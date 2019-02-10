@@ -28,7 +28,7 @@ public:
     {
         super(g);
         assert (ylg >= 2 * xlg);
-        const cb = getInternal(fileImageGuiNumber);
+        const cb = InternalImage.guiNumber.toCutbit;
         _track = new Frame(new Geom(xlg/3, xlg, xlg/3, ylg - 2*xlg));
         _up   = new BitmapButton(new Geom(0, 0, xlg, xlg), cb);
         _down = new BitmapButton(new Geom(0, 0, xlg, xlg, From.BOTTOM), cb);

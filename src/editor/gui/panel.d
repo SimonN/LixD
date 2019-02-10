@@ -5,7 +5,6 @@ import std.conv;
 import std.range;
 import std.string;
 
-import basics.globals;
 import editor.gui.custgrid;
 import file.option : showFPS;
 import file.filename; // currentFilename
@@ -164,7 +163,7 @@ private:
         immutable bitmapYl = (gui.panelYlg - _info.ylg) / 2;
         immutable textXl = gui.screenXlg - infoXl();
         immutable textYl = gui.panelYlg / texts;
-        const cutbit = fileImageEditPanel.getInternal;
+        const cutbit = InternalImage.editPanel.toCutbit;
 
         Geom newGeomForButton(int i)
         {

@@ -9,7 +9,6 @@ module gui.button.twotask;
 
 import std.format;
 
-import basics.globals; // bitmap file for the spawnint button, doubleclick spd
 import graphic.cutbit;
 import graphic.internal;
 import gui;
@@ -70,7 +69,7 @@ class SpawnIntervalButton : TwoTasksButton {
 public:
     this(Geom g)
     {
-        super(g, getInternal(basics.globals.fileImageGamePanel2));
+        super(g, InternalImage.gamePanel2.toCutbit);
         Geom g2 = new Geom(g);
         g2.x   -= g.xl - 13;
         g2.from = From.CENTER;

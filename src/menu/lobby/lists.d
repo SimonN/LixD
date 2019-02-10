@@ -26,7 +26,7 @@ public:
                 getPanelInfoIcon(prof.style)));
         addChild(new Label(new Geom(20, 0, xlg - 40, 20), prof.name));
         auto check = new CutbitElement(new Geom(0, 0, 20, 20, From.RIGHT),
-            getInternal(fileImageMenuCheckmark));
+            InternalImage.menuCheckmark.toCutbit);
         check.xf = prof.feeling;
         addChild(check);
     }
@@ -119,7 +119,7 @@ public:
             addChild(_buttons[$-1]);
         }
         _spec = new BitmapButton(new Geom(0, 0, xlg, ylg/5f, From.BOTTOM),
-            getInternal(fileImageLobbySpec));
+            InternalImage.lobbySpec.toCutbit);
         addChild(_spec);
     }
 

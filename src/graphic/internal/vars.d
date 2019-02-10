@@ -7,6 +7,7 @@ module graphic.internal.vars;
 import basics.globals;
 import basics.matrix;
 import graphic.cutbit;
+import graphic.internal.names;
 public import graphic.color;
 public import net.style;
 

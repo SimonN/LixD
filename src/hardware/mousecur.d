@@ -6,7 +6,6 @@ module hardware.mousecur;
  *  public Graphic mouseCursor; -- work with this object however you wish
  */
 
-import basics.globals;
 import basics.rect;
 import file.log;
 import graphic.cutbit;
@@ -19,9 +18,9 @@ public Graphic mouseCursor;
 void initialize()
 {
     assert (mouseCursor is null, "mouse cursor is already initialized");
-    const(Cutbit) cb = getInternal(fileImageMouse);
+    const(Cutbit) cb = InternalImage.mouse.toCutbit;
     if (! cb.valid)
-        logf("Mouse cursor not found: `%s'", fileImageMouse.rootless);
+        logf("Mouse cursor not found: `%s'", InternalImage.mouse.toBasename);
     mouseCursor = new Graphic(cb, null);
 }
 

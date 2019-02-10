@@ -123,17 +123,7 @@ Filename fileGlobalConfigLegacy, fileLog, fileReplayVerifier, fileTharsisProf,
     fileMusicMenu, fileMusicGain,
     fileSingleplayerFirstLevel;
 
-Filename fileImageAbility, fileImageGuiNumber, fileImageAppIcon,
-    fileImageDebris, fileImageEditFlip, fileImageEditHatch,
-    fileImageEditPanel, fileImageExplosion, fileImageFuse,
-    fileImageFuseFlame, fileImageGameArrow, fileImageGameIcon,
-    fileImageGamePanel, fileImageGamePanel2,
-    fileImageGamePanelHints, fileImageGameSpawnint, fileImageGamePause,
-    fileImageGoalMarker,
-    fileImageGameReplay, fileImageImplosion, fileImageSpritesheet,
-    fileImageStyleRecol, fileImageLobbySpec, fileImageMenuBackground,
-    fileImageMenuCheckmark, fileImageMouse, fileImagePreviewIcon,
-    fileImageSkillIcons;
+Filename fileImageAppIcon;
 
 static this()
 {
@@ -155,11 +145,6 @@ static this()
     dirReplayManual = new Fn("replays/manual/");
     dirExport = new Fn("export/");
 
-    // This should really be "./trophies.sdl" and Lix's virtual file system
-    // should decide whether to prefix with the "user/" dir or not.
-    // Self-contained: prepend "user/", FHS-installed: no extra subdir,
-    // write to "~/./local/share/lix/trophies.sdl".
-    fileHotkeys = new Fn("user/hotkeys.sdl");
     fileOptions = new Fn("user/options.sdl");
     fileTrophies = new Fn("user/trophies.sdl");
     fileLog = new Fn("user/log.txt");
@@ -173,30 +158,4 @@ static this()
                                     ~ "lemforum/Lovely/anyway.txt");
 
     fileImageAppIcon = new Fn("data/images/app_icon.I.png"); // with extension
-
-    // These are without image extensions due to legacy design that tried
-    // to stay format-agnostic. But PNG has become the standard since.
-    fileImageAbility = new Fn("data/images/ability.I");
-    fileImageGuiNumber = new Fn("data/images/api_numb.I");
-    fileImageDebris = new Fn("data/images/debris.I");
-    fileImageEditPanel = new Fn("data/images/edit_pan.I");
-    fileImageExplosion = new Fn("data/images/explode.I");
-    fileImageFuse = new Fn("data/images/fuse.I");
-    fileImageFuseFlame = new Fn("data/images/fuse_fla.I");
-    fileImageGameArrow = new Fn("data/images/game_arr.I");
-    fileImageGameIcon = new Fn("data/images/game_ico.I");
-    fileImageGamePanel = new Fn("data/images/game_pan.I");
-    fileImageGamePanel2 = new Fn("data/images/game_pa2.I");
-    fileImageGamePause = new Fn("data/images/game_pau.I");
-    fileImageGameReplay = new Fn("data/images/game_rep.I");
-    fileImageGoalMarker = new Fn("data/images/goalmark.I");
-    fileImageImplosion = new Fn("data/images/implode.I");
-    fileImageSpritesheet = new Fn("data/images/lix.I");
-    fileImageStyleRecol = new Fn("data/images/lixrecol.I");
-    fileImageLobbySpec = new Fn("data/images/lobby_sp.I");
-    fileImageMenuBackground = new Fn("data/images/menu_bg.I");
-    fileImageMenuCheckmark = new Fn("data/images/menu_chk.I");
-    fileImageMouse = new Fn("data/images/mouse.I");
-    fileImagePreviewIcon = new Fn("data/images/prev_ico.I");
-    fileImageSkillIcons = new Fn("data/images/skillico.I");
 }

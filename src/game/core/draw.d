@@ -7,7 +7,7 @@ import std.range : retro;
 import std.string; // format
 
 import basics.alleg5;
-import basics.globals; // replay sign
+import basics.globals : ticksPerSecond;
 import file.option : showFPS;
 import game.core.game;
 import game.panel.tooltip;
@@ -162,7 +162,7 @@ void drawReplaySign(Game game)
     if (! game.replaying)
         return;
     if (game.view.showReplaySign) {
-        const(Cutbit) rep = getInternal(fileImageGameReplay);
+        const(Cutbit) rep = InternalImage.gameReplay.toCutbit;
         rep.drawToCurrentAlbitNotTorbit(Point(0,
             (rep.yl/5 * (1 + sin(timerTicks * 0.08f))).to!int));
     }

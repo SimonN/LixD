@@ -3,7 +3,6 @@ module editor.gui.skills;
 import std.algorithm;
 
 import file.option; // length of sorted skill array
-import basics.globals;
 import editor.gui.okcancel;
 import file.language;
 import graphic.internal;
@@ -118,7 +117,7 @@ public:
         addChild(_main);
         foreach (int i; 0 .. _small.length) {
             _small[i] = new BitmapButton(new Geom( i/3 * xlg/2, i%3 * ylg/6,
-                xlg/2, ylg/6), getInternal(fileImageGuiNumber));
+                xlg/2, ylg/6), InternalImage.guiNumber.toCutbit);
             _small[i].xf = 6 + i;
             addChild(_small[i]);
         }

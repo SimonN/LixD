@@ -3,7 +3,6 @@ module lix.fuse;
 import std.math;
 
 import basics.alleg5;
-import basics.globals;
 import basics.matrix;
 import basics.help;
 import basics.rect;
@@ -47,7 +46,7 @@ void drawAbilities(in Lixxie lixxie, bool highlit = false) { with (lixxie)
         || ! (abilityToRun || abilityToClimb || abilityToFloat))
         return;
 
-    const cb = getInternal(fileImageAbility);
+    const cb = InternalImage.ability.toCutbit;
     Point topLeft = Point(
         lixxie.eyeOnMap.x - (cb.xl + 1) / 2 + 1 * facingLeft,
         locCutbit.y - cb.yl/3);
@@ -111,14 +110,14 @@ void drawFuseOrFlame(bool fuseIfFalseFlameIfTrue)(in Lixxie lixxie)
     }
     static if (! fuseIfFalseFlameIfTrue) {
         // Draw the fuse element bitmap many times to create a fuse
-        const fuse = getInternal(fileImageFuse);
+        const fuse = InternalImage.fuse.toCutbit;
         al_hold_bitmap_drawing(true);
         for (int y = eye.y - 1; y >= tip; --y)
             fuse.draw(wiggle(y) - Point(1, 0));
         al_hold_bitmap_drawing(false);
     }
     else static if (fuseIfFalseFlameIfTrue) {
-        const flame = getInternal(fileImageFuseFlame);
+        const flame = InternalImage.fuseFlame.toCutbit;
         flame.draw(wiggle(tip) - flame.len/2,
                    lixxie.ploderTimer % flame.xfs, 0);
     }

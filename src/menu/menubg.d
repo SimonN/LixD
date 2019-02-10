@@ -1,6 +1,5 @@
 module menu.menubg;
 
-import basics.globals;
 import basics.alleg5;
 import graphic.internal;
 import gui;
@@ -12,7 +11,7 @@ public:
 protected:
     override void drawSelf()
     {
-        auto bg = getInternal(fileImageMenuBackground);
+        auto bg = InternalImage.menuBackground.toCutbit;
         if (bg && bg.valid)
             // DALLEGCONST: We have to cast
             al_draw_scaled_bitmap(cast (Albit) bg.albit, 0, 0, bg.xl, bg.yl,

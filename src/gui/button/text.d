@@ -9,7 +9,6 @@ module gui.button.text;
 import std.conv;
 
 import gui;
-import basics.globals;
 import graphic.color;
 import graphic.cutbit;
 import graphic.internal;
@@ -108,7 +107,7 @@ protected:
         // There's a (chXlg)x(chXlg) area reserved for the cutbit on the right.
         // Draw to the center of this square.
         if (_checkFrame != 0) {
-            auto cb = getInternal(fileImageMenuCheckmark);
+            const cb = InternalImage.menuCheckmark.toCutbit;
             cb.draw(Point(to!int(checkGeom.xs + checkGeom.xls/2 - cb.xl/2),
                           to!int(checkGeom.ys + checkGeom.yls/2 - cb.yl/2)),
                 _checkFrame, 2 * (on && ! down)

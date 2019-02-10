@@ -6,7 +6,6 @@ import std.range;
 import std.string;
 
 import basics.alleg5;
-import basics.globals;
 import file.filename;
 import graphic.color;
 import graphic.cutbit;
@@ -144,7 +143,7 @@ body {
         {
             import graphic.internal;
             import std.exception;
-            auto icon = getInternal(fileImagePreviewIcon);
+            const icon = InternalImage.previewIcon.toCutbit;
             enforce(icon, "we need internal graphics to render levels");
             with (level.topology)
                 icon.draw(Point(0, 0), torusX + 2 * torusY, 1);
@@ -186,6 +185,7 @@ body {
 unittest {
     import basics.init;
     import basics.cmdargs;
+    import basics.globals;
 
     al_run_allegro({
         initializeNoninteractive(Runmode.EXPORT_IMAGES);

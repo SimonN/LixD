@@ -3,11 +3,11 @@ module graphic.internal.loadfile;
 import std.algorithm; // find
 
 import basics.alleg5;
-import basics.globals;
 import file.filename;
 import graphic.color;
 import graphic.cutbit;
 import graphic.internal.getters;
+import graphic.internal.names;
 import graphic.internal.vars;
 import graphic.internal.recol;
 
@@ -27,25 +27,6 @@ void loadFromDisk(Filename fn)
     assert (fn.rootlessNoExt in internal);
 }
 
-bool needGuiRecoloring(Filename fn)
-{
-    return [fileImageAbility,
-            fileImageGuiNumber,
-            fileImageEditFlip,
-            fileImageEditHatch,
-            fileImageEditPanel,
-            fileImageGameArrow,
-            fileImageGamePanel,
-            fileImageGamePanel2,
-            fileImageGamePanelHints,
-            fileImageGameSpawnint,
-            fileImageGamePause,
-            fileImageLobbySpec,
-            fileImageMenuCheckmark,
-            fileImagePreviewIcon
-        ].find(fn) != null;
-}
-
 void makeLixSprites(in Style st)
 {
     assert (spritesheets[st] is null);
@@ -56,13 +37,13 @@ void makeLixSprites(in Style st)
 void makePanelInfoIcon(in Style st)
 {
     recolorForGuiAndPlayer!magicnrPanelInfoIcons(
-        fileImageGameIcon, panelInfoIcons, st);
+        InternalImage.gameIcon, panelInfoIcons, st);
 }
 
 void makeSkillButtonIcon(in Style st)
 {
     recolorForGuiAndPlayer!magicnrSkillButtonIcons(
-        fileImageSkillIcons, skillButtonIcons, st);
+        InternalImage.skillIcons, skillButtonIcons, st);
 }
 
 void makeGoalMarker(in Style st)
@@ -71,17 +52,17 @@ body {
     // magicnrSkillButtonIcons isn't a perfect descripition: It recolors
     // exactly the first row. But goal markers have only one frame, thus OK.
     recolorForGuiAndPlayer!magicnrSkillButtonIcons(
-        fileImageGoalMarker, goalMarkers, st);
+        InternalImage.goalMarker, goalMarkers, st);
 }
 
 private:
 
 void recolorForGuiAndPlayer(int magicnr)(
-    in Filename fn,
+    in InternalImage id,
     ref Cutbit[Style.max] vec,
     in Style st
 ) {
     assert (vec[st] is null);
-    Cutbit sourceCb = getInternalMutable(fn);
+    Cutbit sourceCb = getInternalMutable(id);
     vec[st] = lockThenRecolor!magicnr(sourceCb, st);
 }

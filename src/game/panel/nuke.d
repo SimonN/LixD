@@ -3,7 +3,7 @@ module game.panel.nuke;
 import std.string;
 
 import basics.alleg5;
-import basics.globals;
+import basics.globals : ticksForDoubleClick;
 import file.option;
 import game.core.game;
 import graphic.color;
@@ -24,9 +24,10 @@ public:
 
     this(Geom g, in WideDesign wide)
     {
-        super(g, getInternal(wide ? fileImageGamePanel2 : fileImageGamePanel));
+        super(g, (wide
+            ? InternalImage.gamePanel2 : InternalImage.gamePanel).toCutbit);
         hotkey = keyNuke;
-        xf = wide ? 1 : 9;
+        xf = wide ? GamePanel2Xf.nuke : 9;
         if (wide) {
             _label = new Label(new Geom(-xlg/4 - 5, 0, xlg/2 - 10,
                 20, From.CENTER), "0:00");

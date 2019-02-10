@@ -12,7 +12,6 @@ import std.range;
 import optional;
 
 import file.option;
-import basics.globals;
 import game.core.view;
 import game.panel.infobar;
 import game.panel.nuke;
@@ -96,8 +95,8 @@ public:
         // Most modes have cool shades.
         if (shadesGeom) {
             _coolShades = new BitmapButton(shadesGeom,
-                                           getInternal(fileImageGamePanel2));
-            _coolShades.xf = 0;
+                InternalImage.gamePanel2.toCutbit);
+            _coolShades.xf = GamePanel2Xf.clearPhysics;
             _coolShades.hotkey = file.option.keyPingGoals;
             addChild(_coolShades);
         }

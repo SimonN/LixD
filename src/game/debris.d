@@ -17,7 +17,6 @@ import std.conv;
 import std.math; // fmod, to rotate pickaxes
 import std.random;
 
-import basics.globals;
 import basics.rect;
 import file.filename;
 import graphic.color;
@@ -67,19 +66,19 @@ struct Debris {
 
     static auto newImplosion(in Point foot)
     {
-        auto cb = getInternal(fileImageImplosion);
+        auto cb = InternalImage.implosion.toCutbit;
         return typeof(this)(Type.implosion, cb.xfs, foot);
     }
 
     static auto newExplosion(in Point foot)
     {
-        auto cb = getInternal(fileImageExplosion);
+        auto cb = InternalImage.explosion.toCutbit;
         return typeof(this)(Type.explosion, cb.xfs + 2, foot);
     }
 
     static auto newFlyingTool(in Point foot, in int dir, in int toolFrame
     ) {
-        auto cb = getInternal(fileImageDebris);
+        auto cb = InternalImage.debris.toCutbit;
         auto ret = typeof(this)(Type.flyingTool, debrisTimeToLive,
             foot + Point(10 * dir, 0),
             Point(uniform(1, 6) * dir, uniform(-11, -7)),
@@ -94,10 +93,10 @@ struct Debris {
     {
         --timeToLive;
         final switch (type) {
-            case Type.arrow:      calcArrow();      break;
-            case Type.implosion:  break;
-            case Type.explosion:  break;
-            case Type.particle:   calcParticle();   break;
+            case Type.arrow: calcArrow(); break;
+            case Type.implosion: break;
+            case Type.explosion: break;
+            case Type.particle: calcParticle(); break;
             case Type.flyingTool: calcFlyingTool(); break;
         }
     }
@@ -105,11 +104,11 @@ struct Debris {
     void draw()
     {
         final switch (type) {
-            case Type.arrow:      drawArrow();      break;
+            case Type.arrow: drawArrow(); break;
             case Type.flyingTool: drawFlyingTool(); break;
-            case Type.implosion:  drawPlosion(fileImageImplosion); break;
-            case Type.explosion:  drawPlosion(fileImageExplosion); break;
-            case Type.particle:   drawParticle();   break;
+            case Type.implosion: drawPlosion(InternalImage.implosion); break;
+            case Type.explosion: drawPlosion(InternalImage.explosion); break;
+            case Type.particle: drawParticle(); break;
         }
     }
 
@@ -149,7 +148,7 @@ private:
 
     void drawArrow()
     {
-        auto cbA = getInternal(fileImageGameArrow);
+        auto cbA = InternalImage.gameArrow.toCutbit;
         auto cbI = getSkillButtonIcon(style);
         cbA.draw(foot - Point(cbA.xl/2, cbA.yl));
         cbI.draw(foot - Point(cbI.xl/2, cbA.yl*15/16), frame);
@@ -157,15 +156,15 @@ private:
 
     void drawFlyingTool()
     {
-        auto cb = getInternal(fileImageDebris);
+        auto cb = InternalImage.debris.toCutbit;
         cb.draw(foot - Point(cb.xl/2, cb.yl/2),
                 clamp(cb.xfs - timeToLive/4, 0, cb.xfs - 1),
                 frame, false, rotCw);
     }
 
-    void drawPlosion(in Filename fn)
+    void drawPlosion(in InternalImage id)
     {
-        auto cb = getInternal(fn);
+        auto cb = id.toCutbit;
         cb.draw(foot - Point(cb.xl/2, cb.yl/2 + explodeMaskOffsetY),
                 clamp(cb.xfs - timeToLive, 0, cb.xfs - 1));
     }

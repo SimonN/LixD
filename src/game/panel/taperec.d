@@ -6,7 +6,6 @@ module game.panel.taperec;
 
 import std.algorithm;
 
-import basics.globals;
 import file.option;
 import game.panel.nuke;
 import game.panel.tooltip;
@@ -38,7 +37,7 @@ public:
         {
             b = new T(new Geom(x * xlg/4f, ylg1 * (y >= 1) + ylg2 * (y >= 2),
                                xlg/4f, y == 0 ? ylg1 : ylg2),
-                      getInternal(basics.globals.fileImageGamePanel));
+                InternalImage.gamePanel.toCutbit);
             b.xf = frame;
             b.hotkey = keyLeft;
             static if (is (T == TwoTasksButton))
@@ -57,7 +56,7 @@ public:
 
         _pause = new BitmapButton(
             new Geom(0, 0, xlg/4f, ylg - ylg1, From.BOTTOM_RIGHT),
-            getInternal(basics.globals.fileImageGamePause));
+            InternalImage.gamePause.toCutbit);
         _pause.hotkey = keyPause;
         addChild(_pause);
     }
@@ -151,12 +150,12 @@ public:
         // Once there is a savestate, stateSave shrinks and stateLoad pops in.
         _saveState = new BitmapButton(
             new Geom(0, 0, xlg, 20),
-            getInternal(basics.globals.fileImageGamePanel2));
+            InternalImage.gamePanel2.toCutbit);
         _loadState = new BitmapButton(
             new Geom(xlg/2f, 0, xlg/2f, 20),
-            getInternal(basics.globals.fileImageGamePanel2));
-        _saveState.xf = 2;
-        _loadState.xf = 3;
+            InternalImage.gamePanel2.toCutbit);
+        _saveState.xf = GamePanel2Xf.quicksave;
+        _loadState.xf = GamePanel2Xf.quickload;
         _saveState.hotkey = keyStateSave;
         _loadState.hotkey = keyStateLoad;
         addChildren(_saveState, _loadState);

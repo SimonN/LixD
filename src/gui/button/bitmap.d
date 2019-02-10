@@ -2,7 +2,6 @@ module gui.button.bitmap;
 
 import std.conv; // to!int for drawing the cutbit
 
-import basics.globals; // name of checkmark bitmap
 import graphic.cutbit;
 import graphic.internal;
 import gui;
@@ -47,7 +46,7 @@ public:
     {
         g.xl = 20;
         g.yl = 20;
-        super(g, getInternal(fileImageMenuCheckmark));
+        super(g, InternalImage.menuCheckmark.toCutbit);
         this.onExecute = (){ this.toggle; };
     }
 

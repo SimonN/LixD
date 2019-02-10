@@ -33,7 +33,7 @@ public:
 
     void drawNoSign() const
     {
-        const(Cutbit) c = getInternal(fileImageMouse);
+        const(Cutbit) c = InternalImage.mouse.toCutbit;
         c.draw(Point(
             this.loc.x + tile.trigger.x + tile.triggerXl / 2 - c.xl / 2,
             this.loc.y + tile.trigger.y + tile.triggerYl / 2 - c.yl),

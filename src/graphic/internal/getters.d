@@ -3,10 +3,11 @@ module graphic.internal.getters;
 import std.range;
 import std.exception : enforce;
 
-import basics.globals;
+import basics.globals : dirDataBitmap;
 import file.filename;
 import graphic.cutbit;
 import graphic.internal.loadfile;
+import graphic.internal.names;
 import graphic.internal.recol;
 import graphic.internal.vars;
 
@@ -21,7 +22,8 @@ out (ret) {
 body {
     if (_lixRawSprites)
         return _lixRawSprites;
-    auto fn = new VfsFilename(fileImageSpritesheet.rootless ~ imgExt);
+    immutable fn = new VfsFilename(dirDataBitmap.dirRootless
+        ~ InternalImage.spritesheet.toBasename);
     loadFromDisk(fn);
     enforce(fn.rootlessNoExt in internal, "Can't find Lix spritesheet"
         ~ " at `" ~ fn.rootless ~ "'. The spritesheet is required for physics"
@@ -32,32 +34,35 @@ body {
     return _lixRawSprites;
 }
 
-// Input: filename without any scaling subdir
+// Input: ID of internal bitmap file (IDs don't know about scaling subdir)
 // Output: The cutbit from the correct scaling subdir, or a replacement image
 // See comment near graphic.internal.vars.internal about how we save strings
-Cutbit getInternalMutable(in Filename fn)
+Cutbit getInternalMutable(in InternalImage id)
 {
     if (! wantRecoloredGraphics) {
         assert (nullCutbit, "call graphic.internal.initialize() first");
         return nullCutbit;
     }
-    auto correctScale  = new VfsFilename(scaleDir ~ fn.file ~ imgExt);
-    auto fallbackScale = new VfsFilename(fn.rootless ~ imgExt);
-    if (auto ret = correctScale.rootlessNoExt in internal)
+    immutable correctScale = new VfsFilename(scaleDir ~ id.toBasename);
+    if (auto ret = correctScale.rootlessNoExt in internal) {
         return *ret;
-    if (auto ret = fallbackScale.rootlessNoExt in internal)
+    }
+    immutable fallbackScale = new VfsFilename(
+        dirDataBitmap.dirRootless ~ id.toBasename);
+    if (auto ret = fallbackScale.rootlessNoExt in internal) {
         return *ret;
+    }
     // Neither the correcty-scaled image nor the fallback have already
     // been successfully loaded. Try to load from disk in this order.
     loadFromDisk(correctScale);
     if (auto ret = correctScale.rootlessNoExt in internal) {
-        if (fn.needGuiRecoloring)
+        if (id.needGuiRecoloring)
             eidrecol(*ret, 0);
         return *ret;
     }
     loadFromDisk(fallbackScale);
     if (auto ret = fallbackScale.rootlessNoExt in internal) {
-        if (fn.needGuiRecoloring)
+        if (id.needGuiRecoloring)
             eidrecol(*ret, 0);
         return *ret;
     }

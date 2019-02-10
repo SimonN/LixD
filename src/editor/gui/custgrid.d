@@ -1,6 +1,5 @@
 module editor.gui.custgrid;
 
-import basics.globals;
 import file.option;
 import file.language;
 import graphic.internal;
@@ -13,7 +12,7 @@ private:
 public:
     this(Geom g)
     {
-        super(g, getInternal(fileImageEditPanel));
+        super(g, InternalImage.editPanel.toCutbit);
         xf = Lang.editorButtonGridCustom - Lang.editorButtonFileNew;
 
         _gridSize = new Label(new Geom(0, 0, xlg, 20, From.CENTER));

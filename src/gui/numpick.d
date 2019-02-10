@@ -74,7 +74,7 @@ implConstructor()
     {
         auto b = new BitmapButton(
             new Geom(x - 20 * (! cfg.sixButtons), 0, 20, 20, from),
-            graphic.internal.getInternal(fileImageGuiNumber));
+            InternalImage.guiNumber.toCutbit);
         b.xf = bbGeomCount;
         b.onExecute = () { this.buttonCallback(change); };
 

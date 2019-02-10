@@ -27,7 +27,6 @@ import enumap;
 
 import basics.alleg5;
 import basics.cmdargs;
-import basics.globals;
 import basics.help;
 import net.repdata;
 import tile.phymap;
@@ -496,11 +495,14 @@ private:
         auto targetBitmap = TargetBitmap(_mask);
         al_clear_to_color(color.transp);
 
-        const recol = getInternal(basics.globals.fileImageStyleRecol).albit;
-        if (! recol)
+        const recol = InternalImage.styleRecol.toCutbit.albit;
+        if (! recol) {
+            import basics.globals : dirDataBitmap;
             throw new Exception("We lack the recoloring bitmap. "
-                ~ "Is Lix installed properly? We're looking for: `"
-                ~ basics.globals.fileImageStyleRecol.rootless ~ "'.");
+                ~ "Is Lix installed properly? We're looking for: "
+                ~ dirDataBitmap.dirRootless
+                ~ InternalImage.styleRecol.toBasename);
+        }
         assert (recol.xl >= 3);
 
         auto lockRecol = LockReadOnly(recol);

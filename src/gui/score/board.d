@@ -16,7 +16,6 @@ import enumap;
 
 public import physics.score;
 import basics.alleg5;
-import basics.globals : fileImageGamePanel2; // nuke graphicr
 import gui;
 import gui.score.bar; // for the package-declared SimpleBar
 import graphic.color;
@@ -175,8 +174,8 @@ public:
             style, 5);
 
         _nuke = new CutbitElement(new Geom(barL, 0, nukeL, 20, From.RIGHT),
-            getInternal(fileImageGamePanel2));
-        _nuke.xf = 1;
+            InternalImage.gamePanel2.toCutbit);
+        _nuke.xf = GamePanel2Xf.nuke;
 
         addChildren(_bar, _nameLabel, _alive.icon, _alive.label,
             _saved.icon, _saved.label, _nuke);

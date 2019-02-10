@@ -3,11 +3,11 @@ module graphic.internal.recol;
 import std.string;
 
 import basics.alleg5;
-import basics.globals; // fileImageStyleRecol
 import file.filename;
 import graphic.color;
 import graphic.cutbit;
 import graphic.internal.getters;
+import graphic.internal.names;
 import graphic.internal.vars;
 import hardware.tharsis;
 
@@ -143,7 +143,7 @@ void makeAlcol3DforStyle(in Style st)
     // if the image fails to exist
     with (alcol3DforStyles[st])
         l = m = d = color.white;
-    Cutbit rclCb = getInternalMutable(fileImageStyleRecol);
+    Cutbit rclCb = InternalImage.styleRecol.getInternalMutable;
     assert (rclCb);
     Albit recol = rclCb.albit;
     if (recol is null || al_get_bitmap_height(recol) < st - 1) {
@@ -218,7 +218,7 @@ void recolorAllShadows(Albit bitmap)
 
 Alcol[Alcol] generateRecolArray(in Style st)
 {
-    Cutbit rclCb = getInternalMutable(fileImageStyleRecol);
+    Cutbit rclCb = InternalImage.styleRecol.getInternalMutable;
     assert (rclCb);
     Albit recol = rclCb.albit;
     if (recol is null) {
@@ -245,7 +245,8 @@ void logRecoloringError(
 ) {
     import file.log;
     import std.conv;
-    logf("Error with the recoloring map `%s':", fileImageStyleRecol.rootless);
+    logf("Error with the recoloring map %s:",
+        InternalImage.styleRecol.toBasename);
     if (recol is null) {
         logf("    -> File doesn't exist or format not supported.");
         return;

@@ -7,8 +7,8 @@ module menu.preview;
 import std.format;
 
 import basics.alleg5;
-import basics.globals;
 import basics.help; // rounding
+import basics.globals : fileLog;
 import gui;
 import file.language;
 import graphic.color;
@@ -31,7 +31,7 @@ public:
     this(Geom g)
     {
         super(g);
-        auto cb = getInternal(fileImagePreviewIcon);
+        auto cb = InternalImage.previewIcon.toCutbit;
         iconStatus = new Graphic(cb, guiosd);
         iconTorus  = new Graphic(cb, guiosd);
         iconTorus.yf = 1;

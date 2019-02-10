@@ -11,6 +11,8 @@ import graphic.cutbit;
 import graphic.internal.getters;
 import graphic.internal.vars;
 
+public import graphic.internal.names;
+
 void initialize(Runmode runmode)
 {
     if (! nullCutbit)
@@ -33,7 +35,9 @@ void initialize(Runmode runmode)
 void initializeScale(float scale) { implSetScale(scale); }
 void deinitialize()               { implDeinitialize();  }
 
-const(Cutbit) getInternal    (Filename fn) { return getInternalMutable  (fn); }
+const(Cutbit) toCutbit(in InternalImage id) { return getInternalMutable(id); }
+// also public: Filename toFilename(InternalImage) in graphic.internal.names
+
 const(Cutbit) getLixSpritesheet (Style st) { return implGetLixSprites   (st); }
 const(Cutbit) getPanelInfoIcon  (Style st) { return implGetPanelInfoIcon(st); }
 const(Cutbit) getSkillButtonIcon(Style st) { return implGetSkillButton  (st); }
