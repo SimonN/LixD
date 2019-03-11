@@ -39,7 +39,7 @@ implGameDraw(Game game) { with (game)
         map.clearScreenRect(levBg);
         game.drawGadgets();
 
-        if (modalWindow || ! pan.coolShadesAreOn || pan.isMouseHere) {
+        if (modalWindow || ! pan.splatRulerIsOn || pan.isMouseHere) {
             game.drawLand();
             game.pingOwnGadgets();
         }

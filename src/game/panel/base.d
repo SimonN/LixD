@@ -36,7 +36,7 @@ private:
     SaveStateButtons _ssbs;
     TapeRecorderButtons _trbs; // contains the singleplayer nuke button
     NukeButton _nukeMulti;
-    BitmapButton _coolShades;
+    BitmapButton _splatRuler;
     Optional!ScoreGraph _scoreGraph;
     Optional!ScoreBoard _scoreBoard; // Can be present and nonetheless hidden.
 
@@ -94,11 +94,11 @@ public:
 
         // Most modes have cool shades.
         if (shadesGeom) {
-            _coolShades = new BitmapButton(shadesGeom,
+            _splatRuler = new BitmapButton(shadesGeom,
                 InternalImage.gamePanel2.toCutbit);
-            _coolShades.xf = GamePanel2Xf.splatRuler;
-            _coolShades.hotkey = file.option.keyPingGoals;
-            addChild(_coolShades);
+            _splatRuler.xf = GamePanel2Xf.splatRuler;
+            _splatRuler.hotkey = file.option.keyPingGoals;
+            addChild(_splatRuler);
         }
     }
 
@@ -158,8 +158,8 @@ public:
         bool framestepAheadOne()  { return _trbs && _trbs.framestepAheadOne; }
         bool framestepAheadMany() { return _trbs && _trbs.framestepAheadMany; }
         bool nukeDoubleclicked()  { return nuke.doubleclicked; }
-        bool coolShadesAreOn()    { return _coolShades && _coolShades.on; }
-        bool coolShadesExecute()  { return _coolShades && _coolShades.execute;}
+        bool splatRulerIsOn()     { return _splatRuler && _splatRuler.on; }
+        bool pingGoalsExecute()   { return _splatRuler && _splatRuler.execute;}
         bool zoomIn()             { return _trbs && _trbs.zoomIn
                                       || ! _trbs && keyZoomIn.keyTapped; }
         bool zoomOut()            { return _trbs && _trbs.zoomOut
@@ -198,8 +198,8 @@ protected:
             else
                 hardware.sound.playQuiet(Sound.PANEL_EMPTY);
         });
-        if (_coolShades && _coolShades.execute)
-            _coolShades.on = ! _coolShades.on;
+        if (_splatRuler && _splatRuler.execute)
+            _splatRuler.on = ! _splatRuler.on;
         showOrHideScoreBoard();
         suggestTooltips();
     }
@@ -234,7 +234,7 @@ private:
         if (nuke.isMouseHere)
             // can be the same button that TapeRecorderButtons has reported
             suggestTooltip(Tooltip.ID.nuke);
-        if (_coolShades && _coolShades.isMouseHere) {
+        if (_splatRuler && _splatRuler.isMouseHere) {
             // Hack: We want to distinguish between single- and multiplayer.
             suggestTooltip(_scoreBoard.empty ? Tooltip.ID.showSplatRuler
                 : Tooltip.ID.pingHatchesGoals);
