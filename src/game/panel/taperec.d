@@ -14,7 +14,7 @@ import gui;
 import hardware.keyset;
 
 // This doesn't have save/load state
-class TapeRecorderButtons : Element {
+class TapeRecorderButtons : Element, TooltipSuggester {
 private:
     enum frameFast  = 4;
     enum frameTurbo = 5;
@@ -77,13 +77,13 @@ public:
         bool framestepAheadMany() { return _speedAhead.executeRight; }
         bool nukeDoubleclicked()  { return _nuke.doubleclicked; }
 
-        bool anyTooltipSuggested()
+        bool isSuggestingTooltip()
         {
             return children.any!(ch => ch.isMouseHere);
         }
 
-        Tooltip.ID tooltipSuggested()
-        in { assert (anyTooltipSuggested); }
+        Tooltip.ID suggestedTooltip()
+        in { assert (isSuggestingTooltip); }
         body {
             return _restart.isMouseHere ? Tooltip.ID.restart
                 : _pause.isMouseHere ? Tooltip.ID.pause
@@ -137,7 +137,7 @@ private:
     }
 }
 
-class SaveStateButtons : Element {
+class SaveStateButtons : Element, TooltipSuggester {
 private:
     BitmapButton _saveState, _loadState;
 
@@ -166,13 +166,13 @@ public:
         bool saveState() { return _saveState.execute; }
         bool loadState() { return _loadState.execute; }
 
-        bool anyTooltipSuggested()
+        bool isSuggestingTooltip()
         {
             return children.any!(ch => ch.isMouseHere);
         }
 
-        Tooltip.ID tooltipSuggested()
-        in { assert (anyTooltipSuggested); }
+        Tooltip.ID suggestedTooltip()
+        in { assert (isSuggestingTooltip); }
         body {
             return _saveState.isMouseHere ? Tooltip.ID.stateSave
                 : Tooltip.ID.stateLoad;

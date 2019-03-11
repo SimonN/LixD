@@ -6,11 +6,12 @@ import basics.alleg5;
 import basics.globals : ticksForDoubleClick;
 import file.option;
 import game.core.game;
+import game.panel.tooltip;
 import graphic.color;
 import graphic.internal;
 import gui;
 
-class NukeButton : BitmapButton {
+class NukeButton : BitmapButton, TooltipSuggester {
 private:
     bool _doubleclicked;
     typeof(timerTicks) _lastExecute;
@@ -57,6 +58,9 @@ public:
         reqDraw();
     }
 
+    @property bool isSuggestingTooltip() const { return this.isMouseHere; }
+    @property Tooltip.ID suggestedTooltip() const { return Tooltip.ID.nuke; }
+
 protected:
     override void calcSelf()
     {
@@ -71,5 +75,46 @@ protected:
             down = true;
         else if (on)
             down = false;
+    }
+}
+
+class SplatRulerButton : BitmapButton, TooltipSuggester {
+public:
+    this(Geom g)
+    {
+        super(g, InternalImage.gamePanel2.toCutbit);
+        xf = GamePanel2Xf.splatRuler;
+        hotkey = file.option.keyPingGoals;
+    }
+
+    @property bool isSuggestingTooltip() const { return this.isMouseHere; }
+    @property Tooltip.ID suggestedTooltip() const
+    {
+        return Tooltip.ID.showSplatRuler;
+    }
+
+protected:
+    override void calcSelf()
+    {
+        super.calcSelf();
+        if (execute) {
+            on = ! on;
+        }
+    }
+}
+
+class PingGoalsButton : BitmapButton, TooltipSuggester {
+public:
+    this(Geom g)
+    {
+        super(g, InternalImage.gamePanel2.toCutbit);
+        xf = GamePanel2Xf.pingGoals;
+        hotkey = file.option.keyPingGoals;
+    }
+
+    @property bool isSuggestingTooltip() const { return this.isMouseHere; }
+    @property Tooltip.ID suggestedTooltip() const
+    {
+        return Tooltip.ID.pingGoals;
     }
 }

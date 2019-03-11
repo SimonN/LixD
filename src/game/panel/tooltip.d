@@ -8,6 +8,16 @@ import file.log;
 import file.option;
 import hardware.keyset;
 
+interface TooltipSuggester {
+public:
+    @property bool isSuggestingTooltip() const;
+    @property Tooltip.ID suggestedTooltip() const
+        in {
+            assert (isSuggestingTooltip,
+                "Call suggestedTooltip only when isSuggestingTooltip.");
+        }
+}
+
 struct Tooltip {
     Lang lang;
     bool formatWithButtons;
@@ -19,7 +29,7 @@ struct Tooltip {
         pause = 0x1,
         zoom = 0x2,
         showSplatRuler = 0x4,
-        pingHatchesGoals = 0x8,
+        pingGoals = 0x8,
         stateSave = 0x10,
         stateLoad = 0x20,
         framestepBack = 0x40,
@@ -88,7 +98,7 @@ static this()
     none(Tooltip.ID.pause, Lang.gamePause);
     mouse(Tooltip.ID.zoom, Lang.gameZoom);
     none(Tooltip.ID.showSplatRuler, Lang.gameShowSplatRuler);
-    none(Tooltip.ID.pingHatchesGoals, Lang.gamePingHatchesGoals);
+    none(Tooltip.ID.pingGoals, Lang.gamePingHatchesGoals);
     none(Tooltip.ID.stateSave, Lang.gameStateSave);
     none(Tooltip.ID.stateLoad, Lang.gameStateLoad);
     mouse(Tooltip.ID.framestepBack, Lang.gameFramestepBack);
