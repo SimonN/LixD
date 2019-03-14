@@ -11,28 +11,45 @@ import graphic.color;
 import graphic.internal;
 import gui;
 
-class NukeButton : BitmapButton, TooltipSuggester {
+class NukeButton : Button, TooltipSuggester {
 private:
     bool _doubleclicked;
     typeof(timerTicks) _lastExecute;
     bool _overtimeRunning;
     int _overtimeRemainingInPhyus;
 
-    Label _label;
+    CutbitElement _icon; // Reimplement this part of BitmapButton to move it
+    Label _label; // null when constructed with WithTimeLabel.no
 
 public:
-    enum WideDesign : bool { no, yes }
+    enum WithTimeLabel : bool { no, yes }
 
-    this(Geom g, in WideDesign wide)
+    this(Geom g, in WithTimeLabel withTimeLabel)
     {
-        super(g, (wide
-            ? InternalImage.gamePanel2 : InternalImage.gamePanel).toCutbit);
+        super(g);
         hotkey = keyNuke;
-        xf = wide ? GamePanel2Xf.nuke : 9;
-        if (wide) {
-            _label = new Label(new Geom(-xlg/4 - 5, 0, xlg/2 - 10,
-                20, From.CENTER), "0:00");
-            addChild(_label);
+
+        if (withTimeLabel == WithTimeLabel.no) {
+            _icon = new CutbitElement(new Geom(0, 0, xlg, ylg,
+                From.CENTER), InternalImage.gamePanel.toCutbit);
+            _icon.xf = 9;
+            addChild(_icon);
+        }
+        else if (xlg < 80) {
+            _icon = new CutbitElement(new Geom(0, 0, xlg/2, ylg,
+                From.RIGHT), InternalImage.gamePanel2.toCutbit);
+            _icon.xf = GamePanel2Xf.nuke;
+            immutable float x = TextButton.textXFromLeft;
+            _label = new Label(new Geom(x, 0, xlg - 2f*x, 20,
+                From.LEFT), "0:00");
+            addChildren(_icon, _label);
+        }
+        else {
+            _icon = new CutbitElement(new Geom(xlg/6f, 0, xlg*2f/3f, ylg,
+                From.CENTER), InternalImage.gamePanel2.toCutbit);
+            _label = new Label(new Geom(-xlg/6f, 0, xlg*2f/3f, 20,
+                From.CENTER), "0:00");
+            addChildren(_icon, _label);
         }
     }
 
@@ -66,6 +83,7 @@ protected:
     {
         super.calcSelf();
         _doubleclicked = false;
+        _icon.yf = on ? 1 : 0;
         if (! on && execute) {
             auto now = timerTicks;
             _doubleclicked = (now - _lastExecute < ticksForDoubleClick);

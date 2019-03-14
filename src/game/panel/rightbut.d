@@ -104,7 +104,7 @@ public:
 
         _nukeMulti = new NukeButton(
             new Geom(2 * skillXl, 0, 2 * skillXl, butYl, From.BOT_RIG),
-            NukeButton.WideDesign.yes);
+            NukeButton.WithTimeLabel.yes);
         addChild(_nukeMulti);
         addSuggester(_nukeMulti);
     }

@@ -51,7 +51,7 @@ public:
         newBut(_restart,    1, 1,  8, keyRestart);
 
         _nuke = new NukeButton(new Geom(xlg/2f, ylg1, xlg/4f, ylg2),
-                               NukeButton.WideDesign.no);
+                               NukeButton.WithTimeLabel.no);
         addChild(_nuke);
 
         _pause = new BitmapButton(
