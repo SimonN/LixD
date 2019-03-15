@@ -101,8 +101,8 @@ public:
     this(Geom g)
     {
         super(g, InternalImage.gamePanel2.toCutbit);
-        xf = GamePanel2Xf.splatRuler;
-        hotkey = file.option.keyPingGoals;
+        xf = GamePanel2Xf.showSplatRuler;
+        hotkey = file.option.keyShowSplatRuler;
     }
 
     @property bool isSuggestingTooltip() const { return this.isMouseHere; }
@@ -121,18 +121,18 @@ protected:
     }
 }
 
-class PingGoalsButton : BitmapButton, TooltipSuggester {
+class HighlightGoalsButton : BitmapButton, TooltipSuggester {
 public:
     this(Geom g)
     {
         super(g, InternalImage.gamePanel2.toCutbit);
-        xf = GamePanel2Xf.pingGoals;
-        hotkey = file.option.keyPingGoals;
+        xf = GamePanel2Xf.highlightGoals;
+        hotkey = file.option.keyHighlightGoals;
     }
 
     @property bool isSuggestingTooltip() const { return this.isMouseHere; }
     @property Tooltip.ID suggestedTooltip() const
     {
-        return Tooltip.ID.pingGoals;
+        return Tooltip.ID.highlightGoals;
     }
 }

@@ -105,9 +105,10 @@ $gameFramestepOrQuit Rewind time (◀▮) or quit with [%s].
 $gamePause Pause.
 $gameZoom %s to zoom in, %s to zoom out.
 $gameShowSplatRuler Show splat ruler.
-$gamePingHatchesGoals Show splat ruler. Highlight hatches and goals.
+$gameHighlightGoals Highlight own hatches and goals.
 $gameStateSave Quicksave game position.
 $gameStateLoad Load quicksaved position.
+$gameShowReplayEditor Show replay editor.
 $gameFramestepBack %s to step back, %s to jump back.
 $gameFramestepAhead %s to step ahead, %s to jump ahead.
 $gameFastForward %s for fast-forward, %s for turbo.
@@ -315,8 +316,10 @@ $optionKeySpeedTurbo ▶▶▶|Toggle turbo-fast-forward.|Turbo-fast-forward is 
 $optionKeyRestart Restart|Restart the level from the beginning. All your actions will replay.|To interrupt the replay, click into the air.
 $optionKeyStateLoad Load state|Go back to the remembered game position.|You can remember the position via Save state.
 $optionKeyStateSave Save state|Remember the exact game position.|You can come back to that position via Load state.
+$optionKeyShowReplayEditor Replay editor|Display the replay editor to fine-tune solution attempts.|You can delete and move arbitrary skill assignments.
 $optionKeyChat Chat|Open the console to chat during a multiplayer game.
-$optionKeyClearPhysics Clear physics|Display a ruler to measure splat height during play.|Highlight own hatches and goals during a networking game.
+$optionKeyShowSplatRuler Splat ruler|Display a ruler to measure splat height during play.
+$optionKeyHighlightGoals Highlight goals|Highlight own hatches and goals during a networking game.
 $optionKeyNuke Nuke|In singleplayer, explode all your lix to finish the level.|In multiplayer, start overtime if you have saved at least 1 lix.
 
 $optionAvoidBuilderQueuing Prefer spamming over queuing|Prefer builder assignments to non-builders over queuing to existing builders.|You can hold priority invert (see Controls tab) to do what you don't prefer.

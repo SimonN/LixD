@@ -139,7 +139,7 @@ private:
 
 class SaveStateButtons : Element, TooltipSuggester {
 private:
-    BitmapButton _saveState, _loadState;
+    BitmapButton _stateLoad, _stateSave;
 
 public:
     this(Geom g)
@@ -148,23 +148,24 @@ public:
 
         // stateSave.xl = (2 * its normal xl) because stateLoad starts hidden.
         // Once there is a savestate, stateSave shrinks and stateLoad pops in.
-        _saveState = new BitmapButton(
-            new Geom(0, 0, xlg, 20),
+        _stateLoad = new BitmapButton(
+            new Geom(0, 0, xlg/2f, 20),
             InternalImage.gamePanel2.toCutbit);
-        _loadState = new BitmapButton(
+        _stateSave = new BitmapButton(
             new Geom(xlg/2f, 0, xlg/2f, 20),
             InternalImage.gamePanel2.toCutbit);
-        _saveState.xf = GamePanel2Xf.quicksave;
-        _loadState.xf = GamePanel2Xf.quickload;
-        _saveState.hotkey = keyStateSave;
-        _loadState.hotkey = keyStateLoad;
-        addChildren(_saveState, _loadState);
+        _stateLoad.xf = GamePanel2Xf.quickload;
+        _stateSave.xf = GamePanel2Xf.quicksave;
+        _stateLoad.hotkey = keyStateLoad;
+        _stateSave.hotkey = keyStateSave;
+        addChildren(_stateSave, _stateLoad);
         showLoadState(false);
     }
 
     @property const {
-        bool saveState() { return _saveState.execute; }
-        bool loadState() { return _loadState.execute; }
+        bool loadState() { return _stateLoad.execute; }
+        bool saveState() { return _stateSave.execute; }
+        bool replayEditorIsOn() { return false; }
 
         bool isSuggestingTooltip()
         {
@@ -174,16 +175,18 @@ public:
         Tooltip.ID suggestedTooltip()
         in { assert (isSuggestingTooltip); }
         body {
-            return _saveState.isMouseHere ? Tooltip.ID.stateSave
-                : Tooltip.ID.stateLoad;
+            return _stateLoad.isMouseHere ? Tooltip.ID.stateLoad
+                : _stateSave.isMouseHere ? Tooltip.ID.stateSave
+                : Tooltip.ID.showReplayEditor;
         }
     }
 
 protected:
     override void calcSelf()
     {
-        if (_saveState.execute)
+        if (_stateSave.execute) {
             showLoadState(true);
+        }
     }
 
 
@@ -192,7 +195,8 @@ private:
     // savestates. But now, I call it in this.calcSelf, that seems enough.
     void showLoadState(bool b)
     {
-        _saveState.resize(b ? xlg/2f : xlg, _saveState.ylg);
-        _loadState.shown = b;
+        _stateSave.resize(b ? xlg/2f : xlg, _stateSave.ylg);
+        _stateSave.move(b ? xlg/2f : 0, 0);
+        _stateLoad.shown = b;
     }
 }

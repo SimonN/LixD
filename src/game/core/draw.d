@@ -97,7 +97,7 @@ void pingOwnGadgets(Game game) { with (game)
 {
     if (! multiplayer)
         return;
-    immutable remains = _altickPingGoalsUntil - timerTicks;
+    immutable remains = _altickHighlightGoalsUntil - timerTicks;
     if (remains < 0) {
         // Usually, we haven't clicked the cool shades button.
         // Merely draw the own goals with semi-transparent extra lixes.

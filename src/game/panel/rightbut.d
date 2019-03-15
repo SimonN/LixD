@@ -27,21 +27,23 @@ public:
     abstract inout(NukeButton) nuke() inout;
 
     const @property {
-        bool paused()             { return false; }
-        bool speedIsNormal()      { return true; }
-        bool speedIsFast()        { return false; }
-        bool speedIsTurbo()       { return false; }
-        bool restart()            { return false; }
-        bool saveState()          { return false; }
-        bool loadState()          { return false; }
-        bool framestepBackOne()   { return false; }
-        bool framestepBackMany()  { return false; }
-        bool framestepAheadOne()  { return false; }
+        bool paused() { return false; }
+        bool speedIsNormal() { return true; }
+        bool speedIsFast() { return false; }
+        bool speedIsTurbo() { return false; }
+        bool restart() { return false; }
+        bool saveState() { return false; }
+        bool loadState() { return false; }
+        bool framestepBackOne() { return false; }
+        bool framestepBackMany() { return false; }
+        bool framestepAheadOne() { return false; }
         bool framestepAheadMany() { return false; }
-        bool splatRulerIsOn()     { return false; }
-        bool pingGoalsExecute()   { return false; }
-        bool zoomIn()             { return false; }
-        bool zoomOut()            { return false; }
+
+        bool splatRulerIsOn() { return false; }
+        bool replayEditorIsOn() { return false; }
+        bool highlightGoalsExecute() { return false; }
+        bool zoomIn() { return false; }
+        bool zoomOut() { return false; }
     }
 
     final @property bool nukeDoubleclicked() const
@@ -84,7 +86,7 @@ protected:
 class BattleRightButtons : RightButtons {
 private:
     NukeButton _nukeMulti;
-    PingGoalsButton _pingGoals;
+    HighlightGoalsButton _highlightGoals;
 
     mixin ScoreMixin;
     mixin SplatRulerMixin;
@@ -97,10 +99,10 @@ public:
         makeGraphWithYl(ylg - butYl);
 
         makeSplatRuler(new Geom(0, 0, skillXl, butYl, From.BOT_RIG));
-        _pingGoals = new PingGoalsButton(
+        _highlightGoals = new HighlightGoalsButton(
             new Geom(skillXl, 0, skillXl, butYl, From.BOT_RIG));
-        addChild(_pingGoals);
-        addSuggester(_pingGoals);
+        addChild(_highlightGoals);
+        addSuggester(_highlightGoals);
 
         _nukeMulti = new NukeButton(
             new Geom(2 * skillXl, 0, 2 * skillXl, butYl, From.BOT_RIG),
@@ -110,7 +112,10 @@ public:
     }
 
     override inout(NukeButton) nuke() inout { return _nukeMulti; }
-    override bool pingGoalsExecute() const { return _pingGoals.execute; }
+    override bool highlightGoalsExecute() const
+    {
+        return _highlightGoals.execute;
+    }
 
 protected:
     override void calcSelf()

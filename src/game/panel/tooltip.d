@@ -29,14 +29,15 @@ struct Tooltip {
         pause = 0x1,
         zoom = 0x2,
         showSplatRuler = 0x4,
-        pingGoals = 0x8,
+        highlightGoals = 0x8,
         stateSave = 0x10,
         stateLoad = 0x20,
-        framestepBack = 0x40,
-        framestepAhead = 0x80,
-        fastForward = 0x100,
-        restart = 0x200,
-        nuke = 0x400,
+        showReplayEditor = 0x40,
+        framestepBack = 0x80,
+        framestepAhead = 0x100,
+        fastForward = 0x200,
+        restart = 0x400,
+        nuke = 0x800,
 
         forceLeft = 0x1000,
         forceRight = 0x2000,
@@ -98,9 +99,10 @@ static this()
     none(Tooltip.ID.pause, Lang.gamePause);
     mouse(Tooltip.ID.zoom, Lang.gameZoom);
     none(Tooltip.ID.showSplatRuler, Lang.gameShowSplatRuler);
-    none(Tooltip.ID.pingGoals, Lang.gamePingHatchesGoals);
+    none(Tooltip.ID.highlightGoals, Lang.gameHighlightGoals);
     none(Tooltip.ID.stateSave, Lang.gameStateSave);
     none(Tooltip.ID.stateLoad, Lang.gameStateLoad);
+    none(Tooltip.ID.showReplayEditor, Lang.gameShowReplayEditor);
     mouse(Tooltip.ID.framestepBack, Lang.gameFramestepBack);
     mouse(Tooltip.ID.framestepAhead, Lang.gameFramestepAhead);
     mouse(Tooltip.ID.fastForward, Lang.gameFastForward);

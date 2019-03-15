@@ -33,7 +33,7 @@ calcPassive(Game game) { with (game)
     if (map.isHoldScrolling)
         mouseCursor.xf = 3;
 
-    if (pan.pingGoalsExecute) {
-        _altickPingGoalsUntil = timerTicks + ticksPerSecond * 3 / 2;
+    if (pan.highlightGoalsExecute) {
+        _altickHighlightGoalsUntil = timerTicks + ticksPerSecond * 3 / 2;
     }
 }}

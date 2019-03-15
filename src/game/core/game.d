@@ -67,7 +67,7 @@ package:
     RichClient _netClient; // null unless playing/observing multiplayer
 
     long altickLastPhyu;
-    long _altickPingGoalsUntil; // starts at 0, which means don't ping goals
+    long _altickHighlightGoalsUntil; // starts at 0, which means don't highl.
 
     // When we have time-shifted away from the server, we set this variable,
     // and let the physics update function gradually pay back this dept.

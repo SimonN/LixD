@@ -160,9 +160,11 @@ UserOption!KeySet
     keyRestart,
     keyStateLoad,
     keyStateSave,
+    keyShowReplayEditor,
     keyNuke,
     keyChat,
-    keyPingGoals,
+    keyShowSplatRuler,
+    keyHighlightGoals,
     keyGameExit,
 
     keyMenuOkay,
@@ -354,8 +356,10 @@ static this()
     keyRestart = newKey("keyRestart", Lang.optionKeyRestart, ALLEGRO_KEY_F1);
     keyStateLoad = newKey("keyStateLoad", Lang.optionKeyStateLoad, ALLEGRO_KEY_F2);
     keyStateSave = newKey("keyStateSave", Lang.optionKeyStateSave, ALLEGRO_KEY_F3);
+    keyShowReplayEditor = newKey("keyShowReplayEditor", Lang.optionKeyShowReplayEditor, ALLEGRO_KEY_F4);
     keyNuke = newKey("keyNuke", Lang.optionKeyNuke, ALLEGRO_KEY_F12);
-    keyPingGoals = newKey("keyPingGoals", Lang.optionKeyClearPhysics, ALLEGRO_KEY_TAB);
+    keyShowSplatRuler = newKey("keyShowSplatRuler", Lang.optionKeyShowSplatRuler, ALLEGRO_KEY_TAB);
+    keyHighlightGoals = newKey("keyHighlightGoals", Lang.optionKeyHighlightGoals, ALLEGRO_KEY_TAB);
     keyChat = newKey("keyChat", Lang.optionKeyChat, ALLEGRO_KEY_ENTER);
     keyGameExit = newKey("keyGameExit", Lang.winGameTitle, ALLEGRO_KEY_ESCAPE);
 

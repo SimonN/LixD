@@ -293,10 +293,10 @@ void populateGameKeys()
     ];
     fac.y += fac.incrementY / 2;
     groups[OptionGroup.gameKeys] ~= [
-        fac.factory!HotkeyOption(keyPause, watcher),
         fac.factory!HotkeyOption(keyRestart, watcher),
         fac.factory!HotkeyOption(keyStateLoad, watcher),
         fac.factory!HotkeyOption(keyStateSave, watcher),
+        fac.factory!HotkeyOption(keyShowReplayEditor, watcher),
     ];
 
     fac = facKeys!1;
@@ -317,13 +317,15 @@ void populateGameKeys()
     fac = facKeys!2;
     fac.y += plusBelowSkills;
     groups[OptionGroup.gameKeys] ~= [
+        fac.factory!HotkeyOption(keyPause, watcher),
         fac.factory!HotkeyOption(keyNuke, watcher),
         fac.factory!HotkeyOption(keyGameExit, watcher),
     ];
     fac.y += fac.incrementY / 2;
     groups[OptionGroup.gameKeys] ~= [
         fac.factory!HotkeyOption(keyChat, watcher),
-        fac.factory!HotkeyOption(keyPingGoals, watcher),
+        fac.factory!HotkeyOption(keyHighlightGoals, watcher),
+        fac.factory!HotkeyOption(keyShowSplatRuler, watcher),
     ];
 
     enum belowAllGameKeys = 310f;
