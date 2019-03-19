@@ -17,6 +17,7 @@ import graphic.gadget;
 import graphic.internal;
 import graphic.map;
 import graphic.torbit;
+import gui;
 import hardware.display;
 import hardware.music;
 import hardware.tharsis;
@@ -62,6 +63,14 @@ implGameDraw(Game game) { with (game)
         pan.update(sc);
     pan.age = nurse.constStateForDrawingOnly.update;
     game.showSpawnIntervalOnHatches();
+
+    if (pan.replayEditorIsOn) {
+        _repEdit.shown = true;
+    }
+    else if (_repEdit.shown) {
+        _repEdit.shown = false;
+        gui.requireCompleteRedraw();
+    }
 
     auto drata = TargetBitmap(al_get_backbuffer(theA5display));
     {

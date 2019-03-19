@@ -43,15 +43,19 @@ public:
 
     // execute is read-only. Derived classes should make their own bool
     // and then override execute().
-    @property bool execute() const              { return _execute; }
+    @property bool execute() const pure nothrow @nogc { return _execute; }
     @property void onExecute(void delegate() f) { _onExecute = f;  }
 
     mixin (GetSetWithReqDraw!"hotkey");
     mixin (GetSetWithReqDraw!"down");
     mixin (GetSetWithReqDraw!"on");
 
-    override @property bool shown() const { return super.shown; }
-    override @property bool shown(in bool b)
+    override @property bool shown() const nothrow pure @nogc
+    {
+        return super.shown;
+    }
+
+    override @property bool shown(in bool b) nothrow pure
     {
         if (super.shown != b) {
             super.shown = b;

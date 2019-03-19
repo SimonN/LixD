@@ -149,6 +149,7 @@ public:
     override const @property {
         bool saveState() { return _ssbs.saveState; }
         bool loadState() { return _ssbs.loadState; }
+        bool replayEditorIsOn() { return _ssbs.replayEditorIsOn; }
     }
 }
 

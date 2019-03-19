@@ -1,4 +1,4 @@
-module game.window.base;
+module game.exitwin;
 
 import file.option; // hotkeys
 import file.language;

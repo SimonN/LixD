@@ -37,10 +37,11 @@ import game.core.scrstart;
 import game.core.speed;
 import game.core.splatrul;
 import game.effect;
+import game.exitwin;
 import game.harvest;
 import game.nurse.interact;
 import game.panel.base;
-import game.window.base;
+import game.repedit.repedit;
 
 import graphic.map;
 import gui;
@@ -86,6 +87,7 @@ package:
 
     ReallyExitWindow modalWindow;
     Panel pan;
+    ReplayEditor _repEdit; // Never null, but often hidden
     ChatArea _chatArea;
     SplatRuler _splatRuler;
 
@@ -162,6 +164,10 @@ public:
         if (pan) {
             gui.rmElder(pan);
             pan = null;
+        }
+        if (_repEdit) {
+            gui.rmElder(_repEdit);
+            _repEdit = null;
         }
         if (_chatArea) {
             gui.rmElder(_chatArea);
@@ -308,6 +314,7 @@ private:
         nurse = new InteractiveNurse(level, rp, _effect);
 
         initializePanel();
+        initializeMapAndRepEdit();
         initializeConsole();
         stopMusic();
         _splatRuler = createSplatRuler();
@@ -357,9 +364,6 @@ private:
         assert (pan is null);
     }
     body {
-        map = new Map(cs.land, gui.screenXls.to!int,
-                              (gui.screenYls - gui.panelYls).to!int);
-        this.centerCameraOnHatchAverage();
         pan = new Panel(view, level.required);
         foreach (player; nurse.constReplay.players) {
             pan.add(player.style, player.name);
@@ -367,6 +371,21 @@ private:
         gui.addElder(pan);
         setLastPhyuToNow(); // to fill skills, needed for highlightFirstSkill
         pan.highlightFirstSkill();
+    }
+
+    void initializeMapAndRepEdit()
+    in {
+        assert (map is null);
+        assert (_repEdit is null);
+    }
+    body {
+        immutable mapYls = (gui.screenYls - gui.panelYls).to!int;
+        map = new Map(cs.land, gui.screenXls.to!int, mapYls);
+        this.centerCameraOnHatchAverage();
+
+        _repEdit = new ReplayEditor(
+            new Geom(0, 0, 200, screenYlg - panelYlg, From.TOP_RIGHT));
+        gui.addElder(_repEdit);
     }
 
     void initializeConsole()

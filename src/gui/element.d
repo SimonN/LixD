@@ -42,10 +42,12 @@ public:
     @property Alcol undrawColor() const  { return _undrawColor;     }
     @property Alcol undrawColor(Alcol c) { return _undrawColor = c; }
 
-    final void hide() { shown = false; }
-    final void show() { shown = true; }
-    @property bool shown() const { return _shown; }
-    @property bool shown(in bool b) // virtual, b/c Button overrides this :-[
+    final void hide() pure nothrow @nogc { shown = false; }
+    final void show() pure nothrow @nogc { shown = true; }
+
+    // Both have to be virtual because Button overrides one >_>
+    @property bool shown() const pure nothrow @nogc { return _shown; }
+    @property bool shown(in bool b) pure nothrow @nogc
     {
         if (b != _shown) {
             reqDraw();
@@ -103,7 +105,7 @@ public:
 
     // Require a redraw because some data of the element has changed,
     // or because things that would be drawn below need a redraw.
-    void reqDraw()
+    void reqDraw() nothrow pure @nogc
     {
         drawRequired = true;
         _children.each!(c => c.reqDraw);

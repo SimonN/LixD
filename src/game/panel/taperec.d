@@ -139,7 +139,7 @@ private:
 
 class SaveStateButtons : Element, TooltipSuggester {
 private:
-    BitmapButton _stateLoad, _stateSave;
+    BitmapButton _stateLoad, _stateSave, _showReplayEditor;
 
 public:
     this(Geom g)
@@ -149,23 +149,28 @@ public:
         // stateSave.xl = (2 * its normal xl) because stateLoad starts hidden.
         // Once there is a savestate, stateSave shrinks and stateLoad pops in.
         _stateLoad = new BitmapButton(
-            new Geom(0, 0, xlg/2f, 20),
+            new Geom(0, 0, xlg/3f, 20),
             InternalImage.gamePanel2.toCutbit);
         _stateSave = new BitmapButton(
-            new Geom(xlg/2f, 0, xlg/2f, 20),
+            new Geom(xlg/3f, 0, xlg/3f, 20),
+            InternalImage.gamePanel2.toCutbit);
+        _showReplayEditor = new BitmapButton(
+            new Geom(xlg*2f/3f, 0, xlg/3f, 20),
             InternalImage.gamePanel2.toCutbit);
         _stateLoad.xf = GamePanel2Xf.quickload;
         _stateSave.xf = GamePanel2Xf.quicksave;
+        _showReplayEditor.xf = GamePanel2Xf.showReplayEditor;
         _stateLoad.hotkey = keyStateLoad;
         _stateSave.hotkey = keyStateSave;
-        addChildren(_stateSave, _stateLoad);
+        _showReplayEditor.hotkey = keyShowReplayEditor;
+        addChildren(_stateSave, _stateLoad, _showReplayEditor);
         showLoadState(false);
     }
 
     @property const {
         bool loadState() { return _stateLoad.execute; }
         bool saveState() { return _stateSave.execute; }
-        bool replayEditorIsOn() { return false; }
+        bool replayEditorIsOn() { return _showReplayEditor.on; }
 
         bool isSuggestingTooltip()
         {
@@ -187,6 +192,9 @@ protected:
         if (_stateSave.execute) {
             showLoadState(true);
         }
+        if (_showReplayEditor.execute) {
+            _showReplayEditor.on = ! _showReplayEditor.on;
+        }
     }
 
 
@@ -195,8 +203,8 @@ private:
     // savestates. But now, I call it in this.calcSelf, that seems enough.
     void showLoadState(bool b)
     {
-        _stateSave.resize(b ? xlg/2f : xlg, _stateSave.ylg);
-        _stateSave.move(b ? xlg/2f : 0, 0);
+        _stateSave.resize(b ? xlg/3f : xlg*2f/3f, _stateSave.ylg);
+        _stateSave.move(b ? xlg/3f : 0, 0);
         _stateLoad.shown = b;
     }
 }

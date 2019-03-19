@@ -25,7 +25,10 @@ enum PhyuOrder {
     flinger,  // Affects lixes directly by flinging. Phyud first.
 }
 
-nothrow bool isPloder(in Ac ac) pure
+pure:
+@safe:
+
+nothrow bool isPloder(in Ac ac)
 {
     return ac == Ac.imploder || ac == Ac.exploder;
 }

@@ -5,10 +5,10 @@ import std.algorithm; // all
 import file.option;
 import basics.cmdargs;
 import game.core.game;
-import game.window.base;
 import game.core.active;
 import game.core.passive;
 import game.core.speed;
+import game.exitwin;
 import game.panel.tooltip;
 import gui;
 import hardware.keyset;
