@@ -201,10 +201,8 @@ mixin template TapeRecorderMixin() {
         bool framestepBackMany()  { return _trbs.framestepBackMany; }
         bool framestepAheadOne()  { return _trbs.framestepAheadOne; }
         bool framestepAheadMany() { return _trbs.framestepAheadMany; }
-        bool zoomIn()             { return _trbs.zoomIn
-                                      || ! keyZoomIn.keyTapped; }
-        bool zoomOut()            { return _trbs.zoomOut
-                                      || ! keyZoomOut.keyTapped; }
+        bool zoomIn()             { return _trbs.zoomIn; }
+        bool zoomOut()            { return _trbs.zoomOut; }
     }
 
     private void makeTapeRecorderWithYl(in float tapeYlg)
