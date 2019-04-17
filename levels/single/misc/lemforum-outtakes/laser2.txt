@@ -1,0 +1,144 @@
+$FILENAME single/sonst/culledlevels/outtakes/laser2.txt
+$LEVEL_BUILT_REQUIRED 2016-02-01 00:26:33
+$GAME_VERSION_REQUIRED 0.9.25
+
++PLAYER 0 Garden Forestidia
+
+! 76 0 ASSIGN=CLIMBER 0
+! 127 0 ASSIGN=BUILDER 0
+! 149 0 ASSIGN=JUMPER 0
+! 165 0 ASSIGN=BASHER 0
+! 174 0 ASSIGN=BUILDER 0
+! 219 0 ASSIGN=CLIMBER 3
+! 277 0 ASSIGN=BUILDER 3
+! 377 0 ASSIGN=BASHER 3
+! 400 0 ASSIGN=BASHER 3
+! 419 0 ASSIGN=BASHER 0
+
+$BUILT 2016-02-01 00:26:33
+$AUTHOR Insane Steve
+$ENGLISH Laser Deathroom (Part 2)
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#INITIAL 50
+#REQUIRED 49
+#SPAWN_INTERVAL 32
+
+#CLIMBER 5
+#FLOATER 5
+#EXPLODER 5
+#BUILDER 10
+#BASHER 5
+#MINER 5
+#DIGGER 5
+#JUMPER 5
+
+:geoo/abstract/hatch.H: 214 134
+
+:geoo/abstract/goal.G: 386 166
+
+:geoo/construction/Laser_vr_64.F: 266 128
+:geoo/construction/Laser_vr_64.F: 358 128
+:geoo/construction/Laser_hz_64.F: 212 118
+:geoo/construction/Laser_hz_64.F: 364 118
+:geoo/construction/Laser_vr_64.F: 202 126
+:geoo/construction/Laser_vr_64.F: 422 126
+:geoo/construction/Laser_hz_16.F: 208 118
+:geoo/construction/Laser_hz_16.F: 416 118
+:geoo/construction/Laser_hz_16.F: 408 118
+:geoo/construction/Laser_hz_16.F: 214 118
+:geoo/construction/Laser_hz_64.F: 208 334
+:geoo/construction/Laser_hz_64.F: 368 334
+:geoo/construction/Laser_vr_16.F: 270 230
+:geoo/construction/Laser_vr_16.F: 270 326
+:geoo/construction/Laser_vr_16.F: 270 234
+:geoo/construction/Laser_vr_16.F: 354 326
+:geoo/construction/Laser_vr_16.F: 354 230
+:geoo/construction/Laser_vr_16.F: 202 230
+:geoo/construction/Laser_vr_16.F: 202 234
+:geoo/construction/Laser_vr_16.F: 202 326
+:geoo/construction/Laser_vr_16.F: 422 326
+:geoo/construction/Laser_vr_16.F: 422 236
+:geoo/construction/Laser_vr_16.F: 422 230
+:geoo/construction/Laser_hz_16.F: 264 334
+:geoo/construction/Laser_hz_16.F: 360 334
+:geoo/construction/Laser_vr_64.F: 270 262
+:geoo/construction/Laser_vr_64.F: 202 266
+:geoo/construction/Laser_vr_64.F: 354 262
+:geoo/construction/Laser_vr_64.F: 422 266
+:geoo/construction/Laser_hz_16.F: 312 284
+:geoo/construction/Laser_vr_64.F: 306 228
+:geoo/construction/Laser_vr_64.F: 318 228
+:geoo/construction/Laser_hz_16.F: 312 220
+:geoo/construction/Laser_vr_64.F: 270 246
+:geoo/construction/Laser_vr_64.F: 354 246
+:geoo/construction/Laser_vr_64.F: 202 246
+:geoo/construction/Laser_vr_64.F: 422 252
+
+:geoo/steel/16x16o.S: 270 214
+:geoo/steel/16x16o.S: 354 214
+:geoo/steel/16x16o.S: 270 192
+:geoo/steel/16x16o.S: 354 192
+:geoo/steel/16x16o.S: 370 214
+:geoo/steel/16x16o.S: 386 214
+:geoo/steel/16x16o.S: 402 214
+:geoo/steel/16x16o.S: 418 214
+:geoo/steel/16x16o.S: 418 198
+:geoo/steel/16x16o.S: 418 182
+:geoo/steel/16x16o.S: 254 214
+:geoo/steel/16x16o.S: 238 214
+:geoo/steel/16x16o.S: 222 214
+:geoo/steel/16x16o.S: 206 214
+:geoo/steel/16x16o.S: 206 198
+:geoo/steel/16x16o.S: 206 182
+:geoo/abstract/cvblocks/047: 128 272
+:geoo/abstract/cvblocks/047: 448 272
+:geoo/abstract/cvblocks/047: 128 144
+:geoo/abstract/cvblocks/047: 448 144
+:geoo/abstract/cvblocks/047: 448 16
+:geoo/abstract/cvblocks/047: 128 16
+:geoo/abstract/cvblocks/035: 128 -16
+:geoo/abstract/cvblocks/035: 448 -16
+:geoo/abstract/cvblocks/035: 384 0
+:geoo/abstract/cvblocks/035: 192 0
+:geoo/abstract/cvblocks/030: 256 0
+:geoo/abstract/cvblocks/030: 352 0
+:geoo/abstract/cvblocks/030: 304 0
+:geoo/abstract/cvblocks/045: 512 336
+:geoo/abstract/cvblocks/045: 512 272
+:geoo/abstract/cvblocks/045: 512 208
+:geoo/abstract/cvblocks/045: 512 144
+:geoo/abstract/cvblocks/045: 512 80
+:geoo/abstract/cvblocks/045: 576 144
+:geoo/abstract/cvblocks/045: 576 208
+:geoo/abstract/cvblocks/045: 576 272
+:geoo/abstract/cvblocks/045: 576 336
+:geoo/abstract/cvblocks/045: 0 336
+:geoo/abstract/cvblocks/045: 0 272
+:geoo/abstract/cvblocks/045: 0 208
+:geoo/abstract/cvblocks/045: 0 144
+:geoo/abstract/cvblocks/045: 64 80
+:geoo/abstract/cvblocks/045: 64 144
+:geoo/abstract/cvblocks/045: 64 208
+:geoo/abstract/cvblocks/045: 64 272
+:geoo/abstract/cvblocks/045: 64 336
+:geoo/abstract/cvblocks/015: 288 16
+:geoo/abstract/cvblocks/015: 288 0
+:geoo/abstract/cvblocks/015: 336 0
+:geoo/abstract/cvblocks/015: 336 16
+:geoo/abstract/cvblocks/035: 352 368
+:geoo/abstract/cvblocks/035: 224 368
+:geoo/abstract/cvblocks/030: 192 368
+:geoo/abstract/cvblocks/030: 416 368
+:geoo/abstract/cvblocks/030: 304 368
+:geoo/abstract/cvblocks/015: 288 368
+:geoo/abstract/cvblocks/015: 336 368
+:geoo/abstract/cvblocks/015: 288 384
+:geoo/abstract/cvblocks/015: 336 384
+:geoo/abstract/cvblocks/000: 246 206
+:geoo/abstract/cvblocks/000: 246 198
+:geoo/abstract/cvblocks/000: 246 190
+:geoo/abstract/cvblocks/000: 246 182

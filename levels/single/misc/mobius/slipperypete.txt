@@ -1,0 +1,142 @@
+$FILENAME single/sonst/mobius1/slipperypete.txt
+$LEVEL_BUILT_REQUIRED 2012-08-18 14:32:50
+$GAME_VERSION_REQUIRED 0.9.12
+
++PLAYER 0 Garden Forestidia
+
+! 138 0 ASSIGN=BUILDER 0
+! 221 0 ASSIGN=FLOATER 1
+! 245 0 ASSIGN=FLOATER 2
+! 348 0 ASSIGN=CLIMBER 5
+! 380 0 ASSIGN=FLOATER 5
+! 482 0 ASSIGN=DIGGER 5
+! 505 0 ASSIGN=BUILDER 1
+! 540 0 ASSIGN=BUILDER 5
+! 582 0 ASSIGN=MINER 5
+! 608 0 ASSIGN=MINER 3
+! 668 0 ASSIGN=DIGGER 4
+! 770 0 ASSIGN=BUILDER 0
+! 1047 0 ASSIGN=BASHER 4
+
+$BUILT 2012-08-18 14:32:50
+$AUTHOR mobius
+$ENGLISH Slippery Pete
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 1552
+#SIZE_Y 400
+
+#INITIAL 10
+#REQUIRED 10
+#SPAWN_INTERVAL 40
+
+#CLIMBER 1
+#FLOATER 4
+#BUILDER 4
+#BASHER 1
+#MINER 2
+#DIGGER 2
+#EXPLODER2 0
+
+:simon/hatch001.H: 930 4
+
+:matt/bricks/Goal.G: 1280 208
+
+:geoo/construction/Laseremit_hzl_16.F: 700 176
+:geoo/construction/Laser_hz_64.F: 714 176
+:geoo/construction/Laser_hz_64.F: 776 176
+:geoo/construction/Laser_hz_64.F: 824 176
+:geoo/construction/Laseremit_hzr_16.F: 886 176
+:geoo/construction/Laser_hz_64.F: 944 144
+:geoo/construction/Laseremit_hzl_16.F: 928 144
+:geoo/construction/Laseremit_hzr_16.F: 1072 144
+:geoo/construction/Laser_hz_64.F: 1008 144
+:geoo/construction/sawblade.F: 86 160
+:simon/water.W: 496 112
+:simon/water.W: 544 112
+:simon/water.W: 592 112
+:simon/water.W: 640 112
+:geoo/construction/sawblade.F: 1328 112
+
+:matt/bricks/03: 1120 192
+:matt/goldmine/07: 464 -80
+:geoo/steel/64x32o.S: 622 148
+:geoo/steel/64x32o.S: 494 148
+:geoo/steel/64x32o.S: 558 148
+:geoo/steel/64x64o.S: 304 224
+:matt/goldmine/01: 448 112
+:matt/goldmine/00: 384 112
+:matt/goldmine/07: 272 112
+:matt/goldmine/04: 224 80
+:matt/goldmine/plank: 848 64
+:matt/bricks/03: 176 64
+:matt/bricks/03: 240 64
+:matt/bricks/03: 304 64
+:matt/bricks/03: 368 64
+:matt/bricks/03: 176 0
+:matt/bricks/03: 240 0
+:matt/bricks/03: 304 0
+:matt/bricks/03: 368 0
+:matt/bricks/03: 432 64
+:matt/bricks/03: 432 0
+:matt/goldmine/plank: 720 64
+:matt/goldmine/plank: 912 70 rrr
+:matt/bricks/03: 1144 18
+:matt/bricks/03: 1136 66
+:matt/bricks/03: 1120 128
+:matt/bricks/03a: 1124 320
+:matt/bricks/03a: 1188 256
+:matt/bricks/03a: 1188 320
+:matt/bricks/03a: 1252 256
+:matt/bricks/03a: 1252 320
+:matt/goldmine/plank: 784 352
+:matt/goldmine/plank: 912 352
+:matt/bricks/17: 1016 320
+:matt/goldmine/plank: 640 320
+:matt/goldmine/plank: 912 112 rrr
+:matt/bricks/03: 1168 66
+:geoo/steel/64x64o.S: 1408 224
+:geoo/steel/64x64o.S: 1408 160
+:geoo/steel/64x64o.S: 16 64
+:geoo/steel/64x64o.S: 16 0
+:matt/goldmine/00: 256 176
+:matt/goldmine/07: 304 160
+:matt/goldmine/07: 368 128
+:matt/goldmine/07: 384 192
+:matt/goldmine/00: 542 190
+:matt/goldmine/07: 404 250 rr
+:geoo/steel/64x64o.S: 304 288
+:geoo/steel/64x64o.S: 304 352
+:geoo/steel/64x64o.S: 16 128
+:matt/goldmine/00: 542 234
+:geoo/steel/64x64o.S: 1280 32
+:matt/bricks/03: 112 64
+:matt/bricks/03: 112 0
+:matt/bricks/01a: 496 96
+:matt/bricks/01a: 528 96
+:matt/bricks/01a: 560 96
+:matt/bricks/01a: 592 96
+:matt/bricks/01a: 624 96
+:matt/bricks/01a: 656 96
+:matt/bricks/01a: 688 96
+:matt/bricks/01a: 704 96
+:geoo/steel/32x64o.S: 686 116
+:matt/bricks/03a: 1316 256
+:matt/bricks/03a: 1316 320
+:matt/bricks/03: 1184 192
+:matt/bricks/03: 1184 128
+:geoo/steel/32x64o.S: 1152 112
+:geoo/steel/64x64o.S: 1184 112
+:geoo/steel/32x64o.S: 1144 18
+:geoo/steel/64x64o.S: 1080 320
+:matt/bricks/03a: 1124 256
+:geoo/steel/64x64o.S: 1248 288
+:geoo/steel/64x64o.S: 1006 360 d
+:matt/bricks/17: 768 320 f
+:geoo/steel/64x64o.S: 796 360 d
+:geoo/steel/64x64o.S: 736 352 d
+:geoo/steel/64x64o.S: 1080 256 d
+:geoo/steel/64x64o.S: 1080 192 d
+:geoo/steel/64x64o.S: 1080 128 d
+:geoo/steel/64x64o.S: 1080 64 d
+:matt/goldmine/plank: 976 64

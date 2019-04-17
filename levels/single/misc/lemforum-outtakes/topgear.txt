@@ -1,0 +1,155 @@
+$BUILT 2019-02-26 22:08:34
+$AUTHOR ccx
+$ENGLISH Top Gear
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#INITIAL 100
+#REQUIRED 100
+#SPAWN_INTERVAL 6
+
+#CLIMBER 1
+#FLOATER 1
+#BUILDER 6
+#MINER 1
+#EXPLODER2 0
+
+:geoo/sandstone/Hatch.H: 434 97 r
+
+:geoo/sandstone/Goal.G: 450 298
+:geoo/sandstone/Goal.G: 166 112
+
+:geoo/construction/Laser_hz_64.F: 166 347
+:geoo/construction/Laseremit_hzl_16.F: 150 347
+:geoo/construction/Laseremit_hzr_16.F: 229 347
+:geoo/construction/sawblade_small.F: 342 276
+:geoo/construction/sawblade_small.F: 358 290
+:geoo/construction/sawblade_small.F: 374 304
+:geoo/construction/sawblade_small.F: 294 169
+:geoo/construction/sawblade_small.F: 310 184
+:geoo/construction/sawblade_small.F: 326 199
+:geoo/construction/sawblade_medium.F: 258 92
+:geoo/construction/sawblade_small.F: 298 343
+:geoo/construction/sawblade_small.F: 344 343
+:geoo/construction/sawblade_medium.F: 305 328
+:geoo/construction/sawblade_small.F: 181 306
+:simon/water.W: 0 360
+:simon/water.W: 48 360
+:simon/water.W: 96 360
+:simon/water.W: 144 360
+:simon/water.W: 192 360
+:simon/water.W: 240 360
+:simon/water.W: 288 360
+:simon/water.W: 336 360
+:simon/water.W: 384 360
+:simon/water.W: 432 360
+:simon/water.W: 480 360
+:simon/water.W: 528 360
+:simon/water.W: 576 360
+:geoo/construction/Laser_hz_64.F: 18 -2
+:geoo/construction/Laseremit_hzl_16.F: 2 -2
+:geoo/construction/Laseremit_hzr_16.F: 82 -2
+:geoo/construction/Laser_vr_64.F: 41 8
+:geoo/construction/Laseremit_vrb_16.F: 41 72
+:geoo/construction/Laser_vr_64.F: 99 15
+:geoo/construction/Laseremit_vrb_16.F: 99 79
+:geoo/construction/Laser_vr_64.F: 180 26
+:geoo/construction/Laser_hz_64.F: 121 4
+:geoo/construction/Laseremit_hzl_16.F: 105 4
+:geoo/construction/Laser_hz_64.F: 110 85
+:geoo/construction/Laseremit_hzr_16.F: 174 85
+:geoo/construction/Laseremit_vrt_16.F: 180 10
+:geoo/construction/Laser_vr_64.F: 193 10
+:geoo/construction/Laseremit_vrb_16.F: 193 74
+:geoo/construction/Laser_hz_64.F: 215 -1
+:geoo/construction/Laseremit_hzl_16.F: 199 -1
+:geoo/construction/Laseremit_vrt_16.F: 273 5
+:geoo/construction/Laser_vr_16.F: 273 21
+:geoo/construction/Laser_hz_64.F: 203 40
+:geoo/construction/Laseremit_hzr_16.F: 267 40
+:geoo/construction/Laser_vr_16.F: 273 29
+:geoo/construction/Laseremit_vrb_16.F: 367 79
+:geoo/construction/Laser_vr_64.F: 287 27
+:geoo/construction/Laser_hz_64.F: 298 5
+:geoo/construction/Laseremit_hzl_16.F: 293 85
+:geoo/construction/Laser_hz_64.F: 308 85
+:geoo/construction/Laseremit_hzr_16.F: 362 5
+:geoo/construction/Laseremit_vrt_16.F: 287 11
+:geoo/construction/Laser_vr_16.F: 367 63
+:geoo/construction/Laseremit_hzr_16.F: 361 45
+:geoo/construction/Laser_vr_16.F: 367 56
+:geoo/construction/Laser_hz_16.F: 346 45
+:geoo/construction/Laseremit_hzl_16.F: 332 45
+:geoo/construction/Laser_vr_64.F: 382 10
+:geoo/construction/Laseremit_vrb_16.F: 382 73
+:geoo/construction/Laser_hz_64.F: 393 -2
+:geoo/construction/Laseremit_vrt_16.F: 382 4
+:geoo/construction/Laser_hz_64.F: 392 39
+:geoo/construction/Laseremit_hzr_16.F: 444 39
+:geoo/construction/Laser_hz_64.F: 392 79
+:geoo/construction/Laseremit_hzr_16.F: 444 79
+:geoo/construction/Laseremit_hzr_16.F: 445 -2
+:geoo/construction/Laser_hz_64.F: 486 4
+:geoo/construction/Laseremit_hzl_16.F: 470 4
+:geoo/construction/Laseremit_hzr_16.F: 534 4
+:geoo/construction/Laser_vr_64.F: 464 17
+:geoo/construction/Laseremit_vrb_16.F: 464 80
+:geoo/construction/Laser_vr_64.F: 540 18
+:geoo/construction/Laseremit_vrb_16.F: 540 81
+:geoo/construction/Laser_hz_64.F: 486 45
+:geoo/construction/Laseremit_hzl_16.F: 470 45
+:geoo/construction/Laseremit_hzr_16.F: 534 45
+:geoo/construction/Laser_vr_16.F: 464 15
+:geoo/construction/Laser_vr_16.F: 540 14
+:geoo/construction/Laser_hz_64.F: 575 -1
+:geoo/construction/Laseremit_hzl_16.F: 559 -1
+:geoo/construction/Laseremit_hzr_16.F: 623 -1
+:geoo/construction/Laser_vr_64.F: 553 12
+:geoo/construction/Laseremit_vrb_16.F: 553 75
+:geoo/construction/Laser_hz_64.F: 575 39
+:geoo/construction/Laseremit_hzl_16.F: 559 39
+:geoo/construction/Laseremit_hzr_16.F: 623 39
+:geoo/construction/Laser_vr_16.F: 553 10
+:geoo/construction/Laser_vr_16.F: 629 9
+:geoo/construction/Laser_vr_16.F: 629 28
+:geoo/construction/Laser_vr_16.F: 629 17
+:geoo/construction/Laseremit_vrb_16.F: 628 76
+:geoo/construction/Laser_hz_16.F: 607 55
+:geoo/construction/Laser_vr_16.F: 597 49
+:geoo/construction/Laser_vr_16.F: 613 61
+:geoo/construction/Laser_hz_16.F: 622 67
+:geoo/sandstone/brazier.F: 497 73
+:geoo/sandstone/brazier.F: 158 271
+:geoo/sandstone/brazier.F: 204 271
+:simon/water.W: 624 360
+
+:geoo/sandstone/64x32: 419 175
+:geoo/sandstone/64x32: 482 175
+:geoo/sandstone/64x32: 419 206
+:geoo/sandstone/64x32: 482 206
+:geoo/sandstone/64x32: 419 237
+:geoo/sandstone/64x32: 482 237
+:geoo/sandstone/64x32: 134 175
+:geoo/sandstone/64x32: 197 175
+:geoo/sandstone/64x32: 134 206
+:geoo/sandstone/64x32: 197 206
+:geoo/sandstone/64x32: 134 237
+:geoo/sandstone/64x32: 197 237
+:matt/goldmine/plank: 210 361
+:matt/goldmine/plank: 338 361
+:geoo/sandstone/64x16: 134 111 rrr
+:geoo/sandstone/64x16: 245 111 rrr
+:geoo/sandstone/64x16: 419 111 rrr
+:geoo/sandstone/64x16: 530 111 rrr
+:geoo/sandstone/64x16: 134 268 fr
+:geoo/sandstone/64x16: 134 298 fr
+:matt/goldmine/plank: 82 361
+:geoo/sandstone/64x16: 245 268 fr
+:geoo/sandstone/64x16: 245 295 fr
+:geoo/sandstone/64x16: 419 268 fr
+:geoo/sandstone/64x16: 419 295 fr
+:geoo/sandstone/64x16: 530 268 fr
+:geoo/sandstone/64x16: 530 298 fr
+:matt/goldmine/plank: 466 361

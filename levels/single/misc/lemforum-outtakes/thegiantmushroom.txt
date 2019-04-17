@@ -1,0 +1,120 @@
+$FILENAME single/sonst/culledlevels/outtakes/thegiantmushroom.txt
+$LEVEL_BUILT_REQUIRED 2014-05-31 01:26:21
+$GAME_VERSION_REQUIRED 0.9.25
+
++PLAYER 0 Garden Forestidia
+
+! 89 0 ASSIGN=BLOCKER 0
+! 98 0 ASSIGN=RUNNER 1
+! 177 0 ASSIGN=PLATFORMER 1
+! 405 0 ASSIGN=BUILDER 3
+! 412 0 ASSIGN=JUMPER 1
+! 460 0 ASSIGN=DIGGER 1
+! 480 0 ASSIGN=JUMPER 5
+! 555 0 ASSIGN=BUILDER 7
+! 612 0 ASSIGN=JUMPER 3
+! 672 0 ASSIGN=JUMPER 2
+! 675 0 ASSIGN=EXPLODER2 2
+! 897 0 ASSIGN=BUILDER 11
+! 1406 0 ASSIGN=JUMPER 1
+! 1438 0 NUKE 0
+
+$BUILT 2014-05-31 01:26:21
+$AUTHOR minimac
+$ENGLISH The Giant Mushroom
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 1104
+#SIZE_Y 400
+#BACKGROUND_RED 64
+#BACKGROUND_GREEN 128
+#BACKGROUND_BLUE 175
+
+#INITIAL 20
+#REQUIRED 18
+#SPAWN_INTERVAL 32
+
+#RUNNER 1
+#EXPLODER2 1
+#BLOCKER 1
+#BUILDER 3
+#PLATFORMER 1
+#DIGGER 1
+#JUMPER 5
+
+:matt/beach/Hatch.H: 304 334
+:matt/beach/Hatch.H: 740 102
+
+:matt/beach/goal.G: 154 324
+:matt/beach/goal.G: 12 118
+
+:matt/water.W: 624 368
+:matt/water.W: 656 368
+:matt/water.W: 688 368
+:matt/water.W: 720 368
+:matt/water.W: 752 368
+:matt/water.W: 784 368
+:matt/water.W: 816 368
+:matt/water.W: 848 368
+
+:matt/beach/nighttime/13: 728 178 rr
+:matt/bricks/18: 290 270
+:matt/winter/06: 274 270
+:matt/beach/nighttime/06: 222 160
+:matt/beach/nighttime/06: 148 159 frr
+:matt/beach/nighttime/03: 287 233
+:matt/beach/nighttime/03: 146 236 rr
+:matt/beach/nighttime/15: 140 220
+:matt/beach/nighttime/15: 140 232
+:matt/beach/nighttime/15: 410 222 frr
+:matt/bricks/18: 290 302
+:matt/bricks/18: 290 334
+:matt/bricks/18: 290 366
+:matt/bricks/18: 290 382
+:matt/winter/06: 274 334
+:matt/goldmine/03: 210 374
+:matt/goldmine/03: 278 378
+:matt/goldmine/06: 166 384
+:matt/goldmine/planksupport2: 62 182
+:matt/goldmine/planksupport2: -2 182
+:matt/goldmine/planksupport2: 28 246
+:matt/goldmine/planksupport2: 32 246
+:matt/goldmine/crate16: 54 310
+:matt/goldmine/crate16: 62 326
+:matt/goldmine/crate16: 46 326
+:matt/goldmine/crate16: 38 342
+:matt/goldmine/crate16: 54 342
+:matt/goldmine/crate16: 70 342
+:matt/goldmine/crate16: 78 358
+:matt/goldmine/crate16: 62 358
+:matt/goldmine/crate16: 46 358
+:matt/goldmine/crate16: 30 358
+:matt/goldmine/crate16: 22 374
+:matt/goldmine/crate16: 38 374
+:matt/goldmine/crate16: 54 374
+:matt/goldmine/crate16: 70 374
+:matt/goldmine/crate16: 86 374
+:matt/goldmine/crate16: 94 390
+:matt/goldmine/crate16: 78 390
+:matt/goldmine/crate16: 62 390
+:matt/goldmine/crate16: 46 390
+:matt/goldmine/crate16: 30 390
+:matt/goldmine/crate16: 14 390
+:matt/beach/nighttime/13: 780 192 frr
+:matt/beach/nighttime/13: 984 222 rr
+:matt/beach/nighttime/06: 802 192 frr
+:matt/beach/nighttime/06: 834 256
+:matt/beach/nighttime/06: 868 324
+:matt/beach/nighttime/13: 1004 258
+:matt/beach/nighttime/13: 1040 336
+:matt/beach/decor/umbrella_yellow: 1006 144 frr
+:matt/beach/nighttime/13: 1038 226
+:matt/beach/decor/beach ball: 858 182
+:matt/beach/nighttime/15: 782 180
+:matt/beach/nighttime/15: 804 188
+:matt/beach/nighttime/06: 766 244 rr
+:matt/beach/nighttime/00: 516 172
+:matt/beach/nighttime/13: 574 182 rr
+:matt/beach/nighttime/13: 528 222 f
+:matt/beach/nighttime/00: 532 370
+:matt/beach/nighttime/02: 562 314

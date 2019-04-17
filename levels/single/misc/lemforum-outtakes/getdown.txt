@@ -1,0 +1,96 @@
+$FILENAME single/sonst/culledlevels/getdown.txt
+$LEVEL_BUILT_REQUIRED 2014-07-01 20:37:53
+$GAME_VERSION_REQUIRED 0.9.17
+
++PLAYER 0 Garden Forestidia
+
+! 164 0 ASSIGN=DIGGER 0
+! 213 0 ASSIGN=FLOATER 1
+! 445 0 ASSIGN=BLOCKER 3
+! 447 0 ASSIGN=DIGGER 6
+! 483 0 ASSIGN=FLOATER 0
+! 484 0 ASSIGN=FLOATER 5
+! 486 0 ASSIGN=FLOATER 4
+! 487 0 ASSIGN=FLOATER 8
+! 509 0 ASSIGN=FLOATER 7
+! 512 0 ASSIGN=FLOATER 2
+! 517 0 ASSIGN=FLOATER 9
+! 718 0 ASSIGN=BLOCKER 14
+! 1642 0 ASSIGN=WALKER 14
+! 1759 0 ASSIGN=WALKER 14
+! 1760 0 ASSIGN=WALKER 3
+! 1761 0 ASSIGN=WALKER 3
+
+$BUILT 2014-07-01 20:37:53
+$AUTHOR Insane Steve
+$ENGLISH Get Down from There!
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#INITIAL 80
+#REQUIRED 75
+#SPAWN_INTERVAL 32
+
+#WALKER 10
+#FLOATER 10
+#EXPLODER 5
+#BLOCKER 10
+#PLATFORMER 10
+#MINER 10
+#DIGGER 10
+
+:geoo/construction/Hatch.H: 24 24
+
+:geoo/abstract/goal.G: 592 320
+
+:geoo/abstract/cvblocks/035: 0 72
+:geoo/abstract/cvblocks/035: 64 72
+:geoo/abstract/cvblocks/035: 128 72
+:geoo/abstract/cvblocks/035: 32 104
+:geoo/abstract/cvblocks/035: 96 104
+:geoo/abstract/cvblocks/030: 0 104
+:geoo/abstract/cvblocks/035: 192 72
+:geoo/abstract/cvblocks/035: 256 72
+:geoo/abstract/cvblocks/035: 320 72
+:geoo/abstract/cvblocks/035: 224 104
+:geoo/abstract/cvblocks/035: 288 104
+:geoo/abstract/cvblocks/030: 352 104
+:geoo/abstract/cvblocks/035: 0 168
+:geoo/abstract/cvblocks/035: 64 168
+:geoo/abstract/cvblocks/035: 128 168
+:geoo/abstract/cvblocks/035: 32 200
+:geoo/abstract/cvblocks/035: 96 200
+:geoo/abstract/cvblocks/030: 0 200
+:geoo/abstract/cvblocks/035: 192 168
+:geoo/abstract/cvblocks/035: 256 168
+:geoo/abstract/cvblocks/035: 320 168
+:geoo/abstract/cvblocks/035: 224 200
+:geoo/abstract/cvblocks/035: 288 200
+:geoo/abstract/cvblocks/030: 352 200
+:geoo/abstract/cvblocks/035: 0 264
+:geoo/abstract/cvblocks/035: 64 264
+:geoo/abstract/cvblocks/035: 128 264
+:geoo/abstract/cvblocks/035: 32 296
+:geoo/abstract/cvblocks/035: 96 296
+:geoo/abstract/cvblocks/030: 0 296
+:geoo/abstract/cvblocks/035: 192 264
+:geoo/abstract/cvblocks/035: 256 264
+:geoo/abstract/cvblocks/035: 320 264
+:geoo/abstract/cvblocks/035: 224 296
+:geoo/abstract/cvblocks/035: 288 296
+:geoo/abstract/cvblocks/030: 352 296
+:geoo/abstract/cvblocks/035: 160 200
+:geoo/abstract/cvblocks/035: 160 104
+:geoo/abstract/cvblocks/035: 160 296
+:geoo/abstract/cvblocks/035: 0 368
+:geoo/abstract/cvblocks/035: 64 368
+:geoo/abstract/cvblocks/035: 128 368
+:geoo/abstract/cvblocks/035: 192 368
+:geoo/abstract/cvblocks/035: 256 368
+:geoo/abstract/cvblocks/035: 320 368
+:geoo/abstract/cvblocks/035: 384 368
+:geoo/abstract/cvblocks/035: 448 368
+:geoo/abstract/cvblocks/035: 512 368
+:geoo/abstract/cvblocks/035: 576 368

@@ -1,0 +1,126 @@
+$FILENAME single/sonst/culledlevels/outtakes/lixology.txt
+$LEVEL_BUILT_REQUIRED 2012-02-04 18:05:00
+$GAME_VERSION_REQUIRED 0.9.25
+
++PLAYER 0 Garden Forestidia
+
+! 85 0 ASSIGN=CLIMBER 0
+! 86 0 ASSIGN=CLIMBER 1
+! 87 0 ASSIGN=FLOATER 0
+! 88 0 ASSIGN=FLOATER 1
+! 125 0 ASSIGN=BLOCKER 4
+! 443 0 ASSIGN=EXPLODER2 0
+! 492 0 ASSIGN=BASHER 25
+! 1048 0 ASSIGN=MINER 7
+! 1629 0 NUKE 0
+
+$BUILT 2012-02-04 18:05:00
+$AUTHOR geoo / Nortaneous
+$ENGLISH Lixology
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 920
+#SIZE_Y 400
+
+#INITIAL 40
+#REQUIRED 32
+#SPAWN_INTERVAL 16
+
+#CLIMBER 8
+#FLOATER 8
+#EXPLODER2 1
+#BLOCKER 8
+#BASHER 1
+#MINER 1
+#CUBER 8
+
+:matt/earth/Hatch.H: 114 110
+
+:matt/earth/Goal.G: 720 174
+
+:geoo/steel/64x64.S: 542 116 d
+:matt/earth/05: 557 25 rr
+:geoo/steel/64x64.S: 541 116 d
+:geoo/steel/64x64.S: 543 113 d
+:geoo/steel/64x64.S: 544 109 d
+:matt/earth/03: 466 178
+:matt/earth/10: 382 179 frr
+:matt/earth/03: 390 171
+:matt/earth/19: 100 164 r
+:geoo/construction/wall/big_square: 472 144
+:geoo/construction/wall/big_square: 472 80
+:matt/earth/05: 822 316 f
+:matt/earth/05: 784 268 f
+:matt/earth/02: 652 228 rrr
+:geoo/steel/64x32o.S: 760 240
+:geoo/steel/64x64.S: 572 -14 d
+:matt/earth/02: 652 58
+:matt/earth/03: 637 30
+:matt/earth/02: 656 36 frr
+:matt/earth/05: 649 107 frr
+:geoo/steel/64x32o.S: 696 240
+:matt/earth/00: 744 240
+:geoo/steel/64x32o.S: 632 240
+:matt/earth/03: 186 160 frr
+:matt/earth/05: 776 -64 f
+:matt/earth/05: 784 78
+:matt/earth/05: 834 162 f
+:matt/earth/00: 342 27
+:matt/earth/17: 211 98
+:matt/earth/17: 211 82
+:matt/earth/17: 211 66
+:matt/earth/17: 211 50
+:matt/earth/17: 211 34
+:matt/earth/18: 469 27
+:matt/earth/17: 422 40 frr
+:matt/earth/17: 422 92 frr
+:matt/earth/17: 422 66 frr
+:matt/earth/17: 422 118 frr
+:matt/earth/17: 211 114
+:matt/earth/17: 389 20 rrr
+:matt/earth/16: 376 32
+:matt/earth/00: 424 96
+:matt/earth/00: 211 21
+:matt/earth/15: 100 156
+:matt/earth/15: 126 157
+:matt/earth/05: 192 178
+:matt/earth/17: 534 178 f
+:matt/earth/00: 542 219
+:matt/earth/19: 605 344 r
+:matt/earth/04: 598 235 frrr
+:geoo/steel/64x64.S: 544 48 d
+:geoo/steel/64x64.S: 512 8 d
+:matt/earth/10: 90 298 frr
+:matt/earth/10: 44 312
+:matt/earth/00: 574 251
+:matt/earth/10: 212 136
+:matt/earth/00: 424 22
+:matt/earth/00: 384 26
+:matt/earth/10: 241 22
+:matt/earth/09: 846 156
+:matt/earth/09: 356 22
+:matt/earth/03: 608 28
+:matt/earth/09: 701 24
+:matt/earth/09: 614 27 frr
+:matt/earth/09: 667 25 frr
+:matt/earth/09: 732 26 f
+:geoo/steel/64x64.S: 504 40 d
+:matt/earth/09: 404 21
+:matt/earth/09: 309 18
+:matt/earth/06: 211 16
+:matt/earth/09: 447 15
+:matt/earth/09: 150 152
+:matt/earth/09: 100 152 frr
+:matt/earth/10: 220 222
+:matt/earth/10: 375 225
+:matt/earth/10: 456 272
+:matt/earth/17: 328 240
+:matt/earth/10: 208 312
+:matt/earth/10: 352 312
+:matt/earth/10: 300 158
+:matt/earth/10: 262 86
+:matt/earth/00: 240 20
+:matt/earth/09: 248 14
+:matt/earth/09: 294 16 frr
+:geoo/steel/64x64.S: 542 114 d
+:matt/earth/00: 516 175

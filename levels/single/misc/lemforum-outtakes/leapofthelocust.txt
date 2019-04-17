@@ -1,0 +1,139 @@
+$FILENAME single/sonst/culledlevels/outtakes/leapofthelocust.txt
+$LEVEL_BUILT_REQUIRED 2012-02-05 01:10:15
+$GAME_VERSION_REQUIRED 0.9.25
+
++PLAYER 0 Garden Forestidia
+
+! 102 0 ASSIGN=BUILDER 0
+! 115 0 ASSIGN=BASHER 0
+! 225 0 ASSIGN=JUMPER 1
+! 298 0 ASSIGN=JUMPER 2
+! 362 0 ASSIGN=JUMPER 3
+! 374 0 ASSIGN=JUMPER 1
+! 427 0 ASSIGN=JUMPER 4
+! 449 0 ASSIGN=JUMPER 2
+! 492 0 ASSIGN=JUMPER 5
+! 515 0 ASSIGN=JUMPER 3
+! 538 0 ASSIGN=JUMPER 0
+! 559 0 ASSIGN=JUMPER 6
+! 582 0 ASSIGN=JUMPER 4
+! 635 0 ASSIGN=JUMPER 7
+! 648 0 ASSIGN=JUMPER 5
+! 699 0 ASSIGN=JUMPER 8
+! 709 0 ASSIGN=JUMPER 6
+! 783 0 ASSIGN=JUMPER 7
+! 849 0 ASSIGN=JUMPER 8
+
+$BUILT 2012-02-05 01:10:15
+$AUTHOR mobius
+$ENGLISH Leap of the Locust
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 880
+#SIZE_Y 400
+
+#INITIAL 20
+#REQUIRED 20
+#SPAWN_INTERVAL 35
+
+#BUILDER 1
+#BASHER 1
+#JUMPER 20
+#EXPLODER2 0
+
+:geoo/sandstone/Hatch.H: 528 224 r
+
+:geoo/sandstone/Goal.G: 80 256
+
+:simon/water.W: 640 352
+
+:geoo/sandstone/64x32: 64 336
+:geoo/sandstone/64x32: 192 336
+:geoo/sandstone/64x32: 0 304
+:geoo/sandstone/64x32: 128 336
+:geoo/sandstone/64x32: 0 336
+:geoo/sandstone/64x32: 0 368
+:geoo/sandstone/64x32: 64 368
+:geoo/sandstone/64x32: 128 368
+:geoo/sandstone/64x32: 256 336
+:geoo/sandstone/64x32: 320 336
+:geoo/sandstone/64x32: 192 368
+:geoo/sandstone/64x32: 256 368
+:geoo/sandstone/64x32: 320 368
+:geoo/sandstone/64x32: 384 336
+:geoo/sandstone/64x32: 448 336
+:geoo/sandstone/64x32: 512 336
+:geoo/sandstone/64x32: 384 368
+:geoo/sandstone/64x32: 448 368
+:geoo/sandstone/64x32: 512 368
+:geoo/sandstone/64x32: 320 272
+:geoo/sandstone/64x32: 320 304
+:geoo/sandstone/64x32: 256 272
+:geoo/sandstone/64x32: 320 208
+:geoo/sandstone/64x32: 256 304
+:geoo/sandstone/64x32: 320 240
+:geoo/sandstone/64x32: 256 208
+:geoo/sandstone/64x32: 256 240
+:geoo/sandstone/64x32: 576 336
+:geoo/sandstone/64x32: 688 336
+:geoo/sandstone/64x32: 576 368
+:geoo/sandstone/64x32: 688 368
+:geoo/sandstone/64x32: 816 336
+:geoo/sandstone/64x32: 816 368
+:geoo/sandstone/64x32: 576 0
+:geoo/sandstone/64x32: 448 0
+:geoo/sandstone/64x32: 512 0
+:geoo/sandstone/pillar_bottom_ext: 816 320
+:geoo/sandstone/64x32: 768 0
+:geoo/sandstone/64x32: 640 0
+:geoo/sandstone/64x32: 704 0
+:geoo/sandstone/pillar_bottom: 832 288
+:geoo/sandstone/pillar_top: 832 256
+:geoo/sandstone/pillar_bottom: 832 224
+:geoo/sandstone/pillar_top: 832 192
+:geoo/sandstone/pillar_bottom: 832 160
+:geoo/sandstone/pillar_top: 832 128
+:geoo/sandstone/pillar_bottom: 832 96
+:geoo/sandstone/pillar_top: 832 64
+:geoo/sandstone/pillar_top_ext: 816 32
+:geoo/sandstone/pillar_top: 832 48
+:geoo/sandstone/64x32: 192 0
+:geoo/sandstone/64x32: 64 0
+:geoo/sandstone/64x32: 128 0
+:geoo/sandstone/64x32: 384 0
+:geoo/sandstone/64x32: 256 0
+:geoo/sandstone/64x32: 320 0
+:geoo/sandstone/pillar_bottom_ext: 0 288
+:geoo/sandstone/pillar_bottom: 16 256
+:geoo/sandstone/pillar_top: 16 224
+:geoo/sandstone/pillar_bottom: 16 192
+:geoo/sandstone/pillar_top: 16 160
+:geoo/sandstone/pillar_bottom: 16 128
+:geoo/sandstone/pillar_top: 16 96
+:geoo/sandstone/pillar_top_ext: 0 32
+:geoo/sandstone/64x32: 0 0
+:geoo/sandstone/pillar_top: 16 48
+:geoo/sandstone/64x32: 448 272
+:geoo/sandstone/64x32: 448 304
+:geoo/sandstone/64x32: 384 272
+:geoo/sandstone/64x32: 448 208
+:geoo/sandstone/64x32: 384 304
+:geoo/sandstone/64x32: 448 240
+:geoo/sandstone/64x32: 384 208
+:geoo/sandstone/64x32: 384 240
+:geoo/sandstone/64x32: 752 336
+:geoo/sandstone/64x32: 752 368
+:geoo/sandstone/64x32: 864 0
+:geoo/sandstone/64x32_blank: 640 32
+:geoo/sandstone/64x32_blank: 640 64
+:geoo/sandstone/64x32_blank: 640 96
+:geoo/sandstone/32x64: 432 32
+:geoo/sandstone/32x32: 336 32
+:geoo/sandstone/32x64: 160 32
+:geoo/sandstone/32x64: 160 96
+:geoo/sandstone/slopes/64x32rt: 576 32
+:geoo/sandstone/pillar_bottom: 16 64
+:geoo/sandstone/64x16: 64 320
+:geoo/sandstone/64x16: 128 320
+:geoo/sandstone/64x16: 192 320
+:geoo/sandstone/32x32: 832 0

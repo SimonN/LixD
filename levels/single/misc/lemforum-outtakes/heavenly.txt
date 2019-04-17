@@ -1,0 +1,79 @@
+$BUILT 2019-02-26 21:41:31
+$AUTHOR minimac
+$ENGLISH Heavenly skies
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 1008
+#SIZE_Y 400
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 128
+#BACKGROUND_BLUE 192
+
+#INITIAL 80
+#REQUIRED 70
+#SPAWN_INTERVAL 20
+
+#CLIMBER 2
+#FLOATER 3
+#EXPLODER 1
+#BLOCKER 1
+#BUILDER 11
+#DIGGER 1
+
+:matt/earth/Hatch.H: 844 346 r
+
+:matt/marble/Goal.G: 784 80
+
+:matt/earth/07: 126 252
+:matt/earth/07: 120 228
+:matt/earth/07: 102 192
+:matt/earth/07: 123 273 r
+:matt/marble/18a: 872 136
+:matt/earth/19: 926 210 fr
+:matt/marble/08a: 848 128
+:matt/marble/08a: 784 128
+:matt/marble/08a: 720 128
+:matt/marble/08a: 912 128
+:matt/marble/09a: 912 64
+:matt/marble/09a: 912 0
+:matt/marble/09a: 912 160
+:matt/marble/19b: 624 136
+:matt/marble/08b: 152 144
+:matt/earth/10: 618 340 r
+:matt/earth/01: 594 372
+:matt/earth/03: 914 356
+:matt/earth/03: 842 384
+:matt/earth/03: 758 388 frr
+:matt/earth/15: 452 354
+:matt/earth/13: 468 362
+:matt/earth/14: 430 370
+:matt/earth/11: 494 358
+:matt/earth/10: 936 366 r
+:matt/marble/19b: 496 184
+:matt/earth/11: 348 362
+:matt/earth/01: 256 368
+:matt/earth/18: 284 354
+:matt/earth/04: 24 142
+:matt/earth/04: 60 252
+:matt/earth/17: 78 168
+:matt/earth/17: 112 272
+:matt/earth/05: 158 332
+:matt/earth/04: 24 236
+:matt/earth/05: 12 242
+:matt/earth/01: 106 382
+:matt/earth/01: 68 372
+:matt/marble/08d: 370 160
+:matt/marble/08d: 216 160
+:matt/marble/08d: 560 176
+:matt/marble/08c: 338 192
+:matt/marble/08: 306 160
+:matt/marble/12a: 216 144
+:matt/marble/13c: 200 176
+:matt/bricks/16a: 146 208 rrr
+:matt/bricks/16a: 178 272 rrr
+:matt/bricks/16a: 210 336 rrr
+:matt/bricks/02a: 146 272 rrr
+:matt/bricks/02a: 146 336 rrr
+:matt/bricks/02a: 178 336 rrr
+:matt/marble/15b: 402 192
+:matt/marble/17: 306 192

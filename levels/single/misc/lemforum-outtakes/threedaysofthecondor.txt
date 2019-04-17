@@ -1,0 +1,171 @@
+$FILENAME single/sonst/culledlevels/threedaysofthecondor.txt
+$LEVEL_BUILT_REQUIRED 2012-02-05 01:08:28
+$GAME_VERSION_REQUIRED 0.9.17
+
++PLAYER 0 Garden Forestidia
+
+! 245 0 ASSIGN=JUMPER 0
+! 312 0 ASSIGN=FLOATER 0
+! 321 0 ASSIGN=BUILDER 0
+! 322 0 ASSIGN=BUILDER 0
+! 734 0 ASSIGN=JUMPER 0
+! 1283 0 ASSIGN=BUILDER 0
+! 1284 0 ASSIGN=BUILDER 0
+! 1889 0 ASSIGN=BASHER 1
+! 2875 0 ASSIGN=MINER 61
+! 3561 0 ASSIGN=BLOCKER 57
+! 5105 0 NUKE 0
+
+$BUILT 2012-02-05 01:08:28
+$AUTHOR mobius
+$ENGLISH Three Days of the Condor
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 1568
+#SIZE_Y 400
+
+#INITIAL 100
+#REQUIRED 99
+#SPAWN_INTERVAL 15
+
+#FLOATER 1
+#BLOCKER 1
+#BUILDER 4
+#BASHER 1
+#MINER 1
+#JUMPER 2
+#EXPLODER2 0
+
+:geoo/construction/Hatch.H: 376 32
+
+:geoo/construction/Goal2.G: 96 192
+
+:geoo/construction/Laser_vr_64.F: 224 80
+:geoo/construction/Laser_vr_64.F: 224 16
+:geoo/construction/Laseremit_vrb_16.F: 224 200
+:geoo/construction/Laseremit_vrt_16.F: 224 0
+:simon/water.W: 1408 352
+:simon/water.W: 1456 352
+:geoo/construction/Laser_vr_64.F: 224 136
+:simon/water.W: 512 368
+:simon/water.W: 560 368
+:simon/water.W: 416 368
+:simon/water.W: 464 368
+:simon/water.W: 320 368
+:simon/water.W: 368 368
+:simon/water.W: 224 368
+:simon/water.W: 272 368
+:simon/water.W: 800 368
+:simon/water.W: 848 368
+:simon/water.W: 704 368
+:simon/water.W: 752 368
+:simon/water.W: 608 368
+:simon/water.W: 656 368
+:simon/water.W: 176 368
+:simon/water.W: 128 368
+:geoo/construction/Laser_hz_64.F: 328 168
+:geoo/construction/Laser_hz_64.F: 392 168
+:geoo/construction/Laser_hz_64.F: 448 168
+:geoo/construction/Laseremit_hzl_16.F: 312 168
+:geoo/construction/sawblade.F: 1168 352
+:geoo/construction/Laseremit_hzr_16.F: 512 168
+
+:geoo/construction/wall/big_128x128: 544 112
+:matt/earth/10: 1152 304
+:matt/earth/10: 1200 208 r
+:matt/earth/17: 1280 272
+:matt/earth/00: 1216 192
+:matt/earth/17: 1200 160
+:matt/earth/10: 1056 208
+:matt/earth/10: 976 240
+:matt/earth/10: 912 208
+:matt/earth/10: 880 144
+:matt/earth/10: 936 48
+:matt/earth/10: 864 64
+:geoo/construction/rod_rust/straight32: 368 368
+:geoo/construction/rod_rust/straight32: 400 368
+:geoo/construction/pillar_base: 304 112
+:geoo/construction/pillar_base: 336 112
+:geoo/construction/pillar_base: 368 112
+:geoo/construction/pillar_base: 400 112
+:geoo/construction/pillar_base: 432 112
+:geoo/construction/pillar_base: 464 112
+:geoo/construction/pillar_base: 496 112
+:geoo/construction/wall/big_128x128: 544 48
+:geoo/construction/wall/big_128x128: 800 48
+:geoo/construction/wall/big_128x128: 800 112
+:geoo/steel/64x64.S: 704 -16
+:geoo/construction/wall/big_128x128: 672 48
+:geoo/construction/wall/big_128x128: 672 112
+:geoo/construction/fence_rust_64x64: 640 368
+:matt/earth/10: 960 112
+:geoo/construction/wall/small_64x64: 896 208
+:geoo/steel/64x32o.S: 848 208
+:geoo/steel/64x32o.S: 784 208
+:geoo/steel/64x32o.S: 656 208
+:geoo/steel/64x32o.S: 720 208
+:geoo/steel/64x32o.S: 592 208
+:geoo/steel/64x64.S: 768 -16
+:geoo/steel/32x64o.S: 704 240
+:geoo/steel/64x64o.S: 96 64
+:geoo/steel/64x64o.S: 96 0
+:geoo/construction/wall/small_64x64: 96 256
+:geoo/construction/wall/small_64x64: 96 320
+:geoo/steel/64x32o.S: 544 208
+:matt/earth/10: 1024 144
+:matt/earth/10: 1072 96
+:matt/earth/10: 976 80
+:matt/earth/10: 1056 144
+:geoo/steel/32x64o.S: 912 128
+:geoo/construction/fence_rust_64x64: 704 368
+:geoo/construction/fence_rust_64x64: 832 368
+:geoo/construction/fence_rust_64x64: 768 368
+:geoo/construction/rod_rust/straight_diagu32: 336 368
+:geoo/construction/rod_rust/straight32: 432 368
+:geoo/construction/rod_rust/straight32: 464 368
+:geoo/construction/rod_rust/straight32: 496 368
+:geoo/construction/rod_rust/straight32: 528 368
+:geoo/construction/wall/big_128x128: 1024 272
+:geoo/construction/wall/big_128x128: 896 272
+:geoo/construction/fence_rust_64x64: 576 368
+:geoo/construction/wall/small_64x64: 1280 352
+:geoo/construction/wall/small_64x64: 1344 352
+:matt/earth/17: 1152 80
+:matt/earth/17: 1232 144
+:matt/earth/00: 1248 240
+:geoo/construction/wall/big_128x128: 1152 272
+:geoo/steel/64x64o.S: 1216 336
+:geoo/steel/32x32o.S: 1248 304
+:geoo/construction/pillar_32: 248 312
+:geoo/construction/pillar_32: 248 376
+:geoo/construction/pillar_32: 248 344
+:geoo/steel/64x32o.S: 1152 96
+:geoo/steel/64x32o.S: 1216 96
+:geoo/steel/64x32o.S: 1280 96
+:geoo/steel/64x32o.S: 1344 96
+:geoo/steel/64x32o.S: 1408 96
+:geoo/steel/64x32o.S: 1472 96
+:geoo/steel/64x64o.S: 1472 32
+:geoo/steel/64x32o.S: 1472 0
+:geoo/construction/wall/big_brickdiag_bd: 608 240
+:geoo/construction/wall/small_64x64: 96 384
+:geoo/steel/64x64o.S: 1504 352
+:matt/earth/03: 1160 -22 rr
+:matt/earth/10: 1296 -64
+:matt/earth/26: 1280 0
+:matt/earth/24: 1424 16
+:geoo/steel/32x64o.S: 912 224
+:geoo/steel/32x64o.S: 912 192
+:matt/earth/28: 680 112
+:matt/earth/27: 816 80
+:matt/earth/27: 968 304
+:matt/earth/28: 1248 304
+:matt/earth/29: 1168 128
+:geoo/construction/fence_rust_32x32: 672 240
+:geoo/construction/stairsbrick_rd_32: 816 240
+:geoo/construction/stairsbrick_rd_32: 824 16
+:matt/earth/28: 1480 32
+:geoo/construction/rod_rust/straight32: 560 368
+:geoo/construction/rod_rust/straight32: 592 368
+:geoo/steel/64x64o.S: 264 88
+:geoo/construction/pillar_top: 248 312

@@ -1,0 +1,138 @@
+$BUILT 2019-02-26 21:46:53
+$AUTHOR Pieuw/mobius
+$ENGLISH It's All Uphill From Here
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 1184
+#SIZE_Y 400
+
+#INITIAL 50
+#REQUIRED 50
+#SPAWN_INTERVAL 5
+
+#WALKER 1
+#CLIMBER 1
+#FLOATER 1
+#BLOCKER 1
+#BUILDER 1
+#BASHER 1
+#MINER 1
+#DIGGER 1
+#EXPLODER2 0
+
+:matt/earth/Hatch.H: 80 176
+:matt/earth/Hatch.H: 80 224
+
+:matt/earth/Goal.G: 936 292
+
+:simon/water.W: 768 104
+:simon/water.W: 720 104
+:simon/water.W: 672 96
+:simon/water.W: 720 96
+:simon/water.W: 768 96
+:simon/water.W: 816 96
+
+:matt/earth/14: 982 48
+:matt/earth/02: 828 214
+:matt/earth/00: 760 136
+:matt/earth/10: 806 148
+:matt/earth/17: 776 200
+:matt/earth/17: 784 240
+:matt/earth/10: 88 312
+:matt/earth/00: 48 360
+:matt/earth/10: 128 288
+:matt/earth/10: 192 256
+:matt/earth/10: 216 248
+:matt/earth/10: 256 232
+:matt/earth/10: 320 200
+:matt/earth/16: 256 304
+:matt/earth/17: 224 336
+:matt/earth/10: 360 184
+:matt/earth/10: 408 160
+:matt/earth/10: 432 152
+:matt/earth/10: 456 144
+:matt/earth/10: 488 128
+:matt/earth/10: 552 96
+:matt/earth/10: 392 224
+:matt/earth/10: 504 208
+:matt/earth/10: 640 248
+:matt/earth/10: 600 200
+:matt/earth/10: 588 162
+:matt/earth/16: 296 296
+:matt/earth/16: 336 288
+:matt/earth/17: 400 288
+:matt/earth/17: 432 272
+:matt/earth/17: 440 320
+:matt/earth/16: 456 304
+:matt/earth/16: 496 264
+:matt/earth/16: 536 288
+:matt/earth/17: 600 288
+:matt/earth/17: 632 272
+:matt/earth/17: 640 320
+:matt/earth/10: 656 312
+:matt/earth/10: 680 136
+:matt/earth/00: 800 136
+:matt/earth/16: 754 184
+:matt/earth/17: 760 272
+:matt/earth/10: 768 120 rr
+:matt/earth/10: 808 96
+:matt/earth/08: 44 360 rrr
+:matt/earth/06: 576 88
+:matt/earth/17: 808 304
+:matt/earth/10: 902 120
+:matt/earth/10: 878 82
+:matt/earth/01: 1064 138
+:matt/earth/09: 612 88
+:matt/earth/08: 74 338 rrr
+:matt/earth/08: 104 316 rrr
+:matt/earth/08: 156 284 rrr
+:matt/earth/09: 132 310
+:matt/earth/09: 182 280
+:matt/earth/06: 216 252
+:matt/earth/06: 348 194
+:matt/earth/09: 250 246
+:matt/earth/08: 286 226 rrr
+:matt/earth/09: 318 224
+:matt/earth/06: 432 158
+:matt/earth/09: 382 190
+:matt/earth/09: 402 182
+:matt/earth/06: 520 120
+:matt/earth/09: 464 152
+:matt/earth/09: 490 144
+:matt/earth/09: 550 120
+:matt/earth/09: 860 92
+:matt/earth/09: 932 76
+:matt/earth/06: 898 80
+:matt/earth/07: 980 80
+:matt/earth/08: 1014 94
+:matt/earth/08: 1036 104
+:matt/earth/08: 1058 114
+:matt/earth/08: 1080 126
+:matt/earth/08: 1100 140
+:matt/earth/00: 904 364
+:matt/earth/00: 928 362
+:matt/earth/00: 952 364
+:matt/earth/09: 944 356
+:matt/earth/26: 1040 206
+:matt/earth/25: 942 234
+:matt/earth/24: 884 240
+:matt/earth/09: 968 362
+:matt/earth/06: 904 356
+:matt/earth/28: 632 268
+:matt/earth/28: 548 202
+:matt/earth/28: 368 296
+:matt/earth/29: 1026 118
+:matt/earth/29: 438 196
+:matt/earth/12: 872 152
+:matt/earth/13: 588 356
+:matt/earth/12: 364 268
+:matt/earth/13: 224 328
+:matt/earth/15: 536 180
+:matt/earth/27: 932 86
+:geoo/steel/dark_64x64o.S: 720 152
+:geoo/steel/dark_64x64o.S: 720 216
+:matt/earth/29: 736 216
+:matt/earth/28: 744 152
+:matt/earth/29: 624 128
+:matt/earth/29: 952 184
+:matt/earth/29: 542 334

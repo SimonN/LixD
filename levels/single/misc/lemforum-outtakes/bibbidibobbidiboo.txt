@@ -1,0 +1,157 @@
+$FILENAME single/sonst/culledlevels/outtakes/bibbidi-bobbidi-boo.txt
+$LEVEL_BUILT_REQUIRED 2014-05-18 22:09:27
+$GAME_VERSION_REQUIRED 0.9.18
+
++PLAYER 0 Garden Forestidia
+
+! 253 0 ASSIGN=EXPLODER 1
+! 329 0 ASSIGN=BASHER 2
+! 481 0 ASSIGN=BUILDER 0
+! 484 0 ASSIGN=BUILDER 0
+! 878 0 ASSIGN=MINER 0
+
+$BUILT 2014-05-18 22:09:27
+$AUTHOR Pieuw
+$ENGLISH Bibbidi-Bobbidi-Boo
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 1136
+#SIZE_Y 368
+
+#INITIAL 5
+#REQUIRED 4
+#SPAWN_INTERVAL 50
+
+#EXPLODER 1
+#BUILDER 2
+#BASHER 1
+#MINER 1
+
+:matt/goldmine/Hatch.H: 144 46
+
+:matt/goldmine/Goal.G: 1016 128
+
+:matt/goldmine/07: 808 160 rr
+:matt/goldmine/00: 272 176
+:matt/goldmine/crate32: 648 24
+:matt/goldmine/00: 376 188
+:matt/goldmine/crate32: 272 80
+:matt/goldmine/crate32: 304 80
+:matt/goldmine/crate32: 336 80
+:matt/goldmine/plank: 224 272
+:matt/goldmine/crate32: 872 88 f
+:matt/goldmine/06: 808 176
+:matt/goldmine/crate32: 640 248
+:matt/goldmine/explosivecrate: 224 280
+:matt/goldmine/explosivecrate: 360 304
+:matt/goldmine/crate32: 552 280
+:matt/goldmine/crate32: 552 312
+:matt/goldmine/planksupport: 976 208
+:matt/goldmine/crate32: 808 88
+:matt/goldmine/crate32: 840 88
+:matt/goldmine/crate32: 776 88
+:matt/goldmine/crate32: 744 88
+:matt/goldmine/plank: 912 304
+:matt/goldmine/plank: 544 240
+:matt/goldmine/plank: 416 240
+:matt/goldmine/plank: 488 176
+:matt/goldmine/plank: 896 104
+:matt/goldmine/09: 416 184
+:matt/goldmine/plank: 688 176
+:matt/goldmine/05: 424 224
+:matt/goldmine/00: 408 256 rr
+:matt/goldmine/04: 316 180 rr
+:matt/goldmine/00: 336 180
+:matt/goldmine/plank: 76 50 rrr
+:matt/goldmine/plank: 80 142
+:matt/goldmine/plank: 144 126
+:matt/goldmine/plank: 144 110
+:matt/goldmine/plank: 144 94
+:matt/goldmine/plank: 80 126
+:matt/goldmine/plank: 80 110
+:matt/goldmine/07: 112 -82
+:matt/goldmine/plank: 80 94
+:matt/goldmine/planksupport: 16 30
+:matt/goldmine/07: 2 -50
+:matt/goldmine/crate16: 144 110 d
+:matt/goldmine/crate16: 128 110 d
+:matt/goldmine/crate16: 128 126 d
+:matt/goldmine/crate16: 112 126 d
+:matt/goldmine/crate16: 160 126 d
+:matt/goldmine/crate16: 144 126 d
+:matt/goldmine/crate16: 224 110 d
+:matt/goldmine/crate16: 208 110 d
+:geoo/steel/64x32o.S: 144 110 d
+:matt/goldmine/plank: 144 142
+:geoo/steel/32x32o.S: 144 128 d
+:matt/goldmine/planksupport: 208 22
+:matt/goldmine/05: 224 -18
+:geoo/steel/16x32o.S: 168 94 d
+:matt/goldmine/01: 190 -2
+:matt/goldmine/04: 280 -96
+:matt/goldmine/00: 300 30
+:matt/earth/20: 600 344 rrr
+:matt/earth/20: 230 354 rrr
+:matt/goldmine/08: 696 328
+:matt/goldmine/00: 624 264
+:matt/goldmine/01: 200 328
+:matt/goldmine/09: 232 296
+:matt/goldmine/07: 336 24
+:matt/goldmine/07: 344 -24
+:matt/goldmine/07: 632 -56
+:matt/goldmine/plank: 960 104
+:matt/goldmine/07: 808 16 rr
+:matt/goldmine/07: 776 -48 rr
+:matt/goldmine/08: 1008 272
+:matt/goldmine/04: 976 280
+:matt/goldmine/00: 1016 264
+:matt/goldmine/05: 976 -16
+:matt/goldmine/08: 488 -8 rr
+:matt/goldmine/planksupport: 1016 -24
+:matt/goldmine/crate32: 72 176
+:matt/goldmine/crate32: 104 176
+:matt/goldmine/crate32: 136 176
+:matt/goldmine/crate32: 168 176
+:matt/goldmine/crate32: 200 176
+:matt/goldmine/crate32: 232 176
+:matt/goldmine/crate32: 264 176
+:matt/goldmine/crate32: 296 176
+:matt/goldmine/crate32: 328 176
+:matt/goldmine/crate32: 360 176
+:matt/goldmine/crate32: 392 176
+:matt/goldmine/crate32: 456 176
+:matt/goldmine/crate32: 720 176
+:matt/goldmine/crate32: 752 176
+:matt/goldmine/crate32: 784 176
+:matt/goldmine/crate32: 816 176
+:matt/goldmine/crate32: 848 176
+:matt/goldmine/crate32: 880 176
+:matt/goldmine/crate32: 912 176
+:matt/goldmine/crate32: 944 176
+:matt/goldmine/crate32: 976 176
+:matt/goldmine/crate32: 976 176
+:matt/goldmine/crate32: 1008 176
+:matt/goldmine/crate32: 1040 176
+:matt/goldmine/crate32: 1072 176
+:matt/goldmine/plank: 912 312 rrr
+:geoo/steel/64x64o.S: 240 208 d
+:matt/goldmine/05: 280 224
+:geoo/steel/64x64o.S: 176 208 d
+:matt/goldmine/crate32: 552 248
+:matt/goldmine/crate32: 424 176
+:matt/goldmine/crate32: 576 344
+:matt/goldmine/07: 560 280
+:matt/goldmine/00: 376 236
+:matt/goldmine/crate32: 552 176
+:matt/goldmine/crate32: 488 176
+:matt/goldmine/crate32: 648 56
+:matt/goldmine/crate32: 648 88
+:matt/goldmine/crate32: 680 88
+:matt/goldmine/crate32: 712 88 f
+:matt/goldmine/crate32: 520 176
+:matt/goldmine/crate32: 960 144 d
+:matt/goldmine/crate32: 896 144 d
+:matt/goldmine/crate32: 928 144 fd
+:matt/goldmine/crate32: 984 144 fd
+:matt/goldmine/05: 448 80
+:matt/goldmine/07: 464 336

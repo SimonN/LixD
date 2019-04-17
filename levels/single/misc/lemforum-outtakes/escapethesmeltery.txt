@@ -1,0 +1,78 @@
+$BUILT 2019-02-26 21:22:12
+$AUTHOR mobius
+$ENGLISH Escape the Smeltery
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 1280
+#SIZE_Y 400
+
+#INITIAL 50
+#REQUIRED 49
+#SPAWN_INTERVAL 20
+
+#CLIMBER 3
+#FLOATER 2
+#EXPLODER 2
+#BLOCKER 2
+#BUILDER 4
+#PLATFORMER 3
+#DIGGER 2
+
+:simon/hatch001.H: 624 176
+
+:geoo/construction/Goal2.G: 1128 264
+
+:simon/water.W: 560 288
+:simon/water.W: 608 288
+:simon/water.W: 656 288
+:simon/water.W: 704 288
+
+:geoo/construction/wall/big_128x128: 464 144
+:geoo/construction/wall/big_128x64: 464 80
+:geoo/construction/wall/big_128x128: 720 144
+:geoo/construction/wall/big_128x64: 720 80
+:geoo/construction/wall/big_brick1: 560 240
+:geoo/construction/wall/big_brick1: 624 240
+:geoo/construction/wall/big_brick1: 688 240
+:geoo/steel/64x64o.S: 496 296
+:geoo/steel/64x64o.S: 752 296
+:geoo/steel/64x32o.S: 560 328
+:geoo/steel/64x32o.S: 624 328
+:geoo/steel/64x32o.S: 688 328
+:geoo/construction/wall/big_128x128: 336 80
+:geoo/construction/wall/big_128x128: 272 80
+:geoo/construction/wall/big_brick2: 416 328
+:geoo/construction/wall/big_brick1: 224 328
+:geoo/construction/wall/big_brick1: 288 328
+:geoo/construction/wall/big_brick1: 352 328
+:geoo/construction/wall/big_brick2: 160 328
+:geoo/construction/wall/big_brick1: 96 328
+:geoo/construction/wall/big_brick1: 168 256
+:geoo/construction/wall/big_brick2: 104 256
+:geoo/construction/wall/big_brick1: 40 256
+:geoo/steel/32x64o.S: 40 288
+:geoo/steel/32x64o.S: 720 208
+:geoo/steel/32x64o.S: 720 144
+:geoo/steel/32x64o.S: 560 208
+:geoo/steel/32x64o.S: 560 144
+:geoo/steel/32x64o.S: 560 80
+:geoo/steel/32x64o.S: 720 80
+:geoo/construction/wall/big_128x128: 848 144
+:geoo/construction/wall/big_128x64: 848 80
+:geoo/construction/wall/big_128x64: 96 168
+:geoo/construction/wall/big_brick2: 1088 328
+:geoo/construction/wall/big_brick1: 896 328
+:geoo/construction/wall/big_brick1: 960 328
+:geoo/construction/wall/big_brick1: 1024 328
+:geoo/construction/wall/big_brick2: 832 328
+:geoo/construction/wall/big_brick2: 1152 328
+:geoo/construction/rod_rust/straight_diagu32: 1112 118
+:geoo/construction/rod_rust/straight_diagd32: 1144 118
+:geoo/construction/rod_rust/straight_diagd32: 1118 80
+:geoo/construction/rod_rust/straight_diagu32: 1150 90
+:geoo/construction/wall/big_brick2: 296 256
+:geoo/construction/wall/big_brick1: 232 256
+:geoo/steel/64x32o.S: 496 240
+:geoo/steel/64x32o.S: 400 208
+:geoo/steel/32x64o.S: 464 208
+:geoo/steel/64x32o.S: 336 208
