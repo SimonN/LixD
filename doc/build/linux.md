@@ -1,4 +1,4 @@
-How to build Lix on Linux or MacOS
+How to build Lix on Linux or macOS
 ==================================
 
 If you run into any kind of roadblock, don't be shy and ask me!
@@ -14,24 +14,28 @@ If you run into any kind of roadblock, don't be shy and ask me!
 Install a D environment
 -----------------------
 
-I recommend the D compiler LDC, it produces the fastest executables.
-Alternatively, DMD is the best D compiler for debugging, it compiles D code
-quicker than any other compiler. I haven't tested GDC.
-You also need the D standard library Phobos (might be called libphobos for DMD
-or liblphobos for LDC), but those often ship with the compilers already.
-Finally, dub is the D build system and source library package manager.
-
-On Arch linux, run `# pacman -S dlang`,
-this group package will install everything you need.
+On Arch Linux, run `# pacman -S dlang`.
 
 On Debian/Ubuntu, run `# apt-get install ldc dub`.
 
-On MacOS, install [Homebrew](https://brew.sh/), then run
-`$ brew install ldc dub`.
+On macOS, install [Homebrew](https://brew.sh/), then run
+`$ brew install ldc dub`. Beware: Since January 2019, Lix on macOS 10.14
+shows only black window. You're welcome to help debugging, see
+[issue 381: macOS black screen](https://github.com/SimonN/LixD/issues/381).
 
 If you don't use a package manager, download
 [LDC](https://github.com/ldc-developers/ldc/releases) and
 [dub](https://code.dlang.org/download) manually.
+
+I recommend the D compiler LDC, it produces the fastest executables.
+LDC must be based on DMD 2.081.1 or newer, checkable with `ldc2 --version`.
+Alternatively, DMD is the best D compiler for debugging, it compiles D code
+quicker than any other compiler. You need version 2.081.2 or newer.
+I do *not* support GDC, it is based on too old a DMD version.
+
+You need the D standard library Phobos (might be called *libphobos* for DMD
+or *liblphobos* for LDC), but those often ship with the compilers already.
+Finally, dub is the D build system and source library package manager.
 
 
 
@@ -42,36 +46,21 @@ dub only downloads source libraries and D bindings to `~/dub/`.
 dub will not download binary libraries or install anything in `/usr/`.
 You must install the Allegro 5 and enet binary libraries yourself.
 
-On Arch Linux, install:
+Arch Linux:
 
-     pkgconf
-     allegro
-     enet
+     # pacman -S pkgconf allegro enet
 
-On Debian/Ubuntu, install:
+Debian/Ubuntu:
 
-     pkgconf
-     liballegro5-dev
-     liballegro-acodec5-dev
-     liballegro-audio5-dev
-     liballegro-image5-dev
-     liballegro-ttf5-dev
-     libenet-dev
+     # apt-get install pkgconf liballegro5-dev liballegro-acodec5-dev liballegro-audio5-dev liballegro-image5-dev liballegro-ttf5-dev libenet-dev
 
-On Fedora 29, install:
+Fedora 29:
 
-     pkgconf-pkg-config
-     allegro5-devel
-     allegro5-addon-acodec-devel
-     allegro5-addon-audio-devel
-     allegro5-addon-image-devel
-     allegro5-addon-ttf-devel
-     enet-devel
+     # dnf install pkgconf-pkg-config allegro5-devel allegro5-addon-acodec-devel allegro5-addon-audio-devel allegro5-addon-image-devel allegro5-addon-ttf-devel enet-devel
 
-On MacOS, run:
+macOS:
 
-     $ brew install allegro
-     $ brew install enet
+     $ brew install allegro enet
 
 If you don't use a package manager, you might
 [build Allegro 5 and enet 1.3 from source](

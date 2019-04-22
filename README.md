@@ -15,7 +15,11 @@ Download
 [![Download icon](http://lixgame.com/img/download-icon.png)](https://github.com/SimonN/LixD/releases)
 [Download Lix for Windows or Linux](https://github.com/SimonN/LixD/releases)
 
-Mac or other systems: Build from source, see below.
+macOS or others: Build from source, see below.
+
+macOS users beware: Since January 2019, Lix on macOS 10.14
+may often show only a black window. You're welcome to help debugging, see
+[issue 381: macOS black screen](https://github.com/SimonN/LixD/issues/381).
 
 License/Copying/Public domain
 -----------------------------
@@ -53,7 +57,7 @@ Build instructions
 
 * [Build instructions for Windows](
 https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/win64.txt)
-* [Build instructions for Linux or MacOS](
+* [Build instructions for Linux or macOS](
 https://github.com/SimonN/LixD/blob/master/doc/build/linux.md)
 * [Notes for Linux package maintainers](
 https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/package.txt)
