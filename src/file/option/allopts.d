@@ -60,31 +60,6 @@ private auto newOpt(T)(string fileKey, T defaultVal)
     return fileLanguage.fileNoExtNoPre == basics.globals.englishBasenameNoExt;
 }
 
-enum ScreenMode {
-    windowed = 0,
-    softwareFullscreen = 1,
-    hardwareFullscreen = 2,
-}
-
-struct DisplayTryMode {
-    ScreenMode mode;
-    int x, y;
-}
-
-@property DisplayTryMode displayTryMode() nothrow
-{
-    if (screenMode !is null
-        && screenMode.value != ScreenMode.softwareFullscreen
-        && screenWindowedX !is null && screenWindowedY !is null
-    ) {
-        try return DisplayTryMode(screenMode.value.to!ScreenMode,
-            screenWindowedX.value, screenWindowedY.value);
-        catch (Exception)
-            screenMode.value = ScreenMode.softwareFullscreen;
-    }
-    return DisplayTryMode(ScreenMode.softwareFullscreen, 0, 0);
-}
-
 string userName() { return userNameOption is null ? "" : userNameOption.value;}
 UserOption!string userNameOption; // userName is string for back-compat
 
@@ -101,9 +76,9 @@ UserOption!bool avoidBatterToExploder;
 UserOption!bool replayAfterFrameBack;
 UserOption!bool unpauseOnAssign;
 
-UserOption!int screenMode;
-UserOption!int screenWindowedX;
-UserOption!int screenWindowedY;
+UserOption!int screenMode; // see file.option.screen for access methods
+UserOption!int screenWindowedX; // see file.option.screen for access methods
+UserOption!int screenWindowedY; // see file.option.screen for access methods
 UserOption!int splatRulerDesign;
 UserOption!bool paintTorusSeams;
 UserOption!bool showButtonHotkeys;
@@ -258,14 +233,8 @@ static this()
     avoidBatterToExploder = newOpt("avoidBatterToExploder", Lang.optionAvoidBatterToExploder, false);
     replayAfterFrameBack = newOpt("replayAfterFrameBack", Lang.optionReplayAfterFrameBack, true);
     unpauseOnAssign = newOpt("unpauseOnAssign", Lang.optionUnpauseOnAssign, false);
-    version (assert) {
-        screenMode = newOpt("screenMode", Lang.optionScreenMode,
-            ScreenMode.windowed.to!int);
-    }
-    else {
-        screenMode = newOpt("screenMode", Lang.optionScreenMode,
-            ScreenMode.softwareFullscreen.to!int);
-    }
+    screenMode = newOpt("screenMode", Lang.optionScreenMode,
+        defaultScreenMode.to!int);
     screenWindowedX = newOpt("screenWindowedX", Lang.optionScreenWindowedRes, 640);
     screenWindowedY = newOpt("screenWindowedY", 480);
     splatRulerDesign = newOpt("splatRulerDesign", Lang.optionSplatRulerDesign, 2);
