@@ -461,7 +461,11 @@ private:
     }
 
     IoLine[] readFileUserLanguageOrNullArray()
-    {
+    in {
+        assert (languageBasenameNoExt !is null,
+            "Initialize user options before reading language files");
+    }
+    body {
         try {
             assert (fileLanguage !is null);
             return fillVectorFromFile(fileLanguage);

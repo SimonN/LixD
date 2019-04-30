@@ -1,8 +1,12 @@
 module file.option.allopts;
 
-/* User settings read from the user config file. This file differs from the
- * global config file, see globconf.d. Whenever the user file doesn't exist,
- * the default values from static this() are used.
+/*
+ * User settings. Class objects will be initialized by initializeIfNecessary(),
+ * called from file.option.saveload.
+ *
+ * Later, their values will be read in from the user config file.
+ * Whenever the user file doesn't exist, the default values from
+ * initializeIfNecessary() are used.
  */
 
 import std.typecons; // rebindable
@@ -210,9 +214,19 @@ private Ac[14] _skillSort = [
     Ac.digger
 ];
 
-static this()
-{
-    assert (! languageBasenameNoExt);
+/*
+ * This cannot be "static this()" because on macOS 10.14, that would run in
+ * a different thread than what runs in al_run_main. That would lead to
+ * segfaults when we later access the non-null non-shared mutable options.
+ */
+void initializeIfNecessary()
+out { assert (languageBasenameNoExt !is null); }
+body {
+    if (languageBasenameNoExt !is null) {
+        // We've already created all class objects.
+        // Nothing to initialize, caller can take and change their values.
+        return;
+    }
     userNameOption = newOpt("userName", Lang.optionUserName, "");
     languageBasenameNoExt = newOpt("language", Lang.optionLanguage, englishBasenameNoExt);
     optionGroup = newOpt("optionGroup", 0);

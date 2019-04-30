@@ -61,11 +61,7 @@ struct Tooltip {
         return "";
     }
 
-    static string format(ID id)
-    {
-        auto ptr = id in _arr;
-        return ptr ? ptr.format() : "";
-    }
+    static string format(ID id) { return makeTooltip(id).format; }
 
     string format()
     {
@@ -84,41 +80,37 @@ struct Tooltip {
 
 private:
 
-Tooltip[Tooltip.ID] _arr;
+Tooltip makeTooltip(Tooltip.ID id) nothrow @nogc @safe
+{
+    Tooltip none(in Lang lang) { return Tooltip(lang, false, null); }
+    Tooltip mouse(in Lang lang) { return Tooltip(lang, true, null); }
+    Tooltip key(in Lang lang, UserOption!KeySet opt)
+    {
+        return Tooltip(lang, false, opt);
+    }
 
-static this()
-{
-    key(Tooltip.ID.forceLeft, Lang.gameForceLeft, keyForceLeft);
-    key(Tooltip.ID.forceRight, Lang.gameForceRight, keyForceRight);
-    key(Tooltip.ID.priorityInvert, Lang.gamePriorityInvert, keyPriorityInvert);
-    none(Tooltip.ID.queueBuilder, Lang.gameQueueBuilder);
-    none(Tooltip.ID.queuePlatformer, Lang.gameQueuePlatformer);
-    key(Tooltip.ID.holdToScroll, Lang.gameHoldToScroll, keyScroll);
-    none(Tooltip.ID.clickToCancelReplay, Lang.gameClickToCancelReplay);
-    key(Tooltip.ID.framestepOrQuit, Lang.gameFramestepOrQuit, keyGameExit);
-    none(Tooltip.ID.pause, Lang.gamePause);
-    mouse(Tooltip.ID.zoom, Lang.gameZoom);
-    none(Tooltip.ID.showSplatRuler, Lang.gameShowSplatRuler);
-    none(Tooltip.ID.highlightGoals, Lang.gameHighlightGoals);
-    none(Tooltip.ID.stateSave, Lang.gameStateSave);
-    none(Tooltip.ID.stateLoad, Lang.gameStateLoad);
-    none(Tooltip.ID.showReplayEditor, Lang.gameShowReplayEditor);
-    mouse(Tooltip.ID.framestepBack, Lang.gameFramestepBack);
-    mouse(Tooltip.ID.framestepAhead, Lang.gameFramestepAhead);
-    mouse(Tooltip.ID.fastForward, Lang.gameFastForward);
-    none(Tooltip.ID.restart, Lang.gameRestart);
-    none(Tooltip.ID.nuke, Lang.gameNuke);
-}
-
-void key(Tooltip.ID id, Lang lang, UserOption!KeySet opt)
-{
-    _arr[id] = Tooltip(lang, false, opt);
-}
-void mouse(Tooltip.ID id, Lang lang)
-{
-    _arr[id] = Tooltip(lang, true, null);
-}
-void none(Tooltip.ID id, Lang lang)
-{
-    _arr[id] = Tooltip(lang, false, null);
+    with (Tooltip) final switch (id) {
+        case ID.forceLeft: return key(Lang.gameForceLeft, keyForceLeft);
+        case ID.forceRight: return key(Lang.gameForceRight, keyForceRight);
+        case ID.priorityInvert:
+            return key(Lang.gamePriorityInvert, keyPriorityInvert);
+        case ID.queueBuilder: return none(Lang.gameQueueBuilder);
+        case ID.queuePlatformer: return none(Lang.gameQueuePlatformer);
+        case ID.holdToScroll: return key(Lang.gameHoldToScroll, keyScroll);
+        case ID.clickToCancelReplay: return none(Lang.gameClickToCancelReplay);
+        case ID.framestepOrQuit:
+            return key(Lang.gameFramestepOrQuit, keyGameExit);
+        case ID.pause: return none(Lang.gamePause);
+        case ID.zoom: return mouse(Lang.gameZoom);
+        case ID.showSplatRuler: return none(Lang.gameShowSplatRuler);
+        case ID.highlightGoals: return none(Lang.gameHighlightGoals);
+        case ID.stateSave: return none(Lang.gameStateSave);
+        case ID.stateLoad: return none(Lang.gameStateLoad);
+        case ID.showReplayEditor: return none(Lang.gameShowReplayEditor);
+        case ID.framestepBack: return mouse(Lang.gameFramestepBack);
+        case ID.framestepAhead: return mouse(Lang.gameFramestepAhead);
+        case ID.fastForward: return mouse(Lang.gameFastForward);
+        case ID.restart: return none(Lang.gameRestart);
+        case ID.nuke: return none(Lang.gameNuke);
+    }
 }

@@ -1,10 +1,11 @@
 module basics.globals;
 
-import file.filename;
+/*
+ * globals.d contains all the compile-time _constants_ accessible from
+ * throughout the game. Mutable user options are in file.option.allopts.
+ */
 
-// globals.d contains all the compile-time _constants_ accessible from
-// throughout the game. Global variables that may change are in globconf.d,
-// those are the variables saved into the global config file.
+import file.filename;
 
 // Untranslated strings; for translations of other strings see file.language
 immutable nameOfTheGame = "Lix";

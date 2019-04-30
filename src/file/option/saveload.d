@@ -14,6 +14,7 @@ import hardware.tharsis;
 
 void loadUserOptions()
 {
+    file.option.allopts.initializeIfNecessary();
     try {
         loadUserOptionsSdlang();
     }
