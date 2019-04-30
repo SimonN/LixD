@@ -24,13 +24,30 @@ public:
     }
 
     final writeChangesTo(Level level)
-    {
+    in {
+        assert (done, "Call writeChangesTo only when dialog is done");
+        assert (level);
+    }
+    body {
         if (_okay.execute || mouseClickRight) {
-            assert (level);
             selfWriteChangesTo(level);
         }
+        else {
+            // Cancel
+            selfRevertToNoChange();
+            selfPreviewChangesOn(level);
+        }
+    }
+
+    final previewChangesOn(Level level)
+    {
+        assert (level);
+        selfPreviewChangesOn(level);
     }
 
 protected:
     abstract void selfWriteChangesTo(Level);
+
+    void selfPreviewChangesOn(Level) { } // Subclass writes potential changes
+    void selfRevertToNoChange() { } // After this, subclass previews no change
 }

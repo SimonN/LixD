@@ -150,13 +150,21 @@ void maybeCloseTerrainBrowser(Editor editor) {
 void maybeCloseOkCancelWindow(Editor editor) {
     with (editor)
 {
-    if (! _okCancelWindow || ! _okCancelWindow.done)
+    if (! _okCancelWindow) {
         return;
-    assert (_okCancelWindow.done);
-    _okCancelWindow.writeChangesTo(_level);
-    rmFocus(_okCancelWindow);
-    _okCancelWindow = null;
-    _panel.allButtonsOff();
+    }
+    if (_okCancelWindow.done) {
+        _okCancelWindow.writeChangesTo(_level);
+        rmFocus(_okCancelWindow);
+        _okCancelWindow = null;
+        _panel.allButtonsOff();
+    }
+    else {
+        // This mutates the _level, but later, writeChangesTo can revert that.
+        // Then, even when we exited _okCancelWindow by pressing Cancel,
+        // the background color for example will revert to before dialog.
+        _okCancelWindow.previewChangesOn(_level);
+    }
 }}
 
 void maybeCloseSaveBrowser(Editor editor) {

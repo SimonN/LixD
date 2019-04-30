@@ -3,6 +3,8 @@ module editor.gui.topology;
 import std.algorithm;
 import std.math;
 
+import enumap;
+
 import basics.globals;
 import basics.topology;
 import file.option;
@@ -30,8 +32,9 @@ private:
     BoolOption _torusY;
     Label[] _warnTooLarge;
 
-    NumPick _red, _green, _blue;
     enum thisXl = 480;
+    NumPick[3] _bgColors;
+    int[3] _bgColorsToRevertToOnCancel;
 
 public:
     this(Level level)
@@ -74,9 +77,20 @@ protected:
             level.terrain.each!fun;
             level.gadgets[].each!(occList => occList.each!fun);
         }
-        level.bgRed = _red.number;
-        level.bgGreen = _green.number;
-        level.bgBlue = _blue.number;
+        selfPreviewChangesOn(level); // Write colors
+    }
+
+    override void selfPreviewChangesOn(Level level) const
+    {
+        level.bgRed = _bgColors[0].number;
+        level.bgGreen = _bgColors[1].number;
+        level.bgBlue = _bgColors[2].number;
+    }
+
+    override void selfRevertToNoChange()
+    {
+        foreach (id, e; _bgColors)
+            e.number = _bgColorsToRevertToOnCancel[id];
     }
 
     override void calcSelf()
@@ -196,9 +210,12 @@ private:
                 desc.transl));
             return ret;
         }
-        _red = newPick(ylg-80, level.bgRed, Lang.winLooksRed);
-        _green = newPick(ylg-60, level.bgGreen, Lang.winLooksGreen);
-        _blue = newPick(ylg-40, level.bgBlue, Lang.winLooksBlue);
+        _bgColors[0] = newPick(ylg-80, level.bgRed, Lang.winLooksRed);
+        _bgColors[1] = newPick(ylg-60, level.bgGreen, Lang.winLooksGreen);
+        _bgColors[2] = newPick(ylg-40, level.bgBlue, Lang.winLooksBlue);
+
+        foreach (id, e; _bgColors)
+            _bgColorsToRevertToOnCancel[id] = e.number;
     }
 }
 
