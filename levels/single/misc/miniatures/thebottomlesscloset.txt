@@ -1,4 +1,4 @@
-$BUILT 2019-01-28 04:51:50
+$BUILT 2019-05-01 22:42:11
 $AUTHOR geoo
 $ENGLISH The Bottomless Closet
 
@@ -17,7 +17,7 @@ $ENGLISH The Bottomless Closet
 
 :matt/underworld/Hatch.H: 96 10
 
-:matt/underworld/Goal.G: 96 118
+:matt/underworld/Goal.G: 96 124
 
 :matt/underworld/thinplatform128: -192 42
 :matt/underworld/thinplatform128: -64 42
@@ -50,8 +50,7 @@ $ENGLISH The Bottomless Closet
 :geoo/construction/concrete/064h: 320 44 d
 :matt/underworld/thinplatform128: -192 14
 :matt/underworld/thinplatform128: 320 14
-:amanda/steel/steel24x16.S: 104 182
-:amanda/steel/steel24x16.S: 128 182
+:amanda/steel/steel24x16.S: 124 188
 :amanda/steel/steel24x16.S: 0 0
 :amanda/steel/steel24x16.S: 24 0
 :amanda/steel/steel24x16.S: 48 0
@@ -63,3 +62,8 @@ $ENGLISH The Bottomless Closet
 :amanda/steel/steel24x16.S: 208 0
 :amanda/steel/steel24x16.S: 232 0
 :amanda/steel/steel16x16.S: 120 0
+$BEGIN_TILE_GROUP 0
+:amanda/steel/steel24x16.S: 0 0
+:amanda/steel/steel24x16.S: 20 0 d
+$END_TILE_GROUP
+:Group-0: 108 188
