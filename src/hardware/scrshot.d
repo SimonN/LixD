@@ -13,10 +13,10 @@ import hardware.sound;
  */
 void takeScreenshot(string prefix)
 {
-    assert (display);
+    assert (theA5display);
     al_save_bitmap(
         prefix.nonexistantFile().stringForWriting.toStringz,
-        al_get_backbuffer(display));
+        al_get_backbuffer(theA5display));
     playQuiet(Sound.DISKSAVE);
 }
 

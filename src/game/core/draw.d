@@ -63,7 +63,7 @@ implGameDraw(Game game) { with (game)
     pan.age = nurse.constStateForDrawingOnly.update;
     game.showSpawnIntervalOnHatches();
 
-    auto drata = TargetBitmap(al_get_backbuffer(display));
+    auto drata = TargetBitmap(al_get_backbuffer(theA5display));
     {
         version (tharsisprofiling)
             auto zo2 = Zone(profiler, "game draws map to screen");

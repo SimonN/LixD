@@ -26,6 +26,7 @@ Filename legacyUserOptionFilename()
      ~ basics.help.escapeStringForFilename(userName)
      ~ filenameExtConfig);
 }
+
 ///////////////////////////////////////////////////////////////////////////////
 
 package:

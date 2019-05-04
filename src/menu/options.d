@@ -219,7 +219,7 @@ void populateGraphics()
         groups[OptionGroup.graphics] = grp;
     auto fac = facLeft();
     grp ~= [
-        fac.factory!RadioButtonsOption(screenMode,
+        fac.factory!RadioButtonsOption(screenType,
             Lang.optionScreenWindowed.transl,
             Lang.optionScreenSoftwareFullscreen.transl,
             Lang.optionScreenHardwareFullscreen.transl),

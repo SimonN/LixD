@@ -178,6 +178,6 @@ void drawToScreen(Editor editor)
 {
     version (tharsisprofiling)
         auto zone = Zone(profiler, "Editor.drawToScreen");
-    with (TargetBitmap(display.al_get_backbuffer))
+    with (TargetBitmap(theA5display.al_get_backbuffer))
         editor._map.drawCamera();
 }

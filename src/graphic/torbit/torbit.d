@@ -98,7 +98,7 @@ public:
 
     void copyToScreen()
     {
-        auto targetBitmap = TargetBitmap(al_get_backbuffer(display));
+        auto targetBitmap = TargetBitmap(al_get_backbuffer(theA5display));
         al_draw_bitmap(bitmap, 0, 0, 0);
     }
 

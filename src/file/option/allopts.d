@@ -80,9 +80,14 @@ UserOption!bool avoidBatterToExploder;
 UserOption!bool replayAfterFrameBack;
 UserOption!bool unpauseOnAssign;
 
-UserOption!int screenMode; // see file.option.screen for access methods
-UserOption!int screenWindowedX; // see file.option.screen for access methods
-UserOption!int screenWindowedY; // see file.option.screen for access methods
+/*
+ * screenMode and related: See file.option.screen for access methods.
+ * screenMode is an int, but shall be interpreted as of type ScreenMode,
+ * also defined in file.option.screen.
+ */
+UserOption!int screenType; // Read through file.option.screen.screenChoice
+UserOption!int screenWindowedX;
+UserOption!int screenWindowedY;
 UserOption!int splatRulerDesign;
 UserOption!bool paintTorusSeams;
 UserOption!bool showButtonHotkeys;
@@ -247,8 +252,8 @@ body {
     avoidBatterToExploder = newOpt("avoidBatterToExploder", Lang.optionAvoidBatterToExploder, false);
     replayAfterFrameBack = newOpt("replayAfterFrameBack", Lang.optionReplayAfterFrameBack, true);
     unpauseOnAssign = newOpt("unpauseOnAssign", Lang.optionUnpauseOnAssign, false);
-    screenMode = newOpt("screenMode", Lang.optionScreenMode,
-        defaultScreenMode.to!int);
+    screenType = newOpt("screenMode", Lang.optionScreenMode,
+        defaultScreenType.to!int);
     screenWindowedX = newOpt("screenWindowedX", Lang.optionScreenWindowedRes, 640);
     screenWindowedY = newOpt("screenWindowedY", 480);
     splatRulerDesign = newOpt("splatRulerDesign", Lang.optionSplatRulerDesign, 2);

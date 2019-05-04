@@ -41,7 +41,7 @@ nothrow void saveUserOptions()
         // write a comment between the two tags which sdlang-d doesn't support.
         Tag[] roots = [ new Tag() ];
         foreach (opt; _optvecSave) {
-            if (opt is screenMode) {
+            if (opt is screenType) {
                 roots ~= [ new Tag() ];
             }
             roots[$-1].add(opt.createTag);

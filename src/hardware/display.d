@@ -21,7 +21,7 @@ import file.log;
 static import hardware.keyboard; // clear after changing resolution
 static import hardware.mouse; // untrap the mouse when we leave the display
 
-ALLEGRO_DISPLAY* display;
+ALLEGRO_DISPLAY* theA5display;
 
 private:
     ALLEGRO_EVENT_QUEUE* queue;
@@ -38,30 +38,30 @@ public:
     int displayFps() { return _fpsArr.len; }
     int displayXl()
     {
-        assert(display, "display hasn't been created");
-        return al_get_display_width(display);
+        assert (theA5display, "display hasn't been created");
+        return al_get_display_width(theA5display);
     }
 
     int displayYl()
     {
-        assert(display, "display hasn't been created");
-        return al_get_display_height(display);
+        assert (theA5display, "display hasn't been created");
+        return al_get_display_height(theA5display);
     }
 
-    DisplayTryMode currentMode()
-    in { assert (display, "no current mode because no display exists"); }
+    ScreenChoice currentMode()
+    in { assert (theA5display, "no current mode because no display exists"); }
     body {
-        DisplayTryMode ret;
+        ScreenChoice ret;
         ret.x = displayXl;
         ret.y = displayYl;
-        ret.mode = flagsToScreenMode(al_get_display_flags(display));
+        ret.type = flagsToScreenType(al_get_display_flags(theA5display));
         return ret;
     }
 }
 
 void flip_display()
 {
-    assert (display, "display hasn't been created");
+    assert (theA5display, "display hasn't been created");
     al_flip_display();
     computeFPS();
 }
@@ -73,34 +73,36 @@ void setScreenMode(in Cmdargs cmdargs)
         & ~ ALLEGRO_WINDOWED
         & ~ ALLEGRO_FULLSCREEN
         & ~ ALLEGRO_FULLSCREEN_WINDOW;
-    foreach (ref tryMode;
-        cmdArgModes(cmdargs) ~ userFileModes() ~ fallbackModes()
+    foreach (ref tryMode; cmdArgModes(cmdargs)
+        ~ file.option.screen.screenChoice
+        ~ ScreenChoice(ScreenType.windowed, 640, 480) // a fallback mode
     ) {
         deinitialize();
-        al_set_new_display_flags(flags | screenModeToFlags(tryMode.mode));
-        display = al_create_display(tryMode.x, tryMode.y);
-        if (display) {
+        al_set_new_display_flags(flags | screenTypeToFlags(tryMode.type));
+        theA5display = al_create_display(tryMode.x, tryMode.y);
+        if (theA5display) {
             al_flip_display();
             // don't try further modes on success
             break;
         }
     }
-    enforce(display, "Can't instantiate a display even though we want"
+    enforce(theA5display, "Can't instantiate a display even though we want"
         ~ " to run Lix in interactive mode. This is very strange; normally,"
         ~ " at least a window of size 640x480 should have spawned.");
     _displayActive = true;
-    al_set_window_title(display, nameOfTheGame.toStringz);
+    al_set_window_title(theA5display, nameOfTheGame.toStringz);
     loadIcon();
     queue = al_create_event_queue();
-    al_register_event_source(queue, al_get_display_event_source(display));
+    al_register_event_source(queue, al_get_display_event_source(theA5display));
 }
 
 void deinitialize()
 {
-    if (display) {
-        al_unregister_event_source(queue,al_get_display_event_source(display));
-        al_destroy_display(display);
-        display = null;
+    if (theA5display) {
+        al_unregister_event_source(
+            queue, al_get_display_event_source(theA5display));
+        al_destroy_display(theA5display);
+        theA5display = null;
     }
     if (queue) {
         al_destroy_event_queue(queue);
@@ -142,79 +144,53 @@ void calc()
 
 private:
 
-DisplayTryMode[] cmdArgModes(in Cmdargs args)
+ScreenChoice[] cmdArgModes(in Cmdargs args)
 {
     immutable wantX = args.wantResolutionX > 0 ? args.wantResolutionX : 640;
     immutable wantY = args.wantResolutionY > 0 ? args.wantResolutionY : 480;
     typeof(return) ret;
-    if (args.forceHardwareFullscreen)
-        ret ~= DisplayTryMode(ScreenMode.hardwareFullscreen, wantX, wantY);
-    if (args.forceSoftwareFullscreen)
+    if (args.forceHardwareFullscreen) {
+        ret ~= ScreenChoice(ScreenType.hardwareFullscreen, wantX, wantY);
+    }
+    if (args.forceSoftwareFullscreen) {
         // Software fullscreen won't work (display won't be created by A5)
         // if we want software fullscreen with dimensions 0x0. We have to
         // pass arbitrary numbers > 0 here to entice A5 to use the desktop res.
         // Thus, we may as well pass wantX, wantY.
-        ret ~= DisplayTryMode(ScreenMode.softwareFullscreen, wantX, wantY);
-    if (args.forceWindowed)
-        ret ~= DisplayTryMode(ScreenMode.windowed, wantX, wantY);
-    return ret;
-}
-
-DisplayTryMode[] userFileModes()
-{
-    immutable wantX = screenWindowedX.value > 0 ? screenWindowedX.value : 640;
-    immutable wantY = screenWindowedY.value > 0 ? screenWindowedY.value : 480;
-    typeof(return) ret;
-    switch (file.option.screenMode.value) {
-    case ScreenMode.windowed:
-        ret ~= DisplayTryMode(ScreenMode.windowed, wantX, wantY);
-        ret ~= DisplayTryMode(ScreenMode.softwareFullscreen, wantX, wantY);
-        ret ~= DisplayTryMode(ScreenMode.hardwareFullscreen, wantX, wantY);
-        return ret;
-    case ScreenMode.hardwareFullscreen:
-        ret ~= DisplayTryMode(ScreenMode.hardwareFullscreen, wantX, wantY);
-        ret ~= DisplayTryMode(ScreenMode.softwareFullscreen, wantX, wantY);
-        ret ~= DisplayTryMode(ScreenMode.windowed, wantX, wantY);
-        return ret;
-    default:
-        ret ~= DisplayTryMode(ScreenMode.softwareFullscreen, wantX, wantY);
-        ret ~= DisplayTryMode(ScreenMode.windowed, wantX, wantY);
-        ret ~= DisplayTryMode(ScreenMode.hardwareFullscreen, wantX, wantY);
-        return ret;
+        ret ~= ScreenChoice(ScreenType.softwareFullscreen, wantX, wantY);
     }
-}
-
-DisplayTryMode[] fallbackModes()
-{
-    return [ DisplayTryMode(ScreenMode.windowed, 640, 480) ];
+    if (args.forceWindowed) {
+        ret ~= ScreenChoice(ScreenType.windowed, wantX, wantY);
+    }
+    return ret;
 }
 
 void loadIcon()
 {
-    assert (display);
+    assert (theA5display);
     if (! _appIcon)
         _appIcon = al_load_bitmap(fileImageAppIcon.stringForReading.toStringz);
     if (_appIcon)
-        al_set_display_icon(display, _appIcon);
+        al_set_display_icon(theA5display, _appIcon);
 }
 
-ScreenMode flagsToScreenMode(in int flags) pure nothrow @nogc
+ScreenType flagsToScreenType(in int flags) pure nothrow @nogc
 {
     if (flags & ALLEGRO_WINDOWED)
-        return ScreenMode.windowed;
+        return ScreenType.windowed;
     if (flags & ALLEGRO_FULLSCREEN_WINDOW)
-        return ScreenMode.softwareFullscreen;
+        return ScreenType.softwareFullscreen;
     if (flags & ALLEGRO_FULLSCREEN)
-        return ScreenMode.hardwareFullscreen;
+        return ScreenType.hardwareFullscreen;
     assert (false, "strange screen mode selected, can't decode flags");
 }
 
-int screenModeToFlags(in ScreenMode mode) pure nothrow @nogc
+int screenTypeToFlags(in ScreenType st) pure nothrow @nogc
 {
-    final switch (mode) {
-        case ScreenMode.windowed: return ALLEGRO_WINDOWED;
-        case ScreenMode.softwareFullscreen: return ALLEGRO_FULLSCREEN_WINDOW;
-        case ScreenMode.hardwareFullscreen: return ALLEGRO_FULLSCREEN;
+    final switch (st) {
+        case ScreenType.windowed: return ALLEGRO_WINDOWED;
+        case ScreenType.softwareFullscreen: return ALLEGRO_FULLSCREEN_WINDOW;
+        case ScreenType.hardwareFullscreen: return ALLEGRO_FULLSCREEN;
     }
 }
 

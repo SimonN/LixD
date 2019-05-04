@@ -59,8 +59,8 @@ private:
 
     alias _dSpeed = basics.globals.ticksForDoubleClick;
 
-    int xl() { assert (display); return al_get_display_width (display); }
-    int yl() { assert (display); return al_get_display_height(display); }
+    int xl() { assert (theA5display); return al_get_display_width (theA5display); }
+    int yl() { assert (theA5display); return al_get_display_height(theA5display); }
 
 public:
 
@@ -73,8 +73,8 @@ void initialize()
     assert (_queue);
     al_register_event_source(_queue, al_get_mouse_event_source());
 
-    if (display) {
-        al_hide_mouse_cursor(display);
+    if (theA5display) {
+        al_hide_mouse_cursor(theA5display);
         _mouseOwn = Point(xl / 2, yl / 2);
         _mouseFreezeRevert = _mouseOwn;
     }
@@ -129,7 +129,7 @@ void consumeAllegroMouseEvents()
     // mouse movements by the mouse speed, and then later divide by constant
     ALLEGRO_EVENT event;
     while (al_get_next_event(_queue, &event)) {
-        if (event.mouse.display != display)
+        if (event.mouse.display != theA5display)
             continue;
 
         immutable int i = event.mouse.button - 1;
@@ -202,7 +202,7 @@ body {
 void handleTrappedMouse()
 {
     if (! _trapMouse) {
-        al_show_mouse_cursor(display);
+        al_show_mouse_cursor(theA5display);
         return;
     }
     bool isCloseToEdge(in int pos, in int length)
@@ -211,12 +211,12 @@ void handleTrappedMouse()
             ? pos != length/2 // hard to leave
             : pos * 16 < length || pos * 16 >= length * 15; // easy to leave
     }
-    al_hide_mouse_cursor(display);
+    al_hide_mouse_cursor(theA5display);
     ALLEGRO_MOUSE_STATE state;
     al_get_mouse_state(&state);
     if (   isCloseToEdge(al_get_mouse_state_axis(&state, 0), xl)
         || isCloseToEdge(al_get_mouse_state_axis(&state, 1), yl)
     ) {
-        al_set_mouse_xy(display, xl/2, yl/2);
+        al_set_mouse_xy(theA5display, xl/2, yl/2);
     }
 }

@@ -49,10 +49,13 @@ void changeResolutionBasedOnUserFileAlone()
 
 private bool weHaveAReasonToChange()
 {
-    if (! display)
+    if (! theA5display) {
         return true;
-    if (displayTryMode.mode == ScreenMode.softwareFullscreen
-        && currentMode.mode == ScreenMode.softwareFullscreen)
+    }
+    if (screenChoice.type == ScreenType.softwareFullscreen
+        && currentMode.type == ScreenType.softwareFullscreen
+    ) {
         return false;
-    return displayTryMode != currentMode;
+    }
+    return screenChoice != currentMode;
 }
