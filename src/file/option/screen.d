@@ -48,9 +48,9 @@ body {
 @property void screenChoice(ScreenChoice a)
 in { assertOptionsExist(); }
 body {
-    screenType.value = a.type;
-    screenWindowedX.value = a.x;
-    screenWindowedY.value = a.y;
+    screenType = a.type;
+    screenWindowedX = a.x;
+    screenWindowedY = a.y;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -76,7 +76,7 @@ body {
     }
     catch (Exception) {
         ret = defaultScreenType;
-        screenType.value = defaultScreenType;
+        screenType = defaultScreenType;
     }
     return ret;
 }

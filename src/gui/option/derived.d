@@ -48,7 +48,7 @@ public:
     override void saveValue()
     {
         assert (_userOption);
-        _userOption.value = _checkbox.checked;
+        _userOption = _checkbox.checked;
     }
 
     override @property Lang lang() const { return _userOption.lang; }
@@ -89,7 +89,7 @@ public:
     }
 
     override void loadValue() { _texttype.text = _userOption.value; }
-    override void saveValue() { _userOption.value = _texttype.text.strip; }
+    override void saveValue() { _userOption = _texttype.text.strip; }
     override @property Lang lang() const { return _userOption.lang; }
 
     // hack, to enable immediate check of nonempty
@@ -126,7 +126,7 @@ public:
     }
 
     override void loadValue() { _keyb.keySet = _userOption.value; }
-    override void saveValue() { _userOption.value = _keyb.keySet; }
+    override void saveValue() { _userOption = _keyb.keySet; }
     override @property Lang lang() const { return _userOption.lang; }
 }
 
@@ -152,7 +152,7 @@ class SkillHotkeyOption : Option
 
     override @property Lang lang() const { return Lang.commonOk; } // hack
     override void loadValue() { _keyb.keySet = _userOption.value; }
-    override void saveValue() { _userOption.value = _keyb.keySet; }
+    override void saveValue() { _userOption = _keyb.keySet; }
 }
 
 
@@ -183,7 +183,7 @@ class NumPickOption : Option
     @property int  value()   const { return _num.number;     }
     @property bool execute() const { return _num.execute;    }
     override void loadValue() { _num.number = _userOption.value; }
-    override void saveValue() { _userOption.value = _num.number; }
+    override void saveValue() { _userOption = _num.number; }
     override @property Lang lang() const { return _userOption.lang; }
 }
 
@@ -209,7 +209,7 @@ public:
     }
 
     override void loadValue() { _radio.choose(_userOption.value); }
-    override void saveValue() { _userOption.value = _radio.chosen; }
+    override void saveValue() { _userOption = _radio.chosen; }
     override @property Lang lang() const { return _userOption.lang; }
 }
 
@@ -250,7 +250,7 @@ public:
     override void saveValue()
     {
         foreach (i; 0 .. fields)
-            _userOptions[i].value = _texttype[i].number;
+            _userOptions[i] = _texttype[i].number;
     }
 
     override @property Lang lang() const { return _userOptions[0].lang; }

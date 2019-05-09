@@ -58,7 +58,7 @@ public:
     void saveDirOfChosenTileToUserCfg()
     {
         assert (chosenTile !is null);
-        _curDir.value = chosenTile.guaranteedDirOnly();
+        _curDir = chosenTile.guaranteedDirOnly();
     }
 
 private:

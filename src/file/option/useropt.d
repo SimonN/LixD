@@ -85,9 +85,12 @@ public:
         _defaultValue = aValue;
         _value        = aValue;
     }
-    @property T defaultValue() const nothrow { return _defaultValue;   }
-    @property T value()        const nothrow { return _value;          }
-    @property T value(T aValue)      nothrow { return _value = aValue; }
+
+    @property nothrow @nogc @safe {
+        T defaultValue() const { return _defaultValue; }
+        T value()        const { return _value; }
+        T opAssign(in T aValue) { return _value = aValue; }
+    }
 
     alias value this;
 
@@ -142,7 +145,7 @@ protected:
 unittest
 {
     UserOption!int a = new UserOption!int("myUnittestKey", Lang.commonOk, 4);
-    a.value = 5;
+    a = 5;
     assert (a.createTag().name == "myUnittestKey");
     assert (a.createTag().values.front == 5);
 }
@@ -168,7 +171,7 @@ unittest {
     mykey.set(IoLine.Dollar("myHotkeyKey", "2, 1, ,, 4, 3"));
     import std.algorithm;
     assert (mykey.createTag().values.equal([1, 2, 3, 4]));
-    mykey.value = KeySet();
+    mykey = KeySet();
     assert (mykey.createTag().values.empty);
     mykey.set(IoLine.Dollar("myHotkeyKey", ""));
     assert (mykey.createTag().values.empty);
@@ -188,12 +191,15 @@ public:
         _defaultValue = aValue;
         _value        = aValue;
     }
-    @property Filename defaultValue() const nothrow { return _defaultValue; }
-    @property Filename value()        const nothrow { return _value;        }
-    @property Filename value(Filename fn) nothrow
-    {
-        _value = fn;
-        return fn;
+
+    @property nothrow @nogc @safe {
+        Filename defaultValue() const { return _defaultValue; }
+        Filename value()        const { return _value; }
+        Filename opAssign(Filename aValue)
+        {
+            _value = aValue;
+            return _value;
+        }
     }
 
     alias value this;

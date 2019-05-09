@@ -176,9 +176,9 @@ version (unittest) {
     void testWithCuttingFramesteps()
     {
         immutable bool old = replayAfterFrameBack.value;
-        replayAfterFrameBack.value = false;
+        replayAfterFrameBack = false;
         scope (exit)
-            replayAfterFrameBack.value = old;
+            replayAfterFrameBack = old;
         foreach (t; tests)
             t();
     }
@@ -186,9 +186,9 @@ version (unittest) {
     void testWithPreservingFramesteps()
     {
         immutable bool old = replayAfterFrameBack.value;
-        replayAfterFrameBack.value = true;
+        replayAfterFrameBack = true;
         scope (exit)
-            replayAfterFrameBack.value = old;
+            replayAfterFrameBack = old;
         foreach (t; tests)
             t();
     }
