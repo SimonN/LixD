@@ -7,6 +7,7 @@ import std.string;
 import basics.globals;
 import basics.rect;
 import file.option;
+import editor.clone;
 import editor.editor;
 import editor.group;
 import editor.hover;
@@ -67,11 +68,7 @@ void makePanel(Editor editor)
             editor.ungroup();
         });
         onExecute(Lang.editorButtonSelectCopy, keyEditorCopy, () {
-            foreach (sel; editor._selection) {
-                sel.cloneThenPointToClone();
-                sel.moveBy(editor._dragger.clonedShouldMoveBy);
-            }
-            // editor._dragger.startRecordingCopyMove();
+            editor.cloneSelection();
         });
         onExecute(Lang.editorButtonSelectDelete, keyEditorDelete, () {
             editor._selection.each!(s => s.removeFromLevel());
