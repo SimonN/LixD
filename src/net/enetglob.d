@@ -16,8 +16,8 @@ package:
 void initializeEnet()
 {
     if (! _enetDllLoaded) {
+        DerelictENet.load(); // may throw, caught in module menu.lobby.connect
         _enetDllLoaded = true;
-        DerelictENet.load();
     }
     if (_enetInits == 0) {
         if (enet_initialize() != 0)

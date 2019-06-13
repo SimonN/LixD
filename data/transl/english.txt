@@ -239,6 +239,7 @@ $exportSingleRequired Save:
 $exportSingleSpawnint SI:
 
 // network chat messages
+$netChatEnetDLLMissing Networking mode is not usable, the enet DLL is missing:
 $netChatStartClient Connecting to
 $netChatStartCancel Connection attempt cancelled.
 $netChatYouLoggedOut You left the network.

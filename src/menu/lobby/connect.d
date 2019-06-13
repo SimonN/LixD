@@ -1,8 +1,14 @@
 module menu.lobby.connect;
 
-/* The buttons shown when you enter the lobby dialog.
- * When you select one of these buttons, all vanish, and the program tries
- * to connect to a server.
+/*
+ * The buttons shown when you enter the lobby dialog.
+ * When you select one of these options, then click Okay, all options vanish,
+ * and the program tries to connect to a server.
+ *
+ * You must provide a non-null function for _onOkay when you create this.
+ * see its private section.
+ *
+ * You must provide a non-null function for _onMissingEnetDLL.
  */
 
 import std.conv;
@@ -23,18 +29,31 @@ private:
     LabelledFixableTexttype _hostname;
     LabelledFixableTexttype _port;
 
-    // When the user presses _connect, we will create an INetClient.
+    // When the user presses Okay, we will create an INetClient.
     // To pass this INetClient to our owner, the owner should provide this
     // delegate here, and we will call this delegate with the INetClient.
     // We pass the NetClientCfg only for our owner's convenience: The owner
     // does not have to create a client from that config, we already did that,
     // but the owner might display information to the user.
-    void delegate(INetClient, NetClientCfg) _onExecute;
+    void delegate(INetClient, NetClientCfg) _onOkay;
+    void delegate(Exception) _onEnetDLLMissing;
 
 public:
-    this(Geom g)
-    {
+    this(
+        Geom g,
+        void delegate(INetClient, NetClientCfg) aOnOkay,
+        void delegate(Exception) aOnEnetDLLMissing
+    )
+    in {
+        assert (aOnEnetDLLMissing !is null, "pass non-null onMissingEnetDLL");
+        assert (aOnOkay !is null,
+            "pass non-null onOkay, see comments at top and on _onOkay");
+    }
+    body {
         super(g);
+        _onOkay = aOnOkay;
+        _onEnetDLLMissing = aOnEnetDLLMissing;
+
         _hostname = new LabelledFixableTexttype(
             new Geom(0, 80, xlg/2, 40, From.TOP_LEFT),
             Texttype.AllowedChars.unicode);
@@ -61,8 +80,6 @@ public:
 
         addChildren(_radio, _connect, _hostname, _port);
     }
-
-    @property void onExecute(typeof(_onExecute) f) { _onExecute = f; }
 
 private:
     void handleChosenRadioButton(int chosen)
@@ -91,8 +108,9 @@ private:
 
     void connect()
     {
-        if (! _onExecute || _hostname.value.empty || _port.number == 0)
+        if (_hostname.value.empty || _port.number == 0) {
             return;
+        }
         NetClientCfg cfg = NetClientCfg();
         cfg.hostname = _hostname.value;
         cfg.port = _port.number;
@@ -105,18 +123,30 @@ private:
             { }
 
         networkConnectionMethod = _radio.chosen;
-        switch (_radio.chosen) {
-        case 0:
-            return _onExecute(new NetClient(cfg), cfg);
-        case 1:
-            networkOwnServerPort = _port.number;
-            return _onExecute(new ClientWithServer(cfg), cfg);
-        case 2:
-            networkConnectToAddress = _hostname.value;
-            networkConnectToPort = _port.number;
-            return _onExecute(new NetClient(cfg), cfg);
-        default:
-            assert (false, "unhandled radio button during connection");
+
+        INetClient ret;
+        try {
+            switch (_radio.chosen) {
+            case 0:
+                ret = new NetClient(cfg);
+                break;
+            case 1:
+                networkOwnServerPort = _port.number;
+                ret = new ClientWithServer(cfg);
+                break;
+            case 2:
+                networkConnectToAddress = _hostname.value;
+                networkConnectToPort = _port.number;
+                ret = new NetClient(cfg);
+                break;
+            default:
+                assert (false, "unhandled radio button during connection");
+            }
+            // If no DLL exception thrown by the new'ing:
+            _onOkay(ret, cfg);
+        }
+        catch (Exception e) {
+            _onEnetDLLMissing(e);
         }
     }
 }

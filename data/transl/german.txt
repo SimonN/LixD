@@ -227,6 +227,7 @@ $exportSingleRequired Rette:
 $exportSingleSpawnint SI:
 
 // Netzwerk-Chatnachrichten
+$netChatEnetDLLMissing Netzwerkmodus nicht benutzbar, da die enet-DLL fehlt:
 $netChatStartClient Verbinde zu
 $netChatStartCancel Verbindungsaufbau abgebrochen.
 $netChatYouLoggedOut Du hast das Netzwerk verlassen.

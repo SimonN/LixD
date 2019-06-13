@@ -295,6 +295,7 @@ enum Lang {
     exportSingleSpawnint,
 
     // network chat messages
+    netChatEnetDLLMissing,
     netChatStartClient,
     netChatStartCancel,
     netChatYouLoggedOut,

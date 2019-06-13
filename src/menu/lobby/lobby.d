@@ -3,11 +3,12 @@ module menu.lobby.lobby;
 import std.algorithm;
 import std.conv;
 import std.file;
-import std.format;
 import std.range;
+import std.string;
 
 import file.option;
 import file.language;
+import file.log;
 import game.harvest;
 import gui;
 import hardware.mouse;
@@ -179,8 +180,10 @@ private:
         _console = new LobbyConsole(new Geom(0, 60, xlg-40, 160, From.BOTTOM));
         addChild(_console);
 
-        _connections = new ConnectionPicker(new Geom(0, 40, 320,180,From.TOP));
-        _connections.onExecute = &this.acceptConnection;
+        _connections = new ConnectionPicker(
+            new Geom(0, 40, 320,180,From.TOP),
+            &this.acceptConnection,
+            &this.onEnetDLLMissing);
         _showWhenDisconnected ~= _connections;
 
         _peerList = new PeerList(new Geom(20, 40, 120, 20*8));
@@ -267,6 +270,14 @@ private:
         _console.add("Lix %s, enet %s. %s %s:%d...".format(gameVersion,
             _netClient.enetLinkedVersion, Lang.netChatStartClient.transl,
             cfgThatWasUsed.hostname, cfgThatWasUsed.port));
+    }
+
+    void onEnetDLLMissing(Exception e)
+    {
+        string msg = Lang.netChatEnetDLLMissing.transl
+            ~ " " ~ e.msg.tr("\x09\x0A\x0D", "   ", "d");
+        _console.add(msg);
+        log(msg);
     }
 
     // This is dubious. Nepster suggests that we shouldn't treat RMB special
