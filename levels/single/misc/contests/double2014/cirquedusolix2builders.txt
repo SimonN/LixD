@@ -1,0 +1,91 @@
+$BUILT 2014-10-19 17:37:10
+$AUTHOR mobius
+$GERMAN
+$ENGLISH Cirque Du Solix (2 Builders) - 2 min
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 120
+#INITIAL 20
+#REQUIRED 19
+#SPAWN_INTERVAL 10
+#SPAWN_INTERVAL_FAST 4
+
+#NOTHING 0
+#FLOATER 1
+#NOTHING 0
+#BLOCKER 1
+#BUILDER 2
+#PLATFORMER 1
+#BASHER 1
+#DIGGER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/carnival/Hatch.H: 464 -4
+
+:matt/carnival/Goal.G: 544 240
+
+:simon/water.W: 80 352
+:simon/water.W: 128 352
+:simon/water.W: 176 352
+:simon/water.W: 224 352
+:simon/water.W: 272 352
+:simon/water.W: 320 352
+:simon/water.W: 368 352
+:simon/water.W: 416 352
+:simon/water.W: 464 352
+:simon/water.W: 512 352
+:simon/water.W: 560 352
+:simon/water.W: 608 352
+:geoo/construction/sawblade_medium.F: 112 240
+:geoo/construction/sawblade_small.F: 480 208
+
+:matt/carnival/24: 80 208
+:matt/carnival/25: 144 208
+:matt/carnival/27: 144 272
+:matt/carnival/26: 80 272
+:matt/carnival/19: 432 208
+:matt/carnival/17: 240 208
+:matt/carnival/18: 304 208
+:matt/carnival/16: 368 208
+:matt/carnival/55: 240 304
+:matt/carnival/57: 0 -48 rrr
+:matt/carnival/56: 0 208 rrr
+:matt/carnival/27: 32 352
+:matt/carnival/41: 110 76
+:matt/carnival/40: 206 76
+:matt/carnival/39: 174 76
+:matt/carnival/42: 142 76
+:geoo/steel/64x32o.S: 160 134
+:geoo/steel/64x32o.S: 224 134
+:matt/carnival/41: 238 76
+:matt/carnival/39: 302 76
+:matt/carnival/42: 270 76
+:geoo/steel/64x32o.S: 496 208
+:geoo/steel/64x32o.S: 560 208
+:matt/carnival/58: 528 304
+:matt/carnival/27: 464 272 d
+:geoo/steel/32x32o.S: 624 208
+:geoo/steel/32x64o.S: 624 144
+:geoo/steel/32x64o.S: 624 80
+:geoo/steel/32x64o.S: 624 16
+:geoo/steel/64x64o.S: 112 240 d
+:matt/carnival/49: 112 272 r
+:matt/carnival/44: 144 240
+:geoo/steel/64x32o.S: 496 76
+:geoo/steel/64x32o.S: 560 0
+:geoo/steel/64x32o.S: 432 76
+:matt/carnival/40: 334 76
+:matt/carnival/39: 432 44
+:matt/carnival/42: 432 12
+:geoo/steel/32x32o.S: 32 0
+:geoo/steel/32x64o.S: 624 -48

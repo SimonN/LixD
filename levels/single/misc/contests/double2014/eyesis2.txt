@@ -1,0 +1,139 @@
+$BUILT 2014-11-21 21:00:45
+$AUTHOR Ramon
+$GERMAN
+$ENGLISH Eyesis (Part 2) - 30 sec
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 30
+#INITIAL 12
+#REQUIRED 9
+#SPAWN_INTERVAL 16
+#SPAWN_INTERVAL_FAST 16
+
+#WALKER 1
+#JUMPER 1
+#CLIMBER 0
+#FLOATER 1
+#EXPLODER 1
+#BLOCKER 0
+#BATTER 1
+#BUILDER 1
+#PLATFORMER 2
+#BASHER 0
+#MINER 0
+#DIGGER 0
+
+:geoo/sandstone/Hatch.H: 272 96
+:geoo/sandstone/Hatch.H: 272 96 r
+
+:geoo/sandstone/Goal.G: 288 208
+
+:geoo/sandstone/64x16: 288 208
+:geoo/sandstone/16x32: 288 224
+:geoo/sandstone/16x32: 336 224
+:geoo/sandstone/8x16: 288 256
+:geoo/sandstone/8x16: 344 256
+:geoo/sandstone/slopes/32x64lb: 208 200
+:geoo/sandstone/slopes/32x64lb: 272 328
+:geoo/sandstone/slopes/32x64rb: 336 328
+:geoo/sandstone/slopes/32x64rb: 400 200
+:geoo/sandstone/slopes/32x64lt: 400 264
+:geoo/sandstone/slopes/32x64lt: 368 328
+:geoo/sandstone/slopes/32x64rt: 208 264
+:geoo/sandstone/slopes/32x64rt: 240 328
+:geoo/sandstone/slopes/32x64lb: 368 8
+:geoo/sandstone/slopes/32x64lb: 400 72
+:geoo/sandstone/slopes/32x64rt: 336 8
+:geoo/sandstone/slopes/32x64rt: 400 136
+:geoo/sandstone/slopes/32x64rb: 208 72
+:geoo/sandstone/slopes/32x64rb: 240 8
+:geoo/sandstone/slopes/32x64lt: 272 8
+:geoo/sandstone/slopes/32x64lt: 208 136
+:geoo/sandstone/slopes/32x32rt: 400 8
+:geoo/sandstone/slopes/32x32rt: 432 40
+:geoo/sandstone/slopes/32x32rt: 496 104
+:geoo/sandstone/slopes/32x32rt: 528 136
+:geoo/sandstone/slopes/32x32rt: 560 168
+:geoo/sandstone/slopes/32x32rb: 560 200
+:geoo/sandstone/slopes/32x32rb: 528 232
+:geoo/sandstone/slopes/32x32rb: 496 264
+:geoo/sandstone/slopes/32x32rb: 432 328
+:geoo/sandstone/slopes/32x32rb: 400 360
+:geoo/sandstone/slopes/32x32lt: 496 296
+:geoo/sandstone/slopes/32x32lt: 464 328
+:geoo/sandstone/slopes/32x32lt: 208 8
+:geoo/sandstone/slopes/32x32lt: 176 40
+:geoo/sandstone/slopes/32x32lt: 112 104
+:geoo/sandstone/slopes/32x32lt: 80 136
+:geoo/sandstone/slopes/32x32lt: 48 168
+:geoo/sandstone/slopes/32x32lb: 48 200
+:geoo/sandstone/slopes/32x32lb: 80 232
+:geoo/sandstone/slopes/32x32lb: 112 264
+:geoo/sandstone/slopes/32x32lb: 176 328
+:geoo/sandstone/slopes/32x32lb: 208 360
+:geoo/sandstone/slopes/32x32lb: 432 8
+:geoo/sandstone/slopes/32x32lb: 464 40
+:geoo/sandstone/slopes/32x32rb: 144 40
+:geoo/sandstone/slopes/32x32rt: 112 296
+:geoo/sandstone/slopes/32x32rt: 144 328
+:geoo/sandstone/smaragd: 312 208
+:geoo/sandstone/32x32: 432 8
+:geoo/sandstone/slopes/32x32rt: 432 8 d
+:geoo/sandstone/32x32: 176 8
+:geoo/sandstone/32x32: 80 104
+:geoo/sandstone/32x32: 80 264
+:geoo/sandstone/32x32: 176 360
+:geoo/sandstone/32x32: 432 360
+:geoo/sandstone/32x32: 528 264
+:geoo/sandstone/32x32: 528 104
+:geoo/sandstone/slopes/32x32rt: 528 104 d
+:geoo/sandstone/slopes/32x32rb: 528 264 d
+:geoo/sandstone/slopes/32x32rb: 432 360 d
+:geoo/sandstone/slopes/32x32lb: 176 360 d
+:geoo/sandstone/slopes/32x32lb: 80 264 d
+:geoo/sandstone/slopes/32x32lt: 80 104 d
+:geoo/sandstone/slopes/32x32lt: 176 8 d
+:geoo/sandstone/32x64: 368 72
+:geoo/sandstone/32x64: 368 264
+:geoo/sandstone/32x64: 240 264
+:geoo/sandstone/32x64: 240 72
+:geoo/sandstone/slopes/32x64rb: 240 72 d
+:geoo/sandstone/slopes/32x64rt: 240 264 d
+:geoo/sandstone/slopes/32x64lt: 368 264 d
+:geoo/sandstone/slopes/32x64lb: 368 72 d
+:geoo/sandstone/32x64: 176 136
+:geoo/sandstone/32x64: 176 200
+:geoo/sandstone/32x64: 432 200
+:geoo/sandstone/32x64: 432 136
+:geoo/sandstone/slopes/32x64rt: 432 136 d
+:geoo/sandstone/slopes/32x64lt: 176 136 d
+:geoo/sandstone/slopes/32x64rb: 432 200 d
+:geoo/sandstone/slopes/32x64lb: 176 200 d
+:geoo/sandstone/slopes/32x32lb: 496 72
+:geoo/sandstone/32x32: 464 72
+:geoo/sandstone/slopes/32x32lb: 464 72 d
+:geoo/sandstone/slopes/32x32lb: 560 136
+:geoo/sandstone/32x64: 16 168
+:geoo/sandstone/32x64: 592 168
+:geoo/sandstone/slopes/32x32rt: 592 168 d
+:geoo/sandstone/slopes/32x32rb: 592 200 d
+:geoo/sandstone/slopes/32x32lb: 16 200 d
+:geoo/sandstone/slopes/32x32lt: 16 168 d
+:geoo/sandstone/32x32: 144 72
+:geoo/sandstone/slopes/32x32rb: 144 72 d
+:geoo/sandstone/slopes/32x32rb: 112 72
+:geoo/sandstone/slopes/32x32rb: 48 136
+:geoo/sandstone/slopes/32x32rt: 48 232
+:geoo/sandstone/32x32: 144 296
+:geoo/sandstone/slopes/32x32rt: 144 296 d
+:geoo/sandstone/slopes/32x32lt: 560 232
+:geoo/sandstone/32x32: 464 296
+:geoo/sandstone/slopes/32x32lt: 464 296 d
+:geoo/sandstone/64x16: 288 272

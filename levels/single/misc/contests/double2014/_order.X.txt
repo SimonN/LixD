@@ -1,0 +1,10 @@
+16x16.txt
+planetdulux.txt
+amethystnightmareshrine.txt
+templetothefroggods.txt
+cirquedusolix2blockers.txt
+cirquedusolix2builders.txt
+eyesis1.txt
+eyesis2.txt
+theclimber.txt
+thefloater.txt

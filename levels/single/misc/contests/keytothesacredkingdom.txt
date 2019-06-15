@@ -1,0 +1,198 @@
+$BUILT 2017-10-11 14:05:11
+$AUTHOR Simon
+$ENGLISH Key to the Sacred Kingdom v7
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 944
+#SIZE_Y 320
+
+#INITIAL 20
+#REQUIRED 20
+#SPAWN_INTERVAL 37
+
+#CLIMBER 1
+#BUILDER 7
+#BASHER 1
+#DIGGER 3
+#EXPLODER2 0
+
+:simon/hatch001.H: 544 16 r
+
+:proxima/tile/goal.G: 64 104
+
+:geoo/sandstone/torch.F: 478 42
+:geoo/sandstone/torch.F: 670 42
+:geoo/sandstone/torch.F: 642 42
+:simon/crystal.W: 0 284
+:simon/crystal.W: 48 284
+:simon/crystal.W: 96 284
+:simon/crystal.W: 144 284
+:simon/crystal.W: 192 284
+:simon/crystal.W: 240 284
+:amanda/tar.W: 480 288
+:amanda/tar.W: 608 288
+:amanda/tar.W: 736 288
+:amanda/tar.W: 864 288
+:simon/crystal.W: 288 284
+:simon/crystal.W: 336 284
+:simon/crystal.W: 384 284
+:simon/crystal.W: 432 284
+:geoo/sandstone/brazier.F: 316 232
+:geoo/sandstone/brazier.F: 340 232
+:geoo/sandstone/brazier.F: 396 232
+:geoo/sandstone/brazier.F: 420 232
+:geoo/sandstone/brazier.F: 204 232
+:geoo/sandstone/brazier.F: 228 232
+:geoo/sandstone/brazier.F: 508 232
+:geoo/sandstone/brazier.F: 532 232
+:geoo/sandstone/brazier.F: 588 232
+:geoo/sandstone/brazier.F: 612 232
+:geoo/sandstone/brazier.F: 700 232
+:geoo/sandstone/brazier.F: 724 232
+:geoo/sandstone/torch.F: 456 44
+:geoo/sandstone/torch.F: 456 66
+:geoo/sandstone/torch.F: 456 88
+:geoo/sandstone/torch.F: 478 62
+:geoo/sandstone/torch.F: 670 62
+:geoo/sandstone/torch.F: 642 62
+
+:simon/oriental/leaf4: 330 164 frr
+:simon/oriental/leaf6: 388 162
+:simon/oriental/leaf3: 360 114 f
+:simon/oriental/leaf2: 364 126 rrr
+:geoo/sandstone/16x16: 472 48
+:simon/oriental/leaf4: 794 125
+:simon/oriental/leaf5: 782 120 f
+:simon/oriental/leaf4: 883 74 rrr
+:simon/oriental/leaf4: 865 100 frrr
+:simon/oriental/leaf2: 845 118 frr
+:simon/oriental/leaf6: 867 76 rr
+:simon/oriental/leaf3: 877 112 rrr
+:simon/oriental/culm_long: 712 114 r
+:simon/oriental/culm_long: 787 114 r
+:simon/oriental/culm_end: 875 98 f
+:simon/oriental/branch1: 40 258 rr
+:simon/oriental/branch4: 37 258 rrr
+:simon/oriental/bush7: 42 255 frr
+:matt/underworld/00: 720 280 fr
+:matt/underworld/00: 608 280 fr
+:matt/underworld/00: 528 280 fr
+:simon/oriental/branch4: 814 282 f
+:raymanni/gore/goop_1: 822 262
+:raymanni/gore/goop_2: 854 206
+:simon/oriental/branch4: 848 202 rrr
+:simon/oriental/branch6: 850 272
+:simon/oriental/branch1: 899 267 frrr
+$BEGIN_TILE_GROUP 0
+:raymanni/gore/goop_1: -2 10
+:geoo/sandstone/32x64: 0 0 d
+$END_TILE_GROUP
+:Group-0: 798 188
+:simon/oriental/branch7: 868 226 rr
+:raymanni/gore/goop_1: 809 184 frr
+:geoo/sandstone/32x32: 846 158 d
+:simon/oriental/branch7: 816 176 r
+$BEGIN_TILE_GROUP 1
+:proxima/tile/spheres/gold: -1 -1
+:proxima/tile/spheres/goldsmall: 15 12 d
+:proxima/tile/spheres/goldsmall: 10 19 d
+:proxima/tile/spheres/goldsmall: 11 13 d
+:proxima/tile/spheres/goldsmall: 19 13 d
+:proxima/tile/spheres/goldsmall: 11 25 d
+:proxima/tile/spheres/goldsmall: 19 25 d
+:proxima/tile/spheres/goldsmall: 20 19 d
+$END_TILE_GROUP
+:Group-1: 257 20
+:matt/marble/20c: 275 64 d
+:matt/marble/20c: 285 64 d
+:simon/oriental/branch3: 88 242 frrr
+:simon/oriental/branch3: 96 232 rr
+:simon/oriental/branch4: 62 240
+:simon/oriental/branch5: 88 176 frr
+:simon/oriental/bush5: 66 200 frr
+:simon/oriental/branch3: 86 276
+:simon/oriental/bush5: 86 275 frr
+:simon/oriental/branch7: 72 264 rr
+:simon/oriental/bush1: 62 212
+:simon/oriental/branch6: 40 176
+:simon/oriental/bush2: 38 182 frr
+:simon/oriental/bush4: 40 160
+:simon/oriental/branch3: 64 234 r
+:simon/oriental/bush6: 40 224
+:simon/oriental/bush7: 116 196 frr
+$BEGIN_TILE_GROUP 2
+:geoo/sandstone/pillar_32: 12 0
+:geoo/sandstone/pillar_32: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 3
+:geoo/sandstone/pillar_32: 31 0
+:geoo/sandstone/pillar_32: 48 0 d
+:Group-2: 36 0
+:geoo/sandstone/pillar_32: 0 0 d
+$END_TILE_GROUP
+:Group-3: 280 64
+:Group-3: 280 96
+:Group-3: 280 160
+:Group-3: 280 192
+:Group-3: 280 224
+:Group-3: 280 256
+:Group-3: 280 288
+:Group-3: 472 128
+:Group-3: 472 160
+:Group-3: 472 192
+:Group-3: 472 224
+:Group-3: 472 256
+:Group-3: 472 288
+:geoo/sandstone/32x32: 408 256
+:geoo/sandstone/32x32: 328 256
+:geoo/sandstone/8x8: 340 268
+:geoo/sandstone/8x8: 420 268
+:geoo/sandstone/32x32: 216 256
+:geoo/sandstone/8x8: 228 268
+:geoo/sandstone/32x32: 520 256
+:geoo/sandstone/8x8: 532 268
+:geoo/sandstone/16x16: 280 48
+:Group-3: 472 64
+:simon/oriental/culm_long: 485 102 r
+:Group-3: 472 96
+:simon/oriental/bush5: 96 226
+:simon/oriental/bush7: 98 234
+:Group-3: 280 128
+:geoo/sandstone/8x8: 284 52 rr
+:geoo/sandstone/8x8: 476 52 rr
+:Group-3: 664 128
+:Group-3: 664 160
+:Group-3: 664 192
+:Group-3: 664 224
+:Group-3: 664 256
+:Group-3: 664 288
+:geoo/sandstone/32x32: 600 256
+:geoo/sandstone/8x8: 612 268
+:geoo/sandstone/32x32: 712 256
+:geoo/sandstone/8x8: 724 268
+:simon/oriental/branch6: 848 160 rr
+:simon/oriental/branch3: 788 180 rr
+:simon/oriental/branch5: 810 238 frrr
+:matt/marble/20a: 224 288
+:matt/marble/20a: 336 288
+:matt/marble/20a: 416 288
+:simon/oriental/bush6: 66 253 frr
+$BEGIN_TILE_GROUP 4
+:amanda/steel/steel8x16.S: 7 0
+:amanda/steel/steel8x16.S: 0 0 d
+:amanda/steel/steel8x16.S: 10 0 d
+$END_TILE_GROUP
+:Group-4: 472 48
+:simon/oriental/culm_long: 346 156 r
+:simon/oriental/culm_end: 324 156 r
+:simon/oriental/branch2: 384 147 d
+:amanda/steel/steel8x16.S: 488 103 fr
+:geoo/sandstone/16x16: 664 48
+:simon/oriental/culm_long: 580 102 r
+:matt/marble/20c: 669 64 d
+:simon/oriental/culm_half1: 679 102 r
+:simon/oriental/culm_d_half: 700 104 r
+:Group-3: 664 64
+:Group-3: 664 96
+:geoo/sandstone/8x8: 668 52 rr
+:simon/oriental/culm_half1: 694 96 rd

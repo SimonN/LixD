@@ -1,0 +1,53 @@
+$BUILT 2018-06-18 01:59:28
+$AUTHOR Proxima
+$ENGLISH Turnabout Sisters
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 384
+#SIZE_Y 240
+
+#INITIAL 2
+#REQUIRED 2
+#SPAWN_INTERVAL 32
+
+#BLOCKER 2
+#BASHER 1
+#MINER 1
+#DIGGER 1
+#EXPLODER 0
+
+:matt/bricks/Hatch.H: 160 16
+
+:proxima/tile/goal.G: 288 160
+
+:geoo/construction/Laseremit_hzl_16.F: 352 128
+:geoo/construction/Laser_hz_64.F: 288 128
+:geoo/construction/Laser_hz_64.F: 224 128
+:geoo/construction/Laser_hz_64.F: 160 128
+:geoo/construction/Laser_hz_64.F: 96 128
+:geoo/construction/Laseremit_hzr_16.F: 64 128
+:geoo/construction/Laser_hz_16.F: 80 128
+:geoo/construction/Laseremit_vrb_16.F: 0 0
+:geoo/construction/Laseremit_vrt_16.F: 0 160
+:geoo/construction/Laser_vr_64.F: 0 16
+:geoo/construction/Laser_vr_64.F: 0 80
+:geoo/construction/Laser_vr_16.F: 0 144
+
+:proxima/tile/red3: 0 176
+:proxima/tile/red2: 64 176
+:proxima/tile/red2: 128 176
+:proxima/tile/red3: 192 176
+:proxima/tile/red1a: 256 224
+:proxima/tile/red1a: 272 240
+:proxima/tile/red1a: 288 224
+:proxima/tile/red1a: 320 224
+:proxima/tile/red1a: 352 224
+:proxima/tile/red3: 64 64
+:proxima/tile/red2: 128 64
+:proxima/tile/red2: 192 64
+:proxima/tile/red3: 256 64
+:proxima/tile/64.S: 320 64
+:proxima/tile/red1a: 368 128 r
+:proxima/tile/red1a: 384 144 r
+:proxima/tile/red1a: 368 160 r
+:proxima/tile/red1a: 368 192 r

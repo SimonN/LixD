@@ -1,0 +1,110 @@
+$BUILT 2014-10-19 00:00:00
+$AUTHOR NaOH
+$GERMAN
+$ENGLISH Temple to the Frog Gods
+
+#SIZE_X 688
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 100
+#REQUIRED 25
+#SPAWN_INTERVAL 7
+#SPAWN_INTERVAL_FAST 7
+
+#BASHER 1
+#JUMPER 2
+#CLIMBER 1
+#PLATFORMER 2
+#BUILDER 1
+#EXPLODER2 1
+#BATTER 1
+#BLOCKER 1
+#FLOATER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/marble/Hatch.H: 64 176
+:matt/marble/Hatch.H: 560 176 r
+
+:proxima/tile/goal.G: 320 179
+
+:amanda/forest/frog.T: 64 272
+
+:amanda/tar.W: 352 368
+:amanda/tar.W: 224 368
+
+:proxima/tile/pink2: 288 240
+:proxima/tile/pink1a: 288 256 d
+:proxima/tile/pink2: 352 240
+:proxima/tile/pink5s: 464 240
+:proxima/tile/pink5s: 496 240
+:geoo/construction/stairsbrick_rd_8: 448 296 frr
+:proxima/tile/pink1a: 464 288
+:proxima/tile/pink1a: 448 304
+:geoo/construction/stairsbrick_rd_8: 440 320
+:proxima/tile/pink1a: 464 320
+:proxima/tile/pink5s: 464 352
+:proxima/tile/pink5s: 496 352
+:geoo/construction/stairsbrick_rd_8: 520 320 frr
+:proxima/tile/pink1a: 496 320
+:proxima/tile/pink1a: 480 336
+:proxima/tile/pink1a: 512 304
+:geoo/construction/stairsbrick_rd_8: 512 296
+:proxima/tile/pink1a: 496 288
+:proxima/tile/pink4: 464 384
+:geoo/steel/16x32o.S: 464 374
+:proxima/tile/pink4: 528 384
+:proxima/tile/pink4: 592 384
+:proxima/tile/pink4: 96 384
+:proxima/tile/pink4: 160 384
+:proxima/tile/pink4: 32 384
+:geoo/construction/stairsbrick_rd_8: 144 264 frr
+:geoo/construction/stairsbrick_rd_8: 144 296 frr
+:proxima/tile/pink1a: 160 288
+:geoo/construction/stairsbrick_rd_8: 136 320
+:proxima/tile/pink1a: 160 320
+:proxima/tile/pink5s: 160 352
+:proxima/tile/pink5s: 192 352
+:geoo/construction/stairsbrick_rd_8: 216 320 frr
+:proxima/tile/pink1a: 192 320
+:proxima/tile/pink1a: 176 336
+:proxima/tile/pink1a: 208 304
+:geoo/construction/stairsbrick_rd_8: 208 296
+:proxima/tile/pink1a: 192 288
+:proxima/tile/pink1a: 144 304
+:proxima/tile/green1: 64 320
+:proxima/tile/green1: 560 320
+:proxima/tile/pink3: 656 336
+:proxima/tile/pink2: 656 208
+:proxima/tile/pink3: 656 272
+:proxima/tile/pink2: 656 80
+:proxima/tile/pink3: 656 144
+:proxima/tile/pink3: 656 16
+:proxima/tile/pink3: 656 -48
+:proxima/tile/pink2: 592 -16
+:proxima/tile/pink3: -32 336
+:proxima/tile/pink2: -32 272
+:proxima/tile/pink3: -32 208
+:proxima/tile/pink2: -32 80
+:proxima/tile/pink3: -32 144
+:proxima/tile/pink3: -32 16
+:proxima/tile/pink3: -32 -48
+:proxima/tile/pink2: 32 -16
+:proxima/tile/pink3: 528 -48
+:proxima/tile/pink3: 96 -48
+:geoo/steel/16x32o.S: 208 374
+:proxima/tile/pink1a: 288 240 d
+:geoo/construction/stairsbrick_rd_8: 304 248 frr
+:proxima/tile/pink1a: 320 240
+:proxima/tile/pink1a: 288 256
+:proxima/tile/pink1a: 144 272
+:proxima/tile/pink5s: 160 256
+:proxima/tile/pink5s: 192 256
+:geoo/steel/16x32o.S: 480 272 fr

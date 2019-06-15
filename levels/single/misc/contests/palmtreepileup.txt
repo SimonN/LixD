@@ -1,0 +1,90 @@
+$BUILT 2019-06-15 16:25:13
+$AUTHOR Simon
+$ENGLISH Palmtree Pile-up
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 320
+
+#INITIAL 80
+#REQUIRED 8
+#SPAWN_INTERVAL 2
+
+#BUILDER 2
+#PLATFORMER 1
+#BATTER 1
+#EXPLODER2 0
+
+:matt/underworld/Hatch.H: 24 78
+:matt/underworld/Hatch.H: 518 154 r
+
+:matt/underworld/Goal.G: 326 241
+
+:amanda/tar.W: 192 288
+:amanda/tar.W: 400 288
+
+:geoo/nopales/fruit_00: 52 141
+:geoo/nopales/nopal_08: 56 140
+:matt/beach/daytime/00: 138 270
+:matt/beach/decor/grass10: 171 246
+:matt/beach/daytime/01: 150 222 rr
+:matt/beach/daytime/02: 150 218
+:matt/beach/daytime/01: -33 201 frr
+:matt/beach/decor/shovel: 5 116
+:matt/beach/daytime/01: -10 190 frr
+:matt/beach/daytime/03: -31 289
+:matt/beach/daytime/06: -45 207 frr
+:matt/beach/daytime/02: 75 295 fr
+:matt/beach/decor/grass03: -11 168
+:matt/beach/daytime/01: 11 172
+:matt/beach/decor/grass07: 6 206
+:matt/beach/daytime/00: 1 248 r
+:matt/beach/daytime/01: 69 183 rr
+:geoo/nopales/nopal_01: 56 156
+:matt/beach/daytime/03: 39 198 frr
+:matt/beach/decor/beach ball: 146 218
+:matt/beach/daytime/15: 39 187
+:geoo/nopales/fruit_03: 91 127
+:geoo/nopales/fruit_06: 96 128
+:geoo/nopales/fruit_08: 99 133
+:geoo/nopales/fruit_00: 75 141
+:geoo/nopales/fruit_00: 71 147
+:geoo/nopales/fruit_08: 104 150
+:geoo/nopales/nopal_00: 72 148
+:geoo/nopales/fruit_08: 102 146
+:geoo/nopales/nopal_02: 72 132
+:geoo/nopales/fruit_01: 55 142
+:geoo/nopales/fruit_03: 59 137
+:geoo/nopales/fruit_06: 64 143
+:geoo/nopales/fruit_01: 85 130
+:geoo/nopales/fruit_00: 81 136
+:matt/beach/daytime/02: 546 254 fr
+:matt/beach/decor/grass04: 562 196
+:matt/beach/decor/palmtree: 571 98 frr
+:matt/beach/decor/grass02: 611 160
+:matt/beach/daytime/06: 511 187 frr
+:matt/beach/decor/grass10: 592 245
+:matt/beach/daytime/13: 560 250 fr
+:matt/beach/daytime/14: 506 240 f
+:matt/beach/decor/grass11: 487 247
+:matt/beach/daytime/15: 382 305 frr
+:matt/beach/daytime/02: 349 236
+:matt/beach/daytime/13: 301 239 rr
+:matt/beach/daytime/00: 300 230 frr
+:matt/beach/decor/grass09: 18 148
+:matt/beach/daytime/15: 152 235
+:matt/beach/decor/grass11: 145 213
+:matt/beach/daytime/15: 211 221 rrrd
+:matt/beach/decor/grass10: 173 229 frr
+:matt/underworld/04: 331 246 frrrd
+:simon/oriental/culm_half2: 350 231 rrd
+:proxima/tile/spheres/gold: 416 16 f
+:proxima/tile/spheres/cyan: 424 10 d
+:matt/beach/decor/grass02: 68 294
+:matt/bricks/10a: 209 220 d
+:geoo/abstract/cvblocks/029: 356 221 d
+:geoo/abstract/cvblocks/023: 322 221 d
+:geoo/abstract/cvblocks/033: 328 216 d
+:geoo/abstract/cvblocks/028: 344 224 d
+:matt/beach/daytime/05: 398 113 d
+:matt/beach/daytime/05: 401 136 d

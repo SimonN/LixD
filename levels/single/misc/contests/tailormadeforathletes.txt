@@ -1,0 +1,185 @@
+$FILENAME single/misc/contests/tailormadeforathletes.txt
+$LEVEL_BUILT_REQUIRED 2016-05-24 16:50:51
+$GAME_VERSION_REQUIRED 0.9.13
+
++PLAYER 0 Garden F
+
+! 71 0 ASSIGN=CUBER 0
+! 113 0 ASSIGN=CUBER 1
+! 144 0 ASSIGN=PLATFORMER 2
+! 163 0 ASSIGN=BLOCKER 3
+! 211 0 ASSIGN=JUMPER 4
+! 240 0 ASSIGN=JUMPER 5
+! 246 0 ASSIGN=EXPLODER2 5
+! 307 0 ASSIGN=JUMPER 6
+! 309 0 ASSIGN=EXPLODER2 6
+! 374 0 ASSIGN=JUMPER 8
+! 376 0 ASSIGN=EXPLODER2 8
+! 450 0 ASSIGN=CUBER 2
+! 502 0 ASSIGN=MINER 4
+! 681 0 ASSIGN=BASHER 17
+! 827 0 ASSIGN=BLOCKER 17
+! 1161 0 ASSIGN_RIGHT=MINER 9
+! 1526 0 ASSIGN=JUMPER 10
+! 1535 0 ASSIGN=CUBER 10
+! 1545 0 ASSIGN=JUMPER 11
+! 1557 0 ASSIGN=PLATFORMER 11
+! 1558 0 ASSIGN=PLATFORMER 11
+! 1882 0 ASSIGN=JUMPER 11
+! 1947 0 ASSIGN=CUBER 11
+! 1975 0 ASSIGN_RIGHT=PLATFORMER 14
+! 1995 0 ASSIGN_RIGHT=PLATFORMER 37
+! 2067 0 ASSIGN=WALKER 17
+! 2071 0 ASSIGN=PLATFORMER 7
+! 2151 0 ASSIGN=JUMPER 36
+! 2162 0 ASSIGN=CUBER 36
+! 2191 0 ASSIGN=PLATFORMER 37
+! 2338 0 ASSIGN=PLATFORMER 13
+! 2355 0 ASSIGN=PLATFORMER 13
+! 2396 0 ASSIGN=PLATFORMER 17
+! 2495 0 ASSIGN=JUMPER 27
+! 2497 0 ASSIGN=EXPLODER2 27
+! 2557 0 ASSIGN=JUMPER 37
+! 2559 0 ASSIGN=EXPLODER2 37
+! 2723 0 ASSIGN_LEFT=JUMPER 39
+! 2725 0 ASSIGN=EXPLODER2 39
+! 2775 0 ASSIGN=JUMPER 17
+! 2777 0 ASSIGN=EXPLODER2 17
+! 2884 0 ASSIGN=WALKER 3
+! 2909 0 ASSIGN=JUMPER 7
+! 2911 0 ASSIGN=EXPLODER2 7
+! 3205 0 ASSIGN=PLATFORMER 12
+! 3290 0 ASSIGN=PLATFORMER 31
+! 3364 0 ASSIGN=JUMPER 15
+! 3368 0 ASSIGN=EXPLODER2 15
+
+$BUILT 2016-05-24 16:50:51
+$AUTHOR Michael
+$ENGLISH Tailor-made for athletes
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 1280
+#SIZE_Y 400
+
+#INITIAL 40
+#REQUIRED 24
+#SPAWN_INTERVAL 32
+
+#WALKER 4
+#EXPLODER2 10
+#BLOCKER 4
+#PLATFORMER 20
+#BASHER 4
+#MINER 4
+#JUMPER 20
+#CUBER 6
+
+:geoo/construction/Hatch.H: 176 80
+
+:proxima/tile/goal.G: 1056 144
+
+:proxima/flame.F: 712 176
+:simon/crystal.W: 0 352
+:simon/crystal.W: 48 352
+:simon/crystal.W: 96 352
+:matt/underworld/Lava.W: 1152 368
+:matt/underworld/Lava.W: 1200 368
+:matt/underworld/Lava.W: 1248 368
+:proxima/flame.F: 704 192
+:proxima/flame.F: 728 192
+:proxima/flame.F: 712 72
+:proxima/flame.F: 704 88
+:proxima/flame.F: 728 88
+
+:proxima/tile/orange1: 128 144 r
+:proxima/tile/orange1: 192 144 r
+:proxima/tile/orange1: 128 208 r
+:proxima/tile/orange1: 192 208 r
+:proxima/tile/orange1: 128 272 r
+:proxima/tile/orange1: 192 336 r
+:proxima/tile/64.S: 384 336
+:proxima/tile/64.S: 384 272
+:proxima/tile/64.S: 384 208
+:proxima/tile/64.S: 384 144
+:proxima/tile/64.S: 384 80
+:proxima/tile/orange1: 256 144 r
+:proxima/tile/orange1: 320 208 r
+:proxima/tile/orange1: 256 272 r
+:proxima/tile/orange1: 320 272 r
+:proxima/tile/orange1: 256 336 r
+:proxima/tile/orange1: 320 336 r
+:proxima/tile/orange1: 256 80 r
+:proxima/tile/orange1: 320 80 r
+:proxima/tile/orange2: 320 144
+:proxima/tile/orange2: 256 208
+:proxima/tile/orange2: 192 272
+:proxima/tile/orange2: 128 336
+:proxima/tile/orange2s: 352 112
+:proxima/tile/orange2s: 288 176
+:proxima/tile/orange2s: 320 208
+:proxima/tile/orange2s: 224 240
+:proxima/tile/orange2s: 256 272
+:proxima/tile/orange2s: 160 304
+:proxima/tile/orange2s: 192 336
+:proxima/tile/red1: 960 336
+:proxima/tile/red1: 896 336
+:proxima/tile/red1: 960 272
+:proxima/tile/red1: 896 272
+:proxima/tile/red1: 960 240
+:proxima/tile/red1: 896 240
+:proxima/tile/red1: 1024 336
+:proxima/tile/red1: 1024 272
+:proxima/tile/red1: 1024 208
+:proxima/tile/red1: 1088 272
+:proxima/tile/red1: 1088 208
+:proxima/tile/cyan2: 448 80
+:proxima/tile/cyan2: 512 80
+:proxima/tile/cyan1: 448 112
+:proxima/tile/cyan1: 512 112
+:proxima/tile/cyan1: 448 176
+:proxima/tile/cyan1: 512 176
+:proxima/tile/cyan1: 448 240
+:proxima/tile/cyan1: 512 240
+:proxima/tile/cyan1: 448 304
+:proxima/tile/cyan1: 512 304
+:proxima/tile/cyan2: 448 368
+:proxima/tile/cyan2: 512 368
+:proxima/tile/red3: 1088 336
+:proxima/tile/red3: 768 336
+:proxima/tile/red3: 832 336
+:proxima/tile/red3s: 576 368
+:proxima/tile/red3s: 608 368
+:proxima/tile/red3s: 640 368
+:proxima/tile/red3s: 672 368
+:proxima/tile/green3: 0 0
+:proxima/tile/green3: 0 64
+:proxima/tile/green3: 0 128
+:proxima/tile/green3: 0 192
+:proxima/tile/blue2b: 0 192 d
+:proxima/tile/green3: 64 -32
+:proxima/tile/green3: 128 -32
+:proxima/tile/green3: 192 -32
+:proxima/tile/green3: 256 -32
+:proxima/tile/green3: 320 -32
+:proxima/tile/green3: 384 -32
+:proxima/tile/green3: 448 -32
+:proxima/tile/green3: 512 -32
+:proxima/tile/green3: 576 -32
+:proxima/tile/green3: 640 -32
+:proxima/tile/green3: 704 -32
+:proxima/tile/green3: 768 -32
+:proxima/tile/green3: 832 -32
+:proxima/tile/green3: 896 -32
+:proxima/tile/green3: 960 -32
+:proxima/tile/green3: 1024 -32
+:proxima/tile/green3: 1088 -32
+:proxima/tile/green3: 1152 -32
+:proxima/tile/green3: 1216 -32
+:proxima/tile/green3: 1216 32
+:proxima/tile/green3: 1216 96
+:proxima/tile/green3: 1216 160
+:proxima/tile/green3: 1216 224
+:proxima/tile/blue1b: 1216 224 d
+:proxima/tile/64.S: 704 240
+:proxima/tile/64.S: 704 136
+:proxima/tile/64.S: 704 32

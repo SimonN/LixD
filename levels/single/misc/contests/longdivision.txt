@@ -1,0 +1,433 @@
+$BUILT 2019-06-15 23:15:19
+$AUTHOR Simon
+$ENGLISH Long Division
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 832
+#SIZE_Y 400
+
+#INITIAL 30
+#REQUIRED 30
+#SPAWN_INTERVAL 5
+
+#BUILDER 1
+#DIGGER 6
+#BATTER 6
+#EXPLODER2 0
+
+:geoo/sandstone/fennec.H: 33 86
+:geoo/sandstone/fennec.H: 77 33
+:geoo/sandstone/fennec.H: 153 16
+
+:geoo/sandstone/Goal.G: 202 256
+
+:geoo/construction/rod_rust/end_rect_dd: 97 103 rr
+:geoo/construction/rod_rust/cross_diag_lu: 98 100
+:geoo/construction/rod_rust/straight_diagu32: 94 98 frrr
+:geoo/construction/rod_rust/link_du_h: 114 84
+:geoo/sandstone/slopes/32x64rb: 69 113
+:geoo/sandstone/slopes/16x32lb: 100 113
+:geoo/sandstone/64x16: 100 120 rrr
+:geoo/sandstone/pillar_top_jaggedr: 230 320 rr
+:geoo/sandstone/slopes/32x16lb: 210 352
+:matt/beach/nighttime/15: 202 325
+:geoo/sandstone/slopes/16x32lt: 234 320
+:geoo/sandstone/8x16: 216 360 fr
+:matt/bricks/10a: 204 332 rr
+:amanda/forest/rope_c: 212 332
+:geoo/construction/fence_rust_32x32: 203 333
+:geoo/sandstone/8x16: 239 368 fr
+:geoo/sandstone/8x16: 223 368 fr
+:geoo/sandstone/pillar_top_jaggedr: 195 350
+:geoo/abstract/pipes/central1: 186 344 rrr
+:geoo/construction/squarebrickx24_dedicated_to_ccx: 187 357
+:geoo/abstract/pipes/central1: 259 344 rrr
+:geoo/sandstone/pillar_top_jaggedr: 250 347 f
+:geoo/sandstone/slopes/16x32rb: 263 352
+:geoo/construction/rod_rust/end_rect: 162 113 rrr
+:geoo/sandstone/pillar_top_jaggedr: 114 205
+:geoo/construction/rod_rust/straight32: 112 187 r
+:geoo/sandstone/pillar_top_jaggedr: 112 210
+:geoo/sandstone/pillar_top_jaggedr: 168 90 rr
+:geoo/construction/rod_rust/end_rect: 181 113 rrr
+:geoo/construction/rod_rust/end_rect: 153 112 frrr
+:geoo/sandstone/pillar_top_jaggedr: 153 89 rr
+:geoo/sandstone/pillar_32: 150 64 fd
+:geoo/sandstone/slopes/16x32rb: 35 177
+:geoo/sandstone/slopes/16x32lb: 42 184
+:geoo/sandstone/slopes/32x16rb: 24 194
+:geoo/sandstone/32x32: 24 207
+:geoo/sandstone/arc_small: 186 320
+:geoo/abstract/pipes/central1: 136 208 rrr
+:geoo/sandstone/pillar_32: 40 301 f
+:geoo/sandstone/pillar_32: 40 325 f
+:geoo/sandstone/pillar_top_jaggedl: 65 376 frr
+:geoo/sandstone/pillar_32: 40 349
+:geoo/sandstone/pillar_32: 40 376
+:geoo/sandstone/pillar_32: 148 382
+:geoo/sandstone/pillar_top_jaggedl: 148 357
+:geoo/sandstone/pillar_32: 128 368
+:geoo/sandstone/pillar_32: 128 349
+:geoo/sandstone/pillar_32: 128 285
+:geoo/abstract/pipes/central1: 200 96 rrr
+:geoo/abstract/pipes/central1: 144 96 rrr
+:geoo/sandstone/arc_small: 128 96
+:geoo/abstract/pipes/central1: 80 208 rrr
+:geoo/sandstone/pillar_32: 152 144 fd
+:geoo/sandstone/pillar_top_jaggedr: 141 164
+:geoo/construction/rod_rust/straight_diagd32: 142 155 rrr
+:geoo/sandstone/pillar_top_jaggedr: 144 168
+:geoo/sandstone/arc_big: 48 175
+:geoo/sandstone/slopes/16x32rb: 138 212
+:geoo/sandstone/pillar_top_ext: 24 238
+:geoo/sandstone/slopes/16x32lb: 152 208
+:geoo/sandstone/pillar_top_ext: 112 238
+:geoo/sandstone/pillar_top_shaded: 128 253
+:geoo/sandstone/pillar_top_shaded: 40 253
+:geoo/sandstone/pillar_32: 40 285
+:geoo/sandstone/pillar_32: 128 317
+:geoo/sandstone/pillar_top_ext: 186 376
+:geoo/sandstone/pillar_top_shaded: 199 391
+:geoo/sandstone/slopes/32x16lb: 273 362
+:geoo/sandstone/slopes/16x32lb: 278 344
+:geoo/sandstone/pillar_top_ext: 239 376
+:geoo/sandstone/pillar_top_shaded: 257 391
+:geoo/sandstone/8x8: 37 219
+:amanda/forest/rope: 304 145 r
+:amanda/forest/rope_b: 304 142 r
+:amanda/forest/rope: 320 145 r
+:amanda/forest/rope: 336 145 r
+:amanda/forest/rope: 352 145 r
+:amanda/forest/rope: 368 145 r
+:amanda/forest/rope: 384 145 r
+:amanda/forest/rope: 400 145 r
+:amanda/forest/rope: 416 145 r
+:amanda/forest/rope: 432 145 r
+:amanda/forest/rope: 448 145 r
+:amanda/forest/rope: 464 145 r
+:amanda/forest/rope: 480 145 r
+:amanda/forest/rope: 496 145 r
+:amanda/forest/rope: 512 145 r
+:amanda/forest/rope: 528 145 r
+:amanda/forest/rope: 544 145 r
+:amanda/forest/rope: 560 145 r
+:amanda/forest/rope: 576 145 r
+:amanda/forest/rope: 592 145 r
+:amanda/forest/rope: 608 145 r
+:amanda/forest/rope: 624 145 r
+:amanda/forest/rope: 640 145 r
+:amanda/forest/rope: 656 145 r
+:geoo/construction/wall/small_brick2: 224 96
+:geoo/construction/wall/small_brick1: 256 96
+:geoo/construction/wall/small_brick3: 288 96
+:geoo/construction/wall/small_brick2: 320 96
+:geoo/construction/wall/small_brick1: 352 96
+:geoo/construction/wall/small_brick3: 384 96
+:geoo/construction/wall/small_brick1: 416 96
+:geoo/construction/wall/small_brick2: 448 96
+:geoo/construction/wall/small_brick1: 480 96
+:geoo/construction/wall/small_brick3: 512 96
+:geoo/construction/wall/small_brick2: 544 96
+:geoo/construction/wall/small_brick1: 576 96
+:geoo/construction/wall/small_brick3: 608 96
+:geoo/construction/wall/small_brick3: 640 96
+:geoo/construction/wall/small_brick2: 672 96
+:geoo/construction/wall/small_brick1: 704 96
+:geoo/construction/wall/small_brick3: 736 96
+:geoo/construction/wall/small_brick3: 768 96
+:amanda/forest/rope: 672 145 r
+:amanda/forest/rope: 688 145 r
+:amanda/forest/rope: 704 145 r
+:amanda/forest/rope: 720 145 r
+:amanda/forest/rope: 736 145 r
+:amanda/forest/rope: 752 145 r
+:amanda/forest/rope: 768 145 r
+:amanda/forest/rope: 784 193 r
+:amanda/forest/rope_b: 784 190 r
+:amanda/forest/rope: 787 183 frr
+:amanda/forest/rope_c: 792 174 fr
+:amanda/forest/rope_c: 786 183 f
+:amanda/forest/rope_c: 791 180 f
+:geoo/sandstone/pillar_top_ext: 128 126
+:geoo/sandstone/pillar_top_ext: 158 126
+:geoo/sandstone/pillar_top_jaggedr: 120 141 f
+:geoo/sandstone/pillar_32: 152 122 fd
+:geoo/construction/rod_rust/straight_diagd32: 168 134 f
+:geoo/sandstone/slopes/16x32lt: 115 144 f
+:geoo/sandstone/pillar_32: 176 64 fd
+:geoo/construction/rod_rust/straight_diagu8: 174 135 d
+:geoo/construction/rod_rust/straight_diagu8: 179 152 d
+:geoo/construction/rod_rust/straight_diagu8: 196 136 d
+:geoo/construction/wall/small_brickdiag_bu: 167 136 d
+:geoo/abstract/cvblocks/005: 184 125 d
+:geoo/abstract/cvblocks/005: 184 128 d
+:geoo/sandstone/slopes/32x16lb: 299 370 d
+:geoo/sandstone/8x8: 164 230
+:geoo/sandstone/pillar_32: 122 64 fd
+:geoo/sandstone/slopes/16x32rt: 115 143 d
+:geoo/sandstone/slopes/16x32rt: 125 141 d
+:geoo/sandstone/16x16: 118 133 d
+:geoo/sandstone/8x16: 131 155 d
+:geoo/sandstone/slopes/32x16lt: 103 89 d
+:amanda/forest/rope_b: 298 138
+:amanda/forest/rope_b: 320 142 r
+:amanda/forest/rope_b: 336 142 r
+:amanda/forest/rope_b: 352 142 r
+:amanda/forest/rope_b: 368 142 r
+:amanda/forest/rope_b: 384 142 r
+:amanda/forest/rope_b: 400 142 r
+:amanda/forest/rope_b: 416 142 r
+:amanda/forest/rope_b: 432 142 r
+:amanda/forest/rope_b: 448 142 r
+:amanda/forest/rope_b: 464 142 r
+:amanda/forest/rope_b: 480 142 r
+:amanda/forest/rope_b: 496 142 r
+:amanda/forest/rope_b: 512 142 r
+:amanda/forest/rope_b: 528 142 r
+:amanda/forest/rope_b: 544 142 r
+:amanda/forest/rope_b: 560 142 r
+:amanda/forest/rope_b: 576 142 r
+:amanda/forest/rope_b: 592 142 r
+:amanda/forest/rope_b: 608 142 r
+:amanda/forest/rope_b: 624 142 r
+:amanda/forest/rope_b: 640 142 r
+:amanda/forest/rope_b: 656 142 r
+:amanda/forest/rope_b: 672 142 r
+:amanda/forest/rope_b: 688 142 r
+:amanda/forest/rope_b: 704 142 r
+:amanda/forest/rope_b: 720 142 r
+:amanda/forest/rope_b: 736 142 r
+:amanda/forest/rope_b: 752 142 r
+:amanda/forest/rope_b: 768 142 r
+:amanda/forest/rope_c: 304 147 r
+:amanda/forest/rope_c: 320 147 r
+:amanda/forest/rope_c: 336 147 r
+:amanda/forest/rope_c: 352 147 r
+:amanda/forest/rope_c: 368 147 r
+:amanda/forest/rope_c: 384 147 r
+:amanda/forest/rope_c: 400 147 r
+:amanda/forest/rope_c: 416 147 r
+:amanda/forest/rope_c: 432 147 r
+:amanda/forest/rope_c: 448 147 r
+:amanda/forest/rope_c: 464 147 r
+:amanda/forest/rope_c: 480 147 r
+:amanda/forest/rope_c: 496 147 r
+:amanda/forest/rope_c: 512 147 r
+:amanda/forest/rope_c: 528 147 r
+:amanda/forest/rope_c: 544 147 r
+:amanda/forest/rope_c: 560 147 r
+:amanda/forest/rope_c: 576 147 r
+:amanda/forest/rope_c: 592 147 r
+:amanda/forest/rope_c: 608 147 r
+:amanda/forest/rope_c: 624 147 r
+:amanda/forest/rope_c: 640 147 r
+:amanda/forest/rope_c: 656 147 r
+:amanda/forest/rope_c: 672 147 r
+:amanda/forest/rope_c: 688 147 r
+:amanda/forest/rope_c: 704 147 r
+:amanda/forest/rope_c: 720 147 r
+:amanda/forest/rope_c: 736 147 r
+:amanda/forest/rope_c: 752 147 r
+:amanda/forest/rope_c: 768 147 r
+:amanda/forest/rope_c: 784 195 r
+:amanda/forest/rope_c: 791 187 f
+:amanda/forest/rope: 304 193 r
+:amanda/forest/rope: 320 193 r
+:amanda/forest/rope: 336 193 r
+:amanda/forest/rope: 352 193 r
+:amanda/forest/rope: 368 193 r
+:amanda/forest/rope: 384 193 r
+:amanda/forest/rope: 400 193 r
+:amanda/forest/rope: 416 193 r
+:amanda/forest/rope: 432 193 r
+:amanda/forest/rope: 448 193 r
+:amanda/forest/rope: 464 193 r
+:amanda/forest/rope: 480 193 r
+:amanda/forest/rope: 496 193 r
+:amanda/forest/rope: 512 193 r
+:amanda/forest/rope: 528 193 r
+:amanda/forest/rope: 544 193 r
+:amanda/forest/rope: 560 193 r
+:amanda/forest/rope: 576 193 r
+:amanda/forest/rope: 592 193 r
+:amanda/forest/rope: 608 193 r
+:amanda/forest/rope: 624 193 r
+:amanda/forest/rope: 640 193 r
+:amanda/forest/rope: 656 193 r
+:amanda/forest/rope: 672 193 r
+:amanda/forest/rope: 688 193 r
+:amanda/forest/rope: 704 193 r
+:amanda/forest/rope: 720 193 r
+:amanda/forest/rope: 736 193 r
+:amanda/forest/rope: 752 193 r
+:amanda/forest/rope: 768 193 r
+:amanda/forest/rope_b: 304 190 r
+:amanda/forest/rope_b: 320 190 r
+:amanda/forest/rope_b: 336 190 r
+:amanda/forest/rope_b: 352 190 r
+:amanda/forest/rope_b: 368 190 r
+:amanda/forest/rope_b: 384 190 r
+:amanda/forest/rope_b: 400 190 r
+:amanda/forest/rope_b: 416 190 r
+:amanda/forest/rope_b: 432 190 r
+:amanda/forest/rope_b: 448 190 r
+:amanda/forest/rope_b: 464 190 r
+:amanda/forest/rope_b: 480 190 r
+:amanda/forest/rope_b: 496 190 r
+:amanda/forest/rope_b: 512 190 r
+:amanda/forest/rope_b: 528 190 r
+:amanda/forest/rope_b: 544 190 r
+:amanda/forest/rope_b: 560 190 r
+:amanda/forest/rope_b: 576 190 r
+:amanda/forest/rope_b: 592 190 r
+:amanda/forest/rope_b: 608 190 r
+:amanda/forest/rope_b: 624 190 r
+:amanda/forest/rope_b: 640 190 r
+:amanda/forest/rope_b: 656 190 r
+:amanda/forest/rope_b: 672 190 r
+:amanda/forest/rope_b: 688 190 r
+:amanda/forest/rope_b: 704 190 r
+:amanda/forest/rope_b: 720 190 r
+:amanda/forest/rope_b: 736 190 r
+:amanda/forest/rope_b: 752 190 r
+:amanda/forest/rope_b: 768 190 r
+:amanda/forest/rope_c: 304 195 r
+:amanda/forest/rope_c: 320 195 r
+:amanda/forest/rope_c: 336 195 r
+:amanda/forest/rope_c: 352 195 r
+:amanda/forest/rope_c: 368 195 r
+:amanda/forest/rope_c: 384 195 r
+:amanda/forest/rope_c: 400 195 r
+:amanda/forest/rope_c: 416 195 r
+:amanda/forest/rope_c: 432 195 r
+:amanda/forest/rope_c: 448 195 r
+:amanda/forest/rope_c: 464 195 r
+:amanda/forest/rope_c: 480 195 r
+:amanda/forest/rope_c: 496 195 r
+:amanda/forest/rope_c: 512 195 r
+:amanda/forest/rope_c: 528 195 r
+:amanda/forest/rope_c: 544 195 r
+:amanda/forest/rope_c: 560 195 r
+:amanda/forest/rope_c: 576 195 r
+:amanda/forest/rope_c: 592 195 r
+:amanda/forest/rope_c: 608 195 r
+:amanda/forest/rope_c: 624 195 r
+:amanda/forest/rope_c: 640 195 r
+:amanda/forest/rope_c: 656 195 r
+:amanda/forest/rope_c: 672 195 r
+:amanda/forest/rope_c: 688 195 r
+:amanda/forest/rope_c: 704 195 r
+:amanda/forest/rope_c: 720 195 r
+:amanda/forest/rope_c: 736 195 r
+:amanda/forest/rope_c: 752 195 r
+:amanda/forest/rope_c: 768 195 r
+:amanda/forest/rope: 304 241 r
+:amanda/forest/rope: 320 241 r
+:amanda/forest/rope: 336 241 r
+:amanda/forest/rope: 352 241 r
+:amanda/forest/rope: 368 241 r
+:amanda/forest/rope: 384 241 r
+:amanda/forest/rope: 400 241 r
+:amanda/forest/rope: 416 241 r
+:amanda/forest/rope: 432 241 r
+:amanda/forest/rope: 448 241 r
+:amanda/forest/rope: 464 241 r
+:amanda/forest/rope: 480 241 r
+:amanda/forest/rope: 496 241 r
+:amanda/forest/rope: 512 241 r
+:amanda/forest/rope: 528 241 r
+:amanda/forest/rope: 544 241 r
+:amanda/forest/rope: 560 241 r
+:amanda/forest/rope: 576 241 r
+:amanda/forest/rope: 592 241 r
+:amanda/forest/rope: 608 241 r
+:amanda/forest/rope: 624 241 r
+:amanda/forest/rope: 640 241 r
+:amanda/forest/rope: 656 241 r
+:amanda/forest/rope: 672 241 r
+:amanda/forest/rope: 688 241 r
+:amanda/forest/rope: 704 241 r
+:amanda/forest/rope: 720 241 r
+:amanda/forest/rope: 736 241 r
+:amanda/forest/rope: 752 241 r
+:amanda/forest/rope: 768 241 r
+:amanda/forest/rope: 784 241 r
+:amanda/forest/rope_b: 304 238 r
+:amanda/forest/rope_b: 320 238 r
+:amanda/forest/rope_b: 336 238 r
+:amanda/forest/rope_b: 352 238 r
+:amanda/forest/rope_b: 368 238 r
+:amanda/forest/rope_b: 384 238 r
+:amanda/forest/rope_b: 400 238 r
+:amanda/forest/rope_b: 416 238 r
+:amanda/forest/rope_b: 432 238 r
+:amanda/forest/rope_b: 448 238 r
+:amanda/forest/rope_b: 464 238 r
+:amanda/forest/rope_b: 480 238 r
+:amanda/forest/rope_b: 496 238 r
+:amanda/forest/rope_b: 512 238 r
+:amanda/forest/rope_b: 528 238 r
+:amanda/forest/rope_b: 544 238 r
+:amanda/forest/rope_b: 560 238 r
+:amanda/forest/rope_b: 576 238 r
+:amanda/forest/rope_b: 592 238 r
+:amanda/forest/rope_b: 608 238 r
+:amanda/forest/rope_b: 624 238 r
+:amanda/forest/rope_b: 640 238 r
+:amanda/forest/rope_b: 656 238 r
+:amanda/forest/rope_b: 672 238 r
+:amanda/forest/rope_b: 688 238 r
+:amanda/forest/rope_b: 704 238 r
+:amanda/forest/rope_b: 720 238 r
+:amanda/forest/rope_b: 736 238 r
+:amanda/forest/rope_b: 752 238 r
+:amanda/forest/rope_b: 768 238 r
+:amanda/forest/rope_c: 791 235 f
+:amanda/forest/rope_b: 784 238 r
+:amanda/forest/rope_c: 304 243 r
+:amanda/forest/rope_c: 320 243 r
+:amanda/forest/rope_c: 336 243 r
+:amanda/forest/rope_c: 352 243 r
+:amanda/forest/rope_c: 368 243 r
+:amanda/forest/rope_c: 384 243 r
+:amanda/forest/rope_c: 400 243 r
+:amanda/forest/rope_c: 416 243 r
+:amanda/forest/rope_c: 432 243 r
+:amanda/forest/rope_c: 448 243 r
+:amanda/forest/rope_c: 464 243 r
+:amanda/forest/rope_c: 480 243 r
+:amanda/forest/rope_c: 496 243 r
+:amanda/forest/rope_c: 512 243 r
+:amanda/forest/rope_c: 528 243 r
+:amanda/forest/rope_c: 544 243 r
+:amanda/forest/rope_c: 560 243 r
+:amanda/forest/rope_c: 576 243 r
+:amanda/forest/rope_c: 592 243 r
+:amanda/forest/rope_c: 608 243 r
+:amanda/forest/rope_c: 624 243 r
+:amanda/forest/rope_c: 640 243 r
+:amanda/forest/rope_c: 656 243 r
+:amanda/forest/rope_c: 672 243 r
+:amanda/forest/rope_c: 688 243 r
+:amanda/forest/rope_c: 704 243 r
+:amanda/forest/rope_c: 720 243 r
+:amanda/forest/rope_c: 736 243 r
+:amanda/forest/rope_c: 752 243 r
+:amanda/forest/rope_c: 768 243 r
+:amanda/forest/rope_c: 784 243 r
+:geoo/construction/wall/small_brick3: 800 173 d
+:geoo/construction/wall/small_brick3: 294 132 d
+:amanda/forest/rope_b: 298 186
+:geoo/construction/wall/small_brick3: 294 180 d
+:amanda/forest/rope_b: 298 234
+:geoo/construction/wall/small_brick3: 294 228 d
+:amanda/forest/rope: 784 145 r
+:amanda/forest/rope_c: 784 147 r
+:amanda/forest/rope_c: 791 139 f
+:amanda/forest/rope_b: 784 142 r
+:geoo/construction/wall/small_brick3: 784 132 d
+:geoo/construction/wall/small_brick3: 784 228 d
+:geoo/sandstone/32x32: 186 320
+:geoo/sandstone/32x32: 250 320
+:geoo/sandstone/8x8: 198 332
+:geoo/sandstone/8x8: 262 332

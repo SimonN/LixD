@@ -1,0 +1,93 @@
+$BUILT 2019-06-15 21:10:12
+$AUTHOR NaOH
+$ENGLISH Amethyst Nightmare Shrine
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 688
+#SIZE_Y 256
+
+#INITIAL 100
+#REQUIRED 60
+#SPAWN_INTERVAL 34
+
+#CLIMBER 1
+#EXPLODER2 1
+#BLOCKER 1
+#BUILDER 2
+#PLATFORMER 2
+#BASHER 1
+#JUMPER 2
+#BATTER 1
+
+:matt/marble/Hatch.H: 64 32
+:matt/marble/Hatch.H: 560 32 r
+
+:proxima/tile/goal.G: 320 35
+
+:amanda/forest/frog.T: 64 128
+
+:amanda/tar.W: 352 224
+:amanda/tar.W: 224 224
+
+:proxima/tile/pink2: 288 96
+:proxima/tile/pink1a: 288 112 d
+:proxima/tile/pink2: 352 96
+:proxima/tile/pink5s: 464 96
+:proxima/tile/pink5s: 496 96
+:geoo/construction/stairsbrick_rd_8: 448 152 frr
+:proxima/tile/pink1a: 464 144
+:proxima/tile/pink1a: 448 160
+:geoo/construction/stairsbrick_rd_8: 440 176
+:proxima/tile/pink1a: 464 176
+:proxima/tile/pink5s: 464 208
+:proxima/tile/pink5s: 496 208
+:geoo/construction/stairsbrick_rd_8: 520 176 frr
+:proxima/tile/pink1a: 496 176
+:proxima/tile/pink1a: 480 192
+:proxima/tile/pink1a: 512 160
+:geoo/construction/stairsbrick_rd_8: 512 152
+:proxima/tile/pink1a: 496 144
+:proxima/tile/pink4: 464 240
+:geoo/steel/16x32o.S: 464 230
+:proxima/tile/pink4: 528 240
+:proxima/tile/pink4: 592 240
+:proxima/tile/pink4: 96 240
+:proxima/tile/pink4: 160 240
+:proxima/tile/pink4: 32 240
+:geoo/construction/stairsbrick_rd_8: 144 120 frr
+:geoo/construction/stairsbrick_rd_8: 144 152 frr
+:proxima/tile/pink1a: 160 144
+:geoo/construction/stairsbrick_rd_8: 136 176
+:proxima/tile/pink1a: 160 176
+:proxima/tile/pink5s: 160 208
+:proxima/tile/pink5s: 192 208
+:geoo/construction/stairsbrick_rd_8: 216 176 frr
+:proxima/tile/pink1a: 192 176
+:proxima/tile/pink1a: 176 192
+:proxima/tile/pink1a: 208 160
+:geoo/construction/stairsbrick_rd_8: 208 152
+:proxima/tile/pink1a: 192 144
+:proxima/tile/pink1a: 144 160
+:proxima/tile/green1: 64 176
+:proxima/tile/green1: 560 176
+:proxima/tile/pink3: 656 192
+:proxima/tile/pink2: 656 64
+:proxima/tile/pink3: 656 128
+:proxima/tile/pink3: 656 0
+:proxima/tile/pink2: 592 -32
+:proxima/tile/pink3: -32 192
+:proxima/tile/pink2: -32 128
+:proxima/tile/pink3: -32 64
+:proxima/tile/pink3: -32 0
+:proxima/tile/pink2: 32 -32
+:proxima/tile/pink3: 528 -48
+:proxima/tile/pink3: 96 -48
+:geoo/steel/16x32o.S: 208 230
+:proxima/tile/pink1a: 288 96 d
+:geoo/construction/stairsbrick_rd_8: 304 104 frr
+:proxima/tile/pink1a: 320 96
+:proxima/tile/pink1a: 288 112
+:proxima/tile/pink1a: 144 128
+:proxima/tile/pink5s: 160 112
+:proxima/tile/pink5s: 192 112
+:geoo/steel/16x32o.S: 480 128 fr

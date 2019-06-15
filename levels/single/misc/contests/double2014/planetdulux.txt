@@ -1,0 +1,859 @@
+$BUILT 2014-11-07 18:00:53
+$AUTHOR Akseli
+$GERMAN 
+$ENGLISH Planet Dulux
+
+#SIZE_X 968
+#SIZE_Y 622
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 20
+#REQUIRED 19
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 1
+#JUMPER 2
+#CLIMBER 2
+#CUBER 0
+#EXPLODER2 1
+#BLOCKER 1
+#BATTER 1
+#BUILDER 2
+#PLATFORMER 2
+#BASHER 2
+#MINER 2
+#DIGGER 1
+
+:amanda/occult/hatch_tentacle.H: 546 270
+
+:amanda/occult/goal_skull.G: 468 152
+
+:amanda/steel/steel32x32.S: 324 152
+:amanda/steel/steel32x32.S: 356 152
+:amanda/steel/steel32x32.S: 388 152
+:amanda/steel/steel32x32.S: 420 152
+:amanda/steel/steel32x32.S: 452 152
+:amanda/steel/steel32x32.S: 484 152
+:amanda/steel/steel32x32.S: 516 152
+:amanda/steel/steel32x32.S: 548 152
+:amanda/steel/steel32x32.S: 324 376
+:amanda/steel/steel32x32.S: 356 440
+:amanda/steel/steel32x32.S: 388 440
+:amanda/steel/steel32x32.S: 420 440
+:amanda/steel/steel32x32.S: 452 440
+:amanda/steel/steel32x32.S: 484 440
+:amanda/steel/steel32x32.S: 516 440
+:amanda/steel/steel32x32.S: 548 440
+:amanda/steel/steel32x32.S: 324 184
+:amanda/steel/steel32x32.S: 324 216
+:amanda/steel/steel32x32.S: 324 248
+:amanda/steel/steel32x32.S: 324 280
+:amanda/steel/steel32x32.S: 612 248
+:amanda/steel/steel32x32.S: 612 280
+:amanda/steel/steel32x32.S: 612 312
+:amanda/steel/steel32x32.S: 612 344
+:amanda/steel/steel32x32.S: 324 312
+:amanda/steel/steel32x32.S: 324 344
+:amanda/steel/steel32x32.S: 612 376
+:amanda/steel/steel32x32.S: 612 408
+:amanda/steel/steel32x32.S: 324 440
+:amanda/steel/steel32x32.S: 324 408
+:amanda/steel/steel32x32.S: 580 440
+:amanda/steel/steel32x32.S: 612 440
+:amanda/steel/steel32x32.S: 580 152
+:amanda/steel/steel32x32.S: 612 152
+:amanda/steel/steel32x32.S: 612 184
+:amanda/steel/steel32x32.S: 612 216
+:amanda/occult/cube: 356 248
+:amanda/occult/cube: 356 264
+:amanda/occult/cube: 372 248
+:amanda/occult/cube: 372 264
+:amanda/occult/cube: 388 296
+:amanda/occult/cube: 420 328
+:amanda/occult/cube: 404 280
+:amanda/occult/cube: 404 328
+:amanda/occult/cube: 420 280
+:amanda/occult/cube: 436 264
+:amanda/occult/cube: 420 264
+:amanda/occult/cube: 452 264
+:amanda/occult/cube: 372 328
+:amanda/occult/cube: 484 296
+:amanda/occult/cube: 500 280
+:amanda/occult/cube: 500 296
+:amanda/occult/cube: 388 408
+:amanda/occult/cube: 388 424
+:amanda/occult/cube: 404 408
+:amanda/occult/cube: 404 424
+:amanda/occult/cube: 484 328
+:amanda/occult/cube: 420 392
+:amanda/occult/cube: 436 376
+:amanda/occult/cube: 436 392
+:amanda/occult/cube: 500 248
+:amanda/occult/cube: 516 264
+:amanda/occult/cube: 564 264
+:amanda/occult/cube: 452 376
+:amanda/occult/cube: 452 392
+:amanda/occult/cube: 436 248
+:amanda/occult/cube: 468 392
+:amanda/occult/cube: 452 360
+:amanda/occult/cube: 468 344
+:amanda/occult/cube: 468 360
+:amanda/occult/cube: 388 232
+:amanda/occult/cube: 404 216
+:amanda/occult/cube: 404 232
+:amanda/occult/cube: 484 344
+:amanda/occult/cube: 500 408
+:amanda/occult/cube: 500 344
+:amanda/occult/cube: 500 360
+:amanda/occult/cube: 564 296
+:amanda/occult/cube: 580 296
+:amanda/occult/cube: 548 264
+:amanda/occult/cube: 596 296
+:amanda/occult/cube: 388 184
+:amanda/occult/cube: 388 200
+:amanda/occult/cube: 372 184
+:amanda/occult/cube: 372 200
+:amanda/occult/cube: 548 216
+:amanda/occult/cube: 548 232
+:amanda/occult/cube: 564 216
+:amanda/occult/cube: 580 248
+:amanda/occult/cube: 484 408
+:amanda/occult/cube: 500 424
+:amanda/occult/cube: 484 392
+:amanda/occult/cube: 580 424
+:amanda/occult/cube: 548 408
+:amanda/occult/cube: 564 392
+:amanda/occult/cube: 596 424
+:amanda/occult/cube: 436 280
+:amanda/occult/cube: 564 376
+:amanda/occult/cube: 580 376
+:amanda/occult/cube: 580 360
+:amanda/occult/cube: 516 280
+:amanda/occult/cube: 516 296
+:amanda/occult/cube: 532 296
+:amanda/occult/cube: 548 312
+:amanda/occult/cube: 548 328
+:amanda/occult/cube: 564 312
+:amanda/occult/cube: 564 328
+:amanda/occult/cube: 516 184
+:amanda/occult/cube: 516 232
+:amanda/occult/cube: 532 184
+:amanda/occult/cube: 532 232
+:amanda/occult/cube: 420 216
+:amanda/occult/cube: 356 312
+:amanda/occult/cube: 436 216
+:amanda/occult/cube: 580 264
+:amanda/occult/cube: 468 184
+:amanda/occult/cube: 468 200
+:amanda/occult/cube: 356 296
+:amanda/occult/cube: 388 344
+:amanda/occult/cube: 372 296
+:amanda/occult/cube: 388 360
+:amanda/occult/cube: 356 376
+:amanda/occult/cube: 356 392
+:amanda/occult/cube: 372 392
+:amanda/occult/cube: 516 376
+:amanda/occult/cube: 516 424
+:amanda/occult/cube: 532 376
+:amanda/occult/cube: 532 392
+:amanda/occult/cube: 484 216
+:amanda/occult/cube: 484 232
+:amanda/occult/cube: 500 216
+:amanda/occult/cube: 500 232
+:amanda/occult/cube: 548 392
+:amanda/occult/cube: 516 360
+:amanda/occult/cube: 404 296
+:amanda/occult/cube: 452 280
+:amanda/occult/cube: 532 312
+:amanda/occult/cube: 484 200
+:amanda/occult/cube: 468 216
+:amanda/occult/cube: 452 216
+:amanda/occult/cube: 436 200
+:amanda/occult/cube: 388 248
+:amanda/occult/cube: 372 232
+:amanda/occult/cube: 420 408
+:amanda/occult/cube: 436 296
+:amanda/occult/cube: 372 408
+:amanda/occult/cube: 452 408
+:amanda/occult/cube: 452 248
+:amanda/occult/cube: 468 264
+:amanda/occult/cube: 404 200
+:amanda/occult/cube: 356 184
+:amanda/occult/cube: 596 184
+:amanda/occult/cube: 580 184
+:amanda/occult/cube: 596 232
+:amanda/occult/cube: 580 200
+:amanda/occult/cube: 596 248
+:amanda/occult/cube: 564 200
+:amanda/occult/cube: 516 248
+:amanda/occult/cube: 404 344
+:amanda/occult/cube: 356 328
+:amanda/occult/cube: 372 344
+:amanda/occult/cube: 436 328
+:amanda/occult/cube: 356 280
+:amanda/occult/overlay32x32_d: 692 2
+:amanda/steel/steel_flange_right24x16.S: 700 62
+:amanda/occult/overlay32x32_c: 660 0
+:amanda/occult/overlay32x32_d: 724 2
+:amanda/occult/overlay32x32_c: 756 0 frr
+:amanda/occult/overlay32x32_d: 772 46 r
+:amanda/occult/overlay32x32_c: 774 14 r
+:amanda/occult/overlay32x32_d: 772 78 r
+:amanda/occult/overlay32x32_c: 774 110 frrr
+:amanda/occult/overlay32x32_d: 646 46 fr
+:amanda/occult/overlay32x32_c: 644 14 fr
+:amanda/occult/overlay32x32_d: 646 78 fr
+:amanda/occult/overlay32x32_c: 644 110 rrr
+:amanda/occult/overlay32x32_d: 724 122 rr
+:amanda/occult/overlay32x32_c: 756 124 rr
+:amanda/occult/overlay32x32_d: 692 122 rr
+:amanda/occult/overlay32x32_c: 660 124 f
+:amanda/steel/steel_flange_left24x16.S: 724 62
+:amanda/steel/steel_flange_left24x16.S: 724 78 f
+:amanda/steel/steel_flange_right24x16.S: 700 78 f
+:amanda/occult/wax_details_drip: 678 46 fr
+:amanda/occult/wax_details_drip: 678 78 fr
+:amanda/occult/wax_details_drip: 737 78 r
+:amanda/occult/wax_details_drip: 694 87 f
+:amanda/occult/wax_details_drip: 737 46 r
+:amanda/occult/wax_details_drip: 724 87 rr
+:amanda/occult/wax_details_drip: 692 34
+:amanda/occult/wax_details_drip: 722 34 frr
+:amanda/occult/overlay32x32_d: 854 2
+:amanda/steel/steel_flange_right24x16.S: 862 62
+:amanda/occult/overlay32x32_c: 822 0
+:amanda/occult/overlay32x32_d: 886 2
+:amanda/occult/overlay32x32_c: 918 0 frr
+:amanda/occult/overlay32x32_d: 934 46 r
+:amanda/occult/overlay32x32_c: 936 14 r
+:amanda/occult/overlay32x32_d: 934 78 r
+:amanda/occult/overlay32x32_c: 936 110 frrr
+:amanda/occult/overlay32x32_d: 808 46 fr
+:amanda/occult/overlay32x32_c: 806 14 fr
+:amanda/occult/overlay32x32_d: 808 78 fr
+:amanda/occult/overlay32x32_c: 806 110 rrr
+:amanda/occult/overlay32x32_d: 886 122 rr
+:amanda/occult/overlay32x32_c: 918 124 rr
+:amanda/occult/overlay32x32_d: 854 122 rr
+:amanda/occult/overlay32x32_c: 822 124 f
+:amanda/steel/steel_flange_left24x16.S: 886 62
+:amanda/steel/steel_flange_left24x16.S: 886 78 f
+:amanda/steel/steel_flange_right24x16.S: 862 78 f
+:amanda/occult/wax_details_drip: 840 46 fr
+:amanda/occult/wax_details_drip: 840 78 fr
+:amanda/occult/wax_details_drip: 899 78 r
+:amanda/occult/wax_details_drip: 856 87 f
+:amanda/occult/wax_details_drip: 899 46 r
+:amanda/occult/wax_details_drip: 886 87 rr
+:amanda/occult/wax_details_drip: 854 34
+:amanda/occult/wax_details_drip: 884 34 frr
+:amanda/occult/overlay32x32_d: 692 158
+:amanda/steel/steel_flange_right24x16.S: 700 218
+:amanda/occult/overlay32x32_c: 660 156
+:amanda/occult/overlay32x32_d: 724 158
+:amanda/occult/overlay32x32_c: 756 156 frr
+:amanda/occult/overlay32x32_d: 772 202 r
+:amanda/occult/overlay32x32_c: 774 170 r
+:amanda/occult/overlay32x32_d: 772 234 r
+:amanda/occult/overlay32x32_c: 774 266 frrr
+:amanda/occult/overlay32x32_d: 646 202 fr
+:amanda/occult/overlay32x32_c: 644 170 fr
+:amanda/occult/overlay32x32_d: 646 234 fr
+:amanda/occult/overlay32x32_c: 644 266 rrr
+:amanda/occult/overlay32x32_d: 724 278 rr
+:amanda/occult/overlay32x32_c: 756 280 rr
+:amanda/occult/overlay32x32_d: 692 278 rr
+:amanda/occult/overlay32x32_c: 660 280 f
+:amanda/steel/steel_flange_left24x16.S: 724 218
+:amanda/steel/steel_flange_left24x16.S: 724 234 f
+:amanda/steel/steel_flange_right24x16.S: 700 234 f
+:amanda/occult/wax_details_drip: 678 202 fr
+:amanda/occult/wax_details_drip: 678 234 fr
+:amanda/occult/wax_details_drip: 737 234 r
+:amanda/occult/wax_details_drip: 694 243 f
+:amanda/occult/wax_details_drip: 737 202 r
+:amanda/occult/wax_details_drip: 724 243 rr
+:amanda/occult/wax_details_drip: 692 190
+:amanda/occult/wax_details_drip: 722 190 frr
+:amanda/occult/overlay32x32_d: 854 158
+:amanda/steel/steel_flange_right24x16.S: 862 218
+:amanda/occult/overlay32x32_c: 822 156
+:amanda/occult/overlay32x32_d: 886 158
+:amanda/occult/overlay32x32_c: 918 156 frr
+:amanda/occult/overlay32x32_d: 934 202 r
+:amanda/occult/overlay32x32_c: 936 170 r
+:amanda/occult/overlay32x32_d: 934 234 r
+:amanda/occult/overlay32x32_c: 936 266 frrr
+:amanda/occult/overlay32x32_d: 808 202 fr
+:amanda/occult/overlay32x32_c: 806 170 fr
+:amanda/occult/overlay32x32_d: 808 234 fr
+:amanda/occult/overlay32x32_c: 806 266 rrr
+:amanda/occult/overlay32x32_d: 886 278 rr
+:amanda/occult/overlay32x32_c: 918 280 rr
+:amanda/occult/overlay32x32_d: 854 278 rr
+:amanda/occult/overlay32x32_c: 822 280 f
+:amanda/steel/steel_flange_left24x16.S: 886 218
+:amanda/steel/steel_flange_left24x16.S: 886 234 f
+:amanda/steel/steel_flange_right24x16.S: 862 234 f
+:amanda/occult/wax_details_drip: 840 202 fr
+:amanda/occult/wax_details_drip: 840 234 fr
+:amanda/occult/wax_details_drip: 899 234 r
+:amanda/occult/wax_details_drip: 856 243 f
+:amanda/occult/wax_details_drip: 899 202 r
+:amanda/occult/wax_details_drip: 886 243 rr
+:amanda/occult/wax_details_drip: 854 190
+:amanda/occult/wax_details_drip: 884 190 frr
+:amanda/occult/skulls32x32: 776 126
+:amanda/occult/overlay32x32_d: 692 314
+:amanda/steel/steel_flange_right24x16.S: 700 374
+:amanda/occult/overlay32x32_c: 660 312
+:amanda/occult/overlay32x32_d: 724 314
+:amanda/occult/overlay32x32_c: 756 312 frr
+:amanda/occult/overlay32x32_d: 772 358 r
+:amanda/occult/overlay32x32_c: 774 326 r
+:amanda/occult/overlay32x32_d: 772 390 r
+:amanda/occult/overlay32x32_c: 774 422 frrr
+:amanda/occult/overlay32x32_d: 646 358 fr
+:amanda/occult/overlay32x32_c: 644 326 fr
+:amanda/occult/overlay32x32_d: 646 390 fr
+:amanda/occult/overlay32x32_c: 644 422 rrr
+:amanda/occult/overlay32x32_d: 724 434 rr
+:amanda/occult/overlay32x32_c: 756 436 rr
+:amanda/occult/overlay32x32_d: 692 434 rr
+:amanda/occult/overlay32x32_c: 660 436 f
+:amanda/steel/steel_flange_left24x16.S: 724 374
+:amanda/steel/steel_flange_left24x16.S: 724 390 f
+:amanda/steel/steel_flange_right24x16.S: 700 390 f
+:amanda/occult/wax_details_drip: 678 358 fr
+:amanda/occult/wax_details_drip: 678 390 fr
+:amanda/occult/wax_details_drip: 737 390 r
+:amanda/occult/wax_details_drip: 694 399 f
+:amanda/occult/wax_details_drip: 737 358 r
+:amanda/occult/wax_details_drip: 724 399 rr
+:amanda/occult/wax_details_drip: 692 346
+:amanda/occult/wax_details_drip: 722 346 frr
+:amanda/occult/overlay32x32_d: 854 314
+:amanda/steel/steel_flange_right24x16.S: 862 374
+:amanda/occult/overlay32x32_c: 822 312
+:amanda/occult/overlay32x32_d: 886 314
+:amanda/occult/overlay32x32_c: 918 312 frr
+:amanda/occult/overlay32x32_d: 934 358 r
+:amanda/occult/overlay32x32_c: 936 326 r
+:amanda/occult/overlay32x32_d: 934 390 r
+:amanda/occult/overlay32x32_c: 936 422 frrr
+:amanda/occult/overlay32x32_d: 808 358 fr
+:amanda/occult/overlay32x32_c: 806 326 fr
+:amanda/occult/overlay32x32_d: 808 390 fr
+:amanda/occult/overlay32x32_c: 806 422 rrr
+:amanda/occult/overlay32x32_d: 886 434 rr
+:amanda/occult/overlay32x32_c: 918 436 rr
+:amanda/occult/overlay32x32_d: 854 434 rr
+:amanda/occult/overlay32x32_c: 822 436 f
+:amanda/steel/steel_flange_left24x16.S: 886 374
+:amanda/steel/steel_flange_left24x16.S: 886 390 f
+:amanda/steel/steel_flange_right24x16.S: 862 390 f
+:amanda/occult/wax_details_drip: 840 358 fr
+:amanda/occult/wax_details_drip: 840 390 fr
+:amanda/occult/wax_details_drip: 899 390 r
+:amanda/occult/wax_details_drip: 856 399 f
+:amanda/occult/wax_details_drip: 899 358 r
+:amanda/occult/wax_details_drip: 886 399 rr
+:amanda/occult/wax_details_drip: 854 346
+:amanda/occult/wax_details_drip: 884 346 frr
+:amanda/occult/overlay32x32_d: 692 470
+:amanda/steel/steel_flange_right24x16.S: 700 530
+:amanda/occult/overlay32x32_c: 660 468
+:amanda/occult/overlay32x32_d: 724 470
+:amanda/occult/overlay32x32_c: 756 468 frr
+:amanda/occult/overlay32x32_d: 772 514 r
+:amanda/occult/overlay32x32_c: 774 482 r
+:amanda/occult/overlay32x32_d: 772 546 r
+:amanda/occult/overlay32x32_c: 774 578 frrr
+:amanda/occult/overlay32x32_d: 646 514 fr
+:amanda/occult/overlay32x32_c: 644 482 fr
+:amanda/occult/overlay32x32_d: 646 546 fr
+:amanda/occult/overlay32x32_c: 644 578 rrr
+:amanda/occult/overlay32x32_d: 724 590 rr
+:amanda/occult/overlay32x32_c: 756 592 rr
+:amanda/occult/overlay32x32_d: 692 590 rr
+:amanda/occult/overlay32x32_c: 660 592 f
+:amanda/steel/steel_flange_left24x16.S: 724 530
+:amanda/steel/steel_flange_left24x16.S: 724 546 f
+:amanda/steel/steel_flange_right24x16.S: 700 546 f
+:amanda/occult/wax_details_drip: 678 514 fr
+:amanda/occult/wax_details_drip: 678 546 fr
+:amanda/occult/wax_details_drip: 737 546 r
+:amanda/occult/wax_details_drip: 694 555 f
+:amanda/occult/wax_details_drip: 737 514 r
+:amanda/occult/wax_details_drip: 724 555 rr
+:amanda/occult/wax_details_drip: 692 502
+:amanda/occult/wax_details_drip: 722 502 frr
+:amanda/occult/overlay32x32_d: 854 470
+:amanda/steel/steel_flange_right24x16.S: 862 530
+:amanda/occult/overlay32x32_c: 822 468
+:amanda/occult/overlay32x32_d: 886 470
+:amanda/occult/overlay32x32_c: 918 468 frr
+:amanda/occult/overlay32x32_d: 934 514 r
+:amanda/occult/overlay32x32_c: 936 482 r
+:amanda/occult/overlay32x32_d: 934 546 r
+:amanda/occult/overlay32x32_c: 936 578 frrr
+:amanda/occult/overlay32x32_d: 808 514 fr
+:amanda/occult/overlay32x32_c: 806 482 fr
+:amanda/occult/overlay32x32_d: 808 546 fr
+:amanda/occult/overlay32x32_c: 806 578 rrr
+:amanda/occult/overlay32x32_d: 886 590 rr
+:amanda/occult/overlay32x32_c: 918 592 rr
+:amanda/occult/overlay32x32_d: 854 590 rr
+:amanda/occult/overlay32x32_c: 822 592 f
+:amanda/steel/steel_flange_left24x16.S: 886 530
+:amanda/steel/steel_flange_left24x16.S: 886 546 f
+:amanda/steel/steel_flange_right24x16.S: 862 546 f
+:amanda/occult/wax_details_drip: 840 514 fr
+:amanda/occult/wax_details_drip: 840 546 fr
+:amanda/occult/wax_details_drip: 899 546 r
+:amanda/occult/wax_details_drip: 856 555 f
+:amanda/occult/wax_details_drip: 899 514 r
+:amanda/occult/wax_details_drip: 886 555 rr
+:amanda/occult/wax_details_drip: 854 502
+:amanda/occult/wax_details_drip: 884 502 frr
+:amanda/occult/skulls32x32: 776 438
+:amanda/occult/overlay32x32_d: 48 2
+:amanda/steel/steel_flange_right24x16.S: 56 62
+:amanda/occult/overlay32x32_c: 16 0
+:amanda/occult/overlay32x32_d: 80 2
+:amanda/occult/overlay32x32_c: 112 0 frr
+:amanda/occult/overlay32x32_d: 128 46 r
+:amanda/occult/overlay32x32_c: 130 14 r
+:amanda/occult/overlay32x32_d: 128 78 r
+:amanda/occult/overlay32x32_c: 130 110 frrr
+:amanda/occult/overlay32x32_d: 2 46 fr
+:amanda/occult/overlay32x32_c: 0 14 fr
+:amanda/occult/overlay32x32_d: 2 78 fr
+:amanda/occult/overlay32x32_c: 0 110 rrr
+:amanda/occult/overlay32x32_d: 80 122 rr
+:amanda/occult/overlay32x32_c: 112 124 rr
+:amanda/occult/overlay32x32_d: 48 122 rr
+:amanda/occult/overlay32x32_c: 16 124 f
+:amanda/steel/steel_flange_left24x16.S: 80 62
+:amanda/steel/steel_flange_left24x16.S: 80 78 f
+:amanda/steel/steel_flange_right24x16.S: 56 78 f
+:amanda/occult/wax_details_drip: 34 46 fr
+:amanda/occult/wax_details_drip: 34 78 fr
+:amanda/occult/wax_details_drip: 93 78 r
+:amanda/occult/wax_details_drip: 50 87 f
+:amanda/occult/wax_details_drip: 93 46 r
+:amanda/occult/wax_details_drip: 80 87 rr
+:amanda/occult/wax_details_drip: 48 34
+:amanda/occult/wax_details_drip: 78 34 frr
+:amanda/occult/overlay32x32_d: 210 2
+:amanda/steel/steel_flange_right24x16.S: 218 62
+:amanda/occult/overlay32x32_c: 178 0
+:amanda/occult/overlay32x32_d: 242 2
+:amanda/occult/overlay32x32_c: 274 0 frr
+:amanda/occult/overlay32x32_d: 290 46 r
+:amanda/occult/overlay32x32_c: 292 14 r
+:amanda/occult/overlay32x32_d: 290 78 r
+:amanda/occult/overlay32x32_c: 292 110 frrr
+:amanda/occult/overlay32x32_d: 164 46 fr
+:amanda/occult/overlay32x32_c: 162 14 fr
+:amanda/occult/overlay32x32_d: 164 78 fr
+:amanda/occult/overlay32x32_c: 162 110 rrr
+:amanda/occult/overlay32x32_d: 242 122 rr
+:amanda/occult/overlay32x32_c: 274 124 rr
+:amanda/occult/overlay32x32_d: 210 122 rr
+:amanda/occult/overlay32x32_c: 178 124 f
+:amanda/steel/steel_flange_left24x16.S: 242 62
+:amanda/steel/steel_flange_left24x16.S: 242 78 f
+:amanda/steel/steel_flange_right24x16.S: 218 78 f
+:amanda/occult/wax_details_drip: 196 46 fr
+:amanda/occult/wax_details_drip: 196 78 fr
+:amanda/occult/wax_details_drip: 255 78 r
+:amanda/occult/wax_details_drip: 212 87 f
+:amanda/occult/wax_details_drip: 255 46 r
+:amanda/occult/wax_details_drip: 242 87 rr
+:amanda/occult/wax_details_drip: 210 34
+:amanda/occult/wax_details_drip: 240 34 frr
+:amanda/occult/overlay32x32_d: 48 158
+:amanda/steel/steel_flange_right24x16.S: 56 218
+:amanda/occult/overlay32x32_c: 16 156
+:amanda/occult/overlay32x32_d: 80 158
+:amanda/occult/overlay32x32_c: 112 156 frr
+:amanda/occult/overlay32x32_d: 128 202 r
+:amanda/occult/overlay32x32_c: 130 170 r
+:amanda/occult/overlay32x32_d: 128 234 r
+:amanda/occult/overlay32x32_c: 130 266 frrr
+:amanda/occult/overlay32x32_d: 2 202 fr
+:amanda/occult/overlay32x32_c: 0 170 fr
+:amanda/occult/overlay32x32_d: 2 234 fr
+:amanda/occult/overlay32x32_c: 0 266 rrr
+:amanda/occult/overlay32x32_d: 80 278 rr
+:amanda/occult/overlay32x32_c: 112 280 rr
+:amanda/occult/overlay32x32_d: 48 278 rr
+:amanda/occult/overlay32x32_c: 16 280 f
+:amanda/steel/steel_flange_left24x16.S: 80 218
+:amanda/steel/steel_flange_left24x16.S: 80 234 f
+:amanda/steel/steel_flange_right24x16.S: 56 234 f
+:amanda/occult/wax_details_drip: 34 202 fr
+:amanda/occult/wax_details_drip: 34 234 fr
+:amanda/occult/wax_details_drip: 93 234 r
+:amanda/occult/wax_details_drip: 50 243 f
+:amanda/occult/wax_details_drip: 93 202 r
+:amanda/occult/wax_details_drip: 80 243 rr
+:amanda/occult/wax_details_drip: 48 190
+:amanda/occult/wax_details_drip: 78 190 frr
+:amanda/occult/overlay32x32_d: 210 158
+:amanda/steel/steel_flange_right24x16.S: 218 218
+:amanda/occult/overlay32x32_c: 178 156
+:amanda/occult/overlay32x32_d: 242 158
+:amanda/occult/overlay32x32_c: 274 156 frr
+:amanda/occult/overlay32x32_d: 290 202 r
+:amanda/occult/overlay32x32_c: 292 170 r
+:amanda/occult/overlay32x32_d: 290 234 r
+:amanda/occult/overlay32x32_c: 292 266 frrr
+:amanda/occult/overlay32x32_d: 164 202 fr
+:amanda/occult/overlay32x32_c: 162 170 fr
+:amanda/occult/overlay32x32_d: 164 234 fr
+:amanda/occult/overlay32x32_c: 162 266 rrr
+:amanda/occult/overlay32x32_d: 242 278 rr
+:amanda/occult/overlay32x32_c: 274 280 rr
+:amanda/occult/overlay32x32_d: 210 278 rr
+:amanda/occult/overlay32x32_c: 178 280 f
+:amanda/steel/steel_flange_left24x16.S: 242 218
+:amanda/steel/steel_flange_left24x16.S: 242 234 f
+:amanda/steel/steel_flange_right24x16.S: 218 234 f
+:amanda/occult/wax_details_drip: 196 202 fr
+:amanda/occult/wax_details_drip: 196 234 fr
+:amanda/occult/wax_details_drip: 255 234 r
+:amanda/occult/wax_details_drip: 212 243 f
+:amanda/occult/wax_details_drip: 255 202 r
+:amanda/occult/wax_details_drip: 242 243 rr
+:amanda/occult/wax_details_drip: 210 190
+:amanda/occult/wax_details_drip: 240 190 frr
+:amanda/occult/skulls32x32: 132 126
+:amanda/occult/overlay32x32_d: 48 314
+:amanda/steel/steel_flange_right24x16.S: 56 374
+:amanda/occult/overlay32x32_c: 16 312
+:amanda/occult/overlay32x32_d: 80 314
+:amanda/occult/overlay32x32_c: 112 312 frr
+:amanda/occult/overlay32x32_d: 128 358 r
+:amanda/occult/overlay32x32_c: 130 326 r
+:amanda/occult/overlay32x32_d: 128 390 r
+:amanda/occult/overlay32x32_c: 130 422 frrr
+:amanda/occult/overlay32x32_d: 2 358 fr
+:amanda/occult/overlay32x32_c: 0 326 fr
+:amanda/occult/overlay32x32_d: 2 390 fr
+:amanda/occult/overlay32x32_c: 0 422 rrr
+:amanda/occult/overlay32x32_d: 80 434 rr
+:amanda/occult/overlay32x32_c: 112 436 rr
+:amanda/occult/overlay32x32_d: 48 434 rr
+:amanda/occult/overlay32x32_c: 16 436 f
+:amanda/steel/steel_flange_left24x16.S: 80 374
+:amanda/steel/steel_flange_left24x16.S: 80 390 f
+:amanda/steel/steel_flange_right24x16.S: 56 390 f
+:amanda/occult/wax_details_drip: 34 358 fr
+:amanda/occult/wax_details_drip: 34 390 fr
+:amanda/occult/wax_details_drip: 93 390 r
+:amanda/occult/wax_details_drip: 50 399 f
+:amanda/occult/wax_details_drip: 93 358 r
+:amanda/occult/wax_details_drip: 80 399 rr
+:amanda/occult/wax_details_drip: 48 346
+:amanda/occult/wax_details_drip: 78 346 frr
+:amanda/occult/overlay32x32_d: 210 314
+:amanda/steel/steel_flange_right24x16.S: 218 374
+:amanda/occult/overlay32x32_c: 178 312
+:amanda/occult/overlay32x32_d: 242 314
+:amanda/occult/overlay32x32_c: 274 312 frr
+:amanda/occult/overlay32x32_d: 290 358 r
+:amanda/occult/overlay32x32_c: 292 326 r
+:amanda/occult/overlay32x32_d: 290 390 r
+:amanda/occult/overlay32x32_c: 292 422 frrr
+:amanda/occult/overlay32x32_d: 164 358 fr
+:amanda/occult/overlay32x32_c: 162 326 fr
+:amanda/occult/overlay32x32_d: 164 390 fr
+:amanda/occult/overlay32x32_c: 162 422 rrr
+:amanda/occult/overlay32x32_d: 242 434 rr
+:amanda/occult/overlay32x32_c: 274 436 rr
+:amanda/occult/overlay32x32_d: 210 434 rr
+:amanda/occult/overlay32x32_c: 178 436 f
+:amanda/steel/steel_flange_left24x16.S: 242 374
+:amanda/steel/steel_flange_left24x16.S: 242 390 f
+:amanda/steel/steel_flange_right24x16.S: 218 390 f
+:amanda/occult/wax_details_drip: 196 358 fr
+:amanda/occult/wax_details_drip: 196 390 fr
+:amanda/occult/wax_details_drip: 255 390 r
+:amanda/occult/wax_details_drip: 212 399 f
+:amanda/occult/wax_details_drip: 255 358 r
+:amanda/occult/wax_details_drip: 242 399 rr
+:amanda/occult/wax_details_drip: 210 346
+:amanda/occult/wax_details_drip: 240 346 frr
+:amanda/occult/overlay32x32_d: 48 470
+:amanda/steel/steel_flange_right24x16.S: 56 530
+:amanda/occult/overlay32x32_c: 16 468
+:amanda/occult/overlay32x32_d: 80 470
+:amanda/occult/overlay32x32_c: 112 468 frr
+:amanda/occult/overlay32x32_d: 128 514 r
+:amanda/occult/overlay32x32_c: 130 482 r
+:amanda/occult/overlay32x32_d: 128 546 r
+:amanda/occult/overlay32x32_c: 130 578 frrr
+:amanda/occult/overlay32x32_d: 2 514 fr
+:amanda/occult/overlay32x32_c: 0 482 fr
+:amanda/occult/overlay32x32_d: 2 546 fr
+:amanda/occult/overlay32x32_c: 0 578 rrr
+:amanda/occult/overlay32x32_d: 80 590 rr
+:amanda/occult/overlay32x32_c: 112 592 rr
+:amanda/occult/overlay32x32_d: 48 590 rr
+:amanda/occult/overlay32x32_c: 16 592 f
+:amanda/steel/steel_flange_left24x16.S: 80 530
+:amanda/steel/steel_flange_left24x16.S: 80 546 f
+:amanda/steel/steel_flange_right24x16.S: 56 546 f
+:amanda/occult/wax_details_drip: 34 514 fr
+:amanda/occult/wax_details_drip: 34 546 fr
+:amanda/occult/wax_details_drip: 93 546 r
+:amanda/occult/wax_details_drip: 50 555 f
+:amanda/occult/wax_details_drip: 93 514 r
+:amanda/occult/wax_details_drip: 80 555 rr
+:amanda/occult/wax_details_drip: 48 502
+:amanda/occult/wax_details_drip: 78 502 frr
+:amanda/occult/overlay32x32_d: 210 470
+:amanda/steel/steel_flange_right24x16.S: 218 530
+:amanda/occult/overlay32x32_c: 178 468
+:amanda/occult/overlay32x32_d: 242 470
+:amanda/occult/overlay32x32_c: 274 468 frr
+:amanda/occult/overlay32x32_d: 290 514 r
+:amanda/occult/overlay32x32_c: 292 482 r
+:amanda/occult/overlay32x32_d: 290 546 r
+:amanda/occult/overlay32x32_c: 292 578 frrr
+:amanda/occult/overlay32x32_d: 164 514 fr
+:amanda/occult/overlay32x32_c: 162 482 fr
+:amanda/occult/overlay32x32_d: 164 546 fr
+:amanda/occult/overlay32x32_c: 162 578 rrr
+:amanda/occult/overlay32x32_d: 242 590 rr
+:amanda/occult/overlay32x32_c: 274 592 rr
+:amanda/occult/overlay32x32_d: 210 590 rr
+:amanda/occult/overlay32x32_c: 178 592 f
+:amanda/steel/steel_flange_left24x16.S: 242 530
+:amanda/steel/steel_flange_left24x16.S: 242 546 f
+:amanda/steel/steel_flange_right24x16.S: 218 546 f
+:amanda/occult/wax_details_drip: 196 514 fr
+:amanda/occult/wax_details_drip: 196 546 fr
+:amanda/occult/wax_details_drip: 255 546 r
+:amanda/occult/wax_details_drip: 212 555 f
+:amanda/occult/wax_details_drip: 255 514 r
+:amanda/occult/wax_details_drip: 242 555 rr
+:amanda/occult/wax_details_drip: 210 502
+:amanda/occult/wax_details_drip: 240 502 frr
+:amanda/occult/skulls32x32: 132 438
+:amanda/occult/overlay32x32_d: 370 2
+:amanda/steel/steel_flange_right24x16.S: 378 62
+:amanda/occult/overlay32x32_c: 338 0
+:amanda/occult/overlay32x32_d: 402 2
+:amanda/occult/overlay32x32_c: 434 0 frr
+:amanda/occult/overlay32x32_d: 450 46 r
+:amanda/occult/overlay32x32_c: 452 14 r
+:amanda/occult/overlay32x32_d: 450 78 r
+:amanda/occult/overlay32x32_c: 452 110 frrr
+:amanda/occult/overlay32x32_d: 324 46 fr
+:amanda/occult/overlay32x32_c: 322 14 fr
+:amanda/occult/overlay32x32_d: 324 78 fr
+:amanda/occult/overlay32x32_c: 322 110 rrr
+:amanda/occult/overlay32x32_d: 402 122 rr
+:amanda/occult/overlay32x32_c: 434 124 rr
+:amanda/occult/overlay32x32_d: 370 122 rr
+:amanda/occult/overlay32x32_c: 338 124 f
+:amanda/steel/steel_flange_left24x16.S: 402 62
+:amanda/steel/steel_flange_left24x16.S: 402 78 f
+:amanda/steel/steel_flange_right24x16.S: 378 78 f
+:amanda/occult/wax_details_drip: 356 46 fr
+:amanda/occult/wax_details_drip: 356 78 fr
+:amanda/occult/wax_details_drip: 415 78 r
+:amanda/occult/wax_details_drip: 372 87 f
+:amanda/occult/wax_details_drip: 415 46 r
+:amanda/occult/wax_details_drip: 402 87 rr
+:amanda/occult/wax_details_drip: 370 34
+:amanda/occult/wax_details_drip: 400 34 frr
+:amanda/occult/overlay32x32_d: 532 2
+:amanda/steel/steel_flange_right24x16.S: 540 62
+:amanda/occult/overlay32x32_c: 500 0
+:amanda/occult/overlay32x32_d: 564 2
+:amanda/occult/overlay32x32_c: 596 0 frr
+:amanda/occult/overlay32x32_d: 612 46 r
+:amanda/occult/overlay32x32_c: 614 14 r
+:amanda/occult/overlay32x32_d: 612 78 r
+:amanda/occult/overlay32x32_c: 614 110 frrr
+:amanda/occult/overlay32x32_d: 486 46 fr
+:amanda/occult/overlay32x32_c: 484 14 fr
+:amanda/occult/overlay32x32_d: 486 78 fr
+:amanda/occult/overlay32x32_c: 484 110 rrr
+:amanda/occult/overlay32x32_d: 564 122 rr
+:amanda/occult/overlay32x32_c: 596 124 rr
+:amanda/occult/overlay32x32_d: 532 122 rr
+:amanda/occult/overlay32x32_c: 500 124 f
+:amanda/steel/steel_flange_left24x16.S: 564 62
+:amanda/steel/steel_flange_left24x16.S: 564 78 f
+:amanda/steel/steel_flange_right24x16.S: 540 78 f
+:amanda/occult/wax_details_drip: 518 46 fr
+:amanda/occult/wax_details_drip: 518 78 fr
+:amanda/occult/wax_details_drip: 577 78 r
+:amanda/occult/wax_details_drip: 534 87 f
+:amanda/occult/wax_details_drip: 577 46 r
+:amanda/occult/wax_details_drip: 564 87 rr
+:amanda/occult/wax_details_drip: 532 34
+:amanda/occult/wax_details_drip: 562 34 frr
+:amanda/occult/overlay32x32_d: 370 470
+:amanda/steel/steel_flange_right24x16.S: 378 530
+:amanda/occult/overlay32x32_c: 338 468
+:amanda/occult/overlay32x32_d: 402 470
+:amanda/occult/overlay32x32_c: 434 468 frr
+:amanda/occult/overlay32x32_d: 450 514 r
+:amanda/occult/overlay32x32_c: 452 482 r
+:amanda/occult/overlay32x32_d: 450 546 r
+:amanda/occult/overlay32x32_c: 452 578 frrr
+:amanda/occult/overlay32x32_d: 324 514 fr
+:amanda/occult/overlay32x32_c: 322 482 fr
+:amanda/occult/overlay32x32_d: 324 546 fr
+:amanda/occult/overlay32x32_c: 322 578 rrr
+:amanda/occult/overlay32x32_d: 402 590 rr
+:amanda/occult/overlay32x32_c: 434 592 rr
+:amanda/occult/overlay32x32_d: 370 590 rr
+:amanda/occult/overlay32x32_c: 338 592 f
+:amanda/steel/steel_flange_left24x16.S: 402 530
+:amanda/steel/steel_flange_left24x16.S: 402 546 f
+:amanda/steel/steel_flange_right24x16.S: 378 546 f
+:amanda/occult/wax_details_drip: 356 514 fr
+:amanda/occult/wax_details_drip: 356 546 fr
+:amanda/occult/wax_details_drip: 415 546 r
+:amanda/occult/wax_details_drip: 372 555 f
+:amanda/occult/wax_details_drip: 415 514 r
+:amanda/occult/wax_details_drip: 402 555 rr
+:amanda/occult/wax_details_drip: 370 502
+:amanda/occult/wax_details_drip: 400 502 frr
+:amanda/occult/overlay32x32_d: 532 470
+:amanda/steel/steel_flange_right24x16.S: 540 530
+:amanda/occult/overlay32x32_c: 500 468
+:amanda/occult/overlay32x32_d: 564 470
+:amanda/occult/overlay32x32_c: 596 468 frr
+:amanda/occult/overlay32x32_d: 612 514 r
+:amanda/occult/overlay32x32_c: 614 482 r
+:amanda/occult/overlay32x32_d: 612 546 r
+:amanda/occult/overlay32x32_c: 614 578 frrr
+:amanda/occult/overlay32x32_d: 486 514 fr
+:amanda/occult/overlay32x32_c: 484 482 fr
+:amanda/occult/overlay32x32_d: 486 546 fr
+:amanda/occult/overlay32x32_c: 484 578 rrr
+:amanda/occult/overlay32x32_d: 564 590 rr
+:amanda/occult/overlay32x32_c: 596 592 rr
+:amanda/occult/overlay32x32_d: 532 590 rr
+:amanda/occult/overlay32x32_c: 500 592 f
+:amanda/steel/steel_flange_left24x16.S: 564 530
+:amanda/steel/steel_flange_left24x16.S: 564 546 f
+:amanda/steel/steel_flange_right24x16.S: 540 546 f
+:amanda/occult/wax_details_drip: 518 514 fr
+:amanda/occult/wax_details_drip: 518 546 fr
+:amanda/occult/wax_details_drip: 577 546 r
+:amanda/occult/wax_details_drip: 534 555 f
+:amanda/occult/wax_details_drip: 577 514 r
+:amanda/occult/wax_details_drip: 564 555 rr
+:amanda/occult/wax_details_drip: 532 502
+:amanda/occult/wax_details_drip: 562 502 frr
+:amanda/occult/cube: 596 360
+:amanda/occult/cube: 596 408
+:amanda/occult/cube: 548 424
+:amanda/occult/cube: 532 264
+:amanda/steel/steel16x16.S: 356 168
+:amanda/steel/steel16x16.S: 372 168
+:amanda/steel/steel16x16.S: 388 168
+:amanda/steel/steel16x16.S: 404 168
+:amanda/steel/steel16x16.S: 420 168
+:amanda/steel/steel16x16.S: 436 168
+:amanda/steel/steel16x16.S: 452 168
+:amanda/steel/steel16x16.S: 468 168
+:amanda/steel/steel16x16.S: 484 168
+:amanda/steel/steel16x16.S: 500 168
+:amanda/steel/steel16x16.S: 516 168
+:amanda/steel/steel16x16.S: 532 168
+:amanda/steel/steel16x16.S: 548 168
+:amanda/steel/steel16x16.S: 564 168
+:amanda/steel/steel16x16.S: 580 168
+:amanda/steel/steel16x16.S: 596 168
+:amanda/steel/steel16x16.S: 612 168
+:amanda/steel/steel16x16.S: 612 184
+:amanda/steel/steel16x16.S: 612 200
+:amanda/steel/steel16x16.S: 612 216
+:amanda/steel/steel16x16.S: 612 232
+:amanda/steel/steel16x16.S: 612 248
+:amanda/steel/steel16x16.S: 612 264
+:amanda/steel/steel16x16.S: 612 280
+:amanda/steel/steel16x16.S: 612 296
+:amanda/steel/steel16x16.S: 612 312
+:amanda/steel/steel16x16.S: 612 328
+:amanda/steel/steel16x16.S: 612 344
+:amanda/steel/steel16x16.S: 612 360
+:amanda/steel/steel16x16.S: 612 376
+:amanda/steel/steel16x16.S: 612 392
+:amanda/steel/steel16x16.S: 612 408
+:amanda/steel/steel16x16.S: 612 424
+:amanda/steel/steel16x16.S: 612 440
+:amanda/steel/steel16x16.S: 596 440
+:amanda/steel/steel16x16.S: 580 440
+:amanda/steel/steel16x16.S: 564 440
+:amanda/steel/steel16x16.S: 548 440
+:amanda/steel/steel16x16.S: 532 440
+:amanda/steel/steel16x16.S: 516 440
+:amanda/steel/steel16x16.S: 500 440
+:amanda/steel/steel16x16.S: 484 440
+:amanda/steel/steel16x16.S: 468 440
+:amanda/steel/steel16x16.S: 452 440
+:amanda/steel/steel16x16.S: 436 440
+:amanda/steel/steel16x16.S: 420 440
+:amanda/steel/steel16x16.S: 404 440
+:amanda/steel/steel16x16.S: 388 440
+:amanda/steel/steel16x16.S: 372 440
+:amanda/steel/steel16x16.S: 356 440
+:amanda/steel/steel16x16.S: 340 440
+:amanda/steel/steel16x16.S: 340 424
+:amanda/steel/steel16x16.S: 340 408
+:amanda/steel/steel16x16.S: 340 392
+:amanda/steel/steel16x16.S: 340 376
+:amanda/steel/steel16x16.S: 340 360
+:amanda/steel/steel16x16.S: 340 344
+:amanda/steel/steel16x16.S: 340 328
+:amanda/steel/steel16x16.S: 340 312
+:amanda/steel/steel16x16.S: 340 296
+:amanda/steel/steel16x16.S: 340 280
+:amanda/steel/steel16x16.S: 340 264
+:amanda/steel/steel16x16.S: 340 248
+:amanda/steel/steel16x16.S: 340 232
+:amanda/steel/steel16x16.S: 340 216
+:amanda/steel/steel16x16.S: 340 200
+:amanda/steel/steel16x16.S: 340 184
+:amanda/steel/steel16x16.S: 340 168
+:amanda/occult/scrawl_pentagram: 618 130 frr
+:amanda/occult/scrawl_pentagram: 302 128
+:amanda/occult/scrawl_pentagram: 302 436 f
+:amanda/occult/scrawl_pentagram: 618 436 rr
+:amanda/steel/steel16x16.S: 716 70
+:amanda/steel/steel16x16.S: 878 70
+:amanda/steel/steel16x16.S: 878 226
+:amanda/steel/steel16x16.S: 716 226
+:amanda/steel/steel16x16.S: 716 382
+:amanda/steel/steel16x16.S: 878 382
+:amanda/steel/steel16x16.S: 878 538
+:amanda/steel/steel16x16.S: 716 538
+:amanda/steel/steel16x16.S: 556 538
+:amanda/steel/steel16x16.S: 394 538
+:amanda/steel/steel16x16.S: 234 538
+:amanda/steel/steel16x16.S: 72 538
+:amanda/steel/steel16x16.S: 72 382
+:amanda/steel/steel16x16.S: 234 382
+:amanda/steel/steel16x16.S: 234 226
+:amanda/steel/steel16x16.S: 72 226
+:amanda/steel/steel16x16.S: 72 70
+:amanda/steel/steel16x16.S: 234 70
+:amanda/steel/steel16x16.S: 394 70
+:amanda/steel/steel16x16.S: 556 70
