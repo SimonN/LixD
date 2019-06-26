@@ -75,6 +75,13 @@ public:
             cutReplay();
     }
 
+    /*
+     * Rewinds physics, but doesn't advance. The Game will tell us to advance.
+     * We must rewind to keep physics consistent with the replay up to then.
+     * I forgot why we don't immediately advance back to the original phyu
+     * -- probably we (don't advance) to do the minimum possible work
+     * in this function addPlyMaybeGoBack.
+     */
     void addPlyMaybeGoBack(const(Ply[]) vec)
     {
         if (vec.length == 0)
@@ -82,6 +89,13 @@ public:
         assert (replay);
         vec.each!(data => replay.add(data));
         framestepBackTo(Phyu(vec.map!(data => data.update).reduce!min - 1));
+    }
+
+    void editReplayRecomputeToCurrentPhyu(in ChangeRequest rq)
+    {
+        immutable Phyu current = upd;
+        framestepBackTo(Phyu(replay.edit(rq) - 1));
+        updateTo(current);
     }
 
     void updateTo(in Phyu targetPhyu)

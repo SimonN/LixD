@@ -39,6 +39,7 @@ implGameCalc(Game game) { with (game)
     else {
         game.calcPassive();
         game.calcActive();
+        game.applyChangesFromReplayEditor(); // Not yet impl'ed: feed into net
         noninputCalc();
         game.atEndOfGame();
     }

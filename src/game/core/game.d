@@ -247,6 +247,13 @@ package:
         return nurse.constReplay.latestPhyu > nurse.upd;
     }
 
+    @property bool isMouseOnLand() const
+    {
+        assert (pan);
+        assert (_repEdit, "even if hidden, this should be non-null");
+        return ! pan.isMouseHere && ! _repEdit.isMouseHere;
+    }
+
     @property bool multiplayer() const
     {
         return nurse.stateOnlyPrivatelyForGame.multiplayer;

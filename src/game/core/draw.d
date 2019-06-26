@@ -40,7 +40,7 @@ implGameDraw(Game game) { with (game)
         map.clearScreenRect(levBg);
         game.drawGadgets();
 
-        if (modalWindow || ! pan.splatRulerIsOn || pan.isMouseHere) {
+        if (modalWindow || ! pan.splatRulerIsOn || isMouseOnLand) {
             game.drawLand();
             game.pingOwnGadgets();
         }
@@ -66,6 +66,7 @@ implGameDraw(Game game) { with (game)
 
     if (pan.replayEditorIsOn) {
         _repEdit.shown = true;
+        _repEdit.formatButtonsAccordingTo(nurse.constReplay.allData);
     }
     else if (_repEdit.shown) {
         _repEdit.shown = false;
@@ -175,7 +176,7 @@ void drawReplaySign(Game game)
         rep.drawToCurrentAlbitNotTorbit(Point(0,
             (rep.yl/5 * (1 + sin(timerTicks * 0.08f))).to!int));
     }
-    if (game.view.canInterruptReplays && ! game.pan.isMouseHere
+    if (game.view.canInterruptReplays && game.isMouseOnLand
         && ! showFPS.value // power user setting, it overrides us
     ) {
         game.pan.suggestTooltip(Tooltip.ID.clickToCancelReplay);

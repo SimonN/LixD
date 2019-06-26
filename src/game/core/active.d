@@ -24,7 +24,7 @@ package:
 void calcActive(Game game)
 {
     game.handleNukeButton();
-    if (! game.pan.isMouseHere) {
+    if (game.isMouseOnLand) {
         if (mouseClickLeft)
             game.cancelReplay();
         auto potAss = game.findPotentialAssignee();
@@ -39,7 +39,7 @@ void calcActive(Game game)
 
 package void findAgainHighlitLixAfterPhyu(Game game)
 {
-    if (! game.pan.isMouseHere)
+    if (game.isMouseOnLand)
         game.findPotentialAssignee();
 }
 

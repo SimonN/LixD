@@ -18,6 +18,7 @@ import file.filename;
 import file.io;
 import file.log;
 import file.option : userName; // for filename during saving
+import file.replay.change;
 import file.replay.replay;
 import level.level;
 import net.permu;
@@ -131,7 +132,7 @@ void implLoadFromFile(Replay replay, Filename fn) { with (replay)
         d.skill = skill.stringToAc;
         if (d.action != RepAc.NOTHING
             && (d.skill != Ac.max || ! d.isSomeAssignment))
-            addWithoutTouching(d);
+            replay.addWithoutTouching(d);
         break; }
     default:
         break;

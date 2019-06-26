@@ -7,12 +7,11 @@ module file.replay.replay;
  * The Tribe is a team, and the game thinks in terms of Tribes, not PlNrs.
  */
 
-import core.stdc.string; // memmove
-import std.array;
-import std.algorithm; // isSorted
+import std.algorithm;
 import std.range;
 import optional;
 
+public import file.replay.changerq;
 public import net.ac;
 public import net.style;
 public import net.repdata;
@@ -22,9 +21,9 @@ import basics.globals;
 import file.date;
 import file.filename;
 import file.option;
+import file.replay.change;
 import file.replay.io;
 import level.level;
-import level.metadata;
 import net.permu;
 import net.versioning;
 
@@ -191,7 +190,8 @@ public:
         assert (rhs !is null);
     }
     body {
-        return dataSliceBeforePhyu(before) == rhs.dataSliceBeforePhyu(before);
+        return this.dataSliceBeforePhyu(before)
+            == rhs.dataSliceBeforePhyu(before);
     }
 
     void eraseEarlySingleplayerNukes()
@@ -236,7 +236,7 @@ public:
     void deleteAfterPhyu(in Phyu upd)
     {
         assert (upd >= 0);
-        _data = _data[0 .. dataSliceBeforePhyu(Phyu(upd + 1)).length];
+        _data = _data[0 .. this.dataSliceBeforePhyu(Phyu(upd + 1)).length];
         touch();
     }
 
@@ -245,7 +245,7 @@ public:
      */
     const(Ply)[] getDataForPhyu(in Phyu upd) const pure nothrow @nogc
     {
-        auto slice = dataSliceBeforePhyu(Phyu(upd + 1));
+        auto slice = this.dataSliceBeforePhyu(Phyu(upd + 1));
         int firstGood = slice.len;
         while (firstGood > 0 && slice[firstGood - 1].update == upd)
             --firstGood;
@@ -277,6 +277,14 @@ public:
         this.addWithoutTouching(d);
     }
 
+    /*
+     * See file.replay.change for what it returns.
+     */
+    Phyu edit(in ChangeRequest rq)
+    {
+        return this.changeImpl(rq);
+    }
+
     void saveManually(in Level lev) const
     {
         this.implSaveToFile(manualSaveFilename(), lev);
@@ -305,50 +313,6 @@ public:
     {
         return this.saveFilenameCustomBase(
             _players.length > 1 ? dirReplayAutoMulti : dirReplayAutoSolutions);
-    }
-
-package:
-    inout(Ply)[] dataSliceBeforePhyu(in Phyu upd) inout pure nothrow @nogc
-    {
-        // The binary search algo works also for this case.
-        // But we add mostly to the end of the data, so check here for speed.
-        if (_data.length == 0 || _data[$-1].update < upd)
-            return _data;
-
-        int bot = 0;         // first too-large is at a higher position
-        int top = _data.len; // first too-large is here or at a lower position
-
-        while (top != bot) {
-            int bisect = (top + bot) / 2;
-            assert (bisect >= 0   && bisect < _data.len);
-            assert (bisect >= bot && bisect < top);
-            if (_data[bisect].update < upd)
-                bot = bisect + 1;
-            if (_data[bisect].update >= upd)
-                top = bisect;
-        }
-        return _data[0 .. bot];
-    }
-
-    void addWithoutTouching(in Ply d)
-    {
-        // Add after the latest record that's smaller than or equal to d
-        // Equivalently, add before the earliest record that's greater than d.
-        // dataSliceBeforePhyu doesn't do exactly that, it ignores players.
-        // I believe the C++ version had a bug in the comparison. Fixed here.
-        auto slice = dataSliceBeforePhyu(Phyu(d.update + 1));
-        while (slice.length && slice[$-1] > d)
-            slice = slice[0 .. $-1];
-        if (slice.length < _data.length) {
-            _data.length += 1;
-            memmove(&_data[slice.length + 1], &_data[slice.length],
-                    Ply.sizeof * (_data.length - slice.length - 1));
-            _data[slice.length] = d;
-        }
-        else {
-            _data ~= d;
-        }
-        assert (_data.isSorted);
     }
 }
 

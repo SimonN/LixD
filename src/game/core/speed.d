@@ -3,7 +3,7 @@ module game.core.speed;
 static import basics.globals;
 
 import basics.alleg5;
-import net.repdata; // Phyu
+import file.replay.changerq;
 import file.option; // replayAfterFrameBack
 import game.core.game;
 import game.core.active; // findAgainHighlitLixAfterPhyu
@@ -13,6 +13,21 @@ import hardware.mouse;
 import hardware.sound;
 
 package:
+
+void applyChangesFromReplayEditor(Game game)
+{
+    if (! game._repEdit.suggestsChange) {
+        return;
+    }
+    /*
+     * We pause here from Game code. Reason: _repEdit is not related to
+     * pan. Comapre: We don't pause manually here e.g. when framestepping
+     * because framestepping is triggered from pan itself, which pauses
+     * (also responsibility of pan).
+     */
+    game.pan.pause(true);
+    game.nurse.editReplayRecomputeToCurrentPhyu(game._repEdit.suggestedChange);
+}
 
 void updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
 {
@@ -46,7 +61,7 @@ void updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
     else if (pan.framestepAheadMany) {
         game.upd(updatesAheadMany);
     }
-    else if (pan.paused && ! pan.isMouseHere && mouseClickLeft) {
+    else if (pan.paused && isMouseOnLand && mouseClickLeft) {
         // Clicking into the non-panel screen advances physics once.
         // This happens both when we unpause on assignment and when we
         // merely advance 1 frame, but keep the game paused, on assignment.
@@ -91,7 +106,9 @@ void adjustToMatchMillisecondsSinceGameStart(Game game, in int suggMillis)
     game._alticksToAdjust = suggTicks - ourTicks;
 }}
 
-private:
+///////////////////////////////////////////////////////////////////////////////
+private: //////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
 
 struct LoadStateRAII
 {
@@ -102,7 +119,7 @@ struct LoadStateRAII
 
 // Combat the network time-lag, affect _alticksToAdjust.
 // _alticksToAdjust is < 0 if we have to slow down, > 0 if we have to speed up.
-private bool shallWeUpdateAtAdjustedNormalSpeed(Game game) { with (game)
+bool shallWeUpdateAtAdjustedNormalSpeed(Game game) { with (game)
 {
     immutable long updAgo = timerTicks - game.altickLastPhyu;
     immutable long adjust = _alticksToAdjust < -20 ? 2
@@ -118,7 +135,9 @@ private bool shallWeUpdateAtAdjustedNormalSpeed(Game game) { with (game)
 
 // Call upd() only during updatePhysicsAccordingToSpeedButtons()
 // Dispatch new assignments, then move forward in the gametime
-void upd(Game game, in int howmany = 1,
+private void upd(
+    Game game,
+    in int howmany = 1,
     in DuringTurbo duringTurbo = DuringTurbo.no) { with (game)
 {
     if (nurse.doneAnimating())
