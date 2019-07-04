@@ -126,7 +126,7 @@ Filename fileGlobalConfigLegacy, fileLog, fileReplayVerifier, fileTharsisProf,
 
 Filename fileImageAppIcon;
 
-static this()
+shared static this()
 {
     alias Fn = immutable(VfsFilename);
 

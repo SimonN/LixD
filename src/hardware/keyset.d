@@ -119,9 +119,13 @@ private string hotkeyNiceLong(in int hotkey)
         return null;
     string s = al_keycode_to_name(hotkey).to!string;
     string ret;
-    foreach (int i, dchar c; s) {
-        if (i == 0) ret ~= std.uni.toUpper(c);
-        else if (c != '_') ret ~= std.uni.toLower(c);
+    foreach (size_t i, dchar c; s) {
+        if (i == 0) {
+            ret ~= std.uni.toUpper(c);
+        }
+        else if (c != '_') {
+            ret ~= std.uni.toLower(c);
+        }
     }
     // On Windows Allgero, unknown keys are called KEY79. We have changed
     // this to Key97, but still, remove uninformative bloat.
