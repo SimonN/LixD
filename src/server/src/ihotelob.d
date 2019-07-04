@@ -17,7 +17,7 @@ interface IHotelObserver {
     void unreadyAllInRoom(Room);
 
     void sendLevelByChooser(PlNr receiv, const(ubyte[]) level, PlNr from);
-    void sendReplayData(PlNr receiv, ReplayData data);
+    void sendPly(PlNr receiv, Ply data);
     void describeRoom(PlNr receiv, const(ubyte[]) level, PlNr from);
     void informLobbyistAboutRooms(PlNr receiv);
 

@@ -82,7 +82,7 @@ package:
     // by skill assignment, the undispatched data is not cut off with it.
     // If the replay is cut off by explicit cutting (LMB into empty space),
     // the undispatched data too is emptied.
-    ReplayData[] undispatchedAssignments;
+    Ply[] undispatchedAssignments;
 
     ReallyExitWindow modalWindow;
     Panel pan;
@@ -146,7 +146,7 @@ public:
             // Maybe too drastic? Lobby will catch us
             this._gotoMainMenu = true;
         };
-        _netClient.onPeerSendsReplayData = (ReplayData data)
+        _netClient.onPeerSendsPly = (Ply data)
         {
             this.undispatchedAssignments ~= data;
         };
@@ -202,7 +202,7 @@ public:
         if (_chatArea)
             _chatArea.saveUnsentMessageAndDispose();
         ret.onConnectionLost = null;
-        ret.onPeerSendsReplayData = null;
+        ret.onPeerSendsPly = null;
         ret.onMillisecondsSinceGameStart = null;
         return ret;
     }

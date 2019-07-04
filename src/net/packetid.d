@@ -21,7 +21,7 @@ enum PacketCtoS : ubyte {
     levelFile = 31,
 
     // To start a game, the peers set their player profiles to ready.
-    myReplayData = 40,
+    myPly = 40,
 }
 
 enum PacketStoC : ubyte {
@@ -53,6 +53,6 @@ enum PacketStoC : ubyte {
     // players take hatches and goals.
     gameStartsWithPermu = 140,
 
-    peerReplayData = 141,
+    peerPly = 141,
     millisecondsSinceGameStart = 142,
 }

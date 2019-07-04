@@ -129,14 +129,14 @@ public:
         ob.startGame(festivals[room].owner, numberOfDifferentTribes(party));
     }
 
-    void receiveReplayData(Room room, ReplayData data)
+    void receivePly(Room room, Ply data)
     {
         // DTODONETWORK: Remember these during a game, send all to whoever
         // late-joins the room.
         // Right now, we merely relay to existing players except sender.
         foreach (const plNr, ref const profile; ob.allPlayers)
             if (profile.room == room && plNr != data.player)
-                ob.sendReplayData(plNr, data);
+                ob.sendPly(plNr, data);
     }
 
     void calc()

@@ -31,7 +31,7 @@ interface INetClient {
     void createRoom();
 
     void selectLevel(const(void[])); // accepts file that's read into a buffer
-    void sendReplayData(in ReplayData);
+    void sendPly(in Ply);
 
     // Register an event callback. The class who designs the callback functions
     // should display a message from the callback information. Usually, the
@@ -55,7 +55,7 @@ interface INetClient {
                                                        const(Profile[])));
     @property void onLevelSelect(void delegate(string name, const(ubyte[]) data));
     @property void onGameStart(void delegate(Permu));
-    @property void onPeerSendsReplayData(void delegate(ReplayData));
+    @property void onPeerSendsPly(void delegate(Ply));
 
     // The server tells us how many milliseconds have passed.
     // The client adds his networking lag to that value, then calls the

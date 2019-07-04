@@ -1,6 +1,6 @@
 module net.repdata;
 
-/* ReplayData, Permu
+/* Ply, Permu
  */
 
 import std.bitmanip;
@@ -26,7 +26,7 @@ enum RepAc : ubyte {
     NUKE = 6
 }
 
-struct ReplayData {
+struct Ply {
     package enum len = player.sizeof + action.sizeof + skill.sizeof
                      + update.sizeof + toWhichLix.sizeof + 1; // +1 header
     static assert (len == 12);
@@ -44,7 +44,7 @@ struct ReplayData {
             || action == RepAc.ASSIGN_RIGHT;
     }
 
-    int opCmp(const ref ReplayData rhs) const
+    int opCmp(const ref Ply rhs) const
     {
         return this.update < rhs.update ? -1
             :  this.update > rhs.update ?  1
@@ -59,8 +59,8 @@ struct ReplayData {
     {
         ENetPacket* pck = .createPacket(len);
         assert (pck);
-        assert (packetID == PacketCtoS.myReplayData
-            ||  packetID == PacketStoC.peerReplayData);
+        assert (packetID == PacketCtoS.myPly
+            ||  packetID == PacketStoC.peerPly);
         pck.data[0] = packetID;
         pck.data[1] = player;
         pck.data[2] = action;
@@ -72,9 +72,9 @@ struct ReplayData {
 
     this(in ENetPacket* pck)
     {
-        assert (pck.data[0] == PacketCtoS.myReplayData
-            ||  pck.data[0] == PacketStoC.peerReplayData,
-            "don't call ReplayData(p) if p is not replay data");
+        assert (pck.data[0] == PacketCtoS.myPly
+            ||  pck.data[0] == PacketStoC.peerPly,
+            "don't call Ply(p) if p is not replay data");
         enforce(pck.dataLength == len);
         player = PlNr(pck.data[1]);
         update = Phyu(bigEndianToNative!int(pck.data[4 ..  8]));

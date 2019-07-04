@@ -75,7 +75,7 @@ public:
             cutReplay();
     }
 
-    void addReplayDataMaybeGoBack(const(ReplayData[]) vec)
+    void addPlyMaybeGoBack(const(Ply[]) vec)
     {
         if (vec.length == 0)
             return;

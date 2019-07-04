@@ -43,9 +43,9 @@ package void findAgainHighlitLixAfterPhyu(Game game)
         game.findPotentialAssignee();
 }
 
-package ReplayData newReplayDataForNextPhyu(Game game)
+package Ply newPlyForNextPhyu(Game game)
 {
-    ReplayData data;
+    Ply data;
     data.player = game._netClient ? game._netClient.ourPlNr : PlNr(0);
     data.update = game.nurse.upd + 1;
     return data;
@@ -93,7 +93,7 @@ void handleNukeButton(Game game) { with (game)
         return;
     pan.pause = false;
     game.cancelReplay();
-    auto data = game.newReplayDataForNextPhyu();
+    auto data = game.newPlyForNextPhyu();
     data.action = RepAc.NUKE;
     game.includeOurNew(data);
     assert (_effect);
@@ -229,7 +229,7 @@ void assignToPotentialAssignee(
         // the network, but it affects the assignment user interface.
         currentSkill.number = currentSkill.number - 1;
 
-    ReplayData data = game.newReplayDataForNextPhyu();
+    Ply data = game.newPlyForNextPhyu();
     data.action     = forcingLeft  ? RepAc.ASSIGN_LEFT
                     : forcingRight ? RepAc.ASSIGN_RIGHT
                     :                RepAc.ASSIGN;
@@ -249,9 +249,9 @@ void assignToPotentialAssignee(
 }}
 // end PotentialAssignee assignToPotentialAssignee()
 
-void includeOurNew(Game game, in ReplayData data) { with (game)
+void includeOurNew(Game game, in Ply data) { with (game)
 {
     undispatchedAssignments ~= data;
     if (_netClient)
-        _netClient.sendReplayData(data);
+        _netClient.sendPly(data);
 }}

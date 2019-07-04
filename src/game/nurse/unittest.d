@@ -154,13 +154,13 @@ version (unittest) {
     void assign(SaveStatingNurse nurse, Phyu phyu, Ac ac)
     in { assert (nurse); }
     body {
-        ReplayData d;
+        Ply d;
         d.player = PlNr(0);
         d.action = RepAc.ASSIGN;
         d.update = phyu;
         d.skill = ac;
         d.toWhichLix = 0;
-        nurse.addReplayDataMaybeGoBack([d]);
+        nurse.addPlyMaybeGoBack([d]);
     }
 
     const(Lixxie) theLix(Nurse nurse)

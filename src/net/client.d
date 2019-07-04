@@ -48,7 +48,7 @@ private:
     void delegate(const(Room[]), const(Profile[])) _onListOfExistingRooms;
     void delegate(string name, const(ubyte[]) data) _onLevelSelect;
     void delegate(Permu) _onGameStart;
-    void delegate(ReplayData) _onPeerSendsReplayData;
+    void delegate(Ply) _onPeerSendsPly;
     void delegate(int) _onMillisecondsSinceGameStart;
 
 public:
@@ -111,7 +111,7 @@ public:
     @property void onListOfExistingRooms(typeof(_onListOfExistingRooms) dg) { _onListOfExistingRooms = dg; }
     @property void onLevelSelect(typeof(_onLevelSelect) dg) { _onLevelSelect = dg; }
     @property void onGameStart(typeof(_onGameStart) dg) { _onGameStart = dg; }
-    @property void onPeerSendsReplayData(typeof(_onPeerSendsReplayData) dg) { _onPeerSendsReplayData = dg; }
+    @property void onPeerSendsPly(typeof(_onPeerSendsPly) dg) { _onPeerSendsPly = dg; }
     @property void onMillisecondsSinceGameStart(typeof(_onMillisecondsSinceGameStart) dg) { _onMillisecondsSinceGameStart = dg; }
 
     void sendChatMessage(string aText)
@@ -213,12 +213,12 @@ public:
         enet_peer_send(_serverPeer, 0, p);
     }
 
-    void sendReplayData(const ReplayData data)
+    void sendPly(const Ply data)
     {
         if (! connected)
             return;
         enet_peer_send(_serverPeer, 0,
-            data.createPacket(PacketCtoS.myReplayData));
+            data.createPacket(PacketCtoS.myPly));
     }
 
 private:
@@ -380,9 +380,9 @@ private:
                 _onGameStart && _onGameStart(permu);
             }
         }
-        else if (got.data[0] == PacketStoC.peerReplayData) {
-            if (got.dataLength == ReplayData.len && _onPeerSendsReplayData)
-                _onPeerSendsReplayData(ReplayData(got));
+        else if (got.data[0] == PacketStoC.peerPly) {
+            if (got.dataLength == Ply.len && _onPeerSendsPly)
+                _onPeerSendsPly(Ply(got));
         }
         else if (got.data[0] == PacketStoC.peerDisconnected) {
             auto discon = SomeoneDisconnectedPacket(got);

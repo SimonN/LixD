@@ -119,7 +119,7 @@ void implLoadFromFile(Replay replay, Filename fn) { with (replay)
         iSplit.popFront;
         string skill = iSplit.empty ? "" : iSplit.front;
 
-        ReplayData d;
+        Ply d;
         d.update     = i.nr1;
         d.player     = i.nr2 & 0xFF;
         d.toWhichLix = i.nr3;

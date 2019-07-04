@@ -122,11 +122,11 @@ public:
         enet_peer_send(_host.peers + receiv, 0, p);
     }
 
-    void sendReplayData(PlNr receiv, ReplayData data)
+    void sendPly(PlNr receiv, Ply data)
     {
         if (_host.peers + receiv is null)
             return;
-        ENetPacket* p = data.createPacket(PacketStoC.peerReplayData);
+        ENetPacket* p = data.createPacket(PacketStoC.peerPly);
         enet_peer_send(_host.peers + receiv, 0, p);
     }
 
@@ -223,7 +223,7 @@ private:
             case myProfile: receiveProfileChange(peer, got); break;
             case chatMessage: receiveChat(peer, got); break;
             case levelFile: receiveLevel(peer, got); break;
-            case myReplayData: receiveReplayData(peer, got); break;
+            case myPly: receivePly(peer, got); break;
             default: break;
         }
     }
@@ -358,14 +358,14 @@ private:
         unreadyAllInRoom(profile.room);
     }
 
-    void receiveReplayData(ENetPeer* peer, ENetPacket* got)
+    void receivePly(ENetPeer* peer, ENetPacket* got)
     {
         auto plNr = peerToPlNr(peer);
         auto profile = plNr in _profiles;
-        if (! profile || got.dataLength != ReplayData.len)
+        if (! profile || got.dataLength != Ply.len)
             return;
-        auto data = ReplayData(got);
+        auto data = Ply(got);
         data.player = plNr; // Don't trust the client. We decide who sent it!
-        _hotel.receiveReplayData(profile.room, data);
+        _hotel.receivePly(profile.room, data);
     }
 }

@@ -126,7 +126,7 @@ void upd(Game game, in int howmany = 1,
     immutable before = nurse.upd;
     // Don't send undispatched via network, we did that earlier already.
     // Some from undispatchedAssignments have even come from the net.
-    nurse.addReplayDataMaybeGoBack(undispatchedAssignments);
+    nurse.addPlyMaybeGoBack(undispatchedAssignments);
     undispatchedAssignments = null;
     nurse.updateTo(Phyu(before + howmany), duringTurbo);
     game.findAgainHighlitLixAfterPhyu();

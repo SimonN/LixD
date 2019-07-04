@@ -51,7 +51,7 @@ package:
     Version _gameVersionRequired;
     Player[PlNr] _players;
     Permu _permu; // contains natural numbers [0 .. #players[, not the plNrs
-    ReplayData[] _data;
+    Ply[] _data;
 
 public:
     static newForLevel(Filename levFn, Date levBuilt)
@@ -226,7 +226,7 @@ public:
             return;
         deleteAfterPhyu(lastActionsToKeep);
 
-        ReplayData termNuke = ReplayData();
+        Ply termNuke = Ply();
         termNuke.player = _players.byKey.front;
         termNuke.update = Phyu(lastActionsToKeep + 1);
         termNuke.action = RepAc.NUKE;
@@ -240,7 +240,10 @@ public:
         touch();
     }
 
-    const(ReplayData)[] getDataForPhyu(in Phyu upd) const
+    /*
+     * Our users should prefer to call getDataForPhyu() over allData().
+     */
+    const(Ply)[] getDataForPhyu(in Phyu upd) const pure nothrow @nogc
     {
         auto slice = dataSliceBeforePhyu(Phyu(upd + 1));
         int firstGood = slice.len;
@@ -249,6 +252,14 @@ public:
         assert (firstGood >= 0);
         assert (firstGood <= slice.length);
         return _data[firstGood .. slice.length];
+    }
+
+    /*
+     * Call allData() rarely, e.g., to list all entries in the replay editor.
+     */
+    @property const(Ply)[] allData() const pure nothrow @nogc
+    {
+        return _data;
     }
 
     bool getOnPhyuLixClicked(in Phyu upd, in int lix_id, in Ac ac) const
@@ -260,7 +271,7 @@ public:
         return false;
     }
 
-    void add(in ReplayData d)
+    void add(in Ply d)
     {
         touch();
         this.addWithoutTouching(d);
@@ -297,7 +308,7 @@ public:
     }
 
 package:
-    inout(ReplayData)[] dataSliceBeforePhyu(in Phyu upd) @nogc nothrow inout
+    inout(Ply)[] dataSliceBeforePhyu(in Phyu upd) inout pure nothrow @nogc
     {
         // The binary search algo works also for this case.
         // But we add mostly to the end of the data, so check here for speed.
@@ -319,7 +330,7 @@ package:
         return _data[0 .. bot];
     }
 
-    void addWithoutTouching(in ReplayData d)
+    void addWithoutTouching(in Ply d)
     {
         // Add after the latest record that's smaller than or equal to d
         // Equivalently, add before the earliest record that's greater than d.
@@ -331,7 +342,7 @@ package:
         if (slice.length < _data.length) {
             _data.length += 1;
             memmove(&_data[slice.length + 1], &_data[slice.length],
-                    ReplayData.sizeof * (_data.length - slice.length - 1));
+                    Ply.sizeof * (_data.length - slice.length - 1));
             _data[slice.length] = d;
         }
         else {
@@ -344,7 +355,7 @@ package:
 unittest {
     Replay a = Replay.newNoLevelFilename(Date.now());
     Replay b = Replay.newNoLevelFilename(Date.now());
-    ReplayData d;
+    Ply d;
     d.skill = Ac.digger;
     d.toWhichLix = 50;
     d.update = Phyu(20);

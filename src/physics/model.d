@@ -42,10 +42,10 @@ public:
     // The replay data comes with player information (PlNr).
     // Physics only work with tribe information (Style).
     // To preserve database normal form, we shouldn't put the Style in the
-    // replay's ReplayData, but still must ask the caller of advance(),
-    // which is the Nurse, to associate ReplayData to Style via this struct.
+    // replay's Ply, but still must ask the caller of advance(),
+    // which is the Nurse, to associate Ply to Style via this struct.
     struct ColoredData {
-        ReplayData replayData;
+        Ply replayData;
         Style style;
         alias replayData this;
     }
@@ -82,7 +82,7 @@ public:
         if (isInputRange!R && is (ElementType!R : const(ColoredData)))
     {
         ++_cs.update;
-        range.each!(cd => applyReplayData(cd));
+        range.each!(cd => applyPly(cd));
 
         updateNuke(); // sets lixHatch = 0, thus affects spawnLixxiesFromHatch
         spawnLixxiesFromHatches();
@@ -108,7 +108,7 @@ private:
         return OutsideWorld(_cs, _physicsDrawer, _effect, pa);
     }
 
-    void applyReplayData(in ColoredData i)
+    void applyPly(in ColoredData i)
     {
         immutable upd = _cs.update;
         assert (i.update == upd,
@@ -126,7 +126,7 @@ private:
 
         immutable Passport pa = Passport(i.style, i.toWhichLix);
         if (i.isSomeAssignment) {
-            // never assert based on the content in ReplayData, which may have
+            // never assert based on the content in Ply, which may have
             // been a maleficious attack from a third party, carrying a lix ID
             // that is not valid. If bogus data comes, do nothing.
             if (i.toWhichLix < 0 || i.toWhichLix >= tribe.lixlen)
