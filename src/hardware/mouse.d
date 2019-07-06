@@ -13,29 +13,31 @@ void deinitialize();
 
 void calc();
 
-@property int   mouseX()        { return _mouseOwn.x; }
-@property int   mouseY()        { return _mouseOwn.y; }
-@property Point mouseOnScreen() { return _mouseOwn; }
-@property Point mouseMickey()   { return _mickey / mouseStandardDivisor; }
+@property nothrow @nogc {
+    int   mouseX()        { return _mouseOwn.x; }
+    int   mouseY()        { return _mouseOwn.y; }
+    Point mouseOnScreen() { return _mouseOwn; }
+    Point mouseMickey()   { return _mickey / mouseStandardDivisor; }
 
-@property bool mouseClickLeft()         { return _mouseClick  [0]; }
-@property bool mouseClickRight()        { return _mouseClick  [1]; }
-@property bool mouseClickMiddle()       { return _mouseClick  [2]; }
-@property bool mouseDoubleClickLeft()   { return _mouseDouble [0]; }
-@property bool mouseDoubleClickRight()  { return _mouseDouble [1]; }
-@property bool mouseDoubleClickMiddle() { return _mouseDouble [2]; }
-@property int  mouseHeldLeft()          { return _mouseHeldFor[0]; }
-@property int  mouseHeldRight()         { return _mouseHeldFor[1]; }
-@property int  mouseHeldMiddle()        { return _mouseHeldFor[2]; }
-@property bool mouseHeldLongLeft()      { return _mouseHeldFor[0] > _dSpeed; }
-@property bool mouseHeldLongRight()     { return _mouseHeldFor[1] > _dSpeed; }
-@property bool mouseHeldLongMiddle()    { return _mouseHeldFor[2] > _dSpeed; }
-@property int  mouseReleaseLeft()       { return _mouseRelease[0]; }
-@property int  mouseReleaseRight()      { return _mouseRelease[1]; }
-@property int  mouseReleaseMiddle()     { return _mouseRelease[2]; }
-@property int  mouseWheelNotches()      { return _wheelNotches; }
+    bool mouseClickLeft()         { return _mouseClick  [0]; }
+    bool mouseClickRight()        { return _mouseClick  [1]; }
+    bool mouseClickMiddle()       { return _mouseClick  [2]; }
+    bool mouseDoubleClickLeft()   { return _mouseDouble [0]; }
+    bool mouseDoubleClickRight()  { return _mouseDouble [1]; }
+    bool mouseDoubleClickMiddle() { return _mouseDouble [2]; }
+    int  mouseHeldLeft()          { return _mouseHeldFor[0]; }
+    int  mouseHeldRight()         { return _mouseHeldFor[1]; }
+    int  mouseHeldMiddle()        { return _mouseHeldFor[2]; }
+    bool mouseHeldLongLeft()      { return _mouseHeldFor[0] > _dSpeed; }
+    bool mouseHeldLongRight()     { return _mouseHeldFor[1] > _dSpeed; }
+    bool mouseHeldLongMiddle()    { return _mouseHeldFor[2] > _dSpeed; }
+    int  mouseReleaseLeft()       { return _mouseRelease[0]; }
+    int  mouseReleaseRight()      { return _mouseRelease[1]; }
+    int  mouseReleaseMiddle()     { return _mouseRelease[2]; }
+    int  mouseWheelNotches()      { return _wheelNotches; }
 
-@property bool hardwareMouseInsideWindow() { return _trapMouse; }
+    bool hardwareMouseInsideWindow() { return _trapMouse; }
+}
 
 void trapMouse(bool b) { _trapMouse = b; }
 
