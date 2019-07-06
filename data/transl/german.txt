@@ -104,7 +104,7 @@ $gameShowSplatRuler Fallhöhen-Lineal anzeigen.
 $gameHighlightGoals Eigene Klappen und Ziele hervorheben.
 $gameStateSave Spielstand schnellspeichern.
 $gameStateLoad Schnellgespeicherten Spielstand laden.
-$gameShowReplayEditor Replay-Editor anzeigen.
+$gameShowTweaker Replay-Justierer anzeigen.
 $gameFramestepBack %s für Schritt zurück, %s für Sprung zurück.
 $gameFramestepAhead %s für Schritt vorwärts, %s für Sprung vorwärts.
 $gameFastForward %s für schnellen Vorlauf, %s für Turbo.
@@ -304,12 +304,12 @@ $optionKeyFrameBackMany ◀▮ 1 Sek.|Das Spiel um 1 Sekunde zurückspulen.
 $optionKeyFrameBackOne ◀▮ 1 Bild|Das Spiel um 1 Physik-Update zurückspulen, also um ¹⁄₁₅ einer Sekunde.
 $optionKeyFrameAheadOne ▮▶ 1 Bild|Das Spiel um 1 Physik-Update vorspulen, also um ¹⁄₁₅ einer Sekunde.
 $optionKeyFrameAheadMany ▮▶ 10 Sek.|Das Spiel um 10 Sekunden vorspulen.
-$optionKeySpeedFast ▶▶|Schnellen Vorlauf an- und ausschalten.|Schneller Vorlauf ist 4 mal so schnell wie normales Spiel.
-$optionKeySpeedTurbo ▶▶▶|Turbo-Vorlauf an- und ausschalten.|Turbo-Vorlauf ist 36 mal so schnell wie normales Spiel.
+$optionKeySpeedFast ▶▶|Schnellen Vorlauf an- und ausschalten.|Schneller Vorlauf ist 4-mal so schnell wie normales Spiel.
+$optionKeySpeedTurbo ▶▶▶|Turbo-Vorlauf an- und ausschalten.|Turbo-Vorlauf ist 36-mal so schnell wie normales Spiel.
 $optionKeyRestart Neustart|Den Level komplett von vorne starten, mit Replay deiner Aktionen.|Um das Replay abzubrechen, klicke in die Luft.
 $optionKeyStateLoad Stand laden|Zum schnellgespeicherten Spielstand zurückkehren.
 $optionKeyStateSave Stand speich.|Spielstand schnellspeichern.
-$optionKeyShowReplayEditor Replay-Editor|Den Replay-Editor anzeigen, um Lösungsansätze auszubessern.|Du kannst Fähigkeitszuweisungen löschen und verschieben.
+$optionKeyShowTweaker Rep.-Justierer|Den Replay-Justierer anzeigen, um Lösungsansätze auszubessern.|Du kannst Fähigkeitszuweisungen löschen und verschieben.
 $optionKeyChat Chat|Die Chat-Konsole während einer Mehrspieler-Partie öffnen.
 $optionKeyShowSplatRuler Fall-Lineal|Das Fallhöhen-Lineal anzeigen, um tödliche Falldistanzen zu messen.
 $optionKeyHighlightGoals Ziele hervorh.|Eigene Klappen und Ziele während eines Netzwerkspiels hervorheben.|Es ist dann leichter, sich zurechtzufinden.

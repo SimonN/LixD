@@ -1,7 +1,10 @@
-module file.replay.change;
+module file.replay.tweakimp;
 
 /*
- * Implementation of replay-changing functions.
+ * Implementation of replay-tweaking functions.
+ * Replay tweaking means to change the replay via the replay tweaker UI:
+ * To move or delete plies deep in the replay, even if other plies follow.
+ *
  * Everything is package or private here.
  * The public interface is in file.replay.replay.
  */
@@ -22,7 +25,7 @@ package:
  * The public function in file.replay.replay should guarantee for us
  * that (RepData what) can be found in the replay.
  */
-Phyu changeImpl(
+Phyu tweakImpl(
     Replay rep,
     in ChangeRequest rq,
 ) in {
@@ -37,9 +40,9 @@ out {
     version (unittest) {
         import std.conv;
         import std.array;
-        assert (rep._data.isSorted,
-            "Missorted replay data after changeImpl:\n"
-            ~ rep._data.map!(to!string).join("\n"));
+        assert (rep._plies.isSorted,
+            "Missorted replay data after tweakImpl:\n"
+            ~ rep._plies.map!(to!string).join("\n"));
     }
 }
 body {
@@ -56,29 +59,29 @@ body {
     }
 }
 
-inout(Ply)[] dataSliceBeforePhyu(
+inout(Ply)[] plySliceBefore(
     inout(Replay) rep,
     in Phyu upd
 ) pure nothrow @nogc { with (rep)
 {
     // The binary search algo works also for this case.
     // But we add mostly to the end of the data, so check here for speed.
-    if (_data.length == 0 || _data[$-1].update < upd)
-        return _data;
+    if (_plies.length == 0 || _plies[$-1].update < upd)
+        return _plies;
 
     int bot = 0;         // first too-large is at a higher position
-    int top = _data.len; // first too-large is here or at a lower position
+    int top = _plies.len; // first too-large is here or at a lower position
 
     while (top != bot) {
         int bisect = (top + bot) / 2;
-        assert (bisect >= 0   && bisect < _data.len);
+        assert (bisect >= 0   && bisect < _plies.len);
         assert (bisect >= bot && bisect < top);
-        if (_data[bisect].update < upd)
+        if (_plies[bisect].update < upd)
             bot = bisect + 1;
-        if (_data[bisect].update >= upd)
+        if (_plies[bisect].update >= upd)
             top = bisect;
     }
-    return _data[0 .. bot];
+    return _plies[0 .. bot];
 }}
 
 // See file.replay.replay for add() with touching.
@@ -88,23 +91,23 @@ void addWithoutTouching(
 ) {
     // Add after the latest record that's smaller than or equal to d
     // Equivalently, add before the earliest record that's greater than d.
-    // dataSliceBeforePhyu doesn't do exactly that, it ignores players.
+    // plySliceBefore doesn't do exactly that, it ignores players.
     // I believe the C++ version had a bug in the comparison. Fixed here.
-    auto slice = rep.dataSliceBeforePhyu(Phyu(d.update + 1));
+    auto slice = rep.plySliceBefore(Phyu(d.update + 1));
     while (slice.length && slice[$-1] > d)
         slice = slice[0 .. $-1];
-    if (slice.length < rep._data.length) {
-        rep._data.length += 1;
+    if (slice.length < rep._plies.length) {
+        rep._plies.length += 1;
         memmove(
-            &rep._data[slice.length + 1],
-            &rep._data[slice.length],
-            Ply.sizeof * (rep._data.length - slice.length - 1));
-        rep._data[slice.length] = d;
+            &rep._plies[slice.length + 1],
+            &rep._plies[slice.length],
+            Ply.sizeof * (rep._plies.length - slice.length - 1));
+        rep._plies[slice.length] = d;
     }
     else {
-        rep._data ~= d;
+        rep._plies ~= d;
     }
-    assert (rep._data.isSorted);
+    assert (rep._plies.isSorted);
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -112,8 +115,8 @@ private: //////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 
 /*
- * All these functions are called from changeImpl, therefore (RepData what)
- * is guaranteed to be found in (rep._data).
+ * All these functions are called from tweakImpl, therefore (RepData what)
+ * is guaranteed to be found in (rep._plies).
  *
  * See file.replay.changerq for the spec.
  */
@@ -125,14 +128,14 @@ Phyu moveThisLaterImpl(
     int id = rep.indexOf(rq.what);
     immutable oldPhyu = rq.what.update;
     immutable newPhyu = Phyu(rq.what.update + 1);
-    rep._data[id].update = newPhyu;
+    rep._plies[id].update = newPhyu;
     // Restore the sorting, and adhere to the rule of inserting as last,
     // as specced in file.replay.changerq.
     while (
-        rep._data.len >= id + 2 // There is an entry after the changed entry
-        && rep._data[id + 1] <= rep._data[id]
+        rep._plies.len >= id + 2 // There is an entry after the changed entry
+        && rep._plies[id + 1] <= rep._plies[id]
     ) {
-        swap(rep._data[id], rep._data[id + 1]);
+        swap(rep._plies[id], rep._plies[id + 1]);
         ++id; // The changed entry sits at a higher position now. Check again.
     }
     return oldPhyu;
@@ -145,9 +148,9 @@ Phyu moveThisEarlierImpl(
     int id = rep.indexOf(rq.what);
     immutable oldPhyu = rq.what.update;
     immutable newPhyu = Phyu(rq.what.update - 1);
-    rep._data[id].update = newPhyu;
-    while (id > 0 && rep._data[id - 1] > rep._data[id]) {
-        swap(rep._data[id - 1], rep._data[id]);
+    rep._plies[id].update = newPhyu;
+    while (id > 0 && rep._plies[id - 1] > rep._plies[id]) {
+        swap(rep._plies[id - 1], rep._plies[id]);
         --id;
     }
     return newPhyu;
@@ -158,19 +161,19 @@ Phyu eraseThisImpl(
     in ChangeRequest rq
 ) {
     int id = rep.indexOf(rq.what);
-    assert (id < rep._data.len);
+    assert (id < rep._plies.len);
     memmove(
-        &rep._data[id],
-        &rep._data[id] + 1, // if outside array, then 0 bytes will be copied...
-        Ply.sizeof * (rep._data.len - id - 1)); // ...because of this number.
-    rep._data.length -= 1;
+        &rep._plies[id],
+        &rep._plies[id] + 1, // if outside array, 0 bytes will be copied...
+        Ply.sizeof * (rep._plies.len - id - 1)); // ...because of this number.
+    rep._plies.length -= 1;
     return rq.what.update;
 }
 
 /*
- * Find (what)'s index in rep._data.
- * Assume that rep._data is sorted..
- * If duplicates of (what) are in rep._data, return the first of them.
+ * Find (what)'s index in rep._plies.
+ * Assume that rep._plies is sorted..
+ * If duplicates of (what) are in rep._plies, return the first of them.
  * Returns -1 if (Ply what) cannot be found.
  */
 int indexOf(
@@ -179,8 +182,8 @@ int indexOf(
 ) nothrow @nogc
 {
     // Slow impl, consider bisecting
-    for (int id = 0; id < rep._data.len; ++id) {
-        if (rep._data[id] == what) {
+    for (int id = 0; id < rep._plies.len; ++id) {
+        if (rep._plies[id] == what) {
             return id;
         }
     }
@@ -216,39 +219,39 @@ unittest {
      * it's still the assignment with index 1. After the second move,
      * the rule of inserting as last applies and forces to swap builder/basher.
      */
-    assert (rep._data[1].skill == Ac.builder);
-    assert (rep._data[1].update == 101);
-    rep.changeImpl(ChangeRequest(rep._data[1], ChangeVerb.moveThisLater));
-    assert (rep._data[1].skill == Ac.builder);
-    assert (rep._data[1].update == 102);
-    rep.changeImpl(ChangeRequest(rep._data[1], ChangeVerb.moveThisLater));
-    assert (rep._data[1].skill == Ac.basher);
-    assert (rep._data[2].skill == Ac.builder);
-    assert (rep._data[1].update == 103);
-    rep.changeImpl(ChangeRequest(rep._data[2], ChangeVerb.moveThisLater));
-    assert (rep._data[2].update == 104);
+    assert (rep._plies[1].skill == Ac.builder);
+    assert (rep._plies[1].update == 101);
+    rep.tweakImpl(ChangeRequest(rep._plies[1], ChangeVerb.moveThisLater));
+    assert (rep._plies[1].skill == Ac.builder);
+    assert (rep._plies[1].update == 102);
+    rep.tweakImpl(ChangeRequest(rep._plies[1], ChangeVerb.moveThisLater));
+    assert (rep._plies[1].skill == Ac.basher);
+    assert (rep._plies[2].skill == Ac.builder);
+    assert (rep._plies[1].update == 103);
+    rep.tweakImpl(ChangeRequest(rep._plies[2], ChangeVerb.moveThisLater));
+    assert (rep._plies[2].update == 104);
 
     /*
      * Move the builder assignment back, and even more.
      * Again adhere to the rule of inserting last.
      * This means that (moving later, then moving earlier) is not always nop.
      */
-    rep.changeImpl(ChangeRequest(rep._data[2], ChangeVerb.moveThisEarlier));
-    assert (rep._data[1].skill == Ac.basher);
-    assert (rep._data[2].skill == Ac.builder);
-    assert (rep._data[2].update == 103);
-    rep.changeImpl(ChangeRequest(rep._data[2], ChangeVerb.moveThisEarlier));
-    assert (rep._data[1].skill == Ac.builder);
-    assert (rep._data[2].skill == Ac.basher);
-    rep.changeImpl(ChangeRequest(rep._data[1], ChangeVerb.moveThisEarlier));
-    assert (rep._data[1].skill == Ac.builder);
-    rep.changeImpl(ChangeRequest(rep._data[1], ChangeVerb.moveThisEarlier));
-    assert (rep._data[0].skill == Ac.blocker);
-    assert (rep._data[1].skill == Ac.builder);
-    assert (rep._data[0].update == rep._data[1].update);
-    rep.changeImpl(ChangeRequest(rep._data[1], ChangeVerb.moveThisEarlier));
-    assert (rep._data[0].skill == Ac.builder);
-    assert (rep._data[1].skill == Ac.blocker);
+    rep.tweakImpl(ChangeRequest(rep._plies[2], ChangeVerb.moveThisEarlier));
+    assert (rep._plies[1].skill == Ac.basher);
+    assert (rep._plies[2].skill == Ac.builder);
+    assert (rep._plies[2].update == 103);
+    rep.tweakImpl(ChangeRequest(rep._plies[2], ChangeVerb.moveThisEarlier));
+    assert (rep._plies[1].skill == Ac.builder);
+    assert (rep._plies[2].skill == Ac.basher);
+    rep.tweakImpl(ChangeRequest(rep._plies[1], ChangeVerb.moveThisEarlier));
+    assert (rep._plies[1].skill == Ac.builder);
+    rep.tweakImpl(ChangeRequest(rep._plies[1], ChangeVerb.moveThisEarlier));
+    assert (rep._plies[0].skill == Ac.blocker);
+    assert (rep._plies[1].skill == Ac.builder);
+    assert (rep._plies[0].update == rep._plies[1].update);
+    rep.tweakImpl(ChangeRequest(rep._plies[1], ChangeVerb.moveThisEarlier));
+    assert (rep._plies[0].skill == Ac.builder);
+    assert (rep._plies[1].skill == Ac.blocker);
 }
 
 unittest {
@@ -260,15 +263,15 @@ unittest {
     rep.add(b);
     rep.add(c);
 
-    rep.changeImpl(ChangeRequest(b, ChangeVerb.eraseThis));
-    assert (rep._data.length == 2);
-    assert (rep._data[0] == a);
-    assert (rep._data[1] == c);
+    rep.tweakImpl(ChangeRequest(b, ChangeVerb.eraseThis));
+    assert (rep._plies.length == 2);
+    assert (rep._plies[0] == a);
+    assert (rep._plies[1] == c);
 
-    rep.changeImpl(ChangeRequest(c, ChangeVerb.eraseThis));
-    assert (rep._data.length == 1);
-    assert (rep._data[0] == a);
+    rep.tweakImpl(ChangeRequest(c, ChangeVerb.eraseThis));
+    assert (rep._plies.length == 1);
+    assert (rep._plies[0] == a);
 
-    rep.changeImpl(ChangeRequest(a, ChangeVerb.eraseThis));
-    assert (rep._data.length == 0);
+    rep.tweakImpl(ChangeRequest(a, ChangeVerb.eraseThis));
+    assert (rep._plies.length == 0);
 }

@@ -10,10 +10,9 @@ module game.repedit.oneline;
 import std.format;
 import std.range;
 
-import file.replay.changerq;
+import file.replay.tweakrq;
 import gui;
 import graphic.internal;
-import net.ac;
 import net.repdata;
 
 class OneLine : Element {

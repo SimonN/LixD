@@ -13,7 +13,7 @@ import game.repedit.oneline;
 import graphic.color;
 import gui;
 
-class ReplayEditor : Element {
+class Tweaker : Element {
 private:
     OneLine[] _entries;
 
@@ -22,7 +22,7 @@ public:
     {
         super(g);
         /*
-         * We don't undraw the ReplayEditor when we hide it.
+         * We don't undraw the Tweaker when we hide it.
          * color.transp means don't undraw. (Bad convention?)
          * Instead of undrawing, the Game will redraw all GUI, a hack.
          */

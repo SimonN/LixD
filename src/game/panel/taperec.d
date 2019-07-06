@@ -139,7 +139,7 @@ private:
 
 class SaveStateButtons : Element, TooltipSuggester {
 private:
-    BitmapButton _stateLoad, _stateSave, _showReplayEditor;
+    BitmapButton _stateLoad, _stateSave, _showTweaker;
 
 public:
     this(Geom g)
@@ -154,23 +154,23 @@ public:
         _stateSave = new BitmapButton(
             new Geom(xlg/3f, 0, xlg/3f, 20),
             InternalImage.gamePanel2.toCutbit);
-        _showReplayEditor = new BitmapButton(
+        _showTweaker = new BitmapButton(
             new Geom(xlg*2f/3f, 0, xlg/3f, 20),
             InternalImage.gamePanel2.toCutbit);
         _stateLoad.xf = GamePanel2Xf.quickload;
         _stateSave.xf = GamePanel2Xf.quicksave;
-        _showReplayEditor.xf = GamePanel2Xf.showReplayEditor;
+        _showTweaker.xf = GamePanel2Xf.showTweaker;
         _stateLoad.hotkey = keyStateLoad;
         _stateSave.hotkey = keyStateSave;
-        _showReplayEditor.hotkey = keyShowReplayEditor;
-        addChildren(_stateSave, _stateLoad, _showReplayEditor);
+        _showTweaker.hotkey = keyShowTweaker;
+        addChildren(_stateSave, _stateLoad, _showTweaker);
         showLoadState(false);
     }
 
     @property const {
         bool loadState() { return _stateLoad.execute; }
         bool saveState() { return _stateSave.execute; }
-        bool replayEditorIsOn() { return _showReplayEditor.on; }
+        bool tweakerIsOn() { return _showTweaker.on; }
 
         bool isSuggestingTooltip()
         {
@@ -182,7 +182,7 @@ public:
         body {
             return _stateLoad.isMouseHere ? Tooltip.ID.stateLoad
                 : _stateSave.isMouseHere ? Tooltip.ID.stateSave
-                : Tooltip.ID.showReplayEditor;
+                : Tooltip.ID.showTweaker;
         }
     }
 
@@ -192,8 +192,8 @@ protected:
         if (_stateSave.execute) {
             showLoadState(true);
         }
-        if (_showReplayEditor.execute) {
-            _showReplayEditor.on = ! _showReplayEditor.on;
+        if (_showTweaker.execute) {
+            _showTweaker.on = ! _showTweaker.on;
         }
     }
 

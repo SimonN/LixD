@@ -40,7 +40,7 @@ public:
         bool framestepAheadMany() { return false; }
 
         bool splatRulerIsOn() { return false; }
-        bool replayEditorIsOn() { return false; }
+        bool tweakerIsOn() { return false; }
         bool highlightGoalsExecute() { return false; }
         bool zoomIn() { return false; }
         bool zoomOut() { return false; }
@@ -149,7 +149,7 @@ public:
     override const @property {
         bool saveState() { return _ssbs.saveState; }
         bool loadState() { return _ssbs.loadState; }
-        bool replayEditorIsOn() { return _ssbs.replayEditorIsOn; }
+        bool tweakerIsOn() { return _ssbs.tweakerIsOn; }
     }
 }
 

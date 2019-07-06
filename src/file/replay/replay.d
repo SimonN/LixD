@@ -11,7 +11,7 @@ import std.algorithm;
 import std.range;
 import optional;
 
-public import file.replay.changerq;
+public import file.replay.tweakrq;
 public import net.ac;
 public import net.style;
 public import net.repdata;
@@ -21,7 +21,7 @@ import basics.globals;
 import file.date;
 import file.filename;
 import file.option;
-import file.replay.change;
+import file.replay.tweakimp;
 import file.replay.io;
 import level.level;
 import net.permu;
@@ -50,7 +50,7 @@ package:
     Version _gameVersionRequired;
     Player[PlNr] _players;
     Permu _permu; // contains natural numbers [0 .. #players[, not the plNrs
-    Ply[] _data;
+    Ply[] _plies;
 
 public:
     static newForLevel(Filename levFn, Date levBuilt)
@@ -84,7 +84,7 @@ public:
             (fn) { levelFilename = fn; },
             () { _levelFnCanBeNullInNetgames = MutFilename(null); });
         _permu = rhs._permu.clone();
-        _data = rhs._data.dup;
+        _plies = rhs._plies.dup;
 
         assert (! _players.length);
         rhs._players.byKeyValue.each!(a => _players[a.key] = a.value);
@@ -113,7 +113,7 @@ public:
     override bool opEquals(Object rhsObj)
     {
         if (const rhs = cast(const(Replay)) rhsObj)
-            return _data == rhs._data
+            return _plies == rhs._plies
                 && cast(const(Player[PlNr])) _players == rhs._players
                 && _permu == rhs._permu
                 && levelFilename == rhs.levelFilename;
@@ -133,8 +133,8 @@ public:
         int numPlayers() { return _players.length & 0x7FFF_FFFF; }
         const(Player[PlNr]) players() { return _players; }
         const(Permu) permu() { return _permu; }
-        bool empty() { return _data.length == 0; }
-        int latestPhyu() { return (_data.length > 0) ? _data[$-1].update : 0; }
+        bool empty() { return _plies.length == 0; }
+        int latestPhyu() { return (_plies.length > 0) ? _plies[$-1].update : 0; }
     }
 
     @property Permu permu(Permu p) { _permu = p; return p; }
@@ -190,8 +190,8 @@ public:
         assert (rhs !is null);
     }
     body {
-        return this.dataSliceBeforePhyu(before)
-            == rhs.dataSliceBeforePhyu(before);
+        return this.plySliceBefore(before)
+            == rhs.plySliceBefore(before);
     }
 
     void eraseEarlySingleplayerNukes()
@@ -200,11 +200,11 @@ public:
         enum beforePhyu = 61; // Not 60, only nuke if it kills lix.
         if (_players.length > 1)
             return;
-        for (int i = 0; i < _data.length; ++i) {
-            if (_data[i].update >= beforePhyu)
+        for (int i = 0; i < _plies.length; ++i) {
+            if (_plies[i].update >= beforePhyu)
                 break;
-            else if (_data[i].action == RepAc.NUKE) {
-                _data = _data[0 .. i] ~ _data[i+1 .. $];
+            else if (_plies[i].action == RepAc.NUKE) {
+                _plies = _plies[0 .. i] ~ _plies[i+1 .. $];
                 --i;
             }
         }
@@ -222,7 +222,7 @@ public:
     void terminateSingleplayerWithNukeAfter(in Phyu lastActionsToKeep)
     {
         if (_players.length != 1
-            || _data.canFind!(rd => rd.action == RepAc.NUKE))
+            || _plies.canFind!(rd => rd.action == RepAc.NUKE))
             return;
         deleteAfterPhyu(lastActionsToKeep);
 
@@ -236,35 +236,35 @@ public:
     void deleteAfterPhyu(in Phyu upd)
     {
         assert (upd >= 0);
-        _data = _data[0 .. this.dataSliceBeforePhyu(Phyu(upd + 1)).length];
+        _plies = _plies[0 .. this.plySliceBefore(Phyu(upd + 1)).length];
         touch();
     }
 
     /*
-     * Our users should prefer to call getDataForPhyu() over allData().
+     * Our users should prefer to call plySliceFor() over allPlies().
      */
-    const(Ply)[] getDataForPhyu(in Phyu upd) const pure nothrow @nogc
+    const(Ply)[] plySliceFor(in Phyu upd) const pure nothrow @nogc
     {
-        auto slice = this.dataSliceBeforePhyu(Phyu(upd + 1));
+        auto slice = this.plySliceBefore(Phyu(upd + 1));
         int firstGood = slice.len;
         while (firstGood > 0 && slice[firstGood - 1].update == upd)
             --firstGood;
         assert (firstGood >= 0);
         assert (firstGood <= slice.length);
-        return _data[firstGood .. slice.length];
+        return _plies[firstGood .. slice.length];
     }
 
     /*
-     * Call allData() rarely, e.g., to list all entries in the replay editor.
+     * Call allPlies() rarely, e.g., to list all entries in the replay editor.
      */
-    @property const(Ply)[] allData() const pure nothrow @nogc
+    @property const(Ply)[] allPlies() const pure nothrow @nogc
     {
-        return _data;
+        return _plies;
     }
 
     bool getOnPhyuLixClicked(in Phyu upd, in int lix_id, in Ac ac) const
     {
-        auto vec = getDataForPhyu(upd);
+        auto vec = plySliceFor(upd);
         foreach (const ref d; vec)
             if (d.isSomeAssignment && d.toWhichLix == lix_id && d.skill == ac)
                 return true;
@@ -280,9 +280,9 @@ public:
     /*
      * See file.replay.change for what it returns.
      */
-    Phyu edit(in ChangeRequest rq)
+    Phyu tweak(in ChangeRequest rq)
     {
-        return this.changeImpl(rq);
+        return this.tweakImpl(rq);
     }
 
     void saveManually(in Level lev) const

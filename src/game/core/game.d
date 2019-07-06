@@ -87,7 +87,7 @@ package:
 
     ReallyExitWindow modalWindow;
     Panel pan;
-    ReplayEditor _repEdit; // Never null, but often hidden
+    Tweaker _tweaker; // Never null, but often hidden
     ChatArea _chatArea;
     SplatRuler _splatRuler;
 
@@ -165,9 +165,9 @@ public:
             gui.rmElder(pan);
             pan = null;
         }
-        if (_repEdit) {
-            gui.rmElder(_repEdit);
-            _repEdit = null;
+        if (_tweaker) {
+            gui.rmElder(_tweaker);
+            _tweaker = null;
         }
         if (_chatArea) {
             gui.rmElder(_chatArea);
@@ -250,8 +250,8 @@ package:
     @property bool isMouseOnLand() const
     {
         assert (pan);
-        assert (_repEdit, "even if hidden, this should be non-null");
-        return ! pan.isMouseHere && ! _repEdit.isMouseHere;
+        assert (_tweaker, "even if hidden, this should be non-null");
+        return ! pan.isMouseHere && ! _tweaker.isMouseHere;
     }
 
     @property bool multiplayer() const
@@ -383,16 +383,16 @@ private:
     void initializeMapAndRepEdit()
     in {
         assert (map is null);
-        assert (_repEdit is null);
+        assert (_tweaker is null);
     }
     body {
         immutable mapYls = (gui.screenYls - gui.panelYls).to!int;
         map = new Map(cs.land, gui.screenXls.to!int, mapYls);
         this.centerCameraOnHatchAverage();
 
-        _repEdit = new ReplayEditor(
+        _tweaker = new Tweaker(
             new Geom(0, 0, 200, screenYlg - panelYlg, From.TOP_RIGHT));
-        gui.addElder(_repEdit);
+        gui.addElder(_tweaker);
     }
 
     void initializeConsole()

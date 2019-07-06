@@ -91,7 +91,7 @@ version (unittest) {
         nurse.loadUserState();
         assert (nurse.theLix.ac == Ac.builder,
             "The savestated builder should be loaded back.");
-        assert (nurse.constReplay.getDataForPhyu(Phyu(85)).length > 0,
+        assert (nurse.constReplay.plySliceFor(Phyu(85)).length > 0,
             "The builder assignment should still be in the replay because"
             ~ " the builder is in the physics.");
     }

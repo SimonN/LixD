@@ -296,7 +296,7 @@ void populateGameKeys()
         fac.factory!HotkeyOption(keyRestart, watcher),
         fac.factory!HotkeyOption(keyStateLoad, watcher),
         fac.factory!HotkeyOption(keyStateSave, watcher),
-        fac.factory!HotkeyOption(keyShowReplayEditor, watcher),
+        fac.factory!HotkeyOption(keyShowTweaker, watcher),
     ];
 
     fac = facKeys!1;

@@ -64,12 +64,12 @@ implGameDraw(Game game) { with (game)
     pan.age = nurse.constStateForDrawingOnly.update;
     game.showSpawnIntervalOnHatches();
 
-    if (pan.replayEditorIsOn) {
-        _repEdit.shown = true;
-        _repEdit.formatButtonsAccordingTo(nurse.constReplay.allData);
+    if (pan.tweakerIsOn) {
+        _tweaker.shown = true;
+        _tweaker.formatButtonsAccordingTo(nurse.constReplay.allPlies);
     }
-    else if (_repEdit.shown) {
-        _repEdit.shown = false;
+    else if (_tweaker.shown) {
+        _tweaker.shown = false;
         gui.requireCompleteRedraw();
     }
 

@@ -32,7 +32,7 @@ struct Tooltip {
         highlightGoals = 0x8,
         stateSave = 0x10,
         stateLoad = 0x20,
-        showReplayEditor = 0x40,
+        showTweaker = 0x40,
         framestepBack = 0x80,
         framestepAhead = 0x100,
         fastForward = 0x200,
@@ -106,7 +106,7 @@ Tooltip makeTooltip(Tooltip.ID id) nothrow @nogc @safe
         case ID.highlightGoals: return none(Lang.gameHighlightGoals);
         case ID.stateSave: return none(Lang.gameStateSave);
         case ID.stateLoad: return none(Lang.gameStateLoad);
-        case ID.showReplayEditor: return none(Lang.gameShowReplayEditor);
+        case ID.showTweaker: return none(Lang.gameShowTweaker);
         case ID.framestepBack: return mouse(Lang.gameFramestepBack);
         case ID.framestepAhead: return mouse(Lang.gameFramestepAhead);
         case ID.fastForward: return mouse(Lang.gameFastForward);

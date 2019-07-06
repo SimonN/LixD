@@ -18,7 +18,7 @@ import file.filename;
 import file.io;
 import file.log;
 import file.option : userName; // for filename during saving
-import file.replay.change;
+import file.replay.tweakimp;
 import file.replay.replay;
 import level.level;
 import net.permu;
@@ -164,9 +164,9 @@ void saveToStdioFile(
     if (_players.length > 1)
         file.writeln(IoLine.Dollar(replayPermu, permu.toString));
 
-    if (_data.length)
+    if (_plies.length)
         file.writeln();
-    foreach (d; _data) {
+    foreach (d; _plies) {
         string word
             = d.action == RepAc.NUKE         ? replayNuke
             : d.action == RepAc.ASSIGN       ? replayAssignAny
@@ -234,9 +234,9 @@ unittest
 
     void assertReplay(in Replay r)
     {
-        assert (r._data.len == 5);
-        assert (r._data[0].update == 125);
-        assert (r._data[0].skill == Ac.climber);
+        assert (r._plies.len == 5);
+        assert (r._plies[0].update == 125);
+        assert (r._plies[0].skill == Ac.climber);
         assert (r.players.length == 1);
         assert (r.players[PlNr(0)].name == "TestName");
         assert (r.players[PlNr(0)].style == Style.yellow);

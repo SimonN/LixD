@@ -3,7 +3,6 @@ module game.core.speed;
 static import basics.globals;
 
 import basics.alleg5;
-import file.replay.changerq;
 import file.option; // replayAfterFrameBack
 import game.core.game;
 import game.core.active; // findAgainHighlitLixAfterPhyu
@@ -11,22 +10,23 @@ import game.nurse.cache : DuringTurbo;
 import game.panel.base;
 import hardware.mouse;
 import hardware.sound;
+import net.repdata;
 
 package:
 
-void applyChangesFromReplayEditor(Game game)
+void dispatchTweaks(Game game)
 {
-    if (! game._repEdit.suggestsChange) {
+    if (! game._tweaker.suggestsChange) {
         return;
     }
     /*
-     * We pause here from Game code. Reason: _repEdit is not related to
+     * We pause here from Game code. Reason: _tweaker is not related to
      * pan. Comapre: We don't pause manually here e.g. when framestepping
      * because framestepping is triggered from pan itself, which pauses
      * (also responsibility of pan).
      */
     game.pan.pause(true);
-    game.nurse.editReplayRecomputePhysics(game._repEdit.suggestedChange);
+    game.nurse.tweakReplayRecomputePhysics(game._tweaker.suggestedChange);
 }
 
 void updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
