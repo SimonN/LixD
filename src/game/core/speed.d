@@ -26,7 +26,7 @@ void applyChangesFromReplayEditor(Game game)
      * (also responsibility of pan).
      */
     game.pan.pause(true);
-    game.nurse.editReplayRecomputeToCurrentPhyu(game._repEdit.suggestedChange);
+    game.nurse.editReplayRecomputePhysics(game._repEdit.suggestedChange);
 }
 
 void updatePhysicsAccordingToSpeedButtons(Game game) { with (game)

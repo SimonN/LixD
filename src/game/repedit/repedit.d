@@ -38,6 +38,8 @@ public:
         for (int i = dat.len; i < _entries.len; ++i) {
             rmChild(_entries[i]);
             _entries[i] = null;
+            reqDraw(); // Paint over the missing buttons that didn't get any
+                       // chance to undraw before we removed them as children
         }
         _entries.length = dat.length;
         foreach (size_t id, ref OneLine e; _entries) {

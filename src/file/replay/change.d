@@ -26,13 +26,21 @@ Phyu changeImpl(
     Replay rep,
     in ChangeRequest rq,
 ) in {
-    import std.conv;
-    assert (rep.indexOf(rq.what) >= 0,
-        "file.replay.replay should guarantee that (what) exists in the data: "
-        ~ rq.what.to!string);
+    version (unittest) {
+        import std.conv;
+        assert (rep.indexOf(rq.what) >= 0,
+            "file.replay.replay should guarantee that (what) exists in the data: "
+            ~ rq.what.to!string);
+    }
 }
 out {
-    assert (rep._data.isSorted, "Missorted replay data after changeImpl");
+    version (unittest) {
+        import std.conv;
+        import std.array;
+        assert (rep._data.isSorted,
+            "Missorted replay data after changeImpl:\n"
+            ~ rep._data.map!(to!string).join("\n"));
+    }
 }
 body {
     final switch (rq.how) {
@@ -40,9 +48,10 @@ body {
             return rep.moveThisLaterImpl(rq);
         case ChangeVerb.moveThisEarlier:
             return rep.moveThisEarlierImpl(rq);
+        case ChangeVerb.eraseThis:
+            return rep.eraseThisImpl(rq);
         case ChangeVerb.moveTailBeginningWithThisLater:
         case ChangeVerb.moveTailBeginningWithPhyuEarlier:
-        case ChangeVerb.eraseThis:
             assert (false, "not yet implemented");
     }
 }
@@ -144,6 +153,20 @@ Phyu moveThisEarlierImpl(
     return newPhyu;
 }
 
+Phyu eraseThisImpl(
+    Replay rep,
+    in ChangeRequest rq
+) {
+    int id = rep.indexOf(rq.what);
+    assert (id < rep._data.len);
+    memmove(
+        &rep._data[id],
+        &rep._data[id] + 1, // if outside array, then 0 bytes will be copied...
+        Ply.sizeof * (rep._data.len - id - 1)); // ...because of this number.
+    rep._data.length -= 1;
+    return rq.what.update;
+}
+
 /*
  * Find (what)'s index in rep._data.
  * Assume that rep._data is sorted..
@@ -164,7 +187,9 @@ int indexOf(
     return -1;
 }
 
-unittest {
+version (unittest) {
+    import file.date;
+
     /*
      * Quick func to avoid specifying too many Ply constructor args.
      */
@@ -178,8 +203,9 @@ unittest {
         ret.toWhichLix = 3;
         return ret;
     }
+}
 
-    import file.date;
+unittest {
     Replay rep = Replay.newNoLevelFilename(Date.now());
     rep.add(rd(Ac.blocker, Phyu(100)));
     rep.add(rd(Ac.builder, Phyu(101)));
@@ -223,4 +249,26 @@ unittest {
     rep.changeImpl(ChangeRequest(rep._data[1], ChangeVerb.moveThisEarlier));
     assert (rep._data[0].skill == Ac.builder);
     assert (rep._data[1].skill == Ac.blocker);
+}
+
+unittest {
+    Replay rep = Replay.newNoLevelFilename(Date.now());
+    immutable Ply a = rd(Ac.blocker, Phyu(100));
+    immutable Ply b = rd(Ac.builder, Phyu(101));
+    immutable Ply c = rd(Ac.basher, Phyu(103));
+    rep.add(a);
+    rep.add(b);
+    rep.add(c);
+
+    rep.changeImpl(ChangeRequest(b, ChangeVerb.eraseThis));
+    assert (rep._data.length == 2);
+    assert (rep._data[0] == a);
+    assert (rep._data[1] == c);
+
+    rep.changeImpl(ChangeRequest(c, ChangeVerb.eraseThis));
+    assert (rep._data.length == 1);
+    assert (rep._data[0] == a);
+
+    rep.changeImpl(ChangeRequest(a, ChangeVerb.eraseThis));
+    assert (rep._data.length == 0);
 }

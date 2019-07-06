@@ -31,15 +31,21 @@ public:
     in { assert(g.xlg >= 4 * butXlg, "no space for row of text"); }
     body {
         super(g);
+        /*
+         * We don't set an undraw color. Even though we want to be undrawn
+         * when deleted, we will be deleted before we get a chance to undraw.
+         * Therefore, our owner will redraw itself entirely after deleting us.
+         * It's a hack.
+         */
         _del = new TextButton(new Geom(0, 0, butXlg, g.ylg), "\u2715");
         _bar = new TextButton(new Geom(20, 0, g.xlg - 3 * butXlg, g.ylg));
 
         _earlier = new BitmapButton(new Geom(20, 0, butXlg, g.ylg,
             From.TOP_RIGHT), InternalImage.guiNumber.toCutbit);
-        _earlier.xf = 8;
+        _earlier.xf = 2;
         _later = new BitmapButton(new Geom(0, 0, butXlg, g.ylg,
             From.TOP_RIGHT), InternalImage.guiNumber.toCutbit);
-        _later.xf = 11;
+        _later.xf = 3;
         addChildren(_del, _bar, _earlier, _later);
 
         replayData = aRepData; // reformats the bar

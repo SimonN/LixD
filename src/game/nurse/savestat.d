@@ -91,11 +91,11 @@ public:
         framestepBackTo(Phyu(vec.map!(data => data.update).reduce!min - 1));
     }
 
-    void editReplayRecomputeToCurrentPhyu(in ChangeRequest rq)
+    void editReplayRecomputePhysics(in ChangeRequest rq)
     {
         immutable Phyu current = upd;
         framestepBackTo(Phyu(replay.edit(rq) - 1));
-        updateTo(current);
+        updateTo(max(current, rq.what.update));
     }
 
     void updateTo(in Phyu targetPhyu)
