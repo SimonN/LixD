@@ -45,12 +45,10 @@ public:
         foreach (size_t id, ref OneLine e; _entries) {
             if (e is null) {
                 immutable float entryY = 10 + 20 * id.to!float;
-                e = new OneLine(new Geom(10, entryY, xlg-20, 20), dat[id]);
+                e = new OneLine(new Geom(10, entryY, xlg-20, 20));
                 addChild(e);
             }
-            else {
-                e.replayData = dat[id];
-            }
+            e.ply = dat[id];
         }
     }
 

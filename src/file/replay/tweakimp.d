@@ -11,6 +11,7 @@ module file.replay.tweakimp;
 
 import core.stdc.string : memmove;
 import std.algorithm;
+import std.conv;
 
 import basics.help;
 import file.replay.replay;
@@ -29,16 +30,12 @@ Phyu tweakImpl(
     Replay rep,
     in ChangeRequest rq,
 ) in {
-    version (unittest) {
-        import std.conv;
-        assert (rep.indexOf(rq.what) >= 0,
-            "file.replay.replay should guarantee that (what) exists in the data: "
-            ~ rq.what.to!string);
-    }
+    assert (rep.indexOf(rq.what) >= 0,
+        "file.replay.replay should guarantee that (what) exists in the data: "
+        ~ rq.what.to!string);
 }
 out {
     version (unittest) {
-        import std.conv;
         import std.array;
         assert (rep._plies.isSorted,
             "Missorted replay data after tweakImpl:\n"
@@ -174,12 +171,11 @@ Phyu eraseThisImpl(
  * Find (what)'s index in rep._plies.
  * Assume that rep._plies is sorted..
  * If duplicates of (what) are in rep._plies, return the first of them.
- * Returns -1 if (Ply what) cannot be found.
  */
 int indexOf(
     in Replay rep,
     in Ply what
-) nothrow @nogc
+) nothrow
 {
     // Slow impl, consider bisecting
     for (int id = 0; id < rep._plies.len; ++id) {
@@ -187,7 +183,7 @@ int indexOf(
             return id;
         }
     }
-    return -1;
+    assert (false, "Ply not in replay: " ~ what.to!string);
 }
 
 version (unittest) {
