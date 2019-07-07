@@ -19,14 +19,17 @@ import file.replay.replay;
 package:
 
 /*
- * Returns phyu of first difference to old replay.
+ * See file.replay.tweakrq for spec of return struct.
+ * Among that spec, we see that tweakImpl returns
+ * the phyu of first difference to old replay.
  * To recompute physics properly, the game must load a savestate
- * that was computed for a phyu strictly less than the returned phyu.
+ * that was computed for a phyu strictly earlier than that first difference.
+ * Therefore, callers should probably deduct 1 phyu from that first difference.
  *
  * The public function in file.replay.replay should guarantee for us
  * that (RepData what) can be found in the replay.
  */
-Phyu tweakImpl(
+TweakResult tweakImpl(
     Replay rep,
     in ChangeRequest rq,
 ) in {
@@ -118,7 +121,7 @@ private: //////////////////////////////////////////////////////////////////////
  * See file.replay.changerq for the spec.
  */
 
-Phyu moveThisLaterImpl(
+TweakResult moveThisLaterImpl(
     Replay rep,
     in ChangeRequest rq
 ) {
@@ -135,10 +138,13 @@ Phyu moveThisLaterImpl(
         swap(rep._plies[id], rep._plies[id + 1]);
         ++id; // The changed entry sits at a higher position now. Check again.
     }
-    return oldPhyu;
+    TweakResult ret;
+    ret.firstDifference = oldPhyu;
+    ret.goodPhyuToView = newPhyu;
+    return ret;
 }
 
-Phyu moveThisEarlierImpl(
+TweakResult moveThisEarlierImpl(
     Replay rep,
     in ChangeRequest rq
 ) {
@@ -150,10 +156,13 @@ Phyu moveThisEarlierImpl(
         swap(rep._plies[id - 1], rep._plies[id]);
         --id;
     }
-    return newPhyu;
+    TweakResult ret;
+    ret.firstDifference = newPhyu;
+    ret.goodPhyuToView = newPhyu; // Yes, same as firstDifference
+    return ret;
 }
 
-Phyu eraseThisImpl(
+TweakResult eraseThisImpl(
     Replay rep,
     in ChangeRequest rq
 ) {
@@ -164,7 +173,10 @@ Phyu eraseThisImpl(
         &rep._plies[id] + 1, // if outside array, 0 bytes will be copied...
         Ply.sizeof * (rep._plies.len - id - 1)); // ...because of this number.
     rep._plies.length -= 1;
-    return rq.what.update;
+    TweakResult ret;
+    ret.firstDifference = rq.what.update;
+    ret.goodPhyuToView = rq.what.update;
+    return ret;
 }
 
 /*

@@ -94,8 +94,9 @@ public:
     void tweakReplayRecomputePhysics(in ChangeRequest rq)
     {
         immutable Phyu current = upd;
-        framestepBackTo(Phyu(replay.tweak(rq) - 1));
-        updateTo(max(current, rq.what.update));
+        immutable tweakResult = replay.tweak(rq);
+        framestepBackTo(Phyu(tweakResult.firstDifference - 1));
+        updateTo(max(current, tweakResult.goodPhyuToView));
     }
 
     void updateTo(in Phyu targetPhyu)

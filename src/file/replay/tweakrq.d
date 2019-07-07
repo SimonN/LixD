@@ -76,3 +76,18 @@ struct ChangeRequest {
     Ply what;
     ChangeVerb how;
 }
+
+struct TweakResult {
+    /*
+     * The first phyu in which (the replay before the tweak) differs from
+     * (the replay after the tweak). See the general comment of
+     * file.replay.tweakimp.tweakImpl() for how to use this.
+     */
+    Phyu firstDifference;
+    /*
+     * Viewers should look at this phyu to clearly see the result of the tweak.
+     * This will be later than the first difference if the ply moved later.
+     * Any later phyus than goodPhyuToView are also fine to view.
+     */
+    Phyu goodPhyuToView;
+}

@@ -280,7 +280,7 @@ public:
     /*
      * See file.replay.change for what it returns.
      */
-    Phyu tweak(in ChangeRequest rq)
+    TweakResult tweak(in ChangeRequest rq)
     {
         return this.tweakImpl(rq);
     }
