@@ -1,6 +1,33 @@
 Version history
 ===============
 
+0.9.28
+------
+
+2019-07-07
+
+Replay tweaker: A new feature for singleplayer puzzle solving. To open the
+replay tweaker, click the filmstrip button in the panel. The tweaker allows
+you to move and delete assignments deep in the replay without erasing
+any other assignments. The tweaker is not perfect yet: I'm sure we'll find
+many ways to improve it.
+
+Added 22 singleplayer levels from various level design contests. They are in
+levels/single/misc/contests/. All levels are proven solvable. Some proofs may
+be backroutes. For Key to the Sacred Kingdom, I chose its version 9, the
+miniature, but extended it with decoration from its big version 7. Adapted
+Long Division to 0.9 physics, it's fairer now and less nasty.
+
+Fix #364: If the enet DLL is missing, the networking lobby prints an error
+message to its console. Before, the game would crash from an uncaught
+exception.
+
+Code: Fix deprecations for dmd 2.087.0: Don't initialize immutable variables
+in thread-local static this(), instead initialize them in shared static this().
+Lix should now compile warning-free.
+
+
+
 0.9.27
 ------
 
