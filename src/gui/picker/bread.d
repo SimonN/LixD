@@ -5,7 +5,13 @@ module gui.picker.bread;
  *
  * This doesn't check whether directories exist! Ls would throw when
  * we search a nonexisting dir, but Breadcrumb won't.
+ *
+ * Squashing Convention:
+ * If we squash buttons at all (to preserve horizontal space),
+ * we squash the outermost non-top-level dirs. We keep one top-level dir
+ * and maybe several innermost dirs.
  */
+
 
 import std.algorithm;
 
@@ -17,22 +23,25 @@ import file.filename;
 class Breadcrumb : Element {
 private:
     Filename _baseDir;
-    MutFilename  _currentDir;
+    MutFilename _currentDir;
     TextButton[] _buttons;
-    Label        _label;
-    bool         _execute;
+    Label _innermost;
+    bool _execute;
+    int _dirButtonsSquashed; // To preserve space in deeply-nested dirs
 
 public:
     // Picker's search button shall have same shape
     enum butXl = 100f;
+    enum xgBetweenRightmostButtonAndInnermostLabel = 4f;
 
     this(Geom g, Filename aBaseDir)
     in { assert (aBaseDir !is null); }
     body {
         super(g);
-        _label = new Label(new Geom(0, 0, butXl*3/2, 20, From.LEFT));
+        _innermost = new Label(new Geom(0, 0,
+            butXl - xgBetweenRightmostButtonAndInnermostLabel, 20, From.LEFT));
         _baseDir = aBaseDir;
-        addChild(_label);
+        addChild(_innermost);
     }
 
     @property bool execute() const { return _execute; }
@@ -52,8 +61,8 @@ public:
             _currentDir = newCur;
             clearButtons();
             immutable int usedChars = makeButtons();
-            _label.move(butX + 4, 0);
-            _label.text = currentDir.dirRootless[usedChars .. $];
+            moveInnermostLabel();
+            _innermost.text = currentDir.dirRootless[usedChars .. $];
         }
         return _currentDir;
     }
@@ -62,15 +71,10 @@ protected:
     override void calcSelf()
     {
         _execute = false;
-        foreach (const size_t numSlashesToSkip, Button b; _buttons) {
+        foreach (const size_t buttonID, Button b; _buttons) {
             if (! b.execute)
                 continue;
-            assert (currentDir.dirRootless.startsWith(baseDir.dirRootless));
-            string s = currentDir.dirRootless[baseDir.dirRootless.length .. $];
-            foreach (_; 0 .. numSlashesToSkip)
-                s.findSkip("/");
-            currentDir = new VfsFilename(
-                currentDir.dirRootless[0 .. $ - s.length]);
+            currentDir = filenameForButtonID(buttonID);
             _execute = true;
             break;
         }
@@ -82,15 +86,19 @@ protected:
         super.drawSelf();
     }
 
-    final float butX() const { return _buttons.map!(b => b.xlg).sum; }
+    final @property float buttonsTotalXlg() const
+    {
+        return _buttons.map!(b => b.xlg).sum;
+    }
 
-    final void add(TextButton b)
+    final void addNewRightmostDirButton(in string caption)
     {
         if (_buttons.len > 0)
             _buttons[$-1].hotkey = _buttons[$-1].hotkey.init;
-        _buttons ~= b;
-        b.hotkey = keyMenuUpDir;
-        addChild(b);
+        _buttons ~= new TextButton(new Geom(
+            buttonsTotalXlg, 0, butXl, ylg), caption);
+        _buttons[$-1].hotkey = keyMenuUpDir;
+        addChild(_buttons[$-1]);
     }
 
     // Override to restrict possible paths (except for that currentDir must
@@ -114,11 +122,36 @@ protected:
         for ( ; iter < currentDir.dirRootless.len; ++iter) {
             string cap = currentDir.dirRootless[usedChars .. iter];
             if (cap.len > 0 && cap[$-1] == '/') {
-                add(new TextButton(new Geom(butX, 0, butXl, ylg), cap));
+                addNewRightmostDirButton(cap);
                 usedChars = iter;
             }
         }
+        sqashMiddleButtonsIfArrayTooLong();
         return usedChars;
+    }
+
+    final void sqashMiddleButtonsIfArrayTooLong()
+    {
+        /*
+         * Always keep top-level button and innermost dir button. Thus, keep 2.
+         * It's fine if everything else gets squashed. Normally, squash
+         * the outermost non-top-level dirs, this is the squashing convention
+         * from the comment at the top of this file.
+         */
+        while (_buttons.len > 2
+            && buttonsTotalXlg + xgBetweenRightmostButtonAndInnermostLabel
+                               + _innermost.xlg > this.xlg
+        ) {
+            rmChild(_buttons[1]);
+            foreach (int i; 1 .. _buttons.len - 1) {
+                _buttons[i] = _buttons[i+1];
+                _buttons[i].move(i * butXl, 0);
+            }
+            _buttons.length -= 1;
+            _buttons[1].text = ".../" ~ _buttons[1].text;
+            _dirButtonsSquashed += 1;
+            moveInnermostLabel();
+        }
     }
 
 private:
@@ -127,5 +160,33 @@ private:
         reqDraw();
         _buttons.each!(b => rmChild(b));
         _buttons = null;
+        _dirButtonsSquashed = 0;
+    }
+
+    void moveInnermostLabel()
+    {
+        _innermost.move(
+            buttonsTotalXlg + xgBetweenRightmostButtonAndInnermostLabel, 0);
+    }
+
+    /*
+     * For the button with ID (size_t id), return the (newly-allocated)
+     * directory name to where that button would switch.
+     */
+    Filename filenameForButtonID(in size_t id)
+    {
+        // See squashing convention in the comment at the top of this file.
+        if (id == 0) {
+            return baseDir;
+        }
+        else {
+            assert (currentDir.dirRootless.startsWith(baseDir.dirRootless));
+            string s = currentDir.dirRootless[baseDir.dirRootless.length .. $];
+            immutable numSlashesToSkip = id + _dirButtonsSquashed;
+            foreach (_; 0 .. numSlashesToSkip)
+                s.findSkip("/");
+            return currentDir = new VfsFilename(
+                currentDir.dirRootless[0 .. $ - s.length]);
+        }
     }
 }

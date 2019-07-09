@@ -154,7 +154,7 @@ protected:
         for ( ; iter < currentDir.dirRootless.len; ++iter) {
             string cap = currentDir.dirRootless[0 .. iter];
             if (cap.len > 0 && cap[$-1] == '/') {
-                add(new TextButton(new Geom(butX, 0, butXl, ylg), cap));
+                addNewRightmostDirButton(cap);
                 return iter;
             }
         }

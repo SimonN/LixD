@@ -63,7 +63,7 @@ public:
         undrawColor = color.transp; // Hack. Picker should not be a drawable
                                     // element, but rather only have children.
         if (cfg.showSearchButton)
-            cfg.bread.xl -= (Breadcrumb.butXl + 20);
+            cfg.bread.xl -= Breadcrumb.butXl;
         _bread = new Br(cfg.bread, cfg.baseDir);
         _ls = cfg.ls;
         _list = new ScrolledFiles(cfg.files, delegate FileTiler(Geom gg)
