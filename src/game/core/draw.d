@@ -40,7 +40,7 @@ implGameDraw(Game game) { with (game)
         map.clearScreenRect(levBg);
         game.drawGadgets();
 
-        if (modalWindow || ! pan.splatRulerIsOn || isMouseOnLand) {
+        if (modalWindow || ! pan.splatRulerIsOn || ! isMouseOnLand) {
             game.drawLand();
             game.pingOwnGadgets();
         }
