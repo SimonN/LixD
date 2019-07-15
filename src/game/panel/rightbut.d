@@ -42,8 +42,15 @@ public:
         bool splatRulerIsOn() { return false; }
         bool tweakerIsOn() { return false; }
         bool highlightGoalsExecute() { return false; }
-        bool zoomIn() { return false; }
-        bool zoomOut() { return false; }
+
+        /*
+         * Even when there are no zoom buttons due to lack of UI space,
+         * we still want the hotkeys to operate as if there were a zoom button.
+         * Override this and replace its behavior completely with the button
+         * if you have a button.
+         */
+        bool zoomIn() { return keyZoomIn.value.keyTappedAllowingRepeats; }
+        bool zoomOut() { return keyZoomOut.value.keyTappedAllowingRepeats; }
     }
 
     final @property bool nukeDoubleclicked() const
