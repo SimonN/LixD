@@ -28,15 +28,33 @@ public:
     final @property          files()      const { return _files; }
     final @property Filename currentDir() const { return _currentDir; }
 
-    // Throws File Exception if not found
+    /*
+     * Switch directory.
+     * Throws File Exception if not found.
+     * Short-circuits if the directory is the same as the old one,
+     * call forceRloadOfCurrentDir manually to subvert that short-circuiting.
+     */
     final @property Filename currentDir(Filename newDir)
-    {
-        assert (newDir.file == "");
-        if (newDir == currentDir)
+    in {
+        assert (newDir !is null, "Ls.currentDir = null: forbidden");
+        assert (newDir.file == "", "Ls.currentDir = regular file: forbidden");
+    }
+    body {
+        if (newDir == currentDir) {
             return currentDir;
+        }
         _currentDir = newDir;
-        if (! currentDir)
-            return currentDir;
+        forceReloadOfCurrentDir();
+        return currentDir;
+    }
+
+    /*
+     * Throws File Exception if not found.
+     * Typically forceReloadOfCurrentDir is called only from currentDir setter.
+     * But Picker will expose a forced reload; that must be able to call us.
+     */
+    final void forceReloadOfCurrentDir()
+    {
         auto tempD = dirsInCurrentDir.filter!(f => visibleCriterion(f)).array;
         auto tempF = filesInCurrentDir.filter!(f => searchCriterion(f)
                                                 && visibleCriterion(f)).array;
@@ -46,7 +64,6 @@ public:
         Filename deMut(in MutFilename a) { return a; }
         _dirs  = tempD.map!deMut.array;
         _files = tempF.map!deMut.array;
-        return currentDir;
     }
 
     // This function treats the dirs and files as if they were in one long

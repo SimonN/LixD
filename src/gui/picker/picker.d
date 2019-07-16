@@ -92,6 +92,18 @@ public:
         return currentDir;
     }
 
+    void forceReloadOfCurrentDir()
+    {
+        try {
+            _ls.forceReloadOfCurrentDir();
+        }
+        catch (FileException e) {
+            handleLsFileException(e);
+            return;
+        }
+        updateAccordingToBreadCurrentDir();
+    }
+
     void highlightNothing() { _list.tiler.highlightNothing(); }
     bool highlightFile(int i, CenterOnHighlitFile chf)
     {
@@ -153,16 +165,21 @@ private:
         try
             _ls.currentDir = currentDir;
         catch (FileException e) {
-            log(e.msg);
-            if (currentDir == baseDir && baseDir !is null)
-                // This throws if the dir doesn't exist afterwards
-                baseDir.mkdirRecurse();
-            currentDir = baseDir;
+            handleLsFileException(e);
             return;
         }
         _list.tiler.loadDirsFiles(_ls.dirs, _ls.files, ksp);
         if (_onDirSelect)
             _onDirSelect(currentDir);
+    }
+
+    void handleLsFileException(FileException e)
+    {
+        log(e.msg);
+        if (currentDir == baseDir && baseDir !is null)
+            // This throws if the dir doesn't exist afterwards
+            baseDir.mkdirRecurse();
+        currentDir = baseDir;
     }
 
     void createSearchButton(void delegate(Filename) aOnFileSelect)

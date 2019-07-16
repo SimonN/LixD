@@ -113,6 +113,13 @@ private:
     Harvest _harvest; // We take ownership of last game's level and replay.
 
 public:
+    /*
+     * This delegate will be called back after the replay has been saved
+     * manually. It will be called with argument Filename = the filename
+     * of the manually-saved replay.
+     */
+    void delegate(Filename) onSavingManually = null; // may remain null
+
     this(Geom g, Harvest ha)
     {
         super(g);
@@ -130,6 +137,9 @@ public:
             _doneSavingManually.show();
             _doneSavingManually.text = replay.manualSaveFilename.rootless;
             playQuiet(Sound.DISKSAVE);
+            if (onSavingManually !is null) {
+                onSavingManually(replay.manualSaveFilename);
+            }
         };
         addChildren(_saveManually, _doneSavingManually);
     }

@@ -110,6 +110,11 @@ protected:
         _picker.currentDir = fn;
     }
 
+    void forceReloadOfCurrentDir()
+    {
+        _picker.forceReloadOfCurrentDir();
+    }
+
     final Optional!Filename deleteFileHighlightNeighbor(Filename fn)
     {
         auto ret = _picker.deleteFileHighlightNeighbor(fn);

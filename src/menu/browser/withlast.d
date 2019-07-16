@@ -60,6 +60,14 @@ protected:
             40, From.BOTTOM_LEFT);
     }
 
+    override void forceReloadOfCurrentDir()
+    {
+        if (_lastGame.dispatch.shown.orElse(false)) {
+            _showLastGameOnNextHighlight = true;
+        }
+        super.forceReloadOfCurrentDir();
+    }
+
     final override void onHighlightNone()
     {
         // Keep _showLastGameOnNextHighlight because the single call to

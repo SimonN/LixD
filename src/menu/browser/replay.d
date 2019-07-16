@@ -49,10 +49,16 @@ public:
         super(Lang.browserReplayTitle.transl, basics.globals.dirReplays,
             PickerConfig!(Breadcrumb, ReplayTiler)());
         commonConstructor();
-        // Final class calls:
-        super.addStatsThenHighlight(
-            new StatsAfterReplay(super.newStatsGeom, ha, lastLoaded),
-            file.option.replayLastLevel);
+        {
+            auto stats = new StatsAfterReplay(
+                super.newStatsGeom, ha, lastLoaded);
+            stats.onSavingManually = (Filename itWasSavedHere) {
+                if (itWasSavedHere.guaranteedDirOnly == currentDir) {
+                    this.forceReloadOfCurrentDir();
+                }
+            };
+            super.addStatsThenHighlight(stats, file.option.replayLastLevel);
+        }
     }
 
     // Override method with assert(false): Violates fundamental OO principles.
@@ -118,6 +124,7 @@ protected:
 
     override void calcSelf()
     {
+        import hardware.mouse;
         super.calcSelf();
         if (_buttonPlayWithPointedTo.execute
             && ! _matcher.empty && matcher.pointedToIsGood
