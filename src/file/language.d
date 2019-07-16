@@ -187,6 +187,13 @@ enum Lang {
     gameRestart,
     gameNuke,
 
+    tweakerHeaderLixID,
+    tweakerHeaderPhyu,
+    tweakerEmptyListTitle,
+    tweakerEmptyListDesc1,
+    tweakerEmptyListDesc2,
+    tweakerEmptyListDesc3,
+
     // main editor screen
     editorHotkey,
     editorBarAt,

@@ -11,6 +11,7 @@ import std.conv;
 import std.format;
 import std.range;
 
+import file.language;
 import file.replay.tweakrq;
 import gui;
 import graphic.color;
@@ -69,6 +70,35 @@ public:
     }
 }
 
+class TweakerHeader : Element {
+public:
+    this(Geom g) { with (DescRelativePositions)
+    {
+        super(g);
+        addChildren(
+            new Label(new Geom(20 + thickg, 0, xlg/2f, 20),
+                Lang.tweakerHeaderLixID.transl),
+            new Label(new Geom(40 + thickg, 0, xlg/2f, 20, From.RIGHT),
+                Lang.tweakerHeaderPhyu.transl),
+        );
+    }}
+}
+
+/*
+ * +-----------+--------+-----------+--------------+
+ * |    Lix    |  Dir   |   Skill   |     Phyu     |
+ * |     ID    | arrow  |    name   |              |
+ * |           |        |           |              |
+ * |<---3/12-->|<-2/12->|<---3/12-->|<----4/12---->|
+ * +-----------+--------+-----------+--------------+
+ */
+private enum DescRelativePositions : float {
+    xlL = 3f/12f,
+    xlD = 2f/12f,
+    xlS = 3f/12f,
+    xlP = 4f/12f,
+}
+
 /*
  * All the info of a OneLine, i.e., everything of OneLine that is not a button.
  */
@@ -81,21 +111,9 @@ private:
     Ply _ply;
 
 public:
-    this(Geom g)
+    this(Geom g) { with (DescRelativePositions)
     {
         super(g);
-        /*
-         * +-----------+--------+-----------+--------------+
-         * |    Lix    |  Dir   |   Skill   |     Phyu     |
-         * |     ID    | arrow  |    name   |              |
-         * |           |        |           |              |
-         * |<---3/12-->|<-2/12->|<---3/12-->|<----4/12---->|
-         * +-----------+--------+-----------+--------------+
-         */
-        enum xlL = 3f/12f;
-        enum xlD = 2f/12f;
-        enum xlS = 3f/12f;
-        enum xlP = 4f/12f;
         _lixID = new Label(new Geom(
             xlg * (1-xlL), 0, xlg * (1-xlL) - thickg, ylg, From.RIGHT));
         _directionalForceArrow = new Label(new Geom(
@@ -106,7 +124,7 @@ public:
         _phyu = new Label(new Geom(
             thickg, 0, xlg * xlP, ylg, From.RIGHT));
         addChildren(_lixID, _directionalForceArrow, _skillName, _phyu);
-    }
+    }}
 
     @property Ply ply() const pure nothrow @nogc
     {
