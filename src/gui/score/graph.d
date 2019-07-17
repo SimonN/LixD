@@ -19,7 +19,7 @@ import gui.score.bar; // for the package-declared SimpleBar
 
 class ScoreGraph : Element {
 private:
-    NukeBoxBar[] _bars; // not an AA because we want to sort it
+    SimpleBar[] _bars; // not an AA because we want to sort it
     Style _ourStyle; // tiebreak in favor of this for sorting
 
 public:
@@ -30,7 +30,7 @@ public:
         auto found = _bars.find!(bar => bar.style == updatedScore.style);
         if (found.length > 0 && found[0].score == updatedScore)
             return;
-        NukeBoxBar toUpdate = found.length > 0 ? found[0] : newScoreBar();
+        SimpleBar toUpdate = found.length > 0 ? found[0] : newScoreBar();
         toUpdate.score = updatedScore;
         updateMaxPotentials(_bars);
         sortScores();
@@ -57,9 +57,9 @@ protected:
     }
 
 private:
-    NukeBoxBar newScoreBar()
+    SimpleBar newScoreBar()
     {
-        _bars ~= new NukeBoxBar(new Geom());
+        _bars ~= new SimpleBar(new Geom());
         addChild(_bars[$-1]);
         foreach (bar; _bars)
             bar.resize(xlg - 4 * gui.thickg,
@@ -76,31 +76,5 @@ private:
             bar.move(2 * gui.thickg,
                 2 * gui.thickg + (ylg - 4 * gui.thickg) * i / _bars.length);
             });
-    }
-}
-
-class NukeBoxBar : SimpleBar {
-public:
-    this(Geom g) { super(g); }
-
-protected:
-    override void drawSelf()
-    {
-        super.drawSelf();
-        if (score.prefersGameToEnd)
-            drawNukeOverlay();
-    }
-
-private:
-    // When a player nukes or has finished playing, mark bar with a square
-    void drawNukeOverlay()
-    {
-        Alcol grey(in float f) { return al_map_rgb_f(f, f, f); }
-        immutable float boxXl = 10 * stretchFactor;
-        draw3DButton(xs, ys, boxXl, yls, // draw a square
-            grey(0.95f), grey(0.8f), grey(0.65f));
-        draw3DButton(xs + gui.thicks, ys + gui.thicks,
-            boxXl - 2*gui.thicks, yls - 2*gui.thicks,
-            grey(0.00f), grey(0.15f), grey(0.3f));
     }
 }
