@@ -17,6 +17,9 @@ package:
 void centerCameraOnHatchAverage(Game game)
 {
     assert (game.map);
+    if (game.view.startZoomedOutToSeeEntireMap) {
+        game.map.zoomOutToSeeEntireMap();
+    }
     game.map.centerOnAverage(game.ourHatches().map!(h => h.screenCenter.x),
                              game.ourHatches().map!(h => h.screenCenter.y));
     game.map.snapToBoundary();

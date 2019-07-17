@@ -189,6 +189,19 @@ private template zoomInOrOut(string s) {
 mixin(zoomInOrOut!"In");
 mixin(zoomInOrOut!"Out");
 
+/*
+ * Makes no guarantee where we're centered. Callers should probably call
+ * centerOnAverage afterwards.
+ */
+void zoomOutToSeeEntireMap()
+{
+    while (_zoom.zoomableOut
+        && (cameraXl < torbit.xl || cameraYl < torbit.yl)
+    ) {
+        _zoom.zoomOut();
+    }
+}
+
 // On non-torus maps, we want the initial scrolling position exactly at the
 // boundary, or a good chunk away from the boundary.
 void snapToBoundary()

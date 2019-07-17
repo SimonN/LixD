@@ -40,6 +40,11 @@ bool canAssignSkills(in View v)
     return v.canInterruptReplays || v == View.battle;
 }
 
+bool startZoomedOutToSeeEntireMap(in View v)
+{
+    return v == View.observeBattle || v == View.observeSolving;
+}
+
 bool showReplaySign(in View v)
 {
     return v.canInterruptReplays || v == View.replayBattle;
