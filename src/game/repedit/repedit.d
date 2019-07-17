@@ -51,11 +51,12 @@ public:
         undrawColor = color.transp;
     }
 
-    void formatButtonsAccordingTo(const(Ply[]) dat)
+    void formatButtonsAccordingTo(const(Ply)[] dat)
     out {
         assert (_entries.all!(e => e !is null));
     }
     body {
+        dat.length = min(dat.length, 18); // hack, add scrollbar instead
         for (int i = dat.len; i < _entries.len; ++i) {
             rmChild(_entries[i]);
             _entries[i] = null;
