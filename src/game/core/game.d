@@ -41,7 +41,7 @@ import game.exitwin;
 import game.harvest;
 import game.nurse.interact;
 import game.panel.base;
-import game.repedit.repedit;
+import game.tweaker.tweaker;
 
 import graphic.map;
 import gui;

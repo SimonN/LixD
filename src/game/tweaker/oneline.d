@@ -1,7 +1,7 @@
-module game.repedit.oneline;
+module game.tweaker.oneline;
 
 /*
- * A button in the replay editor that represents a single Ply (replay action).
+ * A button in the replay tweaker that represents a single Ply (replay action).
  *
  * Poll with suggestsChange(). If true, ask for the change
  * with suggestedChange().

@@ -1,4 +1,4 @@
-module game.repedit.repedit;
+module game.tweaker.tweaker;
 
 /*
  * The replay editor that appears when we press the film-strip button.
@@ -11,7 +11,7 @@ import std.range;
 import basics.help;
 import file.language;
 import file.replay;
-import game.repedit.oneline;
+import game.tweaker.oneline;
 import graphic.color;
 import gui;
 
