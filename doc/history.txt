@@ -1,6 +1,46 @@
 Version history
 ===============
 
+0.9.29
+------
+
+2019-07-18
+
+Observers in a networking game begin zoomed out; they see the entire map
+without any extra input.
+
+In multiplayer, there are no more black boxes on the score graph after a nuke.
+The black boxes obscured the bars of low-scoring players. The black boxes were
+a hack solution before we had the nice score board when you mouse over the
+score graph. Now, to see who nuked, mouse over the score graph.
+
+Partially fix #385: The replay tweaker displays only the first 18 plies
+(= assignments or nukes) instead of painting the 19th, 20th, ... ply over the
+remainder of the panel. In the long run, the tweaker needs a scrollbar.
+
+The tweaker explains itself with short text while it has no plies to show yet.
+This is better than presenting the tweaker as a completely blank GUI widget.
+
+Fix #327: After you save a replay manually from the replay browser, the browser
+reloads the directory and immediately shows the newly saved file.
+
+Fix: The splat ruler draws properly again when the mouse is on the map (i.e.,
+off the panel). 0.9.28 had a bug where the ruler would only draw while the
+mouse was on the panel instead of on the land.
+
+Fix: In multiplayer battles, you can zoom again, even though there is no
+GUI button to zoom. By default, zoom is bound to the mouse wheel.
+
+Fix #317: In a deeply nested directory hierarchy, the browsers' breadcrumb
+navigation condenses some higher-level directories into a single button.
+The top-level directory keeps its exclusive button at the very left.
+
+Removed a default keybinding duplication: Highlight goals and splat ruler were
+both bound to Tab. Now, only the splat ruler is bound to Tab, highlight goals
+has no default hotkey.
+
+
+
 0.9.28
 ------
 

@@ -1,7 +1,7 @@
 Lix
 ===
 
-Lix is an action-puzzle game inspired by Lemmings (DMA Design, 1991). Lix is free and open source.
+Lix is a puzzle game inspired by *Lemmings* (DMA Design, 1991). Lix is free and open source.
 
 Assign skills to guide the lix through over 600 singleplayer puzzles. Design your own levels with the included editor.
 
@@ -17,8 +17,8 @@ Download
 
 macOS or others: Build from source, see below.
 
-macOS users beware: Since January 2019, Lix on macOS 10.14
-may often show only a black window. You're welcome to help debugging, see
+macOS users: In January-April 2019, Lix on macOS 10.14
+sometimes showed only a black window. Does this still happen? See
 [issue 381: macOS black screen](https://github.com/SimonN/LixD/issues/381).
 
 License/Copying/Public domain
