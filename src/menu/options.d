@@ -228,7 +228,6 @@ void populateGraphics()
     immutable bottomHalfY = fac.y;
     grp ~= [
         fac.factory!BoolOption(paintTorusSeams),
-        fac.factory!BoolOption(showButtonHotkeys),
         fac.factory!BoolOption(ingameTooltips),
         fac.factory!BoolOption(showFPS),
     ];

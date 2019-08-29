@@ -293,7 +293,6 @@ $optionScreenHardwareFullscreen Hardware fullscreen
 $optionScreenWindowedRes Windowed/hardware resolution|Size of the Lix window when you have chosen windowed mode.|Monitor resolution for hardware fullscreen. Software fullscreen ignores this.
 $optionPaintTorusSeams Paint torus seams|Mark the wrapping seam with a thin line whenever a level wraps around.|This doesn't affect game physics, but may improve your orientation.
 $optionIngameTooltips Tooltips during game|Explain buttons and lix-selecting hotkeys during play, e.g., to select left-facing lix.|Some buttons have two functions: One on left-click, one on right-click.
-$optionShowButtonHotkeys Show button hotkeys|On every button, print the button's hotkeys in the bottom-right-hand corner.
 $optionShowFPS Count physics and FPS|Print number of physics updates since the game started.|Print the number of video frames per second, during play or editor.
 
 $optionKeyZoomIn Zoom +|Zoom into the level.

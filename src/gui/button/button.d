@@ -112,10 +112,9 @@ protected:
         auto c3 = _down ? color.guiDownL : _on ? color.guiOnL : color.guiD;
         draw3DButton(xs, ys, xls, yls, c1, c2, c3);
         drawOntoButton();
-        if (file.option.showButtonHotkeys.value) {
-            children.each!(ch => ch.draw); // force drawing now, such that...
-            drawHotkey();                  // the hotkey is drawn on top
-        }
+
+        children.each!(ch => ch.draw); // force drawing now, such that...
+        drawHotkey();                  // the hotkey is drawn on top
     }
 
 private:

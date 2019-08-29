@@ -282,7 +282,6 @@ $optionScreenHardwareFullscreen Hardware-Vollbild
 $optionScreenWindowedRes Fenster-/Hardware-Auflösung|Größe des Lix-Fensters im Fenstermodus.|Monitor-Auflösung im Hardware-Vollbild. Software-Vollbild ignoriert dies.
 $optionPaintTorusSeams Torus-Nahtstellen anmalen|Torus-Nahtstellen in der Landschaft mit einer dünnen Linie kennzeichnen.|Dies hat keine Auswirkung auf die Physik; es dient zur Orientierung.
 $optionIngameTooltips Tooltips im Spiel|Buttons und Lix-wählende Hotkeys im Spiel erklären, z.B. nur Linksläufer.|Einige Buttons haben eine Linksklick- und eine Rechtsklick-Funktion.
-$optionShowButtonHotkeys Button-Hotkeys anzeigen|Auf jedem Button die Hotkeys des Buttons in der rechten unteren Ecke anzeigen.
 $optionShowFPS Physik und FPS zählen|Anzahl Physik-Updates seit Spielbeginn anzeigen.|Im Editor und Spiel: Frames pro Sekunde anzeigen.
 $optionGuiColorRed Menüfarbe Rot|Die Grafikoberfläche in Lix anders färben.
 $optionGuiColorGreen Menüfarbe Grün|Die Grafikoberfläche in Lix anders färben.

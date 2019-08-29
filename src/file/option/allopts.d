@@ -90,7 +90,6 @@ UserOption!int screenWindowedX;
 UserOption!int screenWindowedY;
 UserOption!int splatRulerDesign;
 UserOption!bool paintTorusSeams;
-UserOption!bool showButtonHotkeys;
 UserOption!bool ingameTooltips;
 UserOption!bool showFPS;
 UserOption!int guiColorRed;
@@ -258,7 +257,6 @@ body {
     screenWindowedY = newOpt("screenWindowedY", 480);
     splatRulerDesign = newOpt("splatRulerDesign", Lang.optionSplatRulerDesign, 2);
     paintTorusSeams = newOpt("paintTorusSeams", Lang.optionPaintTorusSeams, false);
-    showButtonHotkeys = newOpt("showButtonHotkeys", Lang.optionShowButtonHotkeys, true);
     ingameTooltips = newOpt("ingameTooltips", Lang.optionIngameTooltips, true);
     showFPS = newOpt("showFramesPerSecond", Lang.optionShowFPS, false);
     guiColorRed = newOpt("guiColorRed", Lang.optionGuiColorRed, 0x60);
