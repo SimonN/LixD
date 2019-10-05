@@ -32,7 +32,7 @@ void useWater(Lixxie lixxie) { with (lixxie)
 {
     if (! healthy)
         return;
-    else if (bodyEncounters & Phybit.fire)
+    else if (footEncounters & Phybit.fire)
         become(Ac.burner);
     else if (footEncounters & Phybit.water)
         become(Ac.drowner);
@@ -57,7 +57,7 @@ void useNonconstantTraps(Lixxie lixxie) { with (lixxie)
 
 void useFlingers(Lixxie lixxie) { with (lixxie) with (outsideWorld.state)
 {
-    if (! (bodyEncounters & Phybit.fling) || ! healthy)
+    if (! (footEncounters & Phybit.fling) || ! healthy)
         return;
     auto encounteredOpenFlingers = chain(flingTrigs
             .filter!(fl => inTriggerArea(fl) && fl.isOpenFor(update, style))

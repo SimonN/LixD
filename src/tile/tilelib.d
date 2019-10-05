@@ -12,6 +12,7 @@ static import glo = basics.globals;
 
 import basics.help; // clear_array
 import file.filename;
+import file.io;
 import file.log;
 import hardware.tharsis;
 import graphic.cutbit;
@@ -127,7 +128,11 @@ Filename nameToFoundFileOrNull(in string name)
 }
 
 void loadGadgetFromDisk(in string strNoExt, in char pe, in Filename fn)
-{
+out {
+    const tile = (strNoExt in gadgets);
+    assert (tile && *tile);
+}
+body {
     GadType type;
     bool subtype = false;
     if      (pe == glo.preExtHatch) { type = GadType.HATCH; }
@@ -145,19 +150,26 @@ void loadGadgetFromDisk(in string strNoExt, in char pe, in Filename fn)
         logBadTile!"Canvas too large"(strNoExt);
         return;
     }
-    gadgets[strNoExt] = GadgetTile.takeOverCutbit(strNoExt, cb, type, subtype);
-    auto tile = (strNoExt in gadgets);
-    assert (tile && *tile);
-    // Load overriding definitions from a possibly accompanying text file.
-    // That file must have the same name, minus its extension, plus ".txt".
+    // Some tiles have gadget definition files:
+    // Same name, minus extension, plus ".txt".
     Filename defs = new VfsFilename(fn.rootlessNoExt
-                               ~ glo.filenameExtTileDefinitions);
-    // We test for existence here, because trying to load the file
-    // will generate a log message for nonexisting file otherwise.
-    // It's normal to have no definitions file, so don't log that.
-    if (defs.fileExists)
-        tile.readDefinitionsFile(defs);
-    tile.logAnyErrors(strNoExt);
+        ~ glo.filenameExtTileDefinitions);
+    const(IoLine)[] defVec;
+    // Missing file shall be no error, but merely result in empty defVec.
+    // We want to log only on bad UTF-8 etc. in an existing file.
+    if (defs.fileExists) {
+        try {
+            defVec = fillVectorFromFile(defs);
+        }
+        catch (Exception e) {
+            logf("Error reading gadget definitions `%s':", defs.rootless);
+            logf("    -> %s", e.msg);
+            logf("    -> Falling back to default gadget properties.");
+            return;
+        }
+    }
+    gadgets[strNoExt] = GadgetTile.takeOverCutbit(
+        strNoExt, cb, type, subtype, defVec);
 }
 
 void loadTerrainFromDisk(in string strNoExt, in char pe, in Filename fn)

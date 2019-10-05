@@ -39,7 +39,6 @@ private:
     byte _flingY;
     byte _ploderTimer; // phyus since assign. See exploder.handlePloderTimer.
     Style _style;
-    Phybitset _encBody;
     Phybitset _encFoot;
     OutsideWorld* _outsideWorld; // set whenever physics and tight coupling
                                  // are needed, nulled again at end of those
@@ -107,22 +106,15 @@ public:
     @property int xf() const { return this.frame; }
     @property int yf() const { return this.ac;    }
 
-    @property auto bodyEncounters() const { return _encBody; }
     @property auto footEncounters() const { return _encFoot; }
 
+    void forceFootEncounters(Phybitset ft) { _encFoot = ft; }
     void setNoEncountersNoBlockerFlags()
     {
-        _encBody = 0;
         _encFoot = 0;
         inBlockerFieldLeft  = false;
         inBlockerFieldRight = false;
         turnedByBlocker     = false;
-    }
-
-    void forceBodyAndFootEncounters(Phybitset bo, Phybitset ft)
-    {
-        _encBody = bo;
-        _encFoot = ft;
     }
 
     private template flagsProperty(int bit, string name) {
@@ -196,7 +188,6 @@ LixxieImpl clone() const
     ret._flags = this._flags;
     ret._flingX = this._flingX;
     ret._flingY = this._flingY;
-    ret._encBody = this._encBody;
     ret._encFoot = this._encFoot;
     ret.ploderTimer = this.ploderTimer;
     ret._job = this._job; // POD, designed to be copied like this
@@ -207,10 +198,6 @@ LixxieImpl clone() const
 void addEncountersFromHere()
 {
     _encFoot |= lookup.get(Point(_ex, _ey));
-    _encBody |= _encFoot
-             |  lookup.get(Point(_ex, _ey -  4))
-             |  lookup.get(Point(_ex, _ey -  8))
-             |  lookup.get(Point(_ex, _ey - 12));
 }
 
 @property int ex(in int n)

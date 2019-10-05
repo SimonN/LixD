@@ -82,7 +82,6 @@ protected:
         immutable oldEx = ex;
         immutable oldEy = ey;
         immutable oldEncFoot = footEncounters;
-        immutable oldEncBody = bodyEncounters;
 
         // The first frame is a short break taken after standing up or
         // falling onto this position. perform has already advanced
@@ -97,7 +96,7 @@ protected:
             // we have to reset position and encounters to where we started.
             ex = oldEx;
             ey = oldEy;
-            forceBodyAndFootEncounters(oldEncBody, oldEncFoot);
+            forceFootEncounters(oldEncFoot);
             bool climbedAfterAll = false;
 
             if (abilityToClimb) {

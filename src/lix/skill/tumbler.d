@@ -106,7 +106,6 @@ private:
             immutable oldEx = ex;
             immutable oldEy = ey;
             immutable oldFallen = pixelsFallen;
-            immutable oldEncBody = bodyEncounters;
             immutable oldEncFoot = footEncounters;
 
             void moveDownCounting(int by)
@@ -141,14 +140,14 @@ private:
                 return col.becomeCalled;
             }
             else if (col.pleaseDo == PleaseDo.resetEncounters) {
-                forceBodyAndFootEncounters(oldEncBody, oldEncFoot);
+                forceFootEncounters(oldEncFoot);
                 ey = ey; // re-check encounters here
                 return col.becomeCalled;
             }
             else if (col.pleaseDo == PleaseDo.resetPosition ||
                 col.pleaseDo == PleaseDo.resetPositionIfMovedX && ex != oldEx
             ) {
-                forceBodyAndFootEncounters(oldEncBody, oldEncFoot);
+                forceFootEncounters(oldEncFoot);
                 ex = oldEx;
                 ey = oldEy;
                 pixelsFallen = oldFallen;

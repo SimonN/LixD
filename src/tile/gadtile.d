@@ -50,24 +50,19 @@ public:
         MAX
     }
 
-protected:
-    this(
+public:
+    static typeof(this) takeOverCutbit(
         string aName,
         Cutbit aCb,
         Type   aType,
         bool   aSubtype,
+        const(IoLine)[] linesFromDefFile,
     ) {
-        super(aCb); // take ownership
-        _name   = aName;
-        _type   = aType;
-        subtype = aSubtype;
-        set_nice_defaults_based_on_type();
-        with (LockReadOnly(cb.albit)) {
-            findSelboxAssumeLocked();
-        }
+        if (! aCb || ! aCb.valid)
+            return null;
+        return new typeof(this)(aName, aCb, aType, aSubtype, linesFromDefFile);
     }
 
-public:
     @property type() const { return _type; }
     override @property string name() const { return _name; }
 
@@ -82,31 +77,76 @@ public:
         return Rect(trigger, triggerXl, triggerYl);
     }
 
-    static typeof(this) takeOverCutbit(
+protected:
+    this(
         string aName,
         Cutbit aCb,
         Type   aType,
-        bool   aSubtype = false
+        bool   aSubtype,
+        const(IoLine)[] linesFromDefFile,
     ) {
-        if (! aCb || ! aCb.valid)
-            return null;
-        return new typeof(this)(aName, aCb, aType, aSubtype);
+        super(aCb); // take ownership
+        _name   = aName;
+        _type   = aType;
+        subtype = aSubtype;
+        set_nice_defaults_based_on_type();
+
+        with (LockReadOnly(cb.albit)) {
+            findSelboxAssumeLocked();
+        }
+        readDefinitionsFile(linesFromDefFile);
+        adaptFireTriggerAreaToOldBodyRules();
+        logAnyErrors();
     }
 
-    void readDefinitionsFile(in Filename filename)
+private:
+    void set_nice_defaults_based_on_type()
+    {
+        assert (cb);
+        switch (type) {
+        case Type.HATCH:
+            _triggerX = cb.xl / 2;
+            _triggerY = max(20, cb.yl - 24);
+            specialX  = 1;
+            break;
+        case Type.GOAL:
+            _triggerX = cb.xl / 2;
+            _triggerY = cb.yl - 2;
+            triggerXl = 12;
+            triggerYl = 12;
+            _triggerXc = true;
+            _triggerYc = true;
+            break;
+        case Type.TRAP:
+            _triggerX = cb.xl / 2;
+            _triggerY = cb.yl * 4 / 5;
+            triggerXl = 4; // _xl was 6 before July 2014, but 6 isn't symmetric
+            triggerYl = 6; // on a piece with width 16 and (lix-xl % 2 == 0)
+            _triggerXc = true;
+            _triggerYc = true;
+            sound      = Sound.SPLAT;
+            break;
+        case Type.WATER:
+            _triggerX = 0;
+            _triggerY = 20;
+            triggerXl = cb.xl;
+            triggerYl = cb.yl - 20;
+            if (subtype) {
+                // then it's fire, not water
+                _triggerY = 0;
+                triggerYl = cb.yl;
+            }
+            break;
+        default:
+            break;
+        }
+    }
+
+
+    void readDefinitionsFile(const(IoLine[]) lines)
     {
         // We assume that the object's xl, yl, type, and subtype
         // have been correctly set by the constructor.
-        IoLine[] lines;
-        try {
-            lines = fillVectorFromFile(filename);
-        }
-        catch (Exception e) {
-            logf("Error reading gadget definitions `%s':", filename.rootless);
-            logf("    -> %s", e.msg);
-            logf("    -> Falling back to default gadget properties.");
-            return;
-        }
         foreach (i; lines) if (i.type == '#') {
             if      (i.text1 == tileDefTAAbsoluteX) {
                 _triggerX = i.nr1;
@@ -162,7 +202,24 @@ public:
     }
     // end read_definitions_file
 
-    void logAnyErrors(in string name) const
+    /*
+     * During 0.9, I don't want to touch the trigger area definitions file.
+     * Make (fire with foot checks) behave like (fire in 0.9.29 and earlier
+     * with body checks).
+     * https://www.lemmingsforums.net/index.php?topic=4440
+     */
+    void adaptFireTriggerAreaToOldBodyRules()
+    {
+        if (_type != Type.WATER || ! subtype) {
+            // This isn't fire.
+            return;
+        }
+        // Downwards-extend trigger area by 12.
+        _triggerY += _triggerYc ? 6 : 0;
+        triggerYl += 12;
+    }
+
+    void logAnyErrors() const
     {
         if (! cb)
             return;
@@ -170,49 +227,6 @@ public:
             logf("Error: Triggered %s `%s':",
                 type == Type.TRAP ? "trap" : "flinger", name);
             logf("    -> Image has %d rows of frames, not 2.", cb.yfs);
-        }
-    }
-
-private:
-    void set_nice_defaults_based_on_type()
-    {
-        assert (cb);
-        switch (type) {
-        case Type.HATCH:
-            _triggerX = cb.xl / 2;
-            _triggerY = max(20, cb.yl - 24);
-            specialX  = 1;
-            break;
-        case Type.GOAL:
-            _triggerX = cb.xl / 2;
-            _triggerY = cb.yl - 2;
-            triggerXl = 12;
-            triggerYl = 12;
-            _triggerXc = true;
-            _triggerYc = true;
-            break;
-        case Type.TRAP:
-            _triggerX = cb.xl / 2;
-            _triggerY = cb.yl * 4 / 5;
-            triggerXl = 4; // _xl was 6 before July 2014, but 6 isn't symmetric
-            triggerYl = 6; // on a piece with width 16 and (lix-xl % 2 == 0)
-            _triggerXc = true;
-            _triggerYc = true;
-            sound      = Sound.SPLAT;
-            break;
-        case Type.WATER:
-            _triggerX = 0;
-            _triggerY = 20;
-            triggerXl = cb.xl;
-            triggerYl = cb.yl - 20;
-            if (subtype) {
-                // then it's fire, not water
-                _triggerY = 0;
-                triggerYl = cb.yl;
-            }
-            break;
-        default:
-            break;
         }
     }
 }
