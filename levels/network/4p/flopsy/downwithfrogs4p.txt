@@ -1,0 +1,236 @@
+$BUILT 2019-10-27 03:17:22
+$AUTHOR Flopsy
+$ENGLISH Down with Frogs! 4P
+
+#INTENDED_NUMBER_OF_PLAYERS 4
+#SIZE_X 576
+#SIZE_Y 408
+#TORUS_X 1
+#TORUS_Y 0
+
+#SECONDS 60
+#INITIAL 100
+#SPAWN_INTERVAL 32
+
+#WALKER -1
+#RUNNER 20
+#CLIMBER 20
+#FLOATER 20
+#EXPLODER2 30
+#BUILDER 50
+#BASHER 40
+#JUMPER -1
+#BATTER 50
+#CUBER 1
+
+:geoo/abstract/hatch.H: 384 0
+:geoo/abstract/hatch.H: 240 0
+:geoo/abstract/hatch.H: 528 0
+:geoo/abstract/hatch.H: 96 0
+:geoo/abstract/hatch.H: 160 0 r
+:geoo/abstract/hatch.H: 16 0 r
+:geoo/abstract/hatch.H: 304 0 r
+:geoo/abstract/hatch.H: 448 0 r
+
+:matt/marble/Goal.G: 544 330
+:matt/marble/Goal.G: 400 330
+:matt/marble/Goal.G: 112 330
+:matt/marble/Goal.G: 256 330
+
+:amanda/forest/frog.T: 429 32
+:amanda/forest/frog.T: 285 32
+:amanda/forest/frog.T: 573 32
+:amanda/forest/frog.T: 141 32
+:amanda/forest/frog.T: 192 146
+:amanda/forest/frog.T: 336 146
+:amanda/forest/frog.T: 480 144
+:amanda/forest/frog.T: 48 146
+:amanda/forest/frog.T: 304 234
+:amanda/forest/frog.T: 160 234
+:amanda/forest/frog.T: 448 234
+:amanda/forest/frog.T: 16 234
+:amanda/forest/frog.T: 328 354
+:amanda/forest/frog.T: 184 354
+:amanda/forest/frog.T: 40 354
+:amanda/forest/frog.T: 472 354
+
+:matt/marble/03a: 368 0
+:matt/marble/03a: 368 32
+:matt/marble/03a: 368 64
+:matt/marble/03a: 496 64
+:matt/marble/03a: 496 32
+:matt/marble/03a: 496 0
+:matt/marble/04a: 384 80
+:matt/marble/04a: 432 80
+:matt/marble/04a: 464 80
+:matt/marble/03: 224 0
+:matt/marble/03: 224 32
+:matt/marble/03: 224 64
+:matt/marble/04: 240 80
+:matt/marble/04: 288 80
+:matt/marble/04: 320 80
+:matt/marble/03: 352 64
+:matt/marble/03: 352 32
+:matt/marble/03: 352 0
+:matt/marble/03c: 512 0
+:matt/marble/03c: 512 32
+:matt/marble/03c: 512 64
+:matt/marble/04c: 528 80
+:matt/marble/04c: 576 80
+:matt/marble/04c: 608 80
+:matt/marble/03c: 640 64
+:matt/marble/03c: 640 32
+:matt/marble/03c: 640 0
+:matt/marble/03b: 80 0
+:matt/marble/03b: 80 32
+:matt/marble/03b: 80 64
+:matt/marble/04b: 96 80
+:matt/marble/04b: 144 80
+:matt/marble/04b: 176 80
+:matt/marble/03b: 208 64
+:matt/marble/03b: 208 32
+:matt/marble/03b: 208 0
+:geoo/steel/16x16o.S: 164 80
+:geoo/steel/16x16o.S: 596 80
+:geoo/steel/16x16o.S: 308 80
+:geoo/steel/16x16o.S: 452 80
+:geoo/steel/16x16o.S: 104 80
+:geoo/steel/16x16o.S: 536 80
+:geoo/steel/16x16o.S: 248 80
+:geoo/steel/16x16o.S: 392 80
+:geoo/abstract/cvblocks/042: 518 130
+:geoo/abstract/cvblocks/041: 474 130
+:geoo/abstract/cvblocks/041: 330 130
+:geoo/abstract/cvblocks/041: 42 130
+:geoo/abstract/cvblocks/041: 186 130
+:geoo/abstract/cvblocks/042: 374 130
+:geoo/abstract/cvblocks/042: 230 130
+:geoo/abstract/cvblocks/042: 86 130
+:geoo/abstract/cvblocks/005: 42 194
+:geoo/abstract/cvblocks/005: 58 194
+:geoo/abstract/cvblocks/005: 74 194
+:geoo/abstract/cvblocks/005: 90 194
+:geoo/abstract/cvblocks/005: 106 194
+:geoo/abstract/cvblocks/005: 122 194
+:geoo/abstract/cvblocks/005: 138 194
+:geoo/abstract/cvblocks/005: 154 194
+:geoo/abstract/cvblocks/005: 170 194
+:geoo/abstract/cvblocks/005: 186 194
+:geoo/abstract/cvblocks/005: 202 194
+:geoo/abstract/cvblocks/005: 218 194
+:geoo/abstract/cvblocks/005: 234 194
+:geoo/abstract/cvblocks/005: 250 194
+:geoo/abstract/cvblocks/005: 266 194
+:geoo/abstract/cvblocks/005: 282 194
+:geoo/abstract/cvblocks/005: 298 194
+:geoo/abstract/cvblocks/005: 314 194
+:geoo/abstract/cvblocks/005: 330 194
+:geoo/abstract/cvblocks/005: 346 194
+:geoo/abstract/cvblocks/005: 362 194
+:geoo/abstract/cvblocks/005: 378 194
+:geoo/abstract/cvblocks/005: 394 194
+:geoo/abstract/cvblocks/005: 410 194
+:geoo/abstract/cvblocks/005: 426 194
+:geoo/abstract/cvblocks/005: 442 194
+:geoo/abstract/cvblocks/005: 458 194
+:geoo/abstract/cvblocks/005: 474 194
+:geoo/abstract/cvblocks/005: 490 194
+:geoo/abstract/cvblocks/005: 512 194
+:geoo/abstract/cvblocks/005: 522 194
+:geoo/abstract/cvblocks/005: 538 194
+:geoo/abstract/cvblocks/005: 554 194
+:geoo/abstract/cvblocks/005: 570 194
+:geoo/abstract/cvblocks/005: 10 194
+:geoo/abstract/cvblocks/005: 26 194
+:matt/marble/03b: 144 96
+:matt/marble/03b: 144 128
+:matt/marble/03a: 432 96
+:matt/marble/03a: 432 128
+:matt/marble/03: 288 96
+:matt/marble/03: 288 128
+:matt/marble/03c: 576 96
+:matt/marble/03c: 576 128
+:amanda/steel/steel24x8.S: 68 194
+:amanda/steel/steel24x8.S: 212 194
+:amanda/steel/steel24x8.S: 356 194
+:amanda/steel/steel24x8.S: 500 194
+:matt/marble/03b: 288 202
+:matt/marble/03b: 288 234
+:matt/marble/03b: 416 202
+:matt/marble/03b: 416 234
+:matt/marble/03b: 288 266
+:matt/marble/03b: 416 266
+:matt/marble/04b: 304 282
+:matt/marble/04b: 336 282
+:matt/marble/04b: 384 282
+:geoo/steel/16x16o.S: 328 282
+:matt/marble/04b: 320 378
+:matt/marble/04b: 288 378
+:matt/marble/04b: 256 378
+:matt/marble/04b: 224 378
+:matt/marble/03c: 272 202
+:matt/marble/03c: 272 234
+:matt/marble/03c: 272 266
+:matt/marble/04c: 240 282
+:matt/marble/04c: 192 282
+:matt/marble/04c: 160 282
+:matt/marble/03c: 144 266
+:matt/marble/03c: 144 234
+:matt/marble/03c: 144 202
+:matt/marble/04c: 176 378
+:matt/marble/04c: 144 378
+:matt/marble/04c: 112 378
+:matt/marble/04c: 80 378
+:matt/marble/03: 560 202
+:matt/marble/03: 560 234
+:matt/marble/03: 560 266
+:matt/marble/04: 528 282
+:matt/marble/04: 480 282
+:matt/marble/04: 448 282
+:matt/marble/03: 432 266
+:matt/marble/03: 432 234
+:matt/marble/03: 432 202
+:geoo/steel/16x16o.S: 184 282
+:geoo/steel/16x16o.S: 472 282
+:matt/marble/03a: 128 202
+:matt/marble/03a: 128 234
+:matt/marble/03a: 128 266
+:matt/marble/03a: 0 202
+:matt/marble/03a: 0 234
+:matt/marble/03a: 0 266
+:matt/marble/04a: 16 282
+:matt/marble/04a: 48 282
+:matt/marble/04a: 96 282
+:matt/marble/04: 464 378
+:matt/marble/04: 432 378
+:matt/marble/04: 400 378
+:matt/marble/04: 368 378
+:matt/marble/04a: 32 378
+:matt/marble/04a: 0 378
+:matt/marble/04a: 544 378
+:matt/marble/04a: 512 378
+:geoo/steel/16x16o.S: 40 282
+:geoo/steel/16x16o.S: 280 378
+:geoo/steel/16x16o.S: 136 378
+:geoo/steel/16x16o.S: 424 378
+:geoo/steel/16x16o.S: 568 378
+:matt/marble/04b: 320 394
+:matt/marble/04b: 288 394
+:matt/marble/04b: 256 394
+:matt/marble/04b: 224 394
+:matt/marble/04c: 176 394
+:matt/marble/04c: 144 394
+:matt/marble/04c: 112 394
+:matt/marble/04c: 80 394
+:matt/marble/04: 464 394
+:matt/marble/04: 432 394
+:matt/marble/04: 400 394
+:matt/marble/04: 368 394
+:matt/marble/04a: 32 394
+:matt/marble/04a: 0 394
+:matt/marble/04a: 544 394
+:matt/marble/04a: 512 394
+:amanda/steel/steel24x8.S: 492 400
+:amanda/steel/steel24x8.S: 60 400
+:amanda/steel/steel24x8.S: 204 400
+:amanda/steel/steel24x8.S: 348 400
