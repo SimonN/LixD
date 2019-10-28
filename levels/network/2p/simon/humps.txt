@@ -1,0 +1,197 @@
+$BUILT 2018-04-14 22:08:01
+$AUTHOR Simon/F
+$ENGLISH Humps
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 640
+#SIZE_Y 420
+#TORUS_X 1
+#TORUS_Y 0
+#BACKGROUND_RED 16
+#BACKGROUND_GREEN 16
+#BACKGROUND_BLUE 0
+
+#SECONDS 30
+#INITIAL 50
+#SPAWN_INTERVAL 23
+
+#WALKER 20
+#EXPLODER2 20
+#BUILDER 30
+#PLATFORMER 30
+#BASHER 30
+#MINER 3
+#DIGGER 1
+#JUMPER 20
+
+:amanda/forest/hatch.H: 139 0
+:amanda/forest/hatch.H: 453 0
+
+:amanda/forest/exit.G: 590 288
+:amanda/forest/exit.G: 270 288
+
+$BEGIN_TILE_GROUP 0
+:matt/beach/decor/grass03: 0 0
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:proxima/tile/orange2: 0 2
+:raymanni/gore/bone_6: 1 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 2
+:proxima/tile/orange2: 0 0
+:Group-1: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 3
+:Group-0: 0 0
+:Group-2: 8 31 rr
+$END_TILE_GROUP
+:Group-3: 293 86
+:Group-3: 617 85
+$BEGIN_TILE_GROUP 4
+:matt/earth/10: 0 0
+:matt/earth/10: 1 38 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 5
+:Group-4: 453 1 frr
+:Group-4: 0 28 f
+:Group-4: 135 0 frr
+:Group-4: 321 29 f
+$END_TILE_GROUP
+:Group-5: 236 70
+:amanda/forest/moss_00: 143 68
+:amanda/forest/moss_00: 465 65
+:amanda/forest/moss_00: 276 132 rr
+:amanda/forest/moss_00: 602 132 rr
+$BEGIN_TILE_GROUP 6
+:matt/earth/06: 17 0
+:matt/bricks/02: 0 26 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 7
+:Group-6: 84 0
+:Group-6: 59 15
+:Group-6: 0 42
+:Group-6: 32 29
+$END_TILE_GROUP
+:Group-7: 342 78
+:Group-7: 23 77
+$BEGIN_TILE_GROUP 8
+:matt/earth/07: 5 0
+:matt/bricks/02: 0 27 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 9
+:Group-8: 0 0
+:Group-8: 21 13
+:Group-8: 36 27
+$END_TILE_GROUP
+:Group-9: 213 82
+:Group-9: 533 82
+:Group-5: 236 145
+:amanda/forest/moss_00: 143 143
+:amanda/forest/moss_00: 465 140
+:amanda/forest/moss_00: 276 207 rr
+:amanda/forest/moss_00: 602 207 rr
+:Group-7: 342 153
+:Group-7: 23 152
+:Group-9: 212 159
+:Group-9: 533 158
+:Group-5: 239 217
+:amanda/forest/moss_00: 146 215
+:amanda/forest/moss_00: 468 212
+:amanda/forest/moss_00: 279 279 rr
+:amanda/forest/moss_00: 605 279 rr
+:Group-7: 345 225
+:Group-7: 26 224
+:Group-9: 216 229
+:Group-9: 536 231
+$BEGIN_TILE_GROUP 10
+:geoo/steel/dark_32x16o.S: 31 0
+:geoo/steel/dark_32x16o.S: 0 0
+$END_TILE_GROUP
+:Group-10: 286 379
+:Group-10: 606 380
+:Group-5: 230 320
+:amanda/forest/moss_00: 139 317
+:amanda/forest/moss_00: 461 314
+:amanda/forest/moss_00: 272 381 rr
+:amanda/forest/moss_00: 598 381 rr
+:Group-7: 338 327
+:Group-7: 19 326
+:Group-9: 209 331
+:Group-9: 531 332
+$BEGIN_TILE_GROUP 11
+:matt/earth/00: 168 32
+:matt/earth/00: 125 10
+:matt/earth/00: 92 0
+:matt/earth/00: 55 17
+:matt/earth/00: 0 34
+:matt/earth/00: 87 40
+$END_TILE_GROUP
+:Group-11: 32 349
+:Group-11: 352 348
+$BEGIN_TILE_GROUP 12
+:proxima/tile/spheres/blue: 618 0
+:matt/earth/22: 0 30 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 13
+:proxima/tile/spheres/blue: 639 0
+:Group-12: 0 1 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 14
+:geoo/construction/wall/small_64x64: 0 0
+:matt/earth/22: 21 25 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 15
+:Group-13: 2 2
+:Group-14: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 16
+:proxima/tile/orange2: 0 0
+:geoo/nopales/nopal_02: 15 10 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 17
+:proxima/tile/orange2: 0 0
+:Group-16: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 18
+:proxima/tile/orange2: 0 0
+:geoo/nopales/nopal_07: 18 15 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 19
+:proxima/tile/orange2: 0 0
+:Group-18: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 20
+:proxima/tile/orange2: 0 0
+:geoo/nopales/nopal_03: 11 17 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 21
+:proxima/tile/orange2: 0 0
+:Group-20: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 22
+:proxima/tile/orange2: 0 0
+:geoo/nopales/nopal_02: 13 15 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 23
+:proxima/tile/orange2: 0 0
+:Group-22: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 24
+:proxima/tile/orange2: 0 0
+:geoo/nopales/nopal_03: 17 12 rd
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 25
+:proxima/tile/orange2: 0 0
+:Group-24: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 26
+:Group-15: 35 36
+:Group-17: 50 6
+:Group-19: 41 52
+:Group-19: 28 0
+:Group-21: 54 41
+:Group-23: 7 48
+:Group-25: 0 20 r
+$END_TILE_GROUP
+:Group-26: 124 336
+:Group-26: 440 336
