@@ -19,6 +19,7 @@ module game.effect;
 import std.algorithm;
 import std.container;
 import std.format;
+import std.random;
 
 public import physics.effect;
 
@@ -155,7 +156,8 @@ public:
         Effect e = Effect(upd, pa);
         if (e !in _alreadyPlayed) {
             _alreadyPlayed.insert(e);
-            _debris ~= Debris.newArrow(foot, pa.style, ac);
+            Debris d = newDebris!Arrow.ctor(foot, pa.style, ac);
+            _debris ~= d;
         }
     }
 
@@ -244,7 +246,7 @@ private:
         _alreadyPlayed.insert(e);
         hardware.sound.play(e.sound, e.loudness);
         static if (axe) {
-            _debris ~= Debris.newFlyingTool(foot, dir, Debris.framePickaxe);
+            _debris ~= newDebris!Pickaxe.ctor(foot, dir);
         }
         else {
             // DTODOEFFECT: animate the dig hammer at(footX, footY - 10)
@@ -260,10 +262,16 @@ private:
         _alreadyPlayed.insert(e);
         hardware.sound.play(e.sound, e.loudness);
         static if (ex) {
-            _debris ~= Debris.newExplosion(foot);
+            _debris ~= newDebris!ExplosionCenter.ctor(foot);
         }
         else {
-            _debris ~= Debris.newImplosion(foot);
+            _debris ~= newDebris!ImplosionCenter.ctor(foot);
+            immutable float firstAngle = uniform(0, ImplosionParticle.tau);
+            enum numStars = 12;
+            foreach (star; 0 .. numStars) {
+                _debris ~= newDebris!ImplosionParticle.ctor(foot,
+                    firstAngle + star * ImplosionParticle.tau/numStars);
+            }
         }
     }
 }
