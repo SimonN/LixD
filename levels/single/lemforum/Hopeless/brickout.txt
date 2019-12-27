@@ -1,12 +1,10 @@
-$BUILT 2016-07-29 21:28:27
+$BUILT 2019-12-03 16:16:14
 $AUTHOR ccx
 $ENGLISH Brickout
 
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 1200
 #SIZE_Y 400
-#START_X 0
-#START_Y 380
 
 #INITIAL 50
 #REQUIRED 48
@@ -53,6 +51,10 @@ $ENGLISH Brickout
 :geoo/sandstone/brazier.F: 296 208
 :geoo/sandstone/brazier.F: 952 208
 :geoo/sandstone/brazier.F: 312 208
+:geoo/construction/sawblade_small.F: 354 301
+:geoo/construction/sawblade_small.F: 370 301
+:geoo/construction/sawblade_small.F: 798 301
+:geoo/construction/sawblade_small.F: 814 301
 
 :matt/bricks/03a: 472 48
 :matt/bricks/03a: 536 48
