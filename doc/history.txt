@@ -1,6 +1,33 @@
 Version history
 ===============
 
+0.9.30
+------
+
+2019-12-28
+
+Fix #339: Imploder animation: Now, purple stars and vortexes circle around the
+center, then get sucked into the center. The old animation was too slow
+and subtle.
+
+Fix #388: Oblivion sound was too noisy and high-pitched. Replaced this
+sound effect with meow-like voice acting that is not shrill.
+
+lemforum: ccexplore fixed a backroute in Brickout.
+
+Always print hotkeys on buttons' lower-right corner. Removed user option that
+toggled whether hotkeys would be printed on buttons.
+
+Code: Remove body encounters from physics implementation; these happened at
+(foot - 4), (foot - 8), (foot - 12). Always check foot encounters instead.
+Before, only fire hazards checked for body encounters. Draw larger trigger
+area (in the editor) for fire to compensate. No changes to file formats. No
+changes to physics.
+
+Multiplayer maps: Added Down with Frogs by Flopsy.
+Added remake of Humps (2-player map from 2010) using Lix's earth terrain.
+Removed endless falls at the side of Honeypots.
+
 0.9.29
 ------
 
