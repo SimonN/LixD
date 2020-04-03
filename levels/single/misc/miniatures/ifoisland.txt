@@ -1,4 +1,4 @@
-$BUILT 2018-05-20 20:26:09
+$BUILT 2020-04-03 19:16:19
 $AUTHOR Simon
 $ENGLISH Ifo Island
 
@@ -13,6 +13,7 @@ $ENGLISH Ifo Island
 #WALKER 1
 #BLOCKER 1
 #BUILDER 2
+#PLATFORMER 1
 #BASHER 1
 #MINER 1
 #DIGGER 1
@@ -21,16 +22,15 @@ $ENGLISH Ifo Island
 :matt/winter/Hatch.H: 24 -32
 :matt/winter/Hatch.H: 88 -32
 
-:matt/winter/Goal.G: 226 118
+:matt/winter/Goal.G: 256 118
 
 :raymanni/toys/water.W: 198 180
 :raymanni/toys/water.W: 102 180
 :raymanni/toys/water.W: 134 180
 :raymanni/toys/water.W: 166 180
+:raymanni/toys/water.W: 230 180
 
-:matt/winter/09c: 200 186
-:matt/winter/09c: 208 180
-:matt/winter/09c: 196 194
+:matt/winter/09b: 252 180
 :matt/winter/11: -32 96
 :matt/winter/15: -26 154 f
 :matt/winter/04: 260 -112 f
@@ -38,22 +38,18 @@ $ENGLISH Ifo Island
 :geoo/steel/silhouette_32x32.S: 256 80 rrr
 :geoo/steel/silhouette_32x32.S: 288 80 rrr
 :geoo/steel/silhouette_32x32.S: 192 80 rrr
-:matt/winter/09b: 292 168
-:matt/winter/09b: 274 172
+:matt/winter/09b: 300 172
+:matt/winter/09b: 274 174
 :matt/winter/09b: 294 186
-:matt/winter/09b: 200 192
-:matt/winter/09b: 218 172
 :matt/winter/06: 16 32 r
 :matt/winter/17: -32 -48 f
 :matt/winter/11: -32 48
 :matt/winter/15: 256 -16
 :matt/winter/06: 80 32 r
 :matt/winter/07: 144 32 r
-:matt/winter/09b: 244 172
 :matt/winter/07: 128 80 fr
 :matt/winter/06: 192 80 fr
 :matt/winter/06: 256 80 fr
-:matt/winter/05: -106 154 frrr
+:matt/winter/05: -120 154 frrr
 :matt/winter/02: 24 104 rr
-:matt/winter/09b: 232 188
 :matt/winter/09c: 266 192
