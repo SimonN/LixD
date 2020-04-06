@@ -101,7 +101,17 @@ protected:
         return isWithinTileset ? currentDir.findTree() : [];
     }
 
+protected:
+    override void sortDirs(MutFilename[] arr) const
+    {
+        arr.sort!((a, b) => a.dirInnermost < b.dirInnermost);
+    }
+
 private:
+    /*
+     * We can either be in a tileset already, then we'll list all its tiles,
+     * or we can be in an outer dir, then we'll list directories and no tiles.
+     */
     bool isWithinTileset() const
     {
         return currentDir.rootless.length > _baseDir.rootless.length;
