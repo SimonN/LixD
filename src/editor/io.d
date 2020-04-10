@@ -14,7 +14,7 @@ import editor.paninit;
 import file.filename;
 import file.date;
 import file.language;
-import graphic.map;
+import graphic.camera.mapncam;
 import gui;
 import hardware.keyset;
 import hardware.sound;
@@ -33,7 +33,7 @@ void implConstructor(Editor editor) { with (editor)
     else {
         editor.newLevelNoQuestions();
     }
-    Map newMap() { with (_level) return new Map(topology,
+    MapAndCamera newMap() { with (_level) return new MapAndCamera(topology,
         gui.screenXls.to!int, (gui.screenYls - gui.panelYls).to!int); }
     _map        = newMap();
     _mapTerrain = newMap();

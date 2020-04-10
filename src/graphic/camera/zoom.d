@@ -1,4 +1,4 @@
-module graphic.zoom;
+module graphic.camera.zoom;
 
 import std.array;
 import std.algorithm;
@@ -27,18 +27,19 @@ public:
         selectOneAllowed(level, cameraLen);
     }
 
-    @property float current() const pure { return _allowed[_selected]; }
-
-    @property bool zoomableIn() const { return _selected < _allowed.len - 1; }
-    @property bool zoomableOut() const { return _selected > 0; }
-
-    void zoomIn()  { if (zoomableIn) ++_selected; }
-    void zoomOut() { if (zoomableOut) --_selected; }
+    @property const pure nothrow @nogc {
+        float current() { return _allowed[_selected]; }
+        bool zoomableIn() { return _selected < _allowed.len - 1; }
+        bool zoomableOut() { return _selected > 0; }
+    }
 
     bool preferNearestNeighbor() const pure
     {
         return abs(current.roundInt - current) < 0.01f || current >= 3;
     }
+
+    void zoomIn()  { if (zoomableIn) ++_selected; }
+    void zoomOut() { if (zoomableOut) --_selected; }
 
 private:
     mixin template aAndB() {

@@ -74,7 +74,8 @@ void drawMainMap(Editor editor)
     with (TargetTorbit(editor._map))
     with (editor)
     with (editor._level) {
-        editor._map.clearScreenRect(color.makecol(bgRed, bgGreen, bgBlue));
+        editor._map.clearSourceThatWouldBeBlitToTarget(
+            color.makecol(bgRed, bgGreen, bgBlue));
         editor.drawGadgets();
         editor._map.loadCameraRect(_mapTerrain);
         editor.drawGadgetAnnotations();

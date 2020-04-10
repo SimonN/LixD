@@ -24,11 +24,11 @@ import optional;
 
 import basics.alleg5;
 import basics.globals;
-import file.option; // username, to determine whether to save result
 import basics.help : len;
 import file.filename;
 import file.trophy;
 import file.replay;
+import file.option;
 
 import game.core.calc;
 import game.core.chatarea;
@@ -43,7 +43,7 @@ import game.nurse.interact;
 import game.panel.base;
 import game.tweaker.tweaker;
 
-import graphic.map;
+import graphic.camera.mapncam;
 import gui;
 import hardware.display; // fps for framestepping speed
 import hardware.music;
@@ -59,10 +59,14 @@ public:
     const(Level) level;
 
 package:
-    Map map; // The map does not hold the referential level image, that's
-             // in cs.land and cs.lookup. Instead, the map loads a piece
-             // of that land, blits gadgets and lixes on it, and blits the
-             // result to the screen. It is both a renderer and a camera.
+    /*
+     * The map does not hold the referential level image, that's
+     * in cs.land and cs.lookup. Instead, the map loads a piece
+     * of that land, blits gadgets and lixes on it, and blits the
+     * result to the screen. It is both a renderer and a camera.
+     */
+    MapAndCamera map;
+
     InteractiveNurse nurse;
     EffectManager _effect; // never null, never the NullEffectSink
     RichClient _netClient; // null unless playing/observing multiplayer
@@ -387,7 +391,7 @@ private:
     }
     body {
         immutable mapYls = (gui.screenYls - gui.panelYls).to!int;
-        map = new Map(cs.land, gui.screenXls.to!int, mapYls);
+        map = new MapAndCamera(cs.land, gui.screenXls.to!int, mapYls);
         this.centerCameraOnHatchAverage();
 
         _tweaker = new Tweaker(

@@ -15,7 +15,7 @@ import editor.hover;
 import editor.io;
 import editor.gui.panel;
 import file.filename;
-import graphic.map;
+import graphic.camera.mapncam;
 import gui.iroot;
 import gui.msgbox;
 import level.level;
@@ -25,8 +25,8 @@ import tile.gadtile;
 
 class Editor : IRoot {
 package:
-    Map _map; // level background color, and gadgets
-    Map _mapTerrain; // transp, for rendering terrain, later blit to _map
+    MapAndCamera _map; // level background color, and gadgets
+    MapAndCamera _mapTerrain; // transp, to render terrain, later blit to _map
     Level _level;
     Level _levelToCompareForDataLoss;
     MutFilename _loadedFrom; // whenever this changes, notify the panel

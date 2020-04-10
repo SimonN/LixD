@@ -11,11 +11,11 @@ import basics.globals : ticksPerSecond;
 import file.option : showFPS;
 import game.core.game;
 import game.panel.tooltip;
+import graphic.camera.mapncam;
 import graphic.color;
 import graphic.cutbit; // replay sign
 import graphic.gadget;
 import graphic.internal;
-import graphic.map;
 import graphic.torbit;
 import gui;
 import hardware.display;
@@ -37,7 +37,7 @@ implGameDraw(Game game) { with (game)
         // nothing except comparing two pointers there if we've set stuff here.
         auto drata = TargetTorbit(map);
         Alcol levBg = color.makecol(level.bgRed, level.bgGreen, level.bgBlue);
-        map.clearScreenRect(levBg);
+        map.clearSourceThatWouldBeBlitToTarget(levBg);
         game.drawGadgets();
 
         if (modalWindow || ! pan.splatRulerIsOn || ! isMouseOnLand) {

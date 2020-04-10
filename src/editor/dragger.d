@@ -11,7 +11,7 @@ import std.typecons;
 
 import basics.rect;
 import editor.hover;
-import graphic.map;
+import graphic.camera.mapncam;
 static import hardware.mouse; // only for position, not for clicks
 
 class MouseDragger {
@@ -42,7 +42,7 @@ public:
         _snapper = null;
     }
 
-    void startFrame(const(Map) map)
+    void startFrame(const(MapAndCamera) map)
     {
         _mode = DragMode.frame;
         _snapper = null; // probably already null, but let's not guess
@@ -52,7 +52,7 @@ public:
     // Returns the frame rectangle on the map, not on the screen.
     // Nonetheless, this function depends on mouse coordinates on the screen:
     // framePart() needs them to determine frame spanning direction on tori.
-    Rect frame(const(Map) map) const
+    Rect frame(const(MapAndCamera) map) const
     {
         assert (framing);
         auto mol = map.mouseOnLand;
@@ -63,7 +63,7 @@ public:
         return Rect(xPart.start, yPart.start, xPart.len + 1, yPart.len + 1);
     }
 
-    void startMove(const(Map) map, Hover snapper)
+    void startMove(const(MapAndCamera) map, Hover snapper)
     {
         assert (snapper, "must startMove with a non-null snapper");
         _mode = DragMode.move;
@@ -72,7 +72,7 @@ public:
     }
 
     // Side effect: calling this makes it return 0 if called again immediately
-    Point snapperShouldMoveBy(const(Map) map, in int grid)
+    Point snapperShouldMoveBy(const(MapAndCamera) map, in int grid)
     {
         if (! moving)
             return Point(0, 0);
@@ -102,7 +102,7 @@ private:
             _snapper ? "non-null" : "null", _mode));
     }
 
-    void saveFroms(const(Map) map)
+    void saveFroms(const(MapAndCamera) map)
     {
         _fromMap    = map.mouseOnLand;
         _fromScreen = hardware.mouse.mouseOnScreen;
