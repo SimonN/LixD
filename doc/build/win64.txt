@@ -14,9 +14,13 @@ If you get stuck at any point, don't hesitate to contact me
 Install LDC and dub
 -------------------
 
-Download the D compiler LDC, version 1.13.0 or newer, for Windows-x64:
+Download the D compiler LDC, version 1.21.0-beta1 or 1.21.0 or newer;
+choose the download that ends in "-windows-x64.7z":
 
     https://github.com/ldc-developers/ldc/releases
+
+(If you have LDC versions 1.13.0 through 1.20.1, see below at
+"Old LDC versions".)
 
 7z files can be extracted with 7-Zip, available at:
 
@@ -140,6 +144,36 @@ add the music for a more complete experience. To get the music, download:
     http://www.lixgame.com/dow/lix-music.zip
 
 Extract this into Lix's directory, you'll get a subdirectory ./music/.
+
+You are done!
+
+
+
+Old LDC versions
+----------------
+
+LDC versions 1.13.0 through 1.20.1 can still be made to work.
+You can check your compiler version with "ldc2 --version".
+
+With LDC 1.20.1 or older, follow the build instructions normally until
+you have cloned/extracted Lix's source. Then, before compiling Lix,
+first change the text file ./dub.json in Lix's root directory.
+Find the following two lines in ./dub.json:
+
+    "lflags-windows-ldc": ["-subsystem:windows", "-entry:wmainCRTStartup"],
+    "lflags-windows-ldc2": ["-subsystem:windows", "-entry:wmainCRTStartup"],
+
+...and replace them with these two:
+
+    "lflags-windows-ldc": ["-subsystem:windows", "-entry:mainCRTStartup"],
+    "lflags-windows-ldc2": ["-subsystem:windows", "-entry:mainCRTStartup"],
+
+...and save, then continue with the build instructions normally.
+
+Reason: If you didn't change dub.json, then LDC 1.13.0 through 1.20.1
+would generate this error during linking:
+
+    lld-link: error: <root>: undefined symbol: wmainCRTStartup
 
 
 

@@ -1,11 +1,14 @@
 Lix
 ===
 
-Lix is a puzzle game inspired by *Lemmings* (DMA Design, 1991). Lix is free and open source.
+Lix is a puzzle game inspired by *Lemmings* (DMA Design, 1991).
+Lix is free and open source.
 
-Assign skills to guide the lix through over 600 singleplayer puzzles. Design your own levels with the included editor.
+Assign skills to guide the lix through over 700 singleplayer puzzles.
+Design your own levels with the included editor.
 
-Attack and defend in real-time multiplayer for 2 to 8 players: Who can save the most lix?
+Attack and defend in real-time multiplayer for 2 to 8 players:
+Who can save the most lix?
 
 ![Lix screenshot](http://lixgame.com/img/lix-d-screenshot.png)
 
@@ -17,10 +20,6 @@ Download
 
 macOS or others: Build from source, see below.
 
-macOS users: In January-April 2019, Lix on macOS 10.14
-sometimes showed only a black window. Does this still happen? See
-[issue 381: macOS black screen](https://github.com/SimonN/LixD/issues/381).
-
 License/Copying/Public domain
 -----------------------------
 
@@ -29,7 +28,8 @@ tracks (but not all music tracks) are released into the public domain
 via the CC0 public domain dedication.
 
 The text font DejaVu Sans and some music tracks have their own licenses.
-[Full license/copying text](https://raw.githubusercontent.com/SimonN/LixD/master/doc/copying.txt)
+[Full license/copying
+text](https://raw.githubusercontent.com/SimonN/LixD/master/doc/copying.txt)
 
 Networked multiplayer
 ---------------------
@@ -62,7 +62,14 @@ https://github.com/SimonN/LixD/blob/master/doc/build/linux.md)
 * [Notes for Linux package maintainers](
 https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/package.txt)
 
-Quick instructions: You need a D compiler, dub, Allegro 5.2, and enet 1.3. Build Lix with `$ dub build -b release`, then [download the game music](http://www.lixgame.com/dow/lix-music.zip) and extract it in Lix's directory.
+Quick instructions: You need a D compiler, dub, Allegro 5.2, and enet 1.3.
+Build Lix with `$ dub build -b release`, then
+[download the game music](http://www.lixgame.com/dow/lix-music.zip)
+and extract it in Lix's directory.
+
+On Windows, you need LDC 1.21.0, which is still very new as of April 2020.
+Older LDC versions 1.13.0 through 1.20.1 work on Windows, but you have to edit
+`dub.json`, see "Old LDC versions" in the [Windows build notes](https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/win64.txt).
 
 Contact
 -------

@@ -35,8 +35,8 @@
     "libs-windows": ["allegro"],
 
     "lflags-windows-dmd": ["-L/subsystem:windows"],
-    "lflags-windows-ldc": ["-subsystem:windows", "-entry:mainCRTStartup"],
-    "lflags-windows-ldc2": ["-subsystem:windows", "-entry:mainCRTStartup"],
+    "lflags-windows-ldc": ["-subsystem:windows", "-entry:wmainCRTStartup"],
+    "lflags-windows-ldc2": ["-subsystem:windows", "-entry:wmainCRTStartup"],
 
     "sourceFiles-windows-x86": ["src\\icon\\win32.res"],
     "sourceFiles-windows-x86_64": ["src\\icon\\win64.res"],
