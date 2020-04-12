@@ -14,7 +14,7 @@
         "enumap": ">=0.4.2",
         "derelict-enet": ">=2.0.0",
         "optional": "~>0.6.3",
-        "sdlang-d": ">=0.10.4",
+        "sdlang-d": ">=0.10.6",
     },
 
     "libs": [

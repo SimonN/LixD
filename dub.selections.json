@@ -6,11 +6,10 @@
 		"derelict-enet": "4.1.0",
 		"derelict-util": "3.0.0-beta.2",
 		"enumap": "0.4.2",
-		"libinputvisitor": "1.2.2",
 		"optional": "0.6.3",
-		"sdlang-d": "0.10.4",
-		"silly": "0.8.0",
-		"taggedalgebraic": "0.10.12",
-		"unit-threaded": "0.7.52"
+		"sdlang-d": "0.10.6",
+		"silly": "1.0.2",
+		"taggedalgebraic": "0.11.12",
+		"unit-threaded": "0.7.55"
 	}
 }
