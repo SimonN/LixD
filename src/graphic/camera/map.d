@@ -102,8 +102,8 @@ void centerOnAverage(Rx, Ry)(Rx rangeX, Ry rangeY)
     _cam.focus = Point(torusAverageX(rangeX), torusAverageY(rangeY));
 }
 
-void zoomIn() { _cam.zoomInKeepingSourcePointFixed(mouseOnLand); }
-void zoomOut() { _cam.zoomOutKeepingSourcePointFixed(mouseOnLand); }
+void zoomIn() { _cam.zoomInKeepingTargetPointFixed(mouseOnTarget); }
+void zoomOut() { _cam.zoomOutKeepingTargetPointFixed(mouseOnTarget); }
 void zoomOutToSeeEntireMap() { _cam.zoomOutToSeeEntireSource(); }
 void snapToBoundary() { _cam.snapToBoundary(); }
 
@@ -125,11 +125,14 @@ private @property int borderUpperSideYl() const
     return (_cam.targetYl - yl * zoom).ceil.roundInt;
 }
 
-@property Point
-mouseOnLand() const
+@property Point mouseOnTarget() const
 {
-    immutable Point mouseOnTarget = hardware.mouse.mouseOnScreen
+    return hardware.mouse.mouseOnScreen
         - Point(borderOneSideXl, borderUpperSideYl);
+}
+
+@property Point mouseOnLand() const
+{
     return _cam.sourceOf(mouseOnTarget);
 }
 

@@ -74,12 +74,22 @@ public:
 
     void zoomInKeepingSourcePointFixed(in Point sourceToFix)
     {
-        zoomInOrOut(sourceToFix, { _zoom.zoomIn(); });
+        zoomKeepingSourcePointFixed(sourceToFix, { _zoom.zoomIn(); });
     }
 
     void zoomOutKeepingSourcePointFixed(in Point sourceToFix)
     {
-        zoomInOrOut(sourceToFix, { _zoom.zoomOut(); });
+        zoomKeepingSourcePointFixed(sourceToFix, { _zoom.zoomOut(); });
+    }
+
+    void zoomInKeepingTargetPointFixed(in Point targetToFix)
+    {
+        zoomKeepingTargetPointFixed(targetToFix, { _zoom.zoomIn(); });
+    }
+
+    void zoomOutKeepingTargetPointFixed(in Point targetToFix)
+    {
+        zoomKeepingTargetPointFixed(targetToFix, { _zoom.zoomOut(); });
     }
 
     void zoomOutToSeeEntireSource()
@@ -115,7 +125,7 @@ public:
     }
 
 private:
-    void zoomInOrOut(
+    void zoomKeepingSourcePointFixed(
         in Point sourceToFix,
         void delegate() callZoom,
     ) {
@@ -131,6 +141,16 @@ private:
         focus = Point(
             roundInt(a * sourceToFix.x + (1f - a) * focus.x),
             roundInt(a * sourceToFix.y + (1f - a) * focus.y));
+    }
+
+    void zoomKeepingTargetPointFixed(
+        in Point targetToFix,
+        void delegate() callZoom,
+    ) {
+        immutable Point oldSource = sourceOf(targetToFix);
+        callZoom();
+        immutable Point newSource = sourceOf(targetToFix);
+        focus = focus + oldSource - newSource;
     }
 }
 
