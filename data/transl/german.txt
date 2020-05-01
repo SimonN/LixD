@@ -113,6 +113,7 @@ $gameNuke Atombombe. Aktiviere per Doppelklick.
 
 $tweakerHeaderLixID Lix-ID
 $tweakerHeaderPhyu Phyu
+$tweakerLineNow Jetzt
 $tweakerEmptyListTitle Replay-Justierer
 $tweakerEmptyListDesc1 Klicke ein paar Lix an.
 $tweakerEmptyListDesc2 Dann kannst du hier den

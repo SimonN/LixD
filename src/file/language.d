@@ -189,6 +189,7 @@ enum Lang {
 
     tweakerHeaderLixID,
     tweakerHeaderPhyu,
+    tweakerLineNow,
     tweakerEmptyListTitle,
     tweakerEmptyListDesc1,
     tweakerEmptyListDesc2,

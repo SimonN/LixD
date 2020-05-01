@@ -117,6 +117,7 @@ $gameNuke Nuke. Double-click to activate.
 
 $tweakerHeaderLixID Lix ID
 $tweakerHeaderPhyu Phyu
+$tweakerLineNow Now
 $tweakerEmptyListTitle Replay Tweaker
 $tweakerEmptyListDesc1 Click lix to assign skills.
 $tweakerEmptyListDesc2 Later, you can tweak

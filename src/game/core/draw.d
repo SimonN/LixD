@@ -66,7 +66,8 @@ implGameDraw(Game game) { with (game)
 
     if (pan.tweakerIsOn) {
         _tweaker.shown = true;
-        _tweaker.formatButtonsAccordingTo(nurse.constReplay.allPlies);
+        _tweaker.formatButtonsAccordingTo(
+            nurse.constReplay.allPlies, nurse.upd);
     }
     else if (_tweaker.shown) {
         _tweaker.shown = false;
