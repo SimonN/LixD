@@ -355,7 +355,6 @@ enum Lang {
     optionScreenWindowedRes,
     optionPaintTorusSeams,
     optionIngameTooltips,
-    optionShowButtonHotkeys,
     optionShowFPS,
     optionGuiColorRed,
     optionGuiColorGreen,
