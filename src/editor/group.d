@@ -1,25 +1,33 @@
 module editor.group;
 
 import std.algorithm;
+import std.conv;
 import std.range;
 
-import basics.help; // positiveMod
+import basics.help;
 import editor.editor;
-import editor.hover;
+import editor.undoable.addrm;
+import editor.undoable.compound;
+import level.level;
+import level.oil;
 import tile.group;
 import tile.occur;
 import tile.tilelib;
+import tile.visitor;
 
 void createGroup(Editor editor) {
     with (editor)
 {
-    // Choose only the terrain occurrences. _selection may have hovers
-    // of gadgets, those gadgets shall not become part of the new group.
+    // Choose only the terrain occurrences. _selection may gadget Oils,
+    // those gadgets shall not become part of the new group.
     // I would like to remove the dynamic cast, but this code is clearest.
-    auto occurrences = editor._selection
-        .map   !(hov => cast (TerrainHover) hov)
-        .filter!(hov => hov !is null)
-        .map   !(hov => hov.occ);
+    auto occurrences = editor._selection[]
+        .map!(oil => cast (TerOil) oil)
+        .filter!(oil => oil !is null)
+        .map!(oil => oil.occ(levelRefacme));
+    static assert (is (ElementType!(typeof(occurrences)) == TerOcc),
+        "As of 2020-11, we need mutable TerOccs for this algo");
+
     assert (occurrences.all!(occ => occ !is null && occ.tile !is null));
     if (   occurrences.walkLength < 2
         || occurrences.all!(occ => occ.dark))
@@ -31,24 +39,52 @@ void createGroup(Editor editor) {
     catch (TileGroup.InvisibleException)
         return;
 
-    // Hack. In all other cases, we let Level add occurrences to itself
-    // by giving to Level the key and the position.
-    // Here, we add the new occurrence ourselves.
     TerOcc groupOcc = new TerOcc(group);
-    groupOcc.loc  = occurrences.map!(occ => occ.cutbitOnMap)
-                              .reduce!(Rect.smallestContainer)
-                              .topLeft + group.transpCutOff;
-    _level.terrain ~= groupOcc;
-    _selection.filter!(s => cast (TerrainHover) s)
-              .each  !(s => s.removeFromLevel());
-    _selection = [ new GroupHover(_level, groupOcc, Hover.Reason.addedTile)];
+    groupOcc.loc = occurrences
+        .map!(occ => occ.cutbitOnMap)
+        .reduce!(Rect.smallestContainer)
+        .topLeft + group.transpCutOff;
+    /*
+     * We must first first remove loose tiles, then add the group occ.
+     * Reason: The Oil of the inserted group occ must be valid after all
+     * the deletions to allow an immediate editor._selection of the newly
+     * inserted tile.
+     */
+    auto deletions = _selection[]
+        .filter!(oil => null !is cast (TerOil) oil)
+        .map!(oil => new TileRemoval(oil, oil.occ(level)))
+        .array
+        .sort!((a, b) => a.shouldBeAppliedBefore(b));
+    TileInsertion insertion = new TileInsertion(
+        new TerOil(level.terrain.len - deletions.length.to!int), groupOcc);
+    apply(deletions
+        .chain(only(insertion))
+        .toCompoundUndoable);
 }}
 
-void ungroup(Editor editor)
+void ungroup(Editor editor) { with (editor)
 {
-    editor._selection
-        = editor._selection.map!(hov => hov.replaceInLevelWithElements()).join;
-}
+    if (_selection.empty)
+        return;
+    auto visitor = new UngroupingVisitor(editor.level);
+    /*
+     * Each tile can generate an ungrouping, which is a CompoundUndoable.
+     * We might want to ungroup all group in the selection, and if there is
+     * more than one group in the selection, we could make a CompoundUndoable
+     * of all the ungrouping CompoundUndoables.
+     *
+     * But for fear of inconsistent Oils,
+     * I will only apply the first ungrouping and then cancel.
+     */
+    foreach (oil; editor._selection[]) {
+        visitor.theGroup = oil.occ(levelRefacme);
+        visitor.theGroup.tile.accept(visitor);
+        if (visitor.retOrNull !is null) {
+            apply(visitor.retOrNull);
+            break;
+        }
+    }
+}}
 
 private:
 
@@ -133,4 +169,44 @@ unittest {
     // The first rectangle ends at 30, we have to span from 80 to 30.
     Side[] sides = [ Side(10, 20), Side(80, 5), Side(90, 30) ];
     assert (sides.nepstersAlgo(100) == Side(80, 50));
+}
+
+class UngroupingVisitor : TileVisitor {
+public:
+    CompoundUndoable retOrNull = null; // output
+    Occurrence theGroup; // input
+
+private:
+    const(Level) _level;
+
+public:
+    this(const(Level) aLevel) { _level = aLevel; }
+
+    override void visit(const(TerrainTile) te) { retOrNull = null; }
+    override void visit(const(GadgetTile) ga) { retOrNull = null; }
+
+    override void visit(const(TileGroup) groupTile)
+    {
+        if (groupTile.key.elements.len < 2) {
+            retOrNull = null;
+            return;
+        }
+        immutable int id = _level.terrain.countUntil(theGroup).to!int;
+        assert (id >= 0, "Trying to ungroup nonexistant group");
+
+        const(Occurrence) moveToOurPosition(Occurrence part)
+        {
+            part.loc += theGroup.loc - groupTile.transpCutOff;
+            return part;
+        }
+        auto additions = groupTile.key.elements
+            .map!(e => e.clone)
+            .map!moveToOurPosition
+            .enumerate!int
+            .map!(tuple => new TileInsertion(
+                new TerOil(id + tuple.index), tuple.value));
+        retOrNull = only(new TileRemoval(new TerOil(id), theGroup))
+            .chain(additions)
+            .toCompoundUndoable;
+    }
 }

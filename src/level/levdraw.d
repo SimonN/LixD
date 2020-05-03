@@ -5,7 +5,6 @@ import std.conv;
 import std.range;
 import std.string;
 
-import basics.alleg5;
 import file.filename;
 import graphic.color;
 import graphic.cutbit;
@@ -183,6 +182,7 @@ body {
 // getting initialized. Doesn't matter. Noninteractive level dump is important
 // and should work.
 unittest {
+    import basics.alleg5;
     import basics.init;
     import basics.cmdargs;
     import basics.globals;

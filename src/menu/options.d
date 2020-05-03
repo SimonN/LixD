@@ -359,8 +359,8 @@ void populateEditorKeys()
     ];
     fac.y += fac.incrementY;
     groups[OptionGroup.editorKeys] ~= [
-        fac.factory!HotkeyOption(keyEditorSave, watcher),
-        fac.factory!HotkeyOption(keyEditorSaveAs, watcher),
+        fac.factory!HotkeyOption(keyEditorUndo, watcher),
+        fac.factory!HotkeyOption(keyEditorRedo, watcher),
     ];
     fac.y += fac.incrementY;
     groups[OptionGroup.editorKeys] ~= [
@@ -408,8 +408,11 @@ void populateEditorKeys()
         fac.factory!HotkeyOption(keyEditorMenuSkills, watcher),
     ];
     fac.y += fac.incrementY;
-    groups[OptionGroup.editorKeys] ~=
-        fac.factory!HotkeyOption(keyEditorExit, watcher);
+    groups[OptionGroup.editorKeys] ~= [
+        fac.factory!HotkeyOption(keyEditorSave, watcher),
+        fac.factory!HotkeyOption(keyEditorSaveAs, watcher),
+        fac.factory!HotkeyOption(keyEditorExit, watcher),
+    ];
 }
 
 void populateMenuKeys()

@@ -10,8 +10,9 @@ import std.math;
 import std.typecons;
 
 import basics.rect;
-import editor.hover;
 import graphic.camera.mapncam;
+import level.level;
+import level.oil;
 static import hardware.mouse; // only for position, not for clicks
 
 class MouseDragger {
@@ -28,7 +29,7 @@ private:
     // snapper has moved, even if they don't end up snapped to grid.
     // The editor should pick the clicked-to-move tile and make that the
     // snapper. We don't move the snapper ourselves, or anything else.
-    Rebindable!(const(Hover)) _snapper;
+    Oil _snapper;
 
     enum DragMode { none, frame, move }
 
@@ -63,7 +64,7 @@ public:
         return Rect(xPart.start, yPart.start, xPart.len + 1, yPart.len + 1);
     }
 
-    void startMove(const(MapAndCamera) map, Hover snapper)
+    void startMove(const(MapAndCamera) map, Oil snapper)
     {
         assert (snapper, "must startMove with a non-null snapper");
         _mode = DragMode.move;
@@ -72,8 +73,11 @@ public:
     }
 
     // Side effect: calling this makes it return 0 if called again immediately
-    Point snapperShouldMoveBy(const(MapAndCamera) map, in int grid)
-    {
+    Point snapperShouldMoveBy(
+        const(Level) level, // to resolve the _snapper Oil
+        const(MapAndCamera) map,
+        in int grid
+    ) {
         if (! moving)
             return Point(0, 0);
         immutable draggedOnGrid = (map.mouseOnLand - _fromMap).roundTo(grid);
@@ -81,8 +85,8 @@ public:
             return Point(0, 0);
         _fromMap += draggedOnGrid;
         assert (_snapper);
-        return (_snapper.occ.loc + draggedOnGrid).roundTo(grid)
-              - _snapper.occ.loc;
+        return (_snapper.occ(level).loc + draggedOnGrid).roundTo(grid)
+              - _snapper.occ(level).loc;
     }
 
     Point clonedShouldMoveBy() const

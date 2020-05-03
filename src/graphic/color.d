@@ -2,7 +2,10 @@ module graphic.color;
 
 import std.random;
 
-public import basics.alleg5 : Alcol;
+public import basics.alleg5 :
+    Alcol,
+    al_map_rgb, al_unmap_rgb, al_map_rgb_f, al_unmap_rgb_f,
+    al_map_rgba, al_unmap_rgba, al_map_rgba_f, al_unmap_rgba_f;
 
 import basics.alleg5;
 import file.option;
@@ -48,6 +51,9 @@ private class ColorPrivate {
         return al_map_rgb_f(r / 255f, g / 255f, b / 255f);
     }
 
+    // Handy to have this available without color initialization, for Level
+    enum Alcol black = Alcol(0f, 0f, 0f, 1f);
+
     Alcol
         bad,
         transp,
@@ -57,7 +63,6 @@ private class ColorPrivate {
         lixFileEye, // for detection of where exploder fuses are positioned
 
         white,
-        black,
         red,
 
         guiFileSha, // how it looks in an image file, these get
@@ -108,7 +113,6 @@ private:
         lixFileEye = makecol(0x50, 0x50, 0x50);
 
         white = al_map_rgb_f(1, 1, 1);
-        black = al_map_rgb_f(0, 0, 0);
         red = al_map_rgb_f(1, 0, 0);
 
         // how it looks in an image file

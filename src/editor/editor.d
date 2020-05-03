@@ -1,7 +1,11 @@
 module editor.editor;
 
-/* I would like some MVC separation here. The model is class Level.
- * The Editor is Controller and View.
+/*
+ * Rough MVC separation:
+ * The model is the Level.
+ * The view is MapAndCamera.
+ * The controller is all the modules in editor.*, and they pass changes
+ * to the model via the UndoRedoStack in class Editor.
  */
 
 import enumap;
@@ -11,32 +15,40 @@ import editor.dragger;
 import editor.draw;
 import editor.gui.browter;
 import editor.gui.okcancel;
-import editor.hover;
-import editor.io;
 import editor.gui.panel;
+import editor.io;
+import editor.stack;
+import editor.undoable.base;
 import file.filename;
 import graphic.camera.mapncam;
 import gui.iroot;
 import gui.msgbox;
 import level.level;
+import level.oil;
 import menu.browser.saveas;
 import tile.occur;
 import tile.gadtile;
 
 class Editor : IRoot {
+private:
+    /*
+     * To access the level or the undo stack within the editor.* package,
+     * see below for package-visible methods of Editor.
+     */
+    UndoRedoStackThatMergesTileMoves _undoRedo;
+    Level _level;
+
 package:
     MapAndCamera _map; // level background color, and gadgets
     MapAndCamera _mapTerrain; // transp, to render terrain, later blit to _map
-    Level _level;
     Level _levelToCompareForDataLoss;
-    MutFilename _loadedFrom; // whenever this changes, notify the panel
 
     bool _gotoMainMenuOnceAllWindowsAreClosed;
     EditorPanel _panel;
     MouseDragger _dragger;
 
-    Hover[] _hover;
-    Hover[] _selection;
+    OilSet _hover;
+    OilSet _selection;
 
     MsgBox         _askForDataLoss;
     TerrainBrowser _terrainBrowser;
@@ -44,10 +56,14 @@ package:
     SaveBrowser    _saveBrowser;
 
 public:
-    this(Filename fn)
+    this()
     {
-        _loadedFrom = fn;
-        this.implConstructor();
+        this.implConstructor(newEmptyLevel, null);
+    }
+
+    this(Filename fn) // may not be null; choose the other ctor for empty level
+    {
+        this.implConstructor(delegate Level() { return new Level(fn); }, fn);
     }
 
     ~this() { this.implDestructor(); }
@@ -63,7 +79,7 @@ public:
     void emergencySave() const
     {
         import basics.globals;
-        _level.saveToFile(new VfsFilename(dirLevels.dirRootless
+        level.saveToFile(new VfsFilename(dirLevels.dirRootless
                                        ~ "editor-emergency-save.txt"));
     }
 
@@ -75,6 +91,51 @@ public:
     bool draw() { this.implEditorDraw(); return mainUIisActive; }
 
 package:
+/*
+ * Interaction with the level and the undo stack:
+ */
+    void setLevelAndCreateUndoStack(
+        Level delegate() newLevelFunc, // this should new a Level and return it
+        Filename fnOrNull, // null iff new level that was never saved/loaded
+    ) {
+        _hover = new OilSet;
+        _selection = new OilSet;
+        _undoRedo = new UndoRedoStackThatMergesTileMoves();
+        _panel.currentFilenameOrNull = fnOrNull;
+        _level = newLevelFunc();
+        _levelToCompareForDataLoss = newLevelFunc();
+    }
+
+    @property Level levelRefacme() pure nothrow @nogc
+    {
+        return _level;
+    }
+
+    @property const(Level) level() const pure nothrow @nogc
+    {
+        return _level;
+    }
+
+    void apply(Command)(Command cmd)
+        if (is (Command : Undoable))
+    {
+        _selection = _undoRedo.apply(_level, cmd).clone;
+    }
+
+    void applyAndTrustThatTheSelectionWillNotChange(Command)(Command cmd)
+        if (is (Command : Undoable))
+    {
+        _undoRedo.apply(_level, cmd);
+    }
+
+    void undoOne() { _selection = _undoRedo.undoOne(_level).clone; }
+    void redoOne() { _selection = _undoRedo.redoOne(_level).clone; }
+    void stopCurrentMove() { _undoRedo.stopCurrentMove(); }
+
+/*
+ * Remaining package methods that aren't about the stack:
+ */
+
     // Verify this when you would like to open new windows.
     @property bool mainUIisActive() const
     {

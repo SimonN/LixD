@@ -6,7 +6,6 @@ import std.string;
 
 import basics.globals;
 import file.option;
-import file.option; // hotkeys for the popup dialogs
 import editor.dragger;
 import editor.editor;
 import editor.gui.panel;
@@ -19,29 +18,28 @@ import gui;
 import hardware.keyset;
 import hardware.sound;
 import level.level;
+import level.oil;
 import menu.browser.saveas;
 import tile.gadtile;
 
 package:
 
-void implConstructor(Editor editor) { with (editor)
+void implConstructor(
+    Editor editor,
+    Level delegate() toLoad,
+    Filename fnOrNull, // null iff we start with a blank level
+) { with (editor)
 {
-    if (_loadedFrom) {
-        _level = new Level(_loadedFrom);
-        _levelToCompareForDataLoss = new Level(_loadedFrom);
-    }
-    else {
-        editor.newLevelNoQuestions();
-    }
-    MapAndCamera newMap() { with (_level) return new MapAndCamera(topology,
+    editor.makePanel();
+    setLevelAndCreateUndoStack(toLoad, fnOrNull);
+    MapAndCamera newMap() { with (level) return new MapAndCamera(topology,
         gui.screenXls.to!int, (gui.screenYls - gui.panelYls).to!int); }
     _map        = newMap();
     _mapTerrain = newMap();
     _map.centerOnAverage(
-        _level.gadgets[GadType.HATCH].map!(h => h.screenCenter.x),
-        _level.gadgets[GadType.HATCH].map!(h => h.screenCenter.y));
+        level.gadgets[GadType.HATCH].map!(h => h.screenCenter.x),
+        level.gadgets[GadType.HATCH].map!(h => h.screenCenter.y));
     _dragger = new MouseDragger();
-    editor.makePanel();
 }}
 
 void implDestructor(Editor editor)
@@ -50,41 +48,31 @@ void implDestructor(Editor editor)
         rmElder(editor._panel);
 }
 
-void newLevel(Editor editor) {
-    with (editor)
+void onNewLevelButtonExecuted(Editor editor)
 {
     editor.askForDataLossThenExecute(delegate void() {
-        _hover = null;
-        _selection = null;
-        _loadedFrom = null;
-        _panel.currentFilename = null;
-        editor.newLevelNoQuestions();
+        editor.setLevelAndCreateUndoStack(
+            delegate Level() { return newEmptyLevel(); }, null);
     });
-}}
+}
 
-private void newLevelNoQuestions(Editor editor) {
-    with (editor)
+auto newEmptyLevel = delegate Level()
 {
-    Level f()
-    {
-        Level l = new Level;
-        l.author = file.option.userName;
-        l.overtimeSeconds = 30; // Level discards this if saved as 1-pl
-        return l;
-    }
-    _level = f();
-    _levelToCompareForDataLoss = f();
-}}
+    Level l = new Level;
+    l.author = file.option.userName;
+    l.overtimeSeconds = 30; // Level discards this if saved as 1-pl
+    return l;
+};
 
 void saveToExistingFile(Editor editor) {
     with (editor)
 {
-    if (editor._loadedFrom) {
-        file.option.singleLastLevel = editor._loadedFrom;
-        if (_level != _levelToCompareForDataLoss)
-            _level.built = Date.now();
-        _level.saveToFile(_loadedFrom);
-        _levelToCompareForDataLoss = new Level(_loadedFrom);
+    if (Filename fn = _panel.currentFilenameOrNull) {
+        file.option.singleLastLevel = fn;
+        if (level != _levelToCompareForDataLoss)
+            levelRefacme.built = Date.now();
+        level.saveToFile(fn);
+        _levelToCompareForDataLoss = new Level(fn);
         playQuiet(Sound.DISKSAVE);
     }
     else
@@ -96,7 +84,11 @@ void openSaveAsBrowser(Editor editor) {
 {
     assert (mainUIisActive);
     _saveBrowser = new SaveBrowser(dirLevels);
-    _saveBrowser.highlight(_loadedFrom ? _loadedFrom : singleLastLevel);
+    {
+        Filename fn = _panel.currentFilenameOrNull;
+        Filename single = singleLastLevel;
+        _saveBrowser.highlight(fn ? fn : single);
+    }
     addFocus(_saveBrowser);
 }}
 
@@ -107,23 +99,23 @@ void askForDataLossThenExecute(
     with (editor)
 {
     assert (mainUIisActive);
-    assert (_level !is _levelToCompareForDataLoss);
-    if     (_level  == _levelToCompareForDataLoss) {
+    assert (level !is _levelToCompareForDataLoss);
+    if     (level  == _levelToCompareForDataLoss) {
         unlessCancelledExecuteThis();
     }
     else {
         MsgBox box = new MsgBox(Lang.saveBoxTitleSave.transl);
-        if (_loadedFrom) {
+        if (_panel.currentFilenameOrNull) {
             box.addMsg(Lang.saveBoxQuestionUnsavedChangedLevel.transl);
             box.addMsg("%s %s".format(Lang.saveBoxFileName.transl,
-                                      _loadedFrom.rootless));
+                _panel.currentFilenameOrNull.rootless));
         }
         else {
             box.addMsg(Lang.saveBoxQuestionUnsavedNewLevel.transl);
         }
-        if (_level.name != null)
+        if (level.name != null)
             box.addMsg("%s %s".format(Lang.saveBoxLevelName.transl,
-                                      _level.name));
+                                      level.name));
         box.addButton(Lang.saveBoxYesSave.transl, keyMenuOkay, () {
             _askForDataLoss = null;
             editor.saveToExistingFile();

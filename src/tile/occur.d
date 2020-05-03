@@ -17,6 +17,14 @@ import tile.gadtile;
 
 abstract class Occurrence {
 public:
+    struct Can {
+        bool rotate;
+        bool mirror;
+        bool darken;
+    }
+
+    immutable Can can;
+
     /* loc: location of the occurrence. This is the top-left corner of the
      * entire image (cutbitOnMap). The selection box's map coordinates
      * (selboxOnMap) may too start here (this.selboxOnMap.topLeft == this.loc).
@@ -35,11 +43,12 @@ public:
      */
     Point loc;
 
-    abstract Occurrence clone() const
-    out (ret) { assert (ret); }
-    body { return null; }
+protected:
+    this(in Can aCan) { can = aCan; }
 
-    abstract @safe const(AbstractTile) tile() const pure nothrow;
+public:
+    abstract Occurrence clone() const;
+    abstract const(AbstractTile) tile() const pure nothrow @safe @nogc;
     abstract IoLine toIoLine() const;
 
     override bool opEquals(Object rhsObj)
@@ -48,29 +57,70 @@ public:
         return rhs && tile is rhs.tile && loc == rhs.loc;
     }
 
-    final @property Rect selboxOnMap() const { return selboxOnTile + loc; }
-    final @property Rect cutbitOnMap() const { return cutbitOnTile + loc; }
+    @property const {
+        final Rect selboxOnMap() { return selboxOnTile + loc; }
+        final Rect cutbitOnMap() { return cutbitOnTile + loc; }
 
-    @property Rect selboxOnTile() const { assert (tile); return tile.selbox; }
-    @property Rect cutbitOnTile() const
-    {
-        assert (tile);
-        return Rect(0, 0, tile.cb.xl, tile.cb.yl);
+        Rect selboxOnTile() { assert (tile); return tile.selbox; }
+        Rect cutbitOnTile()
+        {
+            assert (tile);
+            return Rect(0, 0, tile.cb.xl, tile.cb.yl);
+        }
+    }
+
+    /*
+     * It's only legal to call these when the corresponding can.* is true.
+     * Override the following when the corresponding can.* may be true.
+     */
+    @property pure nothrow @safe @nogc {
+        int rotCw() const
+        in { assert (can.rotate); } body { return 0; }
+        int rotCw(int)
+        in { assert (can.rotate); } body { return 0; }
+
+        bool mirrY() const
+        in { assert (can.mirror); } body { return false; }
+        bool mirrY(bool)
+        in { assert (can.mirror); } body { return false; }
+
+        bool dark() const
+        in { assert (can.darken); } body { return false; }
+        bool dark(bool)
+        in { assert (can.darken); } body { return false; }
+    }
+
+    version (assert) {
+        override string toString() const
+        {
+            import std.format;
+            import std.range;
+            import std.array;
+            return format!"%s at %s %s%s%s"(tile.name, loc,
+                'r'.repeat(can.rotate ? rotCw : 0).array,
+                'f'.repeat(can.mirror ? mirrY : 0).array,
+                'd'.repeat(can.darken ? dark : 0).array);
+        }
     }
 }
 
 class GadOcc : Occurrence {
-public:
+private:
+    bool _hatchRot;
     const(GadgetTile) _tile;
-    bool hatchRot;
 
-    this(const(GadgetTile) t) { _tile = t; }
+public:
+    this(const(GadgetTile) t)
+    {
+        _tile = t;
+        super(Can(false, _tile.type == GadType.HATCH, false));
+    }
 
     override GadOcc clone() const
     {
         auto ret = new GadOcc(tile);
         ret.loc = loc;
-        ret.hatchRot = hatchRot;
+        ret._hatchRot = _hatchRot;
         return ret;
     }
 
@@ -85,6 +135,16 @@ public:
     {
         assert (_tile);
         return IoLine.Colon(_tile.name, loc.x, loc.y, hatchRot ? "r" : "");
+    }
+
+    final override @property pure nothrow @safe @nogc {
+        bool mirrY() const { return _hatchRot; }
+        bool mirrY(bool b) { return _hatchRot = b; }
+    }
+
+    @property bool hatchRot() const pure nothrow @safe @nogc
+    {
+        return _hatchRot;
     }
 
     @property Rect triggerAreaOnMap() const
@@ -102,16 +162,19 @@ public:
 }
 
 class TerOcc : Occurrence {
-public:
+private:
     const(TerrainTile) _tile;
-    bool mirrY; // mirror vertically, happens before rotation
-    int  rotCw; // rotate tile after mirrY? 0 = no, 1, 2, 3 = turned clockwise
-    bool dark;  // wherever solid pixels would be drawn, erase exisiting pixels
+    bool _mirrY; // mirror vertically, happens before rotation
+    int  _rotCw; // rotate tile after mirrY? 0 = no, 1, 2, 3 = turned clockwise
+    bool _dark;  // where solid pixels would be drawn, erase exisiting pixels
+
+public:
     bool noow;  // only draw pixels into air; may be culled in the future
 
     this(const(TerrainTile) t, Point p = Point())
     {
         _tile = t;
+        super(Can(true, true, true));
         loc = p;
     }
 
@@ -119,10 +182,10 @@ public:
     {
         auto ret = new TerOcc(tile);
         ret.loc = loc;
-        ret.mirrY = mirrY;
-        ret.rotCw = rotCw;
-        ret.dark  = dark;
         ret.noow  = noow;
+        ret._mirrY = _mirrY;
+        ret._rotCw = _rotCw;
+        ret._dark  = _dark;
         return ret;
     }
 
@@ -144,6 +207,15 @@ public:
         if (noow) modifiers ~= 'n';
         assert (_tile);
         return IoLine.Colon(_tile.name, loc.x, loc.y, modifiers);
+    }
+
+    final override @property pure nothrow @safe @nogc {
+        int rotCw() const { return _rotCw; }
+        int rotCw(int r) { return _rotCw = r % 4; }
+        bool mirrY() const { return _mirrY; }
+        bool mirrY(bool b) { return _mirrY = b; }
+        bool dark() const { return _dark; }
+        bool dark(bool b) { return _dark = b; }
     }
 
     auto phybitsOnMap(in Point pointOnMap) const

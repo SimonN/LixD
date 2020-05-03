@@ -6,8 +6,8 @@ import std.string;
 
 import basics.alleg5;
 import basics.help;
+import editor.drawcol;
 import editor.editor;
-import editor.hover;
 import file.language;
 import graphic.color;
 import graphic.cutbit;
@@ -15,6 +15,7 @@ import gui.context; // draw text to screen
 import graphic.torbit;
 import hardware.display;
 import hardware.tharsis;
+import level.oil;
 import tile.draw;
 import tile.gadtile;
 import tile.occur;
@@ -35,7 +36,7 @@ private:
 
 void updateTopologies(Editor editor)
 {
-    with (editor._level.topology) {
+    with (editor.level.topology) {
         editor._map       .resize(xl, yl);
         editor._mapTerrain.resize(xl, yl);
         editor._map       .setTorusXY(torusX, torusY);
@@ -48,10 +49,10 @@ void updateTopologies(Editor editor)
 // Can't take _editor as an argument because function must be argument to
 // std.algorithm.filter.
 mixin template nATT() {
-    bool notAboutToTrash(Occurrence o)
+    bool notAboutToTrash(in Occurrence o)
     {
         return ! editor.aboutToTrash
-            || ! editor._selection.any!(hover => hover.occ is o);
+            || Oil.makeViaLookup(editor.level, o) !in editor._selection;
     }
 }
 
@@ -63,7 +64,7 @@ void drawTerrainToSeparateMap(Editor editor) {
         auto zone = Zone(profiler, "Editor.drawMapTerrain");
     with (TargetTorbit(_mapTerrain)) {
         _mapTerrain.clearToColor(color.transp);
-        _level.terrain.filter!notAboutToTrash.each!drawOccurrence;
+        level.terrain.filter!notAboutToTrash.each!drawOccurrence;
     }
 }}
 
@@ -73,9 +74,8 @@ void drawMainMap(Editor editor)
         auto zone = Zone(profiler, "Editor.drawMapMain");
     with (TargetTorbit(editor._map))
     with (editor)
-    with (editor._level) {
-        editor._map.clearSourceThatWouldBeBlitToTarget(
-            color.makecol(bgRed, bgGreen, bgBlue));
+    with (editor.level) {
+        editor._map.clearSourceThatWouldBeBlitToTarget(level.bgColor);
         editor.drawGadgets();
         editor._map.loadCameraRect(_mapTerrain);
         editor.drawGadgetAnnotations();
@@ -91,7 +91,7 @@ void drawGadgets(Editor editor)
     version (tharsisprofiling)
         auto zone = Zone(profiler, "Editor.drawGadgets");
     mixin nATT;
-    foreach (gadgetList; editor._level.gadgets)
+    foreach (gadgetList; editor.level.gadgets)
         gadgetList.filter!notAboutToTrash.each!(g => g.tile.cb.draw(g.loc));
 }
 
@@ -99,13 +99,13 @@ void drawGadgetTriggerAreas(Editor editor)
 {
     version (tharsisprofiling)
         auto zone = Zone(profiler, "Editor.annotateGadgets");
-    foreach (gadgetList; editor._level.gadgets)
+    foreach (gadgetList; editor.level.gadgets)
         foreach (g; gadgetList)
             editor._map.drawRectangle(g.triggerAreaOnMap, color.triggerArea);
 }
 
 void drawGadgetAnnotations(Editor editor) {
-    with (editor._level)
+    with (editor.level)
 {
     version (tharsisprofiling)
         auto zone = Zone(profiler, "Editor.drawGadgetAnnotations");
@@ -150,26 +150,11 @@ void drawGadgetAnnotations(Editor editor) {
         annotate(gadgets[GadType.GOAL]);
 }}
 
-// Returns value in 0 .. 256
-int hoverColorVal(bool light)
-{
-    immutable int time  = timerTicks & 0x3F;
-    immutable int subtr = time < 0x20 ? time : 0x40 - time;
-    return (light ? 0xFF : 0xB0) - 2 * subtr;
-}
-
-void drawHovers(Editor editor, const(Hover[]) list, in bool light)
-{
-    immutable val = hoverColorVal(light);
-    foreach (ho; list)
-        editor._map.drawRectangle(ho.occ.selboxOnMap, ho.hoverColor(val));
-}
-
 void drawDraggedFrame(Editor editor) { with (editor)
 {
     if (! _dragger.framing)
         return;
-    immutable val = hoverColorVal(false);
+    immutable val = hoverColorLightness(false);
     assert (val >= 0x40 && val < 0xC0); // because we'll be varying by 0x40
     immutable col = color.makecol(val + 0x40, val, val - 0x40);
     _map.drawRectangle(_dragger.frame(_map), col);

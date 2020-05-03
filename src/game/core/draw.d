@@ -36,8 +36,7 @@ implGameDraw(Game game) { with (game)
         // This RAII struct is used in each innermost loop, too, but it does
         // nothing except comparing two pointers there if we've set stuff here.
         auto drata = TargetTorbit(map);
-        Alcol levBg = color.makecol(level.bgRed, level.bgGreen, level.bgBlue);
-        map.clearSourceThatWouldBeBlitToTarget(levBg);
+        map.clearSourceThatWouldBeBlitToTarget(level.bgColor);
         game.drawGadgets();
 
         if (modalWindow || ! pan.splatRulerIsOn || ! isMouseOnLand) {
@@ -45,7 +44,7 @@ implGameDraw(Game game) { with (game)
             game.pingOwnGadgets();
         }
         else {
-            _splatRuler.considerBackgroundColor(levBg);
+            _splatRuler.considerBackgroundColor(level.bgColor);
             _splatRuler.determineSnap(nurse.constStateForDrawingOnly.lookup,
                 map.mouseOnLand);
             _splatRuler.drawBelowLand(map);

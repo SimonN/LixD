@@ -9,6 +9,7 @@ import optional;
 
 static import glo = basics.globals;
 
+import basics.alleg5;
 import file.date;
 import file.filename;
 import file.io;
@@ -50,6 +51,16 @@ private void resize(Level level, in int x, in int y)
                           clamp(y, Level.minYl, Level.maxYl));
 }
 
+private void loadcol(Level level, in string keyword, in int val)
+{
+    ubyte r, g, b;
+    al_unmap_rgb(level.bgColor, &r, &g, &b);
+    if      (keyword == glo.levelBackgroundRed)   r = val.clamp(0, 255) & 0xFF;
+    else if (keyword == glo.levelBackgroundGreen) g = val.clamp(0, 255) & 0xFF;
+    else if (keyword == glo.levelBackgroundBlue)  b = val.clamp(0, 255) & 0xFF;
+    level.bgColor = al_map_rgb(r, g, b);
+}
+
 private void load_from_vector(Level level, in IoLine[] lines) { with (level)
 {
     // Groups don't have installation-unique names, unlike plain tiles
@@ -87,9 +98,9 @@ private void load_from_vector(Level level, in IoLine[] lines) { with (level)
         else if (text1 == glo.levelSizeY) level.resize(topology.xl, nr1);
         else if (text1 == glo.levelTorusX) topology.setTorusXY(nr1 > 0, topology.torusY);
         else if (text1 == glo.levelTorusY) topology.setTorusXY(topology.torusX, nr1 > 0);
-        else if (text1 == glo.levelBackgroundRed) bgRed = nr1;
-        else if (text1 == glo.levelBackgroundGreen) bgGreen = nr1;
-        else if (text1 == glo.levelBackgroundBlue) bgBlue = nr1;
+        else if (text1 == glo.levelBackgroundRed
+            ||   text1 == glo.levelBackgroundGreen
+            ||   text1 == glo.levelBackgroundBlue) level.loadcol(text1, nr1);
         else if (text1 == glo.levelSeconds) overtimeSeconds = nr1;
         else if (text1 == glo.levelInitial) initial = nr1;
         else if (text1 == glo.levelRequired) required = nr1;
@@ -141,9 +152,6 @@ private void load_level_finalize(Level level) {
     initial  = clamp(initial,  1, Level.initialMax);
     required = clamp(required, 1, initial);
     spawnint = clamp(spawnint, Level.spawnintMin, Level.spawnintMax);
-    bgRed   = clamp(bgRed,   0, 255);
-    bgGreen = clamp(bgGreen, 0, 255);
-    bgBlue  = clamp(bgBlue,  0, 255);
 
     // Only allow one type of im/exploder.
     if (ploder == Ac.exploder)

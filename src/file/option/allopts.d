@@ -180,6 +180,8 @@ UserOption!KeySet
     keyEditorSelectAll,
     keyEditorSelectFrame,
     keyEditorSelectAdd,
+    keyEditorUndo,
+    keyEditorRedo,
     keyEditorGroup,
     keyEditorUngroup,
     keyEditorBackground,
@@ -379,6 +381,8 @@ body {
     keyEditorSelectAll = newKey("keyEditorSelectAll", Lang.optionEdSelectAll, ALLEGRO_KEY_ALT);
     keyEditorSelectFrame = newKey("keyEditorSelectFrame", Lang.optionEdSelectFrame, ALLEGRO_KEY_LSHIFT);
     keyEditorSelectAdd = newKey("keyEditorSelectAdd", Lang.optionEdSelectAdd, ALLEGRO_KEY_V);
+    keyEditorUndo = newKey("keyEditorUndo", Lang.optionEdUndo, ALLEGRO_KEY_Z);
+    keyEditorRedo = newKey("keyEditorRedo", Lang.optionEdRedo, ALLEGRO_KEY_Y);
     keyEditorGroup = newKey("keyEditorGroup", Lang.optionEdGroup, ALLEGRO_KEY_Q);
     keyEditorUngroup = newOpt("keyEditorUngroup", Lang.optionEdUngroup, KeySet());
     keyEditorForeground = newKey("keyEditorForeground", Lang.optionEdForeground, ALLEGRO_KEY_T);

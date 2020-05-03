@@ -6,16 +6,22 @@ import std.range;
 
 import optional;
 
+import basics.help;
 import basics.topology;
 import file.option; // hotkeys for movement
 import editor.editor;
-import editor.hover;
 import editor.io;
+import editor.movetile;
 import editor.select;
+import editor.undoable.addrm;
 import file.language; // select grid
 import gui;
 import hardware.keyboard;
 import hardware.mousecur;
+import level.oil;
+import tile.occur;
+import tile.visitor;
+import tile.tilelib;
 
 package:
 
@@ -107,81 +113,47 @@ void selectGrid(Editor editor)
     }
 }
 
-void moveTiles(Editor editor) {
-    with (editor)
-{
-    immutable grid = editorGridSelected.value;
-    immutable movedByKeyboard
-        = Point(-grid, 0) * keyEditorLeft .keyTappedAllowingRepeats
-        + Point(+grid, 0) * keyEditorRight.keyTappedAllowingRepeats
-        + Point(0, -grid) * keyEditorUp   .keyTappedAllowingRepeats
-        + Point(0, +grid) * keyEditorDown .keyTappedAllowingRepeats;
-    immutable total = movedByKeyboard
-                    + _dragger.snapperShouldMoveBy(_map, grid);
-    if (total != Point(0, 0))
-        _selection.each!(tile => tile.moveBy(total));
-}}
-
 // ############################################################################
 private: // ########################################################### private
 // ############################################################################
 
-import level.level;
-import tile.visitor;
-import tile.occur;
-import tile.tilelib;
+final class OccMakingVisitor : TileVisitor {
+    public Occurrence occ;
 
-final class AddingVisitor : TileVisitor {
-    Level level;
-    Occurrence theNew;
+    this(const(AbstractTile) tile) { tile.accept(this); }
 
-    this(Level lev)
-    {
-        level = lev;
-        theNew = null;
-    }
-
-    override void visit(const(TerrainTile) te)
-    {
-        level.terrain ~= new TerOcc(te);
-        theNew = level.terrain[$-1];
-    }
-
-    override void visit(const(TileGroup) gr)
-    {
-        visit(cast (const(TerrainTile)) gr);
-    }
-
-    override void visit(const(GadgetTile) ga)
-    {
-        level.gadgets[ga.type] ~= new GadOcc(ga);
-        theNew = level.gadgets[ga.type][$-1];
-    }
+    void visit(const(TerrainTile) te) { occ = new TerOcc(te); }
+    void visit(const(TileGroup)   gr) { occ = new TerOcc(gr); }
+    void visit(const(GadgetTile)  ga) { occ = new GadOcc(ga); }
 }
+
+Occurrence makeAndPositionOccFor(Editor editor, const(AbstractTile) tile) {
+    with (editor)
+{
+    Occurrence occ = (new OccMakingVisitor(tile)).occ;
+    assert (occ);
+    assert (occ.tile);
+    assert (occ.tile is tile);
+    assert (occ.tile.cb);
+    occ.loc = level.topology.clamp(_map.mouseOnLand) - tile.cb.len / 2;
+    // Must round the location, not the mouse coordinates for center.
+    occ.loc = roundWithin(level.topology,
+        Rect(occ.loc, tile.cb.len.x, tile.cb.len.y),
+        editorGridSelected);
+    return occ;
+}}
 
 void maybeCloseTerrainBrowser(Editor editor) {
     with (editor)
 {
     if (! _terrainBrowser || ! _terrainBrowser.done)
         return;
-    tile.tilelib.resolveTileName(_terrainBrowser.chosenTile).match!(
-        () { },
+    tile.tilelib.resolveTileName(_terrainBrowser.chosenTile).each!(
         (const(AbstractTile) ti)
         {
-            assert (ti);
-            auto visitor = new AddingVisitor(_level);
-            ti.accept(visitor);
-
-            assert (visitor.theNew);
-            assert (visitor.theNew.tile is ti);
-            assert (ti.cb);
-            visitor.theNew.loc = _level.topology.clamp(_map.mouseOnLand)
-                - ti.cb.len / 2;
-            // Must round the location, not the mouse coordinates for center.
-            visitor.theNew.loc = roundWithin(_level.topology,
-                Rect(visitor.theNew.loc, ti.cb.len.x, ti.cb.len.y),
-                editorGridSelected);
-            _selection = [ Hover.newViaEvilDynamicCast(_level, visitor.theNew) ];
+            Occurrence newOcc = editor.makeAndPositionOccFor(ti);
+            apply(new TileInsertion(
+                Oil.makeAtEndOfList(level, ti), newOcc));
             _terrainBrowser.saveDirOfChosenTileToUserCfg();
         });
     rmFocus(_terrainBrowser);
@@ -189,6 +161,7 @@ void maybeCloseTerrainBrowser(Editor editor) {
     _panel.allButtonsOff();
 }}
 
+    import editor.guiapply;
 void maybeCloseOkCancelWindow(Editor editor) {
     with (editor)
 {
@@ -196,17 +169,18 @@ void maybeCloseOkCancelWindow(Editor editor) {
         return;
     }
     if (_okCancelWindow.done) {
-        _okCancelWindow.writeChangesTo(_level);
+        _okCancelWindow.writeChangesTo(levelRefacme);
         rmFocus(_okCancelWindow);
         _okCancelWindow = null;
         _panel.allButtonsOff();
     }
     else {
-        // This mutates the _level, but later, writeChangesTo can revert that.
+        // This mutates the level, but later, writeChangesTo can revert that.
         // Then, even when we exited _okCancelWindow by pressing Cancel,
         // the background color for example will revert to before dialog.
-        _okCancelWindow.previewChangesOn(_level);
+        _okCancelWindow.previewChangesOn(levelRefacme);
     }
+    maybeApplyTopologyWindowResult(editor);
 }}
 
 void maybeCloseSaveBrowser(Editor editor) {
@@ -215,8 +189,7 @@ void maybeCloseSaveBrowser(Editor editor) {
     if (! _saveBrowser || ! _saveBrowser.done)
         return;
     if (_saveBrowser.chosenFile) {
-        _loadedFrom = _saveBrowser.chosenFile;
-        _panel.currentFilename = _loadedFrom;
+        _panel.currentFilenameOrNull = _saveBrowser.chosenFile;
         editor.saveToExistingFile();
     }
     rmFocus(_saveBrowser);
@@ -258,15 +231,16 @@ void describeOnStatusBar(Editor editor)
 
 string describeHoveredTiles(Editor editor) { with (editor)
 {
-    const(Hover[]) list = _hover.empty ? _selection : _hover;
-    if (list.empty)
+    const(OilSet) list = _hover[].empty ? _selection : _hover;
+    if (list[].empty)
         return "";
     string name = list.length == 1
-        ? list[0].tileDescription
+        ? describeSingle(list[].front.occ(level))
         : "%d %s".format(list.length, list is _hover
             ? Lang.editorBarHover.transl : Lang.editorBarSelection.transl);
-    immutable Point p = Point(list.map!(hov => hov.occ.loc.x).reduce!min,
-                              list.map!(hov => hov.occ.loc.y).reduce!min);
+    immutable Point p = Point(
+        list[].map!(oil => oil.occ(level).loc.x).reduce!min,
+        list[].map!(oil => oil.occ(level).loc.y).reduce!min);
     return format!"%s %s %s"(name, Lang.editorBarAt.transl, p.toDec);
 }}
 
@@ -280,4 +254,25 @@ string describeMousePosition(Editor editor)
 string toDec(in Point p) pure
 {
     return format!"(%d, %d)"(p.x, p.y);
+}
+
+string describeSingle(in Occurrence occ)
+{
+    string ret;
+    occ.tile.accept(new class TileVisitor {
+        override void visit(const(TerrainTile) te) { ret = te.name; }
+        override void visit(const(GadgetTile) ga) { ret = ga.name; }
+        override void visit(const(TileGroup) group)
+        {
+            ret = format!"%d%s"(group.key.elements.len,
+                                Lang.editorBarGroup.transl);
+        }
+    });
+    if (! occ.can.rotate || ! occ.can.mirror)
+        return ret;
+    if (occ.rotCw == 0 && ! occ.mirrY)
+        return ret;
+    return ret ~ format!" [%s%s]"(
+        occ.mirrY ? "f" : "",
+        'r'.repeat(occ.rotCw));
 }

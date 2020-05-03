@@ -9,6 +9,7 @@ import glo = basics.globals;
 import file.filename;
 import file.io;
 import file.log;
+import graphic.color;
 import level.level;
 import tile.group;
 import tile.occur;
@@ -44,10 +45,12 @@ body{
         file.writeln(IoLine.Hash(glo.levelTorusX, l.topology.torusX));
         file.writeln(IoLine.Hash(glo.levelTorusY, l.topology.torusY));
     }
-    if (l.bgRed != 0 || l.bgGreen != 0 || l.bgBlue != 0) {
-        file.writeln(IoLine.Hash(glo.levelBackgroundRed,   l.bgRed  ));
-        file.writeln(IoLine.Hash(glo.levelBackgroundGreen, l.bgGreen));
-        file.writeln(IoLine.Hash(glo.levelBackgroundBlue,  l.bgBlue ));
+    if (l.bgColor != color.black) {
+        ubyte r, g, b;
+        al_unmap_rgb(l.bgColor, &r, &g, &b);
+        file.writeln(IoLine.Hash(glo.levelBackgroundRed,   r));
+        file.writeln(IoLine.Hash(glo.levelBackgroundGreen, g));
+        file.writeln(IoLine.Hash(glo.levelBackgroundBlue,  b));
     }
 
     file.writeln();

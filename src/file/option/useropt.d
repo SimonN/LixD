@@ -4,7 +4,7 @@ module file.option.useropt;
  * will be saved into the user file, not the all-user global config file.
  *
  * For the collection of all user options, including the methods to save/load
- * them all at once to/from the user file see module file.option instead.
+ * them all at once to/from the user file see module file.option.allopts.
  *
  * Contract with file.language.Lang:
  * Each short option description (caption in the options menu)

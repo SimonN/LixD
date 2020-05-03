@@ -7,34 +7,36 @@ import std.string;
 import basics.globals;
 import basics.rect;
 import file.option;
-import editor.clone;
 import editor.editor;
 import editor.group;
-import editor.hover;
 import editor.io;
 import editor.select;
+import editor.mirrtile;
 import editor.gui.browter;
 import editor.gui.constant;
 import editor.gui.panel;
 import editor.gui.skills;
 import editor.gui.topology;
+import editor.undoable.clone;
+import editor.undoable.compound;
+import editor.undoable.zorder;
 import file.language;
 import file.filename;
 import gui;
 import hardware.keyset;
 import level.level;
+import level.oil;
 
 package:
 
 void makePanel(Editor editor)
 {
     editor._panel = new EditorPanel();
-    editor._panel.currentFilename = editor._loadedFrom;
     addDrawingOnlyElder(editor._panel);
 
     with (editor._panel) {
         onExecute(Lang.editorButtonFileNew, KeySet(), () {
-            editor.newLevel();
+            editor.setLevelAndCreateUndoStack(newEmptyLevel, null);
         });
         onExecute(Lang.editorButtonFileExit, keyEditorExit, () {
             editor.askForDataLossThenExecute(() {
@@ -61,6 +63,12 @@ void makePanel(Editor editor)
         onExecute(Lang.editorButtonSelectAdd, keyEditorSelectAdd, () {
             buttonSelectAdd.on = ! buttonSelectAdd.on;
         });
+        onExecute(Lang.editorButtonUndo, keyEditorUndo, () {
+            editor.undoOne();
+        }, Button.WhenToExecute.whenMouseClickAllowingRepeats);
+        onExecute(Lang.editorButtonRedo, keyEditorRedo, () {
+            editor.redoOne();
+        }, Button.WhenToExecute.whenMouseClickAllowingRepeats);
         onExecute(Lang.editorButtonGroup, keyEditorGroup, () {
             editor.createGroup();
         });
@@ -68,22 +76,25 @@ void makePanel(Editor editor)
             editor.ungroup();
         });
         onExecute(Lang.editorButtonSelectCopy, keyEditorCopy, () {
-            editor.cloneSelection();
+            if (editor._selection.empty)
+                return;
+            editor.apply(new CopyPaste(
+                editor.levelRefacme,
+                editor._selection.clone.assumeUnique,
+                editor._dragger.clonedShouldMoveBy));
+            // editor._dragger.startRecordingCopyMove(); -- unimplemented;
         });
         onExecute(Lang.editorButtonSelectDelete, keyEditorDelete, () {
-            editor._selection.each!(s => s.removeFromLevel());
-            editor._selection = null;
+            editor.removeFromLevelTheSelection();
             if (editor._dragger.moving)
                 editor._dragger.stop();
         });
         onExecute(Lang.editorButtonBackground, keyEditorBackground, () {
             // see "Comment on correct zOrdering calls" in editor.hover.
-            foreach (sel; editor._selection)
-                sel.zOrderTowardsButIgnore(Hover.FgBg.bg, editor._selection);
+            editor.zOrderSelectionTowards(FgBg.bg);
             }, Button.WhenToExecute.whenMouseClickAllowingRepeats);
         onExecute(Lang.editorButtonForeground, keyEditorForeground, () {
-            foreach (sel; editor._selection.retro)
-                sel.zOrderTowardsButIgnore(Hover.FgBg.fg, editor._selection);
+            editor.zOrderSelectionTowards(FgBg.fg);
             }, Button.WhenToExecute.whenMouseClickAllowingRepeats);
 
         // Zoom execute is handled in Editor.calc()
@@ -91,15 +102,13 @@ void makePanel(Editor editor)
         buttonZoom.hotkeyRight = keyZoomOut;
 
         onExecute(Lang.editorButtonMirrorHorizontally, keyEditorMirror, () {
-            immutable box = editor.smallestRectContainingSelection();
-            editor._selection.each!(sel => sel.mirrorHorizontallyWithin(box));
+            editor.mirrorSelectionHorizontally;
         });
         onExecute(Lang.editorButtonSelectRotate, keyEditorRotate, () {
-            immutable box = editor.smallestRectContainingSelection();
-            editor._selection.each!(sel => sel.rotateCwWithin(box));
+            editor.rotateSelectionClockwise;
         });
         onExecute(Lang.editorButtonSelectDark, keyEditorDark, () {
-            editor._selection.each!(sel => sel.toggleDark());
+            editor.toggleDarkTheSelection();
         });
         template mkSubwin(string forWhat) {
             enum string mkSubwin = q{
@@ -108,8 +117,9 @@ void makePanel(Editor editor)
                         if (! editor.mainUIisActive)
                             return;
                         editor._dragger.stop();
-                        editor._hover = null;
-                        editor._okCancelWindow = new %sWindow(editor._level);
+                        editor._hover.clear();
+                        editor._okCancelWindow = new %sWindow(
+                            editor.levelRefacme);
                         addFocus(editor._okCancelWindow);
                         button(Lang.editorButtonMenu%s).on = true;
                     });
@@ -127,7 +137,7 @@ void makePanel(Editor editor)
                         addFocus(editor._terrainBrowser);
                         button(Lang.editorButtonAdd%s).on = true;
                         editor._dragger.stop();
-                        editor._hover = null;
+                        editor._hover.clear();
                     });
                 }.format(name, name, constructorArgs, name);
         }
@@ -135,21 +145,20 @@ void makePanel(Editor editor)
         // I don't go through chain(_selection, _hover) because I believe that
         // will irritate users. If you don't click something, you haven't done
         // anything, you shouldn't affect the browser's starting directory.
+        enum edMap = "editor._selection[].map!(o => o.occ(editor.level).tile)";
         mixin (mkBrowser!("Terrain",
-            "[0], editorLastDirTerrain, MergeDirs.depthTwo, editor._selection"));
-        mixin (mkBrowser!("Steel",
-            "[preExtSteel], editorLastDirSteel, MergeDirs.allIntoRoot, editor._selection"));
-        mixin (mkBrowser!("Hatch", "[preExtHatch], editorLastDirHatch, MergeDirs.allIntoRoot, null"));
-        mixin (mkBrowser!("Goal", "[preExtGoal], editorLastDirGoal, MergeDirs.allIntoRoot, null"));
-        mixin (mkBrowser!("Hazard", "['W','T','F'], editorLastDirHazard, MergeDirs.allIntoRoot, null"));
+            "[0], editorLastDirTerrain, MergeDirs.depthTwo, " ~ edMap));
+        mixin (mkBrowser!("Steel", "[preExtSteel], editorLastDirSteel,"
+            ~ " MergeDirs.allIntoRoot, " ~ edMap));
+        mixin (mkBrowser!("Hatch", "[preExtHatch], editorLastDirHatch"));
+        mixin (mkBrowser!("Goal", "[preExtGoal], editorLastDirGoal"));
+        mixin (mkBrowser!("Hazard", "['W','T','F'], editorLastDirHazard"));
     }
 }
 
-private:
-
-Rect smallestRectContainingSelection(in Editor editor)
+void zOrderSelectionTowards(Editor editor, FgBg fgbg) { with (editor)
 {
-    return editor._selection.empty ? Rect()
-        :  editor._selection.map   !(hov => hov.occ.selboxOnMap)
-                            .reduce!(Rect.smallestContainer);
-}
+    auto uOrNull = zOrderingTowardsOrNull(levelRefacme, _selection, fgbg);
+    if (uOrNull !is null)
+        apply(uOrNull);
+}}

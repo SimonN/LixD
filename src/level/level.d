@@ -40,14 +40,12 @@ public:
     int intendedNumberOfPlayers;
 
     Topology topology;
-    int  bgRed;
-    int  bgGreen;
-    int  bgBlue;
+    Alcol bgColor;
 
-    int  overtimeSeconds;
-    int  initial;
-    int  required;
-    int  spawnint;
+    int overtimeSeconds;
+    int initial;
+    int required;
+    int spawnint;
 
     /* ploder: either Ac.exploder or Ac.imploder.
      * This is never written to the level file. Instead, 0 exploders or 0
@@ -70,13 +68,14 @@ package:
 public:
     this()
     {
-        built   = Date.now();
+        built = Date.now();
         intendedNumberOfPlayers = 1;
         topology = new Topology(cppLixOneScreenXl, 400);
-        initial  =  20;
-        required =  20;
-        spawnint =  32;
-        ploder   = Ac.exploder;
+        initial = 20;
+        required = 20;
+        spawnint = 32;
+        ploder = Ac.exploder;
+        bgColor = color.black;
     }
 
     this(in Filename fn)
@@ -129,11 +128,6 @@ public:
     {
         _built = aDate;
         return built;
-    }
-
-    @property Alcol bgColor() const
-    {
-        return color.makecol(bgRed, bgGreen, bgBlue);
     }
 
     void drawTerrainTo(Torbit tb, Phymap lo = null) const
@@ -192,9 +186,7 @@ public:
             || this.nameGerman   != rhs.nameGerman
             || this.nameEnglish  != rhs.nameEnglish
             || ! this.topology.matches(rhs.topology)
-            || this.bgRed != rhs.bgRed
-            || this.bgGreen != rhs.bgGreen
-            || this.bgBlue != rhs.bgBlue
+            || this.bgColor != rhs.bgColor
             || this.initial != rhs.initial
             || this.required != rhs.required
             || this.spawnint != rhs.spawnint

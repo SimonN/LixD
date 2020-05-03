@@ -54,7 +54,7 @@ Occurrence addFromLine(
             newpos.loc = level.topology.wrap(cornerAt);
             if (ga.type == GadType.HATCH)
                 foreach (char c; text2) switch (c) {
-                    case 'r': newpos.hatchRot = ! newpos.hatchRot; break;
+                    case 'r': newpos.mirrY = ! newpos.mirrY; break;
                     default: break;
                 }
             level.gadgets[ga.type] ~= newpos;

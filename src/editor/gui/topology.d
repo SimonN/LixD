@@ -9,12 +9,26 @@ import basics.globals;
 import basics.topology;
 import file.option;
 import editor.gui.okcancel;
+import editor.undoable.topology;
 import file.language;
 import gui;
 import gui.option;
 import graphic.color;
 import level.level;
 import tile.occur;
+
+/*
+ * Hack: A global to pass input (to construct the Undoable) from the Window
+ * to the Editor. The OkCancelWindow hierarchy works by applying things
+ * directly to the level, we can't use that meaningfully for undo, we should
+ * refactor that hierarchy. Until then, we pass via global variable.
+ *
+ * The editor shall check the bool. If it's true, he shall set it to false
+ * and use the State element [0] once.
+ */
+bool __global__newResultForTheEditor = false;
+TopologyChange.State[] __global__suggestedTopologyChangeState = [];
+Point __global__moveAllTilesBy;
 
 class TopologyWindow : OkCancelWindow {
 private:
@@ -41,6 +55,7 @@ public:
     {
         super(new Geom(0, 0, thisXl, 290, From.CENTER),
             Lang.winTopologyTitle.transl);
+        __global__newResultForTheEditor = false;
         _oldXl = level.topology.xl;
         _oldYl = level.topology.yl;
         makeTopologyChildren(level);
@@ -51,40 +66,22 @@ public:
 protected:
     override void selfWriteChangesTo(Level level) const
     {
-        level.topology.resize(suggestedXl, suggestedYl);
-        level.topology.setTorusXY(_torusX.checked, _torusY.checked);
-
-        immutable Point moveAllTilesBy = ()
-        {
-            Point ret = Point(_left.number, _top.number);
-            // Defend against going over the max, but allow shifting
-            // by adding and removing similar same area on opposing sides.
-            if (_right.number == 0) {
-                immutable defend = abs(_oldXl - suggestedXl);
-                ret.x = clamp(ret.x, -defend, +defend);
-            }
-            if (_bottom.number == 0) {
-                immutable defend = abs(_oldYl - suggestedYl);
-                ret.y = clamp(ret.y, -defend, defend);
-            }
-            return ret;
-        }();
-        if (moveAllTilesBy != Point(0, 0)) {
-            void fun(Occurrence occ)
-            {
-                occ.loc = level.topology.wrap(occ.loc + moveAllTilesBy);
-            }
-            level.terrain.each!fun;
-            level.gadgets[].each!(occList => occList.each!fun);
-        }
-        selfPreviewChangesOn(level); // Write colors
+        level.bgColor = al_map_rgb(
+            _bgColorsToRevertToOnCancel[0] & 0xFF,
+            _bgColorsToRevertToOnCancel[1] & 0xFF,
+            _bgColorsToRevertToOnCancel[2] & 0xFF);
+        __global__suggestedTopologyChangeState = [];
+        __global__suggestedTopologyChangeState ~= TopologyChange.State(
+            new immutable Topology(
+            suggestedXl, suggestedYl, _torusX.checked, _torusY.checked),
+            suggestedColor);
+        __global__moveAllTilesBy = Point(_left.number, _top.number);
+        __global__newResultForTheEditor = true;
     }
 
     override void selfPreviewChangesOn(Level level) const
     {
-        level.bgRed = _bgColors[0].number;
-        level.bgGreen = _bgColors[1].number;
-        level.bgBlue = _bgColors[2].number;
+        level.bgColor = suggestedColor;
     }
 
     override void selfRevertToNoChange()
@@ -117,6 +114,14 @@ private:
     {
         return clamp(_oldYl + _top.number + _bottom.number,
                      Level.minYl, Level.maxYl);
+    }
+
+    @property Alcol suggestedColor() const
+    {
+        return al_map_rgb(
+            _bgColors[0].number & 0xFF,
+            _bgColors[1].number & 0xFF,
+            _bgColors[2].number & 0xFF);
     }
 
     void warnIfTooLarge()
@@ -210,9 +215,13 @@ private:
                 desc.transl));
             return ret;
         }
-        _bgColors[0] = newPick(ylg-80, level.bgRed, Lang.winLooksRed);
-        _bgColors[1] = newPick(ylg-60, level.bgGreen, Lang.winLooksGreen);
-        _bgColors[2] = newPick(ylg-40, level.bgBlue, Lang.winLooksBlue);
+        {
+            ubyte r, g, b;
+            al_unmap_rgb(level.bgColor, &r, &g, &b);
+            _bgColors[0] = newPick(ylg-80, r, Lang.winLooksRed);
+            _bgColors[1] = newPick(ylg-60, g, Lang.winLooksGreen);
+            _bgColors[2] = newPick(ylg-40, b, Lang.winLooksBlue);
+        }
 
         foreach (id, e; _bgColors)
             _bgColorsToRevertToOnCancel[id] = e.number;

@@ -2,6 +2,7 @@ module editor.gui.browter;
 
 import std.algorithm;
 import std.conv;
+import std.range;
 import std.string : representation;
 
 import optional;
@@ -9,12 +10,12 @@ import optional;
 import basics.help : len;
 import basics.globals;
 import file.option;
-import editor.hover;
 import file.language;
 import file.option;
 import gui;
 import gui.picker;
 import hardware.mouse;
+import tile.abstile;
 
 enum MergeDirs : int {
     depthTwo = 1,
@@ -29,14 +30,24 @@ private:
     MutFilename _chosenTile; // null until we're good to exit
 
 public:
-    this(string allowedPreExts, UserOptionFilename curDir, MergeDirs merge,
+    this(string allowedPreExts, UserOptionFilename curDir)
+    {
+        const(AbstractTile)[] noTiles = [];
+        this(allowedPreExts, curDir, MergeDirs.allIntoRoot, noTiles);
+    }
+
+    this(Tiles)(
+        string allowedPreExts,
+        UserOptionFilename curDir,
+        MergeDirs merge,
         /*
          * If this array contains at least one hover that points to a tile
          * with an allowed pre-extension, the first such tile in the hover
          * determines the starting directory.
          */
-        const(Hover)[] allHoveredTiles
-    ) {
+        Tiles allHoveredTiles
+    ) if (isInputRange!Tiles && is (ElementType!Tiles == const(AbstractTile)))
+    {
         assert (curDir !is null);
         _curDir = curDir;
         super(new Geom(0, 0, gui.screenXlg, gui.mapYlg, From.TOP),
@@ -62,8 +73,8 @@ public:
     }
 
 private:
-    Picker makePicker(
-        const(Hover)[] allHoveredTiles,
+    Picker makePicker(Tiles)(
+        Tiles allHoveredTiles,
         string allowedPreExts,
         MergeDirs merge
     ) {
@@ -102,23 +113,23 @@ private:
 
 private:
 
-Filename allowedTileOr(
-    const(Hover)[] hoveredTiles, // find a suitable tile among these
+Filename allowedTileOr(Tiles)(
+    Tiles hoveredTiles, // find a suitable tile among these
     string allowedPreExts, // require these pre-extensions to allow a tile
     Filename fallback, // if no tile was allowed, return this
-) {
-    bool allowedTile(in Hover hov) {
-        auto name = hov.occ.tile.name;
-        if (name.length < 2)
+) if (isInputRange!Tiles && is (ElementType!Tiles == const(AbstractTile)))
+{
+    bool allowedTile(const(AbstractTile) tile) {
+        if (tile.name.length < 2)
             return false;
         // This name check for type is bad. Replace the name in the tile
         // class with Optional!Filename and check for its pre-extension?
-        return allowedPreExts.canFind(name[$-1])
-            || allowedPreExts.canFind('\0') && name[$-2] != '.';
+        return allowedPreExts.canFind(tile.name[$-1])
+            || allowedPreExts.canFind('\0') && tile.name[$-2] != '.';
     }
     auto allowed = hoveredTiles.find!allowedTile;
-    return allowed.length == 0 ? fallback
-        : allowed[0].occ.tile.name.tileNameToFilename;
+    return allowed.empty ? fallback
+        : allowed.front.name.tileNameToFilename;
 }
 
 /*

@@ -7,7 +7,7 @@ import std.string;
 
 import editor.gui.custgrid;
 import file.option : showFPS;
-import file.filename; // currentFilename
+import file.filename; // currentFilenameOrNull
 import file.language;
 import graphic.internal;
 import gui;
@@ -21,7 +21,7 @@ private:
     TwoTasksButton _zoom;
     TextButton[]   _textButtons;
     Label          _fps;
-    MutFilename    _currentFilename;
+    MutFilename    _currentFilenameOrNull; // null if unsaved new level
 
 public:
     this()
@@ -31,10 +31,16 @@ public:
         makeButtons();
     }
 
-    // this is only to display the correct file in the tooltip
-    Filename currentFilename(Filename fn)
+    // This is only to display the correct file in the tooltip.
+    // This is null iff the level was newly created and hasn't been saved yet.
+    @property Filename currentFilenameOrNull() const
     {
-        _currentFilename = fn;
+        return _currentFilenameOrNull;
+    }
+
+    @property Filename currentFilenameOrNull(Filename fn)
+    {
+        _currentFilenameOrNull = fn;
         return fn;
     }
 
@@ -134,8 +140,6 @@ private:
         assert (lang <= Lang.editorButtonMenuSkills);
         if (lang < Lang.editorButtonMenuConstants)
             return lang - Lang.editorButtonFileNew
-                // DTODOUNDO: undo isn't implemented yet, otherwise rm this
-                - (lang >= Lang.editorButtonUndo ? 2 : 0)
                 // DTODO: Flip vertically isn't implemented yet
                 - (lang >= Lang.editorButtonFlipVertically ? 1 : 0);
         else
@@ -146,16 +150,14 @@ private:
     {
         enum ebfn = Lang.editorButtonFileNew;
         return to!Lang(id + Lang.editorButtonFileNew
-            + (id >= Lang.editorButtonUndo - ebfn ? 2 : 0)
-            + (id+2 >= Lang.editorButtonFlipVertically - ebfn ? 1 : 0));
+            + (id >= Lang.editorButtonFlipVertically - ebfn ? 1 : 0));
     }
 
     void makeButtons()
     {
         immutable int bitmaps = Lang.editorButtonAddHazard + 1
                               - Lang.editorButtonFileNew
-                              - 1 // because no vertical flip
-                              - 2; // because no undo or redo yet
+                              - 1; // because no vertical flip
         immutable int texts = 3;
         // Xl computes with (bitmaps + 1) becasue the button for the
         // terrain brower is double-sized.
@@ -223,10 +225,10 @@ private:
                 try _info.text = indexToLang(id).transl;
                 catch (ConvException) { }
                 if (indexToLang(id) == Lang.editorButtonFileSave
-                    && _currentFilename !is null
+                    && _currentFilenameOrNull !is null
                 ) {
                     _info.text = "%s %s".format(_info.text,
-                                        _currentFilename.rootless);
+                                        _currentFilenameOrNull.rootless);
                 }
             }
         }

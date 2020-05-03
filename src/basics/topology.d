@@ -24,7 +24,8 @@ private:
     bool _tx, _ty; // torus property in either direction, making edges loop
 
 public:
-    this(in int nxl, in int nyl, in bool ntx = false, in bool nty = false)
+    this(this T)(
+        in int nxl, in int nyl, in bool ntx = false, in bool nty = false)
     in {
         assert (nxl > 0 && nyl > 0,
             "Topology: (xl, yl) > 0 required, not (%d, %d)".format(nxl, nyl));
@@ -37,7 +38,7 @@ public:
     }
 
     Topology clone() const { return new Topology(this); }
-    this(in Topology rhs)
+    this(this T)(in Topology rhs)
     {
         assert (rhs);
         _xl = rhs._xl;
@@ -151,6 +152,14 @@ public:
         _tx = x;
         _ty = y;
         onAnyChange();
+    }
+
+    version (assert) {
+        override string toString() const
+        {
+            return "Top(" ~ _xl.to!string ~ ", " ~ _yl.to!string ~ ", "
+                ~ _tx.to!string ~ ", " ~ _ty.to!string ~ ")";
+        }
     }
 
 protected:
