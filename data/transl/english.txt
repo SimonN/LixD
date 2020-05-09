@@ -88,10 +88,10 @@ $winLobbyRoomNumber Room #%d
 $winLobbyRoomCreate Open a new room
 $winLobbyRoomLeave Leave room
 
-// end-of-game dialog, or pause dialog
-$winGameTitle Game Menu|Open the game menu dialog.|Exit the level or save replays from this dialog.
-$winGameResume Continue
-$winGameMenu Exit
+// Multiplayer interruption dialog
+$winAbortNetgameTitle Game Menu|Open the menu dialog during networked games.|This allows to exit the game early. It doesn't pause.
+$winAbortNetgameContinuePlaying Continue playing
+$winAbortNetgameExitToLobby Exit to lobby
 
 // help texts inside the game
 $gameForceLeft [%s] for left-facing.

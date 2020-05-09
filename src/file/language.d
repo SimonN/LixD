@@ -160,10 +160,10 @@ enum Lang {
     winLobbyRoomCreate,
     winLobbyRoomLeave,
 
-    // end-of-game dialog, or pause dialog
-    winGameTitle,
-    winGameResume,
-    winGameMenu,
+    // Multiplayer interruption dialog
+    winAbortNetgameTitle,
+    winAbortNetgameContinuePlaying,
+    winAbortNetgameExitToLobby,
 
     // help texts inside the game
     gameForceLeft,

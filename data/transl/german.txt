@@ -84,10 +84,10 @@ $winLobbyRoomNumber Raum Nr. %d
 $winLobbyRoomCreate Raum eröffnen
 $winLobbyRoomLeave Raum verlassen
 
-// Game window
-$winGameTitle Spielmenü|Das Menü während des Spiels aufrufen,|um den Level zu beenden oder das Replay zu speichern.
-$winGameResume Weiterspielen
-$winGameMenu Beenden
+// Multiplayer interruption dialog
+$winAbortNetgameTitle Spielmenü|Das Menü während des Netzwerkspiels aufrufen,|um die Partie vorzeitig zu beenden. Das Menü pausiert das Spiel nicht.
+$winAbortNetgameContinuePlaying Weiterspielen
+$winAbortNetgameExitToLobby Beenden, zur Lobby
 
 // Help texts inside the game
 $gameForceLeft [%s] für Linksläufer.

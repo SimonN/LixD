@@ -347,7 +347,7 @@ body {
     keyShowSplatRuler = newKey("keyShowSplatRuler", Lang.optionKeyShowSplatRuler, ALLEGRO_KEY_TAB);
     keyHighlightGoals = newOpt("keyHighlightGoals", Lang.optionKeyHighlightGoals, KeySet());
     keyChat = newKey("keyChat", Lang.optionKeyChat, ALLEGRO_KEY_ENTER);
-    keyGameExit = newKey("keyGameExit", Lang.winGameTitle, ALLEGRO_KEY_ESCAPE);
+    keyGameExit = newKey("keyGameExit", Lang.winAbortNetgameTitle, ALLEGRO_KEY_ESCAPE);
 
     keyMenuOkay = newKey("keyMenuOkay", Lang.optionKeyMenuOkay, ALLEGRO_KEY_SPACE);
     keyMenuEdit = newKey("keyMenuEdit", Lang.optionKeyMenuEdit, ALLEGRO_KEY_F);
