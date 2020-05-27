@@ -1,4 +1,4 @@
-$BUILT 2017-06-21 15:12:12
+$BUILT 2020-05-27 17:05:41
 $AUTHOR geoo
 $ENGLISH Every Lix for Herself!
 
@@ -6,9 +6,9 @@ $ENGLISH Every Lix for Herself!
 #SIZE_X 640
 #SIZE_Y 400
 
-#INITIAL 50
-#REQUIRED 20
-#SPAWN_INTERVAL 12
+#INITIAL 40
+#REQUIRED 25
+#SPAWN_INTERVAL 3
 
 #WALKER 10
 #CLIMBER 10
@@ -17,13 +17,16 @@ $ENGLISH Every Lix for Herself!
 #BATTER 10
 #EXPLODER2 0
 
-:simon/oriental/hatch.H: 280 36
-:simon/oriental/hatch.H: 108 10 r
-:simon/oriental/hatch.H: 518 34
+:simon/oriental/hatch.H: 280 34
+:simon/oriental/hatch.H: 146 16 r
+:simon/oriental/hatch.H: 518 32
 
 :simon/oriental/goal.G: 16 216
 :simon/oriental/goal.G: 560 216
 
+:simon/oriental/leaf2: 112 84 r
+:simon/oriental/culm_half1: 48 78 fr
+:simon/oriental/culm_end: 183 78 fr
 :simon/oriental/pebbles5: 122 308
 :simon/oriental/pebble3: 468 296 r
 :simon/oriental/pebbles6: 84 346
@@ -101,7 +104,7 @@ $END_TILE_GROUP
 :simon/oriental/culm_long: 558 -4 rrr
 :simon/oriental/leaf2: 584 18 frr
 :simon/oriental/leaf3: 604 2 rrr
-:simon/oriental/culm_long: 72 70 fr
+:simon/oriental/culm_long: 66 78 fr
 :simon/oriental/culm_half1: 499 74
 :simon/oriental/culm_long: 510 94 fr
 :simon/oriental/01: 478 74
@@ -135,5 +138,5 @@ $END_TILE_GROUP
 :simon/oriental/pebbles3: 10 292
 :simon/oriental/pebble2: 54 292
 :simon/oriental/culm_half1: 274 96 fr
-:simon/oriental/culm_end: 168 70 r
+:simon/oriental/culm_end: 162 78 r
 :simon/oriental/culm_long: 606 94 fr
