@@ -20,6 +20,7 @@ import std.algorithm;
 import basics.rect;
 import graphic.color;
 import graphic.cutbit;
+import tile.visitor;
 
 abstract class AbstractTile {
 private:
@@ -44,6 +45,8 @@ public:
     {
         return cast(size_t) cast(void*) this;
     }
+
+    abstract void accept(TileVisitor) const;
 
 protected:
     // take ownership of the cutbit

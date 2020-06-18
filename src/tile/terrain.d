@@ -17,6 +17,7 @@ import graphic.color;
 import hardware.tharsis;
 import tile.phymap;
 import tile.abstile;
+import tile.visitor;
 
 class TerrainTile : AbstractTile {
 private:
@@ -34,6 +35,8 @@ public:
 
     @property const(Cutbit) dark()  const { return _dark; }
     override @property string name() const { return _name; }
+
+    override void accept(TileVisitor v) const { v.visit(this); }
 
     // Input: Where you want to draw on the map, in relation to tile's 0, 0.
     // Output: The solid/nonsolid bits there of the rotated/mirrored tile

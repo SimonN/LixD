@@ -16,6 +16,7 @@ import file.log;
 import graphic.cutbit;
 import hardware.sound;
 import tile.abstile;
+import tile.visitor;
 
 alias GadType = GadgetTile.Type;
 
@@ -65,6 +66,8 @@ public:
 
     @property type() const { return _type; }
     override @property string name() const { return _name; }
+
+    override void accept(TileVisitor v) const { v.visit(this); }
 
     @property Point trigger() const
     {

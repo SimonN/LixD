@@ -4,6 +4,8 @@ import std.algorithm;
 import std.format;
 import std.range;
 
+import optional;
+
 import basics.topology;
 import file.option; // hotkeys for movement
 import editor.editor;
@@ -124,24 +126,64 @@ void moveTiles(Editor editor) {
 private: // ########################################################### private
 // ############################################################################
 
+import level.level;
+import tile.visitor;
+import tile.occur;
+import tile.tilelib;
+
+final class AddingVisitor : TileVisitor {
+    Level level;
+    Occurrence theNew;
+
+    this(Level lev)
+    {
+        level = lev;
+        theNew = null;
+    }
+
+    override void visit(const(TerrainTile) te)
+    {
+        level.terrain ~= new TerOcc(te);
+        theNew = level.terrain[$-1];
+    }
+
+    override void visit(const(TileGroup) gr)
+    {
+        visit(cast (const(TerrainTile)) gr);
+    }
+
+    override void visit(const(GadgetTile) ga)
+    {
+        level.gadgets[ga.type] ~= new GadOcc(ga);
+        theNew = level.gadgets[ga.type][$-1];
+    }
+}
+
 void maybeCloseTerrainBrowser(Editor editor) {
     with (editor)
 {
     if (! _terrainBrowser || ! _terrainBrowser.done)
         return;
-    if (auto pos = _level.addTileWithCenterAt(_terrainBrowser.chosenTile,
-                                              _map.mouseOnLand)
-    ) {
-        // Must round the pos's location, not the mouse coordinates for center.
-        // Therefore, round in a separate call from the creation above.
-        assert (pos.tile);
-        assert (pos.tile.cb);
-        auto cbLen = pos.tile.cb.len;
-        pos.loc = roundWithin(_level.topology,
-                    Rect(pos.loc, cbLen.x, cbLen.y), editorGridSelected);
-        _selection = [ Hover.newViaEvilDynamicCast(_level, pos) ];
-        _terrainBrowser.saveDirOfChosenTileToUserCfg();
-    }
+    tile.tilelib.resolveTileName(_terrainBrowser.chosenTile).match!(
+        () { },
+        (const(AbstractTile) ti)
+        {
+            assert (ti);
+            auto visitor = new AddingVisitor(_level);
+            ti.accept(visitor);
+
+            assert (visitor.theNew);
+            assert (visitor.theNew.tile is ti);
+            assert (ti.cb);
+            visitor.theNew.loc = _level.topology.clamp(_map.mouseOnLand)
+                - ti.cb.len / 2;
+            // Must round the location, not the mouse coordinates for center.
+            visitor.theNew.loc = roundWithin(_level.topology,
+                Rect(visitor.theNew.loc, ti.cb.len.x, ti.cb.len.y),
+                editorGridSelected);
+            _selection = [ Hover.newViaEvilDynamicCast(_level, visitor.theNew) ];
+            _terrainBrowser.saveDirOfChosenTileToUserCfg();
+        });
     rmFocus(_terrainBrowser);
     _terrainBrowser = null;
     _panel.allButtonsOff();

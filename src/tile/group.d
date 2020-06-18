@@ -31,6 +31,7 @@ import tile.draw;
 import tile.occur;
 import tile.phymap;
 import tile.terrain;
+import tile.visitor;
 
 class TileGroup : TerrainTile {
 private:
@@ -104,6 +105,8 @@ public:
         assert (_key.tilesOfElements.length > 0);
         return _key.tilesOfElements;
     }
+
+    override void accept(TileVisitor v) const { v.visit(this); }
 
     @property Point transpCutOff() const { return _transpCutOff; }
 

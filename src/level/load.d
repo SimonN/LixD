@@ -5,6 +5,8 @@ module level.load;
 import std.algorithm;
 import std.range;
 
+import optional;
+
 static import glo = basics.globals;
 
 import file.date;
@@ -106,15 +108,23 @@ private void load_from_vector(Level level, in IoLine[] lines) { with (level)
 
     // new tile for the level
     case ':':
-        Occurrence occ = addFromLine(level,
-            // in case of TerOcc: Where to add the tile? All Gadgets -> level.
-            groupName == "" ? &level.terrain : &groupElements,
-            resolveTileName(groupsRead, text1), Point(nr1, nr2), text2);
-        if (occ is null && ! text1.startsWith(glo.levelUseGroup)
-            && ! _missingTiles.canFind(text1)
-        ) {
-            _missingTiles ~= text1;
-        }
+        resolveTileName(groupsRead, text1).match!(
+            () {
+                if (! text1.startsWith(glo.levelUseGroup)
+                    && ! _missingTiles.canFind(text1)
+                ) {
+                    _missingTiles ~= text1;
+                }
+            },
+            (foundTile) {
+                addFromLine(level,
+                    // in case of TerOcc: Where to add the tile?
+                    // Nontrivial groupName means we're in the middle of
+                    // building a group, not adding tiles directly to level.
+                    // (Gadgets always go to level. Shouldn't happen in file.)
+                    groupName == "" ? &level.terrain : &groupElements,
+                    foundTile, Point(nr1, nr2), text2);
+            });
         break;
 
     default:

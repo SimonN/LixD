@@ -8,6 +8,8 @@ import std.algorithm;
 import std.conv; // ulong -> int for string lengths
 import std.typecons; // Rebindable!(const Filename)
 
+import optional;
+
 static import glo = basics.globals;
 
 import basics.help; // clear_array
@@ -40,38 +42,29 @@ void deinitialize()
     _loggedMissingImages = null;
 }
 
-// Feeble attempt to avoid dynamic cast :-( Maybe ripe for the visitor pattern.
-struct ResolvedTile {
-    const(TerrainTile) terrain;
-    const(GadgetTile) gadget;
-    const(TileGroup) group;
-
-    @property const(AbstractTile) tile() const
-    {
-        return terrain ? terrain : gadget ? gadget : group;
-    }
-}
-
 // For most tiles, their name is the filename without "images/", without
 // extension, but with pre-extension in case the filename has one
 // This doesn't resolve groups because tilelib doesn't know about group
 // names, it merely knows about group keys, see getGroup().
-ResolvedTile resolveTileName(in string name)
+Optional!(const(AbstractTile)) resolveTileName(in string name)
 {
-    if (auto ptr = name in terrain)
-        return ResolvedTile(*ptr, null, null);
-    else if (auto ptr = name in gadgets)
-        return ResolvedTile(null, *ptr, null);
-    else if (name in _loggedMissingImages)
-        return ResolvedTile();
+    if (const(AbstractTile)* ptr = name in terrain) {
+        return some(*ptr);
+    }
+    else if (const(AbstractTile)* ptr = name in gadgets) {
+        return some(*ptr);
+    }
+    else if (name in _loggedMissingImages) {
+        return no!(const(AbstractTile));
+    }
     loadTileFromDisk(name);
     return resolveTileName(name);
 }
 
-ResolvedTile resolveTileName(Filename fn)
+Optional!(const(AbstractTile)) resolveTileName(Filename fn)
 {
     if (! fn || fn.rootlessNoExt.length < glo.dirImages.rootlessNoExt.length)
-        return ResolvedTile();
+        return no!(const(AbstractTile));
     // We have indexed the tiles without "images/" at the front of filenames
     return resolveTileName(fn.rootlessNoExt[
                            glo.dirImages.rootlessNoExt.length .. $]);

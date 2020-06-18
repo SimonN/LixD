@@ -136,13 +136,6 @@ public:
         return color.makecol(bgRed, bgGreen, bgBlue);
     }
 
-    // Called from the Editor. Adds to the correct array of this level,
-    // then returns, in addition, a reference to the added piece.
-    Occurrence addTileWithCenterAt(Filename fn, Point p)
-    {
-        return implCenter(this, fn, p);
-    }
-
     void drawTerrainTo(Torbit tb, Phymap lo = null) const
     {
         implDrawTerrainTo(this, tb, lo);

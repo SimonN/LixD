@@ -68,18 +68,18 @@ public:
     {
         assert (fn);
         super(g);
-        ResolvedTile resolved = resolveTileName(fn);
-        if (resolved.tile) {
+        resolveTileName(fn).each!((const(AbstractTile) ti)
+        {
             // Adding gui.thickg much of padding around the cutbit element.
             // Reason: We shall not draw on the button's 3D edge.
             // Adding + 1 to the thickness offset from the top.
             // Reason: The rounding is crap, neither +0 nor +1 is optimal right
             // now. I rather leave empty row than overwrite button thickness.
             _cbe = new CutbitElement(new Geom(0, gui.thickg + 1,
-                xlg - 2*gui.thickg, ylg - 13, From.TOP), resolved.tile.cb);
+                xlg - 2*gui.thickg, ylg - 13, From.TOP), ti.cb);
             _cbe.allowUpscaling = false;
             addChild(_cbe);
-        }
+        });
         _text = new Label(new Geom(0, 0, xlg - 2*gui.thickg, 12, From.BOTTOM),
             toLabel(fn));
         _text.font = djvuS;
