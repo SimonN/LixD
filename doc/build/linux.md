@@ -71,16 +71,33 @@ https://github.com/SimonN/LixD/blob/master/doc/build/a5manual.md).
 Build Lix
 ---------
 
-Open a shell, navigate to Lix's root directory, and run `$ dub build`.
-This builds a debug version. To play the game, run `$ ./bin/lix`.
+Get the Lix source:
+
+*   If you use git: `$ git clone https://github.com/SimonN/LixD`
+*   Without git, go with your web browser to
+    [Lix's github page](https://github.com/SimonN/LixD),
+    click Code, then click "Download Zip". Extract the archive somewhere.
+
+Open a shell and navigate to the cloned/extracted Lix root directory;
+this is the directory that contains `README.md` and `dub.json`.
+Now, build a debug version:
+
+     $ dub build
+
+To play, run:
+
+     $ ./bin/lix
 
 If the debugging version compiles, links, and runs with no problems,
-build a release version for performance:
-`$ dub build -b release --compiler=ldc`.
+build a release version for performance, choosing LDC as the compiler because
+it produces the fastest-running binaries:
+
+     $ dub build -b release --compiler=ldc2
 
 Lix will read/write configuration/levels/replays to its
 working directory. If you need standard paths like
-`/usr/share/lix/` instead, read my [notes for Linux package maintainers](
+`/usr/share/lix/` or `~/.local/share/lix/` instead, read my
+[notes for Linux package maintainers](
 https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/package.txt).
 
 
