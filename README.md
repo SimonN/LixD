@@ -12,13 +12,24 @@ Who can save the most lix?
 
 ![Lix screenshot](http://lixgame.com/img/lix-d-screenshot.png)
 
-Download
---------
+Get Lix
+-------
 
-[![Download icon](http://lixgame.com/img/download-icon.png)](https://github.com/SimonN/LixD/releases)
-[Download Lix for Windows or Linux](https://github.com/SimonN/LixD/releases)
+* Windows:
+    [![Download icon](http://lixgame.com/img/download-icon.png)](https://github.com/SimonN/LixD/releases)
+    [Download Lix for Windows](https://github.com/SimonN/LixD/releases)
+* Arch Linux: [Lix AUR
+    package](https://aur.archlinux.org/packages/lix/),
+    maintained by Lucki
+* Debian: [Lix Debian
+    package](https://packages.debian.org/stable/source/lix),
+    maintained by Gürkan
+* openSUSE: [Lix openSUSE Build Service
+    package](https://build.opensuse.org/package/show/games/lix),
+    maintained by Martin
+* macOS, other Linuxes, other OSes: Build from source, see below.
 
-macOS or others: Build from source, see below.
+Thanks to our awesome package maintainers!
 
 License/Copying/Public domain
 -----------------------------
