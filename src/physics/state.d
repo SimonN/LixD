@@ -52,7 +52,7 @@ public:
 
     this(this) { opAssignImpl(this); }
 
-    ref RawGameState opAssign(ref const(RawGameState) rhs)
+    ref RawGameState opAssign(ref const(RawGameState) rhs) return
     {
         if (this is rhs)
             return this;
@@ -127,7 +127,7 @@ public:
     }
 
 private:
-    ref RawGameState opAssignImpl(ref const(RawGameState) rhs)
+    ref RawGameState opAssignImpl(ref const(RawGameState) rhs) return
     {
         copyValuesArraysFrom(rhs);
         copyLandFrom(rhs);

@@ -46,7 +46,7 @@ public:
 
     this(this) { duplicate(level); }
 
-    ref Festival opAssign(ref const(Festival) fe)
+    ref Festival opAssign(ref const(Festival) fe) return
     {
         if (fe is this)
             return this;
