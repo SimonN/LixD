@@ -2,7 +2,7 @@ Contributors to Lix
 ===================
 
 I (Simon Naarmann) wrote nearly all of the code and drew the character sprites,
-but my thanks go to all community memebrs that shaped Lix over the years:
+but my thanks go to all community membrs that shaped Lix over the years:
 
 geoo
     * Tilesets in images/geoo.
@@ -14,7 +14,7 @@ geoo
         tilesets with Lix anyway because of their third-party copyrights.
 
 Raymanni
-    *  Toys, lab, gore, and holiday tilesets in images/raymanni.
+    * Toys, lab, gore, and holiday tilesets in images/raymanni.
 
 Matt C.
     * Tilesets in images/matt/.
@@ -62,10 +62,14 @@ Lucki
 
 Alex M. (tarzeau)
     * Hosting the Lix website and game server from 2010 to 2016.
+    * Maintaining the Lix Debian package
 
 Mindless
     * Running the IRC bot in irc.quakenet.org #lix to announce forum topics.
     * Hosting my game server in 2009 and 2010.
+
+Martin H.
+    * Maintaining the Lix openSUSE package
 
 Clam
     * ClamLix, an entire levelpack. This pack has no maintainer these days,
