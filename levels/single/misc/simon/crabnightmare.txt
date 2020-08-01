@@ -1,0 +1,93 @@
+$BUILT 2020-08-01 23:06:52
+$AUTHOR Anonymous
+$ENGLISH Crab Nightmare
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 928
+#SIZE_Y 368
+
+#INITIAL 1
+#REQUIRED 1
+#SPAWN_INTERVAL 32
+
+#WALKER 1
+#RUNNER 1
+#CLIMBER 1
+#FLOATER 1
+#BUILDER 1
+#PLATFORMER 1
+#BASHER 1
+#MINER 1
+#DIGGER 1
+#JUMPER 1
+#BATTER 1
+#EXPLODER2 0
+
+:matt/beach/Hatch.H: 818 0 r
+
+:matt/earth/Goal.G: 872 256
+
+:raymanni/crab.T: 220 312
+:raymanni/crab.T: 400 310
+:raymanni/crab.T: 12 242
+:raymanni/crab.T: 44 310
+:raymanni/crab.T: 584 232
+:raymanni/crab.T: 804 318
+:raymanni/crab.T: 872 242
+:raymanni/crab.T: 810 74
+:raymanni/crab.T: 490 74
+:raymanni/crab.T: 170 74
+:raymanni/crab.T: 304 234
+
+:simon/water.W: 680 334
+:simon/water.W: 728 334
+:simon/water.W: 776 334
+:simon/water.W: 824 334
+:simon/water.W: 872 334
+:simon/water.W: 920 334
+
+:raymanni/holiday/plank_left: 644 322
+:matt/beach/decor/umbrella_blue: 286 258
+:matt/beach/decor/grass02: 40 322
+:matt/beach/decor/umbrella_red: -18 262 frr
+:matt/beach/decor/shovel: 514 254
+:matt/beach/nighttime/03: -8 338
+:matt/beach/decor/grass02: 220 320 frr
+:matt/beach/nighttime/03: 114 334
+:matt/beach/decor/beach ball: 376 328
+:matt/beach/nighttime/03: 222 336
+:matt/beach/decor/grass02: 400 320 frr
+:matt/beach/nighttime/03: 314 338
+:matt/beach/decor/palmtree: 570 252
+:matt/beach/nighttime/03: 438 334
+:raymanni/holiday/plank_long: 646 322
+:matt/beach/nighttime/03: 554 336
+:raymanni/holiday/plank_broken: 774 322 frr
+:raymanni/holiday/plank_long: 898 322 frr
+:raymanni/holiday/plank_broken: 866 322
+:matt/underworld/03: 10 44
+:matt/underworld/09a: 166 58
+:matt/underworld/09a: 230 58
+:matt/underworld/09a: 296 58
+:matt/underworld/09a: 360 58
+:matt/underworld/09a: 424 58
+:matt/underworld/09a: 488 58
+:matt/underworld/09a: 552 58
+:matt/underworld/09a: 616 58
+:matt/underworld/09a: 682 58
+:matt/underworld/09a: 746 58
+:matt/underworld/09a: 810 58
+:matt/underworld/09b: 130 62
+:matt/underworld/09b: 874 60 frr
+:geoo/steel/silhouette_64x32.S: 874 106
+:geoo/steel/silhouette_64x32.S: 810 106
+:geoo/steel/silhouette_64x32.S: 746 106
+:geoo/steel/silhouette_64x32.S: 682 106
+:geoo/steel/silhouette_64x32.S: 618 106
+:geoo/steel/silhouette_64x32.S: 554 106
+:geoo/steel/silhouette_64x32.S: 490 106
+:geoo/steel/silhouette_64x32.S: 426 106
+:geoo/steel/silhouette_64x32.S: 362 106
+:geoo/steel/silhouette_64x32.S: 298 106
+:geoo/steel/silhouette_64x32.S: 234 106
+:geoo/steel/silhouette_64x32.S: 170 106
