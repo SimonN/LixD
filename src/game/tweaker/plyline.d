@@ -47,6 +47,11 @@ public:
         return _desc.ply = aPly;
     }
 
+    @property Ply ply() const pure nothrow @nogc
+    {
+        return _desc.ply;
+    }
+
     @property bool suggestsChange() const pure nothrow @nogc
     {
         return _del.execute || earlierExecuted || laterExecuted;

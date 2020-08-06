@@ -26,17 +26,7 @@ private:
      * geom.y may skip to make space for the NowLine that's not in _entries.
      */
     PlyLine[] _entries;
-
     NowLine _nowLine; // never null, but is hidden when _entries.empty
-
-    /*
-     * Hackish way to determine whether we need a reqDraw() even though no
-     * _entries were removed. This caches the number of entries in the past.
-     * If _nowLine has to change position, we'll undraw everything.
-     * Elements can't move and then undraw properly; that has never been
-     * supported in my GUI library so far.
-     */
-    int _numEntriesInThePastReqDrawOnChange;
 
     Label _emptyListTitle;
     Label[] _emptyListDescs;
@@ -129,7 +119,7 @@ private:
      * from resizeListOfGuiEntriesTo() may be null
      */
     void formatListOfGuiEntries(
-        const(Ply)[] dat,
+        const(Ply)[] pliesToMatch,
         in Phyu now)
     in {
         assert (_entries.all!(e => e !is null));
@@ -139,17 +129,19 @@ private:
             return aPly.update <= now;
         }
         foreach (size_t id, ref PlyLine e; _entries) {
-            e.ply = dat[id];
+            if (e.ply != pliesToMatch[id]) {
+                e.ply = pliesToMatch[id];
+                reqDraw(); // redraw all our lines, they can't easily undraw
+            }
             e.move(e.geom.x, 30 + 20 * id.to!float
-                + (liesInPast(dat[id]) ? 0 : 20f));
+                + (liesInPast(pliesToMatch[id]) ? 0 : 20f));
         }
-        _nowLine.phyu = now;
-        _nowLine.move(_nowLine.geom.x, 30f + 20f * dat.count!liesInPast);
-        immutable inPast = dat.count!liesInPast.to!int;
-        if (inPast != _numEntriesInThePastReqDrawOnChange) {
-            _numEntriesInThePastReqDrawOnChange = inPast;
+        if (_nowLine.phyu != now) {
+            _nowLine.phyu = now;
             reqDraw();
         }
+        _nowLine.move(_nowLine.geom.x,
+            30f + 20f * pliesToMatch.count!liesInPast);
     }
 
     void showOrHideEmptyListDescs() pure @nogc
