@@ -70,8 +70,8 @@ public:
     body {
         // Here, min(dat.len, 18) is a hack to keep the list short enough
         // for a single screen. Add a scrollbar instead.
-        resizeListOfGuiEntriesTo(min(dat.len, 18));
-        formatListOfGuiEntries(dat, now);
+        resizeListOfGuiEntriesTo(min(dat.len, 17));
+        formatListOfGuiEntries(dat[0 .. min(17, dat.len)], now);
         showOrHideEmptyListDescs();
     }
 
