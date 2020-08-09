@@ -68,10 +68,9 @@ public:
         assert (_entries.all!(e => e !is null));
     }
     body {
-        // Here, min(dat.len, 18) is a hack to keep the list short enough
-        // for a single screen. Add a scrollbar instead.
-        resizeListOfGuiEntriesTo(min(dat.len, 17));
-        formatListOfGuiEntries(dat[0 .. min(17, dat.len)], now);
+        const(Ply)[] cutDat = cullPliesSoTheyFitIntoOnePage(dat, now);
+        resizeListOfGuiEntriesTo(cutDat.len);
+        formatListOfGuiEntries(cutDat, now);
         showOrHideEmptyListDescs();
     }
 
@@ -95,6 +94,27 @@ protected:
     }
 
 private:
+    mixin template liesInPast()
+    {
+        bool liesInPast(in Ply aPly) {
+            return aPly.update <= now;
+        }
+    }
+
+    static const(Ply)[] cullPliesSoTheyFitIntoOnePage(
+        const(Ply)[] plies,
+        in Phyu now
+    ) {
+        // 17 plies plus the NowLine fit on a screen.
+        // If we have more plies, we cut around the NowLine to make it 17.
+        // Consider a scrollbar instead? But that eats precious space.
+        while (plies.len > 17) {
+            mixin liesInPast;
+            plies = plies.count!liesInPast > 9 ? plies[1..$] : plies[0..$-1];
+        }
+        return plies;
+    }
+
     void resizeListOfGuiEntriesTo(in int newNumOfEntries)
     out {
         assert (_entries.all!(e => e !is null));
@@ -125,9 +145,7 @@ private:
         assert (_entries.all!(e => e !is null));
     }
     body {
-        bool liesInPast(in Ply aPly) {
-            return aPly.update <= now;
-        }
+        mixin liesInPast;
         foreach (size_t id, ref PlyLine e; _entries) {
             if (e.ply != pliesToMatch[id]) {
                 e.ply = pliesToMatch[id];
