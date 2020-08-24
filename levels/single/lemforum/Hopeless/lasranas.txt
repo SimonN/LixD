@@ -1,12 +1,10 @@
-$BUILT 2015-08-16 20:42:27
+$BUILT 2020-09-14 21:08:54
 $AUTHOR geoo
-$GERMAN 
 $ENGLISH Las Ranas Hermanas
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 1168
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
 #BACKGROUND_RED 8
 #BACKGROUND_GREEN 0
 #BACKGROUND_BLUE 16
@@ -18,18 +16,21 @@ $ENGLISH Las Ranas Hermanas
 #CLIMBER 11
 #MINER 13
 #DIGGER 1
+#EXPLODER2 0
 
 :geoo/construction/Hatch.H: 56 288
 
 :matt/marble/Goal.G: 1064 304
 
-:amanda/forest/frog_happy.T: 328 304
-:amanda/forest/frog.T: 648 304
+:amanda/forest/frog_happy.T: 328 302
+:amanda/forest/frog.T: 648 302
 :amanda/forest/frog_catch.T: 463 144
 :amanda/forest/frog.T: 184 144
 :amanda/forest/frog_happy.T: 856 144
 :amanda/forest/frog_happy.T: 513 144
 
+:matt/marble/00e_2: 676 350
+:matt/marble/00e_2: 356 350
 :matt/marble/22d: 248 304 rrr
 :matt/marble/thinplatform128p: 752 352
 :matt/marble/22d: 704 336
@@ -237,3 +238,7 @@ $ENGLISH Las Ranas Hermanas
 :matt/marble/23e: 216 224
 :matt/marble/23e: 184 192
 :matt/marble/23e: 216 192
+:matt/marble/thinplatform8p: 332 350
+:matt/marble/thinplatform8p: 380 350
+:matt/marble/thinplatform8p: 652 350
+:matt/marble/thinplatform8p: 700 350

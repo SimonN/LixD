@@ -1,4 +1,4 @@
-$BUILT 2017-08-22 03:22:20
+$BUILT 2020-08-24 22:23:15
 $AUTHOR namida
 $ENGLISH One-Lix Showdown
 
@@ -22,12 +22,14 @@ $ENGLISH One-Lix Showdown
 :matt/carnival/Goal.G: 647 176
 
 :geoo/construction/Laser_hz_64.F: 513 144
-:geoo/construction/Laser_vr_64.F: 594 154
-:geoo/construction/Laseremit_vrb_16.F: 594 214
+:geoo/construction/Laser_vr_64.F: 602 162
+:geoo/construction/Laseremit_vrb_16.F: 602 222
 :geoo/construction/Laser_hz_64.F: 574 86
 :geoo/construction/Laser_hz_64.F: 513 86
 :geoo/construction/Laser_hz_64.F: 592 86
 :geoo/construction/Laser_hz_64.F: 577 144
+:geoo/construction/Laser_hz_64.F: 649 214
+:geoo/construction/Laser_vr_16.F: 602 152
 
 :geoo/construction/steam_up.T: 500 234
 

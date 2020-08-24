@@ -1,4 +1,4 @@
-$BUILT 2017-03-05 11:12:50
+$BUILT 2020-09-12 23:14:48
 $AUTHOR geoo
 $ENGLISH Triangle Inequality
 
@@ -29,6 +29,8 @@ $ENGLISH Triangle Inequality
 :geoo/construction/squisher.T: 488 328
 
 :geoo/construction/sawblade_small.F: 224 104
+:geoo/construction/sawblade_small.F: 100 124
+:geoo/construction/sawblade_small.F: 78 124
 
 :geoo/steel/64x64.S: 8 328
 :geoo/steel/64x64.S: 8 264
@@ -106,22 +108,18 @@ $ENGLISH Triangle Inequality
 :geoo/construction/rod_steel/edge_lu.S: 126 52
 :geoo/construction/rod_steel/edge_ru.S: 106 52
 :geoo/construction/rod_steel/straight8.S: 126 44 rrr
-:geoo/construction/rod_steel/end_rect.S: 94 128 frr
 :geoo/construction/rod_steel/straight8.S: 86 128
-:geoo/construction/rod_steel/end_rect.S: 108 128
 :geoo/construction/rod_steel/edge_lu.S: 126 128
 :geoo/construction/rod_steel/edge_ru.S: 76 128
 :geoo/construction/rod_steel/straight8.S: 118 128
 :geoo/construction/rod_steel/straight8.S: 82 128
-:geoo/construction/rod_steel/straight8.S: 114 128
 :geoo/construction/rod_steel/link.S: 86 118 fr
 :geoo/construction/rod_steel/link.S: 116 118 fr
 :geoo/construction/rod_steel/straight8.S: 114 36
 :geoo/construction/rod_steel/straight8.S: 114 52
 :geoo/construction/platformbrick_single: 96 120 fr
 :geoo/construction/platformbrick_single: 112 120 fr
-:geoo/construction/platform_single.S: 100 111 rrr
-:geoo/construction/platform_single.S: 100 118
+:geoo/construction/platform_single.S: 100 112
 :geoo/construction/concrete/008v: 296 280
 :geoo/construction/concrete/008: 300 296
 :geoo/construction/concrete/008: 300 304
@@ -273,18 +271,19 @@ $ENGLISH Triangle Inequality
 :geoo/construction/rod_steel/straight32.S: 288 72 rrr
 :geoo/construction/rod_steel/straight32.S: 216 104 rrr
 :geoo/construction/rod_steel/straight32.S: 256 104 rrr
-:geoo/construction/platform_single.S: 112 111 rrr
-:geoo/construction/platform_single.S: 110 111 rrr
-:geoo/construction/platform_single.S: 108 111 rrr
-:geoo/construction/platform_single.S: 106 118
-:geoo/construction/platform_single.S: 96 111 rrr
-:geoo/construction/platform_single.S: 98 111 rrr
-:geoo/construction/platform_single.S: 96 118
+:geoo/construction/platform_single.S: 106 112
+:geoo/construction/platform_single.S: 96 112
 :geoo/construction/rod_steel/end_rect.S: 96 96 fr
 :geoo/construction/rod_steel/end_rect.S: 106 96 fr
-:geoo/construction/rod_steel/straight8.S: 96 104 rrr
-:geoo/construction/rod_steel/straight8.S: 106 104 rrr
-:geoo/construction/rod_steel/end_rect.S: 96 108 rrr
-:geoo/construction/rod_steel/end_rect.S: 106 108 rrr
 :geoo/construction/platformbrick_single: 100 120 fr
 :geoo/construction/platformbrick_single: 108 120 fr
+:geoo/construction/platformbrick_single: 94 128
+:geoo/construction/rod_steel/edge_lu.S: 86 128
+:geoo/construction/rod_steel/edge_ru.S: 116 128
+:geoo/construction/platformbrick_single: 108 128
+:geoo/construction/rod_steel/end_rect.S: 106 112 rrr
+:geoo/construction/rod_steel/end_rect.S: 96 112 rrr
+:geoo/construction/rod_steel/straight8.S: 96 104 rrr
+:geoo/construction/rod_steel/straight8.S: 106 104 rrr
+:geoo/construction/platformbrick_single: 102 104 frd
+:geoo/construction/platformbrick_single: 106 104 frd
