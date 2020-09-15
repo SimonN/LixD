@@ -2,7 +2,7 @@ Contributors to Lix
 ===================
 
 I (Simon Naarmann) wrote nearly all of the code and drew the character sprites,
-but my thanks go to all community membrs that shaped Lix over the years:
+but my thanks go to all community members that shaped Lix over the years:
 
 geoo
     * Tilesets in images/geoo.
@@ -56,6 +56,11 @@ mobius
     * Project Capybara, a levelpack for Lix that I did not include because
         it felt too close to the copyrighted Lemmings 1 levels.
 
+minim
+    * Graphical upscaling of icons for higher resolutions than 640x480.
+    * Together with mobius, 5 tracks in music/minim-mobius, released as
+        public domain.
+
 Lucki
     * Maintaining the Arch Linux Lix package in the AUR:
         https://aur.archlinux.org/packages/lix/
@@ -78,10 +83,6 @@ Clam
 Insane Steve
     * Many levels in levels/lemforum/.
     * Early multiplayer maps and playtesting in 2009.
-
-minim
-    * Together with mobius, 5 tracks in music/minim-mobius, released as
-        public domain.
 
 Nessy
     * 10 singleplayer puzzles in misc/nessy/.
