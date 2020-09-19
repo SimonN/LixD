@@ -9,7 +9,7 @@ targetName "server"
 targetPath "../../bin"
 versions "lixDaemon"
 
-dependency "derelict-enet" version="~>2.0.0"
+dependency "derelict-enet" version=">=2.0.0"
 
 importPaths "src" "../net"
 sourcePaths "src" "../net"

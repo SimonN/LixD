@@ -3,13 +3,13 @@
 	"versions": {
 		"allegro": "4.0.4+5.2.0",
 		"bolts": "0.7.1",
-		"derelict-enet": "4.1.0",
+		"derelict-enet": "4.2.0",
 		"derelict-util": "3.0.0-beta.2",
 		"enumap": "0.4.2",
 		"optional": "0.6.3",
 		"sdlang-d": "0.10.6",
 		"silly": "1.0.2",
-		"taggedalgebraic": "0.11.12",
+		"taggedalgebraic": "0.11.18",
 		"unit-threaded": "0.7.55"
 	}
 }

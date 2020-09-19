@@ -1,7 +1,7 @@
 {
 	"fileVersion": 1,
 	"versions": {
-		"derelict-enet": "2.0.0",
-		"derelict-util": "2.1.0"
+		"derelict-enet": "4.2.0",
+		"derelict-util": "3.0.0-beta.2"
 	}
 }
