@@ -1,37 +1,37 @@
-How to build Lix on a 32-bit Windows machine
-============================================
+How to build Lix for a 32-bit Windows machine
+=============================================
 
 If you get stuck at any point, don't hesitate to contact me
 (Simon N.) and ask me for help:
 
     IRC:    irc.quakenet.org #lix
     E-Mail: s.naarmann@gmail.com
-    Web:    http://www.lixgame.com
+    Issues: https://github.com/SimonN/LixD/issues
     Forum:  https://www.lemmingsforums.net -- we have a Lix board
+    Web:    http://www.lixgame.com
 
 
 
-Really consider 64-bit
-----------------------
+Consider 64-bit
+---------------
 
 I encourage you to build the 64-bit version of Lix instead of 32-bit Lix!
 Please see ./doc/build/win64.txt instead of this file, and continue there.
 
 Since 2010, computers with 32-bit Windows are extremely rare. Most likely,
-you and your fellow players all have 64-bit machines.
+you and your fellow players all have 64-bit machines. 32-bit Lix is inferior:
+D's garbage collector will often be confused by 32-bit pointers and thus will
+hog memory that could be freed. On large maps, 32-bit Lix will even crash.
 
-32-bit Lix is inferior: D's garbage collector will often be confused by 32-bit
-pointers and thus will hog memory that could be easily freed. On large maps,
-32-bit Lix will even crash.
+But in case 64-bit Lix has other problems for you, here are the 32-bit build
+instructions as a backup.
 
 
 
 Install D and dub
 -----------------
 
-Download dmd, the Digital Mars D compiler. It's possible to use compilers
-other than dmd, for example gdc, but dmd is the one I've been using.
-Get dmd here:
+Download DMD, the Digital Mars D compiler:
 
     http://dlang.org/download
 
@@ -45,7 +45,7 @@ During the installation, when asked:
 If you would like, you may test the D environment. See appendix 1 at the
 bottom of this file for how to write and compile a hello world program.
 
-dmd already ships with dub, the D package manager.
+DMD already ships with dub, the D package manager.
 
 
 
@@ -96,10 +96,8 @@ Method 1:
     land in windows/lib/.
 
 Method 2:
-    Maybe you don't trust me instructing you to download opaque binaries? :-)
-    You can find or build Allegro 5.2 DLLs yourself, then follow the
-    instructions by SiegeLord on how to generate your .lib files from your own
-    DLLs:
+    Build Allegro 5.2 DLLs yourself, then follow the instructions by SiegeLord
+    on how to generate your .lib files from your own DLLs:
 
         https://github.com/SiegeLord/DAllegro5#windows-notes
 
@@ -127,8 +125,7 @@ Method 1:
     enet DLL in the correct place, and don't have to do anything here.
 
 Method 2:
-    Again, if you don't trust me, feel free to find an enet DLL of version
-    1.3.x on the internet or build one yourself from enet's source. :-)
+    Find an enet DLL of version 1.3.x or build one yourself from enet's source.
     Put enet.dll in the D installation directory's `windows/bin/'.
 
 In a pinch, Lix singleplayer works without the enet DLL, but Lix will
@@ -141,7 +138,7 @@ Compile Lix
 
 Enter the Lix directory, and run:
 
-    dub
+    dub --compiler=dmd --arch=x86
 
 It should build the game, finding and linking against the Allegro 5 libraries
 in the progress.
@@ -149,10 +146,10 @@ in the progress.
 If the game starts and runs without errors, compile a release build
 for performance:
 
-    dub build -b release
+    dub build -b release --compiler=dmd --arch=x86
 
 This takes longer to build. In case of a crash, you won't get a good
-crash report either. Non-fatal errors go to ./data/log.txt.
+crash report either. Non-fatal errors go to ./user/log.txt.
 
 
 
@@ -194,8 +191,8 @@ Get help
 
 If you run into any kind of roadblock, don't be shy and ask:
 
-    Web:    http://www.lixgame.com
-    Issues: https://github.com/SimonN/LixD/issues
+    IRC:    irc.quakenet.org #lix
     E-Mail: s.naarmann@gmail.com
-    IRC:    irc.quakenet.org #lix, I'm SimonN or SimonNa
-    Forums: lemmingsforums.net, I'm Simon
+    Issues: https://github.com/SimonN/LixD/issues
+    Forum:  https://www.lemmingsforums.net -- we have a Lix board
+    Web:    http://www.lixgame.com
