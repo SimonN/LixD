@@ -161,15 +161,15 @@ private void calcEdgeScrolling()
     void msg(bool b) { _suggestTooltip = _suggestTooltip || b; }
 
     with (hardware.mouse) {
-        Point mov = Point(0, 0);
+        .Point mov = .Point(0, 0);
         // Deliberately, we suggest the tooltip when we could scroll into
         // the opposite direction, not into the scrolling direction. The idea
         // is that I don't want the tooltip at the bottom edge when you can't
         // scroll down, but tooltip should persist after scrolled all the way.
-        if (mouseX == 0)   { mov -= Point(a, 0); msg(_cam.mayScrollRight); }
-        if (mouseX == dxl) { mov += Point(a, 0); msg(_cam.mayScrollLeft); }
-        if (mouseY == 0)   { mov -= Point(0, a); msg(_cam.mayScrollDown); }
-        if (mouseY == dyl) { mov += Point(0, a); msg(_cam.mayScrollUp); }
+        if (mouseX == 0)   { mov -= .Point(a, 0); msg(_cam.mayScrollRight); }
+        if (mouseX == dxl) { mov += .Point(a, 0); msg(_cam.mayScrollLeft); }
+        if (mouseY == 0)   { mov -= .Point(0, a); msg(_cam.mayScrollDown); }
+        if (mouseY == dyl) { mov += .Point(0, a); msg(_cam.mayScrollUp); }
         _cam.focus = _cam.focus + mov;
     }
 }
