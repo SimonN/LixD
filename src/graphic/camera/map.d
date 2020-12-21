@@ -288,16 +288,16 @@ drawCamera_with_target_corner(
 ) {
     immutable Rect r = _cam.sourceSeenBeforeFirstTorusSeam();
     // Source length of the non-wrapped portion. (Target len = this * zoom.)
-    immutable sxl1 = min(r.xl, _cam.divByZoom(maxTcxl));
-    immutable syl1 = min(r.yl, _cam.divByZoom(maxTcyl));
+    immutable sxl1 = min(r.xl, _cam.divByZoomCeil(maxTcxl));
+    immutable syl1 = min(r.yl, _cam.divByZoomCeil(maxTcyl));
     // target corner coordinates and size of the wrapped-around torus portion
     immutable tcx2 = tcx + r.xl * zoom;
     immutable tcy2 = tcy + r.yl * zoom;
     // source length of the wrapped-around torus portion
     immutable sxl2 = min(_cam.sourceSeen.xl - r.xl,
-                         _cam.divByZoom(maxTcxl) - sxl1);
+                         _cam.divByZoomCeil(maxTcxl) - sxl1);
     immutable syl2 = min(_cam.sourceSeen.yl - r.yl,
-                         _cam.divByZoom(maxTcyl) - syl1);
+                         _cam.divByZoomCeil(maxTcyl) - syl1);
 
     void blitOnce(in int sx,  in int sy,  // source x, y
                   in int sxl, in int syl, // length on the source

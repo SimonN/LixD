@@ -50,7 +50,7 @@ public:
         bool mayScrollUp()    { return _y.mayScrollLower(); }
 
         bool preferNearestNeighbor() { return _zoom.preferNearestNeighbor; }
-        final int divByZoom(in float x) { return (x / zoom).ceil.to!int; }
+        final int divByZoomCeil(in float x) { return _zoom.divideCeil(x); }
 
         Rect sourceSeen()
         {

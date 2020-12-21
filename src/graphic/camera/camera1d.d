@@ -114,9 +114,10 @@ public:
      * Output: The coordinate of the source that projects there.
      * A purely linear transformation, no cutting at source boundaries.
      */
-    int sourceOf(in int onTarget) const pure
+    int sourceOf(in int pixelOnTarget) const pure
     {
-        immutable ret = divByZoom(onTarget) + sourceSeen.start;
+        immutable int ret = _zoomOwnedBy2DCamera.divideFloor(pixelOnTarget)
+            + sourceSeen.start;
         return torus ? positiveMod(ret, sourceLen) : ret;
     }
 
@@ -133,9 +134,8 @@ private:
          * With deep zoom, (large value zoom()), then this is small.
          * Zoomed out, this might be more than the source.
          */
-        int numPixelsSeen() { return divByZoom(targetLen); }
-
-        final int divByZoom(in float x) { return (x / zoom).ceil.to!int; }
-        final float zoom() { return _zoomOwnedBy2DCamera.current; }
+        int numPixelsSeen() {
+            return _zoomOwnedBy2DCamera.divideCeil(targetLen);
+        }
     }
 }

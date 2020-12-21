@@ -27,7 +27,7 @@ public:
         selectOneAllowed(level, cameraLen);
     }
 
-    @property const pure nothrow @nogc {
+    @property const pure nothrow @nogc @safe {
         float current() { return _allowed[_selected]; }
         bool zoomableIn() { return _selected < _allowed.len - 1; }
         bool zoomableOut() { return _selected > 0; }
@@ -40,6 +40,11 @@ public:
 
     void zoomIn()  { if (zoomableIn) ++_selected; }
     void zoomOut() { if (zoomableOut) --_selected; }
+
+    const pure @safe {
+        int divideFloor(in float x) { return (x / current).floor.to!int; }
+        int divideCeil (in float x) { return (x / current).ceil .to!int; }
+    }
 
 private:
     mixin template aAndB() {
