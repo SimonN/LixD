@@ -91,6 +91,21 @@ void resize(in int newXl, in int newYl)
         return;
     _nearestNeighbor.resize(newXl, newYl);
     _blurryScaling.resize(newXl, newYl);
+    reinitializeCamera();
+}
+
+// This function shall intercept calls to Torbit.setTorusXY.
+void setTorusXY(in bool aTx, in bool aTy)
+{
+    if (torusX == aTx && torusY == aTy)
+        return;
+    _nearestNeighbor.setTorusXY(aTx, aTy);
+    _blurryScaling.setTorusXY(aTx, aTy);
+    reinitializeCamera();
+}
+
+private void reinitializeCamera()
+{
     immutable Point oldFocus = _cam.focus;
     _cam = new Camera(torbit, Point(_cam.targetXl, _cam.targetYl));
     _cam.focus = oldFocus;
