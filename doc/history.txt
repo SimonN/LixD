@@ -1,6 +1,32 @@
 Version history
 ===============
 
+0.9.35
+------
+
+2020-12-24
+
+Undo/redo feature: The editor allows full undo and redo. Everything that is
+visible in the editor's level display is undoable: Tile moves, z-reorderings,
+additions, deletions, copying, rotations, mirroring, darkening, and changing
+the level's height, width, wrappings, and background color. Pressing the
+button to create a new level clears the undo history. Changing the level's
+name, lix, save requirement, player count, or skillset isn't undoable, but
+doesn't clear the undo history either; you can still undo earlier things.
+This undo/redo feature has been in development for 7 months.
+
+Fix #406: The camera rounds correctly to determine the mouse coordinates
+in the level. Before, with deep zoom, the mouse seemed to select things
+1 pixel too far right and 1 pixel too far down.
+
+Fix #405: The editor reinitializes its camera when the level's torus wrapping
+changes. This prevents graphical leftovers.
+
+Fixed compilation errors that appeared with DMD 2.094.2.
+
+Added build notes for a 64-bit Windows build with DMD. I encourage to use LDC
+instead of DMD for release builds, but it's good to have more options.
+
 0.9.34
 ------
 
