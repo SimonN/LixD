@@ -60,18 +60,18 @@ public:
         _matcher.forcePointedTo();
         _lv = _matcher.preferredLevel();
         _trophy = levelFilename.match!(
-            () => Trophy(_lv.dispatch.built.orElse(Date.now), ""),
-            (lfn) => Trophy(_lv.dispatch.built.orElse(Date.now), lfn));
+            () => Trophy(_lv.oc.built.frontOr(Date.now), ""),
+            (lfn) => Trophy(_lv.oc.built.frontOr(Date.now), lfn));
         _status = pointsToItself ? Status.noPointer
             : _matcher.isMultiplayer ? Status.multiplayer
             : _lv.empty ? Status.noPointer
-            : _lv.unwrap.errorFileNotFound ? Status.missingLevel
-            : ! _lv.unwrap.playable ? Status.badLevel
+            : _lv.front.errorFileNotFound ? Status.missingLevel
+            : ! _lv.front.playable ? Status.badLevel
             : Status.untested;
         if (_status != Status.untested) {
             return;
         }
-        assert (_lv.dispatch.playable.orElse(false));
+        assert (_lv.any!(l => l.playable));
         // If we want trophies, caller should tell us maybeAddTrophy() later.
         VerifyingNurse nurse = _matcher.createVerifyingNurse();
         auto eval = nurse.evaluateReplay();
@@ -79,7 +79,7 @@ public:
 
         _trophy.copyFrom(eval.halfTrophy);
         _phyusUsed = eval.phyusUsed;
-        _status = _trophy.lixSaved >= _lv.unwrap.required ? Status.solved
+        _status = _trophy.lixSaved >= _lv.front.required ? Status.solved
             : eval.mercyKilled ? Status.mercyKilled : Status.failed;
     }
 
@@ -94,9 +94,9 @@ public:
     {
         return format!"%s,%s,%s,%s,%d,%d,%d,%d"(statusWord[_status],
             _rpFn.rootless,
-            levelFilename.dispatch.rootless.orElse(""),
+            levelFilename.oc.rootless.frontOr(""),
             _matcher.singleplayerName, _trophy.lixSaved,
-            _lv.empty ? 0 : _lv.unwrap.required,
+            _lv.empty ? 0 : _lv.front.required,
             _trophy.skillsUsed, _phyusUsed);
     }
 
@@ -110,10 +110,10 @@ public:
         assert (! _lv.empty);
         assert (! _matcher.isMultiplayer);
         TrophyKey key;
-        key.fileNoExt = _matcher.pointedToFilename
-            .dispatch.fileNoExtNoPre.orElse("");
-        key.title = _lv.dispatch.name.orElse("");
-        key.author = _lv.dispatch.author.orElse("");
+        key.fileNoExt = _matcher.pointedToFilename.oc
+            .fileNoExtNoPre.frontOr("");
+        key.title = _lv.oc.name.frontOr("");
+        key.author = _lv.oc.author.frontOr("");
         return maybeImprove(key, _trophy);
     }
 

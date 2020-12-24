@@ -15,6 +15,7 @@ module menu.repmatch;
  * first construct an instance and then call forceLevel() on it.
  */
 
+import std.algorithm;
 import std.typecons;
 
 import enumap;
@@ -54,8 +55,8 @@ public:
     do {
         _fnRp = aReplayFn;
         _rp = Replay.loadFromFile(_fnRp);
-        _choices.included.fnMayBeZero = _rp.levelFilename.orElse(_fnRp);
-        _choices.pointed.fnMayBeZero = _rp.levelFilename.orElse(Filename.init);
+        _choices.included.fnMayBeZero = _rp.levelFilename.frontOr(_fnRp);
+        _choices.pointed.fnMayBeZero = _rp.levelFilename.frontOr(Filename.init);
         _choices.pointed.lvMatchesFn = true;
     }
 
@@ -94,18 +95,18 @@ public:
     @property bool includedIsGood()
     {
         initialize(Choice.included);
-        return _choices.included.level.dispatch.playable.orElse(false);
+        return _choices.included.level.any!(l => l.playable);
     }
 
     @property bool pointedToIsGood()
     {
         initialize(Choice.pointed);
-        return _choices.pointed.level.dispatch.playable.orElse(false);
+        return _choices.pointed.level.any!(l => l.playable);
     }
 
     @property bool mayCreateGame()
     {
-        return preferredLevel.dispatch.playable.orElse(false) && (! _rp.empty
+        return preferredLevel.any!(l => l.playable) && (! _rp.empty
             || preferredInitializedStruct.fnMayBeZero !is null);
     }
 
@@ -121,20 +122,20 @@ public:
         TrophyKey key;
         key.fileNoExt = pref.fnMayBeZero !is null
             ? pref.fnMayBeZero.fileNoExtNoPre
-            : _rp.levelFilename.dispatch.fileNoExtNoPre.orElse("");
-        key.title = pref.level.unwrap.name;
-        key.author = pref.level.unwrap.author;
-        return new Game(pref.level.unwrap, key,
+            : _rp.levelFilename.oc.fileNoExtNoPre.frontOr("");
+        key.title = pref.level.front.name;
+        key.author = pref.level.front.author;
+        return new Game(pref.level.front, key,
             pref.fnMayBeZero !is null ? pref.fnMayBeZero : new VfsFilename(""),
             some(_rp));
     }
 
     VerifyingNurse createVerifyingNurse()
-    in { assert (preferredLevel.dispatch.playable.orElse(false)); }
+    in { assert (preferredLevel.any!(l => l.playable)); }
     out (ret) { assert (ret); }
     do {
         auto pref = preferredInitializedStruct();
-        return new VerifyingNurse(pref.level.unwrap, _rp, pref.lvMatchesFn);
+        return new VerifyingNurse(pref.level.front, _rp, pref.lvMatchesFn);
     }
 
     @property bool isMultiplayer() const @nogc nothrow
@@ -178,8 +179,8 @@ private:
             }
             break;
         case Choice.pointed:
-            _choices.pointed.level = _rp.levelFilename.empty ? null
-                : new Level(_rp.levelFilename.unwrap);
+            _choices.pointed.level
+                = _rp.levelFilename.map!(fn => new Level(fn)).frontOr(null);
             break;
         case Choice.explicit:
             _choices.explicit.level = _choices.explicit.fnMayBeZero !is null

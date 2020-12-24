@@ -62,7 +62,7 @@ protected:
 
     override void forceReloadOfCurrentDir()
     {
-        if (_lastGame.dispatch.shown.orElse(false)) {
+        if (_lastGame.any!(lg => lg.shown)) {
             _showLastGameOnNextHighlight = true;
         }
         super.forceReloadOfCurrentDir();
@@ -75,7 +75,7 @@ protected:
         // and only then onHighlight(Filename). Then later, onHighlight(Fn)
         // will set _showLastGameOnNextHighlight to false.
         _delete.hide();
-        _lastGame.dispatch.hide();
+        _lastGame.oc.hide();
         onOnHighlightNone();
     }
 
@@ -89,7 +89,7 @@ protected:
             }
         }
         else {
-            _lastGame.dispatch.hide();
+            _lastGame.oc.hide();
             onHighlightWithoutLastGame(fn);
         }
         _showLastGameOnNextHighlight = false;

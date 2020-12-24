@@ -181,21 +181,20 @@ void saveToStdioFile(
         file.writeln(IoLine.Bang(d.update, d.player, word, d.toWhichLix));
     }
 
-    bool okToSave(Optional!(const Level) l)
+    bool okToSave(in Level l)
     {
-        return ! l.dispatch.errorFileNotFound.orElse(true)
-            && ! l.dispatch.errorEmpty.orElse(true);
+        return ! l.errorFileNotFound && ! l.errorEmpty;
     }
     Optional!(const Level) levToSave
         = lev ? some(lev) // lev should always be non-null. ?:?: guards legacy.
         : levelFilename.match!(
             (fn) => some!(const Level)(new Level(fn)),
             () => no!(const Level));
-    if (okToSave(levToSave)) {
+    levToSave.filter!okToSave.each!((lev) {
         file.writeln();
         assert (! levToSave.empty);
-        level.level.saveToFile(levToSave.unwrap, file);
-    }
+        level.level.saveToFile(levToSave.front, file);
+    });
 }}
 
 // Input: A replay's level filename

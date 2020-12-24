@@ -134,7 +134,7 @@ private:
     {
         if (! vp.printCoverage || tested.levelFilename.empty)
             return;
-        Filename tlfn = tested.levelFilename.unwrap;
+        Filename tlfn = tested.levelFilename.front;
         if (! levelDirsToCover.canFind(tlfn.dirRootless)) {
             levelDirsToCover ~= tlfn.dirRootless;
             levelDirsToCover = levelDirsToCover.sort().uniq.array;

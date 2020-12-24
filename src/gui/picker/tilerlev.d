@@ -80,12 +80,10 @@ protected:
 private:
     int determineCheckFrame(const(LevelMetaData) dat, Optional!Trophy tro)
     {
-        if (tro.empty)
-            return 0;
-        Date troDate = tro.unwrap.built;
-        return dat.built != troDate ? 3
-            : tro.unwrap.lixSaved >= dat.required ? 2
-            : 0;
+        return tro.match!(
+            () { return 0; },
+            (t) { return dat.built != t.built ? 3
+                    : t.lixSaved >= dat.required ? 2 : 0; } );
         // Never display the little ring for looked-at-but-not-solved.
         // It makes people sad!
     }

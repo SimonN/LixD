@@ -72,7 +72,7 @@ private:
     {
         if (_lastLoaded.empty)
             return no!(const Replay);
-        const(Replay) ret = *_lastLoaded.unwrap;
+        const(Replay) ret = _lastLoaded.front;
         return some(ret);
     }
 

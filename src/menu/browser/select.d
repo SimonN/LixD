@@ -92,10 +92,9 @@ protected:
         Optional!Filename opt = super.deleteFileHighlightNeighbor(_fileRecent);
         // Super class only tells the picker to highlight the neighbor.
         // We, as a browser, must highlight the neighbor, too. Bad OO? <_<
-        if (opt.empty)
-            highlightNone();
-        else
-            highlight(opt.unwrap);
+        opt.match!(
+            () { highlightNone(); },
+            (fn) { highlight(fn); });
         _upDownToCanBeNull = null;
         playLoud(Sound.SCISSORS);
     }

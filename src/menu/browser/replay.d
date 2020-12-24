@@ -70,7 +70,7 @@ public:
 
     @property ReplayToLevelMatcher matcher()
     in { assert (! _matcher.empty, "call this only when matcher exists"); }
-    do { return _matcher.unwrap; }
+    do { return _matcher.front; }
 
 protected:
     final override void onOnHighlightNone()
@@ -90,13 +90,13 @@ protected:
         _buttonPlayWithPointedTo.shown = matcher.pointedToIsGood;
 
         if (! solved && ! matcher.pointedToFilename.empty
-            && matcher.pointedToFilename.unwrap.rootless.length
+            && matcher.pointedToFilename.front.rootless.length
             > dirLevels.rootless.length
         ) {
             // We show this even if the level is bad. It's probably
             // most important then
             _labelPointedTo.show();
-            _labelPointedTo.value = matcher.pointedToFilename.unwrap.rootless[
+            _labelPointedTo.value = matcher.pointedToFilename.front.rootless[
                 dirLevels.rootless.length .. $];
         }
         else {

@@ -191,7 +191,7 @@ unittest {
         new VfsFilename("./levels/a.txt"));
     Level level = new Level();
     level.built = new Date("2000-01-01");
-    assert (privateEqual(level.built, old.unwrap.built),
+    assert (privateEqual(level.built, old.front.built),
         "should be equal if we explicitly compare two Dates, even"
         ~ " when one is Rebindable!_Date.");
 }

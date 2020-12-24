@@ -334,8 +334,9 @@ private:
 
     Replay generateFreshReplay(Optional!Filename levelFilename)
     {
-        auto rp = levelFilename.empty ? Replay.newNoLevelFilename(level.built)
-            : Replay.newForLevel(levelFilename.unwrap, level.built);
+        auto rp = levelFilename.match!(
+            () => Replay.newNoLevelFilename(level.built),
+            (fn) => Replay.newForLevel(fn, level.built));
         if (! _netClient) {
             rp.addPlayer(PlNr(0), Style.garden, file.option.userName);
         }
