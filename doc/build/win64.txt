@@ -19,8 +19,9 @@ choose the download that ends in "-windows-x64.7z":
 
     https://github.com/ldc-developers/ldc/releases
 
-(If you have LDC versions 1.13.0 through 1.20.1, see below at
-"Old LDC versions". If you want to use DMD, see below at "Building with DMD".)
+I do not support older LDC versions than 1.21.0. If newer versions fail to
+build Lix without erros, tell me. If you want to use DMD instead of LDC,
+see below at "Building with DMD".
 
 7z files can be extracted with 7-Zip, available at:
 
@@ -149,43 +150,16 @@ You are done!
 
 
 
-Old LDC versions
-----------------
-
-LDC versions 1.13.0 through 1.20.1 can still be made to work.
-You can check your compiler version with "ldc2 --version".
-
-With LDC 1.20.1 or older, follow the build instructions normally until
-you have cloned/extracted Lix's source. Then, before compiling Lix,
-first change the text file ./dub.json in Lix's root directory.
-Find the following two lines in ./dub.json:
-
-    "lflags-windows-ldc": ["-subsystem:windows", "-entry:wmainCRTStartup"],
-    "lflags-windows-ldc2": ["-subsystem:windows", "-entry:wmainCRTStartup"],
-
-...and replace them with these two:
-
-    "lflags-windows-ldc": ["-subsystem:windows", "-entry:mainCRTStartup"],
-    "lflags-windows-ldc2": ["-subsystem:windows", "-entry:mainCRTStartup"],
-
-...and save, then continue with the build instructions normally.
-
-Reason: If you didn't change dub.json, then LDC 1.13.0 through 1.20.1
-would generate this error during linking:
-
-    lld-link: error: <root>: undefined symbol: wmainCRTStartup
-
-
-
 Building with DMD
 ------------------
 
 DMD is an alternative D compiler. It is possible to build a 64-bit version of
 Lix with DMD instead of LDC as well, even though LDC is recommended for better
-playing performance. At least DMD 2.084 seems to be required for
-self-contained build. If you want to build it with DMD for some reason, e.g.,
-for faster compile times during development, then adjust the following steps
-in the build instructions:
+playing performance. DMD version 2.094.1 works, older versions might work
+but aren't guaranteed to work, and newer versions should work; tell me if
+a newer version doesn't build Lix.
+
+To build Lix with DMD, adjust the following steps in above build instructions:
 
 Getting compiler and dub:
 
