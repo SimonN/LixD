@@ -43,3 +43,33 @@ without replay coverage. A level is listed iff it satisfies all points here:
     with 30 replays -- 10 solving replays for A, 3 solving and 7 failing
     replays for B, 10 failing replays for C, and none for D. This will report
     levels C and D as potentially unsolvable.
+
+
+
+Point a replay to a different level
+-----------------------------------
+
+Even though replays contain a level, during mass verification, contained levels
+are ignored and the pointed-to level is used. It may happen that you move or
+rename the level. Then you must hand-edit the replay file.
+
+Replays are text files, open them in a text editor. Find the line that starts
+with $FILENAME, this will usually be the first line. E.g.,
+
+    $FILENAME single/mydir/mylevel.txt
+
+If you've moved the level from "single/mydir/mylevel.txt" to "single/anotherdir/anotherlevel.txt", change the line and save:
+
+    $FILENAME single/anotherdir/anotherlevel.txt
+
+Then, during your next mass verification, Lix will match this replay
+to that given level.
+
+
+
+Level format
+------------
+
+Levels are text files, too. In a pinch, you can hand-edit them. See:
+
+    doc/formats/level.txt

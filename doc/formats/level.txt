@@ -1,0 +1,63 @@
+Lix level file format
+=====================
+
+Levels are text files.
+
+Tile groups are a composition of multiple tiles which can be used like one Single Terrain tile. 
+They have following format:
+
+The tile groups are defined within a bracket which marks the begin and the end of tile group and in between lines with the tile data of which the tile group is composed:
+
+$BEGIN_TILE_GROUP <name of the group>
+:<tile>: <position> [modifiers]
+...
+$END_TILE_GROUP
+
+e.g.:
+
+$BEGIN_TILE_GROUP 0
+:simon/oriental/bridge1: 0 22
+:simon/oriental/bridge1: 44 0
+:simon/oriental/bridge1: 0 65 rr
+:simon/oriental/bridge1: 44 43 rr
+$END_TILE_GROUP
+
+To call the tile group into existence, it is instantiated in the following form:
+
+:Group-<name of the group>: <position> [modifiers]
+
+e.g.:
+
+:Group-0: 112 132 rr
+
+That puts the tile group at the named position in the level like a Single Terrain tile.
+
+Single Terrain tiles may have these modifiers:
+
+d
+    Tile has the option: Dark: Selected terrain erases normal terrain.
+
+f
+    Tile is mirrored vertically. Mirroring happens before any rotation ("r").
+    The "f" stands for "flip".
+
+frr
+    Tile has the option: Flip: Mirrors the selected terrain horizontally.
+    This is because "frr" is really a vertical rotation followed by two quarter
+    turns, which is the same as horizontal mirroring.
+
+n
+    No-overwrite: Outdated tile option that has been substituted by tile
+    groups. The meaning was: Paint only those pixels that, at the time of
+    drawing, would go into empty space.
+
+    The Lix editor will interpret parts of a file containing the "n" modifier
+    as tile groups for backwards compatibility. With very bad luck, the
+    generated tile group will span nearly the whole level and will be hard to
+    edit, but it will at least look identical to the old meaning of "n".
+
+r
+    Tile has the option: Rotate: Performs a quarter turn on the selected
+    terrain. This always means a clockwise quarter turn. Rotation will always
+    happen after any vertical mirroring ("f"), not before. Multiple "r"
+    indicate the number of rotations, up to 3.
