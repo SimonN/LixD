@@ -14,14 +14,11 @@ import gui.picker;
 import hardware.keyset;
 import level.level;
 import menu.browser.frommain;
-import menu.lastgame;
 
-class BrowserWithLastAndDelete : BrowserCalledFromMainMenu {
+class BrowserWithDelete : BrowserCalledFromMainMenu {
 private:
     Button _delete;
     Optional!MsgBox _boxDelete;
-    Optional!StatsAfterGame _lastGame; // if exist => never killed
-    bool _showLastGameOnNextHighlight = false; // workaround for 2x highlights
 
 public:
     this(T)(string title, Filename baseDir, T t)
@@ -36,18 +33,7 @@ public:
 protected:
     abstract MsgBox newMsgBoxDelete();
     abstract void onOnHighlightNone();
-    abstract void onHighlightWithLastGame(Filename, bool solved);
-    abstract void onHighlightWithoutLastGame(Filename);
-
-    // Call this from the final class.
-    void addStatsThenHighlight(StatsAfterGame lgs, Filename fn)
-    {
-        // The final class creates lgs and thereby already saves the trophies.
-        _lastGame = some(lgs);
-        addChild(lgs);
-        _showLastGameOnNextHighlight = true;
-        super.highlight(fn);
-    }
+    abstract void onOnHighlight(Filename);
 
     final Geom newStatsGeom() const
     {
@@ -60,39 +46,16 @@ protected:
             40, From.BOTTOM_LEFT);
     }
 
-    override void forceReloadOfCurrentDir()
-    {
-        if (_lastGame.any!(lg => lg.shown)) {
-            _showLastGameOnNextHighlight = true;
-        }
-        super.forceReloadOfCurrentDir();
-    }
-
     final override void onHighlightNone()
     {
-        // Keep _showLastGameOnNextHighlight because the single call to
-        // super.highlight() in addHarvest...() will call onHighlightNone,
-        // and only then onHighlight(Filename). Then later, onHighlight(Fn)
-        // will set _showLastGameOnNextHighlight to false.
         _delete.hide();
-        _lastGame.oc.hide();
         onOnHighlightNone();
     }
 
     final override void onHighlight(Filename fn)
     {
         _delete.show();
-        if (_showLastGameOnNextHighlight) {
-            foreach (lg; _lastGame) {
-                lg.show();
-                onHighlightWithLastGame(fn, lg.solved);
-            }
-        }
-        else {
-            _lastGame.oc.hide();
-            onHighlightWithoutLastGame(fn);
-        }
-        _showLastGameOnNextHighlight = false;
+        onOnHighlight(fn);
     }
 
     override void calcSelf()

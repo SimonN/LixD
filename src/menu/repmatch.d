@@ -119,13 +119,7 @@ public:
     out (ret) { assert (ret); }
     do {
         auto pref = preferredInitializedStruct();
-        TrophyKey key;
-        key.fileNoExt = pref.fnMayBeZero !is null
-            ? pref.fnMayBeZero.fileNoExtNoPre
-            : _rp.levelFilename.oc.fileNoExtNoPre.frontOr("");
-        key.title = pref.level.front.name;
-        key.author = pref.level.front.author;
-        return new Game(pref.level.front, key,
+        return new Game(pref.level.front,
             pref.fnMayBeZero !is null ? pref.fnMayBeZero : new VfsFilename(""),
             some(_rp));
     }

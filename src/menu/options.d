@@ -20,10 +20,6 @@ import hardware.mouse; // RMB to OK the window away
 import hardware.music; // reapplyVolumeMusic
 
 class OptionsMenu : Window {
-
-    @property bool gotoMainMenu() const { return _gotoMainMenu; }
-//  this(); -- exists, see below
-
 private:
     bool _gotoMainMenu;
 
@@ -43,7 +39,10 @@ private:
     NumPick guiRed, guiGreen, guiBlue;
     Texttype _userName;
 
-
+public @property bool gotoMainMenu() const pure nothrow @safe @nogc
+{
+    return _gotoMainMenu;
+}
 
 public this()
 {

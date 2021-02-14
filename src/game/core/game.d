@@ -54,7 +54,7 @@ import physics;
 import net.repdata;
 import net.structs;
 
-class Game {
+class Game : IRoot {
 public:
     const(Level) level;
 
@@ -95,7 +95,6 @@ package:
     ChatArea _chatArea;
     SplatRuler _splatRuler;
 
-    const(TrophyKey) _trophyKeyOfTheLevel;
     Filename _levelFnForHarvest;
     bool _gotoMainMenu;
 
@@ -114,22 +113,20 @@ public:
      * as the TrophyKey's fileNoExt is nonempty. If fileNoExt is empty,
      * maybeImprove() will reject the trophy anyway.
      */
-    this(Level lv, TrophyKey keyOfLv,
-        Filename levelFnForLegacyPointedTo,
+    this(Level lv,
+        Filename levelFn,
         Optional!Replay orp)
     in {
         assert (lv);
         assert (lv.playable);
-        assert (levelFnForLegacyPointedTo !is null);
+        assert (levelFn !is null);
     }
     do {
         level = lv;
-        _trophyKeyOfTheLevel = keyOfLv;
-        _levelFnForHarvest = levelFnForLegacyPointedTo;
+        _levelFnForHarvest = levelFn;
         import optional;
         if (orp.empty) { // Hack! orp.match failed with crazy template error
-            commonConstructor(generateFreshReplay(
-                some(levelFnForLegacyPointedTo)));
+            commonConstructor(generateFreshReplay(some(levelFn)));
         }
         else {
             commonConstructor(orp.front);
@@ -145,7 +142,6 @@ public:
 
         level = client.level;
         _netClient = client;
-        _trophyKeyOfTheLevel = TrophyKey(""); // empty fileNoExt => never save
         _levelFnForHarvest = new VfsFilename(""); // shouldn't be important
         _netClient.onConnectionLost = ()
         {
@@ -191,13 +187,16 @@ public:
         }
     }
 
-    @property bool gotoMainMenu() { return _gotoMainMenu; }
+    bool gotoMainMenu() const pure nothrow @safe @nogc { return _gotoMainMenu;}
 
     Harvest harvest() const
     {
         Trophy tro = Trophy(level.built, _levelFnForHarvest);
         tro.copyFrom(nurse.trophyForTribe(localStyle));
-        return Harvest(level, nurse.constReplay, _trophyKeyOfTheLevel, tro);
+        return Harvest(level, nurse.constReplay,
+            TrophyKey(_levelFnForHarvest.fileNoExtNoPre,
+                level.nameEnglish, level.author),
+            tro);
     }
 
     const(Replay) replay() const { return nurse.constReplay; }
@@ -229,8 +228,15 @@ public:
             ? "multiplayer" : "singleplayer";
     }
 
-    void calc() { implGameCalc(this); }
-    void draw() { implGameDraw(this); }
+    void work() { implGameCalc(this); }
+    void calc() { /* Empty, really a hack, we decide in work() */ }
+
+    // We always draw ourselves.
+    void reqDraw() { }
+    bool draw() {
+        implGameDraw(this);
+        return true; // We've always drawn land/lix, even when window-covered.
+    }
 
 package:
     static int updatesBackMany()

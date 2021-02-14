@@ -19,9 +19,8 @@ import gui.picker;
 import hardware.sound;
 import level.level;
 import menu.browser.withlast;
-import menu.lastgame;
 
-final class BrowserSingle : BrowserWithLastAndDelete {
+final class BrowserSingle : BrowserWithDelete {
 private:
     bool _gotoEditorLoadFileRecent;
     bool _gotoEditorNewLevel;
@@ -44,30 +43,23 @@ public:
         super.highlight(file.option.singleLastLevel);
     }
 
-    this(Harvest ha, Optional!(const Replay) lastLoaded)
-    {
-        super(Lang.browserSingleTitle.transl,
-            basics.globals.dirLevels, super.pickerConfig());
-        commonConstructor();
-        // Final class calls in correct order:
-        super.addStatsThenHighlight(
-            new StatsAfterReplay(super.newStatsGeom(), ha, lastLoaded),
-            file.option.singleLastLevel);
-    }
-
     override @property inout(Level) levelRecent() inout
     {
         return _levelRecent;
     }
 
-    @property bool gotoEditorNewLevel() const { return _gotoEditorNewLevel; }
-    @property bool gotoEditorLoadFileRecent() const
+    bool gotoEditorNewLevel() const pure nothrow @safe @nogc
+    {
+        return _gotoEditorNewLevel;
+    }
+
+    bool gotoEditorLoadFileRecent() const pure nothrow @safe @nogc
     {
         assert (! _gotoEditorLoadFileRecent || fileRecent);
         return _gotoEditorLoadFileRecent;
     }
 
-    @property bool gotoRepForLev() const
+    bool gotoRepForLev() const pure nothrow @safe @nogc
     {
         assert (! _gotoRepForLev || fileRecent);
         return _gotoRepForLev;
@@ -83,14 +75,7 @@ protected:
         previewNone();
     }
 
-    final override void onHighlightWithLastGame(Filename fn, bool solved)
-    in { assert (fn, "call onHighlightNone() instead"); }
-    do {
-        onHighlightWithoutLastGame(fn);
-        _trophySkills.shown = false;
-    }
-
-    final override void onHighlightWithoutLastGame(Filename fn)
+    final override void onOnHighlight(Filename fn)
     in { assert (fn, "call onHighlightNone() instead"); }
     do {
         only(_edit, _exportImage, _repForLev, _by, _save).each!(e => e.show());

@@ -91,8 +91,10 @@ public:
         showOrHideGuiBasedOnConnection();
     }
 
-    @property gotoMainMenu() const { return _gotoMainMenu; }
-    @property gotoGame() const { return _gotoGame && _netClient; }
+    const pure nothrow @safe @nogc {
+        bool gotoMainMenu() { return _gotoMainMenu; }
+        bool gotoGame() { return _gotoGame && _netClient; }
+    }
 
     auto loseOwnershipOfRichClient()
     {

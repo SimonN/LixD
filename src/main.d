@@ -13,7 +13,7 @@
 import basics.alleg5;
 import basics.cmdargs;
 import basics.init;
-import basics.mainloop;
+import mainloop.mainloop;
 import verify.cmdargs;
 
 void main(string[] args)

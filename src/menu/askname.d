@@ -19,8 +19,10 @@ private:
     Texttype _tt;
 
 public:
-    @property bool gotoMainMenu() const { return _gotoMainMenu; }
-    @property bool gotoExitApp() const { return _gotoExitApp; }
+    const pure nothrow @safe @nogc {
+        bool gotoMainMenu() { return _gotoMainMenu; }
+        bool gotoExitApp() { return _gotoExitApp; }
+    }
 
     this()
     {

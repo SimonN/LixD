@@ -21,13 +21,12 @@ import gui.picker;
 import hardware.keyset;
 import level.level;
 import menu.browser.withlast;
-import menu.lastgame;
 import menu.repmatch;
 import menu.verify;
 
 static import basics.globals;
 
-final class BrowserReplay : BrowserWithLastAndDelete {
+final class BrowserReplay : BrowserWithDelete {
 private:
     Optional!ReplayToLevelMatcher _matcher; // empty if no replay previewed
     LabelTwo _labelPointedTo;
@@ -42,23 +41,6 @@ public:
         commonConstructor();
         // Final class calls:
         super.highlight(file.option.replayLastLevel);
-    }
-
-    this(Harvest ha, Optional!(const Replay) lastLoaded)
-    {
-        super(Lang.browserReplayTitle.transl, basics.globals.dirReplays,
-            PickerConfig!(Breadcrumb, ReplayTiler)());
-        commonConstructor();
-        {
-            auto stats = new StatsAfterReplay(
-                super.newStatsGeom, ha, lastLoaded);
-            stats.onSavingManually = (Filename itWasSavedHere) {
-                if (itWasSavedHere.guaranteedDirOnly == currentDir) {
-                    this.forceReloadOfCurrentDir();
-                }
-            };
-            super.addStatsThenHighlight(stats, file.option.replayLastLevel);
-        }
     }
 
     // Override method with assert(false): Violates fundamental OO principles.
@@ -81,7 +63,7 @@ protected:
         previewNone();
     }
 
-    final override void onHighlightWithLastGame(Filename fn, bool solved)
+    final override void onOnHighlight(Filename fn)
     in { assert (fn, "call onHighlightNone() instead"); }
     do {
         _matcher = some(new ReplayToLevelMatcher(fn));
@@ -89,7 +71,7 @@ protected:
             previewLevel(lv);
         _buttonPlayWithPointedTo.shown = matcher.pointedToIsGood;
 
-        if (! solved && ! matcher.pointedToFilename.empty
+        if (! matcher.pointedToFilename.empty
             && matcher.pointedToFilename.front.rootless.length
             > dirLevels.rootless.length
         ) {
@@ -102,11 +84,6 @@ protected:
         else {
             _labelPointedTo.hide();
         }
-    }
-
-    final override void onHighlightWithoutLastGame(Filename fn)
-    {
-        onHighlightWithLastGame(fn, false);
     }
 
     override void onPlay(Filename fn)

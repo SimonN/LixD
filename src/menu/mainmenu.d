@@ -32,11 +32,13 @@ private:
     enum butSpg =  20f; // spacing
 
 public:
-    @property bool gotoSingle()  { return _single .execute; }
-    @property bool gotoNetwork() { return _network.execute; }
-    @property bool gotoReplays() { return _replays.execute; }
-    @property bool gotoOptions() { return _options.execute; }
-    @property bool exitProgram() { return _exit  .execute; }
+    @property const pure nothrow @safe @nogc {
+        bool gotoSingle()  { return _single .execute; }
+        bool gotoNetwork() { return _network.execute; }
+        bool gotoReplays() { return _replays.execute; }
+        bool gotoOptions() { return _options.execute; }
+        bool exitProgram() { return _exit  .execute; }
+    }
 
     this()
     {

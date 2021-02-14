@@ -53,7 +53,10 @@ public:
         addChildren(_buttonPlay);
     }
 
-    @property Filename fileRecent() inout { return _fileRecent; }
+    Filename fileRecent() inout const pure nothrow @safe @nogc
+    {
+        return _fileRecent;
+    }
 
     final void highlightNone()
     {

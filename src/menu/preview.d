@@ -41,20 +41,19 @@ public:
         addChild(_mtl);
     }
 
-    ~this()
+    void dispose()
     {
-        if (torbit) destroy(torbit);
+        if (torbit) {
+            destroy(torbit);
+        }
         torbit = null;
+        iconStatus.xf = 0;
+        iconTorus .xf = 0;
     }
 
     public @property void level(in Level level) // to clear, set level = 0
     {
-        if (torbit)
-            destroy(torbit);
-        torbit        = null;
-        iconStatus.xf = 0;
-        iconTorus .xf = 0;
-
+        dispose();
         if (level !is null) {
             torbit  = level.create_preview(
                 (xs + xls).roundInt - xs.roundInt,

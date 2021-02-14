@@ -42,12 +42,6 @@ void implConstructor(
     _dragger = new MouseDragger();
 }}
 
-void implDestructor(Editor editor)
-{
-    if (editor._panel)
-        rmElder(editor._panel);
-}
-
 void onNewLevelButtonExecuted(Editor editor)
 {
     editor.askForDataLossThenExecute(delegate void() {

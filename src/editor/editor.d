@@ -22,6 +22,7 @@ import editor.undoable.base;
 import file.filename;
 import graphic.camera.mapncam;
 import gui.iroot;
+import gui.root;
 import gui.msgbox;
 import level.level;
 import level.oil;
@@ -66,9 +67,15 @@ public:
         this.implConstructor(delegate Level() { return new Level(fn); }, fn);
     }
 
-    ~this() { this.implDestructor(); }
+    void dispose()
+    {
+        if (_panel) {
+            rmElder(_panel);
+            _panel = null;
+        }
+    }
 
-    bool gotoMainMenu() const
+    bool gotoMainMenu() const pure nothrow @safe @nogc
     {
         return _gotoMainMenuOnceAllWindowsAreClosed && noWindows;
     }
@@ -150,7 +157,7 @@ package:
     }
 
 private:
-    @property bool noWindows() const
+    @property bool noWindows() const pure nothrow @safe @nogc
     {
         return ! _askForDataLoss && ! _terrainBrowser && ! _okCancelWindow
             && ! _saveBrowser;

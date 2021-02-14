@@ -51,11 +51,11 @@ public:
         previewNone();
     }
 
-    ~this()
+    // If you need to override this, add onDispose() and let dispose() call it.
+    final void dispose()
     {
         if (_preview) {
-            destroy(_preview);
-            _preview = null;
+            _preview.dispose();
         }
     }
 
@@ -68,7 +68,10 @@ public:
         return _preview.yg + _preview.ylg + 20;
     }
 
-    @property bool gotoMainMenu() const { return _gotoMainMenu; }
+    @property bool gotoMainMenu()  const pure nothrow @safe @nogc
+    {
+        return _gotoMainMenu;
+    }
 
     void previewNone()
     {

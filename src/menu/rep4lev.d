@@ -45,10 +45,9 @@ public:
         commonConstructor();
     }
 
-    @property bool gotoBrowSin() const @nogc nothrow { return _gotoBrowSin; }
-    @property bool gotoGame() const @nogc nothrow
-    {
-        return null !is _replayFnNullUntilReplayIsSelected;
+    const pure nothrow @safe @nogc {
+        bool gotoBrowSin() { return _gotoBrowSin; }
+        bool gotoGame() { return null !is _replayFnNullUntilReplayIsSelected; }
     }
 
     @property ReplayToLevelMatcher matcher()
