@@ -237,15 +237,18 @@ body {
     languageBasenameNoExt = newOpt("language", Lang.optionLanguage, englishBasenameNoExt);
     optionGroup = newOpt("optionGroup", 0);
 
-    mouseSpeed = newOpt("mouseSpeed", Lang.optionMouseSpeed, mouseStandardDivisor);
     scrollSpeedEdge = newOpt("edgeScrollSpeed", Lang.optionScrollSpeedEdge, mouseStandardDivisor);
     holdToScrollSpeed = newOpt("holdToScrollSpeed", Lang.optionHoldToScrollSpeed, mouseStandardDivisor / 2);
     holdToScrollInvert = newOpt("holdToScrollInvert", Lang.optionHoldToScrollInvert, false);
     version (linux) {
+        mouseSpeed = newOpt("mouseSpeed", Lang.optionMouseSpeed,
+            mouseStandardDivisor / 2);
         fastMovementFreesMouse = newOpt("fastMovementFreesMouse",
             Lang.optionFastMovementFreesMouse, false);
     }
     else {
+        mouseSpeed = newOpt("mouseSpeed", Lang.optionMouseSpeed,
+            mouseStandardDivisor);
         fastMovementFreesMouse = newOpt("fastMovementFreesMouse",
             Lang.optionFastMovementFreesMouse, true);
     }
