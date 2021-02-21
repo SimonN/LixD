@@ -118,6 +118,7 @@ UserOption!int networkConnectToPort;
 
 UserOption!int  editorGridSelected;
 UserOption!int  editorGridCustom;
+UserOption!int  editorCopiedTilesOffest;
 UserOptionFilename editorLastDirTerrain;
 UserOptionFilename editorLastDirSteel;
 UserOptionFilename editorLastDirHatch;
@@ -297,6 +298,7 @@ body {
 
     editorGridSelected = newOpt("editorGridSelected", 2);
     editorGridCustom = newOpt("editorGridCustom", Lang.optionEdGridCustom, 8);
+    editorCopiedTilesOffest = newOpt("editorCopiedTilesOffest", 16);
 
     void newSkillKey(Ac ac, int singleKey)
     {
