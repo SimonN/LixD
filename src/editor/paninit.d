@@ -35,9 +35,15 @@ void makePanel(Editor editor)
     addDrawingOnlyElder(editor._panel);
 
     with (editor._panel) {
-        onExecute(Lang.editorButtonFileNew, KeySet(), () {
-            editor.setLevelAndCreateUndoStack(newEmptyLevel, null);
-        });
+        onExecute(
+            Lang.editorButtonFileNew,
+            KeySet(),
+            () {
+                editor.askForDataLossThenExecute(() {
+                    editor.setLevelAndCreateUndoStack(newEmptyLevel, null);
+                });
+            }
+        );
         onExecute(Lang.editorButtonFileExit, keyEditorExit, () {
             editor.askForDataLossThenExecute(() {
                 editor._gotoMainMenuOnceAllWindowsAreClosed = true;
