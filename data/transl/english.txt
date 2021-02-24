@@ -151,9 +151,9 @@ $editorButtonFileNew New: Deletes everything on screen and starts a new level.
 $editorButtonFileExit Quit: Exits the editor and asks about saving changed data.
 $editorButtonFileSave Save:
 $editorButtonFileSaveAs Save As: Saves the current level under a new file name.
-$editorButtonGrid2 Grid 2: Rounds tiles' coordinates to multiples of 2.
+$editorButtonGrid2 Grid 2: Tiles will move in steps of 2 pixels.
 $editorButtonGridCustom Custom grid: This grid size is settable in the options.
-$editorButtonGrid16 Grid 16: Rounds tiles' coordinates to multiples of 16.
+$editorButtonGrid16 Grid 16: Tiles will move in steps of 16 pixels.
 $editorButtonSelectAll Everything: Selects all tiles in the level.
 $editorButtonSelectFrame Frame: Drag a frame with the mouse to select tiles.
 $editorButtonSelectAdd Add: Keep tiles selected when selecting additional tiles.

@@ -145,9 +145,9 @@ $editorButtonFileNew Neu: Karte leeren und einen ganz neuen Level bauen.
 $editorButtonFileExit Beenden: Editor verlassen, auf Wunsch Änderungen speichern.
 $editorButtonFileSave Speichern:
 $editorButtonFileSaveAs Speichern unter: Level unter einem neuen Dateinamen abspeichern.
-$editorButtonGrid2 Raster 2: Objekt-Koordinaten beim Umherziehen auf 2er runden.
+$editorButtonGrid2 Raster 2: Objekte zukünftig in 2-Pixel-Schritten bewegen.
 $editorButtonGridCustom Benutzerdef. Raster: In den Hauptmenü-Optionen verstellbar.
-$editorButtonGrid16 Raster 16: Objekt-Koordinaten beim Umherziehen auf 16er runden.
+$editorButtonGrid16 Raster 16: Objekte zukünftig in 16-Pixel-Schritten bewegen.
 $editorButtonSelectAll Alles: Alle Objekte auf dem Bildschirm in die Auswahl setzen.
 $editorButtonSelectFrame Rahmen: Mehrfachauswahl von Objekten durch Rahmenziehen.
 $editorButtonSelectAdd Hinzufügen: Neue Objekte auswählen, ohne alte abzuwählen.
