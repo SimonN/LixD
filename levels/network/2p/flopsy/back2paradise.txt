@@ -1,0 +1,180 @@
+$BUILT 2021-01-11 22:14:12
+$AUTHOR Flopsy
+$ENGLISH Bac 2 Paradise 2P
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 3200
+#SIZE_Y 400
+
+#SECONDS 90
+#INITIAL 70
+#SPAWN_INTERVAL 32
+
+#WALKER -1
+#RUNNER 10
+#CLIMBER 20
+#FLOATER 20
+#EXPLODER2 20
+#BLOCKER 5
+#BUILDER 50
+#PLATFORMER 50
+#BASHER 30
+#MINER 30
+#DIGGER 30
+#JUMPER -1
+#BATTER 20
+#CUBER 5
+
+:matt/beach/Hatch.H: 121 234
+:matt/beach/Hatch.H: 3026 234 r
+
+:matt/beach/goal.G: 3074 310
+:matt/beach/goal.G: 27 310
+
+:raymanni/crab.T: 2725 178
+:raymanni/crab.T: 2325 324
+:raymanni/crab.T: 1566 286
+:raymanni/crab.T: 408 178
+:raymanni/crab.T: 808 324
+
+:simon/water.W: 3153 374
+:simon/water.W: 2569 246
+:simon/water.W: 2617 246
+:simon/water.W: 2457 126
+:simon/water_main.W: 2457 174
+:simon/water_main.W: 2457 190
+:simon/water_main.W: 2457 206
+:simon/water_main.W: 2457 222
+:simon/water_main.W: 2457 238
+:simon/water_main.W: 2457 254
+:simon/water_main.W: 2457 270
+:simon/water_main.W: 2457 286
+:simon/water_main.W: 2457 302
+:simon/water_main.W: 2457 318
+:simon/water_thin.W: 1957 370
+:simon/water_thin.W: 1909 370
+:simon/water.W: -4 374
+:simon/water.W: 580 246
+:simon/water.W: 532 246
+:simon/water.W: 692 126
+:simon/water_main.W: 692 174
+:simon/water_main.W: 692 190
+:simon/water_main.W: 692 206
+:simon/water_main.W: 692 222
+:simon/water_main.W: 692 238
+:simon/water_main.W: 692 254
+:simon/water_main.W: 692 270
+:simon/water_main.W: 692 286
+:simon/water_main.W: 692 302
+:simon/water_main.W: 692 318
+:simon/water_thin.W: 1192 370
+:simon/water_thin.W: 1240 370
+
+:matt/beach/daytime/00: 1544 352
+:matt/beach/daytime/02: 1592 312
+:matt/beach/daytime/05: 1624 218 frr
+:matt/beach/daytime/03: 3015 368 frr
+:matt/beach/decor/palmtree: 2943 282 frr
+:matt/beach/daytime/03: 2955 368 frr
+:matt/beach/daytime/03: 2875 368 frr
+:matt/beach/daytime/02: 2869 292 frr
+:matt/beach/daytime/02: 2853 226 frr
+:matt/beach/decor/palmtree: 2769 102 frr
+:matt/beach/daytime/06: 2694 190 frr
+:matt/beach/daytime/04: 2781 280 frr
+:matt/beach/daytime/04: 2744 208 frr
+:matt/beach/daytime/04: 2659 188 frr
+:matt/beach/daytime/06: 2504 278 f
+:matt/beach/daytime/03: 2575 274 frr
+:matt/beach/daytime/00: 2495 230 frr
+:matt/beach/daytime/06: 2502 296
+:matt/beach/daytime/02: 2509 180 frr
+:matt/beach/daytime/02: 2497 118 frr
+:matt/beach/daytime/02: 2497 320 frr
+:matt/beach/daytime/02: 2499 164 frr
+:matt/beach/daytime/02: 2497 256 frr
+:matt/beach/daytime/02: 2493 326 frr
+:matt/beach/daytime/02: 2403 118
+:matt/beach/daytime/02: 2401 202
+:matt/beach/daytime/02: 2403 288
+:matt/beach/daytime/02: 2399 354
+:matt/beach/daytime/14: 2234 142 frr
+:matt/beach/daytime/13: 2298 162 frr
+:matt/beach/daytime/06: 2254 94 frr
+:matt/beach/daytime/02: 2363 166 frr
+:matt/beach/daytime/00: 2297 230 frr
+:matt/beach/daytime/06: 2202 332
+:matt/beach/daytime/00: 2231 230 frr
+:matt/beach/daytime/00: 2351 338 frr
+:matt/beach/decor/palmtree: 2111 260 frr
+:matt/beach/daytime/00: 2133 348 frr
+:matt/beach/daytime/06: 1994 342 frr
+:matt/beach/daytime/15: 2200 356 frr
+:matt/beach/daytime/15: 1994 378 frr
+:matt/beach/decor/umbrella_blue: 1830 274
+:matt/beach/daytime/06: 1708 344 frr
+:matt/beach/daytime/13: 1632 288 frr
+:matt/beach/daytime/15: 1726 360 frr
+:matt/beach/daytime/15: 1742 360 frr
+:matt/beach/decor/sun: 3088 48
+:matt/beach/daytime/15: 2452 324
+:matt/beach/daytime/15: 2474 324
+:matt/beach/daytime/00: 1573 352 frr
+:matt/beach/daytime/02: 1541 312 frr
+:matt/beach/daytime/05: 1501 218
+:matt/beach/daytime/03: 32 368
+:matt/beach/decor/palmtree: 168 282
+:matt/beach/daytime/03: 92 368
+:matt/beach/daytime/03: 172 368
+:matt/beach/daytime/02: 264 292
+:matt/beach/daytime/02: 280 226
+:matt/beach/decor/palmtree: 342 102
+:matt/beach/daytime/06: 290 190
+:matt/beach/daytime/04: 294 280
+:matt/beach/daytime/04: 331 208
+:matt/beach/daytime/04: 416 188
+:matt/beach/daytime/06: 480 278 rr
+:matt/beach/daytime/03: 472 274
+:matt/beach/daytime/00: 622 230
+:matt/beach/daytime/06: 482 296 frr
+:matt/beach/daytime/02: 624 180
+:matt/beach/daytime/02: 636 118
+:matt/beach/daytime/02: 636 320
+:matt/beach/daytime/02: 634 164
+:matt/beach/daytime/02: 636 256
+:matt/beach/daytime/02: 640 326
+:matt/beach/daytime/02: 730 118 frr
+:matt/beach/daytime/02: 732 202 frr
+:matt/beach/daytime/02: 730 288 frr
+:matt/beach/daytime/02: 734 354 frr
+:matt/beach/daytime/14: 882 142
+:matt/beach/daytime/13: 794 162
+:matt/beach/daytime/06: 730 94
+:matt/beach/daytime/02: 770 166
+:matt/beach/daytime/00: 820 230
+:matt/beach/daytime/06: 782 332 frr
+:matt/beach/daytime/00: 886 230
+:matt/beach/daytime/00: 766 338
+:matt/beach/decor/palmtree: 1000 260
+:matt/beach/daytime/00: 984 348
+:matt/beach/daytime/06: 990 342
+:matt/beach/daytime/15: 962 356
+:matt/beach/daytime/15: 1168 378
+:matt/beach/decor/umbrella_green: 1270 274 frr
+:matt/beach/daytime/06: 1276 344
+:matt/beach/daytime/13: 1460 288
+:matt/beach/daytime/15: 1436 360
+:matt/beach/daytime/15: 1420 360
+:matt/beach/daytime/15: 710 324 frr
+:matt/beach/daytime/15: 688 324 frr
+:matt/beach/decor/moon: 50 46
+:matt/beach/daytime/15: 1580 316
+:matt/beach/daytime/15: 1580 332
+:geoo/steel/16x16o.S: 66 374
+:geoo/steel/16x16o.S: 82 374
+:geoo/steel/16x16o.S: 52 374
+:geoo/steel/16x16o.S: 3114 374
+:geoo/steel/16x16o.S: 3130 374
+:geoo/steel/16x16o.S: 3098 374
+:matt/beach/daytime/15: 264 352
+:matt/beach/daytime/15: 2898 354

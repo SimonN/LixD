@@ -1,0 +1,341 @@
+$BUILT 2021-01-12 21:14:12
+$AUTHOR Flopsy
+$ENGLISH Homewrecker 6P (No Gap)
+
+#INTENDED_NUMBER_OF_PLAYERS 6
+#SIZE_X 640
+#SIZE_Y 288
+#TORUS_X 0
+#TORUS_Y 1
+
+#SECONDS 60
+#INITIAL 60
+#SPAWN_INTERVAL 32
+
+#WALKER 30
+#RUNNER 10
+#CLIMBER 10
+#EXPLODER2 20
+#BUILDER 30
+#PLATFORMER 30
+#BASHER 5
+#MINER 40
+#DIGGER 20
+#JUMPER 30
+#BATTER 20
+#CUBER 5
+
+:geoo/abstract/hatch.H: 528 64 r
+:geoo/abstract/hatch.H: 528 160 r
+:geoo/abstract/hatch.H: 528 256 r
+:geoo/abstract/hatch.H: 80 16
+:geoo/abstract/hatch.H: 80 208
+:geoo/abstract/hatch.H: 80 112
+
+:geoo/abstract/goal.G: 0 240
+:geoo/abstract/goal.G: 0 48
+:geoo/abstract/goal.G: 0 144
+:geoo/abstract/goal.G: 608 192
+:geoo/abstract/goal.G: 608 96
+:geoo/abstract/goal.G: 608 0
+
+:geoo/shadow/wall/center: 480 256
+:geoo/shadow/wall/center: 448 256
+:geoo/shadow/wall/center: 416 256
+:geoo/shadow/wall/center: 384 256
+:geoo/shadow/wall/center: 352 256
+:geoo/shadow/wall/center: 320 256
+:geoo/shadow/wall/center: 288 256
+:geoo/shadow/wall/center: 256 256
+:geoo/shadow/wall/center: 224 256
+:geoo/shadow/wall/center: 192 256
+:geoo/shadow/wall/center: 160 256
+:geoo/shadow/wall/center: 128 256
+:geoo/shadow/wall/center: 160 224
+:geoo/shadow/wall/center: 192 224
+:geoo/shadow/wall/center: 224 224
+:geoo/shadow/wall/center: 256 224
+:geoo/shadow/wall/center: 288 224
+:geoo/shadow/wall/center: 320 224
+:geoo/shadow/wall/center: 352 224
+:geoo/shadow/wall/center: 384 224
+:geoo/shadow/wall/center: 416 224
+:geoo/shadow/wall/center: 448 224
+:geoo/shadow/wall/center: 480 224
+:geoo/shadow/wall/center: 128 224
+:geoo/shadow/wall/center: 128 192
+:geoo/shadow/wall/center: 160 192
+:geoo/shadow/wall/center: 192 192
+:geoo/shadow/wall/center: 224 192
+:geoo/shadow/wall/center: 256 192
+:geoo/shadow/wall/center: 288 192
+:geoo/shadow/wall/center: 320 192
+:geoo/shadow/wall/center: 352 192
+:geoo/shadow/wall/center: 384 192
+:geoo/shadow/wall/center: 416 192
+:geoo/shadow/wall/center: 448 192
+:geoo/shadow/wall/center: 480 192
+:geoo/shadow/wall/center: 480 160
+:geoo/shadow/wall/center: 448 160
+:geoo/shadow/wall/center: 416 160
+:geoo/shadow/wall/center: 384 160
+:geoo/shadow/wall/center: 352 160
+:geoo/shadow/wall/center: 320 160
+:geoo/shadow/wall/center: 288 160
+:geoo/shadow/wall/center: 256 160
+:geoo/shadow/wall/center: 224 160
+:geoo/shadow/wall/center: 192 160
+:geoo/shadow/wall/center: 160 160
+:geoo/shadow/wall/center: 128 160
+:geoo/shadow/wall/center: 160 128
+:geoo/shadow/wall/center: 192 128
+:geoo/shadow/wall/center: 224 128
+:geoo/shadow/wall/center: 256 128
+:geoo/shadow/wall/center: 288 128
+:geoo/shadow/wall/center: 320 128
+:geoo/shadow/wall/center: 352 128
+:geoo/shadow/wall/center: 384 128
+:geoo/shadow/wall/center: 416 128
+:geoo/shadow/wall/center: 448 128
+:geoo/shadow/wall/center: 480 128
+:geoo/shadow/wall/center: 128 128
+:geoo/shadow/wall/center: 128 96
+:geoo/shadow/wall/center: 160 96
+:geoo/shadow/wall/center: 192 96
+:geoo/shadow/wall/center: 224 96
+:geoo/shadow/wall/center: 256 96
+:geoo/shadow/wall/center: 288 96
+:geoo/shadow/wall/center: 320 96
+:geoo/shadow/wall/center: 352 96
+:geoo/shadow/wall/center: 384 96
+:geoo/shadow/wall/center: 416 96
+:geoo/shadow/wall/center: 448 96
+:geoo/shadow/wall/center: 480 96
+:geoo/shadow/wall/center: 480 64
+:geoo/shadow/wall/center: 448 64
+:geoo/shadow/wall/center: 416 64
+:geoo/shadow/wall/center: 384 64
+:geoo/shadow/wall/center: 352 64
+:geoo/shadow/wall/center: 320 64
+:geoo/shadow/wall/center: 288 64
+:geoo/shadow/wall/center: 256 64
+:geoo/shadow/wall/center: 224 64
+:geoo/shadow/wall/center: 192 64
+:geoo/shadow/wall/center: 160 64
+:geoo/shadow/wall/center: 128 64
+:geoo/shadow/wall/center: 160 32
+:geoo/shadow/wall/center: 192 32
+:geoo/shadow/wall/center: 224 32
+:geoo/shadow/wall/center: 256 32
+:geoo/shadow/wall/center: 288 32
+:geoo/shadow/wall/center: 320 32
+:geoo/shadow/wall/center: 352 32
+:geoo/shadow/wall/center: 384 32
+:geoo/shadow/wall/center: 416 32
+:geoo/shadow/wall/center: 448 32
+:geoo/shadow/wall/center: 480 32
+:geoo/shadow/wall/center: 128 32
+:geoo/shadow/wall/center: 128 0
+:geoo/shadow/wall/center: 160 0
+:geoo/shadow/wall/center: 192 0
+:geoo/shadow/wall/center: 224 0
+:geoo/shadow/wall/center: 256 0
+:geoo/shadow/wall/center: 288 0
+:geoo/shadow/wall/center: 320 0
+:geoo/shadow/wall/center: 352 0
+:geoo/shadow/wall/center: 384 0
+:geoo/shadow/wall/center: 416 0
+:geoo/shadow/wall/center: 448 0
+:geoo/shadow/wall/center: 480 0
+:geoo/steel/16x16o.S: 512 240
+:geoo/steel/16x16o.S: 528 240
+:geoo/steel/16x16o.S: 544 240
+:geoo/steel/16x16o.S: 560 240
+:geoo/steel/16x16o.S: 576 240
+:geoo/steel/16x16o.S: 592 240
+:geoo/steel/16x16o.S: 608 240
+:geoo/steel/16x16o.S: 624 240
+:geoo/steel/16x16o.S: 112 192
+:geoo/steel/16x16o.S: 96 192
+:geoo/steel/16x16o.S: 80 192
+:geoo/steel/16x16o.S: 64 192
+:geoo/steel/16x16o.S: 48 192
+:geoo/steel/16x16o.S: 32 192
+:geoo/steel/16x16o.S: 16 192
+:geoo/steel/16x16o.S: 0 192
+:geoo/steel/16x16o.S: 512 144
+:geoo/steel/16x16o.S: 528 144
+:geoo/steel/16x16o.S: 544 144
+:geoo/steel/16x16o.S: 560 144
+:geoo/steel/16x16o.S: 576 144
+:geoo/steel/16x16o.S: 592 144
+:geoo/steel/16x16o.S: 608 144
+:geoo/steel/16x16o.S: 624 144
+:geoo/steel/16x16o.S: 112 96
+:geoo/steel/16x16o.S: 96 96
+:geoo/steel/16x16o.S: 0 96
+:geoo/steel/16x16o.S: 16 96
+:geoo/steel/16x16o.S: 32 96
+:geoo/steel/16x16o.S: 48 96
+:geoo/steel/16x16o.S: 64 96
+:geoo/steel/16x16o.S: 80 96
+:geoo/steel/16x16o.S: 512 48
+:geoo/steel/16x16o.S: 528 48
+:geoo/steel/16x16o.S: 544 48
+:geoo/steel/16x16o.S: 560 48
+:geoo/steel/16x16o.S: 576 48
+:geoo/steel/16x16o.S: 592 48
+:geoo/steel/16x16o.S: 608 48
+:geoo/steel/16x16o.S: 624 48
+:geoo/steel/16x16o.S: 112 0
+:geoo/steel/16x16o.S: 0 0
+:geoo/steel/16x16o.S: 16 0
+:geoo/steel/16x16o.S: 32 0
+:geoo/steel/16x16o.S: 48 0
+:geoo/steel/16x16o.S: 64 0
+:geoo/steel/16x16o.S: 80 0
+:geoo/steel/16x16o.S: 96 0
+:geoo/shadow/tile2: 48 16
+:geoo/shadow/rope1: 64 16
+:geoo/shadow/sock: 64 16
+:geoo/shadow/tile2: 48 112
+:geoo/shadow/rope1: 64 112
+:geoo/shadow/sock: 64 112
+:geoo/shadow/tile2: 48 208
+:geoo/shadow/rope1: 64 208
+:geoo/shadow/sock: 64 208
+:geoo/shadow/tile2: 560 64
+:geoo/shadow/rope1: 512 64 frr
+:geoo/shadow/sock: 544 64 frr
+:geoo/shadow/tile2: 560 160
+:geoo/shadow/rope1: 512 160 frr
+:geoo/shadow/sock: 544 160 frr
+:geoo/shadow/tile2: 560 256
+:geoo/shadow/rope1: 512 256 frr
+:geoo/shadow/sock: 544 256 frr
+:geoo/shadow/door: 560 192
+:geoo/shadow/door: 560 96
+:geoo/shadow/door: 560 0
+:geoo/shadow/door: 48 48
+:geoo/shadow/door: 48 144
+:geoo/shadow/door: 48 240
+:geoo/shadow/tile2: 592 256
+:geoo/shadow/tile2: 624 256
+:geoo/shadow/tile2: 592 160
+:geoo/shadow/tile2: 624 160
+:geoo/shadow/tile2: 592 64
+:geoo/shadow/tile2: 624 64
+:geoo/shadow/tile2: -16 16
+:geoo/shadow/tile2: 16 16
+:geoo/shadow/tile2: -16 208
+:geoo/shadow/tile2: 16 208
+:geoo/shadow/tile2: -16 112
+:geoo/shadow/tile2: 16 112
+:geoo/shadow/door: 192 240
+:geoo/shadow/door: 416 192
+:geoo/shadow/door: 192 144
+:geoo/shadow/door: 416 96
+:geoo/shadow/door: 192 48
+:geoo/shadow/door: 416 0
+:geoo/shadow/window: 240 144
+:geoo/shadow/window: 368 192
+:geoo/shadow/window: 368 96
+:geoo/shadow/window: 240 48
+:geoo/shadow/window: 240 240
+:geoo/shadow/window: 144 240
+:geoo/shadow/window: 144 144
+:geoo/shadow/window: 144 48
+:geoo/shadow/window: 464 96
+:geoo/shadow/window: 464 192
+:geoo/shadow/window: 368 0
+:geoo/shadow/window: 464 0
+:geoo/shadow/tile4: 336 240
+:geoo/shadow/tile4: 352 240
+:geoo/shadow/tile4: 368 240
+:geoo/shadow/tile4: 384 240
+:geoo/shadow/tile4: 400 240
+:geoo/shadow/tile4: 416 240
+:geoo/shadow/tile4: 432 240
+:geoo/shadow/tile4: 448 240
+:geoo/shadow/tile4: 464 240
+:geoo/shadow/tile4: 480 240
+:geoo/shadow/tile4: 496 240
+:geoo/shadow/tile4: 336 144
+:geoo/shadow/tile4: 352 144
+:geoo/shadow/tile4: 368 144
+:geoo/shadow/tile4: 384 144
+:geoo/shadow/tile4: 400 144
+:geoo/shadow/tile4: 416 144
+:geoo/shadow/tile4: 432 144
+:geoo/shadow/tile4: 448 144
+:geoo/shadow/tile4: 464 144
+:geoo/shadow/tile4: 480 144
+:geoo/shadow/tile4: 496 144
+:geoo/shadow/tile4: 336 48
+:geoo/shadow/tile4: 352 48
+:geoo/shadow/tile4: 368 48
+:geoo/shadow/tile4: 384 48
+:geoo/shadow/tile4: 400 48
+:geoo/shadow/tile4: 416 48
+:geoo/shadow/tile4: 432 48
+:geoo/shadow/tile4: 448 48
+:geoo/shadow/tile4: 464 48
+:geoo/shadow/tile4: 480 48
+:geoo/shadow/tile4: 496 48
+:geoo/shadow/tile4: 128 0
+:geoo/shadow/tile4: 144 0
+:geoo/shadow/tile4: 160 0
+:geoo/shadow/tile4: 176 0
+:geoo/shadow/tile4: 192 0
+:geoo/shadow/tile4: 208 0
+:geoo/shadow/tile4: 224 0
+:geoo/shadow/tile4: 240 0
+:geoo/shadow/tile4: 256 0
+:geoo/shadow/tile4: 272 0
+:geoo/shadow/tile4: 288 0
+:geoo/shadow/tile4: 128 96
+:geoo/shadow/tile4: 144 96
+:geoo/shadow/tile4: 160 96
+:geoo/shadow/tile4: 176 96
+:geoo/shadow/tile4: 192 96
+:geoo/shadow/tile4: 208 96
+:geoo/shadow/tile4: 224 96
+:geoo/shadow/tile4: 240 96
+:geoo/shadow/tile4: 256 96
+:geoo/shadow/tile4: 272 96
+:geoo/shadow/tile4: 288 96
+:geoo/shadow/tile4: 128 192
+:geoo/shadow/tile4: 144 192
+:geoo/shadow/tile4: 160 192
+:geoo/shadow/tile4: 176 192
+:geoo/shadow/tile4: 192 192
+:geoo/shadow/tile4: 208 192
+:geoo/shadow/tile4: 224 192
+:geoo/shadow/tile4: 240 192
+:geoo/shadow/tile4: 256 192
+:geoo/shadow/tile4: 272 192
+:geoo/shadow/tile4: 288 192
+:geoo/shadow/tile4: 304 272
+:geoo/shadow/tile4: 320 256
+:geoo/shadow/tile4: 320 224
+:geoo/shadow/tile4: 304 208
+:geoo/shadow/tile4: 304 176
+:geoo/shadow/tile4: 320 160
+:geoo/shadow/tile4: 320 128
+:geoo/shadow/tile4: 304 112
+:geoo/shadow/tile4: 304 80
+:geoo/shadow/tile4: 320 64
+:geoo/shadow/tile4: 304 16
+:geoo/shadow/tile4: 320 32
+:geoo/shadow/window_broken: 240 48
+:geoo/shadow/window_broken: 240 144
+:geoo/shadow/window_broken: 240 240
+:geoo/shadow/window_broken: 368 0 frr
+:geoo/shadow/window_broken: 368 96 frr
+:geoo/shadow/window_broken: 368 192 frr
+:geoo/shadow/wall/deco_crags2: 432 160
+:geoo/shadow/wall/deco_crags2: 432 64
+:geoo/shadow/wall/deco_crags2: 432 256
+:geoo/shadow/wall/deco_crags2: 176 208 frr
+:geoo/shadow/wall/deco_crags2: 176 112 frr
+:geoo/shadow/wall/deco_crags2: 176 16 frr

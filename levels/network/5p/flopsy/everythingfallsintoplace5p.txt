@@ -1,0 +1,305 @@
+$BUILT 2021-01-14 00:31:39
+$AUTHOR Flopsy
+$ENGLISH Everything Falls into Place 5P
+
+#INTENDED_NUMBER_OF_PLAYERS 5
+#SIZE_X 608
+#SIZE_Y 840
+#TORUS_X 1
+#TORUS_Y 1
+
+#SECONDS 60
+#INITIAL 100
+#SPAWN_INTERVAL 16
+
+#WALKER 30
+#RUNNER 10
+#CLIMBER 20
+#FLOATER 20
+#EXPLODER2 20
+#BLOCKER 1
+#BUILDER 30
+#PLATFORMER 30
+#BASHER 20
+#MINER 20
+#DIGGER 10
+#JUMPER 30
+#BATTER 20
+#CUBER 10
+
+:matt/goldmine/Hatch.H: 32 368
+:matt/goldmine/Hatch.H: 32 536
+:matt/goldmine/Hatch.H: 32 704
+:matt/goldmine/Hatch.H: 32 32
+:matt/goldmine/Hatch.H: 32 200
+
+:matt/goldmine/Goal.G: 532 200
+:matt/goldmine/Goal.G: 532 368
+:matt/goldmine/Goal.G: 532 536
+:matt/goldmine/Goal.G: 532 704
+:matt/goldmine/Goal.G: 532 32
+
+:matt/goldmine/tracks: 16 412
+:matt/goldmine/tracks: 112 412
+:matt/goldmine/tracks: 208 412
+:matt/goldmine/tracks: 280 412
+:matt/goldmine/crate64: 128 352
+:matt/goldmine/crate64: 192 352
+:matt/goldmine/explosivecrate: 192 352
+:matt/goldmine/crate16: 304 400
+:matt/goldmine/crate16: 304 384
+:matt/goldmine/crate16: 304 368
+:matt/goldmine/crate16: 304 352
+:matt/goldmine/crate16: 304 336
+:matt/goldmine/tracks: 472 412
+:matt/goldmine/tracks: 424 412
+:matt/goldmine/crate16: 304 504
+:matt/goldmine/plankdiag: 416 500
+:matt/goldmine/tracks: 304 496
+:matt/goldmine/10: 430 462
+:matt/goldmine/10: 556 470
+:matt/goldmine/03: 439 470
+:matt/goldmine/tracks: 400 496
+:matt/goldmine/tracks: 472 496
+:matt/goldmine/10: 435 415
+:matt/goldmine/10: 478 416
+:matt/goldmine/10: 505 415
+:matt/goldmine/00: 435 418
+:matt/goldmine/crate16: 424 484
+:matt/goldmine/crate16: 424 468
+:matt/goldmine/crate16: 424 452
+:matt/goldmine/crate16: 424 436
+:matt/goldmine/crate16: 424 420
+:matt/goldmine/tracks: 424 412
+:matt/goldmine/10: 557 415
+:matt/goldmine/tracks: 472 412
+:matt/goldmine/00: 511 419
+:matt/goldmine/10: 498 453
+:matt/goldmine/10: 498 435
+:matt/goldmine/crate16: 576 420
+:matt/goldmine/crate16: 576 436
+:matt/goldmine/crate16: 576 452
+:matt/goldmine/crate16: 576 468
+:matt/goldmine/crate16: 576 484
+:matt/goldmine/10: 45 416
+:matt/goldmine/10: 16 415
+:matt/goldmine/03: 16 417
+:matt/goldmine/tracks: 16 412
+:matt/goldmine/tracks: 112 412
+:matt/goldmine/tracks: 208 412
+:matt/goldmine/tracks: 280 412
+:matt/goldmine/planksupport2: 208 420
+:matt/goldmine/plankdiag: 384 364
+:matt/goldmine/tracks: 16 580
+:matt/goldmine/tracks: 112 580
+:matt/goldmine/tracks: 208 580
+:matt/goldmine/tracks: 280 580
+:matt/goldmine/crate64: 128 520
+:matt/goldmine/crate64: 192 520
+:matt/goldmine/explosivecrate: 192 520
+:matt/goldmine/crate16: 304 568
+:matt/goldmine/crate16: 304 552
+:matt/goldmine/crate16: 304 536
+:matt/goldmine/crate16: 304 520
+:matt/goldmine/tracks: 472 580
+:matt/goldmine/tracks: 424 580
+:matt/goldmine/crate16: 304 672
+:matt/goldmine/plankdiag: 416 668
+:matt/goldmine/tracks: 304 664
+:matt/goldmine/10: 430 630
+:matt/goldmine/10: 556 638
+:matt/goldmine/03: 439 638
+:matt/goldmine/tracks: 400 664
+:matt/goldmine/tracks: 472 664
+:matt/goldmine/10: 435 583
+:matt/goldmine/10: 478 584
+:matt/goldmine/10: 505 583
+:matt/goldmine/00: 435 586
+:matt/goldmine/crate16: 424 652
+:matt/goldmine/crate16: 424 636
+:matt/goldmine/crate16: 424 620
+:matt/goldmine/crate16: 424 604
+:matt/goldmine/crate16: 424 588
+:matt/goldmine/tracks: 424 580
+:matt/goldmine/10: 557 583
+:matt/goldmine/tracks: 472 580
+:matt/goldmine/00: 511 587
+:matt/goldmine/10: 498 621
+:matt/goldmine/10: 498 603
+:matt/goldmine/crate16: 576 588
+:matt/goldmine/crate16: 576 604
+:matt/goldmine/crate16: 576 620
+:matt/goldmine/crate16: 576 636
+:matt/goldmine/crate16: 576 652
+:matt/goldmine/10: 45 584
+:matt/goldmine/10: 16 583
+:matt/goldmine/03: 16 585
+:matt/goldmine/tracks: 16 580
+:matt/goldmine/tracks: 112 580
+:matt/goldmine/tracks: 208 580
+:matt/goldmine/tracks: 280 580
+:matt/goldmine/planksupport2: 208 588
+:matt/goldmine/plankdiag: 384 532
+:matt/goldmine/crate16: 304 672
+:matt/goldmine/tracks: 16 748
+:matt/goldmine/tracks: 112 748
+:matt/goldmine/tracks: 208 748
+:matt/goldmine/tracks: 280 748
+:matt/goldmine/crate64: 128 688
+:matt/goldmine/crate64: 192 688
+:matt/goldmine/explosivecrate: 192 688
+:matt/goldmine/crate16: 304 736
+:matt/goldmine/crate16: 304 720
+:matt/goldmine/crate16: 304 704
+:matt/goldmine/crate16: 304 688
+:matt/goldmine/tracks: 472 748
+:matt/goldmine/tracks: 424 748
+:matt/goldmine/plankdiag: 416 332
+:matt/goldmine/plankdiag: 416 836
+:matt/goldmine/tracks: 304 832
+:matt/goldmine/10: 430 798
+:matt/goldmine/10: 556 806
+:matt/goldmine/03: 439 806
+:matt/goldmine/tracks: 400 832
+:matt/goldmine/tracks: 472 832
+:matt/goldmine/10: 435 751
+:matt/goldmine/10: 478 752
+:matt/goldmine/10: 505 751
+:matt/goldmine/00: 435 754
+:matt/goldmine/crate16: 424 820
+:matt/goldmine/crate16: 424 804
+:matt/goldmine/crate16: 424 788
+:matt/goldmine/crate16: 424 772
+:matt/goldmine/crate16: 424 756
+:matt/goldmine/tracks: 424 748
+:matt/goldmine/10: 557 751
+:matt/goldmine/tracks: 472 748
+:matt/goldmine/00: 511 755
+:matt/goldmine/10: 498 789
+:matt/goldmine/10: 498 771
+:matt/goldmine/crate16: 576 756
+:matt/goldmine/crate16: 576 772
+:matt/goldmine/crate16: 576 788
+:matt/goldmine/crate16: 576 804
+:matt/goldmine/crate16: 576 820
+:matt/goldmine/10: 45 752
+:matt/goldmine/10: 16 751
+:matt/goldmine/03: 16 753
+:matt/goldmine/tracks: 16 748
+:matt/goldmine/tracks: 112 748
+:matt/goldmine/tracks: 208 748
+:matt/goldmine/tracks: 280 748
+:matt/goldmine/planksupport2: 208 756
+:matt/goldmine/plankdiag: 384 700
+:geoo/steel/16x16o.S: 56 584
+:geoo/steel/16x16o.S: 56 752
+:geoo/steel/16x16o.S: 556 752
+:geoo/steel/16x16o.S: 556 584
+:geoo/steel/16x16o.S: 56 416
+:geoo/steel/16x16o.S: 556 416
+:matt/goldmine/tracks: 16 76
+:matt/goldmine/tracks: 112 76
+:matt/goldmine/tracks: 208 76
+:matt/goldmine/tracks: 280 76
+:matt/goldmine/crate64: 128 16
+:matt/goldmine/crate64: 192 16
+:matt/goldmine/explosivecrate: 192 16
+:matt/goldmine/crate16: 304 64
+:matt/goldmine/crate16: 304 48
+:matt/goldmine/crate16: 304 32
+:matt/goldmine/crate16: 304 16
+:matt/goldmine/crate16: 304 0
+:matt/goldmine/tracks: 472 76
+:matt/goldmine/tracks: 424 76
+:matt/goldmine/crate16: 304 168
+:matt/goldmine/plankdiag: 416 164
+:matt/goldmine/tracks: 304 160
+:matt/goldmine/10: 430 126
+:matt/goldmine/10: 556 134
+:matt/goldmine/03: 439 134
+:matt/goldmine/tracks: 400 160
+:matt/goldmine/tracks: 472 160
+:matt/goldmine/10: 435 79
+:matt/goldmine/10: 478 80
+:matt/goldmine/10: 505 79
+:matt/goldmine/00: 435 82
+:matt/goldmine/crate16: 424 148
+:matt/goldmine/crate16: 424 132
+:matt/goldmine/crate16: 424 116
+:matt/goldmine/crate16: 424 100
+:matt/goldmine/crate16: 424 84
+:matt/goldmine/tracks: 424 76
+:matt/goldmine/10: 557 79
+:matt/goldmine/tracks: 472 76
+:matt/goldmine/00: 511 83
+:matt/goldmine/10: 498 117
+:matt/goldmine/10: 498 99
+:matt/goldmine/crate16: 576 84
+:matt/goldmine/crate16: 576 100
+:matt/goldmine/crate16: 576 116
+:matt/goldmine/crate16: 576 132
+:matt/goldmine/crate16: 576 148
+:matt/goldmine/10: 45 80
+:matt/goldmine/10: 16 79
+:matt/goldmine/03: 16 81
+:matt/goldmine/tracks: 16 76
+:matt/goldmine/tracks: 112 76
+:matt/goldmine/tracks: 208 76
+:matt/goldmine/tracks: 280 76
+:matt/goldmine/planksupport2: 208 84
+:matt/goldmine/plankdiag: 384 28
+:matt/goldmine/tracks: 16 244
+:matt/goldmine/tracks: 112 244
+:matt/goldmine/tracks: 208 244
+:matt/goldmine/tracks: 280 244
+:matt/goldmine/crate64: 128 184
+:matt/goldmine/crate64: 192 184
+:matt/goldmine/explosivecrate: 192 184
+:matt/goldmine/crate16: 304 232
+:matt/goldmine/crate16: 304 216
+:matt/goldmine/crate16: 304 200
+:matt/goldmine/crate16: 304 184
+:matt/goldmine/tracks: 472 244
+:matt/goldmine/tracks: 424 244
+:matt/goldmine/crate16: 304 336
+:matt/goldmine/plankdiag: 416 332
+:matt/goldmine/tracks: 304 328
+:matt/goldmine/10: 430 294
+:matt/goldmine/10: 556 302
+:matt/goldmine/03: 439 302
+:matt/goldmine/tracks: 400 328
+:matt/goldmine/tracks: 472 328
+:matt/goldmine/10: 435 247
+:matt/goldmine/10: 478 248
+:matt/goldmine/10: 505 247
+:matt/goldmine/00: 435 250
+:matt/goldmine/crate16: 424 316
+:matt/goldmine/crate16: 424 300
+:matt/goldmine/crate16: 424 284
+:matt/goldmine/crate16: 424 268
+:matt/goldmine/crate16: 424 252
+:matt/goldmine/tracks: 424 244
+:matt/goldmine/10: 557 247
+:matt/goldmine/tracks: 472 244
+:matt/goldmine/00: 511 251
+:matt/goldmine/10: 498 285
+:matt/goldmine/10: 498 267
+:matt/goldmine/crate16: 576 252
+:matt/goldmine/crate16: 576 268
+:matt/goldmine/crate16: 576 284
+:matt/goldmine/crate16: 576 300
+:matt/goldmine/crate16: 576 316
+:matt/goldmine/10: 45 248
+:matt/goldmine/10: 16 247
+:matt/goldmine/03: 16 249
+:matt/goldmine/tracks: 16 244
+:matt/goldmine/tracks: 112 244
+:matt/goldmine/tracks: 208 244
+:matt/goldmine/tracks: 280 244
+:matt/goldmine/planksupport2: 208 252
+:matt/goldmine/plankdiag: 384 196
+:matt/goldmine/crate16: 304 336
+:geoo/steel/16x16o.S: 56 248
+:geoo/steel/16x16o.S: 556 248
+:geoo/steel/16x16o.S: 56 80
+:geoo/steel/16x16o.S: 556 80

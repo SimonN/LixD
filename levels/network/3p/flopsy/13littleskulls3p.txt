@@ -1,0 +1,90 @@
+$BUILT 2021-01-05 14:38:52
+$AUTHOR Flopsy
+$ENGLISH 13 Little Skulls 3P
+
+#INTENDED_NUMBER_OF_PLAYERS 3
+#SIZE_X 762
+#SIZE_Y 480
+#TORUS_X 1
+#TORUS_Y 1
+
+#SECONDS 90
+#INITIAL 70
+#SPAWN_INTERVAL 32
+
+#WALKER 30
+#RUNNER 10
+#EXPLODER2 1
+#BLOCKER 1
+#BUILDER 30
+#PLATFORMER 30
+#BASHER 30
+#MINER 10
+#DIGGER 1
+#JUMPER 30
+#BATTER 20
+#CUBER 10
+
+:raymanni/gore/hatch.H: 116 44
+:raymanni/gore/hatch.H: 366 204
+:raymanni/gore/hatch.H: 622 364
+
+:raymanni/gore/goal.G: 10 328
+:raymanni/gore/goal.G: 272 8
+:raymanni/gore/goal.G: 520 169
+
+:raymanni/gore/eater.T: 190 30
+:raymanni/gore/eater.T: 440 190
+:raymanni/gore/eater.T: 696 350
+
+:raymanni/gore/blob_2: 74 126
+:raymanni/gore/blob_3: 34 104
+:raymanni/gore/blob_4: 24 72
+:raymanni/gore/blob_4: 38 146
+:amanda/occult/skulls32x32: 58 118
+:raymanni/gore/blob_2: 66 158
+:raymanni/gore/blob_5: 172 92
+:raymanni/gore/blob_2: 182 80
+:raymanni/gore/blob_3: 258 66
+:raymanni/gore/blob_1: 284 62
+:raymanni/gore/blob_2: 188 112
+:raymanni/gore/blob_2: 224 92
+:raymanni/gore/blob_2: 166 146
+:raymanni/gore/blob_5: 24 96
+:amanda/occult/skulls32x32: 294 94
+:raymanni/gore/blob_2: 324 286
+:raymanni/gore/blob_3: 284 264
+:raymanni/gore/blob_4: 274 232
+:raymanni/gore/blob_1: 248 198
+:raymanni/gore/blob_4: 288 306
+:amanda/occult/skulls32x32: 308 278
+:raymanni/gore/blob_2: 316 318
+:raymanni/gore/blob_5: 422 252
+:raymanni/gore/blob_2: 432 240
+:raymanni/gore/blob_3: 508 226
+:raymanni/gore/blob_1: 534 222
+:raymanni/gore/blob_2: 438 272
+:raymanni/gore/blob_2: 474 252
+:raymanni/gore/blob_2: 416 306
+:raymanni/gore/blob_5: 274 256
+:amanda/occult/skulls32x32: 544 254
+:raymanni/gore/blob_2: 580 446
+:raymanni/gore/blob_3: 540 424
+:raymanni/gore/blob_4: 530 392
+:raymanni/gore/blob_1: 761 38
+:raymanni/gore/blob_4: 544 466
+:amanda/occult/skulls32x32: 564 438
+:raymanni/gore/blob_2: 572 478
+:raymanni/gore/blob_5: 678 412
+:raymanni/gore/blob_2: 688 400
+:raymanni/gore/blob_3: 0 386
+:raymanni/gore/blob_1: 22 382
+:raymanni/gore/blob_2: 694 432
+:raymanni/gore/blob_2: 730 412
+:raymanni/gore/blob_2: 672 466
+:raymanni/gore/blob_5: 530 416
+:amanda/occult/skulls32x32: 32 414
+:raymanni/gore/blob_1: 504 358
+:amanda/steel/steel16x16.S: 544 233
+:amanda/steel/steel16x16.S: 296 73
+:amanda/steel/steel16x16.S: 34 393

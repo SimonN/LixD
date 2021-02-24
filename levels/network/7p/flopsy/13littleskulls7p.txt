@@ -1,0 +1,367 @@
+$BUILT 2021-01-05 15:20:14
+$AUTHOR Flopsy
+$ENGLISH 13 Little Skulls 7P
+
+#INTENDED_NUMBER_OF_PLAYERS 7
+#SIZE_X 1786
+#SIZE_Y 1114
+#TORUS_X 1
+#TORUS_Y 1
+
+#SECONDS 90
+#INITIAL 70
+#SPAWN_INTERVAL 32
+
+#WALKER 50
+#RUNNER 20
+#EXPLODER2 1
+#BLOCKER 1
+#BUILDER 50
+#PLATFORMER 50
+#BASHER 40
+#MINER 40
+#JUMPER 50
+#BATTER 20
+#CUBER 10
+
+:raymanni/gore/hatch.H: 148 44
+:raymanni/gore/hatch.H: 398 204
+:raymanni/gore/hatch.H: 654 364
+:raymanni/gore/hatch.H: 910 524
+:raymanni/gore/hatch.H: 1166 684
+:raymanni/gore/hatch.H: 1422 844
+:raymanni/gore/hatch.H: 1672 1004
+
+:raymanni/gore/goal.G: 1580 810
+:raymanni/gore/goal.G: 43 968
+:raymanni/gore/goal.G: 304 9
+:raymanni/gore/goal.G: 554 169
+:raymanni/gore/goal.G: 804 328
+:raymanni/gore/goal.G: 1066 490
+:raymanni/gore/goal.G: 1322 650
+
+:raymanni/gore/eater.T: 222 30
+:raymanni/gore/eater.T: 472 190
+:raymanni/gore/eater.T: 728 350
+:raymanni/gore/eater.T: 984 510
+:raymanni/gore/eater.T: 1556 396
+:raymanni/gore/eater.T: 1250 464
+:raymanni/gore/eater.T: 1240 670
+:raymanni/gore/eater.T: 26 556
+:raymanni/gore/eater.T: 1506 624
+:raymanni/gore/eater.T: 794 1036
+:raymanni/gore/eater.T: 488 1104
+:raymanni/gore/eater.T: 1050 82
+:raymanni/gore/eater.T: 744 150
+:raymanni/gore/eater.T: 1306 242
+:raymanni/gore/eater.T: 1000 310
+:raymanni/gore/eater.T: 1496 830
+:raymanni/gore/eater.T: 282 716
+:raymanni/gore/eater.T: 1762 784
+:raymanni/gore/eater.T: 1746 990
+:raymanni/gore/eater.T: 538 882
+:raymanni/gore/eater.T: 232 950
+:raymanni/gore/eater.T: 202 226
+:raymanni/gore/eater.T: 456 388
+:raymanni/gore/eater.T: 712 548
+:raymanni/gore/eater.T: 968 708
+:raymanni/gore/eater.T: 1224 868
+:raymanni/gore/eater.T: 1480 1028
+:raymanni/gore/eater.T: 1728 66
+
+:raymanni/gore/blob_2: 106 126
+:raymanni/gore/blob_3: 66 104
+:raymanni/gore/blob_4: 56 72
+:raymanni/gore/blob_4: 70 146
+:amanda/occult/skulls32x32: 90 118
+:raymanni/gore/blob_2: 98 158
+:raymanni/gore/blob_5: 204 92
+:raymanni/gore/blob_2: 214 80
+:raymanni/gore/blob_3: 290 66
+:raymanni/gore/blob_1: 316 62
+:raymanni/gore/blob_2: 220 112
+:raymanni/gore/blob_2: 240 92
+:raymanni/gore/blob_2: 198 146
+:raymanni/gore/blob_5: 56 96
+:amanda/occult/skulls32x32: 326 94
+:raymanni/gore/blob_2: 356 286
+:raymanni/gore/blob_3: 316 264
+:raymanni/gore/blob_4: 306 232
+:raymanni/gore/blob_1: 280 198
+:raymanni/gore/blob_4: 320 306
+:amanda/occult/skulls32x32: 340 278
+:raymanni/gore/blob_2: 348 318
+:raymanni/gore/blob_5: 454 252
+:raymanni/gore/blob_2: 464 240
+:raymanni/gore/blob_3: 540 226
+:raymanni/gore/blob_1: 566 222
+:raymanni/gore/blob_2: 470 272
+:raymanni/gore/blob_2: 506 252
+:raymanni/gore/blob_2: 448 306
+:raymanni/gore/blob_5: 306 256
+:amanda/occult/skulls32x32: 576 254
+:raymanni/gore/blob_2: 612 446
+:raymanni/gore/blob_3: 572 424
+:raymanni/gore/blob_4: 562 392
+:raymanni/gore/blob_1: 28 40
+:raymanni/gore/blob_4: 576 466
+:amanda/occult/skulls32x32: 596 438
+:raymanni/gore/blob_2: 604 478
+:raymanni/gore/blob_5: 710 412
+:raymanni/gore/blob_2: 720 400
+:raymanni/gore/blob_3: 794 386
+:raymanni/gore/blob_1: 816 382
+:raymanni/gore/blob_2: 726 432
+:raymanni/gore/blob_2: 762 412
+:raymanni/gore/blob_2: 704 466
+:raymanni/gore/blob_5: 562 416
+:amanda/occult/skulls32x32: 826 414
+:raymanni/gore/blob_1: 536 358
+:raymanni/gore/blob_2: 1479 445
+:raymanni/gore/blob_2: 1560 446
+:raymanni/gore/blob_2: 868 606
+:raymanni/gore/blob_3: 828 584
+:raymanni/gore/blob_4: 818 552
+:raymanni/gore/blob_4: 832 626
+:amanda/occult/skulls32x32: 852 598
+:raymanni/gore/blob_2: 860 638
+:raymanni/gore/blob_5: 818 576
+:raymanni/gore/blob_1: 790 520
+:raymanni/gore/blob_5: 966 572
+:raymanni/gore/blob_2: 976 560
+:raymanni/gore/blob_3: 1052 546
+:raymanni/gore/blob_1: 1078 542
+:raymanni/gore/blob_2: 982 592
+:raymanni/gore/blob_2: 1018 572
+:raymanni/gore/blob_2: 960 626
+:amanda/occult/skulls32x32: 1088 574
+:raymanni/gore/blob_2: 1191 515
+:raymanni/gore/blob_2: 1242 516
+:raymanni/gore/bone_5: 1196 470
+:raymanni/gore/bone_5: 1297 470 frr
+:raymanni/gore/blob_2: 1124 766
+:raymanni/gore/blob_3: 1084 744
+:raymanni/gore/blob_4: 1074 712
+:raymanni/gore/blob_4: 1088 786
+:amanda/occult/skulls32x32: 1108 758
+:raymanni/gore/blob_2: 1116 798
+:raymanni/gore/blob_5: 1222 732
+:raymanni/gore/blob_2: 1232 720
+:raymanni/gore/blob_3: 1308 706
+:raymanni/gore/blob_1: 1334 702
+:raymanni/gore/blob_2: 1238 752
+:raymanni/gore/blob_2: 1274 732
+:raymanni/gore/blob_2: 1216 786
+:raymanni/gore/blob_5: 1074 736
+:amanda/occult/skulls32x32: 1344 734
+:raymanni/gore/blob_1: 1046 680
+:raymanni/gore/blob_2: 1648 448
+:raymanni/gore/blob_2: 1399 445
+:raymanni/gore/blob_3: 1434 400
+:raymanni/gore/blob_1: 1450 416
+:raymanni/gore/blob_1: 1418 416
+:raymanni/gore/blob_3: 1678 402
+:raymanni/gore/blob_1: 1694 418
+:raymanni/gore/blob_1: 1662 418
+:raymanni/gore/blob_2: 1735 605
+:raymanni/gore/blob_2: 30 606
+:raymanni/gore/blob_2: 1447 675
+:raymanni/gore/blob_2: 1498 676
+:raymanni/gore/bone_5: 1452 630
+:raymanni/gore/bone_5: 1553 630 frr
+:raymanni/gore/blob_2: 118 608
+:raymanni/gore/blob_2: 1655 605
+:raymanni/gore/blob_3: 1690 560
+:raymanni/gore/blob_1: 1706 576
+:raymanni/gore/blob_1: 1674 576
+:raymanni/gore/blob_3: 148 562
+:raymanni/gore/blob_1: 164 578
+:raymanni/gore/blob_1: 132 578
+:raymanni/gore/blob_2: 717 1085
+:raymanni/gore/blob_2: 798 1086
+:raymanni/gore/blob_2: 429 41
+:raymanni/gore/blob_2: 480 42
+:raymanni/gore/bone_5: 434 1110
+:raymanni/gore/bone_5: 535 1110 frr
+:raymanni/gore/blob_2: 886 1088
+:raymanni/gore/blob_2: 637 1085
+:raymanni/gore/blob_3: 672 1040
+:raymanni/gore/blob_1: 688 1056
+:raymanni/gore/blob_1: 656 1056
+:raymanni/gore/blob_3: 916 1042
+:raymanni/gore/blob_1: 932 1058
+:raymanni/gore/blob_1: 900 1058
+:raymanni/gore/blob_2: 973 131
+:raymanni/gore/blob_2: 1054 132
+:raymanni/gore/blob_2: 685 201
+:raymanni/gore/blob_2: 736 202
+:raymanni/gore/bone_5: 690 156
+:raymanni/gore/bone_5: 791 156 frr
+:raymanni/gore/blob_2: 1142 134
+:raymanni/gore/blob_2: 893 131
+:raymanni/gore/blob_3: 928 86
+:raymanni/gore/blob_1: 944 102
+:raymanni/gore/blob_1: 912 102
+:raymanni/gore/blob_3: 1172 88
+:raymanni/gore/blob_1: 1188 104
+:raymanni/gore/blob_1: 1156 104
+:raymanni/gore/blob_2: 1229 291
+:raymanni/gore/blob_2: 1310 292
+:raymanni/gore/blob_2: 941 361
+:raymanni/gore/blob_2: 992 362
+:raymanni/gore/bone_5: 946 316
+:raymanni/gore/bone_5: 1047 316 frr
+:raymanni/gore/blob_2: 1398 294
+:raymanni/gore/blob_2: 1149 291
+:raymanni/gore/blob_3: 1184 246
+:raymanni/gore/blob_1: 1200 262
+:raymanni/gore/blob_1: 1168 262
+:raymanni/gore/blob_3: 1428 248
+:raymanni/gore/blob_1: 1444 264
+:raymanni/gore/blob_1: 1412 264
+:raymanni/gore/blob_2: 1232 720
+:raymanni/gore/blob_3: 1308 706
+:raymanni/gore/blob_1: 1334 702
+:raymanni/gore/blob_2: 1238 752
+:raymanni/gore/blob_2: 1274 732
+:raymanni/gore/blob_2: 1216 786
+:amanda/occult/skulls32x32: 1344 734
+:raymanni/gore/blob_2: 1380 926
+:raymanni/gore/blob_3: 1340 904
+:raymanni/gore/blob_4: 1330 872
+:raymanni/gore/blob_4: 1344 946
+:amanda/occult/skulls32x32: 1364 918
+:raymanni/gore/blob_2: 1372 958
+:raymanni/gore/blob_5: 1478 892
+:raymanni/gore/blob_2: 1488 880
+:raymanni/gore/blob_3: 1564 866
+:raymanni/gore/blob_1: 1590 862
+:raymanni/gore/blob_2: 1494 912
+:raymanni/gore/blob_2: 1530 892
+:raymanni/gore/blob_2: 1472 946
+:raymanni/gore/blob_5: 1330 896
+:amanda/occult/skulls32x32: 1600 894
+:raymanni/gore/blob_1: 1302 840
+:raymanni/gore/blob_2: 205 765
+:raymanni/gore/blob_2: 286 766
+:raymanni/gore/blob_2: 1703 835
+:raymanni/gore/blob_2: 1754 836
+:raymanni/gore/bone_5: 1708 790
+:raymanni/gore/bone_5: 23 790 frr
+:raymanni/gore/blob_2: 374 768
+:raymanni/gore/blob_2: 125 765
+:raymanni/gore/blob_3: 160 720
+:raymanni/gore/blob_1: 176 736
+:raymanni/gore/blob_1: 144 736
+:raymanni/gore/blob_3: 404 722
+:raymanni/gore/blob_1: 420 738
+:raymanni/gore/blob_1: 388 738
+:raymanni/gore/bone_1: 1455 135 r
+:raymanni/gore/blob_2: 1344 120
+:raymanni/gore/bone_1: 1711 295 r
+:raymanni/gore/blob_2: 1608 280
+:raymanni/gore/bone_1: 179 457 r
+:raymanni/gore/blob_2: 70 440
+:raymanni/gore/bone_1: 435 617 r
+:raymanni/gore/blob_2: 326 600
+:raymanni/gore/bone_1: 691 777 r
+:raymanni/gore/blob_2: 582 760
+:raymanni/gore/bone_1: 1203 1097 r
+:raymanni/gore/blob_2: 1094 1080
+:raymanni/gore/blob_2: 1488 880
+:raymanni/gore/blob_3: 1564 866
+:raymanni/gore/blob_1: 1590 862
+:raymanni/gore/blob_2: 1494 912
+:raymanni/gore/blob_2: 1530 892
+:raymanni/gore/blob_2: 1472 946
+:amanda/occult/skulls32x32: 1600 894
+:raymanni/gore/blob_2: 1630 1086
+:raymanni/gore/blob_3: 1590 1064
+:raymanni/gore/blob_4: 1580 1032
+:raymanni/gore/blob_1: 1554 998
+:raymanni/gore/blob_4: 1594 1106
+:amanda/occult/skulls32x32: 1614 1078
+:raymanni/gore/blob_2: 1622 4
+:raymanni/gore/blob_5: 1728 1052
+:raymanni/gore/blob_2: 1738 1040
+:raymanni/gore/blob_3: 28 1026
+:raymanni/gore/blob_1: 54 1022
+:raymanni/gore/blob_2: 1744 1072
+:raymanni/gore/blob_2: 1780 1052
+:raymanni/gore/blob_2: 1722 1106
+:raymanni/gore/blob_5: 1580 1056
+:amanda/occult/skulls32x32: 64 1054
+:raymanni/gore/blob_2: 461 931
+:raymanni/gore/blob_2: 542 932
+:raymanni/gore/blob_2: 173 1001
+:raymanni/gore/blob_2: 224 1002
+:raymanni/gore/bone_5: 178 956
+:raymanni/gore/bone_5: 279 956 frr
+:raymanni/gore/blob_2: 630 934
+:raymanni/gore/blob_2: 381 931
+:raymanni/gore/blob_3: 416 886
+:raymanni/gore/blob_1: 432 902
+:raymanni/gore/blob_1: 400 902
+:raymanni/gore/blob_3: 660 888
+:raymanni/gore/blob_1: 676 904
+:raymanni/gore/blob_1: 644 904
+:raymanni/gore/blob_3: 672 1078
+:raymanni/gore/blob_3: 916 1080
+:raymanni/gore/bone_1: 947 937 r
+:raymanni/gore/blob_2: 832 920
+:amanda/steel/steel16x16.S: 67 1033
+:amanda/steel/steel16x16.S: 1603 875
+:amanda/steel/steel16x16.S: 1346 715
+:amanda/steel/steel16x16.S: 1091 555
+:amanda/steel/steel16x16.S: 828 393
+:amanda/steel/steel16x16.S: 577 235
+:amanda/steel/steel16x16.S: 327 73
+:raymanni/gore/bone_6: 1128 1032
+:raymanni/gore/bone_6: 864 870
+:raymanni/gore/bone_6: 612 712
+:raymanni/gore/bone_6: 356 551
+:raymanni/gore/bone_6: 100 392
+:raymanni/gore/bone_6: 1638 233
+:raymanni/gore/bone_6: 1376 72
+:raymanni/gore/bone_1: 211 457 r
+:raymanni/gore/bone_1: 243 457 r
+:raymanni/gore/bone_1: 275 457 r
+:raymanni/gore/bone_1: 307 457 r
+:raymanni/gore/bone_2: 338 442 r
+:raymanni/gore/blob_2: 404 438
+:raymanni/gore/bone_1: 467 617 r
+:raymanni/gore/bone_1: 499 617 r
+:raymanni/gore/bone_1: 531 617 r
+:raymanni/gore/bone_1: 563 617 r
+:raymanni/gore/bone_2: 594 602 r
+:raymanni/gore/blob_2: 660 598
+:raymanni/gore/bone_1: 723 777 r
+:raymanni/gore/bone_1: 755 777 r
+:raymanni/gore/bone_1: 787 777 r
+:raymanni/gore/bone_1: 819 777 r
+:raymanni/gore/bone_2: 850 762 r
+:raymanni/gore/blob_2: 916 758
+:raymanni/gore/bone_1: 979 937 r
+:raymanni/gore/bone_1: 1011 937 r
+:raymanni/gore/bone_1: 1043 937 r
+:raymanni/gore/bone_1: 1075 937 r
+:raymanni/gore/bone_2: 1106 922 r
+:raymanni/gore/blob_2: 1172 918
+:raymanni/gore/bone_1: 1235 1097 r
+:raymanni/gore/bone_1: 1267 1097 r
+:raymanni/gore/bone_1: 1299 1097 r
+:raymanni/gore/bone_1: 1331 1097 r
+:raymanni/gore/bone_2: 1362 1082 r
+:raymanni/gore/blob_2: 1428 1078
+:raymanni/gore/bone_1: 1487 135 r
+:raymanni/gore/bone_1: 1519 135 r
+:raymanni/gore/bone_1: 1551 135 r
+:raymanni/gore/bone_1: 1583 135 r
+:raymanni/gore/bone_2: 1614 120 r
+:raymanni/gore/blob_2: 1680 116
+:raymanni/gore/bone_1: 1743 295 r
+:raymanni/gore/bone_1: 1775 295 r
+:raymanni/gore/bone_1: 21 295 r
+:raymanni/gore/bone_1: 53 295 r
+:raymanni/gore/bone_2: 84 280 r
+:raymanni/gore/blob_2: 150 276

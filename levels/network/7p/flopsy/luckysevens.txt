@@ -1,0 +1,138 @@
+$BUILT 2021-01-09 23:22:41
+$AUTHOR Flopsy
+$ENGLISH Lucky Sevens 7P
+
+#INTENDED_NUMBER_OF_PLAYERS 7
+#SIZE_X 896
+#SIZE_Y 720
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 160
+#BACKGROUND_BLUE 255
+
+#SECONDS 60
+#INITIAL 50
+#SPAWN_INTERVAL 32
+
+#WALKER 50
+#CLIMBER 20
+#FLOATER 10
+#EXPLODER2 20
+#BLOCKER 5
+#BUILDER 50
+#PLATFORMER 30
+#BASHER 5
+#MINER 30
+#DIGGER 1
+#JUMPER 10
+#BATTER 10
+
+:matt/earth/Hatch.H: 192 528
+:matt/earth/Hatch.H: 32 16
+:matt/earth/Hatch.H: 720 96 r
+:matt/earth/Hatch.H: 368 0
+:matt/earth/Hatch.H: 432 608 r
+:matt/earth/Hatch.H: 720 288 r
+:matt/earth/Hatch.H: 32 320
+
+:matt/earth/Goal.G: 496 240
+:matt/earth/Goal.G: 800 368
+:matt/earth/Goal.G: 96 224
+:matt/earth/Goal.G: 528 624
+:matt/earth/Goal.G: 352 368
+:matt/earth/Goal.G: 16 544
+:matt/earth/Goal.G: 720 496
+
+:matt/10tons.T: 396 336
+
+:matt/earth/20: 416 480
+:matt/earth/19: 577 422
+:matt/earth/16: 501 395
+:matt/earth/30: 704 354 frr
+:matt/earth/20: 784 432 frr
+:matt/earth/20: 784 384 frr
+:matt/earth/00: 717 404
+:matt/earth/20: 332 433 frr
+:matt/earth/03: 288 368
+:matt/earth/11: 276 394
+:matt/earth/30: 672 322 frr
+:matt/earth/04: 544 48
+:matt/earth/20: 480 304
+:matt/earth/04: 560 192
+:matt/earth/26: 704 656
+:matt/earth/25: 736 656
+:matt/earth/21: 656 640
+:matt/earth/10: 672 560
+:matt/earth/04: 512 432
+:matt/earth/00: 560 544
+:matt/earth/02: 368 80
+:matt/earth/20: 508 689 frr
+:matt/earth/30: 352 624 frr
+:matt/earth/30: 368 640 frr
+:matt/earth/20: 415 689
+:matt/earth/19: 144 592
+:matt/earth/26: 326 640
+:matt/earth/23: 312 632
+:matt/earth/00: 288 576
+:matt/earth/16: 240 368
+:matt/earth/28: 268 508
+:matt/earth/10: 144 432
+:matt/earth/20: 16 608
+:matt/earth/00: 80 576
+:matt/earth/02: 80 624
+:matt/earth/02: 288 480
+:matt/earth/02: -32 448
+:matt/earth/05: -48 176
+:matt/earth/10: -96 368
+:matt/earth/30: 786 156
+:matt/earth/26: 770 248
+:matt/earth/10: 608 160
+:matt/earth/05: 368 112
+:matt/earth/04: 96 80
+:matt/earth/20: 80 288
+:matt/earth/16: 160 192
+:matt/earth/01: 64 112
+:matt/earth/10: 0 128
+:matt/earth/18: 848 544
+:matt/earth/02: 832 560
+:matt/earth/01: 704 448
+:matt/earth/16: 688 400
+:matt/earth/00: -32 112
+:matt/earth/05: 368 80 rr
+:matt/earth/04: 112 64
+:matt/earth/10: 48 96
+:matt/earth/00: 192 176
+:matt/earth/04: 160 48
+:matt/earth/01: 192 48
+:matt/earth/04: 128 -80
+:matt/earth/02: 272 320
+:matt/earth/01: 752 384
+:matt/earth/02: 528 352 frr
+:matt/earth/00: 820 108
+:geoo/steel/dark_16x16o.S: 520 306
+:geoo/steel/dark_16x16o.S: 376 434
+:geoo/steel/dark_16x16o.S: 552 690
+:geoo/steel/dark_16x16o.S: 744 562
+:geoo/steel/dark_16x16o.S: 824 434
+:geoo/steel/dark_16x16o.S: 40 610
+:geoo/steel/dark_16x16o.S: 120 290
+:geoo/steel/dark_16x16o.S: 414 378
+:matt/earth/06: 268 382
+:matt/earth/07: 574 44 frr
+:matt/earth/09: 660 156
+:matt/earth/06: 168 52
+:matt/earth/08: 784 388
+:matt/earth/06: 550 74
+:matt/earth/06: 820 106
+:matt/earth/07: 858 104
+:matt/earth/07: 854 540
+:matt/earth/09: 280 316
+:matt/earth/09: 534 350
+:matt/earth/06: 354 78
+:matt/earth/07: 406 76
+:matt/earth/09: 378 74
+:matt/earth/06: 126 -8
+:matt/earth/07: 314 450
+:matt/earth/09: 96 574
+:matt/earth/08: 46 382
+:matt/earth/09: 352 364
+:matt/earth/06: 142 448

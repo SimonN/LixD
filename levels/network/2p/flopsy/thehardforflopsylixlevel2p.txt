@@ -1,0 +1,385 @@
+$BUILT 2021-01-11 22:14:31
+$AUTHOR Flopsy
+$ENGLISH The Hard For Flopsy LIX Level 2P
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 896
+#SIZE_Y 496
+#TORUS_X 1
+#TORUS_Y 0
+
+#SECONDS 60
+#INITIAL 100
+#SPAWN_INTERVAL 1
+
+#WALKER 30
+#RUNNER 5
+#CLIMBER 10
+#FLOATER 5
+#EXPLODER2 20
+#BUILDER 40
+#PLATFORMER 40
+#BASHER 30
+#MINER 30
+#DIGGER 30
+#JUMPER 30
+#BATTER 20
+
+:matt/marble/Hatch.H: 64 112
+:matt/marble/Hatch.H: 512 112
+
+:matt/marble/Goal.G: 556 400
+:matt/marble/Goal.G: 108 400
+
+:geoo/construction/sawblade_medium.F: 333 92
+:geoo/construction/sawblade_medium.F: 333 140
+:geoo/construction/sawblade_medium.F: 333 188
+:geoo/construction/sawblade_medium.F: 333 236
+:geoo/construction/sawblade_medium.F: 333 284
+:geoo/construction/sawblade_medium.F: 333 332
+:geoo/construction/sawblade_medium.F: 781 92
+:geoo/construction/sawblade_medium.F: 781 140
+:geoo/construction/sawblade_medium.F: 781 188
+:geoo/construction/sawblade_medium.F: 781 236
+:geoo/construction/sawblade_medium.F: 781 284
+:geoo/construction/sawblade_medium.F: 781 332
+:geoo/construction/sawblade_medium.F: 863 228
+:geoo/construction/sawblade_medium.F: 863 184
+:geoo/construction/sawblade_medium.F: 863 140
+:geoo/construction/sawblade_medium.F: 863 96
+:geoo/construction/sawblade_medium.F: 863 52
+:geoo/construction/sawblade_medium.F: 863 8
+:geoo/construction/sawblade_medium.F: 415 228
+:geoo/construction/sawblade_medium.F: 415 184
+:geoo/construction/sawblade_medium.F: 415 140
+:geoo/construction/sawblade_medium.F: 415 96
+:geoo/construction/sawblade_medium.F: 415 52
+:geoo/construction/sawblade_medium.F: 415 8
+:geoo/construction/sawblade_medium.F: 894 356
+:geoo/construction/sawblade_medium.F: 56 312
+:geoo/construction/sawblade_medium.F: 160 312
+:geoo/construction/sawblade_medium.F: 446 356
+:geoo/construction/sawblade_medium.F: 504 312
+:geoo/construction/sawblade_medium.F: 608 312
+
+:matt/marble/09: 32 192
+:geoo/steel/32x32o.S: 0 192
+:geoo/steel/32x32o.S: 0 160
+:geoo/steel/32x32o.S: 0 128
+:geoo/steel/32x32o.S: 0 96
+:geoo/steel/32x32o.S: 0 224
+:geoo/steel/32x32o.S: 0 256
+:geoo/steel/32x32o.S: 32 256
+:geoo/steel/32x32o.S: 64 256
+:geoo/steel/32x32o.S: 96 256
+:geoo/steel/32x32o.S: 128 256
+:geoo/steel/32x32o.S: 160 256
+:geoo/steel/32x32o.S: 192 256
+:geoo/steel/32x32o.S: 224 256
+:matt/marble/09: 96 192
+:matt/marble/09: 160 192
+:matt/marble/09: 224 192
+:geoo/steel/32x32o.S: 256 256
+:geoo/steel/32x32o.S: 0 64
+:geoo/steel/32x32o.S: 0 32
+:matt/marble/17: 385 32 rr
+:geoo/steel/16x16o.S: 353 32
+:geoo/steel/16x16o.S: 337 32
+:geoo/steel/16x16o.S: 321 32
+:geoo/steel/16x16o.S: 305 32
+:geoo/steel/16x16o.S: 289 32
+:geoo/steel/16x16o.S: 305 32
+:geoo/steel/16x16o.S: 273 32
+:geoo/steel/16x16o.S: 257 32
+:geoo/steel/16x16o.S: 241 32
+:geoo/steel/16x16o.S: 225 32
+:geoo/steel/16x16o.S: 209 32
+:geoo/steel/16x16o.S: 193 32
+:geoo/steel/16x16o.S: 177 32
+:geoo/steel/16x16o.S: 161 32
+:geoo/steel/16x16o.S: 145 32
+:geoo/steel/16x16o.S: 129 32
+:geoo/steel/16x16o.S: 113 32
+:geoo/steel/16x16o.S: 97 32
+:geoo/steel/16x16o.S: 81 32
+:geoo/steel/16x16o.S: 65 32
+:geoo/steel/16x16o.S: 49 32
+:geoo/steel/16x16o.S: 32 -8
+:geoo/steel/16x16o.S: 48 0
+:geoo/steel/16x16o.S: 64 0
+:geoo/steel/16x16o.S: 80 0
+:geoo/steel/16x16o.S: 96 0
+:geoo/steel/16x16o.S: 112 0
+:geoo/steel/16x16o.S: 128 0
+:geoo/steel/16x16o.S: 144 0
+:geoo/steel/16x16o.S: 160 0
+:geoo/steel/16x16o.S: 176 0
+:geoo/steel/16x16o.S: 192 0
+:geoo/steel/16x16o.S: 208 0
+:geoo/steel/16x16o.S: 224 0
+:geoo/steel/16x16o.S: 240 0
+:geoo/steel/16x16o.S: 256 0
+:geoo/steel/16x16o.S: 272 0
+:geoo/steel/16x16o.S: 288 0
+:geoo/steel/16x16o.S: 304 0
+:geoo/steel/16x16o.S: 320 0
+:geoo/steel/16x16o.S: 336 0
+:geoo/steel/16x16o.S: 352 0
+:geoo/steel/16x16o.S: 35 32
+:geoo/steel/16x16o.S: 368 0
+:geoo/steel/16x16o.S: 384 0
+:geoo/steel/16x16o.S: 400 0
+:matt/marble/17: 384 63 f
+:geoo/steel/16x16o.S: 369 48
+:geoo/steel/16x16o.S: 369 32
+:geoo/steel/16x16o.S: 369 64
+:geoo/steel/16x16o.S: 369 80
+:geoo/steel/16x16o.S: 369 96
+:geoo/steel/16x16o.S: 369 112
+:geoo/steel/16x16o.S: 369 128
+:geoo/steel/16x16o.S: 369 144
+:matt/marble/17: 385 94 rr
+:matt/marble/17: 384 125 f
+:geoo/steel/16x16o.S: 369 160
+:geoo/steel/16x16o.S: 369 176
+:geoo/steel/16x16o.S: 369 192
+:geoo/steel/16x16o.S: 369 208
+:geoo/steel/16x16o.S: 369 224
+:geoo/steel/16x16o.S: 369 240
+:geoo/steel/16x16o.S: 369 256
+:geoo/steel/16x16o.S: 369 272
+:matt/marble/17: 385 156 rr
+:matt/marble/17: 384 187 f
+:matt/marble/17: 385 218 rr
+:matt/marble/17: 384 249 f
+:geoo/steel/16x16o.S: 369 288
+:geoo/steel/16x16o.S: 369 304
+:geoo/steel/16x16o.S: 369 320
+:geoo/steel/16x16o.S: 369 336
+:geoo/steel/16x16o.S: 369 352
+:geoo/steel/16x16o.S: 369 368
+:matt/marble/17: 385 280 rr
+:matt/marble/17: 384 311 f
+:matt/marble/17: 385 342 rr
+:matt/marble/17: 384 373 f
+:matt/marble/17: 373 384 f
+:matt/marble/02: 400 400
+:matt/marble/07: 336 448
+:matt/marble/07: 288 448
+:matt/marble/07: 240 448
+:matt/marble/22: 160 400 frr
+:matt/marble/07: 192 448
+:matt/marble/07: 144 448
+:matt/marble/22: 64 400
+:matt/marble/07: 96 448
+:matt/marble/07: 48 448
+:matt/marble/07: 0 448
+:matt/marble/07: 384 448
+:geoo/steel/16x16o.S: 132 448
+:geoo/steel/16x16o.S: 416 0
+:geoo/steel/16x16o.S: 416 16
+:geoo/steel/16x16o.S: 416 32
+:geoo/steel/16x16o.S: 416 48
+:geoo/steel/16x16o.S: 416 64
+:geoo/steel/16x16o.S: 416 80
+:geoo/steel/16x16o.S: 416 96
+:geoo/steel/16x16o.S: 416 112
+:geoo/steel/16x16o.S: 416 128
+:geoo/steel/16x16o.S: 416 144
+:geoo/steel/16x16o.S: 416 160
+:geoo/steel/16x16o.S: 416 176
+:geoo/steel/16x16o.S: 416 192
+:geoo/steel/16x16o.S: 416 208
+:geoo/steel/16x16o.S: 416 224
+:geoo/steel/16x16o.S: 416 240
+:geoo/steel/16x16o.S: 416 256
+:geoo/steel/16x16o.S: 416 272
+:geoo/steel/16x16o.S: 416 288
+:geoo/steel/16x16o.S: 416 304
+:geoo/steel/16x16o.S: 416 320
+:geoo/steel/16x16o.S: 416 336
+:geoo/steel/16x16o.S: 416 352
+:geoo/steel/16x16o.S: 416 368
+:geoo/steel/16x16o.S: 416 384
+:geoo/steel/16x16o.S: 416 400
+:matt/marble/01: 354 376
+:matt/marble/01: 354 312
+:matt/marble/09: 480 192
+:geoo/steel/32x32o.S: 480 256
+:geoo/steel/32x32o.S: 512 256
+:geoo/steel/32x32o.S: 544 256
+:geoo/steel/32x32o.S: 576 256
+:geoo/steel/32x32o.S: 608 256
+:geoo/steel/32x32o.S: 640 256
+:geoo/steel/32x32o.S: 672 256
+:matt/marble/09: 544 192
+:matt/marble/09: 608 192
+:matt/marble/09: 672 192
+:geoo/steel/32x32o.S: 704 256
+:matt/marble/17: 833 32 rr
+:geoo/steel/16x16o.S: 801 32
+:geoo/steel/16x16o.S: 785 32
+:geoo/steel/16x16o.S: 769 32
+:geoo/steel/16x16o.S: 753 32
+:geoo/steel/16x16o.S: 737 32
+:geoo/steel/16x16o.S: 753 32
+:geoo/steel/16x16o.S: 721 32
+:geoo/steel/16x16o.S: 705 32
+:geoo/steel/16x16o.S: 689 32
+:geoo/steel/16x16o.S: 673 32
+:geoo/steel/16x16o.S: 657 32
+:geoo/steel/16x16o.S: 641 32
+:geoo/steel/16x16o.S: 625 32
+:geoo/steel/16x16o.S: 609 32
+:geoo/steel/16x16o.S: 593 32
+:geoo/steel/16x16o.S: 577 32
+:geoo/steel/16x16o.S: 561 32
+:geoo/steel/16x16o.S: 545 32
+:geoo/steel/16x16o.S: 529 32
+:geoo/steel/16x16o.S: 513 32
+:geoo/steel/16x16o.S: 497 32
+:geoo/steel/16x16o.S: 480 -8
+:geoo/steel/16x16o.S: 496 0
+:geoo/steel/16x16o.S: 512 0
+:geoo/steel/16x16o.S: 528 0
+:geoo/steel/16x16o.S: 544 0
+:geoo/steel/16x16o.S: 560 0
+:geoo/steel/16x16o.S: 576 0
+:geoo/steel/16x16o.S: 592 0
+:geoo/steel/16x16o.S: 608 0
+:geoo/steel/16x16o.S: 624 0
+:geoo/steel/16x16o.S: 640 0
+:geoo/steel/16x16o.S: 656 0
+:geoo/steel/16x16o.S: 672 0
+:geoo/steel/16x16o.S: 688 0
+:geoo/steel/16x16o.S: 704 0
+:geoo/steel/16x16o.S: 720 0
+:geoo/steel/16x16o.S: 736 0
+:geoo/steel/16x16o.S: 752 0
+:geoo/steel/16x16o.S: 768 0
+:geoo/steel/16x16o.S: 784 0
+:geoo/steel/16x16o.S: 800 0
+:geoo/steel/16x16o.S: 483 32
+:geoo/steel/16x16o.S: 816 0
+:geoo/steel/16x16o.S: 832 0
+:geoo/steel/16x16o.S: 848 0
+:matt/marble/17: 832 63 f
+:matt/marble/17: 833 94 rr
+:matt/marble/17: 832 125 f
+:matt/marble/17: 833 156 rr
+:matt/marble/17: 832 187 f
+:matt/marble/17: 833 218 rr
+:matt/marble/17: 832 249 f
+:matt/marble/14a: 832 250
+:geoo/steel/16x16o.S: 817 256
+:matt/marble/17: 833 280 rr
+:matt/marble/17: 832 311 f
+:matt/marble/17: 833 342 rr
+:matt/marble/17: 832 373 f
+:matt/marble/17: 821 384 f
+:matt/marble/02: 848 400
+:matt/marble/07: 784 448
+:matt/marble/07: 736 448
+:matt/marble/07: 688 448
+:matt/marble/22: 608 400 frr
+:matt/marble/07: 640 448
+:matt/marble/07: 592 448
+:matt/marble/22: 512 400
+:matt/marble/07: 544 448
+:matt/marble/07: 496 448
+:matt/marble/07: 448 448
+:matt/marble/07: 832 448
+:matt/marble/07a: 544 448
+:matt/marble/07a: 592 448
+:geoo/steel/16x16o.S: 580 448
+:geoo/steel/16x16o.S: 864 0
+:geoo/steel/16x16o.S: 864 16
+:geoo/steel/16x16o.S: 864 32
+:geoo/steel/16x16o.S: 864 48
+:geoo/steel/16x16o.S: 864 64
+:geoo/steel/16x16o.S: 864 80
+:geoo/steel/16x16o.S: 864 96
+:geoo/steel/16x16o.S: 864 112
+:geoo/steel/16x16o.S: 864 128
+:geoo/steel/16x16o.S: 864 144
+:geoo/steel/16x16o.S: 864 160
+:geoo/steel/16x16o.S: 864 176
+:geoo/steel/16x16o.S: 864 192
+:geoo/steel/16x16o.S: 864 208
+:geoo/steel/16x16o.S: 864 224
+:geoo/steel/16x16o.S: 864 240
+:geoo/steel/16x16o.S: 864 256
+:geoo/steel/16x16o.S: 864 272
+:geoo/steel/16x16o.S: 864 288
+:geoo/steel/16x16o.S: 864 304
+:geoo/steel/16x16o.S: 864 320
+:geoo/steel/16x16o.S: 864 336
+:geoo/steel/16x16o.S: 864 352
+:geoo/steel/16x16o.S: 864 368
+:geoo/steel/16x16o.S: 864 384
+:geoo/steel/16x16o.S: 864 400
+:matt/marble/01: 802 376
+:matt/marble/01: 802 312
+:geoo/steel/16x16o.S: 16 -8
+:geoo/steel/16x16o.S: 0 0
+:geoo/steel/16x16o.S: 880 0
+:geoo/steel/32x32o.S: 448 192
+:geoo/steel/32x32o.S: 448 160
+:geoo/steel/32x32o.S: 448 128
+:geoo/steel/32x32o.S: 448 96
+:geoo/steel/32x32o.S: 448 224
+:geoo/steel/32x32o.S: 448 256
+:geoo/steel/32x32o.S: 448 64
+:geoo/steel/32x32o.S: 448 32
+:geoo/steel/16x16o.S: 464 -8
+:geoo/steel/16x16o.S: 448 0
+:geoo/steel/16x16o.S: 432 0
+:matt/marble/09a: 480 192
+:matt/marble/09a: 544 192
+:matt/marble/09a: 608 192
+:matt/marble/09a: 672 192
+:matt/marble/01a: 802 312
+:matt/marble/01a: 802 376
+:matt/marble/07a: 448 448
+:matt/marble/07a: 688 448
+:matt/marble/07a: 736 448
+:matt/marble/07a: 784 448
+:matt/marble/07a: 832 448
+:matt/marble/14a: 832 312
+:geoo/steel/16x16o.S: 817 320
+:geoo/steel/16x16o.S: 817 304
+:matt/marble/14a: 832 188
+:geoo/steel/16x16o.S: 817 192
+:matt/marble/14a: 832 126
+:geoo/steel/16x16o.S: 817 128
+:matt/marble/14a: 832 64
+:geoo/steel/16x16o.S: 817 64
+:matt/marble/14a: 832 280 frr
+:geoo/steel/16x16o.S: 817 288
+:geoo/steel/16x16o.S: 817 272
+:matt/marble/14a: 832 342 frr
+:geoo/steel/16x16o.S: 817 368
+:geoo/steel/16x16o.S: 817 352
+:geoo/steel/16x16o.S: 817 336
+:matt/marble/14a: 832 218 frr
+:geoo/steel/16x16o.S: 817 240
+:geoo/steel/16x16o.S: 817 224
+:geoo/steel/16x16o.S: 817 208
+:matt/marble/14a: 832 156 frr
+:geoo/steel/16x16o.S: 817 176
+:geoo/steel/16x16o.S: 817 160
+:geoo/steel/16x16o.S: 817 144
+:matt/marble/14a: 832 94 frr
+:geoo/steel/16x16o.S: 817 112
+:geoo/steel/16x16o.S: 817 96
+:geoo/steel/16x16o.S: 817 80
+:matt/marble/14a: 832 32 frr
+:geoo/steel/16x16o.S: 817 48
+:geoo/steel/16x16o.S: 817 32
+:matt/marble/22a: 512 400
+:matt/marble/07a: 496 448
+:matt/marble/22a: 608 400 frr
+:matt/marble/07a: 640 448
+:matt/marble/14a: 832 374
+:matt/marble/14a: 822 384
+:matt/marble/02a: 848 400
