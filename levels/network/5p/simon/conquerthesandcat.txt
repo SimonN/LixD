@@ -1,0 +1,336 @@
+$BUILT 2021-02-24 18:57:28
+$AUTHOR Anonymous
+$ENGLISH Conquer the Sandcat
+
+#INTENDED_NUMBER_OF_PLAYERS 5
+#SIZE_X 2560
+#SIZE_Y 400
+#TORUS_X 1
+#TORUS_Y 0
+
+#SECONDS 60
+#INITIAL 50
+#SPAWN_INTERVAL 10
+
+#WALKER 25
+#RUNNER 2
+#EXPLODER2 10
+#BLOCKER 3
+#BUILDER 60
+#PLATFORMER 50
+#BASHER 15
+#MINER 20
+#JUMPER 50
+#BATTER 10
+#CUBER 10
+
+:matt/beach/Hatch.H: 520 304
+:matt/beach/Hatch.H: 1032 304
+:matt/beach/Hatch.H: 1544 304
+:matt/beach/Hatch.H: 2056 304
+:matt/beach/Hatch.H: 8 304
+
+:matt/beach/goal.G: 1760 48
+:matt/beach/goal.G: 2272 48
+:matt/beach/goal.G: 224 48
+:matt/beach/goal.G: 736 48
+:matt/beach/goal.G: 1248 48
+
+:raymanni/crab.T: 704 88
+:raymanni/crab.T: 1216 88
+:raymanni/crab.T: 1728 88
+:raymanni/crab.T: 2240 88
+:raymanni/crab.T: 192 88
+:raymanni/crab.T: 1586 198
+:raymanni/crab.T: 2098 198
+:raymanni/crab.T: 50 198
+:raymanni/crab.T: 562 198
+:raymanni/crab.T: 1074 198
+:raymanni/crab.T: 1248 288
+:raymanni/crab.T: 1328 336
+:raymanni/crab.T: 1168 336
+:raymanni/crab.T: 1248 368
+:raymanni/crab.T: 1584 368
+:raymanni/crab.T: 1424 368
+:raymanni/crab.T: 1072 368
+:raymanni/crab.T: 1680 336
+:raymanni/crab.T: 1760 288
+:raymanni/crab.T: 1840 336
+:raymanni/crab.T: 1760 368
+:raymanni/crab.T: 1936 368
+:raymanni/crab.T: 2096 368
+:raymanni/crab.T: 736 368
+:raymanni/crab.T: 736 288
+:raymanni/crab.T: 560 368
+:raymanni/crab.T: 304 336
+:raymanni/crab.T: 224 288
+:raymanni/crab.T: 2448 368
+:raymanni/crab.T: 2352 336
+:raymanni/crab.T: 2272 368
+:raymanni/crab.T: 2272 288
+:raymanni/crab.T: 2192 336
+:raymanni/crab.T: 656 336
+:raymanni/crab.T: 400 368
+:raymanni/crab.T: 224 368
+:raymanni/crab.T: 144 336
+:raymanni/crab.T: 48 368
+:raymanni/crab.T: 816 336
+:raymanni/crab.T: 912 368
+
+:geoo/sandstone/8x8: 1034 -62 frr
+:amanda/steel/steel24x8.S: 736 112
+:amanda/steel/steel24x8.S: 760 112
+:amanda/steel/steel24x8.S: 784 112
+:amanda/steel/steel24x8.S: 808 112
+:matt/beach/nighttime/06: 512 344
+:matt/beach/nighttime/06: 568 296
+:matt/beach/nighttime/06: 624 256
+:matt/beach/nighttime/06: 672 224
+:matt/beach/decor/shovel: 768 120
+:matt/beach/nighttime/06: 816 352 frr
+:matt/beach/nighttime/06: 760 304 frr
+:matt/beach/nighttime/06: 704 264 frr
+:proxima/tile/spheres/grey.S: 672 240
+:matt/beach/nighttime/06: 656 232 frr
+$BEGIN_TILE_GROUP 0
+:matt/beach/daytime/06: 14 0
+:matt/beach/daytime/06: 0 16 rr
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:Group-0: 0 28
+:Group-0: 0 0 rr
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 2
+:raymanni/holiday/snow1: 0 0
+:raymanni/holiday/cane_end2: 14 19 rd
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 3
+:raymanni/holiday/snow1: 0 0
+:Group-2: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 4
+:raymanni/holiday/snow1: 0 0
+:raymanni/holiday/bauble_string: 6 10 rd
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 5
+:raymanni/holiday/snow1: 0 0
+:Group-4: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 6
+:raymanni/holiday/snow1: 0 0
+:raymanni/holiday/bauble_cross: 20 20 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 7
+:raymanni/holiday/snow1: 0 0
+:Group-6: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 8
+:raymanni/holiday/brick_red_a: 12 0
+:raymanni/holiday/brick_red_a: 0 0 frr
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 9
+:raymanni/holiday/snow2: 0 0
+:Group-8: 41 32 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 10
+:raymanni/holiday/snow2: 0 0
+:Group-9: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 11
+:raymanni/holiday/snow1: 0 0
+:raymanni/holiday/cane_mid: 16 8 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 12
+:raymanni/holiday/snow1: 0 0
+:Group-11: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 13
+:raymanni/holiday/cane_b: 0 0
+:raymanni/holiday/cane_end2: 16 29
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 14
+:raymanni/holiday/snow1: 0 0
+:Group-13: 14 1 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 15
+:raymanni/holiday/snow1: 0 0
+:Group-14: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 16
+:Group-3: 86 122
+:Group-5: 0 45
+:Group-7: 1 38
+:Group-10: 9 0
+:raymanni/holiday/snow1: 6 13
+:raymanni/holiday/snow1: 23 53
+:raymanni/holiday/snow1: 43 58
+:raymanni/holiday/snow1: 65 61
+:raymanni/holiday/snow1: 66 73
+:Group-3: 41 112
+:Group-12: 51 96
+:raymanni/holiday/snow1: 39 71
+:raymanni/holiday/snow1: 22 68
+:Group-12: 96 106
+:Group-15: 110 74
+:raymanni/holiday/snow1: 31 71
+:raymanni/holiday/snow1: 51 72
+:Group-3: 18 120
+:Group-12: 28 104
+:Group-3: 66 125
+:Group-12: 76 109
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 17
+:Group-1: 0 0
+:Group-16: 60 2 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 18
+:Group-1: 0 0
+:Group-17: 0 0 d
+$END_TILE_GROUP
+:Group-18: 704 104
+:matt/beach/nighttime/06: 656 328 frr
+:geoo/sandstone/8x8: 1546 -54 frr
+:amanda/steel/steel24x8.S: 1248 112
+:amanda/steel/steel24x8.S: 1272 112
+:amanda/steel/steel24x8.S: 1296 112
+:amanda/steel/steel24x8.S: 1320 112
+:matt/beach/nighttime/06: 1024 344
+:matt/beach/nighttime/06: 1080 296
+:matt/beach/nighttime/06: 1136 256
+:matt/beach/nighttime/06: 1184 224
+:matt/beach/decor/shovel: 1280 120
+:matt/beach/nighttime/06: 1328 352 frr
+:matt/beach/nighttime/06: 1272 304 frr
+:proxima/tile/spheres/grey.S: 1184 240
+:matt/beach/nighttime/06: 1216 264 frr
+:matt/beach/nighttime/06: 1168 232 frr
+:Group-18: 1216 104
+:matt/beach/nighttime/06: 1168 328 frr
+:geoo/sandstone/8x8: 2058 -62 frr
+:amanda/steel/steel24x8.S: 1760 112
+:amanda/steel/steel24x8.S: 1784 112
+:amanda/steel/steel24x8.S: 1808 112
+:amanda/steel/steel24x8.S: 1832 112
+:matt/beach/nighttime/06: 1536 344
+:matt/beach/nighttime/06: 1592 296
+:matt/beach/nighttime/06: 1648 256
+:matt/beach/nighttime/06: 1696 224
+:matt/beach/decor/shovel: 1792 120
+:matt/beach/nighttime/06: 1840 352 frr
+:matt/beach/nighttime/06: 1784 304 frr
+:matt/beach/nighttime/06: 1728 264 frr
+:proxima/tile/spheres/grey.S: 1696 240
+:matt/beach/nighttime/06: 1680 232 frr
+:Group-18: 1728 104
+:matt/beach/nighttime/06: 1680 328 frr
+:geoo/sandstone/8x8: 10 -54 frr
+:amanda/steel/steel24x8.S: 2272 112
+:amanda/steel/steel24x8.S: 2296 112
+:amanda/steel/steel24x8.S: 2320 112
+:amanda/steel/steel24x8.S: 2344 112
+:matt/beach/nighttime/06: 2048 344
+:matt/beach/nighttime/06: 2104 296
+:matt/beach/nighttime/06: 2160 256
+:matt/beach/nighttime/06: 2208 224
+:matt/beach/decor/shovel: 2304 120
+:matt/beach/nighttime/06: 2352 352 frr
+:matt/beach/nighttime/06: 2296 304 frr
+:matt/beach/nighttime/06: 2240 264 frr
+:proxima/tile/spheres/grey.S: 2208 240
+:matt/beach/nighttime/06: 2192 232 frr
+:Group-18: 2240 104
+:matt/beach/nighttime/06: 2192 328 frr
+:amanda/steel/steel24x8.S: 224 112
+:amanda/steel/steel24x8.S: 248 112
+:amanda/steel/steel24x8.S: 272 112
+:amanda/steel/steel24x8.S: 296 112
+:matt/beach/nighttime/06: 0 344
+:matt/beach/nighttime/06: 56 296
+:matt/beach/nighttime/06: 112 256
+:matt/beach/nighttime/06: 160 224
+:matt/beach/decor/shovel: 256 120
+:matt/beach/nighttime/06: 304 352 frr
+:matt/beach/nighttime/06: 248 304 frr
+:matt/beach/nighttime/06: 192 264 frr
+:proxima/tile/spheres/grey.S: 160 240
+:matt/beach/nighttime/06: 144 232 frr
+:Group-18: 192 104
+:matt/beach/nighttime/06: 144 328 frr
+:geoo/construction/fence_64x64.S: 2016 368
+:geoo/construction/fence_64x64.S: 2528 368
+:geoo/construction/fence_64x64.S: 480 368
+:geoo/construction/fence_64x64.S: 992 368
+:geoo/construction/fence_64x64.S: 1504 368
+:proxima/tile/spheres/greysmall.S: 528 360
+:proxima/tile/spheres/greysmall.S: 464 360
+:proxima/tile/spheres/greysmall.S: 16 360
+:proxima/tile/spheres/greysmall.S: 2064 360
+:proxima/tile/spheres/greysmall.S: 2512 360
+:proxima/tile/spheres/greysmall.S: 2000 360
+:proxima/tile/spheres/greysmall.S: 1552 360
+:proxima/tile/spheres/greysmall.S: 1488 360
+:proxima/tile/spheres/greysmall.S: 1040 360
+:proxima/tile/spheres/greysmall.S: 976 360
+:matt/beach/decor/umbrella_blue: 2080 224 frr
+:matt/beach/decor/umbrella_green: 1568 224 frr
+:matt/beach/decor/umbrella_yellow: 1056 224 frr
+:matt/beach/decor/umbrella_red: 544 224 frr
+:matt/beach/decor/umbrella_blue: 32 224 frr
+:matt/beach/decor/beach ball: 1888 272
+:matt/beach/decor/beach ball: 2400 272
+:matt/beach/decor/beach ball: 352 272
+:matt/beach/decor/beach ball: 864 272
+:matt/beach/decor/beach ball: 1376 272
+:matt/beach/decor/beach ball: 1088 368 d
+:matt/beach/decor/beach ball: 1440 368 d
+:matt/beach/decor/beach ball: 1264 288 d
+:matt/beach/decor/beach ball: 1184 336 d
+:matt/beach/decor/beach ball: 1344 336 d
+:matt/beach/decor/beach ball: 1264 368 d
+:matt/beach/decor/beach ball: 576 368 d
+:matt/beach/decor/beach ball: 928 368 d
+:matt/beach/decor/beach ball: 752 288 d
+:matt/beach/decor/beach ball: 672 336 d
+:matt/beach/decor/beach ball: 832 336 d
+:matt/beach/decor/beach ball: 752 368 d
+:matt/beach/decor/beach ball: 64 368 d
+:matt/beach/decor/beach ball: 416 368 d
+:matt/beach/decor/beach ball: 240 288 d
+:matt/beach/decor/beach ball: 160 336 d
+:matt/beach/decor/beach ball: 320 336 d
+:matt/beach/decor/beach ball: 240 368 d
+:matt/beach/decor/beach ball: 2112 368 d
+:matt/beach/decor/beach ball: 2464 368 d
+:matt/beach/decor/beach ball: 2288 288 d
+:matt/beach/decor/beach ball: 2208 336 d
+:matt/beach/decor/beach ball: 2368 336 d
+:matt/beach/decor/beach ball: 2288 368 d
+:matt/beach/decor/beach ball: 1600 368 d
+:matt/beach/decor/beach ball: 1952 368 d
+:matt/beach/decor/beach ball: 1776 288 d
+:matt/beach/decor/beach ball: 1696 336 d
+:matt/beach/decor/beach ball: 1856 336 d
+:matt/beach/decor/beach ball: 1776 368 d
+$BEGIN_TILE_GROUP 19
+:geoo/construction/stairs_rd_32.S: 168 65
+:geoo/construction/platform.S: 17 1
+:geoo/construction/stairs_rd_32.S: 104 33
+:geoo/construction/stairs_rd_32.S: 41 1
+:raymanni/holiday/plank_broken: 0 0 rrd
+:raymanni/holiday/plank_broken: 121 41 rrd
+:raymanni/holiday/plank_broken: 123 32 d
+$END_TILE_GROUP
+:Group-19: 992 146
+:Group-19: 480 146
+:Group-19: 2528 146
+:Group-19: 2016 146
+:Group-19: 1504 146
+$BEGIN_TILE_GROUP 20
+:geoo/construction/stairs_rd_8.S: 0 2
+:raymanni/holiday/plank_broken: 18 0 d
+$END_TILE_GROUP
+:Group-20: 832 112
+:Group-20: 320 112
+:Group-20: 2368 112
+:Group-20: 1856 112
+:Group-20: 1344 112
