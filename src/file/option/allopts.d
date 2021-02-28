@@ -264,7 +264,12 @@ body {
     splatRulerDesign = newOpt("splatRulerDesign", Lang.optionSplatRulerDesign, 2);
     paintTorusSeams = newOpt("paintTorusSeams", Lang.optionPaintTorusSeams, false);
     ingameTooltips = newOpt("ingameTooltips", Lang.optionIngameTooltips, true);
-    showFPS = newOpt("showFramesPerSecond", Lang.optionShowFPS, false);
+    version (assert) {
+        showFPS = newOpt("showFramesPerSecond", Lang.optionShowFPS, true);
+    }
+    else {
+        showFPS = newOpt("showFramesPerSecond", Lang.optionShowFPS, false);
+    }
     guiColorRed = newOpt("guiColorRed", Lang.optionGuiColorRed, 0x60);
     guiColorGreen = newOpt("guiColorGreen", Lang.optionGuiColorGreen, 0x80);
     guiColorBlue = newOpt("guiColorBlue", Lang.optionGuiColorBlue, 0xB0);
