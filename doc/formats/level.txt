@@ -1,15 +1,212 @@
-Lix level file format
+Lix Level File Format
 =====================
 
 Levels are text files.
 
-Tile groups are a composition of multiple tiles which can be used like one Single Terrain tile. 
+The meaning of most lines is isolated from all other lines; only the
+definition of tile groups (see below) spans multiple lines.
+
+
+
+1) General Properties
+---------------------
+
+Lix recognizes the following lines for general properties of levels.
+
+    $BUILT <yyyy-mm-dd hh:mm:ss>
+
+        Datetime when the level was built or most recently modified.
+        Example: $BUILT 2020-01-01 06:00:00
+
+        $BUILT is used for versioning: Trophies (= records/stats of solved
+        singleplayer levels) remember the level's $BUILT field and are thus
+        either current or outdated.
+
+    $AUTHOR <name>
+
+        Name of the designer of the level.
+        Example: $AUTHOR John Doe
+
+        $AUTHOR will be used to match replays and trophies to levels; if
+        two levels have different $AUTHOR, Lix will consider them different.
+
+    $ENGLISH <level title>
+
+        Title of the level.
+        Example: $ENGLISH Any Way You Want
+
+        I recommend to keep titles in English, in title case. But this is
+        only my personal preference.
+
+        Lix doesn't translate titles: No matter what language you pick in the
+        options, the level title is always $ENGLISH. I believe it's important
+        to always know what level somebody is talking about; this is easiest
+        when the title is language-independent. Still, it's possible that we
+        reintroduce translations in a future Lix version.
+
+        $ENGLISH will be used to match replays and trophies to levels; if
+        two levels have different $ENGLISH, Lix will consider them different.
+        If you retitle a level, trophies and replays will be disassociated; you
+        can manually edit the replays/trophies to match the new title.
+
+    #INTENDED_NUMBER_OF_PLAYERS <number>
+
+        Number of players. Put 1 for singleplayer. Put one of 2, 3, ..., 8
+        for multiplayer. You can't put more than one number.
+        Example: #INTENDED_NUMBER_OF_PLAYERS 1
+
+        This will change how the editor prints letters A, B, C, ... over
+        hatches and goals. It has no effect over what number of players can
+        play the level; Lix will always reassociate hatches/goals for the
+        actual number of players.
+
+    #SIZE_X <number>
+
+        Width (horizontal size) of the level, in hi-res pixels.
+
+    #SIZE_Y <number>
+
+        Height (vertical size) of the level, in hi-res pixels.
+
+    #TORUS_X <0 XOR 1>
+
+        Horizontal wrapping: 1 for horizontal wrapping, 0 for no wrapping.
+        If the line is missing, this defaults to 0.
+
+    #TORUS_Y <0 XOR 1>
+
+        Vertical wrapping: 1 for vertical wrapping, 0 for no wrapping.
+        If the line is missing, this defaults to 0.
+
+    #BACKGROUND_RED <0..255> (red portion of the background color, RGB format)
+    #BACKGROUND_GREEN <0..255> (green portion of the background color, RGB format)
+    #BACKGROUND_BLUE <0..255> (blue portion of the background color, RGB format)
+
+        Defines a level background color (for air pixels) as an RGB value.
+        Digits are decimal between 0 and 255 inclusive. Any missing component
+        defaults to 0. Thus, if all three are missing, the color will be
+        (0, 0, 0), the standard black.
+
+    #SECONDS <amount of seconds>
+
+        Number of seconds of overtime in a multiplayer level.
+
+        Has no effect in singleplayer. Old C++ Lix versions, before 2014,
+        supported time limits in singleplayer. It's possible that you will
+        find old levels that still give singleplayer time limits in #SECONDS.
+
+    #INITIAL <amount of lix total>
+
+        Number of lix that will spawn from (the/each) player's hatches.
+
+    #REQUIRED <amount of lix required>
+
+        Number of lix that the player must save in a singleplayer puzzle
+        to solve it. Should be equal or less than #INITIAL.
+
+        Has no effect in multiplayer.
+
+    #SPAWN_INTERVAL <number>
+
+        Spawn interval (SI) of the level. This is the number of frames that
+        must pass until the next lix spawns from the hatches. The fastest
+        is 1, the slowest is 96.
+
+    #<skill> <amount>
+
+        Gives (the/each) player the given amount of the given skill.
+
+        #EXPLODER2 is the knockback (flinging) exploder.
+        #EXPLODER is the imploder.
+
+        Old levels can contain unassignable skills such as #NOTHING, #STUNNER,
+        #EXITER, #BURNER etc.
+
+Outdated lines that Lix doesn't recognize anymore:
+
+    $GERMAN <level title>
+
+        This was the German level title.
+
+    #START_X <position number>
+    #START_Y <position number>
+
+        These specified a top-left coordinate of the map where the camera
+        would start. These days, Lix will always auto-compute the screen start
+        based on the hatches. Lix auto-computes initial zoom based on the
+        level size.
+
+    #SPAWN_INTERVAL_FAST <number>
+
+        Before 2014, Lix allowed the player to modify the spawn interval
+        in singleplayer during play. Allowed values were in the range between
+        #SPAWN_INTERVAL and #SPAWN_INTERVAL_FAST. Most levels gave
+        #SPAWN_INTERVAL_FAST 4.
+
+
+
+Tile lines
+----------
+
+Ordering of tile lines (these start with colons ':') matters: Tiles from
+earlier lines will be drawn first, and tiles from later lines will be drawn on
+top of earlier lines.
+
+    :<hatch>: <x-coordinate> <y-coordinate> [modifier]
+
+        Adds a hatch to the level.
+
+        Hatch image files end in '.H'. <hatch> is a file path in
+        ./images/, excluding the leading './images/', excluding the ending
+        '.png'.
+
+        The modifier may be 'r' (spawned lix face left) or nothing (spawned
+        lix face right).
+
+    :<goal>: <x-coordinate> <y-coordinate>
+
+        Adds a goal to the level.
+
+        Goal image files end in '.G'. <goal> is a file path in
+        ./images/, excluding the leading './images/', excluding the ending
+        '.png'.
+
+Hatches and goals are distributed to players round-robin during multiplayer. I
+should explain that better somewhere. But ideally, I'll improve on this
+fundamentally and associate each hatch/goal in the level file directly with a
+player position.
+
+    :<trap>: <x-coordinate> <y-coordinate>
+
+    Add a hazard to the level.
+
+    Traps end in '.T' for one-lix-at-a-time traps or for flinging gadgets
+    (whether one-lix-at-a-time or continuous), '.W' for water traps, '.F' for
+    fire traps. <trap> is the path below ./images, excluding the ending
+    '.png'.
+
+    :<tile>: <x-coordinate> <y-coordinate> [modifiers]
+
+    Add a tile to the level. <tile> may be either a path below './images/'
+    excluding the ending '.png' for a regular tile, or it may be
+    'Group-'<groupname> for tile group.
+    Example: :matt/bricks/01: 1720 200
+    Example: :Group-0: 64 64
+
+    For modifiers, see below under "3) Modifiers for Single Terrain tiles".
+
+
+
+2) Tile Group Definitions
+-------------------------
+
+Tile groups are a composition of multiple tiles which can be used like one Single Terrain tile.
 They have following format:
 
 The tile groups are defined within a bracket which marks the begin and the end of tile group and in between lines with the tile data of which the tile group is composed:
 
 $BEGIN_TILE_GROUP <name of the group>
-:<tile>: <position> [modifiers]
+:<tile>: <x-coordinate> <y-coordinate> [modifiers]
 ...
 $END_TILE_GROUP
 
@@ -24,13 +221,18 @@ $END_TILE_GROUP
 
 To call the tile group into existence, it is instantiated in the following form:
 
-:Group-<name of the group>: <position> [modifiers]
+:Group-<name of the group>: <x-coordinate> <y-coordinate> [modifiers]
 
 e.g.:
 
 :Group-0: 112 132 rr
 
 That puts the tile group at the named position in the level like a Single Terrain tile.
+
+
+
+3) Modifiers for Single Terrain Tiles
+-------------------------------------
 
 Single Terrain tiles may have these modifiers:
 
