@@ -95,7 +95,7 @@ public:
     void zoomOutToSeeEntireSource()
     {
         while (_zoom.zoomableOut
-            && ! _x.seesEntireSource && ! _y.seesEntireSource
+            && ! (_x.seesEntireSource && _y.seesEntireSource)
         ) {
             _zoom.zoomOut();
         }

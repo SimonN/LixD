@@ -36,12 +36,16 @@ private:
 
 void updateTopologies(Editor editor)
 {
+    if (editor.level.topology.matches(editor._map)) {
+        return;
+    }
     with (editor.level.topology) {
         editor._map       .resize(xl, yl);
         editor._mapTerrain.resize(xl, yl);
         editor._map       .setTorusXY(torusX, torusY);
         editor._mapTerrain.setTorusXY(torusX, torusY);
     }
+    editor._map.zoomOutToSeeEntireMap();
 }
 
 // This must be mixin template to be easily accessible from callers, it
