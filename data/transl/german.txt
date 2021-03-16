@@ -7,13 +7,16 @@ $mainNameOfLanguage Deutsch
 // German closing quote: “ (this closing quote is the English opening quote)
 // File/shell output: " (ASCII double quote, both opening and closing)
 
+// Darstellung der aktuellen Version im Hauptmenü
+$versioningVersion Version
+$versioningForOperatingSystem für
+
 // Verschiedene Dialoge
 $commonOk Okay
 $commonCancel Abbrechen
 $commonNo Nein
 $commonBack Zurück
 $commonExit Beenden
-$commonVersion Version
 
 $mainMenuGetMusic Extrahiere die Musik im Lix-Ordner:
 

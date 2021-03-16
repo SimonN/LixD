@@ -11,13 +11,16 @@
 // don't have your language's name in English (don't put "German" or "French")
 $mainNameOfLanguage English
 
+// Printing of current version in the main menu
+$versioningVersion Version
+$versioningForOperatingSystem for
+
 // used in various dialogues
 $commonOk Okay
 $commonCancel Cancel
 $commonNo No
 $commonBack Back
 $commonExit Exit
-$commonVersion Version
 
 $mainMenuGetMusic Extract the music into Lix's directory:
 

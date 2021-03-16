@@ -5,13 +5,14 @@ module menu.mainmenu;
  * for language and name are shown first instead, and only then this.
  */
 
-import net.versioning;
+import basics.arch;
 import basics.globals;
 import file.option;
 import file.option;
 import file.language;
 import gui;
 import menu.menubg;
+import net.versioning;
 
 static import basics.globals;
 static import hardware.sound; // ...to warn about errors initializing audio.
@@ -39,9 +40,11 @@ public:
 
     this()
     {
+        enum ylBelowBottomButton = 100;
         super(new Geom(0, 0,
-            butXlg     + butSpg * 2,                  // 80 = labels and space
-            butYlg * 4 + butSpg * 4 + Window.titleYlg + 80, Geom.From.CENTER),
+            butXlg     + butSpg * 2,
+            butYlg * 4 + butSpg * 4 + Window.titleYlg + ylBelowBottomButton,
+            Geom.From.CENTER),
             basics.globals.nameOfTheGame);
         addButtons();
         addVersioning();
@@ -79,8 +82,10 @@ private:
     void addVersioning()
     {
         import std.conv : to;
+        addChild(new Label(new Geom(0, 60, xlg, 20, Geom.From.BOTTOM),
+            Lang.versioningVersion.transl ~ " " ~ gameVersion.toString));
         addChild(new Label(new Geom(0, 40, xlg, 20, Geom.From.BOTTOM),
-            transl(Lang.commonVersion) ~ " " ~ gameVersion().toString()));
+            Lang.versioningForOperatingSystem.transl ~ " " ~ osAndArch));
         addChild(new Label(new Geom(0, 20, xlg, 20, Geom.From.BOTTOM),
             basics.globals.homepageURL));
     }

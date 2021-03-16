@@ -13,6 +13,7 @@ import std.algorithm; // splitter
 import std.conv;
 import std.stdio;
 
+import basics.arch;
 import basics.alleg5;
 import net.versioning;
 import file.filename;
@@ -134,7 +135,7 @@ public:
         if (versionAndExit && ! helpAndExit && good)
             writeln(gameVersion);
         else
-            writeln("Lix version ", gameVersion);
+            writeln(gameNameVersionOsAndArch);
 
         if (allegroVersionAndExit)
             writeln("Allegro DLL version ", allegroDLLVersion());

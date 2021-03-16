@@ -84,13 +84,16 @@ enum Lang {
     // fundamental things
     mainNameOfLanguage,
 
+    // game and versioning
+    versioningVersion,
+    versioningForOperatingSystem,
+
     // used in various dialogues
     commonOk,
     commonCancel,
     commonNo,
     commonBack,
     commonExit,
-    commonVersion,
     mainMenuGetMusic,
 
     // browsers
