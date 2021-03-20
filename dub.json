@@ -39,11 +39,11 @@
         "-subsystem:windows",
         "-entry:mainCRTStartup"
     ],
-    "lflags-windows-x86_64-ldc": [
+    "lflags-windows-ldc": [
         "-subsystem:windows",
         "-entry:wmainCRTStartup"
     ],
-    "lflags-windows-x86_64-ldc2": [
+    "lflags-windows-ldc2": [
         "-subsystem:windows",
         "-entry:wmainCRTStartup"
     ],
