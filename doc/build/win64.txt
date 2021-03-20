@@ -14,63 +14,47 @@ If you get stuck at any point, don't hesitate to contact me
 Install LDC and dub
 -------------------
 
-Download the D compiler LDC, version 1.21.0 or newer;
-choose the download that ends in "-windows-x64.7z":
+Download the D compiler LDC, version 1.21.0 or newer; prefer the download that
+ends in -windows-multilib.exe:
 
     https://github.com/ldc-developers/ldc/releases
 
-I do not support older LDC versions than 1.21.0. If newer versions fail to
-build Lix without erros, tell me. If you want to use DMD instead of LDC,
-see below at "Building with DMD".
+The download that ends in -windows-multilib.7z will also work, it's an
+alternative. LDC versions 1.25 and older will offer only the .7z.
 
-7z files can be extracted with 7-Zip, available at:
+I do not support LDC versions older than 1.21.0. If very new versions give you
+errors when building Lix, tell me. On Win 7 or on Wine 6.4 and older, LDC 1.25
+and 1.26 don't work due to linker problems; these LDC versions are still good
+on Wine 6.7+, Win 8, or Win 10 are fine. If you want to use DMD instead of
+LDC, see below at "Building with DMD".
 
-    https://www.7-zip.org/download.html
+* If you downloaded -windows-multilib.exe:
 
-Extract the LDC archive to a directory of your choice. We will refer
-to that directory as the LDC directory.
+    Run it. This is an installer. The default choices are okay for Lix.
+    The installer will add LDC's bin/ directory to your PATH variable
+    automatically.
 
-Add LDC's bin/ subdirectory to your Windows PATH variable. How to do that
-depends on your system:
+* If you downloaded -windows-multilib.7z:
 
-* In Windows 7:
-    1. Right-click My Computer.
-    2. Select Properties in the pop-up menu.
-    3. Go to the Advanced tab.
-    4. Click Environment Variables.
-    5. Highlight PATH and click Edit.
-    6. Move the cursor to the end of PATH's value text.
-    7. Add a semicolon ";" without quotes.
-    8. Add the path to your LDC directory, followed by "\bin" without quotes.
-    9. Click OK everywhere.
+    Extract this archive, e.g., with 7-Zip from
 
-* In Windows 10:
-    1. Open the Control Panel.
-    2. Select System and Security.
-    3. In the left column, select Advanced system settings.
-    4. Go to the Advanced tab.
-    5. Click Environment Variables.
-    6. Highlight PATH and click Edit.
-    7. Move the cursor to the end of PATH's value text.
-    8. Add a semicolon ";" without quotes.
-    8. Add the path to your LDC directory, followed by "\bin" without quotes.
-    10. Click OK everywhere.
+        https://www.7-zip.org/download.html
 
-* In Wine on non-Windows systems:
-    1. Run "wine regedit" from a shell.
-    2. Go to HKEY_LOCAL_MACHINE -> System -> CurrentControlSet -> Control
-        -> Session Manager -> Environment.
-    3. Edit the PATH variable.
-    4. Append a semicolon ";" without quotes.
-    5. Append the installation path of LDC, followed by "\bin" without quotes.
-        Use backslashes instead of slashes, but I haven't tried slashes.
-        C:\ will usually mean ~/.wine/drive_c/.
-        Z:\ will usually mean the Linux sysem's root directory /.
+    ..., to a directory of your choice. We will refer to the extracted
+    directory as the LDC directory. Add LDC's bin/ subdirectory to your
+    Windows PATH variable; for instructions, see addtopath.txt in the same
+    directory of this file, win64.txt.
+
+
+
+Verify that LDC and dub work
+----------------------------
 
 Windows LDC already ships with a Windows version of dub, the D package manager.
 
 To verify that both LDC and dub are installed properly:
-    1. Open a command prompt.
+
+    1. Open a command prompt anywhere.
     2. Run "dub" or "ldc2" without quotes.
     3. Check that both programs are found and output something different
         than "is not a recognized program or command".
@@ -80,20 +64,31 @@ To verify that both LDC and dub are installed properly:
 Install Allegro 5 and enet
 --------------------------
 
-I have prepared all necessary DLLs in a single archive. Download this:
+I have prepared all necessary DLLs in a single archive tailored to the LDC
+multilib release. Download this:
 
     http://www.lixgame.com/dow/lix-dlls-libs-win64.zip
 
 Extract this into your LDC directory. You will get new DLLs in bin/ and
-new LIBs in lib/. Proceed to the next section, "Get the Lix source".
+new LIBs in lib64/. Proceed to the next section, "Get the Lix source".
 
-If you don't trust me or prefer another way to get these files, you could
-build Allegro 5 from source, or get the Allegro DLLs and LIBs from its NuGet
-binary package. If you get them from the NuGet package, remove all files with
-"debug" within their name. Copy the other DLLs to LDC's bin/ dir, the other
-LIBs to LDC's lib/ dir. Match the filenames to what I provided in my archive.
-above, for example bin/allegro_acodec-5.2.dll or lib/allegro_acodec.lib.
-You'd also have to build enet from source.
+If you use another release of LDC, especially the "-windows-x64.7z" release,
+then the lib directory might be called differently than lib64/, e.g., just
+lib/. Copy into your lib directory everything from my extracted lib64/.
+
+If my DLLs or LIBs fail, or if you prefer another way to get the Allegro 5 and
+enet DLLs and LIBs: You can build these libraries from source, or you can get
+the Allegro DLLs and LIBs from its NuGet binary package:
+
+    https://www.nuget.org/packages/Allegro
+
+Click Download on the right. Unzip the downloaded file allegro*.nupkg, it
+is a normal zip archive. Go to build/native/v141, and you'll see Allegro
+.lib and .dll files for win32 (= 32-bit) and for x64 (= 64-bit).
+You don't need any files with "debug" in their name. Copy the other DLLs to
+LDC's bin/ dir. Copy the other LIBs to LDC's lib64/ dir or the respective dir
+name for releases other than multilib. Match the filenames to what I provided
+in my archive.
 
 
 
@@ -101,17 +96,20 @@ Get the Lix source
 ------------------
 
 * If you have git:
-    Clone the repository:
+
+    Clone Lix's repository:
 
         git clone https://github.com/SimonN/LixD.git
 
 * If you don't have git:
-    Download the source as a zip archive here:
+
+    Download Lix's source as a zip archive here:
 
         https://github.com/SimonN/LixD/archive/master.zip
 
-    Extract to a directory of your choice. We will refer to that directory
-    as the Lix directory.
+    Extract to a directory of your choice. We will refer to the extracted
+    directory as the Lix directory.
+
 
 
 Compile Lix
@@ -121,8 +119,7 @@ Doubleclick win-build.bat in the Lix directory to build the game.
 If successful, you will get an executable ./bin/lix.exe, run it to start Lix.
 If Lix runs, proceed to the next section, "Add music".
 
-Alternatively, if you prefer the command line instead of the batch file,
-try either of these commands:
+If you prefer the command line, try one of these commands:
 
     dub build --compiler=ldc2
     dub build -b release --compiler=ldc2
@@ -151,7 +148,7 @@ You are done!
 
 
 Building with DMD
-------------------
+-----------------
 
 DMD is an alternative D compiler. It is possible to build a 64-bit version of
 Lix with DMD instead of LDC as well, even though LDC is recommended for better
@@ -176,11 +173,14 @@ During the installation, when asked:
 
 DMD already ships with dub, the D package manager.
 
-Edit Windows's/Wine's PATH variable (see instructions near top of this file):
-Append a semicolon, then append the full path to DMD's windows/bin64
-directory. (Reason: DMD's installer adds only the 32-bit directory to the PATH,
-but we want the separate 64-bit directory in the PATH, too, so that the DLLs
-will later be found when running Lix.)
+Edit Windows's/Wine's PATH variable (for instructions, see addtopath.txt in
+the same directory of this file, win64.txt, but instead of adding LDC's
+directory, do the following): Append a semicolon to the PATH
+variable, then append the full path to DMD's windows\bin64 directory.
+
+Reason for this manual adding to PATH: DMD's installer adds only the 32-bit
+directory to the PATH, but we want the separate 64-bit directory in the PATH,
+too, so that the DLLs will later be found when running Lix.
 
 Install Allegro 5 and enet:
 

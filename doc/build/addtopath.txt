@@ -1,0 +1,42 @@
+How to add paths to your PATH
+=============================
+
+If you've downloaded LDC's installer, you don't need these instructions.
+
+But if you've downloaded LDC's 7z archive, you must add the LDC executables'
+path to your PATH variable, so that dub or manually typed commands can find
+the LDC executables. Here is how to do that:
+
+* In Windows 7:
+    1. Right-click My Computer.
+    2. Select Properties in the pop-up menu.
+    3. Go to the Advanced tab.
+    4. Click Environment Variables.
+    5. Highlight PATH and click Edit.
+    6. Move the cursor to the end of PATH's value text.
+    7. Add a semicolon ";" without quotes.
+    8. Add the path to your LDC directory, followed by "\bin" without quotes.
+    9. Click OK everywhere.
+
+* In Windows 10:
+    1. Open the Control Panel.
+    2. Select System and Security.
+    3. In the left column, select Advanced system settings.
+    4. Go to the Advanced tab.
+    5. Click Environment Variables.
+    6. Highlight PATH and click Edit.
+    7. Move the cursor to the end of PATH's value text.
+    8. Add a semicolon ";" without quotes.
+    8. Add the path to your LDC directory, followed by "\bin" without quotes.
+    10. Click OK everywhere.
+
+* In Wine on non-Windows systems:
+    1. Run "wine regedit" from a shell.
+    2. Go to HKEY_LOCAL_MACHINE -> System -> CurrentControlSet -> Control
+        -> Session Manager -> Environment.
+    3. Edit the PATH variable.
+    4. Append a semicolon ";" without quotes.
+    5. Append the installation path of LDC, followed by "\bin" without quotes.
+        Use backslashes instead of slashes, but I haven't tried slashes.
+        C:\ will usually mean ~/.wine/drive_c/.
+        Z:\ will usually mean the Linux sysem's root directory /.
