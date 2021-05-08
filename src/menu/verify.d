@@ -23,6 +23,7 @@ private:
     VerifyCounter _vc;
     MutFilename[] _queue;
     File _permanent;
+    bool _hasPrintedExitingLine = false;
 
 public:
     this(Filename dir)
@@ -51,6 +52,7 @@ protected:
     override void calcSelf()
     {
         verifyOneFromQueue();
+        maybePrintExitingLine();
         if (keyMenuOkay.keyTapped || keyMenuExit.keyTapped
             || keyMenuDelete.keyTapped || mouseClickLeft || mouseClickRight
         ) {
@@ -62,18 +64,26 @@ protected:
 private:
     void verifyOneFromQueue()
     {
-        if (_queue.length == 0)
-            return;
-        _vc.verifyOneReplay(_queue[0]);
-        _queue =_queue[1 .. $];
-        if (_queue.length % 10 == 0)
-            core.memory.GC.collect();
         if (_queue.length == 0) {
-            _vc.writeLevelsNotCovered();
-            _vc.writeStatistics();
-            _console.addWhite(Lang.winVerifyOutputWrittenTo.translf(
-                fileReplayVerifier.rootless));
-            _permanent.close();
+            return;
         }
+        _vc.verifyOneReplay(_queue[0]);
+        _queue = _queue[1 .. $];
+        if (_queue.length % 10 == 0) {
+            core.memory.GC.collect();
+        }
+    }
+
+    void maybePrintExitingLine()
+    {
+        if (_queue.length >= 1 || _hasPrintedExitingLine) {
+            return;
+        }
+        _hasPrintedExitingLine = true;
+        _vc.writeLevelsNotCovered();
+        _vc.writeStatistics();
+        _console.addWhite(Lang.winVerifyOutputWrittenTo.translf(
+            fileReplayVerifier.rootless));
+        _permanent.close();
     }
 }
