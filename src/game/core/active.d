@@ -23,6 +23,7 @@ package:
 
 void calcActive(Game game)
 {
+    assert (!game.modalWindow);
     game.handleNukeButton();
     if (game.isMouseOnLand) {
         if (mouseClickLeft)
@@ -37,9 +38,11 @@ void calcActive(Game game)
     }
 }
 
+// This doesn't strictly belong in game.core.active.
+// It's also called for contingency from game.core.speed.
 package void findAgainHighlitLixAfterPhyu(Game game)
 {
-    if (game.isMouseOnLand)
+    if (game.isMouseOnLand && !game.modalWindow)
         game.findPotentialAssignee();
 }
 
