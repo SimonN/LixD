@@ -1,0 +1,675 @@
+$BUILT 2021-05-02 18:26:37
+$AUTHOR Flopsy
+$ENGLISH In The Mall 4P
+
+#INTENDED_NUMBER_OF_PLAYERS 4
+#SIZE_X 864
+#SIZE_Y 648
+#TORUS_X 1
+#TORUS_Y 0
+
+#SECONDS 150
+#INITIAL 50
+#SPAWN_INTERVAL 10
+
+#WALKER 40
+#RUNNER 10
+#CLIMBER 5
+#FLOATER 5
+#EXPLODER2 5
+#BLOCKER 1
+#BUILDER 50
+#PLATFORMER 30
+#BASHER 30
+#MINER 30
+#DIGGER 10
+#JUMPER 40
+#BATTER -1
+#CUBER 1
+
+:matt/carnival/Hatch.H: 80 80
+:matt/carnival/Hatch.H: 304 80 r
+:matt/carnival/Hatch.H: 512 80
+:matt/carnival/Hatch.H: 736 80 r
+
+:raymanni/toys/goal.G: 480 528
+:raymanni/toys/goal.G: 768 528
+:raymanni/toys/goal.G: 48 528
+:raymanni/toys/goal.G: 336 528
+
+:raymanni/gore/eater.T: 128 248
+:amanda/forest/frog_happy.T: 32 184
+:amanda/forest/frog_happy.T: 32 344
+:raymanni/gore/eater.T: 128 408
+:raymanni/gore/eater.T: 256 248
+:amanda/forest/frog_happy.T: 352 184
+:amanda/forest/frog_happy.T: 352 344
+:raymanni/gore/eater.T: 256 408
+:raymanni/gore/eater.T: 560 248
+:amanda/forest/frog_happy.T: 464 184
+:amanda/forest/frog_happy.T: 464 344
+:raymanni/gore/eater.T: 560 408
+:raymanni/gore/eater.T: 688 248
+:amanda/forest/frog_happy.T: 784 184
+:amanda/forest/frog_happy.T: 784 344
+:raymanni/gore/eater.T: 688 408
+:raymanni/holiday/porcupine.T: 240 576
+:raymanni/holiday/porcupine.T: 672 576
+:raymanni/toys/monkey.T: 144 576
+:raymanni/toys/monkey.T: 576 576
+
+$BEGIN_TILE_GROUP 0
+:matt/marble/22c: 0 32
+:matt/marble/22c: 32 0
+$END_TILE_GROUP
+:Group-0: 112 160
+:matt/marble/03c: 192 168
+:matt/marble/03c: 192 200
+:matt/marble/03c: 192 248
+:matt/marble/03c: 192 280
+:matt/marble/04c: 160 232
+:matt/marble/04c: 128 232
+:matt/marble/04c: 96 232
+:Group-0: 24 240 frr
+:matt/marble/04c: 64 232
+:matt/marble/04c: 32 232
+:matt/marble/03c: 16 168
+:matt/marble/03c: 16 200
+:matt/marble/03c: 16 248
+:matt/marble/03c: 16 280
+:geoo/steel/16x16o.S: 16 232
+:geoo/steel/16x16o.S: 192 232
+:amanda/steel/steel24x8.S: 184 160
+:amanda/steel/steel24x8.S: 160 160
+:amanda/steel/steel24x8.S: 136 160
+:amanda/steel/steel24x8.S: 112 160
+:amanda/steel/steel24x8.S: 88 160
+:amanda/steel/steel24x8.S: 64 160
+:amanda/steel/steel24x8.S: 40 160
+:amanda/steel/steel24x8.S: 16 160
+:geoo/steel/16x16o.S: 16 144
+:geoo/steel/16x16o.S: 16 128
+:geoo/steel/16x16o.S: 16 112
+:geoo/steel/16x16o.S: 16 96
+:geoo/steel/16x16o.S: 16 80
+:geoo/steel/16x16o.S: 16 64
+:geoo/steel/16x16o.S: 16 48
+:geoo/steel/16x16o.S: 16 32
+:matt/marble/03c: 16 328
+:matt/marble/03c: 16 360
+:matt/marble/03c: 192 328
+:matt/marble/03c: 192 360
+:matt/marble/04c: 32 312
+:matt/marble/04c: 64 312
+:Group-0: 112 320
+:Group-0: 112 320
+:matt/marble/04c: 96 312
+:matt/marble/04c: 128 312
+:matt/marble/04c: 160 312
+:geoo/steel/16x16o.S: 192 312
+:geoo/steel/16x16o.S: 16 312
+:geoo/steel/16x16o.S: 152 312
+:geoo/steel/16x16o.S: 56 232
+:matt/marble/03c: 192 328
+:matt/marble/03c: 192 360
+:matt/marble/04c: 160 392
+:matt/marble/04c: 128 392
+:matt/marble/04c: 96 392
+:matt/marble/04c: 64 392
+:matt/marble/04c: 32 392
+:matt/marble/03c: 16 328
+:matt/marble/03c: 16 360
+:geoo/steel/16x16o.S: 16 392
+:geoo/steel/16x16o.S: 192 392
+:geoo/steel/16x16o.S: 56 392
+:matt/marble/02c: 0 32
+:matt/marble/02c: 0 152
+:matt/marble/02c: 0 280
+:matt/marble/02c: 0 392
+:matt/marble/03c: 192 408
+:matt/marble/03c: 192 440
+:matt/marble/04c: 160 392
+:matt/marble/04c: 128 392
+:matt/marble/04c: 96 392
+:Group-0: 24 400 frr
+:matt/marble/04c: 64 392
+:matt/marble/04c: 32 392
+:matt/marble/03c: 16 408
+:matt/marble/03c: 16 440
+:geoo/steel/16x16o.S: 16 392
+:geoo/steel/16x16o.S: 192 392
+:matt/marble/04c: 32 472
+:matt/marble/04c: 64 472
+:matt/marble/04c: 96 472
+:matt/marble/04c: 128 472
+:matt/marble/04c: 160 472
+:geoo/steel/16x16o.S: 192 472
+:geoo/steel/16x16o.S: 16 472
+:geoo/steel/16x16o.S: 152 472
+:geoo/steel/16x16o.S: 56 392
+:Group-0: 248 160 frr
+:matt/marble/03c: 240 168 frr
+:matt/marble/03c: 240 200 frr
+:matt/marble/03c: 240 248 frr
+:matt/marble/03c: 240 280 frr
+:matt/marble/04c: 256 232 frr
+:matt/marble/04c: 288 232 frr
+:matt/marble/04c: 320 232 frr
+:Group-0: 336 240
+:matt/marble/04c: 352 232 frr
+:matt/marble/04c: 384 232 frr
+:matt/marble/03c: 416 168 frr
+:matt/marble/03c: 416 200 frr
+:matt/marble/03c: 416 248 frr
+:matt/marble/03c: 416 280 frr
+:geoo/steel/16x16o.S: 416 232 frr
+:geoo/steel/16x16o.S: 240 232 frr
+:amanda/steel/steel24x8.S: 240 160 frr
+:amanda/steel/steel24x8.S: 264 160 frr
+:amanda/steel/steel24x8.S: 288 160 frr
+:amanda/steel/steel24x8.S: 312 160 frr
+:amanda/steel/steel24x8.S: 336 160 frr
+:amanda/steel/steel24x8.S: 360 160 frr
+:amanda/steel/steel24x8.S: 384 160 frr
+:amanda/steel/steel24x8.S: 408 160 frr
+:geoo/steel/16x16o.S: 416 144 frr
+:geoo/steel/16x16o.S: 416 128 frr
+:geoo/steel/16x16o.S: 416 112 frr
+:geoo/steel/16x16o.S: 416 96 frr
+:geoo/steel/16x16o.S: 416 80 frr
+:geoo/steel/16x16o.S: 416 64 frr
+:geoo/steel/16x16o.S: 416 48 frr
+:geoo/steel/16x16o.S: 416 32 frr
+:matt/marble/03c: 416 328 frr
+:matt/marble/03c: 416 360 frr
+:matt/marble/03c: 240 328 frr
+:matt/marble/03c: 240 360 frr
+:matt/marble/04c: 384 312 frr
+:matt/marble/04c: 352 312 frr
+:Group-0: 248 320 frr
+:Group-0: 248 320 frr
+:matt/marble/04c: 320 312 frr
+:matt/marble/04c: 288 312 frr
+:matt/marble/04c: 256 312 frr
+:geoo/steel/16x16o.S: 240 312 frr
+:geoo/steel/16x16o.S: 416 312 frr
+:geoo/steel/16x16o.S: 280 312 frr
+:geoo/steel/16x16o.S: 376 232 frr
+:matt/marble/03c: 240 328 frr
+:matt/marble/03c: 240 360 frr
+:matt/marble/04c: 256 392 frr
+:matt/marble/04c: 288 392 frr
+:matt/marble/04c: 320 392 frr
+:matt/marble/04c: 352 392 frr
+:matt/marble/04c: 384 392 frr
+:matt/marble/03c: 416 328 frr
+:matt/marble/03c: 416 360 frr
+:geoo/steel/16x16o.S: 416 392 frr
+:geoo/steel/16x16o.S: 240 392 frr
+:geoo/steel/16x16o.S: 376 392 frr
+:matt/marble/02c: 0 32 frr
+:matt/marble/02c: 0 152 frr
+:matt/marble/02c: 0 280 frr
+:matt/marble/02c: 0 392 frr
+:matt/marble/03c: 240 408 frr
+:matt/marble/03c: 240 440 frr
+:matt/marble/04c: 256 392 frr
+:matt/marble/04c: 288 392 frr
+:matt/marble/04c: 320 392 frr
+:Group-0: 336 400
+:matt/marble/04c: 352 392 frr
+:matt/marble/04c: 384 392 frr
+:matt/marble/03c: 416 408 frr
+:matt/marble/03c: 416 440 frr
+:geoo/steel/16x16o.S: 416 392 frr
+:geoo/steel/16x16o.S: 240 392 frr
+:matt/marble/04c: 384 472 frr
+:matt/marble/04c: 352 472 frr
+:matt/marble/04c: 320 472 frr
+:matt/marble/04c: 288 472 frr
+:matt/marble/04c: 256 472 frr
+:geoo/steel/16x16o.S: 240 472 frr
+:geoo/steel/16x16o.S: 416 472 frr
+:geoo/steel/16x16o.S: 280 472 frr
+:geoo/steel/16x16o.S: 376 392 frr
+:matt/marble/03c: 192 128
+:matt/marble/03c: 192 96
+:matt/marble/03c: 240 128
+:matt/marble/03c: 240 96
+:matt/marble/04c: 176 80
+:matt/marble/04c: 240 80
+:Group-0: 544 160
+:matt/marble/03c: 624 168
+:matt/marble/03c: 624 200
+:matt/marble/03c: 624 248
+:matt/marble/03c: 624 280
+:matt/marble/04c: 592 232
+:matt/marble/04c: 560 232
+:matt/marble/04c: 528 232
+:Group-0: 456 240 frr
+:matt/marble/04c: 496 232
+:matt/marble/04c: 464 232
+:matt/marble/03c: 448 168
+:matt/marble/03c: 448 200
+:matt/marble/03c: 448 248
+:matt/marble/03c: 448 280
+:geoo/steel/16x16o.S: 448 232
+:geoo/steel/16x16o.S: 624 232
+:amanda/steel/steel24x8.S: 616 160
+:amanda/steel/steel24x8.S: 592 160
+:amanda/steel/steel24x8.S: 568 160
+:amanda/steel/steel24x8.S: 544 160
+:amanda/steel/steel24x8.S: 520 160
+:amanda/steel/steel24x8.S: 496 160
+:amanda/steel/steel24x8.S: 472 160
+:amanda/steel/steel24x8.S: 448 160
+:geoo/steel/16x16o.S: 448 144
+:geoo/steel/16x16o.S: 448 128
+:geoo/steel/16x16o.S: 448 112
+:geoo/steel/16x16o.S: 448 96
+:geoo/steel/16x16o.S: 448 80
+:geoo/steel/16x16o.S: 448 64
+:geoo/steel/16x16o.S: 448 48
+:geoo/steel/16x16o.S: 448 32
+:matt/marble/03c: 448 328
+:matt/marble/03c: 448 360
+:matt/marble/03c: 624 328
+:matt/marble/03c: 624 360
+:matt/marble/04c: 464 312
+:matt/marble/04c: 496 312
+:Group-0: 544 320
+:Group-0: 544 320
+:matt/marble/04c: 528 312
+:matt/marble/04c: 560 312
+:matt/marble/04c: 592 312
+:geoo/steel/16x16o.S: 624 312
+:geoo/steel/16x16o.S: 448 312
+:matt/marble/04: 560 312
+:matt/marble/04: 592 312
+:geoo/steel/16x16o.S: 584 312
+:matt/marble/04: 496 232
+:matt/marble/04: 464 232
+:geoo/steel/16x16o.S: 488 232
+:matt/marble/03c: 624 328
+:matt/marble/03c: 624 360
+:matt/marble/04c: 592 392
+:matt/marble/04c: 560 392
+:matt/marble/04c: 528 392
+:matt/marble/04c: 496 392
+:matt/marble/04c: 464 392
+:matt/marble/03c: 448 328
+:matt/marble/03c: 448 360
+:geoo/steel/16x16o.S: 448 392
+:geoo/steel/16x16o.S: 624 392
+:geoo/steel/16x16o.S: 488 392
+:matt/marble/02c: 432 32
+:matt/marble/02c: 432 152
+:matt/marble/02c: 432 280
+:matt/marble/02c: 432 392
+:matt/marble/03c: 624 408
+:matt/marble/03c: 624 440
+:matt/marble/04c: 592 392
+:matt/marble/04c: 560 392
+:matt/marble/04c: 528 392
+:Group-0: 456 400 frr
+:matt/marble/04c: 496 392
+:matt/marble/04c: 464 392
+:matt/marble/03c: 448 408
+:matt/marble/03c: 448 440
+:geoo/steel/16x16o.S: 448 392
+:geoo/steel/16x16o.S: 624 392
+:matt/marble/04c: 464 472
+:matt/marble/04c: 496 472
+:matt/marble/04c: 528 472
+:matt/marble/04c: 560 472
+:matt/marble/04c: 592 472
+:geoo/steel/16x16o.S: 624 472
+:geoo/steel/16x16o.S: 448 472
+:matt/marble/04: 560 472
+:matt/marble/04: 592 472
+:geoo/steel/16x16o.S: 584 472
+:matt/marble/04: 496 392
+:matt/marble/04: 464 392
+:geoo/steel/16x16o.S: 488 392
+:Group-0: 680 160 frr
+:matt/marble/03c: 672 168 frr
+:matt/marble/03c: 672 200 frr
+:matt/marble/03c: 672 248 frr
+:matt/marble/03c: 672 280 frr
+:matt/marble/04c: 688 232 frr
+:matt/marble/04c: 720 232 frr
+:matt/marble/04c: 752 232 frr
+:Group-0: 768 240
+:matt/marble/04c: 784 232 frr
+:matt/marble/04c: 816 232 frr
+:matt/marble/03c: 848 168 frr
+:matt/marble/03c: 848 200 frr
+:matt/marble/03c: 848 248 frr
+:matt/marble/03c: 848 280 frr
+:geoo/steel/16x16o.S: 848 232 frr
+:geoo/steel/16x16o.S: 672 232 frr
+:amanda/steel/steel24x8.S: 672 160 frr
+:amanda/steel/steel24x8.S: 696 160 frr
+:amanda/steel/steel24x8.S: 720 160 frr
+:amanda/steel/steel24x8.S: 744 160 frr
+:amanda/steel/steel24x8.S: 768 160 frr
+:amanda/steel/steel24x8.S: 792 160 frr
+:amanda/steel/steel24x8.S: 816 160 frr
+:amanda/steel/steel24x8.S: 840 160 frr
+:geoo/steel/16x16o.S: 848 144 frr
+:geoo/steel/16x16o.S: 848 128 frr
+:geoo/steel/16x16o.S: 848 112 frr
+:geoo/steel/16x16o.S: 848 96 frr
+:geoo/steel/16x16o.S: 848 80 frr
+:geoo/steel/16x16o.S: 848 64 frr
+:geoo/steel/16x16o.S: 848 48 frr
+:geoo/steel/16x16o.S: 848 32 frr
+:matt/marble/03c: 848 328 frr
+:matt/marble/03c: 848 360 frr
+:matt/marble/03c: 672 328 frr
+:matt/marble/03c: 672 360 frr
+:matt/marble/04c: 816 312 frr
+:matt/marble/04c: 784 312 frr
+:Group-0: 680 320 frr
+:Group-0: 680 320 frr
+:matt/marble/04c: 752 312 frr
+:matt/marble/04c: 720 312 frr
+:matt/marble/04c: 688 312 frr
+:geoo/steel/16x16o.S: 672 312 frr
+:geoo/steel/16x16o.S: 848 312 frr
+:matt/marble/04: 720 312
+:matt/marble/04: 688 312
+:geoo/steel/16x16o.S: 712 312 frr
+:matt/marble/04: 816 232
+:matt/marble/04: 784 232
+:geoo/steel/16x16o.S: 808 232 frr
+:matt/marble/03c: 672 328 frr
+:matt/marble/03c: 672 360 frr
+:matt/marble/04c: 688 392 frr
+:matt/marble/04c: 720 392 frr
+:matt/marble/04c: 752 392 frr
+:matt/marble/04c: 784 392 frr
+:matt/marble/04c: 816 392 frr
+:matt/marble/03c: 848 328 frr
+:matt/marble/03c: 848 360 frr
+:geoo/steel/16x16o.S: 848 392 frr
+:geoo/steel/16x16o.S: 672 392 frr
+:geoo/steel/16x16o.S: 808 392 frr
+:matt/marble/02c: 432 32 frr
+:matt/marble/02c: 432 152 frr
+:matt/marble/02c: 432 280 frr
+:matt/marble/02c: 432 392 frr
+:matt/marble/03c: 672 408 frr
+:matt/marble/03c: 672 440 frr
+:matt/marble/04c: 688 392 frr
+:matt/marble/04c: 720 392 frr
+:matt/marble/04c: 752 392 frr
+:Group-0: 768 400
+:matt/marble/04c: 784 392 frr
+:matt/marble/04c: 816 392 frr
+:matt/marble/03c: 848 408 frr
+:matt/marble/03c: 848 440 frr
+:geoo/steel/16x16o.S: 848 392 frr
+:geoo/steel/16x16o.S: 672 392 frr
+:matt/marble/04c: 816 472 frr
+:matt/marble/04c: 784 472 frr
+:matt/marble/04c: 752 472 frr
+:matt/marble/04: 752 472
+:matt/marble/04c: 720 472 frr
+:matt/marble/04c: 688 472 frr
+:geoo/steel/16x16o.S: 672 472 frr
+:geoo/steel/16x16o.S: 848 472 frr
+:matt/marble/04: 688 472
+:matt/marble/04: 720 472
+:geoo/steel/16x16o.S: 712 472 frr
+:matt/marble/04: 784 392
+:matt/marble/04: 816 392
+:geoo/steel/16x16o.S: 808 392 frr
+:matt/marble/03c: 624 128
+:matt/marble/03c: 624 96
+:matt/marble/03c: 672 128
+:matt/marble/03c: 672 96
+:matt/marble/04c: 608 80
+:matt/marble/04c: 672 80
+:geoo/steel/16x16o.S: 466 128
+:geoo/steel/16x16o.S: 466 112
+:geoo/steel/16x16o.S: 466 96
+:geoo/steel/16x16o.S: 466 80
+:geoo/steel/16x16o.S: 466 64
+:geoo/steel/16x16o.S: 466 48
+:geoo/steel/16x16o.S: 466 32
+:geoo/steel/16x16o.S: 466 16
+:geoo/steel/16x16o.S: 466 0
+:geoo/steel/16x16o.S: 398 128
+:geoo/steel/16x16o.S: 398 112
+:geoo/steel/16x16o.S: 398 96
+:geoo/steel/16x16o.S: 398 80
+:geoo/steel/16x16o.S: 398 64
+:geoo/steel/16x16o.S: 398 48
+:geoo/steel/16x16o.S: 398 32
+:geoo/steel/16x16o.S: 398 16
+:geoo/steel/16x16o.S: 398 0
+:geoo/steel/16x16o.S: 830 128
+:geoo/steel/16x16o.S: 830 112
+:geoo/steel/16x16o.S: 830 96
+:geoo/steel/16x16o.S: 830 80
+:geoo/steel/16x16o.S: 830 64
+:geoo/steel/16x16o.S: 830 48
+:geoo/steel/16x16o.S: 830 32
+:geoo/steel/16x16o.S: 830 16
+:geoo/steel/16x16o.S: 830 0
+:geoo/steel/16x16o.S: 34 128
+:geoo/steel/16x16o.S: 34 112
+:geoo/steel/16x16o.S: 34 96
+:geoo/steel/16x16o.S: 34 80
+:geoo/steel/16x16o.S: 34 64
+:geoo/steel/16x16o.S: 34 48
+:geoo/steel/16x16o.S: 34 32
+:geoo/steel/16x16o.S: 34 16
+:geoo/steel/16x16o.S: 34 0
+:Group-0: 128 512
+:Group-0: 232 512 frr
+:matt/marble/06c: 208 512
+:matt/marble/04c: 144 512
+:matt/marble/04c: 112 512
+:matt/marble/04c: 80 512
+:matt/marble/04c: 48 512
+:matt/marble/04c: 16 512
+:matt/marble/04c: 832 512
+:matt/marble/04c: 800 512
+:matt/marble/04c: 768 512
+:matt/marble/04c: 736 512
+:matt/marble/04c: 704 512
+:matt/marble/04c: 400 512
+:matt/marble/04c: 368 512
+:matt/marble/04c: 336 512
+:matt/marble/04c: 304 512
+:matt/marble/04c: 272 512
+:matt/marble/04c: 576 512
+:matt/marble/04c: 544 512
+:matt/marble/04c: 512 512
+:matt/marble/04c: 480 512
+:matt/marble/04c: 448 512
+:Group-0: 560 512
+:Group-0: 664 512 frr
+:matt/marble/22: 696 544 frr
+:matt/marble/22: 592 512
+:matt/marble/22: 664 512 frr
+:matt/marble/06c: 640 512
+:matt/marble/09c: 80 592
+:matt/marble/09c: 16 592
+:matt/marble/09c: 736 592
+:matt/marble/09c: 800 592
+:matt/marble/09: 736 592
+:matt/marble/09: 800 592
+:geoo/steel/16x16o.S: 792 592 frr
+:geoo/steel/16x16o.S: 72 592 frr
+:matt/marble/22: 560 544
+:matt/marble/09c: 512 592
+:matt/marble/09c: 448 592
+:matt/marble/09c: 304 592
+:matt/marble/09c: 368 592
+:geoo/steel/16x16o.S: 360 592 frr
+:matt/marble/09: 448 592
+:matt/marble/09: 512 592
+:geoo/steel/16x16o.S: 504 592 frr
+:matt/marble/04c: 576 640
+:matt/marble/04c: 608 640
+:matt/marble/04c: 640 640
+:matt/marble/04c: 672 640
+:matt/marble/04c: 704 640
+:matt/marble/04c: 144 640
+:matt/marble/04c: 176 640
+:matt/marble/04c: 208 640
+:matt/marble/04c: 240 640
+:matt/marble/04c: 272 640
+:matt/marble/04c: 48 48
+:matt/marble/04c: 80 48
+:matt/marble/04c: 112 48
+:matt/marble/04c: 144 48
+:matt/marble/04c: 176 48
+:matt/marble/04c: 208 48
+:matt/marble/04c: 240 48
+:matt/marble/04c: 272 48
+:matt/marble/04c: 304 48
+:matt/marble/04c: 336 48
+:matt/marble/04c: 368 48
+:raymanni/toys/soldier_2: 64 0
+:raymanni/toys/soldier_3: 144 0
+:raymanni/toys/soldier_1: 224 0
+:raymanni/toys/letter_2: 288 16
+:raymanni/toys/letter_1: 320 16
+:raymanni/toys/letter_4: 352 16
+:matt/marble/04c: 480 48
+:matt/marble/04c: 512 48
+:matt/marble/04c: 544 48
+:matt/marble/04c: 576 48
+:matt/marble/04c: 608 48
+:matt/marble/04c: 640 48
+:matt/marble/04c: 672 48
+:matt/marble/04c: 704 48
+:matt/marble/04c: 736 48
+:matt/marble/04c: 768 48
+:matt/marble/04c: 800 48
+:raymanni/toys/soldier_2: 496 0
+:raymanni/toys/soldier_3: 576 0
+:raymanni/toys/soldier_1: 656 0
+:raymanni/toys/letter_2: 720 16
+:raymanni/toys/letter_1: 752 16
+:raymanni/toys/letter_4: 784 16
+:matt/marble/02: 432 280
+:matt/marble/02: 432 152
+:matt/marble/02: 432 392
+:matt/marble/02: 432 32
+:matt/marble/04: 480 48
+:matt/marble/04: 512 48
+:matt/marble/04: 544 48
+:matt/marble/04: 576 48
+:matt/marble/04: 608 48
+:matt/marble/04: 640 48
+:matt/marble/04: 672 48
+:matt/marble/04: 704 48
+:matt/marble/04: 736 48
+:matt/marble/04: 768 48
+:matt/marble/04: 800 48
+:matt/marble/04: 672 80
+:matt/marble/04: 608 80
+:matt/marble/04: 592 232
+:matt/marble/22: 552 184
+:matt/marble/04: 560 232
+:matt/marble/04: 528 232
+:matt/marble/22: 480 264 frr
+:matt/marble/04: 464 312
+:matt/marble/04: 496 312
+:matt/marble/04: 528 312
+:matt/marble/04: 592 392
+:matt/marble/22: 552 344
+:matt/marble/04: 560 392
+:matt/marble/04: 528 392
+:matt/marble/04: 464 472
+:matt/marble/04: 496 472
+:matt/marble/22: 480 424 frr
+:matt/marble/04: 528 472
+:matt/marble/22: 776 424
+:matt/marble/04: 784 472
+:matt/marble/04: 816 472
+:matt/marble/04: 688 392
+:matt/marble/22: 704 344 frr
+:matt/marble/04: 720 392
+:matt/marble/04: 752 392
+:matt/marble/04: 816 312
+:matt/marble/22: 776 264
+:matt/marble/04: 784 312
+:matt/marble/04: 752 312
+:matt/marble/04: 688 232
+:matt/marble/22: 704 184 frr
+:matt/marble/04: 720 232
+:matt/marble/04: 752 232
+:matt/marble/04: 832 512
+:matt/marble/04: 448 512
+:matt/marble/04: 480 512
+:matt/marble/04: 512 512
+:matt/marble/04: 544 512
+:matt/marble/04: 576 512
+:matt/marble/04: 704 512
+:matt/marble/04: 736 512
+:matt/marble/04: 768 512
+:matt/marble/04: 800 512
+:matt/marble/03: 448 168
+:matt/marble/03: 448 200
+:matt/marble/03: 448 248
+:matt/marble/03: 448 280
+:matt/marble/03: 448 328
+:matt/marble/03: 448 360
+:matt/marble/03: 448 408
+:matt/marble/03: 448 440
+:matt/marble/03: 624 440
+:matt/marble/03: 624 408
+:matt/marble/03: 624 96
+:matt/marble/03: 624 128
+:matt/marble/03: 624 168
+:matt/marble/03: 624 200
+:matt/marble/03: 624 248
+:matt/marble/03: 624 280
+:matt/marble/03: 624 328
+:matt/marble/03: 624 360
+:matt/marble/03: 672 96
+:matt/marble/03: 672 128
+:matt/marble/03: 672 168
+:matt/marble/03: 672 200
+:matt/marble/03: 672 248
+:matt/marble/03: 672 280
+:matt/marble/03: 672 328
+:matt/marble/03: 672 360
+:matt/marble/03: 672 408
+:matt/marble/03: 672 440
+:matt/marble/03: 848 168
+:matt/marble/03: 848 200
+:matt/marble/03: 848 248
+:matt/marble/03: 848 280
+:matt/marble/03: 848 328
+:matt/marble/03: 848 360
+:matt/marble/03: 848 408
+:matt/marble/03: 848 440
+:matt/marble/22: 568 168
+:matt/marble/22: 568 328
+:matt/marble/22: 792 408
+:matt/marble/22: 792 248
+:matt/marble/04: 576 640
+:matt/marble/04: 608 640
+:matt/marble/04: 640 640
+:matt/marble/04: 672 640
+:matt/marble/04: 704 640
+:matt/marble/06: 640 512
+:matt/marble/22: 464 408 frr
+:matt/marble/22: 688 328 frr
+:matt/marble/22: 688 168 frr
+:matt/marble/22: 464 248 frr
+:geoo/steel/16x16o.S: 240 144 frr
+:geoo/steel/16x16o.S: 192 144 frr
+:geoo/steel/16x16o.S: 624 144 frr
+:geoo/steel/16x16o.S: 672 144 frr
+:geoo/steel/16x16o.S: 624 128 frr
+:geoo/steel/16x16o.S: 672 128 frr
+:geoo/steel/16x16o.S: 240 128 frr
+:geoo/steel/16x16o.S: 192 128 frr

@@ -1,0 +1,97 @@
+$BUILT 2021-05-16 18:48:43
+$AUTHOR Anonymous
+$ENGLISH Revenge of the Giant Crab
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 736
+#SIZE_Y 400
+
+#SECONDS 30
+#INITIAL 40
+#SPAWN_INTERVAL 20
+
+#WALKER 10
+#RUNNER 5
+#CLIMBER 5
+#FLOATER 10
+#EXPLODER2 2
+#BLOCKER 5
+#BUILDER 50
+#PLATFORMER 50
+#BASHER 10
+#MINER 15
+#DIGGER 10
+#JUMPER 10
+#BATTER 10
+#CUBER 5
+
+:raymanni/lab/hatch.H: 8 24
+:raymanni/lab/hatch.H: 696 24 r
+
+:raymanni/lab/goal.G: 360 208
+:raymanni/lab/goal.G: 312 208
+
+:raymanni/crab.T: 416 316
+:raymanni/crab.T: 384 348
+:raymanni/crab.T: 336 348
+:raymanni/crab.T: 288 348
+:raymanni/crab.T: 256 316
+:raymanni/crab.T: 288 284
+:raymanni/crab.T: 336 284
+:raymanni/crab.T: 384 284
+:raymanni/crab.T: 376 316
+:raymanni/crab.T: 336 316
+:raymanni/crab.T: 296 316
+:raymanni/crab.T: 440 284
+:raymanni/crab.T: 232 284
+:raymanni/crab.T: 248 252
+:raymanni/crab.T: 224 228
+:raymanni/crab.T: 272 228
+:raymanni/crab.T: 424 252
+:raymanni/crab.T: 400 228
+:raymanni/crab.T: 448 228
+
+:simon/water.W: 128 360
+:simon/water.W: 176 360
+:simon/water.W: 224 360
+:simon/water.W: 272 360
+:simon/water.W: 320 360
+:simon/water.W: 368 360
+:simon/water.W: 416 360
+:simon/water.W: 464 360
+:simon/water.W: 512 360
+:simon/water.W: 560 360
+:simon/water.W: 608 360
+:simon/water.W: 656 360
+:simon/water.W: 704 360
+:simon/water.W: 752 360
+:simon/water.W: -16 360
+:simon/water.W: 32 360
+:simon/water.W: 80 360
+
+:matt/beach/daytime/00: 558 348 rr
+:matt/beach/daytime/06: 600 312
+:matt/beach/daytime/00: 108 350 f
+:matt/beach/daytime/06: -76 312 frr
+:raymanni/holiday/plank_long: 0 88
+:raymanni/holiday/plank_long: 128 88
+:raymanni/holiday/plank_long: 608 88
+:raymanni/holiday/plank_long: 480 88
+:raymanni/holiday/plank_broken: 472 88
+:raymanni/holiday/plank_broken: 232 88 frr
+:geoo/construction/stairs_rd_32.S: 610 282
+:geoo/construction/stairs_rd_32.S: 46 282 frr
+:geoo/steel/dark_32x16o.S: 0 88
+:geoo/steel/dark_32x16o.S: 90 88
+:geoo/steel/dark_32x16o.S: 180 88
+:geoo/steel/dark_32x16o.S: 526 88
+:geoo/steel/dark_32x16o.S: 704 88
+:geoo/steel/dark_32x16o.S: 616 88
+:matt/underworld/03: 320 268 frr
+:amanda/steel/steel16x16.S: 336 268
+:matt/underworld/03: 370 268
+:simon/oriental/pebble2: 388 298 d
+:amanda/steel/steel16x16.S: 384 268
+:geoo/construction/stairs_rd_32.S: 546 250
+:geoo/construction/stairs_rd_32.S: 110 250 frr
+:simon/oriental/pebble2: 339 298 frrd

@@ -1,0 +1,140 @@
+$BUILT 2021-02-27 13:06:31
+$AUTHOR Dullstar
+$ENGLISH Carnival of Pain (4P)
+
+#INTENDED_NUMBER_OF_PLAYERS 4
+#SIZE_X 768
+#SIZE_Y 576
+#TORUS_X 1
+#TORUS_Y 1
+
+#SECONDS 90
+#INITIAL 40
+#SPAWN_INTERVAL 32
+
+#WALKER -1
+#RUNNER 20
+#CLIMBER 10
+#FLOATER 10
+#EXPLODER2 20
+#BLOCKER 3
+#BUILDER 35
+#PLATFORMER 35
+#BASHER 20
+#MINER 20
+#DIGGER 20
+#JUMPER -1
+#BATTER 20
+#CUBER 6
+
+:simon/hatch001.H: 400 144
+:simon/hatch001.H: 16 144
+:simon/hatch001.H: 16 432
+:simon/hatch001.H: 400 432
+
+:raymanni/lab/goal.G: 304 480
+:raymanni/lab/goal.G: 688 480
+:raymanni/lab/goal.G: 688 192
+:raymanni/lab/goal.G: 304 192
+
+:amanda/forest/frog.T: 544 48
+:amanda/forest/frog.T: 160 48
+:amanda/forest/frog.T: 160 336
+:amanda/forest/frog.T: 544 336
+
+:geoo/steel/32x32o.S: 704 256
+:geoo/construction/stairs_ru_32.S: 384 224
+:geoo/steel/32x32o.S: 320 256
+:geoo/construction/stairs_ru_32.S: 0 224
+:matt/carnival/05: 352 192
+:matt/carnival/57: 96 0
+:matt/carnival/01: 64 0
+:matt/carnival/57: 64 256
+:matt/carnival/35: 160 96
+:matt/carnival/01: 224 96
+:matt/carnival/01: 256 96
+:matt/carnival/01: 288 96
+:matt/carnival/01: 320 96
+:matt/carnival/01: 352 96
+:matt/carnival/01: 0 96
+:matt/carnival/01: 32 96
+:matt/carnival/01: 64 96
+:matt/carnival/47: 96 96
+:matt/carnival/05: 192 192
+:matt/carnival/35: 256 176
+:matt/carnival/01: 320 176
+:matt/carnival/12: 368 176
+:matt/carnival/12: 352 176
+:geoo/steel/32x32o.S: 320 544
+:geoo/construction/stairs_ru_32.S: 0 512
+:geoo/steel/32x32o.S: 704 544
+:geoo/construction/stairs_ru_32.S: 384 512
+:geoo/steel/64x64o.S: 736 544
+:geoo/steel/64x64o.S: 736 256
+:geoo/steel/64x64o.S: 352 256
+:geoo/steel/64x64o.S: 352 544
+:matt/carnival/55: 480 0
+:matt/carnival/02: 448 0
+:matt/carnival/37: 640 176
+:matt/carnival/37: 544 96
+:matt/carnival/02: 384 96
+:matt/carnival/02: 416 96
+:matt/carnival/02: 448 96
+:matt/carnival/02: 608 96
+:matt/carnival/02: 640 96
+:matt/carnival/02: 672 96
+:matt/carnival/02: 704 96
+:matt/carnival/02: 736 96
+:matt/carnival/02: 704 176
+:matt/carnival/55: 448 256
+:matt/carnival/06: 736 192
+:matt/carnival/14: 736 176
+:matt/carnival/14: 752 176
+:matt/carnival/06: 576 192
+$BEGIN_TILE_GROUP 0
+:matt/carnival/09: 0 0
+:matt/carnival/49: 0 0 d
+$END_TILE_GROUP
+:Group-0: 480 96
+:matt/carnival/56: 480 288
+:matt/carnival/00: 448 288
+:matt/carnival/00: 448 384
+:matt/carnival/00: 416 384
+:matt/carnival/00: 384 384
+:matt/carnival/04: 576 480
+:matt/carnival/56: 448 544
+:matt/carnival/00: 736 384
+:matt/carnival/00: 704 384
+:matt/carnival/00: 672 384
+:matt/carnival/00: 640 384
+:matt/carnival/00: 608 384
+:matt/carnival/33: 544 384
+:matt/carnival/43: 480 384
+:matt/carnival/00: 704 464
+:matt/carnival/33: 640 464
+:matt/carnival/13: 736 464
+:matt/carnival/13: 752 464
+:matt/carnival/04: 736 480
+:matt/carnival/03: 0 384
+:matt/carnival/03: 32 384
+:matt/carnival/03: 64 384
+$BEGIN_TILE_GROUP 1
+:matt/carnival/08: 0 0
+:matt/carnival/49: 0 0 d
+$END_TILE_GROUP
+:Group-1: 96 384
+:matt/carnival/03: 352 384
+:matt/carnival/03: 320 384
+:matt/carnival/03: 288 384
+:matt/carnival/03: 256 384
+:matt/carnival/03: 224 384
+:matt/carnival/38: 160 384 rr
+:matt/carnival/03: 320 464
+:matt/carnival/38: 256 464 rr
+:matt/carnival/07: 352 480
+:matt/carnival/15: 352 464
+:matt/carnival/15: 368 464
+:matt/carnival/07: 192 480
+:matt/carnival/58: 64 544
+:matt/carnival/58: 96 288
+:matt/carnival/03: 64 288

@@ -1,0 +1,283 @@
+$BUILT 2021-02-10 01:52:35
+$AUTHOR Flopsy
+$ENGLISH Backwards Reduction 6P
+
+#INTENDED_NUMBER_OF_PLAYERS 6
+#SIZE_X 832
+#SIZE_Y 768
+#TORUS_X 0
+#TORUS_Y 1
+
+#SECONDS 60
+#INITIAL 60
+#SPAWN_INTERVAL 32
+
+#WALKER 30
+#BUILDER 15
+#PLATFORMER 15
+#BASHER 30
+#DIGGER 20
+#JUMPER 30
+#EXPLODER2 0
+
+:geoo/sandstone/Hatch.H: 720 544 r
+:geoo/sandstone/Hatch.H: 720 672 r
+:geoo/sandstone/Hatch.H: 720 32 r
+:geoo/sandstone/Hatch.H: 720 160 r
+:geoo/sandstone/Hatch.H: 720 288 r
+:geoo/sandstone/Hatch.H: 720 416 r
+
+:geoo/sandstone/Goal.G: 32 64
+:geoo/sandstone/Goal.G: 32 192
+:geoo/sandstone/Goal.G: 32 320
+:geoo/sandstone/Goal.G: 32 448
+:geoo/sandstone/Goal.G: 32 576
+:geoo/sandstone/Goal.G: 32 704
+
+:amanda/forest/frog.T: 192 80
+:amanda/forest/frog.T: 576 80
+:amanda/forest/frog.T: 576 208
+:amanda/forest/frog.T: 384 16
+:amanda/forest/frog.T: 384 144
+:amanda/forest/frog.T: 192 208
+:amanda/forest/frog.T: 576 336
+:amanda/forest/frog.T: 384 272
+:amanda/forest/frog.T: 192 336
+:amanda/forest/frog.T: 576 464
+:amanda/forest/frog.T: 384 400
+:amanda/forest/frog.T: 192 464
+:amanda/forest/frog.T: 576 592
+:amanda/forest/frog.T: 384 528
+:amanda/forest/frog.T: 192 592
+:amanda/forest/frog.T: 576 720
+:amanda/forest/frog.T: 384 656
+:amanda/forest/frog.T: 192 720
+
+:geoo/sandstone/64x64: 640 0
+:geoo/sandstone/64x64: 640 64
+:geoo/sandstone/64x64: 640 128
+:geoo/sandstone/64x64: 640 192
+:geoo/steel/32x32o.S: 704 0
+:geoo/steel/32x32o.S: 736 0
+:geoo/steel/32x32o.S: 768 0
+:geoo/steel/32x32o.S: 800 0
+:geoo/steel/32x32o.S: 704 128
+:geoo/steel/32x32o.S: 736 128
+:geoo/steel/32x32o.S: 768 128
+:geoo/steel/32x32o.S: 800 128
+:geoo/sandstone/64x64: 576 0
+:geoo/sandstone/64x64: 576 64
+:geoo/sandstone/64x64: 576 128
+:geoo/sandstone/64x64: 576 192
+:geoo/sandstone/64x64: 512 0
+:geoo/sandstone/64x64: 512 64
+:geoo/sandstone/64x64: 512 128
+:geoo/sandstone/64x64: 512 192
+:geoo/sandstone/64x64: 448 0
+:geoo/sandstone/64x64: 448 64
+:geoo/sandstone/64x64: 448 128
+:geoo/sandstone/64x64: 448 192
+:geoo/sandstone/64x64: 384 0
+:geoo/sandstone/64x64: 384 64
+:geoo/sandstone/64x64: 384 128
+:geoo/sandstone/64x64: 384 192
+:geoo/sandstone/64x64: 320 0
+:geoo/sandstone/64x64: 320 64
+:geoo/sandstone/64x64: 320 128
+:geoo/sandstone/64x64: 320 192
+:geoo/sandstone/64x64: 256 0
+:geoo/sandstone/64x64: 256 64
+:geoo/sandstone/64x64: 256 128
+:geoo/sandstone/64x64: 256 192
+:geoo/sandstone/64x64: 192 0
+:geoo/sandstone/64x64: 192 64
+:geoo/sandstone/64x64: 192 128
+:geoo/sandstone/64x64: 192 192
+:geoo/steel/32x32o.S: 0 0
+:geoo/steel/32x32o.S: 32 0
+:geoo/steel/32x32o.S: 64 0
+:geoo/steel/32x32o.S: 96 0
+:geoo/steel/32x32o.S: 0 128
+:geoo/steel/32x32o.S: 32 128
+:geoo/steel/32x32o.S: 64 128
+:geoo/steel/32x32o.S: 96 128
+:geoo/sandstone/ribbon_start_sq: 576 192
+:geoo/sandstone/ribbon_start_sq: 608 192
+:geoo/sandstone/ribbon_start_sq: 608 224
+:geoo/sandstone/ribbon_start_sq: 576 224
+:geoo/sandstone/ribbon_start_sq: 192 192
+:geoo/sandstone/ribbon_start_sq: 224 192
+:geoo/sandstone/ribbon_start_sq: 224 224
+:geoo/sandstone/ribbon_start_sq: 192 224
+:geoo/sandstone/ribbon_start_sq: 384 128
+:geoo/sandstone/ribbon_start_sq: 416 128
+:geoo/sandstone/ribbon_start_sq: 416 160
+:geoo/sandstone/ribbon_start_sq: 384 160
+:geoo/sandstone/ribbon_start_sq: 192 64
+:geoo/sandstone/ribbon_start_sq: 224 64
+:geoo/sandstone/ribbon_start_sq: 224 96
+:geoo/sandstone/ribbon_start_sq: 192 96
+:geoo/sandstone/ribbon_start_sq: 576 64
+:geoo/sandstone/ribbon_start_sq: 608 64
+:geoo/sandstone/ribbon_start_sq: 608 96
+:geoo/sandstone/ribbon_start_sq: 576 96
+:geoo/sandstone/64x64: 128 0
+:geoo/sandstone/64x64: 128 64
+:geoo/sandstone/64x64: 128 128
+:geoo/sandstone/64x64: 128 192
+:geoo/sandstone/ribbon_start_sq: 384 0
+:geoo/sandstone/ribbon_start_sq: 416 0
+:geoo/sandstone/ribbon_start_sq: 416 32
+:geoo/sandstone/ribbon_start_sq: 384 32
+:geoo/sandstone/64x64: 640 256
+:geoo/sandstone/64x64: 640 320
+:geoo/steel/32x32o.S: 704 256
+:geoo/steel/32x32o.S: 736 256
+:geoo/steel/32x32o.S: 768 256
+:geoo/steel/32x32o.S: 800 256
+:geoo/sandstone/64x64: 576 256
+:geoo/sandstone/64x64: 576 320
+:geoo/sandstone/64x64: 512 256
+:geoo/sandstone/64x64: 512 320
+:geoo/sandstone/64x64: 448 256
+:geoo/sandstone/64x64: 448 320
+:geoo/sandstone/64x64: 384 256
+:geoo/sandstone/64x64: 384 320
+:geoo/sandstone/64x64: 320 256
+:geoo/sandstone/64x64: 320 320
+:geoo/sandstone/64x64: 256 256
+:geoo/sandstone/64x64: 256 320
+:geoo/sandstone/64x64: 192 256
+:geoo/sandstone/64x64: 192 320
+:geoo/steel/32x32o.S: 0 256
+:geoo/steel/32x32o.S: 32 256
+:geoo/steel/32x32o.S: 64 256
+:geoo/steel/32x32o.S: 96 256
+:geoo/sandstone/ribbon_start_sq: 576 320
+:geoo/sandstone/ribbon_start_sq: 608 320
+:geoo/sandstone/ribbon_start_sq: 608 352
+:geoo/sandstone/ribbon_start_sq: 576 352
+:geoo/sandstone/ribbon_start_sq: 192 320
+:geoo/sandstone/ribbon_start_sq: 224 320
+:geoo/sandstone/ribbon_start_sq: 224 352
+:geoo/sandstone/ribbon_start_sq: 192 352
+:geoo/sandstone/ribbon_start_sq: 384 256
+:geoo/sandstone/ribbon_start_sq: 416 256
+:geoo/sandstone/ribbon_start_sq: 416 288
+:geoo/sandstone/ribbon_start_sq: 384 288
+:geoo/sandstone/64x64: 128 256
+:geoo/sandstone/64x64: 128 320
+:geoo/sandstone/64x64: 640 384
+:geoo/sandstone/64x64: 640 448
+:geoo/steel/32x32o.S: 704 384
+:geoo/steel/32x32o.S: 736 384
+:geoo/steel/32x32o.S: 768 384
+:geoo/steel/32x32o.S: 800 384
+:geoo/sandstone/64x64: 576 384
+:geoo/sandstone/64x64: 576 448
+:geoo/sandstone/64x64: 512 384
+:geoo/sandstone/64x64: 512 448
+:geoo/sandstone/64x64: 448 384
+:geoo/sandstone/64x64: 448 448
+:geoo/sandstone/64x64: 384 384
+:geoo/sandstone/64x64: 384 448
+:geoo/sandstone/64x64: 320 384
+:geoo/sandstone/64x64: 320 448
+:geoo/sandstone/64x64: 256 384
+:geoo/sandstone/64x64: 256 448
+:geoo/sandstone/64x64: 192 384
+:geoo/sandstone/64x64: 192 448
+:geoo/steel/32x32o.S: 0 384
+:geoo/steel/32x32o.S: 32 384
+:geoo/steel/32x32o.S: 64 384
+:geoo/steel/32x32o.S: 96 384
+:geoo/sandstone/ribbon_start_sq: 576 448
+:geoo/sandstone/ribbon_start_sq: 608 448
+:geoo/sandstone/ribbon_start_sq: 608 480
+:geoo/sandstone/ribbon_start_sq: 576 480
+:geoo/sandstone/ribbon_start_sq: 192 448
+:geoo/sandstone/ribbon_start_sq: 224 448
+:geoo/sandstone/ribbon_start_sq: 224 480
+:geoo/sandstone/ribbon_start_sq: 192 480
+:geoo/sandstone/ribbon_start_sq: 384 384
+:geoo/sandstone/ribbon_start_sq: 416 384
+:geoo/sandstone/ribbon_start_sq: 416 416
+:geoo/sandstone/ribbon_start_sq: 384 416
+:geoo/sandstone/64x64: 128 384
+:geoo/sandstone/64x64: 128 448
+:geoo/sandstone/64x64: 640 512
+:geoo/sandstone/64x64: 640 576
+:geoo/steel/32x32o.S: 704 512
+:geoo/steel/32x32o.S: 736 512
+:geoo/steel/32x32o.S: 768 512
+:geoo/steel/32x32o.S: 800 512
+:geoo/sandstone/64x64: 576 512
+:geoo/sandstone/64x64: 576 576
+:geoo/sandstone/64x64: 512 512
+:geoo/sandstone/64x64: 512 576
+:geoo/sandstone/64x64: 448 512
+:geoo/sandstone/64x64: 448 576
+:geoo/sandstone/64x64: 384 512
+:geoo/sandstone/64x64: 384 576
+:geoo/sandstone/64x64: 320 512
+:geoo/sandstone/64x64: 320 576
+:geoo/sandstone/64x64: 256 512
+:geoo/sandstone/64x64: 256 576
+:geoo/sandstone/64x64: 192 512
+:geoo/sandstone/64x64: 192 576
+:geoo/steel/32x32o.S: 0 512
+:geoo/steel/32x32o.S: 32 512
+:geoo/steel/32x32o.S: 64 512
+:geoo/steel/32x32o.S: 96 512
+:geoo/sandstone/ribbon_start_sq: 576 576
+:geoo/sandstone/ribbon_start_sq: 608 576
+:geoo/sandstone/ribbon_start_sq: 608 608
+:geoo/sandstone/ribbon_start_sq: 576 608
+:geoo/sandstone/ribbon_start_sq: 192 576
+:geoo/sandstone/ribbon_start_sq: 224 576
+:geoo/sandstone/ribbon_start_sq: 224 608
+:geoo/sandstone/ribbon_start_sq: 192 608
+:geoo/sandstone/ribbon_start_sq: 384 512
+:geoo/sandstone/ribbon_start_sq: 416 512
+:geoo/sandstone/ribbon_start_sq: 416 544
+:geoo/sandstone/ribbon_start_sq: 384 544
+:geoo/sandstone/64x64: 128 512
+:geoo/sandstone/64x64: 128 576
+:geoo/sandstone/64x64: 640 640
+:geoo/sandstone/64x64: 640 704
+:geoo/steel/32x32o.S: 704 640
+:geoo/steel/32x32o.S: 736 640
+:geoo/steel/32x32o.S: 768 640
+:geoo/steel/32x32o.S: 800 640
+:geoo/sandstone/64x64: 576 640
+:geoo/sandstone/64x64: 576 704
+:geoo/sandstone/64x64: 512 640
+:geoo/sandstone/64x64: 512 704
+:geoo/sandstone/64x64: 448 640
+:geoo/sandstone/64x64: 448 704
+:geoo/sandstone/64x64: 384 640
+:geoo/sandstone/64x64: 384 704
+:geoo/sandstone/64x64: 320 640
+:geoo/sandstone/64x64: 320 704
+:geoo/sandstone/64x64: 256 640
+:geoo/sandstone/64x64: 256 704
+:geoo/sandstone/64x64: 192 640
+:geoo/sandstone/64x64: 192 704
+:geoo/steel/32x32o.S: 0 640
+:geoo/steel/32x32o.S: 32 640
+:geoo/steel/32x32o.S: 64 640
+:geoo/steel/32x32o.S: 96 640
+:geoo/sandstone/ribbon_start_sq: 576 704
+:geoo/sandstone/ribbon_start_sq: 608 704
+:geoo/sandstone/ribbon_start_sq: 608 736
+:geoo/sandstone/ribbon_start_sq: 576 736
+:geoo/sandstone/ribbon_start_sq: 192 704
+:geoo/sandstone/ribbon_start_sq: 224 704
+:geoo/sandstone/ribbon_start_sq: 224 736
+:geoo/sandstone/ribbon_start_sq: 192 736
+:geoo/sandstone/ribbon_start_sq: 384 640
+:geoo/sandstone/ribbon_start_sq: 416 640
+:geoo/sandstone/ribbon_start_sq: 416 672
+:geoo/sandstone/ribbon_start_sq: 384 672
+:geoo/sandstone/64x64: 128 640
+:geoo/sandstone/64x64: 128 704

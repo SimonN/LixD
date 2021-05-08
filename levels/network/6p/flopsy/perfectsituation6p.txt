@@ -1,11 +1,11 @@
-$BUILT 2020-05-08 16:02:36
+$BUILT 2021-02-12 03:36:41
 $AUTHOR Flopsy
 $ENGLISH Perfect Situation 6P
 
 #INTENDED_NUMBER_OF_PLAYERS 6
 #SIZE_X 1408
 #SIZE_Y 1392
-#TORUS_X 1
+#TORUS_X 0
 #TORUS_Y 1
 
 #SECONDS 60
@@ -16,13 +16,16 @@ $ENGLISH Perfect Situation 6P
 #RUNNER 20
 #CLIMBER 10
 #FLOATER 5
+#EXPLODER2 5
 #BLOCKER 1
 #BUILDER 40
+#PLATFORMER 20
 #BASHER 20
 #MINER 40
+#DIGGER 10
 #JUMPER 40
 #BATTER 20
-#EXPLODER2 0
+#CUBER 1
 
 :matt/goldmine/Hatch.H: 304 32 r
 :matt/goldmine/Hatch.H: 304 496 r
@@ -47,9 +50,7 @@ $ENGLISH Perfect Situation 6P
 :matt/goldmine/plank: 336 80
 :matt/goldmine/08: 112 16
 :matt/goldmine/09: 144 128
-:geoo/construction/stairs_ru_32.S: 176 80
 :matt/goldmine/00: 112 128
-:geoo/construction/stairs_ru_32.S: 144 96
 :matt/goldmine/04: 1376 1344
 :matt/goldmine/01: 64 80
 :matt/goldmine/09: 48 1376
@@ -95,15 +96,12 @@ $ENGLISH Perfect Situation 6P
 :amanda/steel/steel8x16.S: 504 80 r
 :matt/goldmine/plankdiag: 480 96 frr
 :amanda/steel/steel8x16.S: 328 80 r
-:geoo/construction/stairs_ru_32.S: 112 112
 :matt/goldmine/plank: 224 544
 :matt/goldmine/00: 128 720
 :matt/goldmine/plank: 336 544
 :matt/goldmine/08: 112 480
 :matt/goldmine/09: 144 592
-:geoo/construction/stairs_ru_32.S: 176 544
 :matt/goldmine/00: 112 592
-:geoo/construction/stairs_ru_32.S: 144 560
 :matt/goldmine/04: 1376 416
 :matt/goldmine/01: 64 544
 :matt/goldmine/09: 48 448
@@ -149,7 +147,6 @@ $ENGLISH Perfect Situation 6P
 :amanda/steel/steel8x16.S: 504 544 r
 :matt/goldmine/plankdiag: 480 560 frr
 :amanda/steel/steel8x16.S: 328 544 r
-:geoo/construction/stairs_ru_32.S: 112 576
 :matt/goldmine/08: 16 368
 :matt/goldmine/09: 1376 384
 :matt/goldmine/02: 192 384
@@ -196,20 +193,12 @@ $ENGLISH Perfect Situation 6P
 :matt/goldmine/plank: 944 544 frr
 :matt/goldmine/08: 1191 480 frr
 :matt/goldmine/09: 1183 592 frr
-:geoo/construction/stairs_ru_32.S: 1152 544 frr
 :matt/goldmine/00: 1216 592 frr
-:geoo/construction/stairs_ru_32.S: 1184 560 frr
-:matt/goldmine/04: 1318 416 frr
 :matt/goldmine/01: 1280 544 frr
-:matt/goldmine/09: 1279 448 frr
 :matt/goldmine/01: 1248 464 frr
 :matt/goldmine/06: 1216 656 frr
 :matt/goldmine/08: 1223 432 frr
-:matt/goldmine/09: 1343 512 frr
-:matt/goldmine/07: 1243 608 frr
-:matt/goldmine/08: 1287 544 frr
 :matt/goldmine/10: 1275 590 frr
-:matt/goldmine/07: 1179 640 frr
 :matt/goldmine/02: 1360 688 frr
 :matt/goldmine/08: 1335 720 frr
 :matt/goldmine/09: 1279 720 frr
@@ -230,13 +219,9 @@ $ENGLISH Perfect Situation 6P
 :amanda/steel/steel8x16.S: 888 544 fr
 :matt/goldmine/plankdiag: 880 560
 :amanda/steel/steel8x16.S: 1064 544 fr
-:geoo/construction/stairs_ru_32.S: 1216 576 frr
-:matt/goldmine/08: 1287 368 frr
-:matt/goldmine/09: 1359 384 frr
 :matt/goldmine/02: 1152 384 frr
 :matt/goldmine/02: 1168 448 frr
 :matt/goldmine/08: 1191 384 frr
-:matt/goldmine/08: 1255 400 frr
 :matt/goldmine/03: 1178 64 frr
 :matt/goldmine/08: 1335 720 frr
 :matt/goldmine/09: 1279 720 frr
@@ -252,9 +237,7 @@ $ENGLISH Perfect Situation 6P
 :matt/goldmine/plank: 944 80 frr
 :matt/goldmine/08: 1191 16 frr
 :matt/goldmine/09: 1183 128 frr
-:geoo/construction/stairs_ru_32.S: 1152 80 frr
 :matt/goldmine/00: 1216 128 frr
-:geoo/construction/stairs_ru_32.S: 1184 96 frr
 :matt/goldmine/04: 1318 880 frr
 :matt/goldmine/01: 1280 80 frr
 :matt/goldmine/09: 1279 912 frr
@@ -267,10 +250,6 @@ $ENGLISH Perfect Situation 6P
 :matt/goldmine/10: 1275 126 frr
 :matt/goldmine/07: 1179 176 frr
 :matt/goldmine/02: 1360 224 frr
-:matt/goldmine/08: 1335 256 frr
-:matt/goldmine/09: 1279 256 frr
-:matt/goldmine/07: 1243 320 frr
-:matt/goldmine/09: 1231 256 frr
 :matt/goldmine/minecart: 995 320 frr
 :matt/goldmine/07: 1115 320 frr
 :matt/goldmine/10: 1341 96 frr
@@ -286,7 +265,6 @@ $ENGLISH Perfect Situation 6P
 :amanda/steel/steel8x16.S: 888 80 fr
 :matt/goldmine/plankdiag: 880 96
 :amanda/steel/steel8x16.S: 1064 80 fr
-:geoo/construction/stairs_ru_32.S: 1216 112 frr
 :matt/goldmine/08: 1287 832 frr
 :matt/goldmine/09: 1359 848 frr
 :matt/goldmine/02: 1152 848 frr
@@ -342,9 +320,7 @@ $ENGLISH Perfect Situation 6P
 :matt/goldmine/plank: 336 1008
 :matt/goldmine/08: 112 944
 :matt/goldmine/09: 144 1056
-:geoo/construction/stairs_ru_32.S: 176 1008
 :matt/goldmine/00: 112 1056
-:geoo/construction/stairs_ru_32.S: 144 1024
 :matt/goldmine/04: 1376 880
 :matt/goldmine/01: 64 1008
 :matt/goldmine/09: 48 912
@@ -390,7 +366,6 @@ $ENGLISH Perfect Situation 6P
 :amanda/steel/steel8x16.S: 504 1008 r
 :matt/goldmine/plankdiag: 480 1024 frr
 :amanda/steel/steel8x16.S: 328 1008 r
-:geoo/construction/stairs_ru_32.S: 112 1040
 :matt/goldmine/08: 16 832
 :matt/goldmine/09: 1376 848
 :matt/goldmine/02: 192 848
@@ -437,9 +412,7 @@ $ENGLISH Perfect Situation 6P
 :matt/goldmine/plank: 944 1008 frr
 :matt/goldmine/08: 1191 944 frr
 :matt/goldmine/09: 1183 1056 frr
-:geoo/construction/stairs_ru_32.S: 1152 1008 frr
 :matt/goldmine/00: 1216 1056 frr
-:geoo/construction/stairs_ru_32.S: 1184 1024 frr
 :matt/goldmine/04: 1318 880 frr
 :matt/goldmine/01: 1280 1008 frr
 :matt/goldmine/09: 1279 912 frr
@@ -471,7 +444,6 @@ $ENGLISH Perfect Situation 6P
 :amanda/steel/steel8x16.S: 888 1008 fr
 :matt/goldmine/plankdiag: 880 1024
 :amanda/steel/steel8x16.S: 1064 1008 fr
-:geoo/construction/stairs_ru_32.S: 1216 1040 frr
 :matt/goldmine/08: 1287 832 frr
 :matt/goldmine/09: 1359 848 frr
 :matt/goldmine/02: 1152 848 frr
@@ -492,9 +464,6 @@ $ENGLISH Perfect Situation 6P
 :matt/goldmine/09: 1279 1376 frr
 :matt/goldmine/08: 1223 1360 frr
 :matt/goldmine/02: 1360 688 frr
-:matt/goldmine/08: 1335 720 frr
-:matt/goldmine/09: 1279 720 frr
-:matt/goldmine/07: 1243 784 frr
 :matt/goldmine/09: 1231 720 frr
 :matt/goldmine/minecart: 995 784 frr
 :matt/goldmine/07: 1115 784 frr
@@ -525,3 +494,25 @@ $ENGLISH Perfect Situation 6P
 :matt/goldmine/plankdiag2: 576 1312
 :matt/goldmine/plankdiag2: 592 1328
 :matt/goldmine/plankdiag2: 608 1344
+$BEGIN_TILE_GROUP 0
+:matt/goldmine/04: 139 160 frr
+:matt/goldmine/09: 100 192 frr
+:matt/goldmine/09: 164 256 frr
+:matt/goldmine/07: 64 352 frr
+:matt/goldmine/08: 108 288 frr
+:matt/goldmine/07: 0 384 frr
+:matt/goldmine/08: 108 112 frr
+:matt/goldmine/09: 180 128 frr
+:matt/goldmine/08: 76 144 frr
+:matt/goldmine/08: 156 0 frr
+:matt/goldmine/09: 100 0 frr
+:matt/goldmine/07: 64 64 frr
+:matt/goldmine/09: 52 0 frr
+:matt/goldmine/08: 156 464 frr
+:matt/goldmine/09: 100 464 frr
+:matt/goldmine/07: 64 528 frr
+$END_TILE_GROUP
+:Group-0: 1179 256
+:Group-0: -77 240 frr
+:Group-0: -61 816 frr
+:Group-0: -53 1232 frr

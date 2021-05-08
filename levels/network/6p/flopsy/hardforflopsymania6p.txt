@@ -1,6 +1,6 @@
-$BUILT 2021-01-12 20:14:09
+$BUILT 2021-02-12 05:25:53
 $AUTHOR Flopsy
-$ENGLISH Hard for Flopsy MANIA 8P
+$ENGLISH Hard for Flopsy MANIA 6P
 
 #INTENDED_NUMBER_OF_PLAYERS 6
 #SIZE_X 1344
@@ -84,14 +84,12 @@ $ENGLISH Hard for Flopsy MANIA 8P
 :geoo/construction/sawblade_medium.F: 894 356
 :geoo/construction/sawblade_medium.F: 952 312
 :geoo/construction/sawblade_medium.F: 1056 312
-:geoo/construction/sawblade_medium.F: 382 356
 :geoo/construction/sawblade_medium.F: 1229 596
 :geoo/construction/sawblade_medium.F: 1229 644
 :geoo/construction/sawblade_medium.F: 1229 692
 :geoo/construction/sawblade_medium.F: 1229 740
 :geoo/construction/sawblade_medium.F: 1229 788
 :geoo/construction/sawblade_medium.F: 1229 836
-:geoo/construction/sawblade_medium.F: 382 860
 :geoo/construction/sawblade_medium.F: 952 816
 :geoo/construction/sawblade_medium.F: 1056 816
 :geoo/construction/sawblade_medium.F: 333 596
@@ -107,7 +105,6 @@ $ENGLISH Hard for Flopsy MANIA 8P
 :geoo/construction/sawblade_medium.F: 415 556
 :geoo/construction/sawblade_medium.F: 415 512
 :geoo/construction/sawblade_medium.F: 446 860
-:geoo/construction/sawblade_medium.F: 382 860
 :geoo/construction/sawblade_medium.F: 56 816
 :geoo/construction/sawblade_medium.F: 160 816
 :geoo/construction/sawblade_medium.F: 415 732
@@ -145,6 +142,8 @@ $ENGLISH Hard for Flopsy MANIA 8P
 :geoo/construction/sawblade_medium.F: 1311 600
 :geoo/construction/sawblade_medium.F: 1311 556
 :geoo/construction/sawblade_medium.F: 1311 512
+:geoo/construction/sawblade_medium.F: 0 352
+:geoo/construction/sawblade_medium.F: 0 856
 
 :matt/marble/09: 32 192
 :geoo/steel/32x32o.S: 0 192
@@ -607,7 +606,7 @@ $ENGLISH Hard for Flopsy MANIA 8P
 :geoo/steel/32x32o.S: 1152 760
 :geoo/steel/32x32o.S: 896 568
 :geoo/steel/32x32o.S: 896 536
-:matt/marble/17: 1281 536 rr
+:matt/marble/17: 1281 537 rr
 :geoo/steel/16x16o.S: 1249 536
 :geoo/steel/16x16o.S: 1233 536
 :geoo/steel/16x16o.S: 1217 536
@@ -630,7 +629,7 @@ $ENGLISH Hard for Flopsy MANIA 8P
 :geoo/steel/16x16o.S: 961 536
 :geoo/steel/16x16o.S: 945 536
 :geoo/steel/16x16o.S: 931 536
-:matt/marble/17: 1280 567 f
+:matt/marble/17: 1280 568 f
 :geoo/steel/16x16o.S: 1265 552
 :geoo/steel/16x16o.S: 1265 536
 :geoo/steel/16x16o.S: 1265 568
@@ -639,8 +638,8 @@ $ENGLISH Hard for Flopsy MANIA 8P
 :geoo/steel/16x16o.S: 1265 616
 :geoo/steel/16x16o.S: 1265 632
 :geoo/steel/16x16o.S: 1265 648
-:matt/marble/17: 1281 598 rr
-:matt/marble/17: 1280 629 f
+:matt/marble/17: 1281 599 rr
+:matt/marble/17: 1280 630 f
 :geoo/steel/16x16o.S: 1265 664
 :geoo/steel/16x16o.S: 1265 680
 :geoo/steel/16x16o.S: 1265 696
@@ -649,20 +648,20 @@ $ENGLISH Hard for Flopsy MANIA 8P
 :geoo/steel/16x16o.S: 1265 744
 :geoo/steel/16x16o.S: 1265 760
 :geoo/steel/16x16o.S: 1265 776
-:matt/marble/17: 1281 660 rr
-:matt/marble/17: 1280 691 f
-:matt/marble/17: 1281 722 rr
-:matt/marble/17: 1280 753 f
+:matt/marble/17: 1281 661 rr
+:matt/marble/17: 1280 692 f
+:matt/marble/17: 1281 723 rr
+:matt/marble/17: 1280 754 f
 :geoo/steel/16x16o.S: 1265 792
 :geoo/steel/16x16o.S: 1265 808
 :geoo/steel/16x16o.S: 1265 824
 :geoo/steel/16x16o.S: 1265 840
 :geoo/steel/16x16o.S: 1265 856
 :geoo/steel/16x16o.S: 1265 872
-:matt/marble/17: 1281 784 rr
-:matt/marble/17: 1280 815 f
-:matt/marble/17: 1281 846 rr
-:matt/marble/17: 1280 877 f
+:matt/marble/17: 1281 785 rr
+:matt/marble/17: 1280 816 f
+:matt/marble/17: 1281 847 rr
+:matt/marble/17: 1280 878 f
 :matt/marble/17: 1269 888 f
 :matt/marble/02: 1296 904
 :matt/marble/07: 1232 952
@@ -1090,3 +1089,39 @@ $ENGLISH Hard for Flopsy MANIA 8P
 :geoo/steel/16x16o.S: 817 552
 :geoo/steel/16x16o.S: 817 536
 :matt/marble/02b: 848 904
+:matt/marble/17: 385 341 rr
+:matt/marble/17: 385 279 rr
+:matt/marble/17: 385 217 rr
+:matt/marble/17: 385 155 rr
+:matt/marble/17: 385 93 rr
+:matt/marble/17: 385 31 rr
+:matt/marble/17: 384 62 f
+:matt/marble/17: 384 124 f
+:matt/marble/17: 384 186 f
+:matt/marble/17: 384 248 f
+:matt/marble/17: 384 310 f
+:matt/marble/17: 1281 536 rr
+:matt/marble/17: 1280 567 f
+:matt/marble/17: 1281 598 rr
+:matt/marble/17: 1280 629 f
+:matt/marble/17: 1281 660 rr
+:matt/marble/17: 1280 691 f
+:matt/marble/17: 1281 722 rr
+:matt/marble/17: 1280 753 f
+:matt/marble/17: 1281 784 rr
+:matt/marble/17: 1280 815 f
+:matt/marble/17: 1281 846 rr
+:matt/marble/17: 1280 877 f
+:matt/marble/17: 1269 888 f
+:matt/marble/02: 1296 904
+:matt/marble/17: 1281 845 rr
+:matt/marble/17: 1281 783 rr
+:matt/marble/17: 1281 721 rr
+:matt/marble/17: 1281 659 rr
+:matt/marble/17: 1281 597 rr
+:matt/marble/17: 1281 535 rr
+:matt/marble/17: 1280 566 f
+:matt/marble/17: 1280 628 f
+:matt/marble/17: 1280 690 f
+:matt/marble/17: 1280 752 f
+:matt/marble/17: 1280 814 f

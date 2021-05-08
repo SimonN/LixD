@@ -1,0 +1,492 @@
+$BUILT 2021-02-05 05:38:24
+$AUTHOR Flopsy
+$ENGLISH Just Passing Through Here! (Thin) 4P
+
+#INTENDED_NUMBER_OF_PLAYERS 4
+#SIZE_X 1024
+#SIZE_Y 400
+#TORUS_X 1
+#TORUS_Y 0
+
+#SECONDS 120
+#INITIAL 99
+#SPAWN_INTERVAL 10
+
+#WALKER -1
+#RUNNER -1
+#CLIMBER -1
+#FLOATER -1
+#EXPLODER2 -1
+#BUILDER 60
+#PLATFORMER 60
+#BASHER 30
+#MINER 30
+#DIGGER 15
+#JUMPER -1
+#BATTER -1
+#CUBER 5
+
+:geoo/construction/Hatch.H: 608 32
+:geoo/construction/Hatch.H: 864 32
+:geoo/construction/Hatch.H: 96 32
+:geoo/construction/Hatch.H: 352 32
+:geoo/construction/Hatch.H: 392 272
+:geoo/construction/Hatch.H: 648 272
+:geoo/construction/Hatch.H: 904 272
+:geoo/construction/Hatch.H: 136 272
+:geoo/construction/Hatch.H: 312 272 r
+:geoo/construction/Hatch.H: 568 272 r
+:geoo/construction/Hatch.H: 824 272 r
+:geoo/construction/Hatch.H: 56 272 r
+:geoo/construction/Hatch.H: 136 224
+:geoo/construction/Hatch.H: 392 224
+:geoo/construction/Hatch.H: 648 224
+:geoo/construction/Hatch.H: 904 224
+:geoo/construction/Hatch.H: 56 224 r
+:geoo/construction/Hatch.H: 312 224 r
+:geoo/construction/Hatch.H: 568 224 r
+:geoo/construction/Hatch.H: 824 224 r
+:geoo/construction/Hatch.H: 904 176
+:geoo/construction/Hatch.H: 136 176
+:geoo/construction/Hatch.H: 392 176
+:geoo/construction/Hatch.H: 648 176
+:geoo/construction/Hatch.H: 824 176 r
+:geoo/construction/Hatch.H: 56 176 r
+:geoo/construction/Hatch.H: 312 176 r
+:geoo/construction/Hatch.H: 568 176 r
+:geoo/construction/Hatch.H: 648 128
+:geoo/construction/Hatch.H: 904 128
+:geoo/construction/Hatch.H: 136 128
+:geoo/construction/Hatch.H: 392 128
+:geoo/construction/Hatch.H: 568 128 r
+:geoo/construction/Hatch.H: 824 128 r
+:geoo/construction/Hatch.H: 56 128 r
+:geoo/construction/Hatch.H: 312 128 r
+
+:geoo/construction/Goal2.G: 208 64
+:geoo/construction/Goal2.G: 464 64
+:geoo/construction/Goal2.G: 720 64
+:geoo/construction/Goal2.G: 976 64
+
+:geoo/construction/Laser_vr_64.F: 435 256
+:geoo/construction/Laser_vr_64.F: 435 192
+:geoo/construction/Laser_vr_64.F: 435 128
+:geoo/construction/Laser_vr_64.F: 285 256
+:geoo/construction/Laser_vr_64.F: 285 192
+:geoo/construction/Laser_vr_64.F: 285 128
+:geoo/construction/Laser_vr_64.F: 691 256
+:geoo/construction/Laser_vr_64.F: 691 192
+:geoo/construction/Laser_vr_64.F: 691 128
+:geoo/construction/Laser_vr_64.F: 541 256
+:geoo/construction/Laser_vr_64.F: 541 192
+:geoo/construction/Laser_vr_64.F: 541 128
+:geoo/construction/Laser_vr_64.F: 947 256
+:geoo/construction/Laser_vr_64.F: 947 192
+:geoo/construction/Laser_vr_64.F: 947 128
+:geoo/construction/Laser_vr_64.F: 797 256
+:geoo/construction/Laser_vr_64.F: 797 192
+:geoo/construction/Laser_vr_64.F: 797 128
+:simon/acid.W: 976 368
+:simon/acid.W: 928 368
+:simon/acid.W: 880 368
+:simon/acid.W: 832 368
+:simon/acid.W: 784 368
+:simon/acid.W: 736 368
+:simon/acid.W: 688 368
+:simon/acid.W: 640 368
+:simon/acid.W: 592 368
+:simon/acid.W: 544 368
+:simon/acid.W: 496 368
+:simon/acid.W: 448 368
+:simon/acid.W: 400 368
+:simon/acid.W: 352 368
+:simon/acid.W: 304 368
+:simon/acid.W: 256 368
+:simon/acid.W: 208 368
+:geoo/construction/Laser_vr_64.F: 179 256
+:geoo/construction/Laser_vr_64.F: 179 192
+:geoo/construction/Laser_vr_64.F: 179 128
+:geoo/construction/Laser_vr_64.F: 29 256
+:geoo/construction/Laser_vr_64.F: 29 192
+:geoo/construction/Laser_vr_64.F: 29 128
+:simon/acid.W: 192 368
+:simon/acid.W: 144 368
+:simon/acid.W: 96 368
+:simon/acid.W: 48 368
+:simon/acid.W: 0 368
+:simon/acid.W: 976 368
+
+:geoo/construction/squarebrick_large: 224 128
+:geoo/construction/squarebrick_large: 256 128
+:geoo/construction/squarebrick_large: 256 160
+:geoo/construction/squarebrick_large: 256 192
+:geoo/construction/squarebrick_large: 256 224
+:geoo/construction/squarebrick_large: 256 256
+:geoo/construction/squarebrick_large: 256 288
+:geoo/construction/squarebrick_large: 256 320
+:geoo/construction/squarebrick_large: 256 352
+:geoo/construction/platform.S: 200 62
+:geoo/construction/platform.S: 248 62
+:geoo/construction/platform.S: 264 62
+:geoo/construction/platform.S: 294 64 r
+:geoo/construction/platform.S: 294 96 r
+:geoo/construction/platform.S: 294 128 r
+:geoo/construction/platform.S: 294 160 r
+:geoo/construction/platform.S: 440 64 r
+:geoo/construction/platform.S: 440 96 r
+:geoo/construction/platform.S: 440 128 r
+:geoo/construction/platform.S: 440 160 r
+:geoo/construction/platform.S: 440 192 r
+:geoo/construction/platform.S: 440 224 r
+:geoo/construction/platform.S: 440 256 r
+:geoo/construction/platform.S: 440 288 r
+:geoo/construction/platform.S: 408 318
+:geoo/construction/platform.S: 376 318
+:geoo/construction/platform.S: 408 270
+:geoo/construction/platform.S: 376 270
+:geoo/construction/platform.S: 408 222
+:geoo/construction/platform.S: 376 222
+:geoo/construction/platform.S: 408 174
+:geoo/construction/platform.S: 376 174
+:geoo/construction/platform.S: 408 126
+:geoo/construction/platform.S: 376 126
+:geoo/construction/squarebrick_large: 352 224
+:geoo/construction/squarebrick_large: 352 128
+:geoo/construction/squarebrick_large: 448 352
+:geoo/construction/squarebrick_large: 448 320
+:geoo/construction/squarebrick_large: 448 288
+:geoo/construction/squarebrick_large: 448 256
+:geoo/construction/squarebrick_large: 448 224
+:geoo/construction/squarebrick_large: 448 192
+:geoo/construction/squarebrick_large: 448 160
+:geoo/construction/squarebrick_large: 448 128
+:geoo/construction/squarebrick_large: 480 128
+:geoo/construction/squarebrick_large: 512 128
+:geoo/construction/squarebrick_large: 512 160
+:geoo/construction/squarebrick_large: 512 192
+:geoo/construction/squarebrick_large: 512 224
+:geoo/construction/squarebrick_large: 512 256
+:geoo/construction/squarebrick_large: 512 288
+:geoo/construction/squarebrick_large: 512 320
+:geoo/construction/squarebrick_large: 512 352
+:geoo/construction/squarebrick_large: 416 352
+:geoo/construction/squarebrick_large: 384 352
+:geoo/construction/squarebrick_large: 352 352
+:geoo/construction/squarebrick_large: 320 352
+:geoo/construction/squarebrick_large: 288 352
+:geoo/construction/squarebrick_large: 256 352
+:geoo/construction/squarebrick_large: 256 320
+:geoo/construction/platform.S: 440 62
+:geoo/construction/platform.S: 456 62
+:geoo/construction/platform.S: 504 62
+:geoo/construction/platform.S: 520 62
+:geoo/construction/platform.S: 550 64 r
+:geoo/construction/platform.S: 550 96 r
+:geoo/construction/platform.S: 550 128 r
+:geoo/construction/platform.S: 550 160 r
+:geoo/construction/platform.S: 294 64 fr
+:geoo/construction/platform.S: 294 96 fr
+:geoo/construction/platform.S: 294 128 fr
+:geoo/construction/platform.S: 294 160 fr
+:geoo/construction/platform.S: 294 192 fr
+:geoo/construction/platform.S: 294 224 fr
+:geoo/construction/platform.S: 294 256 fr
+:geoo/construction/platform.S: 294 288 fr
+:geoo/construction/platform.S: 296 318 frr
+:geoo/construction/platform.S: 328 318 frr
+:geoo/construction/squarebrick_large: 352 288
+:geoo/construction/platform.S: 296 270 frr
+:geoo/construction/platform.S: 328 270 frr
+:geoo/construction/squarebrick_large: 352 256
+:geoo/construction/platform.S: 296 222 frr
+:geoo/construction/platform.S: 328 222 frr
+:geoo/construction/squarebrick_large: 352 192
+:geoo/construction/platform.S: 296 174 frr
+:geoo/construction/platform.S: 328 174 frr
+:geoo/construction/squarebrick_large: 352 160
+:geoo/construction/platform.S: 296 126 frr
+:geoo/construction/platform.S: 328 126 frr
+:geoo/construction/squarebrick_large: 352 96
+:geoo/construction/platform.S: 264 62 frr
+:geoo/construction/squarebrick_large: 256 288
+:geoo/construction/squarebrick_large: 256 256
+:geoo/construction/squarebrick_large: 256 224
+:geoo/construction/squarebrick_large: 256 192
+:geoo/construction/squarebrick_large: 256 160
+:geoo/construction/squarebrick_large: 256 128
+:geoo/construction/platform.S: 696 64 r
+:geoo/construction/platform.S: 696 96 r
+:geoo/construction/platform.S: 696 128 r
+:geoo/construction/platform.S: 696 160 r
+:geoo/construction/platform.S: 696 192 r
+:geoo/construction/platform.S: 696 224 r
+:geoo/construction/platform.S: 696 256 r
+:geoo/construction/platform.S: 696 288 r
+:geoo/construction/platform.S: 664 318
+:geoo/construction/platform.S: 632 318
+:geoo/construction/platform.S: 664 270
+:geoo/construction/platform.S: 632 270
+:geoo/construction/platform.S: 664 222
+:geoo/construction/platform.S: 632 222
+:geoo/construction/platform.S: 664 174
+:geoo/construction/platform.S: 632 174
+:geoo/construction/platform.S: 664 126
+:geoo/construction/platform.S: 632 126
+:geoo/construction/squarebrick_large: 608 224
+:geoo/construction/squarebrick_large: 608 128
+:geoo/construction/squarebrick_large: 704 352
+:geoo/construction/squarebrick_large: 704 320
+:geoo/construction/squarebrick_large: 704 288
+:geoo/construction/squarebrick_large: 704 256
+:geoo/construction/squarebrick_large: 704 224
+:geoo/construction/squarebrick_large: 704 192
+:geoo/construction/squarebrick_large: 704 160
+:geoo/construction/squarebrick_large: 704 128
+:geoo/construction/squarebrick_large: 736 128
+:geoo/construction/squarebrick_large: 768 128
+:geoo/construction/squarebrick_large: 768 160
+:geoo/construction/squarebrick_large: 768 192
+:geoo/construction/squarebrick_large: 768 224
+:geoo/construction/squarebrick_large: 768 256
+:geoo/construction/squarebrick_large: 768 288
+:geoo/construction/squarebrick_large: 768 320
+:geoo/construction/squarebrick_large: 768 352
+:geoo/construction/squarebrick_large: 672 352
+:geoo/construction/squarebrick_large: 640 352
+:geoo/construction/squarebrick_large: 608 352
+:geoo/construction/squarebrick_large: 576 352
+:geoo/construction/squarebrick_large: 544 352
+:geoo/construction/squarebrick_large: 512 352
+:geoo/construction/squarebrick_large: 512 320
+:geoo/construction/platform.S: 696 62
+:geoo/construction/platform.S: 712 62
+:geoo/construction/platform.S: 760 62
+:geoo/construction/platform.S: 776 62
+:geoo/construction/platform.S: 806 64 r
+:geoo/construction/platform.S: 806 96 r
+:geoo/construction/platform.S: 806 128 r
+:geoo/construction/platform.S: 806 160 r
+:geoo/construction/platform.S: 550 64 fr
+:geoo/construction/platform.S: 550 96 fr
+:geoo/construction/platform.S: 550 128 fr
+:geoo/construction/platform.S: 550 160 fr
+:geoo/construction/platform.S: 550 192 fr
+:geoo/construction/platform.S: 550 224 fr
+:geoo/construction/platform.S: 550 256 fr
+:geoo/construction/platform.S: 550 288 fr
+:geoo/construction/platform.S: 552 318 frr
+:geoo/construction/platform.S: 584 318 frr
+:geoo/construction/squarebrick_large: 608 288
+:geoo/construction/platform.S: 552 270 frr
+:geoo/construction/platform.S: 584 270 frr
+:geoo/construction/squarebrick_large: 608 256
+:geoo/construction/platform.S: 552 222 frr
+:geoo/construction/platform.S: 584 222 frr
+:geoo/construction/squarebrick_large: 608 192
+:geoo/construction/platform.S: 552 174 frr
+:geoo/construction/platform.S: 584 174 frr
+:geoo/construction/squarebrick_large: 608 160
+:geoo/construction/platform.S: 552 126 frr
+:geoo/construction/platform.S: 584 126 frr
+:geoo/construction/squarebrick_large: 608 96
+:geoo/construction/platform.S: 520 62 frr
+:geoo/construction/squarebrick_large: 512 288
+:geoo/construction/squarebrick_large: 512 256
+:geoo/construction/squarebrick_large: 512 224
+:geoo/construction/squarebrick_large: 512 192
+:geoo/construction/squarebrick_large: 512 160
+:geoo/construction/squarebrick_large: 512 128
+:geoo/construction/platform.S: 952 64 r
+:geoo/construction/platform.S: 952 96 r
+:geoo/construction/platform.S: 952 128 r
+:geoo/construction/platform.S: 952 160 r
+:geoo/construction/platform.S: 952 192 r
+:geoo/construction/platform.S: 952 224 r
+:geoo/construction/platform.S: 952 256 r
+:geoo/construction/platform.S: 952 288 r
+:geoo/construction/platform.S: 920 318
+:geoo/construction/platform.S: 888 318
+:geoo/construction/platform.S: 920 270
+:geoo/construction/platform.S: 888 270
+:geoo/construction/platform.S: 920 222
+:geoo/construction/platform.S: 888 222
+:geoo/construction/platform.S: 920 174
+:geoo/construction/platform.S: 888 174
+:geoo/construction/platform.S: 920 126
+:geoo/construction/platform.S: 888 126
+:geoo/construction/squarebrick_large: 864 224
+:geoo/construction/squarebrick_large: 864 128
+:geoo/construction/squarebrick_large: 960 352
+:geoo/construction/squarebrick_large: 960 320
+:geoo/construction/squarebrick_large: 960 288
+:geoo/construction/squarebrick_large: 960 256
+:geoo/construction/squarebrick_large: 960 224
+:geoo/construction/squarebrick_large: 960 192
+:geoo/construction/squarebrick_large: 960 160
+:geoo/construction/squarebrick_large: 960 128
+:geoo/construction/squarebrick_large: 992 128
+:geoo/construction/squarebrick_large: 928 352
+:geoo/construction/squarebrick_large: 896 352
+:geoo/construction/squarebrick_large: 864 352
+:geoo/construction/squarebrick_large: 832 352
+:geoo/construction/squarebrick_large: 800 352
+:geoo/construction/squarebrick_large: 768 352
+:geoo/construction/squarebrick_large: 768 320
+:geoo/construction/platform.S: 952 62
+:geoo/construction/platform.S: 968 62
+:geoo/construction/platform.S: 806 64 fr
+:geoo/construction/platform.S: 806 96 fr
+:geoo/construction/platform.S: 806 128 fr
+:geoo/construction/platform.S: 806 160 fr
+:geoo/construction/platform.S: 806 192 fr
+:geoo/construction/platform.S: 806 224 fr
+:geoo/construction/platform.S: 806 256 fr
+:geoo/construction/platform.S: 806 288 fr
+:geoo/construction/platform.S: 808 318 frr
+:geoo/construction/platform.S: 840 318 frr
+:geoo/construction/squarebrick_large: 864 288
+:geoo/construction/platform.S: 808 270 frr
+:geoo/construction/platform.S: 840 270 frr
+:geoo/construction/squarebrick_large: 864 256
+:geoo/construction/platform.S: 808 222 frr
+:geoo/construction/platform.S: 840 222 frr
+:geoo/construction/squarebrick_large: 864 192
+:geoo/construction/platform.S: 808 174 frr
+:geoo/construction/platform.S: 840 174 frr
+:geoo/construction/squarebrick_large: 864 160
+:geoo/construction/platform.S: 808 126 frr
+:geoo/construction/platform.S: 840 126 frr
+:geoo/construction/squarebrick_large: 864 96
+:geoo/construction/platform.S: 776 62 frr
+:geoo/construction/squarebrick_large: 768 288
+:geoo/construction/squarebrick_large: 768 256
+:geoo/construction/squarebrick_large: 768 224
+:geoo/construction/squarebrick_large: 768 192
+:geoo/construction/squarebrick_large: 768 160
+:geoo/construction/squarebrick_large: 768 128
+:geoo/construction/fence_rust_32x32: 480 352
+:geoo/construction/fence_rust_32x32: 480 320
+:geoo/construction/fence_rust_32x32: 480 288
+:geoo/construction/fence_rust_32x32: 480 256
+:geoo/construction/fence_rust_32x32: 480 224
+:geoo/construction/fence_rust_32x32: 480 192
+:geoo/construction/fence_rust_32x32: 480 160
+:geoo/construction/fence_rust_32x32: 736 160
+:geoo/construction/fence_rust_32x32: 736 192
+:geoo/construction/fence_rust_32x32: 736 224
+:geoo/construction/fence_rust_32x32: 736 256
+:geoo/construction/fence_rust_32x32: 736 288
+:geoo/construction/fence_rust_32x32: 736 320
+:geoo/construction/fence_rust_32x32: 736 352
+:geoo/construction/fence_rust_32x32: 224 160
+:geoo/construction/fence_rust_32x32: 224 192
+:geoo/construction/fence_rust_32x32: 224 224
+:geoo/construction/fence_rust_32x32: 224 256
+:geoo/construction/fence_rust_32x32: 224 288
+:geoo/construction/fence_rust_32x32: 224 320
+:geoo/construction/fence_rust_32x32: 224 352
+:geoo/construction/fence_rust_32x32: 992 160
+:geoo/construction/fence_rust_32x32: 992 192
+:geoo/construction/fence_rust_32x32: 992 224
+:geoo/construction/fence_rust_32x32: 992 256
+:geoo/construction/fence_rust_32x32: 992 288
+:geoo/construction/fence_rust_32x32: 992 320
+:geoo/construction/fence_rust_32x32: 992 352
+:geoo/construction/squarebrick_large: 992 128
+:geoo/construction/squarebrick_large: 0 128
+:geoo/construction/squarebrick_large: 0 160
+:geoo/construction/squarebrick_large: 0 192
+:geoo/construction/squarebrick_large: 0 224
+:geoo/construction/squarebrick_large: 0 256
+:geoo/construction/squarebrick_large: 0 288
+:geoo/construction/squarebrick_large: 0 320
+:geoo/construction/squarebrick_large: 0 352
+:geoo/construction/platform.S: 968 62
+:geoo/construction/platform.S: 1016 62
+:geoo/construction/platform.S: 8 62
+:geoo/construction/platform.S: 38 64 r
+:geoo/construction/platform.S: 38 96 r
+:geoo/construction/platform.S: 38 128 r
+:geoo/construction/platform.S: 38 160 r
+:geoo/construction/platform.S: 184 64 r
+:geoo/construction/platform.S: 184 96 r
+:geoo/construction/platform.S: 184 128 r
+:geoo/construction/platform.S: 184 160 r
+:geoo/construction/platform.S: 184 192 r
+:geoo/construction/platform.S: 184 224 r
+:geoo/construction/platform.S: 184 256 r
+:geoo/construction/platform.S: 184 288 r
+:geoo/construction/platform.S: 152 318
+:geoo/construction/platform.S: 120 318
+:geoo/construction/platform.S: 152 270
+:geoo/construction/platform.S: 120 270
+:geoo/construction/platform.S: 152 222
+:geoo/construction/platform.S: 120 222
+:geoo/construction/platform.S: 152 174
+:geoo/construction/platform.S: 120 174
+:geoo/construction/platform.S: 152 126
+:geoo/construction/platform.S: 120 126
+:geoo/construction/squarebrick_large: 96 224
+:geoo/construction/squarebrick_large: 96 128
+:geoo/construction/squarebrick_large: 192 352
+:geoo/construction/squarebrick_large: 192 320
+:geoo/construction/squarebrick_large: 192 288
+:geoo/construction/squarebrick_large: 192 256
+:geoo/construction/squarebrick_large: 192 224
+:geoo/construction/squarebrick_large: 192 192
+:geoo/construction/squarebrick_large: 192 160
+:geoo/construction/squarebrick_large: 192 128
+:geoo/construction/squarebrick_large: 160 352
+:geoo/construction/squarebrick_large: 128 352
+:geoo/construction/squarebrick_large: 96 352
+:geoo/construction/squarebrick_large: 64 352
+:geoo/construction/squarebrick_large: 32 352
+:geoo/construction/squarebrick_large: 0 352
+:geoo/construction/squarebrick_large: 0 320
+:geoo/construction/platform.S: 184 62
+:geoo/construction/platform.S: 200 62
+:geoo/construction/platform.S: 38 64 fr
+:geoo/construction/platform.S: 38 96 fr
+:geoo/construction/platform.S: 38 128 fr
+:geoo/construction/platform.S: 38 160 fr
+:geoo/construction/platform.S: 38 192 fr
+:geoo/construction/platform.S: 38 224 fr
+:geoo/construction/platform.S: 38 256 fr
+:geoo/construction/platform.S: 38 288 fr
+:geoo/construction/platform.S: 40 318 frr
+:geoo/construction/platform.S: 72 318 frr
+:geoo/construction/squarebrick_large: 96 288
+:geoo/construction/platform.S: 40 270 frr
+:geoo/construction/platform.S: 72 270 frr
+:geoo/construction/squarebrick_large: 96 256
+:geoo/construction/platform.S: 40 222 frr
+:geoo/construction/platform.S: 72 222 frr
+:geoo/construction/squarebrick_large: 96 192
+:geoo/construction/platform.S: 40 174 frr
+:geoo/construction/platform.S: 72 174 frr
+:geoo/construction/squarebrick_large: 96 160
+:geoo/construction/platform.S: 40 126 frr
+:geoo/construction/platform.S: 72 126 frr
+:geoo/construction/squarebrick_large: 96 96
+:geoo/construction/platform.S: 8 62 frr
+:geoo/construction/squarebrick_large: 0 288
+:geoo/construction/squarebrick_large: 0 256
+:geoo/construction/squarebrick_large: 0 224
+:geoo/construction/squarebrick_large: 0 192
+:geoo/construction/squarebrick_large: 0 160
+:geoo/construction/squarebrick_large: 0 128
+:geoo/construction/fence_rust_32x32: 992 160
+:geoo/construction/fence_rust_32x32: 992 192
+:geoo/construction/fence_rust_32x32: 992 224
+:geoo/construction/fence_rust_32x32: 992 256
+:geoo/construction/fence_rust_32x32: 992 288
+:geoo/construction/fence_rust_32x32: 992 320
+:geoo/construction/fence_rust_32x32: 992 352
+:geoo/construction/platform_single.S: 876 96
+:geoo/construction/platform_single.S: 1004 128
+:geoo/construction/platform_single.S: 748 128
+:geoo/construction/platform_single.S: 620 96
+:geoo/construction/platform_single.S: 492 128
+:geoo/construction/platform_single.S: 364 96
+:geoo/construction/platform_single.S: 236 128
+:geoo/construction/platform_single.S: 108 96

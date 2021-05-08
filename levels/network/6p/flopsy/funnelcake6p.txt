@@ -1,0 +1,700 @@
+$BUILT 2021-02-26 21:26:18
+$AUTHOR Flopsy
+$ENGLISH Funnel Cake 6P
+
+#INTENDED_NUMBER_OF_PLAYERS 6
+#SIZE_X 1536
+#SIZE_Y 480
+#TORUS_X 1
+#TORUS_Y 0
+
+#SECONDS 90
+#INITIAL 60
+#SPAWN_INTERVAL 32
+
+#WALKER 50
+#RUNNER 10
+#CLIMBER 15
+#FLOATER 15
+#EXPLODER2 5
+#BLOCKER 1
+#BUILDER 50
+#PLATFORMER 30
+#BASHER 20
+#MINER 30
+#DIGGER 20
+#JUMPER 50
+#BATTER 30
+#CUBER 5
+
+:simon/oriental/hatch.H: 880 0
+:simon/oriental/hatch.H: 592 0 r
+:simon/oriental/hatch.H: 1392 0
+:simon/oriental/hatch.H: 1104 0 r
+:simon/oriental/hatch.H: 368 0
+:simon/oriental/hatch.H: 80 0 r
+:simon/oriental/hatch.H: 1220 -54
+:simon/oriental/hatch.H: 248 -56 r
+:simon/oriental/hatch.H: 200 -56
+:simon/oriental/hatch.H: 760 -56 r
+:simon/oriental/hatch.H: 712 -56
+:simon/oriental/hatch.H: 1272 -52 r
+
+:simon/oriental/goal.G: 642 374
+:simon/oriental/goal.G: 830 374
+:simon/oriental/goal.G: 1154 374
+:simon/oriental/goal.G: 1342 374
+:simon/oriental/goal.G: 130 374
+:simon/oriental/goal.G: 318 374
+
+:raymanni/gore/eater.T: 764 186
+:raymanni/gore/eater.T: 709 186
+:raymanni/gore/eater.T: 1276 186
+:raymanni/gore/eater.T: 1221 186
+:raymanni/gore/eater.T: 992 336
+:raymanni/gore/eater.T: 1504 336
+:raymanni/gore/eater.T: 252 186
+:raymanni/gore/eater.T: 197 186
+:raymanni/gore/eater.T: 480 336
+
+:simon/crystal.W: 672 240
+:simon/crystal.W: 816 240
+:simon/crystal.W: 880 456
+:simon/crystal.W: 928 456
+:simon/crystal.W: 976 456
+:simon/crystal.W: 512 456
+:simon/crystal.W: 560 456
+:simon/crystal.W: 608 456
+:simon/crystal.W: 1184 240
+:simon/crystal.W: 1328 240
+:simon/crystal.W: 1392 456
+:simon/crystal.W: 1440 456
+:simon/crystal.W: 1488 456
+:simon/crystal.W: 1024 456
+:simon/crystal.W: 1072 456
+:simon/crystal.W: 1120 456
+:simon/crystal.W: 160 240
+:simon/crystal.W: 304 240
+:simon/crystal.W: 368 456
+:simon/crystal.W: 416 456
+:simon/crystal.W: 464 456
+:simon/crystal.W: 0 456
+:simon/crystal.W: 48 456
+:simon/crystal.W: 96 456
+:simon/crystal.W: 512 456
+:simon/crystal.W: 560 456
+
+:simon/oriental/pebbles6: 960 64
+:simon/oriental/pebbles6: 928 64
+:simon/oriental/pebbles6: 896 96
+:simon/oriental/pebbles6: 944 112
+:simon/oriental/pebbles6: 912 144
+:simon/oriental/pebbles6: 896 64
+:simon/oriental/pebbles6: 896 128
+:simon/oriental/pebbles6: 906 214
+:simon/oriental/pebbles3: 997 276 frr
+:simon/oriental/pebbles6: 942 216
+:simon/oriental/pebbles6: 896 176
+:simon/oriental/pebbles6: 986 214
+:simon/oriental/pebbles6: 960 214
+:simon/oriental/pebbles6: 896 208
+:simon/oriental/pebbles3: 901 276 frr
+:simon/oriental/pebbles3: 965 276 frr
+:simon/oriental/pebbles3: 933 276 frr
+:simon/oriental/pebbles6: 924 216
+:simon/oriental/pebbles3: 869 276 frr
+:simon/oriental/pebbles6: 882 216
+:simon/oriental/pebbles6: 928 192
+:simon/oriental/pebbles6: 960 160
+:simon/oriental/pebbles6: 976 192
+:simon/oriental/05: 864 78
+:simon/oriental/05_top: 864 62
+:simon/oriental/culm_long: 912 62 r
+:simon/oriental/pebbles6: 976 112
+:simon/oriental/pebbles6: 992 144
+:simon/oriental/pebbles6: 992 64
+:simon/oriental/culm_long: 944 62 r
+:simon/oriental/05: 864 158
+:simon/oriental/05_btm: 864 256
+:simon/oriental/05: 864 190
+:simon/oriental/pebbles3: 837 276 frr
+:simon/oriental/05_btm: 864 270
+:simon/oriental/culm_long: 912 276 r
+:simon/oriental/culm_long: 944 276 r
+:simon/oriental/pebbles6: 1532 64 frr
+:simon/oriental/pebbles6: 540 64 frr
+:simon/oriental/pebbles6: 572 96 frr
+:simon/oriental/pebbles6: 524 112 frr
+:simon/oriental/pebbles6: 556 144 frr
+:simon/oriental/pebbles6: 572 64 frr
+:simon/oriental/pebbles6: 572 128 frr
+:simon/oriental/pebbles6: 562 214 frr
+:simon/oriental/pebbles3: 1525 276
+:simon/oriental/pebbles6: 526 216 frr
+:simon/oriental/pebbles6: 572 176 frr
+:simon/oriental/pebbles6: 1506 214 frr
+:simon/oriental/pebbles6: 1532 214 frr
+:simon/oriental/pebbles6: 572 208 frr
+:simon/oriental/pebbles3: 597 276
+:simon/oriental/pebbles3: 533 276
+:simon/oriental/pebbles3: 565 276
+:simon/oriental/pebbles6: 544 216 frr
+:simon/oriental/pebbles3: 629 276
+:simon/oriental/pebbles6: 586 216 frr
+:simon/oriental/pebbles6: 544 192 frr
+:simon/oriental/pebbles6: 1532 160 frr
+:simon/oriental/pebbles6: 1516 192 frr
+:simon/oriental/05: 624 78 frr
+:simon/oriental/05_top: 624 62 frr
+:simon/oriental/culm_long: 528 62 fr
+:simon/oriental/pebbles6: 1516 112 frr
+:simon/oriental/pebbles6: 1500 144 frr
+:simon/oriental/pebbles6: 1500 64 frr
+:simon/oriental/culm_long: 1520 62 fr
+:simon/oriental/05: 624 158 frr
+:simon/oriental/05_btm: 624 256 frr
+:simon/oriental/05: 624 190 frr
+:simon/oriental/pebbles3: 663 276
+:simon/oriental/05_btm: 624 270 frr
+:simon/oriental/culm_long: 528 276 fr
+:simon/oriental/culm_long: 1520 276 fr
+:simon/oriental/culm_long: 763 41
+:simon/oriental/culm_long: 763 -48
+:simon/oriental/culm_long: 720 40 r
+:simon/oriental/02b: 704 0
+:simon/oriental/02b: 800 0
+:simon/oriental/culm_long: 763 139
+:simon/oriental/culm_long: 763 237
+:simon/oriental/pebbles3: 696 276
+:simon/oriental/pebbles3: 728 276
+:simon/oriental/pebbles3: 805 276 frr
+:simon/oriental/pebbles3: 773 276 frr
+:simon/oriental/pebbles3: 757 276 frr
+:simon/oriental/pebbles4: 760 368
+:simon/oriental/pebbles4: 776 368
+:simon/oriental/pebbles4: 904 368
+:simon/oriental/pebbles4: 888 368
+:simon/oriental/pebbles4: 872 368
+:simon/oriental/pebbles4: 856 368
+:simon/oriental/pebbles4: 840 368
+:simon/oriental/pebbles4: 824 368
+:simon/oriental/pebbles4: 808 368
+:simon/oriental/pebbles4: 792 368
+:simon/oriental/pebbles4: 768 368
+:simon/oriental/pebbles4: 712 368
+:simon/oriental/pebbles4: 728 368
+:simon/oriental/pebbles4: 744 368
+:simon/oriental/culm_long: 763 333
+:simon/oriental/pebbles3: 712 260
+:simon/oriental/pebbles3: 728 244
+:simon/oriental/pebbles3: 792 260 frr
+:simon/oriental/pebbles3: 776 244 frr
+:simon/oriental/pebbles3: 760 244 frr
+:simon/oriental/pebbles3: 744 244 frr
+:simon/oriental/pebbles3: 760 260 frr
+:simon/oriental/pebbles3: 728 260 frr
+:simon/oriental/pebbles3: 792 244 frr
+:simon/oriental/pebbles3: 712 244 frr
+:simon/oriental/pebbles3: 792 244
+:simon/oriental/pebbles3: 712 244
+:simon/oriental/pebbles3: 708 244
+:simon/oriental/pebbles3: 708 260
+:simon/oriental/pebbles4: 696 368
+:simon/oriental/pebbles4: 680 368
+:simon/oriental/pebbles4: 664 368
+:simon/oriental/pebbles4: 648 368
+:simon/oriental/pebbles4: 632 368
+:simon/oriental/pebbles4: 616 368
+:simon/oriental/pebbles4: 600 368
+:geoo/steel/16x16o.S: 608 368
+:geoo/steel/16x16o.S: 624 368
+:geoo/steel/16x16o.S: 640 368
+:geoo/steel/16x16o.S: 656 368
+:geoo/steel/16x16o.S: 672 368
+:geoo/steel/16x16o.S: 688 368
+:geoo/steel/16x16o.S: 704 368
+:geoo/steel/16x16o.S: 720 368
+:geoo/steel/16x16o.S: 736 368
+:geoo/steel/16x16o.S: 784 368
+:geoo/steel/16x16o.S: 800 368
+:geoo/steel/16x16o.S: 816 368
+:geoo/steel/16x16o.S: 832 368
+:geoo/steel/16x16o.S: 848 368
+:geoo/steel/16x16o.S: 864 368
+:geoo/steel/16x16o.S: 880 368
+:geoo/steel/16x16o.S: 896 368
+:geoo/steel/16x16o.S: 912 368
+:geoo/steel/dark_16x16o.S: 608 368
+:geoo/steel/dark_16x16o.S: 624 368
+:geoo/steel/dark_16x16o.S: 640 368
+:geoo/steel/dark_16x16o.S: 656 368
+:geoo/steel/dark_16x16o.S: 672 368
+:geoo/steel/dark_16x16o.S: 688 368
+:geoo/steel/dark_16x16o.S: 704 368
+:geoo/steel/dark_16x16o.S: 720 368
+:geoo/steel/dark_16x16o.S: 736 368
+:geoo/steel/dark_16x16o.S: 784 368
+:geoo/steel/dark_16x16o.S: 800 368
+:geoo/steel/dark_16x16o.S: 816 368
+:geoo/steel/dark_16x16o.S: 832 368
+:geoo/steel/dark_16x16o.S: 848 368
+:geoo/steel/dark_16x16o.S: 864 368
+:geoo/steel/dark_16x16o.S: 880 368
+:geoo/steel/dark_16x16o.S: 896 368
+:geoo/steel/dark_16x16o.S: 912 368
+:simon/oriental/bridge1: 928 400
+:simon/oriental/bridge2: 992 400
+:simon/oriental/bridge2: 1504 400
+:simon/oriental/bridge3: 544 400
+:simon/oriental/pebbles6: 736 448
+:simon/oriental/gate: 704 394
+:simon/oriental/pebbles6: 784 448
+:simon/oriental/pebbles6: 688 448
+:simon/oriental/pebbles6: 704 448
+:simon/oriental/pebbles6: 720 448
+:simon/oriental/pebbles6: 736 448
+:simon/oriental/pebbles6: 752 448
+:simon/oriental/pebbles6: 768 448
+:simon/oriental/pebbles6: 778 448 frr
+:simon/oriental/pebbles6: 682 448 frr
+:simon/oriental/pebbles6: 794 448 frr
+:simon/oriental/pebbles6: 810 448 frr
+:simon/oriental/pebbles6: 826 448 frr
+:simon/oriental/pebbles6: 842 448 frr
+:simon/oriental/pebbles6: 666 448 frr
+:simon/oriental/pebbles6: 650 448 frr
+:simon/oriental/pebbles6: 634 448 frr
+:simon/oriental/pebbles6: 618 448 frr
+:geoo/steel/dark_16x16o.S: 666 456
+:geoo/steel/dark_16x16o.S: 854 456
+:geoo/steel/dark_16x16o.S: 904 64
+:geoo/steel/dark_16x16o.S: 616 64
+:simon/oriental/pebbles6: 1472 64
+:simon/oriental/pebbles6: 1440 64
+:simon/oriental/pebbles6: 1408 96
+:simon/oriental/pebbles6: 1456 112
+:simon/oriental/pebbles6: 1424 144
+:simon/oriental/pebbles6: 1408 64
+:simon/oriental/pebbles6: 1408 128
+:simon/oriental/pebbles6: 1418 214
+:simon/oriental/pebbles3: 1509 276 frr
+:simon/oriental/pebbles6: 1454 216
+:simon/oriental/pebbles6: 1408 176
+:simon/oriental/pebbles6: 1498 214
+:simon/oriental/pebbles6: 1472 214
+:simon/oriental/pebbles6: 1408 208
+:simon/oriental/pebbles3: 1413 276 frr
+:simon/oriental/pebbles3: 1477 276 frr
+:simon/oriental/pebbles3: 1445 276 frr
+:simon/oriental/pebbles6: 1436 216
+:simon/oriental/pebbles3: 1381 276 frr
+:simon/oriental/pebbles6: 1394 216
+:simon/oriental/pebbles6: 1440 192
+:simon/oriental/pebbles6: 1472 160
+:simon/oriental/pebbles6: 1488 192
+:simon/oriental/05: 1376 78
+:simon/oriental/05_top: 1376 62
+:simon/oriental/culm_long: 1424 62 r
+:simon/oriental/pebbles6: 1488 112
+:simon/oriental/pebbles6: 1504 144
+:simon/oriental/pebbles6: 1504 64
+:simon/oriental/culm_long: 1456 62 r
+:simon/oriental/05: 1376 158
+:simon/oriental/05_btm: 1376 256
+:simon/oriental/05: 1376 190
+:simon/oriental/pebbles3: 1349 276 frr
+:simon/oriental/05_btm: 1376 270
+:simon/oriental/culm_long: 1424 276 r
+:simon/oriental/culm_long: 1456 276 r
+:simon/oriental/pebbles6: 1020 64 frr
+:simon/oriental/pebbles6: 1052 64 frr
+:simon/oriental/pebbles6: 1084 96 frr
+:simon/oriental/pebbles6: 1036 112 frr
+:simon/oriental/pebbles6: 1068 144 frr
+:simon/oriental/pebbles6: 1084 64 frr
+:simon/oriental/pebbles6: 1084 128 frr
+:simon/oriental/pebbles6: 1074 214 frr
+:simon/oriental/pebbles3: 1013 276
+:simon/oriental/pebbles6: 1038 216 frr
+:simon/oriental/pebbles6: 1084 176 frr
+:simon/oriental/pebbles6: 994 214 frr
+:simon/oriental/pebbles6: 1020 214 frr
+:simon/oriental/pebbles6: 1084 208 frr
+:simon/oriental/pebbles3: 1109 276
+:simon/oriental/pebbles3: 1045 276
+:simon/oriental/pebbles3: 1077 276
+:simon/oriental/pebbles6: 1056 216 frr
+:simon/oriental/pebbles3: 1141 276
+:simon/oriental/pebbles6: 1098 216 frr
+:simon/oriental/pebbles6: 1056 192 frr
+:simon/oriental/pebbles6: 1020 160 frr
+:simon/oriental/pebbles6: 1004 192 frr
+:simon/oriental/05: 1136 78 frr
+:simon/oriental/05_top: 1136 62 frr
+:simon/oriental/culm_long: 1040 62 fr
+:simon/oriental/pebbles6: 1004 112 frr
+:simon/oriental/pebbles6: 988 144 frr
+:simon/oriental/pebbles6: 988 64 frr
+:simon/oriental/culm_long: 1008 62 fr
+:simon/oriental/05: 1136 158 frr
+:simon/oriental/05_btm: 1136 256 frr
+:simon/oriental/05: 1136 190 frr
+:simon/oriental/pebbles3: 1175 276
+:simon/oriental/05_btm: 1136 270 frr
+:simon/oriental/culm_long: 1040 276 fr
+:simon/oriental/culm_long: 1008 276 fr
+:simon/oriental/culm_long: 1275 41
+:simon/oriental/culm_long: 1275 -48
+:simon/oriental/culm_long: 1232 40 r
+:simon/oriental/02b: 1216 0
+:simon/oriental/02b: 1312 0
+:simon/oriental/culm_long: 1275 139
+:simon/oriental/culm_long: 1275 237
+:simon/oriental/pebbles3: 1208 276
+:simon/oriental/pebbles3: 1240 276
+:simon/oriental/pebbles3: 1317 276 frr
+:simon/oriental/pebbles3: 1285 276 frr
+:simon/oriental/pebbles3: 1269 276 frr
+:simon/oriental/pebbles4: 1272 368
+:simon/oriental/pebbles4: 1288 368
+:simon/oriental/pebbles4: 1416 368
+:simon/oriental/pebbles4: 1400 368
+:simon/oriental/pebbles4: 1384 368
+:simon/oriental/pebbles4: 1368 368
+:simon/oriental/pebbles4: 1352 368
+:simon/oriental/pebbles4: 1336 368
+:simon/oriental/pebbles4: 1320 368
+:simon/oriental/pebbles4: 1304 368
+:simon/oriental/pebbles4: 1280 368
+:simon/oriental/pebbles4: 1224 368
+:simon/oriental/pebbles4: 1240 368
+:simon/oriental/pebbles4: 1256 368
+:simon/oriental/culm_long: 1275 333
+:simon/oriental/pebbles3: 1224 260
+:simon/oriental/pebbles3: 1240 244
+:simon/oriental/pebbles3: 1304 260 frr
+:simon/oriental/pebbles3: 1288 244 frr
+:simon/oriental/pebbles3: 1272 244 frr
+:simon/oriental/pebbles3: 1256 244 frr
+:simon/oriental/pebbles3: 1272 260 frr
+:simon/oriental/pebbles3: 1240 260 frr
+:simon/oriental/pebbles3: 1304 244 frr
+:simon/oriental/pebbles3: 1224 244 frr
+:simon/oriental/pebbles3: 1304 244
+:simon/oriental/pebbles3: 1224 244
+:simon/oriental/pebbles3: 1220 244
+:simon/oriental/pebbles3: 1220 260
+:simon/oriental/pebbles4: 1208 368
+:simon/oriental/pebbles4: 1192 368
+:simon/oriental/pebbles4: 1176 368
+:simon/oriental/pebbles4: 1160 368
+:simon/oriental/pebbles4: 1144 368
+:simon/oriental/pebbles4: 1128 368
+:simon/oriental/pebbles4: 1112 368
+:geoo/steel/16x16o.S: 1120 368
+:geoo/steel/16x16o.S: 1136 368
+:geoo/steel/16x16o.S: 1152 368
+:geoo/steel/16x16o.S: 1168 368
+:geoo/steel/16x16o.S: 1184 368
+:geoo/steel/16x16o.S: 1200 368
+:geoo/steel/16x16o.S: 1216 368
+:geoo/steel/16x16o.S: 1232 368
+:geoo/steel/16x16o.S: 1248 368
+:geoo/steel/16x16o.S: 1296 368
+:geoo/steel/16x16o.S: 1312 368
+:geoo/steel/16x16o.S: 1328 368
+:geoo/steel/16x16o.S: 1344 368
+:geoo/steel/16x16o.S: 1360 368
+:geoo/steel/16x16o.S: 1376 368
+:geoo/steel/16x16o.S: 1392 368
+:geoo/steel/16x16o.S: 1408 368
+:geoo/steel/16x16o.S: 1424 368
+:geoo/steel/dark_16x16o.S: 1120 368
+:geoo/steel/dark_16x16o.S: 1136 368
+:geoo/steel/dark_16x16o.S: 1152 368
+:geoo/steel/dark_16x16o.S: 1168 368
+:geoo/steel/dark_16x16o.S: 1184 368
+:geoo/steel/dark_16x16o.S: 1200 368
+:geoo/steel/dark_16x16o.S: 1216 368
+:geoo/steel/dark_16x16o.S: 1232 368
+:geoo/steel/dark_16x16o.S: 1248 368
+:geoo/steel/dark_16x16o.S: 1296 368
+:geoo/steel/dark_16x16o.S: 1312 368
+:geoo/steel/dark_16x16o.S: 1328 368
+:geoo/steel/dark_16x16o.S: 1344 368
+:geoo/steel/dark_16x16o.S: 1360 368
+:geoo/steel/dark_16x16o.S: 1376 368
+:geoo/steel/dark_16x16o.S: 1392 368
+:geoo/steel/dark_16x16o.S: 1408 368
+:geoo/steel/dark_16x16o.S: 1424 368
+:simon/oriental/bridge1: 1440 400
+:simon/oriental/bridge2: 1504 400
+:simon/oriental/bridge2: 992 400
+:simon/oriental/bridge3: 1056 400
+:simon/oriental/pebbles6: 1248 448
+:simon/oriental/gate: 1216 394
+:simon/oriental/pebbles6: 1296 448
+:simon/oriental/pebbles6: 1200 448
+:simon/oriental/pebbles6: 1216 448
+:simon/oriental/pebbles6: 1232 448
+:simon/oriental/pebbles6: 1248 448
+:simon/oriental/pebbles6: 1264 448
+:simon/oriental/pebbles6: 1280 448
+:simon/oriental/pebbles6: 1290 448 frr
+:simon/oriental/pebbles6: 1194 448 frr
+:simon/oriental/pebbles6: 1306 448 frr
+:simon/oriental/pebbles6: 1322 448 frr
+:simon/oriental/pebbles6: 1338 448 frr
+:simon/oriental/pebbles6: 1354 448 frr
+:simon/oriental/pebbles6: 1178 448 frr
+:simon/oriental/pebbles6: 1162 448 frr
+:simon/oriental/pebbles6: 1146 448 frr
+:simon/oriental/pebbles6: 1130 448 frr
+:geoo/steel/dark_16x16o.S: 1178 456
+:geoo/steel/dark_16x16o.S: 1366 456
+:geoo/steel/dark_16x16o.S: 1416 64
+:geoo/steel/dark_16x16o.S: 1128 64
+:simon/oriental/temple: 940 80
+:simon/oriental/gate: 960 0
+:simon/oriental/gate: 1472 0
+:geoo/steel/dark_16x16o.S: 704 0
+:geoo/steel/dark_16x16o.S: 704 16
+:geoo/steel/dark_16x16o.S: 704 32
+:geoo/steel/dark_16x16o.S: 704 48
+:geoo/steel/dark_16x16o.S: 704 64
+:geoo/steel/dark_16x16o.S: 704 80
+:geoo/steel/dark_16x16o.S: 816 0
+:geoo/steel/dark_16x16o.S: 816 16
+:geoo/steel/dark_16x16o.S: 816 32
+:geoo/steel/dark_16x16o.S: 816 48
+:geoo/steel/dark_16x16o.S: 816 64
+:geoo/steel/dark_16x16o.S: 816 80
+:geoo/steel/dark_16x16o.S: 1216 0
+:geoo/steel/dark_16x16o.S: 1216 16
+:geoo/steel/dark_16x16o.S: 1216 32
+:geoo/steel/dark_16x16o.S: 1216 48
+:geoo/steel/dark_16x16o.S: 1216 64
+:geoo/steel/dark_16x16o.S: 1216 80
+:geoo/steel/dark_16x16o.S: 1328 0
+:geoo/steel/dark_16x16o.S: 1328 16
+:geoo/steel/dark_16x16o.S: 1328 32
+:geoo/steel/dark_16x16o.S: 1328 48
+:geoo/steel/dark_16x16o.S: 1328 64
+:geoo/steel/dark_16x16o.S: 1328 80
+:simon/oriental/pebbles6: 448 64
+:simon/oriental/pebbles6: 416 64
+:simon/oriental/pebbles6: 384 96
+:simon/oriental/pebbles6: 432 112
+:simon/oriental/pebbles6: 400 144
+:simon/oriental/pebbles6: 384 64
+:simon/oriental/pebbles6: 384 128
+:simon/oriental/pebbles6: 394 214
+:simon/oriental/pebbles3: 485 276 frr
+:simon/oriental/pebbles6: 430 216
+:simon/oriental/pebbles6: 384 176
+:simon/oriental/pebbles6: 474 214
+:simon/oriental/pebbles6: 448 214
+:simon/oriental/pebbles6: 384 208
+:simon/oriental/pebbles3: 389 276 frr
+:simon/oriental/pebbles3: 453 276 frr
+:simon/oriental/pebbles3: 421 276 frr
+:simon/oriental/pebbles6: 412 216
+:simon/oriental/pebbles3: 357 276 frr
+:simon/oriental/pebbles6: 370 216
+:simon/oriental/pebbles6: 416 192
+:simon/oriental/pebbles6: 448 160
+:simon/oriental/pebbles6: 464 192
+:simon/oriental/05: 352 78
+:simon/oriental/05_top: 352 62
+:simon/oriental/culm_long: 400 62 r
+:simon/oriental/pebbles6: 464 112
+:simon/oriental/pebbles6: 480 144
+:simon/oriental/pebbles6: 480 64
+:simon/oriental/culm_long: 432 62 r
+:simon/oriental/05: 352 158
+:simon/oriental/05_btm: 352 256
+:simon/oriental/05: 352 190
+:simon/oriental/pebbles3: 325 276 frr
+:simon/oriental/05_btm: 352 270
+:simon/oriental/culm_long: 400 276 r
+:simon/oriental/culm_long: 432 276 r
+:simon/oriental/pebbles6: 28 64 frr
+:simon/oriental/pebbles6: 60 96 frr
+:simon/oriental/pebbles6: 12 112 frr
+:simon/oriental/pebbles6: 44 144 frr
+:simon/oriental/pebbles6: 60 64 frr
+:simon/oriental/pebbles6: 60 128 frr
+:simon/oriental/pebbles6: 50 214 frr
+:simon/oriental/pebbles6: 14 216 frr
+:simon/oriental/pebbles6: 60 176 frr
+:simon/oriental/pebbles6: 60 208 frr
+:simon/oriental/pebbles3: 85 276
+:simon/oriental/pebbles3: 21 276
+:simon/oriental/pebbles3: 53 276
+:simon/oriental/pebbles6: 32 216 frr
+:simon/oriental/pebbles3: 117 276
+:simon/oriental/pebbles6: 74 216 frr
+:simon/oriental/pebbles6: 32 192 frr
+:simon/oriental/temple: 1452 80
+:simon/oriental/05: 112 78 frr
+:simon/oriental/05_top: 112 62 frr
+:simon/oriental/culm_long: 16 62 fr
+:simon/oriental/05: 112 158 frr
+:simon/oriental/05_btm: 112 256 frr
+:simon/oriental/05: 112 190 frr
+:simon/oriental/pebbles3: 151 276
+:simon/oriental/05_btm: 112 270 frr
+:simon/oriental/culm_long: 16 276 fr
+:simon/oriental/culm_long: 251 41
+:simon/oriental/culm_long: 251 -48
+:simon/oriental/culm_long: 208 40 r
+:simon/oriental/02b: 192 0
+:simon/oriental/02b: 288 0
+:simon/oriental/culm_long: 251 139
+:simon/oriental/culm_long: 251 237
+:simon/oriental/pebbles3: 184 276
+:simon/oriental/pebbles3: 216 276
+:simon/oriental/pebbles3: 293 276 frr
+:simon/oriental/pebbles3: 261 276 frr
+:simon/oriental/pebbles3: 245 276 frr
+:simon/oriental/pebbles4: 248 368
+:simon/oriental/pebbles4: 264 368
+:simon/oriental/pebbles4: 392 368
+:simon/oriental/pebbles4: 376 368
+:simon/oriental/pebbles4: 360 368
+:simon/oriental/pebbles4: 344 368
+:simon/oriental/pebbles4: 328 368
+:simon/oriental/pebbles4: 312 368
+:simon/oriental/pebbles4: 296 368
+:simon/oriental/pebbles4: 280 368
+:simon/oriental/pebbles4: 256 368
+:simon/oriental/pebbles4: 200 368
+:simon/oriental/pebbles4: 216 368
+:simon/oriental/pebbles4: 232 368
+:simon/oriental/culm_long: 251 333
+:simon/oriental/pebbles3: 200 260
+:simon/oriental/pebbles3: 216 244
+:simon/oriental/pebbles3: 280 260 frr
+:simon/oriental/pebbles3: 264 244 frr
+:simon/oriental/pebbles3: 248 244 frr
+:simon/oriental/pebbles3: 232 244 frr
+:simon/oriental/pebbles3: 248 260 frr
+:simon/oriental/pebbles3: 216 260 frr
+:simon/oriental/pebbles3: 280 244 frr
+:simon/oriental/pebbles3: 200 244 frr
+:simon/oriental/pebbles3: 280 244
+:simon/oriental/pebbles3: 200 244
+:simon/oriental/pebbles3: 196 244
+:simon/oriental/pebbles3: 196 260
+:simon/oriental/pebbles4: 184 368
+:simon/oriental/pebbles4: 168 368
+:simon/oriental/pebbles4: 152 368
+:simon/oriental/pebbles4: 136 368
+:simon/oriental/pebbles4: 120 368
+:simon/oriental/pebbles4: 104 368
+:simon/oriental/pebbles4: 88 368
+:geoo/steel/16x16o.S: 96 368
+:geoo/steel/16x16o.S: 112 368
+:geoo/steel/16x16o.S: 128 368
+:geoo/steel/16x16o.S: 144 368
+:geoo/steel/16x16o.S: 160 368
+:geoo/steel/16x16o.S: 176 368
+:geoo/steel/16x16o.S: 192 368
+:geoo/steel/16x16o.S: 208 368
+:geoo/steel/16x16o.S: 224 368
+:geoo/steel/16x16o.S: 272 368
+:geoo/steel/16x16o.S: 288 368
+:geoo/steel/16x16o.S: 304 368
+:geoo/steel/16x16o.S: 320 368
+:geoo/steel/16x16o.S: 336 368
+:geoo/steel/16x16o.S: 352 368
+:geoo/steel/16x16o.S: 368 368
+:geoo/steel/16x16o.S: 384 368
+:geoo/steel/16x16o.S: 400 368
+:geoo/steel/dark_16x16o.S: 96 368
+:geoo/steel/dark_16x16o.S: 112 368
+:geoo/steel/dark_16x16o.S: 128 368
+:geoo/steel/dark_16x16o.S: 144 368
+:geoo/steel/dark_16x16o.S: 160 368
+:geoo/steel/dark_16x16o.S: 176 368
+:geoo/steel/dark_16x16o.S: 192 368
+:geoo/steel/dark_16x16o.S: 208 368
+:geoo/steel/dark_16x16o.S: 224 368
+:geoo/steel/dark_16x16o.S: 272 368
+:geoo/steel/dark_16x16o.S: 288 368
+:geoo/steel/dark_16x16o.S: 304 368
+:geoo/steel/dark_16x16o.S: 320 368
+:geoo/steel/dark_16x16o.S: 336 368
+:geoo/steel/dark_16x16o.S: 352 368
+:geoo/steel/dark_16x16o.S: 368 368
+:geoo/steel/dark_16x16o.S: 384 368
+:geoo/steel/dark_16x16o.S: 400 368
+:simon/oriental/bridge1: 416 400
+:simon/oriental/bridge2: 480 400
+:simon/oriental/bridge3: 32 400
+:simon/oriental/pebbles6: 224 448
+:simon/oriental/gate: 192 394
+:simon/oriental/pebbles6: 272 448
+:simon/oriental/pebbles6: 176 448
+:simon/oriental/pebbles6: 192 448
+:simon/oriental/pebbles6: 208 448
+:simon/oriental/pebbles6: 224 448
+:simon/oriental/pebbles6: 240 448
+:simon/oriental/pebbles6: 256 448
+:simon/oriental/pebbles6: 266 448 frr
+:simon/oriental/pebbles6: 170 448 frr
+:simon/oriental/pebbles6: 282 448 frr
+:simon/oriental/pebbles6: 298 448 frr
+:simon/oriental/pebbles6: 314 448 frr
+:simon/oriental/pebbles6: 330 448 frr
+:simon/oriental/pebbles6: 154 448 frr
+:simon/oriental/pebbles6: 138 448 frr
+:simon/oriental/pebbles6: 122 448 frr
+:simon/oriental/pebbles6: 106 448 frr
+:geoo/steel/dark_16x16o.S: 154 456
+:geoo/steel/dark_16x16o.S: 342 456
+:geoo/steel/dark_16x16o.S: 392 64
+:geoo/steel/dark_16x16o.S: 104 64
+:simon/oriental/pebbles6: 508 64 frr
+:simon/oriental/pebbles6: 540 64 frr
+:simon/oriental/pebbles6: 572 96 frr
+:simon/oriental/pebbles6: 524 112 frr
+:simon/oriental/pebbles6: 556 144 frr
+:simon/oriental/pebbles6: 572 64 frr
+:simon/oriental/pebbles6: 572 128 frr
+:simon/oriental/pebbles6: 562 214 frr
+:simon/oriental/pebbles3: 501 276
+:simon/oriental/pebbles6: 526 216 frr
+:simon/oriental/pebbles6: 572 176 frr
+:simon/oriental/pebbles6: 482 214 frr
+:simon/oriental/pebbles6: 508 214 frr
+:simon/oriental/pebbles6: 572 208 frr
+:simon/oriental/pebbles3: 533 276
+:simon/oriental/pebbles3: 565 276
+:simon/oriental/pebbles6: 544 216 frr
+:simon/oriental/pebbles6: 544 192 frr
+:simon/oriental/pebbles6: 508 160 frr
+:simon/oriental/pebbles6: 492 192 frr
+:simon/oriental/culm_long: 528 62 fr
+:simon/oriental/pebbles6: 492 112 frr
+:simon/oriental/pebbles6: 476 144 frr
+:simon/oriental/pebbles6: 476 64 frr
+:simon/oriental/culm_long: 496 62 fr
+:simon/oriental/culm_long: 528 276 fr
+:simon/oriental/culm_long: 496 276 fr
+:simon/oriental/bridge2: 480 400
+:simon/oriental/bridge3: 544 400
+:simon/oriental/temple: 428 80
+:simon/oriental/gate: 448 0
+:geoo/steel/dark_16x16o.S: 192 0
+:geoo/steel/dark_16x16o.S: 192 16
+:geoo/steel/dark_16x16o.S: 192 32
+:geoo/steel/dark_16x16o.S: 192 48
+:geoo/steel/dark_16x16o.S: 192 64
+:geoo/steel/dark_16x16o.S: 192 80
+:geoo/steel/dark_16x16o.S: 304 0
+:geoo/steel/dark_16x16o.S: 304 16
+:geoo/steel/dark_16x16o.S: 304 32
+:geoo/steel/dark_16x16o.S: 304 48
+:geoo/steel/dark_16x16o.S: 304 64
+:geoo/steel/dark_16x16o.S: 304 80

@@ -1,0 +1,1155 @@
+$BUILT 2021-05-01 02:16:26
+$AUTHOR Flopsy
+$ENGLISH Let's Go Rock Climbing 7P
+
+#INTENDED_NUMBER_OF_PLAYERS 7
+#SIZE_X 584
+#SIZE_Y 1680
+#TORUS_X 0
+#TORUS_Y 1
+
+#SECONDS 60
+#INITIAL 80
+#SPAWN_INTERVAL 32
+
+#WALKER 40
+#RUNNER 10
+#CLIMBER 80
+#EXPLODER 80
+#BLOCKER 1
+#PLATFORMER 30
+#BASHER 10
+#DIGGER 5
+#JUMPER 40
+#BATTER 30
+#CUBER 5
+
+:matt/goldmine/Hatch.H: 28 142
+:matt/goldmine/Hatch.H: 28 382
+:matt/goldmine/Hatch.H: 28 622
+:matt/goldmine/Hatch.H: 28 862
+:matt/goldmine/Hatch.H: 28 1102
+:matt/goldmine/Hatch.H: 28 1342
+:matt/goldmine/Hatch.H: 28 1582
+:matt/goldmine/Hatch.H: 321 176 r
+:matt/goldmine/Hatch.H: 321 416 r
+:matt/goldmine/Hatch.H: 321 656 r
+:matt/goldmine/Hatch.H: 321 896 r
+:matt/goldmine/Hatch.H: 321 1136 r
+:matt/goldmine/Hatch.H: 321 1376 r
+:matt/goldmine/Hatch.H: 321 1616 r
+
+:matt/goldmine/Goal.G: 264 0
+:matt/goldmine/Goal.G: 264 240
+:matt/goldmine/Goal.G: 264 480
+:matt/goldmine/Goal.G: 264 720
+:matt/goldmine/Goal.G: 264 960
+:matt/goldmine/Goal.G: 264 1200
+:matt/goldmine/Goal.G: 264 1440
+
+:matt/goldmine/explosivecrate: 112 126
+:matt/goldmine/06: 6 186
+:matt/goldmine/07: 28 170
+:matt/goldmine/02: -24 138 rr
+:amanda/steel/steel16x16.S: 52 190
+:amanda/steel/steel16x16.S: 296 224
+:matt/goldmine/07: 58 170 rr
+:matt/goldmine/03: 396 144
+:matt/goldmine/05: 438 176
+:matt/goldmine/07: 296 96
+:amanda/steel/steel16x16.S: 312 224
+:amanda/steel/steel16x16.S: 328 224
+:amanda/steel/steel16x16.S: 344 224
+:amanda/steel/steel16x16.S: 360 224
+:amanda/steel/steel16x16.S: 376 224
+:amanda/steel/steel16x16.S: 392 224
+:amanda/steel/steel16x16.S: 408 224
+:amanda/steel/steel16x16.S: 424 224
+:amanda/steel/steel16x16.S: 440 224
+:amanda/steel/steel16x16.S: 456 224
+:amanda/steel/steel16x16.S: 472 224
+:amanda/steel/steel16x16.S: 488 224
+:amanda/steel/steel16x16.S: 504 224
+:amanda/steel/steel16x16.S: 520 224
+:geoo/construction/platform_single.S: 298 102 r
+:geoo/construction/platform_single.S: 298 100 r
+:geoo/construction/platform_single.S: 300 96 r
+:geoo/construction/platform_single.S: 298 80 r
+:matt/goldmine/09: 476 64
+:matt/goldmine/09: 508 32 frr
+:matt/goldmine/01: 508 144
+:matt/goldmine/09: 492 48 frr
+:amanda/steel/steel16x16.S: 296 48
+:amanda/steel/steel16x16.S: 312 48
+:amanda/steel/steel16x16.S: 328 48
+:amanda/steel/steel16x16.S: 344 48
+:amanda/steel/steel16x16.S: 360 48
+:amanda/steel/steel16x16.S: 376 48
+:amanda/steel/steel16x16.S: 392 48
+:amanda/steel/steel16x16.S: 408 48
+:amanda/steel/steel16x16.S: 424 48
+:amanda/steel/steel16x16.S: 440 48
+:amanda/steel/steel16x16.S: 456 48
+:amanda/steel/steel16x16.S: 568 224
+:amanda/steel/steel16x16.S: 568 208
+:amanda/steel/steel16x16.S: 568 192
+:amanda/steel/steel16x16.S: 568 176
+:amanda/steel/steel16x16.S: 568 160
+:amanda/steel/steel16x16.S: 568 144
+:amanda/steel/steel16x16.S: 568 128
+:amanda/steel/steel16x16.S: 568 112
+:amanda/steel/steel16x16.S: 568 96
+:amanda/steel/steel16x16.S: 568 80
+:amanda/steel/steel16x16.S: 584 64
+:amanda/steel/steel16x16.S: 568 48
+:amanda/steel/steel16x16.S: 568 64
+:matt/goldmine/07: 336 80
+:geoo/construction/platform_single.S: 296 104 r
+:geoo/construction/platform_single.S: 298 136 r
+:geoo/construction/platform_single.S: 298 128 r
+:matt/goldmine/01: 296 152
+:geoo/construction/platform_single.S: 298 152 r
+:geoo/construction/platform_single.S: 298 144 r
+:geoo/construction/platform_single.S: 298 168 r
+:geoo/construction/platform_single.S: 298 160 r
+:geoo/construction/platform_single.S: 298 184 r
+:geoo/construction/platform_single.S: 298 176 r
+:geoo/construction/platform_single.S: 298 200 r
+:geoo/construction/platform_single.S: 298 192 r
+:geoo/construction/platform_single.S: 298 216 r
+:geoo/construction/platform_single.S: 298 208 r
+:geoo/construction/platform_single.S: 296 120 r
+:geoo/construction/platform_single.S: 296 136 r
+:geoo/construction/platform_single.S: 296 152 r
+:geoo/construction/platform_single.S: 296 168 r
+:geoo/construction/platform_single.S: 296 184 r
+:geoo/construction/platform_single.S: 296 200 r
+:geoo/construction/platform_single.S: 296 216 r
+:geoo/construction/platform_single.S: 296 208 r
+:geoo/construction/platform_single.S: 296 192 r
+:geoo/construction/platform_single.S: 296 176 r
+:geoo/construction/platform_single.S: 296 160 r
+:geoo/construction/platform_single.S: 296 144 r
+:geoo/construction/platform_single.S: 296 128 r
+:geoo/construction/platform_single.S: 296 112 r
+:geoo/construction/platform_single.S: 298 120 r
+:geoo/construction/platform_single.S: 300 88 r
+:geoo/construction/platform_single.S: 300 80 r
+:geoo/construction/platform_single.S: 296 80 r
+:geoo/construction/platform_single.S: 296 72 r
+:geoo/construction/platform_single.S: 298 72 r
+:geoo/construction/platform_single.S: 300 72 r
+:geoo/construction/platform_single.S: 296 64 r
+:geoo/construction/platform_single.S: 298 64 r
+:geoo/construction/platform_single.S: 300 64 r
+:geoo/construction/platform_single.S: 300 124 r
+:geoo/construction/platform_single.S: 300 128 r
+:geoo/construction/platform_single.S: 300 144 r
+:geoo/construction/platform_single.S: 300 160 r
+:geoo/construction/platform_single.S: 300 176 r
+:geoo/construction/platform_single.S: 300 192 r
+:geoo/construction/platform_single.S: 300 208 r
+:geoo/construction/platform_single.S: 300 102 r
+:geoo/construction/platform_single.S: 300 136 r
+:geoo/construction/platform_single.S: 300 152 r
+:geoo/construction/platform_single.S: 300 168 r
+:geoo/construction/platform_single.S: 300 184 r
+:geoo/construction/platform_single.S: 300 200 r
+:geoo/construction/platform_single.S: 300 216 r
+:amanda/steel/steel16x16.S: 568 32
+:amanda/steel/steel16x16.S: 568 16
+:amanda/steel/steel16x16.S: 568 0
+:amanda/steel/steel16x16.S: 552 0
+:amanda/steel/steel16x16.S: 488 0
+:amanda/steel/steel16x16.S: 520 0
+:amanda/steel/steel16x16.S: 504 0
+:amanda/steel/steel16x16.S: 552 224
+:matt/goldmine/02: -16 80
+:amanda/steel/steel16x16.S: 280 48
+:amanda/steel/steel16x16.S: 264 48
+:amanda/steel/steel16x16.S: 248 48
+:amanda/steel/steel16x16.S: 232 48
+:amanda/steel/steel16x16.S: 216 48
+:amanda/steel/steel16x16.S: 200 48
+:amanda/steel/steel16x16.S: 184 48
+:amanda/steel/steel16x16.S: 168 48
+:amanda/steel/steel16x16.S: 152 48
+:amanda/steel/steel16x16.S: 136 48
+:amanda/steel/steel16x16.S: 120 48
+:matt/goldmine/06: 32 80
+:matt/goldmine/06: 96 80
+:matt/goldmine/03: 94 76
+:matt/goldmine/01: 200 82
+:matt/goldmine/08: -14 20 frr
+:matt/goldmine/00: -48 226
+:matt/goldmine/explosivecrate: 112 366
+:matt/goldmine/06: 6 426
+:matt/goldmine/07: 28 410
+:matt/goldmine/02: -24 378 rr
+:amanda/steel/steel16x16.S: 52 430
+:amanda/steel/steel16x16.S: 296 464
+:matt/goldmine/07: 58 410 rr
+:matt/goldmine/03: 396 384
+:matt/goldmine/05: 438 416
+:matt/goldmine/07: 296 336
+:amanda/steel/steel16x16.S: 312 464
+:amanda/steel/steel16x16.S: 328 464
+:amanda/steel/steel16x16.S: 344 464
+:amanda/steel/steel16x16.S: 360 464
+:amanda/steel/steel16x16.S: 376 464
+:amanda/steel/steel16x16.S: 392 464
+:amanda/steel/steel16x16.S: 408 464
+:amanda/steel/steel16x16.S: 424 464
+:amanda/steel/steel16x16.S: 440 464
+:amanda/steel/steel16x16.S: 456 464
+:amanda/steel/steel16x16.S: 472 464
+:amanda/steel/steel16x16.S: 488 464
+:amanda/steel/steel16x16.S: 504 464
+:amanda/steel/steel16x16.S: 520 464
+:geoo/construction/platform_single.S: 298 342 r
+:geoo/construction/platform_single.S: 298 340 r
+:geoo/construction/platform_single.S: 300 336 r
+:geoo/construction/platform_single.S: 298 320 r
+:matt/goldmine/09: 476 304
+:matt/goldmine/09: 508 272 frr
+:matt/goldmine/01: 508 384
+:matt/goldmine/09: 492 288 frr
+:amanda/steel/steel16x16.S: 296 288
+:amanda/steel/steel16x16.S: 312 288
+:amanda/steel/steel16x16.S: 328 288
+:amanda/steel/steel16x16.S: 344 288
+:amanda/steel/steel16x16.S: 360 288
+:amanda/steel/steel16x16.S: 376 288
+:amanda/steel/steel16x16.S: 392 288
+:amanda/steel/steel16x16.S: 408 288
+:amanda/steel/steel16x16.S: 424 288
+:amanda/steel/steel16x16.S: 440 288
+:amanda/steel/steel16x16.S: 456 288
+:amanda/steel/steel16x16.S: 568 464
+:amanda/steel/steel16x16.S: 568 448
+:amanda/steel/steel16x16.S: 568 432
+:amanda/steel/steel16x16.S: 568 416
+:amanda/steel/steel16x16.S: 568 400
+:amanda/steel/steel16x16.S: 568 384
+:amanda/steel/steel16x16.S: 568 368
+:amanda/steel/steel16x16.S: 568 352
+:amanda/steel/steel16x16.S: 568 336
+:amanda/steel/steel16x16.S: 568 320
+:amanda/steel/steel16x16.S: 584 304
+:amanda/steel/steel16x16.S: 568 288
+:amanda/steel/steel16x16.S: 568 304
+:matt/goldmine/07: 336 320
+:geoo/construction/platform_single.S: 296 344 r
+:geoo/construction/platform_single.S: 298 376 r
+:geoo/construction/platform_single.S: 298 368 r
+:matt/goldmine/01: 296 392
+:geoo/construction/platform_single.S: 298 392 r
+:geoo/construction/platform_single.S: 298 384 r
+:geoo/construction/platform_single.S: 298 408 r
+:geoo/construction/platform_single.S: 298 400 r
+:geoo/construction/platform_single.S: 298 424 r
+:geoo/construction/platform_single.S: 298 416 r
+:geoo/construction/platform_single.S: 298 440 r
+:geoo/construction/platform_single.S: 298 432 r
+:geoo/construction/platform_single.S: 298 456 r
+:geoo/construction/platform_single.S: 298 448 r
+:geoo/construction/platform_single.S: 296 360 r
+:geoo/construction/platform_single.S: 296 376 r
+:geoo/construction/platform_single.S: 296 392 r
+:geoo/construction/platform_single.S: 296 408 r
+:geoo/construction/platform_single.S: 296 424 r
+:geoo/construction/platform_single.S: 296 440 r
+:geoo/construction/platform_single.S: 296 456 r
+:geoo/construction/platform_single.S: 296 448 r
+:geoo/construction/platform_single.S: 296 432 r
+:geoo/construction/platform_single.S: 296 416 r
+:geoo/construction/platform_single.S: 296 400 r
+:geoo/construction/platform_single.S: 296 384 r
+:geoo/construction/platform_single.S: 296 368 r
+:geoo/construction/platform_single.S: 296 352 r
+:geoo/construction/platform_single.S: 298 360 r
+:geoo/construction/platform_single.S: 300 328 r
+:geoo/construction/platform_single.S: 300 320 r
+:geoo/construction/platform_single.S: 296 320 r
+:geoo/construction/platform_single.S: 296 312 r
+:geoo/construction/platform_single.S: 298 312 r
+:geoo/construction/platform_single.S: 300 312 r
+:geoo/construction/platform_single.S: 296 304 r
+:geoo/construction/platform_single.S: 298 304 r
+:geoo/construction/platform_single.S: 300 304 r
+:geoo/construction/platform_single.S: 300 364 r
+:geoo/construction/platform_single.S: 300 368 r
+:geoo/construction/platform_single.S: 300 384 r
+:geoo/construction/platform_single.S: 300 400 r
+:geoo/construction/platform_single.S: 300 416 r
+:geoo/construction/platform_single.S: 300 432 r
+:geoo/construction/platform_single.S: 300 448 r
+:geoo/construction/platform_single.S: 300 342 r
+:geoo/construction/platform_single.S: 300 376 r
+:geoo/construction/platform_single.S: 300 392 r
+:geoo/construction/platform_single.S: 300 408 r
+:geoo/construction/platform_single.S: 300 424 r
+:geoo/construction/platform_single.S: 300 440 r
+:geoo/construction/platform_single.S: 300 456 r
+:amanda/steel/steel16x16.S: 568 272
+:amanda/steel/steel16x16.S: 568 256
+:amanda/steel/steel16x16.S: 568 240
+:amanda/steel/steel16x16.S: 552 240
+:amanda/steel/steel16x16.S: 488 240
+:amanda/steel/steel16x16.S: 520 240
+:amanda/steel/steel16x16.S: 504 240
+:amanda/steel/steel16x16.S: 552 464
+:matt/goldmine/02: -16 320
+:amanda/steel/steel16x16.S: 280 288
+:amanda/steel/steel16x16.S: 264 288
+:amanda/steel/steel16x16.S: 248 288
+:amanda/steel/steel16x16.S: 232 288
+:amanda/steel/steel16x16.S: 216 288
+:amanda/steel/steel16x16.S: 200 288
+:amanda/steel/steel16x16.S: 184 288
+:amanda/steel/steel16x16.S: 168 288
+:amanda/steel/steel16x16.S: 152 288
+:amanda/steel/steel16x16.S: 136 288
+:amanda/steel/steel16x16.S: 120 288
+:matt/goldmine/06: 32 320
+:matt/goldmine/06: 96 320
+:matt/goldmine/03: 94 316
+:matt/goldmine/01: 200 322
+:matt/goldmine/08: -14 260 frr
+:matt/goldmine/00: -48 466
+:matt/goldmine/07: 28 410
+:matt/goldmine/02: -24 378 rr
+:matt/goldmine/07: 58 410 rr
+:matt/goldmine/00: -48 466
+:matt/goldmine/explosivecrate: 112 606
+:matt/goldmine/06: 6 666
+:matt/goldmine/07: 28 650
+:matt/goldmine/02: -24 618 rr
+:amanda/steel/steel16x16.S: 52 670
+:amanda/steel/steel16x16.S: 296 704
+:matt/goldmine/07: 58 650 rr
+:matt/goldmine/03: 396 624
+:matt/goldmine/05: 438 656
+:matt/goldmine/07: 296 576
+:amanda/steel/steel16x16.S: 312 704
+:amanda/steel/steel16x16.S: 328 704
+:amanda/steel/steel16x16.S: 344 704
+:amanda/steel/steel16x16.S: 360 704
+:amanda/steel/steel16x16.S: 376 704
+:amanda/steel/steel16x16.S: 392 704
+:amanda/steel/steel16x16.S: 408 704
+:amanda/steel/steel16x16.S: 424 704
+:amanda/steel/steel16x16.S: 440 704
+:amanda/steel/steel16x16.S: 456 704
+:amanda/steel/steel16x16.S: 472 704
+:amanda/steel/steel16x16.S: 488 704
+:amanda/steel/steel16x16.S: 504 704
+:amanda/steel/steel16x16.S: 520 704
+:geoo/construction/platform_single.S: 298 582 r
+:geoo/construction/platform_single.S: 298 580 r
+:geoo/construction/platform_single.S: 300 576 r
+:geoo/construction/platform_single.S: 298 560 r
+:matt/goldmine/09: 476 544
+:matt/goldmine/09: 508 512 frr
+:matt/goldmine/01: 508 624
+:matt/goldmine/09: 492 528 frr
+:amanda/steel/steel16x16.S: 296 528
+:amanda/steel/steel16x16.S: 312 528
+:amanda/steel/steel16x16.S: 328 528
+:amanda/steel/steel16x16.S: 344 528
+:amanda/steel/steel16x16.S: 360 528
+:amanda/steel/steel16x16.S: 376 528
+:amanda/steel/steel16x16.S: 392 528
+:amanda/steel/steel16x16.S: 408 528
+:amanda/steel/steel16x16.S: 424 528
+:amanda/steel/steel16x16.S: 440 528
+:amanda/steel/steel16x16.S: 456 528
+:amanda/steel/steel16x16.S: 568 704
+:amanda/steel/steel16x16.S: 568 688
+:amanda/steel/steel16x16.S: 568 672
+:amanda/steel/steel16x16.S: 568 656
+:amanda/steel/steel16x16.S: 568 640
+:amanda/steel/steel16x16.S: 568 624
+:amanda/steel/steel16x16.S: 568 608
+:amanda/steel/steel16x16.S: 568 592
+:amanda/steel/steel16x16.S: 568 576
+:amanda/steel/steel16x16.S: 568 560
+:amanda/steel/steel16x16.S: 568 528
+:amanda/steel/steel16x16.S: 568 544
+:matt/goldmine/07: 336 560
+:geoo/construction/platform_single.S: 296 584 r
+:geoo/construction/platform_single.S: 298 616 r
+:geoo/construction/platform_single.S: 298 608 r
+:matt/goldmine/01: 296 632
+:geoo/construction/platform_single.S: 298 632 r
+:geoo/construction/platform_single.S: 298 624 r
+:geoo/construction/platform_single.S: 298 648 r
+:geoo/construction/platform_single.S: 298 640 r
+:geoo/construction/platform_single.S: 298 664 r
+:geoo/construction/platform_single.S: 298 656 r
+:geoo/construction/platform_single.S: 298 680 r
+:geoo/construction/platform_single.S: 298 672 r
+:geoo/construction/platform_single.S: 298 696 r
+:geoo/construction/platform_single.S: 298 688 r
+:geoo/construction/platform_single.S: 296 600 r
+:geoo/construction/platform_single.S: 296 616 r
+:geoo/construction/platform_single.S: 296 632 r
+:geoo/construction/platform_single.S: 296 648 r
+:geoo/construction/platform_single.S: 296 664 r
+:geoo/construction/platform_single.S: 296 680 r
+:geoo/construction/platform_single.S: 296 696 r
+:geoo/construction/platform_single.S: 296 688 r
+:geoo/construction/platform_single.S: 296 672 r
+:geoo/construction/platform_single.S: 296 656 r
+:geoo/construction/platform_single.S: 296 640 r
+:geoo/construction/platform_single.S: 296 624 r
+:geoo/construction/platform_single.S: 296 608 r
+:geoo/construction/platform_single.S: 296 592 r
+:geoo/construction/platform_single.S: 298 600 r
+:geoo/construction/platform_single.S: 300 568 r
+:geoo/construction/platform_single.S: 300 560 r
+:geoo/construction/platform_single.S: 296 560 r
+:geoo/construction/platform_single.S: 296 552 r
+:geoo/construction/platform_single.S: 298 552 r
+:geoo/construction/platform_single.S: 300 552 r
+:geoo/construction/platform_single.S: 296 544 r
+:geoo/construction/platform_single.S: 298 544 r
+:geoo/construction/platform_single.S: 300 544 r
+:geoo/construction/platform_single.S: 300 604 r
+:geoo/construction/platform_single.S: 300 608 r
+:geoo/construction/platform_single.S: 300 624 r
+:geoo/construction/platform_single.S: 300 640 r
+:geoo/construction/platform_single.S: 300 656 r
+:geoo/construction/platform_single.S: 300 672 r
+:geoo/construction/platform_single.S: 300 688 r
+:geoo/construction/platform_single.S: 300 582 r
+:geoo/construction/platform_single.S: 300 616 r
+:geoo/construction/platform_single.S: 300 632 r
+:geoo/construction/platform_single.S: 300 648 r
+:geoo/construction/platform_single.S: 300 664 r
+:geoo/construction/platform_single.S: 300 680 r
+:geoo/construction/platform_single.S: 300 696 r
+:amanda/steel/steel16x16.S: 568 512
+:amanda/steel/steel16x16.S: 568 496
+:amanda/steel/steel16x16.S: 568 480
+:amanda/steel/steel16x16.S: 552 480
+:amanda/steel/steel16x16.S: 488 480
+:amanda/steel/steel16x16.S: 520 480
+:amanda/steel/steel16x16.S: 504 480
+:amanda/steel/steel16x16.S: 552 704
+:matt/goldmine/02: -16 560
+:amanda/steel/steel16x16.S: 280 528
+:amanda/steel/steel16x16.S: 264 528
+:amanda/steel/steel16x16.S: 248 528
+:amanda/steel/steel16x16.S: 232 528
+:amanda/steel/steel16x16.S: 216 528
+:amanda/steel/steel16x16.S: 200 528
+:amanda/steel/steel16x16.S: 184 528
+:amanda/steel/steel16x16.S: 168 528
+:amanda/steel/steel16x16.S: 152 528
+:amanda/steel/steel16x16.S: 136 528
+:amanda/steel/steel16x16.S: 120 528
+:matt/goldmine/06: 32 560
+:matt/goldmine/06: 96 560
+:matt/goldmine/03: 94 556
+:matt/goldmine/01: 200 562
+:matt/goldmine/08: -14 500 frr
+:matt/goldmine/00: -48 706
+:matt/goldmine/07: 28 650
+:matt/goldmine/07: 58 650 rr
+:matt/goldmine/00: -48 706
+:matt/goldmine/07: 28 650
+:matt/goldmine/07: 58 650 rr
+:matt/goldmine/00: -48 706
+:matt/goldmine/explosivecrate: 112 846
+:matt/goldmine/06: 6 906
+:matt/goldmine/07: 28 890
+:matt/goldmine/02: -24 858 rr
+:amanda/steel/steel16x16.S: 52 910
+:amanda/steel/steel16x16.S: 296 944
+:matt/goldmine/07: 58 890 rr
+:matt/goldmine/03: 396 864
+:matt/goldmine/05: 438 896
+:matt/goldmine/07: 296 816
+:amanda/steel/steel16x16.S: 312 944
+:amanda/steel/steel16x16.S: 328 944
+:amanda/steel/steel16x16.S: 344 944
+:amanda/steel/steel16x16.S: 360 944
+:amanda/steel/steel16x16.S: 376 944
+:amanda/steel/steel16x16.S: 392 944
+:amanda/steel/steel16x16.S: 408 944
+:amanda/steel/steel16x16.S: 424 944
+:amanda/steel/steel16x16.S: 440 944
+:amanda/steel/steel16x16.S: 456 944
+:amanda/steel/steel16x16.S: 472 944
+:amanda/steel/steel16x16.S: 488 944
+:amanda/steel/steel16x16.S: 504 944
+:amanda/steel/steel16x16.S: 520 944
+:geoo/construction/platform_single.S: 298 822 r
+:geoo/construction/platform_single.S: 298 820 r
+:geoo/construction/platform_single.S: 300 816 r
+:geoo/construction/platform_single.S: 298 800 r
+:matt/goldmine/09: 476 784
+:matt/goldmine/09: 508 752 frr
+:matt/goldmine/01: 508 864
+:matt/goldmine/09: 492 768 frr
+:amanda/steel/steel16x16.S: 296 768
+:amanda/steel/steel16x16.S: 312 768
+:amanda/steel/steel16x16.S: 328 768
+:amanda/steel/steel16x16.S: 344 768
+:amanda/steel/steel16x16.S: 360 768
+:amanda/steel/steel16x16.S: 376 768
+:amanda/steel/steel16x16.S: 392 768
+:amanda/steel/steel16x16.S: 408 768
+:amanda/steel/steel16x16.S: 424 768
+:amanda/steel/steel16x16.S: 440 768
+:amanda/steel/steel16x16.S: 456 768
+:amanda/steel/steel16x16.S: 568 944
+:amanda/steel/steel16x16.S: 568 928
+:amanda/steel/steel16x16.S: 568 912
+:amanda/steel/steel16x16.S: 568 896
+:amanda/steel/steel16x16.S: 568 880
+:amanda/steel/steel16x16.S: 568 864
+:amanda/steel/steel16x16.S: 568 848
+:amanda/steel/steel16x16.S: 568 832
+:amanda/steel/steel16x16.S: 568 816
+:amanda/steel/steel16x16.S: 568 800
+:amanda/steel/steel16x16.S: 568 768
+:amanda/steel/steel16x16.S: 568 784
+:matt/goldmine/07: 336 800
+:geoo/construction/platform_single.S: 296 824 r
+:geoo/construction/platform_single.S: 298 856 r
+:geoo/construction/platform_single.S: 298 848 r
+:matt/goldmine/01: 296 872
+:geoo/construction/platform_single.S: 298 872 r
+:geoo/construction/platform_single.S: 298 864 r
+:geoo/construction/platform_single.S: 298 888 r
+:geoo/construction/platform_single.S: 298 880 r
+:geoo/construction/platform_single.S: 298 904 r
+:geoo/construction/platform_single.S: 298 896 r
+:geoo/construction/platform_single.S: 298 920 r
+:geoo/construction/platform_single.S: 298 912 r
+:geoo/construction/platform_single.S: 298 936 r
+:geoo/construction/platform_single.S: 298 928 r
+:geoo/construction/platform_single.S: 296 840 r
+:geoo/construction/platform_single.S: 296 856 r
+:geoo/construction/platform_single.S: 296 872 r
+:geoo/construction/platform_single.S: 296 888 r
+:geoo/construction/platform_single.S: 296 904 r
+:geoo/construction/platform_single.S: 296 920 r
+:geoo/construction/platform_single.S: 296 936 r
+:geoo/construction/platform_single.S: 296 928 r
+:geoo/construction/platform_single.S: 296 912 r
+:geoo/construction/platform_single.S: 296 896 r
+:geoo/construction/platform_single.S: 296 880 r
+:geoo/construction/platform_single.S: 296 864 r
+:geoo/construction/platform_single.S: 296 848 r
+:geoo/construction/platform_single.S: 296 832 r
+:geoo/construction/platform_single.S: 298 840 r
+:geoo/construction/platform_single.S: 300 808 r
+:geoo/construction/platform_single.S: 300 800 r
+:geoo/construction/platform_single.S: 296 800 r
+:geoo/construction/platform_single.S: 296 792 r
+:geoo/construction/platform_single.S: 298 792 r
+:geoo/construction/platform_single.S: 300 792 r
+:geoo/construction/platform_single.S: 296 784 r
+:geoo/construction/platform_single.S: 298 784 r
+:geoo/construction/platform_single.S: 300 784 r
+:geoo/construction/platform_single.S: 300 844 r
+:geoo/construction/platform_single.S: 300 848 r
+:geoo/construction/platform_single.S: 300 864 r
+:geoo/construction/platform_single.S: 300 880 r
+:geoo/construction/platform_single.S: 300 896 r
+:geoo/construction/platform_single.S: 300 912 r
+:geoo/construction/platform_single.S: 300 928 r
+:geoo/construction/platform_single.S: 300 822 r
+:geoo/construction/platform_single.S: 300 856 r
+:geoo/construction/platform_single.S: 300 872 r
+:geoo/construction/platform_single.S: 300 888 r
+:geoo/construction/platform_single.S: 300 904 r
+:geoo/construction/platform_single.S: 300 920 r
+:geoo/construction/platform_single.S: 300 936 r
+:amanda/steel/steel16x16.S: 568 752
+:amanda/steel/steel16x16.S: 568 736
+:amanda/steel/steel16x16.S: 568 720
+:amanda/steel/steel16x16.S: 552 720
+:amanda/steel/steel16x16.S: 488 720
+:amanda/steel/steel16x16.S: 520 720
+:amanda/steel/steel16x16.S: 504 720
+:amanda/steel/steel16x16.S: 552 944
+:matt/goldmine/02: -16 800
+:amanda/steel/steel16x16.S: 280 768
+:amanda/steel/steel16x16.S: 264 768
+:amanda/steel/steel16x16.S: 248 768
+:amanda/steel/steel16x16.S: 232 768
+:amanda/steel/steel16x16.S: 216 768
+:amanda/steel/steel16x16.S: 200 768
+:amanda/steel/steel16x16.S: 184 768
+:amanda/steel/steel16x16.S: 168 768
+:amanda/steel/steel16x16.S: 152 768
+:amanda/steel/steel16x16.S: 136 768
+:amanda/steel/steel16x16.S: 120 768
+:matt/goldmine/06: 32 800
+:matt/goldmine/06: 96 800
+:matt/goldmine/03: 94 796
+:matt/goldmine/01: 200 802
+:matt/goldmine/08: -14 740 frr
+:matt/goldmine/00: -48 946
+:matt/goldmine/07: 28 890
+:matt/goldmine/02: -24 858 rr
+:matt/goldmine/07: 58 890 rr
+:matt/goldmine/00: -48 946
+:matt/goldmine/07: 28 890
+:matt/goldmine/07: 58 890 rr
+:matt/goldmine/00: -48 946
+:matt/goldmine/07: 28 890
+:matt/goldmine/07: 58 890 rr
+:matt/goldmine/00: -48 946
+:matt/goldmine/explosivecrate: 112 1086
+:matt/goldmine/06: 6 1146
+:matt/goldmine/07: 28 1130
+:matt/goldmine/02: -24 1098 rr
+:amanda/steel/steel16x16.S: 52 1150
+:amanda/steel/steel16x16.S: 296 1184
+:matt/goldmine/07: 58 1130 rr
+:matt/goldmine/03: 396 1104
+:matt/goldmine/05: 438 1136
+:matt/goldmine/07: 296 1056
+:amanda/steel/steel16x16.S: 312 1184
+:amanda/steel/steel16x16.S: 328 1184
+:amanda/steel/steel16x16.S: 344 1184
+:amanda/steel/steel16x16.S: 360 1184
+:amanda/steel/steel16x16.S: 376 1184
+:amanda/steel/steel16x16.S: 392 1184
+:amanda/steel/steel16x16.S: 408 1184
+:amanda/steel/steel16x16.S: 424 1184
+:amanda/steel/steel16x16.S: 440 1184
+:amanda/steel/steel16x16.S: 456 1184
+:amanda/steel/steel16x16.S: 472 1184
+:amanda/steel/steel16x16.S: 488 1184
+:amanda/steel/steel16x16.S: 504 1184
+:amanda/steel/steel16x16.S: 520 1184
+:geoo/construction/platform_single.S: 298 1062 r
+:geoo/construction/platform_single.S: 298 1060 r
+:geoo/construction/platform_single.S: 300 1056 r
+:geoo/construction/platform_single.S: 298 1040 r
+:matt/goldmine/09: 476 1024
+:matt/goldmine/09: 508 992 frr
+:matt/goldmine/01: 508 1104
+:matt/goldmine/09: 492 1008 frr
+:amanda/steel/steel16x16.S: 296 1008
+:amanda/steel/steel16x16.S: 312 1008
+:amanda/steel/steel16x16.S: 328 1008
+:amanda/steel/steel16x16.S: 344 1008
+:amanda/steel/steel16x16.S: 360 1008
+:amanda/steel/steel16x16.S: 376 1008
+:amanda/steel/steel16x16.S: 392 1008
+:amanda/steel/steel16x16.S: 408 1008
+:amanda/steel/steel16x16.S: 424 1008
+:amanda/steel/steel16x16.S: 440 1008
+:amanda/steel/steel16x16.S: 456 1008
+:amanda/steel/steel16x16.S: 568 1184
+:amanda/steel/steel16x16.S: 568 1168
+:amanda/steel/steel16x16.S: 568 1152
+:amanda/steel/steel16x16.S: 568 1136
+:amanda/steel/steel16x16.S: 568 1120
+:amanda/steel/steel16x16.S: 568 1104
+:amanda/steel/steel16x16.S: 568 1088
+:amanda/steel/steel16x16.S: 568 1072
+:amanda/steel/steel16x16.S: 568 1056
+:amanda/steel/steel16x16.S: 568 1040
+:amanda/steel/steel16x16.S: 568 1008
+:amanda/steel/steel16x16.S: 568 1024
+:matt/goldmine/07: 336 1040
+:geoo/construction/platform_single.S: 296 1064 r
+:geoo/construction/platform_single.S: 298 1096 r
+:geoo/construction/platform_single.S: 298 1088 r
+:matt/goldmine/01: 296 1112
+:geoo/construction/platform_single.S: 298 1112 r
+:geoo/construction/platform_single.S: 298 1104 r
+:geoo/construction/platform_single.S: 298 1128 r
+:geoo/construction/platform_single.S: 298 1120 r
+:geoo/construction/platform_single.S: 298 1144 r
+:geoo/construction/platform_single.S: 298 1136 r
+:geoo/construction/platform_single.S: 298 1160 r
+:geoo/construction/platform_single.S: 298 1152 r
+:geoo/construction/platform_single.S: 298 1176 r
+:geoo/construction/platform_single.S: 298 1168 r
+:geoo/construction/platform_single.S: 296 1080 r
+:geoo/construction/platform_single.S: 296 1096 r
+:geoo/construction/platform_single.S: 296 1112 r
+:geoo/construction/platform_single.S: 296 1128 r
+:geoo/construction/platform_single.S: 296 1144 r
+:geoo/construction/platform_single.S: 296 1160 r
+:geoo/construction/platform_single.S: 296 1176 r
+:geoo/construction/platform_single.S: 296 1168 r
+:geoo/construction/platform_single.S: 296 1152 r
+:geoo/construction/platform_single.S: 296 1136 r
+:geoo/construction/platform_single.S: 296 1120 r
+:geoo/construction/platform_single.S: 296 1104 r
+:geoo/construction/platform_single.S: 296 1088 r
+:geoo/construction/platform_single.S: 296 1072 r
+:geoo/construction/platform_single.S: 298 1080 r
+:geoo/construction/platform_single.S: 300 1048 r
+:geoo/construction/platform_single.S: 300 1040 r
+:geoo/construction/platform_single.S: 296 1040 r
+:geoo/construction/platform_single.S: 296 1032 r
+:geoo/construction/platform_single.S: 298 1032 r
+:geoo/construction/platform_single.S: 300 1032 r
+:geoo/construction/platform_single.S: 296 1024 r
+:geoo/construction/platform_single.S: 298 1024 r
+:geoo/construction/platform_single.S: 300 1024 r
+:geoo/construction/platform_single.S: 300 1084 r
+:geoo/construction/platform_single.S: 300 1088 r
+:geoo/construction/platform_single.S: 300 1104 r
+:geoo/construction/platform_single.S: 300 1120 r
+:geoo/construction/platform_single.S: 300 1136 r
+:geoo/construction/platform_single.S: 300 1152 r
+:geoo/construction/platform_single.S: 300 1168 r
+:geoo/construction/platform_single.S: 300 1062 r
+:geoo/construction/platform_single.S: 300 1096 r
+:geoo/construction/platform_single.S: 300 1112 r
+:geoo/construction/platform_single.S: 300 1128 r
+:geoo/construction/platform_single.S: 300 1144 r
+:geoo/construction/platform_single.S: 300 1160 r
+:geoo/construction/platform_single.S: 300 1176 r
+:amanda/steel/steel16x16.S: 568 992
+:amanda/steel/steel16x16.S: 568 976
+:amanda/steel/steel16x16.S: 568 960
+:amanda/steel/steel16x16.S: 552 960
+:amanda/steel/steel16x16.S: 488 960
+:amanda/steel/steel16x16.S: 520 960
+:amanda/steel/steel16x16.S: 504 960
+:amanda/steel/steel16x16.S: 552 1184
+:matt/goldmine/02: -16 1040
+:amanda/steel/steel16x16.S: 280 1008
+:amanda/steel/steel16x16.S: 264 1008
+:amanda/steel/steel16x16.S: 248 1008
+:amanda/steel/steel16x16.S: 232 1008
+:amanda/steel/steel16x16.S: 216 1008
+:amanda/steel/steel16x16.S: 200 1008
+:amanda/steel/steel16x16.S: 184 1008
+:amanda/steel/steel16x16.S: 168 1008
+:amanda/steel/steel16x16.S: 152 1008
+:amanda/steel/steel16x16.S: 136 1008
+:amanda/steel/steel16x16.S: 120 1008
+:matt/goldmine/06: 32 1040
+:matt/goldmine/06: 96 1040
+:matt/goldmine/03: 94 1036
+:matt/goldmine/01: 200 1042
+:matt/goldmine/08: -14 980 frr
+:matt/goldmine/00: -48 1186
+:matt/goldmine/07: 28 1130
+:matt/goldmine/07: 58 1130 rr
+:matt/goldmine/00: -48 1186
+:matt/goldmine/07: 28 1130
+:matt/goldmine/07: 58 1130 rr
+:matt/goldmine/00: -48 1186
+:matt/goldmine/07: 28 1130
+:matt/goldmine/07: 58 1130 rr
+:matt/goldmine/00: -48 1186
+:matt/goldmine/07: 28 1130
+:matt/goldmine/07: 58 1130 rr
+:matt/goldmine/00: -48 1186
+:matt/goldmine/explosivecrate: 112 1326
+:matt/goldmine/06: 6 1386
+:matt/goldmine/07: 28 1370
+:matt/goldmine/02: -24 1338 rr
+:amanda/steel/steel16x16.S: 52 1390
+:amanda/steel/steel16x16.S: 296 1424
+:matt/goldmine/07: 58 1370 rr
+:matt/goldmine/03: 396 1344
+:matt/goldmine/05: 438 1376
+:matt/goldmine/07: 296 1296
+:amanda/steel/steel16x16.S: 312 1424
+:amanda/steel/steel16x16.S: 328 1424
+:amanda/steel/steel16x16.S: 344 1424
+:amanda/steel/steel16x16.S: 360 1424
+:amanda/steel/steel16x16.S: 376 1424
+:amanda/steel/steel16x16.S: 392 1424
+:amanda/steel/steel16x16.S: 408 1424
+:amanda/steel/steel16x16.S: 424 1424
+:amanda/steel/steel16x16.S: 440 1424
+:amanda/steel/steel16x16.S: 456 1424
+:amanda/steel/steel16x16.S: 472 1424
+:amanda/steel/steel16x16.S: 488 1424
+:amanda/steel/steel16x16.S: 504 1424
+:amanda/steel/steel16x16.S: 520 1424
+:geoo/construction/platform_single.S: 298 1302 r
+:geoo/construction/platform_single.S: 298 1300 r
+:geoo/construction/platform_single.S: 300 1296 r
+:geoo/construction/platform_single.S: 298 1280 r
+:matt/goldmine/09: 476 1264
+:matt/goldmine/09: 508 1232 frr
+:matt/goldmine/01: 508 1344
+:matt/goldmine/09: 492 1248 frr
+:amanda/steel/steel16x16.S: 296 1248
+:amanda/steel/steel16x16.S: 312 1248
+:amanda/steel/steel16x16.S: 328 1248
+:amanda/steel/steel16x16.S: 344 1248
+:amanda/steel/steel16x16.S: 360 1248
+:amanda/steel/steel16x16.S: 376 1248
+:amanda/steel/steel16x16.S: 392 1248
+:amanda/steel/steel16x16.S: 408 1248
+:amanda/steel/steel16x16.S: 424 1248
+:amanda/steel/steel16x16.S: 440 1248
+:amanda/steel/steel16x16.S: 456 1248
+:amanda/steel/steel16x16.S: 568 1424
+:amanda/steel/steel16x16.S: 568 1408
+:amanda/steel/steel16x16.S: 568 1392
+:amanda/steel/steel16x16.S: 568 1376
+:amanda/steel/steel16x16.S: 568 1360
+:amanda/steel/steel16x16.S: 568 1344
+:amanda/steel/steel16x16.S: 568 1328
+:amanda/steel/steel16x16.S: 568 1312
+:amanda/steel/steel16x16.S: 568 1296
+:amanda/steel/steel16x16.S: 568 1280
+:amanda/steel/steel16x16.S: 568 1248
+:amanda/steel/steel16x16.S: 568 1264
+:matt/goldmine/07: 336 1280
+:geoo/construction/platform_single.S: 296 1304 r
+:geoo/construction/platform_single.S: 298 1336 r
+:geoo/construction/platform_single.S: 298 1328 r
+:matt/goldmine/01: 296 1352
+:geoo/construction/platform_single.S: 298 1352 r
+:geoo/construction/platform_single.S: 298 1344 r
+:geoo/construction/platform_single.S: 298 1368 r
+:geoo/construction/platform_single.S: 298 1360 r
+:geoo/construction/platform_single.S: 298 1384 r
+:geoo/construction/platform_single.S: 298 1376 r
+:geoo/construction/platform_single.S: 298 1400 r
+:geoo/construction/platform_single.S: 298 1392 r
+:geoo/construction/platform_single.S: 298 1416 r
+:geoo/construction/platform_single.S: 298 1408 r
+:geoo/construction/platform_single.S: 296 1320 r
+:geoo/construction/platform_single.S: 296 1336 r
+:geoo/construction/platform_single.S: 296 1352 r
+:geoo/construction/platform_single.S: 296 1368 r
+:geoo/construction/platform_single.S: 296 1384 r
+:geoo/construction/platform_single.S: 296 1400 r
+:geoo/construction/platform_single.S: 296 1416 r
+:geoo/construction/platform_single.S: 296 1408 r
+:geoo/construction/platform_single.S: 296 1392 r
+:geoo/construction/platform_single.S: 296 1376 r
+:geoo/construction/platform_single.S: 296 1360 r
+:geoo/construction/platform_single.S: 296 1344 r
+:geoo/construction/platform_single.S: 296 1328 r
+:geoo/construction/platform_single.S: 296 1312 r
+:geoo/construction/platform_single.S: 298 1320 r
+:geoo/construction/platform_single.S: 300 1288 r
+:geoo/construction/platform_single.S: 300 1280 r
+:geoo/construction/platform_single.S: 296 1280 r
+:geoo/construction/platform_single.S: 296 1272 r
+:geoo/construction/platform_single.S: 298 1272 r
+:geoo/construction/platform_single.S: 300 1272 r
+:geoo/construction/platform_single.S: 296 1264 r
+:geoo/construction/platform_single.S: 298 1264 r
+:geoo/construction/platform_single.S: 300 1264 r
+:geoo/construction/platform_single.S: 300 1324 r
+:geoo/construction/platform_single.S: 300 1328 r
+:geoo/construction/platform_single.S: 300 1344 r
+:geoo/construction/platform_single.S: 300 1360 r
+:geoo/construction/platform_single.S: 300 1376 r
+:geoo/construction/platform_single.S: 300 1392 r
+:geoo/construction/platform_single.S: 300 1408 r
+:geoo/construction/platform_single.S: 300 1302 r
+:geoo/construction/platform_single.S: 300 1336 r
+:geoo/construction/platform_single.S: 300 1352 r
+:geoo/construction/platform_single.S: 300 1368 r
+:geoo/construction/platform_single.S: 300 1384 r
+:geoo/construction/platform_single.S: 300 1400 r
+:geoo/construction/platform_single.S: 300 1416 r
+:amanda/steel/steel16x16.S: 568 1232
+:amanda/steel/steel16x16.S: 568 1216
+:amanda/steel/steel16x16.S: 568 1200
+:amanda/steel/steel16x16.S: 552 1200
+:amanda/steel/steel16x16.S: 488 1200
+:amanda/steel/steel16x16.S: 520 1200
+:amanda/steel/steel16x16.S: 504 1200
+:amanda/steel/steel16x16.S: 552 1424
+:matt/goldmine/02: -16 1280
+:amanda/steel/steel16x16.S: 280 1248
+:amanda/steel/steel16x16.S: 264 1248
+:amanda/steel/steel16x16.S: 248 1248
+:amanda/steel/steel16x16.S: 232 1248
+:amanda/steel/steel16x16.S: 216 1248
+:amanda/steel/steel16x16.S: 200 1248
+:amanda/steel/steel16x16.S: 184 1248
+:amanda/steel/steel16x16.S: 168 1248
+:amanda/steel/steel16x16.S: 152 1248
+:amanda/steel/steel16x16.S: 136 1248
+:amanda/steel/steel16x16.S: 120 1248
+:matt/goldmine/06: 32 1280
+:matt/goldmine/06: 96 1280
+:matt/goldmine/03: 94 1276
+:matt/goldmine/01: 200 1282
+:matt/goldmine/08: -14 1220 frr
+:matt/goldmine/00: -48 1426
+:matt/goldmine/07: 28 1370
+:matt/goldmine/07: 58 1370 rr
+:matt/goldmine/00: -48 1426
+:matt/goldmine/07: 28 1370
+:matt/goldmine/07: 58 1370 rr
+:matt/goldmine/00: -48 1426
+:matt/goldmine/07: 28 1370
+:matt/goldmine/07: 58 1370 rr
+:matt/goldmine/00: -48 1426
+:matt/goldmine/07: 28 1370
+:matt/goldmine/07: 58 1370 rr
+:matt/goldmine/00: -48 1426
+:matt/goldmine/07: 28 1370
+:matt/goldmine/07: 58 1370 rr
+:matt/goldmine/00: -48 1426
+:matt/goldmine/explosivecrate: 112 1566
+:matt/goldmine/06: 6 1626
+:matt/goldmine/07: 28 1610
+:matt/goldmine/02: -24 1578 rr
+:amanda/steel/steel16x16.S: 52 1630
+:amanda/steel/steel16x16.S: 296 1664
+:matt/goldmine/07: 58 1610 rr
+:matt/goldmine/03: 396 1584
+:matt/goldmine/05: 438 1616
+:matt/goldmine/07: 296 1536
+:amanda/steel/steel16x16.S: 312 1664
+:amanda/steel/steel16x16.S: 328 1664
+:amanda/steel/steel16x16.S: 344 1664
+:amanda/steel/steel16x16.S: 360 1664
+:amanda/steel/steel16x16.S: 376 1664
+:amanda/steel/steel16x16.S: 392 1664
+:amanda/steel/steel16x16.S: 408 1664
+:amanda/steel/steel16x16.S: 424 1664
+:amanda/steel/steel16x16.S: 440 1664
+:amanda/steel/steel16x16.S: 456 1664
+:amanda/steel/steel16x16.S: 472 1664
+:amanda/steel/steel16x16.S: 488 1664
+:amanda/steel/steel16x16.S: 504 1664
+:amanda/steel/steel16x16.S: 520 1664
+:geoo/construction/platform_single.S: 298 1542 r
+:geoo/construction/platform_single.S: 298 1540 r
+:geoo/construction/platform_single.S: 300 1536 r
+:geoo/construction/platform_single.S: 298 1520 r
+:matt/goldmine/09: 476 1504
+:matt/goldmine/09: 508 1472 frr
+:matt/goldmine/01: 508 1584
+:matt/goldmine/09: 492 1488 frr
+:amanda/steel/steel16x16.S: 296 1488
+:amanda/steel/steel16x16.S: 312 1488
+:amanda/steel/steel16x16.S: 328 1488
+:amanda/steel/steel16x16.S: 344 1488
+:amanda/steel/steel16x16.S: 360 1488
+:amanda/steel/steel16x16.S: 376 1488
+:amanda/steel/steel16x16.S: 392 1488
+:amanda/steel/steel16x16.S: 408 1488
+:amanda/steel/steel16x16.S: 424 1488
+:amanda/steel/steel16x16.S: 440 1488
+:amanda/steel/steel16x16.S: 456 1488
+:amanda/steel/steel16x16.S: 568 1664
+:amanda/steel/steel16x16.S: 568 1648
+:amanda/steel/steel16x16.S: 568 1632
+:amanda/steel/steel16x16.S: 568 1616
+:amanda/steel/steel16x16.S: 568 1600
+:amanda/steel/steel16x16.S: 568 1584
+:amanda/steel/steel16x16.S: 568 1568
+:amanda/steel/steel16x16.S: 568 1552
+:amanda/steel/steel16x16.S: 568 1536
+:amanda/steel/steel16x16.S: 568 1520
+:amanda/steel/steel16x16.S: 568 1488
+:amanda/steel/steel16x16.S: 568 1504
+:matt/goldmine/07: 336 1520
+:geoo/construction/platform_single.S: 296 1544 r
+:geoo/construction/platform_single.S: 298 1576 r
+:geoo/construction/platform_single.S: 298 1568 r
+:matt/goldmine/01: 296 1592
+:geoo/construction/platform_single.S: 298 1592 r
+:geoo/construction/platform_single.S: 298 1584 r
+:geoo/construction/platform_single.S: 298 1608 r
+:geoo/construction/platform_single.S: 298 1600 r
+:geoo/construction/platform_single.S: 298 1624 r
+:geoo/construction/platform_single.S: 298 1616 r
+:geoo/construction/platform_single.S: 298 1640 r
+:geoo/construction/platform_single.S: 298 1632 r
+:geoo/construction/platform_single.S: 298 1656 r
+:geoo/construction/platform_single.S: 298 1648 r
+:geoo/construction/platform_single.S: 296 1560 r
+:geoo/construction/platform_single.S: 296 1576 r
+:geoo/construction/platform_single.S: 296 1592 r
+:geoo/construction/platform_single.S: 296 1608 r
+:geoo/construction/platform_single.S: 296 1624 r
+:geoo/construction/platform_single.S: 296 1640 r
+:geoo/construction/platform_single.S: 296 1656 r
+:geoo/construction/platform_single.S: 296 1648 r
+:geoo/construction/platform_single.S: 296 1632 r
+:geoo/construction/platform_single.S: 296 1616 r
+:geoo/construction/platform_single.S: 296 1600 r
+:geoo/construction/platform_single.S: 296 1584 r
+:geoo/construction/platform_single.S: 296 1568 r
+:geoo/construction/platform_single.S: 296 1552 r
+:geoo/construction/platform_single.S: 298 1560 r
+:geoo/construction/platform_single.S: 300 1528 r
+:geoo/construction/platform_single.S: 300 1520 r
+:geoo/construction/platform_single.S: 296 1520 r
+:geoo/construction/platform_single.S: 296 1512 r
+:geoo/construction/platform_single.S: 298 1512 r
+:geoo/construction/platform_single.S: 300 1512 r
+:geoo/construction/platform_single.S: 296 1504 r
+:geoo/construction/platform_single.S: 298 1504 r
+:geoo/construction/platform_single.S: 300 1504 r
+:geoo/construction/platform_single.S: 300 1564 r
+:geoo/construction/platform_single.S: 300 1568 r
+:geoo/construction/platform_single.S: 300 1584 r
+:geoo/construction/platform_single.S: 300 1600 r
+:geoo/construction/platform_single.S: 300 1616 r
+:geoo/construction/platform_single.S: 300 1632 r
+:geoo/construction/platform_single.S: 300 1648 r
+:geoo/construction/platform_single.S: 300 1542 r
+:geoo/construction/platform_single.S: 300 1576 r
+:geoo/construction/platform_single.S: 300 1592 r
+:geoo/construction/platform_single.S: 300 1608 r
+:geoo/construction/platform_single.S: 300 1624 r
+:geoo/construction/platform_single.S: 300 1640 r
+:geoo/construction/platform_single.S: 300 1656 r
+:amanda/steel/steel16x16.S: 568 1472
+:amanda/steel/steel16x16.S: 568 1456
+:amanda/steel/steel16x16.S: 568 1440
+:amanda/steel/steel16x16.S: 552 1440
+:amanda/steel/steel16x16.S: 488 1440
+:amanda/steel/steel16x16.S: 520 1440
+:amanda/steel/steel16x16.S: 504 1440
+:amanda/steel/steel16x16.S: 552 1664
+:matt/goldmine/02: -16 1520
+:amanda/steel/steel16x16.S: 280 1488
+:amanda/steel/steel16x16.S: 264 1488
+:amanda/steel/steel16x16.S: 248 1488
+:amanda/steel/steel16x16.S: 232 1488
+:amanda/steel/steel16x16.S: 216 1488
+:amanda/steel/steel16x16.S: 200 1488
+:amanda/steel/steel16x16.S: 184 1488
+:amanda/steel/steel16x16.S: 168 1488
+:amanda/steel/steel16x16.S: 152 1488
+:amanda/steel/steel16x16.S: 136 1488
+:amanda/steel/steel16x16.S: 120 1488
+:matt/goldmine/06: 32 1520
+:matt/goldmine/06: 96 1520
+:matt/goldmine/03: 94 1516
+:matt/goldmine/01: 200 1522
+:matt/goldmine/08: -14 1460 frr
+:matt/goldmine/00: -48 1666
+:amanda/steel/steel16x16.S: 0 1048
+:amanda/steel/steel16x16.S: 16 1048
+:amanda/steel/steel16x16.S: 32 1048
+:amanda/steel/steel16x16.S: 48 1048
+:amanda/steel/steel16x16.S: 64 1048
+:amanda/steel/steel16x16.S: 80 1048
+:amanda/steel/steel16x16.S: 96 1048
+:amanda/steel/steel16x16.S: 112 1048
+:amanda/steel/steel16x16.S: 128 1048
+:amanda/steel/steel16x16.S: 144 1048
+:amanda/steel/steel16x16.S: 160 1048
+:amanda/steel/steel16x16.S: 176 1048
+:amanda/steel/steel16x16.S: 192 1048
+:amanda/steel/steel16x16.S: 208 1048
+:amanda/steel/steel16x16.S: 224 1048
+:amanda/steel/steel16x16.S: 224 1064
+:amanda/steel/steel16x16.S: 224 1080
+:amanda/steel/steel16x16.S: 0 808
+:amanda/steel/steel16x16.S: 16 808
+:amanda/steel/steel16x16.S: 32 808
+:amanda/steel/steel16x16.S: 48 808
+:amanda/steel/steel16x16.S: 64 808
+:amanda/steel/steel16x16.S: 80 808
+:amanda/steel/steel16x16.S: 96 808
+:amanda/steel/steel16x16.S: 112 808
+:amanda/steel/steel16x16.S: 128 808
+:amanda/steel/steel16x16.S: 144 808
+:amanda/steel/steel16x16.S: 160 808
+:amanda/steel/steel16x16.S: 176 808
+:amanda/steel/steel16x16.S: 192 808
+:amanda/steel/steel16x16.S: 208 808
+:amanda/steel/steel16x16.S: 224 808
+:amanda/steel/steel16x16.S: 224 824
+:amanda/steel/steel16x16.S: 224 840
+:amanda/steel/steel16x16.S: 0 568
+:amanda/steel/steel16x16.S: 16 568
+:amanda/steel/steel16x16.S: 32 568
+:amanda/steel/steel16x16.S: 48 568
+:amanda/steel/steel16x16.S: 64 568
+:amanda/steel/steel16x16.S: 80 568
+:amanda/steel/steel16x16.S: 96 568
+:amanda/steel/steel16x16.S: 112 568
+:amanda/steel/steel16x16.S: 128 568
+:amanda/steel/steel16x16.S: 144 568
+:amanda/steel/steel16x16.S: 160 568
+:amanda/steel/steel16x16.S: 176 568
+:amanda/steel/steel16x16.S: 192 568
+:amanda/steel/steel16x16.S: 208 568
+:amanda/steel/steel16x16.S: 224 568
+:amanda/steel/steel16x16.S: 224 584
+:amanda/steel/steel16x16.S: 224 600
+:amanda/steel/steel16x16.S: 0 328
+:amanda/steel/steel16x16.S: 16 328
+:amanda/steel/steel16x16.S: 32 328
+:amanda/steel/steel16x16.S: 48 328
+:amanda/steel/steel16x16.S: 64 328
+:amanda/steel/steel16x16.S: 80 328
+:amanda/steel/steel16x16.S: 96 328
+:amanda/steel/steel16x16.S: 112 328
+:amanda/steel/steel16x16.S: 128 328
+:amanda/steel/steel16x16.S: 144 328
+:amanda/steel/steel16x16.S: 160 328
+:amanda/steel/steel16x16.S: 176 328
+:amanda/steel/steel16x16.S: 192 328
+:amanda/steel/steel16x16.S: 208 328
+:amanda/steel/steel16x16.S: 224 328
+:amanda/steel/steel16x16.S: 224 344
+:amanda/steel/steel16x16.S: 224 360
+:amanda/steel/steel16x16.S: 0 88
+:amanda/steel/steel16x16.S: 16 88
+:amanda/steel/steel16x16.S: 32 88
+:amanda/steel/steel16x16.S: 48 88
+:amanda/steel/steel16x16.S: 64 88
+:amanda/steel/steel16x16.S: 80 88
+:amanda/steel/steel16x16.S: 96 88
+:amanda/steel/steel16x16.S: 112 88
+:amanda/steel/steel16x16.S: 128 88
+:amanda/steel/steel16x16.S: 144 88
+:amanda/steel/steel16x16.S: 160 88
+:amanda/steel/steel16x16.S: 176 88
+:amanda/steel/steel16x16.S: 192 88
+:amanda/steel/steel16x16.S: 208 88
+:amanda/steel/steel16x16.S: 224 88
+:amanda/steel/steel16x16.S: 224 104
+:amanda/steel/steel16x16.S: 224 120
+:amanda/steel/steel16x16.S: 0 1528
+:amanda/steel/steel16x16.S: 16 1528
+:amanda/steel/steel16x16.S: 32 1528
+:amanda/steel/steel16x16.S: 48 1528
+:amanda/steel/steel16x16.S: 64 1528
+:amanda/steel/steel16x16.S: 80 1528
+:amanda/steel/steel16x16.S: 96 1528
+:amanda/steel/steel16x16.S: 112 1528
+:amanda/steel/steel16x16.S: 128 1528
+:amanda/steel/steel16x16.S: 144 1528
+:amanda/steel/steel16x16.S: 160 1528
+:amanda/steel/steel16x16.S: 176 1528
+:amanda/steel/steel16x16.S: 192 1528
+:amanda/steel/steel16x16.S: 208 1528
+:amanda/steel/steel16x16.S: 224 1528
+:amanda/steel/steel16x16.S: 224 1544
+:amanda/steel/steel16x16.S: 224 1560
+:amanda/steel/steel16x16.S: 0 1288
+:amanda/steel/steel16x16.S: 16 1288
+:amanda/steel/steel16x16.S: 32 1288
+:amanda/steel/steel16x16.S: 48 1288
+:amanda/steel/steel16x16.S: 64 1288
+:amanda/steel/steel16x16.S: 80 1288
+:amanda/steel/steel16x16.S: 96 1288
+:amanda/steel/steel16x16.S: 112 1288
+:amanda/steel/steel16x16.S: 128 1288
+:amanda/steel/steel16x16.S: 144 1288
+:amanda/steel/steel16x16.S: 160 1288
+:amanda/steel/steel16x16.S: 176 1288
+:amanda/steel/steel16x16.S: 192 1288
+:amanda/steel/steel16x16.S: 208 1288
+:amanda/steel/steel16x16.S: 224 1288
+:amanda/steel/steel16x16.S: 224 1304
+:amanda/steel/steel16x16.S: 224 1320

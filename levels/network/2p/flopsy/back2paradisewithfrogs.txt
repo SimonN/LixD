@@ -1,4 +1,4 @@
-$BUILT 2021-01-17 22:42:42
+$BUILT 2021-02-10 02:47:23
 $AUTHOR Flopsy
 $ENGLISH Bac 2 Paradise 2P (Frogs)
 
@@ -16,8 +16,8 @@ $ENGLISH Bac 2 Paradise 2P (Frogs)
 #FLOATER 20
 #EXPLODER2 20
 #BLOCKER 5
-#BUILDER 50
-#PLATFORMER 50
+#BUILDER 60
+#PLATFORMER 30
 #BASHER 30
 #MINER 30
 #DIGGER 30
@@ -36,6 +36,8 @@ $ENGLISH Bac 2 Paradise 2P (Frogs)
 :amanda/forest/frog.T: 2724 164
 :amanda/forest/frog.T: 808 308
 :amanda/forest/frog.T: 408 164
+:amanda/forest/frog.T: 1329 -13
+:amanda/forest/frog.T: 1801 -13
 
 :simon/water.W: 3153 374
 :simon/water.W: 2569 246
@@ -69,6 +71,12 @@ $ENGLISH Bac 2 Paradise 2P (Frogs)
 :simon/water_main.W: 692 318
 :simon/water_thin.W: 1192 370
 :simon/water_thin.W: 1240 370
+:simon/water_thin.W: 1448 56
+:simon/water_thin.W: 1496 56
+:simon/water_thin.W: 1512 56
+:simon/water_thin.W: 1698 56
+:simon/water_thin.W: 1650 56
+:simon/water_thin.W: 1634 56
 
 :matt/beach/daytime/00: 1544 352
 :matt/beach/daytime/02: 1592 312
@@ -178,3 +186,11 @@ $ENGLISH Bac 2 Paradise 2P (Frogs)
 :geoo/steel/16x16o.S: 3098 374
 :matt/beach/daytime/15: 264 352
 :matt/beach/daytime/15: 2898 354
+:matt/beach/daytime/04: 1537 -61
+:matt/beach/daytime/03: 1456 80
+:matt/beach/daytime/04: 1536 -61 frr
+:matt/beach/daytime/06: 1280 32
+:matt/beach/daytime/04: 1535 -61 frr
+:matt/beach/daytime/03: 1588 80 frr
+:matt/beach/daytime/04: 1536 -61
+:matt/beach/daytime/06: 1701 32 frr

@@ -1,0 +1,168 @@
+$BUILT 2021-02-15 02:06:11
+$AUTHOR Flopsy
+$ENGLISH Get Ready to Strike Out 6P
+
+#INTENDED_NUMBER_OF_PLAYERS 6
+#SIZE_X 288
+#SIZE_Y 480
+#TORUS_X 1
+#TORUS_Y 1
+
+#SECONDS 60
+#INITIAL 60
+#SPAWN_INTERVAL 1
+
+#WALKER -1
+#RUNNER -1
+#CLIMBER 5
+#FLOATER 20
+#EXPLODER2 -1
+#JUMPER -1
+#BATTER -1
+
+:raymanni/lab/hatch.H: 34 0
+:raymanni/lab/hatch.H: 34 80
+:raymanni/lab/hatch.H: 34 160
+:raymanni/lab/hatch.H: 34 240
+:raymanni/lab/hatch.H: 34 320
+:raymanni/lab/hatch.H: 34 400
+:raymanni/lab/hatch.H: 52 0
+:raymanni/lab/hatch.H: 52 80
+:raymanni/lab/hatch.H: 52 160
+:raymanni/lab/hatch.H: 52 240
+:raymanni/lab/hatch.H: 52 320
+:raymanni/lab/hatch.H: 52 400
+:raymanni/lab/hatch.H: 228 0
+:raymanni/lab/hatch.H: 228 80
+:raymanni/lab/hatch.H: 228 160
+:raymanni/lab/hatch.H: 228 240
+:raymanni/lab/hatch.H: 228 320
+:raymanni/lab/hatch.H: 228 400
+
+:raymanni/lab/goal.G: 273 16
+:raymanni/lab/goal.G: 273 96
+:raymanni/lab/goal.G: 273 176
+:raymanni/lab/goal.G: 273 256
+:raymanni/lab/goal.G: 273 336
+:raymanni/lab/goal.G: 273 416
+
+:geoo/construction/platform.S: 65 97 r
+:geoo/construction/platform.S: 33 129 r
+:geoo/construction/platform.S: 33 81 r
+:geoo/construction/platformbrick_single: 33 113 r
+:geoo/construction/platform.S: 34 80
+:geoo/construction/platformbrick_single: 33 121 r
+:geoo/construction/platform.S: 34 80
+:geoo/construction/platform.S: 2 80
+:geoo/construction/platformbrick: 0 81 r
+:geoo/construction/platform.S: 65 81 r
+:geoo/construction/platform.S: 65 129 r
+:geoo/construction/platform.S: 34 160
+:geoo/construction/platform.S: 2 160
+:geoo/construction/platformbrick: 0 113 r
+:geoo/construction/platformbrick: 0 145 r
+:geoo/construction/platform.S: 65 177 r
+:geoo/construction/platform.S: 33 209 r
+:geoo/construction/platform.S: 33 161 r
+:geoo/construction/platformbrick_single: 33 193 r
+:geoo/construction/platform.S: 34 160
+:geoo/construction/platformbrick_single: 33 201 r
+:geoo/construction/platform.S: 34 160
+:geoo/construction/platform.S: 2 160
+:geoo/construction/platformbrick: 0 161 r
+:geoo/construction/platform.S: 65 161 r
+:geoo/construction/platform.S: 65 209 r
+:geoo/construction/platform.S: 34 240
+:geoo/construction/platform.S: 2 240
+:geoo/construction/platformbrick: 0 193 r
+:geoo/construction/platformbrick: 0 225 r
+:geoo/construction/platform.S: 65 257 r
+:geoo/construction/platform.S: 33 289 r
+:geoo/construction/platform.S: 33 241 r
+:geoo/construction/platformbrick_single: 33 273 r
+:geoo/construction/platform.S: 34 240
+:geoo/construction/platformbrick_single: 33 281 r
+:geoo/construction/platform.S: 34 240
+:geoo/construction/platform.S: 2 240
+:geoo/construction/platformbrick: 0 241 r
+:geoo/construction/platform.S: 65 241 r
+:geoo/construction/platform.S: 65 289 r
+:geoo/construction/platform.S: 34 0
+:geoo/construction/platform.S: 2 0
+:geoo/construction/platformbrick: 0 273 r
+:geoo/construction/platformbrick: 0 305 r
+:geoo/construction/platformbrick: 0 305 r
+:geoo/construction/platform.S: 65 17 r
+:geoo/construction/platform.S: 33 49 r
+:geoo/construction/platform.S: 33 1 r
+:geoo/construction/platformbrick_single: 33 33 r
+:geoo/construction/platformbrick_single: 33 41 r
+:geoo/construction/platformbrick: 0 1 r
+:geoo/construction/platform.S: 65 1 r
+:geoo/construction/platform.S: 65 49 r
+:geoo/construction/platform.S: 34 80
+:geoo/construction/platform.S: 2 80
+:geoo/construction/platformbrick: 0 33 r
+:geoo/construction/platformbrick: 0 65 r
+:geoo/construction/platform.S: 162 0
+:geoo/construction/platform.S: 194 0
+:geoo/construction/platform.S: 208 0
+:geoo/construction/platform.S: 162 80
+:geoo/construction/platform.S: 194 80
+:geoo/construction/platform.S: 208 80
+:geoo/construction/platform.S: 162 160
+:geoo/construction/platform.S: 194 160
+:geoo/construction/platform.S: 208 160
+:geoo/construction/platform.S: 162 240
+:geoo/construction/platform.S: 194 240
+:geoo/construction/platform.S: 208 240
+:geoo/construction/platform.S: 33 113 r
+:geoo/construction/platform.S: 33 193 r
+:geoo/construction/platform.S: 33 257 r
+:geoo/construction/platform.S: 33 33 r
+:geoo/construction/platform.S: 33 289 r
+:geoo/construction/platform.S: 65 289 r
+:geoo/construction/platform.S: 34 320
+:geoo/construction/platform.S: 2 320
+:geoo/construction/platformbrick: 0 305 r
+:geoo/construction/platform.S: 65 337 r
+:geoo/construction/platform.S: 33 369 r
+:geoo/construction/platform.S: 33 321 r
+:geoo/construction/platformbrick_single: 33 353 r
+:geoo/construction/platform.S: 34 320
+:geoo/construction/platformbrick_single: 33 361 r
+:geoo/construction/platform.S: 34 320
+:geoo/construction/platform.S: 2 320
+:geoo/construction/platformbrick: 0 321 r
+:geoo/construction/platform.S: 65 321 r
+:geoo/construction/platform.S: 65 369 r
+:geoo/construction/platformbrick: 0 353 r
+:geoo/construction/platformbrick: 0 385 r
+:geoo/construction/platformbrick: 0 385 r
+:geoo/construction/platform.S: 162 320
+:geoo/construction/platform.S: 194 320
+:geoo/construction/platform.S: 208 320
+:geoo/construction/platform.S: 33 337 r
+:geoo/construction/platformbrick: 0 385 r
+:geoo/construction/platformbrick: 0 385 r
+:geoo/construction/platform.S: 34 400
+:geoo/construction/platform.S: 2 400
+:geoo/construction/platformbrick: 0 385 r
+:geoo/construction/platform.S: 65 417 r
+:geoo/construction/platform.S: 33 449 r
+:geoo/construction/platform.S: 33 401 r
+:geoo/construction/platformbrick_single: 33 433 r
+:geoo/construction/platform.S: 34 400
+:geoo/construction/platformbrick_single: 33 441 r
+:geoo/construction/platform.S: 34 400
+:geoo/construction/platform.S: 2 400
+:geoo/construction/platformbrick: 0 401 r
+:geoo/construction/platform.S: 65 401 r
+:geoo/construction/platform.S: 65 449 r
+:geoo/construction/platformbrick: 0 433 r
+:geoo/construction/platformbrick: 0 465 r
+:geoo/construction/platformbrick: 0 465 r
+:geoo/construction/platform.S: 162 400
+:geoo/construction/platform.S: 194 400
+:geoo/construction/platform.S: 208 400
+:geoo/construction/platform.S: 33 417 r

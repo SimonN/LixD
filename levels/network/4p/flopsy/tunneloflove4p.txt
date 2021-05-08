@@ -1,0 +1,178 @@
+$BUILT 2021-02-13 04:23:09
+$AUTHOR Flopsy
+$ENGLISH The Tunnel of Love 4P
+
+#INTENDED_NUMBER_OF_PLAYERS 4
+#SIZE_X 672
+#SIZE_Y 320
+#TORUS_X 0
+#TORUS_Y 1
+
+#SECONDS 120
+#INITIAL 60
+#SPAWN_INTERVAL 32
+
+#WALKER 40
+#RUNNER 10
+#CLIMBER 10
+#FLOATER 10
+#EXPLODER2 10
+#BLOCKER 1
+#BUILDER 30
+#PLATFORMER 30
+#BASHER 20
+#MINER 30
+#DIGGER 20
+#JUMPER 40
+#BATTER 30
+#CUBER 5
+
+:raymanni/holiday/hatch.H: 14 32 r
+:raymanni/holiday/hatch.H: 16 192 r
+:raymanni/holiday/hatch.H: 592 32
+:raymanni/holiday/hatch.H: 592 192
+
+:raymanni/holiday/goal.G: 528 272
+:raymanni/holiday/goal.G: 528 112
+:raymanni/holiday/goal.G: 80 272
+:raymanni/holiday/goal.G: 80 112
+
+:amanda/forest/frog.T: 240 128
+:raymanni/gore/eater.T: 368 112
+:amanda/forest/frog.T: 368 288
+:raymanni/gore/eater.T: 240 272
+
+:matt/marble/09c: 144 16
+:matt/marble/09c: 208 16
+:matt/marble/09c: 272 16
+:matt/marble/09c: 336 16
+:matt/marble/09c: 400 16
+:matt/marble/09c: 464 16
+:matt/marble/09c: 464 80
+:matt/marble/09c: 400 80
+:matt/marble/09c: 336 80
+:matt/marble/09c: 272 80
+:matt/marble/09c: 208 80
+:matt/marble/09c: 144 80
+:matt/marble/09b: 144 176
+:matt/marble/09b: 208 176
+:matt/marble/09b: 272 176
+:matt/marble/09b: 336 176
+:matt/marble/09b: 400 176
+:matt/marble/09b: 464 176
+:matt/marble/09b: 464 240
+:matt/marble/09b: 400 240
+:matt/marble/09b: 336 240
+:matt/marble/09b: 272 240
+:matt/marble/09b: 208 240
+:matt/marble/09b: 144 240
+:matt/marble/02c: 528 16
+:matt/marble/02c: 544 16
+:matt/marble/02c: 560 16
+:matt/marble/02c: 576 16
+:matt/marble/02c: 640 96
+:matt/marble/02c: 624 96
+:matt/marble/02c: 608 96
+:matt/marble/02c: 592 96
+:matt/marble/02c: 656 64
+:matt/marble/02c: 656 48
+:matt/marble/02c: 656 80
+:matt/marble/02c: 656 96
+:matt/marble/02c: 656 112
+:matt/marble/02c: 656 128
+:matt/marble/02c: 656 144
+:matt/marble/02c: 656 32
+:matt/marble/02c: 656 16
+:matt/marble/02c: 656 0
+:matt/marble/02b: 656 160
+:matt/marble/02b: 656 176
+:matt/marble/02b: 656 192
+:matt/marble/02b: 656 208
+:matt/marble/02b: 656 224
+:matt/marble/02b: 656 304
+:matt/marble/02b: 656 288
+:matt/marble/02b: 656 272
+:matt/marble/02b: 656 256
+:matt/marble/02b: 656 240
+:matt/marble/02b: 640 256
+:matt/marble/02b: 592 256
+:matt/marble/02b: 608 256
+:matt/marble/02b: 624 256
+:matt/marble/02b: 528 176
+:matt/marble/02b: 544 176
+:matt/marble/02b: 560 176
+:matt/marble/02b: 576 176
+:matt/marble/02c: 128 16 frr
+:matt/marble/02c: 112 16 frr
+:matt/marble/02c: 96 16 frr
+:matt/marble/02c: 80 16 frr
+:matt/marble/02c: 16 96 frr
+:matt/marble/02c: 32 96 frr
+:matt/marble/02c: 48 96 frr
+:matt/marble/02c: 64 96 frr
+:matt/marble/02c: 0 64 frr
+:matt/marble/02c: 0 48 frr
+:matt/marble/02c: 0 80 frr
+:matt/marble/02c: 0 96 frr
+:matt/marble/02c: 0 112 frr
+:matt/marble/02c: 0 128 frr
+:matt/marble/02c: 0 144 frr
+:matt/marble/02c: 0 32 frr
+:matt/marble/02c: 0 16 frr
+:matt/marble/02c: 0 0 frr
+:matt/marble/02b: 0 160 frr
+:matt/marble/02b: 0 176 frr
+:matt/marble/02b: 0 192 frr
+:matt/marble/02b: 0 208 frr
+:matt/marble/02b: 0 224 frr
+:matt/marble/02b: 0 304 frr
+:matt/marble/02b: 0 288 frr
+:matt/marble/02b: 0 272 frr
+:matt/marble/02b: 0 256 frr
+:matt/marble/02b: 0 240 frr
+:matt/marble/02b: 16 256 frr
+:matt/marble/02b: 64 256 frr
+:matt/marble/02b: 48 256 frr
+:matt/marble/02b: 32 256 frr
+:matt/marble/02b: 128 176 frr
+:matt/marble/02b: 112 176 frr
+:matt/marble/02b: 96 176 frr
+:matt/marble/02b: 80 176 frr
+:geoo/steel/16x16o.S: 40 96
+:geoo/steel/16x16o.S: 616 256
+:geoo/steel/16x16o.S: 616 96
+:geoo/steel/16x16o.S: 40 256
+:geoo/steel/16x16o.S: 104 176
+:geoo/steel/16x16o.S: 552 176
+:geoo/steel/16x16o.S: 552 16
+:geoo/steel/16x16o.S: 104 16
+:geoo/steel/16x16o.S: 264 176
+:geoo/steel/16x16o.S: 392 176
+:geoo/steel/16x16o.S: 264 16
+:geoo/steel/16x16o.S: 392 16
+$BEGIN_TILE_GROUP 0
+:matt/carnival/46: 112 0
+:matt/carnival/46: 0 0 frr
+:matt/carnival/46: 32 0
+:matt/carnival/46: 80 0 frr
+:matt/carnival/32: 112 32 r
+:matt/carnival/32: 96 64 r
+:matt/carnival/33: 80 32 frrr
+:matt/carnival/45: 88 40
+:matt/carnival/45: 88 72 rrr
+:matt/carnival/45: 88 64
+:matt/carnival/45: 88 96 rrr
+:matt/carnival/32: 96 64 rrrd
+:matt/carnival/46: 0 0 frr
+:matt/carnival/46: 32 0
+:matt/carnival/32: 0 32 fr
+:matt/carnival/32: 16 64 fr
+:matt/carnival/33: 32 32 rrr
+:matt/carnival/45: 24 40 frr
+:matt/carnival/45: 24 72 frrr
+:matt/carnival/45: 24 64 frr
+:matt/carnival/45: 24 96 frrr
+:matt/carnival/32: 16 64 frrrd
+$END_TILE_GROUP
+:Group-0: 264 176
+:Group-0: 264 16

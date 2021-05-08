@@ -1,0 +1,795 @@
+$BUILT 2021-02-15 02:00:38
+$AUTHOR Flopsy
+$ENGLISH The Lix in the Middle 6P
+
+#INTENDED_NUMBER_OF_PLAYERS 6
+#SIZE_X 1920
+#SIZE_Y 448
+#TORUS_X 1
+#TORUS_Y 0
+
+#SECONDS 60
+#INITIAL 60
+#SPAWN_INTERVAL 32
+
+#WALKER 50
+#RUNNER 10
+#CLIMBER 5
+#FLOATER 5
+#EXPLODER2 10
+#BUILDER 50
+#BASHER 10
+#MINER 10
+#DIGGER 10
+#JUMPER 50
+#BATTER 30
+#CUBER 5
+
+:simon/hatch001.H: 64 32
+:simon/hatch001.H: 512 32 r
+:simon/hatch001.H: 704 32
+:simon/hatch001.H: 1152 32 r
+:simon/hatch001.H: 1344 32
+:simon/hatch001.H: 1792 32 r
+
+:proxima/tile/goal.G: 1312 368
+:proxima/tile/goal.G: 1824 370
+:proxima/tile/goal.G: 32 368
+:proxima/tile/goal.G: 544 368
+:proxima/tile/goal.G: 672 368
+:proxima/tile/goal.G: 1184 368
+
+:raymanni/gore/eater.T: 368 368
+:raymanni/gore/eater.T: 1008 368
+:raymanni/gore/eater.T: 208 368
+:raymanni/gore/eater.T: 848 368
+:raymanni/gore/eater.T: 1648 368
+:raymanni/gore/eater.T: 1488 368
+
+:geoo/construction/sawblade_small.F: 392 258
+:geoo/construction/sawblade_small.F: 392 286
+:geoo/construction/sawblade_small.F: 216 258
+:geoo/construction/sawblade_small.F: 216 286
+:geoo/construction/sawblade_small.F: 1032 258
+:geoo/construction/sawblade_small.F: 1032 286
+:geoo/construction/sawblade_small.F: 856 258
+:geoo/construction/sawblade_small.F: 856 286
+:simon/acid.W: 296 416
+:simon/acid.W: 936 416
+:geoo/construction/sawblade_small.F: 1672 258
+:geoo/construction/sawblade_small.F: 1672 286
+:geoo/construction/sawblade_small.F: 1496 258
+:geoo/construction/sawblade_small.F: 1496 286
+:simon/acid.W: 1576 416
+:geoo/construction/sawblade_small.F: 696 258
+:geoo/construction/sawblade_small.F: 696 286
+:geoo/construction/sawblade_small.F: 552 258
+:geoo/construction/sawblade_small.F: 552 286
+:geoo/construction/sawblade_small.F: 56 258
+:geoo/construction/sawblade_small.F: 56 286
+:geoo/construction/sawblade_small.F: 1832 258
+:geoo/construction/sawblade_small.F: 1832 286
+:geoo/construction/sawblade_small.F: 1336 258
+:geoo/construction/sawblade_small.F: 1336 286
+:geoo/construction/sawblade_small.F: 1192 258
+:geoo/construction/sawblade_small.F: 1192 286
+
+:proxima/tile/blue1s: 32 64
+:proxima/tile/blue1s: 2 64
+:proxima/tile/blue1s: 2 32
+:proxima/tile/blue1s: 32 96
+:proxima/tile/blue1s: 64 96
+:proxima/tile/blue1s: 96 96
+:proxima/tile/blue1s: 128 96
+:proxima/tile/blue1s: 160 96
+:proxima/tile/blue1s: 160 64
+:proxima/tile/blue1s: 192 128
+:proxima/tile/blue1s: 224 96
+:proxima/tile/blue1s: 224 64
+:proxima/tile/blue1s: 224 32
+:proxima/tile/blue1s: 256 64
+:proxima/tile/green1s: 352 64
+:proxima/tile/green1s: 384 32
+:proxima/tile/green1s: 384 64
+:proxima/tile/green1s: 384 96
+:proxima/tile/green1s: 416 128
+:proxima/tile/green1s: 448 96
+:proxima/tile/green1s: 512 96
+:proxima/tile/green1s: 544 96
+:proxima/tile/green1s: 576 96
+:proxima/tile/green1s: 576 64
+:proxima/tile/green1s: 606 64
+:proxima/tile/green1s: 606 32
+:proxima/tile/green1s: 336 128
+:proxima/tile/green1s: 352 128
+:proxima/tile/green1s: 336 32
+:proxima/tile/blue1s: 272 32
+:proxima/tile/blue1s: 272 128
+:proxima/tile/blue1s: 256 128
+:geoo/steel/dark_32x32o.S: 64 96
+:geoo/steel/dark_32x32o.S: 96 96
+:geoo/steel/dark_32x32o.S: 512 96
+:geoo/steel/dark_32x32o.S: 544 96
+:proxima/tile/green1s: 448 64
+:proxima/tile/green1s: 480 96
+:proxima/tile/pink2s: 0 416
+:proxima/tile/pink2s: 0 384
+:proxima/tile/pink2s: 0 352
+:proxima/tile/pink1a: 32 432
+:proxima/tile/pink1a: 64 432
+:proxima/tile/pink1a: 96 432
+:proxima/tile/pink1a: 32 352
+:proxima/tile/pink1a: 64 352
+:proxima/tile/pink1a: 96 352
+:proxima/tile/pink1a: 128 432
+:proxima/tile/pink2s: 160 352
+:proxima/tile/pink2s: 160 384
+:proxima/tile/pink2s: 160 416
+:proxima/tile/pink1a: 192 432
+:proxima/tile/pink1a: 224 432
+:proxima/tile/pink1a: 256 432
+:proxima/tile/pink2s: 276 416
+:proxima/tile/pink2s: 276 384
+:proxima/tile/pink2s: 276 352
+:geoo/steel/dark_32x32o.S: 276 384
+:proxima/tile/pink1a: 128 352
+:geoo/steel/dark_32x32o.S: 0 352
+:geoo/steel/dark_32x32o.S: 0 384
+:geoo/steel/dark_32x32o.S: 0 416
+:proxima/tile/pink1a: 192 352
+:proxima/tile/pink1a: 224 352
+:proxima/tile/pink1a: 256 352
+:proxima/tile/pink2s: 608 416 frr
+:proxima/tile/pink2s: 608 384 frr
+:proxima/tile/pink2s: 608 352 frr
+:proxima/tile/pink1a: 576 432 frr
+:proxima/tile/pink1a: 544 432 frr
+:proxima/tile/pink1a: 512 432 frr
+:proxima/tile/pink1a: 576 352 frr
+:proxima/tile/pink1a: 544 352 frr
+:proxima/tile/pink1a: 512 352 frr
+:proxima/tile/pink1a: 480 432 frr
+:proxima/tile/pink2s: 448 352 frr
+:proxima/tile/pink2s: 448 384 frr
+:proxima/tile/pink2s: 448 416 frr
+:proxima/tile/pink1a: 416 432 frr
+:proxima/tile/pink1a: 384 432 frr
+:proxima/tile/pink2s: 332 416 frr
+:proxima/tile/pink2s: 332 384 frr
+:proxima/tile/pink2s: 332 352 frr
+:geoo/steel/dark_32x32o.S: 332 384 frr
+:proxima/tile/pink1a: 480 352 frr
+:geoo/steel/dark_32x32o.S: 608 352 frr
+:geoo/steel/dark_32x32o.S: 608 384 frr
+:geoo/steel/dark_32x32o.S: 608 416 frr
+:proxima/tile/pink1a: 416 352 frr
+:proxima/tile/pink1a: 384 352 frr
+:proxima/tile/orange1a: 352 352 r
+:proxima/tile/orange1a: 352 432 r
+:proxima/tile/orange1a: 384 432 r
+:proxima/tile/orange1a: 416 432 r
+:proxima/tile/orange1a: 384 352 r
+:proxima/tile/orange1a: 416 352 r
+:proxima/tile/orange1a: 480 352 r
+:proxima/tile/orange1a: 512 352 r
+:proxima/tile/orange1a: 544 352 r
+:proxima/tile/orange1a: 576 352 r
+:proxima/tile/orange2s: 448 352
+:proxima/tile/orange2s: 448 384
+:proxima/tile/orange2s: 448 416
+:proxima/tile/orange1a: 480 432 r
+:proxima/tile/orange1a: 512 432 r
+:proxima/tile/orange1a: 544 432 r
+:proxima/tile/orange1a: 576 432 r
+:matt/marble/01: 400 286
+:matt/marble/01: 224 286
+:geoo/steel/dark_16x16o.S: 568 432
+:geoo/steel/dark_16x16o.S: 56 432
+:proxima/tile/blue1s: 672 64
+:proxima/tile/blue1s: 642 64
+:proxima/tile/blue1s: 642 32
+:proxima/tile/blue1s: 672 96
+:proxima/tile/blue1s: 704 96
+:proxima/tile/blue1s: 736 96
+:proxima/tile/blue1s: 768 96
+:proxima/tile/blue1s: 800 96
+:proxima/tile/blue1s: 800 64
+:proxima/tile/blue1s: 832 128
+:proxima/tile/blue1s: 864 96
+:proxima/tile/blue1s: 864 64
+:proxima/tile/blue1s: 864 32
+:proxima/tile/blue1s: 896 64
+:proxima/tile/green1s: 992 64
+:proxima/tile/green1s: 1024 32
+:proxima/tile/green1s: 1024 64
+:proxima/tile/green1s: 1024 96
+:proxima/tile/green1s: 1056 128
+:proxima/tile/green1s: 1088 96
+:proxima/tile/green1s: 1152 96
+:proxima/tile/green1s: 1184 96
+:proxima/tile/green1s: 1216 96
+:proxima/tile/green1s: 1216 64
+:proxima/tile/green1s: 1246 64
+:proxima/tile/green1s: 1246 32
+:proxima/tile/green1s: 976 128
+:proxima/tile/green1s: 992 128
+:proxima/tile/green1s: 976 32
+:proxima/tile/blue1s: 912 32
+:proxima/tile/blue1s: 912 128
+:proxima/tile/blue1s: 896 128
+:geoo/steel/dark_32x32o.S: 704 96
+:geoo/steel/dark_32x32o.S: 736 96
+:geoo/steel/dark_32x32o.S: 1152 96
+:geoo/steel/dark_32x32o.S: 1184 96
+:proxima/tile/green1s: 1088 64
+:proxima/tile/green1s: 1120 96
+:proxima/tile/pink2s: 640 416
+:proxima/tile/pink2s: 640 384
+:proxima/tile/pink2s: 640 352
+:proxima/tile/pink1a: 672 432
+:proxima/tile/pink1a: 704 432
+:proxima/tile/pink1a: 736 432
+:proxima/tile/pink1a: 672 352
+:proxima/tile/pink1a: 704 352
+:proxima/tile/pink1a: 736 352
+:proxima/tile/pink1a: 768 432
+:proxima/tile/pink2s: 800 352
+:proxima/tile/pink2s: 800 384
+:proxima/tile/pink2s: 800 416
+:proxima/tile/pink1a: 832 432
+:proxima/tile/pink1a: 864 432
+:proxima/tile/pink1a: 896 432
+:proxima/tile/pink2s: 916 416
+:proxima/tile/pink2s: 916 384
+:proxima/tile/pink2s: 916 352
+:geoo/steel/dark_32x32o.S: 916 384
+:proxima/tile/pink1a: 768 352
+:geoo/steel/dark_32x32o.S: 640 352
+:geoo/steel/dark_32x32o.S: 640 384
+:geoo/steel/dark_32x32o.S: 640 416
+:proxima/tile/pink1a: 832 352
+:proxima/tile/pink1a: 864 352
+:proxima/tile/pink1a: 896 352
+:proxima/tile/pink2s: 1248 416 frr
+:proxima/tile/pink2s: 1248 384 frr
+:proxima/tile/pink2s: 1248 352 frr
+:proxima/tile/pink1a: 1216 432 frr
+:proxima/tile/pink1a: 1184 432 frr
+:proxima/tile/pink1a: 1152 432 frr
+:proxima/tile/pink1a: 1216 352 frr
+:proxima/tile/pink1a: 1184 352 frr
+:proxima/tile/pink1a: 1152 352 frr
+:proxima/tile/pink1a: 1120 432 frr
+:proxima/tile/pink2s: 1088 352 frr
+:proxima/tile/pink2s: 1088 384 frr
+:proxima/tile/pink2s: 1088 416 frr
+:proxima/tile/pink1a: 1056 432 frr
+:proxima/tile/pink1a: 1024 432 frr
+:proxima/tile/pink2s: 972 416 frr
+:proxima/tile/pink2s: 972 384 frr
+:proxima/tile/pink2s: 972 352 frr
+:geoo/steel/dark_32x32o.S: 972 384 frr
+:proxima/tile/pink1a: 1120 352 frr
+:geoo/steel/dark_32x32o.S: 1248 352 frr
+:geoo/steel/dark_32x32o.S: 1248 384 frr
+:geoo/steel/dark_32x32o.S: 1248 416 frr
+:proxima/tile/pink1a: 1056 352 frr
+:proxima/tile/pink1a: 1024 352 frr
+:proxima/tile/orange1a: 992 352 r
+:proxima/tile/orange1a: 992 432 r
+:proxima/tile/orange1a: 1024 432 r
+:proxima/tile/orange1a: 1056 432 r
+:proxima/tile/orange1a: 1024 352 r
+:proxima/tile/orange1a: 1056 352 r
+:proxima/tile/orange1a: 1120 352 r
+:proxima/tile/orange1a: 1152 352 r
+:proxima/tile/orange1a: 1184 352 r
+:proxima/tile/orange1a: 1216 352 r
+:proxima/tile/orange2s: 1088 352
+:proxima/tile/orange2s: 1088 384
+:proxima/tile/orange2s: 1088 416
+:proxima/tile/orange1a: 1120 432 r
+:proxima/tile/orange1a: 1152 432 r
+:proxima/tile/orange1a: 1184 432 r
+:proxima/tile/orange1a: 1216 432 r
+:matt/marble/01: 1040 286
+:matt/marble/01: 864 286
+:geoo/steel/dark_16x16o.S: 1208 432
+:geoo/steel/dark_16x16o.S: 696 432
+:geoo/steel/dark_16x16o.S: 1032 432
+:geoo/steel/dark_16x16o.S: 872 432
+:geoo/steel/dark_16x16o.S: 232 432
+:geoo/steel/dark_16x16o.S: 672 352
+:geoo/steel/dark_16x16o.S: 688 352
+:geoo/steel/dark_16x16o.S: 704 352
+:geoo/steel/dark_16x16o.S: 720 352
+:geoo/steel/dark_16x16o.S: 736 352
+:geoo/steel/dark_16x16o.S: 752 352
+:geoo/steel/dark_16x16o.S: 768 352
+:geoo/steel/dark_16x16o.S: 784 352
+:geoo/steel/dark_16x16o.S: 592 352
+:geoo/steel/dark_16x16o.S: 576 352
+:geoo/steel/dark_16x16o.S: 560 352
+:geoo/steel/dark_16x16o.S: 544 352
+:geoo/steel/dark_16x16o.S: 528 352
+:geoo/steel/dark_16x16o.S: 512 352
+:geoo/steel/dark_16x16o.S: 496 352
+:geoo/steel/dark_16x16o.S: 480 352
+:geoo/steel/dark_16x16o.S: 1120 352
+:geoo/steel/dark_16x16o.S: 1136 352
+:geoo/steel/dark_16x16o.S: 1152 352
+:geoo/steel/dark_16x16o.S: 1168 352
+:geoo/steel/dark_16x16o.S: 1184 352
+:geoo/steel/dark_16x16o.S: 1200 352
+:geoo/steel/dark_16x16o.S: 1216 352
+:geoo/steel/dark_16x16o.S: 1232 352
+:geoo/steel/dark_16x16o.S: 32 352
+:geoo/steel/dark_16x16o.S: 48 352
+:geoo/steel/dark_16x16o.S: 64 352
+:geoo/steel/dark_16x16o.S: 80 352
+:geoo/steel/dark_16x16o.S: 96 352
+:geoo/steel/dark_16x16o.S: 112 352
+:geoo/steel/dark_16x16o.S: 128 352
+:geoo/steel/dark_16x16o.S: 144 352
+:proxima/tile/red3s: 976 32
+:proxima/tile/red3s: 992 64
+:proxima/tile/red3s: 976 128
+:proxima/tile/red3s: 992 128
+:proxima/tile/red3s: 1024 32
+:proxima/tile/red3s: 1024 64
+:proxima/tile/red3s: 1024 96
+:proxima/tile/red3s: 1056 128
+:proxima/tile/red3s: 1088 96
+:proxima/tile/red3s: 1088 64
+:proxima/tile/red3s: 1120 96
+:proxima/tile/red3s: 1216 96
+:proxima/tile/red3s: 1216 64
+:proxima/tile/red3s: 1246 64
+:proxima/tile/red3s: 1246 32
+:proxima/tile/orange2s: 642 32
+:proxima/tile/orange2s: 642 64
+:proxima/tile/orange2s: 672 64
+:proxima/tile/orange2s: 672 96
+:proxima/tile/orange2s: 768 96
+:proxima/tile/orange2s: 800 64
+:proxima/tile/orange2s: 800 96
+:proxima/tile/orange2s: 832 128
+:proxima/tile/orange2s: 912 128
+:proxima/tile/orange2s: 896 128
+:proxima/tile/orange2s: 864 96
+:proxima/tile/orange2s: 864 64
+:proxima/tile/orange2s: 896 64
+:proxima/tile/orange2s: 912 32
+:proxima/tile/orange2s: 864 32
+:proxima/tile/orange2s: 160 352
+:proxima/tile/orange2s: 160 384
+:proxima/tile/orange2s: 160 416
+:proxima/tile/orange1a: 192 352 r
+:proxima/tile/orange1a: 224 352 r
+:proxima/tile/orange1a: 256 352 r
+:geoo/steel/dark_32x32o.S: 276 352
+:proxima/tile/orange1a: 192 432 r
+:proxima/tile/orange1a: 224 432 r
+:proxima/tile/orange1a: 256 432 r
+:geoo/steel/dark_32x32o.S: 276 416
+:geoo/steel/dark_16x16o.S: 232 432
+:proxima/tile/orange1a: 128 432 r
+:proxima/tile/orange1a: 96 432 r
+:proxima/tile/orange1a: 64 432 r
+:proxima/tile/orange1a: 32 432 r
+:geoo/steel/dark_16x16o.S: 56 432
+:proxima/tile/red3s: 448 352
+:proxima/tile/red3s: 448 384
+:proxima/tile/red3s: 448 416
+:proxima/tile/red1a: 416 352
+:proxima/tile/red1a: 384 352
+:proxima/tile/red1a: 352 352
+:geoo/steel/dark_32x32o.S: 332 352 frr
+:proxima/tile/red1a: 352 432
+:geoo/steel/dark_32x32o.S: 332 416 frr
+:proxima/tile/red1a: 384 432
+:geoo/steel/dark_16x16o.S: 392 432
+:proxima/tile/red1a: 416 432
+:proxima/tile/red1a: 480 432
+:proxima/tile/red1a: 512 432
+:proxima/tile/red1a: 544 432
+:proxima/tile/red1a: 576 432
+:geoo/steel/dark_16x16o.S: 568 432
+:proxima/tile/blue1s: 800 352
+:proxima/tile/blue1s: 800 384
+:proxima/tile/blue1s: 800 416
+:proxima/tile/cyan1b: 832 352
+:proxima/tile/cyan1b: 864 352
+:proxima/tile/cyan1b: 896 352
+:proxima/tile/cyan1b: 896 432
+:proxima/tile/cyan1b: 864 432
+:proxima/tile/cyan1b: 832 432
+:geoo/steel/dark_16x16o.S: 872 432
+:proxima/tile/cyan1b: 768 432
+:proxima/tile/cyan1b: 736 432
+:proxima/tile/cyan1b: 704 432
+:proxima/tile/cyan1b: 672 432
+:geoo/steel/dark_16x16o.S: 696 432
+:proxima/tile/green1s: 1088 352
+:proxima/tile/green1s: 1088 384
+:proxima/tile/green1s: 1088 416
+:proxima/tile/green1s: 1120 432
+:proxima/tile/green1s: 1152 432
+:proxima/tile/green1s: 1184 432
+:proxima/tile/green1s: 1216 432
+:proxima/tile/green1s: 992 432
+:proxima/tile/green1s: 1024 432
+:proxima/tile/green1s: 1056 432
+:geoo/steel/dark_16x16o.S: 1208 432
+:geoo/steel/dark_16x16o.S: 1032 432
+:proxima/tile/cyan1a: 1056 352
+:proxima/tile/cyan1a: 1024 352
+:proxima/tile/cyan1a: 992 352
+:proxima/tile/blue1s: 1312 64
+:proxima/tile/blue1s: 1282 64
+:proxima/tile/blue1s: 1282 32
+:proxima/tile/blue1s: 1312 96
+:proxima/tile/blue1s: 1344 96
+:proxima/tile/blue1s: 1376 96
+:proxima/tile/blue1s: 1408 96
+:proxima/tile/blue1s: 1440 96
+:proxima/tile/blue1s: 1440 64
+:proxima/tile/blue1s: 1472 128
+:proxima/tile/blue1s: 1504 96
+:proxima/tile/blue1s: 1504 64
+:proxima/tile/blue1s: 1504 32
+:proxima/tile/blue1s: 1536 64
+:proxima/tile/green1s: 1632 64
+:proxima/tile/green1s: 1664 32
+:proxima/tile/green1s: 1664 64
+:proxima/tile/green1s: 1664 96
+:proxima/tile/green1s: 1696 128
+:proxima/tile/green1s: 1728 96
+:proxima/tile/green1s: 1792 96
+:proxima/tile/green1s: 1824 96
+:proxima/tile/green1s: 1856 96
+:proxima/tile/green1s: 1856 64
+:proxima/tile/green1s: 1886 64
+:proxima/tile/green1s: 1886 32
+:proxima/tile/green1s: 1616 128
+:proxima/tile/green1s: 1632 128
+:proxima/tile/green1s: 1616 32
+:proxima/tile/blue1s: 1552 32
+:proxima/tile/blue1s: 1552 128
+:proxima/tile/blue1s: 1536 128
+:geoo/steel/dark_32x32o.S: 1344 96
+:geoo/steel/dark_32x32o.S: 1376 96
+:geoo/steel/dark_32x32o.S: 1792 96
+:geoo/steel/dark_32x32o.S: 1824 96
+:proxima/tile/green1s: 1728 64
+:proxima/tile/green1s: 1760 96
+:proxima/tile/pink2s: 1280 416
+:proxima/tile/pink2s: 1280 384
+:proxima/tile/pink2s: 1280 352
+:proxima/tile/pink1a: 1312 432
+:proxima/tile/pink1a: 1344 432
+:proxima/tile/pink1a: 1376 432
+:proxima/tile/pink1a: 1312 352
+:proxima/tile/pink1a: 1344 352
+:proxima/tile/pink1a: 1376 352
+:proxima/tile/pink1a: 1408 432
+:proxima/tile/pink2s: 1440 352
+:proxima/tile/pink2s: 1440 384
+:proxima/tile/pink2s: 1440 416
+:proxima/tile/pink1a: 1472 432
+:proxima/tile/pink1a: 1504 432
+:proxima/tile/pink1a: 1536 432
+:proxima/tile/pink2s: 1556 416
+:proxima/tile/pink2s: 1556 384
+:proxima/tile/pink2s: 1556 352
+:geoo/steel/dark_32x32o.S: 1556 384
+:proxima/tile/pink1a: 1408 352
+:geoo/steel/dark_32x32o.S: 1280 352
+:geoo/steel/dark_32x32o.S: 1280 384
+:geoo/steel/dark_32x32o.S: 1280 416
+:proxima/tile/pink1a: 1472 352
+:proxima/tile/pink1a: 1504 352
+:proxima/tile/pink1a: 1536 352
+:proxima/tile/pink2s: 1888 416 frr
+:proxima/tile/pink2s: 1888 384 frr
+:proxima/tile/pink2s: 1888 352 frr
+:proxima/tile/pink1a: 1856 432 frr
+:proxima/tile/pink1a: 1824 432 frr
+:proxima/tile/pink1a: 1792 432 frr
+:proxima/tile/pink1a: 1856 352 frr
+:proxima/tile/pink1a: 1824 352 frr
+:proxima/tile/pink1a: 1792 352 frr
+:proxima/tile/pink1a: 1760 432 frr
+:proxima/tile/pink2s: 1728 352 frr
+:proxima/tile/pink2s: 1728 384 frr
+:proxima/tile/pink2s: 1728 416 frr
+:proxima/tile/pink1a: 1696 432 frr
+:proxima/tile/pink1a: 1664 432 frr
+:proxima/tile/pink2s: 1612 416 frr
+:proxima/tile/pink2s: 1612 384 frr
+:proxima/tile/pink2s: 1612 352 frr
+:geoo/steel/dark_32x32o.S: 1612 384 frr
+:proxima/tile/pink1a: 1760 352 frr
+:geoo/steel/dark_32x32o.S: 1888 352 frr
+:geoo/steel/dark_32x32o.S: 1888 384 frr
+:geoo/steel/dark_32x32o.S: 1888 416 frr
+:proxima/tile/pink1a: 1696 352 frr
+:proxima/tile/pink1a: 1664 352 frr
+:proxima/tile/orange1a: 1632 352 r
+:proxima/tile/orange1a: 1632 432 r
+:proxima/tile/orange1a: 1664 432 r
+:proxima/tile/orange1a: 1696 432 r
+:proxima/tile/orange1a: 1664 352 r
+:proxima/tile/orange1a: 1696 352 r
+:proxima/tile/orange1a: 1760 352 r
+:proxima/tile/orange1a: 1792 352 r
+:proxima/tile/orange1a: 1824 352 r
+:proxima/tile/orange1a: 1856 352 r
+:proxima/tile/orange2s: 1728 352
+:proxima/tile/orange2s: 1728 384
+:proxima/tile/orange2s: 1728 416
+:proxima/tile/orange1a: 1760 432 r
+:proxima/tile/orange1a: 1792 432 r
+:proxima/tile/orange1a: 1824 432 r
+:proxima/tile/orange1a: 1856 432 r
+:matt/marble/01: 1680 286
+:matt/marble/01: 1504 286
+:geoo/steel/dark_16x16o.S: 1848 432
+:geoo/steel/dark_16x16o.S: 1336 432
+:geoo/steel/dark_16x16o.S: 1672 432
+:geoo/steel/dark_16x16o.S: 1512 432
+:geoo/steel/dark_16x16o.S: 1312 352
+:geoo/steel/dark_16x16o.S: 1328 352
+:geoo/steel/dark_16x16o.S: 1344 352
+:geoo/steel/dark_16x16o.S: 1360 352
+:geoo/steel/dark_16x16o.S: 1376 352
+:geoo/steel/dark_16x16o.S: 1392 352
+:geoo/steel/dark_16x16o.S: 1408 352
+:geoo/steel/dark_16x16o.S: 1424 352
+:geoo/steel/dark_16x16o.S: 1760 352
+:geoo/steel/dark_16x16o.S: 1776 352
+:geoo/steel/dark_16x16o.S: 1792 352
+:geoo/steel/dark_16x16o.S: 1808 352
+:geoo/steel/dark_16x16o.S: 1824 352
+:geoo/steel/dark_16x16o.S: 1840 352
+:geoo/steel/dark_16x16o.S: 1856 352
+:geoo/steel/dark_16x16o.S: 1872 352
+:proxima/tile/red3s: 1616 32
+:proxima/tile/red3s: 1632 64
+:proxima/tile/red3s: 1616 128
+:proxima/tile/red3s: 1632 128
+:proxima/tile/red3s: 1664 32
+:proxima/tile/red3s: 1664 64
+:proxima/tile/red3s: 1664 96
+:proxima/tile/red3s: 1696 128
+:proxima/tile/red3s: 1728 96
+:proxima/tile/red3s: 1728 64
+:proxima/tile/red3s: 1760 96
+:proxima/tile/red3s: 1856 96
+:proxima/tile/red3s: 1856 64
+:proxima/tile/red3s: 1886 64
+:proxima/tile/red3s: 1886 32
+:proxima/tile/orange2s: 1282 32
+:proxima/tile/orange2s: 1282 64
+:proxima/tile/orange2s: 1312 64
+:proxima/tile/orange2s: 1312 96
+:proxima/tile/orange2s: 1408 96
+:proxima/tile/orange2s: 1440 64
+:proxima/tile/orange2s: 1440 96
+:proxima/tile/orange2s: 1472 128
+:proxima/tile/orange2s: 1552 128
+:proxima/tile/orange2s: 1536 128
+:proxima/tile/orange2s: 1504 96
+:proxima/tile/orange2s: 1504 64
+:proxima/tile/orange2s: 1536 64
+:proxima/tile/orange2s: 1552 32
+:proxima/tile/orange2s: 1504 32
+:proxima/tile/blue1s: 1440 352
+:proxima/tile/blue1s: 1440 384
+:proxima/tile/blue1s: 1440 416
+:proxima/tile/cyan1b: 1472 352
+:proxima/tile/cyan1b: 1504 352
+:proxima/tile/cyan1b: 1536 352
+:geoo/steel/dark_32x32o.S: 1556 352
+:proxima/tile/cyan1b: 1536 432
+:geoo/steel/dark_32x32o.S: 1556 416
+:proxima/tile/cyan1b: 1504 432
+:proxima/tile/cyan1b: 1472 432
+:geoo/steel/dark_16x16o.S: 1512 432
+:proxima/tile/cyan1b: 1408 432
+:proxima/tile/cyan1b: 1376 432
+:proxima/tile/cyan1b: 1344 432
+:proxima/tile/cyan1b: 1312 432
+:geoo/steel/dark_16x16o.S: 1336 432
+:proxima/tile/green1s: 1728 352
+:proxima/tile/green1s: 1728 384
+:proxima/tile/green1s: 1728 416
+:proxima/tile/green1s: 1760 432
+:proxima/tile/green1s: 1792 432
+:proxima/tile/green1s: 1824 432
+:proxima/tile/green1s: 1856 432
+:proxima/tile/green1s: 1632 432
+:geoo/steel/dark_32x32o.S: 1612 416 frr
+:proxima/tile/green1s: 1664 432
+:proxima/tile/green1s: 1696 432
+:geoo/steel/dark_16x16o.S: 1848 432
+:geoo/steel/dark_16x16o.S: 1672 432
+:proxima/tile/cyan1a: 1696 352
+:proxima/tile/cyan1a: 1664 352
+:proxima/tile/cyan1a: 1632 352
+:geoo/steel/dark_32x32o.S: 1612 352 frr
+:proxima/tile/pink2s: 1282 32
+:proxima/tile/pink2s: 1282 64
+:proxima/tile/pink2s: 1312 64
+:proxima/tile/pink2s: 1312 96
+:proxima/tile/pink2s: 1408 96
+:proxima/tile/pink2s: 1440 96
+:proxima/tile/pink2s: 1440 64
+:proxima/tile/pink2s: 1472 128
+:proxima/tile/pink2s: 1504 96
+:proxima/tile/pink2s: 1504 64
+:proxima/tile/pink2s: 1504 32
+:proxima/tile/pink2s: 1552 32
+:proxima/tile/pink2s: 1536 64
+:proxima/tile/pink2s: 1552 128
+:proxima/tile/pink2s: 1536 128
+:proxima/tile/pink2s: 800 352
+:proxima/tile/pink2s: 800 384
+:proxima/tile/pink2s: 800 416
+:proxima/tile/pink1a: 832 352
+:proxima/tile/pink1a: 864 352
+:proxima/tile/pink1a: 896 352
+:geoo/steel/dark_32x32o.S: 916 352
+:proxima/tile/pink1a: 832 432
+:proxima/tile/pink1a: 864 432
+:proxima/tile/pink1a: 896 432
+:geoo/steel/dark_32x32o.S: 916 416
+:geoo/steel/dark_16x16o.S: 872 432
+:proxima/tile/pink1a: 768 432
+:proxima/tile/pink1a: 736 432
+:proxima/tile/pink1a: 704 432
+:proxima/tile/pink1a: 672 432
+:geoo/steel/dark_16x16o.S: 696 432
+:proxima/tile/cyan3: 1088 352
+:proxima/tile/cyan3: 1088 384
+:proxima/tile/cyan3: 1088 416
+:proxima/tile/cyan2s: 1056 352
+:proxima/tile/cyan2s: 1024 352
+:proxima/tile/cyan2s: 992 352
+:geoo/steel/dark_32x32o.S: 972 352 frr
+:proxima/tile/cyan2s: 992 432
+:geoo/steel/dark_32x32o.S: 972 416 frr
+:proxima/tile/cyan2s: 1024 432
+:proxima/tile/cyan2s: 1056 432
+:proxima/tile/cyan2s: 1120 432
+:proxima/tile/cyan2s: 1152 432
+:proxima/tile/cyan2s: 1184 432
+:proxima/tile/cyan2s: 1216 432
+:geoo/steel/dark_16x16o.S: 1208 432
+:geoo/steel/dark_16x16o.S: 1032 432
+:proxima/tile/cyan3a: 1088 384
+:proxima/tile/cyan3a: 1088 416
+:proxima/tile/cyan3: 1616 32
+:proxima/tile/cyan3: 1664 32
+:proxima/tile/cyan3: 1886 32
+:proxima/tile/cyan3a: 1632 64
+:proxima/tile/cyan3a: 1664 64
+:proxima/tile/cyan3a: 1664 96
+:proxima/tile/cyan3a: 1616 128
+:proxima/tile/cyan3a: 1632 128
+:proxima/tile/cyan3a: 1696 128
+:proxima/tile/cyan3a: 1728 96
+:proxima/tile/cyan3a: 1760 96
+:proxima/tile/cyan3: 1728 64
+:proxima/tile/cyan3a: 1856 96
+:proxima/tile/cyan3a: 1886 64
+:proxima/tile/cyan2: 1728 96
+:proxima/tile/cyan3: 1856 64
+:matt/marble/01: 704 286
+:matt/marble/01: 560 286
+:matt/marble/01: 64 286
+:matt/marble/01: 1840 286
+:matt/marble/01: 1344 286
+:matt/marble/01: 1200 286
+:geoo/steel/dark_16x16o.S: 1240 432
+:geoo/steel/dark_16x16o.S: 1224 432
+:geoo/steel/dark_16x16o.S: 1208 432
+:geoo/steel/dark_16x16o.S: 1192 432
+:geoo/steel/dark_16x16o.S: 1176 432
+:geoo/steel/dark_16x16o.S: 1160 432
+:geoo/steel/dark_16x16o.S: 1144 432
+:geoo/steel/dark_16x16o.S: 1128 432
+:geoo/steel/dark_16x16o.S: 1112 432
+:geoo/steel/dark_16x16o.S: 1096 432
+:geoo/steel/dark_16x16o.S: 1080 432
+:geoo/steel/dark_16x16o.S: 1064 432
+:geoo/steel/dark_16x16o.S: 1048 432
+:geoo/steel/dark_16x16o.S: 1032 432
+:geoo/steel/dark_16x16o.S: 1016 432
+:geoo/steel/dark_16x16o.S: 1000 432
+:geoo/steel/dark_16x16o.S: 1544 432
+:geoo/steel/dark_16x16o.S: 1528 432
+:geoo/steel/dark_16x16o.S: 1512 432
+:geoo/steel/dark_16x16o.S: 1496 432
+:geoo/steel/dark_16x16o.S: 1480 432
+:geoo/steel/dark_16x16o.S: 1464 432
+:geoo/steel/dark_16x16o.S: 1448 432
+:geoo/steel/dark_16x16o.S: 1432 432
+:geoo/steel/dark_16x16o.S: 1416 432
+:geoo/steel/dark_16x16o.S: 1400 432
+:geoo/steel/dark_16x16o.S: 1384 432
+:geoo/steel/dark_16x16o.S: 1368 432
+:geoo/steel/dark_16x16o.S: 1352 432
+:geoo/steel/dark_16x16o.S: 1336 432
+:geoo/steel/dark_16x16o.S: 1320 432
+:geoo/steel/dark_16x16o.S: 1304 432
+:geoo/steel/dark_16x16o.S: 1880 432
+:geoo/steel/dark_16x16o.S: 1864 432
+:geoo/steel/dark_16x16o.S: 1848 432
+:geoo/steel/dark_16x16o.S: 1832 432
+:geoo/steel/dark_16x16o.S: 1816 432
+:geoo/steel/dark_16x16o.S: 1800 432
+:geoo/steel/dark_16x16o.S: 1784 432
+:geoo/steel/dark_16x16o.S: 1768 432
+:geoo/steel/dark_16x16o.S: 1752 432
+:geoo/steel/dark_16x16o.S: 1736 432
+:geoo/steel/dark_16x16o.S: 1720 432
+:geoo/steel/dark_16x16o.S: 1704 432
+:geoo/steel/dark_16x16o.S: 1688 432
+:geoo/steel/dark_16x16o.S: 1672 432
+:geoo/steel/dark_16x16o.S: 1656 432
+:geoo/steel/dark_16x16o.S: 1640 432
+:geoo/steel/dark_16x16o.S: 264 432
+:geoo/steel/dark_16x16o.S: 248 432
+:geoo/steel/dark_16x16o.S: 232 432
+:geoo/steel/dark_16x16o.S: 216 432
+:geoo/steel/dark_16x16o.S: 200 432
+:geoo/steel/dark_16x16o.S: 184 432
+:geoo/steel/dark_16x16o.S: 168 432
+:geoo/steel/dark_16x16o.S: 152 432
+:geoo/steel/dark_16x16o.S: 136 432
+:geoo/steel/dark_16x16o.S: 120 432
+:geoo/steel/dark_16x16o.S: 104 432
+:geoo/steel/dark_16x16o.S: 88 432
+:geoo/steel/dark_16x16o.S: 72 432
+:geoo/steel/dark_16x16o.S: 56 432
+:geoo/steel/dark_16x16o.S: 40 432
+:geoo/steel/dark_16x16o.S: 24 432
+:geoo/steel/dark_16x16o.S: 600 432
+:geoo/steel/dark_16x16o.S: 584 432
+:geoo/steel/dark_16x16o.S: 568 432
+:geoo/steel/dark_16x16o.S: 552 432
+:geoo/steel/dark_16x16o.S: 536 432
+:geoo/steel/dark_16x16o.S: 520 432
+:geoo/steel/dark_16x16o.S: 504 432
+:geoo/steel/dark_16x16o.S: 488 432
+:geoo/steel/dark_16x16o.S: 472 432
+:geoo/steel/dark_16x16o.S: 456 432
+:geoo/steel/dark_16x16o.S: 440 432
+:geoo/steel/dark_16x16o.S: 424 432
+:geoo/steel/dark_16x16o.S: 408 432
+:geoo/steel/dark_16x16o.S: 392 432
+:geoo/steel/dark_16x16o.S: 376 432
+:geoo/steel/dark_16x16o.S: 360 432
+:geoo/steel/dark_16x16o.S: 904 432
+:geoo/steel/dark_16x16o.S: 888 432
+:geoo/steel/dark_16x16o.S: 872 432
+:geoo/steel/dark_16x16o.S: 856 432
+:geoo/steel/dark_16x16o.S: 840 432
+:geoo/steel/dark_16x16o.S: 824 432
+:geoo/steel/dark_16x16o.S: 808 432
+:geoo/steel/dark_16x16o.S: 792 432
+:geoo/steel/dark_16x16o.S: 776 432
+:geoo/steel/dark_16x16o.S: 760 432
+:geoo/steel/dark_16x16o.S: 744 432
+:geoo/steel/dark_16x16o.S: 728 432
+:geoo/steel/dark_16x16o.S: 712 432
+:geoo/steel/dark_16x16o.S: 696 432
+:geoo/steel/dark_16x16o.S: 680 432
+:geoo/steel/dark_16x16o.S: 664 432
+:proxima/tile/orange2s: 642 128
+:proxima/tile/green1s: 606 128
+:proxima/tile/blue1s: 2 128
+:proxima/tile/cyan3a: 1886 128
+:proxima/tile/pink2s: 1282 128
+:proxima/tile/red3s: 1246 128

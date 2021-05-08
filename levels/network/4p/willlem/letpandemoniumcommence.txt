@@ -1,0 +1,588 @@
+$BUILT 2021-05-09 01:57:04
+$AUTHOR WillLem
+$ENGLISH Let Pandemonium Commence!
+
+#INTENDED_NUMBER_OF_PLAYERS 4
+#SIZE_X 3200
+#SIZE_Y 400
+
+#SECONDS 120
+#INITIAL 300
+#SPAWN_INTERVAL 8
+
+#WALKER -1
+#RUNNER -1
+#CLIMBER -1
+#FLOATER -1
+#EXPLODER -1
+#BLOCKER -1
+#BUILDER -1
+#PLATFORMER -1
+#BASHER -1
+#MINER -1
+#DIGGER -1
+#JUMPER -1
+#BATTER -1
+#CUBER -1
+
+:simon/hatch001.H: 1282 58
+:simon/hatch001.H: 1474 58
+:simon/hatch001.H: 1666 58 r
+:simon/hatch001.H: 1858 58 r
+
+:matt/marble/Goal.G: 1666 320
+:matt/marble/Goal.G: 1858 320
+:matt/marble/Goal.G: 1282 320
+:matt/marble/Goal.G: 1474 320
+:matt/marble/Goal.G: 2710 120
+:matt/marble/Goal.G: 2898 38
+:matt/marble/Goal.G: 500 114
+:matt/marble/Goal.G: 374 96
+
+:simon/crystal.W: 1104 360
+:simon/crystal.W: 1056 360
+:simon/crystal.W: 1008 360
+:simon/crystal.W: 960 360
+:simon/crystal.W: 912 360
+:simon/crystal.W: 864 360
+:simon/crystal.W: 816 360
+:simon/crystal.W: 768 360
+:simon/crystal.W: 720 360
+:simon/crystal.W: 672 360
+:simon/crystal.W: 624 360
+:simon/crystal.W: 576 360
+:simon/crystal.W: 528 360
+:simon/crystal.W: 480 360
+:simon/crystal.W: 432 360
+:simon/crystal.W: 384 360
+:simon/crystal.W: 336 360
+:simon/crystal.W: 288 360
+:simon/crystal.W: 240 360
+:simon/crystal.W: 192 360
+:simon/crystal.W: 144 360
+:simon/crystal.W: 96 360
+:simon/crystal.W: 48 360
+:simon/crystal.W: 0 360
+:simon/crystal.W: 2384 360
+:simon/crystal.W: 2336 360
+:simon/crystal.W: 2288 360
+:simon/crystal.W: 2240 360
+:simon/crystal.W: 2192 360
+:simon/crystal.W: 2144 360
+:simon/crystal.W: 2096 360
+:simon/crystal.W: 2048 360
+:simon/crystal.W: 2768 360
+:simon/crystal.W: 2720 360
+:simon/crystal.W: 2672 360
+:simon/crystal.W: 2624 360
+:simon/crystal.W: 2576 360
+:simon/crystal.W: 2528 360
+:simon/crystal.W: 2480 360
+:simon/crystal.W: 2432 360
+:simon/crystal.W: 3152 360
+:simon/crystal.W: 3104 360
+:simon/crystal.W: 3056 360
+:simon/crystal.W: 3008 360
+:simon/crystal.W: 2960 360
+:simon/crystal.W: 2912 360
+:simon/crystal.W: 2864 360
+:simon/crystal.W: 2816 360
+
+:matt/bricks/02b: 1216 368
+:matt/bricks/02b: 1280 368
+:matt/bricks/02b: 1344 368
+:matt/bricks/02b: 1408 368
+:matt/bricks/02b: 1472 368
+:matt/bricks/02b: 1536 368
+:matt/bricks/02b: 1600 368
+:matt/bricks/02b: 1664 368
+:matt/bricks/02b: 1728 368
+:matt/bricks/02b: 1792 368
+:matt/bricks/02b: 1856 368
+:matt/bricks/02b: 1920 368
+:proxima/tile/64.S: 1152 368
+:proxima/tile/64.S: 1984 368
+$BEGIN_TILE_GROUP 0
+:matt/bricks/17: 0 144
+:matt/bricks/17: 48 96
+:matt/bricks/17: 96 48
+:matt/bricks/17: 144 0
+$END_TILE_GROUP
+:Group-0: 2072 320 frr
+:Group-0: 2032 168
+:Group-0: 904 304
+:Group-0: 960 168 frr
+:proxima/tile/spheres/red: 934 -34
+:proxima/tile/spheres/red: 922 -14
+:proxima/tile/spheres/red: 916 -6
+:proxima/tile/spheres/red: 906 0
+:proxima/tile/spheres/red: 894 6
+:proxima/tile/spheres/red: 882 12
+:proxima/tile/spheres/red: 868 18
+:Group-0: 520 40 frr
+:Group-0: 704 48
+:Group-0: 512 240
+:Group-0: 2440 200 frr
+:Group-0: 2280 40 frr
+:Group-0: 2560 54
+:proxima/tile/spheres/gold: 94 364
+:proxima/tile/spheres/gold: 102 350
+:proxima/tile/spheres/gold: 110 334
+:proxima/tile/spheres/gold: 116 320
+:proxima/tile/spheres/gold: 126 304
+:proxima/tile/spheres/gold: 138 286
+:proxima/tile/spheres/gold: 148 272
+:proxima/tile/spheres/gold: 158 262
+:proxima/tile/spheres/gold: 170 248
+:proxima/tile/spheres/gold: 180 238
+:proxima/tile/spheres/gold: 192 226
+:proxima/tile/spheres/gold: 204 214
+:proxima/tile/spheres/gold: 218 202
+:proxima/tile/spheres/gold: 234 190
+:proxima/tile/spheres/gold: 250 180
+:proxima/tile/spheres/gold: 264 172
+:proxima/tile/spheres/gold: 280 164
+:proxima/tile/spheres/gold: 296 152
+:proxima/tile/spheres/gold: 312 148
+:proxima/tile/spheres/gold: 328 144
+:proxima/tile/spheres/gold: 344 140
+:proxima/tile/spheres/gold: 360 140
+:proxima/tile/spheres/gold: 376 140
+:Group-0: 240 296 frr
+:Group-0: 2856 296
+:proxima/tile/spheres/blue: 2934 366
+:proxima/tile/spheres/blue: 2930 354
+:proxima/tile/spheres/blue: 2922 338
+:proxima/tile/spheres/blue: 2914 322
+:proxima/tile/spheres/blue: 2906 306
+:proxima/tile/spheres/blue: 2898 290
+:proxima/tile/spheres/blue: 2890 274
+:proxima/tile/spheres/blue: 2880 260
+:proxima/tile/spheres/blue: 2870 246
+:proxima/tile/spheres/blue: 2860 234
+:proxima/tile/spheres/blue: 2848 222
+:proxima/tile/spheres/blue: 2836 208
+:proxima/tile/spheres/blue: 2822 196
+:proxima/tile/spheres/blue: 2808 188
+:proxima/tile/spheres/blue: 2794 182
+:proxima/tile/spheres/blue: 2780 174
+:proxima/tile/spheres/blue: 2766 170
+:proxima/tile/spheres/blue: 2750 168
+:proxima/tile/spheres/blue: 2732 166
+:proxima/tile/spheres/blue: 2716 166
+:proxima/tile/spheres/blue: 2704 166
+:proxima/tile/spheres/blue: 2690 166
+:proxima/tile/spheres/blue: 2676 170
+:proxima/tile/spheres/blue: 940 134
+:proxima/tile/spheres/blue: 948 142
+:proxima/tile/spheres/blue: 956 158
+:proxima/tile/spheres/blue: 960 174
+:proxima/tile/spheres/blue: 960 188
+:proxima/tile/spheres/blue: 958 200
+:proxima/tile/spheres/blue: 950 212
+:proxima/tile/spheres/blue: 940 224
+:proxima/tile/spheres/blue: 930 238
+:proxima/tile/spheres/blue: 916 250
+:proxima/tile/spheres/blue: 898 262
+:proxima/tile/spheres/blue: 882 266
+:proxima/tile/spheres/blue: 864 270
+:proxima/tile/spheres/blue: 846 270
+:proxima/tile/spheres/blue: 828 266
+:proxima/tile/spheres/blue: 812 258
+:proxima/tile/spheres/blue: 798 252
+:proxima/tile/spheres/blue: 782 246
+:proxima/tile/spheres/blue: 762 244
+:proxima/tile/spheres/blue: 744 244
+:proxima/tile/spheres/blue: 728 244
+:proxima/tile/spheres/blue: 712 252
+:proxima/tile/spheres/blue: 696 260
+:proxima/tile/spheres/blue: 682 266
+:proxima/tile/spheres/blue: 666 270
+:proxima/tile/spheres/blue: 646 268
+:proxima/tile/spheres/blue: 628 262
+:proxima/tile/spheres/blue: 612 254
+:proxima/tile/spheres/blue: 596 242
+:proxima/tile/spheres/blue: 586 228
+:proxima/tile/spheres/blue: 578 212
+:proxima/tile/spheres/blue: 566 196
+:proxima/tile/spheres/blue: 556 184
+:proxima/tile/spheres/blue: 542 172
+:proxima/tile/spheres/blue: 526 162
+:proxima/tile/spheres/blue: 512 158
+:proxima/tile/spheres/red: 854 22
+:proxima/tile/spheres/red: 838 28
+:proxima/tile/spheres/red: 824 32
+:proxima/tile/spheres/red: 812 38
+:proxima/tile/spheres/red: 800 44
+:proxima/tile/spheres/red: 788 54
+:proxima/tile/spheres/red: 776 64
+:proxima/tile/spheres/red: 766 74
+:proxima/tile/spheres/red: 760 82
+:proxima/tile/spheres/red: 756 94
+:proxima/tile/spheres/red: 754 110
+:proxima/tile/spheres/red: 756 128
+:proxima/tile/spheres/red: 764 144
+:proxima/tile/spheres/red: 778 156
+:proxima/tile/spheres/red: 792 166
+:proxima/tile/spheres/red: 806 180
+:proxima/tile/spheres/red: 816 196
+:proxima/tile/spheres/red: 820 216
+:proxima/tile/spheres/red: 818 232
+:proxima/tile/spheres/red: 812 248
+:proxima/tile/spheres/red: 804 262
+:proxima/tile/spheres/red: 796 276
+:proxima/tile/spheres/red: 782 288
+:proxima/tile/spheres/red: 768 298
+:proxima/tile/spheres/red: 750 306
+:proxima/tile/spheres/red: 734 314
+:proxima/tile/spheres/red: 720 322
+:proxima/tile/spheres/red: 710 330
+:proxima/tile/spheres/red: 702 340
+:proxima/tile/spheres/red: 696 350
+:proxima/tile/spheres/red: 692 362
+:proxima/tile/spheres/red: 692 376
+:proxima/tile/spheres/red: 694 390
+:proxima/tile/spheres/blue: 496 158
+:proxima/tile/spheres/blue: 482 158
+:proxima/tile/spheres/blue: 470 166
+:proxima/tile/spheres/blue: 460 174
+:proxima/tile/spheres/blue: 452 180
+:proxima/tile/spheres/blue: 442 186
+:proxima/tile/spheres/blue: 426 192
+:proxima/tile/spheres/blue: 410 198
+:proxima/tile/spheres/blue: 392 200
+:proxima/tile/spheres/blue: 376 202
+:proxima/tile/spheres/blue: 360 202
+:proxima/tile/spheres/blue: 344 202
+:proxima/tile/spheres/blue: 326 200
+:proxima/tile/spheres/blue: 308 196
+:proxima/tile/spheres/blue: 290 190
+:proxima/tile/spheres/blue: 274 182
+:proxima/tile/spheres/blue: 258 172
+:proxima/tile/spheres/blue: 244 158
+:proxima/tile/spheres/blue: 232 144
+:proxima/tile/spheres/blue: 226 130
+:proxima/tile/spheres/blue: 224 114
+:proxima/tile/spheres/blue: 228 96
+:proxima/tile/spheres/blue: 238 84
+:proxima/tile/spheres/blue: 250 74
+:proxima/tile/spheres/blue: 262 68
+:proxima/tile/spheres/blue: 276 64
+:proxima/tile/spheres/blue: 288 62
+:proxima/tile/spheres/blue: 300 58
+:proxima/tile/spheres/blue: 316 50
+:proxima/tile/spheres/blue: 330 38
+:proxima/tile/spheres/blue: 340 26
+:proxima/tile/spheres/blue: 346 12
+:proxima/tile/spheres/blue: 352 -6
+:proxima/tile/spheres/blue: 352 -22
+:proxima/tile/spheres/gold: 394 142
+:proxima/tile/spheres/gold: 408 148
+:proxima/tile/spheres/gold: 422 156
+:proxima/tile/spheres/gold: 434 164
+:proxima/tile/spheres/gold: 448 174
+:proxima/tile/spheres/gold: 458 186
+:proxima/tile/spheres/gold: 466 198
+:proxima/tile/spheres/gold: 474 212
+:proxima/tile/spheres/gold: 482 228
+:proxima/tile/spheres/gold: 486 242
+:proxima/tile/spheres/gold: 492 258
+:proxima/tile/spheres/gold: 494 274
+:proxima/tile/spheres/gold: 496 290
+:proxima/tile/spheres/gold: 496 306
+:proxima/tile/spheres/gold: 494 322
+:proxima/tile/spheres/gold: 492 338
+:proxima/tile/spheres/gold: 488 354
+:proxima/tile/spheres/gold: 484 370
+:proxima/tile/spheres/red: 2228 -30
+:proxima/tile/spheres/red: 2236 -16
+:proxima/tile/spheres/red: 2244 -6
+:proxima/tile/spheres/red: 2252 4
+:proxima/tile/spheres/red: 2264 16
+:proxima/tile/spheres/red: 2278 28
+:proxima/tile/spheres/red: 2294 42
+:proxima/tile/spheres/red: 2310 54
+:proxima/tile/spheres/red: 2326 66
+:proxima/tile/spheres/red: 2342 76
+:proxima/tile/spheres/red: 2358 82
+:proxima/tile/spheres/red: 2374 90
+:proxima/tile/spheres/red: 2390 94
+:proxima/tile/spheres/red: 2406 98
+:proxima/tile/spheres/red: 2422 102
+:proxima/tile/spheres/red: 2438 110
+:proxima/tile/spheres/red: 2454 120
+:proxima/tile/spheres/red: 2470 132
+:proxima/tile/spheres/red: 2486 146
+:proxima/tile/spheres/red: 2502 162
+:proxima/tile/spheres/red: 2518 180
+:proxima/tile/spheres/red: 2534 198
+:proxima/tile/spheres/red: 2550 216
+:proxima/tile/spheres/red: 2566 228
+:proxima/tile/spheres/red: 2582 238
+:proxima/tile/spheres/red: 2598 244
+:proxima/tile/spheres/red: 2616 248
+:proxima/tile/spheres/red: 2632 248
+:proxima/tile/spheres/red: 2648 246
+:proxima/tile/spheres/red: 2664 244
+:proxima/tile/spheres/red: 2680 242
+:proxima/tile/spheres/red: 2696 236
+:proxima/tile/spheres/red: 2712 232
+:proxima/tile/spheres/red: 2728 226
+:proxima/tile/spheres/red: 2744 220
+:proxima/tile/spheres/red: 2760 208
+:proxima/tile/spheres/red: 2772 194
+:proxima/tile/spheres/red: 2782 174
+:proxima/tile/spheres/red: 2788 154
+:proxima/tile/spheres/red: 2792 136
+:proxima/tile/spheres/red: 2804 118
+:proxima/tile/spheres/red: 2814 104
+:proxima/tile/spheres/red: 2826 96
+:proxima/tile/spheres/red: 2842 88
+:proxima/tile/spheres/red: 2858 84
+:proxima/tile/spheres/red: 2874 82
+:proxima/tile/spheres/red: 2890 82
+:proxima/tile/spheres/blue: 2664 174
+:proxima/tile/spheres/blue: 2650 180
+:proxima/tile/spheres/blue: 2634 190
+:proxima/tile/spheres/blue: 2620 198
+:proxima/tile/spheres/blue: 2610 206
+:proxima/tile/spheres/blue: 2596 216
+:proxima/tile/spheres/blue: 2582 224
+:proxima/tile/spheres/blue: 2566 232
+:proxima/tile/spheres/blue: 2552 238
+:proxima/tile/spheres/blue: 2536 242
+:proxima/tile/spheres/blue: 2518 244
+:proxima/tile/spheres/blue: 2502 244
+:proxima/tile/spheres/blue: 2484 244
+:proxima/tile/spheres/blue: 2470 240
+:proxima/tile/spheres/blue: 2450 236
+:proxima/tile/spheres/blue: 2434 230
+:proxima/tile/spheres/blue: 2420 222
+:proxima/tile/spheres/blue: 2402 216
+:proxima/tile/spheres/blue: 2384 210
+:proxima/tile/spheres/blue: 2366 198
+:proxima/tile/spheres/blue: 2350 188
+:proxima/tile/spheres/blue: 2336 180
+:proxima/tile/spheres/blue: 2320 176
+:proxima/tile/spheres/blue: 2304 178
+:proxima/tile/spheres/blue: 2290 184
+:proxima/tile/spheres/blue: 2274 194
+:proxima/tile/spheres/blue: 2258 206
+:proxima/tile/spheres/blue: 2248 218
+:proxima/tile/spheres/blue: 2242 234
+:proxima/tile/spheres/blue: 2240 250
+:proxima/tile/spheres/blue: 2236 266
+:proxima/tile/spheres/blue: 2232 282
+:proxima/tile/spheres/blue: 2224 294
+:proxima/tile/spheres/blue: 2210 310
+:proxima/tile/spheres/blue: 2198 324
+:proxima/tile/spheres/blue: 2186 336
+:proxima/tile/spheres/blue: 2172 346
+:proxima/tile/spheres/blue: 2156 356
+:proxima/tile/spheres/blue: 2138 366
+:proxima/tile/spheres/blue: 2122 376
+:proxima/tile/spheres/blue: 2104 382
+:proxima/tile/spheres/blue: 2086 390
+:proxima/tile/spheres/gold: 2450 -46
+:proxima/tile/spheres/gold: 2460 -36
+:proxima/tile/spheres/gold: 2468 -22
+:proxima/tile/spheres/gold: 2474 -10
+:proxima/tile/spheres/gold: 2480 2
+:proxima/tile/spheres/gold: 2486 14
+:proxima/tile/spheres/gold: 2492 28
+:proxima/tile/spheres/gold: 2496 44
+:proxima/tile/spheres/gold: 2500 60
+:proxima/tile/spheres/gold: 2500 76
+:proxima/tile/spheres/gold: 2500 90
+:proxima/tile/spheres/gold: 2498 106
+:proxima/tile/spheres/gold: 2492 120
+:proxima/tile/spheres/gold: 2488 134
+:proxima/tile/spheres/gold: 2484 150
+:proxima/tile/spheres/gold: 2478 166
+:proxima/tile/spheres/gold: 2468 182
+:proxima/tile/spheres/gold: 2458 196
+:proxima/tile/spheres/gold: 2448 210
+:proxima/tile/spheres/gold: 2438 220
+:proxima/tile/spheres/gold: 2430 230
+:proxima/tile/spheres/gold: 2420 240
+:proxima/tile/spheres/gold: 2410 254
+:proxima/tile/spheres/gold: 2404 270
+:proxima/tile/spheres/gold: 2402 286
+:proxima/tile/spheres/gold: 2402 302
+:proxima/tile/spheres/gold: 2404 318
+:proxima/tile/spheres/gold: 2408 334
+:proxima/tile/spheres/gold: 2414 350
+:proxima/tile/spheres/gold: 2422 366
+:proxima/tile/spheres/gold: 2430 382
+:proxima/tile/spheres/gold: 2442 392
+:proxima/tile/spheres/grey.S: 3106 -42
+:proxima/tile/spheres/grey.S: 3096 -26
+:proxima/tile/spheres/grey.S: 3086 -10
+:proxima/tile/spheres/grey.S: 3076 2
+:proxima/tile/spheres/grey.S: 3068 12
+:proxima/tile/spheres/grey.S: 3060 26
+:proxima/tile/spheres/grey.S: 3054 42
+:proxima/tile/spheres/grey.S: 3052 58
+:proxima/tile/spheres/grey.S: 3052 74
+:proxima/tile/spheres/grey.S: 3052 90
+:proxima/tile/spheres/grey.S: 3054 106
+:proxima/tile/spheres/grey.S: 3058 122
+:proxima/tile/spheres/grey.S: 3062 138
+:proxima/tile/spheres/grey.S: 3064 154
+:proxima/tile/spheres/grey.S: 3066 170
+:proxima/tile/spheres/grey.S: 3062 186
+:proxima/tile/spheres/grey.S: 3056 202
+:proxima/tile/spheres/grey.S: 3050 218
+:proxima/tile/spheres/grey.S: 3048 234
+:proxima/tile/spheres/grey.S: 3048 250
+:proxima/tile/spheres/grey.S: 3052 266
+:proxima/tile/spheres/grey.S: 3060 282
+:proxima/tile/spheres/grey.S: 3068 298
+:proxima/tile/spheres/grey.S: 3076 314
+:proxima/tile/spheres/grey.S: 3084 328
+:proxima/tile/spheres/grey.S: 3098 344
+:proxima/tile/spheres/grey.S: 3114 360
+:proxima/tile/spheres/grey.S: 3128 374
+:proxima/tile/spheres/grey.S: 3142 388
+:proxima/tile/spheres/grey.S: 70 -54
+:matt/bricks/17: 3016 280
+:matt/bricks/17: 3064 232
+:matt/bricks/17: 3112 184
+:proxima/tile/spheres/grey.S: 80 -42
+:proxima/tile/spheres/grey.S: 90 -26
+:proxima/tile/spheres/grey.S: 98 -10
+:proxima/tile/spheres/grey.S: 106 4
+:proxima/tile/spheres/grey.S: 112 16
+:proxima/tile/spheres/grey.S: 116 32
+:proxima/tile/spheres/grey.S: 116 48
+:proxima/tile/spheres/grey.S: 114 64
+:proxima/tile/spheres/grey.S: 108 80
+:proxima/tile/spheres/grey.S: 100 96
+:proxima/tile/spheres/grey.S: 96 112
+:proxima/tile/spheres/grey.S: 94 128
+:proxima/tile/spheres/grey.S: 94 144
+:proxima/tile/spheres/grey.S: 96 160
+:proxima/tile/spheres/grey.S: 102 176
+:proxima/tile/spheres/grey.S: 110 192
+:proxima/tile/spheres/grey.S: 120 208
+:proxima/tile/spheres/grey.S: 134 224
+:proxima/tile/spheres/grey.S: 150 240
+:proxima/tile/spheres/grey.S: 164 250
+:proxima/tile/spheres/grey.S: 180 260
+:proxima/tile/spheres/grey.S: 196 268
+:proxima/tile/spheres/grey.S: 206 280
+:proxima/tile/spheres/grey.S: 214 294
+:proxima/tile/spheres/grey.S: 216 310
+:proxima/tile/spheres/grey.S: 214 326
+:proxima/tile/spheres/grey.S: 210 342
+:proxima/tile/spheres/grey.S: 204 358
+:proxima/tile/spheres/grey.S: 196 374
+:proxima/tile/spheres/grey.S: 184 386
+:proxima/tile/spheres/red: 2906 82
+:proxima/tile/spheres/red: 2922 84
+:proxima/tile/spheres/red: 2936 88
+:proxima/tile/spheres/red: 2952 94
+:proxima/tile/spheres/blue: 346 -40
+:proxima/tile/spheres/blue: 340 -52
+$BEGIN_TILE_GROUP 1
+:matt/marble/25d: 800 0 r
+:matt/marble/25d: 672 0 r
+:matt/marble/25d: 544 0 r
+:matt/marble/25d: 416 0 r
+:matt/marble/25d: 384 0 r
+:matt/marble/25d: 256 0 r
+:matt/marble/25d: 128 0 r
+:matt/marble/25d: 0 0 r
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 2
+:amanda/occult/wax32x48: 648 30
+:amanda/occult/wax64x64: 640 26
+:amanda/occult/wax64x48: 576 26
+:amanda/occult/wax32x48: 704 26
+:amanda/occult/wax32x48: 504 30
+:amanda/occult/wax64x64: 480 26
+:amanda/occult/wax64x48: 416 26
+:amanda/occult/wax32x48: 544 26
+:amanda/occult/wax32x48: 336 24
+:amanda/occult/wax64x64: 320 26
+:amanda/occult/wax64x48: 256 26
+:amanda/occult/wax32x48: 384 26
+:amanda/occult/wax32x48: 178 30
+:amanda/occult/wax64x64: 160 26
+:amanda/occult/wax64x48: 96 26
+:amanda/occult/wax32x48: 224 26
+:amanda/occult/wax32x48: 808 30
+:amanda/occult/wax64x64: 800 26
+:amanda/occult/wax64x48: 736 26
+:amanda/occult/wax32x48: 864 26
+:simon/oriental/fat_d_long: 96 10
+:simon/oriental/fat_d_long: 96 10 r
+:simon/oriental/fat_d_long: 208 10
+:simon/oriental/fat_d_long: 208 10 r
+:simon/oriental/fat_d_long: 320 10
+:simon/oriental/fat_d_long: 320 10 r
+:simon/oriental/fat_d_long: 432 10
+:simon/oriental/fat_d_long: 432 10 r
+:simon/oriental/fat_d_long: 544 10
+:simon/oriental/fat_d_long: 544 10 r
+:simon/oriental/fat_d_long: 656 10
+:simon/oriental/fat_d_long: 656 10 r
+:simon/oriental/fat_d_long: 768 10
+:simon/oriental/fat_d_long: 768 10 r
+:amanda/occult/wax64x48: 32 26
+:amanda/occult/wax64x48: 896 26
+:Group-1: 32 76
+:Group-1: 32 0
+:amanda/occult/wax32x48_cap_right_sheer: 960 26
+:amanda/occult/wax32x48_cap_left_sheer: 0 26
+:matt/marble/14d: 0 0
+:matt/marble/14d: 0 76 rrr
+:matt/marble/14d: 960 0 frr
+:matt/marble/14d: 960 76 frrr
+$END_TILE_GROUP
+:Group-2: 1104 150
+:matt/beach/decor/grass08: 1176 -48 f
+:matt/beach/decor/grass08: 1152 -48 f
+:matt/beach/decor/grass10: 1168 -32 rr
+:matt/beach/decor/grass08: 1216 -56 f
+:matt/beach/decor/grass10: 1200 -24 rr
+:matt/beach/decor/grass10: 1224 -32 rr
+:matt/beach/decor/grass10: 1296 -8 rr
+:matt/beach/decor/grass10: 1328 -24 rr
+:matt/beach/decor/grass10: 1384 -32 rr
+:matt/beach/decor/grass10: 1392 -24 rr
+:matt/beach/decor/grass08: 1456 -40 f
+:matt/beach/decor/grass08: 1360 -48 f
+:matt/beach/decor/grass10: 1416 -16 rr
+:matt/beach/decor/grass10: 1504 -32 rr
+:matt/beach/decor/grass10: 1504 -24 f
+:matt/beach/decor/grass11: 1584 -8 f
+:matt/beach/decor/grass08: 1640 -48 f
+:matt/beach/decor/palmtree: 1584 -8 rr
+:matt/beach/decor/grass10: 1600 -8 rr
+:matt/beach/decor/grass10: 1624 -24 rr
+:matt/beach/decor/grass11: 1720 -16 f
+:matt/beach/decor/grass10: 1688 -16 rr
+:matt/beach/decor/grass10: 1768 -16 rr
+:matt/beach/decor/grass11: 1848 -8 rr
+:matt/beach/decor/grass10: 1880 -24 f
+:matt/beach/decor/grass08: 1928 -40 f
+:matt/beach/decor/grass10: 1960 -32 rr
+:matt/beach/decor/grass10: 2024 -24 rr
+:matt/beach/decor/palmtree: 1936 -32 rr
+:matt/beach/decor/palmtree: 2032 -80 f
+:matt/beach/decor/palmtree: 1800 -64 rr
+:matt/beach/decor/palmtree: 1744 -8 f
+:matt/beach/decor/palmtree: 1664 -72 f
+:matt/beach/decor/grass10: 1744 -16 rr
+:matt/beach/decor/palmtree: 1480 -48 f
+:matt/beach/decor/palmtree: 1384 -16 f
+:matt/beach/decor/palmtree: 1184 -32 rr
+:matt/beach/decor/palmtree: 1088 -80 rr
+:matt/beach/decor/palmtree: 1280 -64 f
+:matt/beach/decor/grass11: 1896 -8 rr
+:matt/beach/decor/grass11: 1984 -16 f
+:matt/beach/decor/grass11: 1520 -16 rr
+:matt/beach/decor/grass11: 1344 -8 f
+:matt/beach/decor/grass11: 1248 -16 f
+:matt/beach/decor/grass08: 1552 -40 rr

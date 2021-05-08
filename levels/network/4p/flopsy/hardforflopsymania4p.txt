@@ -1,4 +1,4 @@
-$BUILT 2021-01-17 21:35:36
+$BUILT 2021-02-12 05:28:33
 $AUTHOR Flopsy
 $ENGLISH Hard for Flopsy MANIA 4P
 
@@ -70,7 +70,6 @@ $ENGLISH Hard for Flopsy MANIA 4P
 :geoo/construction/sawblade_medium.F: 863 96
 :geoo/construction/sawblade_medium.F: 863 52
 :geoo/construction/sawblade_medium.F: 863 8
-:geoo/construction/sawblade_medium.F: 382 356
 :geoo/construction/sawblade_medium.F: 333 596
 :geoo/construction/sawblade_medium.F: 333 644
 :geoo/construction/sawblade_medium.F: 333 692
@@ -115,6 +114,7 @@ $ENGLISH Hard for Flopsy MANIA 4P
 :geoo/construction/sawblade_medium.F: 504 816
 :geoo/construction/sawblade_medium.F: 608 816
 :geoo/construction/sawblade_medium.F: 0 860
+:geoo/construction/sawblade_medium.F: 0 352
 
 :matt/marble/09: 32 192
 :geoo/steel/32x32o.S: 0 192
@@ -766,3 +766,14 @@ $ENGLISH Hard for Flopsy MANIA 4P
 :geoo/steel/16x16o.S: 817 552
 :geoo/steel/16x16o.S: 817 536
 :matt/marble/02b: 848 904
+:matt/marble/17: 385 341 rr
+:matt/marble/17: 385 279 rr
+:matt/marble/17: 385 217 rr
+:matt/marble/17: 385 155 rr
+:matt/marble/17: 385 93 rr
+:matt/marble/17: 385 31 rr
+:matt/marble/17: 384 62 f
+:matt/marble/17: 384 124 f
+:matt/marble/17: 384 186 f
+:matt/marble/17: 384 248 f
+:matt/marble/17: 384 310 f

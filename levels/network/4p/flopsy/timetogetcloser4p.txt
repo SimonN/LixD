@@ -1,0 +1,119 @@
+$BUILT 2021-05-01 02:21:08
+$AUTHOR Flopsy
+$ENGLISH Time To Get Closer 4P
+
+#INTENDED_NUMBER_OF_PLAYERS 4
+#SIZE_X 672
+#SIZE_Y 704
+#TORUS_X 1
+#TORUS_Y 1
+
+#SECONDS 120
+#INITIAL 70
+#SPAWN_INTERVAL 4
+
+#WALKER 40
+#RUNNER 10
+#CLIMBER 10
+#FLOATER 10
+#EXPLODER2 5
+#BLOCKER 1
+#BUILDER 25
+#PLATFORMER 30
+#BASHER 20
+#MINER 20
+#JUMPER 40
+#BATTER 30
+#CUBER 1
+
+:simon/oriental/hatch.H: 8 320
+:simon/oriental/hatch.H: 344 496
+:simon/oriental/hatch.H: 8 672
+:simon/oriental/hatch.H: 344 144
+
+:simon/oriental/goal.G: 240 208
+:simon/oriental/goal.G: 576 384
+:simon/oriental/goal.G: 240 560
+:simon/oriental/goal.G: 576 32
+
+:geoo/construction/sawblade.F: 436 132
+:geoo/construction/sawblade.F: 408 104
+:geoo/construction/sawblade.F: 380 76
+:geoo/construction/sawblade.F: 100 660
+:geoo/construction/sawblade.F: 72 632
+:geoo/construction/sawblade.F: 44 604
+:geoo/construction/sawblade.F: 436 484
+:geoo/construction/sawblade.F: 408 456
+:geoo/construction/sawblade.F: 380 428
+:geoo/construction/sawblade.F: 100 308
+:geoo/construction/sawblade.F: 72 280
+:geoo/construction/sawblade.F: 44 252
+
+$BEGIN_TILE_GROUP 0
+:simon/oriental/05: 176 64
+:simon/oriental/05: 224 64
+:simon/oriental/05: 272 64
+:simon/oriental/05: 128 64
+:simon/oriental/culm_d_long: 80 0 frr
+:simon/oriental/05_top: 128 48
+:simon/oriental/05_top: 176 48
+:simon/oriental/05_top: 224 48
+:simon/oriental/05_top: 272 48
+:simon/oriental/bush4: 219 32
+:simon/oriental/bush4: 186 32
+:simon/oriental/bush4: 122 32
+:simon/oriental/05_btm: 176 128 d
+:simon/oriental/05: 128 112
+:simon/oriental/05_btm: 128 192
+:simon/oriental/05: 224 112
+:simon/oriental/05_btm: 224 192
+:simon/oriental/05: 272 112
+:simon/oriental/05_btm: 272 192
+:simon/oriental/05: 80 208 r
+:simon/oriental/05_btm: 160 208 fr
+:simon/oriental/08: 0 128
+:geoo/steel/16x16o.S: 127 48
+:geoo/steel/16x16o.S: 128 64
+:geoo/steel/16x16o.S: 127 80
+:geoo/steel/16x16o.S: 128 96
+:simon/oriental/05: 0 208 r
+:simon/oriental/05_btm: 0 208 r
+:simon/oriental/05: 232 208 r
+:simon/oriental/05_btm: 304 208 fr
+:simon/oriental/05_btm: 224 208 r
+:geoo/steel/16x16o.S: 32 128
+:geoo/steel/16x16o.S: 264 32
+:simon/oriental/05_btm: 176 104
+:simon/oriental/05_btm: 176 120 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:simon/oriental/culm_d_long: 48 0 frr
+:Group-0: 0 32
+$END_TILE_GROUP
+:Group-1: 336 400
+:Group-1: 0 224
+$BEGIN_TILE_GROUP 2
+:simon/oriental/culm_d_long: 192 272
+:simon/oriental/culm_d_half: 168 280 frr
+:Group-1: 0 0
+:simon/oriental/culm_d_long: 160 304
+:simon/oriental/pebbles5: 88 320
+$END_TILE_GROUP
+:Group-2: 336 48
+$BEGIN_TILE_GROUP 3
+:Group-2: 0 0
+:simon/oriental/pebbles5: 144 336
+:simon/oriental/pebbles5: 176 352
+$END_TILE_GROUP
+:Group-3: 336 400
+:Group-3: 336 48
+:Group-3: 0 224
+:Group-3: 0 576
+:simon/oriental/bush7: 280 288
+:simon/oriental/bush7: 288 288
+:simon/oriental/bush7: 616 464
+:simon/oriental/bush7: 624 464
+:simon/oriental/bush7: 280 640
+:simon/oriental/bush7: 288 640
+:simon/oriental/bush7: 616 112
+:simon/oriental/bush7: 624 112

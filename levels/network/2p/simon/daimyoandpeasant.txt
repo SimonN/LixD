@@ -1,0 +1,132 @@
+$BUILT 2021-05-02 18:52:42
+$AUTHOR Simon
+$ENGLISH Daimyo and Peasant
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 832
+#SIZE_Y 400
+
+#SECONDS 40
+#INITIAL 60
+#SPAWN_INTERVAL 29
+
+#WALKER 29
+#RUNNER 11
+#CLIMBER 9
+#EXPLODER2 19
+#BUILDER 47
+#PLATFORMER 31
+#BASHER 23
+#MINER 33
+#JUMPER 23
+#BATTER 21
+#CUBER 13
+
+:simon/oriental/hatch.H: 60 179
+:matt/earth/Hatch.H: 680 304 r
+
+:simon/oriental/goal.G: 528 32
+:matt/underworld/Goal.G: 352 288
+
+:raymanni/lab/elev_up.T: -2 368
+:raymanni/lab/elev_up.T: -2 336
+:raymanni/lab/elev_up.T: -2 304
+:raymanni/lab/elev_up.T: -2 272
+:raymanni/lab/elev_up.T: -2 240
+:raymanni/lab/elev_up.T: -2 208
+:raymanni/lab/elev_up.T: -2 176
+:raymanni/lab/launcher_right.T: 0 144
+:geoo/abstract/tbeam_left.T: 16 384
+:geoo/abstract/tbeam_left.T: 48 384
+:geoo/abstract/tbeam_left.T: 80 384
+:geoo/abstract/tbeam_left.T: 112 384
+:geoo/abstract/tbeam_left.T: 144 384
+:geoo/abstract/tbeam_left.T: 176 384
+:geoo/abstract/tbeam_left.T: 208 384
+:geoo/abstract/tbeam_left.T: 240 384
+
+:simon/oriental/bush6: 26 226
+:simon/oriental/bush7: 18 184
+:simon/oriental/fat_long: 20 192
+:simon/oriental/fat_end: 20 312
+:simon/oriental/culm_d_half: 140 234 frr
+:simon/oriental/earth: 112 240
+:simon/oriental/culm_half1: 65 224
+:simon/oriental/earth: 32 240
+:amanda/steel/steel16x16.S: 90 262
+:simon/oriental/earth: 32 272
+:simon/oriental/earth: 112 272
+:simon/oriental/fat_half1: 20 352 f
+:simon/oriental/fat_d_long: 28 272
+:simon/oriental/earth: 32 304
+:simon/oriental/fat_end: 20 336
+:simon/oriental/earth: 32 336
+:simon/oriental/culm_d_long: 148 212
+:simon/oriental/culm_half2: 128 234
+:simon/oriental/bush3: 119 298
+:simon/oriental/earth: 112 304
+:simon/oriental/earth: 112 336
+:simon/oriental/culm_d_long: 224 224
+:simon/oriental/leaf5: 212 216 frr
+:simon/oriental/culm_end: 228 224
+:simon/oriental/leaf2: 266 274 rrr
+:simon/oriental/earth: 192 240
+:simon/oriental/leaf3: 274 312 rr
+:simon/oriental/fat_long: 262 304
+:simon/oriental/earth: 192 272
+:simon/oriental/earth: 192 304
+:simon/oriental/fat_d_half: 210 320 frr
+:simon/oriental/earth: 192 336
+:simon/oriental/fat_end: -4 148 frr
+:simon/oriental/fat_long: -6 176
+:simon/oriental/fat_long: -6 300
+:simon/oriental/leaf2: 30 98 f
+:simon/oriental/leaf5: 8 100 rrr
+:simon/oriental/fat_d_long: -64 120
+:simon/oriental/leaf4: 184 224
+:simon/oriental/gate: 496 112
+:simon/oriental/05: 496 192
+:simon/oriental/05_top: 496 176
+:simon/oriental/05: 576 192
+:simon/oriental/05_top: 576 176
+:simon/oriental/05: 496 272
+:simon/oriental/05: 576 272
+:simon/oriental/pebbles5: 436 370
+:simon/oriental/pebbles6: 384 352 fr
+:simon/oriental/02: 368 368
+:simon/oriental/pebbles5: 288 368
+:simon/oriental/02: 344 352
+:simon/oriental/pebbles3: 448 384
+:simon/oriental/pebbles2: 456 368
+:simon/oriental/pebbles5: 416 360 r
+:simon/oriental/02: 392 352
+:simon/oriental/02: 696 368
+:simon/oriental/02: 672 352
+:simon/oriental/pebbles3: 272 384
+:simon/oriental/bush7: 760 254
+:simon/oriental/branch6: 736 256 rr
+:simon/oriental/branch7: 752 320 rr
+:simon/oriental/pebbles5: 728 368
+:simon/oriental/02: 720 352
+:simon/oriental/bush1: 736 312
+:simon/oriental/bush5: 734 276 frr
+:simon/oriental/bush7: 764 250 frr
+:simon/oriental/bush7: 780 292
+:simon/oriental/bridge3: 624 -32
+:simon/oriental/bridge3: 688 0
+:simon/oriental/bridge3: 752 32
+:simon/oriental/bridge3: 432 -32 frr
+:simon/oriental/bridge3: 368 0 frr
+:simon/oriental/bridge3: 304 32 frr
+:simon/oriental/bridge2: 240 64
+:simon/oriental/bridge2: 176 64
+:simon/oriental/bridge3: 112 32
+:simon/oriental/bridge3: 48 0
+:simon/oriental/bridge3: -16 -32
+:simon/oriental/bridge2: 496 -32
+:simon/oriental/bridge2: 560 -32
+:simon/oriental/bridge3: 816 64
+:amanda/steel/steel16x16.S: 376 352
+:amanda/steel/steel16x16.S: 704 352
+:simon/oriental/05: 496 352
+:simon/oriental/05: 576 352

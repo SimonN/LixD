@@ -1,4 +1,4 @@
-$BUILT 2021-01-17 21:37:50
+$BUILT 2021-02-12 05:18:29
 $AUTHOR Flopsy
 $ENGLISH Hard for Flopsy MANIA 8P
 
@@ -1506,3 +1506,36 @@ $ENGLISH Hard for Flopsy MANIA 8P
 :geoo/steel/16x16o.S: 817 552
 :geoo/steel/16x16o.S: 817 536
 :matt/marble/02b: 848 904
+:matt/marble/17: 1281 845 rr
+:matt/marble/17: 1281 783 rr
+:matt/marble/17: 1281 721 rr
+:matt/marble/17: 1281 659 rr
+:matt/marble/17: 1281 597 rr
+:matt/marble/17: 1281 535 rr
+:matt/marble/17: 1280 814 f
+:matt/marble/17: 1280 752 f
+:matt/marble/17: 1280 690 f
+:matt/marble/17: 1280 628 f
+:matt/marble/17: 1280 566 f
+:matt/marble/17: 385 32 rr
+:matt/marble/17: 384 63 f
+:matt/marble/17: 385 94 rr
+:matt/marble/17: 384 125 f
+:matt/marble/17: 385 156 rr
+:matt/marble/17: 384 187 f
+:matt/marble/17: 385 218 rr
+:matt/marble/17: 384 249 f
+:matt/marble/17: 385 280 rr
+:matt/marble/17: 384 311 f
+:matt/marble/17: 385 342 rr
+:matt/marble/17: 385 341 rr
+:matt/marble/17: 385 279 rr
+:matt/marble/17: 385 217 rr
+:matt/marble/17: 385 155 rr
+:matt/marble/17: 385 93 rr
+:matt/marble/17: 385 31 rr
+:matt/marble/17: 384 310 f
+:matt/marble/17: 384 248 f
+:matt/marble/17: 384 186 f
+:matt/marble/17: 384 124 f
+:matt/marble/17: 384 62 f

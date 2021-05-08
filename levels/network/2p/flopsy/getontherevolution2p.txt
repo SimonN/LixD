@@ -1,4 +1,4 @@
-$BUILT 2021-01-13 00:59:40
+$BUILT 2021-02-10 02:48:46
 $AUTHOR Flopsy
 $ENGLISH Get on the Revolution 2P
 
@@ -452,3 +452,5 @@ $ENGLISH Get on the Revolution 2P
 :raymanni/lab/scen_2: 1040 0
 :raymanni/lab/scen_6: 32 336
 :raymanni/lab/scen_6: 2048 336
+:raymanni/lab/block_8: 848 368
+:raymanni/lab/block_8: 1200 368

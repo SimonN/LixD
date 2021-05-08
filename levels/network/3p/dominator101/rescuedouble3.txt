@@ -1,0 +1,243 @@
+$BUILT 2021-05-17 10:55:46
+$AUTHOR geoo & Dominator_101
+$ENGLISH Rescue Rangers Double Team (3p)
+
+#INTENDED_NUMBER_OF_PLAYERS 3
+#SIZE_X 774
+#SIZE_Y 480
+#TORUS_X 1
+#TORUS_Y 0
+
+#SECONDS 85
+#INITIAL 40
+#SPAWN_INTERVAL 1
+
+#WALKER 60
+#RUNNER 5
+#CLIMBER 5
+#FLOATER 5
+#EXPLODER 1
+#BUILDER 50
+#MINER 1
+#DIGGER 20
+#JUMPER 50
+#BATTER -1
+
+:raymanni/lab/hatch.H: 159 48
+:raymanni/lab/hatch.H: 417 48
+:raymanni/lab/hatch.H: 675 48
+:raymanni/lab/hatch.H: 321 48 r
+:raymanni/lab/hatch.H: 579 48 r
+:raymanni/lab/hatch.H: 63 48 r
+
+:raymanni/lab/goal.G: 567 384
+:raymanni/lab/goal.G: 139 384
+:raymanni/lab/goal.G: 309 384
+:raymanni/lab/goal.G: 655 384
+:raymanni/lab/goal.G: 51 384
+:raymanni/lab/goal.G: 397 384
+
+:geoo/construction/sawblade_small.F: 55 262
+:geoo/construction/sawblade_small.F: 167 262
+:raymanni/lab/goo.W: 111 416
+:raymanni/lab/goo.W: 240 416
+:geoo/construction/sawblade_small.F: 11 332
+:geoo/construction/sawblade_small.F: 211 332
+:geoo/construction/sawblade_small.F: 313 262
+:geoo/construction/sawblade_small.F: 425 262
+:raymanni/lab/goo.W: 369 416
+:raymanni/lab/goo.W: 498 416
+:geoo/construction/sawblade_small.F: 269 332
+:geoo/construction/sawblade_small.F: 469 332
+:geoo/construction/sawblade_small.F: 571 262
+:geoo/construction/sawblade_small.F: 683 262
+:raymanni/lab/goo.W: 627 416
+:raymanni/lab/goo.W: 756 416
+:geoo/construction/sawblade_small.F: 527 332
+:geoo/construction/sawblade_small.F: 727 332
+
+:geoo/abstract/tbeam_down.T: 111 144
+:geoo/abstract/tbeam_right.T: 95 128
+:geoo/abstract/tbeam_down.T: 111 128
+:geoo/abstract/tbeam_left.T: 127 128
+:geoo/abstract/tbeam_down.T: 369 144
+:geoo/abstract/tbeam_right.T: 353 128
+:geoo/abstract/tbeam_down.T: 369 128
+:geoo/abstract/tbeam_left.T: 385 128
+:geoo/abstract/tbeam_down.T: 627 144
+:geoo/abstract/tbeam_right.T: 611 128
+:geoo/abstract/tbeam_down.T: 627 128
+:geoo/abstract/tbeam_left.T: 643 128
+
+:geoo/construction/platformbrick_single: 67 296
+:geoo/construction/platformbrick_single: 179 296
+:geoo/steel/32x64o.S: 111 64
+:raymanni/lab/pipe_2: 63 93 rrr
+:raymanni/lab/scen_7: 179 -8
+:raymanni/lab/pipe_2: 159 93 rrr
+:geoo/steel/16x16o.S: 143 32
+:geoo/steel/16x16o.S: 143 80
+:geoo/steel/16x16o.S: 95 80
+:geoo/steel/16x16o.S: 95 32
+:geoo/steel/32x16o.S: 94 160
+:geoo/steel/32x16o.S: 128 160
+$BEGIN_TILE_GROUP 0
+:geoo/steel/32x64o.S: 28 0
+:geoo/steel/32x64o.S: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:geoo/steel/32x64o.S: 0 0
+:Group-0: 20 0
+$END_TILE_GROUP
+:Group-1: 158 112
+:Group-1: 48 112
+:geoo/steel/16x32o.S: 48 80
+:geoo/steel/16x32o.S: 190 80
+:geoo/steel/16x32o.S: 95 48
+:geoo/steel/16x32o.S: 143 48
+:raymanni/lab/scen_1: 159 -4 frr
+:raymanni/lab/scen_7: 43 -8 frr
+:raymanni/lab/scen_1: 63 -6
+$BEGIN_TILE_GROUP 2
+:raymanni/lab/scen_1: 32 0
+:raymanni/lab/scen_1: 0 0 frr
+:geoo/steel/64x64o.S: 2 22 d
+:raymanni/lab/scen_6: 16 4
+$END_TILE_GROUP
+:Group-2: 106 7
+:geoo/steel/32x32o.S: 79 0
+:geoo/steel/32x32o.S: 143 0
+:geoo/steel/16x32o.S: 288 64
+:geoo/steel/16x16o.S: 288 96
+:geoo/steel/16x16o.S: 208 96
+:geoo/steel/16x32o.S: 208 64
+$BEGIN_TILE_GROUP 3
+:geoo/steel/64x64o.S: 48 0
+:geoo/steel/64x64o.S: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 4
+:geoo/steel/64x64o.S: 0 0
+:Group-3: 48 0
+$END_TILE_GROUP
+:Group-4: 208 0
+:raymanni/lab/scen_3: 214 56
+:raymanni/lab/scen_3: 266 56 frr
+:raymanni/lab/block_8: 224 0
+:raymanni/lab/scen_5: 240 48
+:Group-4: 208 112
+:geoo/steel/64x32o.S: 96 448
+:raymanni/lab/pipe_1: 83 384 rrr
+$BEGIN_TILE_GROUP 5
+:geoo/steel/32x64o.S: 16 0
+:geoo/steel/32x64o.S: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 6
+:geoo/steel/32x64o.S: 0 0
+:geoo/steel/32x64o.S: 8 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 7
+:Group-5: 0 0
+:Group-6: 0 0
+$END_TILE_GROUP
+:Group-7: 107 384
+:raymanni/lab/pipe_1: 51 384 rrr
+:Group-1: 11 384
+:raymanni/lab/pipe_1: 171 384 rrr
+:Group-1: 195 384
+:geoo/steel/64x32o.S: 160 448
+:geoo/steel/64x32o.S: 32 448
+:raymanni/lab/pipe_1: 139 384 rrr
+:Group-7: 131 384
+:geoo/steel/32x64o.S: 369 64
+:raymanni/lab/pipe_2: 321 93 rrr
+:raymanni/lab/scen_7: 437 -8
+:raymanni/lab/pipe_2: 417 93 rrr
+:geoo/steel/16x16o.S: 401 32
+:geoo/steel/16x16o.S: 401 80
+:geoo/steel/16x16o.S: 353 80
+:geoo/steel/16x16o.S: 353 32
+:geoo/steel/32x16o.S: 352 160
+:geoo/steel/32x16o.S: 386 160
+:Group-1: 416 112
+:Group-1: 306 112
+:geoo/steel/16x32o.S: 306 80
+:geoo/steel/16x32o.S: 448 80
+:geoo/steel/16x32o.S: 353 48
+:geoo/steel/16x32o.S: 401 48
+:raymanni/lab/scen_1: 417 -4 frr
+:raymanni/lab/scen_7: 301 -8 frr
+:raymanni/lab/scen_1: 321 -6
+:Group-2: 364 7
+:geoo/steel/32x32o.S: 337 0
+:geoo/steel/32x32o.S: 401 0
+:geoo/steel/16x32o.S: 546 64
+:geoo/steel/16x16o.S: 546 96
+:geoo/steel/16x16o.S: 466 96
+:geoo/steel/16x32o.S: 466 64
+:Group-4: 466 0
+:raymanni/lab/scen_3: 472 56
+:raymanni/lab/scen_3: 524 56 frr
+:raymanni/lab/block_8: 482 0
+:raymanni/lab/scen_5: 498 48
+:Group-4: 466 112
+:geoo/steel/32x64o.S: 627 64
+:raymanni/lab/pipe_2: 579 93 rrr
+:raymanni/lab/scen_7: 695 -8
+:raymanni/lab/pipe_2: 675 93 rrr
+:geoo/steel/16x16o.S: 659 32
+:geoo/steel/16x16o.S: 659 80
+:geoo/steel/16x16o.S: 611 80
+:geoo/steel/16x16o.S: 611 32
+:geoo/steel/32x16o.S: 610 160
+:geoo/steel/32x16o.S: 644 160
+:Group-1: 674 112
+:Group-1: 564 112
+:geoo/steel/16x32o.S: 564 80
+:geoo/steel/16x32o.S: 706 80
+:geoo/steel/16x32o.S: 611 48
+:geoo/steel/16x32o.S: 659 48
+:raymanni/lab/scen_1: 675 -4 frr
+:raymanni/lab/scen_7: 559 -8 frr
+:raymanni/lab/scen_1: 579 -6
+:Group-2: 622 7
+:geoo/steel/32x32o.S: 595 0
+:geoo/steel/32x32o.S: 659 0
+:geoo/steel/16x32o.S: 30 64
+:geoo/steel/16x16o.S: 30 96
+:geoo/steel/16x16o.S: 724 96
+:geoo/steel/16x32o.S: 724 64
+:Group-4: 724 0
+:raymanni/lab/scen_3: 730 56
+:raymanni/lab/scen_3: 8 56 frr
+:raymanni/lab/block_8: 740 0
+:raymanni/lab/scen_5: 756 48
+:Group-4: 724 112
+:geoo/steel/64x32o.S: 225 448
+:geoo/construction/platformbrick_single: 325 296
+:geoo/construction/platformbrick_single: 437 296
+:geoo/steel/64x32o.S: 354 448
+:raymanni/lab/pipe_1: 341 384 rrr
+:Group-7: 365 384
+:raymanni/lab/pipe_1: 309 384 rrr
+:Group-1: 269 384
+:raymanni/lab/pipe_1: 429 384 rrr
+:Group-1: 453 384
+:geoo/steel/64x32o.S: 418 448
+:geoo/steel/64x32o.S: 290 448
+:raymanni/lab/pipe_1: 397 384 rrr
+:Group-7: 389 384
+:geoo/steel/64x32o.S: 483 448
+:geoo/construction/platformbrick_single: 583 296
+:geoo/construction/platformbrick_single: 695 296
+:geoo/steel/64x32o.S: 612 448
+:raymanni/lab/pipe_1: 599 384 rrr
+:Group-7: 623 384
+:raymanni/lab/pipe_1: 567 384 rrr
+:Group-1: 527 384
+:raymanni/lab/pipe_1: 687 384 rrr
+:Group-1: 711 384
+:geoo/steel/64x32o.S: 676 448
+:geoo/steel/64x32o.S: 548 448
+:raymanni/lab/pipe_1: 655 384 rrr
+:Group-7: 647 384
+:geoo/steel/64x32o.S: 741 448

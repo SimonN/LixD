@@ -1,0 +1,217 @@
+$BUILT 2021-05-02 17:03:56
+$AUTHOR Anonymous
+$ENGLISH Vicious Circle of Cats
+
+#INTENDED_NUMBER_OF_PLAYERS 7
+#SIZE_X 1232
+#SIZE_Y 880
+#TORUS_X 1
+#TORUS_Y 1
+
+#SECONDS 30
+#INITIAL 50
+#SPAWN_INTERVAL 20
+
+#WALKER 25
+#RUNNER 2
+#CLIMBER 5
+#FLOATER 2
+#EXPLODER2 5
+#BLOCKER 3
+#BUILDER 70
+#PLATFORMER 50
+#BASHER 10
+#MINER 10
+#DIGGER 10
+#JUMPER 10
+#BATTER 10
+#CUBER 5
+
+:raymanni/gore/hatch.H: 592 16
+:raymanni/gore/hatch.H: 848 176
+:raymanni/gore/hatch.H: 848 416
+:raymanni/gore/hatch.H: 736 624
+:raymanni/gore/hatch.H: 480 624
+:raymanni/gore/hatch.H: 336 416
+:raymanni/gore/hatch.H: 336 176
+
+:amanda/forest/exit_tent_condensed.G: 592 368
+:amanda/forest/exit_tent_condensed.G: 216 696
+:amanda/forest/exit_tent_condensed.G: 72 248
+:amanda/forest/exit_tent_condensed.G: 72 488
+:amanda/forest/exit_tent_condensed.G: 1112 488
+:amanda/forest/exit_tent_condensed.G: 1112 248
+:amanda/forest/exit_tent_condensed.G: 1000 696
+
+:raymanni/crab.T: 520 688
+:raymanni/crab.T: 776 688
+:raymanni/crab.T: 888 480
+:raymanni/crab.T: 888 240
+:raymanni/crab.T: 632 80
+:raymanni/crab.T: 376 240
+:raymanni/crab.T: 376 480
+
+:geoo/construction/sawblade_small.F: 608 328
+:geoo/construction/sawblade.F: 584 336
+:geoo/construction/sawblade_small.F: 640 328
+:geoo/construction/sawblade.F: 656 336
+:geoo/construction/sawblade_small.F: 624 322
+
+$BEGIN_TILE_GROUP 0
+:matt/beach/daytime/06: 14 0
+:matt/beach/daytime/06: 0 16 rr
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:Group-0: 0 28
+:Group-0: 0 0 rr
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 2
+:raymanni/holiday/brick_red_a: 12 0
+:raymanni/holiday/brick_red_a: 0 0 frr
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 3
+:raymanni/holiday/snow2: 0 0
+:Group-2: 41 32 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 4
+:raymanni/holiday/snow2: 0 0
+:Group-3: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 5
+:raymanni/holiday/snow1: 0 0
+:raymanni/holiday/cane_mid: 16 8 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 6
+:raymanni/holiday/snow1: 0 0
+:Group-5: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 7
+:raymanni/holiday/cane_b: 0 0
+:raymanni/holiday/cane_end2: 16 29
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 8
+:raymanni/holiday/snow1: 0 0
+:Group-7: 14 1 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 9
+:raymanni/holiday/snow1: 0 0
+:Group-8: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 10
+:raymanni/holiday/snow1: 0 0
+:raymanni/holiday/cane_end2: 14 19 rd
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 11
+:raymanni/holiday/snow1: 0 0
+:Group-10: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 12
+:raymanni/holiday/snow1: 0 0
+:raymanni/holiday/bauble_string: 6 10 rd
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 13
+:raymanni/holiday/snow1: 0 0
+:Group-12: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 14
+:raymanni/holiday/snow1: 0 0
+:raymanni/holiday/bauble_cross: 20 20 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 15
+:raymanni/holiday/snow1: 0 0
+:Group-14: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 16
+:Group-11: 86 122
+:Group-13: 0 45
+:Group-15: 1 38
+:Group-4: 9 0
+:raymanni/holiday/snow1: 6 13
+:raymanni/holiday/snow1: 23 53
+:raymanni/holiday/snow1: 43 58
+:raymanni/holiday/snow1: 65 61
+:raymanni/holiday/snow1: 66 73
+:Group-11: 41 112
+:Group-6: 51 96
+:raymanni/holiday/snow1: 39 71
+:raymanni/holiday/snow1: 22 68
+:Group-6: 96 106
+:Group-9: 110 74
+:raymanni/holiday/snow1: 31 71
+:raymanni/holiday/snow1: 51 72
+:Group-11: 18 120
+:Group-6: 28 104
+:Group-11: 66 125
+:Group-6: 76 109
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 17
+:Group-1: 0 0
+:Group-16: 60 2 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 18
+:Group-1: 0 0
+:Group-17: 0 0 d
+$END_TILE_GROUP
+:Group-18: 320 448
+:Group-18: 320 208
+:Group-18: 576 48
+:Group-18: 832 208
+:Group-18: 832 448
+:Group-18: 720 656
+:Group-18: 464 656
+:amanda/steel/steel16x16.S: 344 224
+:amanda/steel/steel16x16.S: 600 64
+:amanda/steel/steel16x16.S: 856 224
+:amanda/steel/steel16x16.S: 856 464
+:amanda/steel/steel16x16.S: 744 672
+:amanda/steel/steel16x16.S: 488 672
+:amanda/steel/steel16x16.S: 344 464
+$BEGIN_TILE_GROUP 19
+:geoo/abstract/pipes/central5: 0 0
+:geoo/abstract/pipes/central5: 32 0
+:geoo/abstract/pipes/central5: 64 0
+:geoo/abstract/pipes/central5: 96 0
+:geoo/abstract/pipes/central5: 128 0
+:geoo/abstract/pipes/central5: 160 0
+:geoo/abstract/pipes/central5: 192 0
+:geoo/abstract/pipes/central5: 224 0
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 20
+:Group-19: 96 0
+:Group-19: 0 0
+$END_TILE_GROUP
+:Group-20: 80 344
+:Group-20: 80 584
+:Group-20: 224 792
+:Group-20: 736 792
+:Group-20: 848 584
+:Group-20: 848 344
+:Group-20: 472 184
+$BEGIN_TILE_GROUP 21
+:geoo/abstract/pipes/central5: 0 0
+:geoo/abstract/pipes/central5: 32 0
+:geoo/abstract/pipes/central5: 64 0
+$END_TILE_GROUP
+:Group-21: 592 464
+:amanda/steel/steel24x8.S: 252 792
+:amanda/steel/steel24x8.S: 108 584
+:amanda/steel/steel24x8.S: 108 344
+:amanda/steel/steel24x8.S: 628 464
+:amanda/steel/steel24x8.S: 1148 584
+:amanda/steel/steel24x8.S: 1148 344
+:amanda/steel/steel24x8.S: 1036 792
+:amanda/steel/steel24x8.S: 392 792
+:amanda/steel/steel24x8.S: 552 792
+:amanda/steel/steel24x8.S: 736 792
+:amanda/steel/steel24x8.S: 896 792
+:amanda/steel/steel24x8.S: 1008 584
+:amanda/steel/steel24x8.S: 848 584
+:amanda/steel/steel24x8.S: 1008 344
+:amanda/steel/steel24x8.S: 848 344
+:amanda/steel/steel24x8.S: 800 184
+:amanda/steel/steel24x8.S: 640 184
+:amanda/steel/steel24x8.S: 472 184
+:amanda/steel/steel24x8.S: 408 344
+:amanda/steel/steel24x8.S: 408 584
+:amanda/steel/steel24x8.S: 248 344
+:amanda/steel/steel24x8.S: 248 584

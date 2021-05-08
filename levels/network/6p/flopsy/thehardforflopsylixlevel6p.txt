@@ -1,4 +1,4 @@
-$BUILT 2021-01-11 23:36:54
+$BUILT 2021-02-10 02:37:35
 $AUTHOR Flopsy
 $ENGLISH The Hard For Flopsy LIX Level 6P
 
@@ -6,7 +6,7 @@ $ENGLISH The Hard For Flopsy LIX Level 6P
 #SIZE_X 2688
 #SIZE_Y 496
 #TORUS_X 1
-#TORUS_Y 0
+#TORUS_Y 1
 
 #SECONDS 60
 #INITIAL 100
@@ -15,7 +15,7 @@ $ENGLISH The Hard For Flopsy LIX Level 6P
 #WALKER 30
 #RUNNER 5
 #CLIMBER 10
-#FLOATER 5
+#FLOATER 10
 #EXPLODER2 20
 #BUILDER 40
 #PLATFORMER 40
@@ -191,7 +191,6 @@ $ENGLISH The Hard For Flopsy LIX Level 6P
 
 :matt/marble/09: 32 192
 :geoo/steel/32x32o.S: 0 192
-:geoo/steel/32x32o.S: 0 160
 :geoo/steel/32x32o.S: 0 128
 :geoo/steel/32x32o.S: 0 96
 :geoo/steel/32x32o.S: 0 224
@@ -231,7 +230,6 @@ $ENGLISH The Hard For Flopsy LIX Level 6P
 :geoo/steel/16x16o.S: 81 32
 :geoo/steel/16x16o.S: 65 32
 :geoo/steel/16x16o.S: 49 32
-:geoo/steel/16x16o.S: 32 -8
 :geoo/steel/16x16o.S: 48 0
 :geoo/steel/16x16o.S: 64 0
 :geoo/steel/16x16o.S: 80 0
@@ -365,7 +363,6 @@ $ENGLISH The Hard For Flopsy LIX Level 6P
 :geoo/steel/16x16o.S: 529 32
 :geoo/steel/16x16o.S: 513 32
 :geoo/steel/16x16o.S: 497 32
-:geoo/steel/16x16o.S: 480 -8
 :geoo/steel/16x16o.S: 496 0
 :geoo/steel/16x16o.S: 512 0
 :geoo/steel/16x16o.S: 528 0
@@ -447,18 +444,15 @@ $ENGLISH The Hard For Flopsy LIX Level 6P
 :geoo/steel/16x16o.S: 864 400
 :matt/marble/01: 802 376
 :matt/marble/01: 802 312
-:geoo/steel/16x16o.S: 16 -8
 :geoo/steel/16x16o.S: 0 0
 :geoo/steel/16x16o.S: 880 0
 :geoo/steel/32x32o.S: 448 192
-:geoo/steel/32x32o.S: 448 160
 :geoo/steel/32x32o.S: 448 128
 :geoo/steel/32x32o.S: 448 96
 :geoo/steel/32x32o.S: 448 224
 :geoo/steel/32x32o.S: 448 256
 :geoo/steel/32x32o.S: 448 64
 :geoo/steel/32x32o.S: 448 32
-:geoo/steel/16x16o.S: 464 -8
 :geoo/steel/16x16o.S: 448 0
 :geoo/steel/16x16o.S: 432 0
 :matt/marble/09a: 480 192
@@ -544,7 +538,6 @@ $ENGLISH The Hard For Flopsy LIX Level 6P
 :geoo/steel/16x16o.S: 977 32
 :geoo/steel/16x16o.S: 961 32
 :geoo/steel/16x16o.S: 945 32
-:geoo/steel/16x16o.S: 928 -8
 :geoo/steel/16x16o.S: 944 0
 :geoo/steel/16x16o.S: 960 0
 :geoo/steel/16x16o.S: 976 0
@@ -626,14 +619,12 @@ $ENGLISH The Hard For Flopsy LIX Level 6P
 :matt/marble/01: 1250 312
 :geoo/steel/16x16o.S: 1328 0
 :geoo/steel/32x32o.S: 896 192
-:geoo/steel/32x32o.S: 896 160
 :geoo/steel/32x32o.S: 896 128
 :geoo/steel/32x32o.S: 896 96
 :geoo/steel/32x32o.S: 896 224
 :geoo/steel/32x32o.S: 896 256
 :geoo/steel/32x32o.S: 896 64
 :geoo/steel/32x32o.S: 896 32
-:geoo/steel/16x16o.S: 912 -8
 :geoo/steel/16x16o.S: 896 0
 :geoo/steel/16x16o.S: 880 0
 :matt/marble/09a: 928 192
@@ -753,7 +744,6 @@ $ENGLISH The Hard For Flopsy LIX Level 6P
 :geoo/steel/16x16o.S: 1425 32
 :geoo/steel/16x16o.S: 1409 32
 :geoo/steel/16x16o.S: 1393 32
-:geoo/steel/16x16o.S: 1376 -8
 :geoo/steel/16x16o.S: 1392 0
 :geoo/steel/16x16o.S: 1408 0
 :geoo/steel/16x16o.S: 1424 0
@@ -837,14 +827,12 @@ $ENGLISH The Hard For Flopsy LIX Level 6P
 :matt/marble/01: 1698 312
 :geoo/steel/16x16o.S: 1776 0
 :geoo/steel/32x32o.S: 1344 192
-:geoo/steel/32x32o.S: 1344 160
 :geoo/steel/32x32o.S: 1344 128
 :geoo/steel/32x32o.S: 1344 96
 :geoo/steel/32x32o.S: 1344 224
 :geoo/steel/32x32o.S: 1344 256
 :geoo/steel/32x32o.S: 1344 64
 :geoo/steel/32x32o.S: 1344 32
-:geoo/steel/16x16o.S: 1360 -8
 :geoo/steel/16x16o.S: 1344 0
 :geoo/steel/16x16o.S: 1328 0
 :matt/marble/09a: 1376 192
@@ -993,7 +981,6 @@ $ENGLISH The Hard For Flopsy LIX Level 6P
 :geoo/steel/16x16o.S: 1873 32
 :geoo/steel/16x16o.S: 1857 32
 :geoo/steel/16x16o.S: 1841 32
-:geoo/steel/16x16o.S: 1824 -8
 :geoo/steel/16x16o.S: 1840 0
 :geoo/steel/16x16o.S: 1856 0
 :geoo/steel/16x16o.S: 1872 0
@@ -1075,14 +1062,12 @@ $ENGLISH The Hard For Flopsy LIX Level 6P
 :matt/marble/01: 2146 312
 :geoo/steel/16x16o.S: 2224 0
 :geoo/steel/32x32o.S: 1792 192
-:geoo/steel/32x32o.S: 1792 160
 :geoo/steel/32x32o.S: 1792 128
 :geoo/steel/32x32o.S: 1792 96
 :geoo/steel/32x32o.S: 1792 224
 :geoo/steel/32x32o.S: 1792 256
 :geoo/steel/32x32o.S: 1792 64
 :geoo/steel/32x32o.S: 1792 32
-:geoo/steel/16x16o.S: 1808 -8
 :geoo/steel/16x16o.S: 1792 0
 :geoo/steel/16x16o.S: 1776 0
 :matt/marble/09a: 1824 192
@@ -1203,7 +1188,6 @@ $ENGLISH The Hard For Flopsy LIX Level 6P
 :geoo/steel/16x16o.S: 2321 32
 :geoo/steel/16x16o.S: 2305 32
 :geoo/steel/16x16o.S: 2289 32
-:geoo/steel/16x16o.S: 2272 -8
 :geoo/steel/16x16o.S: 2288 0
 :geoo/steel/16x16o.S: 2304 0
 :geoo/steel/16x16o.S: 2320 0
@@ -1294,7 +1278,6 @@ $ENGLISH The Hard For Flopsy LIX Level 6P
 :geoo/steel/32x32o.S: 2240 256
 :geoo/steel/32x32o.S: 2240 64
 :geoo/steel/32x32o.S: 2240 32
-:geoo/steel/16x16o.S: 2256 -8
 :geoo/steel/16x16o.S: 2240 0
 :geoo/steel/16x16o.S: 2224 0
 :matt/marble/09a: 2272 192
@@ -1347,3 +1330,14 @@ $ENGLISH The Hard For Flopsy LIX Level 6P
 :matt/marble/14a: 2614 384
 :matt/marble/02a: 2640 400
 :geoo/steel/16x16o.S: 2672 0
+:matt/marble/17: 385 341 rr
+:matt/marble/17: 385 279 rr
+:matt/marble/17: 385 217 rr
+:matt/marble/17: 385 155 rr
+:matt/marble/17: 385 93 rr
+:matt/marble/17: 385 31 rr
+:matt/marble/17: 384 63 f
+:matt/marble/17: 384 124 f
+:matt/marble/17: 384 186 f
+:matt/marble/17: 384 248 f
+:matt/marble/17: 384 310 f

@@ -1,0 +1,237 @@
+$BUILT 2021-03-11 00:34:40
+$AUTHOR Flopsy
+$ENGLISH Flopsy vs. The World 2P
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1376
+#SIZE_Y 288
+#TORUS_X 0
+#TORUS_Y 1
+
+#SECONDS 90
+#INITIAL 70
+#SPAWN_INTERVAL 16
+
+#WALKER 50
+#RUNNER 10
+#CLIMBER 10
+#FLOATER 10
+#EXPLODER2 10
+#BLOCKER 3
+#BUILDER 30
+#PLATFORMER 30
+#BASHER 30
+#MINER 30
+#DIGGER 30
+#JUMPER 50
+#BATTER 30
+#CUBER 5
+
+:matt/carnival/Hatch.H: 112 112
+:matt/carnival/Hatch.H: 1200 112 r
+
+:matt/carnival/Goal.G: 1152 240
+:matt/carnival/Goal.G: 160 240
+
+:matt/carnival/02: 1248 80
+:matt/carnival/02: -16 256
+:matt/carnival/02: 1360 256
+:matt/carnival/37: 648 16 r
+:matt/carnival/36: 696 16 frrr
+:matt/carnival/55: 1024 208
+:matt/carnival/55: 768 208
+:matt/carnival/55: 512 208
+:matt/carnival/02: 960 208 d
+:matt/carnival/02: 928 208 d
+:matt/carnival/06: 896 144
+:matt/carnival/08: 896 80
+:matt/carnival/06: 928 80 r
+:matt/carnival/08: 992 80 frr
+:matt/carnival/06: 992 144
+:matt/carnival/26: 1120 144
+:matt/carnival/02: 1136 112
+:matt/carnival/55: 1088 208
+:matt/carnival/26: 1280 144
+:matt/carnival/37: 584 144 r
+:matt/carnival/37: 616 80 r
+:matt/carnival/36: 728 80 frrr
+:matt/carnival/36: 760 144 frrr
+:matt/carnival/06: 648 80
+:matt/carnival/06: 696 80
+:matt/carnival/06: 728 144
+:matt/carnival/06: 696 144
+:matt/carnival/06: 616 144
+:matt/carnival/06: 648 144
+:matt/carnival/14: 680 160
+:matt/carnival/14: 680 176
+:matt/carnival/14: 680 192
+:matt/carnival/02: 896 112
+:matt/carnival/02: 992 112
+:matt/carnival/41: 944 112
+:matt/carnival/41: 944 144
+:matt/carnival/41: 944 176
+:matt/carnival/41: 944 208
+:matt/carnival/55: 96 208 frr
+:matt/carnival/55: 352 208 frr
+:matt/carnival/02: 384 208 frrd
+:matt/carnival/02: 416 208 frrd
+:matt/carnival/06: 448 144 frr
+:matt/carnival/08: 448 80 frr
+:matt/carnival/06: 384 80 fr
+:matt/carnival/08: 352 80
+:matt/carnival/06: 352 144 frr
+:matt/carnival/26: 192 144 frr
+:matt/carnival/02: 208 112 frr
+:matt/carnival/55: 32 208 frr
+:matt/carnival/26: 32 144 frr
+:matt/carnival/02: 448 112 frr
+:matt/carnival/02: 352 112 frr
+:matt/carnival/41: 400 112 frr
+:matt/carnival/41: 400 144 frr
+:matt/carnival/41: 400 176 frr
+:matt/carnival/41: 400 208 frr
+:matt/carnival/55: 128 240 frr
+:matt/carnival/55: 64 240 frr
+:matt/carnival/44: 32 240
+:matt/carnival/46: 288 208
+:matt/carnival/46: 320 240
+:matt/carnival/44: 320 208
+:matt/carnival/44: 352 240
+:matt/carnival/46: 320 208 d
+:matt/carnival/46: 352 240 d
+:matt/carnival/44: 288 208 d
+:matt/carnival/44: 320 240 d
+:matt/carnival/44: 64 272
+:matt/carnival/55: 96 272 frr
+:matt/carnival/46: 352 272
+:matt/carnival/41: 400 240 frr
+:matt/carnival/55: 480 240
+:matt/carnival/02: 448 240
+:matt/carnival/55: 480 272
+:matt/carnival/46: 512 208 frr
+:matt/carnival/46: 480 240 frr
+:matt/carnival/46: 448 272 frr
+:matt/carnival/44: 480 208 frr
+:matt/carnival/44: 448 240 frr
+:matt/carnival/44: 512 208 frrd
+:matt/carnival/44: 480 240 frrd
+:matt/carnival/44: 448 272 frrd
+:matt/carnival/46: 448 240 frrd
+:matt/carnival/46: 480 208 frrd
+:matt/carnival/41: 400 272 frr
+:matt/carnival/55: 608 208 frr
+:matt/carnival/55: 1024 208
+:matt/carnival/55: 768 208
+:matt/carnival/02: 960 208 d
+:matt/carnival/02: 928 208 d
+:matt/carnival/55: 1088 208
+:matt/carnival/41: 944 208
+:matt/carnival/55: 992 240
+:matt/carnival/55: 1056 240
+:matt/carnival/44: 1312 240 frr
+:matt/carnival/46: 1056 208 frr
+:matt/carnival/46: 1024 240 frr
+:matt/carnival/44: 1024 208 frr
+:matt/carnival/44: 992 240 frr
+:matt/carnival/46: 1024 208 frrd
+:matt/carnival/46: 992 240 frrd
+:matt/carnival/44: 1056 208 frrd
+:matt/carnival/44: 1024 240 frrd
+:matt/carnival/44: 1280 272 frr
+:matt/carnival/55: 1024 272
+:matt/carnival/46: 992 272 frr
+:matt/carnival/41: 944 240
+:matt/carnival/55: 640 240 frr
+:matt/carnival/02: 896 240 frr
+:matt/carnival/55: 672 272 frr
+:matt/carnival/46: 832 208
+:matt/carnival/46: 864 240
+:matt/carnival/46: 896 272
+:matt/carnival/44: 864 208
+:matt/carnival/44: 896 240
+:matt/carnival/44: 832 208 d
+:matt/carnival/44: 864 240 d
+:matt/carnival/44: 896 272 d
+:matt/carnival/46: 896 240 d
+:matt/carnival/46: 864 208 d
+:matt/carnival/41: 944 272
+:matt/carnival/02: 1360 224
+:matt/carnival/46: 1312 272 frr
+:matt/carnival/46: 1344 240 frr
+:matt/carnival/02: 1360 192
+:matt/carnival/02: 1360 160
+:matt/carnival/44: 1344 272 frr
+:matt/carnival/02: -16 224 frr
+:matt/carnival/46: 32 272
+:matt/carnival/46: 0 240
+:matt/carnival/02: -16 192 frr
+:matt/carnival/02: -16 160 frr
+:matt/carnival/44: 0 272
+:matt/carnival/43: 640 272
+:matt/carnival/43: 704 272 frr
+:matt/carnival/02: 672 272 d
+:matt/carnival/46: 704 272 d
+:matt/carnival/46: 640 272 frrd
+:matt/carnival/44: 480 16
+:matt/carnival/44: 608 16 frr
+:matt/carnival/06: 512 16 r
+:matt/carnival/02: 576 16
+:matt/carnival/44: 96 16
+:matt/carnival/06: 128 16 r
+:matt/carnival/06: 192 16 r
+:matt/carnival/06: 256 16 r
+:matt/carnival/44: 320 16 frr
+:matt/carnival/06: 128 240 rd
+:matt/carnival/06: 192 240 rd
+:matt/carnival/43: 224 272 d
+:matt/carnival/43: 128 272 frrd
+:matt/carnival/06: 160 272 rd
+:matt/carnival/44: 224 240 frr
+:matt/carnival/44: 128 240
+:matt/carnival/02: -16 128
+:matt/carnival/02: -16 96
+:matt/carnival/02: -16 64
+:matt/carnival/02: -16 32
+:matt/carnival/02: -16 0
+$BEGIN_TILE_GROUP 0
+:matt/carnival/44: 0 0
+:matt/carnival/44: 128 0 frr
+:matt/carnival/06: 32 0 r
+:matt/carnival/02: 96 0
+$END_TILE_GROUP
+:Group-0: 736 16 frr
+:matt/carnival/44: 1024 16
+:matt/carnival/06: 1056 16 r
+:matt/carnival/06: 1120 16 r
+:matt/carnival/06: 1184 16 r
+:matt/carnival/44: 1248 16 frr
+:matt/carnival/02: 1360 128
+:matt/carnival/02: 1360 96
+:matt/carnival/02: 1360 64
+:matt/carnival/02: 1360 32
+:matt/carnival/02: 1360 0
+:matt/carnival/06: 1152 272 rd
+:matt/carnival/43: 1216 272 d
+:matt/carnival/43: 1120 272 frrd
+:matt/carnival/06: 1120 240 rd
+:matt/carnival/06: 1184 240 rd
+:matt/carnival/44: 1120 240
+:matt/carnival/44: 1216 240 frr
+:matt/carnival/06: 512 272 rd
+:matt/carnival/06: 544 240 rd
+:matt/carnival/06: 768 240 rd
+:matt/carnival/06: 800 272 rd
+:matt/carnival/02: 672 240 d
+:matt/carnival/02: 672 208 d
+:matt/carnival/46: 64 16
+:matt/carnival/44: 32 16
+$BEGIN_TILE_GROUP 1
+:matt/carnival/46: 32 0
+:matt/carnival/44: 0 0
+$END_TILE_GROUP
+:Group-1: 1280 16 frr
+:matt/carnival/02: 96 80
+:geoo/steel/32x16o.S: 128 208
+:geoo/steel/32x16o.S: 176 16
+:geoo/steel/32x16o.S: 1168 16
+:geoo/steel/32x16o.S: 1216 208

@@ -1,0 +1,102 @@
+$BUILT 2021-03-03 05:06:49
+$AUTHOR Dullstar
+$ENGLISH The Bridge of Death (3B vs. 1T)
+
+#INTENDED_NUMBER_OF_PLAYERS 4
+#SIZE_X 640
+#SIZE_Y 416
+
+#SECONDS 90
+#INITIAL 100
+#SPAWN_INTERVAL 28
+
+#WALKER -1
+#RUNNER -1
+#CLIMBER 40
+#FLOATER -1
+#EXPLODER2 -1
+#PLATFORMER -1
+#BASHER 5
+#JUMPER -1
+#BATTER 3
+
+:simon/hatch001.H: 544 32 r
+:simon/hatch001.H: 144 208
+:simon/hatch001.H: 144 208
+:simon/hatch001.H: 144 208
+
+:geoo/abstract/goal.G: 48 240
+:geoo/abstract/goal.G: 560 240
+:geoo/abstract/goal.G: 560 240
+:geoo/abstract/goal.G: 560 240
+
+:geoo/construction/Laser_hz_64.F: 32 368
+:geoo/construction/Laser_hz_64.F: 96 368
+:geoo/construction/Laser_hz_64.F: 160 368
+:geoo/construction/Laser_hz_64.F: 224 368
+:geoo/construction/Laser_hz_64.F: 288 368
+:geoo/construction/Laser_hz_64.F: 352 368
+:geoo/construction/Laser_hz_64.F: 416 368
+:geoo/construction/Laser_hz_64.F: 480 368
+:geoo/construction/Laser_hz_64.F: 544 368
+
+:geoo/steel/32x32o.S: 0 384
+:geoo/steel/32x32o.S: 0 352
+:geoo/steel/32x32o.S: 0 320
+:geoo/steel/32x32o.S: 0 288
+:geoo/steel/32x32o.S: 0 256
+:geoo/steel/32x32o.S: 0 224
+:geoo/steel/32x32o.S: 0 192
+:geoo/steel/32x32o.S: 0 160
+:geoo/steel/32x32o.S: 0 128
+:geoo/steel/32x32o.S: 0 96
+:geoo/steel/32x32o.S: 0 64
+:geoo/steel/32x32o.S: 0 32
+:geoo/steel/32x32o.S: 0 0
+:geoo/steel/32x32o.S: 608 384
+:geoo/steel/32x32o.S: 608 352
+:geoo/steel/32x32o.S: 608 320
+:geoo/steel/32x32o.S: 608 288
+:geoo/steel/32x32o.S: 608 256
+:geoo/steel/32x32o.S: 608 224
+:geoo/steel/32x32o.S: 608 192
+:geoo/steel/32x32o.S: 608 160
+:geoo/steel/32x32o.S: 608 128
+:geoo/steel/32x32o.S: 608 96
+:geoo/steel/32x32o.S: 608 64
+:geoo/steel/32x32o.S: 608 32
+:geoo/steel/32x32o.S: 608 0
+:geoo/steel/64x32o.S: 544 96
+:geoo/steel/64x32o.S: 480 96
+:geoo/steel/64x32o.S: 352 96
+:geoo/steel/64x32o.S: 224 96
+:geoo/steel/64x32o.S: 96 96
+:geoo/steel/64x32o.S: 32 288
+:geoo/steel/64x32o.S: 96 288
+:geoo/steel/64x32o.S: 544 288
+:geoo/steel/64x32o.S: 160 288
+:geoo/steel/32x64o.S: 96 208
+:geoo/steel/64x32o.S: 224 288
+:geoo/steel/64x32o.S: 32 0
+:geoo/steel/64x32o.S: 96 0
+:geoo/steel/64x32o.S: 160 0
+:geoo/steel/64x32o.S: 224 0
+:geoo/steel/64x32o.S: 288 0
+:geoo/steel/64x32o.S: 352 0
+:geoo/steel/64x32o.S: 416 0
+:geoo/steel/64x32o.S: 480 0
+:geoo/steel/64x32o.S: 544 0
+:geoo/steel/32x32o.S: 64 64
+:geoo/steel/32x32o.S: 64 96
+:geoo/steel/32x64o.S: 96 144
+:geoo/steel/32x16o.S: 96 128
+:geoo/steel/32x16o.S: 96 272
+:geoo/steel/32x16o.S: 52 32
+:geoo/steel/16x16o.S: 100 48
+:geoo/steel/32x16o.S: 84 32
+:geoo/steel/32x16o.S: 100 64
+:geoo/steel/32x32o.S: 116 32
+:geoo/steel/16x16o.S: 132 64
+:raymanni/lab/block_1: 224 256
+:raymanni/lab/block_4: 528 80
+:raymanni/lab/block_4: 512 80
