@@ -24,9 +24,6 @@ calcPassive(Game game) { with (game)
     if (pan.zoomOut)
         map.zoomOut();
 
-    mouseCursor.xf = 0;
-    mouseCursor.yf = 0;
-
     map.calcScrolling();
     if (map.suggestHoldScrollingTooltip)
         game.pan.suggestTooltip(Tooltip.ID.holdToScroll);
