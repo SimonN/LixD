@@ -40,8 +40,7 @@ version (tharsisprofiling) {
 
     public import tharsis.prof;
 
-    pragma (msg, "Compiling Lix " ~ gameVersion().toString() ~
-                 " with profiling information...");
+    pragma (msg, "Compiling with profiling information...");
     pragma (msg, "(To optimize for speed, "
                ~ "use `dub build -b release-nobounds')");
 
@@ -121,8 +120,6 @@ version (tharsisprofiling) {
     }
 }
 else {
-    pragma (msg, "Compiling Lix "
-        ~ gameVersion().toString() ~ "...");
     void initialize() { }
     void deinitialize() { }
 }

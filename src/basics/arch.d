@@ -24,7 +24,23 @@ enum string gameVersionOsAndArch = gameVersion.toString ~ ", " ~ osAndArch;
 enum string osAndArch = _ourOs ~ ", "
     ~ ((void*).sizeof == 4 ? "32-bit" : "64-bit");
 
+enum string compilerThatCompiledLix = _ourCompiler;
+
 private:
+
+pragma (msg, "Compiling Lix ", gameVersion().toString(),
+    " with ", compilerThatCompiledLix, " for ", osAndArch, "...");
+
+version (DigitalMars) enum _ourCompiler = "DMD";
+else version (GNU) enum _ourCompiler = "GDC";
+else version (LDC) enum _ourCompiler = "LDC";
+else version (SDC) enum _ourCompiler = "SDC";
+else {
+    enum _ourCompiler = "unknown compiler";
+    pragma (msg, "Lix doesn't have a compiler name string for your compiler."
+        ~ " This is harmless, but it will look strange in Lix's main menu."
+        ~ " Add your compiler to ./src/basics/arch.d and submit a patch!");
+}
 
 version (Windows) enum _ourOs = "Windows";
 else version (linux) enum _ourOs = "Linux";
@@ -52,9 +68,9 @@ else version (Cygwin) enum _ourOs = "Cygwin";
 else version (MinGW) enum _ourOs = "MinGW";
 else version (FreeStanding) enum _ourOs = "Bare Metal";
 else {
-    // Uncomment the next line if you don't want to bother:
-    // enum _ourOs = "Other";
-    static assert (false, "Lix has no operating system name string"
-    ~ " for your system. Edit src/basics/arch.d and add your operating system."
-    ~ " Reference of possible versions: https://dlang.org/spec/version.html");
+    enum _ourOs = "unknown OS";
+    pragma (msg, "Lix has no operating system name string for your OS."
+        ~ " This is harmless, but it will look strange in Lix's main menu."
+        ~ " Add your OS name to ./src/basics/arch.d and submit a patch!"
+        ~ " List of versions: https://dlang.org/spec/version.html");
 }
