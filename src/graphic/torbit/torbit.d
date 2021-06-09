@@ -47,7 +47,7 @@ public:
 
     this(Cfg cfg)
     out { assert (bitmap); }
-    body {
+    do {
         super(cfg.xl, cfg.yl, cfg.torusX, cfg.torusY);
         bitmap = cfg.smoothlyScalable
             ? albitCreateSmoothlyScalable(cfg.xl, cfg.yl)
@@ -162,7 +162,7 @@ public:
         assert (bitmap.isTargetBitmap);
         assert (drawing_delegate != null);
     }
-    body {
+    do {
         targetCorner = wrap(targetCorner);
         // We don't lock the bitmap; drawing with high-level primitives
         // and blitting other VRAM bitmaps is best without locking
@@ -181,7 +181,7 @@ protected:
         assert (xl == al_get_bitmap_width (bitmap));
         assert (yl == al_get_bitmap_height(bitmap));
     }
-    body {
+    do {
         auto cfg = Cfg(this);
         if (bitmap)
             albitDestroy(bitmap);
@@ -210,7 +210,7 @@ package:
         assert (source, "can't blit the null bitmap onto Torbit");
         assert (rotCw >= 0 && rotCw < 4);
     }
-    body {
+    do {
         Albit bit = cast (Albit) source; // A5 is not typesafe
         void delegate(int, int) drawFrom_at;
         // Select the appropriate Allegro function and its arguments.

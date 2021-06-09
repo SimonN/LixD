@@ -57,7 +57,7 @@ public:
     out {
         assert (_ls);
     }
-    body {
+    do {
         super(cfg.all);
         import graphic.color;
         undrawColor = color.transp; // Hack. Picker should not be a drawable
@@ -188,7 +188,7 @@ private:
         assert (aOnFileSelect, "you should provide onFileSelect if you "
         ~ "need the search button, to do something at all with the result");
     }
-    body {
+    do {
         import file.option;
         import file.language;
         _searchButton = new TextButton(new Geom(0, 0, Breadcrumb.butXl,

@@ -70,7 +70,7 @@ public:
 
     @property ReplayToLevelMatcher matcher()
     in { assert (! _matcher.empty, "call this only when matcher exists"); }
-    body { return _matcher.unwrap; }
+    do { return _matcher.unwrap; }
 
 protected:
     final override void onOnHighlightNone()
@@ -83,7 +83,7 @@ protected:
 
     final override void onHighlightWithLastGame(Filename fn, bool solved)
     in { assert (fn, "call onHighlightNone() instead"); }
-    body {
+    do {
         _matcher = some(new ReplayToLevelMatcher(fn));
         foreach (lv; matcher.preferredLevel)
             previewLevel(lv);

@@ -228,7 +228,7 @@ private Ac[14] _skillSort = [
  */
 void initializeIfNecessary()
 out { assert (languageBasenameNoExt !is null); }
-body {
+do {
     if (languageBasenameNoExt !is null) {
         // We've already created all class objects.
         // Nothing to initialize, caller can take and change their values.

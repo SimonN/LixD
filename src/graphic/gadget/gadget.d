@@ -60,7 +60,7 @@ protected:
         assert (levelpos.tile, "we shouldn't make gadgets from missing tiles");
         assert (levelpos.tile.cb, "we shouldn't make gadgets from bad tiles");
     }
-    body {
+    do {
         _graphic = new Graphic(levelpos.tile.cb, top, levelpos.loc);
         _frame = 0;
         tile = levelpos.tile;
@@ -90,7 +90,7 @@ public:
         assert (rhs._graphic !is null, "don't copy from rhs without graphic");
         assert (rhs.tile !is null, "don't copy from rhs with missing tile");
     }
-    body {
+    do {
         _graphic = rhs._graphic.clone;
         _frame = rhs._frame;
         tile = rhs.tile;

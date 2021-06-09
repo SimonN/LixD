@@ -39,7 +39,7 @@ public:
         assert (newDir !is null, "Ls.currentDir = null: forbidden");
         assert (newDir.file == "", "Ls.currentDir = regular file: forbidden");
     }
-    body {
+    do {
         if (newDir == currentDir) {
             return currentDir;
         }

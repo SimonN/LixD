@@ -3,6 +3,8 @@ module file.filename.base;
 import std.algorithm;
 import std.typecons;
 import std.file : SpanMode, isDir;
+static import std.stdio;
+
 public import std.string : toStringz; // for stringForReading/Writing
 
 package interface IFilename {

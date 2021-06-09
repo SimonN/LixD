@@ -25,7 +25,7 @@ public:
         assert (new_xl > 0);
         assert (new_yl > 0);
     }
-    body {
+    do {
         _xl = new_xl;
         _yl = new_yl;
         data = new T[_xl * _yl];
@@ -36,7 +36,7 @@ public:
         assert (data !is null);
         assert (data.length == _xl * _yl);
     }
-    body {
+    do {
         assert (rhs !is null);
         _xl = rhs.xl;
         _yl = rhs.yl;
@@ -50,7 +50,7 @@ public:
         assert (x < _xl, "x is %d, not <= _xl == %d".format(x, _xl));
         assert (y < _yl, "y is %d, not <= _yl == %d".format(y, _yl));
     }
-    body {
+    do {
         return data[y * _xl + x];
     }
 
@@ -61,7 +61,7 @@ public:
         assert (x < _xl);
         assert (y < _yl);
     }
-    body {
+    do {
         data[y * _xl + x] = value;
     }
 

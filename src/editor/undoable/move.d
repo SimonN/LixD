@@ -27,7 +27,7 @@ public:
     in {
         assert (! aSet[].empty, "Moves must involve at least one tile");
     }
-    body {
+    do {
         _toMove = aSet;
         _source = aSource;
         _destination = aDestination;
@@ -89,7 +89,7 @@ public:
     in {
         assert (mayAdd(top, other), "Bad addition of two TileMoves");
     }
-    body {
+    do {
         if (mayAddAsParallelMoveOfMoreTiles(top, other)) {
             return addAsParallelMoveOfMoreTiles(top, other);
         }
@@ -130,7 +130,7 @@ private:
     in {
         assert (mayAddAsParallelMoveOfMoreTiles(top, other));
     }
-    body {
+    do {
         auto merged = _toMove[].chain(other._toMove[]).toOilSet.assumeUnique;
         /*
          * The smallest Oil in this's OilSet, which is associated with
@@ -154,7 +154,7 @@ private:
     in {
         assert (mayAddAsExtraDistanceOfSameTiles(top, other));
     }
-    body {
+    do {
         return new TileMove(_toMove, _source, other._destination);
     }
 }

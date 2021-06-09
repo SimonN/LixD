@@ -26,7 +26,7 @@ in {
 out {
     assert (loadedCutbitMayBeScaled[id] !is null); // but may be nullCutbit
 }
-body {
+do {
     immutable fn = toBestScaledFilenameOrNull(id);
     if (fn is null) {
         loadedCutbitMayBeScaled[id] = nullCutbit;
@@ -60,7 +60,7 @@ void makeSkillButtonIcon(in Style st)
 
 void makeGoalMarker(in Style st)
 in { assert (goalMarkers[st] is null); }
-body {
+do {
     // magicnrSkillButtonIcons isn't a perfect descripition: It recolors
     // exactly the first row. But goal markers have only one frame, thus OK.
     recolorForGuiAndPlayer!magicnrSkillButtonIcons(

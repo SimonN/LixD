@@ -110,7 +110,7 @@ public:
         foreach (e; _alreadyPlayed)
             assert (e.phyu <= upd);
     }
-    body {
+    do {
         // Throw away what has update (upd + 1) or more.
         // Since I can't specify (upd+1, Style.min - 1), I'll cut here:
         const Effect e = Effect(upd, Passport(Style.max, 0));

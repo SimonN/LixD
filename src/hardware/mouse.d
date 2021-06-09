@@ -194,7 +194,7 @@ in {
     assert (event.type == ALLEGRO_EVENT_MOUSE_AXES
         ||  event.type == ALLEGRO_EVENT_MOUSE_WARPED);
 }
-body {
+do {
     // I had massive jumps on hardware mouse warp on Arch 2017, Al 5.2.
     // So did Forestidia: https://www.lemmingsforums.net/index.php?topic=3487
     // Guard only against huge jumps over almost half the screen.

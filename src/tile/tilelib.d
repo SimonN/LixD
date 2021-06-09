@@ -76,7 +76,7 @@ Optional!(const(AbstractTile)) resolveTileName(Filename fn)
 // with dark tiles, which only TileGroup's constructor checks.
 TileGroup getGroup(in TileGroupKey key)
 out (ret) { assert (ret !is null); }
-body {
+do {
     if (auto found = key in groups)
         return *found;
     return groups[key] = new TileGroup(key);
@@ -125,7 +125,7 @@ out {
     const tile = (strNoExt in gadgets);
     assert (tile && *tile);
 }
-body {
+do {
     GadType type;
     bool subtype = false;
     if      (pe == glo.preExtHatch) { type = GadType.HATCH; }

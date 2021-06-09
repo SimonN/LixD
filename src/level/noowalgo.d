@@ -29,7 +29,7 @@ TerOcc[] noowAlgorithm(TerOcc[] terrain, in Topology topol)
 out (ret) {
     assert (ret.all!(occ => ! occ.noow));
 }
-body {
+do {
     version (tharsisprofiling)
         auto zone = Zone(profiler, "noowAlgo, any level");
     if (! terrain.any!(occ => occ.noow))
@@ -87,7 +87,7 @@ in {
 out {
     assert (! list.any!(mo => mo.occ.noow));
 }
-body {
+do {
     bool overlaps(in TerOcc top, in TerOcc bottom)
     {
         return topol.rectIntersectsRect(top.selboxOnMap, bottom.selboxOnMap);

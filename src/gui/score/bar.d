@@ -74,7 +74,7 @@ public:
         assert (maxPot >= sco.current, "maxPotential lower than score");
         assert (maxPot >= sco.potential, "maxPotential lower than potential");
     }
-    body {
+    do {
         if (sco == _score && maxPot == _maxPotential)
             return;
         reqDraw();

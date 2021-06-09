@@ -201,7 +201,7 @@ pure Point roundWithin(in Topology topol, in Rect tile, in int grid)
 in {
     assert (topol);
 }
-body {
+do {
     Point ret = tile.topLeft.roundTo(grid);
     // This is pedestrian code and I'd rather use a static smaller topology to
     // clamp the point in one line:

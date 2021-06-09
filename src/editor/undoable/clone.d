@@ -46,7 +46,7 @@ public:
         in Point idea // Suggestion for how much to move all cloned tiles
     )
     in { assert (aToClone.length > 0, contract); }
-    body {
+    do {
         _source = aToClone;
         _moveEachClonedOccBy
             = awsbimamb(level, idea) ? idea

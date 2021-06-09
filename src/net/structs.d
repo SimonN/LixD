@@ -171,7 +171,7 @@ struct HelloPacket {
     ENetPacket* createPacket() const nothrow
     in { assert (header.packetID == PacketCtoS.hello); }
     out (ret) { assert (ret.data[0] == PacketCtoS.hello); }
-    body {
+    do {
         auto ret = .createPacket(len);
         header.serializeTo(ret.data[0 .. header.len]);
         fromVersion.serializeTo(ret.data[header.len
@@ -271,7 +271,7 @@ struct ListPacket(Index)
     out (ret) {
         assert (indices.length == 0 || ret.data[header.len] == indices[0]);
     }
-    body {
+    do {
         auto ret = .createPacket(len);
         header.serializeTo(ret.data[0 .. header.len]);
 
@@ -294,7 +294,7 @@ struct ListPacket(Index)
 
     this(const(ENetPacket*) p)
     out { assert (indices.length == profiles.length); }
-    body {
+    do {
         enforce((p.dataLength - header.len) % (Profile.len + Index.len) == 0);
         header = PacketHeader(p.data[0 .. header.len]);
         indices.length = (p.dataLength - header.len)

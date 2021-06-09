@@ -28,7 +28,7 @@ public:
         assert (done, "Call writeChangesTo only when dialog is done");
         assert (level);
     }
-    body {
+    do {
         if (_okay.execute || mouseClickRight) {
             selfWriteChangesTo(level);
         }

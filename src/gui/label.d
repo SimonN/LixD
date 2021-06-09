@@ -115,7 +115,7 @@ protected:
 private:
     void shorten_text()
     out { assert (_shortened == (_textShort != _text)); }
-    body {
+    do {
         reqDraw();
         _textShort = _text;
         _shortened = false;

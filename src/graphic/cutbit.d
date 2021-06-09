@@ -204,7 +204,7 @@ private:
         assert (xec >= 0 && xec < _xl); // _xl, _yl are either all the bitmap, or
         assert (yec >= 0 && yec < _xl); // the size of a single frame without grid
     }
-    body {
+    do {
         // Create a sub-bitmap based on the wanted frames. If (Cutbit this)
         // doesn't have frames, don't compute +1 for the outermost frame.
         if (_xfs == 1 && _yfs == 1)

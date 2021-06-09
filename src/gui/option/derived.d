@@ -197,7 +197,7 @@ private:
 public:
     this(Geom g, UserOption!int target, string[] choices...)
     in { assert (choices.length >= 1); }
-    body {
+    do {
         _radio = new RadioButtons(new Geom(0, 0, g.xl, g.yl));
         choices[].each!(ch => _radio.addChoice(ch));
 

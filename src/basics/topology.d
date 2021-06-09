@@ -30,7 +30,7 @@ public:
         assert (nxl > 0 && nyl > 0,
             "Topology: (xl, yl) > 0 required, not (%d, %d)".format(nxl, nyl));
     }
-    body {
+    do {
         _xl = nxl;
         _yl = nyl;
         _tx = ntx;
@@ -136,7 +136,7 @@ public:
         assert (_xl > 0, "Topology: xl > 0 required");
         assert (_yl > 0, "Topology: yl > 0 required");
     }
-    body {
+    do {
         if (_xl == nxl && _yl == nyl)
             return;
         _xl = nxl;

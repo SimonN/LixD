@@ -15,7 +15,7 @@ protected:
 public:
     this(Geom g)
     in { assert(g.xlg >= 4 * butXlg, "no space for row of text"); }
-    body {
+    do {
         super(g);
         /*
          * We don't set an undraw color. Even though we want to be undrawn

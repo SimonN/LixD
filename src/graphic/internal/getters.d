@@ -24,7 +24,7 @@ Cutbit getLixRawSprites()
 out (ret) {
     assert (valid(ret), "can't find Lix spritesheet");
 }
-body {
+do {
     if (loadedCutbitMayBeScaled[InternalImage.spritesheet] !is null) {
         return loadedCutbitMayBeScaled[InternalImage.spritesheet];
     }
@@ -56,7 +56,7 @@ Cutbit getInternalMutable(in InternalImage id)
 
 const(Cutbit) implGetLixSprites(in Style st)
 out (ret) { assert(ret); }
-body {
+do {
     if (! wantRecoloredGraphics)
         return getLixRawSprites();
     if (spritesheets[st] is null)
@@ -66,7 +66,7 @@ body {
 
 const(Cutbit) implGetPanelInfoIcon(in Style st)
 out (ret) { assert(ret); }
-body {
+do {
     if (! wantRecoloredGraphics)
         return nullCutbit;
     if (panelInfoIcons[st] is null)
@@ -76,7 +76,7 @@ body {
 
 const(Cutbit) implGetSkillButton(in Style st)
 out (ret) { assert(ret); }
-body {
+do {
     if (! wantRecoloredGraphics)
         return nullCutbit;
     if (skillButtonIcons[st] is null)
@@ -86,7 +86,7 @@ body {
 
 const(Cutbit) implGetGoalMarker(in Style st)
 out (ret) { assert(ret); }
-body {
+do {
     if (! wantRecoloredGraphics)
         return nullCutbit;
     if (goalMarkers[st] is null)
@@ -95,7 +95,7 @@ body {
 }
 
 const(Alcol3D) implGetAlcol3D(in Style style)
-body {
+do {
     if (! alcol3DforStyles[style].isValid)
         makeAlcol3DforStyle(style);
     return alcol3DforStyles[style];
@@ -108,7 +108,7 @@ body {
  */
 void implDeinitialize()
 out { assert (spritesheets[Style.garden] is null, "badly deinitialized"); }
-body {
+do {
     void deinitArray(T)(ref T arr)
     {
         foreach (ref cb; arr) {

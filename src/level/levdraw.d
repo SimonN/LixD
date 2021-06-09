@@ -89,7 +89,7 @@ in {
     assert (level);
     assert (fnToSaveImage);
 }
-body {
+do {
     version (tharsisprofiling)
         auto zone = Zone(profiler, "Level.export");
     enum int extraYl = 60;

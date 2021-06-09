@@ -56,7 +56,7 @@ public:
     this(in Level level, in Style[] tribesToMake,
          in Permu permu, EffectSink ef)
     in { assert (tribesToMake.len >= 1); }
-    body {
+    do {
         _effect = ef;
         _cs = newZeroState(level, tribesToMake, permu);
         _physicsDrawer = new PhysicsDrawer(_cs.land, _cs.lookup);

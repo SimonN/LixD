@@ -79,7 +79,7 @@ class PhysicsDrawer {
         assert (_addsForPhymap == null);
         assert (_delsForPhymap == null);
     }
-    body {
+    do {
         _land        = newLand;
         _phymap      = newPhymap;
         _addsForLand = null;
@@ -124,7 +124,7 @@ class PhysicsDrawer {
         assert (_delsForLand == null);
         assert (_addsForLand == null);
     }
-    body {
+    do {
         if (! anyChangesToLand)
             return;
 
@@ -262,7 +262,7 @@ private:
         tc.update == _delsForPhymap[0].update));
     }
     out { assert (_delsForPhymap == null); }
-    body {
+    do {
         version (tharsisprofiling)
             auto zone = Zone(profiler, format("PhysDraw del lookup %dx",
                 _delsForPhymap.len));
@@ -293,7 +293,7 @@ private:
     bool diggerAntiRazorsEdge(bool toPhymap, T)(in T tc)
         if (is (T == TerrainDeletion) || is (T == FlaggedDeletion))
     in { assert (tc.type == TerrainDeletion.Type.dig); }
-    body {
+    do {
         bool ret = false;
         Point p;
         for (p.y = 0; p.y < tc.digYl; ++p.y) {
@@ -322,7 +322,7 @@ private:
         assert (_delsForLand == null
             ||  _delsForLand[0].update > upd);
     }
-    body {
+    do {
         auto processThese = splitOffFromArray(_delsForLand, upd);
         if (processThese == null)
             return;
@@ -413,7 +413,7 @@ private:
     out {
         assert (_addsForPhymap == null);
     }
-    body {
+    do {
         foreach (const tc; _addsForPhymap) {
             version (tharsisprofiling)
                 auto zone = Zone(profiler, "PhysDraw lookupmap "
@@ -447,7 +447,7 @@ private:
         assert (_addsForLand == null
             ||  _addsForLand[0].update > upd);
     }
-    body {
+    do {
         auto processThese = splitOffFromArray(_addsForLand, upd);
         if (processThese == null)
             return;

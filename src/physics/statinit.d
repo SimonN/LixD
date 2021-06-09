@@ -26,7 +26,7 @@ GameState newZeroState(in Level level, in Style[] tribesToMake, in Permu permu)
 in {
     assert (tribesToMake.len >= 1);
 }
-body {
+do {
     GameState s;
     s.refCountedStore.ensureInitialized();
     with (level) {
@@ -55,7 +55,7 @@ in {
     assert (tribesToMake.len >= 1);
     assert (tribesToMake.isStrictlyMonotonic);
 }
-body {
+do {
     foreach (style; tribesToMake) {
         Tribe tr = new Tribe(
             tribesToMake.len > 1 && level.overtimeSeconds == 0
@@ -99,7 +99,7 @@ in {
 out {
     assert (state.hatches.all!(h => ! h.tribes.empty));
 }
-body { with (state)
+do { with (state)
 {
     while (hatches.len % numTribes != 0 && numTribes % hatches.len != 0)
         hatches = hatches[0 .. $-1];

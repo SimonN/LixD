@@ -70,7 +70,7 @@ out (result) {
     assert (result == "" || result[0]   != '/');
     assert (result == "" || result[$-1] == '/');
 }
-body {
+do {
     // DTODOFHS: Is this still good? See comment in mangledLevelFilename, too.
     void cutFront(ref string str, in string front)
     {

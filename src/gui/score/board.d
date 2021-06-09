@@ -92,7 +92,7 @@ public:
         assert (_bars.canFind!(bar => bar.style == updatedScore.style),
             "call add() for some names of this tribe before you update()");
     }
-    body {
+    do {
         auto bar = _bars.find!(bar => bar.style == updatedScore.style)[0];
         if (updatedScore == bar.score)
             return;

@@ -122,7 +122,7 @@ public:
 private:
     void verifyImpl(Filename fn)
     in { assert(fn, "Filename shouldn't be null, Optional!Filename might be");}
-    body {
+    do {
         auto tested = new TestedReplay(fn);
         vp.log(tested.toString);
         _stats[tested.status] += 1;

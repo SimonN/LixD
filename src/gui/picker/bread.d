@@ -36,7 +36,7 @@ public:
 
     this(Geom g, Filename aBaseDir)
     in { assert (aBaseDir !is null); }
-    body {
+    do {
         super(g);
         _innermost = new Label(new Geom(0, 0,
             butXl - xgBetweenRightmostButtonAndInnermostLabel, 20, From.LEFT));
@@ -50,7 +50,7 @@ public:
 
     @property Filename currentDir() const
     out (ret) { assert (ret is null || ret.file == ""); }
-    body { return _currentDir; }
+    do { return _currentDir; }
 
     @property Filename currentDir(Filename fn)
     {
@@ -108,7 +108,7 @@ protected:
     out (ret) {
         assert (ret && baseDir && ret.isChildOf(baseDir) && ret.file == "");
     }
-    body { return candidate.guaranteedDirOnly; }
+    do { return candidate.guaranteedDirOnly; }
 
     // Override to get custom buttons.
     // Returns array index into currentDir.dirRootless of the first code unit

@@ -43,7 +43,7 @@ public:
     in {
         assert (occ.tile.type == _type, "Oil: trying to insert wrong GadType");
     }
-    body {
+    do {
         arrInsert(level.gadgets[_type], _id, occ);
     }
 

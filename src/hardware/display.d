@@ -50,7 +50,7 @@ public:
 
     ScreenChoice currentMode()
     in { assert (theA5display, "no current mode because no display exists"); }
-    body {
+    do {
         ScreenChoice ret;
         ret.x = displayXl;
         ret.y = displayYl;

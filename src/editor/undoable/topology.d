@@ -118,7 +118,7 @@ public:
     in {
         assert (aOil !is null, "CoordinateFix must involve exactly 1 tile");
     }
-    body {
+    do {
         _toMove = aOil;
         _source = aSource;
         _destination = aDestination;

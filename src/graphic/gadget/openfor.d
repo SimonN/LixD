@@ -40,7 +40,7 @@ private:
 public:
     this(const(Topology) top, in ref GadOcc levelpos)
     out { assert (_idleAnimLen >= 1); }
-    body {
+    do {
         super(top, levelpos);
         _idleAnimLen = delegate() {
             if (! tile || ! tile.cb || ! tile.cb.frameExists(0, 0))

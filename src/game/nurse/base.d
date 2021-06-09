@@ -39,7 +39,7 @@ public:
 
     // We get to own the replay, but not the level or the effect manager.
     this(in Level lev, Replay rp, EffectSink ef)
-    body {
+    do {
         Style[] stylesToMake = rp.stylesInUse;
         if (stylesToMake.empty)
             stylesToMake = [ Style.garden ];
@@ -108,7 +108,7 @@ protected:
 
     @property inout(GameState) cs() inout
     in { assert (_model); }
-    body { return _model.cs; }
+    do { return _model.cs; }
 
     void updateOnce()
     {

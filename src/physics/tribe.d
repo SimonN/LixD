@@ -101,15 +101,15 @@ final class Tribe {
 
         Phyu firstScoring()
         in { assert (hasScored); }
-        body { return _firstScoring; }
+        do { return _firstScoring; }
 
         Phyu recentScoring()
         in { assert (hasScored); }
-        body { return _recentScoring; }
+        do { return _recentScoring; }
 
         Phyu finishedPlayingAt()
         in { assert (outOfLix); }
-        body{ return _finishedPlayingAt; }
+        do { return _finishedPlayingAt; }
     }
 
     ///////////////////////////////////////////////////////////////////////////
@@ -119,7 +119,7 @@ final class Tribe {
     void recordSpawnedFromHatch()
     in { assert (this.lixHatch > 0); }
     out { assert (this.lixHatch >= 0 && this._lixOut >= 0); }
-    body{
+    do {
         --lixHatch;
         ++_lixOut;
     }
@@ -133,7 +133,7 @@ final class Tribe {
     out {
         assert (this._lixOut >= 0 && this._lixLeaving >= 0);
     }
-    body{
+    do {
         --_lixOut;
         ++_lixLeaving;
         if (outOfLix)
@@ -143,7 +143,7 @@ final class Tribe {
     void recordLeaverDone()
     in { assert (this._lixLeaving > 0); }
     out { assert (this._lixOut >= 0 && this._lixLeaving >= 0); }
-    body{ --_lixLeaving; }
+    do { --_lixLeaving; }
 
     void addSaved(in Style fromWho, in Phyu now)
     {
@@ -175,7 +175,7 @@ final class Tribe {
             assert (false, msg);
         }
     }
-    body {
+    do {
         const hatch = ow.state.hatches[nextHatch];
         LixxieImpl newLix = LixxieImpl(ow, Point(
             hatch.loc.x + hatch.tile.trigger.x - 2 * hatch.spawnFacingLeft,
@@ -209,7 +209,7 @@ final class Tribe {
 
         Phyu prefersGameToEndSince()
         in { assert (prefersGameToEnd); }
-        body {
+        do {
             return min(
                 nukePressed ? _nukePressedSince : Phyu(int.max),
                 outOfLix ? finishedPlayingAt : Phyu(int.max),
@@ -234,7 +234,7 @@ final class Tribe {
                 ~ "we should trigger overtime on first save. Such an earlier "
                 ~ "nuke counts as prefersGameToEnd, not as triggersOvertime.");
         }
-        body {
+        do {
             return min(nukePressed ? max(_nukePressedSince, firstScoring)
                                    : Phyu(int.max),
                 outOfLix ? max(finishedPlayingAt, firstScoring)

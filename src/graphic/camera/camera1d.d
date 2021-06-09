@@ -42,7 +42,7 @@ public:
         assert (aSourceLen > 0, "Camera1D: source len must be > 0");
         assert (aTargetLen > 0, "Camera1D: target len must be > 0");
     }
-    body {
+    do {
         _zoomOwnedBy2DCamera = aZoom;
         targetLen = aTargetLen;
         sourceLen = aSourceLen;
@@ -85,7 +85,7 @@ public:
         out (side) {
             assert (side.start >= 0);
             assert (side.len >= 0);
-        } body {
+        } do {
             immutable int first = focus - focusMin;
             immutable int start = torus
                 ? positiveMod(first, sourceLen) : max(first, 0);
@@ -103,7 +103,7 @@ public:
             assert (side.start >= 0);
             assert (side.len >= 0);
             assert (side.start + side.len <= sourceLen);
-        } body {
+        } do {
             immutable Side uncut = sourceSeen;
             return Side(uncut.start, min(uncut.len, sourceLen - uncut.start));
         }

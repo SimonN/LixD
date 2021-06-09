@@ -64,7 +64,7 @@ public:
 
     final void highlight(Filename fn)
     in { assert (fn, "call highlightNone() instead"); }
-    body {
+    do {
         if (super.navigateToAndHighlightFile(fn)) {
             _buttonPlay.show();
             _fileRecent = fn;

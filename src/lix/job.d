@@ -44,7 +44,7 @@ public:
         assert (lix !is null);
         assert (lix.job is this);
     }
-    body {
+    do {
         return cast (inout(Lixxie)) (cast (void*) this - Lixxie.jobOffset);
     }
 
@@ -111,7 +111,7 @@ struct JobUnion {
             assert (null is cast (Leaver) job.asClass,
                 format!"healthy(%s) == true, but should be false"(ac));
     }
-    body {
+    do {
         return ac != Ac.nothing && ac != Ac.splatter && ac != Ac.burner
             && ac != Ac.drowner && ac != Ac.imploder && ac != Ac.exploder
             && ac != Ac.exiter  && ac != Ac.cuber;

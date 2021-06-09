@@ -49,7 +49,7 @@ public:
         assert (aOnOkay !is null,
             "pass non-null onOkay, see comments at top and on _onOkay");
     }
-    body {
+    do {
         super(g);
         _onOkay = aOnOkay;
         _onEnetDLLMissing = aOnEnetDLLMissing;

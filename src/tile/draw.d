@@ -41,7 +41,7 @@ in {
     assert (lookup);
     assert (! occ.noow, "replace noow with groups before drawing");
 }
-body {
+do {
     version (tharsisprofiling)
         auto zone = Zone(profiler, "Level.drawPos RAM ");
     // The lookup map could contain additional info about trigger areas,

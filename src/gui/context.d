@@ -119,7 +119,7 @@ final class Context {
 
     this(in int aScreenXl, in int aScreenYl)
     in { assert (aScreenYl > 0); }
-    body {
+    do {
         _screenXls     = aScreenXl;
         _screenYls     = aScreenYl;
         _stretchFactor = _screenYls / _screenYlg;
@@ -197,7 +197,7 @@ final class Context {
         assert (result >= 0);
         assert (result <= screenYls);
     }
-    body {
+    do {
         // 1 / panelYlgDivisor is the ratio of vertical space occupied by the
         // game/editor panels. Higher values mean less y-space for panels.
         enum panelYlgDivisor = 6;

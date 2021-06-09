@@ -33,7 +33,7 @@ struct ScreenChoice {
 
 @property ScreenChoice screenChoice()
 in { assertOptionsExist(); }
-body {
+do {
     /*
      * See comment in hardware.display.cmdArgModes:
      * Even with software fullscreen (that takes the desktop res),
@@ -47,7 +47,7 @@ body {
 
 @property void screenChoice(ScreenChoice a)
 in { assertOptionsExist(); }
-body {
+do {
     screenType = a.type;
     screenWindowedX = a.x;
     screenWindowedY = a.y;
@@ -69,7 +69,7 @@ void assertOptionsExist()
 
 @property ScreenType userScreenTypeOrCompilationDefault()
 in { assertOptionsExist(); }
-body {
+do {
     ScreenType ret = defaultScreenType;
     try {
         ret = screenType.value.to!ScreenType;

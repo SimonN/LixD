@@ -29,7 +29,7 @@ package void implSaveToFile(const(Level) level, in Filename fn)
 
 public void saveToFile(const(Level) l, std.stdio.File file)
 in { assert (l); }
-body{
+do {
     file.writeln(IoLine.Dollar(glo.levelBuilt,       l.built      ));
     file.writeln(IoLine.Dollar(glo.levelAuthor,      l.author     ));
     if (l.nameGerman.length > 0)
@@ -104,7 +104,7 @@ private IoLine groupOrRegularTileLine(
 out (ret) {
     assert (ret is null || ret.text1 != null);
 }
-body {
+do {
     auto ret = occ.toIoLine();
     if (ret.text1 == null) {
         auto id = writtenGroups.countUntil(occ.tile);

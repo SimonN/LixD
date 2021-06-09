@@ -54,7 +54,7 @@ private:
 public:
     this(Filename fn)
     in { assert (fn); }
-    body {
+    do {
         _rpFn = fn;
         _matcher = new ReplayToLevelMatcher(_rpFn);
         _matcher.forcePointedTo();

@@ -52,7 +52,7 @@ public:
         assert (g.xl >= 60, "Stats need more space");
         assert (g.yl >= 60, "Stats need more space");
     }
-    body {
+    do {
         super(g, ha);
         // Hack: In 640x480, the English text "Replay autosaved"
         // was shortened to "Replay autosave.". To remedy, give some geoms of

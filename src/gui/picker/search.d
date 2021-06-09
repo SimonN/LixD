@@ -206,7 +206,7 @@ public:
 
     this(Geom g, in Filename afn, string title)
     in { assert (afn); }
-    body {
+    do {
         super(g);
         fn = afn;
         Label makeLabel(in float ax, in float axl, in string aText)

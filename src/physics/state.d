@@ -90,7 +90,7 @@ public:
 
     @property Style singleplayerStyle() const @nogc nothrow
     in { assert (! multiplayer, "call this only in singleplayer"); }
-    body { return tribes.byKey.front; }
+    do { return tribes.byKey.front; }
 
     @property bool singleplayerHasSavedAtLeast(in int lixRequired) const @nogc
     {
@@ -105,7 +105,7 @@ public:
 
     @property bool overtimeRunning() const
     in { assert (tribes.length > 0); }
-    body{
+    do {
         return tribes.byValue.all!(tr => tr.prefersGameToEnd)
             || tribes.byValue.any!(tr => tr.triggersOvertime);
     }
@@ -171,7 +171,7 @@ private:
         assert (overtimeRunning);
         assert (tribes.length > 0);
     }
-    body {
+    do {
         if (tribes.byValue.all!(tr => tr.prefersGameToEnd)) {
             return tribes.byValue.map!(tr => tr.prefersGameToEndSince)
                                  .reduce!max;

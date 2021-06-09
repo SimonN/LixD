@@ -51,7 +51,7 @@ protected:
     // child, we don't do that anywhere.
     abstract @property inout(IScrollable) tiler() inout
     out (ret) { assert (ret !is null); }
-    body { return null; }
+    do { return null; }
 
     // Subclass should instantiate their tiler with this geom, then make
     // inout(Tiler) tiler() inout return that new tiler.

@@ -19,7 +19,7 @@ private:
 public:
     this(Geom g)
     in { assert (g.xl >= 20); }
-    body { super(g); }
+    do { super(g); }
 
     void addChoice(string s)
     {
@@ -49,7 +49,7 @@ public:
 
     void choose(int nr)
     in { assert (_choices.len, "add choices before choosing one of them"); }
-    body {
+    do {
         nr = nr.clamp(0, _choices.len - 1);
         if (nr == chosen)
             return;

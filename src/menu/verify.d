@@ -29,7 +29,7 @@ public:
     this(Filename dir)
     in { assert (dir); }
     out { assert (_vc); }
-    body {
+    do {
         super(new Geom(0, 0, gui.screenXlg, gui.screenYlg),
             Lang.winVerifyTitle.transl);
         _console = new LobbyConsole(new Geom(20, 40, xlg - 40, ylg - 60));

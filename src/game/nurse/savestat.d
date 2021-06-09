@@ -35,7 +35,7 @@ public:
 
     Phyu updatesSinceZero() const
     out (result) { assert (result >= 0); }
-    body { return Phyu(upd - _cache.zeroStatePhyu); }
+    do { return Phyu(upd - _cache.zeroStatePhyu); }
 
     bool userStateExists() { return _cache.userStateExists; }
     void saveUserState()   { _cache.saveUser(cs, replay); }

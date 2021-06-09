@@ -28,7 +28,7 @@ public:
         assert (replay);
         assert (! model.cs.multiplayer, "don't evaluate multiplayer replays");
     }
-    body {
+    do {
         bool mercyKilled = false;
         while (! cs.singleplayerHasSavedAtLeast(_required)
             && ! everybodyOutOfLix

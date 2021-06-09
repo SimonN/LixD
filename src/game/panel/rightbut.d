@@ -80,7 +80,7 @@ public:
 protected:
     void addSuggester(const(TooltipSuggester) sug)
     in { assert (! _suggesters.canFind(sug), "Don't add a suggester twice."); }
-    body { _suggesters ~= sug; }
+    do { _suggesters ~= sug; }
 
     @property float skillXl() const { return this.geom.xlg / 4f; }
     @property float skillYl() const { return this.geom.ylg - 20f; }

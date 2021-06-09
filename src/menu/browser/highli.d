@@ -78,7 +78,7 @@ public:
 
     void previewLevel(Level l)
     in { assert (l, "call previewNone() instead"); }
-    body {
+    do {
         _preview.shown = true;
         _previewLevelTitle.text = l.name;
         _preview.level = l;

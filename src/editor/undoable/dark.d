@@ -24,7 +24,7 @@ public:
         immutable(OilSet) aOils
     )
     in { assert (! aOils[].empty); }
-    body { _oils = aOils; }
+    do { _oils = aOils; }
 
     final override void undo(Level l) const { apply(l); }
     final override void apply(Level l) const

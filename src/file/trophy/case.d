@@ -46,7 +46,7 @@ bool maybeImprove(in TrophyKey key, in Trophy tro)
 in {
     assert (tro.built !is null, "don't save trophies without a built Date");
 }
-body {
+do {
     if (key.fileNoExt == "")
         return false;
     Trophy* old = key in _trophies;
@@ -138,7 +138,7 @@ void addDuringLoad(in TrophyKey key, in Trophy tro)
 in {
     assert (tro.built !is null, "don't save trophies without a built Date");
 }
-body {
+do {
     // Don't call addTrophy because that always overwrites the date.
     // We want the newest date here to tiebreak, unlike addTrophy.
     Trophy* old = (key in _trophies);

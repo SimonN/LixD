@@ -84,7 +84,7 @@ public:
 
         Tooltip.ID suggestedTooltip()
         in { assert (isSuggestingTooltip); }
-        body {
+        do {
             return _restart.isMouseHere ? Tooltip.ID.restart
                 : _pause.isMouseHere ? Tooltip.ID.pause
                 : _nuke.isMouseHere ? Tooltip.ID.nuke
@@ -179,7 +179,7 @@ public:
 
         Tooltip.ID suggestedTooltip()
         in { assert (isSuggestingTooltip); }
-        body {
+        do {
             return _stateLoad.isMouseHere ? Tooltip.ID.stateLoad
                 : _stateSave.isMouseHere ? Tooltip.ID.stateSave
                 : Tooltip.ID.showTweaker;

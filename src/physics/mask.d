@@ -130,7 +130,7 @@ struct Mask {
         assert (strs.all!(a => a.length == strs[0].length),
             "matrix of chars is not rectangular");
     }
-    body {
+    do {
         _solid         = new Matrix!bool(strs[0].len, strs.len);
         bool offsetSet = false;
         for (int y = 0; y < strs.len; ++y) {
@@ -196,7 +196,7 @@ struct Mask {
         assert (_solid.xl % 2 == 0, "can't mirror a matrix with odd xl");
         assert (offsetX   % 2 == 0, "can't mirror a matrix with odd offsetX");
     }
-    body {
+    do {
         Mask ret;
         ret._solid = new Matrix!bool(_solid.xl, _solid.yl);
         if (_ignoreSteel !is null)

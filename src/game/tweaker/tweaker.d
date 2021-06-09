@@ -67,7 +67,7 @@ public:
     out {
         assert (_entries.all!(e => e !is null));
     }
-    body {
+    do {
         const(Ply)[] cutDat = cullPliesSoTheyFitIntoOnePage(dat, now);
         resizeListOfGuiEntriesTo(cutDat.len);
         formatListOfGuiEntries(cutDat, now);
@@ -83,7 +83,7 @@ public:
     in {
         assert (this.suggestsChange);
     }
-    body {
+    do {
         return _entries.find!(e => e.suggestsChange)[0].suggestedChange;
     }
 
@@ -119,7 +119,7 @@ private:
     out {
         assert (_entries.all!(e => e !is null));
     }
-    body {
+    do {
         while (_entries.len > newNumOfEntries) {
             rmChild(_entries[$-1]);
             _entries[$-1] = null;
@@ -144,7 +144,7 @@ private:
     in {
         assert (_entries.all!(e => e !is null));
     }
-    body {
+    do {
         mixin liesInPast;
         foreach (size_t id, ref PlyLine e; _entries) {
             if (e.ply != pliesToMatch[id]) {
@@ -166,7 +166,7 @@ private:
     in {
         assert (_entries.all!(e => e !is null));
     }
-    body {
+    do {
         if (_entries.empty != _emptyListTitle.shown) {
             // Switch between presentation of empty and of nonempty list.
             // Neither header nor the empty-list descriptions can undraw.

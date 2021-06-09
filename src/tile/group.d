@@ -63,7 +63,7 @@ package:
         if (cb)
             assert (cb.xfs == 1 && cb.yfs == 1);
     }
-    body {
+    do {
         if (aKey.elements.all!(occ => occ.dark))
             throw new InvisibleException();
 
@@ -136,7 +136,7 @@ public:
             "%d elements, but %d tilesOfElements"
             .format(_elements.length, _tilesOfElements.length));
     }
-    body {
+    do {
         if (occRange.empty)
             return;
         auto tmp = occRange.map!(occ => occ.clone).array;

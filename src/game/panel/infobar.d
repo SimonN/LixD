@@ -152,7 +152,7 @@ private:
             format("_targetDescLixxie %s, but _targetDescNumber == %d",
             _targetDescLixxie ? "exists" : "null", _targetDescNumber));
     }
-    body { with (_targetDescLixxie) {
+    do { with (_targetDescLixxie) {
         string s = "";
         if (_targetDescLixxie) {
             s = "%d %s%s".format(

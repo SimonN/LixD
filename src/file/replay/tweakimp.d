@@ -45,7 +45,7 @@ out {
             ~ rep._plies.map!(to!string).join("\n"));
     }
 }
-body {
+do {
     final switch (rq.how) {
         case ChangeVerb.moveThisLater:
             return rep.moveThisLaterImpl(rq);

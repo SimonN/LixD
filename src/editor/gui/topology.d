@@ -135,7 +135,7 @@ private:
         assert (_warnTooLarge.length == 0);
         assert (_torusX !is null);
     }
-    body {
+    do {
         const float textXl = this.xlg/2 - 20; // -> makeTopologyChildren.boolXl
         _warnTooLarge ~= new Label(new Geom(20, -this.yg + _torusX.yg,
             textXl, 20, From.TOP_RIGHT), Lang.winTopologyWarnSize1.transl);
@@ -249,7 +249,7 @@ public:
         static assert (Level.maxXl < valueMax);
         static assert (Level.maxYl < valueMax);
     }
-    body {
+    do {
         super(new Geom(20f, y, 150f, 20f, From.TOP_RIGHT));
         undrawColor = color.guiM; // erase old labels before writing
         _oldValue = oldValue;

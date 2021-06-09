@@ -36,7 +36,7 @@ protected:
 
     override void onHighlight(Filename fn)
     in { assert (fn, "call onHighlightNone() instead"); }
-    body {
+    do {
         _levelRecent = new Level(fileRecent);
         previewLevel(_levelRecent);
     }

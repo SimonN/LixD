@@ -122,7 +122,7 @@ public:
         assert (lv.playable);
         assert (levelFnForLegacyPointedTo !is null);
     }
-    body {
+    do {
         level = lv;
         _trophyKeyOfTheLevel = keyOfLv;
         _levelFnForHarvest = levelFnForLegacyPointedTo;
@@ -219,7 +219,7 @@ public:
 
     string filenamePrefixForScreenshot() const
     out (ret) { assert (ret != ""); }
-    body {
+    do {
         assert (nurse);
         assert (nurse.constReplay);
         foreach (fn; nurse.constReplay.levelFilename)
@@ -265,7 +265,7 @@ package:
 
     @property Style localStyle() const @nogc nothrow
     in { assert (_effect, "create effect manager before querying style"); }
-    body { return _effect.localTribe; }
+    do { return _effect.localTribe; }
 
     @property const(Tribe) localTribe() const
     {
@@ -350,7 +350,7 @@ private:
 
     Style determineLocalStyle(in Replay rp) const
     in { assert (rp); }
-    body {
+    do {
         if (rp.players.length == 0)
             return Style.garden;
         if (_netClient) {
@@ -374,7 +374,7 @@ private:
         assert (level);
         assert (pan is null);
     }
-    body {
+    do {
         pan = new Panel(view, level.required);
         foreach (player; nurse.constReplay.players) {
             pan.add(player.style, player.name);
@@ -389,7 +389,7 @@ private:
         assert (map is null);
         assert (_tweaker is null);
     }
-    body {
+    do {
         immutable mapYls = (gui.screenYls - gui.panelYls).to!int;
         map = new MapAndCamera(cs.land, gui.screenXls.to!int, mapYls);
         this.centerCameraOnHatchAverage();

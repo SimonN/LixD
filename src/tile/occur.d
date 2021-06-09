@@ -75,19 +75,19 @@ public:
      */
     @property pure nothrow @safe @nogc {
         int rotCw() const
-        in { assert (can.rotate); } body { return 0; }
+        in { assert (can.rotate); } do { return 0; }
         int rotCw(int)
-        in { assert (can.rotate); } body { return 0; }
+        in { assert (can.rotate); } do { return 0; }
 
         bool mirrY() const
-        in { assert (can.mirror); } body { return false; }
+        in { assert (can.mirror); } do { return false; }
         bool mirrY(bool)
-        in { assert (can.mirror); } body { return false; }
+        in { assert (can.mirror); } do { return false; }
 
         bool dark() const
-        in { assert (can.darken); } body { return false; }
+        in { assert (can.darken); } do { return false; }
         bool dark(bool)
-        in { assert (can.darken); } body { return false; }
+        in { assert (can.darken); } do { return false; }
     }
 
     version (assert) {

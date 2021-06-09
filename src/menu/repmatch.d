@@ -51,7 +51,7 @@ private:
 public:
     this(Filename aReplayFn)
     in { assert (aReplayFn); }
-    body {
+    do {
         _fnRp = aReplayFn;
         _rp = Replay.loadFromFile(_fnRp);
         _choices.included.fnMayBeZero = _rp.levelFilename.orElse(_fnRp);
@@ -116,7 +116,7 @@ public:
         assert (mayCreateGame);
     }
     out (ret) { assert (ret); }
-    body {
+    do {
         auto pref = preferredInitializedStruct();
         TrophyKey key;
         key.fileNoExt = pref.fnMayBeZero !is null
@@ -132,7 +132,7 @@ public:
     VerifyingNurse createVerifyingNurse()
     in { assert (preferredLevel.dispatch.playable.orElse(false)); }
     out (ret) { assert (ret); }
-    body {
+    do {
         auto pref = preferredInitializedStruct();
         return new VerifyingNurse(pref.level.unwrap, _rp, pref.lvMatchesFn);
     }

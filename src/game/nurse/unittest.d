@@ -153,7 +153,7 @@ version (unittest) {
 
     void assign(SaveStatingNurse nurse, Phyu phyu, Ac ac)
     in { assert (nurse); }
-    body {
+    do {
         Ply d;
         d.player = PlNr(0);
         d.action = RepAc.ASSIGN;
@@ -169,7 +169,7 @@ version (unittest) {
         assert (nurse.stateOnlyPrivatelyForGame.tribes[Style.garden]
             .lixvec.length >= 1);
     }
-    body {
+    do {
         return nurse.stateOnlyPrivatelyForGame.tribes[Style.garden].lixvec[0];
     }
 

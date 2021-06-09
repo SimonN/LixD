@@ -66,7 +66,7 @@ public:
     // Create Lobby after finishing a game
     this(RichClient aRichClient, Harvest harvest)
     in { assert(aRichClient, "RichClient should exist after a netgame"); }
-    body {
+    do {
         super(new Geom(0, 0, gui.screenXlg, gui.screenYlg),
             Lang.winLobbyTitle.transl);
         commonConstructor();

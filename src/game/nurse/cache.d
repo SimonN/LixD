@@ -87,7 +87,7 @@ public:
         assert (ret == _userState.refCountedStore.isInitialized,
             "Bad user savestate: We have a replay XOR we have state");
     }
-    body {
+    do {
         return _userReplay !is null;
     }
 
@@ -99,7 +99,7 @@ public:
         assert (userStateExists, "don't load if there is nothing to load");
         assert (nurseReplay, "need reference so I know what to invalidate");
     }
-    body {
+    do {
         forgetAutoSavesOnAndAfter(Phyu(0));
         /+
          + Anything here but the line above is instead speed optimization.
@@ -201,7 +201,7 @@ private:
 
     int updateMultipleForPair(in int pair) const pure @nogc
     in { assert (pair >= 0 && pair < pairsToKeep); }
-    body {
+    do {
         return updatesMostFrequentPair
             * updatesMultiplierNextPairIsSlowerBy^^pair;
     }

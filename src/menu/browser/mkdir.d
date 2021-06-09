@@ -27,7 +27,7 @@ private:
 public:
     this(Geom g, in Filename aParentDir)
     in { assert (aParentDir); }
-    body {
+    do {
         super(g, Lang.browserMkdirTitle.transl);
         _parentDir = aParentDir;
         _pleaseEnter = new Label(new Geom(20, 40, this.xlg - 40, 20),

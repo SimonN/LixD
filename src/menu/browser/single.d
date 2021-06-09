@@ -85,14 +85,14 @@ protected:
 
     final override void onHighlightWithLastGame(Filename fn, bool solved)
     in { assert (fn, "call onHighlightNone() instead"); }
-    body {
+    do {
         onHighlightWithoutLastGame(fn);
         _trophySkills.shown = false;
     }
 
     final override void onHighlightWithoutLastGame(Filename fn)
     in { assert (fn, "call onHighlightNone() instead"); }
-    body {
+    do {
         only(_edit, _exportImage, _repForLev, _by, _save).each!(e => e.show());
         _exportImageDone.hide();
         _levelRecent = new Level(fileRecent);

@@ -62,7 +62,7 @@ public:
         assert (suggestsChange,
             "check suggestsChange before calling suggestedChange");
     }
-    body {
+    do {
         return ChangeRequest(_desc.ply,
             _del.execute ? ChangeVerb.eraseThis
             : earlierExecuted ? ChangeVerb.moveThisEarlier

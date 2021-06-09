@@ -82,7 +82,7 @@ class Phymap : Topology {
         assert (ret.xl <= this.xl);
         assert (ret.yl <= this.yl);
     }
-    body {
+    do {
         Rect ret = Rect(0, 0, xl, yl);
         // This relies on the representation of lt: row, row, row...
         // While the row at ret.x is all zeroes, smallen ret
@@ -110,7 +110,7 @@ class Phymap : Topology {
         assert (rect.xl <= xl);
         assert (rect.yl <= yl);
     }
-    body {
+    do {
         if (rect.xl == xl && rect.yl == yl)
             return;
         Phybitset[] cropped = new Phybitset[rect.xl * rect.yl];
@@ -137,7 +137,7 @@ class Phymap : Topology {
 
     bool getSteel(in Point p) const
     out (ret) { if (ret) assert (getSolid(p)); }
-    body      { return get(p, Phybit.steel);   }
+    do { return get(p, Phybit.steel); }
 
     bool getSteelUnlessMaskIgnores(in Point eff, in Mask mask) const
     {

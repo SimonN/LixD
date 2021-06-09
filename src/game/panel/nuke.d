@@ -66,7 +66,7 @@ public:
 
     @property overtimeRemainingInPhyus(in int re)
     in { assert (re >= 0); }
-    body {
+    do {
         if (re == _overtimeRemainingInPhyus || ! _label)
             return;
         _overtimeRemainingInPhyus = re;

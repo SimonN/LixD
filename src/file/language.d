@@ -476,7 +476,7 @@ private:
         assert (languageBasenameNoExt !is null,
             "Initialize user options before reading language files");
     }
-    body {
+    do {
         try {
             assert (fileLanguage !is null);
             return fillVectorFromFile(fileLanguage);

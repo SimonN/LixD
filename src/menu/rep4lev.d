@@ -38,7 +38,7 @@ public:
         assert (aLevelFn);
         assert (aLevel);
     }
-    body {
+    do {
         _levelFn = aLevelFn;
         super(new Geom(0, 0, gui.screenXlg, gui.screenYlg),
             Lang.repForLevTitle.translf(aLevel.name));
@@ -53,7 +53,7 @@ public:
 
     @property ReplayToLevelMatcher matcher()
     in { assert (gotoGame, "demand the matcher only when its data is ready"); }
-    body {
+    do {
         auto m = new ReplayToLevelMatcher(_replayFnNullUntilReplayIsSelected);
         m.forceLevel(_levelFn);
         return m;

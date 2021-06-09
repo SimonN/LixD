@@ -162,7 +162,7 @@ public:
         assert (gadgetID >= 0);
         assert (intendedNumberOfPlayers > 0);
     }
-    body {
+    do {
         return gadgetID % intendedNumberOfPlayers;
     }
 
@@ -171,7 +171,7 @@ public:
         assert (tribe >= 0 && tribe < intendedNumberOfPlayers);
         assert (listLen >= 0);
     }
-    body {
+    do {
         return (listLen + intendedNumberOfPlayers - 1 - tribe)
             / intendedNumberOfPlayers;
     }

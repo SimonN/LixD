@@ -189,7 +189,7 @@ public:
     in {
         assert (rhs !is null);
     }
-    body {
+    do {
         return this.plySliceBefore(before)
             == rhs.plySliceBefore(before);
     }

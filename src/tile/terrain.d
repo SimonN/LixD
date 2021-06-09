@@ -52,7 +52,7 @@ public:
         assert (0 <= g.y && g.y < bound,
             "input point's y = %d is not inside [0, %d[".format(g.y, bound));
     }
-    body {
+    do {
         // The algorithm for rotation and mirroring is:
         // First mirror vertically, if the mirr flag is true.
         // The resulting thing, turn it by rot * 90 degrees ccw.
