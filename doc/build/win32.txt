@@ -114,18 +114,6 @@ Method 2:
 
     If it's not clear, ask me. See top of file for contact details.
 
-Method 3:
-    Use the NuGet distribution of Allegro .libs and .dlls: Go to
-
-        https://www.nuget.org/packages/Allegro
-
-    Click Download on the right. Unzip the downloaded file allegro*.nupkg, it
-    is a normal zip archive. Go to build/native/v141, and you'll see Allegro
-    .lib and .dll files for win32 (= 32-bit) and for x64 (= 64-bit). Copy the
-    .dlls from the archive's build/native/v141/bin into your compiler's
-    windows/bin/. Copy the files from the archive's build/native/v141/lib
-    into your compiler's windows/lib.
-
 
 
 Install enet
