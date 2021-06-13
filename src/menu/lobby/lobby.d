@@ -79,6 +79,7 @@ public:
             _netClient = aRichClient;
             setOurEventHandlers();
             _preview.level = _netClient.level;
+            _levelTitle.text = _netClient.level ? _netClient.level.name : "";
             _chat.text = _netClient.unsentChat;
             _netClient.unsentChat = "";
             _chat.on = _chat.text != "";
