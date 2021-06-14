@@ -17,6 +17,7 @@ struct Side {
 
 pure:
 nothrow:
+@safe:
 @nogc:
     static Side smallestContainer(in Side a, in Side b)
     {
@@ -39,6 +40,7 @@ struct Rect {
 
 pure:
 nothrow:
+@safe:
 @nogc:
     this(in int ax, in int ay, in int axl, in int ayl)
     {
