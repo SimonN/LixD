@@ -259,8 +259,8 @@ do {
     unpauseOnAssign = newOpt("unpauseOnAssign", Lang.optionUnpauseOnAssign, false);
     screenType = newOpt("screenMode", Lang.optionScreenMode,
         defaultScreenType.to!int);
-    screenWindowedX = newOpt("screenWindowedX", Lang.optionScreenWindowedRes, 640);
-    screenWindowedY = newOpt("screenWindowedY", 480);
+    screenWindowedX = newOpt("screenWindowedX", Lang.optionScreenWindowedRes, 1280);
+    screenWindowedY = newOpt("screenWindowedY", 720);
     splatRulerDesign = newOpt("splatRulerDesign", Lang.optionSplatRulerDesign, 2);
     paintTorusSeams = newOpt("paintTorusSeams", Lang.optionPaintTorusSeams, false);
     ingameTooltips = newOpt("ingameTooltips", Lang.optionIngameTooltips, true);

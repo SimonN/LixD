@@ -19,12 +19,7 @@ enum ScreenType {
     hardwareFullscreen = 2,
 }
 
-version (assert) {
-    enum ScreenType defaultScreenType = ScreenType.windowed;
-}
-else {
-    enum ScreenType defaultScreenType = ScreenType.softwareFullscreen;
-}
+enum ScreenType defaultScreenType = ScreenType.windowed;
 
 struct ScreenChoice {
     ScreenType type;
