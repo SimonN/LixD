@@ -89,7 +89,7 @@ To install Allegro 5, you have a choice between two methods.
 Method 1:
     Download the Allegro DLLs and *.lib files from my website:
 
-        http://www.lixgame.com/dow/lix-dlls-libs-win32.zip
+        http://www.lixgame.com/dow/lix-dlls-libs-dmd32.zip
 
     Extract this into your D installation's windows/ directory. This way, the
     DLLs should automatically land in windows/bin/, and the *.lib files should

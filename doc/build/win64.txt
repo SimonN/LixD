@@ -173,27 +173,40 @@ During the installation, when asked:
 
 DMD already ships with dub, the D package manager.
 
-Edit Windows's/Wine's PATH variable (for instructions, see addtopath.txt in
-the same directory of this file, win64.txt, but instead of adding LDC's
-directory, do the following): Append a semicolon to the PATH
-variable, then append the full path to DMD's windows\bin64 directory.
+If you only need to build Lix for 64-bit architecture:
 
-Reason for this manual adding to PATH: DMD's installer adds only the 32-bit
-directory to the PATH, but we want the separate 64-bit directory in the PATH,
-too, so that the DLLs will later be found when running Lix.
+    Download the Allegro 5 and enet DLLs and LIBs that I prepared:
 
-Install Allegro 5 and enet:
+        http://www.lixgame.com/dow/lix-dlls-libs-win64.zip
 
-Put the Allegro 64-bit DLLs and the enet 64-bit DLL into your D installation's
-windows/bin64/ directory. Put the *.lib files into your D installation's
-windows/lib64/ directory.
+    Extract this into your dmd2/windows/ directory. You will get new DLLs in
+    bin/ and new LIBs in lib64/. Proceed to the next section, "Get the Lix
+    source".
 
-Nothing different for the step Get the Lix source.
+Otherwise, if you want to setup DMD to build Lix for both 32-bit _and_ 64-bit:
 
-Compile Lix:
+    Edit Windows's/Wine's PATH variable (for instructions, see addtopath.txt
+    in the same directory of this file, win64.txt, but instead of adding LDC's
+    directory, do the following): Append a semicolon to the PATH variable,
+    then append the full path to DMD's windows\bin64 directory.
 
-Use one of the following command lines, depending on what kind of build you
-want to build:
+    Reason for this manual adding to PATH: DMD's installer adds only the
+    32-bit directory to the PATH, but we want the separate 64-bit directory in
+    the PATH, too, so that the DLLs will later be found when running Lix.
+
+    Download the Allegro 5 and enet DLLs and LIBs that I prepared:
+
+        http://www.lixgame.com/dow/lix-dlls-libs-win64.zip
+
+    Put the Allegro 64-bit DLLs and the enet 64-bit DLL into your D
+    installation's dmd2/windows/bin64/ directory. Put the *.lib files into
+    your D installation's dmd2/windows/lib64/ directory.
+
+Get the Lix source as described in the section "Get the Lix source" above.
+
+Compile Lix: Use one of the following command lines, depending on what kind of
+build you want. The release build (second command) takes longer but will
+have better performance during play.
 
     dub build --compiler=dmd --arch=x86_64
     dub build -b release --compiler=dmd --arch=x86_64
