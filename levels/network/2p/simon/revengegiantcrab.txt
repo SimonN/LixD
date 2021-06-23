@@ -1,4 +1,4 @@
-$BUILT 2021-05-16 18:48:43
+$BUILT 2021-06-23 21:25:33
 $AUTHOR Anonymous
 $ENGLISH Revenge of the Giant Crab
 
@@ -6,11 +6,11 @@ $ENGLISH Revenge of the Giant Crab
 #SIZE_X 736
 #SIZE_Y 400
 
-#SECONDS 30
+#SECONDS 90
 #INITIAL 40
 #SPAWN_INTERVAL 20
 
-#WALKER 10
+#WALKER 30
 #RUNNER 5
 #CLIMBER 5
 #FLOATER 10
@@ -71,7 +71,7 @@ $ENGLISH Revenge of the Giant Crab
 
 :matt/beach/daytime/00: 558 348 rr
 :matt/beach/daytime/06: 600 312
-:matt/beach/daytime/00: 108 350 f
+:matt/beach/daytime/00: 98 350 f
 :matt/beach/daytime/06: -76 312 frr
 :raymanni/holiday/plank_long: 0 88
 :raymanni/holiday/plank_long: 128 88
@@ -87,11 +87,29 @@ $ENGLISH Revenge of the Giant Crab
 :geoo/steel/dark_32x16o.S: 526 88
 :geoo/steel/dark_32x16o.S: 704 88
 :geoo/steel/dark_32x16o.S: 616 88
-:matt/underworld/03: 320 268 frr
+:matt/underworld/03: 322 268 frr
 :amanda/steel/steel16x16.S: 336 268
 :matt/underworld/03: 370 268
 :simon/oriental/pebble2: 388 298 d
 :amanda/steel/steel16x16.S: 384 268
 :geoo/construction/stairs_rd_32.S: 546 250
 :geoo/construction/stairs_rd_32.S: 110 250 frr
-:simon/oriental/pebble2: 339 298 frrd
+:simon/oriental/pebble2: 341 298 frrd
+:matt/beach/decor/grass02: 22 336
+:matt/beach/decor/grass02: 650 336 frr
+:matt/beach/decor/grass02: -6 358
+:matt/beach/decor/grass02: 56 358
+:matt/beach/decor/grass02: 676 358 frr
+:matt/beach/decor/grass02: 616 358 frr
+:matt/beach/decor/grass08: 120 360 frr
+:matt/beach/decor/grass08: 564 358
+:matt/earth/29: 556 252
+:matt/earth/29: 164 252 frr
+:simon/oriental/bush6: 488 88 rr
+:simon/oriental/bush6: 204 88 rr
+:simon/oriental/culm_half1: -4 64
+:simon/oriental/culm_half1: 730 64
+:simon/oriental/bush1: 28 88 rr
+:simon/oriental/bush1: 118 88 rr
+:simon/oriental/bush1: 556 88 f
+:simon/oriental/bush1: 644 88 f
