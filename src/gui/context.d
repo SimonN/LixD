@@ -132,12 +132,27 @@ final class Context {
         // Other resolutions require us to scale the font size.
         // Unscaled is equivalent to magnif == 1f.
         immutable float magnif = min(aScreenXl / 640f, aScreenYl / 480f);
-        djvuS = makeFont( 8 * magnif);
-        djvuM = makeFont(14 * magnif);
-        djvuL = makeFont(20 * magnif);
-        _shaOffset = min(magnif, magnif / 2.0f + 2);
+        djvuS = makeFont((8 * magnif).floor.to!int);
+        djvuM = makeFont((14 * magnif).floor.to!int);
+        djvuL = makeFont((20 * magnif).floor.to!int);
         _smallScreenDjvuSSurround = magnif <= 1.3f;
-        _djvuMOffset = (aScreenYl / 24f - al_get_font_line_height(djvuM)) / 2f;
+        _shaOffset = () {
+            if (_smallScreenDjvuSSurround) {
+                return 1;
+            }
+            immutable float unrounded = min(magnif, magnif / 2f + 2f);
+            return ((14 * unrounded).floor / 14f).ceil;
+        }();
+        _djvuMOffset = () {
+            immutable float ylsOf20geom = (aScreenYl / 24f);
+            immutable float ylsText = al_get_font_line_height(djvuM);
+            immutable float goodIfNoShadow = (ylsOf20geom - ylsText) / 2f;
+            immutable float goodWithShadow
+                = goodIfNoShadow - _shaOffset / 2f;
+            return aScreenYl <= 400 ? goodWithShadow
+                : aScreenYl <= 500 ? goodWithShadow.ceil
+                : goodWithShadow.floor;
+        }();
     }
 
     void dispose()
@@ -152,11 +167,11 @@ final class Context {
         disposeImpl(djvuL);
     }
 
-    ALLEGRO_FONT* makeFont(in float size)
+    ALLEGRO_FONT* makeFont(in int size)
     {
         immutable fn = new VfsFilename("./data/fonts/djvusans.ttf");
         ALLEGRO_FONT* f = al_load_ttf_font(
-            fn.stringForReading.toStringz, to!int(floor(size)), 0);
+            fn.stringForReading.toStringz, size, 0);
         return f ? f : al_create_builtin_font();
     }
 
