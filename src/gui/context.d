@@ -192,20 +192,47 @@ final class Context {
         }
     }
 
+    // Screen pixels (in y direction) that the map should occupy, i.e.,
+    // the part of the screen that is _not_ covered by the panel at the bottom.
     @property float mapYls() const
     out (result) {
         assert (result >= 0);
         assert (result <= screenYls);
     }
     do {
-        // 1 / panelYlgDivisor is the ratio of vertical space occupied by the
-        // game/editor panels. Higher values mean less y-space for panels.
-        enum panelYlgDivisor = 6;
-        // The remaining pixels (for the map above the panel) should be a
+        immutable float unroundedMapYls
+            = _screenYls - (_screenYls / panelYlgDivisor);
+        // The pixels for the map above the panel should be a
         // multiple of the max zoom level, to make the zoom look nice.
+        // It's fine to make the panel minimally larger/smaller to accomodate.
         enum int multipleForZoom = 4;
-        float ret = _screenYls - (_screenYls / panelYlgDivisor);
-        ret = floor(ret / multipleForZoom) * multipleForZoom;
-        return ret;
+        return floor(unroundedMapYls / multipleForZoom) * multipleForZoom;
+    }
+
+    // 1 / panelYlgDivisor is the ratio of vertical space occupied by the
+    // game/editor panels. Higher values mean less y-space for panels.
+    float panelYlgDivisor() const
+    {
+        assert (_screenXls > 0, "necessary for division; bad init?");
+        assert (_screenYls > 0, "necessary for division; bad init?");
+        immutable float aspectRatio = _screenXls / _screenYls;
+        if (aspectRatio >= 16f / 10f + 0.01f // Widescreen
+            && _screenYls < 1000f // Small screen, hard to upscale skill icons
+        ) {
+            /*
+             * Hack to make skill icons look nice on smaller widescreens.
+             * The skill icons can't be upscaled automatically to 1.5x,
+             * which would be really nice. Until I draw the skill icons at
+             * at 1.5x, I'll enlarge the panel by this hack. On this larger
+             * panel, the GUI will autoscale the skill CutbitElement to 2x.
+             *
+             * This hack is especially important when we set the default
+             * resolution to 1280x720 in July 2021.
+             *
+             * Without the hack, the function should always return 6.
+             */
+            return 5.6f;
+        }
+        return 6;
     }
 }
