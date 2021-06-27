@@ -30,8 +30,8 @@ even when we return from a netgame.
 Fix #423: De-duplicate the multiplayer level tree, as reported by Dullstar.
 I had extra copies of Along the Fabrics of Your Clothing in the 8p directory.
 
-Updated Allegro DLLs to Allegro 5.2.7.1. You can check what Lix usesat runtime
-with Lix's command-line argument: --allgero-version
+Updated Allegro DLLs to Allegro 5.2.7.1. You can check what Lix uses at
+runtime with Lix's command-line argument: --allgero-version
 
 I build the 32-bit Windows release with LDC, not with DMD. LDC generates
 faster-running machine code, exactly what we want for a release version. Tell
