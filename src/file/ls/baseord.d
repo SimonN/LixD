@@ -1,20 +1,23 @@
-module gui.picker.ls;
+module file.ls.baseord;
 
-/* Ls looks for dirs/files based on its own criteria.
+/*
+ * Ls looks for dirs/files based on its own criteria.
  * Ls is not concerned with displaying the dirs/files with certain styles
  * of buttons in a Picker. Instead, Tiler does that.
+ *
+ * This module (baseord) contains the base Ls
+ * and the OrderFile Ls
+ * because there is a unittest that uses internals of both.
  */
 
 import std.algorithm;
-import std.array;
 import std.conv;
-import std.file;
 import std.range;
 
-import basics.globals;
+static import basics.globals;
 import basics.help;
 import file.filename;
-import file.io;
+import file.io; // semantics not used, we only read line-by-line
 import file.log;
 
 class Ls {

@@ -1,10 +1,10 @@
-module gui.picker.lsimg;
+module file.ls.image;
 
 import std.array;
 import std.algorithm;
 
 import file.filename;
-import gui.picker.ls;
+import file.ls.baseord;
 
 abstract class ImageLs : AlphabeticalLs {
 private:
