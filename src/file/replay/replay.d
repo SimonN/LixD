@@ -20,7 +20,7 @@ import basics.help; // array.len of type int
 import basics.globals;
 import file.date;
 import file.filename;
-import file.option;
+static import file.option.allopts;
 import file.replay.tweakimp;
 import file.replay.io;
 import level.level;
@@ -173,13 +173,18 @@ public:
         _gameVersionRequired = gameVersion();
         if (_players.length == 1) {
             foreach (ref Player pl; _players)
-                pl.name = userName;
+                pl.name = file.option.allopts.userName;
         }
     }
 
     void addPlayer(PlNr nr, Style st, string name)
     {
         _players[nr] = Player(st, name);
+    }
+
+    bool wasPlayedBy(string who) const pure nothrow @safe @nogc
+    {
+        return _players.byValue.canFind!(pl => pl.name == who);
     }
 
     // This doesn't check whether the metadata/general data is the same.
@@ -290,17 +295,8 @@ public:
         this.implSaveToFile(manualSaveFilename(), lev);
     }
 
-    bool shouldWeAutoSave() const
-    {
-        return _players.length > 1
-            ? replayAutoMulti.value
-            : replayAutoSolutions.value;
-    }
-
     void saveAsAutoReplay(in Level lev) const
     {
-        if (! shouldWeAutoSave)
-            return;
         this.implSaveToFile(autoSaveFilename(), lev);
     }
 

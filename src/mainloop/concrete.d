@@ -143,6 +143,11 @@ public:
         final switch (_singleOut.exitWith) {
         case SinglePlayerOutcome.ExitWith.notYet:
             return crashInsteadOfReturningAny!TopLevelScreen;
+        case SinglePlayerOutcome.ExitWith.gotoLevel:
+            return new ZockerScreen(new Game(
+                _singleOut.nextLevel.level,
+                _singleOut.nextLevel.fn, no!Replay),
+                no!(const Replay), ZockerScreen.AfterwardsGoto.browSin);
         case SinglePlayerOutcome.ExitWith.gotoBrowser:
             final switch (_browserToExitToIfExitIsChosen) {
             case ZockerScreen.AfterwardsGoto.browSin:

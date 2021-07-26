@@ -20,4 +20,9 @@ struct Harvest {
     // still specify the loaded level's key, not the pointed-to level's key.
     const(TrophyKey) trophyKey;
     const(Trophy) trophy; // of the local team, designed for singleplayer.
+
+    bool singleplayerHasWon() const pure nothrow @safe @nogc
+    {
+        return trophy.lixSaved >= level.required;
+    }
 }

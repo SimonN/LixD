@@ -79,6 +79,16 @@ $winSearchPrompt Search by title, author, or filename in %d levels:
 
 $repForLevTitle Load replay for “%s”
 
+$outcomeAttemptNextLevel Next level:
+$outcomeResolveNextLevel Next level (solved):
+$outcomeAttemptNextUnsolvedLevel Next unsolved level:
+$outcomeExitToSingleBrowser Back to the browser
+
+$outcomeTrophyLixSaved Lix
+$outcomeTrophySkillsUsed Skills
+$outcomeTrophyYourAttempt Your result
+$outcomeTrophyPreviousRecord Record
+
 // networking lobby
 $winLobbyTitle Network Game|From the main menu, go to the networking lobby.
 $winLobbyDisconnect Disconnect

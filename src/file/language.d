@@ -151,6 +151,17 @@ enum Lang {
 
     repForLevTitle,
 
+    // Singleplayer outcome
+    outcomeAttemptNextLevel,
+    outcomeResolveNextLevel,
+    outcomeAttemptNextUnsolvedLevel,
+    outcomeExitToSingleBrowser,
+
+    outcomeTrophyLixSaved,
+    outcomeTrophySkillsUsed,
+    outcomeTrophyYourAttempt,
+    outcomeTrophyPreviousRecord,
+
     // networking lobby
     winLobbyTitle,
     winLobbyDisconnect,
