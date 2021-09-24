@@ -19,7 +19,6 @@ import std.string;
 import sdlang;
 
 import file.filename;
-import file.io;
 import file.language;
 import hardware.keyset;
 
@@ -37,17 +36,11 @@ public:
 
     final Lang lang() const pure nothrow @safe @nogc { return _lang; }
 
-    final void set(in IoLine ioLine)
-    {
-        assert (ioLine.text1 == _userFileKey,
-            "Mismatch in user option setter: IoLine=" ~ ioLine.text1
-            ~ " ourName=" ~ _userFileKey);
-        setImpl(ioLine);
-    }
-
     final void set(Tag tag)
     {
-        assert (tag.name == _userFileKey);
+        assert (tag.name == _userFileKey,
+            "this.name == '" ~ _userFileKey
+            ~ "' != tag.name == '" ~ tag.name ~ "'");
         setImpl(tag);
     }
 
@@ -59,7 +52,6 @@ public:
     }
 
 protected:
-    abstract void setImpl(in IoLine ioLine); // legacy, keep until early 2020
     abstract void setImpl(Tag tag);
     abstract void revertToDefault();
 
@@ -69,7 +61,7 @@ protected:
     abstract void addValueTo(Tag) const;
 }
 
-// ############################################################################
+
 
 class UserOption(T) : AbstractUserOption
     if (is (T == int) || is (T == bool) || is (T == string) || is (T == KeySet)
@@ -104,25 +96,6 @@ public:
     }
 
 protected:
-    override void setImpl(in IoLine ioLine)
-    {
-        static if (is (T == int))
-            _value = ioLine.nr1;
-        else static if (is (T == bool))
-            _value = ioLine.nr1 > 0;
-        else static if (is (T == string))
-            _value = ioLine.text2;
-        else static if (is (T == KeySet)) {
-            _value = parseStringOfIntsIntoKeySet(ioLine.text2);
-            // Backwards compatibility: Before Lix 0.6.2, we saved hotkeys
-            // in '#' fields instead of '$' fields. Load such an old line.
-            if (_value.empty && ioLine.type == '#')
-                _value = KeySet(ioLine.nr1);
-        }
-        else
-            static assert (false);
-    }
-
     override void setImpl(Tag tag)
     {
         static if (is (T == KeySet)) {
@@ -159,34 +132,24 @@ unittest
     assert (a.createTag().values.front == 5);
 }
 
-private KeySet parseStringOfIntsIntoKeySet(string s) pure nothrow
-{
-    KeySet foldInts(KeySet keys, int i) { return KeySet(keys, KeySet(i)); }
-    try
-        return s.splitter(",")
-            .map!(str => str.strip)
-            .filter!(str => ! str.empty)
-            .map!(str => str.to!int)
-            .fold!foldInts(KeySet());
-    catch (Exception)
-        return KeySet();
-}
-
 unittest {
     UserOption!KeySet mykey = new UserOption!KeySet("myHotkeyKey",
         Lang.optionKeyMenuOkay, KeySet(45));
     assert (mykey.createTag().name == "myHotkeyKey");
     assert (mykey.createTag().values.front == 45);
-    mykey.set(IoLine.Dollar("myHotkeyKey", "2, 1, ,, 4, 3"));
-    import std.algorithm;
-    assert (mykey.createTag().values.equal([1, 2, 3, 4]));
+    {
+        Tag root = parseSource("myHotkeyKey 2 1 4 3 2 2 2\n");
+        mykey.set(root.tags.front);
+        import std.algorithm;
+        assert (mykey.createTag().values.equal([1, 2, 3, 4]));
+    }
     mykey = KeySet();
     assert (mykey.createTag().values.empty);
-    mykey.set(IoLine.Dollar("myHotkeyKey", ""));
+    mykey.set(new Tag("", "myHotkeyKey"));
     assert (mykey.createTag().values.empty);
 }
 
-// ############################################################################[
+
 
 class UserOptionFilename : AbstractUserOption {
 private:
@@ -212,11 +175,6 @@ public:
     }
 
 protected:
-    override void setImpl(in IoLine ioLine)
-    {
-        _value = MutFilename(new VfsFilename(ioLine.text2));
-    }
-
     override void setImpl(Tag tag)
     {
         _value = MutFilename(new VfsFilename(tag.getValue!string));
