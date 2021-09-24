@@ -40,7 +40,7 @@ public alias Fire      = Gadget;
 public alias FlingPerm = Gadget;
 
 package immutable string StandardGadgetCtor =
-    "this(const(Topology) top, in ref GadOcc levelpos)
+    "this(const(Topology) top, in GadOcc levelpos)
     {
         super(top, levelpos);
     }";
@@ -55,7 +55,7 @@ public:
 
 protected:
     // protected, use the factory to generate gadgets of the correct subclass
-    this(const(Topology) top, in ref GadOcc levelpos)
+    this(const(Topology) top, in GadOcc levelpos)
     in {
         assert (levelpos.tile, "we shouldn't make gadgets from missing tiles");
         assert (levelpos.tile.cb, "we shouldn't make gadgets from bad tiles");
@@ -68,7 +68,7 @@ protected:
 
 public:
     static Gadget
-    factory(const(Topology) top, in ref GadOcc levelpos)
+    factory(const(Topology) top, in GadOcc levelpos)
     {
         assert (levelpos.tile);
         final switch (levelpos.tile.type) {

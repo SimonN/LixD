@@ -37,7 +37,7 @@ private struct Effect {
     Sound sound; // if not necessary, set to 0 == Sound::NOTHING
     Loudness loudness;
 
-    int opCmp(ref in Effect rhs) const
+    int opCmp(in Effect rhs) const
     {
         return phyu != rhs.phyu ? phyu - rhs.phyu
             : pa != rhs.pa ? pa.opCmp(rhs.pa)

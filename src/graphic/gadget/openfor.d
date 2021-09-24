@@ -38,7 +38,7 @@ private:
     immutable int _eatingAnimLen;
 
 public:
-    this(const(Topology) top, in ref GadOcc levelpos)
+    this(const(Topology) top, in GadOcc levelpos)
     out { assert (_idleAnimLen >= 1); }
     do {
         super(top, levelpos);

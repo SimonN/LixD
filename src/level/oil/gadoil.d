@@ -52,7 +52,7 @@ public:
         arrRemove(level.gadgets[_type], _id);
     }
 
-    void zOrderUntil(Level level, const(Oil) rhsUncast) const
+    void zOrderUntil(Level level, in Oil rhsUncast) const
     {
         /*
          * Same hack as in insertIntoLevel(general Occ).

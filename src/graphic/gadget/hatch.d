@@ -27,7 +27,7 @@ public:
     enum updatesBlinkOn  =  4;
     enum updatesBlinkOff =  2;
 
-    this(const(Topology) top, in ref GadOcc levelpos)
+    this(const(Topology) top, in GadOcc levelpos)
     {
         super(top, levelpos);
         spawnFacingLeft = levelpos.hatchRot;

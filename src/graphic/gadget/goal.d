@@ -22,7 +22,7 @@ import tile.occur;
 
 class Goal : GadgetWithTribeList {
 public:
-    this(const(Topology) top, in ref GadOcc levelpos) { super(top, levelpos); }
+    this(const(Topology) top, in GadOcc levelpos) { super(top, levelpos); }
     this(in Goal rhs) { super(rhs); }
     override Goal clone() const { return new Goal(this); }
 

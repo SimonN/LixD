@@ -89,7 +89,7 @@ public:
     @property nothrow @nogc @safe {
         T defaultValue() const { return _defaultValue; }
         T value()        const { return _value; }
-        T opAssign(in T aValue) { return _value = aValue; }
+        T opAssign(const(T) aValue) { return _value = aValue; }
     }
 
     alias value this;

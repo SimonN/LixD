@@ -77,7 +77,7 @@ struct PotentialAssignee {
     // Holding the priority inversion key, or right mouse button (configurable
     // in the options) inverts the sorting of (1.), but not of the others.
     // Never invert priority for unclickable lix (priority == 0 or == 1).
-    bool isBetterThan(in ref PotentialAssignee rhs) const {
+    bool isBetterThan(in PotentialAssignee rhs) const {
         return lixxie    is null ? false
             : rhs.lixxie is null ? true
             : priority <= 1 && rhs.priority >  1 ? false
@@ -190,7 +190,7 @@ PotentialAssignee generatePotentialAssignee(
 }
 
 void comparePotentialWithBestWorst(
-    in ref PotentialAssignee potAss,
+    in PotentialAssignee potAss,
     ref PotentialAssignee best,
     ref PotentialAssignee worst,
     ref bool anyFoundLeft,
@@ -213,7 +213,7 @@ void comparePotentialWithBestWorst(
 
 void assignToPotentialAssignee(
     Game game,
-    in ref PotentialAssignee potAss) { with (game)
+    in PotentialAssignee potAss) { with (game)
 {
     SkillButton currentSkill = pan.currentSkill;
     if (potAss.lixxie is null)

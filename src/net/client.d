@@ -213,7 +213,7 @@ public:
         enet_peer_send(_serverPeer, 0, p);
     }
 
-    void sendPly(const Ply data)
+    void sendPly(in Ply data)
     {
         if (! connected)
             return;
