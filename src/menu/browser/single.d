@@ -174,8 +174,10 @@ private:
         immutable savedXl = min(110f, infoXl/2f);
         _trophySaved = new LabelTwo(new Geom(infoX, trophyLineY, savedXl, 20),
             Lang.previewLevelSingleTrophySaved.transl);
+        _trophySaved.setUndrawBeforeDraw();
         _trophySkills = new LabelTwo(new Geom(infoX + savedXl, trophyLineY,
             infoXl - savedXl, 20), Lang.previewLevelSingleTrophySkills.transl);
+        _trophySkills.setUndrawBeforeDraw();
 
         addChildren(_edit, _repForLev, _exportImage, _trophySaved,
             _trophySkills, _exportImageDone, _newLevel);

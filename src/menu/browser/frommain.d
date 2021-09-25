@@ -20,6 +20,7 @@ public:
         super(title, baseDir, t);
         _preview = new FullPreview(
             new Geom(20, 60, infoXl, 240, From.TOP_RIG));
+        _preview.setUndrawBeforeDraw();
         addChild(_preview);
         previewNone();
     }

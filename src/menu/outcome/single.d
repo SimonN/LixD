@@ -19,6 +19,7 @@ import file.option.allopts;
 import gui;
 import game.harvest;
 import menu.preview.base;
+import menu.outcome.repsave;
 import menu.outcome.trotable;
 import menu.preview.fullprev;
 
@@ -30,7 +31,9 @@ struct NextLevel {
 class SinglePlayerOutcome : Window {
 private:
     TrophyTable _trophyTable;
+    ReplaySaver _replaySaver;
     FullPreview _oldLevel;
+
     NextLevelButton[] _offeredLevels;
     TextButton _gotoBrowser;
 
@@ -49,10 +52,12 @@ public:
         super(new Geom(0, 0, gui.screenXlg, gui.screenYlg),
             harvest.level.name);
 
-        _trophyTable = new TrophyTable(new Geom(20, 40,
-            xlg - 60f - nextLevelXlg, 160));
+        _trophyTable = new TrophyTable(newTrophyTableGeom());
         _trophyTable.addJustPlayed(harvest.trophy);
         addChild(_trophyTable);
+
+        _replaySaver = new ReplaySaver(newReplaySaverGeom(), harvest);
+        addChild(_replaySaver);
 
         _oldLevel = new FullPreview(new Geom(20, 40, nextLevelXlg, 160,
             From.TOP_RIGHT));
@@ -117,6 +122,19 @@ private:
     float nextLevelXlg() const
     {
         return this.xlg/2f - 30f;
+    }
+
+    Geom newTrophyTableGeom() const
+    {
+        return new Geom(20, 40, xlg - 60f - nextLevelXlg, 100);
+    }
+
+    Geom newReplaySaverGeom() const
+    {
+        Geom ret = newTrophyTableGeom();
+        ret.y += ret.yl + 20;
+        ret.yl = 40;
+        return ret;
     }
 
     void offerUpToTwoLevels(Rhino old)

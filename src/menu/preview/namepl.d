@@ -28,6 +28,12 @@ public:
         addChildren(_level, _replay);
     }
 
+    void setUndrawBeforeDraw()
+    {
+        _level.setUndrawBeforeDraw();
+        _replay.setUndrawBeforeDraw();
+    }
+
     void previewNone()
     {
         _level.hide();
@@ -65,13 +71,19 @@ public:
     do {
         super(g);
         _title = new Label(new Geom(0, 0, xlg, 20));
-        _title.undrawBeforeDraw = true;
         _by = new LabelTwo(new Geom(0, 20, xlg, 20),
             Lang.previewLevelAuthor.transl);
         _save = new LabelTwo(new Geom(0, 40, xlg, 20),
             Lang.previewLevelSingleGoal.transl);
         addChildren(_title, _by, _save);
         undrawColor = color.guiM;
+    }
+
+    void setUndrawBeforeDraw()
+    {
+        _title.undrawBeforeDraw = true;
+        _by.setUndrawBeforeDraw();
+        _save.setUndrawBeforeDraw();
     }
 
     void preview(in Level lev)
@@ -96,13 +108,19 @@ public:
     do {
         super(g);
         _title = new Label(new Geom(0, 0, xlg, 20));
-        _title.undrawBeforeDraw = true;
         _player = new LabelTwo(new Geom(0, 20, xlg, 20),
             Lang.previewReplayPlayer.transl);
         _pointsTo = new LabelTwo(new Geom(0, 40, xlg, 20),
             Lang.previewReplayPointsTo.transl);
         addChildren(_title, _player, _pointsTo);
         undrawColor = color.guiM;
+    }
+
+    void setUndrawBeforeDraw()
+    {
+        _title.undrawBeforeDraw = true;
+        _player.setUndrawBeforeDraw();
+        _pointsTo.setUndrawBeforeDraw();
     }
 
     void preview(in Replay rep, in Level lev)

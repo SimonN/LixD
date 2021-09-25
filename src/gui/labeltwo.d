@@ -20,9 +20,11 @@ public:
         _value   = new Label(new Geom(_caption.textLg + 6f, 0,
                                 xlg - _caption.textLg - 6f, ylg, From.LEFT));
         _caption.color = color.guiOnM; // darker than value's colorText
-        _value.undrawBeforeDraw = true;
         addChildren(_caption, _value);
     }
+
+    // Call this if you expect to reset the value's text several times.
+    void setUndrawBeforeDraw() { _value.undrawBeforeDraw = true; }
 
     @property string value(in string s) { return _value.text = s; }
     @property int    value(in int i)    { _value.number = i; return i; }

@@ -27,6 +27,11 @@ public:
         addChildren(_thumbnail, _nameplate);
     }
 
+    void setUndrawBeforeDraw()
+    {
+        _nameplate.setUndrawBeforeDraw();
+    }
+
     void dispose()
     {
         _thumbnail.dispose();
