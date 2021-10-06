@@ -11,7 +11,7 @@ import gui;
 
 class TrophyTable : Element {
 private:
-    TrophyLine[] _lines;
+    Element[] _lines;
 
 public:
     this(Geom g)
@@ -20,21 +20,29 @@ public:
         addChild(new TrophyHeader(new Geom(0, 0, xlg, 20f)));
     }
 
-    void addJustPlayed(in Trophy yourAttempt)
+    void addSaveRequirement(in int lixRequired)
     {
-        assert (_lines.length == 0, "already contains a just-played trophy");
-        _lines ~= new TrophyLine(new Geom(0, 20f, xlg, 20f),
-            Lang.outcomeTrophyYourAttempt, yourAttempt);
+        _lines ~= new SaveRequirementLine(
+            new Geom(0, 20f + _lines.length * 20f, xlg, 20f), lixRequired);
         addChild(_lines[$-1]);
         reqDraw();
     }
 
+    void addJustPlayed(in Trophy yourAttempt)
+    {
+        add(Lang.outcomeTrophyYourAttempt, yourAttempt);
+    }
+
     void addOld(in Trophy previous)
     {
-        assert (_lines.length >= 1, "add a just-played trophy before the old");
+        add(Lang.outcomeTrophyPreviousRecord, previous);
+    }
+
+private:
+    void add(in Lang caption, in Trophy trophy)
+    {
         _lines ~= new TrophyLine(
-            new Geom(0, 20f + _lines.length * 20f, xlg, 20f),
-            Lang.outcomeTrophyPreviousRecord, previous);
+            new Geom(0, 20f + _lines.length * 20f, xlg, 20f), caption, trophy);
         addChild(_lines[$-1]);
         reqDraw();
     }
@@ -82,5 +90,25 @@ public:
         _numSkillsUsed = new Label(new Geom(0, 0, xlg/4, ylg, From.RIGHT));
         _numSkillsUsed.number = trophy.skillsUsed;
         addChild(_numSkillsUsed);
+    }
+}
+
+class SaveRequirementLine : Element {
+private:
+    Label _name;
+    Label _numLixRequired;
+
+public:
+    this(Geom g, in int lixRequired)
+    {
+        super(g);
+        _name = new Label(new Geom(0, 0, xlg/2, ylg),
+            Lang.winConstantsRequired.transl);
+        addChild(_name);
+
+        _numLixRequired = new Label(
+            new Geom(xlg/2.5f, 0, xlg/4, ylg, From.RIGHT));
+        _numLixRequired.number = lixRequired;
+        addChild(_numLixRequired);
     }
 }

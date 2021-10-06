@@ -53,6 +53,7 @@ public:
             harvest.level.name);
 
         _trophyTable = new TrophyTable(newTrophyTableGeom());
+        _trophyTable.addSaveRequirement(harvest.level.required);
         _trophyTable.addJustPlayed(harvest.trophy);
         addChild(_trophyTable);
 
