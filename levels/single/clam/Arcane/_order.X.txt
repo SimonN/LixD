@@ -7,7 +7,7 @@ flower-towers.txt
 over-and-under-and-out.txt
 cubeout.txt
 runner-stunner.txt
-lazy-gypsy-bums.txt
+lazy-clowns.txt
 sand-me-down.txt
 compression-method-infinity.txt
 builders-without-borders.txt

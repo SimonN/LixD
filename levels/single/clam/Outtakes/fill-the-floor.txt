@@ -1,0 +1,152 @@
+$BUILT 2021-10-05 14:06:41
+$AUTHOR Clam
+$ENGLISH Fill the Floor
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 464
+
+#INITIAL 20
+#REQUIRED 20
+#SPAWN_INTERVAL 23
+
+#FLOATER 20
+#PLATFORMER 1
+#EXPLODER2 0
+
+:matt/carnival/Hatch.H: 112 46
+:matt/carnival/Hatch.H: 144 46
+:matt/carnival/Hatch.H: 176 46
+:matt/carnival/Hatch.H: 208 46
+:matt/carnival/Hatch.H: 208 46 r
+:matt/carnival/Hatch.H: 176 46 r
+:matt/carnival/Hatch.H: 144 46 r
+:matt/carnival/Hatch.H: 112 46 r
+
+:matt/carnival/Goal.G: 432 272
+
+:geoo/construction/sawblade_small.F: 336 312
+
+:matt/carnival/15: 328 320
+$BEGIN_TILE_GROUP 0
+:matt/carnival/50: 0 0
+:matt/carnival/45: 96 0
+:matt/carnival/35: 0 0
+:matt/carnival/00: 32 0 d
+:matt/carnival/33: 64 0 frr
+:matt/carnival/00: 64 0 d
+:matt/carnival/14: 40 16
+:matt/carnival/14: 52 16 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:matt/carnival/14: 48 16
+:Group-0: 0 0
+:matt/carnival/15: 64 16
+:matt/carnival/15: 76 16 d
+$END_TILE_GROUP
+:Group-1: 256 304
+:geoo/abstract/pipes/central1: 316 66 rrr
+:matt/carnival/00: 160 336
+:matt/carnival/01: 192 336
+:matt/carnival/02: 224 336
+:matt/carnival/03: 256 336
+:matt/carnival/00: 416 336
+:matt/carnival/01: 448 336
+:matt/carnival/02: 352 336
+:matt/carnival/03: 384 336
+:matt/carnival/02: 480 336
+:matt/carnival/03: 128 336
+:matt/carnival/50: 384 304
+:matt/carnival/01: 128 368
+:matt/carnival/00: 224 368
+:matt/carnival/01: 256 368
+:matt/carnival/02: 160 368
+:matt/carnival/03: 192 368
+:matt/carnival/00: 352 368
+:matt/carnival/01: 384 368
+:matt/carnival/02: 288 368
+:matt/carnival/03: 320 368
+:matt/carnival/02: 416 368
+:matt/carnival/03: 448 368
+:matt/carnival/00: 480 368
+:matt/carnival/01: 320 336
+:matt/carnival/00: 288 336
+:proxima/tile/spheres/gold: 288 92
+:geoo/construction/concrete/064h: 0 400
+:geoo/construction/concrete/064h: 128 400
+:geoo/construction/concrete/064h: 256 400
+:geoo/construction/concrete/064h: 384 400
+:geoo/construction/concrete/064h: 512 400
+:matt/carnival/03: 512 336
+:matt/carnival/01: 512 368
+:matt/carnival/02: 96 336
+:matt/carnival/00: 96 368
+:matt/carnival/02: 96 208
+:matt/carnival/00: 96 240
+:matt/carnival/03: 512 208
+:matt/carnival/01: 512 240
+:matt/carnival/03: 64 368
+:matt/carnival/01: 64 336
+:matt/carnival/03: 64 240
+:matt/carnival/01: 64 208
+:matt/carnival/00: 544 208
+:matt/carnival/02: 544 240
+:matt/carnival/00: 544 336
+:matt/carnival/02: 544 368
+:geoo/construction/concrete/064h: -64 336
+:geoo/construction/concrete/064h: 576 336
+:matt/carnival/02: 96 144
+:matt/carnival/00: 96 176
+:matt/carnival/03: 64 176
+:matt/carnival/01: 64 144
+:matt/carnival/00: 160 16
+:matt/carnival/01: 192 16
+:matt/carnival/02: 224 16
+:matt/carnival/03: 256 16
+:matt/carnival/00: 416 16
+:matt/carnival/01: 448 16
+:matt/carnival/02: 352 16
+:matt/carnival/03: 384 16
+:matt/carnival/02: 480 16
+:matt/carnival/03: 128 16
+:matt/carnival/01: 128 48
+:matt/carnival/00: 224 48
+:matt/carnival/01: 256 48
+:matt/carnival/02: 160 48
+:matt/carnival/03: 192 48
+:matt/carnival/00: 352 48
+:matt/carnival/01: 384 48
+:matt/carnival/02: 288 48
+:matt/carnival/03: 320 48
+:matt/carnival/02: 416 48
+:matt/carnival/03: 448 48
+:matt/carnival/00: 480 48
+:matt/carnival/01: 320 16
+:matt/carnival/00: 288 16
+:matt/carnival/03: 512 144
+:matt/carnival/01: 512 176
+:matt/carnival/00: 544 144
+:matt/carnival/02: 544 176
+:matt/goldmine/crate32: 528 272 frr
+:matt/goldmine/crate32: 528 304
+:matt/carnival/02: 96 272
+:matt/carnival/00: 96 304
+:matt/carnival/03: 64 304
+:matt/carnival/01: 64 272
+:matt/carnival/44: 224 304 r
+:matt/carnival/02: 96 80
+:matt/carnival/00: 96 112
+:matt/carnival/03: 64 112
+:matt/carnival/01: 64 80
+:matt/carnival/03: 512 80
+:matt/carnival/01: 512 112
+:matt/carnival/00: 544 80
+:matt/carnival/02: 544 112
+:matt/carnival/03: 512 16
+:matt/carnival/01: 512 48
+:matt/carnival/00: 544 16
+:matt/carnival/02: 544 48
+:matt/carnival/02: 96 16
+:matt/carnival/00: 96 48
+:matt/carnival/03: 64 48
+:matt/carnival/01: 64 16

@@ -1,0 +1,67 @@
+$BUILT 2021-10-10 13:39:00
+$AUTHOR Clam Spammer
+$ENGLISH Chaos Theory
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 384
+
+#INITIAL 500
+#REQUIRED 50
+#SPAWN_INTERVAL 1
+
+#WALKER 20
+#RUNNER 20
+#EXPLODER2 -1
+#JUMPER 20
+#BATTER 20
+
+:geoo/construction/Hatch.H: 304 248
+
+:geoo/construction/Goal2.G: 288 120
+
+:geoo/steel/32x32o.S: 448 288
+:geoo/steel/32x32o.S: 416 320
+:geoo/construction/rod_steel/straight_diagu32.S: 475 282
+:geoo/construction/rod_steel/straight_diagu32.S: 443 314
+:geoo/construction/rod_steel/straight_diagu32.S: 411 346
+:geoo/steel/32x32o.S: 448 64
+:geoo/steel/32x32o.S: 416 32
+:geoo/construction/rod_steel/straight_diagd32.S: 410 -6
+:geoo/construction/rod_steel/straight_diagd32.S: 442 26
+:geoo/construction/rod_steel/straight_diagd32.S: 474 58
+:geoo/steel/32x32o.S: 192 32
+:geoo/steel/32x32o.S: 160 64
+:geoo/construction/rod_steel/straight_diagu32.S: 192 0
+:geoo/construction/rod_steel/straight_diagu32.S: 160 32
+:geoo/construction/rod_steel/straight_diagu32.S: 128 64
+:geoo/steel/32x32o.S: 192 320
+:geoo/steel/32x32o.S: 160 288
+:geoo/construction/rod_steel/straight_diagd32.S: 128 277
+:geoo/construction/rod_steel/straight_diagd32.S: 160 309
+:geoo/construction/rod_steel/straight_diagd32.S: 192 341
+:geoo/construction/rod_steel/straight_diagd32.S: 217 314
+:geoo/steel/64x32o.S: 288 352
+:geoo/steel/64x32o.S: 224 352
+:geoo/construction/rod_steel/straight_diagd32.S: 185 282
+:geoo/construction/rod_steel/straight_diagd32.S: 153 250
+:geoo/construction/rod_steel/straight_diagu32.S: 385 320
+:geoo/construction/rod_steel/straight_diagu32.S: 417 288
+:geoo/construction/rod_steel/straight_diagu32.S: 449 256
+:geoo/construction/rod_steel/straight_diagd32.S: 448 84
+:geoo/construction/rod_steel/straight_diagd32.S: 416 52
+:geoo/construction/rod_steel/straight_diagd32.S: 384 20
+:geoo/construction/rod_steel/straight_diagu32.S: 155 90
+:geoo/construction/rod_steel/straight_diagu32.S: 187 58
+:geoo/construction/rod_steel/straight_diagu32.S: 219 26
+:geoo/steel/32x64o.S: 128 96
+:geoo/steel/32x64o.S: 128 160
+:geoo/steel/32x64o.S: 480 96
+:geoo/steel/32x64o.S: 480 160
+:geoo/steel/64x64.S: 288 184
+:geoo/steel/64x32o.S: 288 0
+:geoo/steel/64x32o.S: 224 0
+:geoo/steel/32x64o.S: 128 224
+:geoo/steel/32x64o.S: 480 224
+:geoo/steel/64x32o.S: 352 0
+:geoo/steel/64x32o.S: 352 352
