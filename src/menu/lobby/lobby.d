@@ -9,7 +9,6 @@ import std.string;
 import file.option;
 import file.language;
 import file.log;
-import game.harvest;
 import gui;
 import hardware.mouse;
 import hardware.sound;

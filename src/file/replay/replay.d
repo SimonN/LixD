@@ -75,7 +75,9 @@ public:
         return ret;
     }
 
-    auto clone() const { return new Replay(this); }
+    Replay clone() const { return new Replay(this); }
+    immutable(Replay) iClone() const { return cast(immutable Replay) clone(); }
+
     this(in typeof(this) rhs)
     {
         _gameVersionRequired = rhs._gameVersionRequired;
@@ -110,7 +112,7 @@ public:
     // == ignores levelBuiltRequired and _gameVersionRequired.
     // I'm not sure how good that decision is. The idea is that replays
     // will behave identically anyway even when those differ.
-    override bool opEquals(Object rhsObj)
+    override bool opEquals(Object rhsObj) const
     {
         if (const rhs = cast(const(Replay)) rhsObj)
             return _plies == rhs._plies
@@ -127,7 +129,7 @@ public:
             : some!Filename(_levelFnCanBeNullInNetgames.get);
     }
 
-    @property const @nogc nothrow {
+    @property const pure nothrow @safe @nogc {
         Date levelBuiltRequired() {return _levelBuiltRequired; }
         Version gameVersionRequired() { return _gameVersionRequired; }
         int numPlayers() { return _players.length & 0x7FFF_FFFF; }
@@ -135,6 +137,20 @@ public:
         const(Permu) permu() { return _permu; }
         bool empty() { return _plies.length == 0; }
         int latestPhyu() { return (_plies.length > 0) ? _plies[$-1].update : 0; }
+
+        bool isOfflineSingleplayer() { return _players.length == 1; }
+
+        bool isOnlineSingleplayer()
+        {
+            return ! isOfflineSingleplayer()
+                && _players.byValue.all!(pl =>
+                    pl.style == _players.byValue.front.style);
+        }
+
+        bool isOnlineMultiplayer()
+        {
+            return ! isOfflineSingleplayer && ! isOnlineSingleplayer;
+        }
     }
 
     @property Permu permu(Permu p) { _permu = p; return p; }

@@ -30,6 +30,7 @@ import file.trophy;
 import file.replay;
 import file.option;
 
+import game.argscrea;
 import game.core.calc;
 import game.core.chatarea;
 import game.core.draw;
@@ -104,28 +105,19 @@ public:
     enum updatesDuringTurbo = 9;
     enum updatesAheadMany   = ticksPerSecond / ticksNormalSpeed * 10;
 
-    /*
-     * Create Game without replay. Pass level filename such that the Game
-     * can create its own replay. You will be able to save tropies as long
-     * as the TrophyKey's fileNoExt is nonempty. If fileNoExt is empty,
-     * maybeImprove() will reject the trophy anyway.
-     */
-    this(Level lv,
-        Filename levelFn,
-        Optional!Replay orp)
+    this(ArgsToCreateGame args)
     in {
-        assert (lv);
-        assert (lv.playable);
-        assert (levelFn !is null);
+        assert (args.level !is null);
+        assert (args.level.playable);
+        assert (args.levelFilename !is null);
     }
     do {
-        level = lv;
-        import optional;
-        if (orp.empty) { // Hack! orp.match failed with crazy template error
-            commonConstructor(generateFreshReplay(some(levelFn)));
+        level = args.level;
+        if (args.loadedReplay.empty) {
+            commonConstructor(generateFreshReplay(some(args.levelFilename)));
         }
         else {
-            commonConstructor(orp.front);
+            commonConstructor(args.loadedReplay.front.clone());
         }
     }
 

@@ -152,6 +152,8 @@ enum Lang {
     repForLevTitle,
 
     // Singleplayer outcome
+    outcomeRetryOldLevel,
+    outcomeYouSolvedOldLevel,
     outcomeAttemptNextLevel,
     outcomeResolveNextLevel,
     outcomeAttemptNextUnsolvedLevel,

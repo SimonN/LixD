@@ -75,6 +75,8 @@ $winSearchPrompt Suche nach Titel, Autor oder Dateiname in %d Levels:
 
 $repForLevTitle Replay für „%s“ laden
 
+$outcomeRetryOldLevel Versuch es nochmal:
+$outcomeYouSolvedOldLevel Glückwunsch! Du hast gelöst:
 $outcomeAttemptNextLevel Nächster Level:
 $outcomeResolveNextLevel Nächster Level (gelöst):
 $outcomeAttemptNextUnsolvedLevel Nächster ungelöster Level:

@@ -8,6 +8,7 @@ import file.filename;
 import file.replay;
 import file.trophy;
 import editor.editor;
+import game.argscrea;
 import game.core.game;
 import mainloop.topscrn.base;
 import mainloop.topscrn.game;
@@ -67,23 +68,19 @@ public:
 class SinglePlayerOutcomeScreen : GuiElderTopLevelScreen {
 private:
     SinglePlayerOutcome _singleOut;
-    Optional!(const Replay) _loadedBeforeTheGameStarted;
+    AfterGameGoTo _after;
 
 public:
-    this(const(Level) levelJustPlayed,
+    this(ArgsToCreateGame previous,
         const(Replay) replayJustPlayed,
         in HalfTrophy whatTheReplayAchieved,
-        in Filename fnOfTheLevel,
-        Optional!(const Replay) loadedBeforeTheGameStarted)
-    {
-        Trophy tro = Trophy(levelJustPlayed.built, fnOfTheLevel);
+        in AfterGameGoTo after,
+    ) {
+        Trophy tro = Trophy(previous.level.built, previous.levelFilename);
         tro.copyFrom(whatTheReplayAchieved);
-        _singleOut = new SinglePlayerOutcome(levelJustPlayed, replayJustPlayed,
-            fnOfTheLevel, TrophyKey(fnOfTheLevel.fileNoExtNoPre,
-                levelJustPlayed.nameEnglish, levelJustPlayed.author),
-            tro, loadedBeforeTheGameStarted);
+        _singleOut = new SinglePlayerOutcome(previous, replayJustPlayed, tro);
         super(_singleOut);
-        _loadedBeforeTheGameStarted = loadedBeforeTheGameStarted;
+        _after = after;
     }
 
     bool done() const pure nothrow @safe @nogc
@@ -97,16 +94,22 @@ public:
         case SinglePlayerOutcome.ExitWith.notYet:
             return crashInsteadOfReturningAny!TopLevelScreen;
         case SinglePlayerOutcome.ExitWith.gotoLevel:
-            return new SingleplayerGameScreen(new Game(
+            return new SingleplayerGameScreen(ArgsToCreateGame(
                 _singleOut.nextLevel.level,
-                _singleOut.nextLevel.fn, no!Replay),
                 _singleOut.nextLevel.fn,
-                no!(const Replay));
+                no!(immutable Replay)),
+                /*
+                 * Deliberately deviating from _after.
+                 * If we play more than one map, I think we'll forget which
+                 * browser we came from. It feels like singleplayer, not like
+                 * replay watching, then.
+                 */
+                AfterGameGoTo.singleBrowser);
         case SinglePlayerOutcome.ExitWith.gotoBrowser:
-            if (_loadedBeforeTheGameStarted.empty) {
-                return new BrowserSingleScreen();
+            with (AfterGameGoTo) final switch (_after) {
+                case singleBrowser: return new BrowserSingleScreen();
+                case replayBrowser: return new BrowserReplayScreen();
             }
-            return new BrowserReplayScreen();
         }
     }
 
@@ -143,11 +146,11 @@ public:
     TopLevelScreen nextTopLevelScreen()
     {
         if (_browSin.gotoGame) {
-            return new SingleplayerGameScreen(new Game(
+            return new SingleplayerGameScreen(ArgsToCreateGame(
                 _browSin.levelRecent,
-                _browSin.fileRecent, no!Replay),
                 _browSin.fileRecent,
-                no!(const Replay));
+                no!(immutable Replay)),
+                AfterGameGoTo.singleBrowser);
         }
         return _browSin.gotoRepForLev
             ? new RepForLevScreen(_browSin.fileRecent, _browSin.levelRecent)
@@ -189,9 +192,9 @@ public:
     TopLevelScreen nextTopLevelScreen()
     {
         if (_browRep.gotoGame) {
-            return new SingleplayerGameScreen(_browRep.matcher.createGame(),
-                _browRep.matcher.levelFilenameOfTheCreatedGame(),
-                some!(const Replay)(_browRep.matcher.replay.clone));
+            return new SingleplayerGameScreen(
+                _browRep.matcher.argsToCreateGame(),
+                AfterGameGoTo.replayBrowser);
         }
         else if (_browRep.gotoMainMenu) {
             return new MainMenuScreen();
@@ -281,9 +284,8 @@ public:
     {
         if (_repForLev.gotoGame) {
             return new SingleplayerGameScreen(
-                _repForLev.matcher.createGame(),
-                _repForLev.matcher.levelFilenameOfTheCreatedGame(),
-                some!(const Replay)(_repForLev.matcher.replay.clone));
+                _repForLev.matcher.argsToCreateGame(),
+                AfterGameGoTo.singleBrowser);
         }
         else if (_repForLev.gotoBrowSin) {
             return new BrowserSingleScreen();

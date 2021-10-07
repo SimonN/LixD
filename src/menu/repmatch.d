@@ -24,7 +24,7 @@ import optional;
 import file.filename;
 import file.replay;
 import file.trophy : TrophyKey;
-import game.core.game;
+import game.argscrea;
 import game.nurse.verify;
 import level.level;
 
@@ -110,27 +110,19 @@ public:
             || preferredInitializedStruct.fnMayBeZero !is null);
     }
 
-    Game createGame()
+    ArgsToCreateGame argsToCreateGame()
     in {
-        // It is illegal to call createGame when the preferred level is bad.
+        // It is illegal to call argsToCreateGame when preferred level is bad.
         // Callers should do something reasonable instead.
         assert (mayCreateGame);
     }
-    out (ret) { assert (ret); }
+    out (ret) { assert (ret.level !is null && ret.levelFilename !is null); }
     do {
         auto pref = preferredInitializedStruct();
-        return new Game(pref.level.front, levelFilenameOfTheCreatedGame,
-            some(_rp));
-    }
-
-    Filename levelFilenameOfTheCreatedGame()
-    in {
-        assert (mayCreateGame);
-    }
-    do {
-        auto pref = preferredInitializedStruct();
-        return pref.fnMayBeZero !is null
-            ? pref.fnMayBeZero : new VfsFilename("");
+        return ArgsToCreateGame(
+            pref.level.front,
+            pref.fnMayBeZero !is null ? pref.fnMayBeZero : new VfsFilename(""),
+            some(_rp.iClone));
     }
 
     VerifyingNurse createVerifyingNurse()

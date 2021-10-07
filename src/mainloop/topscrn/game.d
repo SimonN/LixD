@@ -5,10 +5,17 @@ import optional;
 import basics.globals : fileMusicMenu;
 import file.filename;
 import file.replay;
+import game.argscrea;
 import game.core.game;
 import hardware.music;
+import level.level;
 import mainloop.topscrn.base;
 import mainloop.topscrn.other;
+
+enum AfterGameGoTo {
+    singleBrowser,
+    replayBrowser,
+}
 
 final class SingleplayerGameScreen : GameScreen {
 private:
@@ -20,24 +27,24 @@ private:
      * save replays. Whenever you assign a replay to this, clone the replay
      * first. _lastLoaded should be treated like an immutable replay.
      */
-    Optional!(const Replay) _lastLoaded;
+    Optional!(immutable Replay) _lastLoaded;
+    AfterGameGoTo _after;
 
 public:
-    this(
-        Game gameToTakeOwnershipOf,
-        Filename ofLevelPlayedInThatGame,
-        Optional!(const Replay) lastLoaded, // see comment for _lastLoaded
-    ) {
-        super(gameToTakeOwnershipOf);
-        _fnOfPlayedLevel = ofLevelPlayedInThatGame;
-        _lastLoaded = lastLoaded;
+    this(ArgsToCreateGame args, AfterGameGoTo after)
+    {
+        super(new Game(args));
+        _fnOfPlayedLevel = args.levelFilename;
+        _lastLoaded = args.loadedReplay;
+        _after = after;
     }
 
 protected:
     override TopLevelScreen onNextTopLevelScreen()
     {
-        return new SinglePlayerOutcomeScreen(game.level, game.replay,
-            game.halfTrophyOfLocalTribe, _fnOfPlayedLevel, _lastLoaded);
+        return new SinglePlayerOutcomeScreen(
+            ArgsToCreateGame(game.level, _fnOfPlayedLevel, _lastLoaded),
+            game.replay, game.halfTrophyOfLocalTribe, _after);
     }
 }
 

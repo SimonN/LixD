@@ -10,16 +10,15 @@ import glo = file.option.allopts;
 import file.language;
 import file.replay;
 import file.trophy;
+import game.argscrea;
 import gui;
 import hardware.sound;
-import level.level;
 
 class ReplaySaver : Element {
 private:
-    const(Level) _oldLevel;
+    const(ArgsToCreateGame) _previous;
     const(Replay) _theReplay;
     const(Trophy) _trophy;
-    Optional!(const Replay) _loadedBeforePlay; // autosave only if different
 
     TextButton _saveManually;
     Label _doneAutosaving;
@@ -28,13 +27,12 @@ private:
 public:
     this(
         Geom g,
-        const(Level) oldLevel,
+        const(ArgsToCreateGame) previous,
         const(Replay) theReplay,
         in Trophy tro,
-        Optional!(const Replay) loadedBeforePlay,
     ) {
         super(g);
-        _oldLevel = oldLevel;
+        _previous = previous;
         _theReplay = theReplay;
         _trophy = tro;
 
@@ -63,9 +61,10 @@ private:
             return false;
         }
         if (_theReplay.numPlayers == 1) {
-            return _trophy.lixSaved >= _oldLevel.required
+            return _trophy.lixSaved >= _previous.level.required
                 && glo.replayAutoSolutions.value
-                && _theReplay != _loadedBeforePlay;
+                && (_previous.loadedReplay.empty
+                    || _previous.loadedReplay.front != _theReplay);
         }
         return glo.replayAutoMulti.value;
     }
@@ -75,7 +74,7 @@ private:
         if (! shouldWeAutoSave) {
             return;
         }
-        _theReplay.saveAsAutoReplay(_oldLevel);
+        _theReplay.saveAsAutoReplay(_previous.level);
     }
 
     void onSavingManually()
@@ -86,7 +85,7 @@ private:
         _doneAutosaving.undrawBeforeDraw = true;
         _doneSavingManually.text = fn.file;
 
-        _theReplay.saveManually(_oldLevel);
+        _theReplay.saveManually(_previous.level);
         _saveManually.hide();
         _doneSavingManually.show();
         playQuiet(Sound.DISKSAVE);

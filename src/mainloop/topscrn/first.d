@@ -38,8 +38,7 @@ TopLevelScreen createGameFromCmdargs(in Cmdargs cmdargs)
     if (! matcher.mayCreateGame) {
         throw new Exception("Level or replay isn't playable.");
     }
-    return new SingleplayerGameScreen(
-        matcher.createGame(),
-        matcher.levelFilenameOfTheCreatedGame(),
-        some!(const Replay)(matcher.replay.clone));
+    const args = matcher.argsToCreateGame;
+    return new SingleplayerGameScreen(args, args.loadedReplay.empty
+        ? AfterGameGoTo.singleBrowser : AfterGameGoTo.replayBrowser);
 }

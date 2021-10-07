@@ -8,6 +8,7 @@ module menu.outcome.single;
  */
 
 import std.algorithm;
+import std.range;
 
 import optional;
 
@@ -16,6 +17,7 @@ import file.language;
 import file.nextlev;
 import file.trophy;
 import file.option.allopts;
+import game.argscrea;
 import gui;
 import menu.preview.base;
 import menu.outcome.repsave;
@@ -23,7 +25,7 @@ import menu.outcome.trotable;
 import menu.preview.fullprev;
 
 struct NextLevel {
-    Level level;
+    const(Level) level;
     Filename fn;
 }
 
@@ -31,8 +33,6 @@ class SinglePlayerOutcome : Window {
 private:
     TrophyTable _trophyTable;
     ReplaySaver _replaySaver;
-    FullPreview _oldLevel;
-
     NextLevelButton[] _offeredLevels;
     TextButton _gotoBrowser;
 
@@ -47,28 +47,28 @@ public:
     }
 
     this(
-        const(Level) oldLevel,
+        ArgsToCreateGame previous,
         const(Replay) justPlayed,
-        in Filename fnOfOldLevel,
-        in TrophyKey key,
         in Trophy trophy,
-        Optional!(const Replay) loadedBeforePlay,
     ) {
-        super(new Geom(0, 0, gui.screenXlg, gui.screenYlg), oldLevel.name);
+        super(new Geom(0, 0, gui.screenXlg, gui.screenYlg),
+            previous.level.name);
+        immutable bool won = trophy.lixSaved >= previous.level.required;
 
         _trophyTable = new TrophyTable(newTrophyTableGeom());
-        _trophyTable.addSaveRequirement(oldLevel.required);
+        _trophyTable.addSaveRequirement(previous.level.required);
         _trophyTable.addJustPlayed(trophy);
         addChild(_trophyTable);
 
         _replaySaver = new ReplaySaver(newReplaySaverGeom(),
-            oldLevel, justPlayed, trophy, loadedBeforePlay);
+            previous, justPlayed, trophy);
         addChild(_replaySaver);
 
-        _oldLevel = new FullPreview(new Geom(20, 40, nextLevelXlg, 160,
-            From.TOP_RIGHT));
-        _oldLevel.preview(oldLevel);
-        addChild(_oldLevel);
+        _offeredLevels ~= new NextLevelButton(
+            new Geom(20, 40, nextLevelXlg, 160, From.TOP_RIGHT),
+            won ? Lang.outcomeYouSolvedOldLevel : Lang.outcomeRetryOldLevel,
+            NextLevel(previous.level, previous.levelFilename));
+        addChild(_offeredLevels[$-1]);
         _gotoBrowser = new TextButton(new Geom(0, 20, 300, 20, From.BOTTOM),
             Lang.outcomeExitToSingleBrowser.transl);
         _gotoBrowser.hotkey = keyMenuExit;
@@ -77,23 +77,21 @@ public:
         if (_cache is null) {
             _cache = new TreeLevelCache();
         }
-        foreach (old; _cache.rhinoOf(fnOfOldLevel)) {
+        foreach (old; _cache.rhinoOf(previous.levelFilename)) {
             foreach (tro; old.trophy) {
                 _trophyTable.addOld(tro);
             }
             offerUpToTwoLevels(old);
         }
         // ...and only after above rendering the trophies, improve.
-        if (trophy.lixSaved >= oldLevel.required
-            && justPlayed.wasPlayedBy(file.option.userName)
+        if (won && justPlayed.wasPlayedBy(file.option.userName)
         ) {
-            maybeImprove(key, trophy);
+            maybeImprove(previous.trophyKey, trophy);
         }
     }
 
     void dispose()
     {
-        _oldLevel.dispose();
         foreach (but; _offeredLevels) {
             but.dispose();
         }
@@ -162,7 +160,9 @@ private:
         foreach (reallyPreview; toPreview) {
             auto but = new NextLevelButton(new Geom(
                 from == From.BOTTOM ? 0 : 20, 60, nextLevelXlg, 200, from),
-                topCaption.transl, reallyPreview);
+                topCaption, NextLevel(
+                    new Level(reallyPreview.filename),
+                    reallyPreview.filename));
             addChild(but);
             _offeredLevels ~= but;
         }
@@ -187,12 +187,12 @@ private:
     FullPreview _preview;
 
 public:
-    this(Geom g, string topCaption, in Rhino lev)
+    this(Geom g, in Lang topCaption, NextLevel aNextLevel)
     {
         super(g);
-        _nextLevel = NextLevel(new Level(lev.filename), lev.filename);
+        _nextLevel = aNextLevel;
         _topCaption = new Label(
-            new Geom(0, 6, xlg - 10, 20, From.TOP), topCaption);
+            new Geom(0, 6, xlg - 10, 20, From.TOP), topCaption.transl);
         _preview = new FullPreview(
             new Geom(0, 30, xlg - 40, ylg - 36, From.TOP));
         _preview.preview(_nextLevel.level);
