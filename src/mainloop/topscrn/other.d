@@ -1,4 +1,4 @@
-module mainloop.concrete;
+module mainloop.topscrn.other;
 
 import optional;
 
@@ -6,11 +6,13 @@ import basics.globals : fileMusicMenu;
 import basics.resol;
 import file.filename;
 import file.replay;
+import file.trophy;
 import editor.editor;
 import game.core.game;
-import game.harvest;
-import mainloop.topscrn;
+import mainloop.topscrn.base;
+import mainloop.topscrn.game;
 import hardware.music;
+import level.level;
 import menu.askname;
 import menu.browser.replay;
 import menu.browser.single;
@@ -19,6 +21,7 @@ import menu.options;
 import menu.outcome.single;
 import menu.rep4lev;
 import menu.mainmenu;
+import gui.richcli;
 
 private T crashInsteadOfReturningAny(T)()
 {
@@ -61,76 +64,26 @@ public:
     }
 }
 
-class ZockerScreen : GuiElderTopLevelScreen {
-private:
-    Game _game; // We'll own this, we'll dispose it.
-    AfterwardsGoto _after;
-
-    // Prevent harvests from saving duplicate replays: Remember what replay
-    // we loaded last and pass that to program components that handle harvests.
-    // Whenever you assign a replay to this, clone the replay first.
-    // _lastLoaded should be treated like an immutable replay.
-    // Either _lastLoaded contains exactly one replay
-    Optional!(const Replay) _lastLoaded;
-
-public:
-    enum AfterwardsGoto {
-        browSin,
-        browRep,
-        lobby,
-        mainMenu, // because we loaded directly from the command line?
-    }
-
-    this(
-        Game gameToTakeOwnershipOf,
-        Optional!(const Replay) lastLoaded, // see comment for _lastLoaded
-        AfterwardsGoto after
-    ) {
-        _game = gameToTakeOwnershipOf;
-        _lastLoaded = lastLoaded;
-        _after = after;
-        super(_game);
-    }
-
-    bool done() const pure nothrow @safe @nogc
-    {
-        return _game.gotoMainMenu;
-    }
-
-    TopLevelScreen nextTopLevelScreen()
-    {
-        suggestMusic(fileMusicMenu);
-        auto net = _game.loseOwnershipOfRichClient();
-        return net !is null
-            ? new LobbyScreen(net, _game.harvest)
-            : new SinglePlayerOutcomeScreen(_game.harvest, _after);
-    }
-
-    override string filenamePrefixForScreenshot() const
-    {
-        return _game.filenamePrefixForScreenshot;
-    }
-
-protected:
-    override void onDispose()
-    {
-        if (_game) {
-            _game.dispose();
-        }
-    }
-}
-
 class SinglePlayerOutcomeScreen : GuiElderTopLevelScreen {
 private:
     SinglePlayerOutcome _singleOut;
-    ZockerScreen.AfterwardsGoto _browserToExitToIfExitIsChosen;
+    Optional!(const Replay) _loadedBeforeTheGameStarted;
 
 public:
-    this(Harvest harvest, ZockerScreen.AfterwardsGoto after)
+    this(const(Level) levelJustPlayed,
+        const(Replay) replayJustPlayed,
+        in HalfTrophy whatTheReplayAchieved,
+        in Filename fnOfTheLevel,
+        Optional!(const Replay) loadedBeforeTheGameStarted)
     {
-        _singleOut = new SinglePlayerOutcome(harvest);
-        _browserToExitToIfExitIsChosen = after;
+        Trophy tro = Trophy(levelJustPlayed.built, fnOfTheLevel);
+        tro.copyFrom(whatTheReplayAchieved);
+        _singleOut = new SinglePlayerOutcome(levelJustPlayed, replayJustPlayed,
+            fnOfTheLevel, TrophyKey(fnOfTheLevel.fileNoExtNoPre,
+                levelJustPlayed.nameEnglish, levelJustPlayed.author),
+            tro, loadedBeforeTheGameStarted);
         super(_singleOut);
+        _loadedBeforeTheGameStarted = loadedBeforeTheGameStarted;
     }
 
     bool done() const pure nothrow @safe @nogc
@@ -144,22 +97,16 @@ public:
         case SinglePlayerOutcome.ExitWith.notYet:
             return crashInsteadOfReturningAny!TopLevelScreen;
         case SinglePlayerOutcome.ExitWith.gotoLevel:
-            return new ZockerScreen(new Game(
+            return new SingleplayerGameScreen(new Game(
                 _singleOut.nextLevel.level,
                 _singleOut.nextLevel.fn, no!Replay),
-                no!(const Replay), ZockerScreen.AfterwardsGoto.browSin);
+                _singleOut.nextLevel.fn,
+                no!(const Replay));
         case SinglePlayerOutcome.ExitWith.gotoBrowser:
-            final switch (_browserToExitToIfExitIsChosen) {
-            case ZockerScreen.AfterwardsGoto.browSin:
+            if (_loadedBeforeTheGameStarted.empty) {
                 return new BrowserSingleScreen();
-            case ZockerScreen.AfterwardsGoto.browRep:
-                return new BrowserReplayScreen();
-            case ZockerScreen.AfterwardsGoto.lobby:
-                assert (false, "We shouldn't have gone to SinglePlayerOutcome"
-                    ~ " when the suggested going to Lobby afterwards");
-            case ZockerScreen.AfterwardsGoto.mainMenu:
-                return new MainMenuScreen();
             }
+            return new BrowserReplayScreen();
         }
     }
 
@@ -196,10 +143,11 @@ public:
     TopLevelScreen nextTopLevelScreen()
     {
         if (_browSin.gotoGame) {
-            return new ZockerScreen(new Game(
+            return new SingleplayerGameScreen(new Game(
                 _browSin.levelRecent,
                 _browSin.fileRecent, no!Replay),
-                no!(const Replay), ZockerScreen.AfterwardsGoto.browSin);
+                _browSin.fileRecent,
+                no!(const Replay));
         }
         return _browSin.gotoRepForLev
             ? new RepForLevScreen(_browSin.fileRecent, _browSin.levelRecent)
@@ -241,9 +189,9 @@ public:
     TopLevelScreen nextTopLevelScreen()
     {
         if (_browRep.gotoGame) {
-            return new ZockerScreen(_browRep.matcher.createGame(),
-                some!(const Replay)(_browRep.matcher.replay.clone),
-                ZockerScreen.AfterwardsGoto.browRep);
+            return new SingleplayerGameScreen(_browRep.matcher.createGame(),
+                _browRep.matcher.levelFilenameOfTheCreatedGame(),
+                some!(const Replay)(_browRep.matcher.replay.clone));
         }
         else if (_browRep.gotoMainMenu) {
             return new MainMenuScreen();
@@ -332,9 +280,10 @@ public:
     TopLevelScreen nextTopLevelScreen()
     {
         if (_repForLev.gotoGame) {
-            return new ZockerScreen(_repForLev.matcher.createGame(),
-                some!(const Replay)(_repForLev.matcher.replay.clone),
-                ZockerScreen.AfterwardsGoto.browSin);
+            return new SingleplayerGameScreen(
+                _repForLev.matcher.createGame(),
+                _repForLev.matcher.levelFilenameOfTheCreatedGame(),
+                some!(const Replay)(_repForLev.matcher.replay.clone));
         }
         else if (_repForLev.gotoBrowSin) {
             return new BrowserSingleScreen();
@@ -382,9 +331,18 @@ private:
     Lobby _lobby;
 
 public:
-    this(T...)(T args)
+    this()
     {
-        _lobby = new Lobby(args);
+        _lobby = new Lobby();
+        super(_lobby);
+    }
+
+    this(RichClient richClient,
+        in Level oldLevel,
+        in Replay justPlayed,
+    ) {
+        justPlayed.saveAsAutoReplay(oldLevel);
+        _lobby = new Lobby(richClient);
         super(_lobby);
     }
 
@@ -396,10 +354,8 @@ public:
     TopLevelScreen nextTopLevelScreen()
     {
         if (_lobby.gotoGame) {
-            return new ZockerScreen(
-                new Game(_lobby.loseOwnershipOfRichClient()),
-                no!(const Replay),
-                ZockerScreen.AfterwardsGoto.lobby);
+            return new MultiplayerGameScreen(
+                new Game(_lobby.loseOwnershipOfRichClient()));
         }
         else if (_lobby.gotoMainMenu) {
             return new MainMenuScreen;

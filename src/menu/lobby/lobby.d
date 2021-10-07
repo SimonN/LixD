@@ -64,7 +64,7 @@ public:
     }
 
     // Create Lobby after finishing a game
-    this(RichClient aRichClient, Harvest harvest)
+    this(RichClient aRichClient)
     in { assert(aRichClient, "RichClient should exist after a netgame"); }
     do {
         super(new Geom(0, 0, gui.screenXlg, gui.screenYlg),
@@ -85,9 +85,6 @@ public:
             _chat.on = _chat.text != "";
             refreshPeerList();
         }
-
-        harvest.replay.saveAsAutoReplay(harvest.level);
-        // Later, the Lobby should draw nice stats from the harvest.
         showOrHideGuiBasedOnConnection();
     }
 

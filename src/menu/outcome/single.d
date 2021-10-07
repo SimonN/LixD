@@ -17,7 +17,6 @@ import file.nextlev;
 import file.trophy;
 import file.option.allopts;
 import gui;
-import game.harvest;
 import menu.preview.base;
 import menu.outcome.repsave;
 import menu.outcome.trotable;
@@ -47,22 +46,28 @@ public:
         gotoBrowser,
     }
 
-    this(in Harvest harvest)
-    {
-        super(new Geom(0, 0, gui.screenXlg, gui.screenYlg),
-            harvest.level.name);
+    this(
+        const(Level) oldLevel,
+        const(Replay) justPlayed,
+        in Filename fnOfOldLevel,
+        in TrophyKey key,
+        in Trophy trophy,
+        Optional!(const Replay) loadedBeforePlay,
+    ) {
+        super(new Geom(0, 0, gui.screenXlg, gui.screenYlg), oldLevel.name);
 
         _trophyTable = new TrophyTable(newTrophyTableGeom());
-        _trophyTable.addSaveRequirement(harvest.level.required);
-        _trophyTable.addJustPlayed(harvest.trophy);
+        _trophyTable.addSaveRequirement(oldLevel.required);
+        _trophyTable.addJustPlayed(trophy);
         addChild(_trophyTable);
 
-        _replaySaver = new ReplaySaver(newReplaySaverGeom(), harvest);
+        _replaySaver = new ReplaySaver(newReplaySaverGeom(),
+            oldLevel, justPlayed, trophy, loadedBeforePlay);
         addChild(_replaySaver);
 
         _oldLevel = new FullPreview(new Geom(20, 40, nextLevelXlg, 160,
             From.TOP_RIGHT));
-        _oldLevel.preview(harvest.level);
+        _oldLevel.preview(oldLevel);
         addChild(_oldLevel);
         _gotoBrowser = new TextButton(new Geom(0, 20, 300, 20, From.BOTTOM),
             Lang.outcomeExitToSingleBrowser.transl);
@@ -72,19 +77,17 @@ public:
         if (_cache is null) {
             _cache = new TreeLevelCache();
         }
-        foreach (oldFn; harvest.replay.levelFilename) {
-            foreach (old; _cache.rhinoOf(oldFn)) {
-                foreach (tro; old.trophy) {
-                    _trophyTable.addOld(tro);
-                }
-                offerUpToTwoLevels(old);
+        foreach (old; _cache.rhinoOf(fnOfOldLevel)) {
+            foreach (tro; old.trophy) {
+                _trophyTable.addOld(tro);
             }
+            offerUpToTwoLevels(old);
         }
         // ...and only after above rendering the trophies, improve.
-        if (harvest.singleplayerHasWon
-            && harvest.replay.wasPlayedBy(file.option.userName)
+        if (trophy.lixSaved >= oldLevel.required
+            && justPlayed.wasPlayedBy(file.option.userName)
         ) {
-            maybeImprove(harvest.trophyKey, harvest.trophy);
+            maybeImprove(key, trophy);
         }
     }
 

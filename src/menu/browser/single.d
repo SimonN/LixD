@@ -12,7 +12,6 @@ import file.option;
 import file.language;
 import file.filename;
 import file.trophy;
-import game.harvest;
 import file.replay;
 import gui;
 import gui.picker;

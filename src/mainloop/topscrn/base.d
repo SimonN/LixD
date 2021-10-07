@@ -1,4 +1,4 @@
-module mainloop.topscrn;
+module mainloop.topscrn.base;
 
 /*
  * A TopLevelScreen is a part of the program.

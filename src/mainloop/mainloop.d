@@ -19,14 +19,14 @@ import file.filename; // running levels from the command-line
 import file.log; // logging uncaught Exceptions
 import hardware.display;
 import hardware.keyboard;
-import mainloop.topscrn;
+import mainloop.topscrn.base;
 
 static import gui;
 static import hardware.keyboard;
 static import hardware.mouse;
 static import hardware.mousecur;
 static import hardware.sound;
-static import mainloop.firstscr;
+static import mainloop.topscrn.first;
 
 class MainLoop {
 private:
@@ -36,12 +36,9 @@ public:
     this(in Cmdargs cmdargs)
     {
         auto args = cmdargs.fileArgs;
-        if (args.length == 0) {
-            screen = mainloop.firstscr.createFirstScreen();
-        }
-        else {
-            screen = mainloop.firstscr.createGameFromCmdargs(cmdargs);
-        }
+        screen = args.length == 0
+            ? mainloop.topscrn.first.createFirstScreen()
+            : mainloop.topscrn.first.createGameFromCmdargs(cmdargs);
     }
 
     void mainLoop()

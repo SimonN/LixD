@@ -8,7 +8,6 @@ import basics.globals;
 import file.option;
 import file.language;
 import file.filename;
-import game.harvest;
 import gui;
 import gui.picker;
 import hardware.keyset;

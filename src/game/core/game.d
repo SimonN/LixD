@@ -38,7 +38,6 @@ import game.core.speed;
 import game.core.splatrul;
 import game.effect;
 import game.exitwin;
-import game.harvest;
 import game.nurse.interact;
 import game.panel.base;
 import game.tweaker.tweaker;
@@ -94,8 +93,6 @@ package:
     Tweaker _tweaker; // Never null, but often hidden
     ChatArea _chatArea;
     SplatRuler _splatRuler;
-
-    Filename _levelFnForHarvest;
     bool _gotoMainMenu;
 
 private:
@@ -123,7 +120,6 @@ public:
     }
     do {
         level = lv;
-        _levelFnForHarvest = levelFn;
         import optional;
         if (orp.empty) { // Hack! orp.match failed with crazy template error
             commonConstructor(generateFreshReplay(some(levelFn)));
@@ -142,7 +138,6 @@ public:
 
         level = client.level;
         _netClient = client;
-        _levelFnForHarvest = new VfsFilename(""); // shouldn't be important
         _netClient.onConnectionLost = ()
         {
             // Maybe too drastic? Lobby will catch us
@@ -189,14 +184,9 @@ public:
 
     bool gotoMainMenu() const pure nothrow @safe @nogc { return _gotoMainMenu;}
 
-    Harvest harvest() const
+    HalfTrophy halfTrophyOfLocalTribe() const
     {
-        Trophy tro = Trophy(level.built, _levelFnForHarvest);
-        tro.copyFrom(nurse.trophyForTribe(localStyle));
-        return Harvest(level, nurse.constReplay,
-            TrophyKey(_levelFnForHarvest.fileNoExtNoPre,
-                level.nameEnglish, level.author),
-            tro);
+        return nurse.trophyForTribe(localStyle);
     }
 
     const(Replay) replay() const { return nurse.constReplay; }

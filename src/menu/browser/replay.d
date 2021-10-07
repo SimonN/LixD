@@ -15,7 +15,6 @@ import file.option;
 import file.filename;
 import file.language;
 import file.replay;
-import game.harvest;
 import gui;
 import gui.picker;
 import hardware.keyset;

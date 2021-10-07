@@ -119,9 +119,18 @@ public:
     out (ret) { assert (ret); }
     do {
         auto pref = preferredInitializedStruct();
-        return new Game(pref.level.front,
-            pref.fnMayBeZero !is null ? pref.fnMayBeZero : new VfsFilename(""),
+        return new Game(pref.level.front, levelFilenameOfTheCreatedGame,
             some(_rp));
+    }
+
+    Filename levelFilenameOfTheCreatedGame()
+    in {
+        assert (mayCreateGame);
+    }
+    do {
+        auto pref = preferredInitializedStruct();
+        return pref.fnMayBeZero !is null
+            ? pref.fnMayBeZero : new VfsFilename("");
     }
 
     VerifyingNurse createVerifyingNurse()

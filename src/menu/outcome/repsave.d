@@ -4,25 +4,39 @@ module menu.outcome.repsave;
  * Replay-saving decisions and feedback for the GUI in menu.outcome.single.
  */
 
+import optional;
+
 import glo = file.option.allopts;
-import game.harvest;
 import file.language;
-import hardware.sound;
+import file.replay;
+import file.trophy;
 import gui;
+import hardware.sound;
+import level.level;
 
 class ReplaySaver : Element {
 private:
-    const(Harvest) _harvest;
+    const(Level) _oldLevel;
+    const(Replay) _theReplay;
+    const(Trophy) _trophy;
+    Optional!(const Replay) _loadedBeforePlay; // autosave only if different
 
     TextButton _saveManually;
     Label _doneAutosaving;
     Label _doneSavingManually;
 
 public:
-    this(Geom g, const(Harvest) harv)
-    {
+    this(
+        Geom g,
+        const(Level) oldLevel,
+        const(Replay) theReplay,
+        in Trophy tro,
+        Optional!(const Replay) loadedBeforePlay,
+    ) {
         super(g);
-        _harvest = harv;
+        _oldLevel = oldLevel;
+        _theReplay = theReplay;
+        _trophy = tro;
 
         maybeAutoSave();
         _doneAutosaving = new Label(new Geom(0, 0, xlg, ylg/2, From.TOP),
@@ -45,12 +59,13 @@ public:
 private:
     bool shouldWeAutoSave() const
     {
-        if (! _harvest.replay.wasPlayedBy(glo.userName)) {
+        if (! _theReplay.wasPlayedBy(glo.userName)) {
             return false;
         }
-        if (_harvest.replay.numPlayers == 1) {
-            return _harvest.singleplayerHasWon
-                && glo.replayAutoSolutions.value;
+        if (_theReplay.numPlayers == 1) {
+            return _trophy.lixSaved >= _oldLevel.required
+                && glo.replayAutoSolutions.value
+                && _theReplay != _loadedBeforePlay;
         }
         return glo.replayAutoMulti.value;
     }
@@ -60,18 +75,18 @@ private:
         if (! shouldWeAutoSave) {
             return;
         }
-        _harvest.replay.saveAsAutoReplay(_harvest.level);
+        _theReplay.saveAsAutoReplay(_oldLevel);
     }
 
     void onSavingManually()
     {
-        const fn = _harvest.replay.manualSaveFilename;
+        const fn = _theReplay.manualSaveFilename;
         // We abuse _doneAutosaving because it's immediately above our line
         _doneAutosaving.text = fn.dirRootless;
         _doneAutosaving.undrawBeforeDraw = true;
         _doneSavingManually.text = fn.file;
 
-        _harvest.replay.saveManually(_harvest.level);
+        _theReplay.saveManually(_oldLevel);
         _saveManually.hide();
         _doneSavingManually.show();
         playQuiet(Sound.DISKSAVE);

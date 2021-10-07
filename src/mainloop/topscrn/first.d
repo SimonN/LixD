@@ -1,4 +1,4 @@
-module mainloop.firstscr;
+module mainloop.topscrn.first;
 
 /*
  * The first screen that is produced for the main loop.
@@ -11,8 +11,9 @@ import optional;
 import basics.cmdargs;
 static import file.option.allopts;
 import file.replay;
-import mainloop.concrete;
-import mainloop.topscrn;
+import mainloop.topscrn.other;
+import mainloop.topscrn.game;
+import mainloop.topscrn.base;
 import menu.repmatch;
 
 TopLevelScreen createFirstScreen()
@@ -37,8 +38,8 @@ TopLevelScreen createGameFromCmdargs(in Cmdargs cmdargs)
     if (! matcher.mayCreateGame) {
         throw new Exception("Level or replay isn't playable.");
     }
-    return new ZockerScreen(
+    return new SingleplayerGameScreen(
         matcher.createGame(),
-        some!(const Replay)(matcher.replay.clone),
-        ZockerScreen.AfterwardsGoto.browRep);
+        matcher.levelFilenameOfTheCreatedGame(),
+        some!(const Replay)(matcher.replay.clone));
 }
