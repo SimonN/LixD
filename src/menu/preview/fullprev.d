@@ -20,10 +20,11 @@ public:
     {
         super(g);
         immutable float ySpacing = g.ylg >= 220f ? 20f : 5f;
+        immutable float ylNamepl = g.ylg >= 220f ? 60f : 54f;
         _thumbnail = new LevelThumbnail(
-            new Geom(0, 0, xlg, ylg - ySpacing - Nameplate.minYlg));
+            new Geom(0, 0, xlg, ylg - ySpacing - ylNamepl));
         _nameplate = new Nameplate(
-            new Geom(0, 0, xlg, Nameplate.minYlg, From.BOTTOM));
+            new Geom(0, 0, xlg, ylNamepl, From.BOTTOM));
         addChildren(_thumbnail, _nameplate);
     }
 

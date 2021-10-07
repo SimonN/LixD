@@ -62,11 +62,16 @@ unittest {
 
 // Phobos has rounding, but tiebreaks only either to the even integer,
 // or away from zero. I want to tiebreak to the larger integer.
-pure int
-roundInt(F)(in F f)
+int roundInt(F)(in F f)
     if (is (F : float))
 {
     return (f + 0.5f).floor.to!int;
+}
+
+int ceilInt(F)(in F f)
+    if (is (F : float))
+{
+    return f.ceil.to!int;
 }
 
 string

@@ -18,8 +18,6 @@ private:
     ReplayNameplate _replay;
 
 public:
-    enum float minYlg = 60f;
-
     this(Geom g)
     {
         super(g);
@@ -65,15 +63,12 @@ private:
 
 public:
     this(Geom g)
-    in {
-        assert (g.ylg >= Nameplate.minYlg);
-    }
     do {
         super(g);
-        _title = new Label(new Geom(0, 0, xlg, 20));
-        _by = new LabelTwo(new Geom(0, 20, xlg, 20),
+        _title = new Label(new Geom(0, 0, xlg, 20, From.TOP_LEFT));
+        _by = new LabelTwo(new Geom(0, 0, xlg, 20, From.LEFT),
             Lang.previewLevelAuthor.transl);
-        _save = new LabelTwo(new Geom(0, 40, xlg, 20),
+        _save = new LabelTwo(new Geom(0, 0, xlg, 20, From.BOTTOM_LEFT),
             Lang.previewLevelSingleGoal.transl);
         addChildren(_title, _by, _save);
         undrawColor = color.guiM;
@@ -102,15 +97,12 @@ private:
 
 public:
     this(Geom g)
-    in {
-        assert (g.ylg >= Nameplate.minYlg);
-    }
     do {
         super(g);
-        _title = new Label(new Geom(0, 0, xlg, 20));
-        _player = new LabelTwo(new Geom(0, 20, xlg, 20),
+        _title = new Label(new Geom(0, 0, xlg, 20, From.TOP_LEFT));
+        _player = new LabelTwo(new Geom(0, 0, xlg, 20, From.LEFT),
             Lang.previewReplayPlayer.transl);
-        _pointsTo = new LabelTwo(new Geom(0, 40, xlg, 20),
+        _pointsTo = new LabelTwo(new Geom(0, 0, xlg, 20, From.BOTTOM_LEFT),
             Lang.previewReplayPointsTo.transl);
         addChildren(_title, _player, _pointsTo);
         undrawColor = color.guiM;

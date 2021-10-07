@@ -8,8 +8,6 @@ module menu.preview.thumbn;
  * but will only interpret the Level arguments of the methods, no Replay.
  */
 
-import std.format;
-
 import basics.alleg5;
 import basics.help; // rounding
 import basics.globals : fileLog;
@@ -67,8 +65,8 @@ public:
         assert (lev, "call previewNone() to clear, not preview(null)");
         dispose();
         torbit = lev.create_preview(
-            (xs + xls).roundInt - xs.roundInt,
-            (ys + yls).roundInt - ys.roundInt, color.screenBorder);
+            (xs + xls).roundInt - xs.ceilInt,
+            (ys + yls).roundInt - ys.ceilInt, color.screenBorder);
         iconStatus.xf = lev.errorMissingTiles ? 3
             : lev.errorNoHatches ? 1
             : lev.warningNoGoals ? 2 : 0;

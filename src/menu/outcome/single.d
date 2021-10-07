@@ -192,9 +192,9 @@ public:
         super(g);
         _nextLevel = NextLevel(new Level(lev.filename), lev.filename);
         _topCaption = new Label(
-            new Geom(0, 10, xlg - 10, 20, From.TOP), topCaption);
+            new Geom(0, 6, xlg - 10, 20, From.TOP), topCaption);
         _preview = new FullPreview(
-            new Geom(0, 40, xlg - 40, ylg - 50, From.TOP));
+            new Geom(0, 30, xlg - 40, ylg - 36, From.TOP));
         _preview.preview(_nextLevel.level);
         addChildren(_topCaption, _preview);
     }
