@@ -16,7 +16,7 @@ import hardware.sound;
 import level.level;
 import menu.lobby.connect;
 import menu.lobby.lists;
-import menu.preview;
+import menu.preview.thumbn;
 import menu.browser.frommain;
 import menu.browser.network;
 import net.client;
@@ -37,7 +37,7 @@ private:
     PeerList _peerList;
     ColorSelector _colorSelector;
     RoomList _roomList;
-    Preview _preview;
+    LevelThumbnail _preview;
     Label _levelTitle;
     BrowserCalledFromMainMenu _browser;
 
@@ -78,7 +78,7 @@ public:
         if (aRichClient.connected) {
             _netClient = aRichClient;
             setOurEventHandlers();
-            _preview.level = _netClient.level;
+            _preview.preview(_netClient.level);
             _levelTitle.text = _netClient.level ? _netClient.level.name : "";
             _chat.text = _netClient.unsentChat;
             _netClient.unsentChat = "";
@@ -196,7 +196,7 @@ private:
         _roomList = new RoomList(new Geom(20, 40, 300, 20*8, From.TOP_RIGHT));
         _showDuringLobby ~= _roomList;
 
-        _preview = new Preview(new Geom(_roomList.geom));
+        _preview = new LevelThumbnail(new Geom(_roomList.geom));
         _showDuringGameRoom ~= _preview;
 
         enum midButtonsY = 60+20*8;
@@ -299,7 +299,7 @@ private:
     {
         if (connected && ! inLobby) {
             _netClient.gotoExistingRoom(Room(0));
-            _preview.level = null;
+            _preview.previewNone();
             _levelTitle.text = "";
         }
         else {
@@ -376,7 +376,7 @@ private:
         _netClient.onLevelSelect = (string senderName, const(ubyte[]) data)
         {
             refreshPeerList();
-            _preview.level = _netClient.level;
+            _preview.preview(_netClient.level);
             _levelTitle.text = _netClient.level.name;
             _console.add(Lang.netChatLevelChange.translf(
                 senderName, _netClient.level.name));

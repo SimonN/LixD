@@ -35,11 +35,6 @@ protected:
     abstract void onOnHighlightNone();
     abstract void onOnHighlight(Filename);
 
-    final Geom newStatsGeom() const
-    {
-        return new Geom(20, infoY + 20, infoXl/2, 60, From.TOP_RIGHT);
-    }
-
     Geom newDeleteButtonGeom() const
     {
         return new Geom(infoX, 20, infoXl/2,

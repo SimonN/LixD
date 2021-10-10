@@ -33,10 +33,6 @@ $browserExportImage Bild exportieren
 $browserExportImageDone Liegt in:
 $browserMkdirTitle Ordner erstellen
 $browserMkdirPleaseEnter Name des neuen Ordners:
-$browserInfoAuthor Von:
-$browserInfoInitgoal Ziel:
-$browserInfoBestSaved Rekord:
-$browserInfoBestSkills Fähigkeiten:
 
 $browserReplayTitle Replays|Vom Hauptmenü den Replay-Browser aufrufen.
 $browserReplayPointedTo Verwiesener Level
@@ -59,13 +55,20 @@ $verifyStatusFailed Replay löst den verwiesenen Level nicht.
 $verifyStatusMercyKilled Replay läuft über %d Minuten nach letzter Fähigkeits-Zuweisung.
 $verifyStatusSolved Replay löst den verwiesenen Level.
 
+$previewLevelAuthor von
+$previewLevelSingleGoal Ziel:
+$previewLevelSingleTrophySaved Rekord:
+$previewLevelSingleTrophySkills Fähigkeiten:
+$previewLevelMultiIntendedNumPlayers Spielerzahl:
+$previewReplayPlayer Spieler:
+$previewReplayPointsTo ⟶
+$previewMissingTiles %d fehlende Stücke:
+$previewMissingTilesMoreSee und %d weitere, siehe „%s“
+
 $harvestYouSavedThisTime %d Lix gerettet!
 $harvestReplayAutoSaved Replay autogespeichert.
 $harvestReplaySaveManuallyAtAll Replay speichern
 $harvestReplaySaveManuallyToo Manuell speichern
-
-$previewMissingTiles %d fehlende Stücke:
-$previewMissingTilesMoreSee und %d weitere, siehe „%s“
 
 $winSearchTitle Levelsuche
 $winSearchPrompt Suche nach Titel, Autor oder Dateiname in %d Levels:

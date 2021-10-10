@@ -1,7 +1,11 @@
-module menu.preview;
+module menu.preview.thumbn;
 
-/* A GUI element that displays a level thumbnail.
+/*
+ * LevelThumbnail: A GUI element that displays a level thumbnail.
  * Part of package menu, not gui, because only the large menus use it.
+ *
+ * Implements all methods of PreviewLevelOrReplay nontrivially,
+ * but will only interpret the Level arguments of the methods, no Replay.
  */
 
 import std.format;
@@ -16,8 +20,9 @@ import graphic.graphic;
 import graphic.internal;
 import graphic.torbit;
 import level.level;
+import menu.preview.base;
 
-class Preview : Frame {
+class LevelThumbnail : Frame, PreviewLevelOrReplay {
 private:
     Torbit  torbit; // the little canvas, sized like (this), to draw on
     Graphic iconStatus;
@@ -51,23 +56,33 @@ public:
         iconTorus .xf = 0;
     }
 
-    public @property void level(in Level level) // to clear, set level = 0
+    void previewNone()
     {
         dispose();
-        if (level !is null) {
-            torbit  = level.create_preview(
-                (xs + xls).roundInt - xs.roundInt,
-                (ys + yls).roundInt - ys.roundInt, color.screenBorder);
-            iconStatus.xf = level.errorMissingTiles ? 3
-                : level.errorNoHatches ? 1
-                : level.warningNoGoals ? 2 : 0;
-            iconTorus .xf = level.topology.torusX + 2 * level.topology.torusY;
-            if (level.errorEmpty)
-                iconStatus.xf = 0;
-            _missingTiles = level.missingTiles;
-            _warningTooLarge = level.warningTooLarge;
-        }
         reqDraw();
+    }
+
+    void preview(in Level lev)
+    {
+        assert (lev, "call previewNone() to clear, not preview(null)");
+        dispose();
+        torbit = lev.create_preview(
+            (xs + xls).roundInt - xs.roundInt,
+            (ys + yls).roundInt - ys.roundInt, color.screenBorder);
+        iconStatus.xf = lev.errorMissingTiles ? 3
+            : lev.errorNoHatches ? 1
+            : lev.warningNoGoals ? 2 : 0;
+        iconTorus .xf = lev.topology.torusX + 2 * lev.topology.torusY;
+        if (lev.errorEmpty)
+            iconStatus.xf = 0;
+        _missingTiles = lev.missingTiles;
+        _warningTooLarge = lev.warningTooLarge;
+        reqDraw();
+    }
+
+    void preview(in Replay ignored, in Level lev)
+    {
+        preview(lev);
     }
 
 protected:

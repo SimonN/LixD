@@ -29,7 +29,6 @@ static import basics.globals;
 final class BrowserReplay : BrowserWithDelete {
 private:
     Optional!ReplayToLevelMatcher _matcher; // empty if no replay previewed
-    LabelTwo _labelPointedTo;
     TextButton _buttonPlayWithPointedTo;
     TextButton _buttonVerify;
 
@@ -58,7 +57,6 @@ protected:
     final override void onOnHighlightNone()
     {
         _matcher = null;
-        _labelPointedTo.hide();
         _buttonPlayWithPointedTo.hide();
         previewNone();
     }
@@ -68,22 +66,8 @@ protected:
     do {
         _matcher = some(new ReplayToLevelMatcher(fn));
         foreach (lv; matcher.preferredLevel)
-            previewLevel(lv);
+            preview(matcher.replay, lv);
         _buttonPlayWithPointedTo.shown = matcher.pointedToIsGood;
-
-        if (! matcher.pointedToFilename.empty
-            && matcher.pointedToFilename.front.rootless.length
-            > dirLevels.rootless.length
-        ) {
-            // We show this even if the level is bad. It's probably
-            // most important then
-            _labelPointedTo.show();
-            _labelPointedTo.value = matcher.pointedToFilename.front.rootless[
-                dirLevels.rootless.length .. $];
-        }
-        else {
-            _labelPointedTo.hide();
-        }
     }
 
     override void onPlay(Filename fn)
@@ -139,14 +123,11 @@ private:
             b.hotkey = hotkey;
             return b;
         }
-        _labelPointedTo = new LabelTwo(new Geom(infoX, infoY + 20f,
-            infoXl, 20), "\u27F6"); // unicode long arrow right
         _buttonPlayWithPointedTo = newInfo(1, 100,
             Lang.browserReplayPointedTo.transl, keyMenuEdit);
         _buttonVerify = newInfo(1, 60,
             Lang.browserReplayVerifyDir.transl, keyMenuNewLevel);
 
-        addChildren(_labelPointedTo,
-            _buttonPlayWithPointedTo, _buttonVerify);
+        addChildren(_buttonPlayWithPointedTo, _buttonVerify);
     }
 }

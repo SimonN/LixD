@@ -37,10 +37,6 @@ $browserExportImage Export Image
 $browserExportImageDone Exported to:
 $browserMkdirTitle Create Folder
 $browserMkdirPleaseEnter Name of new folder:
-$browserInfoAuthor By:
-$browserInfoInitgoal Goal:
-$browserInfoBestSaved Best:
-$browserInfoBestSkills Skills:
 
 $browserReplayTitle Replays|From the main menu, go to the replay browser.
 $browserReplayPointedTo Pointed-to level
@@ -63,13 +59,20 @@ $verifyStatusFailed Replay doesn't solve the pointed-to level.
 $verifyStatusMercyKilled Replay ran over %d minutes after final skill.
 $verifyStatusSolved Replay solves the pointed-to level.
 
+$previewLevelAuthor by
+$previewLevelSingleGoal Goal:
+$previewLevelSingleTrophySaved Best:
+$previewLevelSingleTrophySkills Skills:
+$previewLevelMultiIntendedNumPlayers Players:
+$previewReplayPlayer Player:
+$previewReplayPointsTo ⟶
+$previewMissingTiles %d missing tiles:
+$previewMissingTilesMoreSee and %d more, see “%s”
+
 $harvestYouSavedThisTime You saved %d lix!
 $harvestReplayAutoSaved Replay autosaved.
 $harvestReplaySaveManuallyAtAll Save replay
 $harvestReplaySaveManuallyToo Save manually
-
-$previewMissingTiles %d missing tiles:
-$previewMissingTilesMoreSee and %d more, see “%s”
 
 $winSearchTitle Level Search
 $winSearchPrompt Search by title, author, or filename in %d levels:

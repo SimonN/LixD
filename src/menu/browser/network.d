@@ -38,7 +38,7 @@ protected:
     in { assert (fn, "call onHighlightNone() instead"); }
     do {
         _levelRecent = new Level(fileRecent);
-        previewLevel(_levelRecent);
+        preview(_levelRecent);
     }
 
     override void onPlay(Filename fn)

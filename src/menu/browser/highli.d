@@ -9,15 +9,12 @@ import gui;
 import gui.picker;
 import hardware.mouse;
 import level.level;
-import menu.preview;
 
 class BrowserHighlight : Window {
 private:
     Picker     _picker;
     bool       _gotoMainMenu;
     TextButton _buttonExit;
-    Preview    _preview;
-    Label      _previewLevelTitle;
 
 public:
     // after calling this(), it's a good idea to call
@@ -44,47 +41,16 @@ public:
         _buttonExit = new TextButton(new Geom(infoX + infoXl/2, 20,
             infoXl/2, 40, From.BOTTOM_LEFT), Lang.commonBack.transl);
         _buttonExit.hotkey = file.option.keyMenuExit;
-        _preview = new Preview(newPreviewGeom());
-        _previewLevelTitle = new Label(new Geom(infoX, infoY, infoXl+17, 20));
-        _previewLevelTitle.undrawBeforeDraw = true;
-        addChildren(_picker, _buttonExit, _preview, _previewLevelTitle);
-        previewNone();
-    }
-
-    // If you need to override this, add onDispose() and let dispose() call it.
-    final void dispose()
-    {
-        if (_preview) {
-            _preview.dispose();
-        }
+        addChildren(_picker, _buttonExit);
     }
 
     enum  float pickerXl = 320;
     final float infoX()  const { return pickerXl + 40;       }
     final float infoXl() const { return xlg - pickerXl - 60; }
-    final float infoY()  const
-    {
-        assert (_preview);
-        return _preview.yg + _preview.ylg + 20;
-    }
 
     @property bool gotoMainMenu()  const pure nothrow @safe @nogc
     {
         return _gotoMainMenu;
-    }
-
-    void previewNone()
-    {
-        _preview.shown = false;
-        _previewLevelTitle.text = "";
-    }
-
-    void previewLevel(Level l)
-    in { assert (l, "call previewNone() instead"); }
-    do {
-        _preview.shown = true;
-        _previewLevelTitle.text = l.name;
-        _preview.level = l;
     }
 
     final Filename currentDir() const { return _picker.currentDir; }
@@ -92,11 +58,6 @@ public:
 protected:
     abstract void onPickerExecuteFile(Filename fn);
     abstract void onPickerExecuteDir();
-
-    final Geom newPreviewGeom() const
-    {
-        return new Geom(20, 60, infoXl, 160, From.TOP_RIG);
-    }
 
     // This browser doesn't support setting file buttons to on.
     // But it must expose the on-setting (highlighting) functionality

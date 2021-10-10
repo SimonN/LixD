@@ -50,7 +50,7 @@ public:
         _buttonPlay = new TextButton(new Geom(infoX, 20,
             infoXl/2, 40, From.BOTTOM_LEFT), Lang.browserPlay.transl);
         _buttonPlay.hotkey = file.option.keyMenuOkay;
-        addChildren(_buttonPlay);
+        addChild(_buttonPlay);
     }
 
     Filename fileRecent() inout const pure nothrow @safe @nogc

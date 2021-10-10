@@ -30,7 +30,7 @@ private:
     TextButton _newLevel;
     TextButton _repForLev;
     TextButton _exportImage;
-    LabelTwo _by, _save, _trophySaved, _trophySkills;
+    LabelTwo _trophySaved, _trophySkills;
     Label _exportImageDone;
 
 public:
@@ -69,7 +69,7 @@ protected:
     final override void onOnHighlightNone()
     {
         only(_edit, _exportImage, _repForLev,
-            _by, _save, _trophySaved, _trophySkills,
+            _trophySaved, _trophySkills,
             _exportImageDone).each!(e => e.hide());
         _levelRecent = null;
         previewNone();
@@ -78,13 +78,10 @@ protected:
     final override void onOnHighlight(Filename fn)
     in { assert (fn, "call onHighlightNone() instead"); }
     do {
-        only(_edit, _exportImage, _repForLev, _by, _save).each!(e => e.show());
+        only(_edit, _exportImage, _repForLev).each!(e => e.show());
         _exportImageDone.hide();
         _levelRecent = new Level(fileRecent);
-        previewLevel(_levelRecent);
-        _by.value = _levelRecent.author;
-        _save.value = "%d/%d".format(_levelRecent.required,
-                                     _levelRecent.initial);
+        preview(_levelRecent);
         TrophyKey key;
         key.fileNoExt = fn.fileNoExtNoPre;
         key.title = _levelRecent.name;
@@ -174,17 +171,13 @@ private:
             hardware.sound.playQuiet(Sound.DISKSAVE);
         };
 
-        _by = new LabelTwo(new Geom(infoX, infoY + 20, infoXl, 20),
-            Lang.browserInfoAuthor.transl);
-        _save = new LabelTwo(new Geom(infoX, infoY + 40, infoXl, 20),
-            Lang.browserInfoInitgoal.transl);
         immutable savedXl = min(110f, infoXl/2f);
-        _trophySaved = new LabelTwo(new Geom(infoX, infoY + 60, savedXl, 20),
-            Lang.browserInfoBestSaved.transl);
-        _trophySkills = new LabelTwo(new Geom(infoX + savedXl, infoY + 60,
-            infoXl - savedXl, 20), Lang.browserInfoBestSkills.transl);
+        _trophySaved = new LabelTwo(new Geom(infoX, trophyLineY, savedXl, 20),
+            Lang.previewLevelSingleTrophySaved.transl);
+        _trophySkills = new LabelTwo(new Geom(infoX + savedXl, trophyLineY,
+            infoXl - savedXl, 20), Lang.previewLevelSingleTrophySkills.transl);
 
-        addChildren(_edit, _repForLev, _exportImage, _by, _save, _trophySaved,
+        addChildren(_edit, _repForLev, _exportImage, _trophySaved,
             _trophySkills, _exportImageDone, _newLevel);
     }
 }
