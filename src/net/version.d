@@ -6,8 +6,10 @@ module net.versioning;
  * Patches that do not break compatibility should only increase patch version.
  */
 
+import std.algorithm;
 import std.bitmanip;
 import std.conv;
+import std.range;
 import std.string;
 
 private immutable _gameVersion = Version(0, 9, 39);
@@ -28,19 +30,11 @@ struct Version {
     // parse version string a la "1.234.56"
     this(in string src)
     {
-        int*[] next = [&major, &minor, &patch];
-        foreach (c; src) {
-            if (next.length == 0) {
-                break;
-            }
-            else if (c >= '0' && c <= '9') {
-                *next[0] *= 10;
-                *next[0] += (c - '0');
-            }
-            else if (c == '.') {
-                next = next[1 .. $];
-            }
-        }
+        src.splitter('.')
+            .take(3)
+            .map!toIntByParsingOnlyDigits
+            .zip(only(&major, &minor, &patch))
+            .each!"*a[1] = a[0]";
         // A4/C++ Lix used dates as versioning numbers, and saved the
         // version as one integer, e.g., 2015010100 for 2015-01-01 with patch
         // number 00. These dates fit into the lower 31 bit of a signed int.
@@ -88,6 +82,19 @@ struct Version {
     }
 }
 
+private int toIntByParsingOnlyDigits(in string s) pure nothrow @safe @nogc
+{
+    int ret = 0;
+    foreach (c; s) {
+        if (c < '0' || c > '9') {
+            continue;
+        }
+        ret *= 10;
+        ret += (c - '0');
+    }
+    return ret;
+}
+
 unittest
 {
     auto a = Version(12, 34, 56);
@@ -108,4 +115,8 @@ unittest
     ubyte[Version.len] buf;
     a.serializeTo(buf);
     assert (Version(buf) == a);
+}
+
+unittest {
+    assert (Version("123.456") == Version(123, 456, 0), "parsing fewer nums");
 }
