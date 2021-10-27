@@ -51,6 +51,7 @@ public:
                 ? Lang.harvestReplaySaveManuallyToo.transl
                 : Lang.harvestReplaySaveManuallyAtAll.transl);
         _saveManually.onExecute = () { onSavingManually(); };
+        _saveManually.hotkey = glo.keyOutcomeSaveReplay;
         addChild(_saveManually);
     }
 

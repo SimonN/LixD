@@ -358,6 +358,11 @@ $optionKeyMenuDownBy1 Runter um 1|Die Markierung um 1 Datei nach unten bewegen.|
 $optionKeyMenuDownBy5 Runter um 5|Die Markierung um 5 Dateien nach unten bewegen.|Hiermit kannst du Levels ohne die Maus auswählen.
 $optionKeyMenuExit Zurück/abbr.|Einen Browser schließen.|Einen Dialog abbrechen, ohne zu speichern.
 
+$optionKeyOutcomeSaveReplay Replay speichern|Im Bildschirm nach einem Einzelspieler-Level:|Das Replay manuell speichern.
+$optionKeyOutcomeOldLevel Selber Level|Im Bildschirm nach einem Einzelspieler-Level:|Denselben Level nochmal spielen.
+$optionKeyOutcomeNextLevel Nächster Level|Im Bildschirm nach einem Einzelspieler-Level:|Den direkt nächsten Level spielen, egal ob schon gelöst oder nicht.
+$optionKeyOutcomeNextUnsolved Nächster ungelöster Level|Im Bildschirm nach einem Einzelspieler-Level:|Den nächsten ungelösten Level spielen.
+
 $optionEdLeft Nach links|Ausgewählte Stücke nach links bewegen.|Das Raster wird eingehalten. Halte die Taste zum schnellen Bewegen.
 $optionEdRight Nach rechts|Ausgewählte Stücke nach rechts bewegen.|Das Raster wird eingehalten. Halte die Taste zum schnellen Bewegen.
 $optionEdUp Nach oben|Ausgewählte Stücke nach oben bewegen.|Das Raster wird eingehalten. Halte die Taste zum schnellen Bewegen.

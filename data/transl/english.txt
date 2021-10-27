@@ -369,6 +369,11 @@ $optionGuiColorRed Menu color red|Recolor Lix's graphical user interface.
 $optionGuiColorGreen Menu color green|Recolor Lix's graphical user interface.
 $optionGuiColorBlue Menu color blue|Recolor Lix's graphical user interface.
 
+$optionKeyOutcomeSaveReplay Save replay|In the screen after finishing a singleplayer level:|Save the replay manually.
+$optionKeyOutcomeOldLevel Same level|In the screen after finishing a singleplayer level:|Play the same level again.
+$optionKeyOutcomeNextLevel Next level|In the screen after finishing a singleplayer level:|Play the immediate next level, whether solved or not.
+$optionKeyOutcomeNextUnsolved Next unsolved|In the screen after finishing a singleplayer level:|Play the next unsolved level.
+
 $optionEdLeft Move left|Move selected tiles to the left.|Movement respects the grid. Hold this key for fast movement.
 $optionEdRight Move right|Move selected tiles to the right.|Movement respects the grid. Hold this key for fast movement.
 $optionEdUp Move up|Move selected tiles up.|Movement respects the grid. Hold this key for fast movement.

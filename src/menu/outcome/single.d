@@ -16,9 +16,10 @@ import file.filename;
 import file.language;
 import file.nextlev;
 import file.trophy;
-import file.option.allopts;
+static import glo = file.option.allopts;
 import game.argscrea;
 import gui;
+import hardware.keyset;
 import menu.preview.base;
 import menu.outcome.repsave;
 import menu.outcome.trotable;
@@ -67,11 +68,12 @@ public:
         _offeredLevels ~= new NextLevelButton(
             new Geom(20, 40, nextLevelXlg, 160, From.TOP_RIGHT),
             won ? Lang.outcomeYouSolvedOldLevel : Lang.outcomeRetryOldLevel,
+            glo.keyOutcomeOldLevel,
             NextLevel(previous.level, previous.levelFilename));
         addChild(_offeredLevels[$-1]);
         _gotoBrowser = new TextButton(new Geom(0, 20, 300, 20, From.BOTTOM),
             Lang.outcomeExitToSingleBrowser.transl);
-        _gotoBrowser.hotkey = keyMenuExit;
+        _gotoBrowser.hotkey = glo.keyMenuExit;
         addChild(_gotoBrowser);
 
         if (_cache is null) {
@@ -84,7 +86,7 @@ public:
             offerUpToTwoLevels(old);
         }
         // ...and only after above rendering the trophies, improve.
-        if (won && justPlayed.wasPlayedBy(file.option.userName)
+        if (won && justPlayed.wasPlayedBy(glo.userName)
         ) {
             maybeImprove(previous.trophyKey, trophy);
         }
@@ -116,7 +118,7 @@ public:
     do {
         // find will return nonempty array because of the in contract
         auto next = _offeredLevels[].find!(but => but.execute)[0].nextLevel;
-        file.option.allopts.singleLastLevel = next.fn;
+        glo.singleLastLevel = next.fn;
         return next;
     }
 
@@ -144,23 +146,28 @@ private:
         auto next = old.nextLevel();
         auto nextU = nextUnsolvedLevelAfter(old);
         if (next == nextU) {
-            offer(From.BOTTOM, Lang.outcomeAttemptNextLevel, next);
+            offer(From.BOTTOM, Lang.outcomeAttemptNextLevel,
+                KeySet(glo.keyOutcomeNextLevel, glo.keyOutcomeNextUnsolved),
+                next);
         }
         else {
-            offer(From.BOT_LEF, Lang.outcomeResolveNextLevel, next);
-            offer(From.BOT_RIG, Lang.outcomeAttemptNextUnsolvedLevel, nextU);
+            offer(From.BOT_LEF, Lang.outcomeResolveNextLevel,
+                glo.keyOutcomeNextLevel, next);
+            offer(From.BOT_RIG, Lang.outcomeAttemptNextUnsolvedLevel,
+                glo.keyOutcomeNextUnsolved, nextU);
         }
     }
 
     void offer(
         Geom.From from,
         Lang topCaption,
+        in KeySet aHotkey,
         Optional!Rhino toPreview
     ) {
         foreach (reallyPreview; toPreview) {
             auto but = new NextLevelButton(new Geom(
                 from == From.BOTTOM ? 0 : 20, 60, nextLevelXlg, 200, from),
-                topCaption, NextLevel(
+                topCaption, aHotkey, NextLevel(
                     new Level(reallyPreview.filename),
                     reallyPreview.filename));
             addChild(but);
@@ -187,7 +194,7 @@ private:
     FullPreview _preview;
 
 public:
-    this(Geom g, in Lang topCaption, NextLevel aNextLevel)
+    this(Geom g, in Lang topCaption, in KeySet aHotkey, NextLevel aNextLevel)
     {
         super(g);
         _nextLevel = aNextLevel;
@@ -197,6 +204,7 @@ public:
             new Geom(0, 30, xlg - 40, ylg - 36, From.TOP));
         _preview.preview(_nextLevel.level);
         addChildren(_topCaption, _preview);
+        hotkey = aHotkey;
     }
 
     inout(NextLevel) nextLevel() inout pure nothrow @safe @nogc

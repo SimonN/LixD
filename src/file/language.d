@@ -425,6 +425,11 @@ enum Lang {
     optionKeyMenuDownBy5,
     optionKeyMenuExit,
 
+    optionKeyOutcomeSaveReplay,
+    optionKeyOutcomeOldLevel,
+    optionKeyOutcomeNextLevel,
+    optionKeyOutcomeNextUnsolved,
+
     optionEdLeft,
     optionEdRight,
     optionEdUp,

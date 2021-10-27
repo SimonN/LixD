@@ -169,6 +169,11 @@ UserOption!KeySet
     keyMenuMainReplays,
     keyMenuMainOptions,
 
+    keyOutcomeSaveReplay,
+    keyOutcomeOldLevel,
+    keyOutcomeNextLevel,
+    keyOutcomeNextUnsolved,
+
     keyEditorLeft,
     keyEditorRight,
     keyEditorUp,
@@ -378,6 +383,11 @@ do {
     keyMenuMainNetwork = newKey("keyMenuMainNetwork", Lang.winLobbyTitle, ALLEGRO_KEY_D);
     keyMenuMainReplays = newKey("keyMenuMainReplay", Lang.browserReplayTitle, ALLEGRO_KEY_S);
     keyMenuMainOptions = newKey("keyMenuMainOptions", Lang.optionTitle, ALLEGRO_KEY_A);
+
+    keyOutcomeSaveReplay = newOpt("keyOutcomeSaveReplay", Lang.optionKeyOutcomeSaveReplay, KeySet());
+    keyOutcomeOldLevel = newKey("keyOutcomeOldLevel", Lang.optionKeyOutcomeOldLevel, ALLEGRO_KEY_F1);
+    keyOutcomeNextLevel = newKey("keyOutcomeNextLevel", Lang.optionKeyOutcomeNextLevel, ALLEGRO_KEY_SPACE);
+    keyOutcomeNextUnsolved = newKey("keyOutcomeNextUnsolved", Lang.optionKeyOutcomeNextUnsolved, ALLEGRO_KEY_F);
 
     keyEditorLeft = newKey2("keyEditorLeft", Lang.optionEdLeft, ALLEGRO_KEY_S, ALLEGRO_KEY_LEFT);
     keyEditorRight = newKey2("keyEditorRight", Lang.optionEdRight, ALLEGRO_KEY_F, ALLEGRO_KEY_RIGHT);

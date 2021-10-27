@@ -442,13 +442,13 @@ void populateMenuKeys()
         fac.factory!HotkeyOption(keyMenuDownBy5, watcher),
     ];
 
-    watcher = new KeyDuplicationWatcher(); // main menu keys are OK to collide
+    KeyDuplicationWatcher wat2 = new KeyDuplicationWatcher();
     fac = facKeys!2;
     grp ~= [
-        fac.factory!HotkeyOption(keyMenuMainSingle, watcher),
-        fac.factory!HotkeyOption(keyMenuMainNetwork, watcher),
-        fac.factory!HotkeyOption(keyMenuMainReplays, watcher),
-        fac.factory!HotkeyOption(keyMenuMainOptions, watcher),
+        fac.factory!HotkeyOption(keyMenuMainSingle, wat2),
+        fac.factory!HotkeyOption(keyMenuMainNetwork, wat2),
+        fac.factory!HotkeyOption(keyMenuMainReplays, wat2),
+        fac.factory!HotkeyOption(keyMenuMainOptions, wat2),
     ];
     fac.y += 20;
     grp ~= fac.factory!HotkeyOption(keyMenuExit, watcher);
@@ -459,9 +459,9 @@ void populateMenuKeys()
     guiCol.hex    = true;
     guiCol.stepMedium = 0x10;
     guiCol.stepSmall  = 0x02;
-    fac = facLeft();
-    fac.xl = this.xlg - 40;
-    fac.y  = 260;
+    fac = facKeys!0;
+    fac.y = 260;
+    fac.incrementY = 30;
     grp ~= [
         fac.factory!NumPickOption(guiCol, guiColorRed),
         fac.factory!NumPickOption(guiCol, guiColorGreen),
@@ -470,6 +470,19 @@ void populateMenuKeys()
     guiRed   = (cast (NumPickOption) grp[$-3]).num;
     guiGreen = (cast (NumPickOption) grp[$-2]).num;
     guiBlue  = (cast (NumPickOption) grp[$-1]).num;
+
+    KeyDuplicationWatcher wat3 = new KeyDuplicationWatcher();
+    scope (success)
+        wat2.checkForDuplicateBindings();
+    fac = facKeys!1;
+    fac.y = 260;
+    fac.xl *= 1.5f; // Because in 2021, there is nothing to its right yet.
+    grp ~= [
+        fac.factory!HotkeyOption(keyOutcomeSaveReplay, wat3),
+        fac.factory!HotkeyOption(keyOutcomeOldLevel, wat3),
+        fac.factory!HotkeyOption(keyOutcomeNextLevel, wat3),
+        fac.factory!HotkeyOption(keyOutcomeNextUnsolved, wat3),
+    ];
 }
 
 }
