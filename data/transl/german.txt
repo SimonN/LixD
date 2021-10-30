@@ -302,9 +302,9 @@ $optionScreenWindowedRes Fenster-/Hardware-Auflösung|Größe des Lix-Fensters i
 $optionPaintTorusSeams Torus-Nahtstellen anmalen|Torus-Nahtstellen in der Landschaft mit einer dünnen Linie kennzeichnen.|Dies hat keine Auswirkung auf die Physik; es dient zur Orientierung.
 $optionIngameTooltips Tooltips im Spiel|Buttons und Lix-wählende Hotkeys im Spiel erklären, z.B. nur Linksläufer.|Einige Buttons haben eine Linksklick- und eine Rechtsklick-Funktion.
 $optionShowFPS Physik und FPS zählen|Anzahl Physik-Updates seit Spielbeginn anzeigen.|Im Editor und Spiel: Frames pro Sekunde anzeigen.
-$optionGuiColorRed Menüfarbe Rot|Die Grafikoberfläche in Lix anders färben.
-$optionGuiColorGreen Menüfarbe Grün|Die Grafikoberfläche in Lix anders färben.
-$optionGuiColorBlue Menüfarbe Blau|Die Grafikoberfläche in Lix anders färben.
+$optionGuiColorRed Menü rot|Die Grafikoberfläche in Lix anders färben.
+$optionGuiColorGreen Menü grün|Die Grafikoberfläche in Lix anders färben.
+$optionGuiColorBlue Menü blau|Die Grafikoberfläche in Lix anders färben.
 
 $optionKeyZoomIn Zoom +|Level größer darstellen, dafür weniger auf einmal sehen.
 $optionKeyZoomOut Zoom −|Level kleiner darstellen, dafür mehr auf einmal sehen.

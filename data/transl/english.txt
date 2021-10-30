@@ -365,9 +365,9 @@ $optionKeyMenuUpBy1 Up by 1|Move the highlight up by 1 file.|With this, you can 
 $optionKeyMenuDownBy1 Down by 1|Move the highlight down by 1 file.|With this, you can navigate levels without the mouse.
 $optionKeyMenuDownBy5 Down by 5|Move the highlight down by 5 files.|With this, you can navigate levels without the mouse.
 $optionKeyMenuExit Back/cancel|Exit a browser. Close a dialog without saving.
-$optionGuiColorRed Menu color red|Recolor Lix's graphical user interface.
-$optionGuiColorGreen Menu color green|Recolor Lix's graphical user interface.
-$optionGuiColorBlue Menu color blue|Recolor Lix's graphical user interface.
+$optionGuiColorRed Menu red|Recolor Lix's graphical user interface.
+$optionGuiColorGreen Menu green|Recolor Lix's graphical user interface.
+$optionGuiColorBlue Menu blue|Recolor Lix's graphical user interface.
 
 $optionKeyOutcomeSaveReplay Save replay|In the screen after finishing a singleplayer level:|Save the replay manually.
 $optionKeyOutcomeOldLevel Same level|In the screen after finishing a singleplayer level:|Play the same level again.
