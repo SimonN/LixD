@@ -61,28 +61,11 @@ implGameDraw(Game game) { with (game)
     foreach (sc; nurse.scores)
         pan.update(sc);
     pan.age = nurse.constStateForDrawingOnly.update;
+
     game.showSpawnIntervalOnHatches();
-
-    if (pan.tweakerIsOn) {
-        _tweaker.shown = true;
-        _tweaker.formatButtonsAccordingTo(
-            nurse.constReplay.allPlies, nurse.upd);
-    }
-    else if (_tweaker.shown) {
-        _tweaker.shown = false;
-        gui.requireCompleteRedraw();
-    }
-
-    auto drata = TargetBitmap(al_get_backbuffer(theA5display));
-    {
-        version (tharsisprofiling)
-            auto zo2 = Zone(profiler, "game draws map to screen");
-        map.drawCamera();
-    }
-    game.drawReplaySign();
-    with (game.nurse.constStateForDrawingOnly)
-        if (! isMusicPlaying && update >= updateFirstSpawn)
-            suggestRandomMusic();
+    game.activateOrDeactivateTweaker();
+    game.drawMapToA5Display();
+    game.ensureMusic();
 }}
 // end with(game), end implGameDraw()
 
@@ -167,6 +150,30 @@ void showSpawnIntervalOnHatches(Game game)
         game.pan.showSpawnInterval(game.localTribe.spawnint);
 }
 
+void activateOrDeactivateTweaker(Game game)
+{
+    if (game.pan.tweakerIsOn) {
+        game._tweaker.shown = true;
+        game._tweaker.formatButtonsAccordingTo(
+            game.nurse.constReplay.allPlies, game.nurse.upd);
+    }
+    else if (game._tweaker.shown) {
+        game._tweaker.shown = false;
+        gui.requireCompleteRedraw();
+    }
+}
+
+void drawMapToA5Display(Game game)
+{
+    auto drata = TargetBitmap(al_get_backbuffer(theA5display));
+    {
+        version (tharsisprofiling)
+            auto zo2 = Zone(profiler, "game draws map to screen");
+        game.map.drawCamera();
+    }
+    game.drawReplaySign();
+}
+
 void drawReplaySign(Game game)
 {
     if (! game.replaying)
@@ -180,5 +187,13 @@ void drawReplaySign(Game game)
         && ! showFPS.value // power user setting, it overrides us
     ) {
         game.pan.suggestTooltip(Tooltip.ID.clickToCancelReplay);
+    }
+}
+
+void ensureMusic(const(Game) game)
+{
+    with (game.nurse.constStateForDrawingOnly) {
+        if (! isMusicPlaying && update >= updateFirstSpawn)
+            suggestRandomMusic();
     }
 }
