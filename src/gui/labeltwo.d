@@ -19,7 +19,7 @@ public:
         _caption = new Label(new Geom(0, 0, xlg, ylg, From.LEFT), cap);
         _value   = new Label(new Geom(_caption.textLg + 6f, 0,
                                 xlg - _caption.textLg - 6f, ylg, From.LEFT));
-        _caption.color = color.guiOnM; // darker than value's colorText
+        _caption.color = color.guiTextDark;
         addChildren(_caption, _value);
     }
 

@@ -65,7 +65,7 @@ public:
         return super.shown;
     }
 
-    @property Alcol colorText() const
+    Alcol colorText() const
     {
         return _on && ! _down ? color.guiTextOn : color.guiText;
     }
@@ -129,6 +129,11 @@ private:
             drawTextRight(djvuS, s,
                 xs + xls - gui.thicks,
                 ys + yls - gui.thicks - al_get_font_line_height(djvuS),
-                colorText);
+                colorHotkeyInCorner);
+    }
+
+    Alcol colorHotkeyInCorner() const nothrow @safe @nogc
+    {
+        return _on && ! _down ? color.guiText : color.guiTextDark;
     }
 }
