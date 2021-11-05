@@ -157,13 +157,29 @@ public:
         implExportImage(this, fn);
     }
 
-    int teamIDforGadget(int gadgetID) const
+    /*
+     * If number of gadgets >= intended number of players, return.len == 1.
+     * If number of gadgets <= intended number of players, return.len >= 1,
+     * and will be (intended number of players) / (num gadgets) for clean div.
+     */
+    int[] teamIDsForGadget(in int gadgetID, in int numGadgetsOfThisType) const
     in {
         assert (gadgetID >= 0);
+        assert (gadgetID < numGadgetsOfThisType);
         assert (intendedNumberOfPlayers > 0);
     }
+    out (ret) {
+        assert (ret.length > 0);
+    }
     do {
-        return gadgetID % intendedNumberOfPlayers;
+        int[] ret;
+        for (int team = gadgetID % intendedNumberOfPlayers;
+            team < intendedNumberOfPlayers;
+            team += numGadgetsOfThisType
+        ) {
+            ret ~= team;
+        }
+        return ret;
     }
 
     int howManyDoesTeamGetOutOf(int tribe, int listLen) const
@@ -220,4 +236,9 @@ unittest {
     assert (l.howManyDoesTeamGetOutOf(4, 3) == 0);
     assert (l.howManyDoesTeamGetOutOf(3, 0) == 0);
     assert (l.howManyDoesTeamGetOutOf(3, 0) == 0);
+
+    l.intendedNumberOfPlayers = 6;
+    assert (l.teamIDsForGadget(0, 2) == [0, 2, 4]);
+    assert (l.teamIDsForGadget(1, 2) == [1, 3, 5]);
+    assert (l.teamIDsForGadget(7, 24) == [1]);
 }

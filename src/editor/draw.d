@@ -135,15 +135,16 @@ void drawGadgetAnnotations(Editor editor) {
             // I duplicate logic here that's also in the Game's state init.
             enum int plusY = 15;
             int y = -plusY;
-            immutable int team = teamIDforGadget(i.to!int);
-            immutable int weGetTotal = howManyDoesTeamGetOutOf(team, list.len);
+            const(int[]) teams = teamIDsForGadget(i.to!int, list.len);
+            const int numForUs = howManyDoesTeamGetOutOf(teams[0], list.len);
 
             if (intendedNumberOfPlayers > 1)
-                print(g, y += plusY, "ABCDEFGH"[team .. team + 1]);
+                print(g, y += plusY, teams.map!(
+                    function char(int i) { return 'A'+i & 0xFF; }).to!string);
             if (intendedNumberOfPlayers == 1
-                || (g.tile.type == GadType.HATCH && weGetTotal > 1))
+                || (g.tile.type == GadType.HATCH && numForUs > 1))
                 print(g, y += plusY, "%d/%d".format(
-                    ((i - team) / intendedNumberOfPlayers) + 1, weGetTotal));
+                    ((i - teams[0]) / intendedNumberOfPlayers) + 1, numForUs));
             if (g.tile.type == GadType.HATCH)
                 // unicode: LEFTWARDS ARROW, RIGHTWARDS ARROW
                 print(g, y += plusY, g.hatchRot ? "\u2190" : "\u2192");
