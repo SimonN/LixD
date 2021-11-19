@@ -200,34 +200,50 @@ player position.
 2) Tile Group Definitions
 -------------------------
 
-Tile groups are a composition of multiple tiles which can be used like one Single Terrain tile.
-They have following format:
+Tile groups are a composition of multiple tiles which can be used like one
+Single Terrain tile. They have following format:
 
-The tile groups are defined within a bracket which marks the begin and the end of tile group and in between lines with the tile data of which the tile group is composed:
+The tile groups are defined within a bracket which marks the begin and the end
+of tile group and in between lines with the tile data of which the tile group
+is composed:
 
-$BEGIN_TILE_GROUP <name of the group>
-:<tile>: <x-coordinate> <y-coordinate> [modifiers]
-...
-$END_TILE_GROUP
+    $BEGIN_TILE_GROUP <name of the group>
+    :<tile>: <x-coordinate> <y-coordinate> [modifiers]
+    ...
+    $END_TILE_GROUP
 
-e.g.:
+Here, <name of the group> can be any string. As of 2021-11, Lix will save
+groups with names 0, 1, 2, ..., i.e., running counts of the groups in the
+level. But any string will work.
 
-$BEGIN_TILE_GROUP 0
-:simon/oriental/bridge1: 0 22
-:simon/oriental/bridge1: 44 0
-:simon/oriental/bridge1: 0 65 rr
-:simon/oriental/bridge1: 44 43 rr
-$END_TILE_GROUP
+Example:
 
-To call the tile group into existence, it is instantiated in the following form:
+    $BEGIN_TILE_GROUP mygroup
+    :simon/oriental/bridge1: 0 22
+    :simon/oriental/bridge1: 44 0
+    :simon/oriental/bridge1: 0 65 rr
+    :simon/oriental/bridge1: 44 43 rr
+    $END_TILE_GROUP
 
-:Group-<name of the group>: <x-coordinate> <y-coordinate> [modifiers]
+This will merely define the group, it won't place the group in the level yet.
+To call the tile group into existence, instantiate it as follows:
 
-e.g.:
+    :Group-<name of the group>: <x-coordinate> <y-coordinate> [modifiers]
 
-:Group-0: 112 132 rr
+Example:
 
-That puts the tile group at the named position in the level like a Single Terrain tile.
+    :Group-mygroup: 112 132 rr
+
+That puts the tile group at the named position in the level like a Single
+Terrain tile.
+
+Advice for level creators: You can move groups between levels by editing the
+level text files with a text editor, but watch out for name clashes. The
+automatically generated groups names 0, 1, 2, ... in the source level can
+clash with the names 0, 1, 2, ..., of groups in the target level. Solution:
+Rename the groups in the source level to, e.g., a0, a1, a2, ..., by
+searching-and-replacing all group definitions (to, e.g., "$BEGIN_TILE_GROUP
+a0") and all instantiations (to, e.g., ":Group-a0:").
 
 
 
