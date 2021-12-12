@@ -1,4 +1,4 @@
-$BUILT 2021-02-13 04:22:57
+$BUILT 2021-12-12 02:34:30
 $AUTHOR Flopsy
 $ENGLISH The Tunnel of Love 6P
 
@@ -34,13 +34,12 @@ $ENGLISH The Tunnel of Love 6P
 :raymanni/holiday/hatch.H: 592 32
 :raymanni/holiday/hatch.H: 592 192
 
-:raymanni/holiday/goal.G: 528 432
+:raymanni/holiday/goal.G: 528 272
 :raymanni/holiday/goal.G: 528 432
 :raymanni/holiday/goal.G: 528 112
 :raymanni/holiday/goal.G: 80 272
 :raymanni/holiday/goal.G: 80 432
 :raymanni/holiday/goal.G: 80 112
-:raymanni/holiday/goal.G: 528 272
 
 :amanda/forest/frog.T: 240 128
 :raymanni/gore/eater.T: 368 112
