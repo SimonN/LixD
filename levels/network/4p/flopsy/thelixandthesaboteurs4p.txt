@@ -1,0 +1,136 @@
+$BUILT 2021-12-07 03:40:30
+$AUTHOR Flopsy
+$ENGLISH The Lix and the Saboteurs 4P
+
+#INTENDED_NUMBER_OF_PLAYERS 4
+#SIZE_X 768
+#SIZE_Y 560
+#TORUS_X 1
+#TORUS_Y 0
+
+#SECONDS 150
+#INITIAL 80
+#SPAWN_INTERVAL 32
+
+#WALKER 50
+#RUNNER 10
+#CLIMBER 20
+#FLOATER 15
+#EXPLODER2 5
+#BLOCKER 1
+#BUILDER 80
+#PLATFORMER 30
+#BASHER 30
+#MINER 30
+#DIGGER 30
+#JUMPER 50
+#BATTER 30
+#CUBER 5
+
+:matt/marble/Hatch.H: 64 128
+:matt/marble/Hatch.H: 256 128 r
+:matt/marble/Hatch.H: 448 128
+:matt/marble/Hatch.H: 640 128 r
+:matt/marble/Hatch.H: 448 16
+:matt/marble/Hatch.H: 640 16 r
+:matt/marble/Hatch.H: 64 16
+:matt/marble/Hatch.H: 256 16 r
+
+:matt/marble/Goal.G: 224 448
+:matt/marble/Goal.G: 96 448
+:matt/marble/Goal.G: 608 448
+:matt/marble/Goal.G: 480 448
+
+:geoo/construction/Laser_vr_64.F: 376 112
+:geoo/construction/Laser_vr_64.F: 376 176
+:geoo/construction/Laser_vr_64.F: 376 240
+:geoo/construction/Laser_vr_64.F: 376 304
+:geoo/construction/Laser_vr_64.F: 376 368
+:geoo/construction/Laser_vr_64.F: 760 112
+:geoo/construction/Laser_vr_64.F: 760 176
+:geoo/construction/Laser_vr_64.F: 760 240
+:geoo/construction/Laser_vr_64.F: 760 304
+:geoo/construction/Laser_vr_64.F: 760 368
+:geoo/construction/Laser_vr_64.F: 376 432
+:geoo/construction/Laser_vr_64.F: 376 496
+:geoo/construction/Laser_vr_64.F: 760 432
+:geoo/construction/Laser_vr_64.F: 760 496
+:geoo/construction/sawblade_small.F: 368 288
+:geoo/construction/sawblade_small.F: 368 320
+:geoo/construction/sawblade_small.F: 752 320
+:geoo/construction/sawblade_small.F: 752 288
+
+:matt/marble/08a: 0 80
+:matt/marble/08a: 64 80
+:matt/marble/08b: 256 80
+:matt/marble/08b: 320 80
+:matt/marble/08a: 128 80
+:matt/marble/08b: 192 80
+:matt/marble/08: 384 80
+:matt/marble/08: 448 80
+:matt/marble/08: 512 80
+:matt/marble/08c: 576 80
+:matt/marble/08c: 640 80
+:matt/marble/08c: 704 80
+:matt/marble/08a: 32 192
+:matt/marble/08a: 96 192
+:matt/marble/08b: 224 192
+:matt/marble/08b: 288 192
+:matt/marble/08: 416 192
+:matt/marble/08: 480 192
+:matt/marble/08c: 608 192
+:matt/marble/08c: 672 192
+:matt/marble/01: 376 318
+:matt/marble/01a: 760 318
+:matt/marble/01b: 376 350
+:matt/marble/01c: 760 350
+:geoo/steel/dark_32x16o.S: 32 128
+:geoo/steel/dark_32x16o.S: 64 128
+:geoo/steel/dark_32x16o.S: 96 128
+:geoo/steel/dark_32x16o.S: 128 128
+:geoo/steel/dark_32x16o.S: 224 128
+:geoo/steel/dark_32x16o.S: 256 128
+:geoo/steel/dark_32x16o.S: 288 128
+:geoo/steel/dark_32x16o.S: 320 128
+:geoo/steel/dark_32x16o.S: 416 128
+:geoo/steel/dark_32x16o.S: 448 128
+:geoo/steel/dark_32x16o.S: 480 128
+:geoo/steel/dark_32x16o.S: 512 128
+:geoo/steel/dark_32x16o.S: 608 128
+:geoo/steel/dark_32x16o.S: 640 128
+:geoo/steel/dark_32x16o.S: 672 128
+:geoo/steel/dark_32x16o.S: 704 128
+:matt/marble/09: 576 496
+:matt/marble/09: 640 496
+:matt/marble/09c: 512 496
+:matt/marble/09c: 448 496
+:matt/marble/09c: 384 496
+:matt/marble/09: 704 496
+:matt/marble/09a: 192 496
+:matt/marble/09a: 256 496
+:matt/marble/09a: 320 496
+:geoo/steel/dark_16x16o.S: 248 496
+:matt/marble/09b: 128 496
+:matt/marble/09b: 64 496
+:matt/marble/09b: 0 496
+:geoo/steel/dark_16x16o.S: 120 496
+:geoo/steel/dark_16x16o.S: 632 496
+:geoo/steel/dark_16x16o.S: 504 496
+:geoo/steel/dark_16x16o.S: 280 192
+:geoo/steel/dark_16x16o.S: 88 192
+:geoo/steel/dark_16x16o.S: 664 192
+:geoo/steel/dark_16x16o.S: 472 192
+:matt/marble/03b: 368 48
+:matt/marble/03: 384 48
+:matt/marble/03a: 0 48
+:matt/marble/03c: 752 48
+:matt/marble/001c: 608 176
+:matt/marble/001c: 728 176
+:matt/marble/001a: 32 176
+:matt/marble/001a: 152 176
+:matt/marble/001b: 224 176
+:matt/marble/001b: 344 176
+:matt/marble/001: 416 176
+:matt/marble/001: 536 176
+:geoo/steel/dark_16x16o.S: 760 96
+:geoo/steel/dark_16x16o.S: 376 96
