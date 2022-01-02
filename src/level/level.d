@@ -90,6 +90,7 @@ public:
         string author() { return md.author; }
         int initial() { return md.initial; }
         int required() { return md.required; }
+        const(string)[] tags() { return md.tags; }
 
         immutable(string)[] missingTiles() { return _missingTiles; }
 

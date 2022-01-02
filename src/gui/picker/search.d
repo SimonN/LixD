@@ -167,6 +167,7 @@ private:
     string titleAllLower;
     string fnAllLower;
     string authorAllLower;
+    const(string)[] tags;
 
 public:
     Filename result;
@@ -186,6 +187,7 @@ public:
         titleDisplay = metadata.name;
         titleAllLower = titleDisplay.toLower;
         authorAllLower = metadata.author.toLower;
+        tags = metadata.tags;
     }
 
     bool matches(R)(R rangeOfWords) const pure
@@ -195,6 +197,7 @@ public:
                     fnAllLower.canFind(word)
                 ||  titleAllLower.canFind(word)
                 ||  authorAllLower.canFind(word)
+                || tags.canFind(word)
             );
     }
 }

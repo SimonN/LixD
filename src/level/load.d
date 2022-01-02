@@ -81,6 +81,7 @@ private void load_from_vector(Level level, in IoLine[] lines) { with (level)
             || text1 == glo.levelAuthor
             || text1 == glo.levelNameGerman
             || text1 == glo.levelNameEnglish
+            || text1 == glo.levelTag
         ) {
             level.md.parse(line);
         }

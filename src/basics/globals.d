@@ -57,6 +57,7 @@ immutable levelAuthor                 = "AUTHOR";
 immutable levelNameGerman             = "GERMAN";
 immutable levelNameEnglish            = "ENGLISH";
 immutable levelIntendedNumberOfPlayers= "INTENDED_NUMBER_OF_PLAYERS";
+immutable levelTag                    = "TAG";
 immutable levelSizeX                  = "SIZE_X";
 immutable levelSizeY                  = "SIZE_Y";
 immutable levelTorusX                 = "TORUS_X";

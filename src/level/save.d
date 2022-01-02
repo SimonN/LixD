@@ -39,6 +39,13 @@ do {
 
     file.writeln(IoLine.Hash(glo.levelIntendedNumberOfPlayers,
                                     l.intendedNumberOfPlayers));
+    foreach (const string tag; l.tags) {
+        file.writeln(IoLine.Dollar(glo.levelTag, tag));
+    }
+    if (l.tags.length > 0) {
+        file.writeln();
+    }
+
     file.writeln(IoLine.Hash(glo.levelSizeX, l.topology.xl));
     file.writeln(IoLine.Hash(glo.levelSizeY, l.topology.yl));
     if (l.topology.torusX || l.topology.torusY) {
