@@ -53,7 +53,7 @@ void onNewLevelButtonExecuted(Editor editor)
 auto newEmptyLevel = delegate Level()
 {
     Level l = new Level;
-    l.author = file.option.userName;
+    l.md.author = file.option.userName;
     l.overtimeSeconds = 30; // Level discards this if saved as 1-pl
     return l;
 };
@@ -63,8 +63,9 @@ void saveToExistingFile(Editor editor) {
 {
     if (Filename fn = _panel.currentFilenameOrNull) {
         file.option.singleLastLevel = fn;
-        if (level != _levelToCompareForDataLoss)
-            levelRefacme.built = Date.now();
+        if (level != _levelToCompareForDataLoss) {
+            levelRefacme.md.touch();
+        }
         level.saveToFile(fn);
         _levelToCompareForDataLoss = new Level(fn);
         playQuiet(Sound.DISKSAVE);

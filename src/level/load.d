@@ -77,10 +77,13 @@ private void load_from_vector(Level level, in IoLine[] lines) { with (level)
     foreach (line; lines) with (line) switch (type) {
     // set a string
     case '$':
-        if      (text1 == glo.levelBuilt       ) built = new Date(text2);
-        else if (text1 == glo.levelAuthor      ) author       = text2;
-        else if (text1 == glo.levelNameGerman ) nameGerman  = text2;
-        else if (text1 == glo.levelNameEnglish) nameEnglish = text2;
+        if (text1 == glo.levelBuilt
+            || text1 == glo.levelAuthor
+            || text1 == glo.levelNameGerman
+            || text1 == glo.levelNameEnglish
+        ) {
+            level.md.parse(line);
+        }
         else if (text1 == glo.levelBeginGroup) {
             groupElements = [];
             groupName = text2;
@@ -102,8 +105,8 @@ private void load_from_vector(Level level, in IoLine[] lines) { with (level)
             ||   text1 == glo.levelBackgroundGreen
             ||   text1 == glo.levelBackgroundBlue) level.loadcol(text1, nr1);
         else if (text1 == glo.levelSeconds) overtimeSeconds = nr1;
-        else if (text1 == glo.levelInitial) initial = nr1;
-        else if (text1 == glo.levelRequired) required = nr1;
+        else if (text1 == glo.levelInitial
+            ||   text1 == glo.levelRequired) md.parse(line);
         else if (text1 == glo.levelSpawnint) spawnint = nr1;
         else if (text1 == glo.levelRateLegacy) spawnint = 4 + (99 - nr1) / 2;
         else if (text1 == glo.levelIntendedNumberOfPlayers)
@@ -149,8 +152,8 @@ private void load_level_finalize(Level level) {
     intendedNumberOfPlayers = clamp(intendedNumberOfPlayers, 1,
                                     glo.teamsPerLevelMax);
     level.resize(topology.xl, topology.yl);
-    initial  = clamp(initial,  1, Level.initialMax);
-    required = clamp(required, 1, initial);
+    md.initial = clamp(md.initial, 1, Level.initialMax);
+    md.required = clamp(md.required, 1, initial);
     spawnint = clamp(spawnint, Level.spawnintMin, Level.spawnintMax);
 
     // Only allow one type of im/exploder.

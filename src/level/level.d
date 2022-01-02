@@ -20,6 +20,7 @@ import graphic.torbit;
 import level.addtile;
 import level.levdraw;
 import level.load;
+import level.metadata;
 import tile.occur;
 import tile.gadtile;
 
@@ -34,17 +35,13 @@ public:
     enum spawnintMax = 96;
     enum initialMax = 999;
 
-    string author;
-    string nameGerman;
-    string nameEnglish;
+    LevelMetaData md;
     int intendedNumberOfPlayers;
 
     Topology topology;
     Alcol bgColor;
 
     int overtimeSeconds;
-    int initial;
-    int required;
     int spawnint;
 
     /* ploder: either Ac.exploder or Ac.imploder.
@@ -63,16 +60,13 @@ public:
 package:
     bool _fileNotFound;
     immutable(string)[] _missingTiles;
-    MutableDate _built;
 
 public:
     this()
     {
-        built = Date.now();
+        md = new LevelMetaData();
         intendedNumberOfPlayers = 1;
         topology = new Topology(cppLixOneScreenXl, 400);
-        initial = 20;
-        required = 20;
         spawnint = 32;
         ploder = Ac.exploder;
         bgColor = color.black;
@@ -90,10 +84,14 @@ public:
         loadFromVoidArray(this, src);
     }
 
-    @property const nothrow @nogc @safe {
-        string name() { return nameEnglish == "" ? nameGerman : nameEnglish; }
+    @property const pure nothrow @nogc @safe {
+        Date built() { return md.built; }
+        string name() { return md.name; }
+        string author() { return md.author; }
+        int initial() { return md.initial; }
+        int required() { return md.required; }
+
         immutable(string)[] missingTiles() { return _missingTiles; }
-        Date built() { return _built; }
 
         bool excellent()
         {
@@ -122,12 +120,6 @@ public:
         {
             return topology.xl * topology.yl >= levelPixelsToWarn;
         }
-    }
-
-    @property Date built(Date aDate)
-    {
-        _built = aDate;
-        return built;
     }
 
     void drawTerrainTo(Torbit tb, Phymap lo = null) const
@@ -198,13 +190,9 @@ public:
         const(Level) rhs = cast (const Level) rhs_obj;
         if (rhs is null) return false;
         if (   this.intendedNumberOfPlayers != rhs.intendedNumberOfPlayers
-            || this.author       != rhs.author
-            || this.nameGerman   != rhs.nameGerman
-            || this.nameEnglish  != rhs.nameEnglish
+            || this.md != rhs.md
             || ! this.topology.matches(rhs.topology)
             || this.bgColor != rhs.bgColor
-            || this.initial != rhs.initial
-            || this.required != rhs.required
             || this.spawnint != rhs.spawnint
             || this.ploder != rhs.ploder
         ) {

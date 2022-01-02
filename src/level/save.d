@@ -30,11 +30,11 @@ package void implSaveToFile(const(Level) level, in Filename fn)
 public void saveToFile(const(Level) l, std.stdio.File file)
 in { assert (l); }
 do {
-    file.writeln(IoLine.Dollar(glo.levelBuilt,       l.built      ));
-    file.writeln(IoLine.Dollar(glo.levelAuthor,      l.author     ));
-    if (l.nameGerman.length > 0)
-        file.writeln(IoLine.Dollar(glo.levelNameGerman,  l.nameGerman ));
-    file.writeln(IoLine.Dollar(glo.levelNameEnglish, l.nameEnglish));
+    file.writeln(IoLine.Dollar(glo.levelBuilt, l.built));
+    file.writeln(IoLine.Dollar(glo.levelAuthor, l.author));
+    if (l.md.nameGerman.length > 0)
+        file.writeln(IoLine.Dollar(glo.levelNameGerman, l.md.nameGerman));
+    file.writeln(IoLine.Dollar(glo.levelNameEnglish, l.md.nameEnglish));
     file.writeln();
 
     file.writeln(IoLine.Hash(glo.levelIntendedNumberOfPlayers,

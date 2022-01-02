@@ -45,7 +45,7 @@ public:
 
         _levelName = new Texttype(new Geom(butX, 40, butXl, 20));
         _author    = new Texttype(new Geom(butX, 70, butXl, 20));
-        _levelName.text = level.nameEnglish;
+        _levelName.text = level.md.nameEnglish;
         _author.text = level.author;
 
         NumPickConfig cfg;
@@ -86,11 +86,11 @@ public:
 protected:
     override void selfWriteChangesTo(Level level)
     {
-        level.nameEnglish = _levelName.text;
-        level.author = _author.text;
+        level.md.nameEnglish = _levelName.text;
+        level.md.author = _author.text;
         level.intendedNumberOfPlayers = _intendedNumberOfPlayers.number;
-        level.initial = _initial.number;
-        level.required = _required.number;
+        level.md.initial = _initial.number;
+        level.md.required = _required.number;
         level.spawnint = _spawnint.number;
         level.overtimeSeconds = _overtime.number;
     }

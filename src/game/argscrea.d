@@ -20,7 +20,7 @@ struct ArgsToCreateGame {
     {
         return TrophyKey(
             levelFilename.fileNoExtNoPre,
-            level.nameEnglish,
+            level.md.nameEnglish,
             level.author);
     }
 }
