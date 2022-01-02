@@ -6,7 +6,14 @@ module net.server.daemon;
  * instead, the main Lix application will run
  */
 
-version (lixDaemon)
+version (unittest)
+{
+    /*
+     * This module is only to start the server outside of testing.
+     * During testing, don't run a server with command-line arguments.
+     */
+}
+else version (lixDaemon)
 {
     import core.time;
     import core.thread;
