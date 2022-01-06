@@ -78,10 +78,6 @@ Build Lix with `$ dub build -b release`, then
 [download the game music](http://www.lixgame.com/dow/lix-music.zip)
 and extract it in Lix's directory.
 
-On Windows, you need LDC 1.21.0, which is still very new as of April 2020.
-Older LDC versions 1.13.0 through 1.20.1 work on Windows, but you have to edit
-`dub.json`, see "Old LDC versions" in the [Windows build notes](https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/win64.txt).
-
 Contact
 -------
 
