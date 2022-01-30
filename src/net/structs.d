@@ -361,8 +361,11 @@ struct ChatPacket {
 
     // +1 for string null-termination
     static assert (netChatMaxLen <= 0xFFFF);
-    int len() const nothrow { return header.len + 1 +
-                        max!(int, int)(netChatMaxLen, text.length & 0xFFFF); }
+    int len() const pure nothrow @safe @nogc
+    {
+        return header.len + 1
+            + (max(netChatMaxLen & 0xFFFF, text.length & 0xFFFF) & 0xFFFF);
+    }
 
     ENetPacket* createPacket() const nothrow
     {
