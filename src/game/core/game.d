@@ -50,9 +50,9 @@ import hardware.music;
 import hardware.sound;
 import level.level;
 import lix; // _drawHerHighlit
-import physics;
+import net.profile;
 import net.repdata;
-import net.structs;
+import physics;
 
 class Game : IRoot {
 public:

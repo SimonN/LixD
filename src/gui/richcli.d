@@ -16,7 +16,8 @@ import level.level;
 import net.iclient;
 import net.permu;
 import net.phyu;
-import net.structs;
+import net.plnr;
+import net.profile;
 import net.versioning;
 
 class RichClient {

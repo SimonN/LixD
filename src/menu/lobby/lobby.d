@@ -21,7 +21,8 @@ import menu.browser.network;
 import net.client;
 import net.iclient;
 import net.permu;
-import net.structs; // Profile
+import net.plnr;
+import net.profile;
 import net.versioning;
 
 class Lobby : Window {

@@ -1,9 +1,6 @@
 module net.packetid;
 
-enum : int {
-    netPlayerNameMaxLen = 30,
-    netChatMaxLen = 300,
-}
+enum int netChatMaxLen = 300;
 
 /* Player numbers are constant throughout a login session at the server.
  * enum values >= 1 and < 100 are in packets from the client to the server.

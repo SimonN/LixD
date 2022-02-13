@@ -22,7 +22,8 @@ import std.range;
 import net.repdata;
 import net.server.ihotelob;
 import net.server.festival;
-import net.structs;
+import net.plnr;
+import net.profile;
 
 package:
 

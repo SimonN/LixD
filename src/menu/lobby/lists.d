@@ -13,7 +13,9 @@ import file.language;
 import graphic.internal;
 import gui;
 import gui.picker.scrolist;
-import net.structs;
+import net.plnr;
+import net.profile;
+import net.structs : RoomListPacket;
 
 class PeerButton : Button {
 public:

@@ -24,131 +24,15 @@ import derelict.enet.enet;
 import net.enetglob;
 import net.packetid;
 import net.style;
+import net.plnr;
+import net.profile;
 import net.versioning;
-
-// make function interfaces more typesafe
-struct PlNr {
-    enum int len = 1;
-    enum int maxExclusive = 255;
-    ubyte n;
-    alias n this;
-}
-
-struct Room {
-    enum int len = 1;
-    enum int maxExclusive = 255;
-    ubyte n;
-    alias n this;
-}
-
-struct PacketHeader {
-    enum len = 2;
-    ubyte packetID;
-    PlNr plNr;
-
-    void serializeTo(ref ubyte[len] buf) const nothrow @nogc
-    {
-        buf[0] = packetID;
-        buf[1] = plNr;
-    }
-
-    this(ref const(ubyte[len]) buf) nothrow @nogc
-    {
-        packetID = buf[0];
-        plNr = PlNr(buf[1]);
-    }
-
-    ENetPacket* createPacket() const nothrow @nogc
-    {
-        auto ret = .createPacket(len);
-        serializeTo(ret.data[0 .. len]);
-        return ret;
-    }
-
-    this(const(ENetPacket*) p)
-    {
-        enforce(p.dataLength >= len);
-        this(p.data[0 .. len]);
-    }
-}
 
 struct SomeoneDisconnectedPacket {
     PacketHeader header;
     alias header this;
 
     this(const(ENetPacket*) p) { header = PacketHeader(p); }
-}
-
-struct Profile {
-private:
-    enum ubytes = 3;
-    Style _style = Style.red;
-    static assert (goodForMultiplayer(Profile.init._style));
-
-public:
-    enum int len = ubytes + netPlayerNameMaxLen + 1; // null-terminated string
-    enum Feeling : ubyte { thinking = 0, ready = 2, observing = 4 }
-    // 0, 2, 4: These numbers specify frames in menu_chk.I.
-
-    Room room;
-    Feeling feeling;
-    string name;
-
-    @property Style style() const nothrow @nogc pure
-    {
-        assert (goodForMultiplayer(_style));
-        return _style;
-    }
-
-    @property void style(in Style st) nothrow
-    {
-        _style = goodForMultiplayer(st) ? st : Style.red;
-    }
-
-    static bool goodForMultiplayer(in Style st) nothrow @nogc pure
-    {
-        return st >= Style.red && st < Style.max;
-    }
-
-    void setNotReady() @nogc
-    {
-        if (feeling == Feeling.ready)
-            feeling = Feeling.thinking;
-    }
-
-    // If a player changes his profile from this to rhs, should we require
-    // everybody in the room to mark themselves as not-ready?
-    bool wouldForceAllNotReadyOnReplace(in typeof(this) rhs)
-    {
-        return this.style != rhs.style
-            || this.room != rhs.room
-            || this.name != rhs.name
-            ||    (this.feeling == Feeling.observing)
-                != (rhs.feeling == Feeling.observing);
-    }
-
-    void serializeTo(ref ubyte[len] buf) const nothrow
-    {
-        buf[0] = room;
-        buf[1] = style;
-        buf[2] = feeling;
-        strncpy(cast (char*) (buf.ptr + ubytes), name.toStringz,
-                                                 netPlayerNameMaxLen);
-        buf[ubytes + netPlayerNameMaxLen] = '\0';
-    }
-
-    this(ref const(ubyte[len]) buf) nothrow
-    {
-        room = Room(buf[0]);
-        try {
-            style = buf[1].to!Style;
-            feeling = buf[2].to!Feeling;
-        }
-        catch (Exception)
-            { }
-        if (buf[ubytes + netPlayerNameMaxLen] == '\0')
-            name = fromStringz(cast (char*) (buf.ptr + ubytes)).idup;
-    }
 }
 
 // Give this function a range with all profiles from the same room

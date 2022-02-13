@@ -6,7 +6,7 @@ module game.core.view;
  */
 
 import net.iclient;
-import net.structs;
+import net.profile;
 
 enum View {
     solveAlone, // one player solves/replays a puzzle

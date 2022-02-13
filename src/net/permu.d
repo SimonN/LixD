@@ -8,9 +8,9 @@ import std.string;
 import derelict.enet.enet;
 
 import net.enetglob;
-import net.repdata; // PlNr
+import net.repdata;
 import net.packetid;
-import net.structs;
+import net.plnr;
 
 class Permu {
 private:

@@ -16,8 +16,9 @@ import net.server.hotel;
 import net.enetglob;
 import net.packetid;
 import net.permu;
-import net.repdata;
+import net.profile;
 import net.structs;
+import net.repdata;
 import net.versioning;
 
 class NetServer : IHotelObserver {

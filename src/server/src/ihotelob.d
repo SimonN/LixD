@@ -8,7 +8,8 @@ module net.server.ihotelob;
  */
 
 import net.repdata;
-import net.structs;
+import net.plnr;
+import net.profile;
 
 interface IHotelObserver {
     const(Profile[PlNr]) allPlayers() const @nogc;

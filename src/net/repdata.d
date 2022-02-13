@@ -13,8 +13,8 @@ import net.packetid;
 import net.enetglob;
 
 import net.ac;
-public import net.structs : PlNr;
 public import net.phyu;
+public import net.plnr;
 
 enum RepAc : ubyte {
     NOTHING = 0,

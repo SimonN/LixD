@@ -19,7 +19,7 @@ module net.server.festival;
 import core.stdc.stdlib;
 import core.time;
 
-import net.structs;
+import net.plnr;
 
 package:
 
