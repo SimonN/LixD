@@ -123,7 +123,7 @@ public:
         ChatPacket chat;
         chat.header.packetID = PacketCtoS.chatMessage;
         chat.text = aText;
-        enet_peer_send(_serverPeer, 0, chat.createPacket());
+        chat.enetSendTo(_serverPeer);
     }
 
     @property bool connected() const
@@ -193,7 +193,7 @@ public:
         RoomChangePacket wish;
         wish.header.packetID = PacketCtoS.toExistingRoom;
         wish.room = newRoom;
-        enet_peer_send(_serverPeer, 0, wish.createPacket);
+        wish.enetSendTo(_serverPeer);
     }
 
     void createRoom()
@@ -202,25 +202,30 @@ public:
             return;
         PacketHeader wish;
         wish.packetID = PacketCtoS.createRoom;
-        enet_peer_send(_serverPeer, 0, wish.createPacket);
+        wish.enetSendTo(_serverPeer);
     }
 
     void selectLevel(const(void[]) buffer)
     {
         if (! connected)
             return;
-        ENetPacket* p = .createPacket(buffer.length + 2);
-        p.data[0] = PacketCtoS.levelFile;
-        p.data[2 .. p.dataLength] = (cast (const(ubyte[])) buffer)[0 .. $];
-        enet_peer_send(_serverPeer, 0, p);
+        struct LevelPacket {
+            ENetPacket* createPacket() const {
+                ENetPacket* ret = .createPacket(buffer.length + 2);
+                ret.data[0] = PacketCtoS.levelFile;
+                ret.data[2 .. ret.dataLength]
+                    = (cast (const(ubyte[])) buffer)[0 .. $];
+                return ret;
+            }
+        }
+        LevelPacket().enetSendTo(_serverPeer);
     }
 
     void sendPly(in Ply data)
     {
         if (! connected)
             return;
-        enet_peer_send(_serverPeer, 0,
-            data.createPacket(PacketCtoS.myPly));
+        data.enetSendTo(_serverPeer, PacketCtoS.myPly);
     }
 
 private:
@@ -274,7 +279,7 @@ private:
         hello.fromVersion = gameVersion;
         hello.profile = generateOurProfile();
         assert (_serverPeer);
-        enet_peer_send(_serverPeer, 0, hello.createPacket);
+        hello.enetSendTo(_serverPeer);
     }
 
     Profile generateOurProfile()
@@ -295,7 +300,7 @@ private:
         newStyle.header.packetID = PacketCtoS.myProfile;
         newStyle.profile = _profilesInOurRoom[_ourPlNr];
         changeTheProfile(newStyle.profile);
-        enet_peer_send(_serverPeer, 0, newStyle.createPacket());
+        newStyle.enetSendTo(_serverPeer);
     }
 
     Profile* receiveProfilePacket(ENetPacket* got)

@@ -112,23 +112,25 @@ public:
 
     void sendLevelByChooser(PlNr receiv, const(ubyte[]) level, PlNr from) @nogc
     {
-        if (_host.peers + receiv is null)
-            return;
-        PacketHeader header;
-        header.packetID = PacketStoC.peerLevelFile;
-        header.plNr = from;
-        auto p = createPacket(header.len + level.length);
-        header.serializeTo(p.data[0 .. header.len]);
-        p.data[header.len .. p.dataLength] = level[0 .. $];
-        enet_peer_send(_host.peers + receiv, 0, p);
+        struct LevelPacket {
+            const(ubyte[]) _level;
+            PlNr _from;
+            ENetPacket* createPacket() const @nogc {
+                PacketHeader header;
+                header.packetID = PacketStoC.peerLevelFile;
+                header.plNr = _from;
+                auto ret = .createPacket(header.len + _level.length);
+                header.serializeTo(ret.data[0 .. header.len]);
+                ret.data[header.len .. ret.dataLength] = _level[0 .. $];
+                return ret;
+            }
+        }
+        LevelPacket(level, from).enetSendTo(_host.peers + receiv);
     }
 
     void sendPly(PlNr receiv, Ply data)
     {
-        if (_host.peers + receiv is null)
-            return;
-        ENetPacket* p = data.createPacket(PacketStoC.peerPly);
-        enet_peer_send(_host.peers + receiv, 0, p);
+        data.enetSendTo(_host.peers + receiv, PacketStoC.peerPly);
     }
 
     // describeRoom will send 1 or 2 packets to receiv.
@@ -144,7 +146,7 @@ public:
                 informMover.indices ~= kv.key;
                 informMover.profiles ~= kv.value;
             });
-        enet_peer_send(_host.peers + receiv, 0, informMover.createPacket());
+        informMover.enetSendTo(_host.peers + receiv);
         if (toRoom == Room(0))
             informLobbyistAboutRooms(receiv);
         else if (level)
@@ -157,7 +159,7 @@ public:
         assert (_host.peers);
         assert (receiv in _profiles);
         assert (_profiles[receiv].room == 0);
-        enet_peer_send(_host.peers + receiv, 0,roomsForLobbyists.createPacket);
+        roomsForLobbyists.enetSendTo(_host.peers + receiv);
     }
 
     void sendPeerEnteredYourRoom(PlNr receiv, PlNr mover)
@@ -168,7 +170,7 @@ public:
         pa.header.packetID = PacketStoC.peerJoinsYourRoom;
         pa.header.plNr = mover;
         pa.profile = _profiles[mover];
-        enet_peer_send(_host.peers + receiv, 0, pa.createPacket);
+        pa.enetSendTo(_host.peers + receiv);
     }
 
     void sendPeerLeftYourRoom(PlNr receiv, PlNr mover)
@@ -181,7 +183,7 @@ public:
         pa.header.packetID = PacketStoC.peerLeftYourRoom;
         pa.header.plNr = mover;
         pa.room = _profiles[mover].room;
-        enet_peer_send(_host.peers + receiv, 0, pa.createPacket);
+        pa.enetSendTo(_host.peers + receiv);
     }
 
     void startGame(PlNr roomOwner, int permuLength)
@@ -199,7 +201,7 @@ public:
         pa.header.packetID = PacketStoC.millisecondsSinceGameStart;
         pa.header.plNr = receiv; // doesn't matter
         pa.milliseconds = millis;
-        enet_peer_send(_host.peers + receiv, 0, pa.createPacket);
+        pa.enetSendTo(_host.peers + receiv);
     }
 
 // ############################################################################
@@ -245,8 +247,7 @@ private:
                 _profiles.byKeyValue
                     .filter!(kv => kv.value.room == subject.room
                         && (includingSubject || kv.key != st.header.plNr))
-                    .each!(kv => enet_peer_send(_host.peers + kv.key,
-                                                0, st.createPacket));
+                    .each!(kv => st.enetSendTo(_host.peers + kv.key));
         }
     }
     alias broadcastToRoom = broadcastTemplate!true;
@@ -277,7 +278,7 @@ private:
                                : hello.fromVersion < gameVersion
                                ? PacketStoC.youTooOld : PacketStoC.youTooNew;
         answer.serverVersion = gameVersion;
-        enet_peer_send(peer, 0, answer.createPacket());
+        answer.enetSendTo(peer);
 
         _profiles.remove(plNr);
         if (answer.header.packetID == PacketStoC.youGoodHeresPlNr) {

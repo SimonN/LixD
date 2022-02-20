@@ -34,6 +34,14 @@ void deinitializeEnet()
         enet_deinitialize();
 }
 
+string enetLinkedVersion()
+{
+    assert (_enetDllLoaded);
+    immutable ver = enet_linked_version();
+    return format("%d.%d.%d", ENET_VERSION_GET_MAJOR(ver),
+        ENET_VERSION_GET_MINOR(ver), ENET_VERSION_GET_PATCH(ver));
+}
+
 ENetPacket* createPacket(T)(T wantLen) nothrow
     if (is (T == int) || is (T == size_t))
 {
@@ -41,10 +49,23 @@ ENetPacket* createPacket(T)(T wantLen) nothrow
         ENET_PACKET_FLAG_RELIABLE);
 }
 
-string enetLinkedVersion()
+/*
+ * enetSendTo:
+ * Tries once to send the packet. No retry on failure.
+ * Two versions. The template version doesn't modify the source struct.
+ * You can send it somewhere else after this, or let it go out of scope.
+ */
+void enetSendTo(Struct, Args...)(
+    in Struct st,
+    ENetPeer* dest,
+    Args args,
+)   if (!is (Struct == ENetPacket*))
 {
-    assert (_enetDllLoaded);
-    immutable ver = enet_linked_version();
-    return format("%d.%d.%d", ENET_VERSION_GET_MAJOR(ver),
-        ENET_VERSION_GET_MINOR(ver), ENET_VERSION_GET_PATCH(ver));
+    ENetPacket* packet = st.createPacket(args);
+    immutable err = enet_peer_send(dest, 0, packet);
+    // enet_peer_send only deallocates on success (err == 0).
+    if (err < 0) {
+        enet_packet_destroy(packet);
+    }
+    // Here, packet has been deallocated exactly once.
 }
