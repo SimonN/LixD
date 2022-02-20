@@ -69,7 +69,7 @@ public:
     Feeling feeling;
     string name;
 
-    @property Style style() const nothrow @nogc pure
+    @property Style style() const pure nothrow @safe @nogc
     {
         assert (goodForMultiplayer(_style));
         return _style;
@@ -88,7 +88,8 @@ public:
 
     // If a player changes his profile from this to rhs, should we require
     // everybody in the room to mark themselves as not-ready?
-    bool wouldForceAllNotReadyOnReplace(in typeof(this) rhs)
+    bool wouldForceAllNotReadyOnReplace(
+        in typeof(this) rhs) const pure nothrow @safe @nogc
     {
         return this.style != rhs.style
             || this.room != rhs.room

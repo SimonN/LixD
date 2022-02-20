@@ -19,23 +19,34 @@ import std.algorithm;
 import std.conv;
 import std.range;
 
+import net.packetid;
 import net.repdata;
 import net.server.ihotelob;
-import net.server.festival;
+import net.server.suite;
 import net.plnr;
 import net.profile;
+import net.structs;
 
 package:
 
 struct Hotel {
 private:
-    Festival[Room.maxExclusive] festivals;
-    IHotelObserver ob;
-
-    invariant() { assert (festivals[0].level is null); }
+    // _suites[0] is the lobby.
+    // None of these Suites ever null, none are ever deallocated/replaced.
+    // The level inside them is kept in the @nogc Festival.
+    Suite[Room.maxExclusive] _suites;
 
 public:
-    this(IHotelObserver ob) { this.ob = ob; }
+    this(Outbox outbox) {
+        foreach (ubyte room, ref sui; _suites) {
+            if (room == 0) {
+                sui = new Lobby(outbox);
+            }
+            else {
+                sui = new GameSuite(Room(room), outbox);
+            }
+        }
+    }
 
     @disable this();
     @disable this(this);
@@ -43,171 +54,119 @@ public:
 
     void dispose()
     {
-        ob = null;
-        foreach (ref fe; festivals)
-            fe.dispose();
+        foreach (ref sui; _suites) {
+            if (sui is null) {
+                continue;
+            }
+            sui.dispose();
+            destroy(sui);
+            sui = null;
+        }
+    }
+
+    bool empty() const pure nothrow @safe @nogc
+    {
+        return _suites[].all!(sui => sui.empty);
     }
 
     // Returns new room ID > 0 when we have successfully created that room.
     // Returns Room(0) when we're full. The player should stay in the lobby.
     Room firstFreeRoomElseLobby()
     {
-        auto roomToCreate = Room(1);
-        while (roomToCreate < Room.maxExclusive && ob.allPlayers.byValue
-                                .any!(profile => profile.room == roomToCreate)
-        ) {
-            roomToCreate = Room((roomToCreate + 1) & 0xFF);
+        auto candidate = Room(1);
+        while (candidate < Room.maxExclusive && ! _suites[candidate].empty) {
+            candidate = Room((candidate + 1) & 0xFF);
         }
-        return roomToCreate == Room.maxExclusive ? Room(0) : roomToCreate;
+        return candidate == Room.maxExclusive ? Room(0) : candidate;
     }
 
-    void receiveLevel(Room room, PlNr chooser, const(ubyte[]) level)
+    void addNewPlayerToLobby(in PlNr nrOfNewbie, Profile newbie)
     {
-        festivals[room].levelChooser = chooser;
-        festivals[room].level = level; // this makes a copy
-        relayLevelToAll(room);
-    }
-
-    // Call after the player has been inserted into allPlayers with room = 0.
-    void newPlayerInLobby(PlNr newbie)
-    {
-        assert (isInRoom(newbie, Room(0)));
-        ob.describeRoom(newbie, null, newbie); // 3rd argument doesn't matter
-        foreach (pl, prof; ob.allPlayers)
-            if (prof.room == Room(0) && pl != newbie)
-                ob.sendPeerEnteredYourRoom(pl, newbie);
+        newbie.room = Room(0);
+        _suites[Room(0)].add(nrOfNewbie, newbie);
+        // It would be enough to send the overview only to the newbie.
+        // But it's easiest to ask to send it to all. (Hotel knows no outbox.)
+        sendRoomOverviewToLobbyists();
     }
 
     // The server should call this after the server has set the mover's room
     // to the 'to' room. Pass the 'from' room nonetheless.
-    void playerHasMoved(PlNr mover, Room from, Room to)
+    void movePlayer(in PlNr mover, in Room to)
     {
-        assert (isInRoom(mover, to));
-        assert (from != to);
-        ob.unreadyAllInRoom(from);
-        ob.unreadyAllInRoom(to);
-        housekeep(from);
-        housekeep(to); // make mover the owner if alone
-        ob.describeRoom(mover, festivals[to].level,festivals[to].levelChooser);
-        foreach (pl, prof; ob.allPlayers)
-            if (prof.room == from) {
-                ob.sendPeerLeftYourRoom(pl, mover);
-                if (from == Room(0))
-                    ob.informLobbyistAboutRooms(pl);
-            }
-            else if (prof.room == to && pl != mover)
-                ob.sendPeerEnteredYourRoom(pl, mover);
-    }
-
-    // The server calls this while the player is still in the profile array,
-    // but the server got a disconnection packet already. We tell the
-    // server to remove the player, it won't do by itself.
-    void playerHasDisconnected(PlNr who)
-    {
-        auto prof = who in ob.allPlayers;
-        assert (prof, "remove from hotel before removing from player list");
-        auto room = prof.room;
-        ob.broadcastDisconnectionOfAndRemove(who);
-        ob.unreadyAllInRoom(room);
-        housekeep(room);
-    }
-
-    void maybeStartGame(Room room)
-    {
-        if (room == Room(0))
+        auto from = _suites[].find!(sui => sui.contains(mover)).takeOne;
+        if (from.empty || _suites[to].contains(mover)) {
             return;
-        auto party = ob.allPlayers.byValue.filter!(prof => prof.room == room);
-        if ( ! party.any!(prof => prof.feeling == Profile.Feeling.ready)
-            || party.any!(prof => prof.feeling == Profile.Feeling.thinking))
-            return;
-        version (assert) {
-            auto p = festivals[room].owner in ob.allPlayers;
-            assert (p);
-            assert (p.room == room);
-            assert (party.walkLength > 0);
         }
-        festivals[room].startGame();
-        ob.startGame(festivals[room].owner, numberOfDifferentTribes(party));
+        Profile pr = from.front.pop(mover,
+            Suite.PopReason(Suite.PopReason.Reason.movedToRoom, to));
+        pr.room = to;
+        _suites[to].add(mover, pr);
+        sendRoomOverviewToLobbyists();
     }
 
-    void receivePly(Room room, Ply data)
+    // The server calls this when it got a disconnection packet.
+    void removePlayerWhoHasDisconnected(PlNr who)
     {
-        // DTODONETWORK: Remember these during a game, send all to whoever
-        // late-joins the room.
-        // Right now, we merely relay to existing players except sender.
-        foreach (const plNr, ref const profile; ob.allPlayers)
-            if (profile.room == room && plNr != data.player)
-                ob.sendPly(plNr, data);
+        _suites[]
+            .filter!(s => s.contains(who))
+            .each!(s => s.pop(who,
+                Suite.PopReason(Suite.PopReason.Reason.disconnected)));
+    }
+
+    void changeProfile(in PlNr ofWhom, in Profile wish)
+    {
+        foreach (where; _suites[].find!(sui => sui.contains(ofWhom)).takeOne) {
+            where.changeProfile(ofWhom, wish);
+        }
+    }
+
+    void broadcastChat(in PlNr chatter, in string text)
+    {
+        foreach (sui; _suites[].find!(s => s.contains(chatter)).takeOne) {
+            sui.broadcastChat(chatter, text);
+        }
+    }
+
+    void receiveLevel(PlNr chooser, const(ubyte[]) level)
+    {
+        foreach (sui; _suites[].find!(s => s.contains(chooser)).takeOne) {
+            sui.receiveLevel(chooser, level);
+        }
+    }
+
+    void receivePly(in Ply ply)
+    {
+        foreach (sui; _suites[].find!(s => s.contains(ply.player)).takeOne) {
+            sui.receivePly(ply);
+        }
     }
 
     void calc()
     {
-        sendTimeSyncingPackets();
+        foreach (suite; _suites) {
+            suite.sendTimeSyncingPackets();
+        }
     }
 
 private:
-    bool isInRoom(in PlNr plNr, Room room) @nogc
+    void sendRoomOverviewToLobbyists()
     {
-        assert (ob);
-        auto ptr = plNr in ob.allPlayers;
-        return ptr && ptr.room == room;
-    }
-
-    // Call housekeep() after the room changes.
-    // If the room is empty, we will dispose it.
-    // Otherwise, if it has no owner inside, make someone the owner.
-    void housekeep(in Room room) @nogc
-    {
-        assert (ob);
-        if (room == 0)
-            return;
-        // Dispose room if empty
-        bool someoneIsHere = false;
-        foreach (ref const prof; ob.allPlayers)
-            if (prof.room == room)
-                someoneIsHere = true;
-        if (! someoneIsHere) {
-            festivals[room].dispose();
+        if (_suites[Room(0)].empty) {
             return;
         }
-        if (! isInRoom(festivals[room].owner, room)) {
-            // Make someone the owner. We're guaranteed that somebody is here
-            // because we didn't return from housekeep() during the check
-            // (room-empty ? dispose : continue) above.
-            foreach (pl, ref const prof; ob.allPlayers)
-                if (prof.room == room) {
-                    festivals[room].owner = pl;
-                    break;
-                }
+        _suites[Room(0)].sendToEachLobbyist(roomOverviewForLobbyists());
+    }
+
+    RoomListPacket roomOverviewForLobbyists()
+    {
+        RoomListPacket ret;
+        ret.header.packetID = PacketStoC.listOfExistingRooms;
+        // We don't need to set a player number on this packet of general info
+
+        foreach (const sui; _suites[Room(1) .. $].filter!(s => ! s.empty)) {
+            ret.indices ~= sui.room;
+            ret.profiles ~= sui.profileOfOwner;
         }
-        assert (isInRoom(festivals[room].owner, room));
-    }
-
-    void relayLevelToAll(Room room)
-    {
-        foreach (const plNr, ref const profile; ob.allPlayers)
-            if (profile.room == room)
-                ob.sendLevelByChooser(plNr, festivals[room].level,
-                                            festivals[room].levelChooser);
-    }
-
-    void sendTimeSyncingPackets()
-    {
-        for (Room ro = Room(0); ro < Room.maxExclusive;
-                                ro = Room(1 + ro & 0xFF))
-            if (int since = festivals[ro].millisecondsSinceGameStartOrZero)
-                foreach (const plNr, ref const profile; ob.allPlayers)
-                    if (profile.room == ro)
-                        ob.sendMillisecondsSinceGameStart(plNr, since);
-    }
-
-    static int numberOfDifferentTribes(T)(T party) @nogc pure nothrow
-    {
-        int ret = 0;
-        auto styles = party.filter!(p => p.feeling == Profile.Feeling.ready)
-                           .map!(p => p.style);
-        return 0xFFFF & styles.save.enumerate.count!(
-            enuStyle => ! styles.save.take(enuStyle.index).canFind!(
-                earlierStyle => earlierStyle == enuStyle.value));
+        return ret;
     }
 }
