@@ -26,6 +26,23 @@ private:
     ENetHost* _host;
     Hotel _hotel;
 
+    /*
+     * Hack to detect size of ENetPeer at runtime, independently from the
+     * D bindings version.
+     *
+     * Why do I need it: For a given int x, I must be able to send to
+     * _host.peers[x] in the C-style array _host.peers. Normally, one knows
+     * where in memory that is by ENetPeer.sizeof. But this depends on the
+     * C header or D bindings that we use at build time. People might have
+     * all sorts of enet binaries installed, and we might not fetch the
+     * correct D headers for their binaries.
+     *
+     * We use the header's answer sizeof(ENetPeer) until I get a packet
+     * from a peer with peer.incomingPeerID == 1. Then I'll use that peer's
+     * offset from _host.peers to overwrite sizeOfEnetPeer.
+     */
+    ptrdiff_t sizeOfEnetPeer = ENetPeer.sizeof;
+
 public:
     this(in int port)
     {
@@ -57,8 +74,9 @@ public:
     void calc()
     {
         assert (_host);
-        ENetEvent event;
-        while (enet_host_service(_host, &event, 0) > 0)
+        ENetEvent event = void;
+        while (enet_host_service(_host, &event, 0) > 0) {
+            computeSizeOfEnetPeer(event.peer);
             final switch (event.type) {
             case ENET_EVENT_TYPE_NONE:
                 assert (false, "enet_host_service should have returned 0");
@@ -80,6 +98,7 @@ public:
                 _hotel.removePlayerWhoHasDisconnected(peerToPlNr(event.peer));
                 break;
             }
+        }
         _hotel.calc();
         enet_host_flush(_host);
     }
@@ -93,7 +112,7 @@ public:
         chat.header.packetID = PacketStoC.peerChatMessage;
         chat.header.plNr = fromChatter;
         chat.text = text;
-        chat.enetSendTo(_host.peers + receiv);
+        chat.enetSendTo(plNrToPeer(receiv));
     }
 
     void sendLevelByChooser(PlNr receiv, const(ubyte[]) level, PlNr from) @nogc
@@ -111,7 +130,7 @@ public:
                 return ret;
             }
         }
-        LevelPacket(level, from).enetSendTo(_host.peers + receiv);
+        LevelPacket(level, from).enetSendTo(plNrToPeer(receiv));
     }
 
     void sendProfileChangeBy(in PlNr receiv, in PlNr ofWhom, in Profile full)
@@ -120,12 +139,12 @@ public:
         pa.header.packetID = PacketStoC.peerProfile;
         pa.header.plNr = ofWhom;
         pa.profile = full;
-        pa.enetSendTo(_host.peers + receiv);
+        pa.enetSendTo(plNrToPeer(receiv));
     }
 
     void sendPly(PlNr receiv, Ply data)
     {
-        data.enetSendTo(_host.peers + receiv, PacketStoC.peerPly);
+        data.enetSendTo(plNrToPeer(receiv), PacketStoC.peerPly);
     }
 
     void describeRoom(in PlNr receiv, in Profile[PlNr] contents)
@@ -137,14 +156,14 @@ public:
             informMover.indices ~= key;
             informMover.profiles ~= prof;
         }
-        informMover.enetSendTo(_host.peers + receiv);
+        informMover.enetSendTo(plNrToPeer(receiv));
     }
 
     void informLobbyistAboutRooms(PlNr receiv, in RoomListPacket rlp)
     {
         assert (_host);
         assert (_host.peers);
-        rlp.enetSendTo(_host.peers + receiv);
+        rlp.enetSendTo(plNrToPeer(receiv));
     }
 
     void sendPeerEnteredYourRoom(PlNr receiv, PlNr mover, in Profile ofMover)
@@ -155,7 +174,7 @@ public:
         pa.header.packetID = PacketStoC.peerJoinsYourRoom;
         pa.header.plNr = mover;
         pa.profile = ofMover;
-        pa.enetSendTo(_host.peers + receiv);
+        pa.enetSendTo(plNrToPeer(receiv));
     }
 
     void sendPeerLeftYourRoom(PlNr receiv, PlNr mover, in Room toWhere)
@@ -166,7 +185,7 @@ public:
         pa.header.packetID = PacketStoC.peerLeftYourRoom;
         pa.header.plNr = mover;
         pa.room = toWhere;
-        pa.enetSendTo(_host.peers + receiv);
+        pa.enetSendTo(plNrToPeer(receiv));
     }
 
     void sendPeerDisconnected(in PlNr receiv, in PlNr disconnected)
@@ -174,7 +193,7 @@ public:
         auto discon = SomeoneDisconnectedPacket();
         discon.packetID = PacketStoC.peerDisconnected;
         discon.plNr = disconnected;
-        discon.enetSendTo(_host.peers + receiv);
+        discon.enetSendTo(plNrToPeer(receiv));
     }
 
     void startGame(in PlNr receiv, in PlNr roomOwner, in int permuLength)
@@ -182,7 +201,7 @@ public:
         auto pa = StartGameWithPermuPacket(permuLength);
         pa.header.packetID = PacketStoC.gameStartsWithPermu;
         pa.header.plNr = roomOwner;
-        pa.enetSendTo(_host.peers + receiv);
+        pa.enetSendTo(plNrToPeer(receiv));
     }
 
     void sendMillisecondsSinceGameStart(PlNr receiv, int millis)
@@ -191,7 +210,7 @@ public:
         pa.header.packetID = PacketStoC.millisecondsSinceGameStart;
         pa.header.plNr = receiv; // doesn't matter
         pa.milliseconds = millis;
-        pa.enetSendTo(_host.peers + receiv);
+        pa.enetSendTo(plNrToPeer(receiv));
     }
 
 // ############################################################################
@@ -222,9 +241,24 @@ private:
         catch (Exception) {}
     }
 
-    PlNr peerToPlNr(ENetPeer* peer) const
+    void computeSizeOfEnetPeer(in ENetPeer* peerInArray) nothrow @system @nogc
     {
-        return PlNr((peer - _host.peers) & 0xFF);
+        if (peerInArray.incomingPeerID == 0) {
+            return; // Can't guess size from peer at start of array.
+        }
+        sizeOfEnetPeer
+            = (cast(const void*) peerInArray - cast(const void*) _host.peers)
+            / peerInArray.incomingPeerID;
+    }
+
+    PlNr peerToPlNr(in ENetPeer* peer) const pure nothrow @safe @nogc
+    {
+        return PlNr(peer.incomingPeerID & 0xFF);
+    }
+
+    ENetPeer* plNrToPeer(in PlNr plNr) const pure nothrow @system @nogc
+    {
+        return cast(ENetPeer*)(cast(void*)_host.peers + plNr * sizeOfEnetPeer);
     }
 
     void receiveHello(ENetPeer* peer, ENetPacket* got)
