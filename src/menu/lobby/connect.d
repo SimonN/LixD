@@ -99,7 +99,6 @@ private:
             _hostname.show();
             _hostname.customValue = networkConnectToAddress;
             _port.customValue = networkConnectToPort.value.to!string;
-            _hostname.on = true;
             break;
         default:
             assert (false, "unhandled radio button");
