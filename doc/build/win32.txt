@@ -4,11 +4,11 @@ How to build Lix for a 32-bit Windows machine
 If you get stuck at any point, don't hesitate to contact me
 (Simon N.) and ask me for help:
 
-    IRC:    irc.quakenet.org #lix
-    E-Mail: s.naarmann@gmail.com
     Issues: https://github.com/SimonN/LixD/issues
-    Forum:  https://www.lemmingsforums.net -- we have a Lix board
-    Web:    http://www.lixgame.com
+    Forums: lemmingsforums.net, I'm Simon, we have boards for Lix
+    IRC:    irc.quakenet.org #lix, I'm SimonN or SimonNa
+    E-Mail: s.naarmann@gmail.com
+    Web:    https://www.lixgame.com
 
 
 
@@ -33,7 +33,7 @@ Install D and dub
 
 Download DMD, the Digital Mars D compiler:
 
-    http://dlang.org/download
+    https://dlang.org/download
 
 During the installation, when asked:
 
@@ -89,7 +89,7 @@ To install Allegro 5, you have a choice between two methods.
 Method 1:
     Download the Allegro DLLs and *.lib files from my website:
 
-        http://www.lixgame.com/dow/lix-dlls-libs-dmd32.zip
+        https://www.lixgame.com/dow/lix-dlls-libs-dmd32.zip
 
     Extract this into your D installation's windows/ directory. This way, the
     DLLs should automatically land in windows/bin/, and the *.lib files should
@@ -159,7 +159,7 @@ Add music
 Lix has music, but the music is not in version control. I encourage you to
 add the music for a more complete experience. To get the music, download:
 
-    http://www.lixgame.com/dow/lix-music.zip
+    https://www.lixgame.com/dow/lix-music.zip
 
 Extract this into Lix's directory, you'll get a subdirectory `./music/'.
 
@@ -186,13 +186,26 @@ file, which you can safely delete.
 
 
 
+Appendix 2
+----------
+
+If you want to use the D compiler LDC instead of DMD for building Windows
+32-bit Lix, download these library files for Allegro and enet instead:
+
+    https://www.lixgame.com/dow/lix-dlls-libs-ldc32.zip
+
+Extract this archive into your LDC installation directory, thus adding its
+files into the existing directories `bin` and `lib32`.
+
+
+
 Get help
 --------
 
 If you run into any kind of roadblock, don't be shy and ask:
 
-    IRC:    irc.quakenet.org #lix
-    E-Mail: s.naarmann@gmail.com
     Issues: https://github.com/SimonN/LixD/issues
-    Forum:  https://www.lemmingsforums.net -- we have a Lix board
-    Web:    http://www.lixgame.com
+    Forums: lemmingsforums.net, I'm Simon, we have boards for Lix
+    IRC:    irc.quakenet.org #lix, I'm SimonN or SimonNa
+    E-Mail: s.naarmann@gmail.com
+    Web:    https://www.lixgame.com

@@ -4,10 +4,11 @@ How to build 64-bit Lix for Windows
 If you get stuck at any point, don't hesitate to contact me
 (Simon N.) and ask me for help:
 
-    IRC:    irc.quakenet.org #lix, I'm SimonN or SimonNa
     E-Mail: s.naarmann@gmail.com
-    Web:    http://www.lixgame.com
-    Forum:  https://www.lemmingsforums.net -- we have a Lix board
+    IRC:    irc.quakenet.org #lix, I'm SimonN or SimonNa
+    Issues: https://github.com/SimonN/LixD/issues
+    Forums: lemmingsforums.net, I'm Simon, we have boards for Lix
+    Web:    https://www.lixgame.com
 
 
 
@@ -67,7 +68,7 @@ Install Allegro 5 and enet
 I have prepared all necessary DLLs in a single archive tailored to the LDC
 multilib release. Download this:
 
-    http://www.lixgame.com/dow/lix-dlls-libs-win64.zip
+    https://www.lixgame.com/dow/lix-dlls-libs-win64.zip
 
 Extract this into your LDC directory. You will get new DLLs in bin/ and
 new LIBs in lib64/. Proceed to the next section, "Get the Lix source".
@@ -139,7 +140,7 @@ Add music
 Lix has music, but the music is not in version control. I encourage you to
 add the music for a more complete experience. To get the music, download:
 
-    http://www.lixgame.com/dow/lix-music.zip
+    https://www.lixgame.com/dow/lix-music.zip
 
 Extract this into Lix's directory, you'll get a subdirectory ./music/.
 
@@ -162,7 +163,7 @@ Getting compiler and dub:
 
 Download DMD, the Digital Mars D compiler:
 
-    http://dlang.org/download
+    https://dlang.org/download
 
 During the installation, when asked:
 
@@ -177,7 +178,7 @@ If you only need to build Lix for 64-bit architecture:
 
     Download the Allegro 5 and enet DLLs and LIBs that I prepared:
 
-        http://www.lixgame.com/dow/lix-dlls-libs-win64.zip
+        https://www.lixgame.com/dow/lix-dlls-libs-win64.zip
 
     Extract this into your dmd2/windows/ directory. You will get new DLLs in
     bin/ and new LIBs in lib64/. Proceed to the next section, "Get the Lix
@@ -196,7 +197,7 @@ Otherwise, if you want to setup DMD to build Lix for both 32-bit _and_ 64-bit:
 
     Download the Allegro 5 and enet DLLs and LIBs that I prepared:
 
-        http://www.lixgame.com/dow/lix-dlls-libs-win64.zip
+        https://www.lixgame.com/dow/lix-dlls-libs-win64.zip
 
     Put the Allegro 64-bit DLLs and the enet 64-bit DLL into your D
     installation's dmd2/windows/bin64/ directory. Put the *.lib files into
@@ -218,8 +219,8 @@ Get help
 
 If you run into any kind of roadblock, don't be shy and ask:
 
-    Web:    http://www.lixgame.com
-    Issues: https://github.com/SimonN/LixD/issues
     E-Mail: s.naarmann@gmail.com
     IRC:    irc.quakenet.org #lix, I'm SimonN or SimonNa
-    Forums: lemmingsforums.net, I'm Simon
+    Issues: https://github.com/SimonN/LixD/issues
+    Forums: lemmingsforums.net, I'm Simon, we have boards for Lix
+    Web:    https://www.lixgame.com
