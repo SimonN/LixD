@@ -46,8 +46,7 @@ immutable:
     final bool isChildOf(Filename parent) nothrow
     {
         return parent.file.length == 0 // parent names a directory
-            && parent.rootless.length <= rootless.length
-            && parent.rootless == rootless[0 .. parent.rootless.length];
+            && rootless.startsWith(parent.rootless);
     }
 
     final bool hasImageExtension() nothrow

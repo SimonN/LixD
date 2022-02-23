@@ -8,8 +8,8 @@ module basics.cmdargs;
  * parsed command-line switches in addition to the global/user config.
  */
 
-import std.array; // array()
-import std.algorithm; // splitter
+import std.array;
+import std.algorithm;
 import std.conv;
 import std.stdio;
 
@@ -236,11 +236,4 @@ private:
         if (wantResolutionX == 0 || wantResolutionY == 0)
             badSwitches ~= arg;
     }
-}
-
-private bool
-startsWith(string large, string small)
-{
-    return large.length >= small.length
-     && large[0 .. small.length] == small;
 }

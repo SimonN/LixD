@@ -8,6 +8,8 @@ module menu.rep4lev;
  * level's basename to determine whether the replay belongs to that level.
  */
 
+import std.algorithm;
+
 import optional;
 
 import basics.globals;
@@ -97,9 +99,8 @@ protected:
     final override bool searchCriterion(Filename fn) const
     {
         return fn.fileNoExtNoPre.length > _levelFn.fileNoExtNoPre.length
-            && fn.fileNoExtNoPre[0 .. _levelFn.fileNoExtNoPre.length]
-                == _levelFn.fileNoExtNoPre
-            && fn.fileNoExtNoPre[_levelFn.fileNoExtNoPre.length] == '-';
+            && fn.fileNoExtNoPre[_levelFn.fileNoExtNoPre.length] == '-'
+            && fn.fileNoExtNoPre.startsWith(_levelFn.fileNoExtNoPre);
     }
 
     final override MutFilename[] dirsInCurrentDir() const { return []; }
