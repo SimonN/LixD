@@ -17,7 +17,14 @@
         "sdlang-d": ">=0.10.6",
     },
 
-    "libs": [
+    "libs-posix": [
+        "allegro_acodec-5",
+        "allegro_image-5",
+        "allegro_primitives-5",
+        "allegro_ttf-5",
+    ],
+    "libs-windows": [
+        "allegro",
         "allegro_acodec",
         "allegro_audio",
         "allegro_font",
@@ -25,15 +32,6 @@
         "allegro_primitives",
         "allegro_ttf",
     ],
-    "libs-linux": ["allegro-5"],
-    "libs-dragonflybsd": ["allegro-5"],
-    "libs-freebsd": ["allegro-5"],
-    "libs-netbsd": ["allegro-5"],
-    "libs-openbsd": ["allegro-5"],
-    "libs-solaris": ["allegro-5"],
-    "libs-osx": ["allegro"],
-    "libs-windows": ["allegro"],
-
     "lflags-windows-x86-dmd": ["-L/subsystem:windows"],
     "lflags-windows-x86_64-dmd": [
         "-subsystem:windows",

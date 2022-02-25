@@ -24,8 +24,14 @@ zero warnings again.
 Refactored the server-side networking code. Rooms carry their own logic. This
 will help in the future to support version restrictions per room.
 
+Fixed DMD 64-bit build on all operating systems by avoiding obscure usercode
+that crashes DMD.
+
 Linux build notes: Added workaround for LDC running out of stack space. You
 can raise the stack size in the current shell with: ulimit -s 16384
+
+Windows 32-bit build notes: Added DLL download for LDC-compatible 32-bit
+libraries.
 
 Removed note from April 2020 in the readme about compilers before LDC 1.21;
 compilers that old aren't prevalent anymore.

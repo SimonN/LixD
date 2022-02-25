@@ -14,30 +14,32 @@ If you run into any kind of roadblock, don't be shy and ask me!
 Install a D environment
 -----------------------
 
-On Arch Linux, run `# pacman -S dlang`.
+Arch Linux:
 
-On Debian/Ubuntu, run `# apt-get install ldc dub`.
+    # pacman -S dlang
 
-On macOS, install [Homebrew](https://brew.sh/), then run
-`$ brew install ldc dub`.
+Debian/Ubuntu:
 
-If you don't use a package manager, download
+    # apt-get install ldc dub
+
+macOS: First, install [Homebrew](https://brew.sh/). Then run
+
+    $ brew install ldc dub
+
+If you don't use a package manager: Download
 [LDC](https://github.com/ldc-developers/ldc/releases) and
 [dub](https://code.dlang.org/download) manually.
+You need the D standard library Phobos (might be called *libphobos* for DMD
+or *liblphobos* for LDC), but those often ship with the compilers already.
 
 I recommend the D compiler LDC, it produces the fastest executables.
-LDC should be version 1.24.0 or newer (based on DMD 2.094.1 or newer),
-checkable with `ldc2 --version`. An older LDC aren't guaranteed to build Lix.
-A newer LDC should work; if it doesn't, tell me.
-
+LDC should be version 1.24.0 or newer, checkable with `ldc2 --version`.
 Alternatively, DMD is the best D compiler for debugging, it compiles D code
 quicker than any other compiler. I recommend version 2.094.1 or newer,
 checkable with `dmd --version`. I do *not* support GDC yet; if you prefer GDC,
 tell me.
 
-You need the D standard library Phobos (might be called *libphobos* for DMD
-or *liblphobos* for LDC), but those often ship with the compilers already.
-Finally, dub is the D build system and source library package manager.
+dub is the D build system and source library package manager.
 
 
 
@@ -62,7 +64,7 @@ Fedora 29:
 
 macOS:
 
-    $ brew install allegro enet
+    $ brew install pkg-config allegro enet
 
 If you don't use a package manager, you might
 [build Allegro 5 and enet 1.3 from source](
