@@ -247,8 +247,9 @@ struct ChatPacket {
     static assert (netChatMaxLen <= 0xFFFF);
     int len() const pure nothrow @safe @nogc
     {
-        return header.len + 1
-            + (max(netChatMaxLen & 0xFFFF, text.length & 0xFFFF) & 0xFFFF);
+        return header.len
+            + (min(netChatMaxLen & 0xFFFF, text.length & 0xFFFF) & 0xFFFF)
+            + 1; // Terminating nullbyte
     }
 
     ENetPacket* createPacket() const nothrow
@@ -268,6 +269,25 @@ struct ChatPacket {
         if (p.data[p.dataLength - 1] == '\0')
             text = fromStringz(cast (char*) (p.data + header.len)).idup;
     }
+}
+
+unittest {
+    import net.enetglob;
+    initializeEnet();
+    scope (exit)
+        deinitializeEnet();
+
+    ChatPacket chat;
+    chat.text = "Hello";
+    assert (chat.len == 2 + 5 + 1);
+
+    auto p = chat.createPacket();
+    assert (p.dataLength == chat.len);
+
+    const decoded = ChatPacket(p);
+    enet_packet_destroy(p);
+    assert (decoded.text == chat.text);
+    assert (decoded.len == chat.len);
 }
 
 struct MillisecondsSinceGameStartPacket {
