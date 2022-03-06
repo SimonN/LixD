@@ -4,6 +4,7 @@ module menu.lobby.lists;
  * The list of players in the room, and the netplay color selector.
  */
 
+import std.array;
 import std.algorithm;
 import std.conv;
 import std.string;
@@ -17,13 +18,18 @@ import net.plnr;
 import net.profile;
 import net.structs : RoomListPacket;
 
-class PeerButton : Button {
+class PeerLine : Button {
+private:
+    Profile2016 _profile;
+
 public:
-    this(Geom g, in Profile prof)
+    this(Geom g, in Profile2016 prof)
     {
         assert (g.xlg > 2 * 20f);
         super(g);
-        if (prof.feeling != Profile.Feeling.observing)
+        _profile = prof;
+
+        if (prof.feeling != Profile2016.Feeling.observing)
             addChild(new CutbitElement(new Geom(0, 0, 20, 20),
                 getPanelInfoIcon(prof.style)));
         addChild(new Label(new Geom(20, 0, xlg - 40, 20), prof.name));
@@ -32,18 +38,53 @@ public:
         check.xf = prof.feeling;
         addChild(check);
     }
+
+    override int opCmp(Object o)
+    {
+        bool isObs(const typeof(this) pb) const pure nothrow @safe @nogc
+        {
+            return pb._profile.feeling == Profile2016.Feeling.observing;
+        }
+
+        const rhs = cast(typeof(this)) o;
+        if (rhs is null) {
+            return -1;
+        }
+        if (isObs(this) != isObs(rhs)) {
+            // One is observing and the other isn't.
+            return isObs(this) - isObs(rhs);
+        }
+        else if (isObs(this)) {
+            // Both are observing.
+            return _profile.name < rhs._profile.name ? -1
+                : _profile.name > rhs._profile.name ? 1 : 0;
+        }
+        // Both want to (eventually) play the next game.
+        return _profile.style != rhs._profile.style
+            ? cast(int)(_profile.style) - cast(int)(rhs._profile.style)
+            : _profile.name < rhs._profile.name ? -1
+            : _profile.name > rhs._profile.name ? 1 : 0;
+    }
+
+    override void calcSelf()
+    {
+        on = false;
+    }
 }
 
 class PeerList : ScrollableButtonList {
 public:
     this(Geom g) { super(g); }
 
-    void recreateButtonsFor(const(Profile[]) players)
+    void recreateButtonsFor(const(Profile2016[]) players)
     {
-        Button[] array;
-        foreach (profile; players)
-            array ~= new PeerButton(newGeomForButton(), profile);
-        replaceAllButtons(array);
+        replaceAllButtons(
+            cast(Button[])(
+                players
+                    .map!(prof => new PeerLine(newGeomForButton(), prof))
+                    .array
+                    .sort
+                    .release));
     }
 }
 
@@ -85,7 +126,7 @@ public:
         roomOfButtonNPlusOne = [];
     }
 
-    void recreateButtonsFor(const(Room[]) rooms, const(Profile[]) profiles)
+    void recreateButtonsFor(const(Room[]) rooms, const(Profile2016[]) profiles)
     {
         Button[] array = [ new TextButton(newGeomForButton(),
                                           Lang.winLobbyRoomCreate.transl) ];
