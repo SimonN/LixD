@@ -21,9 +21,8 @@ import std.range;
 
 import net.packetid;
 import net.repdata;
-import net.server.ihotelob;
+import net.server.outbox;
 import net.server.suite;
-import net.plnr;
 import net.profile;
 import net.structs;
 
@@ -80,13 +79,12 @@ public:
         return candidate == Room.maxExclusive ? Room(0) : candidate;
     }
 
-    void addNewPlayerToLobby(in PlNr nrOfNewbie, Profile newbie)
+    void addNewPlayerToLobby(in PlNr nrOfNewbie, Profile2022 newbie)
     {
-        newbie.room = Room(0);
         _suites[Room(0)].add(nrOfNewbie, newbie);
         // It would be enough to send the overview only to the newbie.
         // But it's easiest to ask to send it to all. (Hotel knows no outbox.)
-        sendRoomOverviewToLobbyists();
+        informLobbyistsAboutRooms();
     }
 
     // The server should call this after the server has set the mover's room
@@ -97,11 +95,10 @@ public:
         if (from.empty || _suites[to].contains(mover)) {
             return;
         }
-        Profile pr = from.front.pop(mover,
+        const pr = from.front.pop(mover,
             Suite.PopReason(Suite.PopReason.Reason.movedToRoom, to));
-        pr.room = to;
         _suites[to].add(mover, pr);
-        sendRoomOverviewToLobbyists();
+        informLobbyistsAboutRooms();
     }
 
     // The server calls this when it got a disconnection packet.
@@ -113,10 +110,10 @@ public:
                 Suite.PopReason(Suite.PopReason.Reason.disconnected)));
     }
 
-    void changeProfile(in PlNr ofWhom, in Profile wish)
+    void changeProfileButKeepVersion(in PlNr ofWhom, in Profile2022 wish)
     {
         foreach (where; _suites[].find!(sui => sui.contains(ofWhom)).takeOne) {
-            where.changeProfile(ofWhom, wish);
+            where.changeProfileButKeepVersion(ofWhom, wish);
         }
     }
 
@@ -149,24 +146,17 @@ public:
     }
 
 private:
-    void sendRoomOverviewToLobbyists()
+    void informLobbyistsAboutRooms()
     {
-        if (_suites[Room(0)].empty) {
-            return;
-        }
-        _suites[Room(0)].sendToEachLobbyist(roomOverviewForLobbyists());
-    }
-
-    RoomListPacket roomOverviewForLobbyists()
-    {
-        RoomListPacket ret;
-        ret.header.packetID = PacketStoC.listOfExistingRooms;
-        // We don't need to set a player number on this packet of general info
-
-        foreach (const sui; _suites[Room(1) .. $].filter!(s => ! s.empty)) {
-            ret.indices ~= sui.room;
-            ret.profiles ~= sui.profileOfOwner;
-        }
-        return ret;
+        RoomListEntry2022[] entries = _suites[]
+            .filter!(sui => ! sui.empty && sui.room != Room(0))
+            .map!((in Suite sui) {
+                RoomListEntry2022 entry;
+                entry.room = sui.room;
+                entry.numInhabitants = sui.numInhabitants;
+                entry.owner = sui.profileOfOwner;
+                return entry;
+            }).array;
+        _suites[Room(0)].informLobbyistsAboutRooms(entries);
     }
 }

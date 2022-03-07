@@ -20,7 +20,7 @@ struct Version {
     int minor;
     int patch;
 
-    this(int major, int minor, int patch)
+    this(int major, int minor, int patch) pure nothrow @safe @nogc
     {
         this.major = major;
         this.minor = minor;
@@ -53,28 +53,28 @@ struct Version {
         return "%d.%d.*".format(major, minor);
     }
 
-    int opCmp(in Version rhs) const
+    int opCmp(in Version rhs) const pure nothrow @safe @nogc
     {
         return major > rhs.major ? 1 : major < rhs.major ? -1
             :  minor > rhs.minor ? 1 : minor < rhs.minor ? -1
             :  patch > rhs.patch ? 1 : patch < rhs.patch ? -1 : 0;
     }
 
-    bool compatibleWith(in Version rhs) const
+    bool compatibleWith(in Version rhs) const pure nothrow @safe @nogc
     {
         return major == rhs.major
             && minor == rhs.minor;
     }
 
     enum len = 12;
-    void serializeTo(ref ubyte[len] buf) const nothrow
+    void serializeTo(ref ubyte[len] buf) const pure nothrow @nogc
     {
         buf[0 .. 4] = nativeToBigEndian!int(major);
         buf[4 .. 8] = nativeToBigEndian!int(minor);
         buf[8 .. 12] = nativeToBigEndian!int(patch);
     }
 
-    this(ref const(ubyte[len]) buf)
+    this(ref const(ubyte[len]) buf) pure nothrow @nogc
     {
         major = bigEndianToNative!int(buf[0 .. 4]);
         minor = bigEndianToNative!int(buf[4 .. 8]);

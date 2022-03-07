@@ -1,17 +1,10 @@
 module net.repdata;
 
-/* Ply, Permu
- */
-
 import std.bitmanip;
 import std.conv;
 import std.exception;
-import std.random;
 
-import derelict.enet.enet;
 import net.packetid;
-import net.enetglob;
-
 import net.ac;
 public import net.phyu;
 public import net.plnr;
@@ -28,8 +21,7 @@ enum RepAc : ubyte {
 
 struct Ply {
     package enum len = player.sizeof + action.sizeof + skill.sizeof
-                     + update.sizeof + toWhichLix.sizeof + 1; // +1 header
-    static assert (len == 12);
+                     + update.sizeof + toWhichLix.sizeof;
 
     PlNr player;
     RepAc action;
@@ -54,36 +46,47 @@ struct Ply {
         // assign, force, nuke -- all of these are equal, and the sorts must
         // be with these. Keep such records in whatever order they were input.
     }
+}
 
-    ENetPacket* createPacket(ubyte packetID) const nothrow
+struct PlyPacket {
+    ubyte packetId;
+    Ply ply;
+
+    enum len = Ply.len + packetId.sizeof;
+    static assert (len == Ply.len + 1);
+    static assert (len == 12);
+
+    this(in ubyte aPacketId, in Ply aPly) pure nothrow @safe @nogc
     {
-        ENetPacket* pck = .createPacket(len);
-        assert (pck);
-        assert (packetID == PacketCtoS.myPly
-            ||  packetID == PacketStoC.peerPly);
-        pck.data[0] = packetID;
-        pck.data[1] = player;
-        pck.data[2] = action;
-        pck.data[3] = skill;
-        pck.data[4 ..  8] = nativeToBigEndian!int(update);
-        pck.data[8 .. 12] = nativeToBigEndian!int(toWhichLix);
-        return pck;
+        packetId = aPacketId;
+        ply = aPly;
     }
 
-    this(in ENetPacket* pck)
+    void serializeTo(ubyte[] buf) const pure nothrow @nogc
     {
-        assert (pck.data[0] == PacketCtoS.myPly
-            ||  pck.data[0] == PacketStoC.peerPly,
-            "don't call Ply(p) if p is not replay data");
-        enforce(pck.dataLength == len);
-        player = PlNr(pck.data[1]);
-        update = Phyu(bigEndianToNative!int(pck.data[4 ..  8]));
-        toWhichLix =    bigEndianToNative!int(pck.data[8 .. 12]);
-
-        try               action = pck.data[2].to!RepAc;
-        catch (Exception) action = RepAc.NOTHING;
-        try               skill  = pck.data[3].to!Ac;
-        catch (Exception) skill  = Ac.nothing;
+        assert (buf.length >= len);
+        assert (packetId == PacketCtoS.myPly
+            ||  packetId == PacketStoC.peerPly);
+        buf[0] = packetId;
+        buf[1] = ply.player;
+        buf[2] = ply.action;
+        buf[3] = ply.skill;
+        buf[4 ..  8] = nativeToBigEndian!int(ply.update);
+        buf[8 .. 12] = nativeToBigEndian!int(ply.toWhichLix);
     }
 
+    this(in ubyte[] buf) pure
+    {
+        enforce(buf.length >= len); // 2016 had == in 2022 let's allow >=
+        enforce(buf[0] == PacketCtoS.myPly
+            ||  buf[0] == PacketStoC.peerPly);
+        ply.player = PlNr(buf[1]);
+        ply.update = Phyu(bigEndianToNative!int(buf[4 ..  8]));
+        ply.toWhichLix = bigEndianToNative!int(buf[8 .. 12]);
+
+        try               ply.action = buf[2].to!RepAc;
+        catch (Exception) ply.action = RepAc.NOTHING;
+        try               ply.skill  = buf[3].to!Ac;
+        catch (Exception) ply.skill  = Ac.nothing;
+    }
 }

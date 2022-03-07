@@ -8,23 +8,255 @@ module net.server.server;
  * local NetServer, and treats that NetServer without knowing it's local.
  */
 
-import std.algorithm;
+import std.exception;
+import std.format;
+
 import derelict.enet.enet;
 
-import net.server.ihotelob;
+import net.server.adapter;
 import net.server.hotel;
+import net.server.outbox;
 import net.enetglob;
 import net.packetid;
-import net.permu;
+import net.plnr;
 import net.profile;
 import net.structs;
-import net.repdata;
 import net.versioning;
 
-class NetServer : Outbox {
+enum minAcceptedOnServer = Version(0, 9, 0);
+bool acceptedOnServer(Version ofClient) pure nothrow @safe @nogc
+{
+    return ofClient.compatibleWith(Version(0, 9, 0))
+        || ofClient.compatibleWith(Version(0, 10, 0));
+}
+
+static assert(minAcceptedOnServer.acceptedOnServer);
+static assert(net.versioning.gameVersion.acceptedOnServer);
+
+class NetServer {
 private:
-    ENetHost* _host;
-    Hotel _hotel;
+    ENetHost* _host; // We own it.
+    Hotel _hotel; // We create and own this.
+    Inboxes _inboxes; // All of them forward to hour _hotel.
+    SendViaEnetHost _sendWithEnet; // We own it.
+    DispatchingOutbox _outbox; // Sends via our our _host.
+
+public:
+    this(in int port)
+    {
+        enforce(port >= 0 && port <= 0xFFFF, format("Invalid UPD port: %d"
+            ~ "\nPlease choose a UPD port >= 0 and <= 65535.", port));
+        initializeEnet();
+        scope (failure) {
+            deinitializeEnet();
+        }
+        ENetAddress address;
+        address.host = ENET_HOST_ANY;
+        address.port = port & 0xFFFF;
+        _host = enet_host_create(&address,
+            127, // max connections. PlNr is ubyte, redesign PlNr if want more
+            2, // allow up to 2 channels to be used, 0 and 1
+            0, // assume any amount of incoming bandwidth
+            0); // assume any amount of outgoing bandwidth
+        enforce(_host, format("Can't create enet server on UPD port %d."
+            ~ "\nIs UDP port %d free for listening?"
+            ~ "\nIs another Lix server already listening there?", port, port));
+
+        _sendWithEnet = new SendViaEnetHost(_host);
+        _outbox = new DispatchingOutbox(_sendWithEnet);
+        _hotel = Hotel(_outbox);
+        _inboxes = Inboxes(&_hotel);
+    }
+
+    void dispose()
+    {
+        _hotel.dispose();
+        if (_host) {
+            enet_host_destroy(_host);
+            _host = null;
+            deinitializeEnet();
+        }
+    }
+
+    bool anyoneConnected() const { return ! _hotel.empty; }
+
+    void calc()
+    {
+        assert (_host);
+        ENetEvent event = void;
+        while (enet_host_service(_host, &event, 0) > 0) {
+            _sendWithEnet.computeSizeOfEnetPeer(event.peer);
+            immutable PlNr from = PlNr(event.peer.incomingPeerID & 0xFF);
+
+            final switch (event.type) {
+            case ENET_EVENT_TYPE_NONE:
+                assert (false, "enet_host_service should have returned 0");
+            case ENET_EVENT_TYPE_CONNECT:
+                // Don't add the player to the hotel rooms yet.
+                // We will do that when the peer sends its hello packet.
+                break;
+            case ENET_EVENT_TYPE_RECEIVE:
+                receivePacket(from,
+                    event.packet.data[0 .. event.packet.dataLength]);
+                enet_packet_destroy(event.packet);
+                break;
+            case ENET_EVENT_TYPE_DISCONNECT:
+                // There are two types of disconnections:
+                // We threw him out for old version by disconnect_later(),
+                // then we don't have to do anything else now.
+                // Or he disconnected by his own will. The difference is
+                // whether he's in our player array. Remove from hotel and
+                // let the hotel decide what to do.
+                _hotel.removePlayerWhoHasDisconnected(from);
+                break;
+            }
+        }
+        _hotel.calc();
+        enet_host_flush(_host);
+    }
+
+private:
+    void receivePacket(in PlNr from, in ubyte[] got) nothrow
+    {
+        if (got.length < 1) {
+            return;
+        }
+        try {
+            if (got[0] == PacketCtoS.hello) {
+                receiveHello(from, got);
+            }
+            else {
+                Inbox inbox = _inboxes.protocolOf(from);
+                if (inbox !is null) switch (got[0]) {
+                case PacketCtoS.toExistingRoom:
+                    inbox.receiveRoomChange(from, got);
+                    break;
+                case PacketCtoS.createRoom:
+                    inbox.receiveCreateRoom(from, got);
+                    break;
+                case PacketCtoS.myProfile:
+                    inbox.receiveProfileChange(from, got);
+                    break;
+                case PacketCtoS.chatMessage:
+                    inbox.receiveChat(from, got);
+                    break;
+                case PacketCtoS.levelFile:
+                    inbox.receiveLevel(from, got);
+                    break;
+                case PacketCtoS.myPly:
+                    inbox.receivePly(from, got);
+                    break;
+                default:
+                    break;
+                }
+            }
+        }
+        catch (Exception) {}
+    }
+
+    void receiveHello(in PlNr from, in ubyte[] got)
+    {
+        immutable hello = HelloPacket(got);
+        auto answer = HelloAnswerPacket();
+        answer.header.plNr = from;
+        answer.header.packetID = hello.fromVersion.acceptedOnServer
+                               ? PacketStoC.youGoodHeresPlNr
+                               : hello.fromVersion < minAcceptedOnServer
+                               ? PacketStoC.youTooOld : PacketStoC.youTooNew;
+        answer.serverVersion = gameVersion;
+        answer.enetSendTo(_sendWithEnet.getPeer(from));
+
+        if (answer.header.packetID == PacketStoC.youGoodHeresPlNr) {
+            _inboxes.setProtocol(from, hello.fromVersion);
+            _outbox.setProtocol(from, hello.fromVersion);
+            _hotel.addNewPlayerToLobby(from,
+                hello.profile.to2022with(hello.fromVersion));
+        }
+        else {
+            _sendWithEnet.disconnectLater(from);
+        }
+    }
+}
+
+private struct Inboxes {
+private:
+    Inbox _inbox2016;
+    Inbox _inbox2022;
+    Inbox[] _receiveVia;
+
+    this(Hotel* whereToSend) {
+        _inbox2016 = new Inbox2016(whereToSend);
+        _inbox2022 = new Inbox2022(whereToSend);
+    }
+
+    void setProtocol(in PlNr who, in Version hisClient) nothrow @safe
+    {
+        if (who >= _receiveVia.length) {
+            _receiveVia.length = who + 1;
+        }
+        _receiveVia[who] = hisClient >= Version(0, 10, 0) ? _inbox2022
+            : _inbox2016;
+    }
+
+    Inbox protocolOf(in PlNr who)
+    in { assert (who < _receiveVia.length); }
+    do {
+        return _receiveVia[who];
+    }
+}
+
+/*
+ * DispatchingOutbox: Implements the outbox interface, but merely delegates
+ * to other Outboxes (that it owns) that know what to send per client version.
+ *
+ * Server can give the DispatchingOutbox to the hotel, then the hotel can
+ * call whatever the hotel likes on the PlNrs without worrying about how
+ * exactly the resulting packet should look like.
+ */
+private class DispatchingOutbox : Outbox {
+private:
+    Outbox _outbox_0_9_x;
+    Outbox _outbox_0_10_x;
+    Outbox[] _dispatchVia;
+
+public:
+    this(SendWithEnet whereToSend) {
+        _outbox_0_9_x = new Outbox_0_9_x(whereToSend);
+        _outbox_0_10_x = new Outbox_0_10_x(whereToSend);
+    }
+
+    void setProtocol(in PlNr who, in Version hisClient) nothrow @safe
+    {
+        if (who >= _dispatchVia.length) {
+            _dispatchVia.length = who + 1;
+        }
+        _dispatchVia[who] = hisClient >= Version(0, 10, 0) ? _outbox_0_10_x
+            : _outbox_0_9_x;
+    }
+
+    /*
+     * Implement each Outbox interface method by:
+     * Look up the recipient's Outbox (e.g., Outbox_0_10_x) in the array,
+     * then forward the method call there, with identical arguments.
+     */
+    import net.permu;
+    import net.repdata;
+    static foreach (func; __traits(allMembers, Outbox)) {
+        import net.server.meta;
+        mixin(format!q{
+            override void %s(%s) {
+                assert (_dispatchVia[receiv] !is null,
+                    "Call setProtocol(receiv, hisClient) before calling %s.");
+                _dispatchVia[receiv].%s(%s);
+            }
+        }(func, ParamTypesAndNames!(Outbox, func),
+            func, func, ParamNamesOnly!(Outbox, func)));
+    }
+}
+
+private class SendViaEnetHost : SendWithEnet {
+private:
+    ENetHost* _host; // We don't own it. We merely know the server's host.
 
     /*
      * Hack to detect size of ENetPeer at runtime, independently from the
@@ -44,200 +276,17 @@ private:
     ptrdiff_t sizeOfEnetPeer = ENetPeer.sizeof;
 
 public:
-    this(in int port)
+    this(ENetHost* viaWhichWeSend)
     {
-        initializeEnet();
-        ENetAddress address;
-        address.host = ENET_HOST_ANY;
-        address.port = port & 0xFFFF;
-        _hotel = Hotel(this);
-        _host = enet_host_create(&address,
-            127, // max connections. PlNr is ubyte, redesign PlNr if want more
-            2, // allow up to 2 channels to be used, 0 and 1
-            0, // assume any amount of incoming bandwidth
-            0); // assume any amount of outgoing bandwidth
-        assert (_host, "error creating enet server host");
+        _host = viaWhichWeSend;
     }
 
-    ~this()
+    ENetPeer* getPeer(in PlNr plNr) const pure nothrow @system @nogc
     {
-        if (_host) {
-            enet_host_destroy(_host);
-            _host = null;
-        }
-        _hotel.dispose();
-        deinitializeEnet();
+        return cast(ENetPeer*)(cast(void*)_host.peers + plNr * sizeOfEnetPeer);
     }
 
-    bool anyoneConnected() const { return ! _hotel.empty; }
-
-    void calc()
-    {
-        assert (_host);
-        ENetEvent event = void;
-        while (enet_host_service(_host, &event, 0) > 0) {
-            computeSizeOfEnetPeer(event.peer);
-            final switch (event.type) {
-            case ENET_EVENT_TYPE_NONE:
-                assert (false, "enet_host_service should have returned 0");
-            case ENET_EVENT_TYPE_CONNECT:
-                // Don't add the player to the hotel rooms yet.
-                // We will do that when the peer sends its hello packet.
-                break;
-            case ENET_EVENT_TYPE_RECEIVE:
-                receivePacket(event.peer, event.packet);
-                enet_packet_destroy(event.packet);
-                break;
-            case ENET_EVENT_TYPE_DISCONNECT:
-                // There are two types of disconnections:
-                // We threw him out for old version by disconnect_later(),
-                // then we don't have to do anything else now.
-                // Or he disconnected by his own will. The difference is
-                // whether he's in our player array. Remove from hotel and
-                // let the hotel decide what to do.
-                _hotel.removePlayerWhoHasDisconnected(peerToPlNr(event.peer));
-                break;
-            }
-        }
-        _hotel.calc();
-        enet_host_flush(_host);
-    }
-
-// ############################################################################
-// ######################################################### friend class Hotel
-
-    void sendChat(in PlNr receiv, in PlNr fromChatter, in string text)
-    {
-        ChatPacket chat;
-        chat.header.packetID = PacketStoC.peerChatMessage;
-        chat.header.plNr = fromChatter;
-        chat.text = text;
-        chat.enetSendTo(plNrToPeer(receiv));
-    }
-
-    void sendLevelByChooser(PlNr receiv, const(ubyte[]) level, PlNr from) @nogc
-    {
-        struct LevelPacket {
-            const(ubyte[]) _level;
-            PlNr _from;
-            ENetPacket* createPacket() const @nogc {
-                PacketHeader header;
-                header.packetID = PacketStoC.peerLevelFile;
-                header.plNr = _from;
-                auto ret = .createPacket(header.len + _level.length);
-                header.serializeTo(ret.data[0 .. header.len]);
-                ret.data[header.len .. ret.dataLength] = _level[0 .. $];
-                return ret;
-            }
-        }
-        LevelPacket(level, from).enetSendTo(plNrToPeer(receiv));
-    }
-
-    void sendProfileChangeBy(in PlNr receiv, in PlNr ofWhom, in Profile full)
-    {
-        ProfilePacket pa;
-        pa.header.packetID = PacketStoC.peerProfile;
-        pa.header.plNr = ofWhom;
-        pa.profile = full;
-        pa.enetSendTo(plNrToPeer(receiv));
-    }
-
-    void sendPly(PlNr receiv, Ply data)
-    {
-        data.enetSendTo(plNrToPeer(receiv), PacketStoC.peerPly);
-    }
-
-    void describeRoom(in PlNr receiv, in Profile[PlNr] contents)
-    {
-        auto informMover = ProfileListPacket();
-        informMover.header.packetID = PacketStoC.peersAlreadyInYourNewRoom;
-        informMover.header.plNr = receiv;
-        foreach (key, prof; contents) {
-            informMover.indices ~= key;
-            informMover.profiles ~= prof;
-        }
-        informMover.enetSendTo(plNrToPeer(receiv));
-    }
-
-    void informLobbyistAboutRooms(PlNr receiv, in RoomListPacket rlp)
-    {
-        assert (_host);
-        assert (_host.peers);
-        rlp.enetSendTo(plNrToPeer(receiv));
-    }
-
-    void sendPeerEnteredYourRoom(PlNr receiv, PlNr mover, in Profile ofMover)
-    {
-        assert (_host);
-        assert (_host.peers);
-        auto pa = ProfilePacket();
-        pa.header.packetID = PacketStoC.peerJoinsYourRoom;
-        pa.header.plNr = mover;
-        pa.profile = ofMover;
-        pa.enetSendTo(plNrToPeer(receiv));
-    }
-
-    void sendPeerLeftYourRoom(PlNr receiv, PlNr mover, in Room toWhere)
-    {
-        assert (_host);
-        assert (_host.peers);
-        auto pa = RoomChangePacket();
-        pa.header.packetID = PacketStoC.peerLeftYourRoom;
-        pa.header.plNr = mover;
-        pa.room = toWhere;
-        pa.enetSendTo(plNrToPeer(receiv));
-    }
-
-    void sendPeerDisconnected(in PlNr receiv, in PlNr disconnected)
-    {
-        auto discon = SomeoneDisconnectedPacket();
-        discon.packetID = PacketStoC.peerDisconnected;
-        discon.plNr = disconnected;
-        discon.enetSendTo(plNrToPeer(receiv));
-    }
-
-    void startGame(in PlNr receiv, in StartGameWithPermuPacket alreadyRolled)
-    {
-        alreadyRolled.enetSendTo(plNrToPeer(receiv));
-    }
-
-    void sendMillisecondsSinceGameStart(PlNr receiv, int millis)
-    {
-        auto pa = MillisecondsSinceGameStartPacket();
-        pa.header.packetID = PacketStoC.millisecondsSinceGameStart;
-        pa.header.plNr = receiv; // doesn't matter
-        pa.milliseconds = millis;
-        pa.enetSendTo(plNrToPeer(receiv));
-    }
-
-// ############################################################################
-
-private:
-    void receivePacket(ENetPeer* peer, ENetPacket* got)
-    {
-        assert (_host);
-        assert (peer);
-        assert (got);
-        if (got.dataLength < 1)
-            return;
-        /* Convention:
-         * When we make a struct from the packet data, this struct contains
-         * a header, but we don't trust header.plNr. To see who sent this
-         * packet, we always infer the plNr from peerToPlNr.
-         */
-        with (PacketCtoS) try switch (got.data[0]) {
-            case hello: receiveHello(peer, got); break;
-            case toExistingRoom: receiveRoomChange(peer, got); break;
-            case createRoom: receiveCreateRoom(peer, got); break;
-            case myProfile: receiveProfileChange(peer, got); break;
-            case chatMessage: receiveChat(peer, got); break;
-            case levelFile: receiveLevel(peer, got); break;
-            case myPly: receivePly(peer, got); break;
-            default: break;
-        }
-        catch (Exception) {}
-    }
-
+    // Call this at least once before sending anything to that peer.
     void computeSizeOfEnetPeer(in ENetPeer* peerInArray) nothrow @system @nogc
     {
         if (peerInArray.incomingPeerID == 0) {
@@ -248,73 +297,8 @@ private:
             / peerInArray.incomingPeerID;
     }
 
-    PlNr peerToPlNr(in ENetPeer* peer) const pure nothrow @safe @nogc
+    override void disconnectLater(in PlNr toDiscon)
     {
-        return PlNr(peer.incomingPeerID & 0xFF);
-    }
-
-    ENetPeer* plNrToPeer(in PlNr plNr) const pure nothrow @system @nogc
-    {
-        return cast(ENetPeer*)(cast(void*)_host.peers + plNr * sizeOfEnetPeer);
-    }
-
-    void receiveHello(ENetPeer* peer, ENetPacket* got)
-    {
-        immutable hello = HelloPacket(got);
-        auto answer = HelloAnswerPacket();
-        immutable plNr = peerToPlNr(peer);
-        answer.header.plNr = plNr;
-        answer.header.packetID = hello.fromVersion.compatibleWith(gameVersion)
-                               ? PacketStoC.youGoodHeresPlNr
-                               : hello.fromVersion < gameVersion
-                               ? PacketStoC.youTooOld : PacketStoC.youTooNew;
-        answer.serverVersion = gameVersion;
-        answer.enetSendTo(peer);
-
-        if (answer.header.packetID == PacketStoC.youGoodHeresPlNr) {
-            _hotel.addNewPlayerToLobby(plNr, hello.profile);
-        }
-        else {
-            enet_peer_disconnect_later(peer, answer.header.packetID);
-        }
-    }
-
-    void receiveRoomChange(ENetPeer* peer, ENetPacket* got)
-    {
-        immutable wish = RoomChangePacket(got);
-        _hotel.movePlayer(peerToPlNr(peer), wish.room);
-    }
-
-    void receiveCreateRoom(ENetPeer* peer, ENetPacket* got)
-    {
-        _hotel.movePlayer(peerToPlNr(peer), _hotel.firstFreeRoomElseLobby());
-    }
-
-    void receiveProfileChange(ENetPeer* peer, ENetPacket* got)
-    {
-        _hotel.changeProfile(peerToPlNr(peer), ProfilePacket(got).profile);
-    }
-
-    void receiveChat(ENetPeer* peer, ENetPacket* got)
-    {
-        _hotel.broadcastChat(peerToPlNr(peer), ChatPacket(got).text);
-    }
-
-    void receiveLevel(ENetPeer* peer, ENetPacket* got)
-    {
-        if (got.dataLength < 2) {
-            return; // Too short for even an empty level.
-        }
-        _hotel.receiveLevel(peerToPlNr(peer), got.data[2 .. got.dataLength]);
-    }
-
-    void receivePly(ENetPeer* peer, ENetPacket* got)
-    {
-        if (got.dataLength != Ply.len) {
-            return;
-        }
-        auto ply = Ply(got);
-        ply.player = peerToPlNr(peer); // Don't trust. We decide who sent it!
-        _hotel.receivePly(ply);
+        enet_peer_disconnect_later(getPeer(toDiscon), 0);
     }
 }

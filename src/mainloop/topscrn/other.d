@@ -22,7 +22,7 @@ import menu.options;
 import menu.outcome.single;
 import menu.rep4lev;
 import menu.mainmenu;
-import gui.richcli;
+import net.client.richcli;
 
 private T crashInsteadOfReturningAny(T)()
 {

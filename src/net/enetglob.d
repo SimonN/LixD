@@ -42,7 +42,7 @@ string enetLinkedVersion()
         ENET_VERSION_GET_MINOR(ver), ENET_VERSION_GET_PATCH(ver));
 }
 
-ENetPacket* createPacket(T)(T wantLen) nothrow
+ENetPacket* createPacket(T)(T wantLen) nothrow @nogc
     if (is (T == int) || is (T == size_t))
 {
     return enet_packet_create(null, wantLen & 0x7FFF_FFFF,
@@ -51,19 +51,17 @@ ENetPacket* createPacket(T)(T wantLen) nothrow
 
 /*
  * enetSendTo:
- * Tries once to send the packet. No retry on failure.
- * Two versions. The template version doesn't modify the source struct.
- * You can send it somewhere else after this, or let it go out of scope.
+ * Takes ownership of the packet.
+ *
+ * Tries once to send the packet, no retry on failure. No memory leak.
  */
-void enetSendTo(Struct, Args...)(
-    in Struct st,
-    ENetPeer* dest,
-    Args args,
-)   if (!is (Struct == ENetPacket*))
+void enetSendTo(Struct)(in Struct st, ENetPeer* dest) nothrow @nogc
+    if (!is (Struct == ENetPacket*))
 {
-    ENetPacket* packet = st.createPacket(args);
+    ENetPacket* packet = .createPacket(st.len);
+    st.serializeTo(packet.data[0 .. st.len]);
     immutable err = enet_peer_send(dest, 0, packet);
-    // enet_peer_send only deallocates on success (err == 0).
+    // enet_peer_send only takes ownership on success (err == 0).
     if (err < 0) {
         enet_packet_destroy(packet);
     }

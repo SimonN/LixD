@@ -7,9 +7,10 @@ license "public domain"
 targetType "executable"
 targetName "server"
 targetPath "../../bin"
+mainSourceFile "src/daemon.d"
 versions "lixDaemon"
 
-dependency "derelict-enet" version=">=2.0.0"
+dependency "derelict-enet" version=">=4.2.0"
 
-importPaths "src" "../net"
-sourcePaths "src" "../net"
+importPaths "src" "../net" "../client"
+sourcePaths "src" "../net" "../client"

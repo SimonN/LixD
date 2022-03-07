@@ -1,14 +1,10 @@
 module net.permu;
 
-import std.bitmanip;
 import std.exception;
 import std.random;
 import std.string;
 
-import derelict.enet.enet;
-
-import net.enetglob;
-import net.repdata;
+import net.structs;
 import net.packetid;
 import net.plnr;
 
@@ -83,10 +79,13 @@ public:
 /* Length of the network-sent permutation is determined from packet length
  */
 struct StartGameWithPermuPacket {
-    PacketHeader header;
+    PacketHeader2016 header;
     PlNr[] arr;
 
-    int len() const nothrow { return header.len + (arr.length & 0xFF); }
+    int len() const pure nothrow @safe @nogc
+    {
+        return header.len + (arr.length & 0xFF);
+    }
 
     this(int permuSize)
     {
@@ -96,23 +95,23 @@ struct StartGameWithPermuPacket {
         arr.randomShuffle;
     }
 
-    ENetPacket* createPacket() const nothrow
+    void serializeTo(ubyte[] buf) const nothrow @nogc
     {
-        auto ret = .createPacket(len);
-        header.serializeTo(ret.data[0 .. header.len]);
-        static assert (PlNr.sizeof == 1);
-        foreach (int i; 0 .. 0xFF & arr.length)
-            ret.data[header.len + i] = arr[i];
-        return ret;
+        assert (buf.length >= len);
+        header.serializeTo(buf[0 .. header.len]);
+        static assert (PlNr.sizeof == 1, "Assumed in the 2016 permu format");
+        foreach (int i; 0 .. 0xFF & arr.length) {
+            buf[header.len + i] = arr[i];
+        }
     }
 
-    this(const(ENetPacket*) p)
+    this(in ubyte[] buf)
     {
-        enforce(p.dataLength >= 3);
-        enforce(p.dataLength < header.len + PlNr.maxExclusive);
-        header = PacketHeader(p.data[0 .. header.len]);
-        arr.length = p.dataLength - header.len;
+        enforce(buf.length >= 3);
+        enforce(buf.length <= header.len + PlNr.maxExclusive);
+        header = PacketHeader2016(buf[0 .. header.len]);
+        arr.length = buf.length - header.len;
         foreach (int i; 0 .. 0xFF & arr.length)
-            arr[i] = p.data[header.len + i];
+            arr[i] = buf[header.len + i];
     }
 }

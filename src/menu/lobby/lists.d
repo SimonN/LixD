@@ -16,20 +16,19 @@ import gui;
 import gui.picker.scrolist;
 import net.plnr;
 import net.profile;
-import net.structs : RoomListPacket;
 
 class PeerLine : Button {
 private:
-    Profile2016 _profile;
+    Profile _profile;
 
 public:
-    this(Geom g, in Profile2016 prof)
+    this(Geom g, in Profile prof)
     {
         assert (g.xlg > 2 * 20f);
         super(g);
         _profile = prof;
 
-        if (prof.feeling != Profile2016.Feeling.observing)
+        if (prof.feeling != Profile.Feeling.observing)
             addChild(new CutbitElement(new Geom(0, 0, 20, 20),
                 getPanelInfoIcon(prof.style)));
         addChild(new Label(new Geom(20, 0, xlg - 40, 20), prof.name));
@@ -43,7 +42,7 @@ public:
     {
         bool isObs(const typeof(this) pb) const pure nothrow @safe @nogc
         {
-            return pb._profile.feeling == Profile2016.Feeling.observing;
+            return pb._profile.feeling == Profile.Feeling.observing;
         }
 
         const rhs = cast(typeof(this)) o;
@@ -76,7 +75,7 @@ class PeerList : ScrollableButtonList {
 public:
     this(Geom g) { super(g); }
 
-    void recreateButtonsFor(const(Profile2016[]) players)
+    void recreateButtonsFor(in Profile[] players)
     {
         replaceAllButtons(
             cast(Button[])(
@@ -126,15 +125,18 @@ public:
         roomOfButtonNPlusOne = [];
     }
 
-    void recreateButtonsFor(const(Room[]) rooms, const(Profile2016[]) profiles)
+    void recreateButtonsFor(in RoomListEntry2022[] rooms)
     {
+        roomOfButtonNPlusOne = [];
         Button[] array = [ new TextButton(newGeomForButton(),
                                           Lang.winLobbyRoomCreate.transl) ];
-        for (int i = 0; i < rooms.length && i < profiles.length; ++i)
+        foreach (ref const entry; rooms) {
+            roomOfButtonNPlusOne ~= entry.room;
             array ~= new TextButton(newGeomForButton(), format!"%s: %s"(
-                Lang.winLobbyRoomNumber.translf(rooms[i]), profiles[i].name));
+                Lang.winLobbyRoomNumber.translf(entry.room),
+                entry.owner.name));
+        }
         replaceAllButtons(array);
-        roomOfButtonNPlusOne = rooms;
     }
 }
 

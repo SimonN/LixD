@@ -15,6 +15,7 @@ import file.replay;
 import file.language;
 import graphic.color;
 import gui;
+import net.client.richcli;
 import physics.score;
 
 class ChatArea : Element {

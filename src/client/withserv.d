@@ -1,4 +1,4 @@
-module net.cliserv;
+module net.client.withserv;
 
 /*
  * A networking client (to be created by the interactive game)
@@ -7,7 +7,11 @@ module net.cliserv;
  * This is not the command-line server app: See module net.server.daemon.
  */
 
-import net.client;
+version (lixDaemon) {}
+else:
+
+import net.client.client;
+import net.client.impl;
 import net.server.server;
 
 class ClientWithServer : NetClient {
@@ -25,7 +29,7 @@ public:
     override void disconnectAndDispose()
     {
         super.disconnectAndDispose();
-        destroy(_server);
+        _server.dispose();
     }
 
     override void calc()

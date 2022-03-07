@@ -18,14 +18,14 @@ import menu.lobby.lists;
 import menu.preview.thumbn;
 import menu.browser.frommain;
 import menu.browser.network;
-import net.client;
-import net.iclient;
+import net.client.client;
+import net.client.richcli;
 import net.permu;
 import net.plnr;
 import net.profile;
 import net.versioning;
 
-class Lobby : Window {
+class Lobby : Window, NetClientObserver {
 private:
     bool _gotoGame;
     bool _gotoMainMenu;
@@ -77,7 +77,7 @@ public:
         // unconnected RichClient -- we don't want this in _netClient.
         if (aRichClient.connected) {
             _netClient = aRichClient;
-            setOurEventHandlers();
+            _netClient.register(this);
             _preview.preview(_netClient.level);
             _levelTitle.text = _netClient.level ? _netClient.level.name : "";
             _chat.text = _netClient.unsentChat;
@@ -96,8 +96,8 @@ public:
     auto loseOwnershipOfRichClient()
     {
         assert (_netClient, "shouldn't lose ownership of null client");
+        _netClient.unregister(this);
         auto ret = _netClient;
-        nullOurEventHandlers();
         _netClient = null;
         _gotoGame = false;
         _chat.on = false;
@@ -246,7 +246,7 @@ private:
     bool connected() const { return _netClient && _netClient.connected; }
     bool connecting() const { return _netClient && _netClient.connecting; }
     bool offline() const { return ! connected && ! connecting; }
-    bool inLobby() const { return connected && _netClient.ourProfile.room ==0;}
+    bool inLobby() const { return connected && _netClient.ourRoom == Room(0); }
 
     void showOrHideGuiBasedOnConnection()
     {
@@ -266,8 +266,9 @@ private:
     void acceptConnection(INetClient cli, NetClientCfg cfgThatWasUsed)
     {
         _netClient = new RichClient(cli, _console);
-        setOurEventHandlers();
-        _console.add("Lix %s, enet %s. %s %s:%d...".format(gameVersion,
+        _netClient.register(this);
+        _console.add("Lix %s, enet %s. %s %s:%d...".format(
+            cfgThatWasUsed.clientVersion,
             _netClient.enetLinkedVersion, Lang.netChatStartClient.transl,
             cfgThatWasUsed.hostname, cfgThatWasUsed.port));
     }
@@ -326,82 +327,62 @@ private:
         _browser = null;
     }
 
-    // Keep this the last private function in this class, it's so long
-    void setOurEventHandlers()
+// ##### Implementation of NetClient ##########################################
+public:
+    // We don't print anything on connecting. Entering the lobby will
+    // generate a message anyway, including an update to the peer list.
+    void onConnect() {}
+    void onCannotConnect()  { _netClient.unregister(this); _netClient = null; }
+    void onVersionMisfit(in Version) {} // Console will print it
+    void onConnectionLost() { _netClient.unregister(this); _netClient = null; }
+    void onChatMessage(in string, in string) {} // Console will print it
+    void onPeerDisconnect(in string) { refreshPeerList(); }
+    void onPeerJoinsRoom(in Profile profile)
     {
-        assert (_netClient);
-
-        // We don't print anything on connecting. Entering the lobby will
-        // generate a message anyway, including an update to the peer list.
-        _netClient.onConnect = null;
-        _netClient.onCannotConnect = () { _netClient = null; };
-        _netClient.onConnectionLost = () { _netClient = null; };
-        _netClient.onPeerDisconnect = (string name) { refreshPeerList(); };
-        _netClient.onPeerJoinsRoom = (const(Profile*) profile)
-        {
-            refreshPeerList();
-            playLoud(Sound.JOIN);
-        };
-
-        _netClient.onPeerLeavesRoomTo = (string name, Room toRoom)
-        {
-            refreshPeerList();
-            // If we're in the lobby, we'll get another packet with the
-            // new possible rooms.
-        };
-
-        _netClient.onPeerChangesProfile = (const(Profile*))
-        {
-            refreshPeerList();
-        };
-
-        _netClient.onWeChangeRoom = (Room toRoom)
-        {
-            refreshPeerList();
-            // We will later get a packet that tells us the rooms in the lobby.
-            // Until then, don't show anything in this list. If we're not
-            // in the lobby, the room list shouldn't even be shown anyway.
-            _roomList.clearButtons();
-        };
-
-        _netClient.onListOfExistingRooms = (const(Room[]) rooms,
-                                            const(Profile[]) profiles
-        ) {
-            _roomList.recreateButtonsFor(rooms, profiles);
-        };
-
-        _netClient.onLevelSelect = (string senderName, const(ubyte[]) data)
-        {
-            refreshPeerList();
-            _preview.preview(_netClient.level);
-            _levelTitle.text = _netClient.level.name;
-            _console.add(Lang.netChatLevelChange.translf(
-                senderName, _netClient.level.name));
-            playLoud(Sound.pageTurn);
-        };
-
-        _netClient.onGameStart = (Permu permu)
-        {
-            refreshPeerList();
-            destroyBrowser(); // Observers got stuck in their browser otherwise
-            _console.add(Lang.netGameHowToChat.translf(keyChat.nameLong));
-            _gotoGame = true;
-        };
+        refreshPeerList();
+        playLoud(Sound.JOIN);
     }
 
-    void nullOurEventHandlers()
+    void onPeerLeavesRoomTo(in string peerName, in Room toRoom)
     {
-        assert (_netClient, "null only when we own a netClient");
-        _netClient.onConnect = null;
-        _netClient.onCannotConnect = null;
-        _netClient.onConnectionLost = null;
-        _netClient.onPeerDisconnect = null;
-        _netClient.onPeerJoinsRoom = null;
-        _netClient.onPeerLeavesRoomTo = null;
-        _netClient.onPeerChangesProfile = null;
-        _netClient.onWeChangeRoom = null;
-        _netClient.onListOfExistingRooms = null;
-        _netClient.onLevelSelect = null;
-        _netClient.onGameStart = null;
+        refreshPeerList();
+        // If we're in the lobby, we'll get another packet with the
+        // new possible rooms.
     }
+
+    void onPeerChangesProfile(in Profile) { refreshPeerList(); }
+    void onWeChangeRoom(in Room toRoom)
+    {
+        refreshPeerList();
+        // We will later get a packet that tells us the rooms in the lobby.
+        // Until then, don't show anything in this list. If we're not
+        // in the lobby, the room list shouldn't even be shown anyway.
+        _roomList.clearButtons();
+    }
+
+    void onListOfExistingRooms(in RoomListEntry2022[] rooms)
+    {
+        _roomList.recreateButtonsFor(rooms);
+    }
+
+    void onLevelSelect(in string senderName, in ubyte[] data)
+    {
+        refreshPeerList();
+        _preview.preview(_netClient.level);
+        _levelTitle.text = _netClient.level.name;
+        _console.add(Lang.netChatLevelChange.translf(
+            senderName, _netClient.level.name));
+        playLoud(Sound.pageTurn);
+    }
+
+    void onGameStart(in Permu permu)
+    {
+        refreshPeerList();
+        destroyBrowser(); // Or observing players get stuck in their browser
+        _console.add(Lang.netGameHowToChat.translf(keyChat.nameLong));
+        _gotoGame = true;
+    }
+
+    void onPeerSendsPly(in Ply) {}
+    void onMillisecondsSinceGameStart(in int millis) {}
 }

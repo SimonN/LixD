@@ -27,8 +27,6 @@ enum PacketStoC : ubyte {
     youGoodHeresPlNr = 101,
     youTooOld = 102,
     youTooNew = 103,
-    someoneTooOld = 104, // broadcast to all others when we send youTooOld
-    someoneTooNew = 105,
 
     // Tell a person in the lobby about all existing rooms at once.
     // When a new person joins the lobby, they get this.

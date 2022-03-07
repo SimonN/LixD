@@ -1,19 +1,17 @@
 module net.server.daemon;
 
-/* A standalone daemon application.
+/*
+ * The daemon is the standalone Lix server application.
  * This instantiates a NetServer and lets that take connections.
- * This isn't used when you click (I want to be server) in the lobby,
- * instead, the main Lix application will run
+ * This isn't used when you click (I want to be server) in the lobby;
+ * instead, the main Lix application will create a NetServer itself.
+ *
+ * This file only compiles during the standalone server build as application.
+ * This file doesn't compile for the standalone server's unittests.
+ * This file doesn't compile for the main Lix build, neither as app nor tests.
  */
 
-version (unittest)
-{
-    /*
-     * This module is only to start the server outside of testing.
-     * During testing, don't run a server with command-line arguments.
-     */
-}
-else version (lixDaemon)
+version (lixDaemon)
 {
     import core.time;
     import core.thread;
@@ -38,8 +36,9 @@ else version (lixDaemon)
         }
         else {
             auto netServer = new NetServer(cmdArgs.port);
-            scope (exit)
-                destroy(netServer);
+            scope (exit) {
+                netServer.dispose();
+            }
             writeln("Lix server is listening on UDP port ", cmdArgs.port, ".");
             while (true) {
                 Thread.sleep(dur!"msecs"(netServer.anyoneConnected ? 5 : 200));

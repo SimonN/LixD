@@ -5,7 +5,7 @@ module game.core.view;
  * players are there, whether we play, replay, or observe live, etc.
  */
 
-import net.iclient;
+import net.client.client;
 import net.profile;
 
 enum View {
