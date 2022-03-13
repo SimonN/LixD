@@ -1,6 +1,8 @@
 How to add paths to your PATH
 =============================
 
+(See `win64.txt` in this directory for how to build Lix on Windows.)
+
 If you've downloaded LDC's installer, you don't need these instructions.
 
 But if you've downloaded LDC's 7z archive, you must add the LDC executables'

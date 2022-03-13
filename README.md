@@ -66,6 +66,8 @@ a different port by `$ bin/server --port=<number>`.
 Build instructions
 ------------------
 
+Instructions are in the directory `./doc/build/` or online:
+
 * [Build instructions for Windows](
 https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/win64.txt)
 * [Build instructions for Linux or macOS](

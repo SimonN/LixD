@@ -1,16 +1,13 @@
 Building Allegro 5 and enet from source
 =======================================
 
-Lix requires the Allegro 5.2 and enet 1.3 binary libraries.
-My [build notes for Linux or MacOS](
-https://github.com/SimonN/LixD/blob/master/doc/build/linux.md)
-describe how to get them from your package manager.
-My [build notes for Windows](
-https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/win64.txt)
-explain how to download the binary libraries and add them to your compiler.
-**Try those instructions first.**
+To build Lix itself, see `win64.txt` (for Windows) or `linux.md` (for
+Linux or Mac) in this directory instead of this file `a5manual.md`.
 
-Only if you're sure that neither works for you, keep reading.
+This file `a5manual.md` is about building Allegro 5.2 and enet 1.3 binary
+libraries in case you can't get them with your package manager or you
+don't want to use my provided DLLs. If you're sure that you really want
+to build Allegro or enet yourself, keep reading.
 
 
 
