@@ -181,6 +181,7 @@ do {
 // Testing the level drawing is expensive and relies on a lot of modules
 // getting initialized. Doesn't matter. Noninteractive level dump is important
 // and should work.
+version (none): // Deactivated for unittest speed.
 unittest {
     import basics.alleg5;
     import basics.init;
@@ -212,6 +213,7 @@ unittest {
         assert (std.file.getSize(imgFn.stringForReading) > 100_000,
             "`" ~ l.name ~ "' is a large level, it should produce a large"
             ~ " image file `" ~ imgFn.rootless ~ "`', but hasn't.");
+        // This unittest doesn't delete its generated file. It should! Add it.
         return 0;
     });
 }
