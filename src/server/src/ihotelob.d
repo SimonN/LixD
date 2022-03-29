@@ -14,6 +14,7 @@ import net.repdata;
 import net.plnr;
 import net.profile;
 import net.structs;
+import net.permu;
 
 interface Outbox {
     void sendChat(in PlNr receiv, in PlNr fromChatter, in string text);
@@ -27,6 +28,6 @@ interface Outbox {
     void sendPeerLeftYourRoom(PlNr receiv, PlNr mover, in Room toWhere);
     void sendPeerDisconnected(PlNr receiv, PlNr disconnector);
 
-    void startGame(in PlNr receiv, in PlNr roomOwner, in int permuLength);
+    void startGame(in PlNr receiv, in StartGameWithPermuPacket alreadyRolled);
     void sendMillisecondsSinceGameStart(PlNr receiv, int millis);
 }

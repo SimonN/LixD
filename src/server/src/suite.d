@@ -15,6 +15,8 @@ module net.server.suite;
 import std.algorithm;
 import std.range;
 
+import net.packetid;
+import net.permu;
 import net.plnr;
 import net.profile;
 import net.repdata;
@@ -219,10 +221,14 @@ private:
             assert (! party.empty);
         }
         immutable numTeams = numberOfDifferentTribes(_players);
-        unreadyAll();
+        unreadyAll(); // Must happen after calling numberOfDifferentTribes.
+        auto pa = StartGameWithPermuPacket(numTeams); // This shuffles.
+        pa.header.packetID = PacketStoC.gameStartsWithPermu;
+        pa.header.plNr = _fe.owner;
+
         _fe.startGame();
         foreach (receiv; _players.byKey) {
-            _outbox.startGame(receiv, _fe.owner, numTeams);
+            _outbox.startGame(receiv, pa); // Everybody gets the same shuffle.
         }
     }
 }

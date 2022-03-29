@@ -196,12 +196,9 @@ public:
         discon.enetSendTo(plNrToPeer(receiv));
     }
 
-    void startGame(in PlNr receiv, in PlNr roomOwner, in int permuLength)
+    void startGame(in PlNr receiv, in StartGameWithPermuPacket alreadyRolled)
     {
-        auto pa = StartGameWithPermuPacket(permuLength);
-        pa.header.packetID = PacketStoC.gameStartsWithPermu;
-        pa.header.plNr = roomOwner;
-        pa.enetSendTo(plNrToPeer(receiv));
+        alreadyRolled.enetSendTo(plNrToPeer(receiv));
     }
 
     void sendMillisecondsSinceGameStart(PlNr receiv, int millis)
