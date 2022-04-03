@@ -257,7 +257,7 @@ struct ChatPacket {
         auto ret = .createPacket(len);
         header.serializeTo(ret.data[0 .. header.len]);
         strncpy(cast (char*) (ret.data + header.len), text.toStringz,
-                                                      netChatMaxLen);
+            len - header.len);
         ret.data[len - 1] = '\0';
         return ret;
     }
