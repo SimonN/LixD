@@ -85,8 +85,10 @@ Contact
 
 * [Lix Homepage](http://www.lixgame.com)
 * [Bugs & Suggestions](https://github.com/SimonN/LixD/issues)
-* E-Mail: `s.naarmann@gmail.com`
-* IRC: `#lix` on QuakeNet, I'm SimonN or SimonNa.
-    [Web IRC client](http://webchat.quakenet.org/?channels=lix)
-* [lemmingsforums.net](https://www.lemmingsforums.net/index.php?board=8.0),
+* [Lemmings Forums](https://www.lemmingsforums.net/index.php?board=8.0),
     I'm Simon
+* E-Mail: `s.naarmann@gmail.com`
+* IRC: `#lix` on QuakeNet, for Lix development and finding players.
+    [Web IRC client](http://webchat.quakenet.org/?channels=lix)
+* IRC: `#lix` on FreeGameDev, a community of libre game players.
+    [Web IRC client](https://freegamedev.net/irc/#lix)
