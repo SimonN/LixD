@@ -16,6 +16,7 @@ module game.core.game;
 public import basics.cmdargs; // Runmode;
 public import game.core.view;
 
+import core.time;
 import std.conv; // float to int in prepare nurse
 import std.exception;
 import std.range;
@@ -141,7 +142,7 @@ public:
         };
         _netClient.onMillisecondsSinceGameStart = (int millis)
         {
-            this.adjustToMatchMillisecondsSinceGameStart(millis);
+            this.recordServersWishSinceGameStart(dur!"msecs"(millis));
         };
         commonConstructor(generateFreshReplay(no!Filename));
     }

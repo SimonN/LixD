@@ -1,5 +1,6 @@
 module game.core.speed;
 
+import core.time;
 static import basics.globals;
 
 import basics.alleg5;
@@ -94,15 +95,26 @@ void restartLevel(Game game)
 // The server tells us the milliseconds since game start, and the net client
 // has added our lag. We think in Phyus or Allegro ticks, not in millis,
 // therefore convert millis to Phyus.
-void adjustToMatchMillisecondsSinceGameStart(Game game, in int suggMillis)
-{ with (game) with (game.nurse)
+void recordServersWishSinceGameStart(
+    Game game,
+    in Duration sinceServerStartedGame
+) {
+with (game) with (game.nurse)
 {
-    // How many ticks have elapsed since game start? This is the number of
-    // completed Phyus converted to ticks, plus leftover ticks that didn't
-    // yet make a complete Phyu.
-    immutable ourTicks = updatesSinceZero * ticksNormalSpeed
+    /*
+     * How many alticks have elapsed on our side since game start?
+     * This is the number of completed Phyus converted to ticks,
+     * plus leftover ticks that didn't yet make a complete Phyu.
+     */
+    immutable long ourTicks = updatesSinceZero * ticksNormalSpeed
                             + (timerTicks - altickLastPhyu);
-    immutable suggTicks = suggMillis * basics.globals.ticksPerSecond / 1000;
+    /*
+     * How many ticks does the server wish to have elapsed on our side
+     * since game start?
+     */
+    enum Duration durOneTick = 1.seconds / basics.globals.ticksPerSecond;
+    immutable long suggTicks = sinceServerStartedGame / durOneTick;
+
     game._alticksToAdjust = suggTicks - ourTicks;
 }}
 
