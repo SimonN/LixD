@@ -35,7 +35,7 @@ private:
     void[objLen] object = void;
 
 public:
-    inout(TimedLifeDebris) asClass() inout
+    inout(TimedLifeDebris) asClass() inout return
     {
         return cast (inout(TimedLifeDebris)) &object;
     }

@@ -97,7 +97,11 @@ unittest {
 
 struct JobUnion {
     ubyte[32] data; // make as small as you can! fit into one cache line
-    inout(Job) asClass() inout pure { return cast (inout(Job)) data.ptr; }
+
+    inout(Job) asClass() inout return pure
+    {
+        return cast (inout(Job)) data.ptr;
+    }
 
     bool valid() const { return data[0..8].any; /* contains a vtable ptr */ }
 
