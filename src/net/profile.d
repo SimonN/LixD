@@ -69,17 +69,6 @@ public:
     Feeling feeling;
     string name;
 
-    @property Style style() const pure nothrow @safe @nogc
-    {
-        assert (goodForMultiplayer(_style));
-        return _style;
-    }
-
-    @property void style(in Style st) nothrow
-    {
-        _style = goodForMultiplayer(st) ? st : Style.red;
-    }
-
     void setNotReady() @nogc
     {
         if (feeling == Feeling.ready)
@@ -133,7 +122,12 @@ private mixin template StyleSetter() {
 
     public void style(in Style st) pure nothrow @safe @nogc
     {
-        _style = goodForMultiplayer(st) ? st : Style.red;
+        if (goodForMultiplayer(st)) {
+            _style = st;
+        }
+        else {
+            _style = Style.red;
+        }
     }
 
     public static bool goodForMultiplayer(in Style st) pure nothrow @safe @nogc
