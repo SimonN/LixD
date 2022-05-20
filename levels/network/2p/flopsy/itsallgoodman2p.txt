@@ -1,0 +1,305 @@
+$BUILT 2022-01-28 01:12:07
+$AUTHOR Flopsy
+$ENGLISH It's All Good Man! 2P
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+$TAG classic
+
+#SIZE_X 1392
+#SIZE_Y 224
+
+#SECONDS 60
+#INITIAL 80
+#SPAWN_INTERVAL 16
+
+#WALKER 50
+#RUNNER 10
+#CLIMBER 10
+#FLOATER 10
+#EXPLODER2 5
+#BLOCKER 1
+#BUILDER 40
+#PLATFORMER 40
+#BASHER 20
+#MINER 20
+#DIGGER 10
+#JUMPER 50
+#BATTER 20
+#CUBER 5
+
+:matt/bricks/Hatch.H: 32 0
+:matt/bricks/Hatch.H: 128 0 r
+
+:matt/bricks/Goal.G: 1136 48
+:matt/bricks/Goal.G: 1264 48
+
+:amanda/forest/frog.T: 752 48
+
+:simon/crystal.W: 0 160
+:simon/crystal.W: 48 160
+:simon/crystal.W: 96 160
+:simon/crystal.W: 144 160
+:simon/crystal.W: 192 160
+:simon/crystal.W: 240 160
+:simon/crystal.W: 288 160
+:geoo/construction/sawblade_medium.F: 416 144
+:geoo/construction/sawblade_medium.F: 464 144
+:geoo/construction/sawblade_medium.F: 464 0
+:geoo/construction/sawblade_medium.F: 416 0
+:simon/crystal.W: 608 160
+:simon/crystal.W: 656 160
+:simon/crystal.W: 704 160
+:simon/crystal.W: 752 160
+:simon/crystal.W: 800 160
+:simon/crystal.W: 848 160
+:geoo/construction/sawblade_medium.F: 816 112
+:simon/crystal.W: 960 160
+:simon/crystal.W: 1312 160
+
+:matt/bricks/02a: 32 48
+:matt/bricks/03a: -32 16
+:matt/bricks/02a: 128 48
+:matt/bricks/03a: 192 16
+:matt/bricks/04a: 32 80
+:matt/bricks/03a: -32 80
+:matt/bricks/02a: 16 128
+:matt/bricks/01a: 80 144
+:matt/bricks/01a: -16 144
+:matt/bricks/01a: 0 192
+:matt/bricks/01a: 32 192
+:matt/bricks/01a: 64 192
+:matt/bricks/01a: 96 192
+:matt/bricks/01a: 128 192
+:matt/bricks/01a: 112 144
+:matt/bricks/01a: 144 144
+:matt/bricks/01a: 160 192
+:matt/bricks/01a: 192 192
+:matt/bricks/01a: 208 144
+:matt/bricks/01a: 224 192
+:matt/bricks/01a: 240 144
+:matt/bricks/01a: 256 192
+:geoo/steel/32x32o.S: 224 48
+:geoo/steel/32x32o.S: 224 16
+:matt/bricks/01a: 320 192
+:geoo/steel/32x32o.S: 336 176
+:geoo/steel/32x32o.S: 336 144
+:geoo/steel/32x32o.S: 336 112
+:geoo/steel/32x32o.S: 336 80
+:geoo/steel/32x32o.S: 336 48
+:matt/bricks/01a: 288 192
+:geoo/steel/16x16o.S: 208 64
+:geoo/steel/16x16o.S: 192 64
+:matt/bricks/17: 368 48 frr
+:matt/bricks/01a: 384 192
+:matt/bricks/17: 368 152
+:matt/bricks/01a: 416 192
+:matt/bricks/01a: 448 192
+:matt/bricks/01a: 480 192
+:matt/bricks/01a: 512 192
+:matt/bricks/01a: 544 192
+:matt/bricks/17: 512 48
+:matt/bricks/17: 512 152 frr
+:matt/bricks/01a: 256 0
+:matt/bricks/01a: 288 0
+:matt/bricks/01a: 320 0
+:matt/bricks/01a: 352 0
+:matt/bricks/01a: 384 0
+:matt/bricks/01a: 416 0
+:matt/bricks/01a: 448 0
+:matt/bricks/01a: 480 0
+:matt/bricks/01a: 512 0
+:matt/bricks/01a: 544 0
+:matt/bricks/01a: 576 0
+:geoo/steel/16x16o.S: 224 0
+:geoo/steel/16x16o.S: 240 0
+:geoo/steel/32x32o.S: 576 176
+:geoo/steel/32x32o.S: 576 144
+:geoo/steel/32x32o.S: 576 112
+:geoo/steel/32x32o.S: 576 80
+:geoo/steel/32x32o.S: 576 48
+:matt/bricks/17: 608 48 frr
+:matt/bricks/18: 704 176
+:matt/bricks/18: 720 176
+:matt/bricks/18: 720 144
+:matt/bricks/18: 704 144
+:matt/bricks/18: 704 112
+:matt/bricks/18: 720 112
+:matt/bricks/18: 704 80
+:matt/bricks/18: 720 80
+:matt/bricks/18: 704 48
+:matt/bricks/18: 720 48
+:matt/bricks/18: 704 16
+:matt/bricks/18: 720 16
+:matt/bricks/01a: 608 0
+:matt/bricks/01a: 640 0
+:matt/bricks/01a: 672 0
+:matt/bricks/01a: 704 0
+:matt/bricks/01a: 736 0
+:matt/bricks/01a: 768 0
+:matt/bricks/01a: 608 192
+:matt/bricks/01a: 640 192
+:matt/bricks/01a: 672 192
+:matt/bricks/01a: 704 192
+:matt/bricks/01a: 736 192
+:matt/bricks/01a: 768 192
+:matt/bricks/01a: 800 192
+:matt/bricks/18: 768 160
+:matt/bricks/18: 784 160
+:matt/bricks/18: 768 128
+:matt/bricks/18: 784 128
+:matt/bricks/18: 784 96
+:matt/bricks/18: 768 96
+:matt/bricks/01a: 832 192
+:matt/bricks/01a: 864 192
+:matt/bricks/01a: 800 0
+:matt/bricks/01a: 832 0
+:matt/bricks/01a: 864 0
+:matt/bricks/18: 832 16
+:matt/bricks/18: 848 16
+:matt/bricks/18: 832 48
+:matt/bricks/18: 848 48
+:matt/bricks/18: 832 80
+:matt/bricks/18: 848 80
+:matt/bricks/18: 832 96
+:matt/bricks/18: 848 96
+:matt/bricks/17: 608 152
+:matt/bricks/03a: 896 144
+:matt/bricks/03a: 896 80
+:matt/bricks/03a: 896 16
+:matt/bricks/01a: 896 0
+:matt/bricks/01a: 928 0
+:matt/bricks/01a: 960 192
+:matt/bricks/01a: 992 192
+:matt/bricks/03a: 1008 128
+:matt/bricks/03a: 1008 64
+:matt/bricks/03a: 1008 0
+:matt/bricks/01a: 1024 192
+:matt/bricks/02a: 1056 176
+:matt/bricks/02a: 1120 176
+:matt/bricks/02a: 1184 176
+:geoo/steel/32x32o.S: 1072 0
+:geoo/steel/32x32o.S: 1072 32
+:geoo/steel/32x32o.S: 1072 64
+:geoo/steel/32x32o.S: 1072 96
+:geoo/steel/32x32o.S: 1136 96
+:geoo/steel/32x32o.S: 1168 96
+:geoo/steel/32x32o.S: 1200 96
+:geoo/steel/32x32o.S: 1232 96
+:geoo/steel/32x32o.S: 1264 96
+:geoo/steel/32x32o.S: 1296 96
+:geoo/steel/32x32o.S: 1360 96
+:geoo/steel/32x32o.S: 1360 64
+:geoo/steel/32x32o.S: 1360 32
+:geoo/steel/32x32o.S: 1360 0
+:geoo/steel/32x32o.S: 1232 64
+:geoo/steel/32x32o.S: 1200 64
+:matt/bricks/02a: 1248 176
+:matt/bricks/01a: 1312 192
+:matt/bricks/01a: 1344 192
+:matt/bricks/10a: 1280 144
+:geoo/steel/32x32o.S: 1360 128
+:geoo/steel/32x32o.S: 1360 160
+:matt/bricks/01a: 960 0
+:matt/bricks/01a: 992 0
+:matt/bricks/01a: 1104 0
+:matt/bricks/01a: 1136 0
+:matt/bricks/01a: 1168 0
+:matt/bricks/01a: 1200 0
+:matt/bricks/01a: 1232 0
+:matt/bricks/01a: 1264 0
+:matt/bricks/01a: 1296 0
+:matt/bricks/01a: 1328 0
+:geoo/steel/16x16o.S: 0 208
+:geoo/steel/16x16o.S: 16 208
+:geoo/steel/16x16o.S: 32 208
+:geoo/steel/16x16o.S: 48 208
+:geoo/steel/16x16o.S: 64 208
+:geoo/steel/16x16o.S: 80 208
+:geoo/steel/16x16o.S: 96 208
+:geoo/steel/16x16o.S: 112 208
+:geoo/steel/16x16o.S: 128 208
+:geoo/steel/16x16o.S: 144 208
+:geoo/steel/16x16o.S: 160 208
+:geoo/steel/16x16o.S: 176 208
+:geoo/steel/16x16o.S: 192 208
+:geoo/steel/16x16o.S: 208 208
+:geoo/steel/16x16o.S: 224 208
+:geoo/steel/16x16o.S: 240 208
+:geoo/steel/16x16o.S: 256 208
+:geoo/steel/16x16o.S: 272 208
+:geoo/steel/16x16o.S: 288 208
+:geoo/steel/16x16o.S: 304 208
+:geoo/steel/16x16o.S: 320 208
+:geoo/steel/16x16o.S: 336 208
+:geoo/steel/16x16o.S: 352 208
+:geoo/steel/16x16o.S: 368 208
+:geoo/steel/16x16o.S: 384 208
+:geoo/steel/16x16o.S: 400 208
+:geoo/steel/16x16o.S: 416 208
+:geoo/steel/16x16o.S: 432 208
+:geoo/steel/16x16o.S: 448 208
+:geoo/steel/16x16o.S: 464 208
+:geoo/steel/16x16o.S: 480 208
+:geoo/steel/16x16o.S: 496 208
+:geoo/steel/16x16o.S: 512 208
+:geoo/steel/16x16o.S: 528 208
+:geoo/steel/16x16o.S: 544 208
+:geoo/steel/16x16o.S: 560 208
+:geoo/steel/16x16o.S: 576 208
+:geoo/steel/16x16o.S: 592 208
+:geoo/steel/16x16o.S: 608 208
+:geoo/steel/16x16o.S: 624 208
+:geoo/steel/16x16o.S: 640 208
+:geoo/steel/16x16o.S: 656 208
+:geoo/steel/16x16o.S: 672 208
+:geoo/steel/16x16o.S: 688 208
+:geoo/steel/16x16o.S: 704 208
+:geoo/steel/16x16o.S: 720 208
+:geoo/steel/16x16o.S: 736 208
+:geoo/steel/16x16o.S: 752 208
+:geoo/steel/16x16o.S: 768 208
+:geoo/steel/16x16o.S: 784 208
+:geoo/steel/16x16o.S: 800 208
+:geoo/steel/16x16o.S: 816 208
+:geoo/steel/16x16o.S: 832 208
+:geoo/steel/16x16o.S: 848 208
+:geoo/steel/16x16o.S: 864 208
+:geoo/steel/16x16o.S: 880 208
+:geoo/steel/16x16o.S: 896 208
+:geoo/steel/16x16o.S: 912 208
+:geoo/steel/16x16o.S: 928 208
+:geoo/steel/16x16o.S: 944 208
+:geoo/steel/16x16o.S: 960 208
+:geoo/steel/16x16o.S: 976 208
+:geoo/steel/16x16o.S: 992 208
+:geoo/steel/16x16o.S: 1008 208
+:geoo/steel/16x16o.S: 1024 208
+:geoo/steel/16x16o.S: 1040 208
+:geoo/steel/16x16o.S: 1056 208
+:geoo/steel/16x16o.S: 1072 208
+:geoo/steel/16x16o.S: 1088 208
+:geoo/steel/16x16o.S: 1104 208
+:geoo/steel/16x16o.S: 1120 208
+:geoo/steel/16x16o.S: 1136 208
+:geoo/steel/16x16o.S: 1152 208
+:geoo/steel/16x16o.S: 1168 208
+:geoo/steel/16x16o.S: 1184 208
+:geoo/steel/16x16o.S: 1200 208
+:geoo/steel/16x16o.S: 1216 208
+:geoo/steel/16x16o.S: 1232 208
+:geoo/steel/16x16o.S: 1248 208
+:geoo/steel/16x16o.S: 1264 208
+:geoo/steel/16x16o.S: 1280 208
+:geoo/steel/16x16o.S: 1296 208
+:geoo/steel/16x16o.S: 1312 208
+:geoo/steel/16x16o.S: 1328 208
+:geoo/steel/16x16o.S: 1344 208
+:geoo/steel/32x32o.S: 1360 192
+:geoo/steel/16x16o.S: 464 0
+:geoo/steel/16x16o.S: 704 0
+:geoo/steel/16x16o.S: 720 0
+:geoo/steel/16x16o.S: 832 0
+:geoo/steel/16x16o.S: 848 0
+:geoo/steel/16x16o.S: 960 0
+:geoo/steel/16x16o.S: 976 0
+:geoo/steel/16x16o.S: 992 0

@@ -1,6 +1,7 @@
 $BUILT 2020-05-08 21:58:53
 $AUTHOR Flopsy
 $ENGLISH Hurry Up and Wait 8P
+$TAG compression
 
 #INTENDED_NUMBER_OF_PLAYERS 8
 #SIZE_X 1536

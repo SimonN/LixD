@@ -1,6 +1,8 @@
 $BUILT 2021-01-17 21:36:27
 $AUTHOR Flopsy
 $ENGLISH Dude! Where's my EXIT!? 8P (Chaotic)
+$TAG gimmick
+$TAG multiple-hatch
 
 #INTENDED_NUMBER_OF_PLAYERS 8
 #SIZE_X 640

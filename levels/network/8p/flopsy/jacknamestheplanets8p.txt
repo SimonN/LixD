@@ -1,0 +1,508 @@
+$BUILT 2022-04-24 21:08:11
+$AUTHOR Flopsy
+$ENGLISH Jack Names The Planets 8P
+
+#INTENDED_NUMBER_OF_PLAYERS 8
+$TAG asymmetric
+
+#SIZE_X 1824
+#SIZE_Y 336
+#TORUS_X 1
+#TORUS_Y 1
+
+#SECONDS 90
+#INITIAL 80
+#SPAWN_INTERVAL 31
+
+#WALKER 50
+#RUNNER 10
+#CLIMBER 10
+#FLOATER 10
+#EXPLODER2 5
+#BLOCKER 1
+#BUILDER 50
+#PLATFORMER 30
+#BASHER 30
+#MINER 30
+#DIGGER 20
+#JUMPER 50
+#BATTER 50
+#CUBER 5
+
+:raymanni/lab/hatch.H: 80 90
+:raymanni/lab/hatch.H: 214 226
+:raymanni/lab/hatch.H: 364 98
+:raymanni/lab/hatch.H: 520 226
+:raymanni/lab/hatch.H: 800 164
+:raymanni/lab/hatch.H: 1148 184
+:raymanni/lab/hatch.H: 1404 162
+:raymanni/lab/hatch.H: 1650 160
+
+:raymanni/lab/goal.G: 782 78
+:raymanni/lab/goal.G: 1132 78
+:raymanni/lab/goal.G: 1388 98
+:raymanni/lab/goal.G: 1634 98
+:raymanni/lab/goal.G: 62 26
+:raymanni/lab/goal.G: 198 164
+:raymanni/lab/goal.G: 348 36
+:raymanni/lab/goal.G: 504 162
+
+:matt/beach/daytime/00: 40 24
+:matt/beach/daytime/00: 64 32
+:matt/beach/daytime/00: 80 56
+:matt/beach/daytime/00: 24 48 frr
+:matt/beach/daytime/00: 32 72 f
+:matt/beach/daytime/00: 56 88 f
+:geoo/abstract/pipes/central2: 96 94
+:matt/beach/daytime/00: 80 72 f
+:matt/beach/daytime/00: 72 32 frr
+:geoo/abstract/pipes/central2: 62 94
+:matt/beach/daytime/00: 56 24 frr
+:matt/beach/decor/moon: 62 58 d
+:matt/earth/00: 186 162
+:matt/earth/00: 206 174
+:matt/earth/00: 170 176
+:matt/earth/00: 161 193 rrr
+:matt/earth/00: 188 218 rr
+:matt/earth/00: 206 208 rr
+:matt/earth/00: 221 183 r
+:matt/beach/decor/moon: 196 196 d
+:amanda/forest/stone_02: 322 14
+:amanda/forest/stone_02: 311 14 rrr
+:amanda/forest/stone_02: 309 21 rr
+:amanda/forest/stone_02: 287 37 rr
+:amanda/forest/stone_02: 294 65 r
+:amanda/forest/stone_02: 304 72
+:amanda/forest/stone_02: 316 84
+:amanda/forest/stone_02: 340 80
+:amanda/forest/stone_02: 342 79 r
+:amanda/forest/stone_02: 358 59 r
+:amanda/forest/stone_02: 337 14 frr
+:amanda/forest/stone_02: 353 12 rrr
+:amanda/forest/stone_02: 363 18 rrr
+:amanda/forest/stone_02: 369 38 rrr
+:amanda/forest/stone_02: 371 52 rrr
+:amanda/forest/stone_02: 361 68 rrr
+:amanda/forest/stone_02: 358 79 r
+:amanda/forest/stone_02: 334 91 r
+:amanda/forest/stone_02: 350 87 r
+:matt/beach/decor/moon: 348 68 d
+:geoo/abstract/pipes/central2: 62 90
+:geoo/abstract/pipes/central2: 94 92
+:geoo/abstract/pipes/central2: 94 94
+:geoo/abstract/pipes/central1: 196 226
+:geoo/abstract/pipes/central1: 228 226
+:geoo/abstract/pipes/central5: 348 98
+:geoo/abstract/pipes/central5: 380 98
+:matt/beach/decor/moon: 490 22
+:raymanni/gore/blob_3: 492 172
+:raymanni/gore/blob_3: 474 192
+:raymanni/gore/blob_3: 474 198 rrr
+:raymanni/gore/blob_3: 482 214 rrr
+:raymanni/gore/blob_3: 506 230 rrr
+:raymanni/gore/blob_3: 504 221 rr
+:raymanni/gore/blob_3: 497 232 r
+:raymanni/gore/blob_3: 511 172 r
+:raymanni/gore/blob_3: 529 186 r
+:raymanni/gore/blob_3: 531 192 r
+:raymanni/gore/blob_3: 520 219 rr
+:raymanni/gore/blob_3: 534 199 rr
+:matt/beach/decor/moon: 504 198 d
+:geoo/abstract/pipes/central0: 504 226
+:geoo/abstract/pipes/central0: 536 226
+:proxima/tile/spheres/redsmall: 562 124
+:proxima/tile/spheres/redsmall: 446 288
+:matt/underworld/09b: 732 28
+:matt/underworld/09b: 708 44
+:matt/underworld/09b: 692 56
+:matt/underworld/09b: 684 70
+:matt/underworld/09b: 676 84
+:matt/underworld/09b: 668 100
+:matt/underworld/09b: 664 116
+:matt/underworld/09b: 664 128
+:matt/underworld/09b: 664 136
+:matt/underworld/09b: 664 170 rrr
+:matt/underworld/09b: 666 178 rrr
+:matt/underworld/09b: 672 192 rrr
+:matt/underworld/09b: 684 214 rrr
+:matt/underworld/09b: 700 234 rrr
+:matt/underworld/09b: 718 254 rrr
+:matt/underworld/09b: 730 260 rrr
+:matt/underworld/09b: 744 264 rrr
+:matt/underworld/09b: 756 270 rrr
+:matt/underworld/09b: 770 274 rrr
+:matt/underworld/09b: 804 272 rr
+:matt/underworld/09b: 812 272 rr
+:matt/underworld/09b: 820 272 rr
+:matt/underworld/09b: 828 272 rr
+:matt/underworld/09b: 840 266 rr
+:matt/underworld/09b: 864 252 rr
+:matt/underworld/09b: 884 238 rr
+:matt/underworld/09b: 900 226 rr
+:matt/underworld/09b: 914 216 rr
+:matt/underworld/09b: 920 204 rr
+:matt/underworld/09b: 926 192 rr
+:matt/underworld/09b: 928 180 rr
+:matt/underworld/09b: 928 170 rr
+:matt/underworld/09b: 928 158 rr
+:matt/underworld/09b: 926 126 r
+:matt/underworld/09b: 912 96 r
+:matt/underworld/09b: 924 114 r
+:matt/underworld/09b: 914 94 r
+:matt/underworld/09b: 898 70 frr
+:matt/underworld/09b: 876 46 frr
+:matt/underworld/09b: 846 28 frr
+:matt/underworld/09b: 836 24 frr
+:matt/underworld/09b: 748 20
+:matt/underworld/09b: 756 18
+:matt/underworld/09b: 762 18
+:matt/underworld/09b: 770 18
+:matt/underworld/09b: 778 18
+:matt/underworld/09b: 828 16 frr
+:matt/underworld/09b: 820 16 frr
+:matt/underworld/09b: 812 16 frr
+:matt/underworld/09b: 804 16 frr
+:matt/underworld/09a: 786 36
+:matt/underworld/09a: 784 26
+:matt/underworld/09a: 720 66
+:matt/underworld/09a: 734 54
+:matt/underworld/09a: 750 48
+:matt/underworld/09a: 712 80
+:matt/underworld/09a: 740 70
+:matt/underworld/09a: 774 58
+:matt/underworld/09a: 796 48
+:matt/underworld/09a: 802 38
+:matt/underworld/09a: 790 26
+:matt/underworld/09a: 806 36
+:matt/underworld/09a: 828 50
+:matt/underworld/09a: 852 70 frr
+:matt/underworld/09a: 860 76 frr
+:matt/underworld/09a: 834 60 frr
+:matt/underworld/09a: 796 68 frr
+:matt/underworld/09a: 772 62 frr
+:matt/underworld/09a: 696 94 frr
+:matt/underworld/09a: 718 86 frr
+:matt/underworld/09a: 748 78 frr
+:matt/underworld/09a: 764 92 frr
+:matt/underworld/09a: 796 82 frr
+:matt/underworld/09a: 832 86 frr
+:matt/underworld/09a: 802 74 frr
+:matt/underworld/09a: 854 90 frr
+:matt/underworld/09a: 870 106 frr
+:matt/underworld/09a: 886 122 frr
+:matt/underworld/09a: 890 132 frr
+:matt/underworld/09a: 848 116 frr
+:matt/underworld/09a: 824 96 frr
+:matt/underworld/09a: 840 106 frr
+:matt/underworld/09a: 802 82 frr
+:matt/underworld/09a: 686 106 frr
+:matt/underworld/09a: 702 114 frr
+:matt/underworld/09a: 718 102 frr
+:matt/underworld/09a: 768 102 frr
+:matt/underworld/09a: 788 104 frr
+:matt/underworld/09a: 700 120 frr
+:matt/underworld/09a: 746 112 frr
+:matt/underworld/09a: 800 118 frr
+:matt/underworld/09a: 850 126 frr
+:matt/underworld/09a: 890 142 frr
+:matt/underworld/09a: 892 154 frr
+:matt/underworld/09a: 884 172 frr
+:matt/underworld/09a: 696 128 frr
+:matt/underworld/09a: 748 124 frr
+:matt/underworld/09a: 830 132 frr
+:matt/underworld/09a: 874 148 frr
+:matt/underworld/09a: 876 162 frr
+:matt/underworld/09a: 804 128 frr
+:matt/underworld/09a: 826 144 frr
+:matt/underworld/09a: 674 160 frr
+:matt/underworld/09a: 680 154 frr
+:matt/underworld/09a: 696 170 frr
+:matt/underworld/09a: 688 144 frr
+:matt/underworld/09a: 700 136 frr
+:matt/underworld/09a: 716 152 frr
+:matt/underworld/09a: 688 128 frr
+:matt/underworld/09a: 742 134 frr
+:matt/underworld/09a: 778 136 frr
+:matt/underworld/09a: 756 144 frr
+:matt/underworld/09a: 798 152 frr
+:matt/underworld/09a: 842 158 frr
+:matt/underworld/09a: 734 164 frr
+:matt/underworld/09a: 676 170 frr
+:matt/underworld/09a: 680 178 frr
+:matt/underworld/09a: 684 186 frr
+:matt/underworld/09a: 694 198 frr
+:matt/underworld/09a: 714 188 frr
+:matt/underworld/09a: 734 178 frr
+:matt/underworld/09a: 750 170 frr
+:matt/underworld/09a: 766 156 frr
+:matt/underworld/09a: 800 166 frr
+:matt/underworld/09a: 838 170 frr
+:matt/underworld/09a: 868 182 frr
+:matt/underworld/09a: 698 206 frr
+:matt/underworld/09a: 698 216 frr
+:matt/underworld/09a: 704 228 frr
+:matt/underworld/09a: 712 238 frr
+:matt/underworld/09a: 722 248 frr
+:matt/underworld/09a: 730 256 frr
+:matt/underworld/09a: 746 266 frr
+:matt/underworld/09a: 768 280 frr
+:matt/underworld/09a: 788 284
+:matt/underworld/09a: 744 200
+:matt/underworld/09a: 776 184
+:matt/underworld/09a: 792 192
+:matt/underworld/09a: 808 174
+:matt/underworld/09a: 758 208
+:matt/underworld/09a: 834 182
+:matt/underworld/09a: 864 192
+:matt/underworld/09a: 880 200
+:matt/underworld/09a: 888 210
+:matt/underworld/09a: 816 196
+:matt/underworld/09a: 866 236
+:matt/underworld/09a: 876 222
+:matt/underworld/09a: 858 228
+:matt/underworld/09a: 820 206
+:matt/underworld/09a: 836 212
+:matt/underworld/09a: 832 222
+:matt/underworld/09a: 758 214
+:matt/underworld/09a: 774 222
+:matt/underworld/09a: 760 230
+:matt/underworld/09a: 782 242
+:matt/underworld/09a: 798 230
+:matt/underworld/09a: 822 236
+:matt/underworld/09a: 838 262
+:matt/underworld/09a: 852 248
+:matt/underworld/09a: 800 266
+:matt/underworld/09a: 798 270
+:matt/underworld/09a: 812 250
+:matt/underworld/09a: 782 254
+:matt/underworld/09a: 798 240
+:matt/underworld/09a: 850 238
+:matt/goldmine/00: 1062 68
+:matt/goldmine/00: 1046 86
+:matt/goldmine/00: 1040 96
+:matt/goldmine/00: 1052 76
+:matt/goldmine/00: 1078 64
+:matt/goldmine/00: 1038 106
+:matt/goldmine/00: 1036 118
+:matt/goldmine/00: 1038 136
+:matt/goldmine/00: 1092 62
+:matt/goldmine/00: 1110 62
+:matt/goldmine/00: 1120 70
+:matt/goldmine/00: 1128 80
+:matt/goldmine/00: 1080 56
+:matt/goldmine/00: 1096 48
+:matt/goldmine/00: 1112 44
+:matt/goldmine/00: 1132 44
+:matt/goldmine/00: 1156 54
+:matt/goldmine/00: 1168 64
+:matt/goldmine/00: 1178 74
+:matt/goldmine/00: 1190 86
+:matt/goldmine/00: 1167 55 r
+:matt/goldmine/00: 1067 71 r
+:matt/goldmine/00: 1101 111 r
+:matt/goldmine/00: 1199 87 r
+:matt/goldmine/00: 1205 103 r
+:matt/goldmine/00: 1207 121 r
+:matt/goldmine/00: 1201 141 r
+:matt/goldmine/00: 1189 161 r
+:matt/goldmine/00: 1175 181 r
+:matt/goldmine/00: 1158 200 rr
+:matt/goldmine/00: 1138 208 rr
+:matt/goldmine/00: 1039 141 rrr
+:matt/goldmine/00: 1049 161 rrr
+:matt/goldmine/00: 1067 177 rrr
+:matt/goldmine/00: 1089 193 rrr
+:matt/goldmine/00: 1124 208 rr
+:matt/goldmine/00: 1110 208 rr
+:matt/goldmine/00: 1126 156 rr
+:matt/goldmine/00: 1146 126 rr
+:matt/goldmine/00: 1162 78 rr
+:matt/goldmine/00: 1178 168 rr
+:matt/goldmine/00: 1084 168 rr
+:matt/goldmine/00: 1036 134 rr
+:guideline/build-R: 1024 204
+:guideline/build-R: 1068 182
+:guideline/build-R: 1104 164
+:guideline/build-R: 1136 148
+:guideline/build-R: 1168 132
+:guideline/build-R: 1200 116
+:guideline/build-R: 1232 100
+:guideline/build-R: 1264 84
+:guideline/build-R: 996 218
+:matt/earth/06: 1352 104
+:matt/earth/06: 1344 112
+:matt/earth/06: 1344 128
+:matt/earth/06: 1340 124
+:matt/earth/06: 1340 140
+:matt/earth/06: 1339 163 rrr
+:matt/earth/06: 1343 179 rrr
+:matt/earth/06: 1347 189 rrr
+:matt/earth/06: 1357 201 rrr
+:matt/earth/06: 1373 207 rrr
+:matt/earth/06: 1410 200 rr
+:matt/earth/06: 1418 200 rr
+:matt/earth/06: 1430 194 rr
+:matt/earth/06: 1442 184 rr
+:matt/earth/06: 1450 174 rr
+:matt/earth/06: 1389 103 r
+:matt/earth/06: 1399 101 r
+:matt/earth/06: 1417 101 r
+:matt/earth/06: 1435 109 r
+:matt/earth/06: 1445 115 r
+:matt/earth/06: 1449 119 r
+:matt/earth/06: 1449 125 r
+:matt/earth/06: 1451 141 r
+:matt/earth/06: 1454 170 rr
+:matt/earth/06: 1448 156 rr
+:matt/earth/06: 1428 172 rr
+:matt/earth/06: 1442 148 rr
+:matt/earth/06: 1436 136 rr
+:matt/earth/06: 1400 116 rr
+:matt/earth/06: 1408 124 rr
+:matt/earth/06: 1420 128 rr
+:matt/earth/06: 1426 136 rr
+:matt/earth/06: 1414 120 rr
+:matt/earth/06: 1354 108 rr
+:matt/earth/06: 1364 108 rr
+:matt/earth/06: 1372 114 rr
+:matt/earth/06: 1382 120 rr
+:matt/earth/06: 1348 132 rr
+:matt/earth/06: 1352 146 rr
+:matt/earth/06: 1362 154 rr
+:matt/earth/06: 1378 146 rr
+:matt/earth/06: 1380 160 rr
+:matt/earth/06: 1396 150 rr
+:matt/earth/06: 1398 164 rr
+:matt/earth/06: 1408 168 rr
+:matt/earth/06: 1402 190 rr
+:matt/earth/06: 1398 198 rr
+:matt/earth/06: 1390 186 rr
+:matt/earth/06: 1384 176 rr
+:matt/earth/06: 1364 172 rr
+:matt/earth/06: 1356 98
+:matt/earth/06: 1370 90
+:matt/earth/06: 1384 88
+:matt/earth/06: 1396 88
+:matt/earth/06: 1426 88 frr
+:matt/earth/06: 1446 100 frr
+:geoo/abstract/pipes/central3: 1414 238 r
+:geoo/abstract/pipes/central3: 1414 206 r
+:geoo/abstract/pipes/central3: 1414 174 r
+:geoo/abstract/pipes/central3: 1414 142 r
+:geoo/abstract/pipes/central3: 1414 110 r
+:geoo/abstract/pipes/central3: 1414 78 r
+:geoo/abstract/pipes/central3: 1414 62 r
+:geoo/abstract/pipes/central3: 1414 244 r
+:matt/winter/00: 1600 64
+:matt/winter/00: 1584 72
+:matt/winter/00: 1568 88
+:matt/winter/00: 1562 98
+:matt/winter/00: 1560 114
+:matt/winter/00: 1558 108
+:matt/winter/00: 1556 122
+:matt/winter/00: 1556 138
+:matt/winter/00: 1558 146
+:matt/winter/00: 1564 156
+:matt/winter/00: 1570 168
+:matt/winter/00: 1578 178
+:matt/winter/00: 1586 188
+:matt/winter/00: 1612 60
+:matt/winter/00: 1624 58
+:matt/winter/00: 1642 58
+:matt/winter/00: 1654 62
+:matt/winter/00: 1672 74
+:matt/winter/00: 1688 84
+:matt/winter/00: 1696 100
+:matt/winter/00: 1700 96
+:matt/winter/00: 1702 106
+:matt/winter/00: 1702 122
+:matt/winter/00: 1698 136
+:matt/winter/00: 1692 146
+:matt/winter/00: 1688 152
+:matt/winter/00: 1678 178 rr
+:matt/winter/00: 1662 186 rr
+:matt/winter/00: 1646 190 rr
+:matt/winter/00: 1630 192 rr
+:matt/winter/00: 1612 190 rr
+:matt/winter/00: 1628 130 rr
+:matt/winter/00: 1644 102 rr
+:matt/underworld/09a: 802 28 frr
+:matt/underworld/09a: 808 32 frr
+:matt/underworld/09a: 814 36 frr
+:matt/underworld/09a: 822 40 frr
+:matt/underworld/09a: 830 46 frr
+:matt/underworld/09a: 838 50 frr
+:matt/underworld/09a: 844 56 frr
+:matt/underworld/09a: 850 62 frr
+:matt/underworld/09a: 856 68 frr
+:matt/underworld/09a: 860 72 frr
+:matt/underworld/09a: 866 78 frr
+:matt/underworld/09a: 872 84 frr
+:matt/underworld/09a: 874 92
+:matt/underworld/09a: 876 96
+:matt/underworld/09a: 878 100
+:matt/underworld/09a: 921 103 r
+:matt/underworld/09a: 925 111 r
+:matt/underworld/09a: 941 145 r
+:matt/earth/22: 1468 272
+:matt/earth/22: 1766 34
+:matt/goldmine/10: 638 274
+:raymanni/holiday/bauble_red: 936 22
+:raymanni/holiday/bauble_navy: 1018 268
+:raymanni/holiday/bauble_yellow: 1280 30
+:raymanni/holiday/bauble_blue: 1300 256
+:raymanni/holiday/bauble_green: 1738 280
+:geoo/nopales/nopal_04: 628 36
+:geoo/nopales/fruit_00: 640 216
+:geoo/nopales/fruit_00: 952 280
+:geoo/nopales/fruit_00: 1000 184
+:geoo/nopales/fruit_00: 904 312
+:geoo/nopales/fruit_00: 968 104
+:geoo/nopales/fruit_00: 1000 72
+:geoo/nopales/fruit_00: 1048 40
+:geoo/nopales/fruit_00: 1144 24
+:geoo/nopales/fruit_00: 1224 24
+:geoo/nopales/fruit_00: 1256 280
+:geoo/nopales/fruit_00: 1096 296
+:geoo/nopales/fruit_00: 1176 296
+:geoo/nopales/fruit_00: 720 16
+:geoo/nopales/fruit_00: 704 304
+:geoo/nopales/fruit_00: 624 112
+:geoo/nopales/fruit_00: 1368 296
+:geoo/nopales/fruit_00: 1528 264
+:geoo/nopales/fruit_00: 1592 296
+:geoo/nopales/fruit_00: 1800 232
+:geoo/nopales/fruit_00: 1624 24
+:geoo/nopales/fruit_00: 1512 184
+:geoo/nopales/fruit_00: 1520 96
+:geoo/nopales/fruit_00: 1464 56
+:geoo/nopales/fruit_00: 1384 48
+:geoo/nopales/fruit_00: 1328 104
+:geoo/nopales/fruit_00: 1304 192
+:matt/beach/decor/moon: 784 162 d
+:matt/beach/decor/moon: 1132 182 d
+:matt/beach/decor/moon: 784 78 d
+:matt/beach/decor/moon: 1388 134 d
+:matt/beach/decor/moon: 1634 132 d
+:matt/beach/decor/moon: 1132 78 d
+:geoo/abstract/pipes/central3: 1388 162
+:geoo/abstract/pipes/central3: 1420 162
+:geoo/abstract/pipes/central4: 1634 160
+:geoo/abstract/pipes/central4: 1666 160
+:amanda/steel/steel24x8.S: 524 226
+:amanda/steel/steel24x8.S: 802 142
+:amanda/steel/steel24x8.S: 1152 144
+:amanda/steel/steel24x8.S: 1408 162
+:amanda/steel/steel24x8.S: 1654 160
+:geoo/abstract/pipes/central2: 62 94
+:amanda/steel/steel24x8.S: 82 90
+:amanda/steel/steel24x8.S: 218 226
+:amanda/steel/steel24x8.S: 368 98
+:amanda/steel/steel16x16.S: 528 262
+:amanda/steel/steel16x16.S: 372 134
+:amanda/steel/steel16x16.S: 220 262
+:amanda/steel/steel16x16.S: 86 122
+:amanda/steel/steel16x16.S: 1658 196
+:amanda/steel/steel16x16.S: 1410 198
+:amanda/steel/steel16x16.S: 1156 246
+:amanda/steel/steel16x16.S: 808 226

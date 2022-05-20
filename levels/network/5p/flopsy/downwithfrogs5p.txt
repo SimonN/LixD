@@ -1,6 +1,8 @@
 $BUILT 2019-10-27 03:12:12
 $AUTHOR Flopsy
 $ENGLISH Down with Frogs! 5P
+$TAG multiple-hatch
+$TAG rescue
 
 #INTENDED_NUMBER_OF_PLAYERS 5
 #SIZE_X 720

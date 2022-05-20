@@ -1,6 +1,8 @@
 $BUILT 2021-05-01 02:18:26
 $AUTHOR Flopsy
 $ENGLISH Run The Gauntlet 2P
+$TAG multiple-hatch
+$TAG rescue
 
 #INTENDED_NUMBER_OF_PLAYERS 2
 #SIZE_X 1120

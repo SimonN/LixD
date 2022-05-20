@@ -1,0 +1,1062 @@
+$BUILT 2022-02-01 12:06:19
+$AUTHOR Flopsy
+$ENGLISH Check My Eyelids for Holes! 8P
+
+#INTENDED_NUMBER_OF_PLAYERS 8
+#SIZE_X 3072
+#SIZE_Y 512
+#TORUS_X 1
+#TORUS_Y 1
+
+#SECONDS 80
+#INITIAL 80
+#SPAWN_INTERVAL 31
+
+#WALKER 40
+#RUNNER 10
+#CLIMBER 10
+#FLOATER 10
+#EXPLODER2 10
+#BUILDER 40
+#PLATFORMER 40
+#BASHER 30
+#MINER 30
+#DIGGER 15
+#JUMPER 40
+#BATTER 40
+#CUBER 5
+
+:raymanni/lab/hatch.H: 1136 256
+:raymanni/lab/hatch.H: 1904 256
+:raymanni/lab/hatch.H: 1616 0
+:raymanni/lab/hatch.H: 848 0
+:raymanni/lab/hatch.H: 2672 256
+:raymanni/lab/hatch.H: 368 256
+:raymanni/lab/hatch.H: 80 0
+:raymanni/lab/hatch.H: 2384 0
+:raymanni/lab/hatch.H: 16 128
+:raymanni/lab/hatch.H: 784 128
+:raymanni/lab/hatch.H: 304 384
+:raymanni/lab/hatch.H: 2608 384
+:raymanni/lab/hatch.H: 1552 128
+:raymanni/lab/hatch.H: 2320 128
+:raymanni/lab/hatch.H: 1840 384
+:raymanni/lab/hatch.H: 1072 384
+
+:raymanni/lab/goal.G: 2240 64
+:raymanni/lab/goal.G: 3008 64
+:raymanni/lab/goal.G: 2528 320
+:raymanni/lab/goal.G: 1760 320
+:raymanni/lab/goal.G: 704 64
+:raymanni/lab/goal.G: 1472 64
+:raymanni/lab/goal.G: 992 320
+:raymanni/lab/goal.G: 224 320
+
+:amanda/forest/frog_happy.T: 2238 192
+:amanda/forest/frog_happy.T: 3006 192
+:amanda/forest/frog_happy.T: 2526 448
+:amanda/forest/frog_happy.T: 1758 448
+:amanda/forest/frog_happy.T: 702 192
+:amanda/forest/frog_happy.T: 1470 192
+:amanda/forest/frog_happy.T: 990 448
+:amanda/forest/frog_happy.T: 222 448
+
+:geoo/construction/sawblade_small.F: 1616 92
+:geoo/construction/sawblade_medium.F: 1728 88
+:proxima/flame.F: 1808 112
+:geoo/construction/sawblade_small.F: 1608 216
+:geoo/construction/sawblade_medium.F: 1904 502
+:proxima/flame.F: 1740 6
+:geoo/construction/sawblade_medium.F: 2250 502
+:geoo/construction/sawblade_small.F: 2384 92
+:geoo/construction/sawblade_medium.F: 2496 88
+:proxima/flame.F: 2576 112
+:geoo/construction/sawblade_small.F: 2376 216
+:geoo/construction/sawblade_medium.F: 2672 502
+:proxima/flame.F: 2508 6
+:geoo/construction/sawblade_medium.F: 3018 502
+:geoo/construction/sawblade_small.F: 1904 348
+:geoo/construction/sawblade_medium.F: 2016 344
+:proxima/flame.F: 2096 368
+:geoo/construction/sawblade_small.F: 1896 472
+:geoo/construction/sawblade_medium.F: 2192 246
+:proxima/flame.F: 2028 262
+:geoo/construction/sawblade_medium.F: 2538 246
+:geoo/construction/sawblade_small.F: 2672 348
+:geoo/construction/sawblade_medium.F: 2784 344
+:proxima/flame.F: 2864 368
+:geoo/construction/sawblade_small.F: 2664 472
+:geoo/construction/sawblade_medium.F: 2960 246
+:proxima/flame.F: 2796 262
+:geoo/construction/sawblade_medium.F: 1770 246
+:geoo/construction/sawblade_small.F: 1872 212
+:geoo/construction/sawblade_small.F: 2640 212
+:geoo/construction/sawblade_small.F: 2160 468
+:geoo/construction/sawblade_small.F: 2928 468
+:geoo/construction/sawblade_small.F: 80 92
+:geoo/construction/sawblade_medium.F: 192 88
+:proxima/flame.F: 272 112
+:geoo/construction/sawblade_small.F: 72 216
+:geoo/construction/sawblade_medium.F: 368 502
+:proxima/flame.F: 204 6
+:geoo/construction/sawblade_medium.F: 714 502
+:geoo/construction/sawblade_small.F: 848 92
+:geoo/construction/sawblade_medium.F: 960 88
+:proxima/flame.F: 1040 112
+:geoo/construction/sawblade_small.F: 840 216
+:geoo/construction/sawblade_medium.F: 1136 502
+:proxima/flame.F: 972 6
+:geoo/construction/sawblade_medium.F: 1482 502
+:geoo/construction/sawblade_small.F: 368 348
+:geoo/construction/sawblade_medium.F: 480 344
+:proxima/flame.F: 560 368
+:geoo/construction/sawblade_small.F: 360 472
+:geoo/construction/sawblade_medium.F: 656 246
+:proxima/flame.F: 492 262
+:geoo/construction/sawblade_medium.F: 1002 246
+:geoo/construction/sawblade_small.F: 1136 348
+:geoo/construction/sawblade_medium.F: 1248 344
+:proxima/flame.F: 1328 368
+:geoo/construction/sawblade_small.F: 1128 472
+:geoo/construction/sawblade_medium.F: 1424 246
+:proxima/flame.F: 1260 262
+:geoo/construction/sawblade_medium.F: 234 246
+:geoo/construction/sawblade_small.F: 336 212
+:geoo/construction/sawblade_small.F: 1104 212
+:geoo/construction/sawblade_small.F: 624 468
+:geoo/construction/sawblade_small.F: 1392 468
+
+:raymanni/lab/block_7: 1536 0
+:raymanni/lab/block_7: 1536 64
+:raymanni/lab/block_7: 1536 128
+:raymanni/lab/block_7: 1536 192
+:raymanni/lab/block_7: 1600 64
+:raymanni/lab/block_7: 1600 128
+:raymanni/lab/block_7: 1600 192
+:raymanni/lab/block_7: 1664 192
+:raymanni/lab/block_7: 1728 192
+:raymanni/lab/block_7: 1728 128
+:matt/bricks/13: 1664 192 fd
+:matt/bricks/13: 1728 160 fd
+:raymanni/lab/block_1: 1728 128 d
+:raymanni/lab/block_1: 1760 128 d
+:raymanni/lab/block_7: 1792 192
+:raymanni/lab/block_1: 1792 160
+:raymanni/lab/block_1: 1824 160
+:raymanni/lab/block_7: 1856 192
+:raymanni/lab/block_7: 1920 192
+:raymanni/lab/block_7: 1920 128
+:raymanni/lab/block_8: 1920 128
+:raymanni/lab/block_7: 1920 64
+:raymanni/lab/block_1: 1696 0
+:raymanni/lab/block_7: 1728 0
+:raymanni/lab/block_7: 1792 0
+:raymanni/lab/block_1: 1856 32
+:matt/bricks/13: 1792 0 rrd
+:raymanni/lab/block_7: 2016 64
+:raymanni/lab/block_7: 1984 64
+:raymanni/lab/block_7: 2016 128
+:raymanni/lab/block_7: 1984 128
+:raymanni/lab/block_7: 2016 192
+:raymanni/lab/block_7: 1984 192
+:raymanni/lab/block_9: 1984 192
+:raymanni/lab/block_7: 2112 192
+:raymanni/lab/block_7: 2112 128
+:raymanni/lab/block_7: 2112 64
+:raymanni/lab/block_7: 2176 192
+:raymanni/lab/block_7: 2176 128
+:raymanni/lab/block_7: 2176 64
+:raymanni/lab/block_7: 2240 128
+:raymanni/lab/block_7: 2240 192
+:raymanni/lab/block_7: 2112 0
+:raymanni/lab/block_1: 2112 0 d
+:raymanni/lab/block_1: 2144 0 d
+:matt/bricks/13: 2112 32 fd
+:raymanni/lab/block_1: 2176 32
+:raymanni/lab/block_1: 2208 32
+:guideline/fling-bomb: 1608 80 d
+:raymanni/lab/block_1: 1728 64
+:raymanni/lab/scen_1: 1770 80 frr
+:raymanni/lab/block_1: 1760 64
+:raymanni/lab/block_2: 1760 64
+:raymanni/lab/block_6: 1728 64
+:raymanni/holiday/screw1: 1750 74 d
+:raymanni/holiday/screw1: 1688 8 d
+:guideline/fling-bomb: 1736 8 d
+:proxima/tile/spheres/bluesmall: 2888 152 d
+:raymanni/lab/block_10: 1600 128
+:proxima/tile/spheres/bluesmall: 1608 216 d
+:proxima/tile/spheres/bluesmall: 1744 208 d
+:guideline/fling-bomb: 1864 200 d
+:raymanni/holiday/screw1: 1816 176 d
+:proxima/tile/spheres/bluesmall: 1944 112 d
+:proxima/tile/spheres/bluesmall: 1992 208 d
+:raymanni/lab/block_10: 1984 64
+:proxima/tile/spheres/bluesmall: 2040 72 d
+:raymanni/holiday/screw1: 1992 72 d
+:raymanni/holiday/screw1: 1976 160 d
+:raymanni/holiday/screw1: 2048 168 d
+:proxima/tile/spheres/bluesmall: 1552 2 d
+:raymanni/lab/block_10: 2176 128
+:proxima/tile/spheres/bluesmall: 2200 106 d
+:raymanni/lab/block_9: 2112 64
+:raymanni/holiday/screw1: 2142 104 d
+:raymanni/holiday/screw1: 2118 222 d
+:raymanni/lab/pipe_6: 2144 208 d
+:raymanni/lab/pipe_6: 2160 224 d
+:raymanni/lab/pipe_6: 2152 216 d
+:raymanni/lab/block_1: 2176 208 d
+:raymanni/lab/block_1: 2208 208 d
+:raymanni/lab/block_1: 2240 208 d
+:raymanni/lab/block_1: 2272 208 d
+:raymanni/lab/block_1: 2144 224 d
+:raymanni/holiday/screw1: 2282 138 d
+:raymanni/lab/block_1: 1536 208 d
+:raymanni/lab/pipe_6: 1560 208 frrd
+:raymanni/lab/pipe_6: 1552 216 frrd
+:raymanni/lab/block_1: 1560 224 frrd
+:raymanni/holiday/screw1: 2160 64 d
+:raymanni/holiday/screw1: 2212 40 d
+:raymanni/lab/scen_6: 2080 494
+:raymanni/lab/block_2: 2016 0
+:raymanni/lab/block_4: 2016 32
+:raymanni/lab/block_4: 2032 32
+:raymanni/lab/block_4: 2048 32
+:raymanni/holiday/screw1: 2028 28 d
+:raymanni/holiday/screw1: 1808 24 d
+:raymanni/holiday/screw1: 1876 40 d
+:raymanni/lab/scen_3: 1862 64
+:raymanni/lab/scen_5: 1870 128
+:raymanni/holiday/screw1: 2088 6 d
+:raymanni/lab/block_8: 1536 64
+:raymanni/holiday/screw1: 1556 94 d
+:raymanni/holiday/screw1: 1630 164 d
+:geoo/steel/16x16o.S: 2262 240
+:geoo/steel/16x16o.S: 1624 64
+:geoo/steel/16x16o.S: 2264 128
+:raymanni/lab/block_6: 2176 32
+:raymanni/lab/block_6: 2048 192
+:raymanni/lab/block_2: 2048 128
+:raymanni/lab/block_8: 1792 192
+:raymanni/lab/scen_7: 2080 46
+:raymanni/lab/scen_8: 1808 64
+:raymanni/lab/block_7: 2304 0
+:raymanni/lab/block_7: 2304 64
+:raymanni/lab/block_7: 2304 128
+:raymanni/lab/block_7: 2304 192
+:raymanni/lab/block_7: 2368 64
+:raymanni/lab/block_7: 2368 128
+:raymanni/lab/block_7: 2368 192
+:raymanni/lab/block_7: 2432 192
+:raymanni/lab/block_7: 2496 192
+:raymanni/lab/block_7: 2496 128
+:matt/bricks/13: 2432 192 fd
+:matt/bricks/13: 2496 160 fd
+:raymanni/lab/block_1: 2496 128 d
+:raymanni/lab/block_1: 2528 128 d
+:raymanni/lab/block_7: 2560 192
+:raymanni/lab/block_1: 2560 160
+:raymanni/lab/block_1: 2592 160
+:raymanni/lab/block_7: 2624 192
+:raymanni/lab/block_7: 2688 192
+:raymanni/lab/block_7: 2688 128
+:raymanni/lab/block_8: 2688 128
+:raymanni/lab/block_7: 2688 64
+:raymanni/lab/block_1: 2464 0
+:raymanni/lab/block_7: 2496 0
+:raymanni/lab/block_7: 2560 0
+:raymanni/lab/block_1: 2624 32
+:matt/bricks/13: 2560 0 rrd
+:raymanni/lab/block_7: 2784 64
+:raymanni/lab/block_7: 2752 64
+:raymanni/lab/block_7: 2784 128
+:raymanni/lab/block_7: 2752 128
+:raymanni/lab/block_7: 2784 192
+:raymanni/lab/block_7: 2752 192
+:raymanni/lab/block_9: 2752 192
+:raymanni/lab/block_7: 2880 192
+:raymanni/lab/block_7: 2880 128
+:raymanni/lab/block_7: 2880 64
+:raymanni/lab/block_7: 2944 192
+:raymanni/lab/block_7: 2944 128
+:raymanni/lab/block_7: 2944 64
+:raymanni/lab/block_7: 3008 128
+:raymanni/lab/block_7: 3008 192
+:raymanni/lab/block_7: 2880 0
+:raymanni/lab/block_1: 2880 0 d
+:raymanni/lab/block_1: 2912 0 d
+:matt/bricks/13: 2880 32 fd
+:raymanni/lab/block_1: 2944 32
+:raymanni/lab/block_1: 2976 32
+:guideline/fling-bomb: 2376 80 d
+:raymanni/lab/block_1: 2496 64
+:raymanni/lab/scen_1: 2538 80 frr
+:raymanni/lab/block_1: 2528 64
+:raymanni/lab/block_2: 2528 64
+:raymanni/lab/block_6: 2496 64
+:raymanni/holiday/screw1: 2518 74 d
+:raymanni/holiday/screw1: 2456 8 d
+:guideline/fling-bomb: 2504 8 d
+:proxima/tile/spheres/bluesmall: 2120 152 d
+:raymanni/lab/block_10: 2368 128
+:proxima/tile/spheres/bluesmall: 2376 216 d
+:proxima/tile/spheres/bluesmall: 2512 208 d
+:guideline/fling-bomb: 2632 200 d
+:raymanni/holiday/screw1: 2584 176 d
+:proxima/tile/spheres/bluesmall: 2712 112 d
+:proxima/tile/spheres/bluesmall: 2760 208 d
+:raymanni/lab/block_10: 2752 64
+:proxima/tile/spheres/bluesmall: 2808 72 d
+:raymanni/holiday/screw1: 2760 72 d
+:raymanni/holiday/screw1: 2744 160 d
+:raymanni/holiday/screw1: 2816 168 d
+:proxima/tile/spheres/bluesmall: 2320 2 d
+:raymanni/lab/block_10: 2944 128
+:proxima/tile/spheres/bluesmall: 2968 106 d
+:raymanni/lab/block_9: 2880 64
+:raymanni/holiday/screw1: 2910 104 d
+:raymanni/holiday/screw1: 2886 222 d
+:raymanni/lab/pipe_6: 2912 208 d
+:raymanni/lab/pipe_6: 2928 224 d
+:raymanni/lab/pipe_6: 2920 216 d
+:raymanni/lab/block_1: 2944 208 d
+:raymanni/lab/block_1: 2976 208 d
+:raymanni/lab/block_1: 3008 208 d
+:raymanni/lab/block_1: 3040 208 d
+:raymanni/lab/block_1: 2912 224 d
+:raymanni/holiday/screw1: 3050 138 d
+:raymanni/lab/block_1: 2304 208 d
+:raymanni/lab/pipe_6: 2328 208 frrd
+:raymanni/lab/pipe_6: 2320 216 frrd
+:raymanni/lab/block_1: 2328 224 frrd
+:raymanni/holiday/screw1: 2928 64 d
+:raymanni/holiday/screw1: 2980 40 d
+:raymanni/lab/scen_6: 2848 494
+:raymanni/lab/block_2: 2784 0
+:raymanni/lab/block_4: 2784 32
+:raymanni/lab/block_4: 2800 32
+:raymanni/lab/block_4: 2816 32
+:raymanni/holiday/screw1: 2796 28 d
+:raymanni/holiday/screw1: 2576 24 d
+:raymanni/holiday/screw1: 2644 40 d
+:raymanni/lab/scen_3: 2630 64
+:raymanni/lab/scen_5: 2638 128
+:raymanni/holiday/screw1: 2856 6 d
+:raymanni/lab/block_8: 2304 64
+:raymanni/holiday/screw1: 2324 94 d
+:raymanni/holiday/screw1: 2398 164 d
+:geoo/steel/16x16o.S: 3030 240
+:geoo/steel/16x16o.S: 2392 64
+:geoo/steel/16x16o.S: 3032 128
+:raymanni/lab/block_6: 2944 32
+:raymanni/lab/block_6: 2816 192
+:raymanni/lab/block_2: 2816 128
+:raymanni/lab/block_8: 2560 192
+:raymanni/lab/scen_7: 2848 46
+:raymanni/lab/scen_8: 2576 64
+:raymanni/lab/block_7: 1824 256
+:raymanni/lab/block_7: 1824 320
+:raymanni/lab/block_7: 1824 384
+:raymanni/lab/block_7: 1824 448
+:raymanni/lab/block_7: 1888 320
+:raymanni/lab/block_7: 1888 384
+:raymanni/lab/block_7: 1888 448
+:raymanni/lab/block_7: 1952 448
+:raymanni/lab/block_7: 2016 448
+:raymanni/lab/block_7: 2016 384
+:matt/bricks/13: 1952 448 fd
+:matt/bricks/13: 2016 416 fd
+:raymanni/lab/block_1: 2016 384 d
+:raymanni/lab/block_1: 2048 384 d
+:raymanni/lab/block_7: 2080 448
+:raymanni/lab/block_1: 2080 416
+:raymanni/lab/block_1: 2112 416
+:raymanni/lab/block_7: 2144 448
+:raymanni/lab/block_7: 2208 448
+:raymanni/lab/block_7: 2208 384
+:raymanni/lab/block_8: 2208 384
+:raymanni/lab/block_7: 2208 320
+:raymanni/lab/block_1: 1952 256
+:raymanni/lab/block_1: 1984 256
+:raymanni/lab/block_7: 2016 256
+:raymanni/lab/block_7: 2080 256
+:raymanni/lab/block_1: 2144 288
+:matt/bricks/13: 2080 256 rrd
+:raymanni/lab/block_7: 2304 320
+:raymanni/lab/block_7: 2272 320
+:raymanni/lab/block_7: 2304 384
+:raymanni/lab/block_7: 2272 384
+:raymanni/lab/block_4: 2360 496
+:raymanni/lab/block_7: 2304 448
+:raymanni/lab/block_7: 2272 448
+:raymanni/lab/block_9: 2272 448
+:raymanni/lab/block_7: 2400 448
+:raymanni/lab/block_7: 2400 384
+:raymanni/lab/block_7: 2400 320
+:raymanni/lab/block_7: 2464 448
+:raymanni/lab/block_7: 2464 384
+:raymanni/lab/block_7: 2464 320
+:raymanni/lab/block_7: 2528 384
+:raymanni/lab/block_7: 2528 448
+:raymanni/lab/block_7: 2400 256
+:raymanni/lab/block_1: 2400 256 d
+:raymanni/lab/block_1: 2432 256 d
+:matt/bricks/13: 2400 288 fd
+:raymanni/lab/block_1: 2464 288
+:raymanni/lab/block_1: 2496 288
+:guideline/fling-bomb: 1896 336 d
+:raymanni/lab/block_1: 2016 320
+:raymanni/lab/scen_1: 2058 336 frr
+:raymanni/lab/block_1: 2048 320
+:raymanni/lab/block_2: 2048 320
+:raymanni/lab/block_6: 2016 320
+:raymanni/holiday/screw1: 2038 330 d
+:raymanni/holiday/screw1: 1976 264 d
+:guideline/fling-bomb: 2024 264 d
+:raymanni/lab/block_10: 1888 384
+:proxima/tile/spheres/bluesmall: 1896 472 d
+:proxima/tile/spheres/bluesmall: 2032 464 d
+:guideline/fling-bomb: 2152 456 d
+:raymanni/holiday/screw1: 2104 432 d
+:proxima/tile/spheres/bluesmall: 2232 368 d
+:proxima/tile/spheres/bluesmall: 2280 464 d
+:raymanni/lab/block_10: 2272 320
+:proxima/tile/spheres/bluesmall: 2328 328 d
+:raymanni/holiday/screw1: 2280 328 d
+:raymanni/holiday/screw1: 2264 416 d
+:raymanni/holiday/screw1: 2336 424 d
+:proxima/tile/spheres/bluesmall: 1840 258 d
+:raymanni/lab/block_10: 2464 384
+:proxima/tile/spheres/bluesmall: 2488 362 d
+:raymanni/lab/block_9: 2400 320
+:raymanni/holiday/screw1: 2430 360 d
+:raymanni/holiday/screw1: 2406 478 d
+:raymanni/lab/pipe_6: 2432 464 d
+:raymanni/lab/pipe_6: 2448 480 d
+:raymanni/lab/pipe_6: 2440 472 d
+:raymanni/lab/block_1: 2464 464 d
+:raymanni/lab/block_1: 2496 464 d
+:raymanni/lab/block_1: 2528 464 d
+:raymanni/lab/block_1: 2560 464 d
+:raymanni/lab/block_1: 2432 480 d
+:raymanni/holiday/screw1: 2570 394 d
+:raymanni/lab/block_1: 1824 464 d
+:raymanni/lab/pipe_6: 1848 464 frrd
+:raymanni/lab/pipe_6: 1840 472 frrd
+:raymanni/lab/block_1: 1848 480 frrd
+:raymanni/holiday/screw1: 2448 320 d
+:raymanni/holiday/screw1: 2500 296 d
+:raymanni/lab/scen_6: 2368 238
+:raymanni/lab/block_2: 2304 256
+:raymanni/lab/block_4: 2304 288
+:raymanni/lab/block_4: 2320 288
+:raymanni/lab/block_4: 2336 288
+:raymanni/holiday/screw1: 2316 284 d
+:raymanni/holiday/screw1: 2096 280 d
+:raymanni/holiday/screw1: 2164 296 d
+:raymanni/lab/scen_3: 2150 320
+:raymanni/lab/scen_5: 2158 384
+:raymanni/holiday/screw1: 2376 262 d
+:raymanni/lab/block_8: 1824 320
+:raymanni/holiday/screw1: 1844 350 d
+:raymanni/holiday/screw1: 1918 420 d
+:geoo/steel/16x16o.S: 2550 496
+:geoo/steel/16x16o.S: 1912 320
+:geoo/steel/16x16o.S: 2552 384
+:raymanni/lab/block_6: 2464 288
+:raymanni/lab/block_6: 2336 448
+:raymanni/lab/block_2: 2336 384
+:raymanni/lab/block_8: 2080 448
+:raymanni/lab/scen_7: 2368 302
+:raymanni/lab/scen_8: 2096 320
+:raymanni/lab/block_7: 2592 256
+:raymanni/lab/block_7: 2592 320
+:raymanni/lab/block_7: 2592 384
+:raymanni/lab/block_7: 2592 448
+:raymanni/lab/block_7: 2656 320
+:raymanni/lab/block_7: 2656 384
+:raymanni/lab/block_7: 2656 448
+:raymanni/lab/block_7: 2720 448
+:raymanni/lab/block_7: 2784 448
+:raymanni/lab/block_7: 2784 384
+:matt/bricks/13: 2720 448 fd
+:matt/bricks/13: 2784 416 fd
+:raymanni/lab/block_1: 2784 384 d
+:raymanni/lab/block_1: 2816 384 d
+:raymanni/lab/block_7: 2848 448
+:raymanni/lab/block_1: 2848 416
+:raymanni/lab/block_1: 2880 416
+:raymanni/lab/block_7: 2912 448
+:raymanni/lab/block_7: 2976 448
+:raymanni/lab/block_7: 2976 384
+:raymanni/lab/block_8: 2976 384
+:raymanni/lab/block_7: 2976 320
+:raymanni/lab/block_1: 2720 256
+:raymanni/lab/block_1: 2752 256
+:raymanni/lab/block_7: 2784 256
+:raymanni/lab/block_7: 2848 256
+:raymanni/lab/block_1: 2912 288
+:matt/bricks/13: 2848 256 rrd
+:raymanni/lab/block_7: 1536 320
+:raymanni/lab/block_7: 3040 320
+:raymanni/lab/block_7: 1536 384
+:raymanni/lab/block_7: 0 384
+:raymanni/lab/block_7: 3040 384
+:raymanni/lab/block_4: 1592 496
+:raymanni/lab/block_7: 1536 448
+:raymanni/lab/block_7: 3040 448
+:raymanni/lab/block_7: 1632 448
+:raymanni/lab/block_7: 1632 384
+:proxima/tile/spheres/bluesmall: 1640 408 d
+:raymanni/lab/block_7: 1632 320
+:raymanni/lab/block_7: 1696 448
+:raymanni/lab/block_7: 1696 384
+:raymanni/lab/block_7: 1696 320
+:raymanni/lab/block_7: 1760 384
+:raymanni/lab/block_7: 1760 448
+:raymanni/lab/block_7: 1632 256
+:raymanni/lab/block_1: 1632 256 d
+:raymanni/lab/block_1: 1664 256 d
+:matt/bricks/13: 1632 288 fd
+:raymanni/lab/block_1: 1696 288
+:raymanni/lab/block_1: 1728 288
+:guideline/fling-bomb: 2664 336 d
+:raymanni/lab/block_1: 2784 320
+:raymanni/lab/scen_1: 2826 336 frr
+:raymanni/lab/block_1: 2816 320
+:raymanni/lab/block_2: 2816 320
+:raymanni/lab/block_6: 2784 320
+:raymanni/holiday/screw1: 2806 330 d
+:raymanni/holiday/screw1: 2744 264 d
+:guideline/fling-bomb: 2792 264 d
+:proxima/tile/spheres/bluesmall: 2408 408 d
+:raymanni/lab/block_10: 2656 384
+:proxima/tile/spheres/bluesmall: 2664 472 d
+:proxima/tile/spheres/bluesmall: 2800 464 d
+:guideline/fling-bomb: 2920 456 d
+:raymanni/holiday/screw1: 2872 432 d
+:proxima/tile/spheres/bluesmall: 3000 368 d
+:proxima/tile/spheres/bluesmall: 1560 328 d
+:raymanni/lab/block_7: 0 320
+:raymanni/lab/block_10: 3040 320
+:raymanni/holiday/screw1: 3048 328 d
+:raymanni/holiday/screw1: 3032 416 d
+:raymanni/holiday/screw1: 1568 424 d
+:proxima/tile/spheres/bluesmall: 2608 258 d
+:raymanni/lab/block_10: 1696 384
+:proxima/tile/spheres/bluesmall: 1720 362 d
+:raymanni/lab/block_9: 1632 320
+:raymanni/holiday/screw1: 1662 360 d
+:raymanni/holiday/screw1: 1638 478 d
+:raymanni/lab/pipe_6: 1664 464 d
+:raymanni/lab/pipe_6: 1680 480 d
+:raymanni/lab/pipe_6: 1672 472 d
+:raymanni/lab/block_1: 1696 464 d
+:raymanni/lab/block_1: 1728 464 d
+:raymanni/lab/block_1: 1760 464 d
+:raymanni/lab/block_1: 1792 464 d
+:raymanni/lab/block_1: 1664 480 d
+:raymanni/holiday/screw1: 1802 394 d
+:raymanni/lab/block_1: 2592 464 d
+:raymanni/lab/pipe_6: 2616 464 frrd
+:raymanni/lab/pipe_6: 2608 472 frrd
+:raymanni/lab/block_1: 2616 480 frrd
+:raymanni/holiday/screw1: 1680 320 d
+:raymanni/holiday/screw1: 1732 296 d
+:raymanni/lab/scen_6: 1600 238
+:raymanni/lab/block_2: 1536 256
+:raymanni/lab/block_4: 1536 288
+:raymanni/lab/block_4: 1552 288
+:raymanni/lab/block_4: 1568 288
+:raymanni/holiday/screw1: 1548 284 d
+:raymanni/holiday/screw1: 2864 280 d
+:raymanni/holiday/screw1: 2932 296 d
+:raymanni/lab/scen_3: 2918 320
+:raymanni/lab/scen_5: 2926 384
+:raymanni/holiday/screw1: 1608 262 d
+:raymanni/lab/block_8: 2592 320
+:raymanni/holiday/screw1: 2612 350 d
+:raymanni/holiday/screw1: 2686 420 d
+:geoo/steel/16x16o.S: 1782 496
+:geoo/steel/16x16o.S: 2680 320
+:geoo/steel/16x16o.S: 1784 384
+:raymanni/lab/block_6: 1696 288
+:raymanni/lab/block_6: 1568 448
+:raymanni/lab/block_2: 1568 384
+:raymanni/lab/block_8: 2848 448
+:raymanni/lab/scen_7: 1600 302
+:raymanni/lab/scen_8: 2864 320
+:raymanni/lab/block_6: 2816 0
+:raymanni/lab/block_6: 2048 0
+:guideline/fling-bomb: 2600 392 d
+:guideline/fling-bomb: 1544 136 d
+:guideline/fling-bomb: 1832 392 d
+:guideline/fling-bomb: 2312 136 d
+:proxima/tile/spheres/bluesmall: 2888 152 d
+:raymanni/lab/block_7: 0 0
+:raymanni/lab/block_7: 0 64
+:raymanni/lab/block_7: 0 128
+:raymanni/lab/block_7: 0 192
+:raymanni/lab/block_7: 64 64
+:raymanni/lab/block_7: 64 128
+:raymanni/lab/block_7: 64 192
+:raymanni/lab/block_7: 128 192
+:raymanni/lab/block_7: 192 192
+:raymanni/lab/block_7: 192 128
+:matt/bricks/13: 128 192 fd
+:matt/bricks/13: 192 160 fd
+:raymanni/lab/block_1: 192 128 d
+:raymanni/lab/block_1: 224 128 d
+:raymanni/lab/block_7: 256 192
+:raymanni/lab/block_1: 256 160
+:raymanni/lab/block_1: 288 160
+:raymanni/lab/block_7: 320 192
+:raymanni/lab/block_7: 384 192
+:raymanni/lab/block_7: 384 128
+:raymanni/lab/block_8: 384 128
+:raymanni/lab/block_7: 384 64
+:raymanni/lab/block_1: 160 0
+:raymanni/lab/block_7: 192 0
+:raymanni/lab/block_7: 256 0
+:raymanni/lab/block_1: 320 32
+:matt/bricks/13: 256 0 rrd
+:raymanni/lab/block_7: 480 64
+:raymanni/lab/block_7: 448 64
+:raymanni/lab/block_7: 480 128
+:raymanni/lab/block_7: 448 128
+:raymanni/lab/block_7: 480 192
+:raymanni/lab/block_7: 448 192
+:raymanni/lab/block_9: 448 192
+:raymanni/lab/block_7: 576 192
+:raymanni/lab/block_7: 576 128
+:raymanni/lab/block_7: 576 64
+:raymanni/lab/block_7: 640 192
+:raymanni/lab/block_7: 640 128
+:raymanni/lab/block_7: 640 64
+:raymanni/lab/block_7: 704 128
+:raymanni/lab/block_7: 704 192
+:raymanni/lab/block_7: 576 0
+:raymanni/lab/block_1: 576 0 d
+:raymanni/lab/block_1: 608 0 d
+:matt/bricks/13: 576 32 fd
+:raymanni/lab/block_1: 640 32
+:raymanni/lab/block_1: 672 32
+:guideline/fling-bomb: 72 80 d
+:raymanni/lab/block_1: 192 64
+:raymanni/lab/scen_1: 234 80 frr
+:raymanni/lab/block_1: 224 64
+:raymanni/lab/block_2: 224 64
+:raymanni/lab/block_6: 192 64
+:raymanni/holiday/screw1: 214 74 d
+:raymanni/holiday/screw1: 152 8 d
+:guideline/fling-bomb: 200 8 d
+:proxima/tile/spheres/bluesmall: 1352 152 d
+:raymanni/lab/block_10: 64 128
+:proxima/tile/spheres/bluesmall: 72 216 d
+:proxima/tile/spheres/bluesmall: 208 208 d
+:guideline/fling-bomb: 328 200 d
+:raymanni/holiday/screw1: 280 176 d
+:proxima/tile/spheres/bluesmall: 408 112 d
+:proxima/tile/spheres/bluesmall: 456 208 d
+:raymanni/lab/block_10: 448 64
+:proxima/tile/spheres/bluesmall: 504 72 d
+:raymanni/holiday/screw1: 456 72 d
+:raymanni/holiday/screw1: 440 160 d
+:raymanni/holiday/screw1: 512 168 d
+:proxima/tile/spheres/bluesmall: 16 2 d
+:raymanni/lab/block_10: 640 128
+:proxima/tile/spheres/bluesmall: 664 106 d
+:raymanni/lab/block_9: 576 64
+:raymanni/holiday/screw1: 606 104 d
+:raymanni/holiday/screw1: 582 222 d
+:raymanni/lab/pipe_6: 608 208 d
+:raymanni/lab/pipe_6: 624 224 d
+:raymanni/lab/pipe_6: 616 216 d
+:raymanni/lab/block_1: 640 208 d
+:raymanni/lab/block_1: 672 208 d
+:raymanni/lab/block_1: 704 208 d
+:raymanni/lab/block_1: 736 208 d
+:raymanni/lab/block_1: 608 224 d
+:raymanni/holiday/screw1: 746 138 d
+:raymanni/lab/block_1: 0 208 d
+:raymanni/lab/pipe_6: 24 208 frrd
+:raymanni/lab/pipe_6: 16 216 frrd
+:raymanni/lab/block_1: 24 224 frrd
+:raymanni/holiday/screw1: 624 64 d
+:raymanni/holiday/screw1: 676 40 d
+:raymanni/lab/scen_6: 544 494
+:raymanni/lab/block_2: 480 0
+:raymanni/lab/block_4: 480 32
+:raymanni/lab/block_4: 496 32
+:raymanni/lab/block_4: 512 32
+:raymanni/holiday/screw1: 492 28 d
+:raymanni/holiday/screw1: 272 24 d
+:raymanni/holiday/screw1: 340 40 d
+:raymanni/lab/scen_3: 326 64
+:raymanni/lab/scen_5: 334 128
+:raymanni/holiday/screw1: 552 6 d
+:raymanni/lab/block_8: 0 64
+:raymanni/holiday/screw1: 20 94 d
+:raymanni/holiday/screw1: 94 164 d
+:geoo/steel/16x16o.S: 726 240
+:geoo/steel/16x16o.S: 88 64
+:geoo/steel/16x16o.S: 728 128
+:raymanni/lab/block_6: 640 32
+:raymanni/lab/block_6: 512 192
+:raymanni/lab/block_2: 512 128
+:raymanni/lab/block_8: 256 192
+:raymanni/lab/scen_7: 544 46
+:raymanni/lab/scen_8: 272 64
+:raymanni/lab/block_7: 768 0
+:raymanni/lab/block_7: 768 64
+:raymanni/lab/block_7: 768 128
+:raymanni/lab/block_7: 768 192
+:raymanni/lab/block_7: 832 64
+:raymanni/lab/block_7: 832 128
+:raymanni/lab/block_7: 832 192
+:raymanni/lab/block_7: 896 192
+:raymanni/lab/block_7: 960 192
+:raymanni/lab/block_7: 960 128
+:matt/bricks/13: 896 192 fd
+:matt/bricks/13: 960 160 fd
+:raymanni/lab/block_1: 960 128 d
+:raymanni/lab/block_1: 992 128 d
+:raymanni/lab/block_7: 1024 192
+:raymanni/lab/block_1: 1024 160
+:raymanni/lab/block_1: 1056 160
+:raymanni/lab/block_7: 1088 192
+:raymanni/lab/block_7: 1152 192
+:raymanni/lab/block_7: 1152 128
+:raymanni/lab/block_8: 1152 128
+:raymanni/lab/block_7: 1152 64
+:raymanni/lab/block_1: 928 0
+:raymanni/lab/block_7: 960 0
+:raymanni/lab/block_7: 1024 0
+:raymanni/lab/block_1: 1088 32
+:matt/bricks/13: 1024 0 rrd
+:raymanni/lab/block_7: 1248 64
+:raymanni/lab/block_7: 1216 64
+:raymanni/lab/block_7: 1248 128
+:raymanni/lab/block_7: 1216 128
+:raymanni/lab/block_7: 1248 192
+:raymanni/lab/block_7: 1216 192
+:raymanni/lab/block_9: 1216 192
+:raymanni/lab/block_7: 1344 192
+:raymanni/lab/block_7: 1344 128
+:raymanni/lab/block_7: 1344 64
+:raymanni/lab/block_7: 1408 192
+:raymanni/lab/block_7: 1408 128
+:raymanni/lab/block_7: 1408 64
+:raymanni/lab/block_7: 1472 128
+:raymanni/lab/block_7: 1472 192
+:raymanni/lab/block_7: 1344 0
+:raymanni/lab/block_1: 1344 0 d
+:raymanni/lab/block_1: 1376 0 d
+:matt/bricks/13: 1344 32 fd
+:raymanni/lab/block_1: 1408 32
+:raymanni/lab/block_1: 1440 32
+:guideline/fling-bomb: 840 80 d
+:raymanni/lab/block_1: 960 64
+:raymanni/lab/scen_1: 1002 80 frr
+:raymanni/lab/block_1: 992 64
+:raymanni/lab/block_2: 992 64
+:raymanni/lab/block_6: 960 64
+:raymanni/holiday/screw1: 982 74 d
+:raymanni/holiday/screw1: 920 8 d
+:guideline/fling-bomb: 968 8 d
+:proxima/tile/spheres/bluesmall: 584 152 d
+:raymanni/lab/block_10: 832 128
+:proxima/tile/spheres/bluesmall: 840 216 d
+:proxima/tile/spheres/bluesmall: 976 208 d
+:guideline/fling-bomb: 1096 200 d
+:raymanni/holiday/screw1: 1048 176 d
+:proxima/tile/spheres/bluesmall: 1176 112 d
+:proxima/tile/spheres/bluesmall: 1224 208 d
+:raymanni/lab/block_10: 1216 64
+:proxima/tile/spheres/bluesmall: 1272 72 d
+:raymanni/holiday/screw1: 1224 72 d
+:raymanni/holiday/screw1: 1208 160 d
+:raymanni/holiday/screw1: 1280 168 d
+:proxima/tile/spheres/bluesmall: 784 2 d
+:raymanni/lab/block_10: 1408 128
+:proxima/tile/spheres/bluesmall: 1432 106 d
+:raymanni/lab/block_9: 1344 64
+:raymanni/holiday/screw1: 1374 104 d
+:raymanni/holiday/screw1: 1350 222 d
+:raymanni/lab/pipe_6: 1376 208 d
+:raymanni/lab/pipe_6: 1392 224 d
+:raymanni/lab/pipe_6: 1384 216 d
+:raymanni/lab/block_1: 1408 208 d
+:raymanni/lab/block_1: 1440 208 d
+:raymanni/lab/block_1: 1472 208 d
+:raymanni/lab/block_1: 1504 208 d
+:raymanni/lab/block_1: 1376 224 d
+:raymanni/holiday/screw1: 1514 138 d
+:raymanni/lab/block_1: 768 208 d
+:raymanni/lab/pipe_6: 792 208 frrd
+:raymanni/lab/pipe_6: 784 216 frrd
+:raymanni/lab/block_1: 792 224 frrd
+:raymanni/holiday/screw1: 1392 64 d
+:raymanni/holiday/screw1: 1444 40 d
+:raymanni/lab/scen_6: 1312 494
+:raymanni/lab/block_2: 1248 0
+:raymanni/lab/block_4: 1248 32
+:raymanni/lab/block_4: 1264 32
+:raymanni/lab/block_4: 1280 32
+:raymanni/holiday/screw1: 1260 28 d
+:raymanni/holiday/screw1: 1040 24 d
+:raymanni/holiday/screw1: 1108 40 d
+:raymanni/lab/scen_3: 1094 64
+:raymanni/lab/scen_5: 1102 128
+:raymanni/holiday/screw1: 1320 6 d
+:raymanni/lab/block_8: 768 64
+:raymanni/holiday/screw1: 788 94 d
+:raymanni/holiday/screw1: 862 164 d
+:geoo/steel/16x16o.S: 1494 240
+:geoo/steel/16x16o.S: 856 64
+:geoo/steel/16x16o.S: 1496 128
+:raymanni/lab/block_6: 1408 32
+:raymanni/lab/block_6: 1280 192
+:raymanni/lab/block_2: 1280 128
+:raymanni/lab/block_8: 1024 192
+:raymanni/lab/scen_7: 1312 46
+:raymanni/lab/scen_8: 1040 64
+:raymanni/lab/block_7: 288 256
+:raymanni/lab/block_7: 288 320
+:raymanni/lab/block_7: 288 384
+:raymanni/lab/block_7: 288 448
+:raymanni/lab/block_7: 352 320
+:raymanni/lab/block_7: 352 384
+:raymanni/lab/block_7: 352 448
+:raymanni/lab/block_7: 416 448
+:raymanni/lab/block_7: 480 448
+:raymanni/lab/block_7: 480 384
+:matt/bricks/13: 416 448 fd
+:matt/bricks/13: 480 416 fd
+:raymanni/lab/block_1: 480 384 d
+:raymanni/lab/block_1: 512 384 d
+:raymanni/lab/block_7: 544 448
+:raymanni/lab/block_1: 544 416
+:raymanni/lab/block_1: 576 416
+:raymanni/lab/block_7: 608 448
+:raymanni/lab/block_7: 672 448
+:raymanni/lab/block_7: 672 384
+:raymanni/lab/block_8: 672 384
+:raymanni/lab/block_7: 672 320
+:raymanni/lab/block_1: 416 256
+:raymanni/lab/block_1: 448 256
+:raymanni/lab/block_7: 480 256
+:raymanni/lab/block_7: 544 256
+:raymanni/lab/block_1: 608 288
+:matt/bricks/13: 544 256 rrd
+:raymanni/lab/block_7: 768 320
+:raymanni/lab/block_7: 736 320
+:raymanni/lab/block_7: 768 384
+:raymanni/lab/block_7: 736 384
+:raymanni/lab/block_4: 824 496
+:raymanni/lab/block_7: 768 448
+:raymanni/lab/block_7: 736 448
+:raymanni/lab/block_9: 736 448
+:raymanni/lab/block_7: 864 448
+:raymanni/lab/block_7: 864 384
+:raymanni/lab/block_7: 864 320
+:raymanni/lab/block_7: 928 448
+:raymanni/lab/block_7: 928 384
+:raymanni/lab/block_7: 928 320
+:raymanni/lab/block_7: 992 384
+:raymanni/lab/block_7: 992 448
+:raymanni/lab/block_7: 864 256
+:raymanni/lab/block_1: 864 256 d
+:raymanni/lab/block_1: 896 256 d
+:matt/bricks/13: 864 288 fd
+:raymanni/lab/block_1: 928 288
+:raymanni/lab/block_1: 960 288
+:guideline/fling-bomb: 360 336 d
+:raymanni/lab/block_1: 480 320
+:raymanni/lab/scen_1: 522 336 frr
+:raymanni/lab/block_1: 512 320
+:raymanni/lab/block_2: 512 320
+:raymanni/lab/block_6: 480 320
+:raymanni/holiday/screw1: 502 330 d
+:raymanni/holiday/screw1: 440 264 d
+:guideline/fling-bomb: 488 264 d
+:raymanni/lab/block_10: 352 384
+:proxima/tile/spheres/bluesmall: 360 472 d
+:proxima/tile/spheres/bluesmall: 496 464 d
+:guideline/fling-bomb: 616 456 d
+:raymanni/holiday/screw1: 568 432 d
+:proxima/tile/spheres/bluesmall: 696 368 d
+:proxima/tile/spheres/bluesmall: 744 464 d
+:raymanni/lab/block_10: 736 320
+:proxima/tile/spheres/bluesmall: 792 328 d
+:raymanni/holiday/screw1: 744 328 d
+:raymanni/holiday/screw1: 728 416 d
+:raymanni/holiday/screw1: 800 424 d
+:proxima/tile/spheres/bluesmall: 304 258 d
+:raymanni/lab/block_10: 928 384
+:proxima/tile/spheres/bluesmall: 952 362 d
+:raymanni/lab/block_9: 864 320
+:raymanni/holiday/screw1: 894 360 d
+:raymanni/holiday/screw1: 870 478 d
+:raymanni/lab/pipe_6: 896 464 d
+:raymanni/lab/pipe_6: 912 480 d
+:raymanni/lab/pipe_6: 904 472 d
+:raymanni/lab/block_1: 928 464 d
+:raymanni/lab/block_1: 960 464 d
+:raymanni/lab/block_1: 992 464 d
+:raymanni/lab/block_1: 1024 464 d
+:raymanni/lab/block_1: 896 480 d
+:raymanni/holiday/screw1: 1034 394 d
+:raymanni/lab/block_1: 288 464 d
+:raymanni/lab/pipe_6: 312 464 frrd
+:raymanni/lab/pipe_6: 304 472 frrd
+:raymanni/lab/block_1: 312 480 frrd
+:raymanni/holiday/screw1: 912 320 d
+:raymanni/holiday/screw1: 964 296 d
+:raymanni/lab/scen_6: 832 238
+:raymanni/lab/block_2: 768 256
+:raymanni/lab/block_4: 768 288
+:raymanni/lab/block_4: 784 288
+:raymanni/lab/block_4: 800 288
+:raymanni/holiday/screw1: 780 284 d
+:raymanni/holiday/screw1: 560 280 d
+:raymanni/holiday/screw1: 628 296 d
+:raymanni/lab/scen_3: 614 320
+:raymanni/lab/scen_5: 622 384
+:raymanni/holiday/screw1: 840 262 d
+:raymanni/lab/block_8: 288 320
+:raymanni/holiday/screw1: 308 350 d
+:raymanni/holiday/screw1: 382 420 d
+:geoo/steel/16x16o.S: 1014 496
+:geoo/steel/16x16o.S: 376 320
+:geoo/steel/16x16o.S: 1016 384
+:raymanni/lab/block_6: 928 288
+:raymanni/lab/block_6: 800 448
+:raymanni/lab/block_2: 800 384
+:raymanni/lab/block_8: 544 448
+:raymanni/lab/scen_7: 832 302
+:raymanni/lab/scen_8: 560 320
+:raymanni/lab/block_7: 1056 256
+:raymanni/lab/block_7: 1056 320
+:raymanni/lab/block_7: 1056 384
+:raymanni/lab/block_7: 1056 448
+:raymanni/lab/block_7: 1120 320
+:raymanni/lab/block_7: 1120 384
+:raymanni/lab/block_7: 1120 448
+:raymanni/lab/block_7: 1184 448
+:raymanni/lab/block_7: 1248 448
+:raymanni/lab/block_7: 1248 384
+:matt/bricks/13: 1184 448 fd
+:matt/bricks/13: 1248 416 fd
+:raymanni/lab/block_1: 1248 384 d
+:raymanni/lab/block_1: 1280 384 d
+:raymanni/lab/block_7: 1312 448
+:raymanni/lab/block_1: 1312 416
+:raymanni/lab/block_1: 1344 416
+:raymanni/lab/block_7: 1376 448
+:raymanni/lab/block_7: 1440 448
+:raymanni/lab/block_7: 1440 384
+:raymanni/lab/block_8: 1440 384
+:raymanni/lab/block_7: 1440 320
+:raymanni/lab/block_1: 1184 256
+:raymanni/lab/block_1: 1216 256
+:raymanni/lab/block_7: 1248 256
+:raymanni/lab/block_7: 1312 256
+:raymanni/lab/block_1: 1376 288
+:matt/bricks/13: 1312 256 rrd
+:raymanni/lab/block_7: 1504 320
+:raymanni/lab/block_7: 1504 384
+:raymanni/lab/block_4: 56 496
+:raymanni/lab/block_7: 0 448
+:raymanni/lab/block_9: 3040 448
+:proxima/tile/spheres/bluesmall: 3048 464 d
+:raymanni/lab/block_7: 1504 448
+:raymanni/lab/block_9: 1504 448
+:raymanni/lab/block_7: 96 448
+:raymanni/lab/block_7: 96 384
+:proxima/tile/spheres/bluesmall: 104 408 d
+:raymanni/lab/block_7: 96 320
+:raymanni/lab/block_7: 160 448
+:raymanni/lab/block_7: 160 384
+:raymanni/lab/block_7: 160 320
+:raymanni/lab/block_7: 224 384
+:raymanni/lab/block_7: 224 448
+:raymanni/lab/block_7: 96 256
+:raymanni/lab/block_1: 96 256 d
+:raymanni/lab/block_1: 128 256 d
+:matt/bricks/13: 96 288 fd
+:raymanni/lab/block_1: 160 288
+:raymanni/lab/block_1: 192 288
+:guideline/fling-bomb: 1128 336 d
+:raymanni/lab/block_1: 1248 320
+:raymanni/lab/scen_1: 1290 336 frr
+:raymanni/lab/block_1: 1280 320
+:raymanni/lab/block_2: 1280 320
+:raymanni/lab/block_6: 1248 320
+:raymanni/holiday/screw1: 1270 330 d
+:raymanni/holiday/screw1: 1208 264 d
+:guideline/fling-bomb: 1256 264 d
+:proxima/tile/spheres/bluesmall: 872 408 d
+:raymanni/lab/block_10: 1120 384
+:proxima/tile/spheres/bluesmall: 1128 472 d
+:proxima/tile/spheres/bluesmall: 1264 464 d
+:guideline/fling-bomb: 1384 456 d
+:raymanni/holiday/screw1: 1336 432 d
+:proxima/tile/spheres/bluesmall: 1464 368 d
+:proxima/tile/spheres/bluesmall: 1512 464 d
+:raymanni/lab/block_10: 1504 320
+:proxima/tile/spheres/bluesmall: 24 328 d
+:raymanni/holiday/screw1: 1512 328 d
+:raymanni/holiday/screw1: 1496 416 d
+:raymanni/holiday/screw1: 32 424 d
+:proxima/tile/spheres/bluesmall: 1072 258 d
+:raymanni/lab/block_10: 160 384
+:proxima/tile/spheres/bluesmall: 184 362 d
+:raymanni/lab/block_9: 96 320
+:raymanni/holiday/screw1: 126 360 d
+:raymanni/holiday/screw1: 102 478 d
+:raymanni/lab/pipe_6: 128 464 d
+:raymanni/lab/pipe_6: 144 480 d
+:raymanni/lab/pipe_6: 136 472 d
+:raymanni/lab/block_1: 160 464 d
+:raymanni/lab/block_1: 192 464 d
+:raymanni/lab/block_1: 224 464 d
+:raymanni/lab/block_1: 256 464 d
+:raymanni/lab/block_1: 128 480 d
+:raymanni/holiday/screw1: 266 394 d
+:raymanni/lab/block_1: 1056 464 d
+:raymanni/lab/pipe_6: 1080 464 frrd
+:raymanni/lab/pipe_6: 1072 472 frrd
+:raymanni/lab/block_1: 1080 480 frrd
+:raymanni/holiday/screw1: 144 320 d
+:raymanni/holiday/screw1: 196 296 d
+:raymanni/lab/scen_6: 64 238
+:raymanni/lab/block_2: 0 256
+:raymanni/lab/block_4: 0 288
+:raymanni/lab/block_4: 16 288
+:raymanni/lab/block_4: 32 288
+:raymanni/holiday/screw1: 12 284 d
+:raymanni/holiday/screw1: 1328 280 d
+:raymanni/holiday/screw1: 1396 296 d
+:raymanni/lab/scen_3: 1382 320
+:raymanni/lab/scen_5: 1390 384
+:raymanni/holiday/screw1: 72 262 d
+:raymanni/lab/block_8: 1056 320
+:raymanni/holiday/screw1: 1076 350 d
+:raymanni/holiday/screw1: 1150 420 d
+:geoo/steel/16x16o.S: 246 496
+:geoo/steel/16x16o.S: 1144 320
+:geoo/steel/16x16o.S: 248 384
+:raymanni/lab/block_6: 160 288
+:raymanni/lab/block_6: 32 448
+:raymanni/lab/block_2: 32 384
+:raymanni/lab/block_8: 1312 448
+:raymanni/lab/scen_7: 64 302
+:raymanni/lab/scen_8: 1328 320
+:raymanni/lab/block_6: 1280 0
+:raymanni/lab/block_6: 512 0
+:guideline/fling-bomb: 1064 392 d
+:guideline/fling-bomb: 8 136 d
+:guideline/fling-bomb: 296 392 d
+:guideline/fling-bomb: 776 136 d
+:proxima/tile/spheres/bluesmall: 1352 152 d

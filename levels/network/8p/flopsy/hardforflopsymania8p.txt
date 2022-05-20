@@ -1,6 +1,8 @@
 $BUILT 2021-02-12 05:18:29
 $AUTHOR Flopsy
 $ENGLISH Hard for Flopsy MANIA 8P
+$TAG fall-survival
+$TAG max-si
 
 #INTENDED_NUMBER_OF_PLAYERS 8
 #SIZE_X 1792

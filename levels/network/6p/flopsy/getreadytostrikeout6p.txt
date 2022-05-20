@@ -1,6 +1,8 @@
 $BUILT 2021-02-15 02:06:11
 $AUTHOR Flopsy
 $ENGLISH Get Ready to Strike Out 6P
+$TAG difficult
+$TAG gimmick
 
 #INTENDED_NUMBER_OF_PLAYERS 6
 #SIZE_X 288

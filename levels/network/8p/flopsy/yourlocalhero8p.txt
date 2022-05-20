@@ -1,6 +1,8 @@
 $BUILT 2021-02-26 20:02:15
 $AUTHOR Flopsy
 $ENGLISH Your Local Hero 8P
+$TAG multiple-hatch
+$TAG long-play
 
 #INTENDED_NUMBER_OF_PLAYERS 8
 #SIZE_X 1280

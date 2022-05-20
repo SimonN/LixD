@@ -1,6 +1,7 @@
 $BUILT 2018-07-10 18:21:16
 $AUTHOR Flopsy
 $ENGLISH Corkscrewed 6P
+$TAG multiple-hatch
 
 #INTENDED_NUMBER_OF_PLAYERS 6
 #SIZE_X 624

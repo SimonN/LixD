@@ -1,6 +1,9 @@
 $BUILT 2018-11-25 18:57:21
 $AUTHOR Flopsy
 $ENGLISH Cascade Squared 6P
+$TAG classic
+$TAG fall-survival
+$TAG max-si
 
 #INTENDED_NUMBER_OF_PLAYERS 6
 #SIZE_X 2176

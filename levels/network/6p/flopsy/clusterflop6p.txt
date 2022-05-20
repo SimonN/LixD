@@ -1,0 +1,318 @@
+$BUILT 2022-04-24 01:10:52
+$AUTHOR geoo + Flopsy
+$ENGLISH ClusterFLOP 6P
+
+#INTENDED_NUMBER_OF_PLAYERS 6
+$TAG short-play
+
+#SIZE_X 768
+#SIZE_Y 416
+#TORUS_X 1
+#TORUS_Y 1
+
+#SECONDS 60
+#INITIAL 20
+#SPAWN_INTERVAL 1
+
+#WALKER 4
+#RUNNER 4
+#CLIMBER 4
+#FLOATER 4
+#BUILDER 30
+#PLATFORMER 30
+#BASHER 20
+#MINER 20
+#DIGGER 1
+#JUMPER 4
+#BATTER 10
+#EXPLODER2 0
+
+:raymanni/lab/hatch.H: 288 0
+:raymanni/lab/hatch.H: 544 0
+:raymanni/lab/hatch.H: 32 0
+:raymanni/lab/hatch.H: 672 208
+:raymanni/lab/hatch.H: 160 208
+:raymanni/lab/hatch.H: 416 208
+
+:raymanni/lab/goal.G: 592 400
+:raymanni/lab/goal.G: 80 400
+:raymanni/lab/goal.G: 336 400
+:raymanni/lab/goal.G: 208 192
+:raymanni/lab/goal.G: 464 192
+:raymanni/lab/goal.G: 720 192
+
+:amanda/forest/frog_happy.T: 164 144
+:amanda/forest/frog_catch.T: 112 48
+:amanda/forest/frog_happy.T: 420 144
+:amanda/forest/frog_catch.T: 368 48
+:amanda/forest/frog_happy.T: 676 144
+:amanda/forest/frog_catch.T: 624 48
+:amanda/forest/frog_happy.T: 292 352
+:amanda/forest/frog_catch.T: 240 256
+:amanda/forest/frog_happy.T: 548 352
+:amanda/forest/frog_catch.T: 496 256
+:amanda/forest/frog_happy.T: 36 352
+:amanda/forest/frog_catch.T: 752 256
+
+:raymanni/lab/goo.W: 20 168
+:raymanni/lab/goo.W: 276 168
+:raymanni/lab/goo.W: 532 168
+:raymanni/lab/goo.W: 148 376
+:raymanni/lab/goo.W: 404 376
+:raymanni/lab/goo.W: 660 376
+:geoo/construction/sawblade_small.F: 256 64
+:geoo/construction/sawblade_small.F: 512 64
+:geoo/construction/sawblade_small.F: 0 64
+:geoo/construction/sawblade_small.F: 128 272
+:geoo/construction/sawblade_small.F: 384 272
+:geoo/construction/sawblade_small.F: 640 272
+:geoo/construction/sawblade_small.F: 144 0
+:geoo/construction/sawblade_small.F: 400 0
+:geoo/construction/sawblade_small.F: 656 0
+:geoo/construction/sawblade_small.F: 16 208
+:geoo/construction/sawblade_small.F: 272 208
+:geoo/construction/sawblade_small.F: 528 208
+
+:raymanni/lab/pipe_2: 591 45 rr
+$BEGIN_TILE_GROUP 0
+:raymanni/lab/pipe_2: 0 0 r
+:raymanni/lab/pipe_2: 16 0 rd
+$END_TILE_GROUP
+:Group-0: 592 44
+$BEGIN_TILE_GROUP 1
+:geoo/steel/32x16o.S: 0 0
+:geoo/abstract/cvblocks/005: 7 0 d
+:geoo/abstract/cvblocks/005: 9 0 d
+$END_TILE_GROUP
+:Group-1: 608 40
+:raymanni/lab/pipe_2: 335 45 rr
+:Group-0: 336 44
+:Group-1: 352 40
+:raymanni/lab/pipe_2: 79 45 rr
+:Group-0: 80 44
+:Group-1: 96 40
+:raymanni/lab/pipe_2: 719 253 rr
+:Group-0: 720 252
+:Group-1: 736 248
+:raymanni/lab/pipe_2: 207 253 rr
+:Group-0: 208 252
+:Group-1: 224 248
+:raymanni/lab/pipe_2: 463 253 rr
+:raymanni/lab/block_3: 0 64
+:raymanni/lab/block_5: 96 96
+:raymanni/lab/block_2: 0 0
+:raymanni/lab/block_2: 64 96
+:raymanni/lab/scen_6: 64 32
+:geoo/steel/32x32o.S: 128 96
+:raymanni/lab/pipe_1: 72 192 r
+:raymanni/lab/pipe_1: 104 192 r
+:raymanni/lab/pipe_1: 72 128
+:raymanni/lab/pipe_1: 72 160
+:raymanni/lab/pipe_1: 136 128
+:raymanni/lab/pipe_1: 136 160
+:raymanni/lab/pipe_1: 136 192 r
+:raymanni/lab/slope_1: 0 160
+:raymanni/lab/slope_2: 40 160
+:raymanni/lab/pipe_1: 0 192 r
+:raymanni/lab/pipe_1: 24 192 r
+:raymanni/lab/pipe_1: 40 192 r
+:raymanni/lab/pipe_1: 168 192 r
+:raymanni/lab/pipe_1: 200 192 r
+:raymanni/lab/scen_4: 96 160
+:geoo/steel/32x32o.S: 32 96
+:raymanni/toys/letter_2: 184 64
+:raymanni/toys/letter_4: 176 0
+:raymanni/toys/letter_1: 192 32
+:raymanni/lab/block_3: 192 96
+:raymanni/lab/pipe_1: 240 128
+:raymanni/lab/pipe_1: 240 160
+:raymanni/lab/pipe_1: 224 192 r
+:raymanni/lab/block_3: 256 64
+:raymanni/lab/block_5: 352 96
+:raymanni/lab/block_2: 256 0
+:raymanni/lab/block_2: 320 96
+:raymanni/lab/scen_6: 320 32
+:geoo/steel/32x32o.S: 384 96
+:raymanni/lab/pipe_1: 328 192 r
+:raymanni/lab/pipe_1: 360 192 r
+:raymanni/lab/pipe_1: 328 128
+:raymanni/lab/pipe_1: 328 160
+:raymanni/lab/pipe_1: 392 128
+:raymanni/lab/pipe_1: 392 160
+:raymanni/lab/pipe_1: 392 192 r
+:raymanni/lab/slope_1: 256 160
+:raymanni/lab/slope_2: 296 160
+:raymanni/lab/pipe_1: 256 192 r
+:raymanni/lab/pipe_1: 280 192 r
+:raymanni/lab/pipe_1: 296 192 r
+:raymanni/lab/pipe_1: 424 192 r
+:raymanni/lab/pipe_1: 456 192 r
+:raymanni/lab/scen_4: 352 160
+:geoo/steel/32x32o.S: 288 96
+:raymanni/toys/letter_2: 432 0
+:raymanni/toys/letter_4: 440 64
+:raymanni/toys/letter_1: 448 32
+:raymanni/lab/block_3: 448 96
+:raymanni/lab/pipe_1: 496 128
+:raymanni/lab/pipe_1: 496 160
+:raymanni/lab/pipe_1: 480 192 r
+:raymanni/lab/block_3: 512 64
+:raymanni/lab/block_5: 608 96
+:raymanni/lab/block_2: 512 0
+:raymanni/lab/block_2: 576 96
+:raymanni/lab/scen_6: 576 32
+:geoo/steel/32x32o.S: 640 96
+:raymanni/lab/pipe_1: 584 192 r
+:raymanni/lab/pipe_1: 616 192 r
+:raymanni/lab/pipe_1: 584 128
+:raymanni/lab/pipe_1: 584 160
+:raymanni/lab/pipe_1: 648 128
+:raymanni/lab/pipe_1: 648 160
+:raymanni/lab/pipe_1: 648 192 r
+:raymanni/lab/slope_1: 512 160
+:raymanni/lab/slope_2: 552 160
+:raymanni/lab/pipe_1: 512 192 r
+:raymanni/lab/pipe_1: 536 192 r
+:raymanni/lab/pipe_1: 552 192 r
+:raymanni/lab/pipe_1: 680 192 r
+:raymanni/lab/pipe_1: 712 192 r
+:raymanni/lab/scen_4: 608 160
+:geoo/steel/32x32o.S: 544 96
+:raymanni/toys/letter_2: 688 0
+:raymanni/toys/letter_4: 696 64
+:raymanni/toys/letter_1: 704 32
+:raymanni/lab/block_3: 704 96
+:raymanni/lab/pipe_1: 752 128
+:raymanni/lab/pipe_1: 752 160
+:raymanni/lab/pipe_1: 736 192 r
+:raymanni/lab/block_3: 128 272
+:raymanni/lab/block_5: 224 304
+:raymanni/lab/block_2: 128 208
+:raymanni/lab/block_2: 192 304
+:raymanni/lab/scen_6: 192 240
+:geoo/steel/32x32o.S: 256 304
+:raymanni/lab/pipe_1: 192 400 r
+:raymanni/lab/pipe_1: 224 400 r
+:raymanni/lab/pipe_1: 200 336
+:raymanni/lab/pipe_1: 200 368
+:raymanni/lab/pipe_1: 264 336
+:raymanni/lab/pipe_1: 264 368
+:raymanni/lab/pipe_1: 256 400 r
+:raymanni/lab/slope_1: 128 368
+:raymanni/lab/slope_2: 168 368
+:raymanni/lab/pipe_1: 120 400 r
+:raymanni/lab/pipe_1: 144 400 r
+:raymanni/lab/pipe_1: 160 400 r
+:raymanni/lab/pipe_1: 288 400 r
+:raymanni/lab/pipe_1: 320 400 r
+:raymanni/lab/scen_4: 224 368
+:geoo/steel/32x32o.S: 160 304
+:raymanni/toys/letter_2: 304 208
+:raymanni/toys/letter_4: 312 272
+:raymanni/toys/letter_1: 320 240
+:raymanni/lab/block_3: 320 304
+:raymanni/lab/pipe_1: 368 336
+:raymanni/lab/pipe_1: 368 368
+:raymanni/lab/pipe_1: 344 400 r
+:raymanni/lab/block_3: 384 272
+:raymanni/lab/block_5: 480 304
+:raymanni/lab/block_2: 384 208
+:raymanni/lab/block_2: 448 304
+:raymanni/lab/scen_6: 448 240
+:geoo/steel/32x32o.S: 512 304
+:raymanni/lab/pipe_1: 448 400 r
+:raymanni/lab/pipe_1: 480 400 r
+:raymanni/lab/pipe_1: 456 336
+:raymanni/lab/pipe_1: 456 368
+:raymanni/lab/pipe_1: 520 336
+:raymanni/lab/pipe_1: 520 368
+:raymanni/lab/pipe_1: 512 400 r
+:raymanni/lab/slope_1: 384 368
+:raymanni/lab/slope_2: 424 368
+:raymanni/lab/pipe_1: 376 400 r
+:raymanni/lab/pipe_1: 400 400 r
+:raymanni/lab/pipe_1: 416 400 r
+:raymanni/lab/pipe_1: 544 400 r
+:raymanni/lab/pipe_1: 576 400 r
+:raymanni/lab/scen_4: 480 368
+:geoo/steel/32x32o.S: 416 304
+:raymanni/toys/letter_2: 560 208
+:raymanni/toys/letter_4: 568 272
+:raymanni/toys/letter_1: 576 240
+:raymanni/lab/block_3: 576 304
+:raymanni/lab/pipe_1: 624 336
+:raymanni/lab/pipe_1: 624 368
+:raymanni/lab/pipe_1: 600 400 r
+:raymanni/lab/block_3: 640 272
+:raymanni/lab/block_5: 736 304
+:raymanni/lab/block_2: 640 208
+:raymanni/lab/block_2: 704 304
+:raymanni/lab/scen_6: 704 240
+:geoo/steel/32x32o.S: 0 304
+:raymanni/lab/pipe_1: 704 400 r
+:raymanni/lab/pipe_1: 736 400 r
+:raymanni/lab/pipe_1: 712 336
+:raymanni/lab/pipe_1: 712 368
+:raymanni/lab/pipe_1: 8 336
+:raymanni/lab/pipe_1: 8 368
+:raymanni/lab/pipe_1: 0 400 r
+:raymanni/lab/slope_1: 640 368
+:raymanni/lab/slope_2: 680 368
+:raymanni/lab/pipe_1: 632 400 r
+:raymanni/lab/pipe_1: 656 400 r
+:raymanni/lab/pipe_1: 672 400 r
+:raymanni/lab/pipe_1: 32 400 r
+:raymanni/lab/pipe_1: 64 400 r
+:raymanni/lab/scen_4: 736 368
+:geoo/steel/32x32o.S: 672 304
+:raymanni/toys/letter_2: 48 208
+:raymanni/toys/letter_4: 56 272
+:raymanni/toys/letter_1: 64 240
+:raymanni/lab/block_3: 64 304
+:raymanni/lab/pipe_1: 112 336
+:raymanni/lab/pipe_1: 112 368
+:raymanni/lab/pipe_1: 88 400 r
+:Group-0: 464 252
+:Group-1: 480 248
+:raymanni/toys/letter_4: 432 0
+:raymanni/toys/letter_4: 184 64
+:raymanni/toys/letter_4: 688 0
+:raymanni/toys/letter_4: 560 208
+:raymanni/toys/letter_4: 304 208
+:raymanni/toys/letter_4: 48 208
+:raymanni/lab/slope_1: 352 304
+:raymanni/lab/slope_1: 96 304
+:raymanni/lab/slope_1: 128 304 rr
+:raymanni/lab/slope_1: 384 304 rr
+:raymanni/lab/slope_1: 608 304
+:raymanni/lab/slope_1: 640 304 rr
+:raymanni/lab/slope_1: 0 96 rr
+:raymanni/lab/slope_1: 736 96
+:raymanni/lab/slope_1: 224 96
+:raymanni/lab/slope_1: 256 96 rr
+:raymanni/lab/slope_1: 480 96
+:raymanni/lab/slope_1: 512 96 rr
+:geoo/steel/16x16o.S: 224 112
+:geoo/steel/16x16o.S: 272 96
+:geoo/steel/16x16o.S: 480 112
+:geoo/steel/16x16o.S: 528 96
+:geoo/steel/16x16o.S: 736 112
+:geoo/steel/16x16o.S: 16 96
+:geoo/steel/16x16o.S: 96 320
+:geoo/steel/16x16o.S: 144 304
+:geoo/steel/16x16o.S: 352 320
+:geoo/steel/16x16o.S: 400 304
+:geoo/steel/16x16o.S: 608 320
+:geoo/steel/16x16o.S: 656 304
+:raymanni/lab/block_5: 32 304
+:raymanni/lab/block_5: 288 304
+:raymanni/lab/block_5: 544 304
+:raymanni/lab/block_5: 672 96
+:raymanni/lab/block_5: 416 96
+:raymanni/lab/block_5: 160 96
+:raymanni/lab/block_5: 256 32 rrr
+:raymanni/lab/block_5: 512 32 rrr
+:raymanni/lab/block_5: 0 32 rrr
+:raymanni/lab/block_5: 128 240 rrr
+:raymanni/lab/block_5: 384 240 rrr
+:raymanni/lab/block_5: 640 240 rrr

@@ -1,6 +1,8 @@
 $BUILT 2021-02-26 18:51:13
 $AUTHOR Flopsy
 $ENGLISH Your Local Hero 4P
+$TAG multiple-hatch
+$TAG long-play
 
 #INTENDED_NUMBER_OF_PLAYERS 4
 #SIZE_X 1280

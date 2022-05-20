@@ -1,6 +1,8 @@
-$BUILT 2021-12-11 21:35:23
+$BUILT 2022-01-02 02:36:17
 $AUTHOR Flopsy
 $ENGLISH The Lix and the Saboteurs 6P
+$TAG fall-survival
+$TAG multiple-hatch
 
 #INTENDED_NUMBER_OF_PLAYERS 6
 #SIZE_X 1152
@@ -10,7 +12,7 @@ $ENGLISH The Lix and the Saboteurs 6P
 
 #SECONDS 150
 #INITIAL 80
-#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL 31
 
 #WALKER 50
 #RUNNER 10

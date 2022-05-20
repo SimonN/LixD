@@ -1,0 +1,1614 @@
+$BUILT 2022-04-24 03:43:37
+$AUTHOR Flopsy
+$ENGLISH Orange Dream 8P
+
+#INTENDED_NUMBER_OF_PLAYERS 8
+#SIZE_X 2944
+#SIZE_Y 800
+#TORUS_X 1
+#TORUS_Y 0
+
+#SECONDS 90
+#INITIAL 80
+#SPAWN_INTERVAL 31
+
+#WALKER 40
+#RUNNER 10
+#CLIMBER 10
+#FLOATER 10
+#BUILDER 40
+#PLATFORMER 20
+#BASHER 20
+#MINER 20
+#DIGGER 1
+#JUMPER 40
+#BATTER 40
+#CUBER 10
+#EXPLODER2 0
+
+:matt/goldmine/Hatch.H: 32 288
+:matt/goldmine/Hatch.H: 768 288
+:matt/goldmine/Hatch.H: 1505 288
+:matt/goldmine/Hatch.H: 2241 288
+:matt/goldmine/Hatch.H: 32 688
+:matt/goldmine/Hatch.H: 769 688
+:matt/goldmine/Hatch.H: 1505 688
+:matt/goldmine/Hatch.H: 2240 688
+:matt/goldmine/Hatch.H: 2817 288 r
+:matt/goldmine/Hatch.H: 609 288 r
+:matt/goldmine/Hatch.H: 1345 288 r
+:matt/goldmine/Hatch.H: 2081 288 r
+:matt/goldmine/Hatch.H: 2816 688 r
+:matt/goldmine/Hatch.H: 608 688 r
+:matt/goldmine/Hatch.H: 1345 688 r
+:matt/goldmine/Hatch.H: 2080 688 r
+
+:matt/goldmine/Goal.G: 608 80
+:matt/goldmine/Goal.G: 1344 80
+:matt/goldmine/Goal.G: 2080 80
+:matt/goldmine/Goal.G: 2816 80
+:matt/goldmine/Goal.G: 608 480
+:matt/goldmine/Goal.G: 1344 480
+:matt/goldmine/Goal.G: 2080 480
+:matt/goldmine/Goal.G: 2816 480
+
+:amanda/forest/frog_happy.T: 672 32
+:amanda/forest/frog_happy.T: 1408 32
+:amanda/forest/frog_happy.T: 720 32
+:amanda/forest/frog_happy.T: 2144 32
+:amanda/forest/frog_happy.T: 2880 32
+:amanda/forest/frog_happy.T: 2928 32
+:amanda/forest/frog_happy.T: 2192 32
+:amanda/forest/frog_happy.T: 672 432
+:amanda/forest/frog_happy.T: 1408 432
+:amanda/forest/frog_happy.T: 720 432
+:amanda/forest/frog_happy.T: 2144 432
+:amanda/forest/frog_happy.T: 2880 432
+:amanda/forest/frog_happy.T: 2928 432
+:amanda/forest/frog_happy.T: 2192 432
+:amanda/forest/frog_happy.T: 1456 32
+:amanda/forest/frog_happy.T: 1456 432
+
+:simon/crystal.W: 16 352
+:simon/crystal.W: 64 352
+:simon/crystal.W: 112 352
+:simon/crystal.W: 160 352
+:simon/crystal.W: 208 352
+:simon/crystal.W: 256 352
+:simon/crystal.W: 304 352
+:simon/crystal.W: 352 352
+:simon/crystal.W: 400 352
+:simon/crystal.W: 448 352
+:simon/crystal.W: 496 352
+:simon/crystal.W: 544 352
+:simon/crystal.W: 592 352
+:simon/crystal.W: 640 352
+:simon/crystal.W: 688 352
+:simon/crystal.W: 704 352
+:simon/crystal.W: 752 352
+:simon/crystal.W: 800 352
+:simon/crystal.W: 848 352
+:simon/crystal.W: 896 352
+:simon/crystal.W: 944 352
+:simon/crystal.W: 992 352
+:simon/crystal.W: 1040 352
+:simon/crystal.W: 1088 352
+:simon/crystal.W: 1136 352
+:simon/crystal.W: 1184 352
+:simon/crystal.W: 1232 352
+:simon/crystal.W: 1280 352
+:simon/crystal.W: 1328 352
+:simon/crystal.W: 1376 352
+:simon/crystal.W: 1424 352
+:simon/crystal.W: 0 352
+:simon/crystal.W: 1488 352
+:simon/crystal.W: 1536 352
+:simon/crystal.W: 1584 352
+:simon/crystal.W: 1632 352
+:simon/crystal.W: 1680 352
+:simon/crystal.W: 1728 352
+:simon/crystal.W: 1776 352
+:simon/crystal.W: 1824 352
+:simon/crystal.W: 1872 352
+:simon/crystal.W: 1920 352
+:simon/crystal.W: 1968 352
+:simon/crystal.W: 2016 352
+:simon/crystal.W: 2064 352
+:simon/crystal.W: 2112 352
+:simon/crystal.W: 2160 352
+:simon/crystal.W: 2176 352
+:simon/crystal.W: 1472 352
+:simon/crystal.W: 2224 352
+:simon/crystal.W: 2272 352
+:simon/crystal.W: 2320 352
+:simon/crystal.W: 2368 352
+:simon/crystal.W: 2416 352
+:simon/crystal.W: 2464 352
+:simon/crystal.W: 2512 352
+:simon/crystal.W: 2560 352
+:simon/crystal.W: 2608 352
+:simon/crystal.W: 2656 352
+:simon/crystal.W: 2704 352
+:simon/crystal.W: 2752 352
+:simon/crystal.W: 2800 352
+:simon/crystal.W: 2848 352
+:simon/crystal.W: 2896 352
+:simon/crystal.W: 2912 352
+:simon/crystal.W: 2208 352
+:simon/crystal.W: 16 752
+:simon/crystal.W: 64 752
+:simon/crystal.W: 112 752
+:simon/crystal.W: 160 752
+:simon/crystal.W: 208 752
+:simon/crystal.W: 256 752
+:simon/crystal.W: 304 752
+:simon/crystal.W: 352 752
+:simon/crystal.W: 400 752
+:simon/crystal.W: 448 752
+:simon/crystal.W: 496 752
+:simon/crystal.W: 544 752
+:simon/crystal.W: 592 752
+:simon/crystal.W: 640 752
+:simon/crystal.W: 688 752
+:simon/crystal.W: 704 752
+:simon/crystal.W: 752 752
+:simon/crystal.W: 800 752
+:simon/crystal.W: 848 752
+:simon/crystal.W: 896 752
+:simon/crystal.W: 944 752
+:simon/crystal.W: 992 752
+:simon/crystal.W: 1040 752
+:simon/crystal.W: 1088 752
+:simon/crystal.W: 1136 752
+:simon/crystal.W: 1184 752
+:simon/crystal.W: 1232 752
+:simon/crystal.W: 1280 752
+:simon/crystal.W: 1328 752
+:simon/crystal.W: 1376 752
+:simon/crystal.W: 1424 752
+:simon/crystal.W: 0 752
+:simon/crystal.W: 1488 752
+:simon/crystal.W: 1536 752
+:simon/crystal.W: 1584 752
+:simon/crystal.W: 1632 752
+:simon/crystal.W: 1680 752
+:simon/crystal.W: 1728 752
+:simon/crystal.W: 1776 752
+:simon/crystal.W: 1824 752
+:simon/crystal.W: 1872 752
+:simon/crystal.W: 1920 752
+:simon/crystal.W: 1968 752
+:simon/crystal.W: 2016 752
+:simon/crystal.W: 2064 752
+:simon/crystal.W: 2112 752
+:simon/crystal.W: 2160 752
+:simon/crystal.W: 2176 752
+:simon/crystal.W: 1472 752
+:simon/crystal.W: 2224 752
+:simon/crystal.W: 2272 752
+:simon/crystal.W: 2320 752
+:simon/crystal.W: 2368 752
+:simon/crystal.W: 2416 752
+:simon/crystal.W: 2464 752
+:simon/crystal.W: 2512 752
+:simon/crystal.W: 2560 752
+:simon/crystal.W: 2608 752
+:simon/crystal.W: 2656 752
+:simon/crystal.W: 2704 752
+:simon/crystal.W: 2752 752
+:simon/crystal.W: 2800 752
+:simon/crystal.W: 2848 752
+:simon/crystal.W: 2896 752
+:simon/crystal.W: 2912 752
+:simon/crystal.W: 2208 752
+
+:matt/goldmine/crate64: 480 256
+:matt/goldmine/crate64: 544 256
+:matt/goldmine/crate64: 480 192
+:matt/goldmine/crate64: 544 192
+:matt/goldmine/crate64: 608 192
+:matt/goldmine/crate64: 608 128
+:matt/goldmine/crate64: 480 128
+:matt/goldmine/crate64: 544 128
+:matt/goldmine/plank: 544 336
+:matt/goldmine/plank: 416 336
+:matt/goldmine/plank: 160 336
+:matt/goldmine/plank: 368 248 r
+:matt/goldmine/plank: 360 240 r
+:matt/goldmine/plank: 288 336
+:matt/goldmine/crate64: 336 272
+:matt/goldmine/crate32: 352 344 d
+:matt/goldmine/plankdiag2: 224 280
+:matt/goldmine/plank: 200 272
+:matt/goldmine/plank: 264 208 rrr
+:matt/goldmine/plank: 256 208 rrr
+:matt/goldmine/plank: 32 336
+:matt/goldmine/plankdiag: 130 208
+:matt/goldmine/plank: 136 208 rrr
+:matt/goldmine/plank: 128 208 rrr
+:matt/goldmine/crate16: 272 264 d
+:matt/goldmine/crate16: 288 272 d
+:matt/goldmine/crate16: 304 272 d
+:matt/goldmine/crate16: 320 272 d
+:matt/goldmine/plank: 264 80 rrr
+:matt/goldmine/plank: 256 80 rrr
+:matt/goldmine/plank: 72 200
+:matt/goldmine/plankdiag2: 96 120
+:matt/goldmine/plank: 72 112
+:matt/goldmine/plank: 136 80 rrr
+:matt/goldmine/plank: 128 80 rrr
+:matt/goldmine/crate16: 112 196 d
+:matt/goldmine/crate16: 96 196 d
+:matt/goldmine/crate16: 80 196 d
+:matt/goldmine/crate16: 64 196 d
+:matt/goldmine/crate16: 144 112 d
+:matt/goldmine/crate16: 160 112 d
+:matt/goldmine/crate16: 176 112 d
+:matt/goldmine/crate16: 192 112 d
+:matt/goldmine/plank: 336 128
+:matt/goldmine/plankdiag2: 384 96
+:matt/goldmine/plank: 336 96
+:matt/goldmine/plank: 336 0 r
+:matt/goldmine/plank: 464 96
+:geoo/steel/16x16o.S: 672 128
+:geoo/steel/16x16o.S: 688 128
+:geoo/steel/16x16o.S: 704 128
+:geoo/steel/16x16o.S: 720 128
+:geoo/steel/16x16o.S: 720 144
+:geoo/steel/16x16o.S: 720 160
+:geoo/steel/16x16o.S: 720 176
+:geoo/steel/16x16o.S: 720 192
+:geoo/steel/16x16o.S: 720 208
+:geoo/steel/16x16o.S: 720 224
+:geoo/steel/16x16o.S: 720 240
+:geoo/steel/16x16o.S: 720 256
+:geoo/steel/16x16o.S: 720 272
+:geoo/steel/16x16o.S: 720 288
+:geoo/steel/16x16o.S: 720 304
+:geoo/steel/16x16o.S: 720 320
+:geoo/steel/16x16o.S: 720 336
+:geoo/steel/16x16o.S: 720 352
+:geoo/steel/16x16o.S: 720 368
+:geoo/steel/16x16o.S: 720 384
+:geoo/steel/16x16o.S: 720 80
+:geoo/steel/16x16o.S: 720 64
+:geoo/steel/16x16o.S: 720 48
+:geoo/steel/16x16o.S: 720 32
+:geoo/steel/16x16o.S: 720 16
+:geoo/steel/16x16o.S: 720 0
+:geoo/steel/16x16o.S: 704 0
+:geoo/steel/16x16o.S: 0 0
+:geoo/steel/16x16o.S: 16 0
+:geoo/steel/16x16o.S: 32 0
+:geoo/steel/16x16o.S: 48 0
+:geoo/steel/16x16o.S: 64 0
+:geoo/steel/16x16o.S: 80 0
+:geoo/steel/16x16o.S: 96 0
+:geoo/steel/16x16o.S: 112 0
+:geoo/steel/16x16o.S: 128 0
+:geoo/steel/16x16o.S: 144 0
+:geoo/steel/16x16o.S: 160 0
+:geoo/steel/16x16o.S: 176 0
+:geoo/steel/16x16o.S: 192 0
+:geoo/steel/16x16o.S: 208 0
+:geoo/steel/16x16o.S: 224 0
+:geoo/steel/16x16o.S: 240 0
+:geoo/steel/16x16o.S: 256 0
+:geoo/steel/16x16o.S: 272 0
+:geoo/steel/16x16o.S: 288 0
+:geoo/steel/16x16o.S: 304 0
+:geoo/steel/16x16o.S: 320 0
+:geoo/steel/16x16o.S: 336 0
+:geoo/steel/16x16o.S: 352 0
+:geoo/steel/16x16o.S: 368 0
+:geoo/steel/16x16o.S: 384 0
+:geoo/steel/16x16o.S: 400 0
+:geoo/steel/16x16o.S: 416 0
+:geoo/steel/16x16o.S: 432 0
+:geoo/steel/16x16o.S: 448 0
+:geoo/steel/16x16o.S: 464 0
+:geoo/steel/16x16o.S: 480 0
+:geoo/steel/16x16o.S: 496 0
+:geoo/steel/16x16o.S: 512 0
+:geoo/steel/16x16o.S: 528 0
+:geoo/steel/16x16o.S: 544 0
+:geoo/steel/16x16o.S: 560 0
+:geoo/steel/16x16o.S: 576 0
+:geoo/steel/16x16o.S: 592 0
+:geoo/steel/16x16o.S: 608 0
+:geoo/steel/16x16o.S: 624 0
+:geoo/steel/16x16o.S: 640 0
+:geoo/steel/16x16o.S: 656 0
+:geoo/steel/16x16o.S: 672 0
+:geoo/steel/16x16o.S: 688 0
+:geoo/steel/16x16o.S: 1456 80
+:geoo/steel/16x16o.S: 0 80
+:geoo/steel/16x16o.S: 16 80
+:geoo/steel/16x16o.S: 32 80
+:geoo/steel/16x16o.S: 0 128
+:geoo/steel/16x16o.S: 16 128
+:geoo/steel/16x16o.S: 32 128
+:geoo/steel/16x16o.S: 0 384
+:geoo/steel/16x16o.S: 704 384
+:geoo/steel/16x16o.S: 688 384
+:geoo/steel/16x16o.S: 672 384
+:geoo/steel/16x16o.S: 656 384
+:geoo/steel/16x16o.S: 640 384
+:geoo/steel/16x16o.S: 624 384
+:geoo/steel/16x16o.S: 608 384
+:geoo/steel/16x16o.S: 592 384
+:geoo/steel/16x16o.S: 576 384
+:geoo/steel/16x16o.S: 560 384
+:geoo/steel/16x16o.S: 544 384
+:geoo/steel/16x16o.S: 528 384
+:geoo/steel/16x16o.S: 512 384
+:geoo/steel/16x16o.S: 496 384
+:geoo/steel/16x16o.S: 480 384
+:geoo/steel/16x16o.S: 464 384
+:geoo/steel/16x16o.S: 448 384
+:geoo/steel/16x16o.S: 432 384
+:geoo/steel/16x16o.S: 416 384
+:geoo/steel/16x16o.S: 400 384
+:geoo/steel/16x16o.S: 384 384
+:geoo/steel/16x16o.S: 368 384
+:geoo/steel/16x16o.S: 352 384
+:geoo/steel/16x16o.S: 336 384
+:geoo/steel/16x16o.S: 320 384
+:geoo/steel/16x16o.S: 304 384
+:geoo/steel/16x16o.S: 288 384
+:geoo/steel/16x16o.S: 272 384
+:geoo/steel/16x16o.S: 256 384
+:geoo/steel/16x16o.S: 240 384
+:geoo/steel/16x16o.S: 224 384
+:geoo/steel/16x16o.S: 208 384
+:geoo/steel/16x16o.S: 192 384
+:geoo/steel/16x16o.S: 176 384
+:geoo/steel/16x16o.S: 160 384
+:geoo/steel/16x16o.S: 144 384
+:geoo/steel/16x16o.S: 128 384
+:geoo/steel/16x16o.S: 112 384
+:geoo/steel/16x16o.S: 96 384
+:geoo/steel/16x16o.S: 80 384
+:geoo/steel/16x16o.S: 64 384
+:geoo/steel/16x16o.S: 48 384
+:geoo/steel/16x16o.S: 32 384
+:geoo/steel/16x16o.S: 16 384
+:geoo/steel/16x16o.S: 632 128
+:matt/goldmine/crate64: 1216 256
+:matt/goldmine/crate64: 1280 256
+:matt/goldmine/crate64: 1216 192
+:matt/goldmine/crate64: 1280 192
+:matt/goldmine/crate64: 1344 192
+:matt/goldmine/crate64: 1344 128
+:matt/goldmine/crate64: 1216 128
+:matt/goldmine/crate64: 1280 128
+:matt/goldmine/plank: 1280 336
+:matt/goldmine/plank: 1152 336
+:matt/goldmine/plank: 896 336
+:matt/goldmine/plank: 1104 248 r
+:matt/goldmine/plank: 1096 240 r
+:matt/goldmine/plank: 1024 336
+:matt/goldmine/crate64: 1072 272
+:matt/goldmine/crate32: 1088 344 d
+:matt/goldmine/plankdiag2: 960 280
+:matt/goldmine/plank: 936 272
+:matt/goldmine/plank: 1000 208 rrr
+:matt/goldmine/plank: 992 208 rrr
+:matt/goldmine/plank: 768 336
+:matt/goldmine/plankdiag: 866 208
+:matt/goldmine/plank: 872 208 rrr
+:matt/goldmine/plank: 864 208 rrr
+:matt/goldmine/crate16: 1008 264 d
+:matt/goldmine/crate16: 1024 272 d
+:matt/goldmine/crate16: 1040 272 d
+:matt/goldmine/crate16: 1056 272 d
+:matt/goldmine/plank: 1000 80 rrr
+:matt/goldmine/plank: 992 80 rrr
+:matt/goldmine/plank: 808 200
+:matt/goldmine/plankdiag2: 832 120
+:matt/goldmine/plank: 808 112
+:matt/goldmine/plank: 872 80 rrr
+:matt/goldmine/plank: 864 80 rrr
+:matt/goldmine/crate16: 848 196 d
+:matt/goldmine/crate16: 832 196 d
+:matt/goldmine/crate16: 816 196 d
+:matt/goldmine/crate16: 800 196 d
+:matt/goldmine/crate16: 880 112 d
+:matt/goldmine/crate16: 896 112 d
+:matt/goldmine/crate16: 912 112 d
+:matt/goldmine/crate16: 928 112 d
+:matt/goldmine/plank: 1072 128
+:matt/goldmine/plankdiag2: 1120 96
+:matt/goldmine/plank: 1072 96
+:matt/goldmine/plank: 1072 0 r
+:matt/goldmine/plank: 1200 96
+:geoo/steel/16x16o.S: 1408 128
+:geoo/steel/16x16o.S: 1424 128
+:geoo/steel/16x16o.S: 1440 128
+:geoo/steel/16x16o.S: 1456 128
+:geoo/steel/16x16o.S: 1456 144
+:geoo/steel/16x16o.S: 1456 160
+:geoo/steel/16x16o.S: 1456 176
+:geoo/steel/16x16o.S: 1456 192
+:geoo/steel/16x16o.S: 1456 208
+:geoo/steel/16x16o.S: 1456 224
+:geoo/steel/16x16o.S: 1456 240
+:geoo/steel/16x16o.S: 1456 256
+:geoo/steel/16x16o.S: 1456 272
+:geoo/steel/16x16o.S: 1456 288
+:geoo/steel/16x16o.S: 1456 304
+:geoo/steel/16x16o.S: 1456 320
+:geoo/steel/16x16o.S: 1456 336
+:geoo/steel/16x16o.S: 1456 352
+:geoo/steel/16x16o.S: 1456 368
+:geoo/steel/16x16o.S: 1456 384
+:geoo/steel/16x16o.S: 1456 80
+:geoo/steel/16x16o.S: 1456 64
+:geoo/steel/16x16o.S: 1456 48
+:geoo/steel/16x16o.S: 1456 32
+:geoo/steel/16x16o.S: 1456 16
+:geoo/steel/16x16o.S: 1456 0
+:geoo/steel/16x16o.S: 1440 0
+:geoo/steel/16x16o.S: 736 0
+:geoo/steel/16x16o.S: 752 0
+:geoo/steel/16x16o.S: 768 0
+:geoo/steel/16x16o.S: 784 0
+:geoo/steel/16x16o.S: 800 0
+:geoo/steel/16x16o.S: 816 0
+:geoo/steel/16x16o.S: 832 0
+:geoo/steel/16x16o.S: 848 0
+:geoo/steel/16x16o.S: 864 0
+:geoo/steel/16x16o.S: 880 0
+:geoo/steel/16x16o.S: 896 0
+:geoo/steel/16x16o.S: 912 0
+:geoo/steel/16x16o.S: 928 0
+:geoo/steel/16x16o.S: 944 0
+:geoo/steel/16x16o.S: 960 0
+:geoo/steel/16x16o.S: 976 0
+:geoo/steel/16x16o.S: 992 0
+:geoo/steel/16x16o.S: 1008 0
+:geoo/steel/16x16o.S: 1024 0
+:geoo/steel/16x16o.S: 1040 0
+:geoo/steel/16x16o.S: 1056 0
+:geoo/steel/16x16o.S: 1072 0
+:geoo/steel/16x16o.S: 1088 0
+:geoo/steel/16x16o.S: 1104 0
+:geoo/steel/16x16o.S: 1120 0
+:geoo/steel/16x16o.S: 1136 0
+:geoo/steel/16x16o.S: 1152 0
+:geoo/steel/16x16o.S: 1168 0
+:geoo/steel/16x16o.S: 1184 0
+:geoo/steel/16x16o.S: 1200 0
+:geoo/steel/16x16o.S: 1216 0
+:geoo/steel/16x16o.S: 1232 0
+:geoo/steel/16x16o.S: 1248 0
+:geoo/steel/16x16o.S: 1264 0
+:geoo/steel/16x16o.S: 1280 0
+:geoo/steel/16x16o.S: 1296 0
+:geoo/steel/16x16o.S: 1312 0
+:geoo/steel/16x16o.S: 1328 0
+:geoo/steel/16x16o.S: 1344 0
+:geoo/steel/16x16o.S: 1360 0
+:geoo/steel/16x16o.S: 1376 0
+:geoo/steel/16x16o.S: 1392 0
+:geoo/steel/16x16o.S: 1408 0
+:geoo/steel/16x16o.S: 1424 0
+:geoo/steel/16x16o.S: 736 80
+:geoo/steel/16x16o.S: 752 80
+:geoo/steel/16x16o.S: 768 80
+:geoo/steel/16x16o.S: 736 128
+:geoo/steel/16x16o.S: 752 128
+:geoo/steel/16x16o.S: 768 128
+:geoo/steel/16x16o.S: 736 384
+:geoo/steel/16x16o.S: 1440 384
+:geoo/steel/16x16o.S: 1424 384
+:geoo/steel/16x16o.S: 1408 384
+:geoo/steel/16x16o.S: 1392 384
+:geoo/steel/16x16o.S: 1376 384
+:geoo/steel/16x16o.S: 1360 384
+:geoo/steel/16x16o.S: 1344 384
+:geoo/steel/16x16o.S: 1328 384
+:geoo/steel/16x16o.S: 1312 384
+:geoo/steel/16x16o.S: 1296 384
+:geoo/steel/16x16o.S: 1280 384
+:geoo/steel/16x16o.S: 1264 384
+:geoo/steel/16x16o.S: 1248 384
+:geoo/steel/16x16o.S: 1232 384
+:geoo/steel/16x16o.S: 1216 384
+:geoo/steel/16x16o.S: 1200 384
+:geoo/steel/16x16o.S: 1184 384
+:geoo/steel/16x16o.S: 1168 384
+:geoo/steel/16x16o.S: 1152 384
+:geoo/steel/16x16o.S: 1136 384
+:geoo/steel/16x16o.S: 1120 384
+:geoo/steel/16x16o.S: 1104 384
+:geoo/steel/16x16o.S: 1088 384
+:geoo/steel/16x16o.S: 1072 384
+:geoo/steel/16x16o.S: 1056 384
+:geoo/steel/16x16o.S: 1040 384
+:geoo/steel/16x16o.S: 1024 384
+:geoo/steel/16x16o.S: 1008 384
+:geoo/steel/16x16o.S: 992 384
+:geoo/steel/16x16o.S: 976 384
+:geoo/steel/16x16o.S: 960 384
+:geoo/steel/16x16o.S: 944 384
+:geoo/steel/16x16o.S: 928 384
+:geoo/steel/16x16o.S: 912 384
+:geoo/steel/16x16o.S: 896 384
+:geoo/steel/16x16o.S: 880 384
+:geoo/steel/16x16o.S: 864 384
+:geoo/steel/16x16o.S: 848 384
+:geoo/steel/16x16o.S: 832 384
+:geoo/steel/16x16o.S: 816 384
+:geoo/steel/16x16o.S: 800 384
+:geoo/steel/16x16o.S: 784 384
+:geoo/steel/16x16o.S: 768 384
+:geoo/steel/16x16o.S: 752 384
+:geoo/steel/16x16o.S: 1368 128
+:geoo/steel/16x16o.S: 704 80
+:geoo/steel/16x16o.S: 688 80
+:geoo/steel/16x16o.S: 672 80
+:geoo/steel/16x16o.S: 1440 80
+:geoo/steel/16x16o.S: 1424 80
+:geoo/steel/16x16o.S: 1408 80
+:matt/goldmine/crate64: 1952 256
+:matt/goldmine/crate64: 2016 256
+:matt/goldmine/crate64: 1952 192
+:matt/goldmine/crate64: 2016 192
+:matt/goldmine/crate64: 2080 192
+:matt/goldmine/crate64: 2080 128
+:matt/goldmine/crate64: 1952 128
+:matt/goldmine/crate64: 2016 128
+:matt/goldmine/plank: 2016 336
+:matt/goldmine/plank: 1888 336
+:matt/goldmine/plank: 1632 336
+:matt/goldmine/plank: 1840 248 r
+:matt/goldmine/plank: 1832 240 r
+:matt/goldmine/plank: 1760 336
+:matt/goldmine/crate64: 1808 272
+:matt/goldmine/crate32: 1824 344 d
+:matt/goldmine/plankdiag2: 1696 280
+:matt/goldmine/plank: 1672 272
+:matt/goldmine/plank: 1736 208 rrr
+:matt/goldmine/plank: 1728 208 rrr
+:matt/goldmine/plank: 1504 336
+:matt/goldmine/plankdiag: 1602 208
+:matt/goldmine/plank: 1608 208 rrr
+:matt/goldmine/plank: 1600 208 rrr
+:matt/goldmine/crate16: 1744 264 d
+:matt/goldmine/crate16: 1760 272 d
+:matt/goldmine/crate16: 1776 272 d
+:matt/goldmine/crate16: 1792 272 d
+:matt/goldmine/plank: 1736 80 rrr
+:matt/goldmine/plank: 1728 80 rrr
+:matt/goldmine/plank: 1544 200
+:matt/goldmine/plankdiag2: 1568 120
+:matt/goldmine/plank: 1544 112
+:matt/goldmine/plank: 1608 80 rrr
+:matt/goldmine/plank: 1600 80 rrr
+:matt/goldmine/crate16: 1584 196 d
+:matt/goldmine/crate16: 1568 196 d
+:matt/goldmine/crate16: 1552 196 d
+:matt/goldmine/crate16: 1536 196 d
+:matt/goldmine/crate16: 1616 112 d
+:matt/goldmine/crate16: 1632 112 d
+:matt/goldmine/crate16: 1648 112 d
+:matt/goldmine/crate16: 1664 112 d
+:matt/goldmine/plank: 1808 128
+:matt/goldmine/plankdiag2: 1856 96
+:matt/goldmine/plank: 1808 96
+:matt/goldmine/plank: 1808 0 r
+:matt/goldmine/plank: 1936 96
+:geoo/steel/16x16o.S: 2144 128
+:geoo/steel/16x16o.S: 2160 128
+:geoo/steel/16x16o.S: 2176 128
+:geoo/steel/16x16o.S: 2192 128
+:geoo/steel/16x16o.S: 2192 144
+:geoo/steel/16x16o.S: 2192 160
+:geoo/steel/16x16o.S: 2192 176
+:geoo/steel/16x16o.S: 2192 192
+:geoo/steel/16x16o.S: 2192 208
+:geoo/steel/16x16o.S: 2192 224
+:geoo/steel/16x16o.S: 2192 240
+:geoo/steel/16x16o.S: 2192 256
+:geoo/steel/16x16o.S: 2192 272
+:geoo/steel/16x16o.S: 2192 288
+:geoo/steel/16x16o.S: 2192 304
+:geoo/steel/16x16o.S: 2192 320
+:geoo/steel/16x16o.S: 2192 336
+:geoo/steel/16x16o.S: 2192 352
+:geoo/steel/16x16o.S: 2192 368
+:geoo/steel/16x16o.S: 2192 384
+:geoo/steel/16x16o.S: 2192 80
+:geoo/steel/16x16o.S: 2192 64
+:geoo/steel/16x16o.S: 2192 48
+:geoo/steel/16x16o.S: 2192 32
+:geoo/steel/16x16o.S: 2192 16
+:geoo/steel/16x16o.S: 2192 0
+:geoo/steel/16x16o.S: 2176 0
+:geoo/steel/16x16o.S: 1472 0
+:geoo/steel/16x16o.S: 1488 0
+:geoo/steel/16x16o.S: 1504 0
+:geoo/steel/16x16o.S: 1520 0
+:geoo/steel/16x16o.S: 1536 0
+:geoo/steel/16x16o.S: 1552 0
+:geoo/steel/16x16o.S: 1568 0
+:geoo/steel/16x16o.S: 1584 0
+:geoo/steel/16x16o.S: 1600 0
+:geoo/steel/16x16o.S: 1616 0
+:geoo/steel/16x16o.S: 1632 0
+:geoo/steel/16x16o.S: 1648 0
+:geoo/steel/16x16o.S: 1664 0
+:geoo/steel/16x16o.S: 1680 0
+:geoo/steel/16x16o.S: 1696 0
+:geoo/steel/16x16o.S: 1712 0
+:geoo/steel/16x16o.S: 1728 0
+:geoo/steel/16x16o.S: 1744 0
+:geoo/steel/16x16o.S: 1760 0
+:geoo/steel/16x16o.S: 1776 0
+:geoo/steel/16x16o.S: 1792 0
+:geoo/steel/16x16o.S: 1808 0
+:geoo/steel/16x16o.S: 1824 0
+:geoo/steel/16x16o.S: 1840 0
+:geoo/steel/16x16o.S: 1856 0
+:geoo/steel/16x16o.S: 1872 0
+:geoo/steel/16x16o.S: 1888 0
+:geoo/steel/16x16o.S: 1904 0
+:geoo/steel/16x16o.S: 1920 0
+:geoo/steel/16x16o.S: 1936 0
+:geoo/steel/16x16o.S: 1952 0
+:geoo/steel/16x16o.S: 1968 0
+:geoo/steel/16x16o.S: 1984 0
+:geoo/steel/16x16o.S: 2000 0
+:geoo/steel/16x16o.S: 2016 0
+:geoo/steel/16x16o.S: 2032 0
+:geoo/steel/16x16o.S: 2048 0
+:geoo/steel/16x16o.S: 2064 0
+:geoo/steel/16x16o.S: 2080 0
+:geoo/steel/16x16o.S: 2096 0
+:geoo/steel/16x16o.S: 2112 0
+:geoo/steel/16x16o.S: 2128 0
+:geoo/steel/16x16o.S: 2144 0
+:geoo/steel/16x16o.S: 2160 0
+:geoo/steel/16x16o.S: 1472 80
+:geoo/steel/16x16o.S: 1488 80
+:geoo/steel/16x16o.S: 1504 80
+:geoo/steel/16x16o.S: 1472 128
+:geoo/steel/16x16o.S: 1488 128
+:geoo/steel/16x16o.S: 1504 128
+:geoo/steel/16x16o.S: 1472 384
+:geoo/steel/16x16o.S: 2176 384
+:geoo/steel/16x16o.S: 2160 384
+:geoo/steel/16x16o.S: 2144 384
+:geoo/steel/16x16o.S: 2128 384
+:geoo/steel/16x16o.S: 2112 384
+:geoo/steel/16x16o.S: 2096 384
+:geoo/steel/16x16o.S: 2080 384
+:geoo/steel/16x16o.S: 2064 384
+:geoo/steel/16x16o.S: 2048 384
+:geoo/steel/16x16o.S: 2032 384
+:geoo/steel/16x16o.S: 2016 384
+:geoo/steel/16x16o.S: 2000 384
+:geoo/steel/16x16o.S: 1984 384
+:geoo/steel/16x16o.S: 1968 384
+:geoo/steel/16x16o.S: 1952 384
+:geoo/steel/16x16o.S: 1936 384
+:geoo/steel/16x16o.S: 1920 384
+:geoo/steel/16x16o.S: 1904 384
+:geoo/steel/16x16o.S: 1888 384
+:geoo/steel/16x16o.S: 1872 384
+:geoo/steel/16x16o.S: 1856 384
+:geoo/steel/16x16o.S: 1840 384
+:geoo/steel/16x16o.S: 1824 384
+:geoo/steel/16x16o.S: 1808 384
+:geoo/steel/16x16o.S: 1792 384
+:geoo/steel/16x16o.S: 1776 384
+:geoo/steel/16x16o.S: 1760 384
+:geoo/steel/16x16o.S: 1744 384
+:geoo/steel/16x16o.S: 1728 384
+:geoo/steel/16x16o.S: 1712 384
+:geoo/steel/16x16o.S: 1696 384
+:geoo/steel/16x16o.S: 1680 384
+:geoo/steel/16x16o.S: 1664 384
+:geoo/steel/16x16o.S: 1648 384
+:geoo/steel/16x16o.S: 1632 384
+:geoo/steel/16x16o.S: 1616 384
+:geoo/steel/16x16o.S: 1600 384
+:geoo/steel/16x16o.S: 1584 384
+:geoo/steel/16x16o.S: 1568 384
+:geoo/steel/16x16o.S: 1552 384
+:geoo/steel/16x16o.S: 1536 384
+:geoo/steel/16x16o.S: 1520 384
+:geoo/steel/16x16o.S: 1504 384
+:geoo/steel/16x16o.S: 1488 384
+:geoo/steel/16x16o.S: 2104 128
+:geoo/steel/16x16o.S: 2176 80
+:geoo/steel/16x16o.S: 2160 80
+:geoo/steel/16x16o.S: 2144 80
+:matt/goldmine/crate64: 2688 256
+:matt/goldmine/crate64: 2752 256
+:matt/goldmine/crate64: 2688 192
+:matt/goldmine/crate64: 2752 192
+:matt/goldmine/crate64: 2816 192
+:matt/goldmine/crate64: 2816 128
+:matt/goldmine/crate64: 2688 128
+:matt/goldmine/crate64: 2752 128
+:matt/goldmine/plank: 2752 336
+:matt/goldmine/plank: 2624 336
+:matt/goldmine/plank: 2368 336
+:matt/goldmine/plank: 2576 248 r
+:matt/goldmine/plank: 2568 240 r
+:matt/goldmine/plank: 2496 336
+:matt/goldmine/crate64: 2544 272
+:matt/goldmine/crate32: 2560 344 d
+:matt/goldmine/plankdiag2: 2432 280
+:matt/goldmine/plank: 2408 272
+:matt/goldmine/plank: 2472 208 rrr
+:matt/goldmine/plank: 2464 208 rrr
+:matt/goldmine/plank: 2240 336
+:matt/goldmine/plankdiag: 2338 208
+:matt/goldmine/plank: 2344 208 rrr
+:matt/goldmine/plank: 2336 208 rrr
+:matt/goldmine/crate16: 2480 264 d
+:matt/goldmine/crate16: 2496 272 d
+:matt/goldmine/crate16: 2512 272 d
+:matt/goldmine/crate16: 2528 272 d
+:matt/goldmine/plank: 2472 80 rrr
+:matt/goldmine/plank: 2464 80 rrr
+:matt/goldmine/plank: 2280 200
+:matt/goldmine/plankdiag2: 2304 120
+:matt/goldmine/plank: 2280 112
+:matt/goldmine/plank: 2344 80 rrr
+:matt/goldmine/plank: 2336 80 rrr
+:matt/goldmine/crate16: 2320 196 d
+:matt/goldmine/crate16: 2304 196 d
+:matt/goldmine/crate16: 2288 196 d
+:matt/goldmine/crate16: 2272 196 d
+:matt/goldmine/crate16: 2352 112 d
+:matt/goldmine/crate16: 2368 112 d
+:matt/goldmine/crate16: 2384 112 d
+:matt/goldmine/crate16: 2400 112 d
+:matt/goldmine/plank: 2544 128
+:matt/goldmine/plankdiag2: 2592 96
+:matt/goldmine/plank: 2544 96
+:matt/goldmine/plank: 2544 0 r
+:matt/goldmine/plank: 2672 96
+:geoo/steel/16x16o.S: 2880 128
+:geoo/steel/16x16o.S: 2896 128
+:geoo/steel/16x16o.S: 2912 128
+:geoo/steel/16x16o.S: 2928 128
+:geoo/steel/16x16o.S: 2928 144
+:geoo/steel/16x16o.S: 2928 160
+:geoo/steel/16x16o.S: 2928 176
+:geoo/steel/16x16o.S: 2928 192
+:geoo/steel/16x16o.S: 2928 208
+:geoo/steel/16x16o.S: 2928 224
+:geoo/steel/16x16o.S: 2928 240
+:geoo/steel/16x16o.S: 2928 256
+:geoo/steel/16x16o.S: 2928 272
+:geoo/steel/16x16o.S: 2928 288
+:geoo/steel/16x16o.S: 2928 304
+:geoo/steel/16x16o.S: 2928 320
+:geoo/steel/16x16o.S: 2928 336
+:geoo/steel/16x16o.S: 2928 352
+:geoo/steel/16x16o.S: 2928 368
+:geoo/steel/16x16o.S: 2928 384
+:geoo/steel/16x16o.S: 2928 80
+:geoo/steel/16x16o.S: 2928 64
+:geoo/steel/16x16o.S: 2928 48
+:geoo/steel/16x16o.S: 2928 32
+:geoo/steel/16x16o.S: 2928 16
+:geoo/steel/16x16o.S: 2928 0
+:geoo/steel/16x16o.S: 2912 0
+:geoo/steel/16x16o.S: 2208 0
+:geoo/steel/16x16o.S: 2224 0
+:geoo/steel/16x16o.S: 2240 0
+:geoo/steel/16x16o.S: 2256 0
+:geoo/steel/16x16o.S: 2272 0
+:geoo/steel/16x16o.S: 2288 0
+:geoo/steel/16x16o.S: 2304 0
+:geoo/steel/16x16o.S: 2320 0
+:geoo/steel/16x16o.S: 2336 0
+:geoo/steel/16x16o.S: 2352 0
+:geoo/steel/16x16o.S: 2368 0
+:geoo/steel/16x16o.S: 2384 0
+:geoo/steel/16x16o.S: 2400 0
+:geoo/steel/16x16o.S: 2416 0
+:geoo/steel/16x16o.S: 2432 0
+:geoo/steel/16x16o.S: 2448 0
+:geoo/steel/16x16o.S: 2464 0
+:geoo/steel/16x16o.S: 2480 0
+:geoo/steel/16x16o.S: 2496 0
+:geoo/steel/16x16o.S: 2512 0
+:geoo/steel/16x16o.S: 2528 0
+:geoo/steel/16x16o.S: 2544 0
+:geoo/steel/16x16o.S: 2560 0
+:geoo/steel/16x16o.S: 2576 0
+:geoo/steel/16x16o.S: 2592 0
+:geoo/steel/16x16o.S: 2608 0
+:geoo/steel/16x16o.S: 2624 0
+:geoo/steel/16x16o.S: 2640 0
+:geoo/steel/16x16o.S: 2656 0
+:geoo/steel/16x16o.S: 2672 0
+:geoo/steel/16x16o.S: 2688 0
+:geoo/steel/16x16o.S: 2704 0
+:geoo/steel/16x16o.S: 2720 0
+:geoo/steel/16x16o.S: 2736 0
+:geoo/steel/16x16o.S: 2752 0
+:geoo/steel/16x16o.S: 2768 0
+:geoo/steel/16x16o.S: 2784 0
+:geoo/steel/16x16o.S: 2800 0
+:geoo/steel/16x16o.S: 2816 0
+:geoo/steel/16x16o.S: 2832 0
+:geoo/steel/16x16o.S: 2848 0
+:geoo/steel/16x16o.S: 2864 0
+:geoo/steel/16x16o.S: 2880 0
+:geoo/steel/16x16o.S: 2896 0
+:geoo/steel/16x16o.S: 2208 80
+:geoo/steel/16x16o.S: 2224 80
+:geoo/steel/16x16o.S: 2240 80
+:geoo/steel/16x16o.S: 2208 128
+:geoo/steel/16x16o.S: 2224 128
+:geoo/steel/16x16o.S: 2240 128
+:geoo/steel/16x16o.S: 2208 384
+:geoo/steel/16x16o.S: 2912 384
+:geoo/steel/16x16o.S: 2896 384
+:geoo/steel/16x16o.S: 2880 384
+:geoo/steel/16x16o.S: 2864 384
+:geoo/steel/16x16o.S: 2848 384
+:geoo/steel/16x16o.S: 2832 384
+:geoo/steel/16x16o.S: 2816 384
+:geoo/steel/16x16o.S: 2800 384
+:geoo/steel/16x16o.S: 2784 384
+:geoo/steel/16x16o.S: 2768 384
+:geoo/steel/16x16o.S: 2752 384
+:geoo/steel/16x16o.S: 2736 384
+:geoo/steel/16x16o.S: 2720 384
+:geoo/steel/16x16o.S: 2704 384
+:geoo/steel/16x16o.S: 2688 384
+:geoo/steel/16x16o.S: 2672 384
+:geoo/steel/16x16o.S: 2656 384
+:geoo/steel/16x16o.S: 2640 384
+:geoo/steel/16x16o.S: 2624 384
+:geoo/steel/16x16o.S: 2608 384
+:geoo/steel/16x16o.S: 2592 384
+:geoo/steel/16x16o.S: 2576 384
+:geoo/steel/16x16o.S: 2560 384
+:geoo/steel/16x16o.S: 2544 384
+:geoo/steel/16x16o.S: 2528 384
+:geoo/steel/16x16o.S: 2512 384
+:geoo/steel/16x16o.S: 2496 384
+:geoo/steel/16x16o.S: 2480 384
+:geoo/steel/16x16o.S: 2464 384
+:geoo/steel/16x16o.S: 2448 384
+:geoo/steel/16x16o.S: 2432 384
+:geoo/steel/16x16o.S: 2416 384
+:geoo/steel/16x16o.S: 2400 384
+:geoo/steel/16x16o.S: 2384 384
+:geoo/steel/16x16o.S: 2368 384
+:geoo/steel/16x16o.S: 2352 384
+:geoo/steel/16x16o.S: 2336 384
+:geoo/steel/16x16o.S: 2320 384
+:geoo/steel/16x16o.S: 2304 384
+:geoo/steel/16x16o.S: 2288 384
+:geoo/steel/16x16o.S: 2272 384
+:geoo/steel/16x16o.S: 2256 384
+:geoo/steel/16x16o.S: 2240 384
+:geoo/steel/16x16o.S: 2224 384
+:geoo/steel/16x16o.S: 2840 128
+:geoo/steel/16x16o.S: 2912 80
+:geoo/steel/16x16o.S: 2896 80
+:geoo/steel/16x16o.S: 2880 80
+:geoo/steel/16x16o.S: 2264 336
+:geoo/steel/16x16o.S: 2840 336
+:geoo/steel/16x16o.S: 56 336
+:geoo/steel/16x16o.S: 632 336
+:geoo/steel/16x16o.S: 792 336
+:geoo/steel/16x16o.S: 1368 336
+:geoo/steel/16x16o.S: 1528 336
+:geoo/steel/16x16o.S: 2104 336
+:matt/goldmine/crate64: 480 656
+:matt/goldmine/crate64: 544 656
+:matt/goldmine/crate64: 480 592
+:matt/goldmine/crate64: 544 592
+:matt/goldmine/crate64: 608 592
+:matt/goldmine/crate64: 608 528
+:matt/goldmine/crate64: 480 528
+:matt/goldmine/crate64: 544 528
+:matt/goldmine/plank: 544 736
+:matt/goldmine/plank: 416 736
+:matt/goldmine/plank: 160 736
+:matt/goldmine/plank: 368 648 r
+:matt/goldmine/plank: 360 640 r
+:matt/goldmine/plank: 288 736
+:matt/goldmine/crate64: 336 672
+:matt/goldmine/crate32: 352 744 d
+:matt/goldmine/plankdiag2: 224 680
+:matt/goldmine/plank: 200 672
+:matt/goldmine/plank: 264 608 rrr
+:matt/goldmine/plank: 256 608 rrr
+:matt/goldmine/plank: 32 736
+:matt/goldmine/plankdiag: 130 608
+:matt/goldmine/plank: 136 608 rrr
+:matt/goldmine/plank: 128 608 rrr
+:matt/goldmine/crate16: 272 664 d
+:matt/goldmine/crate16: 288 672 d
+:matt/goldmine/crate16: 304 672 d
+:matt/goldmine/crate16: 320 672 d
+:matt/goldmine/plank: 264 480 rrr
+:matt/goldmine/plank: 256 480 rrr
+:matt/goldmine/plank: 72 600
+:matt/goldmine/plankdiag2: 96 520
+:matt/goldmine/plank: 72 512
+:matt/goldmine/plank: 136 480 rrr
+:matt/goldmine/plank: 128 480 rrr
+:matt/goldmine/crate16: 112 596 d
+:matt/goldmine/crate16: 96 596 d
+:matt/goldmine/crate16: 80 596 d
+:matt/goldmine/crate16: 64 596 d
+:matt/goldmine/crate16: 144 512 d
+:matt/goldmine/crate16: 160 512 d
+:matt/goldmine/crate16: 176 512 d
+:matt/goldmine/crate16: 192 512 d
+:matt/goldmine/plank: 336 528
+:matt/goldmine/plankdiag2: 384 496
+:matt/goldmine/plank: 336 496
+:matt/goldmine/plank: 336 400 r
+:matt/goldmine/plank: 464 496
+:geoo/steel/16x16o.S: 672 528
+:geoo/steel/16x16o.S: 688 528
+:geoo/steel/16x16o.S: 704 528
+:geoo/steel/16x16o.S: 720 528
+:geoo/steel/16x16o.S: 720 544
+:geoo/steel/16x16o.S: 720 560
+:geoo/steel/16x16o.S: 720 576
+:geoo/steel/16x16o.S: 720 592
+:geoo/steel/16x16o.S: 720 608
+:geoo/steel/16x16o.S: 720 624
+:geoo/steel/16x16o.S: 720 640
+:geoo/steel/16x16o.S: 720 656
+:geoo/steel/16x16o.S: 720 672
+:geoo/steel/16x16o.S: 720 688
+:geoo/steel/16x16o.S: 720 704
+:geoo/steel/16x16o.S: 720 720
+:geoo/steel/16x16o.S: 720 736
+:geoo/steel/16x16o.S: 720 752
+:geoo/steel/16x16o.S: 720 768
+:geoo/steel/16x16o.S: 720 784
+:geoo/steel/16x16o.S: 720 480
+:geoo/steel/16x16o.S: 720 464
+:geoo/steel/16x16o.S: 720 448
+:geoo/steel/16x16o.S: 720 432
+:geoo/steel/16x16o.S: 720 416
+:geoo/steel/16x16o.S: 720 400
+:geoo/steel/16x16o.S: 704 400
+:geoo/steel/16x16o.S: 0 400
+:geoo/steel/16x16o.S: 16 400
+:geoo/steel/16x16o.S: 32 400
+:geoo/steel/16x16o.S: 48 400
+:geoo/steel/16x16o.S: 64 400
+:geoo/steel/16x16o.S: 80 400
+:geoo/steel/16x16o.S: 96 400
+:geoo/steel/16x16o.S: 112 400
+:geoo/steel/16x16o.S: 128 400
+:geoo/steel/16x16o.S: 144 400
+:geoo/steel/16x16o.S: 160 400
+:geoo/steel/16x16o.S: 176 400
+:geoo/steel/16x16o.S: 192 400
+:geoo/steel/16x16o.S: 208 400
+:geoo/steel/16x16o.S: 224 400
+:geoo/steel/16x16o.S: 240 400
+:geoo/steel/16x16o.S: 256 400
+:geoo/steel/16x16o.S: 272 400
+:geoo/steel/16x16o.S: 288 400
+:geoo/steel/16x16o.S: 304 400
+:geoo/steel/16x16o.S: 320 400
+:geoo/steel/16x16o.S: 336 400
+:geoo/steel/16x16o.S: 352 400
+:geoo/steel/16x16o.S: 368 400
+:geoo/steel/16x16o.S: 384 400
+:geoo/steel/16x16o.S: 400 400
+:geoo/steel/16x16o.S: 416 400
+:geoo/steel/16x16o.S: 432 400
+:geoo/steel/16x16o.S: 448 400
+:geoo/steel/16x16o.S: 464 400
+:geoo/steel/16x16o.S: 480 400
+:geoo/steel/16x16o.S: 496 400
+:geoo/steel/16x16o.S: 512 400
+:geoo/steel/16x16o.S: 528 400
+:geoo/steel/16x16o.S: 544 400
+:geoo/steel/16x16o.S: 560 400
+:geoo/steel/16x16o.S: 576 400
+:geoo/steel/16x16o.S: 592 400
+:geoo/steel/16x16o.S: 608 400
+:geoo/steel/16x16o.S: 624 400
+:geoo/steel/16x16o.S: 640 400
+:geoo/steel/16x16o.S: 656 400
+:geoo/steel/16x16o.S: 672 400
+:geoo/steel/16x16o.S: 688 400
+:geoo/steel/16x16o.S: 1456 480
+:geoo/steel/16x16o.S: 0 480
+:geoo/steel/16x16o.S: 16 480
+:geoo/steel/16x16o.S: 32 480
+:geoo/steel/16x16o.S: 0 528
+:geoo/steel/16x16o.S: 16 528
+:geoo/steel/16x16o.S: 32 528
+:geoo/steel/16x16o.S: 0 784
+:geoo/steel/16x16o.S: 704 784
+:geoo/steel/16x16o.S: 688 784
+:geoo/steel/16x16o.S: 672 784
+:geoo/steel/16x16o.S: 656 784
+:geoo/steel/16x16o.S: 640 784
+:geoo/steel/16x16o.S: 624 784
+:geoo/steel/16x16o.S: 608 784
+:geoo/steel/16x16o.S: 592 784
+:geoo/steel/16x16o.S: 576 784
+:geoo/steel/16x16o.S: 560 784
+:geoo/steel/16x16o.S: 544 784
+:geoo/steel/16x16o.S: 528 784
+:geoo/steel/16x16o.S: 512 784
+:geoo/steel/16x16o.S: 496 784
+:geoo/steel/16x16o.S: 480 784
+:geoo/steel/16x16o.S: 464 784
+:geoo/steel/16x16o.S: 448 784
+:geoo/steel/16x16o.S: 432 784
+:geoo/steel/16x16o.S: 416 784
+:geoo/steel/16x16o.S: 400 784
+:geoo/steel/16x16o.S: 384 784
+:geoo/steel/16x16o.S: 368 784
+:geoo/steel/16x16o.S: 352 784
+:geoo/steel/16x16o.S: 336 784
+:geoo/steel/16x16o.S: 320 784
+:geoo/steel/16x16o.S: 304 784
+:geoo/steel/16x16o.S: 288 784
+:geoo/steel/16x16o.S: 272 784
+:geoo/steel/16x16o.S: 256 784
+:geoo/steel/16x16o.S: 240 784
+:geoo/steel/16x16o.S: 224 784
+:geoo/steel/16x16o.S: 208 784
+:geoo/steel/16x16o.S: 192 784
+:geoo/steel/16x16o.S: 176 784
+:geoo/steel/16x16o.S: 160 784
+:geoo/steel/16x16o.S: 144 784
+:geoo/steel/16x16o.S: 128 784
+:geoo/steel/16x16o.S: 112 784
+:geoo/steel/16x16o.S: 96 784
+:geoo/steel/16x16o.S: 80 784
+:geoo/steel/16x16o.S: 64 784
+:geoo/steel/16x16o.S: 48 784
+:geoo/steel/16x16o.S: 32 784
+:geoo/steel/16x16o.S: 16 784
+:geoo/steel/16x16o.S: 632 528
+:matt/goldmine/crate64: 1216 656
+:matt/goldmine/crate64: 1280 656
+:matt/goldmine/crate64: 1216 592
+:matt/goldmine/crate64: 1280 592
+:matt/goldmine/crate64: 1344 592
+:matt/goldmine/crate64: 1344 528
+:matt/goldmine/crate64: 1216 528
+:matt/goldmine/crate64: 1280 528
+:matt/goldmine/plank: 1280 736
+:matt/goldmine/plank: 1152 736
+:matt/goldmine/plank: 896 736
+:matt/goldmine/plank: 1104 648 r
+:matt/goldmine/plank: 1096 640 r
+:matt/goldmine/plank: 1024 736
+:matt/goldmine/crate64: 1072 672
+:matt/goldmine/crate32: 1088 744 d
+:matt/goldmine/plankdiag2: 960 680
+:matt/goldmine/plank: 936 672
+:matt/goldmine/plank: 1000 608 rrr
+:matt/goldmine/plank: 992 608 rrr
+:matt/goldmine/plank: 768 736
+:matt/goldmine/plankdiag: 866 608
+:matt/goldmine/plank: 872 608 rrr
+:matt/goldmine/plank: 864 608 rrr
+:matt/goldmine/crate16: 1008 664 d
+:matt/goldmine/crate16: 1024 672 d
+:matt/goldmine/crate16: 1040 672 d
+:matt/goldmine/crate16: 1056 672 d
+:matt/goldmine/plank: 1000 480 rrr
+:matt/goldmine/plank: 992 480 rrr
+:matt/goldmine/plank: 808 600
+:matt/goldmine/plankdiag2: 832 520
+:matt/goldmine/plank: 808 512
+:matt/goldmine/plank: 872 480 rrr
+:matt/goldmine/plank: 864 480 rrr
+:matt/goldmine/crate16: 848 596 d
+:matt/goldmine/crate16: 832 596 d
+:matt/goldmine/crate16: 816 596 d
+:matt/goldmine/crate16: 800 596 d
+:matt/goldmine/crate16: 880 512 d
+:matt/goldmine/crate16: 896 512 d
+:matt/goldmine/crate16: 912 512 d
+:matt/goldmine/crate16: 928 512 d
+:matt/goldmine/plank: 1072 528
+:matt/goldmine/plankdiag2: 1120 496
+:matt/goldmine/plank: 1072 496
+:matt/goldmine/plank: 1072 400 r
+:matt/goldmine/plank: 1200 496
+:geoo/steel/16x16o.S: 1408 528
+:geoo/steel/16x16o.S: 1424 528
+:geoo/steel/16x16o.S: 1440 528
+:geoo/steel/16x16o.S: 1456 528
+:geoo/steel/16x16o.S: 1456 544
+:geoo/steel/16x16o.S: 1456 560
+:geoo/steel/16x16o.S: 1456 576
+:geoo/steel/16x16o.S: 1456 592
+:geoo/steel/16x16o.S: 1456 608
+:geoo/steel/16x16o.S: 1456 624
+:geoo/steel/16x16o.S: 1456 640
+:geoo/steel/16x16o.S: 1456 656
+:geoo/steel/16x16o.S: 1456 672
+:geoo/steel/16x16o.S: 1456 688
+:geoo/steel/16x16o.S: 1456 704
+:geoo/steel/16x16o.S: 1456 720
+:geoo/steel/16x16o.S: 1456 736
+:geoo/steel/16x16o.S: 1456 752
+:geoo/steel/16x16o.S: 1456 768
+:geoo/steel/16x16o.S: 1456 784
+:geoo/steel/16x16o.S: 1456 480
+:geoo/steel/16x16o.S: 1456 464
+:geoo/steel/16x16o.S: 1456 448
+:geoo/steel/16x16o.S: 1456 432
+:geoo/steel/16x16o.S: 1456 416
+:geoo/steel/16x16o.S: 1456 400
+:geoo/steel/16x16o.S: 1440 400
+:geoo/steel/16x16o.S: 736 400
+:geoo/steel/16x16o.S: 752 400
+:geoo/steel/16x16o.S: 768 400
+:geoo/steel/16x16o.S: 784 400
+:geoo/steel/16x16o.S: 800 400
+:geoo/steel/16x16o.S: 816 400
+:geoo/steel/16x16o.S: 832 400
+:geoo/steel/16x16o.S: 848 400
+:geoo/steel/16x16o.S: 864 400
+:geoo/steel/16x16o.S: 880 400
+:geoo/steel/16x16o.S: 896 400
+:geoo/steel/16x16o.S: 912 400
+:geoo/steel/16x16o.S: 928 400
+:geoo/steel/16x16o.S: 944 400
+:geoo/steel/16x16o.S: 960 400
+:geoo/steel/16x16o.S: 976 400
+:geoo/steel/16x16o.S: 992 400
+:geoo/steel/16x16o.S: 1008 400
+:geoo/steel/16x16o.S: 1024 400
+:geoo/steel/16x16o.S: 1040 400
+:geoo/steel/16x16o.S: 1056 400
+:geoo/steel/16x16o.S: 1072 400
+:geoo/steel/16x16o.S: 1088 400
+:geoo/steel/16x16o.S: 1104 400
+:geoo/steel/16x16o.S: 1120 400
+:geoo/steel/16x16o.S: 1136 400
+:geoo/steel/16x16o.S: 1152 400
+:geoo/steel/16x16o.S: 1168 400
+:geoo/steel/16x16o.S: 1184 400
+:geoo/steel/16x16o.S: 1200 400
+:geoo/steel/16x16o.S: 1216 400
+:geoo/steel/16x16o.S: 1232 400
+:geoo/steel/16x16o.S: 1248 400
+:geoo/steel/16x16o.S: 1264 400
+:geoo/steel/16x16o.S: 1280 400
+:geoo/steel/16x16o.S: 1296 400
+:geoo/steel/16x16o.S: 1312 400
+:geoo/steel/16x16o.S: 1328 400
+:geoo/steel/16x16o.S: 1344 400
+:geoo/steel/16x16o.S: 1360 400
+:geoo/steel/16x16o.S: 1376 400
+:geoo/steel/16x16o.S: 1392 400
+:geoo/steel/16x16o.S: 1408 400
+:geoo/steel/16x16o.S: 1424 400
+:geoo/steel/16x16o.S: 736 480
+:geoo/steel/16x16o.S: 752 480
+:geoo/steel/16x16o.S: 768 480
+:geoo/steel/16x16o.S: 736 528
+:geoo/steel/16x16o.S: 752 528
+:geoo/steel/16x16o.S: 768 528
+:geoo/steel/16x16o.S: 736 784
+:geoo/steel/16x16o.S: 1440 784
+:geoo/steel/16x16o.S: 1424 784
+:geoo/steel/16x16o.S: 1408 784
+:geoo/steel/16x16o.S: 1392 784
+:geoo/steel/16x16o.S: 1376 784
+:geoo/steel/16x16o.S: 1360 784
+:geoo/steel/16x16o.S: 1344 784
+:geoo/steel/16x16o.S: 1328 784
+:geoo/steel/16x16o.S: 1312 784
+:geoo/steel/16x16o.S: 1296 784
+:geoo/steel/16x16o.S: 1280 784
+:geoo/steel/16x16o.S: 1264 784
+:geoo/steel/16x16o.S: 1248 784
+:geoo/steel/16x16o.S: 1232 784
+:geoo/steel/16x16o.S: 1216 784
+:geoo/steel/16x16o.S: 1200 784
+:geoo/steel/16x16o.S: 1184 784
+:geoo/steel/16x16o.S: 1168 784
+:geoo/steel/16x16o.S: 1152 784
+:geoo/steel/16x16o.S: 1136 784
+:geoo/steel/16x16o.S: 1120 784
+:geoo/steel/16x16o.S: 1104 784
+:geoo/steel/16x16o.S: 1088 784
+:geoo/steel/16x16o.S: 1072 784
+:geoo/steel/16x16o.S: 1056 784
+:geoo/steel/16x16o.S: 1040 784
+:geoo/steel/16x16o.S: 1024 784
+:geoo/steel/16x16o.S: 1008 784
+:geoo/steel/16x16o.S: 992 784
+:geoo/steel/16x16o.S: 976 784
+:geoo/steel/16x16o.S: 960 784
+:geoo/steel/16x16o.S: 944 784
+:geoo/steel/16x16o.S: 928 784
+:geoo/steel/16x16o.S: 912 784
+:geoo/steel/16x16o.S: 896 784
+:geoo/steel/16x16o.S: 880 784
+:geoo/steel/16x16o.S: 864 784
+:geoo/steel/16x16o.S: 848 784
+:geoo/steel/16x16o.S: 832 784
+:geoo/steel/16x16o.S: 816 784
+:geoo/steel/16x16o.S: 800 784
+:geoo/steel/16x16o.S: 784 784
+:geoo/steel/16x16o.S: 768 784
+:geoo/steel/16x16o.S: 752 784
+:geoo/steel/16x16o.S: 1368 528
+:geoo/steel/16x16o.S: 704 480
+:geoo/steel/16x16o.S: 688 480
+:geoo/steel/16x16o.S: 672 480
+:geoo/steel/16x16o.S: 1440 480
+:geoo/steel/16x16o.S: 1424 480
+:geoo/steel/16x16o.S: 1408 480
+:matt/goldmine/crate64: 1952 656
+:matt/goldmine/crate64: 2016 656
+:matt/goldmine/crate64: 1952 592
+:matt/goldmine/crate64: 2016 592
+:matt/goldmine/crate64: 2080 592
+:matt/goldmine/crate64: 2080 528
+:matt/goldmine/crate64: 1952 528
+:matt/goldmine/crate64: 2016 528
+:matt/goldmine/plank: 2016 736
+:matt/goldmine/plank: 1888 736
+:matt/goldmine/plank: 1632 736
+:matt/goldmine/plank: 1840 648 r
+:matt/goldmine/plank: 1832 640 r
+:matt/goldmine/plank: 1760 736
+:matt/goldmine/crate64: 1808 672
+:matt/goldmine/crate32: 1824 744 d
+:matt/goldmine/plankdiag2: 1696 680
+:matt/goldmine/plank: 1672 672
+:matt/goldmine/plank: 1736 608 rrr
+:matt/goldmine/plank: 1728 608 rrr
+:matt/goldmine/plank: 1504 736
+:matt/goldmine/plankdiag: 1602 608
+:matt/goldmine/plank: 1608 608 rrr
+:matt/goldmine/plank: 1600 608 rrr
+:matt/goldmine/crate16: 1744 664 d
+:matt/goldmine/crate16: 1760 672 d
+:matt/goldmine/crate16: 1776 672 d
+:matt/goldmine/crate16: 1792 672 d
+:matt/goldmine/plank: 1736 480 rrr
+:matt/goldmine/plank: 1728 480 rrr
+:matt/goldmine/plank: 1544 600
+:matt/goldmine/plankdiag2: 1568 520
+:matt/goldmine/plank: 1544 512
+:matt/goldmine/plank: 1608 480 rrr
+:matt/goldmine/plank: 1600 480 rrr
+:matt/goldmine/crate16: 1584 596 d
+:matt/goldmine/crate16: 1568 596 d
+:matt/goldmine/crate16: 1552 596 d
+:matt/goldmine/crate16: 1536 596 d
+:matt/goldmine/crate16: 1616 512 d
+:matt/goldmine/crate16: 1632 512 d
+:matt/goldmine/crate16: 1648 512 d
+:matt/goldmine/crate16: 1664 512 d
+:matt/goldmine/plank: 1808 528
+:matt/goldmine/plankdiag2: 1856 496
+:matt/goldmine/plank: 1808 496
+:matt/goldmine/plank: 1808 400 r
+:matt/goldmine/plank: 1936 496
+:geoo/steel/16x16o.S: 2144 528
+:geoo/steel/16x16o.S: 2160 528
+:geoo/steel/16x16o.S: 2176 528
+:geoo/steel/16x16o.S: 2192 528
+:geoo/steel/16x16o.S: 2192 544
+:geoo/steel/16x16o.S: 2192 560
+:geoo/steel/16x16o.S: 2192 576
+:geoo/steel/16x16o.S: 2192 592
+:geoo/steel/16x16o.S: 2192 608
+:geoo/steel/16x16o.S: 2192 624
+:geoo/steel/16x16o.S: 2192 640
+:geoo/steel/16x16o.S: 2192 656
+:geoo/steel/16x16o.S: 2192 672
+:geoo/steel/16x16o.S: 2192 688
+:geoo/steel/16x16o.S: 2192 704
+:geoo/steel/16x16o.S: 2192 720
+:geoo/steel/16x16o.S: 2192 736
+:geoo/steel/16x16o.S: 2192 752
+:geoo/steel/16x16o.S: 2192 768
+:geoo/steel/16x16o.S: 2192 784
+:geoo/steel/16x16o.S: 2192 480
+:geoo/steel/16x16o.S: 2192 464
+:geoo/steel/16x16o.S: 2192 448
+:geoo/steel/16x16o.S: 2192 432
+:geoo/steel/16x16o.S: 2192 416
+:geoo/steel/16x16o.S: 2192 400
+:geoo/steel/16x16o.S: 2176 400
+:geoo/steel/16x16o.S: 1472 400
+:geoo/steel/16x16o.S: 1488 400
+:geoo/steel/16x16o.S: 1504 400
+:geoo/steel/16x16o.S: 1520 400
+:geoo/steel/16x16o.S: 1536 400
+:geoo/steel/16x16o.S: 1552 400
+:geoo/steel/16x16o.S: 1568 400
+:geoo/steel/16x16o.S: 1584 400
+:geoo/steel/16x16o.S: 1600 400
+:geoo/steel/16x16o.S: 1616 400
+:geoo/steel/16x16o.S: 1632 400
+:geoo/steel/16x16o.S: 1648 400
+:geoo/steel/16x16o.S: 1664 400
+:geoo/steel/16x16o.S: 1680 400
+:geoo/steel/16x16o.S: 1696 400
+:geoo/steel/16x16o.S: 1712 400
+:geoo/steel/16x16o.S: 1728 400
+:geoo/steel/16x16o.S: 1744 400
+:geoo/steel/16x16o.S: 1760 400
+:geoo/steel/16x16o.S: 1776 400
+:geoo/steel/16x16o.S: 1792 400
+:geoo/steel/16x16o.S: 1808 400
+:geoo/steel/16x16o.S: 1824 400
+:geoo/steel/16x16o.S: 1840 400
+:geoo/steel/16x16o.S: 1856 400
+:geoo/steel/16x16o.S: 1872 400
+:geoo/steel/16x16o.S: 1888 400
+:geoo/steel/16x16o.S: 1904 400
+:geoo/steel/16x16o.S: 1920 400
+:geoo/steel/16x16o.S: 1936 400
+:geoo/steel/16x16o.S: 1952 400
+:geoo/steel/16x16o.S: 1968 400
+:geoo/steel/16x16o.S: 1984 400
+:geoo/steel/16x16o.S: 2000 400
+:geoo/steel/16x16o.S: 2016 400
+:geoo/steel/16x16o.S: 2032 400
+:geoo/steel/16x16o.S: 2048 400
+:geoo/steel/16x16o.S: 2064 400
+:geoo/steel/16x16o.S: 2080 400
+:geoo/steel/16x16o.S: 2096 400
+:geoo/steel/16x16o.S: 2112 400
+:geoo/steel/16x16o.S: 2128 400
+:geoo/steel/16x16o.S: 2144 400
+:geoo/steel/16x16o.S: 2160 400
+:geoo/steel/16x16o.S: 1472 480
+:geoo/steel/16x16o.S: 1488 480
+:geoo/steel/16x16o.S: 1504 480
+:geoo/steel/16x16o.S: 1472 528
+:geoo/steel/16x16o.S: 1488 528
+:geoo/steel/16x16o.S: 1504 528
+:geoo/steel/16x16o.S: 1472 784
+:geoo/steel/16x16o.S: 2176 784
+:geoo/steel/16x16o.S: 2160 784
+:geoo/steel/16x16o.S: 2144 784
+:geoo/steel/16x16o.S: 2128 784
+:geoo/steel/16x16o.S: 2112 784
+:geoo/steel/16x16o.S: 2096 784
+:geoo/steel/16x16o.S: 2080 784
+:geoo/steel/16x16o.S: 2064 784
+:geoo/steel/16x16o.S: 2048 784
+:geoo/steel/16x16o.S: 2032 784
+:geoo/steel/16x16o.S: 2016 784
+:geoo/steel/16x16o.S: 2000 784
+:geoo/steel/16x16o.S: 1984 784
+:geoo/steel/16x16o.S: 1968 784
+:geoo/steel/16x16o.S: 1952 784
+:geoo/steel/16x16o.S: 1936 784
+:geoo/steel/16x16o.S: 1920 784
+:geoo/steel/16x16o.S: 1904 784
+:geoo/steel/16x16o.S: 1888 784
+:geoo/steel/16x16o.S: 1872 784
+:geoo/steel/16x16o.S: 1856 784
+:geoo/steel/16x16o.S: 1840 784
+:geoo/steel/16x16o.S: 1824 784
+:geoo/steel/16x16o.S: 1808 784
+:geoo/steel/16x16o.S: 1792 784
+:geoo/steel/16x16o.S: 1776 784
+:geoo/steel/16x16o.S: 1760 784
+:geoo/steel/16x16o.S: 1744 784
+:geoo/steel/16x16o.S: 1728 784
+:geoo/steel/16x16o.S: 1712 784
+:geoo/steel/16x16o.S: 1696 784
+:geoo/steel/16x16o.S: 1680 784
+:geoo/steel/16x16o.S: 1664 784
+:geoo/steel/16x16o.S: 1648 784
+:geoo/steel/16x16o.S: 1632 784
+:geoo/steel/16x16o.S: 1616 784
+:geoo/steel/16x16o.S: 1600 784
+:geoo/steel/16x16o.S: 1584 784
+:geoo/steel/16x16o.S: 1568 784
+:geoo/steel/16x16o.S: 1552 784
+:geoo/steel/16x16o.S: 1536 784
+:geoo/steel/16x16o.S: 1520 784
+:geoo/steel/16x16o.S: 1504 784
+:geoo/steel/16x16o.S: 1488 784
+:geoo/steel/16x16o.S: 2104 528
+:geoo/steel/16x16o.S: 2176 480
+:geoo/steel/16x16o.S: 2160 480
+:geoo/steel/16x16o.S: 2144 480
+:matt/goldmine/crate64: 2688 656
+:matt/goldmine/crate64: 2752 656
+:matt/goldmine/crate64: 2688 592
+:matt/goldmine/crate64: 2752 592
+:matt/goldmine/crate64: 2816 592
+:matt/goldmine/crate64: 2816 528
+:matt/goldmine/crate64: 2688 528
+:matt/goldmine/crate64: 2752 528
+:matt/goldmine/plank: 2752 736
+:matt/goldmine/plank: 2624 736
+:matt/goldmine/plank: 2368 736
+:matt/goldmine/plank: 2576 648 r
+:matt/goldmine/plank: 2568 640 r
+:matt/goldmine/plank: 2496 736
+:matt/goldmine/crate64: 2544 672
+:matt/goldmine/crate32: 2560 744 d
+:matt/goldmine/plankdiag2: 2432 680
+:matt/goldmine/plank: 2408 672
+:matt/goldmine/plank: 2472 608 rrr
+:matt/goldmine/plank: 2464 608 rrr
+:matt/goldmine/plank: 2240 736
+:matt/goldmine/plankdiag: 2338 608
+:matt/goldmine/plank: 2344 608 rrr
+:matt/goldmine/plank: 2336 608 rrr
+:matt/goldmine/crate16: 2480 664 d
+:matt/goldmine/crate16: 2496 672 d
+:matt/goldmine/crate16: 2512 672 d
+:matt/goldmine/crate16: 2528 672 d
+:matt/goldmine/plank: 2472 480 rrr
+:matt/goldmine/plank: 2464 480 rrr
+:matt/goldmine/plank: 2280 600
+:matt/goldmine/plankdiag2: 2304 520
+:matt/goldmine/plank: 2280 512
+:matt/goldmine/plank: 2344 480 rrr
+:matt/goldmine/plank: 2336 480 rrr
+:matt/goldmine/crate16: 2320 596 d
+:matt/goldmine/crate16: 2304 596 d
+:matt/goldmine/crate16: 2288 596 d
+:matt/goldmine/crate16: 2272 596 d
+:matt/goldmine/crate16: 2352 512 d
+:matt/goldmine/crate16: 2368 512 d
+:matt/goldmine/crate16: 2384 512 d
+:matt/goldmine/crate16: 2400 512 d
+:matt/goldmine/plank: 2544 528
+:matt/goldmine/plankdiag2: 2592 496
+:matt/goldmine/plank: 2544 496
+:matt/goldmine/plank: 2544 400 r
+:matt/goldmine/plank: 2672 496
+:geoo/steel/16x16o.S: 2880 528
+:geoo/steel/16x16o.S: 2896 528
+:geoo/steel/16x16o.S: 2912 528
+:geoo/steel/16x16o.S: 2928 528
+:geoo/steel/16x16o.S: 2928 544
+:geoo/steel/16x16o.S: 2928 560
+:geoo/steel/16x16o.S: 2928 576
+:geoo/steel/16x16o.S: 2928 592
+:geoo/steel/16x16o.S: 2928 608
+:geoo/steel/16x16o.S: 2928 624
+:geoo/steel/16x16o.S: 2928 640
+:geoo/steel/16x16o.S: 2928 656
+:geoo/steel/16x16o.S: 2928 672
+:geoo/steel/16x16o.S: 2928 688
+:geoo/steel/16x16o.S: 2928 704
+:geoo/steel/16x16o.S: 2928 720
+:geoo/steel/16x16o.S: 2928 736
+:geoo/steel/16x16o.S: 2928 752
+:geoo/steel/16x16o.S: 2928 768
+:geoo/steel/16x16o.S: 2928 784
+:geoo/steel/16x16o.S: 2928 480
+:geoo/steel/16x16o.S: 2928 464
+:geoo/steel/16x16o.S: 2928 448
+:geoo/steel/16x16o.S: 2928 432
+:geoo/steel/16x16o.S: 2928 416
+:geoo/steel/16x16o.S: 2928 400
+:geoo/steel/16x16o.S: 2912 400
+:geoo/steel/16x16o.S: 2208 400
+:geoo/steel/16x16o.S: 2224 400
+:geoo/steel/16x16o.S: 2240 400
+:geoo/steel/16x16o.S: 2256 400
+:geoo/steel/16x16o.S: 2272 400
+:geoo/steel/16x16o.S: 2288 400
+:geoo/steel/16x16o.S: 2304 400
+:geoo/steel/16x16o.S: 2320 400
+:geoo/steel/16x16o.S: 2336 400
+:geoo/steel/16x16o.S: 2352 400
+:geoo/steel/16x16o.S: 2368 400
+:geoo/steel/16x16o.S: 2384 400
+:geoo/steel/16x16o.S: 2400 400
+:geoo/steel/16x16o.S: 2416 400
+:geoo/steel/16x16o.S: 2432 400
+:geoo/steel/16x16o.S: 2448 400
+:geoo/steel/16x16o.S: 2464 400
+:geoo/steel/16x16o.S: 2480 400
+:geoo/steel/16x16o.S: 2496 400
+:geoo/steel/16x16o.S: 2512 400
+:geoo/steel/16x16o.S: 2528 400
+:geoo/steel/16x16o.S: 2544 400
+:geoo/steel/16x16o.S: 2560 400
+:geoo/steel/16x16o.S: 2576 400
+:geoo/steel/16x16o.S: 2592 400
+:geoo/steel/16x16o.S: 2608 400
+:geoo/steel/16x16o.S: 2624 400
+:geoo/steel/16x16o.S: 2640 400
+:geoo/steel/16x16o.S: 2656 400
+:geoo/steel/16x16o.S: 2672 400
+:geoo/steel/16x16o.S: 2688 400
+:geoo/steel/16x16o.S: 2704 400
+:geoo/steel/16x16o.S: 2720 400
+:geoo/steel/16x16o.S: 2736 400
+:geoo/steel/16x16o.S: 2752 400
+:geoo/steel/16x16o.S: 2768 400
+:geoo/steel/16x16o.S: 2784 400
+:geoo/steel/16x16o.S: 2800 400
+:geoo/steel/16x16o.S: 2816 400
+:geoo/steel/16x16o.S: 2832 400
+:geoo/steel/16x16o.S: 2848 400
+:geoo/steel/16x16o.S: 2864 400
+:geoo/steel/16x16o.S: 2880 400
+:geoo/steel/16x16o.S: 2896 400
+:geoo/steel/16x16o.S: 2208 480
+:geoo/steel/16x16o.S: 2224 480
+:geoo/steel/16x16o.S: 2240 480
+:geoo/steel/16x16o.S: 2208 528
+:geoo/steel/16x16o.S: 2224 528
+:geoo/steel/16x16o.S: 2240 528
+:geoo/steel/16x16o.S: 2208 784
+:geoo/steel/16x16o.S: 2912 784
+:geoo/steel/16x16o.S: 2896 784
+:geoo/steel/16x16o.S: 2880 784
+:geoo/steel/16x16o.S: 2864 784
+:geoo/steel/16x16o.S: 2848 784
+:geoo/steel/16x16o.S: 2832 784
+:geoo/steel/16x16o.S: 2816 784
+:geoo/steel/16x16o.S: 2800 784
+:geoo/steel/16x16o.S: 2784 784
+:geoo/steel/16x16o.S: 2768 784
+:geoo/steel/16x16o.S: 2752 784
+:geoo/steel/16x16o.S: 2736 784
+:geoo/steel/16x16o.S: 2720 784
+:geoo/steel/16x16o.S: 2704 784
+:geoo/steel/16x16o.S: 2688 784
+:geoo/steel/16x16o.S: 2672 784
+:geoo/steel/16x16o.S: 2656 784
+:geoo/steel/16x16o.S: 2640 784
+:geoo/steel/16x16o.S: 2624 784
+:geoo/steel/16x16o.S: 2608 784
+:geoo/steel/16x16o.S: 2592 784
+:geoo/steel/16x16o.S: 2576 784
+:geoo/steel/16x16o.S: 2560 784
+:geoo/steel/16x16o.S: 2544 784
+:geoo/steel/16x16o.S: 2528 784
+:geoo/steel/16x16o.S: 2512 784
+:geoo/steel/16x16o.S: 2496 784
+:geoo/steel/16x16o.S: 2480 784
+:geoo/steel/16x16o.S: 2464 784
+:geoo/steel/16x16o.S: 2448 784
+:geoo/steel/16x16o.S: 2432 784
+:geoo/steel/16x16o.S: 2416 784
+:geoo/steel/16x16o.S: 2400 784
+:geoo/steel/16x16o.S: 2384 784
+:geoo/steel/16x16o.S: 2368 784
+:geoo/steel/16x16o.S: 2352 784
+:geoo/steel/16x16o.S: 2336 784
+:geoo/steel/16x16o.S: 2320 784
+:geoo/steel/16x16o.S: 2304 784
+:geoo/steel/16x16o.S: 2288 784
+:geoo/steel/16x16o.S: 2272 784
+:geoo/steel/16x16o.S: 2256 784
+:geoo/steel/16x16o.S: 2240 784
+:geoo/steel/16x16o.S: 2224 784
+:geoo/steel/16x16o.S: 2840 528
+:geoo/steel/16x16o.S: 2912 480
+:geoo/steel/16x16o.S: 2896 480
+:geoo/steel/16x16o.S: 2880 480
+:geoo/steel/16x16o.S: 2264 736
+:geoo/steel/16x16o.S: 2840 736
+:geoo/steel/16x16o.S: 56 736
+:geoo/steel/16x16o.S: 632 736
+:geoo/steel/16x16o.S: 792 736
+:geoo/steel/16x16o.S: 1368 736
+:geoo/steel/16x16o.S: 1528 736
+:geoo/steel/16x16o.S: 2104 736

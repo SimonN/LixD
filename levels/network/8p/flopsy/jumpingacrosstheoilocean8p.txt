@@ -1,0 +1,1379 @@
+$BUILT 2022-02-01 14:58:54
+$AUTHOR Flopsy
+$ENGLISH Jumping Across The Oil Ocean 8P
+
+#INTENDED_NUMBER_OF_PLAYERS 8
+#SIZE_X 3200
+#SIZE_Y 800
+#TORUS_X 1
+#TORUS_Y 1
+
+#SECONDS 90
+#INITIAL 80
+#SPAWN_INTERVAL 32
+
+#WALKER 40
+#RUNNER 10
+#FLOATER 10
+#EXPLODER2 5
+#BUILDER 50
+#MINER 30
+#DIGGER 5
+#JUMPER 40
+#BATTER 40
+#CUBER 5
+
+:matt/marble/Hatch.H: 1112 232
+:matt/marble/Hatch.H: 1912 232
+:matt/marble/Hatch.H: 2712 232
+:matt/marble/Hatch.H: 312 232
+:matt/marble/Hatch.H: 1112 632
+:matt/marble/Hatch.H: 1912 632
+:matt/marble/Hatch.H: 2712 632
+:matt/marble/Hatch.H: 312 632
+
+:matt/marble/Goal.G: 3048 464
+:matt/marble/Goal.G: 648 464
+:matt/marble/Goal.G: 1448 464
+:matt/marble/Goal.G: 2248 464
+:matt/marble/Goal.G: 3048 64
+:matt/marble/Goal.G: 648 64
+:matt/marble/Goal.G: 1448 64
+:matt/marble/Goal.G: 2248 64
+
+:matt/marble/26: 992 352 f
+:raymanni/holiday/bauble_cross: 1056 352
+:raymanni/holiday/bauble_cross: 1056 336
+:raymanni/holiday/bauble_cross: 1056 320
+:raymanni/holiday/bauble_cross: 1072 320
+:raymanni/holiday/bauble_cross: 1072 336
+:raymanni/holiday/bauble_cross: 1072 352
+:raymanni/holiday/bauble_cross: 1088 320
+:raymanni/holiday/bauble_cross: 1088 336
+:raymanni/holiday/bauble_cross: 1088 352
+:raymanni/holiday/bauble_cross: 1056 304
+:raymanni/holiday/bauble_cross: 1072 304
+:raymanni/holiday/bauble_cross: 1088 304
+:matt/marble/09: 1232 240
+:raymanni/holiday/bauble_cross: 1104 352
+:raymanni/holiday/bauble_cross: 1104 336
+:raymanni/holiday/bauble_cross: 1104 320
+:raymanni/holiday/bauble_cross: 1120 320
+:raymanni/holiday/bauble_cross: 1120 336
+:raymanni/holiday/bauble_cross: 1120 352
+:raymanni/holiday/bauble_cross: 1136 320
+:raymanni/holiday/bauble_cross: 1136 336
+:raymanni/holiday/bauble_cross: 1136 352
+:raymanni/holiday/bauble_cross: 1104 304
+:raymanni/holiday/bauble_cross: 1120 304
+:raymanni/holiday/bauble_cross: 1136 304
+:raymanni/holiday/bauble_cross: 1152 352
+:raymanni/holiday/bauble_cross: 1152 336
+:raymanni/holiday/bauble_cross: 1152 320
+:raymanni/holiday/bauble_cross: 1168 320
+:raymanni/holiday/bauble_cross: 1168 336
+:raymanni/holiday/bauble_cross: 1168 352
+:raymanni/holiday/bauble_cross: 1184 320
+:raymanni/holiday/bauble_cross: 1184 336
+:raymanni/holiday/bauble_cross: 1184 352
+:raymanni/holiday/bauble_cross: 1152 304
+:raymanni/holiday/bauble_cross: 1168 304
+:raymanni/holiday/bauble_cross: 1184 304
+:raymanni/holiday/bauble_cross: 1200 352
+:raymanni/holiday/bauble_cross: 1200 336
+:raymanni/holiday/bauble_cross: 1200 320
+:raymanni/holiday/bauble_cross: 1200 304
+:raymanni/holiday/bauble_cross: 1216 352
+:raymanni/holiday/bauble_cross: 1216 336
+:raymanni/holiday/bauble_cross: 1216 320
+:raymanni/holiday/bauble_cross: 1232 320
+:raymanni/holiday/bauble_cross: 1232 336
+:raymanni/holiday/bauble_cross: 1232 352
+:raymanni/holiday/bauble_cross: 1248 320
+:raymanni/holiday/bauble_cross: 1248 336
+:raymanni/holiday/bauble_cross: 1248 352
+:raymanni/holiday/bauble_cross: 1216 304
+:raymanni/holiday/bauble_cross: 1232 304
+:raymanni/holiday/bauble_cross: 1248 304
+:raymanni/holiday/bauble_cross: 1056 128
+:raymanni/holiday/bauble_cross: 1056 112
+:raymanni/holiday/bauble_cross: 1056 96
+:raymanni/holiday/bauble_cross: 1072 96
+:raymanni/holiday/bauble_cross: 1072 112
+:raymanni/holiday/bauble_cross: 1072 128
+:raymanni/holiday/bauble_cross: 1088 96
+:raymanni/holiday/bauble_cross: 1088 112
+:raymanni/holiday/bauble_cross: 1088 128
+:raymanni/holiday/bauble_cross: 1056 80
+:raymanni/holiday/bauble_cross: 1072 80
+:raymanni/holiday/bauble_cross: 1088 80
+:raymanni/holiday/bauble_cross: 1104 128
+:raymanni/holiday/bauble_cross: 1104 112
+:raymanni/holiday/bauble_cross: 1104 96
+:raymanni/holiday/bauble_cross: 1120 96
+:raymanni/holiday/bauble_cross: 1120 112
+:raymanni/holiday/bauble_cross: 1120 128
+:raymanni/holiday/bauble_cross: 1136 96
+:raymanni/holiday/bauble_cross: 1136 112
+:raymanni/holiday/bauble_cross: 1136 128
+:raymanni/holiday/bauble_cross: 1104 80
+:raymanni/holiday/bauble_cross: 1120 80
+:raymanni/holiday/bauble_cross: 1136 80
+:raymanni/holiday/bauble_cross: 1152 128
+:raymanni/holiday/bauble_cross: 1152 112
+:raymanni/holiday/bauble_cross: 1152 96
+:raymanni/holiday/bauble_cross: 1168 96
+:raymanni/holiday/bauble_cross: 1168 112
+:raymanni/holiday/bauble_cross: 1168 128
+:raymanni/holiday/bauble_cross: 1184 96
+:raymanni/holiday/bauble_cross: 1184 112
+:raymanni/holiday/bauble_cross: 1184 128
+:raymanni/holiday/bauble_cross: 1152 80
+:raymanni/holiday/bauble_cross: 1168 80
+:raymanni/holiday/bauble_cross: 1184 80
+:raymanni/holiday/bauble_cross: 1200 128
+:raymanni/holiday/bauble_cross: 1200 112
+:raymanni/holiday/bauble_cross: 1200 96
+:raymanni/holiday/bauble_cross: 1200 80
+:raymanni/holiday/bauble_cross: 1216 128
+:raymanni/holiday/bauble_cross: 1216 112
+:raymanni/holiday/bauble_cross: 1216 96
+:raymanni/holiday/bauble_cross: 1232 96
+:raymanni/holiday/bauble_cross: 1232 112
+:raymanni/holiday/bauble_cross: 1232 128
+:raymanni/holiday/bauble_cross: 1248 96
+:raymanni/holiday/bauble_cross: 1248 112
+:raymanni/holiday/bauble_cross: 1248 128
+:matt/marble/09: 1232 112
+:raymanni/holiday/bauble_cross: 1216 80
+:raymanni/holiday/bauble_cross: 1232 80
+:raymanni/holiday/bauble_cross: 1248 80
+:matt/marble/22: 1384 200 frr
+:matt/marble/09: 1328 176
+:matt/marble/09: 1296 176
+:matt/marble/22: 1432 248 frr
+:matt/marble/26: 1376 336 f
+:matt/marble/09: 1328 240
+:matt/marble/09: 1296 240
+:matt/marble/09: 1232 176
+:matt/marble/22: 1376 64
+:matt/marble/09: 1328 112
+:matt/marble/09: 1296 112
+:matt/marble/09: 1328 304
+:matt/marble/09: 1328 368
+:matt/marble/09: 1296 304
+:matt/marble/23: 1392 112
+:matt/marble/23: 1424 112
+:matt/marble/23: 1456 112
+:matt/marble/22: 1504 128 frr
+:matt/marble/23: 1488 112
+:matt/marble/22: 1536 112 frr
+:matt/marble/23: 1520 112
+:matt/marble/22: 1584 160 frr
+:matt/marble/22: 1632 208 frr
+:matt/marble/22: 1680 256 frr
+:matt/marble/22: 1552 176 frr
+:matt/marble/22: 1600 224 frr
+:matt/marble/22: 1648 272 frr
+:matt/marble/22: 1696 320 frr
+:matt/marble/22: 1728 304 frr
+:matt/marble/01: 1528 136 d
+:matt/marble/01: 1520 128 d
+:matt/marble/01: 1504 128 d
+:matt/marble/01: 1488 128 d
+:matt/marble/01: 1472 128 d
+:matt/marble/01: 1456 128 d
+:matt/marble/01: 1440 128 d
+:matt/marble/01: 1424 128 d
+:matt/marble/01: 1408 128 d
+:matt/marble/01: 1400 120 d
+:matt/marble/01: 1392 112 d
+:matt/marble/22: 1464 136 frr
+:matt/marble/22: 1512 184 frr
+:matt/marble/22: 1560 232 frr
+:matt/marble/22: 1608 280 frr
+:matt/marble/22: 1656 328 frr
+:matt/marble/01: 1480 136 d
+:matt/marble/22: 1416 136 frr
+:matt/marble/22: 1464 184 frr
+:matt/marble/22: 1512 232 frr
+:matt/marble/22: 1560 280 frr
+:matt/marble/22: 1608 328 frr
+:matt/marble/01: 1432 136 d
+:geoo/steel/16x16o.S: 1472 112
+:matt/marble/23: 1760 320
+:matt/marble/23: 1760 352
+:matt/marble/23: 1792 320
+:matt/marble/26: 1792 352 f
+:matt/marble/23: 1792 352
+:raymanni/holiday/bauble_cross: 1856 352
+:raymanni/holiday/bauble_cross: 1856 336
+:raymanni/holiday/bauble_cross: 1856 320
+:raymanni/holiday/bauble_cross: 1872 320
+:raymanni/holiday/bauble_cross: 1872 336
+:raymanni/holiday/bauble_cross: 1872 352
+:raymanni/holiday/bauble_cross: 1888 320
+:raymanni/holiday/bauble_cross: 1888 336
+:raymanni/holiday/bauble_cross: 1888 352
+:raymanni/holiday/bauble_cross: 1856 304
+:raymanni/holiday/bauble_cross: 1872 304
+:raymanni/holiday/bauble_cross: 1888 304
+:matt/marble/09: 2032 240
+:raymanni/holiday/bauble_cross: 1904 352
+:raymanni/holiday/bauble_cross: 1904 336
+:raymanni/holiday/bauble_cross: 1904 320
+:raymanni/holiday/bauble_cross: 1920 320
+:raymanni/holiday/bauble_cross: 1920 336
+:raymanni/holiday/bauble_cross: 1920 352
+:raymanni/holiday/bauble_cross: 1936 320
+:raymanni/holiday/bauble_cross: 1936 336
+:raymanni/holiday/bauble_cross: 1936 352
+:raymanni/holiday/bauble_cross: 1904 304
+:raymanni/holiday/bauble_cross: 1920 304
+:raymanni/holiday/bauble_cross: 1936 304
+:raymanni/holiday/bauble_cross: 1952 352
+:raymanni/holiday/bauble_cross: 1952 336
+:raymanni/holiday/bauble_cross: 1952 320
+:raymanni/holiday/bauble_cross: 1968 320
+:raymanni/holiday/bauble_cross: 1968 336
+:raymanni/holiday/bauble_cross: 1968 352
+:raymanni/holiday/bauble_cross: 1984 320
+:raymanni/holiday/bauble_cross: 1984 336
+:raymanni/holiday/bauble_cross: 1984 352
+:raymanni/holiday/bauble_cross: 1952 304
+:raymanni/holiday/bauble_cross: 1968 304
+:raymanni/holiday/bauble_cross: 1984 304
+:raymanni/holiday/bauble_cross: 2000 352
+:raymanni/holiday/bauble_cross: 2000 336
+:raymanni/holiday/bauble_cross: 2000 320
+:raymanni/holiday/bauble_cross: 2000 304
+:raymanni/holiday/bauble_cross: 2016 352
+:raymanni/holiday/bauble_cross: 2016 336
+:raymanni/holiday/bauble_cross: 2016 320
+:raymanni/holiday/bauble_cross: 2032 320
+:raymanni/holiday/bauble_cross: 2032 336
+:raymanni/holiday/bauble_cross: 2032 352
+:raymanni/holiday/bauble_cross: 2048 320
+:raymanni/holiday/bauble_cross: 2048 336
+:raymanni/holiday/bauble_cross: 2048 352
+:raymanni/holiday/bauble_cross: 2016 304
+:raymanni/holiday/bauble_cross: 2032 304
+:raymanni/holiday/bauble_cross: 2048 304
+:raymanni/holiday/bauble_cross: 1856 128
+:raymanni/holiday/bauble_cross: 1856 112
+:raymanni/holiday/bauble_cross: 1856 96
+:raymanni/holiday/bauble_cross: 1872 96
+:raymanni/holiday/bauble_cross: 1872 112
+:raymanni/holiday/bauble_cross: 1872 128
+:raymanni/holiday/bauble_cross: 1888 96
+:raymanni/holiday/bauble_cross: 1888 112
+:raymanni/holiday/bauble_cross: 1888 128
+:raymanni/holiday/bauble_cross: 1856 80
+:raymanni/holiday/bauble_cross: 1872 80
+:raymanni/holiday/bauble_cross: 1888 80
+:raymanni/holiday/bauble_cross: 1904 128
+:raymanni/holiday/bauble_cross: 1904 112
+:raymanni/holiday/bauble_cross: 1904 96
+:raymanni/holiday/bauble_cross: 1920 96
+:raymanni/holiday/bauble_cross: 1920 112
+:raymanni/holiday/bauble_cross: 1920 128
+:raymanni/holiday/bauble_cross: 1936 96
+:raymanni/holiday/bauble_cross: 1936 112
+:raymanni/holiday/bauble_cross: 1936 128
+:raymanni/holiday/bauble_cross: 1904 80
+:raymanni/holiday/bauble_cross: 1920 80
+:raymanni/holiday/bauble_cross: 1936 80
+:raymanni/holiday/bauble_cross: 1952 128
+:raymanni/holiday/bauble_cross: 1952 112
+:raymanni/holiday/bauble_cross: 1952 96
+:raymanni/holiday/bauble_cross: 1968 96
+:raymanni/holiday/bauble_cross: 1968 112
+:raymanni/holiday/bauble_cross: 1968 128
+:raymanni/holiday/bauble_cross: 1984 96
+:raymanni/holiday/bauble_cross: 1984 112
+:raymanni/holiday/bauble_cross: 1984 128
+:raymanni/holiday/bauble_cross: 1952 80
+:raymanni/holiday/bauble_cross: 1968 80
+:raymanni/holiday/bauble_cross: 1984 80
+:raymanni/holiday/bauble_cross: 2000 128
+:raymanni/holiday/bauble_cross: 2000 112
+:raymanni/holiday/bauble_cross: 2000 96
+:raymanni/holiday/bauble_cross: 2000 80
+:raymanni/holiday/bauble_cross: 2016 128
+:raymanni/holiday/bauble_cross: 2016 112
+:raymanni/holiday/bauble_cross: 2016 96
+:raymanni/holiday/bauble_cross: 2032 96
+:raymanni/holiday/bauble_cross: 2032 112
+:raymanni/holiday/bauble_cross: 2032 128
+:raymanni/holiday/bauble_cross: 2048 96
+:raymanni/holiday/bauble_cross: 2048 112
+:raymanni/holiday/bauble_cross: 2048 128
+:matt/marble/09: 2032 112
+:raymanni/holiday/bauble_cross: 2016 80
+:raymanni/holiday/bauble_cross: 2032 80
+:raymanni/holiday/bauble_cross: 2048 80
+:matt/marble/22: 2184 200 frr
+:matt/marble/09: 2128 176
+:matt/marble/09: 2096 176
+:matt/marble/26: 2176 336 f
+:matt/marble/09: 2128 240
+:matt/marble/09: 2096 240
+:matt/marble/09: 2032 176
+:matt/marble/22: 2176 64
+:matt/marble/09: 2128 112
+:matt/marble/09: 2096 112
+:matt/marble/09: 2128 304
+:matt/marble/09: 2128 368
+:matt/marble/09: 2096 304
+:matt/marble/23: 2192 112
+:matt/marble/23: 2224 112
+:matt/marble/23: 2256 112
+:matt/marble/22: 2304 128 frr
+:matt/marble/23: 2288 112
+:matt/marble/22: 2336 112 frr
+:matt/marble/23: 2320 112
+:matt/marble/22: 2384 160 frr
+:matt/marble/22: 2432 208 frr
+:matt/marble/22: 2480 256 frr
+:matt/marble/22: 2352 176 frr
+:matt/marble/22: 2400 224 frr
+:matt/marble/22: 2448 272 frr
+:matt/marble/22: 2496 320 frr
+:matt/marble/22: 2528 304 frr
+:matt/marble/01: 2328 136 d
+:matt/marble/01: 2320 128 d
+:matt/marble/01: 2304 128 d
+:matt/marble/01: 2288 128 d
+:matt/marble/01: 2272 128 d
+:matt/marble/01: 2256 128 d
+:matt/marble/01: 2240 128 d
+:matt/marble/01: 2224 128 d
+:matt/marble/01: 2208 128 d
+:matt/marble/01: 2200 120 d
+:matt/marble/01: 2192 112 d
+:matt/marble/22: 2264 136 frr
+:matt/marble/22: 2312 184 frr
+:matt/marble/22: 2360 232 frr
+:matt/marble/22: 2408 280 frr
+:matt/marble/22: 2456 328 frr
+:matt/marble/01: 2280 136 d
+:matt/marble/22: 2216 136 frr
+:matt/marble/22: 2264 184 frr
+:matt/marble/22: 2312 232 frr
+:matt/marble/22: 2360 280 frr
+:matt/marble/22: 2408 328 frr
+:matt/marble/01: 2232 136 d
+:geoo/steel/16x16o.S: 2272 112
+:matt/marble/23: 2560 320
+:matt/marble/23: 2560 352
+:matt/marble/23: 2592 320
+:matt/marble/26: 2592 352 f
+:matt/marble/23: 2592 352
+:raymanni/holiday/bauble_cross: 2656 352
+:raymanni/holiday/bauble_cross: 2656 336
+:raymanni/holiday/bauble_cross: 2656 320
+:raymanni/holiday/bauble_cross: 2672 320
+:raymanni/holiday/bauble_cross: 2672 336
+:raymanni/holiday/bauble_cross: 2672 352
+:raymanni/holiday/bauble_cross: 2688 320
+:raymanni/holiday/bauble_cross: 2688 336
+:raymanni/holiday/bauble_cross: 2688 352
+:raymanni/holiday/bauble_cross: 2656 304
+:raymanni/holiday/bauble_cross: 2672 304
+:raymanni/holiday/bauble_cross: 2688 304
+:matt/marble/09: 2832 240
+:raymanni/holiday/bauble_cross: 2704 352
+:raymanni/holiday/bauble_cross: 2704 336
+:raymanni/holiday/bauble_cross: 2704 320
+:raymanni/holiday/bauble_cross: 2720 320
+:raymanni/holiday/bauble_cross: 2720 336
+:raymanni/holiday/bauble_cross: 2720 352
+:raymanni/holiday/bauble_cross: 2736 320
+:raymanni/holiday/bauble_cross: 2736 336
+:raymanni/holiday/bauble_cross: 2736 352
+:raymanni/holiday/bauble_cross: 2704 304
+:raymanni/holiday/bauble_cross: 2720 304
+:raymanni/holiday/bauble_cross: 2736 304
+:raymanni/holiday/bauble_cross: 2752 352
+:raymanni/holiday/bauble_cross: 2752 336
+:raymanni/holiday/bauble_cross: 2752 320
+:raymanni/holiday/bauble_cross: 2768 320
+:raymanni/holiday/bauble_cross: 2768 336
+:raymanni/holiday/bauble_cross: 2768 352
+:raymanni/holiday/bauble_cross: 2784 320
+:raymanni/holiday/bauble_cross: 2784 336
+:raymanni/holiday/bauble_cross: 2784 352
+:raymanni/holiday/bauble_cross: 2752 304
+:raymanni/holiday/bauble_cross: 2768 304
+:raymanni/holiday/bauble_cross: 2784 304
+:raymanni/holiday/bauble_cross: 2800 352
+:raymanni/holiday/bauble_cross: 2800 336
+:raymanni/holiday/bauble_cross: 2800 320
+:raymanni/holiday/bauble_cross: 2816 320
+:raymanni/holiday/bauble_cross: 2816 336
+:raymanni/holiday/bauble_cross: 2816 352
+:raymanni/holiday/bauble_cross: 2800 304
+:raymanni/holiday/bauble_cross: 2816 304
+:raymanni/holiday/bauble_cross: 2832 320
+:raymanni/holiday/bauble_cross: 2832 336
+:raymanni/holiday/bauble_cross: 2832 352
+:raymanni/holiday/bauble_cross: 2848 320
+:raymanni/holiday/bauble_cross: 2848 336
+:raymanni/holiday/bauble_cross: 2848 352
+:raymanni/holiday/bauble_cross: 2832 304
+:raymanni/holiday/bauble_cross: 2848 304
+:raymanni/holiday/bauble_cross: 2656 128
+:raymanni/holiday/bauble_cross: 2656 112
+:raymanni/holiday/bauble_cross: 2656 96
+:raymanni/holiday/bauble_cross: 2672 96
+:raymanni/holiday/bauble_cross: 2672 112
+:raymanni/holiday/bauble_cross: 2672 128
+:raymanni/holiday/bauble_cross: 2688 96
+:raymanni/holiday/bauble_cross: 2688 112
+:raymanni/holiday/bauble_cross: 2688 128
+:raymanni/holiday/bauble_cross: 2656 80
+:raymanni/holiday/bauble_cross: 2672 80
+:raymanni/holiday/bauble_cross: 2688 80
+:raymanni/holiday/bauble_cross: 2704 128
+:raymanni/holiday/bauble_cross: 2704 112
+:raymanni/holiday/bauble_cross: 2704 96
+:raymanni/holiday/bauble_cross: 2720 96
+:raymanni/holiday/bauble_cross: 2720 112
+:raymanni/holiday/bauble_cross: 2720 128
+:raymanni/holiday/bauble_cross: 2736 96
+:raymanni/holiday/bauble_cross: 2736 112
+:raymanni/holiday/bauble_cross: 2736 128
+:raymanni/holiday/bauble_cross: 2704 80
+:raymanni/holiday/bauble_cross: 2720 80
+:raymanni/holiday/bauble_cross: 2736 80
+:raymanni/holiday/bauble_cross: 2752 128
+:raymanni/holiday/bauble_cross: 2752 112
+:raymanni/holiday/bauble_cross: 2752 96
+:raymanni/holiday/bauble_cross: 2768 96
+:raymanni/holiday/bauble_cross: 2768 112
+:raymanni/holiday/bauble_cross: 2768 128
+:raymanni/holiday/bauble_cross: 2784 96
+:raymanni/holiday/bauble_cross: 2784 112
+:raymanni/holiday/bauble_cross: 2784 128
+:raymanni/holiday/bauble_cross: 2752 80
+:raymanni/holiday/bauble_cross: 2768 80
+:raymanni/holiday/bauble_cross: 2784 80
+:raymanni/holiday/bauble_cross: 2800 128
+:raymanni/holiday/bauble_cross: 2800 112
+:raymanni/holiday/bauble_cross: 2800 96
+:raymanni/holiday/bauble_cross: 2816 96
+:raymanni/holiday/bauble_cross: 2816 112
+:raymanni/holiday/bauble_cross: 2816 128
+:raymanni/holiday/bauble_cross: 2800 80
+:raymanni/holiday/bauble_cross: 2816 80
+:raymanni/holiday/bauble_cross: 2832 96
+:raymanni/holiday/bauble_cross: 2832 112
+:raymanni/holiday/bauble_cross: 2832 128
+:raymanni/holiday/bauble_cross: 2848 96
+:raymanni/holiday/bauble_cross: 2848 112
+:raymanni/holiday/bauble_cross: 2848 128
+:matt/marble/09: 2832 112
+:raymanni/holiday/bauble_cross: 2832 80
+:raymanni/holiday/bauble_cross: 2848 80
+:matt/marble/22: 2984 200 frr
+:matt/marble/09: 2928 176
+:matt/marble/09: 2896 176
+:matt/marble/22: 3032 248 frr
+:matt/marble/26: 2976 336 f
+:matt/marble/09: 2928 240
+:matt/marble/09: 2896 240
+:matt/marble/09: 2832 176
+:matt/marble/22: 2976 64
+:matt/marble/09: 2928 112
+:matt/marble/09: 2896 112
+:matt/marble/09: 2928 304
+:matt/marble/09: 2928 368
+:matt/marble/09: 2896 304
+:matt/marble/23: 2992 112
+:matt/marble/23: 3024 112
+:matt/marble/23: 3056 112
+:matt/marble/22: 3104 128 frr
+:matt/marble/23: 3088 112
+:matt/marble/22: 3136 112 frr
+:matt/marble/23: 3120 112
+:matt/marble/22: 3184 160 frr
+:matt/marble/22: 32 208 frr
+:matt/marble/22: 80 256 frr
+:matt/marble/22: 3152 176 frr
+:matt/marble/22: 0 224 frr
+:matt/marble/22: 48 272 frr
+:matt/marble/22: 96 320 frr
+:matt/marble/22: 128 304 frr
+:matt/marble/01: 3128 136 d
+:matt/marble/01: 3120 128 d
+:matt/marble/01: 3104 128 d
+:matt/marble/01: 3088 128 d
+:matt/marble/01: 3072 128 d
+:matt/marble/01: 3056 128 d
+:matt/marble/01: 3040 128 d
+:matt/marble/01: 3024 128 d
+:matt/marble/01: 3008 128 d
+:matt/marble/01: 3000 120 d
+:matt/marble/01: 2992 112 d
+:matt/marble/22: 3064 136 frr
+:matt/marble/22: 3112 184 frr
+:matt/marble/22: 3160 232 frr
+:matt/marble/22: 8 280 frr
+:matt/marble/22: 56 328 frr
+:matt/marble/01: 3080 136 d
+:matt/marble/22: 3016 136 frr
+:matt/marble/22: 3064 184 frr
+:matt/marble/22: 3112 232 frr
+:matt/marble/22: 3160 280 frr
+:matt/marble/22: 8 328 frr
+:matt/marble/01: 3032 136 d
+:geoo/steel/16x16o.S: 3072 112
+:matt/marble/23: 160 320
+:matt/marble/23: 160 352
+:matt/marble/23: 192 320
+:matt/marble/26: 192 352 f
+:matt/marble/23: 192 352
+:geoo/steel/16x16o.S: 1136 304
+:geoo/steel/16x16o.S: 1936 304
+:geoo/steel/16x16o.S: 2736 304
+:matt/marble/22: 2232 248 frr
+:matt/marble/22: 2280 296 frr
+:matt/marble/22: 2328 344 frr
+:matt/marble/22: 3080 296 frr
+:matt/marble/22: 3128 344 frr
+:matt/marble/22: 1480 296 frr
+:matt/marble/22: 1528 344 frr
+:raymanni/holiday/bauble_cross: 256 352
+:raymanni/holiday/bauble_cross: 256 336
+:raymanni/holiday/bauble_cross: 256 320
+:raymanni/holiday/bauble_cross: 272 320
+:raymanni/holiday/bauble_cross: 272 336
+:raymanni/holiday/bauble_cross: 272 352
+:raymanni/holiday/bauble_cross: 288 320
+:raymanni/holiday/bauble_cross: 288 336
+:raymanni/holiday/bauble_cross: 288 352
+:raymanni/holiday/bauble_cross: 256 304
+:raymanni/holiday/bauble_cross: 272 304
+:raymanni/holiday/bauble_cross: 288 304
+:matt/marble/09: 432 240
+:raymanni/holiday/bauble_cross: 304 352
+:raymanni/holiday/bauble_cross: 304 336
+:raymanni/holiday/bauble_cross: 304 320
+:raymanni/holiday/bauble_cross: 320 320
+:raymanni/holiday/bauble_cross: 320 336
+:raymanni/holiday/bauble_cross: 320 352
+:raymanni/holiday/bauble_cross: 336 320
+:raymanni/holiday/bauble_cross: 336 336
+:raymanni/holiday/bauble_cross: 336 352
+:raymanni/holiday/bauble_cross: 304 304
+:raymanni/holiday/bauble_cross: 320 304
+:raymanni/holiday/bauble_cross: 336 304
+:raymanni/holiday/bauble_cross: 352 352
+:raymanni/holiday/bauble_cross: 352 336
+:raymanni/holiday/bauble_cross: 352 320
+:raymanni/holiday/bauble_cross: 368 320
+:raymanni/holiday/bauble_cross: 368 336
+:raymanni/holiday/bauble_cross: 368 352
+:raymanni/holiday/bauble_cross: 384 320
+:raymanni/holiday/bauble_cross: 384 336
+:raymanni/holiday/bauble_cross: 384 352
+:raymanni/holiday/bauble_cross: 352 304
+:raymanni/holiday/bauble_cross: 368 304
+:raymanni/holiday/bauble_cross: 384 304
+:raymanni/holiday/bauble_cross: 400 352
+:raymanni/holiday/bauble_cross: 400 336
+:raymanni/holiday/bauble_cross: 400 320
+:raymanni/holiday/bauble_cross: 416 320
+:raymanni/holiday/bauble_cross: 416 336
+:raymanni/holiday/bauble_cross: 416 352
+:raymanni/holiday/bauble_cross: 400 304
+:raymanni/holiday/bauble_cross: 416 304
+:raymanni/holiday/bauble_cross: 432 320
+:raymanni/holiday/bauble_cross: 432 336
+:raymanni/holiday/bauble_cross: 432 352
+:raymanni/holiday/bauble_cross: 448 320
+:raymanni/holiday/bauble_cross: 448 336
+:raymanni/holiday/bauble_cross: 448 352
+:raymanni/holiday/bauble_cross: 432 304
+:raymanni/holiday/bauble_cross: 448 304
+:raymanni/holiday/bauble_cross: 256 128
+:raymanni/holiday/bauble_cross: 256 112
+:raymanni/holiday/bauble_cross: 256 96
+:raymanni/holiday/bauble_cross: 272 96
+:raymanni/holiday/bauble_cross: 272 112
+:raymanni/holiday/bauble_cross: 272 128
+:raymanni/holiday/bauble_cross: 288 96
+:raymanni/holiday/bauble_cross: 288 112
+:raymanni/holiday/bauble_cross: 288 128
+:raymanni/holiday/bauble_cross: 256 80
+:raymanni/holiday/bauble_cross: 272 80
+:raymanni/holiday/bauble_cross: 288 80
+:raymanni/holiday/bauble_cross: 304 128
+:raymanni/holiday/bauble_cross: 304 112
+:raymanni/holiday/bauble_cross: 304 96
+:raymanni/holiday/bauble_cross: 320 96
+:raymanni/holiday/bauble_cross: 320 112
+:raymanni/holiday/bauble_cross: 320 128
+:raymanni/holiday/bauble_cross: 336 96
+:raymanni/holiday/bauble_cross: 336 112
+:raymanni/holiday/bauble_cross: 336 128
+:raymanni/holiday/bauble_cross: 304 80
+:raymanni/holiday/bauble_cross: 320 80
+:raymanni/holiday/bauble_cross: 336 80
+:raymanni/holiday/bauble_cross: 352 128
+:raymanni/holiday/bauble_cross: 352 112
+:raymanni/holiday/bauble_cross: 352 96
+:raymanni/holiday/bauble_cross: 368 96
+:raymanni/holiday/bauble_cross: 368 112
+:raymanni/holiday/bauble_cross: 368 128
+:raymanni/holiday/bauble_cross: 384 96
+:raymanni/holiday/bauble_cross: 384 112
+:raymanni/holiday/bauble_cross: 384 128
+:raymanni/holiday/bauble_cross: 352 80
+:raymanni/holiday/bauble_cross: 368 80
+:raymanni/holiday/bauble_cross: 384 80
+:raymanni/holiday/bauble_cross: 400 128
+:raymanni/holiday/bauble_cross: 400 112
+:raymanni/holiday/bauble_cross: 400 96
+:raymanni/holiday/bauble_cross: 416 96
+:raymanni/holiday/bauble_cross: 416 112
+:raymanni/holiday/bauble_cross: 416 128
+:raymanni/holiday/bauble_cross: 400 80
+:raymanni/holiday/bauble_cross: 416 80
+:raymanni/holiday/bauble_cross: 432 96
+:raymanni/holiday/bauble_cross: 432 112
+:raymanni/holiday/bauble_cross: 432 128
+:raymanni/holiday/bauble_cross: 448 96
+:raymanni/holiday/bauble_cross: 448 112
+:raymanni/holiday/bauble_cross: 448 128
+:matt/marble/09: 432 112
+:raymanni/holiday/bauble_cross: 432 80
+:raymanni/holiday/bauble_cross: 448 80
+:matt/marble/22: 584 200 frr
+:matt/marble/09: 528 176
+:matt/marble/09: 496 176
+:matt/marble/22: 632 248 frr
+:matt/marble/26: 576 336 f
+:matt/marble/09: 528 240
+:matt/marble/09: 496 240
+:matt/marble/09: 432 176
+:matt/marble/22: 576 64
+:matt/marble/09: 528 112
+:matt/marble/09: 496 112
+:matt/marble/09: 528 304
+:matt/marble/09: 528 368
+:matt/marble/09: 496 304
+:matt/marble/23: 592 112
+:matt/marble/23: 624 112
+:matt/marble/23: 656 112
+:matt/marble/22: 704 128 frr
+:matt/marble/23: 688 112
+:matt/marble/22: 736 112 frr
+:matt/marble/23: 720 112
+:matt/marble/22: 784 160 frr
+:matt/marble/22: 832 208 frr
+:matt/marble/22: 880 256 frr
+:matt/marble/22: 752 176 frr
+:matt/marble/22: 800 224 frr
+:matt/marble/22: 848 272 frr
+:matt/marble/22: 896 320 frr
+:matt/marble/22: 928 304 frr
+:matt/marble/01: 728 136 d
+:matt/marble/01: 720 128 d
+:matt/marble/01: 704 128 d
+:matt/marble/01: 688 128 d
+:matt/marble/01: 672 128 d
+:matt/marble/01: 656 128 d
+:matt/marble/01: 640 128 d
+:matt/marble/01: 624 128 d
+:matt/marble/01: 608 128 d
+:matt/marble/01: 600 120 d
+:matt/marble/01: 592 112 d
+:matt/marble/22: 664 136 frr
+:matt/marble/22: 712 184 frr
+:matt/marble/22: 760 232 frr
+:matt/marble/22: 808 280 frr
+:matt/marble/22: 856 328 frr
+:matt/marble/01: 680 136 d
+:matt/marble/22: 616 136 frr
+:matt/marble/22: 664 184 frr
+:matt/marble/22: 712 232 frr
+:matt/marble/22: 760 280 frr
+:matt/marble/22: 808 328 frr
+:matt/marble/01: 632 136 d
+:geoo/steel/16x16o.S: 672 112
+:matt/marble/23: 960 320
+:matt/marble/23: 960 352
+:matt/marble/23: 992 320
+:matt/marble/23: 992 352
+:geoo/steel/16x16o.S: 336 304
+:matt/marble/22: 680 296 frr
+:matt/marble/22: 728 344 frr
+:matt/marble/26: 992 752 f
+:raymanni/holiday/bauble_cross: 1056 752
+:raymanni/holiday/bauble_cross: 1056 736
+:raymanni/holiday/bauble_cross: 1056 720
+:raymanni/holiday/bauble_cross: 1072 720
+:raymanni/holiday/bauble_cross: 1072 736
+:raymanni/holiday/bauble_cross: 1072 752
+:raymanni/holiday/bauble_cross: 1088 720
+:raymanni/holiday/bauble_cross: 1088 736
+:raymanni/holiday/bauble_cross: 1088 752
+:raymanni/holiday/bauble_cross: 1056 704
+:raymanni/holiday/bauble_cross: 1072 704
+:raymanni/holiday/bauble_cross: 1088 704
+:matt/marble/09: 1232 640
+:raymanni/holiday/bauble_cross: 1104 752
+:raymanni/holiday/bauble_cross: 1104 736
+:raymanni/holiday/bauble_cross: 1104 720
+:raymanni/holiday/bauble_cross: 1120 720
+:raymanni/holiday/bauble_cross: 1120 736
+:raymanni/holiday/bauble_cross: 1120 752
+:raymanni/holiday/bauble_cross: 1136 720
+:raymanni/holiday/bauble_cross: 1136 736
+:raymanni/holiday/bauble_cross: 1136 752
+:raymanni/holiday/bauble_cross: 1104 704
+:raymanni/holiday/bauble_cross: 1120 704
+:raymanni/holiday/bauble_cross: 1136 704
+:raymanni/holiday/bauble_cross: 1152 752
+:raymanni/holiday/bauble_cross: 1152 736
+:raymanni/holiday/bauble_cross: 1152 720
+:raymanni/holiday/bauble_cross: 1168 720
+:raymanni/holiday/bauble_cross: 1168 736
+:raymanni/holiday/bauble_cross: 1168 752
+:raymanni/holiday/bauble_cross: 1184 720
+:raymanni/holiday/bauble_cross: 1184 736
+:raymanni/holiday/bauble_cross: 1184 752
+:raymanni/holiday/bauble_cross: 1152 704
+:raymanni/holiday/bauble_cross: 1168 704
+:raymanni/holiday/bauble_cross: 1184 704
+:raymanni/holiday/bauble_cross: 1200 752
+:raymanni/holiday/bauble_cross: 1200 736
+:raymanni/holiday/bauble_cross: 1200 720
+:raymanni/holiday/bauble_cross: 1200 704
+:raymanni/holiday/bauble_cross: 1216 752
+:raymanni/holiday/bauble_cross: 1216 736
+:raymanni/holiday/bauble_cross: 1216 720
+:raymanni/holiday/bauble_cross: 1232 720
+:raymanni/holiday/bauble_cross: 1232 736
+:raymanni/holiday/bauble_cross: 1232 752
+:raymanni/holiday/bauble_cross: 1248 720
+:raymanni/holiday/bauble_cross: 1248 736
+:raymanni/holiday/bauble_cross: 1248 752
+:raymanni/holiday/bauble_cross: 1216 704
+:raymanni/holiday/bauble_cross: 1232 704
+:raymanni/holiday/bauble_cross: 1248 704
+:raymanni/holiday/bauble_cross: 1056 528
+:raymanni/holiday/bauble_cross: 1056 512
+:raymanni/holiday/bauble_cross: 1056 496
+:raymanni/holiday/bauble_cross: 1072 496
+:raymanni/holiday/bauble_cross: 1072 512
+:raymanni/holiday/bauble_cross: 1072 528
+:raymanni/holiday/bauble_cross: 1088 496
+:raymanni/holiday/bauble_cross: 1088 512
+:raymanni/holiday/bauble_cross: 1088 528
+:raymanni/holiday/bauble_cross: 1056 480
+:raymanni/holiday/bauble_cross: 1072 480
+:raymanni/holiday/bauble_cross: 1088 480
+:raymanni/holiday/bauble_cross: 1104 528
+:raymanni/holiday/bauble_cross: 1104 512
+:raymanni/holiday/bauble_cross: 1104 496
+:raymanni/holiday/bauble_cross: 1120 496
+:raymanni/holiday/bauble_cross: 1120 512
+:raymanni/holiday/bauble_cross: 1120 528
+:raymanni/holiday/bauble_cross: 1136 496
+:raymanni/holiday/bauble_cross: 1136 512
+:raymanni/holiday/bauble_cross: 1136 528
+:raymanni/holiday/bauble_cross: 1104 480
+:raymanni/holiday/bauble_cross: 1120 480
+:raymanni/holiday/bauble_cross: 1136 480
+:raymanni/holiday/bauble_cross: 1152 528
+:raymanni/holiday/bauble_cross: 1152 512
+:raymanni/holiday/bauble_cross: 1152 496
+:raymanni/holiday/bauble_cross: 1168 496
+:raymanni/holiday/bauble_cross: 1168 512
+:raymanni/holiday/bauble_cross: 1168 528
+:raymanni/holiday/bauble_cross: 1184 496
+:raymanni/holiday/bauble_cross: 1184 512
+:raymanni/holiday/bauble_cross: 1184 528
+:raymanni/holiday/bauble_cross: 1152 480
+:raymanni/holiday/bauble_cross: 1168 480
+:raymanni/holiday/bauble_cross: 1184 480
+:raymanni/holiday/bauble_cross: 1200 528
+:raymanni/holiday/bauble_cross: 1200 512
+:raymanni/holiday/bauble_cross: 1200 496
+:raymanni/holiday/bauble_cross: 1200 480
+:raymanni/holiday/bauble_cross: 1216 528
+:raymanni/holiday/bauble_cross: 1216 512
+:raymanni/holiday/bauble_cross: 1216 496
+:raymanni/holiday/bauble_cross: 1232 496
+:raymanni/holiday/bauble_cross: 1232 512
+:raymanni/holiday/bauble_cross: 1232 528
+:raymanni/holiday/bauble_cross: 1248 496
+:raymanni/holiday/bauble_cross: 1248 512
+:raymanni/holiday/bauble_cross: 1248 528
+:matt/marble/09: 1232 512
+:raymanni/holiday/bauble_cross: 1216 480
+:raymanni/holiday/bauble_cross: 1232 480
+:raymanni/holiday/bauble_cross: 1248 480
+:matt/marble/22: 1384 600 frr
+:matt/marble/09: 1328 576
+:matt/marble/09: 1296 576
+:matt/marble/22: 1432 648 frr
+:matt/marble/26: 1376 736 f
+:matt/marble/09: 1328 640
+:matt/marble/09: 1296 640
+:matt/marble/09: 1232 576
+:matt/marble/22: 1376 464
+:matt/marble/09: 1328 512
+:matt/marble/09: 1296 512
+:matt/marble/09: 1328 704
+:matt/marble/09: 1328 768
+:matt/marble/09: 1296 704
+:matt/marble/23: 1392 512
+:matt/marble/23: 1424 512
+:matt/marble/23: 1456 512
+:matt/marble/22: 1504 528 frr
+:matt/marble/23: 1488 512
+:matt/marble/22: 1536 512 frr
+:matt/marble/23: 1520 512
+:matt/marble/22: 1584 560 frr
+:matt/marble/22: 1632 608 frr
+:matt/marble/22: 1680 656 frr
+:matt/marble/22: 1552 576 frr
+:matt/marble/22: 1600 624 frr
+:matt/marble/22: 1648 672 frr
+:matt/marble/22: 1696 720 frr
+:matt/marble/22: 1728 704 frr
+:matt/marble/01: 1528 536 d
+:matt/marble/01: 1520 528 d
+:matt/marble/01: 1504 528 d
+:matt/marble/01: 1488 528 d
+:matt/marble/01: 1472 528 d
+:matt/marble/01: 1456 528 d
+:matt/marble/01: 1440 528 d
+:matt/marble/01: 1424 528 d
+:matt/marble/01: 1408 528 d
+:matt/marble/01: 1400 520 d
+:matt/marble/01: 1392 512 d
+:matt/marble/22: 1464 536 frr
+:matt/marble/22: 1512 584 frr
+:matt/marble/22: 1560 632 frr
+:matt/marble/22: 1608 680 frr
+:matt/marble/22: 1656 728 frr
+:matt/marble/01: 1480 536 d
+:matt/marble/22: 1416 536 frr
+:matt/marble/22: 1464 584 frr
+:matt/marble/22: 1512 632 frr
+:matt/marble/22: 1560 680 frr
+:matt/marble/22: 1608 728 frr
+:matt/marble/01: 1432 536 d
+:geoo/steel/16x16o.S: 1472 512
+:matt/marble/23: 1760 720
+:matt/marble/23: 1760 752
+:matt/marble/23: 1792 720
+:matt/marble/26: 1792 752 f
+:matt/marble/23: 1792 752
+:raymanni/holiday/bauble_cross: 1856 752
+:raymanni/holiday/bauble_cross: 1856 736
+:raymanni/holiday/bauble_cross: 1856 720
+:raymanni/holiday/bauble_cross: 1872 720
+:raymanni/holiday/bauble_cross: 1872 736
+:raymanni/holiday/bauble_cross: 1872 752
+:raymanni/holiday/bauble_cross: 1888 720
+:raymanni/holiday/bauble_cross: 1888 736
+:raymanni/holiday/bauble_cross: 1888 752
+:raymanni/holiday/bauble_cross: 1856 704
+:raymanni/holiday/bauble_cross: 1872 704
+:raymanni/holiday/bauble_cross: 1888 704
+:matt/marble/09: 2032 640
+:raymanni/holiday/bauble_cross: 1904 752
+:raymanni/holiday/bauble_cross: 1904 736
+:raymanni/holiday/bauble_cross: 1904 720
+:raymanni/holiday/bauble_cross: 1920 720
+:raymanni/holiday/bauble_cross: 1920 736
+:raymanni/holiday/bauble_cross: 1920 752
+:raymanni/holiday/bauble_cross: 1936 720
+:raymanni/holiday/bauble_cross: 1936 736
+:raymanni/holiday/bauble_cross: 1936 752
+:raymanni/holiday/bauble_cross: 1904 704
+:raymanni/holiday/bauble_cross: 1920 704
+:raymanni/holiday/bauble_cross: 1936 704
+:raymanni/holiday/bauble_cross: 1952 752
+:raymanni/holiday/bauble_cross: 1952 736
+:raymanni/holiday/bauble_cross: 1952 720
+:raymanni/holiday/bauble_cross: 1968 720
+:raymanni/holiday/bauble_cross: 1968 736
+:raymanni/holiday/bauble_cross: 1968 752
+:raymanni/holiday/bauble_cross: 1984 720
+:raymanni/holiday/bauble_cross: 1984 736
+:raymanni/holiday/bauble_cross: 1984 752
+:raymanni/holiday/bauble_cross: 1952 704
+:raymanni/holiday/bauble_cross: 1968 704
+:raymanni/holiday/bauble_cross: 1984 704
+:raymanni/holiday/bauble_cross: 2000 752
+:raymanni/holiday/bauble_cross: 2000 736
+:raymanni/holiday/bauble_cross: 2000 720
+:raymanni/holiday/bauble_cross: 2000 704
+:raymanni/holiday/bauble_cross: 2016 752
+:raymanni/holiday/bauble_cross: 2016 736
+:raymanni/holiday/bauble_cross: 2016 720
+:raymanni/holiday/bauble_cross: 2032 720
+:raymanni/holiday/bauble_cross: 2032 736
+:raymanni/holiday/bauble_cross: 2032 752
+:raymanni/holiday/bauble_cross: 2048 720
+:raymanni/holiday/bauble_cross: 2048 736
+:raymanni/holiday/bauble_cross: 2048 752
+:raymanni/holiday/bauble_cross: 2016 704
+:raymanni/holiday/bauble_cross: 2032 704
+:raymanni/holiday/bauble_cross: 2048 704
+:raymanni/holiday/bauble_cross: 1856 528
+:raymanni/holiday/bauble_cross: 1856 512
+:raymanni/holiday/bauble_cross: 1856 496
+:raymanni/holiday/bauble_cross: 1872 496
+:raymanni/holiday/bauble_cross: 1872 512
+:raymanni/holiday/bauble_cross: 1872 528
+:raymanni/holiday/bauble_cross: 1888 496
+:raymanni/holiday/bauble_cross: 1888 512
+:raymanni/holiday/bauble_cross: 1888 528
+:raymanni/holiday/bauble_cross: 1856 480
+:raymanni/holiday/bauble_cross: 1872 480
+:raymanni/holiday/bauble_cross: 1888 480
+:raymanni/holiday/bauble_cross: 1904 528
+:raymanni/holiday/bauble_cross: 1904 512
+:raymanni/holiday/bauble_cross: 1904 496
+:raymanni/holiday/bauble_cross: 1920 496
+:raymanni/holiday/bauble_cross: 1920 512
+:raymanni/holiday/bauble_cross: 1920 528
+:raymanni/holiday/bauble_cross: 1936 496
+:raymanni/holiday/bauble_cross: 1936 512
+:raymanni/holiday/bauble_cross: 1936 528
+:raymanni/holiday/bauble_cross: 1904 480
+:raymanni/holiday/bauble_cross: 1920 480
+:raymanni/holiday/bauble_cross: 1936 480
+:raymanni/holiday/bauble_cross: 1952 528
+:raymanni/holiday/bauble_cross: 1952 512
+:raymanni/holiday/bauble_cross: 1952 496
+:raymanni/holiday/bauble_cross: 1968 496
+:raymanni/holiday/bauble_cross: 1968 512
+:raymanni/holiday/bauble_cross: 1968 528
+:raymanni/holiday/bauble_cross: 1984 496
+:raymanni/holiday/bauble_cross: 1984 512
+:raymanni/holiday/bauble_cross: 1984 528
+:raymanni/holiday/bauble_cross: 1952 480
+:raymanni/holiday/bauble_cross: 1968 480
+:raymanni/holiday/bauble_cross: 1984 480
+:raymanni/holiday/bauble_cross: 2000 528
+:raymanni/holiday/bauble_cross: 2000 512
+:raymanni/holiday/bauble_cross: 2000 496
+:raymanni/holiday/bauble_cross: 2000 480
+:raymanni/holiday/bauble_cross: 2016 528
+:raymanni/holiday/bauble_cross: 2016 512
+:raymanni/holiday/bauble_cross: 2016 496
+:raymanni/holiday/bauble_cross: 2032 496
+:raymanni/holiday/bauble_cross: 2032 512
+:raymanni/holiday/bauble_cross: 2032 528
+:raymanni/holiday/bauble_cross: 2048 496
+:raymanni/holiday/bauble_cross: 2048 512
+:raymanni/holiday/bauble_cross: 2048 528
+:matt/marble/09: 2032 512
+:raymanni/holiday/bauble_cross: 2016 480
+:raymanni/holiday/bauble_cross: 2032 480
+:raymanni/holiday/bauble_cross: 2048 480
+:matt/marble/22: 2184 600 frr
+:matt/marble/09: 2128 576
+:matt/marble/09: 2096 576
+:matt/marble/26: 2176 736 f
+:matt/marble/09: 2128 640
+:matt/marble/09: 2096 640
+:matt/marble/09: 2032 576
+:matt/marble/22: 2176 464
+:matt/marble/09: 2128 512
+:matt/marble/09: 2096 512
+:matt/marble/09: 2128 704
+:matt/marble/09: 2128 768
+:matt/marble/09: 2096 704
+:matt/marble/23: 2192 512
+:matt/marble/23: 2224 512
+:matt/marble/23: 2256 512
+:matt/marble/22: 2304 528 frr
+:matt/marble/23: 2288 512
+:matt/marble/22: 2336 512 frr
+:matt/marble/23: 2320 512
+:matt/marble/22: 2384 560 frr
+:matt/marble/22: 2432 608 frr
+:matt/marble/22: 2480 656 frr
+:matt/marble/22: 2352 576 frr
+:matt/marble/22: 2400 624 frr
+:matt/marble/22: 2448 672 frr
+:matt/marble/22: 2496 720 frr
+:matt/marble/22: 2528 704 frr
+:matt/marble/01: 2328 536 d
+:matt/marble/01: 2320 528 d
+:matt/marble/01: 2304 528 d
+:matt/marble/01: 2288 528 d
+:matt/marble/01: 2272 528 d
+:matt/marble/01: 2256 528 d
+:matt/marble/01: 2240 528 d
+:matt/marble/01: 2224 528 d
+:matt/marble/01: 2208 528 d
+:matt/marble/01: 2200 520 d
+:matt/marble/01: 2192 512 d
+:matt/marble/22: 2264 536 frr
+:matt/marble/22: 2312 584 frr
+:matt/marble/22: 2360 632 frr
+:matt/marble/22: 2408 680 frr
+:matt/marble/22: 2456 728 frr
+:matt/marble/01: 2280 536 d
+:matt/marble/22: 2216 536 frr
+:matt/marble/22: 2264 584 frr
+:matt/marble/22: 2312 632 frr
+:matt/marble/22: 2360 680 frr
+:matt/marble/22: 2408 728 frr
+:matt/marble/01: 2232 536 d
+:geoo/steel/16x16o.S: 2272 512
+:matt/marble/23: 2560 720
+:matt/marble/23: 2560 752
+:matt/marble/23: 2592 720
+:matt/marble/26: 2592 752 f
+:matt/marble/23: 2592 752
+:raymanni/holiday/bauble_cross: 2656 752
+:raymanni/holiday/bauble_cross: 2656 736
+:raymanni/holiday/bauble_cross: 2656 720
+:raymanni/holiday/bauble_cross: 2672 720
+:raymanni/holiday/bauble_cross: 2672 736
+:raymanni/holiday/bauble_cross: 2672 752
+:raymanni/holiday/bauble_cross: 2688 720
+:raymanni/holiday/bauble_cross: 2688 736
+:raymanni/holiday/bauble_cross: 2688 752
+:raymanni/holiday/bauble_cross: 2656 704
+:raymanni/holiday/bauble_cross: 2672 704
+:raymanni/holiday/bauble_cross: 2688 704
+:matt/marble/09: 2832 640
+:raymanni/holiday/bauble_cross: 2704 752
+:raymanni/holiday/bauble_cross: 2704 736
+:raymanni/holiday/bauble_cross: 2704 720
+:raymanni/holiday/bauble_cross: 2720 720
+:raymanni/holiday/bauble_cross: 2720 736
+:raymanni/holiday/bauble_cross: 2720 752
+:raymanni/holiday/bauble_cross: 2736 720
+:raymanni/holiday/bauble_cross: 2736 736
+:raymanni/holiday/bauble_cross: 2736 752
+:raymanni/holiday/bauble_cross: 2704 704
+:raymanni/holiday/bauble_cross: 2720 704
+:raymanni/holiday/bauble_cross: 2736 704
+:raymanni/holiday/bauble_cross: 2752 752
+:raymanni/holiday/bauble_cross: 2752 736
+:raymanni/holiday/bauble_cross: 2752 720
+:raymanni/holiday/bauble_cross: 2768 720
+:raymanni/holiday/bauble_cross: 2768 736
+:raymanni/holiday/bauble_cross: 2768 752
+:raymanni/holiday/bauble_cross: 2784 720
+:raymanni/holiday/bauble_cross: 2784 736
+:raymanni/holiday/bauble_cross: 2784 752
+:raymanni/holiday/bauble_cross: 2752 704
+:raymanni/holiday/bauble_cross: 2768 704
+:raymanni/holiday/bauble_cross: 2784 704
+:raymanni/holiday/bauble_cross: 2800 752
+:raymanni/holiday/bauble_cross: 2800 736
+:raymanni/holiday/bauble_cross: 2800 720
+:raymanni/holiday/bauble_cross: 2816 720
+:raymanni/holiday/bauble_cross: 2816 736
+:raymanni/holiday/bauble_cross: 2816 752
+:raymanni/holiday/bauble_cross: 2800 704
+:raymanni/holiday/bauble_cross: 2816 704
+:raymanni/holiday/bauble_cross: 2832 720
+:raymanni/holiday/bauble_cross: 2832 736
+:raymanni/holiday/bauble_cross: 2832 752
+:raymanni/holiday/bauble_cross: 2848 720
+:raymanni/holiday/bauble_cross: 2848 736
+:raymanni/holiday/bauble_cross: 2848 752
+:raymanni/holiday/bauble_cross: 2832 704
+:raymanni/holiday/bauble_cross: 2848 704
+:raymanni/holiday/bauble_cross: 2656 528
+:raymanni/holiday/bauble_cross: 2656 512
+:raymanni/holiday/bauble_cross: 2656 496
+:raymanni/holiday/bauble_cross: 2672 496
+:raymanni/holiday/bauble_cross: 2672 512
+:raymanni/holiday/bauble_cross: 2672 528
+:raymanni/holiday/bauble_cross: 2688 496
+:raymanni/holiday/bauble_cross: 2688 512
+:raymanni/holiday/bauble_cross: 2688 528
+:raymanni/holiday/bauble_cross: 2656 480
+:raymanni/holiday/bauble_cross: 2672 480
+:raymanni/holiday/bauble_cross: 2688 480
+:raymanni/holiday/bauble_cross: 2704 528
+:raymanni/holiday/bauble_cross: 2704 512
+:raymanni/holiday/bauble_cross: 2704 496
+:raymanni/holiday/bauble_cross: 2720 496
+:raymanni/holiday/bauble_cross: 2720 512
+:raymanni/holiday/bauble_cross: 2720 528
+:raymanni/holiday/bauble_cross: 2736 496
+:raymanni/holiday/bauble_cross: 2736 512
+:raymanni/holiday/bauble_cross: 2736 528
+:raymanni/holiday/bauble_cross: 2704 480
+:raymanni/holiday/bauble_cross: 2720 480
+:raymanni/holiday/bauble_cross: 2736 480
+:raymanni/holiday/bauble_cross: 2752 528
+:raymanni/holiday/bauble_cross: 2752 512
+:raymanni/holiday/bauble_cross: 2752 496
+:raymanni/holiday/bauble_cross: 2768 496
+:raymanni/holiday/bauble_cross: 2768 512
+:raymanni/holiday/bauble_cross: 2768 528
+:raymanni/holiday/bauble_cross: 2784 496
+:raymanni/holiday/bauble_cross: 2784 512
+:raymanni/holiday/bauble_cross: 2784 528
+:raymanni/holiday/bauble_cross: 2752 480
+:raymanni/holiday/bauble_cross: 2768 480
+:raymanni/holiday/bauble_cross: 2784 480
+:raymanni/holiday/bauble_cross: 2800 528
+:raymanni/holiday/bauble_cross: 2800 512
+:raymanni/holiday/bauble_cross: 2800 496
+:raymanni/holiday/bauble_cross: 2816 496
+:raymanni/holiday/bauble_cross: 2816 512
+:raymanni/holiday/bauble_cross: 2816 528
+:raymanni/holiday/bauble_cross: 2800 480
+:raymanni/holiday/bauble_cross: 2816 480
+:raymanni/holiday/bauble_cross: 2832 496
+:raymanni/holiday/bauble_cross: 2832 512
+:raymanni/holiday/bauble_cross: 2832 528
+:raymanni/holiday/bauble_cross: 2848 496
+:raymanni/holiday/bauble_cross: 2848 512
+:raymanni/holiday/bauble_cross: 2848 528
+:matt/marble/09: 2832 512
+:raymanni/holiday/bauble_cross: 2832 480
+:raymanni/holiday/bauble_cross: 2848 480
+:matt/marble/22: 2984 600 frr
+:matt/marble/09: 2928 576
+:matt/marble/09: 2896 576
+:matt/marble/22: 3032 648 frr
+:matt/marble/26: 2976 736 f
+:matt/marble/09: 2928 640
+:matt/marble/09: 2896 640
+:matt/marble/09: 2832 576
+:matt/marble/22: 2976 464
+:matt/marble/09: 2928 512
+:matt/marble/09: 2896 512
+:matt/marble/09: 2928 704
+:matt/marble/09: 2928 768
+:matt/marble/09: 2896 704
+:matt/marble/23: 2992 512
+:matt/marble/23: 3024 512
+:matt/marble/23: 3056 512
+:matt/marble/22: 3104 528 frr
+:matt/marble/23: 3088 512
+:matt/marble/22: 3136 512 frr
+:matt/marble/23: 3120 512
+:matt/marble/22: 3184 560 frr
+:matt/marble/22: 32 608 frr
+:matt/marble/22: 80 656 frr
+:matt/marble/22: 3152 576 frr
+:matt/marble/22: 0 624 frr
+:matt/marble/22: 48 672 frr
+:matt/marble/22: 96 720 frr
+:matt/marble/22: 128 704 frr
+:matt/marble/01: 3128 536 d
+:matt/marble/01: 3120 528 d
+:matt/marble/01: 3104 528 d
+:matt/marble/01: 3088 528 d
+:matt/marble/01: 3072 528 d
+:matt/marble/01: 3056 528 d
+:matt/marble/01: 3040 528 d
+:matt/marble/01: 3024 528 d
+:matt/marble/01: 3008 528 d
+:matt/marble/01: 3000 520 d
+:matt/marble/01: 2992 512 d
+:matt/marble/22: 3064 536 frr
+:matt/marble/22: 3112 584 frr
+:matt/marble/22: 3160 632 frr
+:matt/marble/22: 8 680 frr
+:matt/marble/22: 56 728 frr
+:matt/marble/01: 3080 536 d
+:matt/marble/22: 3016 536 frr
+:matt/marble/22: 3064 584 frr
+:matt/marble/22: 3112 632 frr
+:matt/marble/22: 3160 680 frr
+:matt/marble/22: 8 728 frr
+:matt/marble/01: 3032 536 d
+:geoo/steel/16x16o.S: 3072 512
+:matt/marble/23: 160 720
+:matt/marble/23: 160 752
+:matt/marble/23: 192 720
+:matt/marble/26: 192 752 f
+:matt/marble/23: 192 752
+:geoo/steel/16x16o.S: 1136 704
+:geoo/steel/16x16o.S: 1936 704
+:geoo/steel/16x16o.S: 2736 704
+:matt/marble/22: 2232 648 frr
+:matt/marble/22: 2280 696 frr
+:matt/marble/22: 2328 744 frr
+:matt/marble/22: 3080 696 frr
+:matt/marble/22: 3128 744 frr
+:matt/marble/22: 1480 696 frr
+:matt/marble/22: 1528 744 frr
+:raymanni/holiday/bauble_cross: 256 752
+:raymanni/holiday/bauble_cross: 256 736
+:raymanni/holiday/bauble_cross: 256 720
+:raymanni/holiday/bauble_cross: 272 720
+:raymanni/holiday/bauble_cross: 272 736
+:raymanni/holiday/bauble_cross: 272 752
+:raymanni/holiday/bauble_cross: 288 720
+:raymanni/holiday/bauble_cross: 288 736
+:raymanni/holiday/bauble_cross: 288 752
+:raymanni/holiday/bauble_cross: 256 704
+:raymanni/holiday/bauble_cross: 272 704
+:raymanni/holiday/bauble_cross: 288 704
+:matt/marble/09: 432 640
+:raymanni/holiday/bauble_cross: 304 752
+:raymanni/holiday/bauble_cross: 304 736
+:raymanni/holiday/bauble_cross: 304 720
+:raymanni/holiday/bauble_cross: 320 720
+:raymanni/holiday/bauble_cross: 320 736
+:raymanni/holiday/bauble_cross: 320 752
+:raymanni/holiday/bauble_cross: 336 720
+:raymanni/holiday/bauble_cross: 336 736
+:raymanni/holiday/bauble_cross: 336 752
+:raymanni/holiday/bauble_cross: 304 704
+:raymanni/holiday/bauble_cross: 320 704
+:raymanni/holiday/bauble_cross: 336 704
+:raymanni/holiday/bauble_cross: 352 752
+:raymanni/holiday/bauble_cross: 352 736
+:raymanni/holiday/bauble_cross: 352 720
+:raymanni/holiday/bauble_cross: 368 720
+:raymanni/holiday/bauble_cross: 368 736
+:raymanni/holiday/bauble_cross: 368 752
+:raymanni/holiday/bauble_cross: 384 720
+:raymanni/holiday/bauble_cross: 384 736
+:raymanni/holiday/bauble_cross: 384 752
+:raymanni/holiday/bauble_cross: 352 704
+:raymanni/holiday/bauble_cross: 368 704
+:raymanni/holiday/bauble_cross: 384 704
+:raymanni/holiday/bauble_cross: 400 752
+:raymanni/holiday/bauble_cross: 400 736
+:raymanni/holiday/bauble_cross: 400 720
+:raymanni/holiday/bauble_cross: 416 720
+:raymanni/holiday/bauble_cross: 416 736
+:raymanni/holiday/bauble_cross: 416 752
+:raymanni/holiday/bauble_cross: 400 704
+:raymanni/holiday/bauble_cross: 416 704
+:raymanni/holiday/bauble_cross: 432 720
+:raymanni/holiday/bauble_cross: 432 736
+:raymanni/holiday/bauble_cross: 432 752
+:raymanni/holiday/bauble_cross: 448 720
+:raymanni/holiday/bauble_cross: 448 736
+:raymanni/holiday/bauble_cross: 448 752
+:raymanni/holiday/bauble_cross: 432 704
+:raymanni/holiday/bauble_cross: 448 704
+:raymanni/holiday/bauble_cross: 256 528
+:raymanni/holiday/bauble_cross: 256 512
+:raymanni/holiday/bauble_cross: 256 496
+:raymanni/holiday/bauble_cross: 272 496
+:raymanni/holiday/bauble_cross: 272 512
+:raymanni/holiday/bauble_cross: 272 528
+:raymanni/holiday/bauble_cross: 288 496
+:raymanni/holiday/bauble_cross: 288 512
+:raymanni/holiday/bauble_cross: 288 528
+:raymanni/holiday/bauble_cross: 256 480
+:raymanni/holiday/bauble_cross: 272 480
+:raymanni/holiday/bauble_cross: 288 480
+:raymanni/holiday/bauble_cross: 304 528
+:raymanni/holiday/bauble_cross: 304 512
+:raymanni/holiday/bauble_cross: 304 496
+:raymanni/holiday/bauble_cross: 320 496
+:raymanni/holiday/bauble_cross: 320 512
+:raymanni/holiday/bauble_cross: 320 528
+:raymanni/holiday/bauble_cross: 336 496
+:raymanni/holiday/bauble_cross: 336 512
+:raymanni/holiday/bauble_cross: 336 528
+:raymanni/holiday/bauble_cross: 304 480
+:raymanni/holiday/bauble_cross: 320 480
+:raymanni/holiday/bauble_cross: 336 480
+:raymanni/holiday/bauble_cross: 352 528
+:raymanni/holiday/bauble_cross: 352 512
+:raymanni/holiday/bauble_cross: 352 496
+:raymanni/holiday/bauble_cross: 368 496
+:raymanni/holiday/bauble_cross: 368 512
+:raymanni/holiday/bauble_cross: 368 528
+:raymanni/holiday/bauble_cross: 384 496
+:raymanni/holiday/bauble_cross: 384 512
+:raymanni/holiday/bauble_cross: 384 528
+:raymanni/holiday/bauble_cross: 352 480
+:raymanni/holiday/bauble_cross: 368 480
+:raymanni/holiday/bauble_cross: 384 480
+:raymanni/holiday/bauble_cross: 400 528
+:raymanni/holiday/bauble_cross: 400 512
+:raymanni/holiday/bauble_cross: 400 496
+:raymanni/holiday/bauble_cross: 416 496
+:raymanni/holiday/bauble_cross: 416 512
+:raymanni/holiday/bauble_cross: 416 528
+:raymanni/holiday/bauble_cross: 400 480
+:raymanni/holiday/bauble_cross: 416 480
+:raymanni/holiday/bauble_cross: 432 496
+:raymanni/holiday/bauble_cross: 432 512
+:raymanni/holiday/bauble_cross: 432 528
+:raymanni/holiday/bauble_cross: 448 496
+:raymanni/holiday/bauble_cross: 448 512
+:raymanni/holiday/bauble_cross: 448 528
+:matt/marble/09: 432 512
+:raymanni/holiday/bauble_cross: 432 480
+:raymanni/holiday/bauble_cross: 448 480
+:matt/marble/22: 584 600 frr
+:matt/marble/09: 528 576
+:matt/marble/09: 496 576
+:matt/marble/22: 632 648 frr
+:matt/marble/26: 576 736 f
+:matt/marble/09: 528 640
+:matt/marble/09: 496 640
+:matt/marble/09: 432 576
+:matt/marble/22: 576 464
+:matt/marble/09: 528 512
+:matt/marble/09: 496 512
+:matt/marble/09: 528 704
+:matt/marble/09: 528 768
+:matt/marble/09: 496 704
+:matt/marble/23: 592 512
+:matt/marble/23: 624 512
+:matt/marble/23: 656 512
+:matt/marble/22: 704 528 frr
+:matt/marble/23: 688 512
+:matt/marble/22: 736 512 frr
+:matt/marble/23: 720 512
+:matt/marble/22: 784 560 frr
+:matt/marble/22: 832 608 frr
+:matt/marble/22: 880 656 frr
+:matt/marble/22: 752 576 frr
+:matt/marble/22: 800 624 frr
+:matt/marble/22: 848 672 frr
+:matt/marble/22: 896 720 frr
+:matt/marble/22: 928 704 frr
+:matt/marble/01: 728 536 d
+:matt/marble/01: 720 528 d
+:matt/marble/01: 704 528 d
+:matt/marble/01: 688 528 d
+:matt/marble/01: 672 528 d
+:matt/marble/01: 656 528 d
+:matt/marble/01: 640 528 d
+:matt/marble/01: 624 528 d
+:matt/marble/01: 608 528 d
+:matt/marble/01: 600 520 d
+:matt/marble/01: 592 512 d
+:matt/marble/22: 664 536 frr
+:matt/marble/22: 712 584 frr
+:matt/marble/22: 760 632 frr
+:matt/marble/22: 808 680 frr
+:matt/marble/22: 856 728 frr
+:matt/marble/01: 680 536 d
+:matt/marble/22: 616 536 frr
+:matt/marble/22: 664 584 frr
+:matt/marble/22: 712 632 frr
+:matt/marble/22: 760 680 frr
+:matt/marble/22: 808 728 frr
+:matt/marble/01: 632 536 d
+:geoo/steel/16x16o.S: 672 512
+:matt/marble/23: 960 720
+:matt/marble/23: 960 752
+:matt/marble/23: 992 720
+:matt/marble/23: 992 752
+:geoo/steel/16x16o.S: 336 704
+:matt/marble/22: 680 696 frr
+:matt/marble/22: 728 744 frr

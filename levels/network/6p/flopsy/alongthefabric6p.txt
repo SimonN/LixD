@@ -1,8 +1,8 @@
-$BUILT 2017-11-16 16:23:36
+$BUILT 2022-04-24 01:13:54
 $AUTHOR Flopsy
 $ENGLISH Along the fabrics of your Clothing! 6P
 
-#INTENDED_NUMBER_OF_PLAYERS 8
+#INTENDED_NUMBER_OF_PLAYERS 6
 #SIZE_X 1024
 #SIZE_Y 766
 #TORUS_X 1
@@ -10,8 +10,7 @@ $ENGLISH Along the fabrics of your Clothing! 6P
 
 #SECONDS 60
 #INITIAL 50
-#REQUIRED 20
-#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL 31
 
 #WALKER 40
 #RUNNER 20
@@ -130,7 +129,7 @@ $END_TILE_GROUP
 :matt/carnival/26: 608 730
 :matt/carnival/26: 544 730
 :matt/carnival/24: 928 218
-:Group-5: 736 30 r
+:Group-5: 736 28 r
 :Group-3: 545 218 r
 :matt/carnival/24: 416 218
 :Group-2: 224 28 r

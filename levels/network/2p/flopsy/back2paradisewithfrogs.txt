@@ -1,6 +1,7 @@
 $BUILT 2021-02-10 02:47:23
 $AUTHOR Flopsy
 $ENGLISH Bac 2 Paradise 2P (Frogs)
+$TAG long-play
 
 #INTENDED_NUMBER_OF_PLAYERS 2
 #SIZE_X 3200

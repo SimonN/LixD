@@ -1,6 +1,7 @@
 $BUILT 2021-02-05 05:38:24
 $AUTHOR Flopsy
 $ENGLISH Just Passing Through Here! (Thin) 4P
+$TAG multiple-hatch
 
 #INTENDED_NUMBER_OF_PLAYERS 4
 #SIZE_X 1024

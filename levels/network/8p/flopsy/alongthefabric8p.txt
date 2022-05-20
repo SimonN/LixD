@@ -1,4 +1,4 @@
-$BUILT 2017-11-16 16:17:37
+$BUILT 2022-01-02 02:40:14
 $AUTHOR Flopsy
 $ENGLISH Along the fabrics of your Clothing! 8P
 
@@ -10,8 +10,7 @@ $ENGLISH Along the fabrics of your Clothing! 8P
 
 #SECONDS 60
 #INITIAL 50
-#REQUIRED 20
-#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL 31
 
 #WALKER 40
 #RUNNER 20

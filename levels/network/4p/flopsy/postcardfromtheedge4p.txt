@@ -1,0 +1,269 @@
+$BUILT 2022-02-05 19:18:30
+$AUTHOR Flopsy
+$ENGLISH Postcard from the Edge 4P
+
+#INTENDED_NUMBER_OF_PLAYERS 4
+$TAG asymmetric
+
+#SIZE_X 640
+#SIZE_Y 768
+#TORUS_X 1
+#TORUS_Y 1
+
+#SECONDS 90
+#INITIAL 80
+#SPAWN_INTERVAL 32
+
+#WALKER 50
+#RUNNER 50
+#CLIMBER 20
+#FLOATER 10
+#EXPLODER2 5
+#BLOCKER 1
+#BUILDER 50
+#PLATFORMER 30
+#BASHER 20
+#MINER 30
+#DIGGER 20
+#JUMPER 50
+#BATTER 50
+#CUBER 5
+
+:matt/marble/Hatch.H: 64 384
+:matt/marble/Hatch.H: 384 224
+:matt/marble/Hatch.H: 384 512
+:matt/marble/Hatch.H: 64 16
+:matt/marble/Hatch.H: 368 384
+:matt/marble/Hatch.H: 224 336
+:matt/marble/Hatch.H: 384 680
+:matt/marble/Hatch.H: 368 64
+
+:matt/marble/Goal.G: 224 256
+:matt/marble/Goal.G: 512 32
+:matt/marble/Goal.G: 528 416
+:matt/marble/Goal.G: 544 704
+:matt/marble/Goal.G: 544 256
+:matt/marble/Goal.G: 224 96
+:matt/marble/Goal.G: 64 544
+:matt/marble/Goal.G: 176 704
+
+:geoo/construction/sawblade_small.F: 184 328
+:geoo/construction/sawblade_small.F: 296 328
+:geoo/construction/sawblade_small.F: 296 352
+:geoo/construction/sawblade_small.F: 184 352
+:geoo/construction/sawblade_small.F: 616 400
+:geoo/construction/sawblade_small.F: 616 248
+:geoo/construction/sawblade_small.F: 616 88
+:geoo/construction/sawblade_small.F: 24 496
+:geoo/construction/sawblade_small.F: 48 496
+:geoo/construction/sawblade_small.F: 72 496
+:geoo/construction/sawblade_small.F: 96 496
+:geoo/construction/sawblade_small.F: 120 496
+:geoo/construction/sawblade_small.F: 144 496
+:geoo/construction/sawblade_small.F: 136 328
+:geoo/construction/sawblade_small.F: 152 624
+:geoo/construction/sawblade_small.F: 176 624
+:geoo/construction/sawblade_small.F: 200 624
+:geoo/construction/sawblade_small.F: 224 624
+:geoo/construction/sawblade_small.F: 248 624
+:geoo/construction/sawblade_small.F: 272 624
+:geoo/construction/sawblade_small.F: 296 624
+:geoo/construction/sawblade_small.F: 616 560
+:geoo/construction/sawblade_small.F: 344 8
+:geoo/construction/sawblade_small.F: 296 8
+:geoo/construction/sawblade_small.F: 296 168
+:geoo/construction/sawblade_small.F: 344 168
+
+:geoo/steel/32x32o.S: 0 752
+:geoo/steel/32x32o.S: 0 16
+:geoo/steel/32x32o.S: 0 48
+:geoo/steel/32x32o.S: 0 80
+:geoo/steel/32x32o.S: 0 144
+:geoo/steel/32x32o.S: 0 176
+:geoo/steel/32x32o.S: 0 240
+:geoo/steel/32x32o.S: 0 272
+:geoo/steel/32x32o.S: 0 304
+:geoo/steel/32x32o.S: 0 336
+:geoo/steel/32x32o.S: 0 368
+:geoo/steel/32x32o.S: 64 752
+:geoo/steel/32x32o.S: 96 752
+:geoo/steel/32x32o.S: 128 752
+:geoo/steel/32x32o.S: 160 752
+:matt/marble/03d: 192 0
+:geoo/steel/32x32o.S: 192 752
+:matt/marble/26c: 232 688 frr
+:geoo/steel/32x32o.S: 224 752
+:geoo/steel/32x32o.S: 256 752
+:matt/marble/26c: 312 688 frr
+:geoo/steel/32x32o.S: 288 752
+:geoo/steel/32x32o.S: 320 752
+:geoo/steel/32x32o.S: 352 752
+:geoo/steel/32x32o.S: 384 752
+:geoo/steel/32x32o.S: 416 752
+:geoo/steel/32x32o.S: 448 752
+:geoo/steel/32x32o.S: 480 752
+:geoo/steel/32x32o.S: 512 752
+:geoo/steel/32x32o.S: 544 752
+:geoo/steel/32x32o.S: 576 752
+:matt/marble/04d: 32 80
+:matt/marble/04d: 64 80
+:matt/marble/04d: 96 80
+:matt/marble/04d: 128 80
+:matt/marble/04d: 160 80
+:matt/marble/03d: 192 64
+:matt/marble/03d: 192 32
+:geoo/steel/32x32o.S: 64 144
+:geoo/steel/32x32o.S: 96 144
+:geoo/steel/32x32o.S: 128 144
+:geoo/steel/32x32o.S: 160 144
+:geoo/steel/32x32o.S: 192 144
+:geoo/steel/32x32o.S: 224 144
+:geoo/steel/32x32o.S: 256 144
+:geoo/steel/32x32o.S: 288 144
+:geoo/steel/32x32o.S: 320 16
+:geoo/steel/32x32o.S: 320 48
+:geoo/steel/32x32o.S: 320 80
+:geoo/steel/32x32o.S: 320 144
+:matt/marble/04b: 608 80
+:matt/marble/04b: 576 80
+:matt/marble/04b: 544 80
+:matt/marble/04b: 512 80
+:matt/marble/04b: 480 80
+:geoo/steel/32x32o.S: 320 176
+:geoo/steel/32x32o.S: 320 208
+:geoo/steel/32x32o.S: 320 240
+:geoo/steel/32x32o.S: 160 336
+:geoo/steel/32x32o.S: 160 368
+:geoo/steel/32x32o.S: 160 400
+:geoo/steel/32x32o.S: 160 464
+:geoo/steel/32x32o.S: 160 304
+:geoo/steel/32x32o.S: 192 304
+:geoo/steel/32x32o.S: 224 304
+:geoo/steel/32x32o.S: 256 304
+:geoo/steel/32x32o.S: 320 304
+:geoo/steel/32x32o.S: 352 144
+:geoo/steel/32x32o.S: 384 144
+:geoo/steel/32x32o.S: 416 144
+:geoo/steel/32x32o.S: 448 144
+:geoo/steel/32x32o.S: 480 144
+:geoo/steel/32x32o.S: 512 144
+:geoo/steel/32x32o.S: 544 144
+:geoo/steel/32x32o.S: 576 144
+:geoo/steel/32x32o.S: 128 464
+:geoo/steel/32x32o.S: 96 464
+:geoo/steel/32x32o.S: 64 464
+:geoo/steel/32x32o.S: 32 464
+:geoo/steel/32x32o.S: 0 464
+:geoo/steel/32x32o.S: 0 400
+:geoo/steel/32x32o.S: 352 304
+:geoo/steel/32x32o.S: 384 304
+:geoo/steel/32x32o.S: 416 304
+:geoo/steel/32x32o.S: 448 304
+:geoo/steel/32x32o.S: 480 304
+:geoo/steel/32x32o.S: 512 304
+:geoo/steel/32x32o.S: 544 304
+:geoo/steel/32x32o.S: 576 304
+:geoo/steel/32x32o.S: 320 336
+:geoo/steel/32x32o.S: 320 368
+:geoo/steel/32x32o.S: 320 400
+:geoo/steel/32x32o.S: 320 464
+:geoo/steel/32x32o.S: 320 496
+:geoo/steel/32x32o.S: 320 528
+:geoo/steel/32x32o.S: 320 592
+:geoo/steel/32x32o.S: 0 496
+:geoo/steel/32x32o.S: 0 528
+:geoo/steel/32x32o.S: 0 560
+:geoo/steel/32x32o.S: 0 592
+:geoo/steel/32x32o.S: 64 592
+:geoo/steel/32x32o.S: 96 592
+:geoo/steel/32x32o.S: 128 592
+:geoo/steel/32x32o.S: 160 592
+:geoo/steel/32x32o.S: 192 592
+:geoo/steel/32x32o.S: 224 592
+:geoo/steel/32x32o.S: 256 592
+:geoo/steel/32x32o.S: 288 592
+:geoo/steel/32x32o.S: 0 624
+:geoo/steel/32x32o.S: 0 656
+:geoo/steel/32x32o.S: 0 688
+:geoo/steel/32x32o.S: 352 464
+:geoo/steel/32x32o.S: 384 464
+:geoo/steel/32x32o.S: 416 464
+:geoo/steel/32x32o.S: 448 464
+:geoo/steel/32x32o.S: 480 464
+:geoo/steel/32x32o.S: 512 464
+:geoo/steel/32x32o.S: 544 464
+:geoo/steel/32x32o.S: 576 464
+:geoo/steel/32x32o.S: 352 592
+:geoo/steel/32x32o.S: 384 592
+:geoo/steel/32x32o.S: 416 592
+:geoo/steel/32x32o.S: 448 592
+:geoo/steel/32x32o.S: 480 592
+:geoo/steel/32x32o.S: 480 624
+:geoo/steel/32x32o.S: 480 656
+:geoo/steel/32x32o.S: 480 688
+:matt/marble/04a: 32 256
+:geoo/steel/32x16o.S: 32 80
+:matt/marble/04a: 64 256
+:matt/marble/04a: 96 256
+:matt/marble/04a: 128 256
+:geoo/steel/32x16o.S: 32 256
+:matt/marble/03d: 320 112
+:matt/marble/03b: 336 112
+:matt/marble/04d: 32 0
+:geoo/steel/32x16o.S: 608 80
+:matt/marble/04b: 608 144
+:matt/marble/04b: 608 0
+:matt/marble/03a: 320 272
+:matt/marble/25c: 480 176
+:matt/marble/04c: 608 160
+:matt/marble/03c: 336 272
+:geoo/steel/32x16o.S: 608 240
+:matt/marble/04c: 608 304
+:matt/marble/04: 608 320
+:matt/marble/04: 608 464
+:geoo/steel/32x16o.S: 608 384
+:matt/marble/04e_1: 608 480
+:matt/marble/04e_1: 608 752
+:matt/marble/03e_2: 496 720
+:matt/marble/thinplatform128p: 480 384
+:matt/marble/14: 448 354
+:matt/marble/14a: 128 304
+:matt/marble/03: 336 432
+:matt/marble/03a: 16 432
+:matt/marble/03a: 160 432
+:matt/marble/04d: 32 144
+:matt/marble/03d: 16 112
+:matt/marble/03b: 0 112
+:matt/marble/03: 0 432
+:matt/marble/03c: 0 208
+:matt/marble/03a: 16 208
+:matt/marble/04c: 32 752
+:matt/marble/03c: 480 720
+:geoo/steel/32x32o.S: 288 304
+:matt/marble/03b: 176 432
+:matt/marble/03b: 320 432
+:matt/marble/08b: 224 400
+:geoo/steel/16x16o.S: 248 400
+:matt/marble/08b: 224 480
+:matt/marble/16b: 160 560
+:matt/marble/04b: 32 592
+:matt/marble/04c: 32 608
+:geoo/steel/32x16o.S: 32 688
+:geoo/steel/32x16o.S: 608 544
+:matt/marble/04e_1: 576 544
+:matt/marble/04e_1: 544 544
+:matt/marble/04e_1: 512 544
+:geoo/steel/16x16o.S: 536 80
+:geoo/steel/32x32o.S: 320 560
+:matt/marble/14: 448 432 frr
+:matt/marble/03e_2: 0 720 frr
+:matt/marble/03c: 16 720 frr
+:geoo/steel/16x16o.S: 88 80
+:geoo/steel/32x32o.S: 128 720
+:geoo/steel/32x32o.S: 128 688
+:geoo/steel/32x16o.S: 64 688
+:matt/marble/08b: 224 560
+:geoo/steel/32x32o.S: 160 496
+:matt/marble/04c: 32 160
+:geoo/steel/32x32o.S: 320 624
+:geoo/steel/32x32o.S: 128 624

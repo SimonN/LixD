@@ -1,6 +1,7 @@
 $BUILT 2021-02-15 02:00:38
 $AUTHOR Flopsy
 $ENGLISH The Lix in the Middle 6P
+$TAG fall-survival
 
 #INTENDED_NUMBER_OF_PLAYERS 6
 #SIZE_X 1920

@@ -1,6 +1,7 @@
 $BUILT 2021-05-01 02:16:04
 $AUTHOR Flopsy
 $ENGLISH Let's Go Rock Climbing 3P
+$TAG multiple-hatch
 
 #INTENDED_NUMBER_OF_PLAYERS 3
 #SIZE_X 584

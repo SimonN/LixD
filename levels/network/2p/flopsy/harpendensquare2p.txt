@@ -1,0 +1,208 @@
+$BUILT 2022-04-23 03:36:02
+$AUTHOR Flopsy
+$ENGLISH Harpenden Square 2P
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 640
+#SIZE_Y 288
+#TORUS_X 1
+#TORUS_Y 1
+
+#SECONDS 80
+#INITIAL 80
+#SPAWN_INTERVAL 1
+
+#WALKER 1
+#RUNNER 1
+#CLIMBER 1
+#FLOATER 1
+#EXPLODER2 1
+#BLOCKER 1
+#BUILDER 1
+#PLATFORMER 1
+#BASHER 1
+#MINER 1
+#DIGGER 1
+#JUMPER 1
+#BATTER 1
+#CUBER 1
+
+:geoo/abstract/hatch.H: 16 232
+:geoo/abstract/hatch.H: 336 88
+
+:geoo/abstract/goal.G: 8 136
+:geoo/abstract/goal.G: 328 280
+
+:amanda/forest/frog.T: 184 184
+:amanda/forest/frog.T: 504 40
+:amanda/forest/frog.T: 392 280
+:amanda/forest/frog.T: 184 232
+:amanda/forest/frog.T: 504 88
+:amanda/forest/frog.T: 72 136
+
+:matt/water.W: 312 152
+:matt/water.W: 344 152
+:matt/water.W: 376 152
+:matt/water.W: 408 152
+:matt/water.W: 440 152
+:matt/water.W: 472 152
+:matt/water.W: 504 152
+:matt/water.W: 536 152
+:matt/water.W: 568 152
+:matt/water.W: 600 152
+:matt/water.W: 632 8
+:matt/water.W: 24 8
+:matt/water.W: 56 8
+:matt/water.W: 88 8
+:matt/water.W: 120 8
+:matt/water.W: 152 8
+:matt/water.W: 184 8
+:matt/water.W: 216 8
+:matt/water.W: 248 8
+:matt/water.W: 280 8
+
+:geoo/abstract/pipes/central0: 0 280
+:geoo/abstract/pipes/central0: 64 280
+:geoo/abstract/pipes/central0: 32 280
+:geoo/abstract/pipes/central0: 96 280
+:geoo/abstract/pipes/central0: 128 280
+:geoo/abstract/pipes/central0: 160 280
+:geoo/abstract/pipes/central0: 192 280
+:geoo/abstract/pipes/central0: 224 280
+:geoo/abstract/pipes/central0: 256 280
+:geoo/abstract/pipes/central0: 176 248 r
+:geoo/abstract/pipes/central0: 176 232
+:geoo/abstract/pipes/central0: 176 216 r
+:geoo/abstract/pipes/central0: 176 184 r
+:geoo/abstract/pipes/central0: 208 232
+:geoo/abstract/pipes/central0: 240 232
+:geoo/abstract/pipes/central0: 256 232
+:geoo/abstract/pipes/central0: 288 280
+:geoo/abstract/pipes/central0: 288 232
+:geoo/abstract/pipes/central0: 168 184
+:geoo/abstract/pipes/central0: 200 184
+:geoo/abstract/pipes/central0: 248 184
+:geoo/abstract/pipes/central0: 232 184
+:geoo/abstract/pipes/central0: 104 184
+:geoo/abstract/pipes/central0: 88 184
+:geoo/abstract/pipes/central0: 0 184
+:geoo/abstract/pipes/central0: 32 184
+:geoo/abstract/pipes/central0: 64 184
+:geoo/abstract/pipes/central0: 320 136
+:geoo/abstract/pipes/central0: 320 136
+:geoo/abstract/pipes/central0: 384 136
+:geoo/abstract/pipes/central0: 352 136
+:geoo/abstract/pipes/central0: 416 136
+:geoo/abstract/pipes/central0: 448 136
+:geoo/abstract/pipes/central0: 480 136
+:geoo/abstract/pipes/central0: 512 136
+:geoo/abstract/pipes/central0: 544 136
+:geoo/abstract/pipes/central0: 576 136
+:geoo/abstract/pipes/central0: 496 104 r
+:geoo/abstract/pipes/central0: 496 88
+:geoo/abstract/pipes/central0: 496 72 r
+:geoo/abstract/pipes/central0: 496 40 r
+:geoo/abstract/pipes/central0: 528 88
+:geoo/abstract/pipes/central0: 560 88
+:geoo/abstract/pipes/central0: 576 88
+:geoo/abstract/pipes/central0: 632 160 r
+:geoo/abstract/pipes/central0: 608 136
+:geoo/abstract/pipes/central0: 632 136 r
+:geoo/abstract/pipes/central0: 608 136
+:geoo/abstract/pipes/central0: 608 88
+:geoo/abstract/pipes/central0: 608 88
+:geoo/abstract/pipes/central0: 488 40
+:geoo/abstract/pipes/central0: 520 40
+:geoo/abstract/pipes/central0: 552 40
+:geoo/abstract/pipes/central0: 424 40
+:geoo/abstract/pipes/central0: 408 40
+:geoo/abstract/pipes/central0: 320 40
+:geoo/abstract/pipes/central0: 320 40
+:geoo/abstract/pipes/central0: 352 40
+:geoo/abstract/pipes/central0: 384 40
+:geoo/abstract/pipes/central0: 304 160 r
+:geoo/abstract/pipes/central0: 288 184
+:geoo/abstract/cvblocks/031: 264 160
+:geoo/abstract/cvblocks/031: 288 136
+:geoo/abstract/pipes/central0: 568 40
+:geoo/abstract/pipes/central0: 608 40
+:geoo/abstract/pipes/central0: 608 40
+:geoo/abstract/cvblocks/031: 584 16
+:geoo/abstract/cvblocks/031: 608 280
+:geoo/abstract/pipes/central0: 320 184
+:geoo/abstract/pipes/central0: 352 184
+:geoo/abstract/pipes/central0: 384 184
+:geoo/abstract/pipes/central0: 416 184
+:geoo/abstract/pipes/central0: 448 184
+:geoo/abstract/pipes/central0: 480 184
+:geoo/abstract/pipes/central0: 512 184
+:geoo/abstract/pipes/central0: 544 184
+:geoo/abstract/pipes/central0: 576 184
+:geoo/abstract/pipes/central0: 608 184
+:geoo/abstract/pipes/central0: 352 232
+:geoo/abstract/pipes/central0: 352 280
+:geoo/abstract/pipes/central0: 416 232
+:geoo/abstract/pipes/central0: 416 280
+:geoo/abstract/pipes/central0: 480 232
+:geoo/abstract/pipes/central0: 480 280
+:geoo/abstract/pipes/central0: 544 232
+:geoo/abstract/pipes/central0: 544 280
+:geoo/abstract/pipes/central0: 0 280
+:geoo/abstract/pipes/central0: 64 280
+:geoo/abstract/pipes/central0: 32 280
+:geoo/abstract/pipes/central0: 96 280
+:geoo/abstract/pipes/central0: 128 280
+:geoo/abstract/pipes/central0: 160 280
+:geoo/abstract/pipes/central0: 192 280
+:geoo/abstract/pipes/central0: 224 280
+:geoo/abstract/pipes/central0: 256 280
+:geoo/abstract/pipes/central0: 312 16 r
+:geoo/abstract/pipes/central0: 312 280 r
+:geoo/abstract/pipes/central0: 288 280
+:geoo/abstract/pipes/central0: 624 16 r
+:geoo/abstract/cvblocks/031: 608 280
+:geoo/abstract/cvblocks/031: 288 136
+:geoo/abstract/pipes/central0: 0 40
+:geoo/abstract/pipes/central0: 32 40
+:geoo/abstract/pipes/central0: 64 40
+:geoo/abstract/pipes/central0: 96 40
+:geoo/abstract/pipes/central0: 128 40
+:geoo/abstract/pipes/central0: 160 40
+:geoo/abstract/pipes/central0: 192 40
+:geoo/abstract/pipes/central0: 224 40
+:geoo/abstract/pipes/central0: 256 40
+:geoo/abstract/pipes/central0: 288 40
+:geoo/abstract/pipes/central0: 32 88
+:geoo/abstract/pipes/central0: 32 136
+:geoo/abstract/pipes/central0: 96 88
+:geoo/abstract/pipes/central0: 96 136
+:geoo/abstract/pipes/central0: 160 88
+:geoo/abstract/pipes/central0: 160 136
+:geoo/abstract/pipes/central0: 224 88
+:geoo/abstract/pipes/central0: 224 136
+:geoo/steel/dark_16x16o.S: 336 40
+:geoo/steel/dark_16x16o.S: 344 136
+:geoo/steel/dark_16x16o.S: 16 184
+:geoo/steel/dark_16x16o.S: 24 280
+:geoo/steel/dark_16x16o.S: 496 40
+:geoo/steel/dark_16x16o.S: 512 40
+:geoo/steel/dark_16x16o.S: 528 40
+:geoo/steel/dark_16x16o.S: 544 40
+:geoo/steel/dark_16x16o.S: 560 40
+:geoo/steel/dark_16x16o.S: 576 40
+:geoo/steel/dark_16x16o.S: 592 40
+:geoo/steel/dark_16x16o.S: 608 40
+:geoo/steel/dark_16x16o.S: 624 40
+:geoo/steel/dark_16x16o.S: 176 184
+:geoo/steel/dark_16x16o.S: 192 184
+:geoo/steel/dark_16x16o.S: 208 184
+:geoo/steel/dark_16x16o.S: 224 184
+:geoo/steel/dark_16x16o.S: 240 184
+:geoo/steel/dark_16x16o.S: 256 184
+:geoo/steel/dark_16x16o.S: 272 184
+:geoo/steel/dark_16x16o.S: 288 184
+:geoo/steel/dark_16x16o.S: 304 184
+:geoo/steel/dark_16x16o.S: 208 232
+:geoo/steel/dark_16x16o.S: 208 280
+:geoo/steel/dark_16x16o.S: 528 88
+:geoo/steel/dark_16x16o.S: 528 136

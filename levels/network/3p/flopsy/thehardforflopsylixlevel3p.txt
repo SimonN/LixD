@@ -1,6 +1,8 @@
 $BUILT 2021-02-10 02:39:58
 $AUTHOR Flopsy
 $ENGLISH The Hard For Flopsy LIX Level 3P
+$TAG max-si
+$TAG fall-survival
 
 #INTENDED_NUMBER_OF_PLAYERS 3
 #SIZE_X 1344
