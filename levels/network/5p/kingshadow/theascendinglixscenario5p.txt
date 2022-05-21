@@ -1,0 +1,178 @@
+$BUILT 2022-05-12 15:31:08
+$AUTHOR Kingshadow
+$ENGLISH The Ascending Lix Scenario 5P
+
+#INTENDED_NUMBER_OF_PLAYERS 5
+#SIZE_X 1920
+#SIZE_Y 320
+#TORUS_X 1
+#TORUS_Y 1
+
+#SECONDS 120
+#INITIAL 50
+#SPAWN_INTERVAL 40
+
+#WALKER 20
+#RUNNER 5
+#CLIMBER 10
+#FLOATER 10
+#EXPLODER2 2
+#BLOCKER 1
+#BUILDER 50
+#PLATFORMER 20
+#BASHER 20
+#MINER 20
+#DIGGER 10
+#JUMPER 50
+#BATTER 5
+#CUBER 5
+
+:geoo/sandstone/Hatch.H: 1536 160
+:geoo/sandstone/Hatch.H: 0 224
+:geoo/sandstone/Hatch.H: 384 288
+:geoo/sandstone/Hatch.H: 768 32
+:geoo/sandstone/Hatch.H: 1152 96
+
+:geoo/sandstone/Goal.G: 928 192
+:geoo/sandstone/Goal.G: 1312 256
+:geoo/sandstone/Goal.G: 1696 0
+:geoo/sandstone/Goal.G: 160 64
+:geoo/sandstone/Goal.G: 544 128
+
+:simon/water.W: 1104 280
+:simon/water.W: 1152 280
+:simon/water.W: 1200 296
+:simon/water.W: 1248 296
+:simon/water.W: 1392 8
+:simon/water.W: 1440 8
+:simon/water.W: 1584 40
+:simon/water.W: 1632 40
+:simon/water.W: 0 88
+:simon/water.W: 48 104
+:simon/water.W: 96 104
+:simon/water.W: 240 136
+:simon/water.W: 288 136
+:simon/water.W: 432 168
+:simon/water.W: 480 168
+:simon/water.W: 624 200
+:simon/water.W: 672 200
+:simon/water.W: 720 216
+:simon/water.W: 768 216
+:simon/water.W: 816 232
+:simon/water.W: 864 232
+:simon/water.W: 1008 264
+:simon/water.W: 1056 264
+:simon/water_thin.W: 912 256
+:simon/water_thin.W: 960 256
+:simon/water_thin.W: 1296 0
+:simon/water_thin.W: 1344 0
+:simon/water_thin.W: 1680 64
+:simon/water_thin.W: 1728 64
+:simon/water_thin.W: 144 128
+:simon/water_thin.W: 192 128
+:simon/water_thin.W: 528 192
+:simon/water_thin.W: 576 192
+:simon/water.W: 1872 88
+:simon/water.W: 1776 72
+:simon/water.W: 1824 72
+:simon/water.W: 336 152
+:simon/water.W: 384 152
+:simon/water.W: 1488 16
+:simon/water.W: 1536 16
+
+:geoo/sandstone/64x16: 928 256
+$BEGIN_TILE_GROUP 0
+:geoo/sandstone/pillar_top_ext: 0 0
+:geoo/sandstone/pillar_top: 17 15
+:geoo/sandstone/pillar_32: 17 47
+:geoo/sandstone/pillar_bottom: 17 79
+$END_TILE_GROUP
+:Group-0: 1551 257
+:Group-0: 1455 241
+:Group-0: 1359 225
+:Group-0: 1263 209
+:Group-0: 1167 193
+:Group-0: 1071 177
+:Group-0: 975 162
+:Group-0: 879 145
+:Group-0: 783 129
+:Group-0: 687 113
+:Group-0: 591 97
+:Group-0: 495 81
+:Group-0: 399 65
+:Group-0: 303 49
+:Group-0: 207 33
+:Group-0: 111 17
+:Group-0: 15 1
+:Group-0: 1647 273
+:geoo/sandstone/32x32: 992 272
+:geoo/sandstone/32x32: 1088 288
+:geoo/sandstone/32x32: 896 256
+:geoo/sandstone/32x32: 800 240
+:geoo/sandstone/32x32: 704 224
+:geoo/sandstone/32x32: 608 208
+:geoo/sandstone/32x32: 512 192
+:geoo/sandstone/32x32: 416 176
+:geoo/sandstone/32x32: 320 160
+:geoo/sandstone/32x32: 224 144
+:geoo/sandstone/32x32: 128 128
+:geoo/sandstone/32x32: 32 112
+:geoo/sandstone/32x32: 1664 64
+:geoo/sandstone/32x32: 1568 48
+:geoo/sandstone/32x32: 1472 32
+:geoo/sandstone/32x32: 1376 16
+:geoo/sandstone/32x32: 1280 0
+:geoo/sandstone/32x32: 1184 304
+:geoo/steel/32x16o.S: 944 256
+:geoo/sandstone/64x16: 1312 0
+:geoo/steel/32x16o.S: 1328 0
+:geoo/sandstone/64x16: 1696 64
+:geoo/steel/32x16o.S: 1712 64
+:geoo/sandstone/64x16: 160 128
+:geoo/steel/32x16o.S: 176 128
+:geoo/sandstone/64x16: 544 192
+:geoo/steel/32x16o.S: 560 192
+:geoo/sandstone/slopes/32x16rt: 608 240
+:geoo/sandstone/slopes/32x16rt: 512 224
+:geoo/sandstone/slopes/32x16rt: 416 208
+:geoo/sandstone/slopes/32x16rt: 320 192
+:geoo/sandstone/slopes/32x16rt: 224 176
+:geoo/sandstone/slopes/32x16rt: 128 160
+:geoo/sandstone/slopes/32x16rt: 32 144
+:geoo/sandstone/slopes/32x16rt: 1664 96
+:geoo/sandstone/slopes/32x16rt: 1568 80
+:geoo/sandstone/slopes/32x16rt: 1472 64
+:geoo/sandstone/slopes/32x16rt: 1376 48
+:geoo/sandstone/slopes/32x16rt: 1280 32
+:geoo/sandstone/slopes/32x16rt: 1184 16
+:geoo/sandstone/slopes/32x16rt: 1088 0
+:geoo/sandstone/slopes/32x16rt: 992 304
+:geoo/sandstone/slopes/32x16rt: 896 288
+:geoo/sandstone/slopes/32x16rt: 800 272
+:geoo/sandstone/slopes/32x16rt: 704 256
+:geoo/sandstone/64x16: 64 144
+:geoo/sandstone/64x16: 160 160
+:geoo/sandstone/64x16: 256 176
+:geoo/sandstone/64x16: 352 192
+:geoo/sandstone/64x16: 448 208
+:geoo/sandstone/64x16: 544 224
+:geoo/sandstone/64x16: 640 240
+:geoo/sandstone/64x16: 736 256
+:geoo/sandstone/64x16: 832 272
+:geoo/sandstone/64x16: 928 288
+:geoo/sandstone/64x16: 1024 304
+:geoo/sandstone/64x16: 1120 0
+:geoo/sandstone/64x16: 1216 16
+:geoo/sandstone/64x16: 1312 32
+:geoo/sandstone/64x16: 1408 48
+:geoo/sandstone/64x16: 1504 64
+:geoo/sandstone/64x16: 1600 80
+:geoo/sandstone/64x16: 1696 96
+:Group-0: 1743 289
+:Group-0: 1839 305
+:geoo/sandstone/32x32: 1760 80
+:geoo/sandstone/32x32: 1856 96
+:geoo/sandstone/64x16: 1792 112
+:geoo/sandstone/64x16: 1888 128
+:geoo/sandstone/slopes/32x16rt: 1760 112
+:geoo/sandstone/slopes/32x16rt: 1856 128
