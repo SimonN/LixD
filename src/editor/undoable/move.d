@@ -36,15 +36,12 @@ public:
     final override void apply(Level l) const
     {
         version (assert) {
-            import std.conv : to;
-            assert (_toMove[].front.occ(l).loc == _source,
-                "Apply: Expected [0].loc == source of "
-                ~ _source.to!string
-                ~ " to then move it to destination "
-                ~ _destination.to!string
-                ~ ", but found [0].loc == "
-                ~ _toMove[].front.occ(l).loc.to!string
-                ~ ". The first element must match without Topology.wrap!");
+            import std.conv : text;
+            assert (_toMove[].front.occ(l).loc == _source, text(
+                "Apply: Expected [0].loc == source of ", _source,
+                " to then move it to destination ", _destination,
+                ", but found [0].loc == ", _toMove[].front.occ(l).loc,
+                ". The first element must match without Topology.wrap!"));
         }
         foreach (oil; _toMove) {
             oil.occ(l).loc
@@ -55,15 +52,12 @@ public:
     final override void undo(Level l) const
     {
         version (assert) {
-            import std.conv : to;
-            assert (_toMove[].front.occ(l).loc == _destination,
-                "Undo: Expecetd occ.loc == destination of "
-                ~ _destination.to!string
-                ~ " to then move it to source "
-                ~ _source.to!string
-                ~ ", but found occ.loc == "
-                ~ _toMove[].front.occ(l).loc.to!string
-                ~ ". The first element must match without Topology.wrap!");
+            import std.conv : text;
+            assert (_toMove[].front.occ(l).loc == _destination, text(
+                "Undo: Expecetd occ.loc == destination of ", _destination,
+                " to then move it to source ", _source,
+                ", but found occ.loc == ", _toMove[].front.occ(l).loc,
+                ". The first element must match without Topology.wrap!"));
         }
         foreach (oil; _toMove) {
             oil.occ(l).loc

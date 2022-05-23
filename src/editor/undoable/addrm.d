@@ -103,7 +103,13 @@ protected:
 
     final void removeTheOcc(Level l) const
     {
-        assert (oil.occ(l) == _toAdd, inconsistentHistory);
+        version (assert) {
+            import std.conv : text;
+            assert (oil.occ(l) == _toAdd, text(
+                "removeTheOcc: Expected ", _toAdd, " to then remove it,",
+                " but instead found ", oil.occ(l), ". Inconsistent history.",
+                " These occs should match without Topology.wrap."));
+        }
         oil.remove(l);
     }
 

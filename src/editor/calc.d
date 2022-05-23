@@ -10,6 +10,7 @@ import basics.help;
 import basics.topology;
 import file.option; // hotkeys for movement
 import editor.editor;
+import editor.guiapply;
 import editor.io;
 import editor.movetile;
 import editor.select;
@@ -136,10 +137,23 @@ Occurrence makeAndPositionOccFor(Editor editor, const(AbstractTile) tile) {
     assert (occ.tile is tile);
     assert (occ.tile.cb);
     occ.loc = level.topology.clamp(_map.mouseOnLand) - tile.cb.len / 2;
-    // Must round the location, not the mouse coordinates for center.
-    occ.loc = roundWithin(level.topology,
-        Rect(occ.loc, tile.cb.len.x, tile.cb.len.y),
-        editorGridSelected);
+
+    // Prevent the tile from entering beyond the top/left sides of the level.
+    occ.loc = level.topology.clamp(occ.loc);
+    // Prevent from entering beyond the bottom/right sides of the level.
+    {
+        immutable Point padding = Point(
+            max(tile.cb.len.x, editorGridSelected.value),
+            max(tile.cb.len.y, editorGridSelected.value));
+        occ.loc = level.topology.clamp(occ.loc + padding) - padding;
+    }
+    occ.loc = occ.loc.roundTo(editorGridSelected);
+    /*
+     * Satisfy TileMove's requirement that TileMove's ctor can't assert:
+     * On torus maps, all coordinates must be nicely wrapped before and after
+     * moving.
+     */
+    occ.loc = level.topology.wrap(occ.loc);
     return occ;
 }}
 
@@ -161,7 +175,6 @@ void maybeCloseTerrainBrowser(Editor editor) {
     _panel.allButtonsOff();
 }}
 
-    import editor.guiapply;
 void maybeCloseOkCancelWindow(Editor editor) {
     with (editor)
 {
@@ -196,29 +209,6 @@ void maybeCloseSaveBrowser(Editor editor) {
     _saveBrowser = null;
     _panel.allButtonsOff();
 }}
-
-pure Point roundWithin(in Topology topol, in Rect tile, in int grid)
-in {
-    assert (topol);
-}
-do {
-    Point ret = tile.topLeft.roundTo(grid);
-    // This is pedestrian code and I'd rather use a static smaller topology to
-    // clamp the point in one line:
-    if (topol.torusX) {
-        while (ret.x + tile.xl/2 < 0)
-            ret.x += grid;
-        while (ret.x - tile.xl/2 >= topol.xl)
-            ret.x -= grid;
-    }
-    if (topol.torusY) {
-        while (ret.y + tile.yl/2 < 0)
-            ret.y += grid;
-        while (ret.y - tile.yl/2 >= topol.yl)
-            ret.y -= grid;
-    }
-    return ret;
-}
 
 void describeOnStatusBar(Editor editor)
 {
