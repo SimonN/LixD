@@ -1,0 +1,477 @@
+$BUILT 2022-05-23 21:42:54
+$AUTHOR Kingshadow
+$ENGLISH Marble Puzzle League 8P
+
+#INTENDED_NUMBER_OF_PLAYERS 8
+#SIZE_X 896
+#SIZE_Y 768
+#TORUS_X 1
+#TORUS_Y 1
+
+#SECONDS 120
+#INITIAL 50
+#SPAWN_INTERVAL 50
+
+#WALKER 40
+#RUNNER 20
+#CLIMBER 10
+#FLOATER 10
+#BUILDER 30
+#PLATFORMER 50
+#BASHER 20
+#MINER 20
+#DIGGER 10
+#JUMPER 50
+#BATTER 20
+#EXPLODER2 0
+
+:simon/hatch001.H: 80 0
+:simon/hatch001.H: 304 0
+:simon/hatch001.H: 528 0
+:simon/hatch001.H: 752 0
+:simon/hatch001.H: 80 384
+:simon/hatch001.H: 304 384
+:simon/hatch001.H: 528 384
+:simon/hatch001.H: 752 384
+
+:geoo/abstract/goal.G: 544 688
+:geoo/abstract/goal.G: 768 688
+:geoo/abstract/goal.G: 96 688
+:geoo/abstract/goal.G: 320 688
+:geoo/abstract/goal.G: 544 304
+:geoo/abstract/goal.G: 768 304
+:geoo/abstract/goal.G: 96 304
+:geoo/abstract/goal.G: 320 304
+
+:proxima/tile/spheres/redsmall: 240 704
+:proxima/tile/spheres/redsmall: 384 688
+:proxima/tile/spheres/redsmall: 336 560
+:proxima/tile/spheres/greensmall: 352 640
+:proxima/tile/spheres/greensmall: 256 608
+:proxima/tile/orange2s: 240 736
+:proxima/tile/orange2s: 272 736
+:proxima/tile/orange2s: 304 736
+:proxima/tile/orange2s: 336 736
+:proxima/tile/orange2s: 368 736
+:proxima/tile/orange2s: 400 736
+:proxima/tile/orange1a: 224 736
+:proxima/tile/orange1a: 224 704
+:proxima/tile/orange1a: 224 672
+:proxima/tile/orange1a: 224 640
+:proxima/tile/orange1a: 224 608
+:proxima/tile/orange1a: 224 576
+:proxima/tile/orange1a: 224 544
+:proxima/tile/orange1a: 224 512
+:proxima/tile/orange1a: 224 480
+:proxima/tile/orange1a: 224 448
+:proxima/tile/orange1a: 224 416
+:proxima/tile/orange1a: 224 384
+:proxima/tile/spheres/bluesmall: 240 656
+:proxima/tile/spheres/goldsmall: 288 576
+:proxima/tile/spheres/pinksmall: 384 592
+:proxima/tile/spheres/pinksmall: 304 640
+:proxima/tile/spheres/bluesmall: 400 640
+:proxima/tile/spheres/goldsmall: 384 544
+:proxima/tile/spheres/greensmall: 304 528
+:proxima/tile/spheres/bluesmall: 240 560
+:proxima/tile/spheres/pinksmall: 352 512
+:proxima/tile/spheres/pinksmall: 272 496
+:proxima/tile/spheres/pinksmall: 256 432
+:proxima/tile/spheres/gold: 304 448
+:proxima/tile/spheres/greensmall: 384 464
+:proxima/tile/spheres/greensmall: 368 416
+:proxima/tile/spheres/goldsmall: 288 688
+:proxima/tile/orange1a: 432 736
+:proxima/tile/orange1a: 432 704
+:proxima/tile/orange1a: 432 672
+:proxima/tile/orange1a: 432 640
+:proxima/tile/orange1a: 432 608
+:proxima/tile/orange1a: 432 576
+:proxima/tile/orange1a: 432 544
+:proxima/tile/orange1a: 432 512
+:proxima/tile/orange1a: 432 480
+:proxima/tile/orange1a: 432 448
+:proxima/tile/orange1a: 432 416
+:proxima/tile/orange1a: 432 384
+:proxima/tile/red1a: 0 0 r
+:proxima/tile/red1a: 0 32 r
+:proxima/tile/red1a: 0 64 r
+:proxima/tile/red1a: 0 96 r
+:proxima/tile/red1a: 0 128 r
+:proxima/tile/red1a: 0 160 r
+:proxima/tile/red1a: 0 192 r
+:proxima/tile/red1a: 0 224 r
+:proxima/tile/red1a: 0 256 r
+:proxima/tile/red1a: 0 288 r
+:proxima/tile/red1a: 0 320 r
+:proxima/tile/red1a: 0 352 r
+:proxima/tile/red3s: 16 352
+:proxima/tile/red3s: 48 352
+:proxima/tile/red3s: 80 352
+:proxima/tile/red3s: 112 352
+:proxima/tile/red3s: 144 352
+:proxima/tile/red3s: 176 352
+:proxima/tile/spheres/redsmall: 16 320
+:proxima/tile/spheres/redsmall: 160 304
+:proxima/tile/spheres/redsmall: 112 176
+:proxima/tile/spheres/greensmall: 128 256
+:proxima/tile/spheres/greensmall: 32 224
+:proxima/tile/spheres/bluesmall: 16 272
+:proxima/tile/spheres/goldsmall: 64 192
+:proxima/tile/spheres/pinksmall: 160 208
+:proxima/tile/spheres/pinksmall: 80 256
+:proxima/tile/spheres/bluesmall: 176 256
+:proxima/tile/spheres/goldsmall: 160 160
+:proxima/tile/spheres/greensmall: 80 144
+:proxima/tile/spheres/bluesmall: 16 176
+:proxima/tile/spheres/pinksmall: 128 128
+:proxima/tile/spheres/pinksmall: 48 112
+:proxima/tile/spheres/pinksmall: 32 48
+:proxima/tile/spheres/gold: 80 64
+:proxima/tile/spheres/greensmall: 160 80
+:proxima/tile/spheres/greensmall: 144 32
+:proxima/tile/spheres/goldsmall: 64 304
+:proxima/tile/red1a: 208 0 r
+:proxima/tile/red1a: 208 32 r
+:proxima/tile/red1a: 208 64 r
+:proxima/tile/red1a: 208 96 r
+:proxima/tile/red1a: 208 128 r
+:proxima/tile/red1a: 208 160 r
+:proxima/tile/red1a: 208 192 r
+:proxima/tile/red1a: 208 224 r
+:proxima/tile/red1a: 208 256 r
+:proxima/tile/red1a: 208 288 r
+:proxima/tile/red1a: 208 320 r
+:proxima/tile/red1a: 208 352 r
+:proxima/tile/blue2s: 240 352
+:proxima/tile/blue2s: 272 352
+:proxima/tile/blue2s: 304 352
+:proxima/tile/blue2s: 336 352
+:proxima/tile/blue2s: 368 352
+:proxima/tile/blue2s: 400 352
+$BEGIN_TILE_GROUP 0
+:proxima/tile/blue2s: 0 0
+:proxima/tile/red1a: 0 0 rd
+$END_TILE_GROUP
+:Group-0: 224 352
+:Group-0: 224 320
+:Group-0: 224 288
+:Group-0: 224 256
+:Group-0: 224 224
+:Group-0: 224 192
+:Group-0: 224 160
+:Group-0: 224 128
+:Group-0: 224 96
+:Group-0: 224 64
+:Group-0: 224 32
+:Group-0: 224 0
+$BEGIN_TILE_GROUP 1
+:proxima/tile/blue2s: 0 0
+:proxima/tile/red1a: 16 0 rd
+$END_TILE_GROUP
+:Group-1: 432 352
+:Group-1: 432 320
+:Group-1: 432 288
+:Group-1: 432 256
+:Group-1: 432 224
+:Group-1: 432 192
+:Group-1: 432 160
+:Group-1: 432 128
+:Group-1: 432 96
+:Group-1: 432 64
+:Group-1: 432 32
+:Group-1: 432 0
+$BEGIN_TILE_GROUP 2
+:proxima/tile/green2s: 0 0
+:proxima/tile/orange1a: 0 0 d
+$END_TILE_GROUP
+:Group-2: 448 352
+:Group-2: 448 320
+:Group-2: 448 288
+:Group-2: 448 256
+:Group-2: 448 224
+:Group-2: 448 192
+:Group-2: 448 160
+:Group-2: 448 128
+:Group-2: 448 96
+:Group-2: 448 64
+:Group-2: 448 32
+:Group-2: 448 0
+:proxima/tile/green2s: 464 352
+:proxima/tile/green2s: 496 352
+:proxima/tile/green2s: 528 352
+:proxima/tile/green2s: 560 352
+:proxima/tile/green2s: 592 352
+:proxima/tile/green2s: 624 352
+$BEGIN_TILE_GROUP 3
+:proxima/tile/green2s: 0 0
+:proxima/tile/orange1a: 16 0 d
+$END_TILE_GROUP
+:Group-3: 656 352
+:Group-3: 656 320
+:Group-3: 656 288
+:Group-3: 656 256
+:Group-3: 656 224
+:Group-3: 656 192
+:Group-3: 656 160
+:Group-3: 656 128
+:Group-3: 656 96
+:Group-3: 656 64
+:Group-3: 656 32
+:Group-3: 656 0
+:geoo/sandstone/32x32: 688 352
+:geoo/sandstone/16x32: 672 352
+:geoo/sandstone/16x32: 672 320
+:geoo/sandstone/16x32: 672 288
+:geoo/sandstone/16x32: 672 256
+:geoo/sandstone/16x32: 672 224
+:geoo/sandstone/16x32: 672 192
+:geoo/sandstone/16x32: 672 160
+:geoo/sandstone/16x32: 672 128
+:geoo/sandstone/16x32: 672 96
+:geoo/sandstone/16x32: 672 64
+:geoo/sandstone/16x32: 672 32
+:geoo/sandstone/16x32: 672 0
+:geoo/sandstone/32x32: 720 352
+:geoo/sandstone/32x32: 752 352
+:geoo/sandstone/32x32: 784 352
+:geoo/sandstone/32x32: 816 352
+:geoo/sandstone/32x32: 848 352
+:geoo/sandstone/16x32: 880 352
+:geoo/sandstone/16x32: 880 320
+:geoo/sandstone/16x32: 880 288
+:geoo/sandstone/16x32: 880 256
+:geoo/sandstone/16x32: 880 224
+:geoo/sandstone/16x32: 880 192
+:geoo/sandstone/16x32: 880 160
+:geoo/sandstone/16x32: 880 128
+:geoo/sandstone/16x32: 880 96
+:geoo/sandstone/16x32: 880 64
+:geoo/sandstone/16x32: 880 32
+:geoo/sandstone/16x32: 880 0
+:proxima/tile/pink4s: 16 736
+:proxima/tile/pink1a: 0 736 r
+:proxima/tile/pink1a: 0 704 r
+:proxima/tile/pink1a: 0 672 r
+:proxima/tile/pink1a: 0 640 r
+:proxima/tile/pink1a: 0 608 r
+:proxima/tile/pink1a: 0 576 r
+:proxima/tile/pink1a: 0 544 r
+:proxima/tile/pink1a: 0 512 r
+:proxima/tile/pink1a: 0 480 r
+:proxima/tile/pink1a: 0 448 r
+:proxima/tile/pink1a: 0 416 r
+:proxima/tile/pink1a: 0 384 r
+:proxima/tile/pink4s: 48 736
+:proxima/tile/pink4s: 80 736
+:proxima/tile/pink4s: 112 736
+:proxima/tile/pink4s: 144 736
+:proxima/tile/pink4s: 176 736
+:proxima/tile/pink1a: 208 736 r
+:proxima/tile/pink1a: 208 704 r
+:proxima/tile/pink1a: 208 672 r
+:proxima/tile/pink1a: 208 640 r
+:proxima/tile/pink1a: 208 608 r
+:proxima/tile/pink1a: 208 576 r
+:proxima/tile/pink1a: 208 544 r
+:proxima/tile/pink1a: 208 512 r
+:proxima/tile/pink1a: 208 480 r
+:proxima/tile/pink1a: 208 448 r
+:proxima/tile/pink1a: 208 416 r
+:proxima/tile/pink1a: 208 384 r
+:proxima/tile/spheres/redsmall: 240 320
+:proxima/tile/spheres/redsmall: 384 304
+:proxima/tile/spheres/redsmall: 336 176
+:proxima/tile/spheres/greensmall: 352 256
+:proxima/tile/spheres/greensmall: 256 224
+:proxima/tile/spheres/bluesmall: 240 272
+:proxima/tile/spheres/goldsmall: 288 192
+:proxima/tile/spheres/pinksmall: 384 208
+:proxima/tile/spheres/pinksmall: 304 256
+:proxima/tile/spheres/bluesmall: 400 256
+:proxima/tile/spheres/goldsmall: 384 160
+:proxima/tile/spheres/greensmall: 304 144
+:proxima/tile/spheres/bluesmall: 240 176
+:proxima/tile/spheres/pinksmall: 352 128
+:proxima/tile/spheres/pinksmall: 272 112
+:proxima/tile/spheres/pinksmall: 256 48
+:proxima/tile/spheres/gold: 304 64
+:proxima/tile/spheres/greensmall: 384 80
+:proxima/tile/spheres/greensmall: 368 32
+:proxima/tile/spheres/goldsmall: 288 304
+:proxima/tile/spheres/redsmall: 464 320
+:proxima/tile/spheres/redsmall: 608 304
+:proxima/tile/spheres/redsmall: 560 176
+:proxima/tile/spheres/greensmall: 576 256
+:proxima/tile/spheres/greensmall: 480 224
+:proxima/tile/spheres/bluesmall: 464 272
+:proxima/tile/spheres/goldsmall: 512 192
+:proxima/tile/spheres/pinksmall: 608 208
+:proxima/tile/spheres/pinksmall: 528 256
+:proxima/tile/spheres/bluesmall: 624 256
+:proxima/tile/spheres/goldsmall: 608 160
+:proxima/tile/spheres/greensmall: 528 144
+:proxima/tile/spheres/bluesmall: 464 176
+:proxima/tile/spheres/pinksmall: 576 128
+:proxima/tile/spheres/pinksmall: 496 112
+:proxima/tile/spheres/pinksmall: 480 48
+:proxima/tile/spheres/gold: 528 64
+:proxima/tile/spheres/greensmall: 608 80
+:proxima/tile/spheres/greensmall: 592 32
+:proxima/tile/spheres/goldsmall: 512 304
+:proxima/tile/spheres/redsmall: 688 320
+:proxima/tile/spheres/redsmall: 832 304
+:proxima/tile/spheres/redsmall: 784 176
+:proxima/tile/spheres/greensmall: 800 256
+:proxima/tile/spheres/greensmall: 704 224
+:proxima/tile/spheres/bluesmall: 688 272
+:proxima/tile/spheres/goldsmall: 736 192
+:proxima/tile/spheres/pinksmall: 832 208
+:proxima/tile/spheres/pinksmall: 752 256
+:proxima/tile/spheres/bluesmall: 848 256
+:proxima/tile/spheres/goldsmall: 832 160
+:proxima/tile/spheres/greensmall: 752 144
+:proxima/tile/spheres/bluesmall: 688 176
+:proxima/tile/spheres/pinksmall: 800 128
+:proxima/tile/spheres/pinksmall: 720 112
+:proxima/tile/spheres/pinksmall: 704 48
+:proxima/tile/spheres/gold: 752 64
+:proxima/tile/spheres/greensmall: 832 80
+:proxima/tile/spheres/greensmall: 816 32
+:proxima/tile/spheres/goldsmall: 736 304
+:proxima/tile/spheres/redsmall: 16 704
+:proxima/tile/spheres/redsmall: 160 688
+:proxima/tile/spheres/redsmall: 112 560
+:proxima/tile/spheres/greensmall: 128 640
+:proxima/tile/spheres/greensmall: 32 608
+:proxima/tile/spheres/bluesmall: 16 656
+:proxima/tile/spheres/goldsmall: 64 576
+:proxima/tile/spheres/pinksmall: 160 592
+:proxima/tile/spheres/pinksmall: 80 640
+:proxima/tile/spheres/bluesmall: 176 640
+:proxima/tile/spheres/goldsmall: 160 544
+:proxima/tile/spheres/greensmall: 80 528
+:proxima/tile/spheres/bluesmall: 16 560
+:proxima/tile/spheres/pinksmall: 128 512
+:proxima/tile/spheres/pinksmall: 48 496
+:proxima/tile/spheres/pinksmall: 32 432
+:proxima/tile/spheres/gold: 80 448
+:proxima/tile/spheres/greensmall: 160 464
+:proxima/tile/spheres/greensmall: 144 416
+:proxima/tile/spheres/goldsmall: 64 688
+:geoo/steel/16x16o.S: 552 352
+:geoo/steel/16x16o.S: 104 352
+:geoo/steel/16x16o.S: 328 352
+:geoo/steel/16x16o.S: 104 736
+:geoo/steel/16x16o.S: 328 736
+:geoo/steel/16x16o.S: 776 352
+:geoo/construction/concrete/032: 464 736
+:geoo/construction/concrete/032: 496 736
+:geoo/construction/concrete/032: 528 736
+:geoo/construction/concrete/032: 560 736
+:geoo/construction/concrete/032: 592 736
+:geoo/construction/concrete/032: 624 736
+:geoo/construction/concrete/016v: 448 384
+:geoo/construction/concrete/016v: 448 416
+:geoo/construction/concrete/016v: 448 448
+:geoo/construction/concrete/016v: 448 480
+:geoo/construction/concrete/016v: 448 512
+:geoo/construction/concrete/016v: 448 544
+:geoo/construction/concrete/016v: 448 576
+:geoo/construction/concrete/016v: 448 608
+:geoo/construction/concrete/016v: 448 640
+:geoo/construction/concrete/016v: 448 672
+:geoo/construction/concrete/016v: 448 704
+:geoo/construction/concrete/016v: 448 736
+:geoo/construction/concrete/016v: 656 384
+:geoo/construction/concrete/016v: 656 416
+:geoo/construction/concrete/016v: 656 448
+:geoo/construction/concrete/016v: 656 480
+:geoo/construction/concrete/016v: 656 512
+:geoo/construction/concrete/016v: 656 544
+:geoo/construction/concrete/016v: 656 576
+:geoo/construction/concrete/016v: 656 608
+:geoo/construction/concrete/016v: 656 640
+:geoo/construction/concrete/016v: 656 672
+:geoo/construction/concrete/016v: 656 704
+:geoo/construction/concrete/016v: 656 736
+$BEGIN_TILE_GROUP 4
+:raymanni/lab/block_1: 16 0
+:raymanni/lab/block_1: 0 0 d
+$END_TILE_GROUP
+:Group-4: 672 384
+:Group-4: 672 416
+:Group-4: 672 448
+:Group-4: 672 480
+:Group-4: 672 512
+:Group-4: 672 544
+:Group-4: 672 576
+:Group-4: 672 608
+:Group-4: 672 640
+:Group-4: 672 672
+:Group-4: 672 704
+:Group-4: 672 736
+$BEGIN_TILE_GROUP 5
+:raymanni/lab/block_1: 0 0
+:raymanni/lab/block_1: 16 0 d
+$END_TILE_GROUP
+:Group-5: 880 736
+:Group-5: 880 704
+:Group-5: 880 672
+:Group-5: 880 640
+:Group-5: 880 608
+:Group-5: 880 576
+:Group-5: 880 544
+:Group-5: 880 512
+:Group-5: 880 480
+:Group-5: 880 448
+:Group-5: 880 416
+:Group-5: 880 384
+:raymanni/lab/block_1: 688 736
+:raymanni/lab/block_1: 720 736
+:raymanni/lab/block_1: 752 736
+:raymanni/lab/block_1: 784 736
+:raymanni/lab/block_1: 816 736
+:raymanni/lab/block_1: 848 736
+:proxima/tile/spheres/redsmall: 688 704
+:proxima/tile/spheres/redsmall: 832 688
+:proxima/tile/spheres/redsmall: 784 560
+:proxima/tile/spheres/greensmall: 800 640
+:proxima/tile/spheres/greensmall: 704 608
+:proxima/tile/spheres/bluesmall: 688 656
+:proxima/tile/spheres/goldsmall: 736 576
+:proxima/tile/spheres/pinksmall: 832 592
+:proxima/tile/spheres/pinksmall: 752 640
+:proxima/tile/spheres/bluesmall: 848 640
+:proxima/tile/spheres/goldsmall: 832 544
+:proxima/tile/spheres/greensmall: 752 528
+:proxima/tile/spheres/bluesmall: 688 560
+:proxima/tile/spheres/pinksmall: 800 512
+:proxima/tile/spheres/pinksmall: 720 496
+:proxima/tile/spheres/pinksmall: 704 432
+:proxima/tile/spheres/gold: 752 448
+:proxima/tile/spheres/greensmall: 832 464
+:proxima/tile/spheres/greensmall: 816 416
+:proxima/tile/spheres/goldsmall: 736 688
+:proxima/tile/spheres/redsmall: 464 704
+:proxima/tile/spheres/redsmall: 608 688
+:proxima/tile/spheres/redsmall: 560 560
+:proxima/tile/spheres/greensmall: 576 640
+:proxima/tile/spheres/greensmall: 480 608
+:proxima/tile/spheres/bluesmall: 464 656
+:proxima/tile/spheres/goldsmall: 512 576
+:proxima/tile/spheres/pinksmall: 608 592
+:proxima/tile/spheres/pinksmall: 528 640
+:proxima/tile/spheres/bluesmall: 624 640
+:proxima/tile/spheres/goldsmall: 608 544
+:proxima/tile/spheres/greensmall: 528 528
+:proxima/tile/spheres/bluesmall: 464 560
+:proxima/tile/spheres/pinksmall: 576 512
+:proxima/tile/spheres/pinksmall: 496 496
+:proxima/tile/spheres/pinksmall: 480 432
+:proxima/tile/spheres/gold: 528 448
+:proxima/tile/spheres/greensmall: 608 464
+:proxima/tile/spheres/greensmall: 592 416
+:proxima/tile/spheres/goldsmall: 512 688
+:geoo/steel/16x16o.S: 552 736
+:geoo/steel/16x16o.S: 776 736

@@ -1,4 +1,4 @@
-$BUILT 2022-05-12 01:15:44
+$BUILT 2022-05-23 21:55:05
 $AUTHOR Kingshadow
 $ENGLISH Straight & Curved 6P
 
@@ -43,7 +43,7 @@ $ENGLISH Straight & Curved 6P
 
 :geoo/construction/squisher.T: 272 576
 :geoo/construction/squisher.T: 272 192
-:geoo/construction/squisher.T: 288 976
+:geoo/construction/squisher.T: 272 960
 :geoo/construction/squisher.T: 912 384
 :geoo/construction/squisher.T: 912 768
 :geoo/construction/squisher.T: 912 0
@@ -440,7 +440,6 @@ $END_TILE_GROUP
 :matt/marble/06d: 640 800
 :matt/marble/06d: 640 672
 :matt/marble/09d: 640 928
-:matt/marble/09d: 640 544
 :matt/marble/06d: 640 608
 :matt/marble/17d: 768 704
 :matt/marble/17d: 832 768
@@ -463,9 +462,6 @@ $END_TILE_GROUP
 :geoo/steel/32x32o.S: 864 832
 :geoo/steel/32x32o.S: 864 864
 :geoo/steel/32x32o.S: 864 896
-:matt/marble/09d: 704 544
-:matt/marble/09d: 768 544
-:matt/marble/09d: 960 544
 :matt/marble/09d: 960 928
 :matt/marble/04d: 896 752
 :matt/marble/04d: 928 752
@@ -524,9 +520,6 @@ $END_TILE_GROUP
 :matt/marble/04d: 1072 752
 :matt/marble/04d: 1072 736
 :matt/marble/03d: 1072 704
-:matt/marble/09d: 1024 544
-:matt/marble/09d: 1088 544
-:matt/marble/09d: 1152 544
 :geoo/steel/32x64o.S: 1248 576
 :geoo/steel/32x64o.S: 1248 672
 :geoo/steel/32x64o.S: 1248 736
@@ -561,8 +554,6 @@ $END_TILE_GROUP
 :matt/marble/06d: 640 96
 :matt/marble/06d: 640 32
 :matt/marble/06d: 640 1056
-:matt/marble/09d: 640 160
-:matt/marble/09d: 640 928
 :matt/marble/06d: 640 992
 :matt/marble/17d: 768 1088
 :matt/marble/17d: 832 0
@@ -576,8 +567,6 @@ $END_TILE_GROUP
 :matt/marble/05d: 832 1120
 :matt/marble/05d: 800 1088
 :matt/marble/05d: 832 1088
-:matt/marble/09d: 768 160
-:matt/marble/09d: 704 160
 :geoo/steel/32x32o.S: 864 1088
 :geoo/steel/32x32o.S: 864 1120
 :geoo/steel/32x32o.S: 864 0
@@ -585,9 +574,6 @@ $END_TILE_GROUP
 :geoo/steel/32x32o.S: 864 64
 :geoo/steel/32x32o.S: 864 96
 :geoo/steel/32x32o.S: 864 128
-:matt/marble/09d: 768 928
-:matt/marble/09d: 960 928
-:matt/marble/09d: 960 160
 :matt/marble/04d: 896 1136
 :matt/marble/04d: 928 1136
 :matt/marble/04d: 960 1136
@@ -603,9 +589,6 @@ $END_TILE_GROUP
 :matt/marble/05d: 1216 96
 :matt/marble/05d: 1184 128
 :matt/marble/05d: 1216 128
-:matt/marble/09d: 1152 160
-:matt/marble/09d: 1024 160
-:matt/marble/09d: 1088 160
 :matt/marble/14d: 896 960
 :matt/marble/14d: 928 160
 :matt/marble/05d: 928 960
@@ -644,9 +627,6 @@ $END_TILE_GROUP
 :matt/marble/04d: 1072 1136
 :matt/marble/04d: 1072 1120
 :matt/marble/03d: 1072 1088
-:matt/marble/09d: 1024 928
-:matt/marble/09d: 1088 928
-:matt/marble/09d: 1152 928
 :geoo/steel/32x64o.S: 1248 960
 :geoo/steel/32x64o.S: 1248 1056
 :geoo/steel/32x64o.S: 1248 1120
@@ -670,21 +650,11 @@ $END_TILE_GROUP
 :matt/marble/05d: 1248 128
 :matt/marble/05d: 1248 1024
 :geoo/steel/32x32o.S: 832 1088
-:geoo/steel/32x16o.S: 432 640
-:geoo/steel/32x16o.S: 368 640
 :geoo/steel/32x16o.S: 400 640
-:geoo/steel/32x16o.S: 432 1024
-:geoo/steel/32x16o.S: 368 1024
 :geoo/steel/32x16o.S: 400 1024
 :geoo/steel/32x16o.S: 432 256
 :geoo/steel/32x16o.S: 368 256
 :geoo/steel/32x16o.S: 400 256
-:geoo/steel/32x16o.S: 1072 64
-:geoo/steel/32x16o.S: 1008 64
 :geoo/steel/32x16o.S: 1040 64
-:geoo/steel/32x16o.S: 1072 832
-:geoo/steel/32x16o.S: 1008 832
 :geoo/steel/32x16o.S: 1040 832
-:geoo/steel/32x16o.S: 1072 448
-:geoo/steel/32x16o.S: 1008 448
 :geoo/steel/32x16o.S: 1040 448

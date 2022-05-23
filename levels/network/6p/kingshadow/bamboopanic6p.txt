@@ -1,0 +1,208 @@
+$BUILT 2022-06-02 21:49:39
+$AUTHOR Kingshadow
+$ENGLISH Bamboo Panic 6P
+
+#INTENDED_NUMBER_OF_PLAYERS 6
+#SIZE_X 2304
+#SIZE_Y 400
+#TORUS_X 1
+#TORUS_Y 0
+
+#SECONDS 90
+#INITIAL 80
+#SPAWN_INTERVAL 80
+
+#WALKER 40
+#RUNNER 10
+#CLIMBER 5
+#FLOATER 10
+#EXPLODER2 10
+#BLOCKER 1
+#BUILDER 60
+#PLATFORMER 30
+#BASHER 50
+#MINER 20
+#DIGGER 30
+#JUMPER 30
+#BATTER 20
+#CUBER 5
+
+:simon/oriental/hatch.H: 56 256
+:simon/oriental/hatch.H: 696 256 r
+:simon/oriental/hatch.H: 824 256
+:simon/oriental/hatch.H: 1464 256 r
+:simon/oriental/hatch.H: 1592 256
+:simon/oriental/hatch.H: 2232 256 r
+
+:simon/oriental/goal.G: 816 16
+:simon/oriental/goal.G: 2240 16
+:simon/oriental/goal.G: 1584 16
+:simon/oriental/goal.G: 704 16
+:simon/oriental/goal.G: 48 16
+:simon/oriental/goal.G: 1472 16
+
+:simon/oriental/08: 48 320
+:simon/oriental/fat_d_long: 128 240
+:simon/oriental/08: 128 320
+:simon/oriental/08: 208 320
+:simon/oriental/fat_d_long: 592 240 frr
+:simon/oriental/08: 528 320
+:simon/oriental/08: 608 320
+:simon/oriental/08: 688 320
+:simon/oriental/05: 0 240
+:simon/oriental/05: 0 160
+:simon/oriental/05: 0 80
+:simon/oriental/05: 0 0
+:simon/oriental/03: 0 0
+:simon/oriental/03: 48 0
+:simon/oriental/03: 96 0
+:simon/oriental/03: 144 0
+:simon/oriental/03: 192 0
+:simon/oriental/03: 240 0
+:simon/oriental/03: 288 0
+:simon/oriental/03: 336 0
+:simon/oriental/03: 384 0
+:simon/oriental/03: 432 0
+:simon/oriental/03: 480 0
+:simon/oriental/03: 528 0
+:simon/oriental/03: 576 0
+:simon/oriental/03: 624 0
+:simon/oriental/03: 672 0
+:simon/oriental/03: 720 0
+:simon/oriental/05: 0 320
+:simon/oriental/07: 48 96
+:simon/oriental/07: 688 96
+:simon/oriental/culm_d_long: 419 68 frr
+:simon/oriental/05_top: 464 112
+:simon/oriental/05_btm: 464 256
+:simon/oriental/culm_d_long: 418 240 fr
+:simon/oriental/05_top: 464 240
+:simon/oriental/05_btm: 464 128
+:simon/oriental/culm_long: 482 144
+:simon/oriental/culm_d_long: 348 68
+:simon/oriental/05_top: 304 112
+:simon/oriental/05_btm: 304 256
+:simon/oriental/culm_d_long: 348 240 r
+:simon/oriental/05_top: 304 240
+:simon/oriental/05_btm: 304 128
+:simon/oriental/culm_long: 322 144 frr
+:simon/oriental/04: 384 336
+:simon/oriental/fat_half1: 400 304
+:simon/oriental/02: 392 256
+:simon/oriental/fat_half1: 400 224
+:simon/oriental/fat_long: 400 96
+:simon/oriental/02: 392 48
+:simon/oriental/fat_long: 592 32 rr
+:simon/oriental/fat_long: 208 32 f
+:geoo/steel/dark_16x16o.S: 72 96
+:geoo/steel/dark_16x16o.S: 728 96
+:simon/oriental/08: 816 320
+:simon/oriental/fat_d_long: 896 240
+:simon/oriental/08: 896 320
+:simon/oriental/08: 976 320
+:simon/oriental/fat_d_long: 1360 240 frr
+:simon/oriental/08: 1296 320
+:simon/oriental/08: 1376 320
+:simon/oriental/08: 1456 320
+:simon/oriental/05: 768 240
+:simon/oriental/05: 768 160
+:simon/oriental/05: 768 80
+:simon/oriental/05: 768 0
+:simon/oriental/03: 768 0
+:simon/oriental/03: 816 0
+:simon/oriental/03: 864 0
+:simon/oriental/03: 912 0
+:simon/oriental/03: 960 0
+:simon/oriental/03: 1008 0
+:simon/oriental/03: 1056 0
+:simon/oriental/03: 1104 0
+:simon/oriental/03: 1152 0
+:simon/oriental/03: 1200 0
+:simon/oriental/03: 1248 0
+:simon/oriental/03: 1296 0
+:simon/oriental/03: 1344 0
+:simon/oriental/03: 1392 0
+:simon/oriental/03: 1440 0
+:simon/oriental/03: 1488 0
+:simon/oriental/05: 768 320
+:simon/oriental/07: 816 96
+:simon/oriental/07: 1456 96
+:simon/oriental/culm_d_long: 1187 68 frr
+:simon/oriental/05_top: 1232 112
+:simon/oriental/05_btm: 1232 256
+:simon/oriental/culm_d_long: 1186 240 fr
+:simon/oriental/05_top: 1232 240
+:simon/oriental/05_btm: 1232 128
+:simon/oriental/culm_long: 1250 144
+:simon/oriental/culm_d_long: 1116 68
+:simon/oriental/05_top: 1072 112
+:simon/oriental/05_btm: 1072 256
+:simon/oriental/culm_d_long: 1116 240 r
+:simon/oriental/05_top: 1072 240
+:simon/oriental/05_btm: 1072 128
+:simon/oriental/culm_long: 1090 144 frr
+:simon/oriental/04: 1152 336
+:simon/oriental/fat_half1: 1168 304
+:simon/oriental/02: 1160 256
+:simon/oriental/fat_half1: 1168 224
+:simon/oriental/fat_long: 1168 96
+:simon/oriental/02: 1160 48
+:simon/oriental/fat_long: 1360 32 rr
+:simon/oriental/fat_long: 976 32 f
+:geoo/steel/dark_16x16o.S: 840 96
+:geoo/steel/dark_16x16o.S: 1496 96
+:simon/oriental/08: 1584 320
+:simon/oriental/fat_d_long: 1664 240
+:simon/oriental/08: 1664 320
+:simon/oriental/08: 1744 320
+:simon/oriental/fat_d_long: 2128 240 frr
+:simon/oriental/08: 2064 320
+:simon/oriental/08: 2144 320
+:simon/oriental/08: 2224 320
+:simon/oriental/05: 1536 240
+:simon/oriental/05: 1536 160
+:simon/oriental/05: 1536 80
+:simon/oriental/05: 1536 0
+:simon/oriental/03: 1536 0
+:simon/oriental/03: 1584 0
+:simon/oriental/03: 1632 0
+:simon/oriental/03: 1680 0
+:simon/oriental/03: 1728 0
+:simon/oriental/03: 1776 0
+:simon/oriental/03: 1824 0
+:simon/oriental/03: 1872 0
+:simon/oriental/03: 1920 0
+:simon/oriental/03: 1968 0
+:simon/oriental/03: 2016 0
+:simon/oriental/03: 2064 0
+:simon/oriental/03: 2112 0
+:simon/oriental/03: 2160 0
+:simon/oriental/03: 2208 0
+:simon/oriental/03: 2256 0
+:simon/oriental/05: 1536 320
+:simon/oriental/07: 1584 96
+:simon/oriental/07: 2224 96
+:simon/oriental/culm_d_long: 1955 68 frr
+:simon/oriental/05_top: 2000 112
+:simon/oriental/05_btm: 2000 256
+:simon/oriental/culm_d_long: 1954 240 fr
+:simon/oriental/05_top: 2000 240
+:simon/oriental/05_btm: 2000 128
+:simon/oriental/culm_long: 2018 144
+:simon/oriental/culm_d_long: 1884 68
+:simon/oriental/05_top: 1840 112
+:simon/oriental/05_btm: 1840 256
+:simon/oriental/culm_d_long: 1884 240 r
+:simon/oriental/05_top: 1840 240
+:simon/oriental/05_btm: 1840 128
+:simon/oriental/culm_long: 1858 144 frr
+:simon/oriental/04: 1920 336
+:simon/oriental/fat_half1: 1936 304
+:simon/oriental/02: 1928 256
+:simon/oriental/fat_half1: 1936 224
+:simon/oriental/fat_long: 1936 96
+:simon/oriental/02: 1928 48
+:simon/oriental/fat_long: 2128 32 rr
+:simon/oriental/fat_long: 1744 32 f
+:geoo/steel/dark_16x16o.S: 1608 96
+:geoo/steel/dark_16x16o.S: 2264 96

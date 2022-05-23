@@ -1,4 +1,4 @@
-$BUILT 2022-05-12 01:17:23
+$BUILT 2022-05-23 21:53:29
 $AUTHOR Kingshadow
 $ENGLISH Straight & Curved 5P
 
@@ -1384,18 +1384,8 @@ $END_TILE_GROUP
 :matt/marble/05d: 1888 320
 :matt/marble/05d: 1888 64
 :geoo/steel/32x32o.S: 1472 128
-:geoo/steel/32x16o.S: 1072 256
 :geoo/steel/32x16o.S: 1040 256
-:geoo/steel/32x16o.S: 1008 256
-:geoo/steel/32x16o.S: 1712 256
 :geoo/steel/32x16o.S: 1680 256
-:geoo/steel/32x16o.S: 1648 256
-:geoo/steel/32x16o.S: 2352 256
 :geoo/steel/32x16o.S: 2320 256
-:geoo/steel/32x16o.S: 2288 256
-:geoo/steel/32x16o.S: 2992 256
 :geoo/steel/32x16o.S: 2960 256
-:geoo/steel/32x16o.S: 2928 256
-:geoo/steel/32x16o.S: 432 256
 :geoo/steel/32x16o.S: 400 256
-:geoo/steel/32x16o.S: 368 256
