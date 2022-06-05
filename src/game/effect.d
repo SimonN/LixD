@@ -24,10 +24,10 @@ import std.random;
 public import physics.effect;
 
 import basics.help;
+import basics.globals;
 import file.language;
 import net.repdata;
 import game.debris;
-import game.core.game; // Game.phyusPerSecond
 import gui.console;
 import graphic.torbit;
 
@@ -218,8 +218,9 @@ public:
         if (_overtimeInPhyusToAnnounce != 0 && console !is null) {
             console.add(format!"%s %d:%02d..."(
                 Lang.netGameOvertimeNukeIn.transl,
-                _overtimeInPhyusToAnnounce / (60 * Game.phyusPerSecond),
-                (_overtimeInPhyusToAnnounce / Game.phyusPerSecond) % 60));
+                _overtimeInPhyusToAnnounce / (60*phyusPerSecondAtNormalSpeed),
+                (_overtimeInPhyusToAnnounce / phyusPerSecondAtNormalSpeed)
+                % 60)); // The 60 means 60 seconds per minute, not 60 fps.
             _overtimeInPhyusToAnnounce = 0; // don't print again on next draw
         }
     }

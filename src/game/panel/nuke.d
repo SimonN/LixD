@@ -3,9 +3,8 @@ module game.panel.nuke;
 import std.string;
 
 import basics.alleg5;
-import basics.globals : ticksForDoubleClick;
+import basics.globals;
 import file.option;
-import game.core.game;
 import game.panel.tooltip;
 import graphic.color;
 import graphic.internal;
@@ -70,7 +69,8 @@ public:
         if (re == _overtimeRemainingInPhyus || ! _label)
             return;
         _overtimeRemainingInPhyus = re;
-        immutable secs = (re + Game.phyusPerSecond - 1) / Game.phyusPerSecond;
+        immutable secs = (re + phyusPerSecondAtNormalSpeed - 1)
+            / phyusPerSecondAtNormalSpeed;
         _label.text = format!"%d:%02d"(secs / 60, secs % 60);
         reqDraw();
     }

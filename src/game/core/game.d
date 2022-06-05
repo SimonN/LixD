@@ -101,10 +101,9 @@ private:
     Phyu _setLastPhyuToNowLastCalled = Phyu(-1);
 
 public:
-    enum phyusPerSecond     = 15;
-    enum ticksNormalSpeed   = ticksPerSecond / phyusPerSecond;
+    enum ticksNormalSpeed = ticksPerSecond / phyusPerSecondAtNormalSpeed;
     enum updatesDuringTurbo = 9;
-    enum updatesAheadMany   = ticksPerSecond / ticksNormalSpeed * 10;
+    enum updatesAheadMany = ticksPerSecond / ticksNormalSpeed * 10;
 
     this(ArgsToCreateGame args)
     in {

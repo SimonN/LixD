@@ -6,11 +6,11 @@ import std.conv;
 import std.typecons;
 
 import basics.alleg5;
+import basics.globals;
 import basics.help; // len
 import file.option;
 import graphic.gadget;
 import graphic.torbit;
-import game.core.game : Game; // phyusPerSecond
 import file.replay;
 import level.level;
 import lix;
@@ -41,8 +41,8 @@ do {
         g.drawLookup(s.lookup);
     });
     s.update = s.multiplayer ? 0 : 45; // start quickly in 1-player
-    s.overtimeAtStartInPhyus =
-        s.multiplayer ? level.overtimeSeconds * Game.phyusPerSecond : 0;
+    s.overtimeAtStartInPhyus = s.multiplayer
+        ? level.overtimeSeconds * phyusPerSecondAtNormalSpeed : 0;
     return s;
 }
 

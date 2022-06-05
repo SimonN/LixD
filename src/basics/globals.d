@@ -15,6 +15,7 @@ immutable musicDownloadURL = "www.lixgame.com/dow/lix-music.zip";
 enum int ticksPerSecond       = 60;
 enum int ticksForDoubleClick  = 20; // 1/3 of a second at 60 ticks/sec
 
+enum int phyusPerSecondAtNormalSpeed = 15;
 enum int teamsPerLevelMax     =  8;
 enum int mouseStandardDivisor = 20;
 
