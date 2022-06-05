@@ -99,8 +99,22 @@ $winLobbyChat Chat:
 $winLobbySelectLevel Level wählen
 $winLobbyReady Bereit zum Start
 $winLobbyRoomNumber Raum Nr. %d
+$winLobbyRoomInhabitants %d Spieler
 $winLobbyRoomCreate Raum eröffnen
 $winLobbyRoomLeave Raum verlassen
+
+$handicapTitle Handicap
+$handicapPhilosophy1 Mit Handicap startest du mit einem Nachteil.
+$handicapPhilosophy2 Wenn ein starker Spieler mit einem schwächeren spielt, kann der starke
+$handicapPhilosophy3 ein Handicap wählen, um das Spiel für alle spannender zu gestalten.
+$handicapInitialLix Start-Lix|Deine Klappen starten mit weniger Lix.
+$handicapInitialLixNormal Normale Start-Lix
+$handicapInitialSkills Fähigkeiten|Deine Fähigkeitsleiste startet mit kleineren Zahlen.
+$handicapInitialSkillsNormal Normale Leiste
+$handicapSpawnDelay Verzögerung|Deine erste Lix erscheint später.
+$handicapSpawnDelayNormal Sofort
+$handicapScore Punktzahl|Deine Ziele geben weniger Punkte pro eintretender Lix.
+$handicapScoreNormal 1 Punkt pro Lix
 
 // Multiplayer interruption dialog
 $winAbortNetgameTitle Spielmenü|Das Menü während des Netzwerkspiels aufrufen,|um die Partie vorzeitig zu beenden. Das Menü pausiert das Spiel nicht.
@@ -260,17 +274,18 @@ $netChatYouLoggedOut Du hast das Netzwerk verlassen.
 $netChatYouCannotConnect Server nicht gefunden.
 $netChatYouLostConnection Verbindung zum Server verloren!
 $netChatPeerDisconnected %s hat das Netzwerk verlassen.
-$netChatWeTooOld Deine Lix-Version ist zu alt, um verbinden zu können.
-$netChatWeTooNew Deine Lix-Version ist zu neu, um verbinden zu können.
+$netChatVersionRoomRequires Du kannst nicht beitreten: Raum Nr. %d verlangt Lix-Version %s,
+$netChatVersionServerSuggests Du kannst nicht verbinden: Der Server empfiehlt Lix-Version %s,
+$netChatVersionYours aber du hast Lix %s.
+$netChatPleaseDownload Lade die neueste Version herunter:
 $netChatWeInRoom Du hast Raum Nr. %d betreten.
 $netChatWeInLobby Du bist in der Lobby.
 $netChatPlayerInRoom %s hat Raum Nr. %d betreten.
 $netChatPlayerInLobby %s hat die Lobby betreten.
 $netChatPlayerOutRoom %s wechselt in Raum Nr. %d.
 $netChatPlayerOutLobby %s hat den Raum verlassen.
-$netChatVersionYours Deine Version ist
-$netChatVersionServer Der Server verlangt
-$netChatPleaseDownload Lade die neueste Version herunter:
+$netChatHandicapSet %s spielt mit Handicap: %s
+$netChatHandicapUnset %s spielt ohne Handicap.
 $netChatLevelChange %s hat „%s“ gewählt.
 $netGameHowToChat Du kannst mit [%s] chatten.
 $netGameEnd Das Spiel ist zu Ende.

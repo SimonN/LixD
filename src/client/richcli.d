@@ -58,6 +58,11 @@ public:
         _permu = Permu.init;
     }
 
+    void printVersionMisfitFor(in RoomListEntry2022 misfitting)
+    {
+        printVersionMisfit(misfitting.owner.clientVersion, misfitting.room);
+    }
+
     bool mayWeDeclareReady() const
     {
         return _inner.mayWeDeclareReady && _level && _level.playable;
@@ -75,8 +80,7 @@ public:
     PlNr ourPlNr() const pure { return _inner.ourPlNr; }
     Room ourRoom() const pure { return _inner.ourRoom; }
     const(Profile2022) ourProfile() const pure { return _inner.ourProfile; }
-    void ourStyle(Style sty) { _inner.ourStyle = sty; }
-    void ourFeeling(Profile2022.Feeling feel) { _inner.ourFeeling = feel; }
+    void setOurProfile(in Profile2022 prof) { _inner.setOurProfile(prof); }
     void gotoExistingRoom(Room r) { _inner.gotoExistingRoom(r); }
     void createRoom() { _inner.createRoom(); }
 
@@ -93,13 +97,7 @@ public:
 
     void onVersionMisfit(in Version serverVersion)
     {
-        _console.add(serverVersion > gameVersion
-            ? Lang.netChatWeTooOld.transl : Lang.netChatWeTooNew.transl);
-        _console.add("%s %s. %s %s.".format(
-            Lang.netChatVersionYours.transl, gameVersion,
-            Lang.netChatVersionServer.transl, serverVersion.compatibles));
-        _console.add("%s %s".format(
-            Lang.netChatPleaseDownload.transl, homepageURL));
+        printVersionMisfit(serverVersion, Room(0));
     }
 
     void onConnectionLost()
@@ -131,7 +129,11 @@ public:
             : Lang.netChatPlayerOutRoom.translf(peerName, toRoom));
     }
 
-    void onPeerChangesProfile(in Profile2022) {}
+    void onPeerChangesProfile(in Profile2022 old, in Profile2022 theNew)
+    {
+        // Print nothing during play. The lobby will print handicap.
+    }
+
     void onWeChangeRoom(in Room toRoom)
     {
         _console.add(toRoom != 0
@@ -149,4 +151,23 @@ public:
     void onGameStart(Permu pe) { _permu = pe; }
     void onPeerSendsPly(in Ply) {}
     void onMillisecondsSinceGameStart(in int millis) {}
+
+// ######### End implementation of the interfaces. Now private helpers. #######
+private:
+    void printVersionMisfit(
+        in Version theirVer,
+        in Room theirRoom, // or 0 if the entire server misfits
+    ) {
+        immutable string cantJoinTheyHave = theirRoom == 0
+            ? Lang.netChatVersionServerSuggests.translf(theirVer.compatibles)
+            : Lang.netChatVersionRoomRequires.translf(
+                theirRoom, theirVer.compatibles);
+        immutable string butYouHave
+            = Lang.netChatVersionYours.translf(gameVersion.toString);
+        _console.add("%s %s".format(cantJoinTheyHave, butYouHave));
+        if (gameVersion < theirVer) {
+            _console.add("%s %s".format(
+                Lang.netChatPleaseDownload.transl, homepageURL));
+        }
+    }
 }

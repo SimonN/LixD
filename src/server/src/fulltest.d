@@ -84,7 +84,11 @@ public:
         await("B got A's initial orange", ()
             => _cliB.profilesInOurRoom.byValue.canFind!(prof
                 => prof.style == Style.orange));
-        _cliA.ourStyle = Style.yellow;
+        {
+            Profile2022 prof = _cliA.ourProfile;
+            prof.style = Style.yellow;
+            _cliA.setOurProfile(prof);
+        }
         await("A picks style, orange -> yellow", ()
             => _cliA.ourProfile.style == Style.yellow);
         await("B got A's style, orange -> yellow", ()

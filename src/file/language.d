@@ -31,7 +31,7 @@ import file.log;
 import file.filename;
 import net.ac;
 
-nothrow @nogc {
+nothrow @nogc @safe {
     string transl(in Lang key) { return _lang[key].transl; }
     string[] descr(in Lang key) { return _lang[key].descr; }
     string skillTooltip(in Ac ac) { return _skillTooltips[ac]; }
@@ -176,8 +176,22 @@ enum Lang {
     winLobbySelectLevel,
     winLobbyReady,
     winLobbyRoomNumber,
+    winLobbyRoomInhabitants,
     winLobbyRoomCreate,
     winLobbyRoomLeave,
+
+    handicapTitle,
+    handicapPhilosophy1,
+    handicapPhilosophy2,
+    handicapPhilosophy3,
+    handicapInitialLix,
+    handicapInitialLixNormal,
+    handicapInitialSkills,
+    handicapInitialSkillsNormal,
+    handicapSpawnDelay,
+    handicapSpawnDelayNormal,
+    handicapScore,
+    handicapScoreNormal,
 
     // Multiplayer interruption dialog
     winAbortNetgameTitle,
@@ -329,10 +343,9 @@ enum Lang {
     netChatYouCannotConnect,
     netChatYouLostConnection,
     netChatPeerDisconnected,
-    netChatWeTooOld,
-    netChatWeTooNew,
+    netChatVersionServerSuggests,
+    netChatVersionRoomRequires,
     netChatVersionYours,
-    netChatVersionServer,
     netChatPleaseDownload,
     netChatWeInRoom,
     netChatWeInLobby,
@@ -340,6 +353,8 @@ enum Lang {
     netChatPlayerInLobby,
     netChatPlayerOutRoom,
     netChatPlayerOutLobby,
+    netChatHandicapSet,
+    netChatHandicapUnset,
     netChatLevelChange,
     netGameHowToChat,
     netGameEnd,

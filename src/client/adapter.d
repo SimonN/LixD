@@ -29,6 +29,8 @@ interface ClientAdapter {
     }
 }
 
+private:
+
 class CliAdp_0_9_x : ClientAdapter {
     ProfilePacket2022 receiveProfilePacket(in ubyte[] got) const
     {

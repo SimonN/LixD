@@ -25,7 +25,7 @@ private:
     mixin NameAsFixStr!64;
 
 public:
-    enum int len = 24 + _name.len;
+    enum int len = 24 + Handicap.len + _name.len;
     enum Feeling : ubyte {
         thinking = 0, // Frame 0 in menu_chk.I
         ready = 2, // Frame 2
@@ -69,9 +69,9 @@ public:
         clientVersion.serializeTo(buf[0 .. 0+12]);
         buf[12] = style;
         buf[13] = feeling;
-        buf[14 .. 20] = 0; // 6 placeholder bytes for future fields
-        handicap.serializeTo(buf[20 .. 24]);
-        _name.serializeTo(buf[24 .. 24 + _name.len]);
+        buf[14 .. 24] = 0; // 10 placeholder bytes for future fields
+        handicap.serializeTo(buf[24 .. 40]);
+        _name.serializeTo(buf[40 .. 40 + _name.len]);
     }
 
     /*
@@ -82,7 +82,8 @@ public:
      */
     this(in ubyte[] buf) pure
     {
-        enum minLenIn2022 = 24 + _name.len;
+        enum minLenIn2022 = 20 + Handicap.len + _name.len;
+        assert (len >= minLenIn2022);
         enforce (buf.length >= minLenIn2022);
         clientVersion = Version(buf[0 .. 0+12]);
         try {
@@ -91,8 +92,8 @@ public:
         }
         catch (Exception) {
         }
-        handicap = Handicap(buf[20 .. 24]);
-        _name = FixStr!64(buf[24 .. 24 + _name.len]);
+        handicap = Handicap(buf[24 .. 40]);
+        _name = FixStr!64(buf[40 .. 40 + _name.len]);
         // If struct grows in future, check buf.length before each field.
     }
 }

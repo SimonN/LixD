@@ -188,7 +188,11 @@ protected:
 template GetSetWithReqDraw(string s)
 {
     enum string GetSetWithReqDraw = q{
-        @property typeof(_%s) %s() const { return _%s; }
+        @property typeof(_%s) %s() const pure nothrow @safe @nogc
+        {
+            return _%s;
+        }
+
         @property typeof(_%s) %s(in typeof(_%s) arg)
         {
             if (_%s == arg)

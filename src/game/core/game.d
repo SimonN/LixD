@@ -407,7 +407,7 @@ public: // Implementation of NetClientObserver
     void onPeerDisconnect(in string peerName) {}
     void onPeerJoinsRoom(in Profile2022) {}
     void onPeerLeavesRoomTo(in string peerName, in Room toRoom) {}
-    void onPeerChangesProfile(in Profile2022) {}
+    void onPeerChangesProfile(in Profile2022 old, in Profile2022 theNew) {}
     void onWeChangeRoom(in Room toRoom) {}
     void onListOfExistingRooms(in RoomListEntry2022[]) {}
     void onLevelSelect(in string peerNameOfChooser, in ubyte[] data) {}

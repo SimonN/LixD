@@ -31,7 +31,7 @@ interface NetClientObserver {
     void onPeerDisconnect(in string peerName);
     void onPeerJoinsRoom(in Profile2022);
     void onPeerLeavesRoomTo(in string peerName, in Room toRoom);
-    void onPeerChangesProfile(in Profile2022);
+    void onPeerChangesProfile(in Profile2022 old, in Profile2022 theNew);
     void onWeChangeRoom(in Room toRoom);
 
     // Structure of arrays: The n-th room ID from the first array belongs
@@ -65,11 +65,7 @@ interface INetClient {
     const(Profile2022) ourProfile() const pure in { assert(connected); }
     bool mayWeDeclareReady() const in { assert(connected); }
 
-    // Call this when the GUI has chosen a new Lix style.
-    // The GUI may update ahead of time, but what the server knows, decides.
-    // Feeling is readiness, and whether we want to observe.
-    void ourStyle(Style sty);
-    void ourFeeling(Profile2022.Feeling feel);
+    void setOurProfile(in Profile2022);
     void gotoExistingRoom(Room);
     void createRoom();
 

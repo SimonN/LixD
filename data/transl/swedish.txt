@@ -103,8 +103,22 @@ $winLobbyChat Chatt:
 $winLobbySelectLevel Välj bana
 $winLobbyReady Redo att starta
 $winLobbyRoomNumber Rum #%d
+$winLobbyRoomInhabitants %d spelare
 $winLobbyRoomCreate Öppna ett nytt rum
 $winLobbyRoomLeave Lämna rum
+
+$handicapTitle Handikapp
+$handicapPhilosophy1 Med ett handikapp börjar du med en nackdel.
+$handicapPhilosophy2 När en stark spelare spelar mot en svagare spelare kan den starka spelaren
+$handicapPhilosophy3 välja ett handikapp för att göra spelet mer spännande för alla.
+$handicapInitialLix Start-Lix|Dina entréluckor börjar med färre lix.
+$handicapInitialLixNormal Normal start-lix
+$handicapInitialSkills Förmågor|Din förmågepanel börjar med mindre talen.
+$handicapInitialSkillsNormal Normal panel
+$handicapSpawnDelay Fördröjning|Din första lix dyker upp senare.
+$handicapSpawnDelayNormal Genast
+$handicapScore Poäng|Dina mål ger färre poäng per inkommande lix.
+$handicapScoreNormal 1 poäng per lix
 
 // Multiplayer interruption dialog
 $winAbortNetgameTitle Spelmeny|Öppna menydialogen under pågående nätverksspel.|Detta gör att du kan avsluta spelet tidigt. Det pausar inte.
@@ -272,10 +286,9 @@ $netChatYouLoggedOut Du lämnade nätverket.
 $netChatYouCannotConnect Server hittades inte.
 $netChatYouLostConnection Anslutning till server förlorades!
 $netChatPeerDisconnected %s lämnade nätverket.
-$netChatWeTooOld Din Lix-version är för gammal för att ansluta till servern.
-$netChatWeTooNew Din Lix-version är för ny. Servern borde uppgradera.
-$netChatVersionYours Din version är
-$netChatVersionServer Servern kräver
+$netChatVersionRoomRequires Du kan inte komma in: Rum #%d kräver Lix-version %s,
+$netChatVersionServerSuggests Du kan inte ansluta: Servern föreslår Lix-version %s,
+$netChatVersionYours men du har Lix %s.
 $netChatPleaseDownload Hämta den nyaste versionen:
 $netChatWeInRoom Du har gått in i rum #%d.
 $netChatWeInLobby Du är i lobbyn.
@@ -283,6 +296,8 @@ $netChatPlayerInRoom %s har gått in i rum #%d.
 $netChatPlayerInLobby %s har klivit in i lobbyn.
 $netChatPlayerOutRoom %s har gått in i rum #%d.
 $netChatPlayerOutLobby %s har lämnat rummet.
+$netChatHandicapSet %s spelar med handikapp: %s
+$netChatHandicapUnset %s spelar utan handikapp.
 $netChatLevelChange %s har markerat “%s”.
 $netGameHowToChat Tryck [%s] för att chatta.
 $netGameEnd Spelet är slut.

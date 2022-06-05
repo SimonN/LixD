@@ -242,7 +242,7 @@ unittest { // 2022
     before.arr ~= createEntry(Room(3), 33, "Hello");
     before.arr ~= createEntry(Room(5), 55, "World");
 
-    ubyte[2 * (64 + 32) + 16] buf;
+    ubyte[PacketHeader2022.len + (2 * RoomListEntry2022.len)] buf;
     before.serializeTo(buf);
     auto after = RoomListPacket2022(buf);
     assert (after.arr.length == 2);

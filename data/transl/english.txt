@@ -103,8 +103,22 @@ $winLobbyChat Chat:
 $winLobbySelectLevel Choose level
 $winLobbyReady Ready to start
 $winLobbyRoomNumber Room #%d
+$winLobbyRoomInhabitants %d players
 $winLobbyRoomCreate Open a new room
 $winLobbyRoomLeave Leave room
+
+$handicapTitle Handicap
+$handicapPhilosophy1 With a handicap, you start at a disadvantage.
+$handicapPhilosophy2 When a strong player plays with a weaker player, the strong player
+$handicapPhilosophy3 may select a handicap to make the game more exciting for everybody.
+$handicapInitialLix Initial Lix|Your hatches start with fewer lix.
+$handicapInitialLixNormal Normal initial lix
+$handicapInitialSkills Skills|Your skill panel starts with lower numbers.
+$handicapInitialSkillsNormal Normal panel
+$handicapSpawnDelay Spawn Delay|Your first lix spawns later.
+$handicapSpawnDelayNormal Right away
+$handicapScore Score|Your goals give fewer points per entering lix.
+$handicapScoreNormal 1 point per lix
 
 // Multiplayer interruption dialog
 $winAbortNetgameTitle Game Menu|Open the menu dialog during networked games.|This allows to exit the game early. It doesn't pause.
@@ -272,10 +286,9 @@ $netChatYouLoggedOut You left the network.
 $netChatYouCannotConnect Server not found.
 $netChatYouLostConnection Connection to server lost!
 $netChatPeerDisconnected %s left the network.
-$netChatWeTooOld You have too old a Lix version to connect to the server.
-$netChatWeTooNew You have too new a Lix version. The server should upgrade.
-$netChatVersionYours Your version is
-$netChatVersionServer The server requires
+$netChatVersionRoomRequires You cannot join: Room #%d requires Lix version %s,
+$netChatVersionServerSuggests You cannot connect: The server suggests Lix version %s,
+$netChatVersionYours but you have Lix %s.
 $netChatPleaseDownload Download the newest version:
 $netChatWeInRoom You have entered room #%d.
 $netChatWeInLobby You are in the lobby.
@@ -283,6 +296,8 @@ $netChatPlayerInRoom %s has joined room #%d.
 $netChatPlayerInLobby %s has entered the lobby.
 $netChatPlayerOutRoom %s has entered room #%d.
 $netChatPlayerOutLobby %s has left the room.
+$netChatHandicapSet %s will play at a handicap: %s
+$netChatHandicapUnset %s will play without handicap.
 $netChatLevelChange %s has selected “%s”.
 $netGameHowToChat Press [%s] to chat.
 $netGameEnd The game is over.

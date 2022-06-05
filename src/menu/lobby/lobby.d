@@ -1,8 +1,6 @@
 module menu.lobby.lobby;
 
 import std.algorithm;
-import std.conv;
-import std.file;
 import std.range;
 import std.string;
 
@@ -12,18 +10,16 @@ import file.log;
 import gui;
 import hardware.mouse;
 import hardware.sound;
-import level.level;
+import menu.lobby.topleft;
 import menu.lobby.connect;
-import menu.lobby.lists;
+import menu.lobby.handicap;
+import menu.lobby.lists : RoomList;
 import menu.preview.thumbn;
 import menu.browser.frommain;
 import menu.browser.network;
 import net.client.client;
 import net.client.richcli;
-import net.permu;
-import net.plnr;
-import net.profile;
-import net.versioning;
+import net.handicap;
 
 class Lobby : Window, NetClientObserver {
 private:
@@ -34,15 +30,13 @@ private:
 
     RichClient _netClient;
     Console _console;
-    PeerList _peerList;
-    ColorSelector _colorSelector;
+    TopLeftUI _topLeft;
     RoomList _roomList;
     LevelThumbnail _preview;
     Label _levelTitle;
     BrowserCalledFromMainMenu _browser;
 
     TextButton _chooseLevel;
-    TextButton _declareReady;
     Texttype _chat;
 
     // Rule: A GUI element is either in exactly one of these, or in none.
@@ -124,7 +118,12 @@ protected:
             assert (_netClient);
             if (_browser.gotoGame)
                 _netClient.selectLevel(_browser.fileRecent.readIntoVoidArray);
-            destroyBrowser();
+            destroySubwindows();
+        }
+        if (_topLeft.execute) { // must be in workSelf(), reason: Handi focuses
+            immutable wish = _topLeft.chosenProfile;
+            file.option.networkLastStyle = wish.style;
+            _netClient.setOurProfile(wish);
         }
         if (_netClient)
             _netClient.calc();
@@ -137,35 +136,8 @@ protected:
         handleRightClick();
         if (! _netClient)
             return;
-        scope (success)
-            showOrHideGuiBasedOnConnection();
-
-        if (_colorSelector.execute) {
-            // The color selector doesn't return execute == true when you
-            // click the button that's already on.
-            if (_colorSelector.observing)
-                _netClient.ourFeeling = Profile.Feeling.observing;
-            else {
-                _netClient.ourStyle = _colorSelector.style;
-                file.option.networkLastStyle = _colorSelector.style;
-            }
-        }
-        if (_roomList.executeExistingRoom)
-            _netClient.gotoExistingRoom(_roomList.executeExistingRoomID);
-        else if (_roomList.executeNewRoom)
-            _netClient.createRoom();
-        if (_declareReady.execute) {
-            assert (_netClient, "declare ready without net client running");
-            assert (_netClient.mayWeDeclareReady, "declare ready disallowed");
-            if (_declareReady.on) {
-                _declareReady.on = false;
-                _netClient.ourFeeling = Profile.Feeling.thinking;
-            }
-            else {
-                _declareReady.on = true;
-                _netClient.ourFeeling = Profile.Feeling.ready;
-            }
-        }
+        handleRoomList();
+        showOrHideGuiBasedOnConnection();
     }
 
 private:
@@ -186,19 +158,19 @@ private:
             &this.onEnetDLLMissing);
         _showWhenDisconnected ~= _connections;
 
-        _peerList = new PeerList(new Geom(20, 40, 120, 20*8));
-        _showWhenConnected ~= _peerList;
-        _colorSelector = new ColorSelector(new Geom(160, 40, 40, 20*8));
-        _showWhenConnected ~= _colorSelector;
-        _roomList = new RoomList(new Geom(20, 40, 300, 20*8, From.TOP_RIGHT));
+        _topLeft = new TopLeftUI(new Geom(20, 40, 300, 20*8 + 20 + 20));
+        _showWhenConnected ~= _topLeft;
+        _roomList = new RoomList(new Geom(20, 40,
+            xlg - 3*20 - _topLeft.xlg, 20*8, From.TOP_RIGHT));
         _showDuringLobby ~= _roomList;
 
         _preview = new LevelThumbnail(new Geom(_roomList.geom));
         _showDuringGameRoom ~= _preview;
 
         enum midButtonsY = 60+20*8;
-        _chooseLevel = new TextButton(new Geom(20, midButtonsY, 120, 20,
-            From.TOP_RIGHT), Lang.winLobbySelectLevel.transl);
+        _chooseLevel = new TextButton(new Geom(20, midButtonsY,
+            (_roomList.xlg - 20) / 2f, 20, From.TOP_RIGHT),
+            Lang.winLobbySelectLevel.transl);
         _chooseLevel.onExecute = ()
         {
             assert (! _browser);
@@ -212,13 +184,6 @@ private:
             midButtonsY, 300, 20, From.TOP_RIGHT));
         _levelTitle.undrawBeforeDraw = true;
         _showDuringGameRoom ~= _levelTitle;
-
-        _declareReady = new TextButton(new Geom(20, midButtonsY,
-            _peerList.xlg, 20), Lang.winLobbyReady.transl);
-        _declareReady.hotkey = keyMenuOkay;
-        addChild(_declareReady);
-        // See showOrHideGuiBasedOnConnection for particular showing/hiding,
-        // because _declareReady isn't in any of the _showXyz arrays
 
         enum chatLabelXl = 50;
         _chat = new Texttype(new Geom(20 + chatLabelXl, 20,
@@ -258,9 +223,6 @@ private:
                        : connected ? Lang.winLobbyRoomLeave.transl
                       : connecting ? Lang.commonCancel.transl
                                    : Lang.commonBack.transl;
-        if (! connected || inLobby)
-            // See also refreshPeerList for visibility of this button
-            _declareReady.shown = false;
     }
 
     void acceptConnection(INetClient cli, NetClientCfg cfgThatWasUsed)
@@ -293,6 +255,22 @@ private:
             disconnect();
     }
 
+    void handleRoomList()
+    {
+        if (_roomList.executeExistingRoom) {
+            const roomEntry = _roomList.executeExistingRoomEntry;
+            if (roomEntry.owner.clientVersion.compatibleWith(gameVersion)) {
+                _netClient.gotoExistingRoom(roomEntry.room);
+            }
+            else {
+                _netClient.printVersionMisfitFor(roomEntry);
+            }
+        }
+        else if (_roomList.executeNewRoom) {
+            _netClient.createRoom();
+        }
+    }
+
     void onExitButtonExecute()
     {
         if (connected && ! inLobby) {
@@ -309,17 +287,14 @@ private:
 
     void refreshPeerList()
     {
-        _peerList.recreateButtonsFor(_netClient.profilesInOurRoom.values);
-        _colorSelector.style = _netClient.ourProfile.style;
-        if (_netClient.ourProfile.feeling == Profile.Feeling.observing)
-            _colorSelector.setObserving();
-        _declareReady.shown = _netClient.mayWeDeclareReady;
-        _declareReady.on = _netClient.ourProfile.feeling
-                            == Profile.Feeling.ready;
+        _topLeft.showInList(_netClient.profilesInOurRoom.values);
+        _topLeft.choose(_netClient.ourProfile);
+        _topLeft.allowToDeclareReady = _netClient.mayWeDeclareReady;
     }
 
-    void destroyBrowser()
+    void destroySubwindows()
     {
+        _topLeft.destroyHandicapWindow();
         if (! _browser)
             return;
         rmFocus(_browser);
@@ -334,7 +309,13 @@ public:
     void onConnect() {}
     void onCannotConnect()  { _netClient.unregister(this); _netClient = null; }
     void onVersionMisfit(in Version) {} // Console will print it
-    void onConnectionLost() { _netClient.unregister(this); _netClient = null; }
+    void onConnectionLost()
+    {
+        destroySubwindows();
+        _netClient.unregister(this);
+        _netClient = null;
+    }
+
     void onChatMessage(in string, in string) {} // Console will print it
     void onPeerDisconnect(in string) { refreshPeerList(); }
     void onPeerJoinsRoom(in Profile profile)
@@ -350,7 +331,18 @@ public:
         // new possible rooms.
     }
 
-    void onPeerChangesProfile(in Profile) { refreshPeerList(); }
+    void onPeerChangesProfile(in Profile2022 old, in Profile2022 next)
+    {
+        refreshPeerList();
+        if (old.handicap == next.handicap) {
+            return;
+        }
+        _console.add(next.handicap == Handicap.init
+            ? Lang.netChatHandicapUnset.translf(next.name)
+            : Lang.netChatHandicapSet.translf(next.name,
+                next.handicap.toUiTextLongAndHelpful));
+    }
+
     void onWeChangeRoom(in Room toRoom)
     {
         refreshPeerList();
@@ -378,7 +370,7 @@ public:
     void onGameStart(in Permu permu)
     {
         refreshPeerList();
-        destroyBrowser(); // Or observing players get stuck in their browser
+        destroySubwindows(); // Or observing players get stuck in their browser
         _console.add(Lang.netGameHowToChat.translf(keyChat.nameLong));
         _gotoGame = true;
     }

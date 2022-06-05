@@ -15,6 +15,7 @@ import derelict.enet.enet;
 import net.client.adapter;
 import net.client.client;
 import net.enetglob;
+import net.handicap;
 import net.header;
 import net.packetid;
 import net.permu;
@@ -162,26 +163,13 @@ public:
 
     // Call this when the GUI has chosen a new Lix style.
     // The GUI may update ahead of time, but what the server knows, decides.
-    @property void ourStyle(Style sty)
+    @property void setOurProfile(in Profile wish)
     {
         if (! connected)
             return;
-        _cfg.ourStyle = sty;
+        _cfg.ourStyle = wish.style;
         // Never affect our profiles directly. Always send the desire
         // to change color over the network and wait for the return packet.
-        Profile2022 wish = _profilesInOurRoom[_ourPlNr];
-        wish.style = sty;
-        wish.feeling = Profile2022.Feeling.thinking; // i.e., not observing
-        _adapter.sendOurUpdatedProfile(_serverPeer, wish, _ourPlNr, _ourRoom);
-    }
-
-    // Feeling is readiness, and whether we want to observe.
-    @property void ourFeeling(Profile2022.Feeling feel)
-    {
-        if (! connected)
-            return;
-        Profile2022 wish = _profilesInOurRoom[_ourPlNr];
-        wish.feeling = feel;
         _adapter.sendOurUpdatedProfile(_serverPeer, wish, _ourPlNr, _ourRoom);
     }
 
@@ -296,18 +284,16 @@ private:
         return ret;
     }
 
-    Profile2022* receiveProfilePacket(in ubyte[] got)
-    {
-        const updated = _adapter.receiveProfilePacket(got);
-        auto ptr = updated.header.subject in _profilesInOurRoom;
-        if (ptr is null || ptr.wouldForceAllNotReadyOnReplace(updated.neck)
-        ) {
+    void insertReceivedProfile(in PlNr forWho, in Profile2022 next)
+    out { assert (forWho in _profilesInOurRoom); }
+    do {
+        const ptr = forWho in _profilesInOurRoom;
+        const old = ptr is null ? next : *ptr;
+        if (old.wouldForceAllNotReadyOnReplace(next)) {
             foreach (ref profile; _profilesInOurRoom)
                 profile.setNotReady();
         }
-        _ourRoom = updated.header.subjectsRoom;
-        _profilesInOurRoom[updated.header.subject] = updated.neck;
-        return updated.header.subject in _profilesInOurRoom;
+        _profilesInOurRoom[forWho] = next;
     }
 
     // Call with: got = packet.data[0 .. dataLength]
@@ -365,18 +351,15 @@ private:
             disconnectAndDispose();
         }
         else if (got[0] == PacketStoC.peerJoinsYourRoom) {
-            const(Profile2022*) changed
-                = receiveProfilePacket(got);
-            if (changed !is null) {
-                foreach (obs; _observers) {
-                    obs.onPeerJoinsRoom(*changed);
-                }
+            const pkg = _adapter.receiveProfilePacket(got);
+            insertReceivedProfile(pkg.subject, pkg.neck);
+            foreach (obs; _observers) {
+                obs.onPeerJoinsRoom(pkg.neck);
             }
         }
         else if (got[0] == PacketStoC.peerLeftYourRoom) {
             auto gone = RoomChangePacket(got);
-            auto ptr = gone.header.plNr in _profilesInOurRoom;
-            auto name = ptr ? ptr.name : "?";
+            auto name = playerName(gone.header.plNr);
             _profilesInOurRoom.remove(gone.header.plNr);
             foreach (ref profile; _profilesInOurRoom)
                 profile.setNotReady();
@@ -403,11 +386,12 @@ private:
             }
         }
         else if (got[0] == PacketStoC.peerProfile) {
-            const(Profile2022*) changed = receiveProfilePacket(got);
-            if (changed !is null) {
-                foreach (obs; _observers) {
-                    obs.onPeerChangesProfile(*changed);
-                }
+            const pkg = _adapter.receiveProfilePacket(got);
+            const ptr = pkg.subject in _profilesInOurRoom;
+            const old = ptr ? *ptr : pkg.neck;
+            insertReceivedProfile(pkg.subject, pkg.neck);
+            foreach (obs; _observers) {
+                obs.onPeerChangesProfile(old, pkg.neck);
             }
         }
         else if (got[0] == PacketStoC.peerChatMessage) {
@@ -447,8 +431,7 @@ private:
         }
         else if (got[0] == PacketStoC.peerDisconnected) {
             auto discon = SomeoneDisconnectedPacket(got);
-            auto ptr = discon.header.plNr in _profilesInOurRoom;
-            auto name = ptr ? ptr.name : "?";
+            auto name = playerName(discon.header.plNr);
             _profilesInOurRoom.remove(discon.plNr);
             foreach (ref profile; _profilesInOurRoom)
                 profile.setNotReady();
