@@ -1,0 +1,106 @@
+$BUILT                                             2011-10-07 03:15:57
+$AUTHOR                                                           geoo
+$GERMAN                                                               
+$ENGLISH                                                 Uphill Battle
+
+#SIZE_X                                                            640
+#SIZE_Y                                                            400
+#TORUS_X                                                             0
+#TORUS_Y                                                             0
+#START_X                                                             0
+#START_Y                                                             0
+#BACKGROUND_RED                                                      0
+#BACKGROUND_GREEN                                                    0
+#BACKGROUND_BLUE                                                     0
+
+#SECONDS                                                            40
+#INITIAL                                                            60
+#REQUIRED                                                           20
+#RATE                                                               60
+
+#CLIMBER                                                            20
+#WALKER                                                             60
+#JUMPER                                                             40
+#RUNNER                                                             10
+#BATTER                                                             10
+#EXPLODER2                                                          20
+#PLATFORMER                                                         40
+#BUILDER                                                            60
+#CUBER                                                              10
+#BASHER                                                             40
+#MINER                                                              40
+#DIGGER                                                              5
+
+:/geoo/construction/Hatch.H:                       144       224
+:/geoo/construction/Hatch.H:                       464        64     r
+
+:/geoo/construction/Goal2.G:                       544        80
+:/geoo/construction/Goal2.G:                        32       272
+
+:/geoo/construction/concrete/032ha:                128       304
+:/geoo/construction/concrete/032ha:                192       272
+:/geoo/construction/wall/big_128x128:              256       144
+:/geoo/construction/wall/big_128x128:              256       272
+:/geoo/construction/concrete/032ha:                384       176
+:/geoo/construction/concrete/032ha:                448       144
+:/geoo/construction/wall/big_128x128:              256        80
+:/geoo/construction/concrete/032h:                 192       304
+:/geoo/construction/concrete/032h:                 448       176
+:/geoo/construction/concrete/128:                  384       208
+:/geoo/steel/64x64.S:                              128       336
+:/geoo/steel/64x64.S:                              192       336
+:/geoo/steel/64x64.S:                              384       336
+:/geoo/steel/64x64.S:                              448       336
+:/geoo/steel/64x64.S:                               64       336
+:/geoo/steel/64x64.S:                                0       336
+:/geoo/steel/64x64.S:                              576       336
+:/geoo/steel/64x64.S:                              512       336
+:/geoo/construction/concrete/128:                  512       208
+:/geoo/steel/64x64.S:                              512       144
+:/geoo/steel/64x64.S:                              576       144
+:/geoo/construction/pillar_32:                      96       272
+:/geoo/construction/pillar_32:                      96       240
+:/geoo/construction/pillar_32:                      96       208
+:/geoo/construction/pillar_32:                      96       176
+:/geoo/construction/pillar_32:                      96       144
+:/geoo/construction/pillar_32:                      96       112
+:/geoo/construction/pillar_32:                      96        80
+:/geoo/construction/pillar_32:                      96        48
+:/geoo/construction/pillar_32:                      96        48
+:/geoo/construction/pillar_32:                      96       304
+:/geoo/construction/pillar_32:                       0       272
+:/geoo/construction/pillar_32:                       0       240
+:/geoo/construction/pillar_32:                       0       208
+:/geoo/construction/pillar_32:                       0       176
+:/geoo/construction/pillar_32:                       0       144
+:/geoo/construction/pillar_32:                       0       112
+:/geoo/construction/pillar_32:                       0        80
+:/geoo/construction/pillar_32:                       0        48
+:/geoo/construction/pillar_32:                       0        48
+:/geoo/construction/pillar_32:                       0       304
+:/geoo/construction/pillar_32:                     608       112
+:/geoo/construction/pillar_32:                     608        80
+:/geoo/construction/pillar_32:                     608        48
+:/geoo/construction/pillar_32:                     608        48
+:/geoo/construction/pillar_32:                     512       112
+:/geoo/construction/pillar_32:                     512        80
+:/geoo/construction/pillar_32:                     512        48
+:/geoo/construction/pillar_32:                     512        48
+:/geoo/construction/pillar_base:                   -16        32
+:/geoo/construction/pillar_base:                    80        32
+:/geoo/construction/pillar_base:                   496        32
+:/geoo/construction/pillar_base:                   592        32
+:/geoo/construction/pillar_top_shaded:             512        48
+:/geoo/construction/pillar_top_shaded:             608        48
+:/geoo/construction/pillar_top_shaded:               0        48
+:/geoo/construction/pillar_top_shaded:              96        48
+:/geoo/construction/wall/big_128x64:                 0       -32
+:/geoo/construction/wall/big_128x64:               128       -32
+:/geoo/construction/wall/big_128x64:               256       -32
+:/geoo/construction/wall/big_128x64:               384       -32
+:/geoo/construction/wall/big_128x64:               512       -32
+:/geoo/construction/pillar_base:                   -16       320
+:/geoo/construction/pillar_base:                    80       320
+:/geoo/construction/pillar_base:                   496       128
+:/geoo/construction/pillar_base:                   592       128
+:/geoo/steel/16x16o.S:                             472       104

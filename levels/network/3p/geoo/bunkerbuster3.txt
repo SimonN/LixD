@@ -1,0 +1,257 @@
+$BUILT 2022-04-04 11:45:06
+$AUTHOR geoo
+$ENGLISH Bunker Buster
+
+#INTENDED_NUMBER_OF_PLAYERS 3
+#SIZE_X 1152
+#SIZE_Y 768
+#TORUS_X 1
+#TORUS_Y 0
+
+#SECONDS 50
+#INITIAL 80
+#SPAWN_INTERVAL 13
+
+#WALKER 80
+#CLIMBER 40
+#EXPLODER2 40
+#BUILDER 80
+#PLATFORMER 20
+#BASHER 40
+#MINER 40
+#DIGGER 40
+#JUMPER 80
+#BATTER 80
+
+:geoo/construction/Hatch.H: 432 144 r
+:geoo/construction/Hatch.H: 48 144
+:geoo/construction/Hatch.H: 816 144 r
+:geoo/construction/Hatch.H: 432 48 r
+:geoo/construction/Hatch.H: 48 48
+:geoo/construction/Hatch.H: 816 48 r
+
+:matt/goldmine/Goal.G: 416 656
+:matt/goldmine/Goal.G: 32 656
+:matt/goldmine/Goal.G: 800 656
+
+:matt/water.W: 128 736
+:matt/water.W: 160 736
+:matt/water.W: 192 736
+:matt/water.W: 224 736
+:matt/water.W: 256 736
+:geoo/construction/sawblade_small.F: 240 192
+:matt/water.W: 288 736
+:matt/water.W: 320 736
+:matt/water.W: 352 736
+:matt/water.W: 512 736
+:matt/water.W: 544 736
+:matt/water.W: 576 736
+:matt/water.W: 608 736
+:matt/water.W: 640 736
+:geoo/construction/sawblade_small.F: 624 192
+:matt/water.W: 672 736
+:matt/water.W: 704 736
+:matt/water.W: 736 736
+:matt/water.W: 896 736
+:matt/water.W: 928 736
+:matt/water.W: 960 736
+:matt/water.W: 992 736
+:matt/water.W: 1024 736
+:geoo/construction/sawblade_small.F: 1008 192
+:matt/water.W: 1056 736
+:matt/water.W: 1088 736
+:matt/water.W: 1120 736
+
+:geoo/abstract/tbeam_down.T: 416 640
+:geoo/abstract/tbeam_down.T: 448 640
+:geoo/abstract/tbeam_left.T: 352 32
+:geoo/abstract/tbeam_left.T: 288 96
+:geoo/abstract/tbeam_right.T: 192 96
+:geoo/abstract/tbeam_left.T: 352 128
+:geoo/abstract/tbeam_left.T: 288 0
+:geoo/abstract/tbeam_right.T: 192 0
+:geoo/abstract/tbeam_right.T: 128 32
+:geoo/abstract/tbeam_right.T: 128 128
+:geoo/abstract/tbeam_down.T: 32 640
+:geoo/abstract/tbeam_down.T: 64 640
+:geoo/abstract/tbeam_left.T: 736 32
+:geoo/abstract/tbeam_left.T: 672 96
+:geoo/abstract/tbeam_right.T: 576 96
+:geoo/abstract/tbeam_left.T: 736 128
+:geoo/abstract/tbeam_left.T: 672 0
+:geoo/abstract/tbeam_right.T: 576 0
+:geoo/abstract/tbeam_right.T: 512 32
+:geoo/abstract/tbeam_right.T: 512 128
+:geoo/abstract/tbeam_down.T: 800 640
+:geoo/abstract/tbeam_down.T: 832 640
+:geoo/abstract/tbeam_left.T: 1120 32
+:geoo/abstract/tbeam_left.T: 1056 96
+:geoo/abstract/tbeam_right.T: 960 96
+:geoo/abstract/tbeam_left.T: 1120 128
+:geoo/abstract/tbeam_left.T: 1056 0
+:geoo/abstract/tbeam_right.T: 960 0
+:geoo/abstract/tbeam_right.T: 896 32
+:geoo/abstract/tbeam_right.T: 896 128
+
+:geoo/construction/rod_rust/straight32: 60 206 rrr
+:matt/underworld/02: 384 96
+:matt/underworld/02: 448 96
+:geoo/construction/rod_rust/straight32: 444 590 rrr
+:matt/underworld/02: 384 608
+:matt/underworld/02: 448 608
+:geoo/steel/64x64.S: 384 704
+:geoo/steel/64x64.S: 448 704
+:matt/carnival/24: 416 640 d
+:geoo/construction/rod_rust/straight32: 444 206 rrr
+:geoo/construction/rod_rust/straight32: 444 238 rrr
+:geoo/construction/rod_rust/straight32: 444 270 rrr
+:geoo/construction/rod_rust/straight32: 444 302 rrr
+:geoo/construction/rod_rust/straight32: 444 334 rrr
+:geoo/construction/rod_rust/straight32: 444 366 rrr
+:geoo/construction/rod_rust/straight32: 444 398 rrr
+:geoo/construction/rod_rust/straight32: 444 430 rrr
+:geoo/construction/rod_rust/straight32: 444 462 rrr
+:geoo/construction/rod_rust/straight32: 444 494 rrr
+:geoo/construction/rod_rust/straight32: 444 526 rrr
+:geoo/construction/rod_rust/straight32: 444 558 rrr
+:matt/underworld/02: 384 128
+:matt/underworld/02: 448 128
+:matt/carnival/24: 416 128 d
+:matt/underworld/02: 384 0
+:matt/underworld/02: 448 0
+:matt/underworld/02: 384 32
+:matt/underworld/02: 448 32
+:matt/carnival/24: 416 32 d
+:geoo/steel/32x32o.S: 352 64
+:geoo/steel/32x32o.S: 128 64
+:matt/underworld/02: 0 96
+:matt/underworld/02: 64 96
+:matt/underworld/02: 0 128
+:matt/underworld/02: 64 128
+:matt/carnival/24: 32 128 d
+:matt/underworld/02: 0 0
+:matt/underworld/02: 64 0
+:matt/carnival/24: 32 32 d
+:amanda/steel/steel24x8.S: 324 88
+:amanda/steel/steel24x8.S: 164 88
+:amanda/steel/steel8x16.S: 236 152 fr
+:amanda/steel/steel8x16.S: 260 152 fr
+:amanda/steel/steel8x16.S: 236 248 fr
+:amanda/steel/steel8x16.S: 260 248 fr
+:geoo/construction/rod_rust/straight32: 60 590 rrr
+:matt/underworld/02: 0 608
+:matt/underworld/02: 64 608
+:geoo/steel/64x64.S: 0 704
+:geoo/steel/64x64.S: 64 704
+:matt/carnival/24: 32 640 d
+:geoo/construction/rod_rust/straight32: 60 238 rrr
+:geoo/construction/rod_rust/straight32: 60 270 rrr
+:geoo/construction/rod_rust/straight32: 60 302 rrr
+:geoo/construction/rod_rust/straight32: 60 334 rrr
+:geoo/construction/rod_rust/straight32: 60 366 rrr
+:geoo/construction/rod_rust/straight32: 60 398 rrr
+:geoo/construction/rod_rust/straight32: 60 430 rrr
+:geoo/construction/rod_rust/straight32: 60 462 rrr
+:geoo/construction/rod_rust/straight32: 60 494 rrr
+:geoo/construction/rod_rust/straight32: 60 526 rrr
+:geoo/construction/rod_rust/straight32: 60 558 rrr
+:geoo/steel/32x32o.S: 24 192
+:geoo/steel/32x32o.S: 72 192
+:geoo/steel/32x32o.S: 408 192
+:geoo/steel/32x32o.S: 456 192
+:geoo/steel/32x32o.S: 456 608
+:geoo/steel/32x32o.S: 408 608
+:geoo/steel/32x32o.S: 72 608
+:geoo/steel/32x32o.S: 24 608
+:matt/marble/20: 440 192
+:matt/marble/20: 440 256
+:matt/marble/20: 440 320
+:matt/marble/20: 440 384
+:matt/marble/20: 440 448
+:matt/marble/20: 440 512
+:matt/marble/20: 440 576
+:matt/marble/20: 56 576
+:matt/marble/20: 56 192
+:matt/marble/20: 56 256
+:matt/marble/20: 56 320
+:matt/marble/20: 56 384
+:matt/marble/20: 56 448
+:matt/marble/20: 56 512
+:matt/marble/20: 352 136 rd
+:matt/marble/20: 352 40 rd
+:matt/marble/20: 96 40 rd
+:matt/marble/20: 96 136 rd
+:amanda/steel/steel24x8.S: 308 216
+:amanda/steel/steel24x8.S: 180 216
+:amanda/steel/steel24x8.S: 244 120
+:geoo/steel/32x32o.S: 736 64
+:geoo/steel/32x32o.S: 512 64
+:amanda/steel/steel24x8.S: 708 88
+:amanda/steel/steel24x8.S: 548 88
+:amanda/steel/steel8x16.S: 620 152 fr
+:amanda/steel/steel8x16.S: 644 152 fr
+:amanda/steel/steel8x16.S: 620 248 fr
+:amanda/steel/steel8x16.S: 644 248 fr
+:matt/marble/20: 736 136 rd
+:matt/marble/20: 736 40 rd
+:matt/marble/20: 480 40 rd
+:matt/marble/20: 480 136 rd
+:amanda/steel/steel24x8.S: 692 216
+:amanda/steel/steel24x8.S: 564 216
+:amanda/steel/steel24x8.S: 628 120
+:matt/underworld/02: 768 96
+:matt/underworld/02: 832 96
+:geoo/construction/rod_rust/straight32: 828 590 rrr
+:matt/underworld/02: 768 608
+:matt/underworld/02: 832 608
+:geoo/steel/64x64.S: 768 704
+:geoo/steel/64x64.S: 832 704
+:matt/carnival/24: 800 640 d
+:geoo/construction/rod_rust/straight32: 828 206 rrr
+:geoo/construction/rod_rust/straight32: 828 238 rrr
+:geoo/construction/rod_rust/straight32: 828 270 rrr
+:geoo/construction/rod_rust/straight32: 828 302 rrr
+:geoo/construction/rod_rust/straight32: 828 334 rrr
+:geoo/construction/rod_rust/straight32: 828 366 rrr
+:geoo/construction/rod_rust/straight32: 828 398 rrr
+:geoo/construction/rod_rust/straight32: 828 430 rrr
+:geoo/construction/rod_rust/straight32: 828 462 rrr
+:geoo/construction/rod_rust/straight32: 828 494 rrr
+:geoo/construction/rod_rust/straight32: 828 526 rrr
+:geoo/construction/rod_rust/straight32: 828 558 rrr
+:matt/underworld/02: 768 128
+:matt/underworld/02: 832 128
+:matt/carnival/24: 800 128 d
+:matt/underworld/02: 768 0
+:matt/underworld/02: 832 0
+:matt/underworld/02: 768 32
+:matt/underworld/02: 832 32
+:matt/carnival/24: 800 32 d
+:geoo/steel/32x32o.S: 792 192
+:geoo/steel/32x32o.S: 840 192
+:geoo/steel/32x32o.S: 840 608
+:geoo/steel/32x32o.S: 792 608
+:matt/marble/20: 824 192
+:matt/marble/20: 824 256
+:matt/marble/20: 824 320
+:matt/marble/20: 824 384
+:matt/marble/20: 824 448
+:matt/marble/20: 824 512
+:matt/marble/20: 824 576
+:matt/marble/20: 736 136 rd
+:matt/marble/20: 736 40 rd
+:geoo/steel/32x32o.S: 1120 64
+:geoo/steel/32x32o.S: 896 64
+:amanda/steel/steel24x8.S: 1092 88
+:amanda/steel/steel24x8.S: 932 88
+:amanda/steel/steel8x16.S: 1004 152 fr
+:amanda/steel/steel8x16.S: 1028 152 fr
+:amanda/steel/steel8x16.S: 1004 248 fr
+:amanda/steel/steel8x16.S: 1028 248 fr
+:matt/marble/20: 1120 136 rd
+:matt/marble/20: 1120 40 rd
+:matt/marble/20: 864 40 rd
+:matt/marble/20: 864 136 rd
+:amanda/steel/steel24x8.S: 1076 216
+:amanda/steel/steel24x8.S: 948 216
+:amanda/steel/steel24x8.S: 1012 120

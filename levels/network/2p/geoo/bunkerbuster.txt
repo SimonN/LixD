@@ -1,0 +1,145 @@
+$BUILT 2022-06-19 22:29:34
+$AUTHOR geoo
+$ENGLISH Bunker Buster (No Wrap)
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 512
+#SIZE_Y 768
+
+#SECONDS 50
+#INITIAL 80
+#SPAWN_INTERVAL 13
+
+#WALKER 80
+#CLIMBER 40
+#EXPLODER2 40
+#BUILDER 80
+#PLATFORMER 20
+#BASHER 40
+#MINER 40
+#DIGGER 40
+#JUMPER 80
+#BATTER 80
+
+:geoo/construction/Hatch.H: 432 144 r
+:geoo/construction/Hatch.H: 48 144
+:geoo/construction/Hatch.H: 432 48 r
+:geoo/construction/Hatch.H: 48 48
+
+:matt/goldmine/Goal.G: 416 656
+:matt/goldmine/Goal.G: 32 656
+
+:matt/water.W: 128 736
+:matt/water.W: 160 736
+:matt/water.W: 192 736
+:matt/water.W: 224 736
+:matt/water.W: 256 736
+:geoo/construction/sawblade_small.F: 240 192
+:matt/water.W: 288 736
+:matt/water.W: 320 736
+:matt/water.W: 352 736
+
+:geoo/abstract/tbeam_down.T: 416 640
+:geoo/abstract/tbeam_down.T: 448 640
+:geoo/abstract/tbeam_left.T: 352 32
+:geoo/abstract/tbeam_left.T: 288 96
+:geoo/abstract/tbeam_right.T: 192 96
+:geoo/abstract/tbeam_left.T: 352 128
+:geoo/abstract/tbeam_left.T: 288 0
+:geoo/abstract/tbeam_right.T: 192 0
+:geoo/abstract/tbeam_right.T: 128 32
+:geoo/abstract/tbeam_right.T: 128 128
+:geoo/abstract/tbeam_down.T: 32 640
+:geoo/abstract/tbeam_down.T: 64 640
+
+:geoo/construction/rod_rust/straight32: 60 206 rrr
+:matt/underworld/02: 384 96
+:matt/underworld/02: 448 96
+:geoo/construction/rod_rust/straight32: 444 590 rrr
+:matt/underworld/02: 384 608
+:matt/underworld/02: 448 608
+:geoo/steel/64x64.S: 384 704
+:geoo/steel/64x64.S: 448 704
+:matt/carnival/24: 416 640 d
+:geoo/construction/rod_rust/straight32: 444 206 rrr
+:geoo/construction/rod_rust/straight32: 444 238 rrr
+:geoo/construction/rod_rust/straight32: 444 270 rrr
+:geoo/construction/rod_rust/straight32: 444 302 rrr
+:geoo/construction/rod_rust/straight32: 444 334 rrr
+:geoo/construction/rod_rust/straight32: 444 366 rrr
+:geoo/construction/rod_rust/straight32: 444 398 rrr
+:geoo/construction/rod_rust/straight32: 444 430 rrr
+:geoo/construction/rod_rust/straight32: 444 462 rrr
+:geoo/construction/rod_rust/straight32: 444 494 rrr
+:geoo/construction/rod_rust/straight32: 444 526 rrr
+:geoo/construction/rod_rust/straight32: 444 558 rrr
+:matt/underworld/02: 384 128
+:matt/underworld/02: 448 128
+:matt/carnival/24: 416 128 d
+:matt/underworld/02: 384 0
+:matt/underworld/02: 448 0
+:matt/underworld/02: 384 32
+:matt/underworld/02: 448 32
+:matt/carnival/24: 416 32 d
+:geoo/steel/32x32o.S: 352 64
+:geoo/steel/32x32o.S: 128 64
+:matt/underworld/02: 0 96
+:matt/underworld/02: 64 96
+:matt/underworld/02: 0 128
+:matt/underworld/02: 64 128
+:matt/carnival/24: 32 128 d
+:matt/underworld/02: 0 0
+:matt/underworld/02: 64 0
+:matt/carnival/24: 32 32 d
+:amanda/steel/steel24x8.S: 324 88
+:amanda/steel/steel24x8.S: 164 88
+:amanda/steel/steel8x16.S: 236 152 fr
+:amanda/steel/steel8x16.S: 260 152 fr
+:amanda/steel/steel8x16.S: 236 248 fr
+:amanda/steel/steel8x16.S: 260 248 fr
+:geoo/construction/rod_rust/straight32: 60 590 rrr
+:matt/underworld/02: 0 608
+:matt/underworld/02: 64 608
+:geoo/steel/64x64.S: 0 704
+:geoo/steel/64x64.S: 64 704
+:matt/carnival/24: 32 640 d
+:geoo/construction/rod_rust/straight32: 60 238 rrr
+:geoo/construction/rod_rust/straight32: 60 270 rrr
+:geoo/construction/rod_rust/straight32: 60 302 rrr
+:geoo/construction/rod_rust/straight32: 60 334 rrr
+:geoo/construction/rod_rust/straight32: 60 366 rrr
+:geoo/construction/rod_rust/straight32: 60 398 rrr
+:geoo/construction/rod_rust/straight32: 60 430 rrr
+:geoo/construction/rod_rust/straight32: 60 462 rrr
+:geoo/construction/rod_rust/straight32: 60 494 rrr
+:geoo/construction/rod_rust/straight32: 60 526 rrr
+:geoo/construction/rod_rust/straight32: 60 558 rrr
+:geoo/steel/32x32o.S: 24 192
+:geoo/steel/32x32o.S: 72 192
+:geoo/steel/32x32o.S: 408 192
+:geoo/steel/32x32o.S: 456 192
+:geoo/steel/32x32o.S: 456 608
+:geoo/steel/32x32o.S: 408 608
+:geoo/steel/32x32o.S: 72 608
+:geoo/steel/32x32o.S: 24 608
+:matt/marble/20: 440 192
+:matt/marble/20: 440 256
+:matt/marble/20: 440 320
+:matt/marble/20: 440 384
+:matt/marble/20: 440 448
+:matt/marble/20: 440 512
+:matt/marble/20: 440 576
+:matt/marble/20: 56 576
+:matt/marble/20: 56 192
+:matt/marble/20: 56 256
+:matt/marble/20: 56 320
+:matt/marble/20: 56 384
+:matt/marble/20: 56 448
+:matt/marble/20: 56 512
+:matt/marble/20: 352 136 rd
+:matt/marble/20: 352 40 rd
+:matt/marble/20: 96 40 rd
+:matt/marble/20: 96 136 rd
+:amanda/steel/steel24x8.S: 308 216
+:amanda/steel/steel24x8.S: 180 216
+:amanda/steel/steel24x8.S: 244 120

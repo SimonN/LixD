@@ -1,0 +1,294 @@
+$BUILT 2022-06-19 22:45:37
+$AUTHOR Arty/geoo
+$ENGLISH Swag Land
+
+#INTENDED_NUMBER_OF_PLAYERS 7
+#SIZE_X 1088
+#SIZE_Y 608
+
+#INITIAL 6
+#SPAWN_INTERVAL 1
+
+#WALKER -1
+#RUNNER 6
+#CLIMBER 6
+#FLOATER 6
+#BLOCKER -1
+#BASHER -1
+#MINER -1
+#DIGGER -1
+#JUMPER -1
+#BATTER -1
+#EXPLODER2 0
+
+:geoo/construction/Hatch.H: 48 112
+:geoo/construction/Hatch.H: 48 112
+:geoo/construction/Hatch.H: 48 112
+:geoo/construction/Hatch.H: 48 112
+:geoo/construction/Hatch.H: 48 112
+:geoo/construction/Hatch.H: 48 112
+:geoo/construction/Hatch.H: 48 288
+:geoo/construction/Hatch.H: 48 288
+:geoo/construction/Hatch.H: 48 288
+:geoo/construction/Hatch.H: 48 288
+:geoo/construction/Hatch.H: 48 288
+:geoo/construction/Hatch.H: 48 288
+:geoo/construction/Hatch.H: 48 480
+:geoo/construction/Hatch.H: 48 480
+:geoo/construction/Hatch.H: 48 480
+:geoo/construction/Hatch.H: 48 480
+:geoo/construction/Hatch.H: 48 480
+:geoo/construction/Hatch.H: 48 480
+
+:geoo/abstract/goal.G: 1024 528
+
+:amanda/forest/frog_happy.T: 556 336
+:amanda/forest/frog_happy.T: 384 208
+:amanda/forest/frog_happy.T: 348 528
+:amanda/forest/frog_happy.T: 476 464
+:amanda/forest/frog_happy.T: 992 304
+:raymanni/gore/eater.T: 848 512
+:raymanni/gore/eater.T: 880 160
+
+:geoo/construction/sawblade_small.F: 148 80
+:raymanni/lab/goo.W: 336 160
+:raymanni/lab/goo.W: 368 160
+:raymanni/lab/goo.W: 400 160
+:raymanni/lab/goo.W: 432 160
+:raymanni/lab/goo.W: 464 160
+:raymanni/lab/goo.W: 496 160
+:raymanni/lab/goo.W: 528 160
+:raymanni/lab/goo.W: 560 160
+:geoo/construction/sawblade_small.F: 208 144
+:geoo/construction/sawblade_small.F: 432 304
+:geoo/construction/sawblade_small.F: 320 352
+:geoo/construction/sawblade_small.F: 680 240
+:geoo/construction/sawblade_small.F: 632 304
+:geoo/construction/sawblade_small.F: 272 448
+:raymanni/lab/goo.W: 512 576
+:raymanni/lab/goo.W: 544 576
+:geoo/construction/sawblade_small.F: 80 16
+:geoo/construction/sawblade_small.F: 256 96
+:raymanni/lab/goo.W: 592 160
+:raymanni/lab/goo.W: 624 160
+:raymanni/lab/goo.W: 656 160
+:geoo/construction/sawblade.F: 992 208
+:geoo/construction/sawblade.F: 944 64
+:geoo/construction/sawblade.F: 816 464
+:geoo/construction/sawblade.F: 848 368
+:geoo/construction/sawblade.F: 800 224
+:geoo/sandstone/brazier.F: 832 80
+:geoo/sandstone/brazier.F: 944 416
+:geoo/sandstone/brazier.F: 928 288
+:geoo/construction/sawblade.F: 888 272
+:geoo/construction/sawblade_small.F: 896 448
+
+:geoo/construction/spring.T: 64 352
+:geoo/construction/spring.T: 80 160
+:geoo/construction/spring.T: 80 544
+:geoo/construction/spring.T: 976 496
+:geoo/construction/spring.T: 1008 544
+:geoo/construction/spring.T: 736 64
+:geoo/construction/spring.T: 928 480
+:geoo/construction/spring.T: 768 544
+:geoo/construction/spring.T: 912 144
+
+:geoo/construction/steam_left.T: 512 32
+:geoo/construction/steam_left.T: 480 32
+:geoo/construction/steam_left.T: 448 32
+:geoo/construction/steam_up.T: 496 144
+:geoo/construction/steam_up.T: 512 144
+:geoo/construction/steam_left.T: 544 32
+:geoo/construction/steam_up.T: 528 144
+:geoo/construction/steam_up.T: 544 144
+:geoo/construction/steam_left.T: 416 32
+
+:raymanni/gore/eye: 848 288 rrr
+:raymanni/gore/eye: 856 264 r
+:raymanni/gore/tentacle_3: 904 176 r
+:raymanni/gore/blob_2: 744 104
+:raymanni/gore/tentacle_2: 208 0 rr
+:raymanni/gore/tentacle_2: 216 8 rr
+:raymanni/gore/tentacle_1: 216 38 frr
+:raymanni/gore/goop_3: 896 32
+:raymanni/gore/blob_2: 960 336
+:raymanni/gore/tentacle_3: 743 267 r
+:raymanni/gore/bone_5: 758 186 r
+:raymanni/gore/bone_5: 656 144
+:raymanni/gore/tentacle_3: 304 -16 rr
+:matt/bricks/01: 240 144 rrr
+:geoo/steel/64x32o.S: 0 576
+:geoo/steel/32x64o.S: 0 256
+:geoo/steel/32x64o.S: 0 320
+:geoo/steel/32x64o.S: 0 448
+:geoo/steel/32x64o.S: 0 512
+:geoo/steel/64x32o.S: 0 384
+:geoo/steel/64x32o.S: 0 192
+:geoo/steel/32x64o.S: 0 64
+:geoo/steel/32x64o.S: 0 128
+:geoo/steel/64x32o.S: 0 0
+:geoo/steel/64x32o.S: 64 576
+:geoo/steel/64x32o.S: 128 576
+:geoo/steel/64x32o.S: 192 576
+:geoo/steel/64x32o.S: 256 576
+:geoo/steel/64x32o.S: 320 576
+:geoo/steel/64x32o.S: 384 576
+:geoo/steel/64x32o.S: 448 576
+:geoo/steel/64x32o.S: 576 576
+:geoo/steel/64x32o.S: 640 576
+:geoo/steel/64x32o.S: 704 576
+:geoo/steel/64x32o.S: 64 384
+:geoo/steel/64x32o.S: 128 384
+:geoo/steel/64x32o.S: 192 384
+:geoo/steel/64x32o.S: 256 384
+:geoo/steel/64x32o.S: 320 384
+:geoo/steel/64x32o.S: 384 384
+:geoo/steel/64x32o.S: 448 384
+:geoo/steel/64x32o.S: 512 384
+:geoo/steel/64x32o.S: 576 384
+:geoo/steel/64x32o.S: 640 384
+:geoo/steel/64x32o.S: 64 0
+:geoo/steel/64x32o.S: 128 0
+:geoo/steel/64x32o.S: 192 0
+:geoo/steel/64x32o.S: 256 0
+:geoo/steel/64x32o.S: 576 0
+:geoo/steel/64x32o.S: 640 0
+:geoo/steel/64x32o.S: 704 0
+:geoo/steel/64x32o.S: 64 192
+:geoo/steel/64x32o.S: 128 192
+:geoo/steel/64x32o.S: 192 192
+:geoo/steel/64x32o.S: 256 192
+:geoo/steel/64x32o.S: 320 192
+:geoo/steel/64x32o.S: 384 192
+:geoo/steel/64x32o.S: 448 192
+:geoo/steel/64x32o.S: 512 192
+:geoo/steel/64x32o.S: 576 192
+:geoo/steel/64x32o.S: 640 192
+:geoo/steel/32x64o.S: 736 512
+:raymanni/gore/blob_5: 752 336
+:geoo/steel/32x64o.S: 736 448
+:geoo/steel/32x64o.S: 736 128
+:geoo/steel/64x32o.S: 768 0
+:geoo/steel/64x32o.S: 832 0
+:matt/bricks/02a: 192 352
+:matt/bricks/02a: 256 320
+:matt/bricks/02a: 320 288
+:matt/bricks/02a: 384 256
+:matt/bricks/02a: 256 352
+:matt/bricks/02a: 240 256
+:matt/bricks/02a: 176 256
+:matt/bricks/02a: 176 288
+:matt/bricks/02a: 112 288
+:matt/bricks/02a: 112 320
+:matt/bricks/02a: 112 224
+:geoo/steel/32x32o.S: 736 96
+:matt/bricks/02: 176 160
+:matt/bricks/02: 132 96
+:geoo/steel/16x32o.S: 320 64
+:geoo/steel/32x32o.S: 304 160
+:geoo/steel/32x32o.S: 304 32
+:geoo/steel/32x16o.S: 384 0
+:geoo/steel/32x16o.S: 416 0
+:geoo/steel/32x16o.S: 448 0
+:geoo/steel/32x16o.S: 480 0
+:geoo/steel/32x16o.S: 352 0
+:geoo/steel/32x16o.S: 320 0
+:geoo/steel/32x16o.S: 512 0
+:geoo/steel/32x32o.S: 544 -16
+:matt/bricks/02a: 320 320
+:matt/bricks/02a: 384 288
+:matt/bricks/02a: 512 288
+:matt/bricks/02a: 512 256
+:matt/bricks/02a: 576 256
+:matt/bricks/02a: 640 256
+:matt/bricks/02a: 624 320
+:matt/bricks/01a: 224 320 r
+:matt/bricks/01a: 280 288 r
+:matt/bricks/01a: 336 256 r
+:matt/bricks/01a: 144 352 r
+:matt/bricks/01a: 112 352 r
+:geoo/steel/16x32o.S: 484 352
+:geoo/steel/16x32o.S: 484 320
+:geoo/steel/16x32o.S: 456 352
+:geoo/steel/16x32o.S: 456 256
+:geoo/steel/16x32o.S: 456 224
+:matt/bricks/01a: 512 320
+:matt/bricks/01a: 512 336
+:matt/bricks/10: 544 288 d
+:raymanni/gore/tentacle_1: 351 142 rr
+:raymanni/gore/tentacle_2: 384 142
+:raymanni/gore/eye: 432 160 rr
+:geoo/steel/32x32o.S: -16 32
+:geoo/steel/32x32o.S: 0 224
+:geoo/steel/32x32o.S: 0 416
+:geoo/abstract/cvblocks/046: 128 512
+:geoo/abstract/cvblocks/046: 160 448
+:geoo/abstract/cvblocks/020: 80 560
+:geoo/abstract/cvblocks/035: 256 512
+:geoo/abstract/cvblocks/035: 192 416
+:geoo/abstract/cvblocks/030: 256 416
+:geoo/abstract/cvblocks/047: 320 416
+:geoo/abstract/cvblocks/035: 288 544
+:geoo/abstract/cvblocks/047: 384 416
+:geoo/abstract/cvblocks/035: 416 544
+:geoo/abstract/cvblocks/035: 448 512
+:geoo/abstract/cvblocks/035: 512 512
+:geoo/abstract/cvblocks/035: 480 448
+:geoo/abstract/cvblocks/047: 576 448
+:geoo/abstract/cvblocks/047: 640 416
+:geoo/steel/32x32o.S: 656 496
+:geoo/steel/32x64o.S: 736 384
+:geoo/steel/32x64o.S: 736 320
+:geoo/steel/32x64o.S: 736 256
+:geoo/steel/32x64o.S: 736 192
+:raymanni/gore/tentacle_1: 815 528 rr
+:geoo/steel/64x32o.S: 768 576
+:raymanni/gore/tentacle_3: 864 464
+:geoo/steel/64x32o.S: 832 576
+:geoo/steel/64x32o.S: 896 576
+:geoo/steel/64x32o.S: 960 576
+:geoo/steel/64x32o.S: 1024 576
+:geoo/steel/32x64o.S: 1056 512
+:geoo/steel/32x64o.S: 1056 448
+:raymanni/toys/car_2: 1024 112
+:geoo/steel/32x64o.S: 1056 128
+:geoo/steel/32x64o.S: 1056 384
+:geoo/steel/32x64o.S: 1056 320
+:geoo/steel/32x64o.S: 1056 256
+:geoo/steel/32x64o.S: 1056 192
+:geoo/steel/32x64o.S: 1056 0
+:geoo/steel/32x64o.S: 1056 64
+:geoo/steel/64x32o.S: 896 0
+:geoo/steel/64x32o.S: 960 0
+:geoo/steel/32x32o.S: 1024 0
+:matt/bricks/02a: 240 224
+:matt/bricks/02a: 576 224
+:matt/bricks/01a: 640 352
+:matt/bricks/01a: 640 368
+:geoo/steel/16x32o.S: 304 128
+:geoo/steel/32x32o.S: 272 112
+:matt/bricks/01: 62 84
+:geoo/steel/16x32o.S: 688 160
+:raymanni/gore/bone_1: 421 71 r
+:raymanni/gore/bone_2: 390 55 fr
+:raymanni/gore/tentacle_1: 555 142 rr
+:raymanni/gore/eye: 624 160 rr
+:raymanni/gore/bone_6: 960 288
+:raymanni/lab/block_8: 880 224
+:raymanni/lab/scen_5: 912 160
+:raymanni/lab/scen_6: 976 512
+:geoo/steel/16x32o.S: 488 224
+:raymanni/gore/bone_1: 453 71 r
+:raymanni/gore/bone_2: 483 55 r
+$BEGIN_TILE_GROUP 0
+:raymanni/gore/tentacle_2: 36 0 r
+:matt/bricks/02a: 0 6 d
+$END_TILE_GROUP
+:Group-0: 240 78
+:geoo/steel/32x32o.S: 840 112
+:raymanni/gore/blob_5: 784 336
+:raymanni/gore/blob_5: 752 384
+:raymanni/toys/car_2: 800 432
+:raymanni/toys/letter_2: 1024 32
+:raymanni/toys/letter_1: 992 32
+:raymanni/toys/letter_4: 960 32

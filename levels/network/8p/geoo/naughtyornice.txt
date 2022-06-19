@@ -1,0 +1,258 @@
+$BUILT 2021-01-17 18:31:40
+$AUTHOR geoo
+$ENGLISH Naughty or Nice?
+
+#INTENDED_NUMBER_OF_PLAYERS 8
+#SIZE_X 832
+#SIZE_Y 368
+#TORUS_X 1
+#TORUS_Y 0
+
+#SECONDS 50
+#INITIAL 5
+#SPAWN_INTERVAL 4
+
+#WALKER 50
+#CLIMBER 3
+#FLOATER 3
+#EXPLODER2 10
+#BUILDER 80
+#PLATFORMER 80
+#BASHER 80
+#MINER 40
+#DIGGER 40
+#JUMPER 50
+#BATTER 40
+#CUBER 5
+
+:geoo/abstract/hatch.H: 560 184 r
+:geoo/abstract/hatch.H: 144 184 r
+:geoo/abstract/hatch.H: 656 184
+:geoo/abstract/hatch.H: 240 184
+:geoo/abstract/hatch.H: 592 168 r
+:geoo/abstract/hatch.H: 208 168
+:geoo/abstract/hatch.H: 624 168
+:geoo/abstract/hatch.H: 176 168 r
+
+:raymanni/toys/goal.G: 176 272
+:raymanni/toys/goal.G: 592 272
+
+:raymanni/gore/eater.T: 800 32
+:raymanni/holiday/porcupine.T: 800 104
+:raymanni/gore/eater.T: 384 32
+:raymanni/holiday/porcupine.T: 384 104
+
+:geoo/construction/sawblade_small.F: 656 48
+:simon/crystal.W: 64 152
+:simon/crystal.W: 720 152
+:raymanni/gore/bonesaw.F: 736 56
+:geoo/construction/sawblade_small.F: 144 48
+:geoo/construction/sawblade_small.F: 608 128
+:raymanni/gore/bonesaw.F: 32 56
+:geoo/construction/sawblade_small.F: 240 48
+:simon/crystal.W: 480 152
+:simon/crystal.W: 304 152
+:raymanni/gore/bonesaw.F: 320 56
+:geoo/construction/sawblade_small.F: 560 48
+:geoo/construction/sawblade_small.F: 192 128
+:raymanni/gore/bonesaw.F: 448 56
+:geoo/sandstone/torch.F: 488 304
+
+:geoo/construction/spring.T: 40 128
+:geoo/construction/spring.T: 760 128
+:geoo/construction/spring.T: 456 128
+:geoo/construction/spring.T: 344 128
+
+:raymanni/holiday/bauble_string: 512 32
+:raymanni/holiday/bauble_string: 96 32
+:raymanni/holiday/snow2: 0 256
+:raymanni/holiday/snow2: 0 188
+:geoo/steel/64x64.S: 416 160
+:raymanni/holiday/snow2: 416 188
+:raymanni/holiday/bauble_string: 704 32
+:raymanni/holiday/bauble_string: 656 32
+:geoo/construction/rod_steel/link_h_dd.S: 672 112
+:geoo/construction/rod_steel/straight_diagd8.S: 689 113
+:geoo/construction/rod_steel/straight_diagd8.S: 697 121
+:geoo/construction/rod_steel/link_du_h.S: 556 100
+:geoo/construction/rod_steel/straight_diagu8.S: 540 116
+:geoo/construction/rod_steel/straight_diagu8.S: 532 124
+:geoo/steel/32x16o.S: 704 352
+:geoo/steel/32x16o.S: 720 352
+:raymanni/holiday/snow4: 718 190
+:geoo/steel/64x64.S: 0 160
+:geoo/steel/64x64.S: 768 160
+:raymanni/holiday/gift1: 800 128
+:raymanni/holiday/gift2: 800 96
+:raymanni/holiday/bauble_string: 752 48
+:raymanni/holiday/bauble_yellow: 704 64
+:raymanni/holiday/bauble_string: 752 16
+:raymanni/holiday/snow2: 818 326 rr
+:raymanni/holiday/snow4: 674 352
+:raymanni/holiday/snow2: 752 320 rr
+:raymanni/holiday/snow3: 814 288 r
+:raymanni/holiday/bauble_navy: 816 136 d
+:raymanni/holiday/garland: 592 0
+:raymanni/holiday/bauble_string: 144 32
+$BEGIN_TILE_GROUP 0
+:raymanni/holiday/cane_c: 0 16
+:raymanni/holiday/cane_end1: 0 0
+:raymanni/holiday/cane_mid: 32 32 r
+:raymanni/holiday/cane_mid: 64 32 r
+:raymanni/holiday/cane_mid: 96 32 r
+:raymanni/holiday/cane_d: 128 16
+:raymanni/holiday/cane_end1: 144 0
+$END_TILE_GROUP
+:Group-0: 16 -8
+:Group-0: 656 -8
+:raymanni/holiday/bauble_string: 752 -16
+:raymanni/holiday/wreath: 800 0
+:raymanni/holiday/wreath: 800 0 frr
+:raymanni/holiday/wreath: 800 176 frr
+:raymanni/holiday/gift1: 48 304
+:raymanni/holiday/gift4: 64 272
+:raymanni/holiday/snowlix: 718 314
+:raymanni/holiday/gift2: 720 336
+:raymanni/holiday/gift1: 736 304
+:raymanni/holiday/gift3: 752 272
+:geoo/steel/32x16o.S: 632 216
+:geoo/steel/32x16o.S: 584 216
+:geoo/construction/rod_steel/straight32.S: 688 144 fr
+:geoo/construction/rod_steel/straight32.S: 688 176 fr
+:geoo/construction/rod_steel/straight32.S: 552 144 fr
+:geoo/construction/rod_steel/straight32.S: 552 176 fr
+:geoo/steel/16x16o.S: 616 216
+:geoo/steel/32x16o.S: 552 216
+:geoo/steel/32x16o.S: 664 216
+:geoo/steel/32x16o.S: 528 128
+:geoo/steel/32x16o.S: 688 128
+:geoo/construction/rod_steel/straight8.S: 688 208 fr
+:geoo/construction/rod_steel/straight8.S: 552 208 fr
+:geoo/construction/rod_steel/straight32.S: 712 168 fr
+:geoo/construction/rod_steel/straight32.S: 712 200 fr
+:geoo/construction/rod_steel/straight32.S: 712 232 fr
+:geoo/construction/rod_steel/end_rect.S: 712 160 fr
+:geoo/construction/rod_steel/straight32.S: 712 264 fr
+:geoo/construction/rod_steel/straight32.S: 712 296 fr
+:geoo/construction/rod_steel/straight32.S: 528 168 fr
+:geoo/construction/rod_steel/straight32.S: 528 200 fr
+:geoo/construction/rod_steel/straight32.S: 528 232 fr
+:geoo/construction/rod_steel/end_rect.S: 528 160 fr
+:geoo/construction/rod_steel/straight32.S: 528 264 fr
+:geoo/construction/rod_steel/straight32.S: 528 296 fr
+:geoo/construction/rod_rust/straight32: 568 112
+:geoo/construction/rod_rust/straight32: 648 112
+:geoo/construction/rod_rust/straight32: 600 112
+:geoo/construction/rod_rust/straight32: 616 112
+:geoo/steel/32x32o.S: 608 112
+:raymanni/toys/beam_9.S: 632 168
+:raymanni/toys/beam_7.S: 608 168
+:raymanni/toys/beam_8.S: 616 168
+:raymanni/toys/beam_8.S: 624 168
+:geoo/construction/rod_steel/straight32.S: 528 312 fr
+:geoo/steel/64x32o.S: 528 336
+:geoo/steel/64x32o.S: 592 336
+:geoo/construction/rod_steel/straight32.S: 712 312 fr
+:geoo/steel/64x32o.S: 656 336
+:raymanni/holiday/bauble_string: 752 56
+:raymanni/holiday/bauble_yellow: 96 64
+:raymanni/holiday/bauble_string: 48 48
+:raymanni/holiday/bauble_string: 48 16
+:raymanni/holiday/bauble_string: 48 56
+:raymanni/holiday/bauble_string: 48 -16
+:raymanni/holiday/bauble_string: 288 32
+:raymanni/holiday/bauble_string: 240 32
+:geoo/construction/rod_steel/link_h_dd.S: 256 112
+:geoo/construction/rod_steel/straight_diagd8.S: 273 113
+:geoo/construction/rod_steel/straight_diagd8.S: 281 121
+:geoo/construction/rod_steel/link_du_h.S: 140 100
+:geoo/construction/rod_steel/straight_diagu8.S: 124 116
+:geoo/construction/rod_steel/straight_diagu8.S: 116 124
+:geoo/steel/32x16o.S: 288 352
+:geoo/steel/32x16o.S: 304 352
+:geoo/steel/64x64.S: 352 160
+:raymanni/holiday/gift1: 384 128
+:raymanni/holiday/gift2: 384 96
+:raymanni/holiday/bauble_string: 336 48
+:raymanni/holiday/bauble_yellow: 288 64
+:raymanni/holiday/bauble_string: 336 16
+:raymanni/holiday/snow2: 298 190 frr
+:raymanni/holiday/snow2: 298 288 rr
+:raymanni/holiday/snow2: 336 272
+:raymanni/holiday/snow1: 320 288
+:raymanni/holiday/snow4: 258 352
+:raymanni/holiday/snow2: 342 340 rr
+:raymanni/holiday/snow1: 306 288
+:raymanni/holiday/snow3: 296 258 r
+:raymanni/holiday/bauble_navy: 400 136 d
+:raymanni/holiday/garland: 176 0
+:raymanni/holiday/bauble_string: 560 32
+:Group-0: 432 -8
+:Group-0: 240 -8
+:raymanni/holiday/bauble_string: 336 -16
+:raymanni/holiday/wreath: 384 0
+:raymanni/holiday/wreath: 384 0 frr
+:raymanni/holiday/snow1: 388 198
+:raymanni/holiday/wreath: 384 176 frr
+:raymanni/holiday/snow3: 416 256 f
+:raymanni/holiday/gift2: 368 336
+:raymanni/holiday/gift1: 352 304
+:raymanni/holiday/gift3: 336 272
+:geoo/steel/32x16o.S: 216 216
+:geoo/steel/32x16o.S: 168 216
+:geoo/construction/rod_steel/straight32.S: 272 144 fr
+:geoo/construction/rod_steel/straight32.S: 272 176 fr
+:geoo/construction/rod_steel/straight32.S: 136 144 fr
+:geoo/construction/rod_steel/straight32.S: 136 176 fr
+:geoo/steel/16x16o.S: 200 216
+:geoo/steel/32x16o.S: 136 216
+:geoo/steel/32x16o.S: 248 216
+:geoo/steel/32x16o.S: 112 128
+:geoo/steel/32x16o.S: 272 128
+:geoo/construction/rod_steel/straight8.S: 272 208 fr
+:geoo/construction/rod_steel/straight8.S: 136 208 fr
+:geoo/construction/rod_steel/straight32.S: 296 168 fr
+:geoo/construction/rod_steel/straight32.S: 296 200 fr
+:geoo/construction/rod_steel/straight32.S: 296 232 fr
+:geoo/construction/rod_steel/end_rect.S: 296 160 fr
+:geoo/construction/rod_steel/straight32.S: 296 264 fr
+:geoo/construction/rod_steel/straight32.S: 296 296 fr
+:geoo/construction/rod_steel/straight32.S: 112 168 fr
+:geoo/construction/rod_steel/straight32.S: 112 200 fr
+:geoo/construction/rod_steel/straight32.S: 112 232 fr
+:geoo/construction/rod_steel/end_rect.S: 112 160 fr
+:geoo/construction/rod_steel/straight32.S: 112 264 fr
+:geoo/construction/rod_steel/straight32.S: 112 296 fr
+:geoo/construction/rod_rust/straight32: 152 112
+:geoo/construction/rod_rust/straight32: 232 112
+:geoo/construction/rod_rust/straight32: 184 112
+:geoo/construction/rod_rust/straight32: 200 112
+:geoo/steel/32x32o.S: 192 112
+:raymanni/toys/beam_9.S: 216 168
+:raymanni/toys/beam_7.S: 192 168
+:raymanni/toys/beam_8.S: 200 168
+:raymanni/toys/beam_8.S: 208 168
+:geoo/construction/rod_steel/straight32.S: 112 312 fr
+:geoo/steel/64x32o.S: 112 336
+:geoo/steel/64x32o.S: 176 336
+:geoo/construction/rod_steel/straight32.S: 296 312 fr
+:geoo/steel/64x32o.S: 240 336
+:raymanni/holiday/bauble_string: 336 56
+:raymanni/holiday/bauble_yellow: 512 64
+:raymanni/holiday/bauble_string: 464 48
+:raymanni/holiday/bauble_string: 464 16
+:raymanni/holiday/bauble_string: 464 56
+:raymanni/holiday/bauble_string: 464 -16
+:geoo/steel/64x32o.S: 48 336
+:raymanni/holiday/snow1: 820 260
+:raymanni/holiday/snow1: 394 240
+:geoo/steel/32x16o.S: 176 200
+:geoo/steel/32x16o.S: 208 200
+:geoo/steel/32x16o.S: 592 200
+:geoo/steel/32x16o.S: 624 200
+:matt/marble/001: 592 184
+:matt/marble/001: 648 184
+:matt/marble/001: 620 184
+:matt/marble/001: 176 184
+:matt/marble/001: 232 184
+:matt/marble/001: 204 184

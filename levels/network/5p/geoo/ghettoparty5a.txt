@@ -1,6 +1,6 @@
-$BUILT 2021-02-27 21:34:50
+$BUILT 2021-02-27 21:33:30
 $AUTHOR geoo
-$ENGLISH Ghetto Party with a block!
+$ENGLISH Ghetto Party!
 
 #INTENDED_NUMBER_OF_PLAYERS 5
 #SIZE_X 1080
@@ -444,8 +444,3 @@ $END_TILE_GROUP
 :Group-1: 928 448
 :geoo/steel/32x32o.S: 1032 448
 :geoo/steel/16x32o.S: 1064 448
-:geoo/steel/16x16o.S: 848 432
-:geoo/steel/16x16o.S: 1064 432
-:geoo/steel/16x16o.S: 200 432
-:geoo/steel/16x16o.S: 416 432
-:geoo/steel/16x16o.S: 632 432

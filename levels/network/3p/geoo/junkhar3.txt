@@ -1,0 +1,90 @@
+$BUILT                                             2011-09-24 07:27:40
+$AUTHOR                                                           geoo
+$GERMAN                                                               
+$ENGLISH                                               Junk Harvesting
+
+#SIZE_X                                                            576
+#SIZE_Y                                                            288
+#TORUS_X                                                             1
+#TORUS_Y                                                             1
+#START_X                                                            48
+#START_Y                                                             0
+#BACKGROUND_RED                                                      0
+#BACKGROUND_GREEN                                                    0
+#BACKGROUND_BLUE                                                     0
+
+#SECONDS                                                            60
+#INITIAL                                                           120
+#REQUIRED                                                           20
+#RATE                                                               85
+
+#WALKER                                                             40
+#JUMPER                                                             40
+#RUNNER                                                             16
+#BATTER                                                             32
+#NOTHING                                                             0
+#EXPLODER2                                                          16
+#BASHER                                                             64
+#NOTHING                                                             0
+#PLATFORMER                                                         16
+#BUILDER                                                            32
+#CUBER                                                              32
+#NOTHING                                                             0
+
+:/matt/goldmine/Hatch.H:                     464       256
+:/matt/goldmine/Hatch.H:                      80        64
+:/matt/goldmine/Hatch.H:                     272       160
+
+:/matt/goldmine/Goal.G:                      320       112
+:/matt/goldmine/Goal.G:                      512       208
+:/matt/goldmine/Goal.G:                      128        16
+
+:/geoo/construction/sawblade_medium.F:              80       272
+:/geoo/construction/sawblade_medium.F:             272        80
+:/geoo/construction/sawblade_medium.F:             464       176
+
+:/matt/goldmine/00:                          368       112
+:/matt/goldmine/00:                          368        80
+:/matt/goldmine/07:                          304         0
+:/geoo/steel/32x16o.S:                             320       160
+:/geoo/steel/32x16o.S:                             352       160
+:/geoo/steel/32x64o.S:                             288       112
+:/matt/goldmine/07:                          272       240
+:/geoo/steel/32x16o.S:                             384       160
+:/matt/goldmine/00:                          416        16
+:/geoo/steel/32x16o.S:                             320        48
+:/geoo/steel/32x16o.S:                             352        16
+:/geoo/steel/32x32o.S:                             384       128
+:/matt/goldmine/00:                          560       208
+:/matt/goldmine/00:                          560       176
+:/matt/goldmine/07:                          496        96
+:/geoo/steel/32x16o.S:                             512       256
+:/geoo/steel/32x16o.S:                             544       256
+:/geoo/steel/32x64o.S:                             480       208
+:/matt/goldmine/07:                          464        48
+:/geoo/steel/32x16o.S:                               0       256
+:/matt/goldmine/00:                           32       112
+:/geoo/steel/32x16o.S:                             512       144
+:/geoo/steel/32x16o.S:                             544       112
+:/geoo/steel/32x32o.S:                               0       224
+:/matt/goldmine/00:                          176        16
+:/matt/goldmine/00:                          176       272
+:/matt/goldmine/07:                          112       192
+:/geoo/steel/32x16o.S:                             128        64
+:/geoo/steel/32x16o.S:                             160        64
+:/geoo/steel/32x64o.S:                              96        16
+:/matt/goldmine/07:                           80       144
+:/geoo/steel/32x16o.S:                             192        64
+:/matt/goldmine/00:                          224       208
+:/geoo/steel/32x16o.S:                             128       240
+:/geoo/steel/32x16o.S:                             160       208
+:/geoo/steel/32x32o.S:                             192        32
+:/matt/goldmine/07:                          192       192
+:/matt/goldmine/07:                          384         0
+:/matt/goldmine/07:                            0        96
+:/matt/goldmine/06:                           48       256
+:/matt/goldmine/06:                          240        64
+:/matt/goldmine/06:                          432       160
+:/geoo/steel/32x16o.S:                             288       256
+:/geoo/steel/32x16o.S:                             480        64
+:/geoo/steel/32x16o.S:                              96       160

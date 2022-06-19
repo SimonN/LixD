@@ -1,4 +1,4 @@
-$BUILT 2021-02-27 21:34:03
+$BUILT 2022-06-19 22:33:23
 $AUTHOR geoo
 $ENGLISH Ghetto Party!
 
@@ -690,3 +690,11 @@ $END_TILE_GROUP
 :Group-1: 1576 448
 :geoo/steel/32x32o.S: 1680 448
 :geoo/steel/16x32o.S: 1712 448
+:geoo/steel/16x16o.S: 416 432
+:geoo/steel/16x16o.S: 632 432
+:geoo/steel/16x16o.S: 848 432
+:geoo/steel/16x16o.S: 1064 432
+:geoo/steel/16x16o.S: 1496 432
+:geoo/steel/16x16o.S: 1280 432
+:geoo/steel/16x16o.S: 1712 432
+:geoo/steel/16x16o.S: 200 432
