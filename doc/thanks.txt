@@ -87,6 +87,10 @@ Insane Steve
 Nessy
     * 10 singleplayer puzzles in misc/nessy/.
 
+Sanchez
+    * Swedish translation of Lix's user interface:
+        data/transl/swedish.txt
+
 CyberShadow
     * Contributing code to early D Lix to for better bitmap buttons
         on large resolutions.

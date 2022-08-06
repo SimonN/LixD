@@ -1,0 +1,408 @@
+// Translations file for Lix
+
+// English opening quote: “
+// English closing quote: ”
+// German opening quote: „
+// German closing quote: “ (this closing quote is the English opening quote)
+// File/shell output: " (ASCII double quote, both opening and closing)
+
+// mainNameOfLanguage: This is how your translated language appears in the
+// options dialogue. Translate this to your language ("Deutsch" or "Français"),
+// don't have your language's name in English (don't put "German" or "French")
+$mainNameOfLanguage Svenska
+
+// Printing of current version in the main menu
+$versioningVersion Version
+$versioningForOperatingSystem för
+
+// used in various dialogues
+$commonOk Okej
+$commonCancel Avbryt
+$commonNo Nej
+$commonBack Tillbaka
+$commonExit Avsluta
+
+$mainMenuGetMusic Extrahera musiken till Lix katalog:
+
+// level browsers
+$browserSingleTitle Enspelarläge|Gå till bläddare för enspelarläge från huvudmenyn.
+$browserNetworkTitle Markera bana för flerspelarläge
+$browserPlay Spela
+$browserEdit Redigera
+$browserNewLevel Skapa bana
+$browserDelete Ta bort
+$browserSearch Hitta
+$browserOpenRepForLev Läs in repris
+$browserExportImage Exportera bild
+$browserExportImageDone Exporterad till:
+$browserMkdirTitle Skapa mapp
+$browserMkdirPleaseEnter Namn på ny mapp:
+
+$browserReplayTitle Repriser|Gå till reprisbläddrare från huvudmenyn.
+$browserReplayPointedTo Bana
+$browserReplayVerifyDir Bekräfta katalog
+
+$winVerifyTitle Reprisbekräftare
+$winVerifyOutputWrittenTo Utmatning skriven till “%s”. Klicka för att återgå.
+$verifyHeader Resultat,Repris,Bana,Spelare,Sparat,Krävt,Förmågor,Phyus
+$verifyStatisticsFrom Statistik från %d repriser:
+$verifyTrophiesUpdated %d troféer för %s uppdaterat.
+$verifyLevelsNoProof Dessa %d banor har inga bevis:
+$verifyDirectoryCoverage Katalogtäckning:
+$verifyAllLevelsCovered Alla %d banor är lösningsbara.
+$verifySomeLevelsCovered %d av %d banor är lösningsbara, %d kan vara olösningsbara.
+$verifyStatusMultiplayer Repris ignorerad, det är flerspelarläge.
+$verifyStatusNoPointer Repris anger inget namn på banfil.
+$verifyStatusMissingLevel Repris pekar mot en icke-existerande bana.
+$verifyStatusBadLevel Repris pekar mot en missbildad bana.
+$verifyStatusFailed Repris löser inte banan.
+$verifyStatusMercyKilled Reprisen pågick längre än %d minuter efter sista förmåga.
+$verifyStatusSolved Reprisen löser banan.
+
+$previewLevelAuthor av
+$previewLevelSingleGoal Mål:
+$previewLevelSingleTrophySaved Bästa:
+$previewLevelSingleTrophySkills Förmågor:
+$previewLevelMultiIntendedNumPlayers Spelare:
+$previewReplayPlayer Spelare:
+$previewReplayPointsTo ⟶
+$previewMissingTiles %d saknade plattläggningar:
+$previewMissingTilesMoreSee och %d till, se “%s”
+
+$harvestYouSavedThisTime Du räddade %d lix!
+$harvestReplayAutoSaved Repris automatiskt sparad.
+$harvestReplaySaveManuallyAtAll Spara repris
+$harvestReplaySaveManuallyToo Spara manuellt
+
+$winSearchTitle Sök bana
+$winSearchPrompt Sök på titel, författare, eller filnamn i %d banor:
+
+$repForLevTitle Läs in repris för “%s”
+
+$outcomeRetryOldLevel Försök igen:
+$outcomeYouSolvedOldLevel Gratulerar! Du löste:
+$outcomeAttemptNextLevel Nästa bana:
+$outcomeResolveNextLevel Nästa bana (löst):
+$outcomeAttemptNextUnsolvedLevel Nästa olösta bana:
+$outcomeExitToSingleBrowser Tillbaka till bläddraren
+
+$outcomeTrophyLixSaved Lix
+$outcomeTrophySkillsUsed Förmågor
+$outcomeTrophyYourAttempt Ditt resultat
+$outcomeTrophyPreviousRecord Rekord
+
+// networking lobby
+$winLobbyTitle Nätverksspel|Gå till nätverkslobbyn från huvudmenyn.
+$winLobbyDisconnect Frånkoppla
+$winLobbyStartCentral Spela på centralservern
+$winLobbyStartServer Stå själv värd för ett spel
+$winLobbyStartCustom Anslut till någon annan
+$winLobbyTitleAddress Address
+$winLobbyTitlePort UDP-port
+$winLobbyChat Chatt:
+$winLobbySelectLevel Välj bana
+$winLobbyReady Redo att starta
+$winLobbyRoomNumber Rum #%d
+$winLobbyRoomCreate Öppna ett nytt rum
+$winLobbyRoomLeave Lämna rum
+
+// Multiplayer interruption dialog
+$winAbortNetgameTitle Spelmeny|Öppna menydialogen under pågående nätverksspel.|Detta gör att du kan avsluta spelet tidigt. Det pausar inte.
+$winAbortNetgameContinuePlaying Fortsätt att spela
+$winAbortNetgameExitToLobby Återgå till lobby
+
+// help texts inside the game
+$gameForceLeft [%s] för att vända till vänster.
+$gameForceRight [%s] för att vända till höger.
+$gamePriorityInvert [%s] för lix längst bak
+$gameQueueBuilder Klicka igen för att kölägga.
+$gameQueuePlatformer Klicka igen för att kölägga.
+$gameHoldToScroll Håll [%s] och rör musen för att rulla.
+$gameClickToCancelReplay Klicka för att avbryta reprisen.
+$gameFramestepOrQuit Spola tillbaka tid (◀▮) eller avsluta med [%s].
+$gamePause Pausat.
+$gameZoom %s för att zooma in, %s för att zooma ut.
+$gameShowSplatRuler Visa splat-linjal.
+$gameHighlightGoals Markera egna luckor och mål.
+$gameStateSave Snabbspara spelposition.
+$gameStateLoad Läs in snabbsparad position.
+$gameShowTweaker Visa repristrimmare.
+$gameFramestepBack %s för att kliva bakåt, %s för att hoppa bakåt.
+$gameFramestepAhead %s för att kliva framåt, %s för att hoppa framåt.
+$gameFastForward %s för att snabbspola framåt, %s för turbo.
+$gameRestart Starta om bana.
+$gameNuke Spräng. Dubbelklicka för att aktivera.
+
+$tweakerHeaderLixID Lix-id
+$tweakerHeaderPhyu Phyu
+$tweakerLineNow Nu
+$tweakerEmptyListTitle Repristrimmare
+$tweakerEmptyListDesc1 Klicka lix för att tilldela förmågor.
+$tweakerEmptyListDesc2 Senare kan du trimma
+$tweakerEmptyListDesc3 dina tilldelningar här.
+
+$skillTooltip walker|Walker. Gå tillbaka eller avbryt blocker.
+$skillTooltip jumper|Jumper. Hoppar en gång. Runner hoppar längre.
+$skillTooltip climber|Climber. Klättra uppför alla vertikala väggar.
+$skillTooltip floater|Floater. Svävar för att överleva alla fall.
+$skillTooltip runner|Runner. Spring fortare än walker.
+$skillTooltip exploder|Imploder. Implodera för att förstöra jord/avbryta blocker.
+$skillTooltip exploder2|Exploder. Explodera för att kasta iväg andra lix.
+$skillTooltip blocker|Blocker. Blockera andra lix, och vända dem.
+$skillTooltip batter|Batter.. Slå andra lix, och kasta iväg dem.
+$skillTooltip cuber|Cuber. Gör kub för att fort generera jord.
+$skillTooltip builder|Builder. Bygg en diagonal trappa.
+$skillTooltip platformer|Platformer. Gör en horizontal brygga.
+$skillTooltip basher|Basher. Slå sönder en horizontal tunnel.
+$skillTooltip miner|Miner. Gräv en diagonal tunnel.
+$skillTooltip digger|Digger. Gräv ett vertikalt hål.
+
+// main editor screen
+$editorHotkey Snabbtangent:
+$editorBarAt på
+$editorBarGroup -plattläggningsgrupp
+$editorBarHover plattläggningar som är på väg att markeras
+$editorBarSelection markerade plattläggningar
+
+// editor buttons
+$editorButtonFileNew Ny: Tar bort allting på skärmen och startar en ny bana.
+$editorButtonFileExit Avsluta: Avslutar redigeraren och frågar om du vill spara ändrade data.
+$editorButtonFileSave Spara:
+$editorButtonFileSaveAs Spara som: Sparar den aktuella banan under ett nytt filnamn.
+$editorButtonGrid2 Rutnät 2: Plattläggningar kommer att flytta 2 bildpunkter.
+$editorButtonGridCustom Anpassat rutnät: Detta rutnätstorlek går att ställa in i inställningarna.
+$editorButtonGrid16 Rutnät 16: Plattläggningar kommer att flytta 16 bildpunkter.
+$editorButtonSelectAll Allting: Markerar alla plattläggningar i banan.
+$editorButtonSelectFrame Ram: Dra en ram med musen för att markera plattläggningar.
+$editorButtonSelectAdd Lägg till: Behåll plattläggningar markerade medan du markerar ytterligare plattläggningar.
+$editorButtonUndo Ångra: Ångrar dina senaste ändringar till banan.
+$editorButtonRedo Gör om: Återverkställer ångrade ändringar till banan.
+$editorButtonGroup Gör grupp: Skapar en ny enskild plattläggning från alla markerade plattläggningar.
+$editorButtonUngroup Ångra grupp: Hämta de enskilda plattläggningarna från markerade grupper.
+$editorButtonSelectCopy Kopiera: Kopierar de markerade plattläggningarna för att placerade dem någon annanstans.
+$editorButtonSelectDelete Ta bort: Tar bort de markerade plattläggningarna från banan.
+$editorButtonBackground Bakgrund: Placerar de markerade plattläggningarna bakom några andra.
+$editorButtonForeground Förgrund: Placerar de markerade plattläggningarna framför några andra.
+$editorButtonMirrorHorizontally Spegel: Speglar den markerade terrängen horizontalt.
+$editorButtonFlipVertically Vrid: Vrider den markerade terrängen vertikalt.
+$editorButtonSelectRotate Rotera: Vrider markerad terräng ett kvarts varv.
+$editorButtonSelectDark Mörk: Markerad terräng raderar normal terräng.
+$editorButtonViewZoom Zoom: Vänsterklick zoomar in i kartan, högerklick zoomar ut.
+$editorButtonAddTerrain Terräng: Lägg till en terrängplattläggning.
+$editorButtonAddSteel Stål: Lägg till en stålplattläggninng som inte kan grävas igenom.
+$editorButtonAddHatch Lucka: Lägg till en entrélucka för lix.
+$editorButtonAddGoal Mål: Lägg till ett mål, dvs en utgång för lix.
+$editorButtonAddHazard Fara: Lägg till en fälla, vatten eller eld.
+$editorButtonMenuConstants Konstanter: Namnge banan, ställ in grundläggande värden.
+$editorButtonMenuTopology Karta: Ändra banans storlek, snurra runt kanterna.
+$editorButtonMenuLooks Utseende: Färglägg bakgrunden, välj startposition för skärm.
+$editorButtonMenuSkills Förmågor: Bestäm hur många lixförmågor varje spelare kan tilldela.
+
+$saveBrowserTitle Spara som
+$saveBrowserWhatToType Filnamn utan filändelse:
+$saveBoxOverwriteTitle Skriva över?
+$saveBoxOverwriteQuestion Vill du verkligen skriva över denna bana?
+$saveBoxOverwrite Skriv över
+
+$saveBoxTitleDelete Ta bort?
+$saveBoxTitleSave Spara?
+$saveBoxQuestionUnsavedChangedLevel Spara ändringar till denna bana?
+$saveBoxQuestionUnsavedNewLevel Spara denna nya bana?
+$saveBoxQuestionDeleteReplay Vill du verkligen ta bort denna repris?
+$saveBoxQuestionDeleteLevel Vill du verkligen ta bort denna bana?
+$saveBoxDirectory Mapp:
+$saveBoxFileName Fil:
+$saveBoxLevelName Titel:
+$saveBoxYesSave Spara
+$saveBoxNoDiscard Förkasta
+$saveBoxNoCancel Avbryt
+
+// BitmapBrowser
+$addTerrain Lägg till terräng
+$addSteel Lägg till stål
+$addHatch Lägg till lucka
+$addGoal Lägg till mål
+$addHazard Lägg till fara
+
+// editor window about the size of map
+$winTopologyTitle Karta
+$winTopologyL Vänster:
+$winTopologyR Höger:
+$winTopologyU Över:
+$winTopologyD Under:
+$winTopologyTorusX Snurra runt horizontalt
+$winTopologyTorusY Snurra runt vertikalt
+$winTopologyWarnSize1 En bana med så många
+$winTopologyWarnSize2 pixlar
+$winTopologyWarnSize3 kraschar på vissa datorer.
+
+// scrolling start position
+$winLooksTitle Utseende
+$winLooksRed röd bakgrund
+$winLooksGreen grön bakgrund
+$winLooksBlue blå bakgrund
+
+// editor window to set level variables
+$winConstantsTitle Konstanter
+$winConstantsAuthor Författare
+$winConstantsLevelName Titel på bana
+$winConstantsPlayers Spelare
+$winConstantsInitial Lix vid start
+$winConstantsRequired Lix att rädda
+$winConstantsSpawnint Tid för fler lix
+$winConstantsOvertime Övertid
+
+// editor window to set skills
+$winSkillsTitle Förmågor
+$winSkillsUseExploder Släng-exploderare
+$winSkillsClear Alla till noll
+$winSkillsEightTo Klassisk 8 till:
+$winSkillsAllTo Alla 14 till:
+
+// exporting a level into a file
+$exportSingleInitial Lix:
+$exportSingleRequired Spara:
+$exportSingleSpawnint SI:
+
+// network chat messages
+$netChatEnetDLLMissing Nätverksläge är inte användbart, enet-DLL:en saknas:
+$netChatStartClient Ansluter till
+$netChatStartCancel Anslutningsförsök avbrutet.
+$netChatYouLoggedOut Du lämnade nätverket.
+$netChatYouCannotConnect Server hittades inte.
+$netChatYouLostConnection Anslutning till server förlorades!
+$netChatPeerDisconnected %s lämnade nätverket.
+$netChatWeTooOld Din Lix-version är för gammal för att ansluta till servern.
+$netChatWeTooNew Din Lix-version är för ny. Servern borde uppgradera.
+$netChatVersionYours Din version är
+$netChatVersionServer Servern kräver
+$netChatPleaseDownload Hämta den nyaste versionen:
+$netChatWeInRoom Du har gått in i rum #%d.
+$netChatWeInLobby Du är i lobbyn.
+$netChatPlayerInRoom %s har gått in i rum #%d.
+$netChatPlayerInLobby %s har klivit in i lobbyn.
+$netChatPlayerOutRoom %s har gått in i rum #%d.
+$netChatPlayerOutLobby %s har lämnat rummet.
+$netChatLevelChange %s har markerat “%s”.
+$netGameHowToChat Tryck [%s] för att chatta.
+$netGameEnd Spelet är slut.
+$netGameEndResult Spelresultat:
+$netGameOvertimeNukeIn Övertid pågår! Dags att spränga
+
+$optionTitle Inställningar|Gå till menyn för inställningar från huvudmenyn.
+$optionGroupGraphics Grafik
+$optionGroupGeneral Allmänt
+$optionGroupControls Kontroller
+$optionGroupGameKeys Speltangenter
+$optionGroupEditorKeys Redigerartangenter
+$optionGroupMenuKeys Menytangenter
+$optionUserName Namn på spelare|Ditt namn visas i repriser och i spel för flerspelarläge.|Lix sparar inställningar till en fil i ./data/user/ namngiven efter dig.
+$optionLanguage Språk|Språk som används i Lix användargränssnitt.
+$optionReplayAutoSolutions Autospara banlösningar|Sparar automatiskt en repris när du löser en bana i enspelarläge.
+$optionReplayAutoMulti Autospara spel för flerspelarläge|Sparar automatiskt en repris när du har klarat ett spel i flerspelarläge.
+$optionSoundEnabled Ljud|Aktivera ljudeffekter.
+$optionMusicEnabled Musik|Aktivera bakgrundsmusik.
+$optionSoundDecibels Ljudökning i dB|Justera ljudvolymen. 0 är redan ganska högt.|Höj/sänk med 10 dB för att dubbla/halvera ljudvolymen.
+$optionMusicDecibels Musikökning i dB|Justera musikvolymen. −10 dB borde vara nog så högt.|Höj/sänk med 10 dB för att dubbla/halvera musikvolymen.
+
+$optionScreenMode Skärmläge|Fönsterläge och helskärm programvara fungerar bra för Alt+Tab.|Fönsterläge och helskärm hårdvara använder upplösningen till höger.
+$optionScreenWindowed Fönsterläge
+$optionScreenSoftwareFullscreen Helskärm programvara
+$optionScreenHardwareFullscreen Helskärm hårdvara
+$optionScreenWindowedRes Fönsterläge/hårdvaruupplösning|Storlek på Lixfönstret då du har valt fönsterläge.|Skärmupplösning för helskärm hårdvara. Helskärm programvara ignorerar detta.
+$optionPaintTorusSeams Måla torussömmar|Markera omslagssömmen med en tunn linje då en bana snurrar runt.|Detta påverkar inte spelfysiken, men kan förbättra din orientering.
+$optionIngameTooltips Inforutor under spelsession|Förklara knappar och lix-markerande snabbtangenter under pågående spel, dvs för att välja vänsterriktade lix.|Några knappar har två funktioner: En på vänsterklick, en på högerklick.
+$optionShowFPS Räkna fysik och bps|Skriv ut antal fysikuppdateringar sedan spelet startades.|Skriv ut antal bilder per sekund under pågående spel eller redigering.
+
+$optionKeyZoomIn Zoom +|Zooma in i banan.
+$optionKeyZoomOut Zoom −|Zooma ut ifrån banan.
+$optionKeyScroll Håll för att rulla|Håll detta (standard: höger musknapp ⟁) och rör musen för att rulla.|Detta är lättare, snabbare och mer exakt än att rulla vid skärmkanten.
+$optionKeyPriorityInvert Omvänd prioritering|Håll för att tilldela förmågor till den lix med lägst prioritet istället för den med högst.|Håll för att välja den understa plattläggningen istället för den översta i redigeraren.
+$optionKeyScreenshot Skärmdump|Ta en skärmdump av hela Lix-fönstret.|Skärmdumpar sparas i ./export/ eller ~/.local/share/lix/export/.
+$optionSplatRulerDesign Splat-linjalsdesign|Växla splat-linjal på/av under pågående spel med "Töm fysik" via Game Keys tab.|3-raderslinjaler snärtar mot kanter, mät sedan splat-avståndet ovanför och nedanför.
+$optionSplatRulerDesignTwoBars 2-rader splatlinjal, liten snärt
+$optionSplatRulerDesign094 3-rader splatlinjal, bakom terräng
+$optionSplatRulerDesignSuperSnap 3-rader splatlinjal, stor snärt
+
+$optionMouseSpeed Mushastighet|Musmarkörens rörelsehastighet.
+$optionScrollSpeedEdge Rullhastighet vid skärmkant|Rullhastighet då musmarkören vidrör skärmkanten.
+$optionHoldToScrollSpeed Rullhastighet med rulltangent|Rullhastighet när du rör musen samtidigt som du håller rulltangenten.|Som standard är rulltangenten höger musknapp ⟁, se vänster för att ändra.
+$optionHoldToScrollInvert Invertera håll-för-att-rulla|Rulla mot musrörelsen samtidigt som du håller rulltangenten.|Som standard är rulltangenten höger musknapp ⟁, se ovanför för att ändra.
+$optionFastMovementFreesMouse Snabb rörelse frigör mus|Musen lämnar Lix-fönstret då du fort rör dig mot sidorna.|Om inte förbockat kan du frigöra musen med Alt+Tab.
+
+$optionKeyForceLeft Tvinga vänster|Håll för att tildela förmågor till vänsterriktade lix.|Detta är användbart i en tät grupp av lix.
+$optionKeyForceRight Tvinga höger|Håll för att tilldela förmågor till högerriktade lix.|Detta är användbart i en tät grupp av lix.
+$optionKeyPause Pausa|Pausa spelet.|Du kan välja om tilldelning av förmågor borde opausa, se nedanför.
+$optionKeyFrameBackMany ◀▮ 1 sek.|Spola tillbaka spelet med 1 sekund.
+$optionKeyFrameBackOne ◀▮ 1 bild|Spola tillbaka spelet med 1 bild, dvs med ¹⁄₁₅ av en sekund.
+$optionKeyFrameAheadOne ▮▶ 1 bild|Spola fram spelet med 1 bild, dvs med ¹⁄₁₅ av en sekund.
+$optionKeyFrameAheadMany ▮▶ 10 sek.|Spola fram spelet med 10 sekunder.
+$optionKeySpeedFast ▶▶|Växla snabbspolning framåt.|Snabbspolning framåt är 4 bilder snabbare än normal hastighet.
+$optionKeySpeedTurbo ▶▶▶|Växla turbosnabbspolning framåt.|Turbosnappspolning framåt är 36 bilder snabbare än normal hastighet.
+$optionKeyRestart Starta om|Starta om banan från början. Alla dina åtgärder kommer att repriseras.|Klicka i luften för att avbryta reprisen.
+$optionKeyStateLoad Läs in tillstånd|Gå tillbaka till den ihågkomna spelpositionen.|Du kan komma ihåg den positionen via Spara tillstånd.
+$optionKeyStateSave Spara tillstånd|Kom ihåg den exakta spelpositionen.|Du kan komma tillbaka till den positionen via Läs in tillstånd.
+$optionKeyShowTweaker Repristrimmare|Visa repristrimmaren för att finjustera lösningsförsök.|Du kan ta bort och flytta godtyckliga tilldelningar av förmågor.
+$optionKeyChat Chatt|Öppna terminalen för att chatta under pågående spel i flerspelarläge.
+$optionKeyShowSplatRuler Splat-linjal|Visa en linjal som mäter splathöjd under pågående spel.
+$optionKeyHighlightGoals Markera mål|Markera egna luckor och mål under nätverksspel.
+$optionKeyNuke Spräng|Spräng alla dina lix i enspelarläge för att klara banan.|Starta övertid i flerspelarläge om du har räddat minst 1 lix.
+
+$optionAvoidBuilderQueuing Föredra spamning framför köläggning|Föredra byggaretilldelningar framför icke-byggare istället för att kölägga till existerande byggare.|Du kan hålla omvänd prioritering för att göra det du inte föredrar.
+$optionAvoidBatterToExploder Föredra slagmän framför icke-exploderare.|Föredra slagmäntilldelningar framför gångare istället för slagmäntilldeningar framför tidsinställda exploderare|Du kan hålla omvänd prioritering.
+$optionReplayAfterFrameBack Behåll repris efter ◀▮|Behåll framtida reprisåtgärder vid framesteppning bakåt (◀▮), tills att du klickar i luften.|Om inte förbockat kommer reprisåtgärder att tas bort då du ångrar dem med framsteppning.
+$optionUnpauseOnAssign Fortsätt spelet vid tilldelning av förmåga|Fortsätt spelet då du tilldelar en förmåga under paus.|Om inte förbockat kommer tilldelning av förmågor under paus att fortsätta spelet med 1 bild.
+
+$optionKeyMenuOkay Okej/ja|Spela den markerade banan. Spara och stäng dialogfönster.
+$optionKeyMenuEdit Redigera|Öppna redigeraren för den markerade banan.
+$optionKeyMenuNewLevel Skapa|Öppna redigeraren för en tom bana.
+$optionKeyMenuRepForLev Läs in repris|Läs in en repris för den markerade banan i enspelarlägesbläddraren.
+$optionKeyMenuExport Exportera|Exportera den markerade banan som en bildfil.
+$optionKeyMenuDelete Förlora data|Ta bort en fil. Förlora osparat data när redigeraren uppmanar dig.
+$optionKeyMenuUpDir Förälderkatalog|Gå tillbaka upp en mapp.|Du kan navigera till andra banor, repriser eller plattläggningar.
+$optionKeyMenuUpBy5 Upp med 5|Flytta markören upp med 5 filer.|Med detta kan du navigera runt banor utan musen.
+$optionKeyMenuUpBy1 Upp med 1|Flytta markören upp med 1 fil.|Med detta kan du navigera runt banor utan musen.
+$optionKeyMenuDownBy1 Ner med 1|Flytta markören ner med 1 fil.|Med detta kan du navigera runt banor utan musen.
+$optionKeyMenuDownBy5 Ner med 5 |Flytta markören ner med 5 filer.|Med detta kan du navigera runt banor utan musen.
+$optionKeyMenuExit Tillbaka/avbryt|Avsluta en bläddrare. Stäng ett dialogfönster utan att spara.
+$optionGuiColorRed Röd meny|Byt färg på Lix grafiska användargränssnitt.
+$optionGuiColorGreen Grön meny|Byt färg på Lix grafiska användargränssnitt.
+$optionGuiColorBlue Blå meny|Byt färg på Lix grafiska användargränssnitt.
+
+$optionKeyOutcomeSaveReplay Spara repris|På skärmen efter att ha klarat en bana i enspelarläge:|Spara reprisen manuellt.
+$optionKeyOutcomeOldLevel Samma bana|På skärmen efter att ha klarat en bana i enspelarläge:|Spela samma bana igen.
+$optionKeyOutcomeNextLevel Nästa bana|På skärmen efter att ha klarat en bana i enspelarläge:|Spela nästa omedelbara bana, oavsett om den är löst eller ej.
+$optionKeyOutcomeNextUnsolved Nästa olösta|På skärmen efter att ha klarat en bana i enspelarläge:|Spela nästa olösta bana.
+
+$optionEdLeft Flytta vänster|Flytta markerade plattläggningar till vänster.|Rörelsen respekter rutnätet. Håll denna tangent för snabb rörelse.
+$optionEdRight Flytta höger|Flytta markerade plattläggningar till höger.|Rörelsen respekter rutnätet. Håll denna tangent för snabb rörelse.
+$optionEdUp Flytta upp|Flytta markerade plattläggningar upp.|Rörelsen respekter rutnätet. Håll denna tangent för snabb rörelse.
+$optionEdDown Flytta ner|Flytta markerade plattläggningar ner.|Rörelsen respekter rutnätet. Håll denna tangent för snabb rörelse.
+$optionEdSave Spara
+$optionEdSaveAs Spara som
+$optionEdGrid Rutnätstorlek
+$optionEdGridCustom Anpassa rutnätstorlek
+$optionEdSelectAll Markera alla
+$optionEdSelectFrame Markera ram
+$optionEdSelectAdd Lägg till i markering
+$optionEdUndo Ångra
+$optionEdRedo Gör om
+$optionEdGroup Gör grupp
+$optionEdUngroup Ångra grupp
+$optionEdCopy Kopiera
+$optionEdDelete Ta bort
+$optionEdForeground Förgrund
+$optionEdBackground Bakgrund
+$optionEdMirror Spegel
+$optionEdRotate Rotera
+$optionEdDark Rita svart
+$optionEdAddTerrain Lägg till terräng
+$optionEdAddSteel Lägg till stål
+$optionEdAddHatch Lägg till lucka
+$optionEdAddGoal Lägg till mål
+$optionEdAddHazard Lägg till fara
+
+// mini-dialogue to greet a new player
+$windowAskNameTitle Lix
+$windowAskNameFirst Hej och välkommen!
+$windowAskNameSecond Vad heter du?
