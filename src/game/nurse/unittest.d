@@ -15,6 +15,7 @@ import game.nurse.savestat;
 import file.replay;
 import level.level;
 import lix.lixxie;
+import net.profile;
 
 private:
 
@@ -145,7 +146,10 @@ version (unittest) {
         return new SaveStatingNurse(lv, ()
             {
                 Replay rep = Replay.newForLevel(fn, lv.built);
-                rep.addPlayer(PlNr(0), Style.garden, "Mr. Unittest");
+                Profile p;
+                p.name = "Mr. Unittest";
+                p.style = Style.garden;
+                rep.addPlayer(PlNr(0), p);
                 return rep;
             }(),
             new NullEffectSink);

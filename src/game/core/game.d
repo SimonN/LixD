@@ -310,13 +310,16 @@ private:
             () => Replay.newNoLevelFilename(level.built),
             (fn) => Replay.newForLevel(fn, level.built));
         if (! _netClient) {
-            rp.addPlayer(PlNr(0), Style.garden, file.option.userName);
+            Profile single;
+            single.name = file.option.userName;
+            single.style = Style.garden;
+            rp.addPlayer(PlNr(0), single);
         }
         else {
             rp.permu = _netClient.permu;
             foreach (plNr, prof; _netClient.profilesInOurRoom)
                 if (prof.feeling != Profile.Feeling.observing)
-                    rp.addPlayer(plNr, prof.style, prof.name);
+                    rp.addPlayer(plNr, prof);
         }
         return rp;
     }

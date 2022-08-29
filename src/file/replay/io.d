@@ -22,6 +22,7 @@ import file.replay.tweakimp;
 import file.replay.replay;
 import level.level;
 import net.permu;
+import net.profile;
 import net.repdata;
 import net.versioning;
 
@@ -108,8 +109,12 @@ void implLoadFromFile(Replay replay, Filename fn) { with (replay)
     case '+':
         // For back-compat, we accept the FRIEND directive, even though
         // since March 2018, we only write PLAYER directives.
-        if (i.text1 == replayPlayer || i.text1 == replayFriend)
-            addPlayer(PlNr(i.nr1 & 0xFF), stringToStyle(i.text2), i.text3);
+        if (i.text1 == replayPlayer || i.text1 == replayFriend) {
+            Profile prof;
+            prof.name = i.text3;
+            prof.style = stringToStyle(i.text2);
+            addPlayer(PlNr(i.nr1 & 0xFF), prof);
+        }
         break;
     case '!': {
         // replays contain ASSIGN=BASHER or ASSIGN_RIGHT=BUILDER.

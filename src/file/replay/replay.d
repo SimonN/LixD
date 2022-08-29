@@ -24,15 +24,11 @@ static import file.option.allopts;
 import file.replay.tweakimp;
 import file.replay.io;
 import level.level;
+import net.profile;
 import net.permu;
 import net.versioning;
 
 class Replay {
-    static struct Player {
-        Style style;
-        string name;
-    }
-
 package:
     // The pointed-to level filename.
     // May be none, e.g., in networking games.
@@ -48,8 +44,8 @@ package:
     MutableDate _levelBuiltRequired;
 
     Version _gameVersionRequired;
-    Player[PlNr] _players;
-    Permu _permu; // contains natural numbers [0 .. #players[, not the plNrs
+    Profile[PlNr] _players;
+    Permu _permu; // contains natural numbers [0 .. #styles[, not the plNrs
     Ply[] _plies;
 
 public:
@@ -116,7 +112,7 @@ public:
     {
         if (const rhs = cast(const(Replay)) rhsObj)
             return _plies == rhs._plies
-                && cast(const(Player[PlNr])) _players == rhs._players
+                && cast(const(Profile[PlNr])) _players == rhs._players
                 && _permu == rhs._permu
                 && levelFilename == rhs.levelFilename;
         else
@@ -133,7 +129,7 @@ public:
         Date levelBuiltRequired() {return _levelBuiltRequired; }
         Version gameVersionRequired() { return _gameVersionRequired; }
         int numPlayers() { return _players.length & 0x7FFF_FFFF; }
-        const(Player[PlNr]) players() { return _players; }
+        const(Profile[PlNr]) players() { return _players; }
         const(Permu) permu() { return _permu; }
         bool empty() { return _plies.length == 0; }
         int latestPhyu() { return (_plies.length > 0) ? _plies[$-1].update : 0; }
@@ -188,14 +184,14 @@ public:
     {
         _gameVersionRequired = gameVersion();
         if (_players.length == 1) {
-            foreach (ref Player pl; _players)
+            foreach (ref Profile pl; _players)
                 pl.name = file.option.allopts.userName;
         }
     }
 
-    void addPlayer(PlNr nr, Style st, string name)
+    void addPlayer(PlNr nr, in Profile p)
     {
-        _players[nr] = Player(st, name);
+        _players[nr] = p;
     }
 
     bool wasPlayedBy(string who) const pure nothrow @safe @nogc
