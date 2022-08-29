@@ -25,6 +25,7 @@ import net.server.outbox;
 import net.server.suite;
 import net.profile;
 import net.structs;
+import net.style;
 
 package:
 
@@ -81,6 +82,9 @@ public:
 
     void addNewPlayerToLobby(in PlNr nrOfNewbie, Profile2022 newbie)
     {
+        if (! newbie.style.goodForMultiplayer) {
+            newbie.style = Style.red;
+        }
         _suites[Room(0)].add(nrOfNewbie, newbie);
         // It would be enough to send the overview only to the newbie.
         // But it's easiest to ask to send it to all. (Hotel knows no outbox.)
@@ -110,8 +114,11 @@ public:
                 Suite.PopReason(Suite.PopReason.Reason.disconnected)));
     }
 
-    void changeProfileButKeepVersion(in PlNr ofWhom, in Profile2022 wish)
+    void changeProfileButKeepVersion(in PlNr ofWhom, Profile2022 wish)
     {
+        if (! wish.style.goodForMultiplayer) {
+            wish.style = Style.red;
+        }
         foreach (where; _suites[].find!(sui => sui.contains(ofWhom)).takeOne) {
             where.changeProfileButKeepVersion(ofWhom, wish);
         }

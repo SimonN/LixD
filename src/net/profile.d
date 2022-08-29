@@ -22,7 +22,6 @@ alias Profile = Profile2022;
 
 struct Profile2022 {
 private:
-    mixin StyleSetter;
     mixin NameAsFixStr!64;
 
 public:
@@ -32,6 +31,7 @@ public:
         ready = 2, // Frame 2
         observing = 4 // Frame 4
     }
+    Style style;
     Feeling feeling;
     Version clientVersion;
     Handicap handicap;
@@ -123,7 +123,6 @@ struct RoomListEntry2022 {
 
 struct Profile2016 {
 private:
-    mixin StyleSetter;
     mixin NameAsFixStr!31; // Yes, not 32. It's 30 good bytes + 1 nullbyte.
 
 public:
@@ -131,6 +130,7 @@ public:
     enum int len = 3 + _name.len;
 
     Room room;
+    Style style;
     Feeling feeling;
 
     void setNotReady() @nogc
@@ -181,33 +181,6 @@ public:
         _name = typeof(_name)(buf[3 .. 3 + _name.len]);
     }
 }
-
-private mixin template StyleSetter() {
-    private Style _style = Style.red;
-
-    public Style style() const pure nothrow @safe @nogc
-    {
-        assert (goodForMultiplayer(_style));
-        return _style;
-    }
-
-    public void style(in Style st) pure nothrow @safe @nogc
-    {
-        if (goodForMultiplayer(st)) {
-            _style = st;
-        }
-        else {
-            _style = Style.red;
-        }
-    }
-
-    public static bool goodForMultiplayer(in Style st) pure nothrow @safe @nogc
-    {
-        return st >= Style.red && st < Style.max;
-    }
-
-    static assert (goodForMultiplayer(typeof(this).init._style));
-};
 
 private mixin template NameAsFixStr(int lenInclNull) {
     private FixStr!lenInclNull _name;

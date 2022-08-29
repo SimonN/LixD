@@ -22,6 +22,11 @@ string styleToString(in Style sty)
     return sty.to!string.asCapitalized.to!string;
 }
 
+bool goodForMultiplayer(in Style st) pure nothrow @safe @nogc
+{
+    return st >= Style.red && st < Style.max;
+}
+
 unittest {
     assert (styleToString(Style.yellow) == "Yellow");
     assert (stringToStyle("ORAnge") == Style.orange);
