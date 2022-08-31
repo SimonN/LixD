@@ -11,6 +11,7 @@ module physics.tribe;
 import std.algorithm;
 
 import enumap;
+import optional;
 
 import basics.globals;
 import basics.help;
@@ -21,78 +22,113 @@ import net.repdata;
 import physics.score;
 
 final class Tribe {
-    private static struct ValueFields {
-    private:
-        Phyu _firstScoring; // Phyu(0) if ! hasScored()
-        Phyu _recentScoring; // Phyu(0) if ! hasScored()
-        Phyu _finishedPlayingAt; // Phyu(0) if can maken more decisions
-        Phyu _nukePressedSince; // Phyu(0) if never pressed
-
-        int  _lixOut;
-        int  _lixLeaving; // these have been scored, but keep game running
-        int  _lixSaved; // query with score()
-
-    public:
-        Style style;
-        int spawnint;
-        int lixHatch;
-
-        Phyu updatePreviousSpawn = Phyu(-Level.spawnintMax); // => at once
-        int nextHatch; // Initialized by the state initalizer with the permu.
-                       // We don't need the permu afterwards for spawns.
-        int skillsUsed;
-    }
-
+    immutable RuleSet rules;
     ValueFields valueFields;
     alias valueFields this;
 
-    Enumap!(Ac, int) skills;
     LixxieImpl[] lixvecImpl;
-    immutable(Rule) rule; // affects how the tribe judges whether he nukes
 
-    enum Rule {
-        normalOvertime,
-        raceToFirstSave,
+    struct RuleSet {
+        enum MustNukeWhen : ubyte {
+            normalOvertime,
+            raceToFirstSave,
+        }
+
+        Style style;
+        MustNukeWhen mustNukeWhen;
+        int initialLixInHatchWithoutHandicap;
+        int spawnInterval; // number of physics updates until next spawn
+        Enumap!(Ac, int) initialSkillsWithoutHandicap; // may be skillInfinity
     }
 
-    this(in Rule aRule) { rule = aRule; }
+    private static struct ValueFields {
+    private:
+        Optional!Phyu _updatePreviousSpawn = none;
+        Phyu _firstScoring; // Phyu(0) if ! hasScored()
+        Phyu _recentScoring; // Phyu(0) if ! hasScored()
+        Phyu _finishedPlayingAt; // Phyu(0) if can make more decisions
+        Phyu _nukePressedSince; // Phyu(0) if never pressed
+
+        int _lixSpawned; // 0 at start
+        int _lixOut;
+        int _lixLeaving; // these have been scored, but keep game running
+        int _lixSaved; // query with score()
+
+    public:
+        Enumap!(Ac, int) skillsUsed;
+        int nextHatch; // Initialized by the state initalizer with the permu.
+                       // We don't need the permu afterwards for spawns.
+    }
+
+    enum Phyu firstSpawnWithoutHandicap = Phyu(60);
+
+public:
+    this(in RuleSet r) { rules = r; }
 
     this(in Tribe rhs)
     {
         assert (rhs, "don't copy-construct from a null Tribe");
         valueFields = rhs.valueFields;
-        skills = rhs.skills;
         lixvecImpl = rhs.lixvecImpl.clone; // only value types since 2017-09!
-        rule = rhs.rule;
+        rules = rhs.rules;
     }
 
     Tribe clone() const { return new Tribe(this); }
 
-    @property lixvec() @nogc // mutable. For const, see 5 lines below
+    auto lixvec() @nogc // mutable. For const, see 5 lines below
     {
         Lixxie f(ref LixxieImpl value) { return &value; }
         return lixvecImpl.map!f;
     }
 
-    @property const @nogc {
-        auto lixvec()
-        {
-            ConstLix f(ref const(LixxieImpl) value) { return &value; }
-            return lixvecImpl[].map!f;
-        }
+    auto lixvec() const @nogc
+    {
+        ConstLix f(ref const(LixxieImpl) value) { return &value; }
+        return lixvecImpl[].map!f;
+    }
+
+    const pure @safe @nogc {
+        Style style() { return rules.style; }
 
         int lixlen() { return lixvecImpl.len; }
 
-        bool outOfLix() { return _lixOut == 0 && lixHatch == 0; }
+        bool outOfLix() { return _lixOut == 0 && lixInHatch == 0; }
         bool doneAnimating() { return outOfLix() && ! _lixLeaving; }
 
         int lixOut() { return _lixOut; }
+        int lixInHatch() {
+            return rules.initialLixInHatchWithoutHandicap - _lixSpawned;
+        }
+
+        Optional!Phyu phyuOfNextSpawn()
+        {
+            if (lixInHatch == 0) {
+                return no!Phyu;
+            }
+            return some(_updatePreviousSpawn.match!(
+                () => firstSpawnWithoutHandicap,
+                (prev) => Phyu(prev + rules.spawnInterval),
+            ));
+        }
+
+        bool canStillUse(in Ac ac)
+        {
+            return usesLeft(ac) > 0 || usesLeft(ac) == skillInfinity;
+        }
+
+        int usesLeft(in Ac ac)
+        {
+            return rules.initialSkillsWithoutHandicap[ac] == skillInfinity
+                ? skillInfinity
+                : rules.initialSkillsWithoutHandicap[ac] - skillsUsed[ac];
+        }
+
         Score score()
         {
             Score ret;
             ret.style = style;
             ret.current = _lixSaved;
-            ret.potential = _lixSaved + _lixOut + lixHatch;
+            ret.potential = _lixSaved + _lixOut + lixInHatch;
             ret.prefersGameToEnd = prefersGameToEnd;
             return ret;
         }
@@ -117,10 +153,10 @@ final class Tribe {
     ///////////////////////////////////////////////////////////////////////////
 
     void recordSpawnedFromHatch()
-    in { assert (this.lixHatch > 0); }
-    out { assert (this.lixHatch >= 0 && this._lixOut >= 0); }
+    in { assert (this.lixInHatch > 0); }
+    out { assert (this.lixInHatch >= 0 && this._lixOut >= 0); }
     do {
-        --lixHatch;
+        ++_lixSpawned;
         ++_lixOut;
     }
 
@@ -145,6 +181,11 @@ final class Tribe {
     out { assert (this._lixOut >= 0 && this._lixLeaving >= 0); }
     do { --_lixLeaving; }
 
+    void stopSpawningAnyMoreLixBecauseWeAreNuking()
+    {
+        _lixSpawned = rules.initialLixInHatchWithoutHandicap;
+    }
+
     void addSaved(in Style fromWho, in Phyu now)
     {
         _recentScoring = now;
@@ -155,9 +196,7 @@ final class Tribe {
 
     void returnSkills(in Ac ac, in int amount)
     {
-        skillsUsed -= amount;
-        if (skills[ac] != skillInfinity)
-            skills[ac] += amount;
+        skillsUsed[ac] -= amount;
     }
 
     void spawnLixxie(OutsideWorld* ow)
@@ -184,7 +223,7 @@ final class Tribe {
             newLix.turn();
         lixvecImpl ~= newLix;
         recordSpawnedFromHatch();
-        updatePreviousSpawn = ow.state.update;
+        _updatePreviousSpawn = ow.state.update;
         do {
             nextHatch = (nextHatch + 1) % ow.state.hatches.len;
         }
@@ -196,15 +235,16 @@ final class Tribe {
     // Nuke
     ///////////////////////////////////////////////////////////////////////////
 
-    @property void nukePressedSince(Phyu u) @nogc { _nukePressedSince = u; }
+    void nukePressedSince(Phyu u) @nogc { _nukePressedSince = u; }
 
-    @property const @nogc {
+    const pure @safe @nogc {
         bool nukePressed() { return _nukePressedSince > Phyu(0); }
 
         bool prefersGameToEnd()
         {
             return nukePressed || outOfLix
-                || rule == rule.raceToFirstSave && hasScored;
+                || (rules.mustNukeWhen == RuleSet.MustNukeWhen.raceToFirstSave
+                    && hasScored);
         }
 
         Phyu prefersGameToEndSince()
@@ -213,8 +253,8 @@ final class Tribe {
             return min(
                 nukePressed ? _nukePressedSince : Phyu(int.max),
                 outOfLix ? finishedPlayingAt : Phyu(int.max),
-                rule == rule.raceToFirstSave && hasScored
-                    ? firstScoring : Phyu(int.max));
+                (rules.mustNukeWhen == RuleSet.MustNukeWhen.raceToFirstSave
+                    && hasScored) ? firstScoring : Phyu(int.max));
         }
 
         bool triggersOvertime()
@@ -239,7 +279,8 @@ final class Tribe {
                                    : Phyu(int.max),
                 outOfLix ? max(finishedPlayingAt, firstScoring)
                          : Phyu(int.max),
-                rule == rule.raceToFirstSave ? firstScoring : Phyu(int.max));
+                rules.mustNukeWhen == RuleSet.MustNukeWhen.raceToFirstSave
+                    ? firstScoring : Phyu(int.max));
         }
     }
 }

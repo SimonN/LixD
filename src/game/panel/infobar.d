@@ -99,12 +99,12 @@ public:
     {
         assert (tribe);
         reqDraw();
-        _lHatch.shown = _bHatch.shown = lixHatch > 0;
-        _lOut.shown = _bOut.shown = lixHatch + lixOut > 0;
-        _lHatch.number = lixHatch;
+        _lHatch.shown = _bHatch.shown = lixInHatch > 0;
+        _lOut.shown = _bOut.shown = lixInHatch + lixOut > 0;
+        _lHatch.number = lixInHatch;
         _bHatch.yf = 1;
-        _lOut.number = lixHatch + lixOut;
-        _bOut.yf = lixHatch + lixOut > 0 ? 0 : 1;
+        _lOut.number = lixInHatch + lixOut;
+        _bOut.yf = lixInHatch + lixOut > 0 ? 0 : 1;
         onShowTribe(tribe);
     }}
 

@@ -56,14 +56,17 @@ in {
     assert (tribesToMake.isStrictlyMonotonic);
 }
 do {
+    const mustNukeWhen = tribesToMake.len > 1 && level.overtimeSeconds == 0
+        ? Tribe.RuleSet.MustNukeWhen.raceToFirstSave
+        : Tribe.RuleSet.MustNukeWhen.normalOvertime;
     foreach (style; tribesToMake) {
-        Tribe tr = new Tribe(
-            tribesToMake.len > 1 && level.overtimeSeconds == 0
-                ? Tribe.Rule.raceToFirstSave : Tribe.Rule.normalOvertime);
-        tr.style        = style;
-        tr.lixHatch     = level.initial;
-        tr.spawnint     = level.spawnint;
-        tr.skills       = level.skills;
+        Tribe tr = new Tribe(Tribe.RuleSet(
+            style,
+            mustNukeWhen,
+            level.initial,
+            level.spawnint,
+            level.skills,
+        ));
         state.tribes[style] = tr;
     }
 }

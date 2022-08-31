@@ -84,7 +84,7 @@ public:
         ++_cs.update;
         range.each!(cd => applyPly(cd));
 
-        updateNuke(); // sets lixHatch = 0, thus affects spawnLixxiesFromHatch
+        updateNuke(); // sets lixInHatch = 0, thus affects spawnLixxiesFromHatch
         spawnLixxiesFromHatches();
         updateLixxies();
         finalizePhyuAnimateGadgets();
@@ -134,14 +134,12 @@ private:
             Lixxie lixxie = tribe.lixvec[i.toWhichLix];
             assert (lixxie);
             if (lixxie.priorityForNewAc(i.skill) <= 1
-                || tribe.skills[i.skill] == 0
+                || ! tribe.canStillUse(i.skill)
                 || (lixxie.facingLeft  && i.action == RepAc.ASSIGN_RIGHT)
                 || (lixxie.facingRight && i.action == RepAc.ASSIGN_LEFT))
                 return;
             // Physics
-            ++(tribe.skillsUsed);
-            if (tribe.skills[i.skill] != lix.skillInfinity)
-                --(tribe.skills[i.skill]);
+            ++(tribe.skillsUsed[i.skill]);
             OutsideWorld ow = makeGypsyWagon(pa);
             lixxie.assignManually(&ow, i.skill);
 
@@ -157,10 +155,9 @@ private:
     void spawnLixxiesFromHatches()
     {
         foreach (int teamNumber, Tribe tribe; _cs.tribes) {
-            if (tribe.lixHatch == 0
-                || _cs.update < _cs.updateFirstSpawn
-                || _cs.update < tribe.updatePreviousSpawn + tribe.spawnint)
+            if (tribe.phyuOfNextSpawn() != _cs.update) {
                 continue;
+            }
             // the only interesting part of OutsideWorld right now is the
             // lookupmap inside the current state. Everything else will be
             // passed anew when the lix are updated.
@@ -174,7 +171,7 @@ private:
         if (! _cs.nuking)
             return;
         foreach (tribe; _cs.tribes) {
-            tribe.lixHatch = 0;
+            tribe.stopSpawningAnyMoreLixBecauseWeAreNuking();
             foreach (int lixID, lix; tribe.lixvec.enumerate!int) {
                 if (! lix.healthy || lix.ploderTimer > 0)
                     continue;
@@ -189,7 +186,7 @@ private:
     {
         version (tharsisprofiling)
             Zone zone = Zone(profiler, "PhysSeq updateLixxies()");
-        bool anyFlingers     = false;
+        bool anyFlingers = false;
 
         /* Refactoring idea:
          * Put this sorting into State, and do it only once at the beginning

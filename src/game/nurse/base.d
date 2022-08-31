@@ -95,7 +95,7 @@ public:
         assert (style in cs.tribes);
         HalfTrophy ret;
         ret.lixSaved = cs.tribes[style].score.current;
-        ret.skillsUsed = cs.tribes[style].skillsUsed;
+        ret.skillsUsed = cs.tribes[style].skillsUsed.byValue.sum();
         return ret;
     }
 

@@ -147,7 +147,7 @@ void showSpawnIntervalOnHatches(Game game)
     game.pan.dontShowSpawnInterval();
     if (game.nurse.constStateForDrawingOnly.hatches.any!(h =>
         game.map.isPointInRectangle(game.map.mouseOnLand, h.rect)))
-        game.pan.showSpawnInterval(game.localTribe.spawnint);
+        game.pan.showSpawnInterval(game.localTribe.rules.spawnInterval);
 }
 
 void activateOrDeactivateTweaker(Game game)
@@ -193,7 +193,7 @@ void drawReplaySign(Game game)
 void ensureMusic(const(Game) game)
 {
     with (game.nurse.constStateForDrawingOnly) {
-        if (! isMusicPlaying && update >= updateFirstSpawn)
+        if (! isMusicPlaying && update >= Tribe.firstSpawnWithoutHandicap)
             suggestRandomMusic();
     }
 }

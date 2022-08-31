@@ -48,8 +48,6 @@ public:
     Torbit land;
     Phymap lookup;
 
-    enum updateFirstSpawn = Phyu(60);
-
     this(this) { opAssignImpl(this); }
 
     ref RawGameState opAssign(ref const(RawGameState) rhs) return

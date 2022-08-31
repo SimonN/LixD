@@ -85,10 +85,10 @@ public:
             b.style = tr.style;
             if (b.skill.isPloder)
                 b.skill = ploderToDisplay;
-            // Since you're not allowed to assign skills when you want to nuke,
-            // show 0 skills on the GUI even if we have more. But in
-            // singleplayer, we want to see how many skills we have left.
-            b.number = tr.nukePressed || multiNuking ? 0 : tr.skills[b.skill];
+            // Skill buttons shouldn't show any skills left when we're nuking,
+            // even though we still haven't used all skills yet.
+            b.number = tr.nukePressed || multiNuking
+                ? 0 : tr.usesLeft(b.skill);
         }
         nuke.on = tr.nukePressed || multiNuking;
         nuke.overtimeRunning = overtimeRunning;
