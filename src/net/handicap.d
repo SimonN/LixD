@@ -109,7 +109,7 @@ public:
 
     int scale(int input) const
     {
-        if (input < 0 || _div == 0) {
+        if (input < 0 || _div == 0 || (_mul == 1 && _div == 1)) {
             return input; // E.g., input == -1 means infinite skills.
         }
         immutable int roundAwayFromZero = _div + (_div > 0 ? -1 : 1);
@@ -129,22 +129,31 @@ private:
         if (_div == 1 || _mul == 1 || _mul == -1) {
             return; // Avoid the factor-cancelling loop for speed.
         }
-        enum T[6] firstPrimes = [2, 3, 5, 7, 11, 13];
-        static assert (T.max >= firstPrimes[$-2]^^2);
-        static assert (T.max <  firstPrimes[$-1]^^2);
-        foreach (T prime; firstPrimes[0 .. $-1]) {
-            while (_mul % prime == 0 && _div % prime == 0) {
-                _mul /= prime;
-                _div /= prime;
-            }
+        removeCommonPrimesInPlace(_mul, _div);
+    }
+}
+
+void removeCommonPrimesInPlace(T)(ref T mul, ref T div)
+{
+    enum T[6] firstPrimes = [2, 3, 5, 7, 11, 13];
+    static assert (byte.max >= firstPrimes[$-2]^^2);
+    static assert (byte.max <  firstPrimes[$-1]^^2);
+    foreach (T prime; firstPrimes[0 .. $-1]) {
+        while (mul % prime == 0 && div % prime == 0) {
+            mul /= prime;
+            div /= prime;
         }
     }
 }
 
 unittest {
     auto f = Fraction(5, 6);
-    assert (f.scale(100) == 84);
     assert (f.scale(120) == 100);
+    assert (f.scale(100) == 84);
+    assert (f.scale(6) == 5);
+    assert (f.scale(5) == 5);
+    assert (f.scale(0) == 0);
+    assert (f.scale(-1) == -1);
 }
 
 unittest {

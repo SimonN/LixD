@@ -11,12 +11,18 @@ module physics.score;
 import std.algorithm;
 
 import net.style;
+import physics.fracint;
 
 struct Score {
     Style style;
-    int current; // should be > 0
-    int potential; // should be larger than current to be visible
+    FracInt lixSaved;
+    int lixYetUnsavedRaw; // Lix in hatch and level, before applying handicap
     bool prefersGameToEnd; // should be filled by Tribe
+
+    FracInt potential() const pure nothrow @nogc @safe
+    {
+        return FracInt(lixSaved.raw + lixYetUnsavedRaw, lixSaved.frac);
+    }
 }
 
 void sortPreferringTeam(T)(T[] arr, in Style pref)
@@ -30,8 +36,8 @@ void sortPreferringTeam(T)(T[] arr, in Style pref)
 // Sort better scores to earlier positions.
 bool betterThanPreferringTeam(in Score a, in Score b, in Style preferred)
 {
-    return a.current > b.current ? true
-        : a.current < b.current ? false
+    return a.lixSaved > b.lixSaved ? true
+        : a.lixSaved < b.lixSaved ? false
         : a.potential > b.potential ? true
         : a.potential < b.potential ? false
         : a.style == preferred && b.style != preferred ? true
@@ -41,10 +47,10 @@ bool betterThanPreferringTeam(in Score a, in Score b, in Style preferred)
 
 unittest {
     Score[] arr = [
-        Score(Style.yellow, 0, 0),
-        Score(Style.blue, 0, 0),
-        Score(Style.green, 0, 0),
-        Score(Style.garden, 0, 0),
+        Score(Style.yellow, FracInt(0), 0),
+        Score(Style.blue, FracInt(0), 0),
+        Score(Style.green, FracInt(0), 0),
+        Score(Style.garden, FracInt(0), 0),
     ];
     arr.sortPreferringTeam(Style.green);
     assert (arr[0].style == Style.green);
@@ -55,9 +61,9 @@ unittest {
 unittest {
     struct Complicated { Score score; int unrelated; }
     Complicated[] arr = [
-        Complicated(Score(Style.yellow, 0, 0), 333),
-        Complicated(Score(Style.orange, 0, 0), 999),
-        Complicated(Score(Style.red, 0, 0), 888),
+        Complicated(Score(Style.yellow, FracInt(0), 0), 333),
+        Complicated(Score(Style.orange, FracInt(0), 0), 999),
+        Complicated(Score(Style.red, FracInt(0), 0), 888),
     ];
     arr.sortPreferringTeam(Style.orange);
     assert (arr[0].unrelated == 999);

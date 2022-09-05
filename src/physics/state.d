@@ -93,7 +93,7 @@ public:
     @property bool singleplayerHasSavedAtLeast(in int lixRequired) const @nogc
     {
         return ! multiplayer
-            && tribes.byValue.front.score.current >= lixRequired;
+            && tribes.byValue.front.score.lixSaved >= lixRequired;
     }
 
     @property bool singleplayerHasNuked() const @nogc

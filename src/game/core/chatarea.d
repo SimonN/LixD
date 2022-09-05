@@ -84,9 +84,9 @@ public:
 
         string line = Lang.netGameEndResult.transl ~ " ";
         foreach (i, score; scores)
-            line ~= format!"%s %d%s"(
+            line ~= format!"%s %s%s"(
                 rep.styleToNames(score.style),
-                score.current,
+                score.lixSaved.asText,
                 i != scores.length - 1 ? " -- " : "");
         _console.add(line);
     }

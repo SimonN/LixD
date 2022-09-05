@@ -19,6 +19,8 @@ import basics.rect;
 import lix;
 import level.level; // spawnintMax
 import net.repdata;
+import physics.fracint;
+import physics.handimrg;
 import physics.score;
 
 final class Tribe {
@@ -35,10 +37,11 @@ final class Tribe {
         }
 
         Style style;
-        MustNukeWhen mustNukeWhen;
         int initialLixInHatchWithoutHandicap;
         int spawnInterval; // number of physics updates until next spawn
         Enumap!(Ac, int) initialSkillsWithoutHandicap; // may be skillInfinity
+        MustNukeWhen mustNukeWhen;
+        MergedHandicap handicap;
     }
 
     private static struct ValueFields {
@@ -97,7 +100,8 @@ public:
 
         int lixOut() { return _lixOut; }
         int lixInHatch() {
-            return rules.initialLixInHatchWithoutHandicap - _lixSpawned;
+            return rules.handicap.initialLix.scale(
+                rules.initialLixInHatchWithoutHandicap) - _lixSpawned;
         }
 
         Optional!Phyu phyuOfNextSpawn()
@@ -106,29 +110,35 @@ public:
                 return no!Phyu;
             }
             return some(_updatePreviousSpawn.match!(
-                () => firstSpawnWithoutHandicap,
+                () => Phyu(firstSpawnWithoutHandicap
+                    + rules.handicap.delayInPhyus),
                 (prev) => Phyu(prev + rules.spawnInterval),
             ));
         }
 
         bool canStillUse(in Ac ac)
         {
-            return usesLeft(ac) > 0 || usesLeft(ac) == skillInfinity;
+            immutable int left = usesLeft(ac);
+            return left > 0 || left == skillInfinity;
         }
 
         int usesLeft(in Ac ac)
         {
-            return rules.initialSkillsWithoutHandicap[ac] == skillInfinity
-                ? skillInfinity
-                : rules.initialSkillsWithoutHandicap[ac] - skillsUsed[ac];
+            if (rules.initialSkillsWithoutHandicap[ac] == skillInfinity) {
+                return skillInfinity;
+            }
+            immutable int atStart = rules.handicap.initialSkills.scale(
+                rules.initialSkillsWithoutHandicap[ac])
+                + rules.handicap.extraSkills;
+            return atStart - skillsUsed[ac];
         }
 
         Score score()
         {
             Score ret;
             ret.style = style;
-            ret.current = _lixSaved;
-            ret.potential = _lixSaved + _lixOut + lixInHatch;
+            ret.lixSaved = FracInt(_lixSaved, rules.handicap.score);
+            ret.lixYetUnsavedRaw = _lixOut + lixInHatch;
             ret.prefersGameToEnd = prefersGameToEnd;
             return ret;
         }
@@ -183,7 +193,8 @@ public:
 
     void stopSpawningAnyMoreLixBecauseWeAreNuking()
     {
-        _lixSpawned = rules.initialLixInHatchWithoutHandicap;
+        _lixSpawned = rules.handicap.initialLix.scale(
+            rules.initialLixInHatchWithoutHandicap);
     }
 
     void addSaved(in Style fromWho, in Phyu now)

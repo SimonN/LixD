@@ -12,25 +12,26 @@ module gui.score.bar;
 
 import std.algorithm;
 
-public import physics.score;
 import basics.alleg5;
 import graphic.color;
 import graphic.internal : getAlcol3DforStyle;
 import gui;
+import physics.fracint;
+import physics.score;
 
 package:
 
 interface ScoreBar {
-    @property Score score() const;
-    @property Score score(in Score sco)
+    Score score() const;
+    void score(in Score sco)
     out { assert (score.potential <= maxPotential); }
 
-    @property int maxPotential() const;
-    @property int maxPotential(in int maxPot)
+    FracInt maxPotential() const;
+    void maxPotential(in FracInt maxPot)
     in { assert (maxPot >= score.potential); }
     out { assert (score.potential <= maxPotential); }
 
-    final @property Style style() const { return score.style; }
+    final Style style() const { return score.style; }
 }
 
 void updateMaxPotentials(T)(T[] arr)
@@ -38,41 +39,41 @@ void updateMaxPotentials(T)(T[] arr)
 {
     if (arr.length == 0)
         return;
-    immutable int maxPot = arr.map!(bar => bar.score.potential).fold!max;
+    immutable FracInt maxPot = arr.map!(bar => bar.score.potential).fold!max;
     arr.each!(bar => bar.maxPotential = maxPot);
 }
 
 class SimpleBar : Element, ScoreBar {
 private:
     Score _score;
-    int _maxPotential;
+    FracInt _maxPotential;
 
 public:
     this(Geom g) { super(g); }
 
-    @property int maxPotential() const { return _maxPotential; }
-    @property int maxPotential(in int mp)
+    FracInt maxPotential() const { return _maxPotential; }
+    void maxPotential(in FracInt mp)
     {
         if (mp == _maxPotential)
-            return _maxPotential;
+            return;
         reqDraw();
-        return _maxPotential = mp;
+        _maxPotential = mp;
     }
 
-    @property Score score() const { return _score; }
-    @property Score score(in Score sc)
+    Score score() const { return _score; }
+    void score(in Score sc)
     {
         if (sc == _score)
-            return _score;
+            return;
         reqDraw();
+        _score = sc;
         _maxPotential = max(sc.potential, _maxPotential);
-        return _score = sc;
     }
 
-    void update(in Score sco, in int maxPot)
+    void update(in Score sco, in FracInt maxPot)
     in {
-        assert (maxPot >= sco.current, "maxPotential lower than score");
-        assert (maxPot >= sco.potential, "maxPotential lower than potential");
+        assert (maxPot >= sco.lixSaved, "Need maxPot >= lixSaved w/ handi");
+        assert (maxPot >= sco.potential, "Need maxPot >= potential w/ handi");
     }
     do {
         if (sco == _score && maxPot == _maxPotential)
@@ -87,20 +88,22 @@ protected:
     {
         al_draw_filled_rectangle(xs, ys, xs + xls, ys + yls, color.black);
         drawOneBar(1f / 3f, _score.potential);
-        drawOneBar(1f, _score.current);
+        drawOneBar(1f, _score.lixSaved);
     }
 
 private:
-    void drawOneBar(in float ylFactor, in int scoreValue)
-    {
+    void drawOneBar(
+        in float ylFactor,
+        in FracInt barLen, // barLen == maxPotential means full horz span
+    ) {
         assert (ylFactor >= 0 && ylFactor <= 1, "bad ylFactor");
-        assert (maxPotential >= scoreValue, "current score too large");
-        if (scoreValue <= 0)
+        assert (maxPotential >= barLen, "current score too large");
+        if (barLen <= 0)
             return;
         immutable Alcol3D cols = getAlcol3DforStyle(score.style);
         draw3DButton(xs,
             ys + (yls * (1f - ylFactor)) / 2f,
-            xls * scoreValue / maxPotential,
+            xls * barLen.as!double / maxPotential.as!double,
             yls * ylFactor,
             cols.l, cols.m, cols.d);
     }

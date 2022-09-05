@@ -17,6 +17,7 @@ import file.date;
 import file.filename;
 import file.trophy;
 import hardware.tharsis;
+import net.profile;
 import physics;
 
 public import level.level;
@@ -39,13 +40,20 @@ public:
 
     // We get to own the replay, but not the level or the effect manager.
     this(in Level lev, Replay rp, EffectSink ef)
+    in {
+        assert (rp !is null);
+    }
     do {
-        Style[] stylesToMake = rp.stylesInUse;
-        if (stylesToMake.empty)
-            stylesToMake = [ Style.garden ];
         _replay = rp;
-        _model = new GameModel(lev, stylesToMake, rp.permu, ef);
-        assert (_replay);
+        if (_replay.players.empty) {
+            Profile missing;
+            missing.name = "Unknown";
+            missing.style = Style.garden;
+            _replay.addPlayer(PlNr(0), missing);
+        }
+        auto cfg = const GameStateInitCfg(lev,
+            mergeHandicaps(_replay.players), _replay.permu);
+        _model = new GameModel(cfg, ef);
     }
 
     void dispose()
@@ -94,7 +102,7 @@ public:
     {
         assert (style in cs.tribes);
         HalfTrophy ret;
-        ret.lixSaved = cs.tribes[style].score.current;
+        ret.lixSaved = cs.tribes[style].score.lixSaved.raw;
         ret.skillsUsed = cs.tribes[style].skillsUsed.byValue.sum();
         return ret;
     }

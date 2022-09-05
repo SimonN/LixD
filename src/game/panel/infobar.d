@@ -217,13 +217,14 @@ public:
 protected:
     override void onShowTribe(in Tribe tribe) { with (tribe)
     {
-        if (score.current < _lixRequired) {
+        immutable saved = score.lixSaved.raw;
+        if (saved < _lixRequired) {
             // "\u2212" is unicode minus
-            _lSaved.text = "\u2212%d".format(_lixRequired - score.current);
+            _lSaved.text = "\u2212%d".format(_lixRequired - saved);
             _singleplayerWinSoundPlayed = false;
         }
         else {
-            _lSaved.text = "+%d".format(score.current - _lixRequired);
+            _lSaved.text = "+%d".format(saved - _lixRequired);
             if (! _singleplayerWinSoundPlayed) {
                 _singleplayerWinSoundPlayed = true;
                 hardware.sound.playLoud(Sound.YIPPIE);
@@ -244,7 +245,7 @@ protected:
         _bSaved.xf = (_warningSignFlicker + flickerFreq - 1) % flickerFreq
             > flickerFreq/2 ? 5 : 10; // 5 = regular exit, 10 = warning sign
         _bSaved.yf = _bSaved.xf == 10 ? 0 // colorful warning sign
-            : score.current >= _lixRequired ? 2 : 1; // green or grayed-out
+            : score.lixSaved >= _lixRequired ? 2 : 1; // green or grayed-out
     }}
 }
 
@@ -266,7 +267,7 @@ protected:
         _bSaved.shown = _lSaved.shown = tribe.hasScored;
         if (tribe.hasScored) {
             _bSaved.yf = 1; // greyed out. Maybe invent something better
-            _lSaved.number = tribe.score.current;
+            _lSaved.text = tribe.score.lixSaved.asText;
         }
     }
 }

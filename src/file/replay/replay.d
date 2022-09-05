@@ -169,17 +169,6 @@ public:
         return Style.garden;
     }
 
-    // Allocates and returns a new array with the report
-    Style[] stylesInUse() const
-    {
-        Style[] ret;
-        foreach (style; _players.byValue.map!(pl => pl.style))
-            if (! ret.canFind(style))
-                ret ~= style;
-        ret.sort();
-        return ret;
-    }
-
     void touch()
     {
         _gameVersionRequired = gameVersion();

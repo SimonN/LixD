@@ -14,12 +14,13 @@ import std.array;
 import std.algorithm;
 import enumap;
 
-public import physics.score;
 import basics.alleg5;
 import gui;
 import gui.score.bar; // for the package-declared SimpleBar
 import graphic.color;
 import graphic.internal;
+import physics.score;
+import physics.fracint;
 
 class ScoreBoardOn3DBackground : ScoreBoard {
 public:
@@ -160,7 +161,7 @@ public:
         assert (barL > 20f, "this is a very short AnnotatedBar");
 
         _bar = new SimpleBar(new Geom(0, 0, barL, 20, From.RIGHT));
-        _bar.score = Score(style, 0, 0);
+        _bar.score = Score(style, FracInt(0), 0);
         _nameLabel = new Label(new Geom(0, 0, teamL - 5f, 20));
         _nameLabel.color = brighten(style);
 
@@ -181,21 +182,21 @@ public:
             _saved.icon, _saved.label, _nuke);
     }
 
-    @property Score score() const { return _bar.score; }
-    @property Score score(in Score sco)
+    Score score() const { return _bar.score; }
+    void score(in Score sco)
     {
         if (_bar.score == sco)
-            return sco;
-        _alive.number = sco.potential - sco.current;
-        _saved.number = sco.current;
+            return;
+        _bar.score = sco;
+        _alive.number = sco.lixYetUnsavedRaw; // Yes, unscaled: not potential()
         _nuke.shown = sco.prefersGameToEnd;
-        return _bar.score = sco;
+        _saved.number = sco.lixSaved;
     }
 
-    @property int maxPotential() const { return _bar.maxPotential; }
-    @property int maxPotential(in int mp) { return _bar.maxPotential = mp; }
+    FracInt maxPotential() const { return _bar.maxPotential; }
+    void maxPotential(in FracInt mp) { _bar.maxPotential = mp; }
 
-    @property float barXs() const { return _bar.xs; }
+    float barXs() const { return _bar.xs; }
     bool has(string aName) const { return _names.canFind(aName); }
 
     void add(string aName)
@@ -221,7 +222,7 @@ struct IconNumber {
 private:
     CutbitElement _icon;
     Label _label;
-    int _lastNumber; // to reduce calls to the label's reqDraw
+    FracInt _previous; // to reduce calls to the label's reqDraw
 
 public:
     this(Geom gi, Geom gl, Style style, int xFrameForIcon)
@@ -232,22 +233,22 @@ public:
         _icon.yf = xFrameForIcon == 5 ? 1 : 0; // exits should be greyed out
         _label = new Label(gl);
         _label.color = AnnotatedBar.brighten(style);
-        _lastNumber = -1; // merely different from 0 for the next line here
-        number = 0;
+        _previous = FracInt(-1); // merely different from 0, for number()
+        number = FracInt(0);
     }
 
     inout(CutbitElement) icon() inout pure @nogc { return _icon;  }
     inout(Label) label() inout pure @nogc { return _label; }
 
-    @property int number() const pure @nogc { return _lastNumber; }
-    @property int number(in int n)
+    void number(in int n) { number(FracInt(n)); }
+    void number(in FracInt n)
     {
-        if (n == _lastNumber)
-            return n;
-        _lastNumber = n;
-        _icon.shown = (n != 0);
-        _label.shown = (n != 0);
-        _label.number = n;
-        return n;
+        if (n == _previous) {
+            return;
+        }
+        _previous = n;
+        _icon.shown = n > 0;
+        _label.shown = n > 0;
+        _label.text = n.asText;
     }
 }

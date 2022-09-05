@@ -17,55 +17,62 @@ import lix;
 import net.permu;
 import physics.state;
 import physics.tribe;
+import physics.handimrg;
 import tile.phymap;
 import tile.gadtile;
 
+public:
+
+struct GameStateInitCfg {
+    Level level;
+    MergedHandicap[Style] tribes;
+    Permu permu;
+}
+
 package:
 
-GameState newZeroState(in Level level, in Style[] tribesToMake, in Permu permu)
+GameState newZeroState(in GameStateInitCfg cfg)
 in {
-    assert (tribesToMake.len >= 1);
+    assert (cfg.tribes.length >= 1);
 }
 do {
     GameState s;
     s.refCountedStore.ensureInitialized();
-    with (level) {
-        s.land   = new Torbit(Torbit.Cfg(level.topology));
-        s.lookup = new Phymap(level.topology);
-        drawTerrainTo(s.land, s.lookup);
-    }
-    s.preparePlayers(level, tribesToMake, permu);
-    s.prepareGadgets(level);
-    s.assignTribesToGoals(permu);
+    s.land   = new Torbit(Torbit.Cfg(cfg.level.topology));
+    s.lookup = new Phymap(cfg.level.topology);
+    cfg.level.drawTerrainTo(s.land, s.lookup);
+
+    s.preparePlayers(cfg);
+    s.prepareGadgets(cfg.level);
+    s.assignTribesToGoals(cfg.permu);
     s.foreachGadget((Gadget g) {
         g.drawLookup(s.lookup);
     });
-    s.update = s.multiplayer ? 0 : 45; // start quickly in 1-player
+    s.update = s.multiplayer ? Phyu(0) : Phyu(45); // start quickly in 1-player
     s.overtimeAtStartInPhyus = s.multiplayer
-        ? level.overtimeSeconds * phyusPerSecondAtNormalSpeed : 0;
+        ? cfg.level.overtimeSeconds * phyusPerSecondAtNormalSpeed : 0;
     return s;
 }
 
 private:
 
-void preparePlayers(GameState state, in Level level,
-                    in Style[] tribesToMake, in Permu permu)
+void preparePlayers(GameState state, in GameStateInitCfg cfg)
 in {
     assert (state.tribes == null);
-    assert (tribesToMake.len >= 1);
-    assert (tribesToMake.isStrictlyMonotonic);
+    assert (cfg.tribes.length >= 1);
 }
 do {
-    const mustNukeWhen = tribesToMake.len > 1 && level.overtimeSeconds == 0
+    const nukeRule = cfg.tribes.length > 1 && cfg.level.overtimeSeconds == 0
         ? Tribe.RuleSet.MustNukeWhen.raceToFirstSave
         : Tribe.RuleSet.MustNukeWhen.normalOvertime;
-    foreach (style; tribesToMake) {
+    foreach (style, mergedHandicap; cfg.tribes) {
         Tribe tr = new Tribe(Tribe.RuleSet(
             style,
-            mustNukeWhen,
-            level.initial,
-            level.spawnint,
-            level.skills,
+            cfg.level.initial,
+            cfg.level.spawnint,
+            cfg.level.skills,
+            nukeRule,
+            mergedHandicap,
         ));
         state.tribes[style] = tr;
     }

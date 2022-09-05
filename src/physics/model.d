@@ -22,9 +22,7 @@ import file.replay;
 import graphic.gadget;
 import graphic.torbit;
 import hardware.sound;
-import level.level;
 import lix;
-import net.permu;
 import physics.effect;
 import physics.physdraw;
 import physics.state;
@@ -50,15 +48,13 @@ public:
         alias replayData this;
     }
 
-    // Add players to the replay before you pass the replay to Nurse.ctor!
     // This remembers the effect manager, but not anything else.
     // We don't own the effect manager.
-    this(in Level level, in Style[] tribesToMake,
-         in Permu permu, EffectSink ef)
-    in { assert (tribesToMake.len >= 1); }
+    this(in GameStateInitCfg cfg, EffectSink ef)
+    in { assert (cfg.tribes.length >= 1); }
     do {
         _effect = ef;
-        _cs = newZeroState(level, tribesToMake, permu);
+        _cs = newZeroState(cfg);
         _physicsDrawer = new PhysicsDrawer(_cs.land, _cs.lookup);
         finalizePhyuAnimateGadgets();
     }
