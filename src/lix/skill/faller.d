@@ -6,9 +6,11 @@ import lix;
 import tile.phymap;
 
 class Faller : Job {
+private:
+    int _pixelsFallen = 0;
 
+public:
     int ySpeed = 4;
-    int pixelsFallen = 0;
 
     mixin JobChild;
 
@@ -16,13 +18,20 @@ class Faller : Job {
     enum pixelsSafeToFall = 126;
     enum pixelsFallenToBecomeFloater = 60;
 
+    int pixelsFallen() const pure nothrow @safe @nogc { return _pixelsFallen; }
+
     static void becomeAndFallPixels(Lixxie lixxie, in int fallY)
     {
         lixxie.moveDown(fallY);
+        becomeWithAlreadyFallenPixels(lixxie, fallY);
+    }
+
+    static void becomeWithAlreadyFallenPixels(Lixxie lixxie, int alreadyFallen)
+    {
         lixxie.become(Ac.faller);
         Faller fa = cast (Faller) lixxie.job;
         assert (fa);
-        fa.pixelsFallen = fallY;
+        fa._pixelsFallen = alreadyFallen;
     }
 
     override void
@@ -31,8 +40,7 @@ class Faller : Job {
         int ySpeedThisFrame = 0;
         for ( ; ySpeedThisFrame <= ySpeed; ++ySpeedThisFrame) {
             if (isSolid(0, ySpeedThisFrame + 2)) {
-                moveDown(ySpeedThisFrame);
-                pixelsFallen += ySpeedThisFrame;
+                fallBy(ySpeedThisFrame);
 
                 bool hasFallenVeryLittle()
                 {
@@ -57,9 +65,7 @@ class Faller : Job {
         // Because of the loop condition, ySpeedThisFrame will be
         // 1 greater than ySpeed. Remedy that.
         ySpeedThisFrame = min(ySpeedThisFrame, ySpeed);
-
-        moveDown(ySpeedThisFrame);
-        pixelsFallen += ySpeedThisFrame;
+        fallBy(ySpeedThisFrame);
 
         if (ySpeed < ySpeedTerminal)
             ++ySpeed;
@@ -74,5 +80,15 @@ class Faller : Job {
             become(Ac.floater);
     }
     // end void perform()
+
+private:
+    void fallBy(in int numPixelsY)
+    {
+        moveDown(numPixelsY);
+        if (pixelsFallen > pixelsSafeToFall) {
+            // This merely guards against int overflow of _pixelsFallen.
+            return;
+        }
+        _pixelsFallen += numPixelsY;
+    }
 }
-// end class

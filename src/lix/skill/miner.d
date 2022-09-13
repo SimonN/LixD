@@ -58,7 +58,7 @@ private:
     void antiShock(in int resiliance) {
         int downThisFrame = antiShockMoveDown(resiliance);
         if (! isSolid || movedDownSinceSwing > resiliance)
-            becomeFallerWithAlreadyFallenPixels(downThisFrame);
+            Faller.becomeWithAlreadyFallenPixels(lixxie, downThisFrame);
     }
 
     int antiShockMoveDown(in int maxDepth)
@@ -130,16 +130,7 @@ private:
         immutable bool solid  = isSolid(0, 2) || futureGroundIsSolid[future];
         immutable bool leeway = (frame == 7 || frame == 10) && isSolid(0, 3);
         if (downTooFar || (! solid && ! leeway))
-            becomeFallerWithAlreadyFallenPixels(downThisFrame);
-    }
-
-    void becomeFallerWithAlreadyFallenPixels(int downThisFrame)
-    {
-        assert (this is lixxie.job, "don't become Faller twice");
-        become(Ac.faller);
-        Faller faller = cast (Faller) lixxie.job;
-        assert (faller);
-        faller.pixelsFallen = downThisFrame;
+            Faller.becomeWithAlreadyFallenPixels(lixxie, downThisFrame);
     }
 }
 // end class Miner
