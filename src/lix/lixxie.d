@@ -396,8 +396,6 @@ bool cursorShouldOpenOverMe() const { return healthy; }
 // this function, but should be done by the calling game code.
 int priorityForNewAc(in Ac newAc) const
 {
-    int p = 0; // return value
-
     // Nothing allowed at all, don't even open the cursor
     if (! cursorShouldOpenOverMe) return 0;
 
@@ -408,31 +406,44 @@ int priorityForNewAc(in Ac newAc) const
      || (newAc == Ac.climber && abilityToClimb)
      || (newAc == Ac.floater && abilityToFloat) ) return 1;
 
+    immutable base = basePriorityForNewAcGivenOldAc(newAc);
+    if (base < 2) {
+        return base;
+    }
+    return base + (newAc == Ac.batter && avoidBatterToExploder.value
+            ? (- ploderTimer) : ploderTimer)
+        + 400 * abilityToRun + 200 * abilityToClimb + 100 * abilityToFloat;
+}
+
+private int basePriorityForNewAcGivenOldAc(in Ac newAc) const
+out (ret) { assert(ret < 2 || ret % 1000 == 0); }
+do {
     switch (ac) {
         // When a blocker shall be freed/exploded, the blocker has extremely
         // high priority, more than anything else on the field.
         case Ac.blocker:
             if (newAc == Ac.walker
-             || newAc == Ac.imploder
-             || newAc == Ac.exploder) p = 6000;
-            else return 1;
-            break;
+                || newAc == Ac.imploder
+                || newAc == Ac.exploder)
+                return 6000;
+            // New in Lix 0.10: Allow ability assignments to blocker.
+            if (newAc == Ac.runner
+                || newAc == Ac.climber
+                || newAc == Ac.floater)
+                return 1000;
+            goto WE_ARE_REALLY_TOO_BUSY;
 
         // Stunners/ascenders may be turned in their later frames, but
         // otherwise act like regular mostly unassignable-to acitivities
         case Ac.stunner:
-            if (frame >= 16) {
-                p = 3000;
-                break;
-            }
-            else goto GOTO_TARGET_FULL_ATTENTION;
+            if (frame >= 16)
+                return 3000;
+            goto WE_ARE_REALLY_TOO_BUSY;
 
         case Ac.ascender:
-            if (frame >= 5) {
-                p = 3000;
-                break;
-            }
-            else goto GOTO_TARGET_FULL_ATTENTION;
+            if (frame >= 5)
+                return 3000;
+            goto WE_ARE_REALLY_TOO_BUSY;
 
         // further activities that take all of the lix's attention; she
         // canot be assigned anything except permanent skills
@@ -441,21 +452,20 @@ int priorityForNewAc(in Ac newAc) const
         case Ac.climber:
         case Ac.floater:
         case Ac.jumper:
-        GOTO_TARGET_FULL_ATTENTION:
+        WE_ARE_REALLY_TOO_BUSY:
             if (newAc == Ac.runner
-             || newAc == Ac.climber
-             || newAc == Ac.floater
-             || newAc == Ac.imploder
-             || newAc == Ac.exploder) p = 2000;
-            else return 1;
-            break;
+                 || newAc == Ac.climber
+                 || newAc == Ac.floater
+                 || newAc == Ac.imploder
+                 || newAc == Ac.exploder)
+                return 2000;
+            return 1;
 
         // standard activities, not considered working lixes
         case Ac.walker:
         case Ac.lander:
         case Ac.runner:
-            p = 3000;
-            break;
+            return 3000;
 
         // Builders and platformers can be queued. These assignments go
         // always through (p > 1), that's important in networked games.
@@ -465,24 +475,14 @@ int priorityForNewAc(in Ac newAc) const
         case Ac.builder:
         case Ac.platformer:
             if (newAc == ac)
-                p = avoidBuilderQueuing.value ? 1000 : 4000;
-            else
-                p = 5000;
-            break;
+                return avoidBuilderQueuing.value ? 1000 : 4000;
+            return 5000;
 
         // Usually, anything different from the current activity can be assign.
         default:
-            if (newAc != ac)
-                p = 5000;
-            else
-                return 1;
+            return (newAc != ac) ? 5000 : 1;
     }
-    p += (newAc == Ac.batter && avoidBatterToExploder.value
-          ? (- ploderTimer) : ploderTimer);
-    p += 400 * abilityToRun + 200 * abilityToClimb + 100 * abilityToFloat;
-    return p;
 }
-
 
 
 // ############################################################################
