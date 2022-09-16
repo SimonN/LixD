@@ -5,7 +5,7 @@ copyright "public domain"
 license "public domain"
 
 targetType "executable"
-targetName "server"
+targetName "lixserv"
 targetPath "../../bin"
 mainSourceFile "src/daemon.d"
 versions "lixDaemon"

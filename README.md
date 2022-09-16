@@ -60,8 +60,8 @@ on a different UDP port with your players.
 It's possible to run your own standalone server outside of Lix.
 To build this server program, `$ cd src/server/`, then `$ dub build`,
 switch back to Lix's base directory with `$ cd ../../` and run the server
-with `$ bin/server`. The server will listen on UDP port 22934; you can choose
-a different port by `$ bin/server --port=<number>`.
+with `$ bin/lixserv`. The server will listen on UDP port 22934; you can choose
+a different port by `$ bin/lixserv --port=<number>`.
 
 Build instructions
 ------------------
