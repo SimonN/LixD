@@ -1,38 +1,28 @@
-$BUILT 2014-02-28 15:25:40
+$BUILT 2022-09-20 00:18:41
 $AUTHOR Rubix
-$GERMAN 
-$ENGLISH Walking in a winter wonderland
+$ENGLISH Walking in a Winter Wonderland
 $HINT_ENGLISH The second climber will be the one used to help release the pack.
+
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 1600
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
-#START_X 800
-#START_Y 380
 #BACKGROUND_RED 127
 #BACKGROUND_GREEN 127
 #BACKGROUND_BLUE 192
 
-#SECONDS 0
 #INITIAL 99
 #REQUIRED 99
 #SPAWN_INTERVAL 4
-#SPAWN_INTERVAL_FAST 4
 
-#CLIMBER 2
 #WALKER 2
+#CLIMBER 2
 #BUILDER 2
 #PLATFORMER 3
 #BASHER 6
 #MINER 2
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
+#EXPLODER2 0
 
-:matt/winter/Hatch.H: 6 282
+:matt/winter/Hatch.H: 32 224
 
 :matt/winter/Goal.G: 16 16
 
@@ -73,6 +63,7 @@ $HINT_ENGLISH The second climber will be the one used to help release the pack.
 :matt/winter/05: 1168 192
 :matt/winter/05: 1200 272
 :matt/winter/10: -145 286
+:matt/winter/15: 1214 -70 rrr
 :matt/winter/10: 1087 -4
 :matt/winter/05: 1347 174
 :matt/winter/05: 1331 286
@@ -94,6 +85,7 @@ $HINT_ENGLISH The second climber will be the one used to help release the pack.
 :matt/winter/16: 1513 303 f
 :matt/winter/16: 1492 202 f
 :matt/winter/04: 1019 -79
+:matt/winter/15: 1158 -6 rr
 :matt/winter/10: 981 -57
 :matt/winter/02: 958 103
 :matt/winter/04: 961 13 r

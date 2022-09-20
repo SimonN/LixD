@@ -1,24 +1,19 @@
-$BUILT 2014-06-04 10:39:10
+$BUILT 2022-09-21 01:36:28
 $AUTHOR Rubix
-$GERMAN 
 $ENGLISH Baywatch
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 255
+#BACKGROUND_RED 32
+#BACKGROUND_GREEN 48
+#BACKGROUND_BLUE 144
 
-#SECONDS 0
 #INITIAL 50
 #REQUIRED 50
 #SPAWN_INTERVAL 32
-#SPAWN_INTERVAL_FAST 4
 
 #WALKER 2
-#JUMPER 2
 #RUNNER 1
 #BLOCKER 1
 #BUILDER 3
@@ -26,13 +21,12 @@ $ENGLISH Baywatch
 #BASHER 1
 #MINER 2
 #DIGGER 1
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
+#JUMPER 2
+#EXPLODER2 0
 
 :matt/beach/Hatch.H: 512 144 r
 
-:matt/beach/goal.G: 206 220
+:matt/beach/goal.G: 176 210
 
 :matt/water.W: 464 368
 :matt/water.W: 496 368
@@ -45,8 +39,9 @@ $ENGLISH Baywatch
 :matt/beach/daytime/15: 444 364
 :matt/beach/daytime/15: 424 360
 :matt/beach/daytime/15: 418 360
+:matt/beach/daytime/03: 208 264
 :matt/beach/daytime/04: 256 176
-:matt/beach/daytime/05: 80 304 rrr
+:matt/beach/daytime/05: -6 294 rrr
 :matt/beach/daytime/05: 256 304 rrr
 :matt/beach/daytime/05: 144 320 rrr
 :matt/beach/daytime/05: 256 352 rrr
@@ -76,9 +71,9 @@ $ENGLISH Baywatch
 :geoo/steel/16x32o.S: 272 144
 :geoo/steel/16x32o.S: 288 176
 :geoo/steel/16x32o.S: 304 208
-:geoo/steel/16x32o.S: 336 272
 :geoo/steel/16x32o.S: 352 304
-:geoo/steel/16x32o.S: 368 336
 :matt/beach/daytime/06: 400 256 d
 :matt/beach/daytime/15: 434 362
 :matt/beach/daytime/05: 118 272 rrr
+:geoo/steel/16x32o.S: 336 272
+:geoo/steel/16x32o.S: 352 304
