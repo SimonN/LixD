@@ -28,18 +28,18 @@ struct Version {
     }
 
     // parse version string a la "1.234.56"
-    this(in string src)
+    this(in string src) pure @safe
     {
         src.splitter('.')
             .take(3)
-            .map!toIntByParsingOnlyDigits
+            .map!toIntPossiblyNegative
             .zip(only(&major, &minor, &patch))
             .each!"*a[1] = a[0]";
         // A4/C++ Lix used dates as versioning numbers, and saved the
         // version as one integer, e.g., 2015010100 for 2015-01-01 with patch
         // number 00. These dates fit into the lower 31 bit of a signed int.
         // Versions like that should come before any A5/D version.
-        if (major >= 2006000000)
+        if (major < -2000_00_00_00 || major > 2000_00_00_00)
             major = minor = patch = 0;
     }
 
@@ -87,17 +87,20 @@ struct Version {
     }
 }
 
-private int toIntByParsingOnlyDigits(in string s) pure nothrow @safe @nogc
+private int toIntPossiblyNegative(in string s) pure nothrow @safe @nogc
 {
     int ret = 0;
+    bool minusSeen = false;
     foreach (c; s) {
-        if (c < '0' || c > '9') {
-            continue;
+        if (c == '-') {
+            minusSeen = true;
         }
-        ret *= 10;
-        ret += (c - '0');
+        else if (c >= '0' || c <= '9') {
+            ret *= 10;
+            ret += (c - '0');
+        }
     }
-    return ret;
+    return minusSeen ? -ret : ret;
 }
 
 unittest
@@ -124,4 +127,9 @@ unittest
 
 unittest {
     assert (Version("123.456") == Version(123, 456, 0), "parsing fewer nums");
+
+    auto neg = Version("-12.--3-4.56");
+    assert (neg.major == -12);
+    assert (neg.minor == -34);
+    assert (neg.patch == 56);
 }
