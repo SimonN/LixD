@@ -102,8 +102,7 @@ private:
     bool mayAddAsParallelMoveOfMoreTiles(
         in Topology top, in TileMove other) const
     {
-        return
-            top.wrap(_destination - _source)
+        return top.wrap(_destination - _source)
             == top.wrap(other._destination - other._source)
             && ! other._toMove[].canFind!"a == b"(_toMove[].front);
     }

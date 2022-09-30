@@ -8,11 +8,6 @@ import editor.undoable.base;
 import level.level;
 import level.oil;
 
-OilSet merge(in OilSet a, in OilSet b)
-{
-    return a[].chain(b[]).toOilSet;
-}
-
 class CompoundUndoable : Undoable {
 private:
     Undoable[] _components;
@@ -28,7 +23,7 @@ public:
         {
             OilSet ret = new OilSet;
             foreach (cmd; _components) {
-                ret = merge(ret, func(cmd));
+                ret = ret[].chain(func(cmd)[]).toOilSet;
             }
             return ret.assumeUnique;
         }
