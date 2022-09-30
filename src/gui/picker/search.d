@@ -116,7 +116,7 @@ private:
         if (_lastQuery == _query.text.toLower)
             return;
         _lastQuery = _query.text.toLower;
-        _results.recreateButtonsFor(matchesInDatabase.take(_results.pageLen));
+        _results.recreateButtonsFor(matchesInDatabase);
     }
 
     auto matchesInDatabase() const pure
