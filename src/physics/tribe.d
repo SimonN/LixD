@@ -47,10 +47,10 @@ final class Tribe {
     private static struct ValueFields {
     private:
         Optional!Phyu _updatePreviousSpawn = none;
-        Phyu _firstScoring; // Phyu(0) if ! hasScored()
-        Phyu _recentScoring; // Phyu(0) if ! hasScored()
-        Phyu _finishedPlayingAt; // Phyu(0) if can make more decisions
-        Phyu _nukePressedSince; // Phyu(0) if never pressed
+        Optional!Phyu _firstScoring = none;
+        Optional!Phyu _recentScoring = none;
+        Optional!Phyu _outOfLixSince = none;
+        Optional!Phyu _nukePressedAt = none;
 
         int _lixSpawned; // 0 at start
         int _lixOut;
@@ -90,7 +90,7 @@ public:
         return lixvecImpl[].map!f;
     }
 
-    const pure @safe @nogc {
+    const pure nothrow @safe @nogc {
         Style style() { return rules.style; }
 
         int lixlen() { return lixvecImpl.len; }
@@ -143,19 +143,12 @@ public:
             return ret;
         }
 
-        bool hasScored() { return _lixSaved > 0; }
-
-        Phyu firstScoring()
-        in { assert (hasScored); }
-        do { return _firstScoring; }
-
-        Phyu recentScoring()
-        in { assert (hasScored); }
-        do { return _recentScoring; }
-
-        Phyu finishedPlayingAt()
-        in { assert (outOfLix); }
-        do { return _finishedPlayingAt; }
+        bool hasScored()
+        {
+            immutable ret = _lixSaved > 0;
+            assert (ret != _firstScoring.empty);
+            return ret;
+        }
     }
 
     ///////////////////////////////////////////////////////////////////////////
@@ -173,8 +166,7 @@ public:
     void recordOutToLeaver(in Phyu now)
     in {
         assert (this._lixOut > 0);
-        assert (this._finishedPlayingAt == this._finishedPlayingAt.init
-            ||  this._finishedPlayingAt == now);
+        assert (this._outOfLixSince.empty);
     }
     out {
         assert (this._lixOut >= 0 && this._lixLeaving >= 0);
@@ -183,7 +175,7 @@ public:
         --_lixOut;
         ++_lixLeaving;
         if (outOfLix)
-            _finishedPlayingAt = now;
+            _outOfLixSince = now;
     }
 
     void recordLeaverDone()
@@ -246,52 +238,79 @@ public:
     // Nuke
     ///////////////////////////////////////////////////////////////////////////
 
-    void nukePressedSince(Phyu u) @nogc { _nukePressedSince = u; }
+    void recordNukePressedAt(Phyu u) @nogc { _nukePressedAt = u; }
 
-    const pure @safe @nogc {
-        bool nukePressed() { return _nukePressedSince > Phyu(0); }
-
-        bool prefersGameToEnd()
-        {
-            return nukePressed || outOfLix
-                || (rules.mustNukeWhen == RuleSet.MustNukeWhen.raceToFirstSave
-                    && hasScored);
-        }
-
-        Phyu prefersGameToEndSince()
-        in { assert (prefersGameToEnd); }
-        do {
-            return min(
-                nukePressed ? _nukePressedSince : Phyu(int.max),
-                outOfLix ? finishedPlayingAt : Phyu(int.max),
-                (rules.mustNukeWhen == RuleSet.MustNukeWhen.raceToFirstSave
-                    && hasScored) ? firstScoring : Phyu(int.max));
-        }
-
+    const pure nothrow @safe @nogc {
+        bool hasNuked() { return ! _nukePressedAt.empty; }
+        bool prefersGameToEnd() { return ! prefersGameToEndSince.empty; }
         bool triggersOvertime()
         {
-            return prefersGameToEnd && hasScored;
+            immutable ret = prefersGameToEnd && hasScored;
+            assert (ret == ! triggersOvertimeSince.empty);
+            return ret;
         }
 
-        Phyu triggersOvertimeSince()
-        in { assert (triggersOvertime, "call only when we trigger overtime"); }
+        private Optional!Phyu finishedRaceAt()
+        {
+            return rules.mustNukeWhen == RuleSet.MustNukeWhen.raceToFirstSave
+                ? _firstScoring : no!Phyu;
+        }
+
+        Optional!Phyu prefersGameToEndSince()
+        {
+            return optmin(_nukePressedAt, _outOfLixSince, finishedRaceAt);
+        }
+
+        Optional!Phyu triggersOvertimeSince()
         out (ret) {
-            assert (ret != Phyu(int.max), "At least one of the ?: in this "
-                ~ "function should return a good value instead of int.max. "
-                ~ "If all return int.max, we probably shouldn't "
-                ~ "triggersOvertimeSince. Check its in contract.");
-            assert (hasScored, "We can only trigger overtime after scoring.");
-            assert (ret >= firstScoring, "If we nuke before saving a lix, "
-                ~ "we should trigger overtime on first save. Such an earlier "
-                ~ "nuke counts as prefersGameToEnd, not as triggersOvertime.");
+            assert (ret.empty != (prefersGameToEnd && hasScored));
         }
         do {
-            return min(nukePressed ? max(_nukePressedSince, firstScoring)
-                                   : Phyu(int.max),
-                outOfLix ? max(finishedPlayingAt, firstScoring)
-                         : Phyu(int.max),
-                rules.mustNukeWhen == RuleSet.MustNukeWhen.raceToFirstSave
-                    ? firstScoring : Phyu(int.max));
+            if (! hasScored) {
+                return no!Phyu;
+            }
+            return optmin(
+                hasNuked ? optmax(_nukePressedAt, _firstScoring) : no!Phyu,
+                outOfLix ? optmax(_outOfLixSince, _firstScoring) : no!Phyu,
+                finishedRaceAt);
         }
     }
+}
+
+private:
+
+/*
+ * optmin(x, y) == the usual min(x, y).
+ * optmin(x, none) == x: We discard (none) before applying min to the rest.
+ * optmin(none, none) == none.
+ */
+Optional!Phyu optreduce(alias pairingFunc)(Optional!Phyu[] nrs...)
+    pure nothrow @safe @nogc
+{
+    auto usefuls = nrs[].joiner; // Range of Phyus: all nonempty optionals.
+    if (usefuls.empty) {
+        return no!Phyu;
+    }
+    Phyu accum = usefuls.front; // Avoid std.algorithm.reduce, it throws.
+    usefuls.popFront();
+    while (! usefuls.empty) {
+        accum = pairingFunc(accum, usefuls.front);
+        usefuls.popFront;
+    }
+    return accum.some;
+}
+
+alias optmin = optreduce!min;
+alias optmax = optreduce!max;
+
+unittest {
+    immutable x = Optional!Phyu(Phyu(8));
+    immutable y = Optional!Phyu(Phyu(7));
+    immutable z = no!Phyu;
+    assert (optmin(x, y) == y);
+    assert (optmin(y, z) == y);
+    assert (optmin(x, z) == x);
+    assert (optmin(z, y, z) == y);
+    assert (optmin(z, z, z) == no!Phyu);
+    assert (optmin() == no!Phyu);
 }

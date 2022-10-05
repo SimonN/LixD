@@ -98,7 +98,7 @@ public:
 
     @property bool singleplayerHasNuked() const @nogc
     {
-        return ! multiplayer && tribes.byValue.front.nukePressed;
+        return ! multiplayer && tribes.byValue.front.hasNuked;
     }
 
     @property bool overtimeRunning() const
@@ -118,13 +118,15 @@ public:
     }
     do {
         if (tribes.byValue.all!(tr => tr.prefersGameToEnd)) {
-            return tribes.byValue.map!(tr => tr.prefersGameToEndSince)
-                                 .reduce!max;
+            return tribes.byValue.map!(tr => tr.prefersGameToEndSince.front)
+                .reduce!max;
         }
         else {
             assert (tribes.byValue.any!(tr => tr.triggersOvertime));
-            return tribes.byValue.filter!(tr => tr.triggersOvertime)
-                .map!(tr => tr.triggersOvertimeSince).reduce!min;
+            return tribes.byValue
+                .filter!(tr => tr.triggersOvertime)
+                .map!(tr => tr.triggersOvertimeSince.front)
+                .reduce!min;
         }
     }
 

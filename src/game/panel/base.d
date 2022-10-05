@@ -87,10 +87,9 @@ public:
                 b.skill = ploderToDisplay;
             // Skill buttons shouldn't show any skills left when we're nuking,
             // even though we still haven't used all skills yet.
-            b.number = tr.nukePressed || multiNuking
-                ? 0 : tr.usesLeft(b.skill);
+            b.number = tr.hasNuked || multiNuking ? 0 : tr.usesLeft(b.skill);
         }
-        nuke.on = tr.nukePressed || multiNuking;
+        nuke.on = tr.hasNuked || multiNuking;
         nuke.overtimeRunning = overtimeRunning;
         nuke.overtimeRemainingInPhyus = overtimeRemainingInPhyus;
         _rb.ourStyle = tr.style;

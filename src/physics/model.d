@@ -116,12 +116,12 @@ private:
         if (! tribe)
             // Ignore bogus data that can come from anywhere
             return;
-        if (tribe.nukePressed || _cs.nukeIsAssigningExploders)
+        if (tribe.hasNuked || _cs.nukeIsAssigningExploders) {
             // Game rule: After you call for the nuke, you may not assign
             // other things, nuke again, or do whatever we allow in the future.
             // During the nuke, nobody can assign or save lixes.
             return;
-
+        }
         immutable Passport pa = Passport(i.style, i.toWhichLix);
         if (i.isSomeAssignment) {
             // never assert based on the content in Ply, which may have
@@ -145,7 +145,7 @@ private:
             _effect.addArrow(upd, pa, lixxie.foot, i.skill);
         }
         else if (i.action == RepAc.NUKE) {
-            tribe.nukePressedSince = upd;
+            tribe.recordNukePressedAt(upd);
             _effect.addSound(upd, pa, Sound.NUKE);
         }
     }
