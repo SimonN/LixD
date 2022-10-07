@@ -62,11 +62,6 @@ bool showTapeRecorderButtons(in View v)
         || v == View.replayBattle;
 }
 
-bool showModalWindowAfterGame(in View v)
-{
-    return v.canAssignSkills || v == View.replayBattle;
-}
-
 bool printResultToConsole(in View v)
 {
     return v == View.battle || v == View.observeBattle

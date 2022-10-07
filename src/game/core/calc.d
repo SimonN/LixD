@@ -41,7 +41,7 @@ implGameCalc(Game game) { with (game)
         game.calcActive();
         game.dispatchTweaks(); // Not yet impl'ed: feed into net
         noninputCalc();
-        game.atEndOfGame();
+        game.considerToEndGame();
     }
 }}
 
@@ -60,29 +60,41 @@ void calcModalWindow(Game game) { with (game)
     }
 }}
 
-void atEndOfGame(Game game) { with (game)
+void considerToEndGame(Game game)
 {
-    if (! nurse.doneAnimating()) {
-        // Not end of game yet
-        return;
+    if (game.nurse.doneAnimating()) {
+        game.calcEndOfPhysicsWhileEffectsAreStillGoingOn();
+        if (game._effect.nothingGoingOn) {
+            game.calcEndOfPhysicsAndEndOfEffects();
+        }
     }
-    // Physics are finished
-    if (! multiplayer && ! singleplayerHasWon) {
-        // The nuke button is checked here in addition to checking it during
+}
+
+void calcEndOfPhysicsWhileEffectsAreStillGoingOn(Game game) { with (game)
+{
+    immutable singleplayerHasLost = ! multiplayer && ! singleplayerHasWon;
+    if (singleplayerHasLost) {
+        // We check the nuke button here in addition to checking it during
         // physics in game.core.active. In game.core.active, it generates
         // the nuke input for the replay, but we won't process any further
         // replay updates after all lixes have died. Thus, after all lixes
         // have died, cancel the game immediately here without affecting
         // physics.
-        if (pan.nukeDoubleclicked)
+        if (pan.nukeDoubleclicked || ! view.canInterruptReplays) {
+            /*
+             * view.canInterruptReplays can only be false here while we don't
+             * have proper multiplayer puzzle solving. Meanwhile, we're reusing
+             * View.battle for that half-baked feature.
+             */
             _gotoMainMenu = true;
+        }
         else
             pan.suggestTooltip(Tooltip.ID.framestepOrQuit);
     }
+}}
 
-    if (! _effect.nothingGoingOn)
-        return;
-    // Physics and animations are finished, there is nothing else to see
+void calcEndOfPhysicsAndEndOfEffects(Game game) { with (game)
+{
     if (multiplayer || singleplayerHasWon || singleplayerHasNuked)
         _gotoMainMenu = true;
     if (view.printResultToConsole)
