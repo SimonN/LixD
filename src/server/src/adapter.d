@@ -218,8 +218,9 @@ private mixin template informLobbyist2016() {
     void informLobbyistAboutRooms(
         in PlNr receiv,
         in Version ofReceiver,
-        RoomListEntry2022[] roomEntries)
-    {
+        RoomListEntry2022[] roomEntries
+    ) {
+        bool sendApology = false;
         RoomListPacket2016 old;
         old.header.packetID = PacketStoC.listOfExistingRooms;
         old.header.plNr = receiv;
@@ -229,12 +230,43 @@ private mixin template informLobbyist2016() {
                  * Don't show un-enterable rooms to 2016 protocol users;
                  * they expect all shown rooms to be enterable.
                  */
+                if (e.owner.clientVersion.isRelease) {
+                    sendApology = true;
+                }
                 continue;
             }
             old.indices ~= e.room;
             old.profiles ~= e.owner.to2016with(e.room);
         }
         old.enetSendTo(_out.getPeer(receiv));
+        if (sendApology) {
+            informLobbyistAboutUnenterables(receiv, ofReceiver, roomEntries);
+        }
+    }
+
+    private void informLobbyistAboutUnenterables(
+        in PlNr receiv,
+        in Version ofReceiver,
+        RoomListEntry2022[] roomEntries
+    ) {
+        immutable Version newest = roomEntries
+            .map!(e => e.owner.clientVersion)
+            .fold!max(Version(0, 10, 0));
+        auto thosePeople = roomEntries
+            .filter!(e => e.owner.clientVersion == newest)
+            .map!(e => e.owner.name);
+        /*
+         * The 2016 protocol (up to 0.9.*) has no suitable packet with
+         * these semantics: "Your version is too old, and you may update
+         * to get new things, but you don't have to; you can keep doing your
+         * business and need not disconnect immediately. It's your choice."
+         * Thus, here, we fall back to sending a chat message, ostensibly from
+         * the receiver to himself, telling him what we want in English only.
+         */
+        sendChat(receiv, receiv, "Update your Lix " ~ ofReceiver.toString
+            ~ " to Lix " ~ newest.compatibles
+            ~ (thosePeople.empty ? "" : " to play with " ~ thosePeople.front)
+            ~ ".");
     }
 }
 

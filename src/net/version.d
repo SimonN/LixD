@@ -53,17 +53,22 @@ struct Version {
         return "%d.%d.*".format(major, minor);
     }
 
-    int opCmp(in Version rhs) const pure nothrow @safe @nogc
-    {
-        return major > rhs.major ? 1 : major < rhs.major ? -1
-            :  minor > rhs.minor ? 1 : minor < rhs.minor ? -1
-            :  patch > rhs.patch ? 1 : patch < rhs.patch ? -1 : 0;
-    }
+    const pure nothrow @safe @nogc {
+        int opCmp(in Version rhs)
+        {
+            return major > rhs.major ? 1 : major < rhs.major ? -1
+                :  minor > rhs.minor ? 1 : minor < rhs.minor ? -1
+                :  patch > rhs.patch ? 1 : patch < rhs.patch ? -1 : 0;
+        }
 
-    bool compatibleWith(in Version rhs) const pure nothrow @safe @nogc
-    {
-        return major == rhs.major
-            && minor == rhs.minor;
+        bool compatibleWith(in Version rhs) const pure nothrow @safe @nogc
+        {
+            return major == rhs.major
+                && minor == rhs.minor;
+        }
+
+        bool isRelease() { return major >= 0 && minor >= 0 && patch >= 0; }
+        bool isExperimental() { return ! isRelease; }
     }
 
     enum len = 12;
