@@ -17,6 +17,7 @@ import std.string;
 import gui;
 import file.language;
 import file.option;
+import hardware.keyset;
 import net.client;
 import net.cliserv;
 import net.iclient;
@@ -75,7 +76,7 @@ public:
 
         _connect = new TextButton( new Geom(0, 0, 100, 40, From.BOTTOM));
         _connect.text = Lang.commonOk.transl;
-        _connect.hotkey = keyMenuMainNetwork;
+        _connect.hotkey = KeySet(keyMenuOkay, keyMenuMainNetwork);
         _connect.onExecute = &this.connect;
 
         addChildren(_radio, _connect, _hostname, _port);
