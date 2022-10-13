@@ -285,7 +285,7 @@ $optionGroupControls Steuerung
 $optionGroupGameKeys Spieltasten
 $optionGroupEditorKeys Editortasten
 $optionGroupMenuKeys Menütasten
-$optionUserName Spielername|Dein Name erscheint in Replays und im Netzwerkspiel.|Lix speichert Einstellungen in ./data/user/ unter deinem Namen.
+$optionUserName Spielername|Dein Name erscheint in Replays und im Netzwerkspiel.|Lix speichert Einstellungen in der Datei ./user/options.sdl.
 $optionLanguage Sprache/Language|Sprache der Lix-Benutzeroberfläche.
 $optionReplayAutoSolutions Level-Lösungen autospeichern|Replays all deiner Einzelspieler-Lösungen speichern.|Wenn ein Versuch nicht klappt, wird er auch nicht gespeichert.
 $optionReplayAutoMulti Im Mehrspieler autospeichern|Replays all deiner Mehrspieler-Partien automatisch speichern.|Dies speichert gewonnene und verlorene Partien.

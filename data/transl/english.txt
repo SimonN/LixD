@@ -296,7 +296,7 @@ $optionGroupControls Controls
 $optionGroupGameKeys Game keys
 $optionGroupEditorKeys Editor keys
 $optionGroupMenuKeys Menu keys
-$optionUserName Player name|Your name appears in replays and in multiplayer games.|Lix saves settings to a file in ./data/user/ named after you.
+$optionUserName Player name|Your name appears in replays and in multiplayer games.|Lix saves settings to the file ./user/options.sdl.
 $optionLanguage Language|Language throughout Lix's user interface.
 $optionReplayAutoSolutions Auto-save level solutions|Saves a replay automatically when you solve a singleplayer level.
 $optionReplayAutoMulti Auto-save multiplayer games|Saves a replay automatically when you have finished a multiplayer game.

@@ -296,7 +296,7 @@ $optionGroupControls Kontroller
 $optionGroupGameKeys Speltangenter
 $optionGroupEditorKeys Redigerartangenter
 $optionGroupMenuKeys Menytangenter
-$optionUserName Namn på spelare|Ditt namn visas i repriser och i spel för flerspelarläge.|Lix sparar inställningar till en fil i ./data/user/ namngiven efter dig.
+$optionUserName Namn på spelare|Ditt namn visas i repriser och i spel för flerspelarläge.|Lix sparar inställningar till filen ./user/options.sdl.
 $optionLanguage Språk|Språk som används i Lix användargränssnitt.
 $optionReplayAutoSolutions Autospara banlösningar|Sparar automatiskt en repris när du löser en bana i enspelarläge.
 $optionReplayAutoMulti Autospara spel för flerspelarläge|Sparar automatiskt en repris när du har klarat ett spel i flerspelarläge.
