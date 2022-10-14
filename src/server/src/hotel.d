@@ -96,7 +96,17 @@ public:
     void movePlayer(in PlNr mover, in Room to)
     {
         auto from = _suites[].find!(sui => sui.contains(mover)).takeOne;
-        if (from.empty || _suites[to].contains(mover)) {
+        if (from.empty) {
+            return;
+        }
+        assert (_suites[from.front.room].room == from.front.room);
+        assert (_suites[from.front.room] is from.front);
+        if (_suites[to].contains(mover)) {
+            return;
+        }
+        if (! _suites[to].allows(from.front.profileOf(mover).clientVersion)) {
+            // Idea: Invent an error packet to send back here.
+            // Hotel-/suite-wise, it's correct to keeping everything as-is.
             return;
         }
         const pr = from.front.pop(mover,
@@ -161,7 +171,7 @@ private:
                 RoomListEntry2022 entry;
                 entry.room = sui.room;
                 entry.numInhabitants = sui.numInhabitants;
-                entry.owner = sui.profileOfOwner;
+                entry.owner = sui.owner;
                 return entry;
             }).array;
         _suites[Room(0)].informLobbyistsAboutRooms(entries);

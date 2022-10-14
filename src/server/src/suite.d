@@ -33,7 +33,8 @@ interface Suite {
         int numInhabitants();
         final bool empty() { return numInhabitants() == 0; }
         bool contains(in PlNr);
-        Profile2022 profileOfOwner() in { assert (!empty); };
+        Profile2022 owner() in { assert (!empty); };
+        Profile2022 profileOf(in PlNr pl) in { assert (contains(pl)); };
         bool allows(in Version);
     }
 
@@ -98,7 +99,7 @@ public:
         return (who in _players) !is null;
     }
 
-    Profile2022 profileOfOwner() const pure nothrow @safe @nogc
+    Profile2022 owner() const pure nothrow @safe @nogc
     in { assert (! empty); }
     do {
         const Profile2022* ret = _fe.owner in _players;
@@ -106,9 +107,13 @@ public:
         return *ret;
     }
 
+    Profile2022 profileOf(in PlNr who) const pure nothrow @safe @nogc
+    in { assert (contains(who)); }
+    do { return *(who in _players); }
+
     bool allows(in Version newbie) const pure nothrow @safe @nogc
     {
-        return empty || newbie.compatibleWith(profileOfOwner.clientVersion);
+        return empty || newbie.compatibleWith(owner.clientVersion);
     }
 
     void add(in PlNr who, in Profile2022 newbie)
@@ -302,11 +307,15 @@ public:
         return (who in _lobbyists) !is null;
     }
 
-    Profile2022 profileOfOwner() const pure nothrow @safe @nogc
+    Profile2022 owner() const pure nothrow @safe @nogc
     in { assert (!empty); }
     do {
         return Profile2022(); // shouldn't be called. Questionable OO.
     }
+
+    Profile2022 profileOf(in PlNr who) const pure nothrow @safe @nogc
+    in { assert (contains(who)); }
+    do { return *(who in _lobbyists); }
 
     bool allows(in Version newbie) const pure nothrow @safe @nogc
     {
