@@ -92,7 +92,8 @@ public:
 
     void unregister(NetClientObserver obs)
     {
-        assert (_observers.canFind(obs), "Can't remove unknown observer");
+        // Don't assert; Game will double-unregister on lost connection. Hmm.
+        // assert (_observers.canFind(obs), "Can't remove unknown observer");
         _observers = _observers[].remove!(entry => entry is obs);
     }
 
