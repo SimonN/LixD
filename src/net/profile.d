@@ -22,10 +22,11 @@ alias Profile = Profile2022;
 
 struct Profile2022 {
 private:
-    mixin NameAsFixStr!64;
+    mixin NameAsFixStr!48;
 
 public:
     enum int len = 24 + Handicap.len + _name.len;
+
     enum Feeling : ubyte {
         thinking = 0, // Frame 0 in menu_chk.I
         ready = 2, // Frame 2
@@ -93,7 +94,7 @@ public:
         catch (Exception) {
         }
         handicap = Handicap(buf[24 .. 40]);
-        _name = FixStr!64(buf[40 .. 40 + _name.len]);
+        _name = typeof(_name)(buf[40 .. 40 + _name.len]);
         // If struct grows in future, check buf.length before each field.
     }
 }
