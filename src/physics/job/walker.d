@@ -82,45 +82,70 @@ public:
 
 protected:
     final void performWalkingOrRunning()
-    {
-        immutable oldEx = lixxie.ex;
-        immutable oldEy = lixxie.ey;
-        immutable oldEncFoot = lixxie.footEncounters;
+    {   /*
+         * This function performWalkingOrRunning() will be called far more
+         * often than anything else. Let's keep it fast. Avoid reading the
+         * same terrain more than once; instead, cache and reuse such reads.
+         */
+        int wall = void;
+        bool floorIsSolid = void;
 
-        // The first frame is a short break taken after standing up or
-        // falling onto this position. perform has already advanced
-        // the frame, so we have to check frame 0, not frame -1.
-        if (frame != 0) {
-            lixxie.moveAhead();
+        if (frame == 0) {
+            /*
+             * The first frame is a short break taken after standing up or
+             * falling onto this position. perform has already advanced
+             * the frame, so we have to check frame 0, not frame -1.
+             * Don't attempt forward motion here (only cache some terrain).
+             */
+            wall = lixxie.solidWallHeight(0, 0);
+            floorIsSolid = canWeStandAt(0);
         }
-        immutable bool turnAfterAll = handleWallOrPitHere();
-
-        if (turnAfterAll) {
-            // Start climbing or turn. Either happens at the old position, so
-            // we have to reset position and encounters to where we started.
-            lixxie.ex = oldEx;
-            lixxie.ey = oldEy;
-            lixxie.forceFootEncounters(oldEncFoot);
-            bool climbedAfterAll = false;
-
-            if (lixxie.abilityToClimb) {
-                bool enoughSpaceToClimb = true;
-                for (int i = 1; i <= highestStepUp; ++i)
-                    if (lixxie.isSolid(0, -i)) {
-                        enoughSpaceToClimb = false;
-                        break;
-                    }
-                if (enoughSpaceToClimb) {
-                    lixxie.become(Ac.climber);
-                    return;
-                }
+        else {
+            // Move forward or, if we can't, react to the wall that stops us.
+            wall = lixxie.solidWallHeight(2, 0);
+            floorIsSolid = canWeStandAt(2);
+            if (! floorIsSolid || wall <= highestStepUp) {
+                /*
+                 * We are not in front of a tall wall.
+                 * Move even without ground: This is airwalk. Bug or feature?
+                 * See: https://www.lemmingsforums.net/index.php?topic=4005.0
+                 */
+                lixxie.moveAhead();
             }
-            lixxie.turn();
-            handleWallOrPitHere();
+            // In front of a tall wall, either climb or turn.
+            else if (lixxie.abilityToClimb && hasSpaceToClimbHere()) {
+                lixxie.become(Ac.climber);
+                return;
+            }
+            else {
+                lixxie.turn();
+                wall = lixxie.solidWallHeight(0, 0);
+                floorIsSolid = canWeStandAt(0);
+            }
+        }
+        /*
+         * Here, we're still a walker/runner.
+         * We moved ahead, or turned, or stayed in place because frame == 0.
+         * In all three cases, now (wall) is the wall height at our foot's x
+         * and (floorIsSolid) is what canWeStandAt(0) would give.
+         */
+        if (! floorIsSolid) {
+            stepDownOrStartFalling();
+            return;
+        }
+        // We're still a walker/runner. Stepping up without turning/climbing.
+        if (wall > highestStepUp) {
+            // We're trapped inside solid terrain.
+        }
+        else if (wall >= 6) {
+            lixxie.become(Ac.ascender);
+        }
+        else {
+            lixxie.moveUp(wall);
         }
     }
 
-    void setFrameAfterShortFallTo(in Job old, int targetFrame)
+    final void setFrameAfterShortFallTo(in Job old, int targetFrame)
     {
         if (old.ac == Ac.faller) {
             auto faller = cast (const(Faller)) old;
@@ -137,52 +162,46 @@ protected:
     }
 
 private:
-    // returns true if the lixxie shall turn or can start to climb
-    final bool handleWallOrPitHere()
+    final bool canWeStandAt(in int xAhead)
     {
-        // Check for floor at the new position. If there is none, check
-        // slightly above -- we don't want to fall through checkerboards,
-        // but we want to ascend them.
-        if (lixxie.isSolid() || lixxie.isSolid(0, 1)) {
-            // do the wall check to turn or ascend
-            immutable int upBy = lixxie.solidWallHeight(0);
-            if (upBy > highestStepUp)
-                return true;
-            else if (upBy >= 6)
-                lixxie.become(Ac.ascender);
-            else
-                lixxie.moveUp(upBy);
-        }
-
-        // No floor? Then step down or start falling
-        else {
-            assert (! lixxie.isSolid(0, 1) && ! lixxie.isSolid(0, 2));
-            immutable spaceBelowForAnyFalling = 7;
-            immutable spaceBelowForNormalFalling = 9;
-            int       spaceBelow = 1; // because of the assertions
-            while (spaceBelow < spaceBelowForNormalFalling
-                && ! lixxie.isSolid(0, spaceBelow + 2)
-            ) {
-                ++spaceBelow;
-            }
-
-            if (spaceBelow >= spaceBelowForNormalFalling)
-                Faller.becomeAndFallPixels(lixxie, 2);
-            else if (spaceBelow >= spaceBelowForAnyFalling)
-                // Space 7 -> fall 3. Space 8 -> fall 4.
-                // Space >= 9 -> fall 2, but that's handled by the 'if' above.
-                Faller.becomeAndFallPixels(lixxie, spaceBelow - 4);
-            else
-                lixxie.moveDown(spaceBelow);
-        }
-        return false;
+        return lixxie.isSolid(xAhead, 2) // Floor below foot.
+            || lixxie.isSolid(xAhead, 1); // Floor above foot, for checkerboarding:
+        // Don't fall through checkerboards; but ascend them.
     }
-    // end method handleWallOrPitHere()
+
+    final bool hasSpaceToClimbHere()
+    {
+        for (int i = 1; i <= highestStepUp; ++i)
+            if (lixxie.isSolid(0, -i))
+                return false;
+        return true;
+    }
+
+    final void stepDownOrStartFalling() {
+        assert (! canWeStandAt(0));
+        immutable spaceBelowForAnyFalling = 7;
+        immutable spaceBelowForNormalFalling = 9;
+        int       spaceBelow = 1; // because of the assertions
+        while (spaceBelow < spaceBelowForNormalFalling
+            && ! lixxie.isSolid(0, spaceBelow + 2)
+        ) {
+            ++spaceBelow;
+        }
+
+        if (spaceBelow >= spaceBelowForNormalFalling)
+            Faller.becomeAndFallPixels(lixxie, 2);
+        else if (spaceBelow >= spaceBelowForAnyFalling)
+            // Space 7 -> fall 3. Space 8 -> fall 4.
+            // Space >= 9 -> fall 2, but that's handled by the 'if' above.
+            Faller.becomeAndFallPixels(lixxie, spaceBelow - 4);
+        else
+            lixxie.moveDown(spaceBelow);
+    }
 }
 
 
 
-class Runner : Walker {
+final class Runner : Walker {
 public:
     override AfterAssignment onManualAssignment(Job old)
     {
@@ -215,7 +234,8 @@ public:
         // A runner performs two walker cycles per frame, unless stuff happens.
         immutable oldDir = lixxie.dir;
         performWalkingOrRunning();
-        if (lixxie.ac == Ac.runner && oldDir == lixxie.dir)
+        if (lixxie.ac == Ac.runner && oldDir == lixxie.dir) {
             performWalkingOrRunning();
+        }
     }
 }
