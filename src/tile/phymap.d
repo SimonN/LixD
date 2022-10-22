@@ -84,21 +84,21 @@ final class Phymap : Topology {
     }
     do {
         Rect ret = Rect(0, 0, xl, yl);
-        // This relies on the representation of lt: row, row, row...
-        // While the row at ret.x is all zeroes, smallen ret
-        while (ret.xl > 0 && lt.drop(ret.x).stride(xl).allZero) {
-            ++ret.x;
-            --ret.xl;
-        }
-        while (ret.xl > 0 && lt.drop(ret.x + ret.xl - 1).stride(xl).allZero)
-            --ret.xl;
-        // Analyze a single row in the representation of lt
-        while (ret.yl > 0 && lt.drop(ret.y * xl).take(xl).allZero) {
+        // This relies on the representation of lt: column, column, column...
+        // While the column at ret.y is all zeroes, smallen ret
+        while (ret.yl > 0 && lt.drop(ret.y).stride(yl).allZero) {
             ++ret.y;
             --ret.yl;
         }
-        while (ret.yl > 0 && lt.drop((ret.y + ret.yl-1) * xl).take(xl).allZero)
+        while (ret.yl > 0 && lt.drop(ret.y + ret.yl - 1).stride(yl).allZero)
             --ret.yl;
+        // Analyze a single column in the representation of lt
+        while (ret.xl > 0 && lt.drop(ret.x * yl).take(yl).allZero) {
+            ++ret.x;
+            --ret.xl;
+        }
+        while (ret.xl > 0 && lt.drop((ret.x + ret.xl-1) * yl).take(yl).allZero)
+            --ret.xl;
         return ret;
     }
 
@@ -115,9 +115,9 @@ final class Phymap : Topology {
             return;
         Phybitset[] cropped = new Phybitset[rect.xl * rect.yl];
         // This implementation works for torus maps, too, but I never use that.
-        foreach (y; 0 .. rect.yl)
-            foreach (x; 0 .. rect.xl)
-                cropped[y * rect.xl + x] = get(Point(rect.x + x, rect.y + y));
+        foreach (x; 0 .. rect.xl)
+            foreach (y; 0 .. rect.yl)
+                cropped[x * rect.yl + y] = get(Point(rect.x + x, rect.y + y));
         resize(rect.xl, rect.yl);
         lt = cropped;
     }
@@ -161,8 +161,8 @@ final class Phymap : Topology {
     {
         with (mask) {
             immutable offset = Point(offsetX, offsetY);
-            foreach (int y; 0 .. solid.yl)
-                foreach (int x; 0 .. solid.xl) {
+            foreach (int x; 0 .. solid.xl)
+                foreach (int y; 0 .. solid.yl) {
                     immutable p = Point(x, y);
                     if (solid.get(x, y)
                         && (ignoreSteel is null || ! ignoreSteel.get(x, y))
@@ -187,16 +187,16 @@ final class Phymap : Topology {
 
     void rect(alias func, Args...)(Rect re, Args args)
     {
-        for     (int ix = 0; ix < re.xl; ++ix)
-            for (int iy = 0; iy < re.yl; ++iy)
+        for (int iy = 0; iy < re.yl; ++iy)
+            for (int ix = 0; ix < re.xl; ++ix)
                 func(Point(re.x + ix, re.y + iy), args);
     }
 
     int rectSum(alias func, Args...)(Rect re, Args args)
     {
         int ret = 0;
-        for     (int ix = 0; ix < re.xl; ++ix)
-            for (int iy = 0; iy < re.yl; ++iy)
+        for (int iy = 0; iy < re.yl; ++iy)
+            for (int ix = 0; ix < re.xl; ++ix)
                 ret += ! ! func(Point(re.x + ix, re.y + iy), args);
         return ret;
     }
@@ -229,10 +229,10 @@ final class Phymap : Topology {
     {
         assert (mask.solid);
         int steelHit = 0;
-        foreach (int iy; 0 .. mask.solid.yl) {
-            Point p = Point(0, topLeft.y + iy);
-            foreach (int ix; 0 .. mask.solid.xl) {
-                p.x = topLeft.x + ix;
+        foreach (int ix; 0 .. mask.solid.xl) {
+            Point p = Point(topLeft.x + ix, 0);
+            foreach (int iy; 0 .. mask.solid.yl) {
+                p.y = topLeft.y + iy;
                 if (mask.solid.get(ix, iy))
                     steelHit += setAirCountSteel(p);
             }
@@ -255,7 +255,7 @@ final class Phymap : Topology {
             albitDestroy(outputBitmap);
         auto targetBitmap = TargetBitmap(outputBitmap);
 
-        foreach (y; 0 .. yl) foreach (x; 0 .. xl) {
+        foreach (x; 0 .. xl) foreach (y; 0 .. yl) {
             immutable Point p = Point(x, y);
             immutable int red   = !!(get(p) & Phybit.terrain);
             immutable int green = !!(get(p) & Phybit.steel);
@@ -267,17 +267,17 @@ final class Phymap : Topology {
     }
 
 private:
-    // "lt" == "lookup table", aligned as row, row, row, row, ...
+    // "lt" == "lookup table", aligned as column, column, column, ...
     // I don't use the matrix class here, the code was already
     // written in C++ without it and works well
     Phybitset[] lt;
 
-    Phybitset getAt(in Point p) const { return lt[p.y * xl + p.x]; }
-    void  addAt(in Point p, Phybitset n) { lt[p.y * xl + p.x] |= n;   }
+    Phybitset getAt(in Point p) const { return lt[p.x * yl + p.y]; }
+    void  addAt(in Point p, Phybitset n) { lt[p.x * yl + p.y] |= n;   }
     void  rmAt (in Point p, Phybitset n)
     {
         static assert (Phybitset.sizeof == 2);
-        lt[p.y * xl + p.x] &= ~ cast(int) n;
+        lt[p.x * yl + p.y] &= ~ cast(int) n;
     }
 
     bool inside(in Point p) const
