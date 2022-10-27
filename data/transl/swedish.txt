@@ -65,6 +65,7 @@ $previewLevelSingleTrophySaved Bästa:
 $previewLevelSingleTrophySkills Förmågor:
 $previewLevelMultiIntendedNumPlayers Spelare:
 $previewReplayPlayer Spelare:
+$previewReplayFilenameOfReplay Repris:
 $previewReplayPointsTo ⟶
 $previewMissingTiles %d saknade plattläggningar:
 $previewMissingTilesMoreSee och %d till, se “%s”

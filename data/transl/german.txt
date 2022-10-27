@@ -61,6 +61,7 @@ $previewLevelSingleTrophySaved Rekord:
 $previewLevelSingleTrophySkills Fähigkeiten:
 $previewLevelMultiIntendedNumPlayers Spielerzahl:
 $previewReplayPlayer Spieler:
+$previewReplayFilenameOfReplay Replay:
 $previewReplayPointsTo ⟶
 $previewMissingTiles %d fehlende Stücke:
 $previewMissingTilesMoreSee und %d weitere, siehe „%s“

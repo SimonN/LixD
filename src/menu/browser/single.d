@@ -35,8 +35,8 @@ private:
 public:
     this()
     {
-        super(Lang.browserSingleTitle.transl,
-            basics.globals.dirLevels, super.pickerConfig());
+        super(Lang.browserSingleTitle.transl, basics.globals.dirLevels,
+            ylOfNameplateForLevels, super.pickerConfig());
         commonConstructor();
         // Final class calls:
         super.highlight(file.option.singleLastLevel);

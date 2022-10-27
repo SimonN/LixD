@@ -20,9 +20,9 @@ private:
     Optional!MsgBox _boxDelete;
 
 public:
-    this(T)(string title, Filename baseDir, T t)
+    this(T)(string title, Filename baseDir, in float ylOfNameplate, T t)
     {
-        super(title, baseDir, t);
+        super(title, baseDir, ylOfNameplate, t);
         _delete = new TextButton(newDeleteButtonGeom,
             Lang.browserDelete.transl);
         _delete.hotkey = file.option.keyMenuDelete;

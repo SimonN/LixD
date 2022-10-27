@@ -201,7 +201,7 @@ public:
         _topCaption = new Label(
             new Geom(0, 6, xlg - 10, 20, From.TOP), topCaption.transl);
         _preview = new FullPreview(
-            new Geom(0, 30, xlg - 40, ylg - 36, From.TOP));
+            new Geom(0, 30, xlg - 40, ylg - 36, From.TOP), 5f, 54f);
         _preview.preview(_nextLevel.level);
         addChildren(_topCaption, _preview);
         hotkey = aHotkey;

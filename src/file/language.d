@@ -137,6 +137,7 @@ enum Lang {
     previewLevelSingleTrophySkills,
     previewLevelMultiIntendedNumPlayers,
     previewReplayPlayer,
+    previewReplayFilenameOfReplay,
     previewReplayPointsTo,
     previewMissingTiles,
     previewMissingTilesMoreSee,

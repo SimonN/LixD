@@ -20,9 +20,18 @@ module menu.preview.base;
 
 public import level.level;
 public import file.replay;
+public import file.filename;
 
 interface PreviewLevelOrReplay {
     void previewNone();
-    void preview(in Level);
-    void preview(in Replay, in Level);
+
+    void preview(in Level l)
+    in { assert (l !is null); };
+
+    void preview(in Replay r, in Filename fnOfThatReplay, in Level l)
+    in {
+        assert (r !is null);
+        assert (fnOfThatReplay !is null);
+        assert (l !is null);
+    };
 }

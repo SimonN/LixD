@@ -16,15 +16,15 @@ private:
     Nameplate _nameplate;
 
 public:
-    this(Geom g)
-    {
+    this(Geom g,
+        in float ylBetweenThumbnailAndNameplate,
+        in float ylForNameplate // Use this much ylg from g for nameplate.
+    ) {
         super(g);
-        immutable float ySpacing = g.ylg >= 220f ? 20f : 5f;
-        immutable float ylNamepl = g.ylg >= 220f ? 60f : 54f;
-        _thumbnail = new LevelThumbnail(
-            new Geom(0, 0, xlg, ylg - ySpacing - ylNamepl));
-        _nameplate = new Nameplate(
-            new Geom(0, 0, xlg, ylNamepl, From.BOTTOM));
+        _thumbnail = new LevelThumbnail(new Geom(0, 0, xlg,
+            ylg - ylBetweenThumbnailAndNameplate - ylForNameplate));
+        _nameplate = new Nameplate(new Geom(0, 0, xlg,
+            ylForNameplate, From.BOTTOM));
         addChildren(_thumbnail, _nameplate);
     }
 
@@ -50,9 +50,9 @@ public:
         _nameplate.preview(lev);
     }
 
-    void preview(in Replay rep, in Level lev)
+    void preview(in Replay rep, in Filename fnOfThatReplay, in Level lev)
     {
-        _thumbnail.preview(rep, lev);
-        _nameplate.preview(rep, lev);
+        _thumbnail.preview(rep, fnOfThatReplay, lev);
+        _nameplate.preview(rep, fnOfThatReplay, lev);
     }
 }

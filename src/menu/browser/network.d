@@ -16,8 +16,8 @@ private:
 public:
     this()
     {
-        super(Lang.browserNetworkTitle.transl,
-            basics.globals.dirLevels, super.pickerConfig());
+        super(Lang.browserNetworkTitle.transl, basics.globals.dirLevels,
+            ylOfNameplateForLevels, super.pickerConfig());
         scope (success)
             super.highlight(file.option.networkLastLevel);
     }

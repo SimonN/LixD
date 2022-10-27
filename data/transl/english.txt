@@ -65,6 +65,7 @@ $previewLevelSingleTrophySaved Best:
 $previewLevelSingleTrophySkills Skills:
 $previewLevelMultiIntendedNumPlayers Players:
 $previewReplayPlayer Player:
+$previewReplayFilenameOfReplay Replay:
 $previewReplayPointsTo ⟶
 $previewMissingTiles %d missing tiles:
 $previewMissingTilesMoreSee and %d more, see “%s”

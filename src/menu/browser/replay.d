@@ -35,7 +35,7 @@ public:
     this()
     {
         super(Lang.browserReplayTitle.transl, basics.globals.dirReplays,
-            PickerConfig!(Breadcrumb, ReplayTiler)());
+            ylOfNameplateForReplays, PickerConfig!(Breadcrumb, ReplayTiler)());
         commonConstructor();
         // Final class calls:
         super.highlight(file.option.replayLastLevel);
@@ -65,7 +65,7 @@ protected:
     do {
         _matcher = some(new ReplayToLevelMatcher(fn));
         foreach (lv; matcher.preferredLevel)
-            preview(matcher.replay, lv);
+            preview(matcher.replay, fn, lv);
         _buttonPlayWithPointedTo.shown = matcher.pointedToIsGood;
     }
 

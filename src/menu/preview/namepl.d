@@ -45,11 +45,11 @@ public:
         _replay.hide();
     }
 
-    void preview(in Replay rep, in Level lev)
+    void preview(in Replay rep, in Filename fnOfThatReplay, in Level lev)
     {
         _level.hide();
         _replay.show();
-        _replay.preview(rep, lev);
+        _replay.preview(rep, fnOfThatReplay, lev);
     }
 }
 
@@ -93,32 +93,45 @@ class ReplayNameplate : Element {
 private:
     Label _title;
     LabelTwo _player;
-    LabelTwo _pointsTo;
+
+    /*
+     * Filename of the replay itself. This replay filename appears already in
+     * the file picker on the left of the screen, but replay filenames can
+     * get long and unwieldy. Let's show the _tail_ of the filename here
+     * because the picker shows only the front when the picker abbreviates.
+     */
+    LabelTwo _repFn;
+    LabelTwo _pointsTo; // Filename of the pointed-to level
 
 public:
     this(Geom g)
     do {
         super(g);
-        _title = new Label(new Geom(0, 0, xlg, 20, From.TOP_LEFT));
-        _player = new LabelTwo(new Geom(0, 0, xlg, 20, From.LEFT),
+        float yFor(int i) { return i * (ylg - 20f) / 3f; } // y for the i-th.
+        _title = new Label(new Geom(0, yFor(0), xlg, 20, From.TOP_LEFT));
+        _player = new LabelTwo(new Geom(0, yFor(1), xlg, 20, From.TOP_LEFT),
             Lang.previewReplayPlayer.transl);
-        _pointsTo = new LabelTwo(new Geom(0, 0, xlg, 20, From.BOTTOM_LEFT),
+        _repFn = new LabelTwo(new Geom(0, yFor(2), xlg, 20, From.TOP_LEFT),
+            Lang.previewReplayFilenameOfReplay.transl);
+        _pointsTo = new LabelTwo(new Geom(0, yFor(3), xlg, 20, From.TOP_LEFT),
             Lang.previewReplayPointsTo.transl);
-        addChildren(_title, _player, _pointsTo);
+        addChildren(_title, _player, _repFn, _pointsTo);
         undrawColor = color.gui.m;
     }
 
     void setUndrawBeforeDraw()
     {
         _title.undrawBeforeDraw = true;
+        _repFn.setUndrawBeforeDraw();
         _player.setUndrawBeforeDraw();
         _pointsTo.setUndrawBeforeDraw();
     }
 
-    void preview(in Replay rep, in Level lev)
+    void preview(in Replay rep, in Filename fnOfThatReplay, in Level lev)
     {
         _title.text = lev.name;
         _player.value = rep.players.byValue.map!(p => p.name).join(", ");
+        _repFn.value = fnOfThatReplay.file;
         rep.levelFilename.match!(
             () {
                 _pointsTo.hide();

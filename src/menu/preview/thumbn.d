@@ -78,7 +78,7 @@ public:
         reqDraw();
     }
 
-    void preview(in Replay ignored, in Level lev)
+    void preview(in Replay ignored, in Filename ignoredToo, in Level lev)
     {
         preview(lev);
     }
