@@ -203,7 +203,6 @@ $editorButtonAddGoal Ziel: Ein Ziel, also einen Lix-Ausgang platzieren.
 $editorButtonAddHazard Gefahr: Eine Falle, Wasser oder Feuer platzieren.
 $editorButtonMenuConstants Konstanten: Titel und wichtige Zahlen einstellen.
 $editorButtonMenuTopology Karte: Abmessungen ändern, Außenkanten verkleben.
-$editorButtonMenuLooks Aussehen: Hintergrund färben, Bildschirm-Start ändern.
 $editorButtonMenuSkills Fähigkeiten: Anzahl Lix-Fähigkeiten pro Spieler einstellen.
 
 $saveBrowserTitle Speichern unter
@@ -396,7 +395,8 @@ $optionEdCopy Kopieren
 $optionEdDelete Löschen
 $optionEdForeground Nach vorn
 $optionEdBackground Nach hinten
-$optionEdMirror Spiegeln
+$optionEdMirrorHorizontally Spiegeln
+$optionEdFlipVertically Kopfüber
 $optionEdRotate Drehen
 $optionEdDark Schwarz
 $optionEdAddTerrain Terrain hinzuf.

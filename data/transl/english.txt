@@ -209,7 +209,6 @@ $editorButtonAddGoal Goal: Add a goal, i.e., an exit, for the lix.
 $editorButtonAddHazard Hazard: Add a trap, water or fire.
 $editorButtonMenuConstants Constants: Name the level, set fundamental values.
 $editorButtonMenuTopology Map: Resize the level, wrap the edges.
-$editorButtonMenuLooks Looks: Color the background, choose screen starting position.
 $editorButtonMenuSkills Skills: Decide how many lix skills each player may assign.
 
 $saveBrowserTitle Save As
@@ -408,7 +407,8 @@ $optionEdCopy Copy
 $optionEdDelete Delete
 $optionEdForeground Foreground
 $optionEdBackground Background
-$optionEdMirror Mirror
+$optionEdMirrorHorizontally Mirror
+$optionEdFlipVertically Flip
 $optionEdRotate Rotate
 $optionEdDark Draw black
 $optionEdAddTerrain Add terrain

@@ -107,9 +107,14 @@ void makePanel(Editor editor)
         buttonZoom.hotkey = keyZoomIn;
         buttonZoom.hotkeyRight = keyZoomOut;
 
-        onExecute(Lang.editorButtonMirrorHorizontally, keyEditorMirror, () {
-            editor.mirrorSelectionHorizontally;
-        });
+        onExecute(Lang.editorButtonMirrorHorizontally,
+            keyEditorMirrorHorizontally, () {
+                editor.mirrorSelectionHorizontally;
+            });
+        onExecute(Lang.editorButtonFlipVertically,
+            keyEditorFlipVertically, () {
+                editor.flipSelectionVertically;
+            });
         onExecute(Lang.editorButtonSelectRotate, keyEditorRotate, () {
             editor.rotateSelectionClockwise;
         });

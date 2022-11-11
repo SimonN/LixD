@@ -44,6 +44,8 @@ void toggleDarkTheSelection(Editor editor) { with (editor)
 
 alias mirrorSelectionHorizontally
     = transformSelectionInBoxAndApply!createMirroredOccWithin;
+alias flipSelectionVertically
+    = transformSelectionInBoxAndApply!createFlippedOccWithin;
 alias rotateSelectionClockwise
     = transformSelectionInBoxAndApply!createRotatedOccWithin;
 
@@ -76,26 +78,55 @@ private void transformSelectionInBoxAndApply(alias trafo)(Editor editor)
         .toCompoundUndoable);
 }}
 
-private immutable(Occurrence) createMirroredOccWithin(
-    in Occurrence old,
+/*
+ * Call this at the start of horizontal mirroring or vertical flipping.
+ * Don't call this at the start of rotating; there, do everything yourself.
+ */
+Occurrence moveWithinBoxOfAllTilesToPrepareForMirrorOrFlip(
+    Occurrence toMove,
     in Topology topol,
-    in Rect box // see mirrorSelectionHorizontally
+    in Rect box // of all tiles that will be mirrored
 ) {
-    Occurrence ret = old.clone;
-    immutable self = ret.cutbitOnMap;
+    immutable self = toMove.cutbitOnMap;
     /*
      * The box is around all the selboxes, but we move according to our
      * cutbit's box, not according to our selbox. This fixes github #144.
      * This differs fundamentally from what we do for rotations!
      */
-    ret.loc.x -= self.x - box.x;
-    ret.loc.x += box.x + box.xl - self.x - self.xl;
-    ret.loc = topol.wrap(ret.loc);
+    toMove.loc.x -= self.x - box.x;
+    toMove.loc.x += box.x + box.xl - self.x - self.xl;
+    toMove.loc = topol.wrap(toMove.loc);
+    return toMove;
+}
+
+private immutable(Occurrence) createMirroredOccWithin(
+    in Occurrence old,
+    in Topology topol,
+    in Rect box // of all tiles that will be mirrored
+) {
+    Occurrence ret = old.clone.moveWithinBoxOfAllTilesToPrepareForMirrorOrFlip(
+                                topol, box);
     if (ret.can.mirror) {
         ret.mirrY = ! ret.mirrY;
     }
     if (ret.can.rotate) {
         ret.rotCw = (2 - ret.rotCw) & 3;
+    }
+    return cast(immutable(Occurrence)) ret;
+}
+
+private immutable(Occurrence) createFlippedOccWithin(
+    in Occurrence old,
+    in Topology topol,
+    in Rect box // of all tiles that will be mirrored
+) {
+    Occurrence ret = old.clone.moveWithinBoxOfAllTilesToPrepareForMirrorOrFlip(
+                                topol, box);
+    if (ret.can.mirror) {
+        ret.mirrY = ! ret.mirrY;
+    }
+    if (ret.can.rotate) {
+        ret.rotCw = -ret.rotCw & 3;
     }
     return cast(immutable(Occurrence)) ret;
 }

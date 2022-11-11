@@ -266,7 +266,6 @@ enum Lang {
     editorButtonAddHazard,
     editorButtonMenuConstants,
     editorButtonMenuTopology,
-    editorButtonMenuLooks,
     editorButtonMenuSkills,
 
     saveBrowserTitle,
@@ -464,7 +463,8 @@ enum Lang {
     optionEdDelete,
     optionEdBackground,
     optionEdForeground,
-    optionEdMirror,
+    optionEdMirrorHorizontally,
+    optionEdFlipVertically,
     optionEdRotate,
     optionEdDark,
     optionEdAddTerrain,

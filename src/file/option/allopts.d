@@ -192,7 +192,8 @@ UserOption!KeySet
     keyEditorUngroup,
     keyEditorBackground,
     keyEditorForeground,
-    keyEditorMirror,
+    keyEditorMirrorHorizontally,
+    keyEditorFlipVertically,
     keyEditorRotate,
     keyEditorDark,
     keyEditorAddTerrain,
@@ -407,7 +408,8 @@ do {
     keyEditorUngroup = newOpt("keyEditorUngroup", Lang.optionEdUngroup, KeySet());
     keyEditorForeground = newKey("keyEditorForeground", Lang.optionEdForeground, ALLEGRO_KEY_T);
     keyEditorBackground = newKey("keyEditorBackground", Lang.optionEdBackground, ALLEGRO_KEY_B);
-    keyEditorMirror = newKey("keyEditorMirror", Lang.optionEdMirror, ALLEGRO_KEY_W);
+    keyEditorMirrorHorizontally = newKey("keyEditorMirrorHorizontally", Lang.optionEdMirrorHorizontally, ALLEGRO_KEY_W);
+    keyEditorFlipVertically = newOpt("keyEditorFlipVertically", Lang.optionEdFlipVertically, KeySet());
     keyEditorRotate = newKey("keyEditorRotate", Lang.optionEdRotate, ALLEGRO_KEY_R);
     keyEditorDark = newKey("keyEditorDark", Lang.optionEdDark, ALLEGRO_KEY_X);
     keyEditorAddTerrain = newKey("keyEditorAddTerrain", Lang.optionEdAddTerrain, ALLEGRO_KEY_SPACE);

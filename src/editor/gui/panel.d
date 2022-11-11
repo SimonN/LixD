@@ -139,29 +139,22 @@ private:
         assert (lang >= Lang.editorButtonFileNew);
         assert (lang <= Lang.editorButtonMenuSkills);
         if (lang < Lang.editorButtonMenuConstants)
-            return lang - Lang.editorButtonFileNew
-                // DTODO: Flip vertically isn't implemented yet
-                - (lang >= Lang.editorButtonFlipVertically ? 1 : 0);
+            return lang - Lang.editorButtonFileNew;
         else
-            return lang - Lang.editorButtonMenuConstants
-                        - (lang >= Lang.editorButtonMenuLooks ? 1 : 0);
+            return lang - Lang.editorButtonMenuConstants;
     }
     Lang indexToLang(int id) const
     {
         enum ebfn = Lang.editorButtonFileNew;
-        return to!Lang(id + Lang.editorButtonFileNew
-            + (id >= Lang.editorButtonFlipVertically - ebfn ? 1 : 0));
+        return to!Lang(id + Lang.editorButtonFileNew);
     }
 
     void makeButtons()
     {
         immutable int bitmaps = Lang.editorButtonAddHazard + 1
-                              - Lang.editorButtonFileNew
-                              - 1; // because no vertical flip
+                              - Lang.editorButtonFileNew;
         immutable int texts = 3;
-        // Xl computes with (bitmaps + 1) becasue the button for the
-        // terrain brower is double-sized.
-        immutable bitmapXl = infoXl * 2f / (bitmaps + 1);
+        immutable bitmapXl = infoXl * 2f / bitmaps;
         immutable bitmapYl = (gui.panelYlg - _info.ylg) / 2;
         immutable textXl = gui.screenXlg - infoXl();
         immutable textYl = gui.panelYlg / texts;
@@ -169,12 +162,6 @@ private:
 
         Geom newGeomForButton(int i)
         {
-            if (i == langToButtonIndex(Lang.editorButtonAddTerrain))
-                return new Geom(i/2*bitmapXl, _info.ylg + i%2*bitmapYl,
-                                bitmapXl, 2 * bitmapYl);
-            if (i > langToButtonIndex(Lang.editorButtonAddTerrain))
-                // Terrain button is twice the size
-                ++i;
             return new Geom(i/2*bitmapXl, _info.ylg + i%2*bitmapYl,
                             bitmapXl, bitmapYl);
         }

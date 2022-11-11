@@ -381,13 +381,14 @@ void populateEditorKeys()
         fac.factory!HotkeyOption(keyEditorSelectFrame, watcher),
         fac.factory!HotkeyOption(keyEditorSelectAdd, watcher),
     ];
-    fac.y += fac.incrementY;
+    fac.y += fac.incrementY / 2;
     groups[OptionGroup.editorKeys] ~= [
         fac.factory!HotkeyOption(keyEditorGroup, watcher),
         fac.factory!HotkeyOption(keyEditorUngroup, watcher),
         fac.factory!HotkeyOption(keyEditorBackground, watcher),
         fac.factory!HotkeyOption(keyEditorForeground, watcher),
-        fac.factory!HotkeyOption(keyEditorMirror, watcher),
+        fac.factory!HotkeyOption(keyEditorMirrorHorizontally, watcher),
+        fac.factory!HotkeyOption(keyEditorFlipVertically, watcher),
         fac.factory!HotkeyOption(keyEditorRotate, watcher),
         fac.factory!HotkeyOption(keyEditorDark, watcher),
     ];

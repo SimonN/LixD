@@ -209,7 +209,6 @@ $editorButtonAddGoal Mål: Lägg till ett mål, dvs en utgång för lix.
 $editorButtonAddHazard Fara: Lägg till en fälla, vatten eller eld.
 $editorButtonMenuConstants Konstanter: Namnge banan, ställ in grundläggande värden.
 $editorButtonMenuTopology Karta: Ändra banans storlek, snurra runt kanterna.
-$editorButtonMenuLooks Utseende: Färglägg bakgrunden, välj startposition för skärm.
 $editorButtonMenuSkills Förmågor: Bestäm hur många lixförmågor varje spelare kan tilldela.
 
 $saveBrowserTitle Spara som
@@ -408,7 +407,8 @@ $optionEdCopy Kopiera
 $optionEdDelete Ta bort
 $optionEdForeground Förgrund
 $optionEdBackground Bakgrund
-$optionEdMirror Spegel
+$optionEdMirrorHorizontally Spegel
+$optionEdFlipVertically Vrid
 $optionEdRotate Rotera
 $optionEdDark Rita svart
 $optionEdAddTerrain Lägg till terräng
