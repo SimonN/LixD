@@ -134,6 +134,6 @@ private:
 
     Alcol colorHotkeyInCorner() const nothrow @safe @nogc
     {
-        return _on && ! _down ? color.guiText : color.guiTextDark;
+        return _on && ! _down ? color.guiText : color.guiTextHotkeyInCorner;
     }
 }

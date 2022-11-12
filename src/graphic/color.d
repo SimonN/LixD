@@ -89,6 +89,7 @@ private class ColorPrivate {
         guiText,
         guiTextDark,
         guiTextOn,
+        guiTextHotkeyInCorner,
 
         guiPicOnD,
         guiPicOnM,
@@ -141,6 +142,7 @@ private:
         guiText   = make_sepia(14f   / 16f); // lighter than an image
         guiTextOn = make_sepia(1.0);         // pure white
         guiTextDark = guiOnM;
+        guiTextHotkeyInCorner = make_sepia(13f / 16f);
 
         guiPicD   = make_sepia(11f   / 16f / 1.2f);
         guiPicM   = make_sepia(11f   / 16f);
