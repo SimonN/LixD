@@ -22,8 +22,7 @@ protected:
     override void drawSelf()
     {
         alias th = gui.thicks;
-        draw3DFrame(xs - th, ys - th, xls + 2*th, yls + 2*th,
-            color.guiD, color.guiM, color.guiL);
+        draw3DFrame(xs - th, ys - th, xls + 2*th, yls + 2*th, color.gui);
     }
 
     override void undrawSelf()

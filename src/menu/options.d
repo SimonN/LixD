@@ -103,7 +103,7 @@ protected override void calcSelf()
         computeColors(guiRed.number, guiGreen.number, guiBlue.number);
         reqDraw();
         explainer.undrawColor = guiRed.undrawColor = guiGreen.undrawColor
-            = guiBlue.undrawColor = color.guiM;
+            = guiBlue.undrawColor = color.gui.m;
     }
 }
 

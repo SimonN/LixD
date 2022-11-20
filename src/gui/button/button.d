@@ -106,13 +106,11 @@ protected:
     final override void // override drawOntoButton instead
     drawSelf()
     {
-        // select the colors according to the button's state
-        auto c1 = _down ? color.guiDownD : _on ? color.guiOnD : color.guiL;
-        auto c2 = _down ? color.guiDownM : _on ? color.guiOnM : color.guiM;
-        auto c3 = _down ? color.guiDownL : _on ? color.guiOnL : color.guiD;
-        draw3DButton(xs, ys, xls, yls, c1, c2, c3);
+        draw3DButton(xs, ys, xls, yls,
+            _down ? color.guiDown.retro
+            : _on ? color.guiOn.retro
+            : color.gui);
         drawOntoButton();
-
         children.each!(ch => ch.draw); // force drawing now, such that...
         drawHotkey();                  // the hotkey is drawn on top
     }

@@ -90,7 +90,7 @@ public:
 protected:
     override void drawSelf()
     {
-        draw3DButton(xs, ys, xls, yls, color.guiL, color.guiM, color.guiD);
+        draw3DButton(xs, ys, xls, yls, color.gui);
     }
 
 private:

@@ -71,7 +71,7 @@ public:
         _save = new LabelTwo(new Geom(0, 0, xlg, 20, From.BOTTOM_LEFT),
             Lang.previewLevelSingleGoal.transl);
         addChildren(_title, _by, _save);
-        undrawColor = color.guiM;
+        undrawColor = color.gui.m;
     }
 
     void setUndrawBeforeDraw()
@@ -105,7 +105,7 @@ public:
         _pointsTo = new LabelTwo(new Geom(0, 0, xlg, 20, From.BOTTOM_LEFT),
             Lang.previewReplayPointsTo.transl);
         addChildren(_title, _player, _pointsTo);
-        undrawColor = color.guiM;
+        undrawColor = color.gui.m;
     }
 
     void setUndrawBeforeDraw()

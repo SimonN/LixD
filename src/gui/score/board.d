@@ -5,9 +5,6 @@ module gui.score.board;
  * a multiplayer game. Should ideally be shown after a networking game
  * in the lobby: The to-be-destroyed game should offer this
  * readily-instantiated UI widget to clients who don't even know about Tribes.
- *
- * The scoreboard isn't drawn onto any large button; you must supply that
- * yourself. Nonetheless, it clears its background to the default menu color.
  */
 
 import std.array;
@@ -22,6 +19,10 @@ import graphic.internal;
 import physics.score;
 import physics.fracint;
 
+/*
+ * The large scoreboard during play that appears when you hover over the
+ * small graph in the panel.
+ */
 class ScoreBoardOn3DBackground : ScoreBoard {
 public:
     this(Geom g) { super(g, 10); }
@@ -31,27 +32,10 @@ protected:
     {
         if (! _bars.length)
             return;
-        draw3DButton(xs, ys, xls, yls, color.guiL, color.guiM, color.guiD);
+        draw3DButton(xs, ys, xls, yls, color.gui);
         draw3DFrame(_bars[0].barXs - thicks, _bars[0].ys - thicks,
             _bars[0].xls - _bars[0].barXs + _bars[0].xs + 2*thicks,
-            yls - 20*stretchFactor + 2*thicks,
-            color.guiD, color.guiM, color.guiL);
-    }
-}
-
-class ScoreBoardTransparentBg : ScoreBoard {
-public:
-    this(Geom g) { super(g, 0); }
-
-protected:
-    override void drawSelf()
-    {
-        if (! _bars.length)
-            return;
-        draw3DFrame(_bars[0].barXs - thicks, _bars[0].ys - thicks,
-            _bars[0].xls - _bars[0].barXs + _bars[0].xs + 2*thicks,
-            yls - 20*stretchFactor + 2*thicks,
-            color.guiD, color.guiM, color.guiL);
+            yls - 20*stretchFactor + 2*thicks, color.gui);
     }
 }
 
@@ -60,7 +44,7 @@ protected:
  * Still public, but module-private constructor.
  * Other modules choose a derived class and treat ScoreBoard as an interface.
  */
-class ScoreBoard : Element {
+abstract class ScoreBoard : Element {
 private:
     AnnotatedBar[] _bars;
     Style _ourStyle;

@@ -149,7 +149,7 @@ do {
         }
 
         // Draw UI near bottom of the level
-        img.drawFilledRectangle(Rect(0, tp.yl, img.xl, extraYl), color.guiM);
+        img.drawFilledRectangle(Rect(0, tp.yl, img.xl, extraYl), color.gui.m);
         import file.option : skillSort;
         import file.language;
         enum sbXl = 40;

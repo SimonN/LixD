@@ -15,8 +15,12 @@ public ColorPrivate color;
 // bar graph 3D colors for a Lix style, or GUI button outlines
 public struct Alcol3D {
     Alcol l, m, d;
-    static assert (is (typeof(l.r) == float));
-    bool isValid() const { return l.r == l.r; /* i.e., it's not NaN */ }
+    Alcol3D retro() const pure nothrow @safe @nogc { return Alcol3D(d, m, l); }
+    bool isValid() const pure nothrow @safe @nogc
+    {
+        static assert (is (typeof(l.r) == const float));
+        return l.r == l.r; // I.e., it's not NaN
+    }
 }
 
 void initialize()
@@ -76,27 +80,17 @@ private class ColorPrivate {
         torusSeamL,
 
         guiSha,
-        guiD,
-        guiM,
-        guiL,
-        guiDownD,
-        guiDownM,
-        guiDownL,
-        guiOnD,
-        guiOnM,
-        guiOnL,
-
         guiText,
         guiTextDark,
         guiTextOn,
-        guiTextHotkeyInCorner,
+        guiTextHotkeyInCorner;
 
-        guiPicOnD,
-        guiPicOnM,
-        guiPicOnL,
-        guiPicD,
-        guiPicM,
-        guiPicL;
+    Alcol3D
+        gui,
+        guiDown,
+        guiOn,
+        guiPic,
+        guiPicOn;
 
 private:
     int _guiColorRed, _guiColorGreen, _guiColorBlue;
@@ -128,28 +122,32 @@ private:
         torusSeamD   = make_sepia(0.25f);
         torusSeamL   = make_sepia(0.4f);
 
-        guiSha    = make_sepia(3f / 16f);
-        guiD      = make_sepia(7.75f / 16f / 1.2f);
-        guiM      = make_sepia(7.75f / 16f);
-        guiL      = make_sepia(7.75f / 16f * 1.2f);
-        guiDownD  = make_sepia(8.75f / 16f / 1.1f);
-        guiDownM  = make_sepia(8.75f / 16f);
-        guiDownL  = make_sepia(8.75f / 16f * 1.1f);
-        guiOnD    = make_sepia(11f   / 16f / 1.1f);
-        guiOnM    = make_sepia(11f   / 16f);
-        guiOnL    = make_sepia(11f   / 16f * 1.1f);
+        gui = Alcol3D(
+            make_sepia(7.75f / 16f * 1.2f),
+            make_sepia(7.75f / 16f),
+            make_sepia(7.75f / 16f / 1.2f));
+        guiDown = Alcol3D(
+            make_sepia(8.75f / 16f * 1.1f),
+            make_sepia(8.75f / 16f),
+            make_sepia(8.75f / 16f / 1.1f));
+        guiOn = Alcol3D(
+            make_sepia(11f / 16f * 1.1f),
+            make_sepia(11f / 16f),
+            make_sepia(11f / 16f / 1.1f));
+        guiPic = Alcol3D(
+            make_sepia(11f / 16f * 1.2f),
+            make_sepia(11f / 16f),
+            make_sepia(11f / 16f / 1.2f));
+        guiPicOn = Alcol3D(
+            make_sepia(1.0),
+            make_sepia(14f / 16f),
+            make_sepia(14f / 16f / 1.2f));
 
-        guiText   = make_sepia(14f   / 16f); // lighter than an image
-        guiTextOn = make_sepia(1.0);         // pure white
-        guiTextDark = guiOnM;
+        guiSha = make_sepia(3f / 16f);
+        guiText = make_sepia(14f / 16f); // lighter than an image
+        guiTextOn = make_sepia(1.0); // pure white
+        guiTextDark = guiOn.m;
         guiTextHotkeyInCorner = make_sepia(13f / 16f);
-
-        guiPicD   = make_sepia(11f   / 16f / 1.2f);
-        guiPicM   = make_sepia(11f   / 16f);
-        guiPicL   = make_sepia(11f   / 16f * 1.2f);
-        guiPicOnD = make_sepia(14f   / 16f / 1.2f);
-        guiPicOnM = make_sepia(14f   / 16f);
-        guiPicOnL = make_sepia(1.0);
     }
 
     // light: max is 1.0, min is 0.0

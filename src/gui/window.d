@@ -34,12 +34,10 @@ protected:
     override void drawSelf()
     {
         // the main area
-        draw3DButton(xs, ys, xls, yls,
-            color.guiL, color.guiM, color.guiD);
+        draw3DButton(xs, ys, xls, yls, color.gui);
         // the title bar
         // title label is drawn automatically afterwards, because it's a child
-        draw3DButton(xs, ys, xls, _labelTitle.yls,
-            color.guiOnL, color.guiOnM, color.guiOnD);
+        draw3DButton(xs, ys, xls, _labelTitle.yls, color.guiOn);
     }
 }
 // end class Window

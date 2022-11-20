@@ -21,7 +21,7 @@ public:
     this(Geom g)
     {
         _geom        = g;
-        _undrawColor = color.guiM;
+        _undrawColor = color.gui.m;
     }
 
     // these functions return the position/length in geoms. See geometry.d

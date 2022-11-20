@@ -209,7 +209,7 @@ private:
         this(Geom g, in string s) { super(g, s); }
         @property override Alcol colorText() const
         {
-            return on ? super.colorText : color.guiOnM;
+            return on ? super.colorText : color.guiTextDark;
         }
     }
 }

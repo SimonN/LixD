@@ -178,14 +178,14 @@ void makeColorDicts()
         return;
     dictGuiLight[color.black]      = color.transp;
     dictGuiLight[color.guiFileSha] = color.guiSha;
-    dictGuiLight[color.guiFileD]   = color.guiPicOnD;
-    dictGuiLight[color.guiFileM]   = color.guiPicOnM;
-    dictGuiLight[color.guiFileL]   = color.guiPicOnL;
+    dictGuiLight[color.guiFileD]   = color.guiPicOn.d;
+    dictGuiLight[color.guiFileM]   = color.guiPicOn.m;
+    dictGuiLight[color.guiFileL]   = color.guiPicOn.l;
     dictGuiNormal[color.black]      = color.transp;
     dictGuiNormal[color.guiFileSha] = color.guiSha;
-    dictGuiNormal[color.guiFileD]   = color.guiPicD;
-    dictGuiNormal[color.guiFileM]   = color.guiPicM;
-    dictGuiNormal[color.guiFileL]   = color.guiPicL;
+    dictGuiNormal[color.guiFileD]   = color.guiPic.d;
+    dictGuiNormal[color.guiFileM]   = color.guiPic.m;
+    dictGuiNormal[color.guiFileL]   = color.guiPic.l;
     dictGuiNormalNoShadow = dictGuiNormal.dup;
     dictGuiNormalNoShadow.remove(color.guiFileSha);
 }

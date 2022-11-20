@@ -1,6 +1,7 @@
 module gui.score.graph;
 
-/* ScoreGraph: The UI element in multiplayer games that displays lovely
+/*
+ *  ScoreGraph: The UI element in multiplayer games that displays lovely
  * bar graphs of the current score and the potential score.
  * Sorted by current score.
  * This is a smaller version of a ScoreBoard. ScoreBoard has names and extra
@@ -51,9 +52,8 @@ protected:
         alias th = gui.thicks;
         assert (xls >= 4*th);
         assert (yls >= 4*th);
-        draw3DFrame(xs, ys, xls, yls, color.guiL, color.guiM, color.guiD);
-        draw3DFrame(xs + th, ys + th, xls - 2*th, yls - 2*th,
-            color.guiD, color.guiM, color.guiL);
+        draw3DFrame(xs, ys, xls, yls, color.gui.retro);
+        draw3DFrame(xs + th, ys + th, xls - 2*th, yls - 2*th, color.gui);
     }
 
 private:

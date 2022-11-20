@@ -100,11 +100,9 @@ private:
         assert (maxPotential >= barLen, "current score too large");
         if (barLen <= 0)
             return;
-        immutable Alcol3D cols = getAlcol3DforStyle(score.style);
         draw3DButton(xs,
             ys + (yls * (1f - ylFactor)) / 2f,
             xls * barLen.as!double / maxPotential.as!double,
-            yls * ylFactor,
-            cols.l, cols.m, cols.d);
+            yls * ylFactor, getAlcol3DforStyle(score.style));
     }
 }

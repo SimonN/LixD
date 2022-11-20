@@ -251,7 +251,7 @@ public:
     }
     do {
         super(new Geom(20f, y, 150f, 20f, From.TOP_RIGHT));
-        undrawColor = color.guiM; // erase old labels before writing
+        undrawColor = color.gui.m; // erase old labels before writing
         _oldValue = oldValue;
         _decOrHex = decOrHex;
         _old    = new Label(new Geom(110, 0, 40, 0, From.TOP_RIGHT));

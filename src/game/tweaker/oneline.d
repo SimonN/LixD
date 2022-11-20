@@ -47,7 +47,7 @@ public:
 protected:
     override void drawSelf()
     {
-        undrawColor = color.guiM; // Erase the labels, they can't undraw
+        undrawColor = color.gui.m; // Erase the labels, they can't undraw
         undraw();
     }
 }
