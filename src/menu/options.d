@@ -435,6 +435,8 @@ void populateMenuKeys()
         fac.factory!HotkeyOption(keyMenuSearch, watcher),
     ];
     fac = facKeys!1;
+    grp ~= fac.factory!HotkeyOption(keyMenuExit, watcher);
+    fac.y += 20;
     grp ~= [
         fac.factory!HotkeyOption(keyMenuUpDir, watcher),
         fac.factory!HotkeyOption(keyMenuUpBy5, watcher),
@@ -451,8 +453,17 @@ void populateMenuKeys()
         fac.factory!HotkeyOption(keyMenuMainReplays, wat2),
         fac.factory!HotkeyOption(keyMenuMainOptions, wat2),
     ];
+
+    KeyDuplicationWatcher wat3 = new KeyDuplicationWatcher();
+    scope (success)
+        wat2.checkForDuplicateBindings();
     fac.y += 20;
-    grp ~= fac.factory!HotkeyOption(keyMenuExit, watcher);
+    grp ~= [
+        fac.factory!HotkeyOption(keyOutcomeSaveReplay, wat3),
+        fac.factory!HotkeyOption(keyOutcomeOldLevel, wat3),
+        fac.factory!HotkeyOption(keyOutcomeNextLevel, wat3),
+        fac.factory!HotkeyOption(keyOutcomeNextUnsolved, wat3),
+    ];
 
     auto guiCol   = NumPickConfig();
     guiCol.max    = 240;
@@ -471,19 +482,6 @@ void populateMenuKeys()
     guiRed   = (cast (NumPickOption) grp[$-3]).num;
     guiGreen = (cast (NumPickOption) grp[$-2]).num;
     guiBlue  = (cast (NumPickOption) grp[$-1]).num;
-
-    KeyDuplicationWatcher wat3 = new KeyDuplicationWatcher();
-    scope (success)
-        wat2.checkForDuplicateBindings();
-    fac = facKeys!1;
-    fac.y = 260;
-    fac.xl *= 1.5f; // Because in 2021, there is nothing to its right yet.
-    grp ~= [
-        fac.factory!HotkeyOption(keyOutcomeSaveReplay, wat3),
-        fac.factory!HotkeyOption(keyOutcomeOldLevel, wat3),
-        fac.factory!HotkeyOption(keyOutcomeNextLevel, wat3),
-        fac.factory!HotkeyOption(keyOutcomeNextUnsolved, wat3),
-    ];
 }
 
 }
