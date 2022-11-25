@@ -57,6 +57,7 @@ class NumPick : Element {
     protected override void drawSelf() { undraw(); super.drawSelf(); }
 
 private:
+    enum int fixedCharXSpacing = 10;
 
     int val;
     NumPickConfig  cfg;
@@ -94,7 +95,7 @@ implConstructor()
     ];
     assert (cfg.digits >= 0);
     foreach (i; 0 .. cfg.digits) {
-        int x = (-cfg.digits + 2*i + 1) * Label.fixedCharXSpacing/2;
+        int x = (-cfg.digits + 2*i + 1) * NumPick.fixedCharXSpacing/2;
         if (i == 0 && cfg.hex)
             // looks better with the small "0x" printed here
             x -= 1;

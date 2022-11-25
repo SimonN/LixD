@@ -1,7 +1,7 @@
 module gui.label;
 
 /* Alignment of Label (LEFT, CENTER, RIGHT) is set by the xFrom nibble of
- * (Geom.From from). Fixed or non-fixed printing is chosen in class Label.
+ * (Geom.From from).
  */
 
 import std.conv;
@@ -23,14 +23,10 @@ private:
 
     Alfont _font; // check if this crashes if Label not destroyed!
     Alcol  _color;
-    bool   _fixed;
 
 public:
     bool undrawBeforeDraw = false; // if true, drawSelf() calls undraw() first
-
-    enum string abbrevSuffix      = ".";
-    enum int    fixedCharXl       = 12; // most chars might occupy this much
-    enum int    fixedCharXSpacing = 10;
+    enum string abbrevSuffix = ".";
 
     this(Geom g, string s = "")
     {
@@ -60,7 +56,6 @@ public:
     }
 
     @property number(in int i) { _text  = i.to!string; shorten_text();     }
-    @property fixed (bool   b) { _fixed = b; shorten_text(); return b;     }
     @property Alcol color(in Alcol  c)
     {
         if (c == _color)
@@ -73,10 +68,8 @@ public:
     float textLg()         const { return textLg(this._text); }
     float textLg(string s) const
     {
-        return (! s.len)  ? 0f
-            :  (! _fixed) ? al_get_text_width(font, s.toStringz)
-                            / gui.stretchFactor
-            :               s.byGrapheme.walkLength * fixedCharXl;
+        return s.empty ? 0f
+            : al_get_text_width(font, s.toStringz) / gui.stretchFactor;
     }
 
     bool tooLong(string s) const { return s.len && textLg(s) > xlg; }
@@ -121,22 +114,11 @@ private:
         _shortened = false;
         if (! text.length)
             return;
-        else if (_fixed) {
-            while (tooLong(_textShort)) {
-                _shortened = true;
-                if (aligned == Geom.From.RIGHT)
-                    _textShort = _textShort[1 .. $];
-                else
-                    _textShort = _textShort[0 .. $-1];
-            }
-        }
-        else {
-            _shortened = tooLong(_text);
-            if (_shortened) {
-                while (_textShort.length > 0 && tooLong(_textShort ~ abbrevSuffix))
-                    _textShort = backspace(_textShort);
-                _textShort ~= abbrevSuffix;
-            }
+        _shortened = tooLong(_text);
+        if (_shortened) {
+            while (_textShort.length > 0 && tooLong(_textShort ~ abbrevSuffix))
+                _textShort = backspace(_textShort);
+            _textShort ~= abbrevSuffix;
         }
     }
 }
