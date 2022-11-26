@@ -37,7 +37,7 @@ public:
     @property float yls() const { return _geom.yls; }
 
     // to edit the geom, use Element.move(x, y) and Element.resize(xl, yl).
-    @property const(Geom) geom() const { return _geom; }
+    const(Geom) geom() const pure nothrow @safe @nogc { return _geom; }
 
     @property Alcol undrawColor() const  { return _undrawColor;     }
     @property Alcol undrawColor(Alcol c) { return _undrawColor = c; }

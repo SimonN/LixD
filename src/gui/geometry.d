@@ -93,8 +93,10 @@ class Geom {
         this(g.x, g.y, g.xl, g.yl, g.from);
     }
 
-    @property From xFrom() const { return to!From(from & 0x0F | 0x20); }
-    @property From yFrom() const { return to!From(from & 0xF0 | 0x02); }
+    const pure @safe {
+        From xFrom() { return to!From(from & 0x0F | 0x20); }
+        From yFrom() { return to!From(from & 0xF0 | 0x02); }
+    }
 
     @property float xlg() const { return xl; }
     @property float ylg() const { return yl; }

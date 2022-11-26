@@ -129,7 +129,7 @@ private:
     void handleTyping()
     {
         if (backspace) {
-            _text = backspace(_text);
+            _text = backspace(_text, CutAt.end);
             pruneText();
         }
         if (utf8Input != "") {
@@ -150,7 +150,7 @@ private:
             _text = pruneString(_text, c => c >= '0' && c <= '9');
 
         while (! _allowScrolling && _label.tooLong(_text ~ caretChar))
-            _text = backspace(_text);
+            _text = backspace(_text, CutAt.end);
     }
 
     void pruneDigits()

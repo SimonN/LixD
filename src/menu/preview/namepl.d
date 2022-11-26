@@ -113,6 +113,7 @@ public:
             Lang.previewReplayPlayer.transl);
         _repFn = new LabelTwo(new Geom(0, yFor(2), xlg, 20, From.TOP_LEFT),
             Lang.previewReplayFilenameOfReplay.transl);
+        _repFn.abbreviateNear(Label.AbbreviateNear.beginning);
         _pointsTo = new LabelTwo(new Geom(0, yFor(3), xlg, 20, From.TOP_LEFT),
             Lang.previewReplayPointsTo.transl);
         addChildren(_title, _player, _repFn, _pointsTo);

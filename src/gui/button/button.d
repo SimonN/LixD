@@ -122,7 +122,7 @@ private:
         // Minor copy-pasta from gui.Label. The hotkey label is not a Label.
         while (s.length && al_get_text_width(djvuS, s.toStringz)
                         / gui.stretchFactor >= this.xlg - 2 * gui.thickg)
-            s = basics.help.backspace(s);
+            s = basics.help.backspace(s, CutAt.end);
         if (s.length)
             drawTextRight(djvuS, s,
                 xs + xls - gui.thicks,

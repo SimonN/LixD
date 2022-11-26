@@ -23,10 +23,12 @@ private:
 
     Alfont _font; // check if this crashes if Label not destroyed!
     Alcol  _color;
+    AbbreviateNear _abbrevNear = AbbreviateNear.end;
 
 public:
     bool undrawBeforeDraw = false; // if true, drawSelf() calls undraw() first
-    enum string abbrevSuffix = ".";
+
+    alias AbbreviateNear = basics.help.CutAt;
 
     this(Geom g, string s = "")
     {
@@ -36,36 +38,50 @@ public:
         _font  = djvuM;
         _text  = s;
         _color = graphic.color.color.guiText;
-        shorten_text();
+        shortenText();
     }
 
-    @property const(Alfont) font()      const { return _font;      }
-    @property string        text()      const { return _text;      }
-    @property Geom.From     aligned()   const { return geom.xFrom; }
-    @property Alcol         color()     const { return _color;     }
-    @property bool          shortened() const { return _shortened; }
+    const(Alfont) font() const pure nothrow @safe @nogc { return _font; }
+    void font(Alfont f)
+    {
+        if (_font == f)
+            return;
+        _font = f;
+        shortenText();
+    }
 
-    @property font(Alfont f) { _font  = f; shorten_text(); return _font; }
-    @property text(string s)
+    string text() const pure nothrow @safe @nogc { return _text; }
+    void number(in int i) { text = i.to!string; }
+    void text(string s)
     {
         if (s == _text)
-            return _text;
+            return;
         _text = s;
-        shorten_text();
-        return _text;
+        shortenText();
     }
 
-    @property number(in int i) { _text  = i.to!string; shorten_text();     }
-    @property Alcol color(in Alcol  c)
+    Alcol color() const pure nothrow @safe @nogc { return _color; }
+    void color(in Alcol c)
     {
         if (c == _color)
-            return _color;
+            return;
         reqDraw();
         _color = c;
-        return _color;
     }
 
-    float textLg()         const { return textLg(this._text); }
+    auto abbreviateNear() const pure nothrow @safe @nogc { return _abbrevNear;}
+    void abbreviateNear(in AbbreviateNear abbr)
+    {
+        if (_abbrevNear == abbr)
+            return;
+        _abbrevNear = abbr;
+        shortenText();
+    }
+
+    Geom.From aligned() const pure @safe { return geom.xFrom; }
+    bool shortened() const pure nothrow @safe @nogc { return _shortened; }
+
+    float textLg() const { return textLg(this._text); }
     float textLg(string s) const
     {
         return s.empty ? 0f
@@ -75,7 +91,7 @@ public:
     bool tooLong(string s) const { return s.len && textLg(s) > xlg; }
 
 protected:
-    override void resizeSelf() { shorten_text(); }
+    override void resizeSelf() { shortenText(); }
     override void drawSelf()
     {
         if (undrawBeforeDraw)
@@ -106,20 +122,31 @@ protected:
     }
 
 private:
-    void shorten_text()
+    string addAbbrevDots(in string s) const pure nothrow @safe
+    {
+        final switch (_abbrevNear) {
+            case AbbreviateNear.end: return s ~ ".";
+            case AbbreviateNear.beginning: return "..." ~ s;
+        }
+    }
+
+    void shortenText()
     out { assert (_shortened == (_textShort != _text)); }
     do {
         reqDraw();
         _textShort = _text;
         _shortened = false;
-        if (! text.length)
+        if (! text.length) {
             return;
-        _shortened = tooLong(_text);
-        if (_shortened) {
-            while (_textShort.length > 0 && tooLong(_textShort ~ abbrevSuffix))
-                _textShort = backspace(_textShort);
-            _textShort ~= abbrevSuffix;
         }
+        _shortened = tooLong(_text);
+        if (! _shortened) {
+            return;
+        }
+        while (! _textShort.empty && tooLong(addAbbrevDots(_textShort))) {
+            _textShort = backspace(_textShort, _abbrevNear);
+        }
+        _textShort = addAbbrevDots(_textShort);
     }
 }
 // end class Label

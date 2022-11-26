@@ -26,6 +26,10 @@ public:
     // Call this if you expect to reset the value's text several times.
     void setUndrawBeforeDraw() { _value.undrawBeforeDraw = true; }
 
-    @property string value(in string s) { return _value.text = s; }
-    @property int    value(in int i)    { _value.number = i; return i; }
+    void value(in string s) { _value.text = s; }
+    void value(in int i) { _value.number = i; }
+    void abbreviateNear(in Label.AbbreviateNear abbr)
+    {
+        _value.abbreviateNear = abbr;
+    }
 }

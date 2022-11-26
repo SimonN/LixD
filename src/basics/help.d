@@ -74,16 +74,43 @@ int ceilInt(F)(in F f)
     return f.ceil.to!int;
 }
 
-string
-backspace(in string str)
+/*
+ * Removing the last or first UTF character of a narrow string.
+ * backspace() returns a substring of the passed string.
+ */
+enum CutAt {
+    end,
+    beginning,
+}
+
+static string backspace(in string str, in CutAt near) pure nothrow @safe
 {
-    if (str.empty) return null;
-    else return str[0 .. str.length - std.utf.strideBack(str, str.length)];
+    if (str.length == 0) {
+        return null;
+    }
+    final switch (near) {
+    case CutAt.end:
+        try {
+            return str[0 .. $ - std.utf.strideBack(str, str.length)];
+        }
+        catch (Exception) {
+            return str[0 .. $ - 1];
+        }
+    case CutAt.beginning:
+        try {
+            return str[std.utf.stride(str, 0) .. $];
+        }
+        catch (Exception) {
+            return str[1 .. $];
+        }
+    }
 }
 
 unittest {
-    assert (backspace("hello") == "hell");
-    assert (backspace("") == "");
+    assert (backspace("", CutAt.end) == "");
+    assert (backspace("", CutAt.beginning) == "");
+    assert (backspace("hello", CutAt.end) == "hell");
+    assert (backspace("hello", CutAt.beginning) == "ello");
 }
 
 // Remove dchars that don't satisfy pred, return newly allocated string.
