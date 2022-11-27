@@ -115,10 +115,12 @@ protected:
 
     override void undrawSelf()
     {
-        // Some letters extend further to the left than the left border.
-        // Don't only paint the Element's rectangle, paint more to the left.
-        al_draw_filled_rectangle(xs - gui.thicks, ys,
-                                 xs + xls,         ys + yls, undrawColor);
+        // Some letters extend further left/right than our border. Thus:
+        al_draw_filled_rectangle(
+            xs - gui.thicks, // Paint left of left border, for "J".
+            ys,
+            xs + xls + gui.thicks, // Paint right of right border, for "t".
+            ys + yls, undrawColor);
     }
 
 private:
