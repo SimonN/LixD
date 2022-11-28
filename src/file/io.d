@@ -1,7 +1,5 @@
 module file.io;
 
-import std.algorithm;
-import std.array;
 import std.file;
 import std.stdio;
 import std.string;
@@ -22,7 +20,7 @@ import file.filename;
  */
 
 class IoLine {
-
+public:
     char type;
     string text1;
     string text2;
@@ -30,10 +28,6 @@ class IoLine {
     int nr1;
     int nr2;
     int nr3;
-
-
-
-// see further down for the rather long constructor this(string);
 
 private this(char c, string s1, string s2, string s3, int n1, int n2, int n3)
 {
@@ -45,8 +39,6 @@ private this(char c, string s1, string s2, string s3, int n1, int n2, int n3)
     nr2   = n2;
     nr3   = n3;
 }
-
-
 
 static IoLine Hash(const string t1, const int n1)
 {
@@ -83,14 +75,6 @@ static IoLine Bang(const int n1, const int n2,
 {
     return new IoLine('!', t1, "", "", n1, n2, n3);
 }
-
-static IoLine Angle(const string t1, const int n1,
-                    const int n2, const int n3, const string t2)
-{
-    return new IoLine('<', t1, t2, "", n1, n2, n3);
-}
-
-
 
 this (string src)
 {
@@ -151,20 +135,6 @@ this (string src)
         while (! src.empty && src[0] != ' ') munch(src, nr3, minus3);
         break;
 
-    case '<':
-        while (! src.empty && src[0] != '>') munch(src, text1);
-        while (! src.empty && src[0] == '>') munch(src);
-        while (! src.empty && src[0] == ' ') munch(src);
-        while (! src.empty && src[0] != ' ') munch(src, nr1, minus1);
-        while (! src.empty && src[0] == ' ') munch(src);
-        while (! src.empty && src[0] != ' ') munch(src, nr2, minus2);
-        while (! src.empty && src[0] == ' ') munch(src);
-        while (! src.empty && src[0] != ' ') munch(src, nr3, minus3);
-        while (! src.empty && src[0] == ' ') munch(src);
-        while (! src.empty                 ) munch(src, text2);
-        break;
-
-
     default:
         // Any other string leads to marking the line as invalid.
         // No fields will be read from the source string.
@@ -201,9 +171,6 @@ override string toString() const
     case '!':
         // deliberately leave a space before the number, there is no keyword
         ret ~= format(" %d %d %s %d", nr1, nr2, text1, nr3);
-        break;
-    case '<':
-        ret ~= format("%s> %d %d %d %s", text1, nr1, nr2, nr3, text2);
         break;
     default:
         // don't return null bytes or anyhting if this.type is strange

@@ -8,7 +8,6 @@ import sdlang;
 import basics.globals;
 import file.backup;
 import file.option.allopts;
-import file.option.load2017;
 import file.log;
 import hardware.tharsis;
 
@@ -19,10 +18,9 @@ void loadUserOptions()
         loadUserOptionsSdlang();
     }
     catch (FileException e) {
-        log("Can't options file: " ~ fileOptions.rootless);
-        log("    -> " ~ e.msg.replace(": Bad address", "File doesn't exist"));
-        loadUserName2017format();
-        loadUserOptions2017format();
+        log("Can't open options file: " ~ fileOptions.rootless);
+        log("    -> " ~ e.msg.replace(": Bad address", "File doesn't exist."));
+        log("    -> This is normal on first run. Using default options.");
     }
     catch (Exception e) {
         log("Syntax errors in options file: " ~ fileOptions.rootless);

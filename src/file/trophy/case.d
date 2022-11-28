@@ -2,18 +2,11 @@ module file.trophy.case_;
 
 /*
  * TrophyCase: Caches trophies, loads/saves them.
- *
- * The saving/loading is called from the user options module because the
- * trophies are stored in the same file as user options. I don't like that.
- * Ultimately, the trophies should save into a standalone file, to cut
- * dependence on the user options file.
  */
 
 import std.algorithm;
-import std.conv;
 import std.file;
 import std.string;
-import std.typecons;
 
 import optional;
 import sdlang;
@@ -21,7 +14,6 @@ import sdlang;
 import basics.globals;
 import file.date;
 import file.backup;
-import file.filename;
 import file.log;
 import file.trophy.trophy;
 import hardware.tharsis;
@@ -81,8 +73,8 @@ void loadTrophies()
     }
     catch (FileException e) {
         log("Can't open trophy file: " ~ fileTrophies.rootless);
-        log("    -> " ~ e.msg.replace(": Bad address", "File doesn't exist"));
-        loadTrophies2017format();
+        log("    -> " ~ e.msg.replace(": Bad address", "File doesn't exist."));
+        log("    -> This is normal on first run. Starting with no trophies.");
     }
     catch (Exception e) {
         log("Syntax errors in trophy file: " ~ fileTrophies.rootless);
@@ -167,49 +159,6 @@ void loadTrophiesSdlang()
         tro.skillsUsed = tag.getAttribute(attrSkillsUsed, 0);
         if (tro.lixSaved <= 0)
             continue;
-        addDuringLoad(key, tro);
-    }
-}
-
-// Legacy trophy format with IoLines, saved in ./data/user/<username>.txt.
-// I should support at least until beginning of 2020.
-void loadTrophies2017format()
-{
-    import file.option;
-    import file.option;
-    import file.io;
-
-    if (userName == null) {
-        log("    -> No pre-2018 format trophies found, either.");
-        log("    -> That's normal when you start Lix for the first time.");
-        return;
-    }
-
-    // Copypasta from file.option.load
-    IoLine[] lines;
-    try {
-        lines = fillVectorFromFile(legacyUserOptionFilename);
-    }
-    catch (Exception e) {
-        // We won't log anything for the legacy format.
-        try {
-            lines = fillVectorFromFile(new VfsFilename(
-                dirDataUser.dirRootless ~ userName ~ filenameExtConfig));
-        }
-        catch (Exception e) {
-            log("    -> No pre-2018 format trophies found, either.");
-            log("    -> That's normal when you start Lix for the first time.");
-            lines = null;
-        }
-    }
-    log("    -> Converting trophies from the pre-2018 format instead.");
-    foreach (i; lines.filter!(i => i.type == '<')) {
-        Filename fullPath = new VfsFilename(i.text1);
-        Trophy tro = Trophy(new Date(i.text2), fullPath);
-        tro.lixSaved = i.nr1;
-        tro.skillsUsed = i.nr2;
-        TrophyKey key;
-        key.fileNoExt = fullPath.fileNoExtNoPre;
         addDuringLoad(key, tro);
     }
 }
