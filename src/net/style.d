@@ -9,7 +9,7 @@ enum Style : ubyte {
     max
 }
 
-nothrow Style stringToStyle(in string str)
+nothrow Style stringToStyle(in string str) pure @safe
 {
     try
         return str.toLower.to!Style;
@@ -17,7 +17,7 @@ nothrow Style stringToStyle(in string str)
         return Style.garden;
 }
 
-string styleToString(in Style sty)
+string styleToString(in Style sty) pure @safe
 {
     return sty.to!string.asCapitalized.to!string;
 }

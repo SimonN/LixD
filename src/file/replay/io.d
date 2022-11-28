@@ -18,8 +18,9 @@ import file.filename;
 import file.io;
 import file.log;
 import file.option : userName; // for filename during saving
-import file.replay.tweakimp;
+import file.replay.playerio;
 import file.replay.replay;
+import file.replay.tweakimp;
 import level.level;
 import net.permu;
 import net.profile;
@@ -95,6 +96,8 @@ void implLoadFromFile(Replay replay, Filename fn) { with (replay)
         log(e.msg);
         return;
     }
+
+    ProfileImporter importer;
     foreach (i; lines) switch (i.type) {
     case '$':
         if (i.text1 == replayLevelBuiltRequired)
@@ -107,14 +110,7 @@ void implLoadFromFile(Replay replay, Filename fn) { with (replay)
             levelFilename = new VfsFilename(dirLevels.dirRootless ~ i.text2);
         break;
     case '+':
-        // For back-compat, we accept the FRIEND directive, even though
-        // since March 2018, we only write PLAYER directives.
-        if (i.text1 == replayPlayer || i.text1 == replayFriend) {
-            Profile prof;
-            prof.name = i.text3;
-            prof.style = stringToStyle(i.text2);
-            addPlayer(PlNr(i.nr1 & 0xFF), prof);
-        }
+        importer.parse(i);
         break;
     case '!': {
         // replays contain ASSIGN=BASHER or ASSIGN_RIGHT=BUILDER.
@@ -142,6 +138,7 @@ void implLoadFromFile(Replay replay, Filename fn) { with (replay)
     default:
         break;
     }
+    _players = importer.loseOwnershipOfProfileArray();
 }}
 
 // ############################################################################
@@ -161,13 +158,14 @@ void saveToStdioFile(
     file.writeln(IoLine.Dollar(replayGameVersionRequired,
         _gameVersionRequired.toString));
 
-    if (_players.length)
+    if (_players.length) {
         file.writeln();
-    foreach (plNr, pl; _players)
-        file.writeln(IoLine.Plus(basics.globals.replayPlayer,
-             plNr, styleToString(pl.style), pl.name));
-    if (_players.length > 1)
-        file.writeln(IoLine.Dollar(replayPermu, permu.toString));
+        foreach (ioLine; ProfileExporter(_players)) {
+            file.writeln(ioLine);
+        }
+        if (_players.length > 1)
+            file.writeln(IoLine.Dollar(replayPermu, permu.toString));
+    }
 
     if (_plies.length)
         file.writeln();

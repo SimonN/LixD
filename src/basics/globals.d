@@ -105,6 +105,7 @@ immutable replayLevelBuiltRequired    = "LEVEL_BUILT_REQUIRED";
 immutable replayLevelFilename         = "FILENAME";
 immutable replayFriend                = "FRIEND";
 immutable replayPlayer                = "PLAYER";
+immutable replaySingleHandi           = "HANDICAP";
 immutable replayPermu                 = "PERMUTATION";
 immutable replayNuke                  = "NUKE";
 immutable replayAssignAny             = "ASSIGN";
