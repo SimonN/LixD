@@ -1,12 +1,10 @@
-$BUILT 2017-08-09 00:51:23
+$BUILT 2022-12-09 03:10:14
 $AUTHOR Insane Steve
 $ENGLISH Just Stop the Bleeding
 
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 3200
 #SIZE_Y 400
-#START_X 1264
-#START_Y 0
 
 #INITIAL 50
 #REQUIRED 50
@@ -244,8 +242,8 @@ $ENGLISH Just Stop the Bleeding
 :matt/earth/08: 152 232 frr
 :matt/earth/09: 184 232
 :matt/earth/26: 227 44 rr
+:matt/earth/26: 572 222 rrr
 :matt/earth/19: 544 168 rrr
-:matt/earth/26: 568 224 rrr
 :matt/earth/23: 528 208 r
 :matt/earth/23: 528 272 r
 :matt/earth/26: 480 208 rrr

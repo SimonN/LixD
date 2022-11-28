@@ -1,12 +1,10 @@
-$BUILT 2017-07-12 23:29:20
+$BUILT 2022-11-28 11:58:39
 $AUTHOR Insane Steve
 $ENGLISH To Destroy is to Construct
 
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
 #SIZE_Y 400
-#START_X 0
-#START_Y 0
 
 #INITIAL 50
 #REQUIRED 48
@@ -29,12 +27,12 @@ $ENGLISH To Destroy is to Construct
 
 :matt/marble/Goal.G: 368 272
 
-:geoo/construction/Laser_vr_16.F: 252 320
-:geoo/construction/Laser_vr_16.F: 264 304
-:geoo/construction/Laser_vr_64.F: 264 242
-:geoo/construction/Laser_vr_64.F: 264 188
+:geoo/construction/Laser_vr_64.F: 264 224
 :geoo/construction/Laser_vr_64.F: 264 160
-:geoo/construction/Laser_vr_16.F: 264 320
+:geoo/construction/Laser_vr_16.F: 264 288
+:geoo/construction/Laser_hz_16.F: 258 312
+:geoo/construction/Laser_vr_16.F: 264 304
+:geoo/construction/Laser_vr_16.F: 252 320
 
 :matt/marble/05: 64 48
 :matt/marble/05: 96 48
@@ -260,3 +258,9 @@ $ENGLISH To Destroy is to Construct
 :matt/marble/02: 64 96
 :matt/marble/02: 64 144
 :matt/marble/02: 64 160
+$BEGIN_TILE_GROUP 0
+:matt/marble/02d: 12 14
+:matt/marble/02d: 0 14 d
+:matt/marble/02d: 12 0 d
+$END_TILE_GROUP
+:Group-0: 262 322

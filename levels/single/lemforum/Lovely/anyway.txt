@@ -1,4 +1,4 @@
-$BUILT 2016-07-22 01:11:19
+$BUILT 2022-12-11 23:27:09
 $AUTHOR Insane Steve
 $ENGLISH Any Way You Want
 
@@ -10,8 +10,6 @@ $HINT_ENGLISH If you're still stuck, I can't really tell <br>you anything else b
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 3200
 #SIZE_Y 400
-#START_X 1264
-#START_Y 0
 
 #INITIAL 10
 #REQUIRED 1
@@ -166,6 +164,7 @@ $HINT_ENGLISH If you're still stuck, I can't really tell <br>you anything else b
 :matt/goldmine/plankdiag: 1264 64
 :matt/goldmine/plankdiag2: 1216 80
 :matt/goldmine/plankdiag2: 1184 48
+:matt/goldmine/plankdiag2: 1128 -8
 :matt/goldmine/plankdiag2: 1152 16
 :matt/goldmine/plankdiag2: 1264 32
 :matt/goldmine/plankdiag2: 1232 0
@@ -251,8 +250,8 @@ $HINT_ENGLISH If you're still stuck, I can't really tell <br>you anything else b
 :matt/earth/08: 152 232 frr
 :matt/earth/09: 184 232
 :matt/earth/26: 224 56 rr
+:matt/earth/26: 572 222 rrr
 :matt/earth/19: 544 168 rrr
-:matt/earth/26: 568 224 rrr
 :matt/earth/23: 528 208 r
 :matt/earth/23: 528 272 r
 :matt/earth/26: 368 208 rrr

@@ -1,4 +1,4 @@
-$BUILT 2017-12-25 21:18:09
+$BUILT 2022-12-11 01:39:15
 $AUTHOR Michael S. Repton
 $ENGLISH Compression Method 2
 
@@ -25,7 +25,6 @@ $ENGLISH Compression Method 2
 :geoo/construction/squisher.T: 464 328
 :geoo/construction/squisher.T: 592 328
 :geoo/construction/squisher.T: 720 328
-:geoo/construction/squisher.T: 848 328
 
 :matt/marble/08d: 0 368
 :matt/marble/01d: 0 360
@@ -77,15 +76,10 @@ $ENGLISH Compression Method 2
 :matt/marble/01: 384 392
 :matt/marble/01: 400 392
 :geoo/steel/dark_32x64o.S: 96 304
-:geoo/steel/dark_64x32o.S: 192 336
 :geoo/steel/dark_64x32o.S: 256 336
-:geoo/steel/dark_64x32o.S: 320 336
 :geoo/steel/dark_64x32o.S: 384 336
-:geoo/steel/dark_64x32o.S: 448 336
 :geoo/steel/dark_64x32o.S: 512 336
-:geoo/steel/dark_64x32o.S: 576 336
 :geoo/steel/dark_64x32o.S: 640 336
-:geoo/steel/dark_64x32o.S: 704 336
 :matt/marble/01: 416 392
 :matt/marble/01: 432 392
 :matt/marble/01: 448 392
@@ -360,3 +354,13 @@ $ENGLISH Compression Method 2
 :matt/marble/01d: 48 0
 :matt/marble/21: 896 248
 :matt/marble/21: 960 248
+:geoo/steel/dark_32x16o.S: 192 336
+:geoo/steel/dark_32x16o.S: 224 336
+:geoo/steel/dark_32x16o.S: 320 336
+:geoo/steel/dark_32x16o.S: 352 336
+:geoo/steel/dark_32x16o.S: 448 336
+:geoo/steel/dark_32x16o.S: 480 336
+:geoo/steel/dark_32x16o.S: 576 336
+:geoo/steel/dark_32x16o.S: 608 336
+:geoo/steel/dark_32x16o.S: 704 336
+:geoo/steel/dark_32x16o.S: 736 336

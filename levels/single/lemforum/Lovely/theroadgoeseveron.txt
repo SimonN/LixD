@@ -1,4 +1,4 @@
-$BUILT 2018-06-25 00:43:14
+$BUILT 2022-12-11 23:27:33
 $AUTHOR I.S./Michael
 $ENGLISH The Road Goes Ever On
 
@@ -158,6 +158,7 @@ $ENGLISH The Road Goes Ever On
 :matt/goldmine/plankdiag: 1264 64
 :matt/goldmine/plankdiag2: 1216 80
 :matt/goldmine/plankdiag2: 1184 48
+:matt/goldmine/plankdiag2: 1128 -8
 :matt/goldmine/plankdiag2: 1152 16
 :matt/goldmine/plankdiag2: 1264 32
 :matt/goldmine/plankdiag2: 1232 0
@@ -243,8 +244,8 @@ $ENGLISH The Road Goes Ever On
 :matt/earth/08: 152 232 frr
 :matt/earth/09: 184 232
 :matt/earth/26: 224 56 rr
+:matt/earth/26: 572 222 rrr
 :matt/earth/19: 544 168 rrr
-:matt/earth/26: 568 224 rrr
 :matt/earth/23: 528 208 r
 :matt/earth/23: 528 272 r
 :matt/earth/26: 368 208 rrr

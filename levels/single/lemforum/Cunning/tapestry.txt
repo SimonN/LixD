@@ -1,12 +1,10 @@
-$BUILT 2016-07-03 00:56:10
+$BUILT 2022-11-28 12:29:12
 $AUTHOR Simon
 $ENGLISH Tapestry
 
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
-#SIZE_Y 400
-#START_X 0
-#START_Y 0
+#SIZE_Y 384
 
 #INITIAL 20
 #REQUIRED 20
@@ -207,3 +205,15 @@ $ENGLISH Tapestry
 :geoo/construction/wall/big_brickdiag_bd: 576 0
 :geoo/construction/wall/big_square: 480 96
 :geoo/construction/wall/big_square: 128 96
+$BEGIN_TILE_GROUP 0
+:geoo/shadow/pillar_verti_32: 10 0
+:geoo/abstract/cvblocks/026: 0 20 d
+:geoo/abstract/cvblocks/026: 16 5 frd
+:geoo/abstract/cvblocks/026: 15 21 rrd
+$END_TILE_GROUP
+:Group-0: 176 272
+$BEGIN_TILE_GROUP 1
+:geoo/shadow/pillar_verti_32: 0 0
+:geoo/abstract/cvblocks/017: 0 16 d
+$END_TILE_GROUP
+:Group-1: 448 272
