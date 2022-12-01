@@ -85,7 +85,7 @@ $outcomeYouSolvedOldLevel Congratulations! You solved:
 $outcomeAttemptNextLevel Next level:
 $outcomeResolveNextLevel Next level (solved):
 $outcomeAttemptNextUnsolvedLevel Next unsolved level:
-$outcomeExitToSingleBrowser Back to the browser
+$outcomeExitToSingleBrowser Back to Level Browser
 
 $outcomeTrophyLixSaved Lix
 $outcomeTrophySkillsUsed Skills

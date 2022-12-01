@@ -85,7 +85,7 @@ $outcomeYouSolvedOldLevel Gratulerar! Du löste:
 $outcomeAttemptNextLevel Nästa bana:
 $outcomeResolveNextLevel Nästa bana (löst):
 $outcomeAttemptNextUnsolvedLevel Nästa olösta bana:
-$outcomeExitToSingleBrowser Tillbaka till bläddraren
+$outcomeExitToSingleBrowser Tillbaka till banabläddraren
 
 $outcomeTrophyLixSaved Lix
 $outcomeTrophySkillsUsed Förmågor
