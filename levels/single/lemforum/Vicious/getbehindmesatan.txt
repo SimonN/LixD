@@ -1,0 +1,117 @@
+$BUILT 2017-07-20 20:34:33
+$AUTHOR mobius
+$ENGLISH Get Behind Me, Satan
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 1104
+#SIZE_Y 368
+
+#INITIAL 10
+#REQUIRED 10
+#SPAWN_INTERVAL 4
+
+#RUNNER 2
+#CLIMBER 10
+#FLOATER 1
+#BLOCKER 1
+#BUILDER 3
+#BASHER 2
+#EXPLODER 0
+
+:matt/underworld/Hatch.H: 88 200
+
+:matt/underworld/Goal.G: 960 232
+
+:geoo/sandstone/torch.F: 40 208
+:geoo/sandstone/torch.F: 192 208
+:geoo/sandstone/torch.F: 256 208
+:matt/underworld/Lava.W: 672 320
+:matt/underworld/Lava.W: 720 320
+:matt/underworld/Lava.W: -16 320
+:matt/underworld/Lava.W: 1024 320
+:matt/underworld/Lava.W: 1072 320
+:geoo/sandstone/brazier.F: 648 104
+:geoo/sandstone/brazier.F: 744 104
+
+:matt/underworld/02: 632 0
+:matt/underworld/02: 696 0
+:matt/underworld/02: 760 0
+:matt/underworld/01: 32 296
+:matt/underworld/01: 96 296
+:matt/underworld/01: 160 296
+:matt/underworld/01: 224 296
+:matt/underworld/02: 320 248
+:matt/underworld/02: 320 152
+:matt/underworld/02: 384 248
+:matt/underworld/02: 448 248
+:matt/underworld/02: 512 248
+:matt/underworld/02: 320 56
+:matt/underworld/02: 328 56 d
+:matt/underworld/01: 544 296
+:matt/underworld/01: 608 296
+:matt/underworld/01: 768 296
+:matt/underworld/01: 832 296
+:matt/underworld/01: 896 296
+:matt/underworld/01: 960 296
+:matt/underworld/02: 448 152
+:matt/underworld/02: 456 152 d
+:matt/underworld/02: 432 80 d
+:matt/underworld/02: 504 152
+:matt/underworld/02: 512 152 d
+:matt/underworld/01: 288 296
+:matt/underworld/02: 824 200
+:matt/underworld/02: 832 200 d
+:matt/underworld/02: 808 128 d
+:matt/underworld/02: 880 200
+:matt/underworld/02: 888 200 d
+:matt/underworld/02: 864 128 d
+:matt/underworld/02: 608 328
+:matt/underworld/02: 544 328
+:matt/underworld/02: 480 328
+:matt/underworld/02: 416 328
+:matt/underworld/02: 352 328
+:matt/underworld/02: 288 328
+:matt/underworld/02: 224 328
+:matt/underworld/02: 160 328
+:matt/underworld/02: 96 328
+:matt/underworld/02: 32 328
+:matt/underworld/02: 832 328
+:matt/underworld/02: 768 328
+:matt/underworld/02: 960 328
+:matt/underworld/02: 896 328
+:matt/underworld/07: 888 56
+:matt/underworld/07: 952 72
+:matt/underworld/07: 928 -8
+:matt/underworld/07: 1024 0
+:matt/underworld/07: 1024 64
+:matt/underworld/07: 864 0
+:matt/underworld/08: 824 32
+:matt/underworld/06: 752 -32
+:matt/underworld/07: 1024 -32
+:matt/underworld/07: 976 -8
+:matt/underworld/07: 872 -40
+:matt/underworld/06: 816 -24
+:matt/underworld/06: 800 8
+:matt/underworld/01: 568 0
+:matt/underworld/01: 504 0
+:matt/underworld/01: 440 0
+:matt/underworld/02: 0 0
+:matt/underworld/02: 64 0
+:matt/underworld/02: 128 0
+:matt/underworld/02: 64 0
+:matt/underworld/02: 128 0
+:matt/underworld/02: 192 0
+:matt/underworld/02: 0 64
+:matt/underworld/02: 64 64
+:matt/underworld/02: 128 64
+:matt/underworld/02: 64 64
+:matt/underworld/02: 128 64
+:matt/underworld/02: 192 64
+:matt/underworld/00: 648 128
+:matt/underworld/00: 712 128
+:geoo/steel/dark_16x32o.S: 704 96
+:matt/underworld/07: 32 -48
+:matt/underworld/07: -16 -32 rrr
+:matt/underworld/07: -40 -40 rrr
+:matt/underworld/07: -64 24 rrr
+:matt/underworld/04: 104 -32
