@@ -21,6 +21,7 @@ import std.conv; // float to int in prepare nurse
 import std.exception;
 import std.range;
 
+import enumap;
 import optional;
 
 import basics.alleg5;
@@ -104,6 +105,7 @@ public:
     enum ticksNormalSpeed = ticksPerSecond / phyusPerSecondAtNormalSpeed;
     enum updatesDuringTurbo = 9;
     enum updatesAheadMany = ticksPerSecond / ticksNormalSpeed * 10;
+    enum tweakerXlg = 200f;
 
     this(ArgsToCreateGame args)
     in {
@@ -366,12 +368,17 @@ private:
         assert (_tweaker is null);
     }
     do {
+        immutable mapXls = gui.screenXls.to!int;
         immutable mapYls = (gui.screenYls - gui.panelYls).to!int;
-        map = new MapAndCamera(cs.land, gui.screenXls.to!int, mapYls);
+        immutable tweXls = (tweakerXlg * gui.context.stretchFactor).to!int;
+        map = new MapAndCamera(cs.land, enumap.enumap(
+            MapAndCamera.CamSize.fullWidth, Point(mapXls, mapYls),
+            MapAndCamera.CamSize.withTweaker, Point(mapXls - tweXls, mapYls)));
         this.centerCameraOnHatchAverage();
 
         _tweaker = new Tweaker(
-            new Geom(0, 0, 200, screenYlg - panelYlg, From.TOP_RIGHT));
+            new Geom(0, 0, tweakerXlg, screenYlg - panelYlg, From.TOP_RIGHT));
+        _tweaker.hide();
         gui.addElder(_tweaker);
     }
 

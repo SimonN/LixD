@@ -50,15 +50,11 @@ public:
         focus = aSourceLen / 2;
     }
 
-    @property int focus() const pure nothrow @nogc
+pure nothrow @safe @nogc:
+    int focus() const { return _focus; }
+    void focus(in int aFocus)
     {
-        return _focus;
-    }
-
-    @property int focus(in int aFocus) pure
-    {
-        return _focus
-            = torus ? basics.help.positiveMod(aFocus, sourceLen)
+        _focus = torus ? basics.help.positiveMod(aFocus, sourceLen)
             : focusMin >= focusMax ? sourceLen / 2 // happens on small maps
             : clamp(aFocus, focusMin, focusMax);
     }
@@ -76,37 +72,36 @@ public:
             focus = focusMax;
     }
 
-    @property const pure {
-        bool mayScrollHigher() { return _focus < focusMax || torus; }
-        bool mayScrollLower()  { return _focus > focusMin || torus; }
-        bool seesEntireSource() { return numPixelsSeen >= sourceLen; }
+const pure nothrow @safe @nogc:
+    bool mayScrollHigher() { return _focus < focusMax || torus; }
+    bool mayScrollLower()  { return _focus > focusMin || torus; }
+    bool seesEntireSource() { return numPixelsSeen >= sourceLen; }
 
-        Side sourceSeen()
-        out (side) {
-            assert (side.start >= 0);
-            assert (side.len >= 0);
-        } do {
-            immutable int first = focus - focusMin;
-            immutable int start = torus
-                ? positiveMod(first, sourceLen) : max(first, 0);
-            return Side(start, numPixelsSeen);
-        }
+    Side sourceSeen()
+    out (side) {
+        assert (side.start >= 0);
+        assert (side.len >= 0);
+    } do {
+        immutable int first = focus - focusMin;
+        immutable int start = torus
+            ? positiveMod(first, sourceLen) : max(first, 0);
+        return Side(start, numPixelsSeen);
+    }
 
-        /*
-         * The rectangle never wraps over a torus seam, but instead is cut off.
-         * Callers who what to draw a full screen rectangle must compute the
-         * remainder behind the seam themselves.
-         * This is bad design, Camera1D should compute the remainder.
-         */
-        Side sourceSeenBeforeFirstTorusSeam()
-        out (side) {
-            assert (side.start >= 0);
-            assert (side.len >= 0);
-            assert (side.start + side.len <= sourceLen);
-        } do {
-            immutable Side uncut = sourceSeen;
-            return Side(uncut.start, min(uncut.len, sourceLen - uncut.start));
-        }
+    /*
+     * The rectangle never wraps over a torus seam, but instead is cut off.
+     * Callers who what to draw a full screen rectangle must compute the
+     * remainder behind the seam themselves.
+     * This is bad design, Camera1D should compute the remainder.
+     */
+    Side sourceSeenBeforeFirstTorusSeam()
+    out (side) {
+        assert (side.start >= 0);
+        assert (side.len >= 0);
+        assert (side.start + side.len <= sourceLen);
+    } do {
+        immutable Side uncut = sourceSeen;
+        return Side(uncut.start, min(uncut.len, sourceLen - uncut.start));
     }
 
     /*
@@ -114,7 +109,7 @@ public:
      * Output: The coordinate of the source that projects there.
      * A purely linear transformation, no cutting at source boundaries.
      */
-    int sourceOf(in int pixelOnTarget) const pure
+    int sourceOf(in int pixelOnTarget)
     {
         immutable int ret = _zoomOwnedBy2DCamera.divideFloor(pixelOnTarget)
             + sourceSeen.start;
@@ -122,20 +117,18 @@ public:
     }
 
 private:
-    @property const pure {
-        int focusMin() { return numPixelsSeen / 2; }
-        int focusMax() { return sourceLen - numPixelsSeen + focusMin; }
-        // Why not focusMax = sourceLen - focusMin? If numPixelsSeen is odd,
-        // dividing by 2 discards some length, and we want
-        // (focusMax - focusMin) == numPixelsSeen exactly.
+    int focusMin() { return numPixelsSeen / 2; }
+    int focusMax() { return sourceLen - numPixelsSeen + focusMin; }
+    // Why not focusMax = sourceLen - focusMin? If numPixelsSeen is odd,
+    // dividing by 2 discards some length, and we want
+    // (focusMax - focusMin) == numPixelsSeen exactly.
 
-        /*
-         * numPixelsSeen: Number of pixels from the source that are copied.
-         * With deep zoom, (large value zoom()), then this is small.
-         * Zoomed out, this might be more than the source.
-         */
-        int numPixelsSeen() {
-            return _zoomOwnedBy2DCamera.divideCeil(targetLen);
-        }
+    /*
+     * numPixelsSeen: Number of pixels from the source that are copied.
+     * With deep zoom, (large value zoom()), then this is small.
+     * Zoomed out, this might be more than the source.
+     */
+    int numPixelsSeen() {
+        return _zoomOwnedBy2DCamera.divideCeil(targetLen);
     }
 }

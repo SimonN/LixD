@@ -4,6 +4,8 @@ import std.algorithm;
 import std.conv;
 import std.string;
 
+import enumap;
+
 import basics.globals;
 import file.option;
 import editor.dragger;
@@ -32,8 +34,13 @@ void implConstructor(
 {
     editor.makePanel();
     setLevelAndCreateUndoStack(toLoad, fnOrNull);
-    MapAndCamera newMap() { with (level) return new MapAndCamera(topology,
-        gui.screenXls.to!int, (gui.screenYls - gui.panelYls).to!int); }
+    MapAndCamera newMap() {
+        auto onlyOneCamsize = Point(gui.screenXls.to!int,
+            (gui.screenYls - gui.panelYls).to!int);
+        return new MapAndCamera(level.topology, enumap.enumap(
+            MapAndCamera.CamSize.fullWidth, onlyOneCamsize,
+            MapAndCamera.CamSize.withTweaker, onlyOneCamsize));
+    }
     _map        = newMap();
     _mapTerrain = newMap();
     _map.centerOnAverage(

@@ -27,24 +27,20 @@ public:
         selectOneAllowed(level, cameraLen);
     }
 
-    @property const pure nothrow @nogc @safe {
+    const pure nothrow @nogc @safe {
         float current() { return _allowed[_selected]; }
         bool zoomableIn() { return _selected < _allowed.len - 1; }
         bool zoomableOut() { return _selected > 0; }
-    }
-
-    bool preferNearestNeighbor() const pure
-    {
-        return abs(current.roundInt - current) < 0.01f || current >= 3;
+        int divideFloor(in float x) { return (x / current).floorInt; }
+        int divideCeil (in float x) { return (x / current).ceilInt; }
+        bool prefersNearestNeighbor()
+        {
+            return abs(current.roundInt - current) < 0.01f || current >= 3;
+        }
     }
 
     void zoomIn()  { if (zoomableIn) ++_selected; }
     void zoomOut() { if (zoomableOut) --_selected; }
-
-    const pure @safe {
-        int divideFloor(in float x) { return (x / current).floor.to!int; }
-        int divideCeil (in float x) { return (x / current).ceil .to!int; }
-    }
 
 private:
     mixin template aAndB() {
@@ -59,7 +55,8 @@ private:
     {
         mixin aAndB;
         enum root2 = 1.41421f;
-        _allowed = [ a, b, 1f/2, root2/2, 1, root2, 2, 3, 4, 6, 8, 16 ].sort()
+        _allowed = [ a, b, 1f/2, root2/2, 1, root2, 2, 3, 4, 6, 8, 16 ]
+            .sort
             .filter!(x => x >= min(a, b, 1)) // even on torus maps? Probably
             .uniq.array;
     }

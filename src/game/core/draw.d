@@ -17,7 +17,6 @@ import graphic.cutbit; // replay sign
 import graphic.gadget;
 import graphic.internal;
 import graphic.torbit;
-import gui;
 import hardware.display;
 import hardware.music;
 import hardware.tharsis;
@@ -63,7 +62,6 @@ implGameDraw(Game game) { with (game)
     pan.age = nurse.constStateForDrawingOnly.update;
 
     game.showSpawnIntervalOnHatches();
-    game.activateOrDeactivateTweaker();
     game.drawMapToA5Display();
     game.ensureMusic();
 }}
@@ -150,19 +148,6 @@ void showSpawnIntervalOnHatches(Game game)
     if (game.nurse.constStateForDrawingOnly.hatches.any!(h =>
         game.map.isPointInRectangle(game.map.mouseOnLand, h.rect)))
         game.pan.showSpawnInterval(game.localTribe.rules.spawnInterval);
-}
-
-void activateOrDeactivateTweaker(Game game)
-{
-    if (game.pan.tweakerIsOn) {
-        game._tweaker.shown = true;
-        game._tweaker.formatButtonsAccordingTo(
-            game.nurse.constReplay.allPlies, game.nurse.upd);
-    }
-    else if (game._tweaker.shown) {
-        game._tweaker.shown = false;
-        gui.requireCompleteRedraw();
-    }
 }
 
 void drawMapToA5Display(Game game)

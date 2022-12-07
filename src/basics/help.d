@@ -18,7 +18,7 @@ unittest {
 }
 
 // mod function that always returns values in 0 .. modulo
-int positiveMod(in int nr, in int modulo) pure nothrow @nogc
+int positiveMod(in int nr, in int modulo) pure nothrow @safe @nogc
 {
     if (modulo <= 0) return 0;
     immutable int normalMod = nr % modulo;
@@ -62,16 +62,29 @@ unittest {
 
 // Phobos has rounding, but tiebreaks only either to the even integer,
 // or away from zero. I want to tiebreak to the larger integer.
-int roundInt(F)(in F f)
+int roundInt(F)(in F f) pure nothrow @safe @nogc
     if (is (F : float))
 {
-    return (f + 0.5f).floor.to!int;
+    return cast (int) (f + 0.5f).floor.rndtol;
 }
 
-int ceilInt(F)(in F f)
+int ceilInt(F)(in F f) pure nothrow @safe @nogc
     if (is (F : float))
 {
-    return f.ceil.to!int;
+    return cast (int) f.ceil.rndtol;
+}
+
+int floorInt(F)(in F f) pure nothrow @safe @nogc
+    if (is (F : float))
+{
+    return cast (int) f.floor.rndtol;
+}
+
+unittest {
+    assert (roundInt(-1.3f) == -1);
+    assert (roundInt(-1.5f) == -1);
+    assert (roundInt(-1.5001f) == -2);
+    assert (roundInt(-1.7f) == -2);
 }
 
 /*

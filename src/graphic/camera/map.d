@@ -9,6 +9,8 @@ import std.conv;
 import std.math;
 import std.range;
 
+import enumap;
+
 // Don't import all of alleg5, because that imports xl(Albit) which interferes
 // with our (alias torbit this).xl.
 import basics.alleg5 : al_draw_filled_rectangle, al_draw_bitmap_region,
@@ -31,7 +33,8 @@ private:
     bool _isHoldScrolling;
     bool _suggestTooltip;
 
-    Camera _cam;
+    Enumap!(CamSize, Camera) _cams;
+    CamSize _chosenCam = CamSize.fullWidth;
 
     // We have two ground torbits, because we must choose at their creation
     // whether we want nearest-neighbor scaling or blurry linear interpolation.
@@ -39,49 +42,57 @@ private:
     Torbit _blurryScaling;
 
 public:
-    @property const pure {
+    enum CamSize : bool { fullWidth, withTweaker }
+
+    /*
+     * Deduct from the real screen xl/yl the GUI elements' yl, then pass the
+     * remainder to this constructor.
+     */
+    this(
+        in Topology topolOfSource,
+        in Enumap!(CamSize, Point) targetSizes
+    ) {
+        foreach (key, val; targetSizes) {
+            _cams[key] = new Camera(topolOfSource, val);
+        }
+        auto cfg = Torbit.Cfg(topolOfSource);
+        _nearestNeighbor = new Torbit(cfg);
+        cfg.smoothlyScalable = true;
+        _blurryScaling = new Torbit(cfg);
+    }
+
+    void dispose()
+    {
+        if (_nearestNeighbor) {
+            _nearestNeighbor.dispose();
+            _nearestNeighbor = null;
+        }
+        if (_blurryScaling) {
+            _blurryScaling.dispose();
+            _blurryScaling = null;
+        }
+    }
+
+    const pure {
         bool scrollable()
         {
-            return _cam.mayScrollUp() || _cam.mayScrollDown()
-                || _cam.mayScrollLeft() || _cam.mayScrollRight();
+            const c = chosenCam();
+            return c.mayScrollUp() || c.mayScrollDown()
+                || c.mayScrollLeft() || c.mayScrollRight();
         }
         bool isHoldScrolling() { return _isHoldScrolling; }
         bool suggestHoldScrollingTooltip() { return _suggestTooltip; }
-        float zoom() { return _cam.zoom; }
+        float zoom() { return chosenCam.zoom; }
     }
 
     alias torbit this;
-    @property inout(Torbit) torbit() inout pure
+    inout(Torbit) torbit() inout pure @safe @nogc
     {
         assert (_nearestNeighbor);
         assert (_blurryScaling);
-        return _cam.preferNearestNeighbor ? _nearestNeighbor : _blurryScaling;
+        return chosenCam.prefersNearestNeighbor
+            ? _nearestNeighbor : _blurryScaling;
     }
-
-/*
- * Deduct from the real screen xl/yl the GUI elements' yl, then pass the
- * remainder to this constructor.
- */
-this(in Topology tp, in int aCameraXl, in int aCameraYl)
-{
-    _cam = new Camera(tp, Point(aCameraXl, aCameraYl));
-    auto cfg = Torbit.Cfg(tp);
-    _nearestNeighbor = new Torbit(cfg);
-    cfg.smoothlyScalable = true;
-    _blurryScaling = new Torbit(cfg);
-}
-
-void dispose()
-{
-    if (_nearestNeighbor) {
-        _nearestNeighbor.dispose();
-        _nearestNeighbor = null;
-    }
-    if (_blurryScaling) {
-        _blurryScaling.dispose();
-        _blurryScaling = null;
-    }
-}
 
 // This function shall intercept calls to Torbit.resize.
 void resize(in int newXl, in int newYl)
@@ -106,21 +117,37 @@ void setTorusXY(in bool aTx, in bool aTy)
 
 private void reinitializeCamera()
 {
-    immutable Point oldFocus = _cam.focus;
-    _cam = new Camera(torbit, Point(_cam.targetXl, _cam.targetYl));
-    _cam.focus = oldFocus;
+    foreach (key, oldCam; _cams) {
+        immutable Point oldFocus = oldCam.focus;
+        _cams[key] = new Camera(torbit, oldCam.targetLen);
+        _cams[key].focus = oldFocus;
+    }
 }
+
+    void choose(in CamSize next)
+    {
+        if (next == _chosenCam) {
+            return;
+        }
+        _cams[next].copyFocusAndZoomRoughlyFrom(chosenCam);
+        _chosenCam = next;
+    }
+
+    private inout(Camera) chosenCam() inout pure @safe @nogc
+    {
+        return _cams[_chosenCam];
+    }
 
 void centerOnAverage(Rx, Ry)(Rx rangeX, Ry rangeY)
     if (isInputRange!Rx && isInputRange!Ry)
 {
-    _cam.focus = Point(torusAverageX(rangeX), torusAverageY(rangeY));
+    chosenCam.focus = Point(torusAverageX(rangeX), torusAverageY(rangeY));
 }
 
-void zoomIn() { _cam.zoomInKeepingTargetPointFixed(mouseOnTarget); }
-void zoomOut() { _cam.zoomOutKeepingTargetPointFixed(mouseOnTarget); }
-void zoomOutToSeeEntireMap() { _cam.zoomOutToSeeEntireSource(); }
-void snapToBoundary() { _cam.snapToBoundary(); }
+void zoomIn() { chosenCam.zoomInKeepingTargetPointFixed(mouseOnTarget); }
+void zoomOut() { chosenCam.zoomOutKeepingTargetPointFixed(mouseOnTarget); }
+void zoomOutToSeeEntireMap() { chosenCam.zoomOutToSeeEntireSource(); }
+void snapToBoundary() { chosenCam.snapToBoundary(); }
 
 // By how much is the camera larger than the map?
 // These are 0 on torus maps, only > 0 for small non-torus maps.
@@ -128,16 +155,16 @@ void snapToBoundary() { _cam.snapToBoundary(); }
 // The border is split into two equally thick sides in the x direction.
 private @property int borderOneSideXl() const
 {
-    if (torusX || xl * zoom >= _cam.targetXl)
+    if (torusX || xl * zoom >= chosenCam.targetLen.x)
         return 0;
-    return (_cam.targetXl - xl * zoom).ceil.roundInt / 2;
+    return (chosenCam.targetLen.x - xl * zoom).ceilInt / 2;
 }
 
 private @property int borderUpperSideYl() const
 {
-    if (torusY || yl * zoom >= _cam.targetYl)
+    if (torusY || yl * zoom >= chosenCam.targetLen.y)
         return 0;
-    return (_cam.targetYl - yl * zoom).ceil.roundInt;
+    return (chosenCam.targetLen.y - yl * zoom).ceilInt;
 }
 
 @property Point mouseOnTarget() const
@@ -148,16 +175,16 @@ private @property int borderUpperSideYl() const
 
 @property Point mouseOnLand() const
 {
-    return _cam.sourceOf(mouseOnTarget);
+    return chosenCam.sourceOf(mouseOnTarget);
 }
 
 void calcScrolling()
 {
-    calcEdgeScrolling();
-    calcHoldScrolling();
+    calcEdgeScrolling(chosenCam);
+    calcHoldScrolling(chosenCam);
 }
 
-private void calcEdgeScrolling()
+private void calcEdgeScrolling(Camera cam)
 {
     _suggestTooltip = false;
     if (! scrollable || ! hardware.mouse.hardwareMouseInsideWindow
@@ -181,15 +208,15 @@ private void calcEdgeScrolling()
         // the opposite direction, not into the scrolling direction. The idea
         // is that I don't want the tooltip at the bottom edge when you can't
         // scroll down, but tooltip should persist after scrolled all the way.
-        if (mouseX == 0)   { mov -= .Point(a, 0); msg(_cam.mayScrollRight); }
-        if (mouseX == dxl) { mov += .Point(a, 0); msg(_cam.mayScrollLeft); }
-        if (mouseY == 0)   { mov -= .Point(0, a); msg(_cam.mayScrollDown); }
-        if (mouseY == dyl) { mov += .Point(0, a); msg(_cam.mayScrollUp); }
-        _cam.focus = _cam.focus + mov;
+        if (mouseX == 0)   { mov -= .Point(a, 0); msg(cam.mayScrollRight); }
+        if (mouseX == dxl) { mov += .Point(a, 0); msg(cam.mayScrollLeft); }
+        if (mouseY == 0)   { mov -= .Point(0, a); msg(cam.mayScrollDown); }
+        if (mouseY == dyl) { mov += .Point(0, a); msg(cam.mayScrollUp); }
+        cam.focus = cam.focus + mov;
     }
 }
 
-private void calcHoldScrolling()
+private void calcHoldScrolling(Camera cam)
 {
     if (! scrollable) {
         _isHoldScrolling = false;
@@ -221,14 +248,15 @@ private void calcHoldScrolling()
         }
         return 0;
     }
-    _cam.focus = _cam.focus + Point(
-        clickScrollingOneDimension(_cam.mayScrollLeft, _cam.mayScrollRight,
+    immutable p = Point(
+        clickScrollingOneDimension(cam.mayScrollLeft, cam.mayScrollRight,
         _scrollGrabbed.x, hardware.mouse.mouseX,
         hardware.mouse.mouseMickey.x, &hardware.mouse.freezeMouseX)
         ,
-        clickScrollingOneDimension(_cam.mayScrollUp, _cam.mayScrollDown,
+        clickScrollingOneDimension(cam.mayScrollUp, cam.mayScrollDown,
         _scrollGrabbed.y, hardware.mouse.mouseY,
         hardware.mouse.mouseMickey.y, &hardware.mouse.freezeMouseY));
+    cam.focus = cam.focus + p;
 }
 
 
@@ -241,53 +269,28 @@ private void calcHoldScrolling()
 
 void drawCamera()
 {
-    drawBorders();
-    drawCameraBorderless();
-}
-
-// To tell apart air from areas outside of the map, color screen borders.
-private void drawBorders()
-{
-    void draw_border(in int ax, in int ay, in int axl, in int ayl)
-    {
-        // we assume the correct target bitmap is set.
-        // D/A5 Lix doesn't make screen border coloring optional
-        al_draw_filled_rectangle(ax, ay, ax + axl, ay + ayl,
-                                 color.screenBorder);
-    }
-    if (borderOneSideXl > 0) {
-        // Left edge.
-        draw_border(0, 0, borderOneSideXl, _cam.targetYl);
-        // Right edge. With fractional zoom, drawCameraBorderless might draw
-        // a smaller rectangle than its plusX (see drawCameraBorderless).
-        // To prevent leftover pixel rows from the last frame, make the border
-        // thicker by 1 pixel here. The camera will draw over it.
-        draw_border(_cam.targetXl - borderOneSideXl - 1, 0,
-            borderOneSideXl + 1, _cam.targetYl);
-    }
-    if (borderUpperSideYl > 0) {
-        draw_border(borderOneSideXl, 0, _cam.targetXl - 2 * borderOneSideXl,
-            borderUpperSideYl);
-    }
+    drawBorders(borderOneSideXl, borderUpperSideYl, chosenCam.targetLen);
+    drawCameraBorderless(chosenCam);
 }
 
 // Draw camera (maybe several times next to itself)
 // to the current drawing target, most likely the screen
-private void drawCameraBorderless()
+private void drawCameraBorderless(in Camera cam)
 {
-    immutable int overallMaxX = _cam.targetXl - borderOneSideXl;
+    immutable int overallMaxX = cam.targetLen.x - borderOneSideXl;
+    immutable int overallMaxY = cam.targetLen.y;
     immutable int plusX = (xl * zoom).ceil.to!int;
     immutable int plusY = (yl * zoom).ceil.to!int;
     for (int x = borderOneSideXl; x < overallMaxX; x += plusX) {
-        for (int y = borderUpperSideYl; y < _cam.targetYl; y += plusY) {
+        for (int y = borderUpperSideYl; y < overallMaxY; y += plusY) {
             // maxXl, maxYl describe the size of the image to be drawn
             // in this iteration of the double-for loop. This should always
             // be as much as possible, i.e., the first argument to min().
             // Only in the last iteration of the loop,
             // a smaller rectangle is better.
             immutable maxXl = min(plusX, overallMaxX - x);
-            immutable maxYl = min(plusY, _cam.targetYl - y);
-            drawCamera_with_target_corner(x, y, maxXl, maxYl);
+            immutable maxYl = min(plusY, overallMaxY - y);
+            drawCamera_with_target_corner(cam, x, y, maxXl, maxYl);
             if (borderUpperSideYl != 0) break;
         }
         if (borderOneSideXl != 0) break;
@@ -296,23 +299,24 @@ private void drawCameraBorderless()
 
 private void
 drawCamera_with_target_corner(
+    in Camera cam,
     in int tcx, // x coordinate of target corner
     in int tcy,
     in int maxTcxl, // length, away from (tcx, tcy). Draw at most this much
     in int maxTcyl  // to the target.
 ) {
-    immutable Rect r = _cam.sourceSeenBeforeFirstTorusSeam();
+    immutable Rect r = cam.sourceSeenBeforeFirstTorusSeam();
     // Source length of the non-wrapped portion. (Target len = this * zoom.)
-    immutable sxl1 = min(r.xl, _cam.divByZoomCeil(maxTcxl));
-    immutable syl1 = min(r.yl, _cam.divByZoomCeil(maxTcyl));
+    immutable sxl1 = min(r.xl, cam.divByZoomCeil(maxTcxl));
+    immutable syl1 = min(r.yl, cam.divByZoomCeil(maxTcyl));
     // target corner coordinates and size of the wrapped-around torus portion
     immutable tcx2 = tcx + r.xl * zoom;
     immutable tcy2 = tcy + r.yl * zoom;
     // source length of the wrapped-around torus portion
-    immutable sxl2 = min(_cam.sourceSeen.xl - r.xl,
-                         _cam.divByZoomCeil(maxTcxl) - sxl1);
-    immutable syl2 = min(_cam.sourceSeen.yl - r.yl,
-                         _cam.divByZoomCeil(maxTcyl) - syl1);
+    immutable sxl2 = min(cam.sourceSeen.xl - r.xl,
+                         cam.divByZoomCeil(maxTcxl) - sxl1);
+    immutable syl2 = min(cam.sourceSeen.yl - r.yl,
+                         cam.divByZoomCeil(maxTcyl) - syl1);
 
     void blitOnce(in int sx,  in int sy,  // source x, y
                   in int sxl, in int syl, // length on the source
@@ -332,45 +336,86 @@ drawCamera_with_target_corner(
     if (drtx && drty) blitOnce(0,   0,   sxl2, syl2, tcx2, tcy2);
 }
 
-void
-loadCameraRect(in Torbit src)
+    void loadCameraRect(in Torbit src)
+    {
+        loadCameraRectImpl(src, torbit, chosenCam);
+    }
+
+    void clearSourceThatWouldBeBlitToTarget(Alcol col)
+    {
+        this.drawFilledRectangle(chosenCam.sourceSeen, col);
+    }
+
+}
+// end class Map
+
+private:
+
+/*
+ * To tell apart air from areas outside of the map, color screen borders.
+ * Assumes that target A5 bitmap is already chosen.
+ */
+private void drawBorders(
+    in int borderOneSideXl,
+    in int borderUpperSideYl,
+    in Point camLen, // pass your chosen Camera's targetLen
+) {
+    void draw_border(in int ax, in int ay, in int axl, in int ayl)
+    {
+        // we assume the correct target bitmap is set.
+        // D/A5 Lix doesn't make screen border coloring optional
+        al_draw_filled_rectangle(ax, ay, ax + axl, ay + ayl,
+                                 color.screenBorder);
+    }
+    if (borderOneSideXl > 0) {
+        // Left edge.
+        draw_border(0, 0, borderOneSideXl, camLen.y);
+        // Right edge. With fractional zoom, drawCameraBorderless might draw
+        // a smaller rectangle than its plusX (see drawCameraBorderless).
+        // To prevent leftover pixel rows from the last frame, make the border
+        // thicker by 1 pixel here. The camera will draw over it.
+        draw_border(camLen.x - borderOneSideXl - 1, 0,
+            borderOneSideXl + 1, camLen.y);
+    }
+    if (borderUpperSideYl > 0) {
+        draw_border(borderOneSideXl, 0, camLen.x - 2 * borderOneSideXl,
+            borderUpperSideYl);
+    }
+}
+
+void loadCameraRectImpl(in Torbit src, Torbit target, in Camera cam)
 {
     assert (src.albit);
-    assert (this.xl == src.xl);
-    assert (this.yl == src.yl);
+    assert (target.xl == src.xl);
+    assert (target.yl == src.yl);
 
     // We don't use a drawing delegate with the Torbit base cless.
     // That would be like stamping the thing 4x entirelly onto the torbit.
     // We might want to copy less than 4 entire stamps. Let's implement it.
-    immutable Rect r = _cam.sourceSeenBeforeFirstTorusSeam();
+    immutable Rect r = cam.sourceSeenBeforeFirstTorusSeam();
 
-    immutable bool drtx = torusX && r.xl < _cam.sourceSeen.xl;
-    immutable bool drty = torusY && r.yl < _cam.sourceSeen.yl;
+    immutable bool drtx = target.torusX && r.xl < cam.sourceSeen.xl;
+    immutable bool drty = target.torusY && r.yl < cam.sourceSeen.yl;
 
-    auto targetTorbit = TargetTorbit(this);
-    if (file.option.paintTorusSeams.value)
-        drawTorusSeams();
-
+    auto targetTorbit = TargetTorbit(target);
+    if (file.option.paintTorusSeams.value) {
+        drawTorusSeams(target);
+    }
     void drawHere(int ax, int ay, int axl, int ayl)
     {
         al_draw_bitmap_region(cast (Albit) (src.albit),
             ax, ay, axl, ayl, ax, ay, 0);
     }
     if (true        ) drawHere(r.x, r.y, r.xl, r.yl);
-    if (drtx        ) drawHere(0,   r.y, _cam.sourceSeen.xl - r.xl, r.yl);
-    if (        drty) drawHere(r.x, 0,   r.xl, _cam.sourceSeen.xl - r.yl);
-    if (drtx && drty) drawHere(0,   0,   _cam.sourceSeen.xl - r.xl,
-                                         _cam.sourceSeen.yl - r.yl);
+    if (drtx        ) drawHere(0,   r.y, cam.sourceSeen.xl - r.xl, r.yl);
+    if (        drty) drawHere(r.x, 0,   r.xl, cam.sourceSeen.xl - r.yl);
+    if (drtx && drty) drawHere(0,   0,   cam.sourceSeen.xl - r.xl,
+                                         cam.sourceSeen.yl - r.yl);
 }
 
-void
-clearSourceThatWouldBeBlitToTarget(Alcol col)
+void drawTorusSeams(Torbit target) { with (target)
 {
-    this.drawFilledRectangle(_cam.sourceSeen, col);
-}
-
-void drawTorusSeams()
-{
+    // We assume that target is already TargetTorbit.
     if (torusX) {
         al_draw_filled_rectangle(xl - 1, 0, xl, yl, color.torusSeamL);
         al_draw_filled_rectangle(0,      0, 1,  yl, color.torusSeamD);
@@ -381,7 +426,4 @@ void drawTorusSeams()
     }
     if (torusX && torusY)
         al_draw_filled_rectangle(xl - 1, 0, xl, 1, color.torusSeamL);
-}
-
-}
-// end class Map
+}}

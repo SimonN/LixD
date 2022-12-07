@@ -12,6 +12,8 @@ import basics.alleg5;
 import basics.globals;
 import game.core.game;
 import game.panel.tooltip;
+import graphic.camera.mapncam;
+import gui;
 import hardware.keyboard;
 import hardware.mousecur;
 import hardware.sound;
@@ -23,8 +25,9 @@ calcPassive(Game game) { with (game)
         map.zoomIn();
     if (pan.zoomOut)
         map.zoomOut();
-
     map.calcScrolling();
+    game.activateOrDeactivateTweaker();
+
     if (map.suggestHoldScrollingTooltip)
         game.pan.suggestTooltip(Tooltip.ID.holdToScroll);
     if (map.isHoldScrolling)
@@ -33,4 +36,21 @@ calcPassive(Game game) { with (game)
     if (pan.highlightGoalsExecute) {
         _altickHighlightGoalsUntil = timerTicks + ticksPerSecond * 3 / 2;
     }
+}}
+
+private:
+
+void activateOrDeactivateTweaker(Game game) { with (game)
+{
+    if (pan.tweakerIsOn) {
+        _tweaker.shown = true;
+        _tweaker.formatButtonsAccordingTo(
+            nurse.constReplay.allPlies, nurse.upd);
+    }
+    else if (_tweaker.shown) {
+        _tweaker.shown = false;
+        gui.requireCompleteRedraw();
+    }
+    map.choose(_tweaker.shown ? MapAndCamera.CamSize.withTweaker
+        : MapAndCamera.CamSize.fullWidth);
 }}

@@ -21,41 +21,25 @@ private:
     Camera1D _y;
 
 public:
-    this(in Topology tp, in Point targetLen)
+    this(in Topology source, in Point targetLen)
     {
-        _zoom = new Zoom(tp, targetLen);
-        _x = new Camera1D(tp.xl, tp.torusX, targetLen.x, _zoom);
-        _y = new Camera1D(tp.yl, tp.torusY, targetLen.y, _zoom);
+        _zoom = new Zoom(source, targetLen);
+        _x = new Camera1D(source.xl, source.torusX, targetLen.x, _zoom);
+        _y = new Camera1D(source.yl, source.torusY, targetLen.y, _zoom);
     }
 
-    /*
-     * Stuff here gets called in graphic.camera.map.
-     * This is legacy behavior. Find everything from those call sites
-     * that can instead go into Camera.
-     * Then decide whether these functions should become public or erased.
-     */
-    package @property const pure nothrow @nogc {
-        int targetXl() { return _x.targetLen; }
-        int targetYl() { return _y.targetLen; }
-        Point targetL() { return Point(_x.targetLen, _y.targetLen); }
-
+    const pure nothrow @safe @nogc {
+        Point targetLen() { return Point(_x.targetLen, _y.targetLen); }
         Point focus() { return Point(_x.focus, _y.focus); }
         final float zoom() { return _zoom.current; }
-    }
 
-    package @property const pure {
         bool mayScrollRight() { return _x.mayScrollHigher(); }
         bool mayScrollLeft()  { return _x.mayScrollLower(); }
         bool mayScrollDown()  { return _y.mayScrollHigher(); }
         bool mayScrollUp()    { return _y.mayScrollLower(); }
+        bool prefersNearestNeighbor() { return _zoom.prefersNearestNeighbor; }
 
-        bool preferNearestNeighbor() { return _zoom.preferNearestNeighbor; }
-        final int divByZoomCeil(in float x) { return _zoom.divideCeil(x); }
-
-        Rect sourceSeen()
-        {
-            return Rect(_x.sourceSeen, _y.sourceSeen);
-        }
+        Rect sourceSeen() { return Rect(_x.sourceSeen, _y.sourceSeen); }
 
         Rect sourceSeenBeforeFirstTorusSeam()
         {
@@ -65,11 +49,15 @@ public:
         }
     }
 
-    @property Point focus(in Point p)
+    final int divByZoomCeil(in float x) const pure nothrow @safe @nogc
+    {
+        return _zoom.divideCeil(x);
+    }
+
+    void focus(in Point p) nothrow pure @safe @nogc
     {
         _x.focus = p.x;
         _y.focus = p.y;
-        return Point(_x.focus, _y.focus);
     }
 
     void zoomInKeepingSourcePointFixed(in Point sourceToFix)
@@ -106,6 +94,13 @@ public:
     {
         _x.snapToBoundary();
         _y.snapToBoundary();
+    }
+
+    void copyFocusAndZoomRoughlyFrom(in Camera other)
+    {
+        while (other.zoom > zoom && _zoom.zoomableIn) { _zoom.zoomIn(); }
+        while (other.zoom < zoom && _zoom.zoomableOut) { _zoom.zoomOut(); }
+        focus = other.focus;
     }
 
     /*
