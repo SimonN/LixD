@@ -12,7 +12,7 @@ import std.conv;
 import std.range;
 import std.string;
 
-private immutable _gameVersion = Version(0, 10, 1);
+private immutable _gameVersion = Version(0, 10, 2);
 const(Version) gameVersion() { return _gameVersion; }
 
 struct Version {
