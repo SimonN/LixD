@@ -1,4 +1,4 @@
-$BUILT 2018-06-25 00:50:00
+$BUILT 2022-12-07 20:27:50
 $AUTHOR Pieuw/mobius
 $ENGLISH The Last Laugh
 
@@ -12,15 +12,15 @@ $ENGLISH The Last Laugh
 
 #CLIMBER 4
 #FLOATER 4
-#EXPLODER 1
+#EXPLODER2 1
 #BUILDER 4
-#BASHER 2
+#BASHER 1
 #JUMPER 4
 
 :matt/bricks/Hatch.H: 112 32
 
 :matt/bricks/Goal.G: 16 240
-:matt/bricks/Goal.G: 496 336
+:matt/bricks/Goal.G: 512 336
 
 :simon/water.W: 512 64
 :simon/water.W: 560 64
@@ -48,8 +48,8 @@ $ENGLISH The Last Laugh
 :matt/bricks/20: 176 152
 :matt/bricks/18: 184 168
 :matt/bricks/18: 184 200
-:matt/bricks/01: 496 384
-:matt/bricks/01: 528 384
+:matt/bricks/01: 512 384
+:matt/bricks/01: 544 384
 :matt/bricks/12: 608 16
 :matt/bricks/12: 608 112
 :matt/bricks/12: 608 -16
@@ -96,10 +96,10 @@ $ENGLISH The Last Laugh
 :matt/bricks/11: 64 16
 :matt/bricks/01: 64 0
 :geoo/steel/16x32o.S: 48 -24
-:matt/bricks/01: 560 384
-:matt/bricks/01: 592 384
-:geoo/steel/dark_64x64o.S: 560 256
-:geoo/steel/dark_64x64o.S: 496 256
-:geoo/steel/dark_64x64o.S: 560 320
+:matt/bricks/01: 576 384
+:matt/bricks/01: 608 384
+:geoo/steel/dark_64x64o.S: 576 256
+:geoo/steel/dark_64x64o.S: 512 256
+:geoo/steel/dark_64x64o.S: 576 320
 :matt/bricks/06: 48 288
 :matt/bricks/05: -16 288

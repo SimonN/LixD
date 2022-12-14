@@ -1,17 +1,16 @@
-$BUILT 2016-07-05 00:49:26
+$BUILT 2022-12-09 20:25:36
 $AUTHOR mobius
 $ENGLISH Narbacular Drop
 
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 1280
 #SIZE_Y 400
-#START_X 400
-#START_Y 0
 
 #INITIAL 15
 #REQUIRED 15
 #SPAWN_INTERVAL 4
 
+#RUNNER 1
 #CLIMBER 1
 #FLOATER 1
 #BUILDER 1
@@ -49,14 +48,17 @@ $ENGLISH Narbacular Drop
 :matt/earth/03: 120 288
 :matt/earth/10: 8 272
 :matt/earth/10: 264 280
+:matt/earth/14: 312 288
 :matt/earth/01: 400 288
+:matt/earth/12: 440 352
 :matt/earth/10: 288 336
 :matt/earth/10: 128 312
+:matt/earth/12: 104 312
 :matt/earth/10: 184 288
-:geoo/steel/dark_64x64o.S: 0 272
-:matt/earth/10: 0 336
-:geoo/steel/dark_64x64o.S: 0 336
 :matt/earth/10: 56 392
+:matt/earth/10: 8 328
+:geoo/steel/dark_64x64o.S: 0 272
+:geoo/steel/dark_64x64o.S: 0 336
 :matt/earth/02: 658 75 fd
 :geoo/steel/dark_64x64o.S: 608 120
 :matt/earth/03: 700 140 d
@@ -88,12 +90,8 @@ $ENGLISH Narbacular Drop
 :matt/earth/10: 968 344
 :matt/earth/10: 1104 336
 :matt/earth/03: 1040 336
-:matt/earth/12: 448 352
-:matt/earth/12: 112 304
-:matt/earth/12: 864 208
+:matt/earth/12: 872 200
 :matt/earth/14: 1072 368
-:matt/earth/14: 256 320
-:matt/earth/11: 752 352
 :matt/earth/24: 368 16
 :matt/earth/02: 320 -16
 :matt/earth/26: 320 136
@@ -126,3 +124,17 @@ $ENGLISH Narbacular Drop
 :matt/earth/00: 592 358 rd
 :matt/earth/00: 552 365 rrr
 :matt/earth/18: 539 246 frd
+:matt/earth/00: 712 288
+:matt/earth/11: 752 352
+:matt/earth/02: 1248 -48
+:matt/earth/26: 1248 104
+:matt/earth/02: 1232 16
+:matt/earth/02: 1216 48
+:matt/earth/04: 1168 -80
+:matt/earth/02: 1184 16
+:matt/earth/02: 1144 -48
+:matt/earth/28: 1208 96
+:matt/earth/28: 1160 40
+:matt/earth/29: 1272 64
+:matt/earth/10: 1008 -80 frr
+:matt/earth/28: 1080 -8

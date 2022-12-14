@@ -1,39 +1,25 @@
-$BUILT 2015-06-22 13:03:04
+$BUILT 2022-12-07 20:34:31
 $AUTHOR geoo
-$GERMAN 
 $ENGLISH Cornerstone
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
 #INITIAL 40
 #REQUIRED 37
 #SPAWN_INTERVAL 12
 
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
 #FLOATER 1
-#BUILDER 2
 #EXPLODER 3
+#BUILDER 2
 #BASHER 5
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
 
-:geoo/construction/Hatch.H: 336 0
+:geoo/construction/Hatch.H: 424 0
 
 :geoo/construction/Goal2.G: 368 304
 
-:geoo/construction/wall/small_64x64: 336 112
-:geoo/construction/wall/small_64x64: 368 112
+:geoo/construction/wall/small_64x64: 400 112
 :geoo/construction/wall/small_64x64: 496 112
 :geoo/construction/wall/small_brick3: 560 112
 :geoo/construction/wall/small_brick3: 592 112
@@ -65,7 +51,7 @@ $ENGLISH Cornerstone
 :geoo/construction/wall/small_64x64: 352 368
 :geoo/construction/wall/small_64x64: 416 368
 :geoo/construction/wall/small_64x64: 480 368
-:geoo/construction/wall/small_brick3: 320 128
+:geoo/construction/wall/small_brick3: 416 128
 :geoo/construction/wall/small_brick3: 336 176
 :geoo/construction/wall/small_brick3: 544 128
 :geoo/construction/wall/small_brick3: 176 176
@@ -90,3 +76,9 @@ $ENGLISH Cornerstone
 :geoo/construction/wall/small_brick3: 288 240 d
 :geoo/construction/wall/small_brick3: 256 240 d
 :geoo/construction/wall/small_brick3: 208 208 d
+:geoo/construction/wall/small_brick3: 352 160
+:geoo/construction/wall/small_brick3: 384 160
+:geoo/construction/wall/small_brick3: 384 128
+:geoo/construction/wall/small_brick3: 384 128 d
+:geoo/construction/wall/small_brick3: 400 144 d
+:geoo/construction/wall/small_brick3: 400 112 d
