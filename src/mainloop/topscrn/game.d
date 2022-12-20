@@ -53,7 +53,7 @@ protected:
         }
         return new SinglePlayerOutcomeScreen(
             ArgsToCreateGame(game.level, _fnOfPlayedLevel, _lastLoaded),
-            game.replay, game.halfTrophyOfLocalTribe, _after);
+            game.replay.iClone, game.halfTrophyOfLocalTribe, _after);
     }
 }
 

@@ -25,11 +25,6 @@ import menu.outcome.repsave;
 import menu.outcome.trotable;
 import menu.preview.fullprev;
 
-struct NextLevel {
-    const(Level) level;
-    Filename fn;
-}
-
 class SinglePlayerOutcome : Window {
 private:
     TrophyTable _trophyTable;
@@ -48,8 +43,8 @@ public:
     }
 
     this(
-        ArgsToCreateGame previous,
-        const(Replay) justPlayed,
+        ArgsToCreateGame previous, // including replay that started that game,
+        immutable(Replay) justPlayed, // which may be different from this one.
         in Trophy trophy,
     ) {
         super(new Geom(0, 0, gui.screenXlg, gui.screenYlg),
@@ -69,7 +64,10 @@ public:
             new Geom(20, 40, nextLevelXlg, 160, From.TOP_RIGHT),
             won ? Lang.outcomeYouSolvedOldLevel : Lang.outcomeRetryOldLevel,
             glo.keyOutcomeOldLevel,
-            NextLevel(previous.level, previous.levelFilename));
+            ArgsToCreateGame(
+                previous.level,
+                previous.levelFilename,
+                some(justPlayed)));
         addChild(_offeredLevels[$-1]);
         _gotoBrowser = new TextButton(new Geom(0, 20, 300, 20, From.BOTTOM),
             Lang.outcomeExitToSingleBrowser.transl);
@@ -116,7 +114,7 @@ public:
         return ExitWith.notYet;
     }
 
-    NextLevel nextLevel()
+    ArgsToCreateGame argsForNextGame()
     in {
         assert (exitWith == ExitWith.gotoLevel,
             "Don't ask for which level if we aren't going to a level");
@@ -124,7 +122,7 @@ public:
     do {
         // find will return nonempty array because of the in contract
         auto next = _offeredLevels[].find!(but => but.execute)[0].nextLevel;
-        glo.singleLastLevel = next.fn;
+        glo.singleLastLevel = next.levelFilename;
         return next;
     }
 
@@ -173,9 +171,10 @@ private:
         foreach (reallyPreview; toPreview) {
             auto but = new NextLevelButton(new Geom(
                 from == From.BOTTOM ? 0 : 20, 60, nextLevelXlg, 200, from),
-                topCaption, aHotkey, NextLevel(
+                topCaption, aHotkey, ArgsToCreateGame(
                     new Level(reallyPreview.filename),
-                    reallyPreview.filename));
+                    reallyPreview.filename,
+                    no!(immutable Replay)));
             addChild(but);
             _offeredLevels ~= but;
         }
@@ -195,13 +194,14 @@ private:
 
 class NextLevelButton : Button {
 private:
-    NextLevel _nextLevel;
+    ArgsToCreateGame _nextLevel;
     Label _topCaption;
     FullPreview _preview;
 
 public:
-    this(Geom g, in Lang topCaption, in KeySet aHotkey, NextLevel aNextLevel)
-    {
+    this(Geom g, in Lang topCaption, in KeySet aHotkey,
+        ArgsToCreateGame aNextLevel
+    ) {
         super(g);
         _nextLevel = aNextLevel;
         _topCaption = new Label(
@@ -213,7 +213,7 @@ public:
         hotkey = aHotkey;
     }
 
-    inout(NextLevel) nextLevel() inout pure nothrow @safe @nogc
+    inout(ArgsToCreateGame) nextLevel() inout pure nothrow @safe @nogc
     {
         return _nextLevel;
     }

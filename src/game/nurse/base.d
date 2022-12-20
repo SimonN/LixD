@@ -45,6 +45,7 @@ public:
     }
     do {
         _replay = rp;
+        rp.eraseEarlySingleplayerNukes(); // Refacme: Move responsib. elsewh.
         if (_replay.players.empty) {
             Profile missing;
             missing.name = "Unknown";

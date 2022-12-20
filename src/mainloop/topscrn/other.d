@@ -71,8 +71,8 @@ private:
     AfterGameGoTo _after;
 
 public:
-    this(ArgsToCreateGame previous,
-        const(Replay) replayJustPlayed,
+    this(ArgsToCreateGame previous, // contains replay that started that game
+        immutable(Replay) replayJustPlayed, // ... which may differ from this.
         in HalfTrophy whatTheReplayAchieved,
         in AfterGameGoTo after,
     ) {
@@ -94,10 +94,7 @@ public:
         case SinglePlayerOutcome.ExitWith.notYet:
             return crashInsteadOfReturningAny!TopLevelScreen;
         case SinglePlayerOutcome.ExitWith.gotoLevel:
-            return new SingleplayerGameScreen(ArgsToCreateGame(
-                _singleOut.nextLevel.level,
-                _singleOut.nextLevel.fn,
-                no!(immutable Replay)),
+            return new SingleplayerGameScreen(_singleOut.argsForNextGame,
                 /*
                  * Deliberately deviating from _after.
                  * If we play more than one map, I think we'll forget which
