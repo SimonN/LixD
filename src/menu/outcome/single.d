@@ -79,16 +79,22 @@ public:
         if (_cache is null) {
             _cache = new TreeLevelCache();
         }
-        foreach (old; _cache.rhinoOf(previous.levelFilename)) {
+        auto prevLevRhino = _cache.rhinoOf(previous.levelFilename);
+        foreach (old; prevLevRhino) {
             foreach (tro; old.trophy) {
                 _trophyTable.addOld(tro);
             }
             offerUpToTwoLevels(old);
         }
         // ...and only after above rendering the trophies, improve.
-        if (won && justPlayed.wasPlayedBy(glo.userName)
-        ) {
+        if (won && justPlayed.wasPlayedBy(glo.userName)) {
+            /*
+             * These two calls -- improve trophy, then recache the improvement
+             * for the next-level database -- should ideally be a single call
+             * to a database that does both.
+             */
             maybeImprove(previous.trophyKey, trophy);
+            prevLevRhino.oc.recacheThisAndAncestors();
         }
     }
 
