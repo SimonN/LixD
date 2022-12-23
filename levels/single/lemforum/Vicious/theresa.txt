@@ -1,4 +1,4 @@
-$BUILT 2017-08-03 13:52:36
+$BUILT 2023-01-02 22:04:34
 $AUTHOR mobius
 $ENGLISH Theresa Falls Up the Stairs
 
@@ -183,27 +183,10 @@ $ENGLISH Theresa Falls Up the Stairs
 :matt/bricks/18: 12 40 rr
 :matt/bricks/20: 4 72 rr
 :matt/bricks/20: 50 48 rr
-:raymanni/toys/beam_2.S: 466 112 rrr
-:raymanni/toys/beam_2.S: 458 112 rrr
-:raymanni/toys/beam_2.S: 450 112 rrr
+:raymanni/toys/beam_2.S: 450 112 fr
 :raymanni/toys/beam_7.S: 442 112
-:raymanni/toys/beam_2.S: 482 112 rrr
-:raymanni/toys/beam_2.S: 474 112 rrr
-:raymanni/toys/beam_2.S: 498 112 rrr
-:raymanni/toys/beam_2.S: 490 112 rrr
-:raymanni/toys/beam_2.S: 514 112 rrr
-:raymanni/toys/beam_2.S: 506 112 rrr
-:raymanni/toys/beam_2.S: 530 112 rrr
-:raymanni/toys/beam_2.S: 522 112 rrr
-:raymanni/toys/beam_2.S: 546 112 rrr
-:raymanni/toys/beam_2.S: 538 112 rrr
-:raymanni/toys/beam_2.S: 562 112 rrr
-:raymanni/toys/beam_2.S: 554 112 rrr
-:raymanni/toys/beam_2.S: 578 112 rrr
-:raymanni/toys/beam_2.S: 570 112 rrr
-:raymanni/toys/beam_2.S: 594 112 rrr
+:raymanni/toys/beam_2.S: 594 112 fr
 :raymanni/toys/brick_1: 600 104
-:raymanni/toys/beam_2.S: 586 112 rrr
 :geoo/construction/platformbrick: 304 144
 :geoo/construction/platformbrick: 336 144
 :geoo/construction/platformbrick: 350 178
@@ -214,3 +197,20 @@ $ENGLISH Theresa Falls Up the Stairs
 :geoo/construction/platformbrick: 474 246
 :geoo/construction/platformbrick: 488 280
 :geoo/construction/platformbrick: 520 280
+:raymanni/toys/beam_2.S: 458 112 fr
+:raymanni/toys/beam_2.S: 466 112 fr
+:raymanni/toys/beam_2.S: 474 112 fr
+:raymanni/toys/beam_2.S: 482 112 fr
+:raymanni/toys/beam_2.S: 490 112 fr
+:raymanni/toys/beam_2.S: 498 112 fr
+:raymanni/toys/beam_2.S: 506 112 fr
+:raymanni/toys/beam_2.S: 514 112 fr
+:raymanni/toys/beam_2.S: 522 112 fr
+:raymanni/toys/beam_2.S: 530 112 fr
+:raymanni/toys/beam_2.S: 538 112 fr
+:raymanni/toys/beam_2.S: 546 112 fr
+:raymanni/toys/beam_2.S: 554 112 fr
+:raymanni/toys/beam_2.S: 562 112 fr
+:raymanni/toys/beam_2.S: 570 112 fr
+:raymanni/toys/beam_2.S: 578 112 fr
+:raymanni/toys/beam_2.S: 586 112 fr

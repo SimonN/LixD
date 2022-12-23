@@ -1,12 +1,10 @@
-$BUILT 2016-07-21 13:31:03
+$BUILT 2022-12-23 10:42:14
 $AUTHOR ccx
 $ENGLISH 100% Built by Lixes
 
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
-#SIZE_Y 400
-#START_X 0
-#START_Y 0
+#SIZE_Y 304
 
 #INITIAL 25
 #REQUIRED 25
@@ -16,9 +14,9 @@ $ENGLISH 100% Built by Lixes
 #BUILDER 13
 #EXPLODER2 0
 
-:geoo/construction/Hatch.H: 504 240
+:geoo/construction/Hatch.H: 504 144
 
-:geoo/construction/Goal2.G: 64 288
+:geoo/construction/Goal2.G: 64 192
 
 :geoo/sandstone/torch.F: 96 64
 :geoo/sandstone/torch.F: 128 64
@@ -27,69 +25,63 @@ $ENGLISH 100% Built by Lixes
 :geoo/sandstone/brazier.F: 224 48
 :geoo/sandstone/brazier.F: 384 48
 
-:geoo/construction/rod_rust/straight_diagd32: 64 348
-:geoo/construction/rod_rust/straight_diagu32: 92 352
-:geoo/construction/rod_rust/straight32: 92 358 r
-:geoo/construction/wall/small_64x64: 248 288
-:geoo/construction/wall/small_64x64: 312 288
-:geoo/construction/wall/small_64x64: 376 288
-:geoo/construction/wall/small_64x64: 376 224
-:geoo/construction/wall/small_64x64: 312 224
-:geoo/construction/wall/small_64x64: 248 224
+:geoo/construction/rod_rust/straight_diagd32: 64 252
+:geoo/construction/rod_rust/straight_diagu32: 92 256
+:geoo/construction/rod_rust/straight32: 92 262 r
 :geoo/construction/wall/small_64x64: 248 192
 :geoo/construction/wall/small_64x64: 312 192
 :geoo/construction/wall/small_64x64: 376 192
-:geoo/construction/pillar_32: 16 288
-:geoo/construction/pillar_base: 0 336
-:geoo/construction/pillar_bottom: 16 320
-:geoo/construction/pillar_top: 16 48
-:geoo/construction/pillar_32: 16 256
-:geoo/construction/pillar_32: 16 224
-:geoo/construction/pillar_base: 0 32
+:geoo/construction/wall/small_64x64: 376 128
+:geoo/construction/wall/small_64x64: 312 128
+:geoo/construction/wall/small_64x64: 248 128
+:geoo/construction/wall/small_64x64: 248 96
+:geoo/construction/wall/small_64x64: 312 96
+:geoo/construction/wall/small_64x64: 376 96
 :geoo/construction/pillar_32: 16 192
+:geoo/construction/pillar_base: 0 240
+:geoo/construction/pillar_bottom: 16 224
+:geoo/construction/pillar_top: 16 48
 :geoo/construction/pillar_32: 16 160
 :geoo/construction/pillar_32: 16 128
+:geoo/construction/pillar_base: 0 32
 :geoo/construction/pillar_32: 16 96
 :geoo/construction/pillar_32: 16 64
-:geoo/construction/pillar_32: 592 288
-:geoo/construction/pillar_bottom: 592 320
-:geoo/construction/pillar_top: 592 48
-:geoo/construction/pillar_32: 592 256
-:geoo/construction/pillar_32: 592 224
-:geoo/construction/pillar_base: 576 32
 :geoo/construction/pillar_32: 592 192
+:geoo/construction/pillar_bottom: 592 224
+:geoo/construction/pillar_top: 592 48
 :geoo/construction/pillar_32: 592 160
 :geoo/construction/pillar_32: 592 128
+:geoo/construction/pillar_base: 576 32
 :geoo/construction/pillar_32: 592 96
 :geoo/construction/pillar_32: 592 64
-:geoo/construction/rod_rust/straight32: 0 352
-:geoo/construction/rod_rust/straight32: 32 352
-:geoo/construction/rod_rust/straight32: 64 352
-:geoo/construction/rod_rust/straight32: 96 352
-:geoo/construction/rod_rust/straight32: 128 352
-:geoo/construction/rod_rust/straight32: 160 352
-:geoo/construction/rod_rust/straight32: 192 352
-:geoo/construction/rod_rust/straight32: 224 352
-:geoo/construction/rod_rust/straight32: 256 352
-:geoo/construction/rod_rust/straight32: 288 352
-:geoo/construction/rod_rust/straight32: 320 352
-:geoo/construction/rod_rust/straight32: 352 352
-:geoo/construction/rod_rust/straight32: 384 352
-:geoo/construction/rod_rust/straight32: 416 352
-:geoo/construction/rod_rust/straight32: 448 352
-:geoo/construction/rod_rust/straight32: 480 352
-:geoo/construction/rod_rust/straight32: 512 352
-:geoo/construction/rod_rust/straight32: 544 352
-:geoo/construction/rod_rust/straight32: 576 352
-:geoo/construction/rod_rust/straight32: 608 352
-:geoo/construction/wall/big_128x64: 248 144 d
-:geoo/construction/wall/big_128x64: 312 144 d
-:geoo/construction/rod_rust/straight32: 92 368 r
-:geoo/construction/rod_rust/straight_diagd32: 512 348
-:geoo/construction/rod_rust/straight_diagu32: 540 352
-:geoo/construction/rod_rust/straight32: 540 358 r
-:geoo/construction/rod_rust/straight32: 540 368 r
-:geoo/construction/pillar_base: 576 336
+:geoo/construction/rod_rust/straight32: 0 256
+:geoo/construction/rod_rust/straight32: 32 256
+:geoo/construction/rod_rust/straight32: 64 256
+:geoo/construction/rod_rust/straight32: 96 256
+:geoo/construction/rod_rust/straight32: 128 256
+:geoo/construction/rod_rust/straight32: 160 256
+:geoo/construction/rod_rust/straight32: 192 256
+:geoo/construction/rod_rust/straight32: 224 256
+:geoo/construction/rod_rust/straight32: 256 256
+:geoo/construction/rod_rust/straight32: 288 256
+:geoo/construction/rod_rust/straight32: 320 256
+:geoo/construction/rod_rust/straight32: 352 256
+:geoo/construction/rod_rust/straight32: 384 256
+:geoo/construction/rod_rust/straight32: 416 256
+:geoo/construction/rod_rust/straight32: 448 256
+:geoo/construction/rod_rust/straight32: 480 256
+:geoo/construction/rod_rust/straight32: 512 256
+:geoo/construction/rod_rust/straight32: 544 256
+:geoo/construction/rod_rust/straight32: 576 256
+:geoo/construction/rod_rust/straight32: 608 256
+:geoo/construction/wall/big_128x64: 248 48 d
+:geoo/construction/wall/big_128x64: 312 48 d
+:geoo/construction/rod_rust/straight32: 92 272 r
+:geoo/construction/rod_rust/straight_diagd32: 512 252
+:geoo/construction/rod_rust/straight_diagu32: 540 256
+:geoo/construction/rod_rust/straight32: 540 262 r
+:geoo/construction/rod_rust/straight32: 540 272 r
+:geoo/construction/pillar_base: 576 240
 :geoo/construction/wall/small_64x32: 0 0
 :geoo/construction/wall/small_64x32: 64 0
 :geoo/construction/wall/small_64x32: 128 0

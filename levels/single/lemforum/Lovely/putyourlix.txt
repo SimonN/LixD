@@ -1,4 +1,4 @@
-$BUILT 2016-06-28 11:56:26
+$BUILT 2022-12-22 06:02:23
 $AUTHOR Michael S. Repton
 $ENGLISH Put Your Lix on Ice
 
@@ -36,13 +36,13 @@ $ENGLISH Put Your Lix on Ice
 :matt/winter/10: 384 336 frr
 :matt/winter/15: 192 224
 :matt/winter/00: 304 176
-:matt/winter/16: 464 224
+:matt/winter/16: 464 256
 :matt/winter/17: 528 96 frr
-:geoo/steel/dark_64x64o.S: 608 208
+:geoo/steel/dark_64x64o.S: 608 224
 :matt/winter/17: 560 192
 :matt/winter/05: 512 144
 :matt/winter/04: 544 272
-:geoo/steel/dark_64x64o.S: 672 208
+:geoo/steel/dark_64x64o.S: 672 224
 :matt/winter/01: 400 160
 :matt/winter/01: 432 176 frr
 :matt/winter/01: 432 144
@@ -69,7 +69,7 @@ $ENGLISH Put Your Lix on Ice
 :matt/winter/16: 720 160 frr
 :matt/winter/10: 736 240
 :matt/winter/05: 704 224
-:matt/winter/10: 832 208 frr
+:matt/winter/10: 816 208 frr
 :matt/winter/05: 944 96
 :matt/winter/10: 944 256
 :matt/winter/16: 1120 272 frr

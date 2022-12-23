@@ -1,79 +1,71 @@
-$BUILT 2017-08-25 05:43:50
+$BUILT 2023-01-07 20:41:22
 $AUTHOR mobius
 $ENGLISH 6 Gaps, 5 Builders
 
 #INTENDED_NUMBER_OF_PLAYERS 1
-#SIZE_X 640
-#SIZE_Y 320
+#SIZE_X 512
+#SIZE_Y 288
 
 #INITIAL 1
 #REQUIRED 1
 #SPAWN_INTERVAL 1
 
-#CLIMBER 1
-#FLOATER 1
 #BUILDER 5
-#BASHER 2
-#DIGGER 2
 #EXPLODER2 0
 
-:simon/hatch001.H: 96 160
+:simon/hatch001.H: 32 128
 
-:simon/tapir/goal.G: 484 208
+:simon/tapir/goal.G: 420 176
 
-:matt/water.W: 176 288
-:matt/water.W: 208 288
-:matt/water.W: 240 288
-:matt/water.W: 272 288
-:matt/water.W: 304 288
-:matt/water.W: 336 288
-:matt/water.W: 368 288
-:matt/water.W: 400 288
-:matt/water.W: 432 288
-:geoo/sandstone/torch.F: 288 120
-:geoo/sandstone/torch.F: 320 120
-:geoo/sandstone/torch.F: 128 120
-:geoo/sandstone/torch.F: 480 120
-:geoo/sandstone/brazier.F: 16 208
-:geoo/sandstone/brazier.F: 592 208
+:matt/water.W: 112 256
+:matt/water.W: 144 256
+:matt/water.W: 176 256
+:matt/water.W: 208 256
+:matt/water.W: 240 256
+:matt/water.W: 272 256
+:matt/water.W: 304 256
+:matt/water.W: 336 256
+:matt/water.W: 368 256
+:geoo/sandstone/torch.F: 224 72
+:geoo/sandstone/torch.F: 256 72
+:geoo/sandstone/torch.F: 64 72
+:geoo/sandstone/torch.F: 416 72
+:geoo/sandstone/brazier.F: 0 176
+:geoo/sandstone/brazier.F: 480 176
 
-:simon/tapir/032v: 212 256
-:simon/tapir/032v: 266 256
-:simon/tapir/032v: 312 256
-:simon/tapir/032v: 394 256
-:simon/tapir/032v: 354 256
-:simon/tapir/064h: 64 256
-:simon/tapir/064h: 448 256
-:simon/tapir/128: 64 -24
-:simon/tapir/128: 192 -24
-:simon/tapir/128: 320 -24
-:simon/tapir/128: 448 -24
-:geoo/steel/dark_64x64o.S: 384 104
-:geoo/steel/dark_64x64o.S: 192 104
+:simon/tapir/032v: 140 224
+:simon/tapir/032v: 196 224
+:simon/tapir/032v: 242 224
+:simon/tapir/032v: 328 224
+:simon/tapir/032v: 288 224
+:simon/tapir/064h: 0 224
+:simon/tapir/064h: 384 224
+:geoo/steel/dark_64x64o.S: 320 64
+:geoo/steel/dark_64x64o.S: 128 64
 $BEGIN_TILE_GROUP 0
 :simon/tapir/032v: 4 0
 :simon/tapir/032v: 0 0 d
 $END_TILE_GROUP
-:Group-0: 378 256
-:matt/underworld/thinplatform64: 382 256 rrrd
-:matt/underworld/thinplatform64: 384 256 rrrd
-:Group-0: 418 256
-:matt/underworld/thinplatform64: 422 256 rrrd
-:matt/underworld/thinplatform64: 424 256 rrrd
-:Group-0: 336 256
-:matt/underworld/thinplatform64: 340 256 rrrd
-:matt/underworld/thinplatform64: 342 256 rrrd
-:Group-0: 290 256
-:matt/underworld/thinplatform64: 294 256 rrrd
-:matt/underworld/thinplatform64: 296 256 rrrd
-:Group-0: 236 256
-:matt/underworld/thinplatform64: 240 256 rrrd
-:matt/underworld/thinplatform64: 242 256 rrrd
-:geoo/steel/dark_64x64o.S: 0 0
-:geoo/steel/dark_64x64o.S: 576 0
-:simon/tapir/032c: 160 104
-:simon/tapir/032d: 256 104
-:simon/tapir/032d: 448 104
-:simon/tapir/032c: 352 104
-:geoo/steel/dark_64x64o.S: 0 256
-:geoo/steel/dark_64x64o.S: 576 256
+:Group-0: 312 224
+:matt/underworld/thinplatform64: 316 224 rrrd
+:matt/underworld/thinplatform64: 318 224 rrrd
+:Group-0: 352 224
+:matt/underworld/thinplatform64: 356 224 rrrd
+:matt/underworld/thinplatform64: 358 224 rrrd
+:Group-0: 266 224
+:matt/underworld/thinplatform64: 270 224 rrrd
+:matt/underworld/thinplatform64: 272 224 rrrd
+:Group-0: 220 224
+:matt/underworld/thinplatform64: 224 224 rrrd
+:matt/underworld/thinplatform64: 226 224 rrrd
+:Group-0: 164 224
+:matt/underworld/thinplatform64: 168 224 rrrd
+:matt/underworld/thinplatform64: 170 224 rrrd
+:simon/tapir/032c: 96 64
+:simon/tapir/032d: 192 64
+:simon/tapir/032d: 384 64
+:simon/tapir/032c: 288 64
+:simon/tapir/064h: 0 0
+:simon/tapir/064h: 128 0
+:simon/tapir/064h: 256 0
+:simon/tapir/064h: 384 0

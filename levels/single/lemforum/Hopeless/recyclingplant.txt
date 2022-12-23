@@ -1,12 +1,10 @@
-$BUILT 2017-05-01 19:51:36
+$BUILT 2023-01-07 19:19:53
 $AUTHOR geoo
 $ENGLISH Recycling Plant
 
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 976
 #SIZE_Y 400
-#START_X 336
-#START_Y -20
 
 #INITIAL 120
 #REQUIRED 118
@@ -260,3 +258,4 @@ $END_TILE_GROUP
 :simon/oriental/bush1: 2 50
 :simon/oriental/bush6: -10 84
 :simon/oriental/bush4: 902 358
+:raymanni/holiday/snowlix: 189 180 d

@@ -1,34 +1,19 @@
-$BUILT 2014-07-01 20:18:17
+$BUILT 2022-12-21 08:51:04
 $AUTHOR mobius
-$GERMAN 
 $ENGLISH Climb to Freedom!
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 1280
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
-#START_X 480
-#START_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
 #INITIAL 10
 #REQUIRED 10
 #SPAWN_INTERVAL 20
 
 #CLIMBER 10
-#FLOATER 0
-#EXPLODER 0
-#BLOCKER 0
 #BUILDER 1
-#BASHER 0
-#MINER 0
 #DIGGER 1
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
+#EXPLODER 0
 
 :matt/winter/Hatch.H: 504 40
 :matt/winter/Hatch.H: 1000 224
@@ -90,8 +75,10 @@ $ENGLISH Climb to Freedom!
 :matt/winter/00: 576 224
 :matt/winter/02: 648 200
 :matt/winter/10: 760 344
+:matt/winter/06: 1152 304
 :matt/winter/10: 904 336
-:matt/winter/04: 1088 272
+:matt/winter/06: 1168 304
+:matt/winter/04: 1100 340
 :matt/winter/02: 624 -56
 :matt/winter/07: 800 -16 rr
 :matt/winter/07: 856 16 rr
@@ -99,3 +86,6 @@ $ENGLISH Climb to Freedom!
 :matt/winter/15: 768 -8
 :matt/winter/15: 832 -8
 :matt/winter/15: 904 -8
+:matt/winter/06: 1152 240
+:matt/winter/06: 1168 240
+:matt/winter/09a: 1136 224

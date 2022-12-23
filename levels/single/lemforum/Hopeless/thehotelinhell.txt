@@ -1,12 +1,10 @@
-$BUILT 2016-07-30 14:44:13
+$BUILT 2023-01-08 22:02:12
 $AUTHOR Michael S. Repton
 $ENGLISH The Hotel in Hell
 
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 2560
 #SIZE_Y 400
-#START_X 720
-#START_Y 0
 
 #INITIAL 20
 #REQUIRED 17
@@ -22,9 +20,9 @@ $ENGLISH The Hotel in Hell
 
 :matt/underworld/Goal.G: 832 272
 
-:geoo/construction/squisher.T: 944 64
 :geoo/construction/squisher.T: 1264 144
 :geoo/construction/squisher.T: 1312 304
+:geoo/construction/squisher.T: 944 64
 
 :proxima/flame.F: 704 336
 :proxima/flame.F: 736 352
@@ -46,6 +44,9 @@ $ENGLISH The Hotel in Hell
 :proxima/flame.F: 1326 252
 :proxima/flame.F: 1290 252
 :proxima/flame.F: 1310 244
+:geoo/construction/Laseremit_hzr_16.F: 992 104
+:geoo/construction/Laser_hz_64.F: 928 104
+:geoo/construction/Laser_hz_64.F: 864 104
 
 :matt/underworld/01: 768 368
 :matt/underworld/01: 832 368
@@ -433,5 +434,4 @@ $ENGLISH The Hotel in Hell
 :geoo/steel/dark_64x32o.S: 1120 232
 :matt/underworld/01: 1792 336
 :geoo/construction/concrete/032hd: 1792 336 d
-:matt/underworld/00: 928 64
-:matt/underworld/00: 928 80
+:geoo/steel/dark_32x16o.S: 864 96
