@@ -77,8 +77,9 @@ UserOption!bool holdToScrollInvert;
 UserOption!bool fastMovementFreesMouse;
 UserOption!bool avoidBuilderQueuing;
 UserOption!bool avoidBatterToExploder;
-UserOption!bool replayAfterFrameBack;
 UserOption!bool unpauseOnAssign;
+UserOption!bool replayAfterFrameBack;
+UserOption!bool replayAlwaysInsert;
 
 /*
  * screenMode and related: See file.option.screen for access methods.
@@ -261,8 +262,9 @@ do {
     }
     avoidBuilderQueuing = newOpt("avoidBuilderQueuing", Lang.optionAvoidBuilderQueuing, true);
     avoidBatterToExploder = newOpt("avoidBatterToExploder", Lang.optionAvoidBatterToExploder, false);
-    replayAfterFrameBack = newOpt("replayAfterFrameBack", Lang.optionReplayAfterFrameBack, true);
     unpauseOnAssign = newOpt("unpauseOnAssign", Lang.optionUnpauseOnAssign, false);
+    replayAfterFrameBack = newOpt("replayAfterFrameBack", Lang.optionReplayAfterFrameBack, true);
+    replayAlwaysInsert = newOpt("replayAlwaysInsert", Lang.optionReplayAlwaysInsert, false);
     screenType = newOpt("screenMode", Lang.optionScreenMode,
         defaultScreenType.to!int);
     screenWindowedX = newOpt("screenWindowedX", Lang.optionScreenWindowedRes, 1280);

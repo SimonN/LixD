@@ -29,14 +29,14 @@ struct Ply {
     Phyu update;
     int toWhichLix;
 
-    @property bool isSomeAssignment() const
+    @property bool isSomeAssignment() const pure nothrow @safe @nogc
     {
         return action == RepAc.ASSIGN
             || action == RepAc.ASSIGN_LEFT
             || action == RepAc.ASSIGN_RIGHT;
     }
 
-    int opCmp(const ref Ply rhs) const
+    int opCmp(const ref Ply rhs) const pure nothrow @safe @nogc
     {
         return this.update < rhs.update ? -1
             :  this.update > rhs.update ?  1

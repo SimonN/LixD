@@ -230,7 +230,7 @@ public:
         if (_players.length != 1
             || _plies.canFind!(rd => rd.action == RepAc.NUKE))
             return;
-        deleteAfterPhyu(lastActionsToKeep);
+        cutGlobalFutureAfter(lastActionsToKeep);
 
         Ply termNuke = Ply();
         termNuke.player = _players.byKey.front;
@@ -239,10 +239,35 @@ public:
         add(termNuke);
     }
 
-    void deleteAfterPhyu(in Phyu upd)
+    void cutGlobalFutureAfter(in Phyu upd)
     {
         assert (upd >= 0);
         _plies = _plies[0 .. this.plySliceBefore(Phyu(upd + 1)).length];
+        touch();
+    }
+
+    /*
+     * We assume that we'll only call cutSingleLixFutureAfter() during
+     * singleplayer, where there is only one tribe and we don't have to
+     * compare players/styles/... We only look for matching lix IDs.
+     */
+    void cutSingleLixFutureAfter(in Phyu upd, in int lixID)
+    {
+        bool toCut(in Ply p) pure nothrow @safe @nogc
+        {
+            if (p.update <= upd) {
+                return false;
+            }
+            return p.action == RepAc.NUKE
+                || p.isSomeAssignment && p.toWhichLix == lixID;
+        }
+        if (_plies.empty
+            || _plies[$-1].update <= upd
+            || ! _plies.canFind!toCut
+        ) {
+            return; // Nothing to cut.
+        }
+        _plies = _plies.filter!(ply => ! toCut(ply)).array;
         touch();
     }
 
@@ -338,4 +363,20 @@ unittest {
     assert (! b.equalBefore(a, Phyu(30)));
     assert (a.equalBefore(b, Phyu(10)));
     assert (b.equalBefore(a, Phyu(10)));
+}
+
+unittest {
+    Replay a = Replay.newNoLevelFilename(Date.now());
+    for (int phyu = 100; phyu < 200; phyu += 10) {
+        Ply ply;
+        ply.action = phyu % 20 == 10 ? RepAc.ASSIGN_LEFT : RepAc.ASSIGN_RIGHT;
+        ply.skill = phyu % 40 < 20 ? Ac.digger : Ac.climber;
+        ply.toWhichLix = 3;
+        ply.update = Phyu(phyu);
+        a.add(ply);
+    }
+    assert (a.allPlies.length == 10);
+    a.cutSingleLixFutureAfter(Phyu(150), 3);
+    assert (a.allPlies.length == 6); // 100, 110, 120, 130, 140, 150
+    assert (a.allPlies[$-1].update == Phyu(150));
 }

@@ -380,8 +380,9 @@ enum Lang {
     optionFastMovementFreesMouse,
     optionAvoidBuilderQueuing,
     optionAvoidBatterToExploder,
-    optionReplayAfterFrameBack,
     optionUnpauseOnAssign,
+    optionReplayAfterFrameBack,
+    optionReplayAlwaysInsert,
 
     optionScreenMode,
     optionScreenWindowed,

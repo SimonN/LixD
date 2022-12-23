@@ -30,6 +30,12 @@ View createView(in int numPlayers, in INetClient netClient) pure
     }
 }
 
+unittest {
+    assert (createView(3, null) != createView(1, null));
+}
+
+pure nothrow @safe @nogc:
+
 bool canInterruptReplays(in View v)
 {
     return v == View.solveAlone || v == View.solveTogether;
@@ -66,8 +72,4 @@ bool printResultToConsole(in View v)
 {
     return v == View.battle || v == View.observeBattle
         || v == View.solveTogether;
-}
-
-unittest {
-    assert (createView(3, null) != createView(1, null));
 }

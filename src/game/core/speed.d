@@ -6,7 +6,6 @@ static import basics.globals;
 import basics.alleg5;
 import file.option; // replayAfterFrameBack
 import game.core.game;
-import game.core.active; // findAgainHighlitLixAfterPhyu
 import game.nurse.cache : DuringTurbo;
 import game.panel.base;
 import hardware.mouse;
@@ -161,6 +160,5 @@ private void upd(
     nurse.addPlyMaybeGoBack(undispatchedAssignments);
     undispatchedAssignments = null;
     nurse.updateTo(Phyu(before + howmany), duringTurbo);
-    game.findAgainHighlitLixAfterPhyu();
     game.setLastPhyuToNow();
 }}

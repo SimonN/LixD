@@ -365,8 +365,9 @@ $optionKeyNuke Spräng|Spräng alla dina lix i enspelarläge för att klara bana
 
 $optionAvoidBuilderQueuing Föredra spamning framför köläggning|Föredra byggaretilldelningar framför icke-byggare istället för att kölägga till existerande byggare.|Du kan hålla omvänd prioritering för att göra det du inte föredrar.
 $optionAvoidBatterToExploder Föredra slagmän framför icke-exploderare.|Föredra slagmäntilldelningar framför gångare istället för slagmäntilldeningar framför tidsinställda exploderare|Du kan hålla omvänd prioritering.
-$optionReplayAfterFrameBack Behåll repris efter ◀▮|Behåll framtida reprisåtgärder vid framesteppning bakåt (◀▮), tills att du klickar i luften.|Om inte förbockat kommer reprisåtgärder att tas bort då du ångrar dem med framsteppning.
 $optionUnpauseOnAssign Fortsätt spelet vid tilldelning av förmåga|Fortsätt spelet då du tilldelar en förmåga under paus.|Om inte förbockat kommer tilldelning av förmågor under paus att fortsätta spelet med 1 bild.
+$optionReplayAfterFrameBack Behåll repris efter ◀▮|Behåll framtida reprisåtgärder vid framesteppning bakåt (◀▮), tills att du klickar i luften.|Utan krok: Reprisåtgärder att tas bort då du ångrar dem med framsteppning.
+$optionReplayAlwaysInsert Infoga under repris|Under repris ny tilldelningen av förmagor bara bort framtiden för samma lix.|Utan krok: Tilldelningen skär av den globala framtiden, som om du klickade på air.
 
 $optionKeyMenuOkay Okej/ja|Spela den markerade banan. Spara och stäng dialogfönster.
 $optionKeyMenuEdit Redigera|Öppna redigeraren för den markerade banan.

@@ -73,9 +73,8 @@ package:
 public:
     enum int ploderDelay = 75; // explode once _ploderTimer >= ploderDelay
 
-    Style style() const { return _style; }
-
-    @property const pure nothrow @nogc {
+    const pure nothrow @safe @nogc {
+        Style style() { return _style; }
         Point foot() { return Point(_ex, _ey); }
         // Setters for the foot (i.e., to move the lix) are below in main code
         short ex() { return _ex; } // deprecate eventually, use foot
@@ -200,7 +199,7 @@ void addEncountersFromHere()
     _encFoot |= lookup.get(Point(_ex, _ey));
 }
 
-@property int ex(in int n)
+int ex(in int n)
 {
     _ex = basics.help.even(n).to!(typeof(_ex));
     if (env.torusX)
@@ -209,7 +208,7 @@ void addEncountersFromHere()
     return _ex;
 }
 
-@property int ey(in int n)
+int ey(in int n)
 {
     _ey = n.to!(typeof(_ey));
     if (env.torusY)

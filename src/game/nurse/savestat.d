@@ -40,12 +40,21 @@ public:
     bool userStateExists() { return _cache.userStateExists; }
     void saveUserState()   { _cache.saveUser(cs, replay); }
 
-    void cutReplay()
+    void cutGlobalFutureFromReplay()
     {
-        if (replay.latestPhyu <= upd)
+        if (replay.latestPhyu <= upd) {
             return;
-        onCutReplay();
-        replay.deleteAfterPhyu(upd);
+        }
+        onCutGlobalFutureFromReplay();
+        replay.cutGlobalFutureAfter(upd);
+    }
+
+    void cutSingleLixFutureFromReplay(in Passport ofWhom)
+    {
+        if (replay.latestPhyu <= upd) {
+            return;
+        }
+        replay.cutSingleLixFutureAfter(upd, ofWhom.id);
     }
 
     void loadUserState()
@@ -55,10 +64,11 @@ public:
 
         if (! replay.equalBefore(loaded.replay, Phyu(upd + 1))) {
             replay = loaded.replay.clone();
-            onCutReplay(); // don't cut, but maybe play sound
+            onCutGlobalFutureFromReplay(); // don't cut, but maybe play sound
         }
-        if (! replayAfterFrameBack.value)
-            cutReplay();
+        if (! replayAfterFrameBack.value) {
+            cutGlobalFutureFromReplay();
+        }
     }
 
     void restartLevel()
@@ -71,8 +81,9 @@ public:
     void framestepBackBy(int backBy)
     {
         framestepBackTo(Phyu(upd - backBy));
-        if (! file.option.replayAfterFrameBack.value)
-            cutReplay();
+        if (! file.option.replayAfterFrameBack.value) {
+            cutGlobalFutureFromReplay();
+        }
     }
 
     /*
@@ -118,7 +129,7 @@ protected:
 
     // Override this, e.g., if you want to draw from the InteractiveNurse
     void onAutoSave() { }
-    void onCutReplay() { }
+    void onCutGlobalFutureFromReplay() { }
 
     final void considerAutoSavestateIfCloseTo(
         in Phyu target, in DuringTurbo turbo

@@ -10,6 +10,7 @@ import basics.alleg5;
 import basics.globals : ticksPerSecond;
 import file.option : showFPS;
 import game.core.game;
+import game.core.highli;
 import game.panel.tooltip;
 import graphic.camera.mapncam;
 import graphic.color;
@@ -135,10 +136,14 @@ void drawAllLixes(Game game)
             if (otherTribe !is game.localTribe)
                 drawTribe(otherTribe);
         import lix.fuse : drawAbilities; // onto opponents, behind our own
-        localTribe.lixvec.retro.each!(l => drawAbilities(l));
+        foreach (li; localTribe.lixvec.retro) {
+            li.drawAbilities();
+        }
         drawTribe(localTribe);
-        if (_drawHerHighlit)
-            _drawHerHighlit.drawAgainHighlit();
+    }
+    const hi = game.findAndDescribePotentialAssignee();
+    if (hi.lixxie !is null) {
+        hi.lixxie.drawAgainHighlit();
     }
 }
 

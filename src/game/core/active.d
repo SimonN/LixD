@@ -4,98 +4,28 @@ module game.core.active;
  * Game.calc() should afterwards calc the network, that flushes the network.
  */
 
-import std.range;
-
 import net.repdata;
-import basics.rect;
-import file.option; // hotkeys
+static import file.option; // unpause on assign
 import game.core.game;
-import game.panel.tooltip;
-import gui : SkillButton;
-import hardware.mouse;
-import hardware.mousecur;
-import hardware.keyboard; // priority invert held
-import hardware.semantic; // force left/right held
+import game.core.highli : PotentialAssignee;
 import hardware.sound;
+import hardware.mouse;
+import hardware.semantic;
 import lix;
 
 package:
 
-void calcActive(Game game)
-{
+void calcNukeButton(Game game)
+in {
     assert (!game.modalWindow);
-    game.handleNukeButton();
-    if (game.isMouseOnLand) {
-        if (mouseClickLeft)
-            game.cancelReplay();
-        auto potAss = game.findPotentialAssignee();
-        if (hardware.mouse.mouseClickLeft && game.view.canAssignSkills)
-            game.assignToPotentialAssignee(potAss);
-    }
-    else {
-        game._drawHerHighlit = null;
-        game.pan.describeTarget(null, 0);
-    }
+    assert (game.view.canAssignSkills);
 }
-
-// This doesn't strictly belong in game.core.active.
-// It's also called for contingency from game.core.speed.
-package void findAgainHighlitLixAfterPhyu(Game game)
+do { with (game)
 {
-    if (game.isMouseOnLand && !game.modalWindow)
-        game.findPotentialAssignee();
-}
-
-package Ply newPlyForNextPhyu(Game game)
-{
-    Ply data;
-    data.player = game._netClient ? game._netClient.ourPlNr : PlNr(0);
-    data.update = game.nurse.upd + 1;
-    return data;
-}
-
-package void cancelReplay(Game game) { with (game)
-{
-    if (replaying && game.view.canInterruptReplays)
-        nurse.cutReplay();
-}}
-
-// ############################################################################
-
-private:
-
-struct PotentialAssignee {
-    ConstLix lixxie;
-    int id;
-    int priority;
-    double distanceToCursor;
-
-    // Compare lixes for, priority:
-    // 1. priority number from lixxie.priorityForNewAc
-    // 2. what is closer to the mouse cursor (if priority is equal)
-    // 3. what has spawned earlier (if still equal)
-    // Holding the priority inversion key, or right mouse button (configurable
-    // in the options) inverts the sorting of (1.), but not of the others.
-    // Never invert priority for unclickable lix (priority == 0 or == 1).
-    bool isBetterThan(in PotentialAssignee rhs) const {
-        return lixxie    is null ? false
-            : rhs.lixxie is null ? true
-            : priority <= 1 && rhs.priority >  1 ? false
-            : priority >  1 && rhs.priority <= 1 ? true
-            : priority > rhs.priority ? ! keyPriorityInvert.keyHeld
-            : priority < rhs.priority ?   keyPriorityInvert.keyHeld
-            : distanceToCursor < rhs.distanceToCursor ? true
-            : distanceToCursor > rhs.distanceToCursor ? false
-            : id < rhs.id;
-    }
-}
-
-void handleNukeButton(Game game) { with (game)
-{
-    if (! pan.nukeDoubleclicked || ! game.view.canAssignSkills)
+    if (! pan.nukeDoubleclicked)
         return;
     pan.pause = false;
-    game.cancelReplay();
+    game.cutGlobalFutureFromReplay();
     auto data = game.newPlyForNextPhyu();
     data.action = RepAc.NUKE;
     game.includeOurNew(data);
@@ -104,153 +34,95 @@ void handleNukeButton(Game game) { with (game)
         Phyu(nurse.upd + 1), Passport(localStyle, 0), Sound.NUKE);
 }}
 
-/* Main function to determine lix under cursor.
- * Side effect: Assigns the best lix to game._drawHerHighlit.
- */
-PotentialAssignee findPotentialAssignee(Game game) { with (game)
-{
-    assert (localTribe);
-
-    PotentialAssignee best; // clicks go to her, priority is already considered
-    PotentialAssignee worst; // if different from best, make tooltip
-    PotentialAssignee described; // her action is described on the panel
-    int lixesUnderCursor = 0;
-    bool leftFound  = false; // if both left/right true,
-    bool rightFound = false; // make a tooltip
-
-    const(SkillButton) currentSkill = game.pan.currentSkill;
-    assert (map.zoom > 0);
-
-    immutable float cursorThicknessOnLand = 12 / map.zoom;
-    immutable float mmldX = cursorThicknessOnLand +  2; // + lix thickness
-    immutable float mmldU = cursorThicknessOnLand + 15; // + lix height
-    immutable float mmldD = cursorThicknessOnLand +  0;
-    immutable mol = map.mouseOnLand;
-
-    foreach (id, ConstLix lixxie; localTribe.lixvec.enumerate!int) {
-        immutable int distX = map.distanceX(lixxie.ex, mol.x);
-        immutable int distY = map.distanceY(lixxie.ey, mol.y);
-        if (   distX <= mmldX && distX >= -mmldX
-            && distY <= mmldD && distY >= -mmldU
-            && lixxie.cursorShouldOpenOverMe
-        ) {
-            ++lixesUnderCursor;
-            PotentialAssignee potAss = game.generatePotentialAssignee(
-                lixxie, id, mol, mmldD - mmldU, currentSkill);
-            if (potAss.isBetterThan(described)) {
-                described = potAss;
-            }
-            comparePotentialWithBestWorst(potAss, best, worst,
-                leftFound, rightFound);
+void calcClicksIntoMap(Game game, PotentialAssignee potAss)
+in {
+    assert (!game.modalWindow);
+    assert (game.view.canAssignSkills);
+}
+do {
+    if (! hardware.mouse.mouseClickLeft || ! game.isMouseOnLand) {
+        return;
+    }
+    else if (game.canAssignTo(potAss)) {
+        game.cutReplayAccordingToOptions(potAss.passport);
+        game.assignTo(potAss);
+        if (file.option.unpauseOnAssign.value == true) {
+            game.pan.pause = false;
         }
-        // end if under cursor
     }
-    // end loop through all lixes
-
-    if (best.lixxie !is null && leftFound && rightFound)
-        pan.suggestTooltip(best.lixxie.facingLeft ? Tooltip.ID.forceRight
-                                                  : Tooltip.ID.forceLeft);
-    else if (best.priority != worst.priority && ! keyPriorityInvert.keyHeld)
-        pan.suggestTooltip(Tooltip.ID.priorityInvert);
-
-    mouseCursor.xf = (forcingLeft ? 1 : forcingRight ? 2 : mouseCursor.xf);
-    mouseCursor.yf = best.lixxie !is null;
-    pan.describeTarget(described.lixxie, lixesUnderCursor);
-
-    if (best.lixxie !is null && currentSkill !is null) {
-        if (best.lixxie.ac == Ac.builder)
-            pan.suggestTooltip(Tooltip.ID.queueBuilder);
-        else if (best.lixxie.ac == Ac.platformer)
-            pan.suggestTooltip(Tooltip.ID.queuePlatformer);
+    else if (potAss.lixxie is null) {
+        game.cutGlobalFutureFromReplay(); // We've clicked air, not a lix.
     }
-    game._drawHerHighlit = best.lixxie;
-    return best;
-}}
-// end void findPotentialAssignee()
-
-PotentialAssignee generatePotentialAssignee(
-    Game game,
-    in Lixxie lixxie,
-    in int id,
-    in Point mouseOnLand,
-    in float dMinusU,
-    in SkillButton currentSkill
-) {
-    import basics.help;
-    PotentialAssignee potAss;
-    potAss.lixxie = lixxie;
-    potAss.id = id;
-    potAss.distanceToCursor = game.map.hypotSquared(
-        mouseOnLand.x, mouseOnLand.y, lixxie.ex,
-                                      lixxie.ey + roundInt(dMinusU/2));
-    potAss.priority = currentSkill !is null
-        ? lixxie.priorityForNewAc(currentSkill.skill) : 1;
-
-    return potAss;
-}
-
-void comparePotentialWithBestWorst(
-    in PotentialAssignee potAss,
-    ref PotentialAssignee best,
-    ref PotentialAssignee worst,
-    ref bool anyFoundLeft,
-    ref bool anyFoundRight,
-) {
-    assert (potAss.lixxie !is null);
-    immutable bool eligibleAccordingToDirSelect =
-           ! (potAss.lixxie.facingLeft  && forcingRight)
-        && ! (potAss.lixxie.facingRight && forcingLeft);
-
-    if (eligibleAccordingToDirSelect) {
-        anyFoundLeft = anyFoundLeft || potAss.lixxie.facingLeft;
-        anyFoundRight = anyFoundRight || potAss.lixxie.facingRight;
-        if (potAss.isBetterThan(best))
-            best = potAss;
-        if (worst.lixxie is null || worst.isBetterThan(potAss))
-            worst = potAss;
-    }
-}
-
-void assignToPotentialAssignee(
-    Game game,
-    in PotentialAssignee potAss) { with (game)
-{
-    SkillButton currentSkill = pan.currentSkill;
-    if (potAss.lixxie is null)
-        return;
-    if (! currentSkill) {
+    else if (game.view.canAssignSkills && game.pan.currentSkill is null) {
         hardware.sound.playLoud(Sound.PANEL_EMPTY);
+    }
+}
+
+void cutReplayAccordingToOptions(Game game, in Passport ofWhom)
+{
+    if (! game.view.canInterruptReplays) {
         return;
     }
-    if (potAss.priority <= 1)
-        return;
+    if (file.option.replayAlwaysInsert.value == true) {
+        game.nurse.cutSingleLixFutureFromReplay(ofWhom);
+    }
+    else {
+        game.nurse.cutGlobalFutureFromReplay();
+    }
+}
 
-    assert (currentSkill.number != 0);
-    if (currentSkill.number != skillInfinity)
+void cutGlobalFutureFromReplay(Game game)
+{
+    if (game.view.canInterruptReplays) {
+        game.nurse.cutGlobalFutureFromReplay();
+    }
+}
+
+// ############################################################################
+
+private:
+
+bool canAssignTo(Game game, in PotentialAssignee potAss)
+{
+    return game.view.canAssignSkills
+        && game.pan.currentSkill !is null
+        && potAss.lixxie !is null
+        && potAss.priority >= 2;
+}
+
+Ply newPlyForNextPhyu(Game game)
+{
+    Ply data;
+    data.player = game._netClient ? game._netClient.ourPlNr : PlNr(0);
+    data.update = game.nurse.upd + 1;
+    return data;
+}
+
+void assignTo(Game game, in PotentialAssignee potAss)
+in { assert (game.canAssignTo(potAss)); }
+do { with (game)
+{
+    Ply theAssignment = game.newPlyForNextPhyu();
+    theAssignment.action = forcingLeft ? RepAc.ASSIGN_LEFT
+        : forcingRight ? RepAc.ASSIGN_RIGHT
+        : RepAc.ASSIGN;
+    theAssignment.skill = game.pan.currentSkill.skill;
+    theAssignment.toWhichLix = potAss.id;
+
+    if (game.pan.currentSkill.number != skillInfinity) {
         // Decrease the visible number on the panel. This is mostly eye candy.
         // It doesn't affect physics, including judging what's coming in over
         // the network, but it affects the assignment user interface.
-        currentSkill.number = currentSkill.number - 1;
-
-    Ply data = game.newPlyForNextPhyu();
-    data.action     = forcingLeft  ? RepAc.ASSIGN_LEFT
-                    : forcingRight ? RepAc.ASSIGN_RIGHT
-                    :                RepAc.ASSIGN;
-    data.skill      = currentSkill.skill;
-    data.toWhichLix = potAss.id;
-    game.includeOurNew(data);
+        game.pan.currentSkill.number = game.pan.currentSkill.number - 1;
+    }
+    game.includeOurNew(theAssignment);
 
     // React faster to the new assignment than during its evaluation next
     // update. The evaluation could be several ticks ticks later.
-    assert (_effect);
-    immutable pa = Passport(localStyle, potAss.id);
-    _effect.addArrowDontShow(data.update, pa);
-    _effect.addSound(data.update, pa, Sound.ASSIGN);
-
-    if (file.option.unpauseOnAssign.value == true)
-        pan.pause = false;
+    assert (game._effect);
+    game._effect.addArrowDontShow(theAssignment.update, potAss.passport);
+    game._effect.addSound(theAssignment.update, potAss.passport, Sound.ASSIGN);
 }}
-// end PotentialAssignee assignToPotentialAssignee()
 
 void includeOurNew(Game game, in Ply data) { with (game)
 {

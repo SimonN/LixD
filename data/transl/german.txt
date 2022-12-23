@@ -357,8 +357,9 @@ $optionKeyNuke Atombombe|Im Einzelspieler alle Lix sprengen, um den Level zu bee
 
 $optionAvoidBuilderQueuing Builder eher an Nicht-Builder|Builder vorrangig an Nicht-Builder zuweisen anstatt an bestehende Builder.|Halte „Priorität invertieren“ (Reiter „Steuerung“), um das jeweils andere zu tun.
 $optionAvoidBatterToExploder Batter eher an Nicht-Exploder|Batter vorrangig an normale Lix zuweisen anstatt an brennende Exploder.|Halte „Priorität invertieren“ (Reiter „Steuerung“), um das jeweils andere zu tun.
-$optionReplayAfterFrameBack Replay bei ◀▮ behalten|Replay-Aktionen beim Zurückspulen (◀▮) behalten, bis du in die Luft klickst.|Ohne Haken: Replay-Aktionen entfernen, die durch ◀▮ ungeschehen werden.
 $optionUnpauseOnAssign Pause aus bei Fähigk.-Zwsg.|Die Pause ausschalten, wenn du eine Fähigkeit zuweist.|Ohne Haken: Nur 1 Physik-Update weiter, wenn du eine Fähigkeit zuweist.
+$optionReplayAfterFrameBack Replay bei ◀▮ behalten|Replay-Aktionen beim Zurückspulen (◀▮) behalten, bis du in die Luft klickst.|Ohne Haken: Replay-Aktionen entfernen, die durch ◀▮ ungeschehen werden.
+$optionReplayAlwaysInsert Einfügen während Replay|Neue Fähigkeitszuweisungen verwerfen nur die Zukunft derselben Lix.|Ohne Haken: Fähigkeitszuweisungen unterbrechen das Replay wie ein Luftklick.
 
 $optionKeyMenuOkay Okay/ja|Den markierten Level spielen.|Dialog-Einstellungen übernehmen und Dialoge beenden.
 $optionKeyMenuEdit Bearbeiten|Den markierten Level mit dem Leveleditor öffnen.

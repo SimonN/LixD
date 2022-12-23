@@ -51,7 +51,6 @@ import hardware.display; // fps for framestepping speed
 import hardware.music;
 import hardware.sound;
 import level.level;
-import lix; // _drawHerHighlit
 import net.client.client;
 import net.client.richcli;
 import physics;
@@ -81,8 +80,6 @@ package:
     // Is > 0 if we have to speed up, is < 0 if we have to slow down.
     // Should always be zero in singleplayer.
     long _alticksToAdjust;
-
-    ConstLix _drawHerHighlit;
 
     // Assignments for the next update go in here, and are only written into
     // the replay right before the update happens. If the replay is cut off

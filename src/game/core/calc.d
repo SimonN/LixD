@@ -6,6 +6,7 @@ import file.option;
 import basics.cmdargs;
 import game.core.game;
 import game.core.active;
+import game.core.highli;
 import game.core.passive;
 import game.core.speed;
 import game.exitwin;
@@ -37,8 +38,12 @@ implGameCalc(Game game) { with (game)
         }
     }
     else {
+        auto potAss = game.findAndDescribePotentialAssignee();
         game.calcPassive();
-        game.calcActive();
+        if (game.view.canAssignSkills) {
+            game.calcNukeButton();
+            game.calcClicksIntoMap(potAss);
+        }
         game.dispatchTweaks(); // Not yet impl'ed: feed into net
         noninputCalc();
         game.considerToEndGame();

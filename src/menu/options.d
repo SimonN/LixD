@@ -329,10 +329,12 @@ void populateGameKeys()
     enum belowAllGameKeys = 310f;
     fac = facLeft();
     fac.y = belowAllGameKeys;
+    fac.incrementY = 20f; // Hack because it's too crowded
     fac.xl = fac.xl - 10; // Mouse hover area shouldn't obscure other options
     groups[OptionGroup.gameKeys] ~= [
         fac.factory!BoolOption(unpauseOnAssign),
         fac.factory!BoolOption(replayAfterFrameBack),
+        fac.factory!BoolOption(replayAlwaysInsert),
     ];
     fac = facRight();
     fac.x = xForBoolOptionsBelowHotkeys + keyButtonXl - 20f;

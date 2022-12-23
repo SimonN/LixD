@@ -157,13 +157,13 @@ $tweakerEmptyListDesc2 Later, you can tweak
 $tweakerEmptyListDesc3 your assignments here.
 
 $skillTooltip walker|Walk back or cancel blockers.
-$skillTooltip jumper|Jump once. Runners jump further.
+$skillTooltip jumper|Jump once. Runners jump farther.
 $skillTooltip climber|Climb all vertical walls.
 $skillTooltip floater|Float to survive all falls.
 $skillTooltip runner|Run faster than walkers.
 $skillTooltip exploder|Implode to destroy earth/cancel blockers.
 $skillTooltip exploder2|Explode to fling other lix.
-$skillTooltip blocker|Block other lix, turning them.
+$skillTooltip blocker|Block to turn other lix.
 $skillTooltip batter|Bat other lix, flinging them.
 $skillTooltip cuber|Cube to generate earth quickly.
 $skillTooltip builder|Build a diagonal staircase.
@@ -365,8 +365,9 @@ $optionKeyNuke Nuke|In singleplayer, explode all your lix to finish the level.|I
 
 $optionAvoidBuilderQueuing Prefer spamming over queuing|Prefer builder assignments to non-builders over queuing to existing builders.|You can hold priority invert (see Controls tab) to do what you don't prefer.
 $optionAvoidBatterToExploder Prefer batters to non-exploders|Prefer batter assignments to walkers over batter assignments to timed exploders.|You can hold priority invert (see Controls tab) to do what you don't prefer.
-$optionReplayAfterFrameBack Keep replay after ◀▮|On framestepping back (◀▮), keep future replay actions until you click air.|If not checked, replay actions are removed when you undo them by framestepping.
 $optionUnpauseOnAssign Unpause on skill assignment|Unpause the game when you assign a skill during pause.|If not checked, skill assignments during pause advance the game by 1 frame.
+$optionReplayAfterFrameBack Keep replay after ◀▮|On framestepping back (◀▮), keep future replay actions until you click air.|If not checked, replay actions are removed when you undo them by framestepping.
+$optionReplayAlwaysInsert Insert during replay|During replay, new skill assignments cut only the same lix's future.|If not checked, assignments cut the global future, as if you clicked air.
 
 $optionKeyMenuOkay Okay/yes|Play the highlighted level. Save and close a dialog.
 $optionKeyMenuEdit Edit|Open the editor on the highlighted level.
