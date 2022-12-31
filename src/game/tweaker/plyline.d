@@ -14,6 +14,7 @@ import std.range;
 import file.language;
 import file.replay.tweakrq;
 import game.tweaker.oneline;
+import game.tweaker.nowline; // Nuke button's text is like NowLine's text.
 import gui;
 import graphic.color;
 import graphic.internal;
@@ -41,13 +42,13 @@ public:
         addChildren(_del, _earlier, _later, _desc);
     }
 
-    @property Ply ply(in Ply aPly)
+    void ply(in Ply aPly)
     {
         phyu = aPly.update;
-        return _desc.ply = aPly;
+        _desc.ply = aPly;
     }
 
-    @property Ply ply() const pure nothrow @nogc
+    Ply ply() const pure nothrow @safe @nogc
     {
         return _desc.ply;
     }
@@ -97,12 +98,15 @@ public:
  * |           |        |           |              |
  * |<---3/12-->|<-2/12->|<---3/12-->|<----4/12---->|
  * +-----------+--------+-----------+--------------+
+ * |                                |              |
+ * |<---------- Nuke text --------->|<--- Phyu --->|
+ * |                                |              |
+ * +--------------------------------+--------------+
  */
 private enum DescRelativePositions : float {
     xlL = 3f/12f,
     xlD = 2f/12f,
     xlS = 3f/12f,
-    xlP = 4f/12f,
 }
 
 /*
@@ -113,6 +117,7 @@ private:
     Label _lixID;
     Label _directionalForceArrow;
     Label _skillName;
+    Label _nukeName;
     Ply _ply;
 
 public:
@@ -126,29 +131,40 @@ public:
             0, xlg * xlD, ylg, From.CENTER));
         _skillName = new Label(new Geom(
             xlg * (xlL + xlD), 0, xlg * xlS, ylg, From.LEFT));
-        addChildren(_lixID, _directionalForceArrow, _skillName);
+        _nukeName = new Label(new Geom(
+            NowLine.textButtonDistXg(g), 0,
+            NowLine.textXlg(g) + 3 * 20f /* 3*20 == 3 * butXlg */, ylg));
+        addChildren(_lixID, _directionalForceArrow, _skillName, _nukeName);
     }}
 
-    @property Ply ply() const pure nothrow @nogc
+    Ply ply() const pure nothrow @safe @nogc
     {
         return _ply;
     }
 
-    @property Ply ply(in Ply aPly)
+    void ply(in Ply aPly)
     {
         if (aPly == _ply) {
-            return _ply;
+            return;
         }
         reqDraw();
         _ply = aPly;
-        _lixID.text = _ply.toWhichLix.to!string;
-        _directionalForceArrow.text
-            = _ply.action == RepAc.ASSIGN_LEFT
-            ? "\u25C4" // unicode: Black left-pointing pointer
-            : _ply.action == RepAc.ASSIGN_RIGHT
-            ? "\u25BA" // unicode: Black right-pointing pointer
-            : "";
-        _skillName.text = _ply.skill.acToNiceCase.take(3).to!string;
-        return _ply;
+        if (_ply.isSomeAssignment) {
+            _lixID.text = _ply.toWhichLix.to!string;
+            _directionalForceArrow.text
+                = _ply.action == RepAc.ASSIGN_LEFT
+                ? "\u25C4" // unicode: Black left-pointing pointer
+                : _ply.action == RepAc.ASSIGN_RIGHT
+                ? "\u25BA" // unicode: Black right-pointing pointer
+                : ""; // no extra symbol for unforced assignment or nuke
+            _skillName.text = _ply.skill.acToNiceCase.take(3).to!string;
+            _nukeName.text = "";
+        }
+        else { // Nuke
+            _lixID.text = "";
+            _directionalForceArrow.text = "";
+            _skillName.text = "";
+            _nukeName.text = Lang.optionKeyNuke.transl;
+        }
     }
 }

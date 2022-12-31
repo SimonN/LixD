@@ -11,6 +11,7 @@ private:
 
 protected:
     enum butXlg = 20;
+    enum phyuXlg = 50;
 
 public:
     this(Geom g)
@@ -24,7 +25,8 @@ public:
          * It's a hack.
          */
         _phyuText = new Label(new Geom(
-            thickg + 2 * butXlg, 0, 60, g.ylg, From.RIGHT));
+            thickg + 2 * butXlg, 0, phyuXlg - thickg, g.ylg, From.RIGHT));
+        _phyuText.abbreviateNear = Label.AbbreviateNear.beginning;
         addChild(_phyuText);
     }
 
