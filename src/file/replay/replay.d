@@ -183,21 +183,52 @@ public:
         _players[nr] = p;
     }
 
-    bool wasPlayedBy(string who) const pure nothrow @safe @nogc
-    {
-        return _players.byValue.canFind!(pl => pl.name == who);
+    const pure nothrow @safe @nogc {
+        bool wasPlayedBy(string who)
+        {
+            return _players.byValue.canFind!(pl => pl.name == who);
+        }
+
+        /*
+         * equalBefore(), extends():
+         * These don't check whether the metadata/general data is the same.
+         * We assume that Game only calls this on replays of the same level.
+         * "Before" is exclusive, you might want to pass Phyu(now + 1).
+         */
+        bool equalBefore(in Replay rhs, in Phyu t)
+        in { assert (rhs !is null); }
+        do {
+            return this.plySliceBefore(t) == rhs.plySliceBefore(t);
+        }
+
+        bool extends(in Replay rhs)
+        in { assert (rhs !is null); }
+        do {
+            immutable rlen = rhs._plies.length;
+            return _plies.length >= rlen && _plies[0 .. rlen] == rhs._plies[];
+        }
+
+        /*
+         * Call allPlies() rarely, e.g., to list all entries in the tweaker.
+         * Prefer to call plySliceFor().
+         */
+        const(Ply)[] allPlies() { return _plies; }
+        const(Ply)[] plySliceFor(in Phyu upd)
+        {
+            auto slice = this.plySliceBefore(Phyu(upd + 1));
+            int firstGood = slice.len;
+            while (firstGood > 0 && slice[firstGood - 1].update == upd)
+                --firstGood;
+            assert (firstGood >= 0);
+            assert (firstGood <= slice.length);
+            return _plies[firstGood .. slice.length];
+        }
     }
 
-    // This doesn't check whether the metadata/general data is the same.
-    // We assume that Game only calls this on replays of the same level.
-    // "Before" is exclusive, you might want to pass Phyu(now + 1).
-    bool equalBefore(in Replay rhs, in Phyu before) const @nogc nothrow
-    in {
-        assert (rhs !is null);
-    }
-    do {
-        return this.plySliceBefore(before)
-            == rhs.plySliceBefore(before);
+    void add(in Ply d)
+    {
+        touch();
+        this.addWithoutTouching(d);
     }
 
     void eraseEarlySingleplayerNukes()
@@ -269,43 +300,6 @@ public:
         }
         _plies = _plies.filter!(ply => ! toCut(ply)).array;
         touch();
-    }
-
-    /*
-     * Our users should prefer to call plySliceFor() over allPlies().
-     */
-    const(Ply)[] plySliceFor(in Phyu upd) const pure nothrow @nogc
-    {
-        auto slice = this.plySliceBefore(Phyu(upd + 1));
-        int firstGood = slice.len;
-        while (firstGood > 0 && slice[firstGood - 1].update == upd)
-            --firstGood;
-        assert (firstGood >= 0);
-        assert (firstGood <= slice.length);
-        return _plies[firstGood .. slice.length];
-    }
-
-    /*
-     * Call allPlies() rarely, e.g., to list all entries in the replay editor.
-     */
-    @property const(Ply)[] allPlies() const pure nothrow @nogc
-    {
-        return _plies;
-    }
-
-    bool getOnPhyuLixClicked(in Phyu upd, in int lix_id, in Ac ac) const
-    {
-        auto vec = plySliceFor(upd);
-        foreach (const ref d; vec)
-            if (d.isSomeAssignment && d.toWhichLix == lix_id && d.skill == ac)
-                return true;
-        return false;
-    }
-
-    void add(in Ply d)
-    {
-        touch();
-        this.addWithoutTouching(d);
     }
 
     /*

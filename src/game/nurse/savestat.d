@@ -62,9 +62,15 @@ public:
         auto loaded = _cache.loadUser(replay, Phyu(cs.update + 1));
         model.takeOwnershipOf(loaded.state.clone);
 
-        if (! replay.equalBefore(loaded.replay, Phyu(upd + 1))) {
+        // Now, upd is the loaded state's physics update, not our old update.
+        immutable bool eqb = replay.equalBefore(loaded.replay, Phyu(upd + 1));
+        immutable bool ext = replay.extends(loaded.replay);
+        if (! eqb || ! ext) {
             replay = loaded.replay.clone();
-            onCutGlobalFutureFromReplay(); // don't cut, but maybe play sound
+            if (! eqb) {
+                // A visible difference already at upd().
+                onCutGlobalFutureFromReplay(); // Don't cut, but play sound.
+            }
         }
         if (! replayAfterFrameBack.value) {
             cutGlobalFutureFromReplay();

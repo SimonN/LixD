@@ -62,7 +62,7 @@ do {
 inout(Ply)[] plySliceBefore(
     inout(Replay) rep,
     in Phyu upd
-) pure nothrow @nogc { with (rep)
+) pure nothrow @safe @nogc { with (rep)
 {
     // The binary search algo works also for this case.
     // But we add mostly to the end of the data, so check here for speed.
