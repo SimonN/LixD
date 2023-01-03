@@ -35,9 +35,9 @@ public:
         addChild(_checkbox);
     }
 
-    @property bool checked() const { return _checkbox.checked;     }
-    @property bool checked(bool b) { return _checkbox.checked = b; }
-    @property bool execute() const { return _execute;              }
+    bool checked() const { return _checkbox.checked; }
+    void checked(bool b) { _checkbox.checked = b; }
+    bool execute() const { return _execute; }
 
     override void loadValue()
     {

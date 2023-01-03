@@ -39,20 +39,32 @@ protected:
 
 class Checkbox : BitmapButton {
 private:
-    enum xfCheckmark = 2;
+    immutable int _xfWhenChecked = 2; // 2 is the checkmark, or caller sets it.
 
 public:
-    this(Geom g)
+    this(Geom g, in int xfWhenChecked = 2)
     {
         g.xl = 20;
         g.yl = 20;
         super(g, InternalImage.menuCheckmark.toCutbit);
+        _xfWhenChecked = xfWhenChecked;
         this.onExecute = (){ this.toggle; };
     }
 
-    @property bool checked(bool b) { xf = (b ? xfCheckmark : 0);
-                                     reqDraw(); return b; }
-    @property bool checked() const { return xf == xfCheckmark;   }
-    bool toggle()                  { return checked = ! checked; }
+    bool checked() const
+    {
+        return xf == _xfWhenChecked;
+    }
+
+    void checked(bool b)
+    {
+        xf = b ? _xfWhenChecked : 0;
+        reqDraw();
+    }
+
+    void toggle()
+    {
+        checked = ! checked;
+    }
 }
 // end class Checkbox

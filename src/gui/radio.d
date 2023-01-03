@@ -23,7 +23,8 @@ public:
 
     void addChoice(string s)
     {
-        auto b = new ChoiceButton(new Geom(0, _choices.len * 20f, 20, 20));
+        auto b = new ChoiceButton(new Geom(0, _choices.len * 20f, 20, 20),
+            6); // 6 is the x-frame for the active radio button.
         auto l = new Label(new Geom(30, _choices.len * 20f, xlg - 30, 20), s);
         b.onExecute = ()
         {
