@@ -61,6 +61,8 @@ protected:
 
     override string hotkeyString() const
     {
-        return "%s/%s".format(hotkey.nameShort, _hotkeyRight.nameShort);
+        return hotkey.empty ? _hotkeyRight.nameShort
+            : _hotkeyRight.empty ? hotkey.nameShort
+            : "%s/%s".format(hotkey.nameShort, _hotkeyRight.nameShort);
     }
 }
