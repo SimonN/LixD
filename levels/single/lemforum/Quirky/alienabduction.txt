@@ -1,12 +1,10 @@
-$BUILT 2016-07-29 13:26:07
+$BUILT 2023-01-06 21:37:25
 $AUTHOR geoo
 $ENGLISH Alien Abduction
 
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
 #SIZE_Y 400
-#START_X 0
-#START_Y 0
 
 #INITIAL 60
 #REQUIRED 60
@@ -129,11 +127,7 @@ $ENGLISH Alien Abduction
 :matt/earth/07b: 416 182
 :matt/earth/07b: 410 184
 :matt/earth/09: 442 174 frr
-$BEGIN_TILE_GROUP 0
-:geoo/abstract/pipes/central5: 0 0 r
-:geoo/abstract/pipes/central5: 0 24 rd
-$END_TILE_GROUP
-:Group-0: 216 192
-:Group-0: 160 192
-:geoo/abstract/pipes/endr5: 216 216 r
-:geoo/abstract/pipes/endr5: 160 216 r
+:matt/marble/thinplatform16p: 160 192 r
+:matt/marble/thinplatform16p: 160 208 r
+:matt/marble/thinplatform16p: 222 192 r
+:matt/marble/thinplatform16p: 222 208 r

@@ -1,12 +1,10 @@
-$BUILT 2017-07-31 15:23:35
+$BUILT 2023-01-06 21:33:46
 $AUTHOR geoo
 $ENGLISH All Aboard the Pain Train
 
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 992
 #SIZE_Y 328
-#START_X 272
-#START_Y 380
 
 #INITIAL 15
 #REQUIRED 13
@@ -168,10 +166,10 @@ $ENGLISH All Aboard the Pain Train
 :amanda/occult/wax_details_bump: 501 180 r
 :geoo/steel/32x32o.S: 503 181 d
 $BEGIN_TILE_GROUP 0
-:amanda/occult/wax32x16_cap_left: 3 9 r
-:amanda/occult/overlay32x32_d: -11 7 rrrd
-:amanda/occult/wax32x16_cap_left_alt: 9 0 rd
-:amanda/occult/wax32x16_cap_left_alt: 7 30 rd
+:amanda/occult/wax32x16_cap_left: 14 9 r
+:amanda/occult/overlay32x32_d: 0 7 rrrd
+:amanda/occult/wax32x16_cap_left_alt: 20 0 rd
+:amanda/occult/wax32x16_cap_left_alt: 18 30 rd
 $END_TILE_GROUP
 :Group-0: 485 143
 $BEGIN_TILE_GROUP 1
@@ -184,8 +182,24 @@ $BEGIN_TILE_GROUP 1
 $END_TILE_GROUP
 :Group-1: 485 159
 $BEGIN_TILE_GROUP 2
-:amanda/occult/wax16x16: 0 0 r
-:amanda/occult/wax16x16: -2 0 rd
+:amanda/occult/wax16x16: 2 0 r
+:amanda/occult/wax16x16: 0 0 rd
 $END_TILE_GROUP
 :Group-2: 503 143
 :Group-2: 503 149
+:amanda/occult/wax_details_lump: 504 154 r
+$BEGIN_TILE_GROUP 3
+:amanda/occult/wax32x16: 2 14 r
+:amanda/occult/wax32x16: 0 0 rrd
+:amanda/occult/wax32x16: 2 28 rrd
+:amanda/occult/wax32x16: 7 14 rd
+$END_TILE_GROUP
+:Group-3: 480 161
+:Group-3: 482 156 f
+$BEGIN_TILE_GROUP 4
+:amanda/occult/wax_details_bump: 0 6
+:amanda/occult/cube: 0 0 d
+:amanda/occult/cube: 18 2 d
+$END_TILE_GROUP
+:Group-4: 504 176
+:Group-4: 505 174
