@@ -22,9 +22,10 @@ lixpotion.txt
 thinkfast.txt
 fourcorners.txt
 pitfall.txt
-ferrytale.txt
+6gaps.txt
 chargeofthelix.txt
 littleviennese.txt
+timetochange.txt
 walkthem.txt
 snowreally.txt
 minimalism2.txt
@@ -34,7 +35,6 @@ dontleavemehanging.txt
 theroadnottaken.txt
 onewayroad.txt
 declination.txt
-youllgetoverit.txt
 thetwotowers.txt
 youhavetobuild.txt
 theroadgoeseveron.txt
