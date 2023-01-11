@@ -18,6 +18,7 @@ import file.filename;
 import file.language;
 import gui;
 import gui.picker;
+import hardware.mouse;
 import hardware.tharsis;
 import level.level;
 import menu.repmatch;
@@ -60,6 +61,12 @@ public:
         return m;
     }
 
+protected:
+    override void calcSelf()
+    {
+        _gotoBrowSin = hardware.mouse.mouseClickRight || _back.execute;
+    }
+
 private:
     void commonConstructor()
     {
@@ -83,7 +90,6 @@ private:
         _back = new TextButton(new Geom(20, 20, 100, 40, From.BOTTOM_RIGHT),
             Lang.commonBack.transl);
         _back.hotkey = keyMenuExit;
-        _back.onExecute = () { _gotoBrowSin = true; };
         addChildren(_picker, _back);
     }
 }

@@ -20,6 +20,7 @@ static import glo = file.option.allopts;
 import game.argscrea;
 import gui;
 import hardware.keyset;
+import hardware.mouse;
 import menu.preview.base;
 import menu.outcome.repsave;
 import menu.outcome.trotable;
@@ -31,6 +32,7 @@ private:
     ReplaySaver _replaySaver;
     NextLevelButton[] _offeredLevels;
     TextButton _gotoBrowser;
+    ExitWith _exitWith = ExitWith.notYet;
 
     // Singleton, refactor with TrophyCase into some kitchen sink object
     static TreeLevelCache _cache = null;
@@ -103,16 +105,7 @@ public:
         }
     }
 
-    ExitWith exitWith() const pure nothrow @safe @nogc
-    {
-        if (_gotoBrowser.execute) {
-            return ExitWith.gotoBrowser;
-        }
-        else if (_offeredLevels.any!(button => button.execute)) {
-            return ExitWith.gotoLevel;
-        }
-        return ExitWith.notYet;
-    }
+    ExitWith exitWith() const pure nothrow @safe @nogc { return _exitWith; }
 
     ArgsToCreateGame argsForNextGame()
     in {
@@ -124,6 +117,15 @@ public:
         auto next = _offeredLevels[].find!(but => but.execute)[0].nextLevel;
         glo.singleLastLevel = next.levelFilename;
         return next;
+    }
+
+protected:
+    override void calcSelf()
+    {
+        _exitWith = (hardware.mouse.mouseClickRight || _gotoBrowser.execute)
+            ? ExitWith.gotoBrowser
+            : _offeredLevels.any!(button => button.execute)
+            ? ExitWith.gotoLevel : ExitWith.notYet;
     }
 
 private:

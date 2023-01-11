@@ -13,7 +13,7 @@ void deinitialize();
 
 void calc();
 
-@property nothrow @nogc {
+@property nothrow @safe @nogc {
     int   mouseX()        { return _mouseOwn.x; }
     int   mouseY()        { return _mouseOwn.y; }
     Point mouseOnScreen() { return _mouseOwn; }
