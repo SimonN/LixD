@@ -1,0 +1,367 @@
+$BUILT 2019-12-29 19:18:44
+$AUTHOR Simon
+$ENGLISH Shed of Presents
+
+#INTENDED_NUMBER_OF_PLAYERS 6
+#SIZE_X 1920
+#SIZE_Y 400
+#TORUS_X 1
+#TORUS_Y 0
+
+#SECONDS 60
+#INITIAL 50
+#SPAWN_INTERVAL 31
+
+#WALKER 44
+#RUNNER 11
+#CLIMBER 11
+#FLOATER 11
+#EXPLODER2 11
+#BLOCKER 1
+#BUILDER 77
+#PLATFORMER 11
+#BASHER 11
+#MINER 11
+#DIGGER 1
+#JUMPER 11
+#BATTER 11
+#CUBER 11
+
+:matt/winter/Hatch.H: 1328 208
+:matt/winter/Hatch.H: 1808 208 r
+:matt/winter/Hatch.H: 48 208
+:matt/winter/Hatch.H: 528 208 r
+:matt/winter/Hatch.H: 688 208
+:matt/winter/Hatch.H: 1168 208 r
+
+:raymanni/holiday/goal.G: 892 144
+:raymanni/holiday/goal.G: 324 144
+:raymanni/holiday/goal.G: 1532 144
+:raymanni/holiday/goal.G: 964 144
+:raymanni/holiday/goal.G: 252 144
+:raymanni/holiday/goal.G: 1604 144
+:raymanni/holiday/goal.G: 1672 56
+:raymanni/holiday/goal.G: 1464 56
+:raymanni/holiday/goal.G: 392 56
+:raymanni/holiday/goal.G: 184 56
+:raymanni/holiday/goal.G: 1032 56
+:raymanni/holiday/goal.G: 824 56
+
+:raymanni/holiday/porcupine.T: 1568 8
+:raymanni/holiday/porcupine.T: 288 8
+:raymanni/holiday/porcupine.T: 928 8
+
+:amanda/tar.W: 1536 368
+:amanda/tar.W: 256 368
+:amanda/tar.W: 896 368
+:amanda/tar.W: 1216 368
+:amanda/tar.W: 1856 368
+:amanda/tar.W: 576 368
+
+$BEGIN_TILE_GROUP 0
+:matt/winter/07: 0 32 f
+:matt/winter/06: 0 0 d
+$END_TILE_GROUP
+:Group-0: 1736 136
+:Group-0: 1744 144
+:Group-0: 1456 136
+:Group-0: 1448 144
+:raymanni/holiday/snow2: 1691 330
+:raymanni/holiday/gift2: 1296 288 fr
+:raymanni/holiday/snow2: 1390 330 frr
+:raymanni/holiday/snow2: 1280 336
+:raymanni/holiday/snow2: 1318 334 frr
+:raymanni/holiday/brick_red: 1664 336
+:raymanni/holiday/brick_red: 1696 336
+:raymanni/holiday/brick_red: 1632 336
+:raymanni/holiday/brick_red: 1664 272
+:raymanni/holiday/brick_red: 1696 272
+:raymanni/holiday/brick_red: 1664 304
+:raymanni/holiday/brick_red: 1696 304
+:raymanni/holiday/brick_red: 1632 272
+:raymanni/holiday/brick_red: 1632 304
+:raymanni/holiday/brick_red: 1504 272
+:raymanni/holiday/brick_red: 1536 272
+:raymanni/holiday/brick_red: 1504 304
+:raymanni/holiday/brick_red: 1536 304
+:raymanni/holiday/brick_red: 1504 336
+:raymanni/holiday/brick_red: 1536 336
+:raymanni/holiday/brick_red: 1472 272
+:raymanni/holiday/brick_red: 1472 304
+:raymanni/holiday/brick_red: 1472 336
+:raymanni/holiday/brick_red_b: 1696 112
+:raymanni/holiday/brick_red_a: 1472 112
+:raymanni/holiday/brick_red: 1632 240
+:raymanni/holiday/brick_red: 1504 144
+:raymanni/holiday/brick_red: 1600 80
+:raymanni/holiday/brick_red: 1568 80
+:raymanni/holiday/brick_red_b: 1632 80
+:raymanni/holiday/brick_red_a: 1536 80
+:raymanni/holiday/brick_red: 1504 112
+:raymanni/holiday/plank_d1: 1568 64
+:raymanni/holiday/brick_red: 1664 112
+:raymanni/holiday/plank_d1: 1632 80 frr
+:raymanni/holiday/brick_red: 1536 112
+:raymanni/holiday/brick_red: 1568 112
+:raymanni/holiday/brick_red: 1600 112
+:raymanni/holiday/brick_red: 1632 112
+:raymanni/holiday/brick_red: 1664 144
+:raymanni/holiday/brick_red: 1504 176
+:raymanni/holiday/brick_red: 1664 176
+:raymanni/holiday/brick_red: 1504 208
+:raymanni/holiday/brick_red: 1536 208
+:raymanni/holiday/brick_red: 1632 208
+:raymanni/holiday/brick_red: 1664 208
+:raymanni/holiday/brick_red: 1504 240
+:raymanni/holiday/brick_red: 1536 240
+:raymanni/holiday/brick_red: 1664 240
+:raymanni/holiday/brick_red: 1472 144
+:raymanni/holiday/brick_red: 1472 176
+:raymanni/holiday/brick_red: 1472 208
+:raymanni/holiday/brick_red: 1472 240
+:raymanni/holiday/brick_red: 1696 144
+:Group-0: 1696 120
+:raymanni/holiday/brick_red: 1696 176
+:raymanni/holiday/brick_red: 1696 208
+:raymanni/holiday/brick_red: 1696 240
+:raymanni/holiday/plank_long: 1536 208
+:raymanni/holiday/plank_left: 1520 208
+:raymanni/holiday/plank_right: 1648 208
+:raymanni/holiday/brick_red_d: 1536 144
+:matt/winter/07: 1536 96 f
+:raymanni/holiday/brick_red_c: 1632 144
+:raymanni/holiday/cane_mid: 1592 136
+:raymanni/holiday/cane_mid: 1592 168
+:raymanni/holiday/cane_mid: 1592 200
+:raymanni/holiday/cane_a: 1592 104
+:raymanni/holiday/cane_b: 1624 104
+:raymanni/holiday/cane_end1: 1640 136 f
+:raymanni/holiday/cane_end2: 1592 232
+:raymanni/holiday/plank_d2: 1440 128
+:raymanni/holiday/plank_d2: 1728 128 frr
+:raymanni/holiday/gift2: 1518 288 fr
+:raymanni/holiday/gift4: 1496 310
+:raymanni/holiday/snow2: 1456 336
+:raymanni/holiday/snow3: 1308 330 frr
+:raymanni/holiday/gift2: 1872 288 fr
+:raymanni/holiday/snow2: 1801 336 frr
+:raymanni/holiday/snow2: 1763 334
+:raymanni/holiday/gift1: 1660 310
+:raymanni/holiday/snow2: 1625 336 frr
+:raymanni/holiday/snow3: 1825 330
+:raymanni/holiday/gift4: 1656 278
+:matt/winter/07: 1480 128 f
+:raymanni/holiday/plank_d1: 1472 112
+:Group-0: 1520 112
+:raymanni/holiday/plank_d1: 1504 96
+:matt/winter/07: 1672 112 f
+:raymanni/holiday/plank_d1: 1664 96 frr
+:Group-0: 1560 88
+:raymanni/holiday/plank_d1: 1536 80
+:raymanni/holiday/plank_d1: 1696 112 frr
+:Group-0: 1608 80
+:raymanni/holiday/plank_d1: 1600 64 frr
+:Group-0: 456 136
+:Group-0: 464 144
+:Group-0: 176 136
+:Group-0: 168 144
+:raymanni/holiday/snow2: 411 330
+:raymanni/holiday/gift2: 16 288 fr
+:raymanni/holiday/snow2: 110 330 frr
+:raymanni/holiday/snow2: 0 336
+:raymanni/holiday/snow2: 38 334 frr
+:raymanni/holiday/brick_red: 384 336
+:raymanni/holiday/brick_red: 416 336
+:raymanni/holiday/brick_red: 352 336
+:raymanni/holiday/brick_red: 384 272
+:raymanni/holiday/brick_red: 416 272
+:raymanni/holiday/brick_red: 384 304
+:raymanni/holiday/brick_red: 416 304
+:raymanni/holiday/brick_red: 352 272
+:raymanni/holiday/brick_red: 352 304
+:raymanni/holiday/brick_red: 224 272
+:raymanni/holiday/brick_red: 256 272
+:raymanni/holiday/brick_red: 224 304
+:raymanni/holiday/brick_red: 256 304
+:raymanni/holiday/brick_red: 224 336
+:raymanni/holiday/brick_red: 256 336
+:raymanni/holiday/brick_red: 192 272
+:raymanni/holiday/brick_red: 192 304
+:raymanni/holiday/brick_red: 192 336
+:raymanni/holiday/brick_red_b: 416 112
+:raymanni/holiday/brick_red_a: 192 112
+:raymanni/holiday/brick_red: 352 240
+:raymanni/holiday/brick_red: 224 144
+:raymanni/holiday/brick_red: 320 80
+:raymanni/holiday/brick_red: 288 80
+:raymanni/holiday/brick_red_b: 352 80
+:raymanni/holiday/brick_red_a: 256 80
+:raymanni/holiday/brick_red: 224 112
+:raymanni/holiday/plank_d1: 288 64
+:raymanni/holiday/brick_red: 384 112
+:raymanni/holiday/plank_d1: 352 80 frr
+:raymanni/holiday/brick_red: 256 112
+:raymanni/holiday/brick_red: 288 112
+:raymanni/holiday/brick_red: 320 112
+:raymanni/holiday/brick_red: 352 112
+:raymanni/holiday/brick_red: 384 144
+:raymanni/holiday/brick_red: 224 176
+:raymanni/holiday/brick_red: 384 176
+:raymanni/holiday/brick_red: 224 208
+:raymanni/holiday/brick_red: 256 208
+:raymanni/holiday/brick_red: 352 208
+:raymanni/holiday/brick_red: 384 208
+:raymanni/holiday/brick_red: 224 240
+:raymanni/holiday/brick_red: 256 240
+:raymanni/holiday/brick_red: 384 240
+:raymanni/holiday/brick_red: 192 144
+:raymanni/holiday/brick_red: 192 176
+:raymanni/holiday/brick_red: 192 208
+:raymanni/holiday/brick_red: 192 240
+:raymanni/holiday/brick_red: 416 144
+:Group-0: 416 120
+:raymanni/holiday/brick_red: 416 176
+:raymanni/holiday/brick_red: 416 208
+:raymanni/holiday/brick_red: 416 240
+:raymanni/holiday/plank_long: 256 208
+:raymanni/holiday/plank_left: 240 208
+:raymanni/holiday/plank_right: 368 208
+:raymanni/holiday/brick_red_d: 256 144
+:matt/winter/07: 256 96 f
+:raymanni/holiday/brick_red_c: 352 144
+:raymanni/holiday/cane_mid: 312 136
+:raymanni/holiday/cane_mid: 312 168
+:raymanni/holiday/cane_mid: 312 200
+:raymanni/holiday/cane_a: 312 104
+:raymanni/holiday/cane_b: 344 104
+:raymanni/holiday/cane_end1: 360 136 f
+:raymanni/holiday/cane_end2: 312 232
+:raymanni/holiday/plank_d2: 160 128
+:raymanni/holiday/plank_d2: 448 128 frr
+:raymanni/holiday/gift2: 238 288 fr
+:raymanni/holiday/gift4: 216 310
+:raymanni/holiday/snow2: 176 336
+:raymanni/holiday/snow3: 28 330 frr
+:raymanni/holiday/gift2: 592 288 fr
+:raymanni/holiday/snow2: 521 336 frr
+:raymanni/holiday/snow2: 483 334
+:raymanni/holiday/gift1: 380 310
+:raymanni/holiday/snow2: 345 336 frr
+:raymanni/holiday/snow3: 545 330
+:raymanni/holiday/gift4: 376 278
+:matt/winter/07: 200 128 f
+:raymanni/holiday/plank_d1: 192 112
+:Group-0: 240 112
+:raymanni/holiday/plank_d1: 224 96
+:matt/winter/07: 392 112 f
+:raymanni/holiday/plank_d1: 384 96 frr
+:Group-0: 280 88
+:raymanni/holiday/plank_d1: 256 80
+:raymanni/holiday/plank_d1: 416 112 frr
+:Group-0: 328 80
+:raymanni/holiday/plank_d1: 320 64 frr
+:Group-0: 1096 136
+:Group-0: 1104 144
+:Group-0: 816 136
+:Group-0: 808 144
+:raymanni/holiday/snow2: 1051 330
+:raymanni/holiday/gift2: 656 288 fr
+:raymanni/holiday/snow2: 750 330 frr
+:raymanni/holiday/snow2: 640 336
+:raymanni/holiday/snow2: 678 334 frr
+:raymanni/holiday/brick_red: 1024 336
+:raymanni/holiday/brick_red: 1056 336
+:raymanni/holiday/brick_red: 992 336
+:raymanni/holiday/brick_red: 1024 272
+:raymanni/holiday/brick_red: 1056 272
+:raymanni/holiday/brick_red: 1024 304
+:raymanni/holiday/brick_red: 1056 304
+:raymanni/holiday/brick_red: 992 272
+:raymanni/holiday/brick_red: 992 304
+:raymanni/holiday/brick_red: 864 272
+:raymanni/holiday/brick_red: 896 272
+:raymanni/holiday/brick_red: 864 304
+:raymanni/holiday/brick_red: 896 304
+:raymanni/holiday/brick_red: 864 336
+:raymanni/holiday/brick_red: 896 336
+:raymanni/holiday/brick_red: 832 272
+:raymanni/holiday/brick_red: 832 304
+:raymanni/holiday/brick_red: 832 336
+:raymanni/holiday/brick_red_b: 1056 112
+:raymanni/holiday/brick_red_a: 832 112
+:raymanni/holiday/brick_red: 992 240
+:raymanni/holiday/brick_red: 864 144
+:raymanni/holiday/brick_red: 960 80
+:raymanni/holiday/brick_red: 928 80
+:raymanni/holiday/brick_red_b: 992 80
+:raymanni/holiday/brick_red_a: 896 80
+:raymanni/holiday/brick_red: 864 112
+:raymanni/holiday/plank_d1: 928 64
+:raymanni/holiday/brick_red: 1024 112
+:raymanni/holiday/plank_d1: 992 80 frr
+:raymanni/holiday/brick_red: 896 112
+:raymanni/holiday/brick_red: 928 112
+:raymanni/holiday/brick_red: 960 112
+:raymanni/holiday/brick_red: 992 112
+:raymanni/holiday/brick_red: 1024 144
+:raymanni/holiday/brick_red: 864 176
+:raymanni/holiday/brick_red: 1024 176
+:raymanni/holiday/brick_red: 864 208
+:raymanni/holiday/brick_red: 896 208
+:raymanni/holiday/brick_red: 992 208
+:raymanni/holiday/brick_red: 1024 208
+:raymanni/holiday/brick_red: 864 240
+:raymanni/holiday/brick_red: 896 240
+:raymanni/holiday/brick_red: 1024 240
+:raymanni/holiday/brick_red: 832 144
+:raymanni/holiday/brick_red: 832 176
+:raymanni/holiday/brick_red: 832 208
+:raymanni/holiday/brick_red: 832 240
+:raymanni/holiday/brick_red: 1056 144
+:Group-0: 1056 120
+:raymanni/holiday/brick_red: 1056 176
+:raymanni/holiday/brick_red: 1056 208
+:raymanni/holiday/brick_red: 1056 240
+:raymanni/holiday/plank_long: 896 208
+:raymanni/holiday/plank_left: 880 208
+:raymanni/holiday/plank_right: 1008 208
+:raymanni/holiday/brick_red_d: 896 144
+:matt/winter/07: 896 96 f
+:raymanni/holiday/brick_red_c: 992 144
+:raymanni/holiday/cane_mid: 952 136
+:raymanni/holiday/cane_mid: 952 168
+:raymanni/holiday/cane_mid: 952 200
+:raymanni/holiday/cane_a: 952 104
+:raymanni/holiday/cane_b: 984 104
+:raymanni/holiday/cane_end1: 1000 136 f
+:raymanni/holiday/cane_end2: 952 232
+:raymanni/holiday/plank_d2: 800 128
+:raymanni/holiday/plank_d2: 1088 128 frr
+:raymanni/holiday/gift2: 878 288 fr
+:raymanni/holiday/gift4: 856 310
+:raymanni/holiday/snow2: 816 336
+:raymanni/holiday/snow3: 668 330 frr
+:raymanni/holiday/gift2: 1232 288 fr
+:raymanni/holiday/snow2: 1161 336 frr
+:raymanni/holiday/snow2: 1123 334
+:raymanni/holiday/gift1: 1020 310
+:raymanni/holiday/snow2: 985 336 frr
+:raymanni/holiday/snow3: 1185 330
+:raymanni/holiday/gift4: 1016 278
+:matt/winter/07: 840 128 f
+:raymanni/holiday/plank_d1: 832 112
+:Group-0: 880 112
+:raymanni/holiday/plank_d1: 864 96
+:matt/winter/07: 1032 112 f
+:raymanni/holiday/plank_d1: 1024 96 frr
+:Group-0: 920 88
+:raymanni/holiday/plank_d1: 896 80
+:raymanni/holiday/plank_d1: 1056 112 frr
+:Group-0: 968 80
+:raymanni/holiday/plank_d1: 960 64 frr
+:amanda/steel/steel24x8.S: 912 208
+:amanda/steel/steel24x8.S: 984 208
+:amanda/steel/steel24x8.S: 1552 208
+:amanda/steel/steel24x8.S: 1624 208
+:amanda/steel/steel24x8.S: 272 208
+:amanda/steel/steel24x8.S: 344 208
