@@ -33,7 +33,8 @@ enum InternalImage {
     menuCheckmark,
     mouse,
     previewIcon,
-    skillIcons,
+    skillsInPanel,
+    skillsInTweaker,
 }
 
 enum GamePanel2Xf {
@@ -68,7 +69,8 @@ string toBasename(in InternalImage id)
     case menuCheckmark: return "menu_chk.I.png";
     case mouse: return "mouse.I.png";
     case previewIcon: return "prev_ico.I.png";
-    case skillIcons: return "skillico.I.png";
+    case skillsInPanel: return "skillpan.I.png";
+    case skillsInTweaker: return "skilltwk.I.png";
     }
 }
 
@@ -87,6 +89,7 @@ bool needGuiRecoloring(in InternalImage id)
     case lobbySpec:
     case menuCheckmark:
     case previewIcon:
+    case skillsInTweaker:
         return true;
     default:
         return false;

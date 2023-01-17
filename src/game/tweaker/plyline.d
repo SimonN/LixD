@@ -79,7 +79,7 @@ private:
 
 class TweakerHeader : Element {
 public:
-    this(Geom g) { with (DescRelativePositions)
+    this(Geom g)
     {
         super(g);
         addChildren(
@@ -88,26 +88,21 @@ public:
             new Label(new Geom(40 + thickg, 0, xlg/2f, 20, From.RIGHT),
                 Lang.tweakerHeaderPhyu.transl),
         );
-    }}
+    }
 }
 
 /*
- * +-----------+--------+-----------+--------------+
- * |    Lix    |  Dir   |   Skill   |     Phyu     |
- * |     ID    | arrow  |    name   |              |
- * |           |        |           |              |
- * |<---3/12-->|<-2/12->|<---3/12-->|<----4/12---->|
- * +-----------+--------+-----------+--------------+
- * |                                |              |
- * |<---------- Nuke text --------->|<--- Phyu --->|
- * |                                |              |
- * +--------------------------------+--------------+
+ * +-------------+-------+--------------+
+ * |    Lix ID   | Skill |     Phyu     |
+ * | incl thickg |       |              |
+ * | 1x per side |       |              |
+ * |    = 30     |  20   |     50       |
+ * +-------------+-------+--------------+
+ * |                     |              |
+ * |<---- Nuke text ---->|<--- Phyu --->|
+ * |                     |              |
+ * +---------------------+--------------+
  */
-private enum DescRelativePositions : float {
-    xlL = 3f/12f,
-    xlD = 2f/12f,
-    xlS = 3f/12f,
-}
 
 /*
  * All the info of a PlyLine, i.e., everything of PlyLine that is not a button.
@@ -115,27 +110,23 @@ private enum DescRelativePositions : float {
 private class PlyLineDesc : Element {
 private:
     Label _lixID;
-    Label _directionalForceArrow;
-    Label _skillName;
+    CutbitElement _skillIcon;
     Label _nukeName;
     Ply _ply;
 
 public:
-    this(Geom g) { with (DescRelativePositions)
+    this(Geom g)
     {
         super(g);
-        _lixID = new Label(new Geom(
-            xlg * (1-xlL), 0, xlg * (1-xlL) - thickg, ylg, From.RIGHT));
-        _directionalForceArrow = new Label(new Geom(
-            xlg * xlL - xlg/2f + (xlg * xlD)/2f,
-            0, xlg * xlD, ylg, From.CENTER));
-        _skillName = new Label(new Geom(
-            xlg * (xlL + xlD), 0, xlg * xlS, ylg, From.LEFT));
+        _lixID = new Label(new Geom(xlg - 30 + thickg, 0,
+            30 - 2 * thickg, ylg, From.RIGHT));
+        _skillIcon = new CutbitElement(new Geom(30, 0, 20, ylg),
+            InternalImage.skillsInTweaker.toCutbit);
         _nukeName = new Label(new Geom(
             NowLine.textButtonDistXg(g), 0,
             NowLine.textXlg(g) + 3 * 20f /* 3*20 == 3 * butXlg */, ylg));
-        addChildren(_lixID, _directionalForceArrow, _skillName, _nukeName);
-    }}
+        addChildren(_lixID, _skillIcon, _nukeName);
+    }
 
     Ply ply() const pure nothrow @safe @nogc
     {
@@ -151,19 +142,14 @@ public:
         _ply = aPly;
         if (_ply.isSomeAssignment) {
             _lixID.text = _ply.toWhichLix.to!string;
-            _directionalForceArrow.text
-                = _ply.action == RepAc.ASSIGN_LEFT
-                ? "\u25C4" // unicode: Black left-pointing pointer
-                : _ply.action == RepAc.ASSIGN_RIGHT
-                ? "\u25BA" // unicode: Black right-pointing pointer
-                : ""; // no extra symbol for unforced assignment or nuke
-            _skillName.text = _ply.skill.acToNiceCase.take(3).to!string;
+            _skillIcon.show();
+            _skillIcon.xf = 2 * _ply.skill.acToSkillIconXf
+                + 1 * (_ply.action == RepAc.ASSIGN_LEFT);
             _nukeName.text = "";
         }
         else { // Nuke
             _lixID.text = "";
-            _directionalForceArrow.text = "";
-            _skillName.text = "";
+            _skillIcon.hide();
             _nukeName.text = Lang.optionKeyNuke.transl;
         }
     }

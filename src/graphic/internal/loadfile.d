@@ -55,7 +55,7 @@ void makePanelInfoIcon(in Style st)
 void makeSkillButtonIcon(in Style st)
 {
     recolorForGuiAndPlayer!magicnrSkillButtonIcons(
-        InternalImage.skillIcons, skillButtonIcons, st);
+        InternalImage.skillsInPanel, skillButtonIcons, st);
 }
 
 void makeGoalMarker(in Style st)
