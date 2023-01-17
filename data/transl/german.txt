@@ -144,13 +144,13 @@ $gameFastForward %s für schnellen Vorlauf, %s für Turbo.
 $gameRestart Level neu starten.
 $gameNuke Atombombe. Aktiviere per Doppelklick.
 
-$tweakerHeaderLixID Lix-ID
+$tweakerHeaderLixID Lix
 $tweakerHeaderPhyu Phyu
 $tweakerLineNow Jetzt
 $tweakerEmptyListTitle Replay-Justierer
-$tweakerEmptyListDesc1 Klicke ein paar Lix an.
-$tweakerEmptyListDesc2 Dann kannst du hier den
-$tweakerEmptyListDesc3 Spielverlauf justieren.
+$tweakerEmptyListDesc1 Klicke Lix an.
+$tweakerEmptyListDesc2 Justiere dann hier
+$tweakerEmptyListDesc3 den Spielverlauf.
 
 $skillTooltip walker|Walker. Dreht um, beendet Blocker.
 $skillTooltip jumper|Jumper. Runner springen weiter.

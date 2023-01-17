@@ -19,6 +19,7 @@ import std.algorithm;
 import std.range;
 import std.string;
 
+import basics.help;
 import basics.globals;
 import file.language;
 import gui;
@@ -143,30 +144,10 @@ string fractionToUnicode(
 ) pure @safe
 in { assert (denominator >= 1, "no zero, and put minus into the numerator"); }
 do {
-    string expressWithTheseDigits(int n, ref immutable string[10] digits)
-    in { assert (digits.length == 10); }
-    do {
-        if (n == 0) {
-            return digits[0];
-        }
-        if (n < 0) {
-            n *= -1;
-        }
-        string ret;
-        while (n > 0) {
-            ret = digits[n % 10] ~ ret;
-            n /= 10;
-        }
-        return ret;
-    }
-    // These are all 2-byte or 3-byte in UTF-8: ⁰¹²³⁴⁵⁶⁷⁸⁹⁄₀₁₂₃₄₅₆₇₈₉
-    alias Strs = immutable string[10];
-    static Strs numStrs = ["⁰", "¹", "²", "³", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹"];
-    static Strs denStrs = ["₀", "₁", "₂", "₃", "₄", "₅", "₆", "₇", "₈", "₉"];
     return (numerator < 0 ? "\u2212" : "")
-        ~ expressWithTheseDigits(numerator, numStrs)
+        ~ expressWithTheseDigits(numerator, superscript)
         ~ "⁄"
-        ~ expressWithTheseDigits(denominator, denStrs);
+        ~ expressWithTheseDigits(denominator, subscript);
 }
 
 unittest {

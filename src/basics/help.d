@@ -135,6 +135,29 @@ pure string pruneString(in string input, bool function(dchar) pure pred)
     return input.all!pred ? input : input.filter!pred.to!string;
 }
 
+// These are all 2-byte or 3-byte in UTF-8: ⁰¹²³⁴⁵⁶⁷⁸⁹⁄₀₁₂₃₄₅₆₇₈₉
+static immutable string[10] superscript
+    = ["⁰", "¹", "²", "³", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹"];
+static immutable string[10] subscript
+    = ["₀", "₁", "₂", "₃", "₄", "₅", "₆", "₇", "₈", "₉"];
+
+string expressWithTheseDigits(int n, ref immutable string[10] digits)
+    nothrow pure @safe
+{
+    if (n == 0) {
+        return digits[0];
+    }
+    if (n < 0) {
+        n *= -1;
+    }
+    string ret;
+    while (n > 0) {
+        ret = digits[n % 10] ~ ret;
+        n /= 10;
+    }
+    return ret;
+}
+
 pure string escapeStringForFilename(in string s)
 {
     return pruneString(s, c => ! c.isControl && ! "\"*/:<>?\\|".canFind(c));

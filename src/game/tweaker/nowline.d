@@ -33,7 +33,7 @@ public:
     static float textXlg(in Geom fullLineGeom)
     {
         return fullLineGeom.xlg
-            - textButtonDistXg(fullLineGeom) - phyuXlg - 3 * butXlg
-            + 10f; // Add back a little to allow some overlap with phyu.
+            - textButtonDistXg(fullLineGeom) - phyuXlg - 3 * butXlg;
+            //+ 10f; // Add back a little to allow some overlap with phyu.
     }
 }

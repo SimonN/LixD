@@ -1,5 +1,7 @@
 module game.tweaker.oneline;
 
+import std.format;
+import basics.help;
 import file.replay.tweakrq;
 import graphic.color;
 import gui;
@@ -11,7 +13,7 @@ private:
 
 protected:
     enum butXlg = 20;
-    enum phyuXlg = 50;
+    enum phyuXlg = 40;
 
 public:
     this(Geom g)
@@ -25,7 +27,8 @@ public:
          * It's a hack.
          */
         _phyuText = new Label(new Geom(
-            thickg + 2 * butXlg, 0, phyuXlg - thickg, g.ylg, From.RIGHT));
+            thickg + 2 * butXlg, 0, phyuXlg - thickg + 5f, // +5 to be lenient.
+            g.ylg, From.RIGHT)); // +5 is necessary for 5 digits on 640x480.
         _phyuText.abbreviateNear = Label.AbbreviateNear.beginning;
         addChild(_phyuText);
     }
@@ -41,7 +44,7 @@ public:
             return _phyu;
         }
         _phyu = aPhyu;
-        _phyuText.number = _phyu;
+        _phyuText.text = tweakerFormat(_phyu);
         reqDraw(); // labels can't easily undraw
         return _phyu;
     }
@@ -51,5 +54,15 @@ protected:
     {
         undrawColor = color.gui.m; // Erase the labels, they can't undraw
         undraw();
+    }
+
+private:
+    string tweakerFormat(in Phyu n) const pure @safe
+    {
+        if (n < 10_000) {
+            return format("%d", n);
+        }
+        return format("%s%03d", expressWithTheseDigits(n / 1000, subscript),
+            n % 1000);
     }
 }

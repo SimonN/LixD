@@ -83,7 +83,8 @@ public:
     {
         super(g);
         addChildren(
-            new Label(new Geom(20 + thickg, 0, xlg/2f, 20),
+            new Label(new Geom(xlg - 50 + thickg, 0,
+                50 - 2 * thickg, ylg, From.RIGHT), // compare with PlyLineDesc
                 Lang.tweakerHeaderLixID.transl),
             new Label(new Geom(40 + thickg, 0, xlg/2f, 20, From.RIGHT),
                 Lang.tweakerHeaderPhyu.transl),
@@ -96,7 +97,7 @@ public:
  * |    Lix ID   | Skill |     Phyu     |
  * | incl thickg |       |              |
  * | 1x per side |       |              |
- * |    = 30     |  20   |     50       |
+ * |    = 30     |  20   |     40       |
  * +-------------+-------+--------------+
  * |                     |              |
  * |<---- Nuke text ---->|<--- Phyu --->|

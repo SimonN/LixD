@@ -148,13 +148,13 @@ $gameFastForward %s för att snabbspola framåt, %s för turbo.
 $gameRestart Starta om bana.
 $gameNuke Spräng. Dubbelklicka för att aktivera.
 
-$tweakerHeaderLixID Lix-id
+$tweakerHeaderLixID Lix
 $tweakerHeaderPhyu Phyu
 $tweakerLineNow Nu
 $tweakerEmptyListTitle Repristrimmare
-$tweakerEmptyListDesc1 Klicka lix för att tilldela förmågor.
-$tweakerEmptyListDesc2 Senare kan du trimma
-$tweakerEmptyListDesc3 dina tilldelningar här.
+$tweakerEmptyListDesc1 Klicka lix. Senare
+$tweakerEmptyListDesc2 kan du trimma dina
+$tweakerEmptyListDesc3 tilldelningar här.
 
 $skillTooltip walker|Walker. Gå tillbaka eller avbryt blocker.
 $skillTooltip jumper|Jumper. Hoppar en gång. Runner hoppar längre.

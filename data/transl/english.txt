@@ -148,13 +148,13 @@ $gameFastForward %s for fast-forward, %s for turbo.
 $gameRestart Restart level.
 $gameNuke Nuke. Double-click to activate.
 
-$tweakerHeaderLixID Lix ID
+$tweakerHeaderLixID Lix
 $tweakerHeaderPhyu Phyu
 $tweakerLineNow Now
 $tweakerEmptyListTitle Replay Tweaker
-$tweakerEmptyListDesc1 Click lix to assign skills.
-$tweakerEmptyListDesc2 Later, you can tweak
-$tweakerEmptyListDesc3 your assignments here.
+$tweakerEmptyListDesc1 Click some lix.
+$tweakerEmptyListDesc2 Later, tweak your
+$tweakerEmptyListDesc3 assignments here.
 
 $skillTooltip walker|Walk back or cancel blockers.
 $skillTooltip jumper|Jump once. Runners jump farther.
