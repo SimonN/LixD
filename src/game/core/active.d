@@ -98,15 +98,28 @@ Ply newPlyForNextPhyu(Game game)
     return data;
 }
 
+bool alwaysForceWhenAssigning(in Ac ac) pure nothrow @safe @nogc
+{
+    return ac == Ac.walker
+        || ac == Ac.jumper
+        || ac == Ac.batter
+        || ac == Ac.builder
+        || ac == Ac.platformer
+        || ac == Ac.basher
+        || ac == Ac.miner;
+}
+
 void assignTo(Game game, in PotentialAssignee potAss)
 in { assert (game.canAssignTo(potAss)); }
 do { with (game)
 {
     Ply theAssignment = game.newPlyForNextPhyu();
-    theAssignment.action = forcingLeft ? RepAc.ASSIGN_LEFT
-        : forcingRight ? RepAc.ASSIGN_RIGHT
-        : RepAc.ASSIGN;
     theAssignment.skill = game.pan.currentSkill.skill;
+    theAssignment.action
+        = forcingLeft ? RepAc.ASSIGN_LEFT
+        : forcingRight ? RepAc.ASSIGN_RIGHT
+        : ! alwaysForceWhenAssigning(theAssignment.skill) ? RepAc.ASSIGN
+        : potAss.lixxie.facingLeft ? RepAc.ASSIGN_LEFT : RepAc.ASSIGN_RIGHT;
     theAssignment.toWhichLix = potAss.id;
 
     if (game.pan.currentSkill.number != skillInfinity) {
