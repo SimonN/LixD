@@ -150,7 +150,7 @@ public:
 
     void receivePly(in Ply ply)
     {
-        foreach (sui; _suites[].find!(s => s.contains(ply.player)).takeOne) {
+        foreach (sui; _suites[].find!(s => s.contains(ply.by)).takeOne) {
             sui.receivePly(ply);
         }
     }

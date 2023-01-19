@@ -122,18 +122,18 @@ void implLoadFromFile(Replay replay, Filename fn) { with (replay)
         string skill = iSplit.empty ? "" : iSplit.front;
 
         Ply d;
-        d.update     = i.nr1;
-        d.player     = i.nr2 & 0xFF;
+        d.when = i.nr1;
+        d.by = i.nr2 & 0xFF;
         d.toWhichLix = i.nr3;
-        d.action = assign == replayAssignAny   ? RepAc.ASSIGN
+        d.fromRepAc(assign == replayAssignAny  ? RepAc.ASSIGN
                  : assign == replayAssignLeft  ? RepAc.ASSIGN_LEFT
                  : assign == replayAssignRight ? RepAc.ASSIGN_RIGHT
                  : assign == replayNuke        ? RepAc.NUKE
-                 : RepAc.NOTHING;
+                 : RepAc.NOTHING);
         d.skill = skill.stringToAc;
-        if (d.action != RepAc.NOTHING
-            && (d.skill != Ac.max || ! d.isSomeAssignment))
+        if (d.skill != Ac.max || d.isNuke) {
             replay.addWithoutTouching(d);
+        }
         break; }
     default:
         break;
@@ -170,18 +170,18 @@ void saveToStdioFile(
     if (_plies.length)
         file.writeln();
     foreach (d; _plies) {
+        immutable RepAc action = d.toRepAc;
         string word
-            = d.action == RepAc.NUKE         ? replayNuke
-            : d.action == RepAc.ASSIGN       ? replayAssignAny
-            : d.action == RepAc.ASSIGN_LEFT  ? replayAssignLeft
-            : d.action == RepAc.ASSIGN_RIGHT ? replayAssignRight : "";
+            = action == RepAc.NUKE         ? replayNuke
+            : action == RepAc.ASSIGN       ? replayAssignAny
+            : action == RepAc.ASSIGN_LEFT  ? replayAssignLeft
+            : action == RepAc.ASSIGN_RIGHT ? replayAssignRight : "";
         if (word == "")
             throw new Exception("bad replay data written to file");
-        if (d.isSomeAssignment) {
-            word ~= "=";
-            word ~= acToString(cast (Ac) d.skill);
+        if (d.isAssignment) {
+            word = word ~ "=" ~ acToString(d.skill);
         }
-        file.writeln(IoLine.Bang(d.update, d.player, word, d.toWhichLix));
+        file.writeln(IoLine.Bang(d.when, d.by, word, d.toWhichLix));
     }
 
     bool okToSave(in Level l)
@@ -237,7 +237,7 @@ unittest
     void assertReplay(in Replay r)
     {
         assert (r._plies.len == 5);
-        assert (r._plies[0].update == 125);
+        assert (r._plies[0].when == 125);
         assert (r._plies[0].skill == Ac.climber);
         assert (r.players.length == 1);
         assert (r.players[PlNr(0)].name == "TestName");

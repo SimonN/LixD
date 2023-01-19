@@ -27,7 +27,7 @@ do { with (game)
     pan.pause = false;
     game.cutGlobalFutureFromReplay();
     auto data = game.newPlyForNextPhyu();
-    data.action = RepAc.NUKE;
+    data.isNuke = true;
     game.includeOurNew(data);
     assert (_effect);
     _effect.addSound(
@@ -93,8 +93,8 @@ bool canAssignTo(Game game, in PotentialAssignee potAss)
 Ply newPlyForNextPhyu(Game game)
 {
     Ply data;
-    data.player = game._netClient ? game._netClient.ourPlNr : PlNr(0);
-    data.update = game.nurse.upd + 1;
+    data.by = game._netClient ? game._netClient.ourPlNr : PlNr(0);
+    data.when = game.nurse.upd + 1;
     return data;
 }
 
@@ -113,14 +113,13 @@ void assignTo(Game game, in PotentialAssignee potAss)
 in { assert (game.canAssignTo(potAss)); }
 do { with (game)
 {
-    Ply theAssignment = game.newPlyForNextPhyu();
-    theAssignment.skill = game.pan.currentSkill.skill;
-    theAssignment.action
-        = forcingLeft ? RepAc.ASSIGN_LEFT
-        : forcingRight ? RepAc.ASSIGN_RIGHT
-        : ! alwaysForceWhenAssigning(theAssignment.skill) ? RepAc.ASSIGN
-        : potAss.lixxie.facingLeft ? RepAc.ASSIGN_LEFT : RepAc.ASSIGN_RIGHT;
-    theAssignment.toWhichLix = potAss.id;
+    Ply i = game.newPlyForNextPhyu();
+    i.skill = game.pan.currentSkill.skill;
+    i.toWhichLix = potAss.id;
+    i.isDirectionallyForced
+        = alwaysForceWhenAssigning(i.skill) || forcingLeft || forcingRight;
+    i.lixShouldFace = potAss.lixxie.facingLeft
+        ? Ply.LixShouldFace.left : Ply.LixShouldFace.right;
 
     if (game.pan.currentSkill.number != skillInfinity) {
         // Decrease the visible number on the panel. This is mostly eye candy.
@@ -128,13 +127,13 @@ do { with (game)
         // the network, but it affects the assignment user interface.
         game.pan.currentSkill.number = game.pan.currentSkill.number - 1;
     }
-    game.includeOurNew(theAssignment);
+    game.includeOurNew(i);
 
     // React faster to the new assignment than during its evaluation next
     // update. The evaluation could be several ticks ticks later.
     assert (game._effect);
-    game._effect.addArrowDontShow(theAssignment.update, potAss.passport);
-    game._effect.addSound(theAssignment.update, potAss.passport, Sound.ASSIGN);
+    game._effect.addArrowDontShow(i.when, potAss.passport);
+    game._effect.addSound(i.when, potAss.passport, Sound.ASSIGN);
 }}
 
 void includeOurNew(Game game, in Ply data) { with (game)

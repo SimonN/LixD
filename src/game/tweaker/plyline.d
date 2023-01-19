@@ -44,7 +44,7 @@ public:
 
     void ply(in Ply aPly)
     {
-        phyu = aPly.update;
+        phyu = aPly.when;
         _desc.ply = aPly;
     }
 
@@ -141,11 +141,11 @@ public:
         }
         reqDraw();
         _ply = aPly;
-        if (_ply.isSomeAssignment) {
+        if (_ply.isAssignment) {
             _lixID.text = _ply.toWhichLix.to!string;
             _skillIcon.show();
             _skillIcon.xf = 2 * _ply.skill.acToSkillIconXf
-                + 1 * (_ply.action == RepAc.ASSIGN_LEFT);
+                + 1 * (_ply.lixShouldFace == Ply.LixShouldFace.left);
             _nukeName.text = "";
         }
         else { // Nuke

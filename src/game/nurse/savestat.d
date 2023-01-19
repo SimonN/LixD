@@ -105,7 +105,7 @@ public:
             return;
         assert (replay);
         vec.each!(data => replay.add(data));
-        framestepBackTo(Phyu(vec.map!(data => data.update).reduce!min - 1));
+        framestepBackTo(Phyu(vec.map!(data => data.when).reduce!min - 1));
     }
 
     void tweakReplayRecomputePhysics(in ChangeRequest rq)

@@ -96,9 +96,7 @@ protected:
 private:
     mixin template liesInPast()
     {
-        bool liesInPast(in Ply aPly) {
-            return aPly.update <= now;
-        }
+        bool liesInPast(in Ply aPly) { return aPly.when <= now; }
     }
 
     static const(Ply)[] cullPliesSoTheyFitIntoOnePage(

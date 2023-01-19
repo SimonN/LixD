@@ -132,7 +132,9 @@ public:
         const(Profile[PlNr]) players() { return _players; }
         const(Permu) permu() { return _permu; }
         bool empty() { return _plies.length == 0; }
-        int latestPhyu() { return (_plies.length > 0) ? _plies[$-1].update : 0; }
+        Phyu latestPhyu() {
+            return (_plies.length > 0) ? _plies[$-1].when : Phyu(0);
+        }
 
         bool isOfflineSingleplayer() { return _players.length == 1; }
 
@@ -217,7 +219,7 @@ public:
         {
             auto slice = this.plySliceBefore(Phyu(upd + 1));
             int firstGood = slice.len;
-            while (firstGood > 0 && slice[firstGood - 1].update == upd)
+            while (firstGood > 0 && slice[firstGood - 1].when == upd)
                 --firstGood;
             assert (firstGood >= 0);
             assert (firstGood <= slice.length);
@@ -238,9 +240,10 @@ public:
         if (_players.length > 1)
             return;
         for (int i = 0; i < _plies.length; ++i) {
-            if (_plies[i].update >= beforePhyu)
+            if (_plies[i].when >= beforePhyu) {
                 break;
-            else if (_plies[i].action == RepAc.NUKE) {
+            }
+            else if (_plies[i].isNuke) {
                 _plies = _plies[0 .. i] ~ _plies[i+1 .. $];
                 --i;
             }
@@ -258,15 +261,15 @@ public:
      */
     void terminateSingleplayerWithNukeAfter(in Phyu lastActionsToKeep)
     {
-        if (_players.length != 1
-            || _plies.canFind!(rd => rd.action == RepAc.NUKE))
+        if (_players.length != 1 || _plies.canFind!(rd => rd.isNuke)) {
             return;
+        }
         cutGlobalFutureAfter(lastActionsToKeep);
 
         Ply termNuke = Ply();
-        termNuke.player = _players.byKey.front;
-        termNuke.update = Phyu(lastActionsToKeep + 1);
-        termNuke.action = RepAc.NUKE;
+        termNuke.by = _players.byKey.front;
+        termNuke.when = Phyu(lastActionsToKeep + 1);
+        termNuke.isNuke = true;
         add(termNuke);
     }
 
@@ -286,14 +289,13 @@ public:
     {
         bool toCut(in Ply p) pure nothrow @safe @nogc
         {
-            if (p.update <= upd) {
+            if (p.when <= upd) {
                 return false;
             }
-            return p.action == RepAc.NUKE
-                || p.isSomeAssignment && p.toWhichLix == lixID;
+            return p.isNuke || p.isAssignment && p.toWhichLix == lixID;
         }
         if (_plies.empty
-            || _plies[$-1].update <= upd
+            || _plies[$-1].when <= upd
             || ! _plies.canFind!toCut
         ) {
             return; // Nothing to cut.
@@ -338,11 +340,11 @@ unittest {
     Ply d;
     d.skill = Ac.digger;
     d.toWhichLix = 50;
-    d.update = Phyu(20);
+    d.when = Phyu(20);
     a.add(d);
     b.add(d);
     d.skill = Ac.builder;
-    d.update = Phyu(5);
+    d.when = Phyu(5);
     a.add(d);
     assert (! a.equalBefore(b, Phyu(30)));
     assert (! b.equalBefore(a, Phyu(30)));
@@ -351,7 +353,7 @@ unittest {
     assert (b.equalBefore(a, Phyu(30)));
 
     d.skill = Ac.basher;
-    d.update = Phyu(10);
+    d.when = Phyu(10);
     b.add(d);
     assert (! a.equalBefore(b, Phyu(30)));
     assert (! b.equalBefore(a, Phyu(30)));
@@ -361,16 +363,18 @@ unittest {
 
 unittest {
     Replay a = Replay.newNoLevelFilename(Date.now());
-    for (int phyu = 100; phyu < 200; phyu += 10) {
+    for (int x = 100; x < 200; x += 10) {
         Ply ply;
-        ply.action = phyu % 20 == 10 ? RepAc.ASSIGN_LEFT : RepAc.ASSIGN_RIGHT;
-        ply.skill = phyu % 40 < 20 ? Ac.digger : Ac.climber;
+        ply.isDirectionallyForced = true;
+        ply.lixShouldFace = x % 20 == 10
+            ? Ply.LixShouldFace.left : Ply.LixShouldFace.right;
+        ply.skill = x % 40 < 20 ? Ac.digger : Ac.climber;
         ply.toWhichLix = 3;
-        ply.update = Phyu(phyu);
+        ply.when = Phyu(x);
         a.add(ply);
     }
     assert (a.allPlies.length == 10);
     a.cutSingleLixFutureAfter(Phyu(150), 3);
     assert (a.allPlies.length == 6); // 100, 110, 120, 130, 140, 150
-    assert (a.allPlies[$-1].update == Phyu(150));
+    assert (a.allPlies[$-1].when == Phyu(150));
 }

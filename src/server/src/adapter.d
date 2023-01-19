@@ -104,7 +104,7 @@ private mixin template commonInboxMethods() {
     void receivePly(in PlNr from, in ubyte[] got)
     {
         auto ply = PlyPacket(got).ply;
-        ply.player = from; // Don't trust. The server decides who sent it!
+        ply.by = from; // Don't trust Ply.by. The server decides who sent it!
         _hotel.receivePly(ply);
     }
 }

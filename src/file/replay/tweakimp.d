@@ -66,7 +66,7 @@ inout(Ply)[] plySliceBefore(
 {
     // The binary search algo works also for this case.
     // But we add mostly to the end of the data, so check here for speed.
-    if (_plies.length == 0 || _plies[$-1].update < upd)
+    if (_plies.length == 0 || _plies[$-1].when < upd)
         return _plies;
 
     int bot = 0;         // first too-large is at a higher position
@@ -76,9 +76,9 @@ inout(Ply)[] plySliceBefore(
         int bisect = (top + bot) / 2;
         assert (bisect >= 0   && bisect < _plies.len);
         assert (bisect >= bot && bisect < top);
-        if (_plies[bisect].update < upd)
+        if (_plies[bisect].when < upd)
             bot = bisect + 1;
-        if (_plies[bisect].update >= upd)
+        if (_plies[bisect].when >= upd)
             top = bisect;
     }
     return _plies[0 .. bot];
@@ -91,9 +91,9 @@ void addWithoutTouching(
 ) {
     // Add after the latest record that's smaller than or equal to d
     // Equivalently, add before the earliest record that's greater than d.
-    // plySliceBefore doesn't do exactly that, it ignores players.
+    // plySliceBefore doesn't do exactly that, it ignores.bys.
     // I believe the C++ version had a bug in the comparison. Fixed here.
-    auto slice = rep.plySliceBefore(Phyu(d.update + 1));
+    auto slice = rep.plySliceBefore(Phyu(d.when + 1));
     while (slice.length && slice[$-1] > d)
         slice = slice[0 .. $-1];
     if (slice.length < rep._plies.length) {
@@ -126,9 +126,9 @@ TweakResult moveThisLaterImpl(
     in ChangeRequest rq
 ) {
     int id = rep.indexOf(rq.what);
-    immutable oldPhyu = rq.what.update;
-    immutable newPhyu = Phyu(rq.what.update + 1);
-    rep._plies[id].update = newPhyu;
+    immutable oldPhyu = rq.what.when;
+    immutable newPhyu = Phyu(rq.what.when + 1);
+    rep._plies[id].when = newPhyu;
     // Restore the sorting, and adhere to the rule of inserting as last,
     // as specced in file.replay.changerq.
     while (
@@ -149,9 +149,9 @@ TweakResult moveThisEarlierImpl(
     in ChangeRequest rq
 ) {
     int id = rep.indexOf(rq.what);
-    immutable oldPhyu = rq.what.update;
-    immutable newPhyu = Phyu(rq.what.update - 1);
-    rep._plies[id].update = newPhyu;
+    immutable oldPhyu = rq.what.when;
+    immutable newPhyu = Phyu(rq.what.when - 1);
+    rep._plies[id].when = newPhyu;
     while (id > 0 && rep._plies[id - 1] > rep._plies[id]) {
         swap(rep._plies[id - 1], rep._plies[id]);
         --id;
@@ -174,8 +174,8 @@ TweakResult eraseThisImpl(
         Ply.sizeof * (rep._plies.len - id - 1)); // ...because of this number.
     rep._plies.length -= 1;
     TweakResult ret;
-    ret.firstDifference = rq.what.update;
-    ret.goodPhyuToView = rq.what.update;
+    ret.firstDifference = rq.what.when;
+    ret.goodPhyuToView = rq.what.when;
     return ret;
 }
 
@@ -207,10 +207,11 @@ version (unittest) {
     Ply rd(Ac ac, Phyu phyu)
     {
         Ply ret;
-        ret.player = 0;
-        ret.action = RepAc.ASSIGN_LEFT;
+        ret.by = 0;
+        ret.isDirectionallyForced = true;
+        ret.lixShouldFace = Ply.LixShouldFace.left;
         ret.skill = ac;
-        ret.update = phyu;
+        ret.when = phyu;
         ret.toWhichLix = 3;
         return ret;
     }
@@ -228,16 +229,16 @@ unittest {
      * the rule of inserting as last applies and forces to swap builder/basher.
      */
     assert (rep._plies[1].skill == Ac.builder);
-    assert (rep._plies[1].update == 101);
+    assert (rep._plies[1].when == 101);
     rep.tweakImpl(ChangeRequest(rep._plies[1], ChangeVerb.moveThisLater));
     assert (rep._plies[1].skill == Ac.builder);
-    assert (rep._plies[1].update == 102);
+    assert (rep._plies[1].when == 102);
     rep.tweakImpl(ChangeRequest(rep._plies[1], ChangeVerb.moveThisLater));
     assert (rep._plies[1].skill == Ac.basher);
     assert (rep._plies[2].skill == Ac.builder);
-    assert (rep._plies[1].update == 103);
+    assert (rep._plies[1].when == 103);
     rep.tweakImpl(ChangeRequest(rep._plies[2], ChangeVerb.moveThisLater));
-    assert (rep._plies[2].update == 104);
+    assert (rep._plies[2].when == 104);
 
     /*
      * Move the builder assignment back, and even more.
@@ -247,7 +248,7 @@ unittest {
     rep.tweakImpl(ChangeRequest(rep._plies[2], ChangeVerb.moveThisEarlier));
     assert (rep._plies[1].skill == Ac.basher);
     assert (rep._plies[2].skill == Ac.builder);
-    assert (rep._plies[2].update == 103);
+    assert (rep._plies[2].when == 103);
     rep.tweakImpl(ChangeRequest(rep._plies[2], ChangeVerb.moveThisEarlier));
     assert (rep._plies[1].skill == Ac.builder);
     assert (rep._plies[2].skill == Ac.basher);
@@ -256,7 +257,7 @@ unittest {
     rep.tweakImpl(ChangeRequest(rep._plies[1], ChangeVerb.moveThisEarlier));
     assert (rep._plies[0].skill == Ac.blocker);
     assert (rep._plies[1].skill == Ac.builder);
-    assert (rep._plies[0].update == rep._plies[1].update);
+    assert (rep._plies[0].when == rep._plies[1].when);
     rep.tweakImpl(ChangeRequest(rep._plies[1], ChangeVerb.moveThisEarlier));
     assert (rep._plies[0].skill == Ac.builder);
     assert (rep._plies[1].skill == Ac.blocker);

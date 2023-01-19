@@ -188,7 +188,7 @@ public:
     {
         // For now, we just relay. For more features, see:
         // Observe game in progress on joining room #393
-        foreach (other; _players.byKey.filter!(pl => pl != ply.player)) {
+        foreach (other; _players.byKey.filter!(pl => pl != ply.by)) {
             _outbox.sendPly(other, ply);
         }
     }

@@ -124,8 +124,8 @@ protected:
         version (tharsisprofiling)
             Zone zone = Zone(profiler, "PhysSeq updateOnceNoSync");
         auto dataSlice = _replay.plySliceFor(Phyu(upd + 1));
-        assert (dataSlice.isSorted!("a.player < b.player"));
+        assert (dataSlice.isSorted!("a.by < b.by"));
         _model.advance(dataSlice.map!(rd =>
-            GameModel.ColoredData(rd, _replay.plNrToStyle(rd.player))));
+            GameModel.ColoredData(rd, _replay.plNrToStyle(rd.by))));
     }
 }

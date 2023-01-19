@@ -118,9 +118,14 @@ public:
 
     private template flagsProperty(int bit, string name) {
         enum string flagsProperty = format(q{
-            @property bool %s() const    { return     (_flags &   %d) != 0; }
-            @property bool %s(in bool b) { return b ? (_flags |=  %d) != 0
-                                                    : (_flags &= ~%d) != 0; }
+            @property bool %s() const pure nothrow @safe @nogc
+            {
+                return (_flags & %d) != 0;
+            }
+            @property bool %s(in bool b) pure nothrow @safe @nogc
+            {
+                return b ? (_flags |= %d) != 0 : (_flags &= ~%d) != 0;
+            }
         }, name, bit, name, bit, bit);
     }
 
@@ -142,7 +147,7 @@ public:
      * If true, turned builders e.g. generate extra steps on their own update.
      */
 
-    @property bool facingRight() const { return ! facingLeft; }
+    bool facingRight() const pure nothrow @safe @nogc { return ! facingLeft; }
     @property bool mirror()      const { return facingLeft; }
     @property int rotation()     const { return 2 * facingLeft; }
     @property int dir()          const { return facingLeft ? -1 : 1; }

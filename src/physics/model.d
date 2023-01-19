@@ -100,7 +100,6 @@ public:
     }
 
 private:
-
     lix.OutsideWorld makeGypsyWagon(in Passport pa) pure nothrow @nogc
     {
         return OutsideWorld(_cs, _physicsDrawer, _effect, pa);
@@ -109,7 +108,7 @@ private:
     void applyPly(in ColoredData i)
     {
         immutable upd = _cs.update;
-        assert (i.update == upd,
+        assert (i.when == upd,
             "increase update manually before applying replay data");
 
         auto tribe = i.style in _cs.tribes;
@@ -123,7 +122,7 @@ private:
             return;
         }
         immutable Passport pa = Passport(i.style, i.toWhichLix);
-        if (i.isSomeAssignment) {
+        if (i.isAssignment) {
             // never assert based on the content in Ply, which may have
             // been a maleficious attack from a third party, carrying a lix ID
             // that is not valid. If bogus data comes, do nothing.
@@ -133,9 +132,10 @@ private:
             assert (lixxie);
             if (lixxie.priorityForNewAc(i.skill) <= 1
                 || ! tribe.canStillUse(i.skill)
-                || (lixxie.facingLeft  && i.action == RepAc.ASSIGN_RIGHT)
-                || (lixxie.facingRight && i.action == RepAc.ASSIGN_LEFT))
+                || (i.isDirectionallyForced && ! matchesDirection(i, lixxie))
+            ) {
                 return;
+            }
             // Physics
             ++(tribe.skillsUsed[i.skill]);
             OutsideWorld ow = makeGypsyWagon(pa);
@@ -144,9 +144,19 @@ private:
             _effect.addSound(upd, pa, Sound.ASSIGN);
             _effect.addArrow(upd, pa, lixxie.foot, i.skill);
         }
-        else if (i.action == RepAc.NUKE) {
+        else if (i.isNuke) {
             tribe.recordNukePressedAt(upd);
             _effect.addSound(upd, pa, Sound.NUKE);
+        }
+    }
+
+    static bool matchesDirection(in Ply p, in Lixxie li)
+    pure nothrow @safe @nogc
+    {
+        final switch (p.lixShouldFace) {
+            case Ply.LixShouldFace.unknown: return true;
+            case Ply.LixShouldFace.left: return li.facingLeft;
+            case Ply.LixShouldFace.right: return li.facingRight;
         }
     }
 

@@ -159,9 +159,9 @@ version (unittest) {
     in { assert (nurse); }
     do {
         Ply d;
-        d.player = PlNr(0);
-        d.action = RepAc.ASSIGN;
-        d.update = phyu;
+        d.by = PlNr(0);
+        d.isNuke = false;
+        d.when = phyu;
         d.skill = ac;
         d.toWhichLix = 0;
         nurse.addPlyMaybeGoBack([d]);
