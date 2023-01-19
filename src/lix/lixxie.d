@@ -148,14 +148,11 @@ public:
      */
 
     bool facingRight() const pure nothrow @safe @nogc { return ! facingLeft; }
-    @property bool mirror()      const { return facingLeft; }
-    @property int rotation()     const { return 2 * facingLeft; }
-    @property int dir()          const { return facingLeft ? -1 : 1; }
-    @property int dir(in int i)
+    int dir() const pure nothrow @safe @nogc { return facingLeft ? -1 : 1; }
+    void dir(in int i) pure nothrow @safe @nogc
     {
         assert (i != 0);
         facingLeft = (i < 0);
-        return dir;
     }
 
     void turn() { dir = -dir; }
@@ -348,7 +345,7 @@ void draw() const
     if (ac == Ac.nothing)
         return;
     drawFuse(&this);
-    cutbit.draw(locCutbit, xf, yf, mirror, rotation);
+    cutbit.draw(locCutbit, xf, yf, facingLeft, 2 * facingLeft);
     drawFlame(&this);
     // Don't draw abilities here. The game should draw these before drawing any
     // lix, to have the lixes always in the foreground. Not good OO, but hm.
@@ -371,12 +368,12 @@ final void drawAgainHighlit() const
         ALLEGRO_BLEND_MODE.ALLEGRO_ONE,
         ALLEGRO_BLEND_MODE.ALLEGRO_INVERSE_ALPHA,
     )) {
-        cb.draw(locCutbit + Point(1, 0), xf, yf, mirror, rotation);
-        cb.draw(locCutbit - Point(1, 0), xf, yf, mirror, rotation);
-        cb.draw(locCutbit - Point(0, 1), xf, yf, mirror, rotation);
+        cb.draw(locCutbit + Point(1, 0), xf, yf, facingLeft, 2 * facingLeft);
+        cb.draw(locCutbit - Point(1, 0), xf, yf, facingLeft, 2 * facingLeft);
+        cb.draw(locCutbit - Point(0, 1), xf, yf, facingLeft, 2 * facingLeft);
         // Don't draw outline below. We don't want to obscure the ground.
     }
-    cb.draw(locCutbit, xf, yf, mirror, rotation);
+    cb.draw(locCutbit, xf, yf, facingLeft, 2 * facingLeft);
     drawAbilities(&this, true);
     drawFlame(&this);
 }
