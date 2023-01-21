@@ -80,7 +80,7 @@ private:
     void removeEarth()
     {
         TerrainDeletion tc;
-        tc.update = outsideWorld.state.update;
+        tc.update = outsideWorld.state.age;
         tc.type = facingRight ? TerrainDeletion.Type.mineRight
                               : TerrainDeletion.Type.mineLeft;
         tc.x = ex - masks[tc.type].offsetX;
@@ -88,7 +88,7 @@ private:
         outsideWorld.physicsDrawer.add(tc);
         if (wouldHitSteel(masks[tc.type])) {
             outsideWorld.effect.addPickaxe(
-                outsideWorld.state.update, outsideWorld.passport, foot, dir);
+                outsideWorld.state.age, outsideWorld.passport, foot, dir);
             turn();
             become(Ac.walker);
         }

@@ -129,7 +129,7 @@ class Builder : BrickCounter {
     override void onBuildingBrick()
     {
         TerrainAddition tc;
-        tc.update = outsideWorld.state.update;
+        tc.update = outsideWorld.state.age;
         tc.type   = TerrainAddition.Type.build;
         tc.style  = style;
         tc.x      = facingRight ? ex : ex - 10;
@@ -269,7 +269,7 @@ class Platformer : BrickCounter {
         immutable bool firstCycle = (frame == 2);
 
         TerrainAddition tc;
-        tc.update = outsideWorld.state.update;
+        tc.update = outsideWorld.state.age;
         tc.type   = firstCycle ? TerrainAddition.Type.platformLong
                                : TerrainAddition.Type.platformShort;
         tc.style  = style;

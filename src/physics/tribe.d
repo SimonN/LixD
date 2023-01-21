@@ -46,7 +46,7 @@ final class Tribe {
 
     private static struct ValueFields {
     private:
-        Optional!Phyu _updatePreviousSpawn = none;
+        Optional!Phyu _previousSpawn = none;
         Optional!Phyu _firstScoring = none;
         Optional!Phyu _recentScoring = none;
         Optional!Phyu _outOfLixSince = none;
@@ -109,7 +109,7 @@ public:
             if (lixInHatch == 0) {
                 return no!Phyu;
             }
-            return some(_updatePreviousSpawn.match!(
+            return some(_previousSpawn.match!(
                 () => Phyu(firstSpawnWithoutHandicap
                     + rules.handicap.delayInPhyus),
                 (prev) => Phyu(prev + rules.spawnInterval),
@@ -226,7 +226,7 @@ public:
             newLix.turn();
         lixvecImpl ~= newLix;
         recordSpawnedFromHatch();
-        _updatePreviousSpawn = ow.state.update;
+        _previousSpawn = ow.state.age;
         do {
             nextHatch = (nextHatch + 1) % ow.state.hatches.len;
         }

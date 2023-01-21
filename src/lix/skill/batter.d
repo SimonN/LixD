@@ -95,7 +95,7 @@ private:
         target.addFling(flingSpeedX * dir, flingSpeedY, style == target.style);
         assert (outsideWorld);
         if (outsideWorld.effect)
-            outsideWorld.effect.addSound(lixxie.outsideWorld.state.update,
+            outsideWorld.effect.addSound(lixxie.outsideWorld.state.age,
                 Passport(target.style, targetId), Sound.BATTER_HIT);
     }
 }

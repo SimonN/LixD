@@ -61,7 +61,7 @@ public:
 
     // Should be accsessible by the Nurse. Shouldn't be accessed straight from
     // the game, but it's the Nurse's task to hide that information.
-    @property inout(GameState) cs() inout { return _cs; }
+    inout(GameState) cs() inout pure nothrow @safe @nogc { return _cs; }
 
     void takeOwnershipOf(GameState s)
     {
@@ -71,13 +71,13 @@ public:
     }
 
     void applyChangesToLand() {
-        _physicsDrawer.applyChangesToLand(_cs.update);
+        _physicsDrawer.applyChangesToLand(_cs.age);
     }
 
     void advance(R)(R range)
         if (isInputRange!R && is (ElementType!R : const(ColoredData)))
     {
-        ++_cs.update;
+        ++_cs.age;
         range.each!(cd => applyPly(cd));
 
         updateNuke(); // sets lixInHatch = 0, thus affects spawnLixxiesFromHatch
@@ -107,9 +107,8 @@ private:
 
     void applyPly(in ColoredData i)
     {
-        immutable upd = _cs.update;
-        assert (i.when == upd,
-            "increase update manually before applying replay data");
+        assert (i.when == _cs.age,
+            "increase the state's age manually before applying replay data");
 
         auto tribe = i.style in _cs.tribes;
         if (! tribe)
@@ -141,12 +140,12 @@ private:
             OutsideWorld ow = makeGypsyWagon(pa);
             lixxie.assignManually(&ow, i.skill);
 
-            _effect.addSound(upd, pa, Sound.ASSIGN);
-            _effect.addArrow(upd, pa, lixxie.foot, i.skill);
+            _effect.addSound(_cs.age, pa, Sound.ASSIGN);
+            _effect.addArrow(_cs.age, pa, lixxie.foot, i.skill);
         }
         else if (i.isNuke) {
-            tribe.recordNukePressedAt(upd);
-            _effect.addSound(upd, pa, Sound.NUKE);
+            tribe.recordNukePressedAt(_cs.age);
+            _effect.addSound(_cs.age, pa, Sound.NUKE);
         }
     }
 
@@ -163,7 +162,7 @@ private:
     void spawnLixxiesFromHatches()
     {
         foreach (int teamNumber, Tribe tribe; _cs.tribes) {
-            if (tribe.phyuOfNextSpawn() != _cs.update) {
+            if (tribe.phyuOfNextSpawn() != _cs.age) {
                 continue;
             }
             // the only interesting part of OutsideWorld right now is the
@@ -269,6 +268,6 @@ private:
         // Animate after we had the traps eat lixes. Eating a lix sets a flag
         // in the trap to run through the animation, showing the first killing
         // frame after this next perform() call. Physics depend on this anim!
-        _cs.foreachGadget((Gadget g) { g.perform(_cs.update, _effect); });
+        _cs.foreachGadget((Gadget g) { g.perform(_cs.age, _effect); });
     }
 }

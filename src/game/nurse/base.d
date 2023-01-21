@@ -30,14 +30,6 @@ private:
     GameModel _model;
 
 public:
-    @property const(Replay) constReplay() const { return _replay; }
-    @property Phyu upd() const { return _model.cs.update; }
-
-    // this is bad, DTODO: refactor
-    @property constStateForDrawingOnly()  const { return _model.cs; }
-    @property stateOnlyPrivatelyForGame() const { return _model.cs; }
-    // end bad
-
     // We get to own the replay, but not the level or the effect manager.
     this(in Level lev, Replay rp, EffectSink ef)
     in {
@@ -66,6 +58,17 @@ public:
         }
     }
 
+    Phyu now() const { return _model.cs.age; }
+
+    final const pure nothrow @safe @nogc {
+        const(Replay) constReplay() const { return _replay; }
+
+        // this is bad, DTODO: refactor
+        @property constStateForDrawingOnly()  const { return _model.cs; }
+        @property stateOnlyPrivatelyForGame() const { return _model.cs; }
+        // end bad
+    }
+
     @property bool everybodyOutOfLix() const
     {
         return cs.tribes.byValue.all!(a => a.outOfLix);
@@ -74,7 +77,7 @@ public:
     @property bool doneAnimating() const
     {
         return cs.tribes.byValue.all!(a => a.doneAnimating)
-            && cs.traps         .all!(a => ! a.isEating(upd));
+            && cs.traps.all!(a => ! a.isEating(now));
     }
 
     @property bool singleplayerHasSavedAtLeast(in int lixRequired) const
@@ -123,7 +126,7 @@ protected:
     {
         version (tharsisprofiling)
             Zone zone = Zone(profiler, "PhysSeq updateOnceNoSync");
-        auto dataSlice = _replay.plySliceFor(Phyu(upd + 1));
+        auto dataSlice = _replay.plySliceFor(Phyu(now + 1));
         assert (dataSlice.isSorted!("a.by < b.by"));
         _model.advance(dataSlice.map!(rd =>
             GameModel.ColoredData(rd, _replay.plNrToStyle(rd.by))));

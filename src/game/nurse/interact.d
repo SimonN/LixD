@@ -18,7 +18,7 @@ class InteractiveNurse : SaveStatingNurse {
 
     void updateTo(in Phyu targetPhyu, in DuringTurbo duringTurbo)
     {
-        while (! doneAnimating && upd < targetPhyu) {
+        while (! doneAnimating && now < targetPhyu) {
             updateOnce();
             considerAutoSavestateIfCloseTo(targetPhyu, duringTurbo);
         }
@@ -28,7 +28,7 @@ class InteractiveNurse : SaveStatingNurse {
     {
         if (everybodyOutOfLix)
             return;
-        replay.terminateSingleplayerWithNukeAfter(upd);
+        replay.terminateSingleplayerWithNukeAfter(now);
     }
 
     void applyChangesToLand() { model.applyChangesToLand(); }

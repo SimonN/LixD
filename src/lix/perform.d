@@ -44,9 +44,9 @@ void useNonconstantTraps(Lixxie lixxie) { with (lixxie)
         return;
     foreach (TrapTrig trap; outsideWorld.state.traps) {
         if (! inTriggerArea(trap)
-            || ! trap.isOpenFor(outsideWorld.state.update, style))
+            || ! trap.isOpenFor(outsideWorld.state.age, style))
             continue;
-        trap.feed(outsideWorld.state.update, style);
+        trap.feed(outsideWorld.state.age, style);
         playSound(trap.tile.sound);
         become(Ac.nothing);
         return;
@@ -60,8 +60,8 @@ void useFlingers(Lixxie lixxie) { with (lixxie) with (outsideWorld.state)
     if (! (footEncounters & Phybit.fling) || ! healthy)
         return;
     auto encounteredOpenFlingers = chain(flingTrigs
-            .filter!(fl => inTriggerArea(fl) && fl.isOpenFor(update, style))
-            .tee!(fl => fl.feed(update, style)),
+            .filter!(fl => inTriggerArea(fl) && fl.isOpenFor(age, style))
+            .tee!(fl => fl.feed(age, style)),
         outsideWorld.state.flingPerms.filter!(fl => inTriggerArea(fl)));
     foreach (Gadget fl; encounteredOpenFlingers) {
         assert (fl.tile);

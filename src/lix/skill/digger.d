@@ -21,7 +21,7 @@ public:
         immutable bool enoughSteel = countSteel(1-midLoRes, 2, midLoRes, 2) >0;
         if (enoughSteel) {
             outsideWorld.effect.addDigHammer(
-                outsideWorld.state.update, outsideWorld.passport, foot, dir);
+                outsideWorld.state.age, outsideWorld.passport, foot, dir);
             become(Ac.walker);
         }
         return enoughSteel;
@@ -70,7 +70,7 @@ public:
     private void removeRowsYInterval(in int y, in int yl)
     {
         TerrainDeletion tc;
-        tc.update = outsideWorld.state.update;
+        tc.update = outsideWorld.state.age;
         tc.type   = TerrainDeletion.Type.dig;
         tc.x      = ex - 8;
         tc.y      = ey + y;

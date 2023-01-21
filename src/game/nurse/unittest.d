@@ -57,7 +57,7 @@ version (unittest) {
         assert (nurse.theLix.ac == Ac.digger);
 
         nurse.framestepBackBy(20);
-        assert (nurse.upd == 120);
+        assert (nurse.now == 120);
         assert (nurse.theLix.ac == Ac.digger,
             "Under issue 294, this was a basher; digger is correct");
     }

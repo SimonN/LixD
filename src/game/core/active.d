@@ -30,8 +30,7 @@ do { with (game)
     data.isNuke = true;
     game.includeOurNew(data);
     assert (_effect);
-    _effect.addSound(
-        Phyu(nurse.upd + 1), Passport(localStyle, 0), Sound.NUKE);
+    _effect.addSound(Phyu(nurse.now + 1), Passport(localStyle, 0), Sound.NUKE);
 }}
 
 void calcClicksIntoMap(Game game, PotentialAssignee potAss)
@@ -94,7 +93,7 @@ Ply newPlyForNextPhyu(Game game)
 {
     Ply data;
     data.by = game._netClient ? game._netClient.ourPlNr : PlNr(0);
-    data.when = game.nurse.upd + 1;
+    data.when = game.nurse.now + 1;
     return data;
 }
 

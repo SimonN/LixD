@@ -45,7 +45,7 @@ void activateOrDeactivateTweaker(Game game) { with (game)
     if (pan.tweakerIsOn) {
         _tweaker.shown = true;
         _tweaker.formatButtonsAccordingTo(
-            nurse.constReplay.allPlies, nurse.upd);
+            nurse.constReplay.allPlies, nurse.now);
     }
     else if (_tweaker.shown) {
         _tweaker.shown = false;

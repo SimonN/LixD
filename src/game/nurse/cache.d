@@ -66,7 +66,7 @@ public:
 
     @property Phyu zeroStatePhyu() const {
         assert (_zero.refCountedStore.isInitialized);
-        return _zero.update;
+        return _zero.age;
     }
 
     void saveUser(in GameState s, in Replay r)
@@ -122,7 +122,7 @@ public:
         GameState ret = _zero;
         foreach (gs; _auto)
             if (   gs.refCountedStore.isInitialized
-                && gs.update < u && gs.update > ret.update)
+                && gs.age < u && gs.age > ret.age)
                 ret = gs;
         forgetAutoSavesOnAndAfter(u);
         return ret;
@@ -135,15 +135,15 @@ public:
     {
         immutable pair = duringTurbo ? 1 : 0;
         assert (pair >= 0 && pair < pairsToKeep);
-        if (s.update == 0 || s.update % updateMultipleForPair(pair) != 0)
+        if (s.age == 0 || s.age % updateMultipleForPair(pair) != 0)
             return false;
         foreach (possible; pair .. pairsToKeep)
             // We save 2 states per update multiple. But when we want to update
             // 100 times, there is no need saving states after 10, 20, 30, ...
             // updates, we would only keep the states at 90 and 100, anyway.
             // And the state at 50 and 100, in a higher pair.
-            if (s.update > updTo - 2 * updateMultipleForPair(possible)
-                && s.update % updateMultipleForPair(possible) == 0)
+            if (s.age > updTo - 2 * updateMultipleForPair(possible)
+                && s.age % updateMultipleForPair(possible) == 0)
                 return true;
         return false;
     }
@@ -169,10 +169,10 @@ public:
         // array indices 0 and 1. The next one has array indices 2 and 3, ...
         for (int pair = pairsToKeepForThisMap - 1; pair >= 0; --pair) {
             immutable int umfp = updateMultipleForPair(pair);
-            if (s.update % umfp != 0)
+            if (s.age % umfp != 0)
                 continue;
 
-            int whichOfPair = (s.update / umfp) % 2;
+            int whichOfPair = (s.age / umfp) % 2;
             if (pair > 0)
                 // Make a shallow copy of the more-frequently-hit state:
                 // We treat states inside PhysicsCache like immutable.
@@ -194,7 +194,7 @@ private:
     void forgetAutoSavesOnAndAfter(in Phyu u)
     {
         foreach (ref GameState gs; _auto)
-            if (gs.refCountedStore.isInitialized && (u <= 0 || gs.update >= u))
+            if (gs.refCountedStore.isInitialized && (u <= 0 || gs.age >= u))
                 destroy(gs);
         _recommendGC = true;
     }

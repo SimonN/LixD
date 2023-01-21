@@ -221,7 +221,7 @@ package:
         // then we are replaying.
         // DTODONETWORKING: Add a check that we are never replaying while
         // we're connected with other players.
-        return nurse.constReplay.latestPhyu > nurse.upd;
+        return nurse.constReplay.latestPhyu > nurse.now;
     }
 
     @property bool isMouseOnLand() const
@@ -257,7 +257,7 @@ package:
     {
         assert (this.nurse);
         if (_effect)
-            _effect.deleteAfter(nurse.upd);
+            _effect.deleteAfter(nurse.now);
         if (pan)
             pan.setLikeTribe(localTribe, level.ploder,
                              cs.overtimeRunning, cs.overtimeRemainingInPhyus);

@@ -60,7 +60,7 @@ implGameDraw(Game game) { with (game)
     pan.showInfo(localTribe);
     foreach (sc; nurse.scores)
         pan.update(sc);
-    pan.age = nurse.constStateForDrawingOnly.update;
+    pan.age = nurse.constStateForDrawingOnly.age;
 
     game.showSpawnIntervalOnHatches();
     game.drawMapToA5Display();
@@ -185,7 +185,7 @@ void drawReplaySign(Game game)
 void ensureMusic(const(Game) game)
 {
     with (game.nurse.constStateForDrawingOnly) {
-        if (! isMusicPlaying && update >= Tribe.firstSpawnWithoutHandicap)
+        if (! isMusicPlaying && age >= Tribe.firstSpawnWithoutHandicap)
             suggestRandomMusic();
     }
 }

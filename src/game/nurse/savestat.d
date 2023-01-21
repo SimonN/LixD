@@ -35,40 +35,40 @@ public:
 
     Phyu updatesSinceZero() const
     out (result) { assert (result >= 0); }
-    do { return Phyu(upd - _cache.zeroStatePhyu); }
+    do { return Phyu(now - _cache.zeroStatePhyu); }
 
     bool userStateExists() { return _cache.userStateExists; }
     void saveUserState()   { _cache.saveUser(cs, replay); }
 
     void cutGlobalFutureFromReplay()
     {
-        if (replay.latestPhyu <= upd) {
+        if (replay.latestPhyu <= now) {
             return;
         }
         onCutGlobalFutureFromReplay();
-        replay.cutGlobalFutureAfter(upd);
+        replay.cutGlobalFutureAfter(now);
     }
 
     void cutSingleLixFutureFromReplay(in Passport ofWhom)
     {
-        if (replay.latestPhyu <= upd) {
+        if (replay.latestPhyu <= now) {
             return;
         }
-        replay.cutSingleLixFutureAfter(upd, ofWhom.id);
+        replay.cutSingleLixFutureAfter(now, ofWhom.id);
     }
 
     void loadUserState()
     {
-        auto loaded = _cache.loadUser(replay, Phyu(cs.update + 1));
+        auto loaded = _cache.loadUser(replay, Phyu(cs.age + 1));
         model.takeOwnershipOf(loaded.state.clone);
 
-        // Now, upd is the loaded state's physics update, not our old update.
-        immutable bool eqb = replay.equalBefore(loaded.replay, Phyu(upd + 1));
+        // Now, 'now' is the loaded state's age, not our old 'now'.
+        immutable bool eqb = replay.equalBefore(loaded.replay, Phyu(now + 1));
         immutable bool ext = replay.extends(loaded.replay);
         if (! eqb || ! ext) {
             replay = loaded.replay.clone();
             if (! eqb) {
-                // A visible difference already at upd().
+                // A visible difference already at now().
                 onCutGlobalFutureFromReplay(); // Don't cut, but play sound.
             }
         }
@@ -86,7 +86,7 @@ public:
 
     void framestepBackBy(int backBy)
     {
-        framestepBackTo(Phyu(upd - backBy));
+        framestepBackTo(Phyu(now - backBy));
         if (! file.option.replayAfterFrameBack.value) {
             cutGlobalFutureFromReplay();
         }
@@ -110,7 +110,7 @@ public:
 
     void tweakReplayRecomputePhysics(in ChangeRequest rq)
     {
-        immutable Phyu current = upd;
+        immutable Phyu current = now;
         immutable tweakResult = replay.tweak(rq);
         framestepBackTo(Phyu(tweakResult.firstDifference - 1));
         updateTo(max(current, tweakResult.goodPhyuToView));
@@ -118,7 +118,7 @@ public:
 
     void updateTo(in Phyu targetPhyu)
     {
-        while (! doneAnimating && upd < targetPhyu) {
+        while (! doneAnimating && now < targetPhyu) {
             updateOnce();
             considerAutoSavestateIfCloseTo(targetPhyu, DuringTurbo.no);
         }
@@ -152,7 +152,7 @@ protected:
 private:
     void framestepBackTo(immutable Phyu u)
     {
-        if (u >= upd)
+        if (u >= now)
             return;
         model.takeOwnershipOf(_cache.loadBeforePhyu(Phyu(u + 1)).clone);
         replay.eraseEarlySingleplayerNukes(); // should bring no bugs

@@ -33,7 +33,7 @@ GameState clone(in GameState gs)
 
 private struct RawGameState {
 public:
-    Phyu update;
+    Phyu age;
     int overtimeAtStartInPhyus;
 
     Tribe[Style] tribes; // update order is garden, red, orange, yellow, ...
@@ -59,7 +59,7 @@ public:
 
     ~this()
     {
-        update = Phyu(0);
+        age = Phyu(0);
         if (land) {
             land.dispose();
             land = null;
@@ -137,7 +137,7 @@ public:
             return overtimeAtStartInPhyus;
         if (tribes.byValue.all!(tr => tr.prefersGameToEnd))
             return 0;
-        return clamp(overtimeAtStartInPhyus + overtimeRunningSince - update,
+        return clamp(overtimeAtStartInPhyus + overtimeRunningSince - age,
                     0, overtimeAtStartInPhyus);
     }
 
@@ -155,7 +155,7 @@ public:
     // Solution: In race maps, allow that one update to finish with scoring.
     @property bool lixMayUseGoals() const
     {
-        return ! nukeIsAssigningExploders || overtimeRunningSince == update;
+        return ! nukeIsAssigningExploders || overtimeRunningSince == age;
     }
 
 private:
@@ -182,7 +182,7 @@ private:
     void copyValuesArraysFrom(ref const(RawGameState) rhs)
     {
         overtimeAtStartInPhyus = rhs.overtimeAtStartInPhyus;
-        update   = rhs.update;
+        age = rhs.age;
         hatches  = basics.help.clone(rhs.hatches);
         goals    = basics.help.clone(rhs.goals);
         waters   = basics.help.clone(rhs.waters);

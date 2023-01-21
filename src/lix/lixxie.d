@@ -328,7 +328,7 @@ int countSteel(int x1, int y1, int x2, int y2) const
 void playSound(in Sound sound)
 {
     outsideWorld.effect.addSound(
-        outsideWorld.state.update, outsideWorld.passport, sound);
+        outsideWorld.state.age, outsideWorld.passport, sound);
 }
 
 const(Cutbit) cutbit() const { return getLixSpritesheet(_style); }

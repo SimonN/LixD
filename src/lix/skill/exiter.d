@@ -16,7 +16,7 @@ public:
 
     void scoreForTribe(Tribe tribe)
     {
-        tribe.addSaved(this.style, outsideWorld.state.update);
+        tribe.addSaved(this.style, outsideWorld.state.age);
     }
 
     void determineSidewaysMotion(in Goal goal)
@@ -39,7 +39,7 @@ public:
             lixxie.playSound(Sound.GOAL_BAD);
             foreach (tr; goal.tribes)
                 outsideWorld.effect.addSound(
-                    outsideWorld.state.update,
+                    outsideWorld.state.age,
                     // arbitrary ID because not same tribe
                     Passport(tr, outsideWorld.passport.id),
                     Sound.GOAL);

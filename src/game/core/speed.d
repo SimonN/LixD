@@ -154,7 +154,7 @@ private void upd(
 {
     if (nurse.doneAnimating())
         return;
-    immutable before = nurse.upd;
+    immutable before = nurse.now;
     // Don't send undispatched via network, we did that earlier already.
     // Some from undispatchedAssignments have even come from the net.
     nurse.addPlyMaybeGoBack(undispatchedAssignments);

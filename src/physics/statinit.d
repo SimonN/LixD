@@ -48,7 +48,7 @@ do {
     s.foreachGadget((Gadget g) {
         g.drawLookup(s.lookup);
     });
-    s.update = s.multiplayer ? Phyu(0) : Phyu(45); // start quickly in 1-player
+    s.age = s.multiplayer ? Phyu(0) : Phyu(45); // start quickly in 1-player
     s.overtimeAtStartInPhyus = s.multiplayer
         ? cfg.level.overtimeSeconds * phyusPerSecondAtNormalSpeed : 0;
     return s;

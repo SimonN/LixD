@@ -49,7 +49,7 @@ private:
     {
         assert (ac == Ac.imploder || ac == Ac.exploder);
         TerrainDeletion tc;
-        tc.update = lixxie.outsideWorld.state.update;
+        tc.update = lixxie.outsideWorld.state.age;
         tc.type   = (ac == Ac.exploder) ? TerrainDeletion.Type.explode
                                         : TerrainDeletion.Type.implode;
         tc.x      = - masks[tc.type].offsetX + lixxie.ex;
@@ -67,7 +67,7 @@ protected:
     override void makeEffect()
     {
         outsideWorld.effect.addImplosion(
-            outsideWorld.state.update, outsideWorld.passport, foot);
+            outsideWorld.state.age, outsideWorld.passport, foot);
     }
 }
 
@@ -80,7 +80,7 @@ protected:
     override void makeEffect()
     {
         outsideWorld.effect.addExplosion(
-            outsideWorld.state.update, outsideWorld.passport, foot);
+            outsideWorld.state.age, outsideWorld.passport, foot);
     }
 
     override void flingOtherLix()

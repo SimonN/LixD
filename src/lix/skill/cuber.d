@@ -22,7 +22,7 @@ class Cuber : Leaver {
     {
         if (frame >= 2) {
             TerrainAddition tc;
-            tc.update = outsideWorld.state.update;
+            tc.update = outsideWorld.state.age;
             tc.type   = TerrainAddition.Type.cube;
             tc.style  = style;
             tc.x      = ex - cubeSize/2;

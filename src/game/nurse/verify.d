@@ -35,12 +35,12 @@ public:
         ) {
             updateOnce();
             // allow 5 minutes after the last replay data before cancelling
-            if (upd >= replay.latestPhyu + 5 * (60 * 15)) {
+            if (now >= replay.latestPhyu + 5 * (60 * 15)) {
                 mercyKilled = true;
                 break;
             }
         }
         return EvalResult(
-            trophyForTribe(model.cs.singleplayerStyle), upd, mercyKilled);
+            trophyForTribe(model.cs.singleplayerStyle), now, mercyKilled);
     }
 }

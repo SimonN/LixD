@@ -72,7 +72,7 @@ private:
             return earthAfter == 0 && pathClear;
         }
         TerrainDeletion tc;
-        tc.update = outsideWorld.state.update;
+        tc.update = outsideWorld.state.age;
         if (omitRelics) {
             if (dir > 0) tc.type = TerrainDeletion.Type.bashNoRelicsRight;
             else         tc.type = TerrainDeletion.Type.bashNoRelicsLeft;
