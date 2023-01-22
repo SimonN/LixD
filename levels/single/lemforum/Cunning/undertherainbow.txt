@@ -1,12 +1,10 @@
-$BUILT 2017-08-09 00:13:58
+$BUILT 2023-01-22 06:27:01
 $AUTHOR Nortaneous
 $ENGLISH Under the Rainbow
 
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 960
 #SIZE_Y 400
-#START_X 0
-#START_Y -20
 
 #INITIAL 50
 #REQUIRED 50
@@ -24,26 +22,26 @@ $ENGLISH Under the Rainbow
 
 :geoo/abstract/goal.G: 856 232
 
-:matt/underworld/Lava.W: 0 256
-:matt/underworld/Lava.W: 0 304
-:matt/underworld/Lava.W: 48 256
-:matt/underworld/Lava.W: 48 304
-:matt/underworld/Lava.W: 96 256
-:matt/underworld/Lava.W: 96 304
-:matt/underworld/Lava.W: 144 256
-:matt/underworld/Lava.W: 144 304
-:matt/underworld/Lava.W: 192 256
-:matt/underworld/Lava.W: 192 304
-:matt/underworld/Lava.W: 240 256
+:matt/underworld/Lava.W: -16 272
+:matt/underworld/Lava.W: 32 272
+:matt/underworld/Lava.W: -8 312
+:matt/underworld/Lava.W: 80 272
+:matt/underworld/Lava.W: 40 312
+:matt/underworld/Lava.W: 128 272
+:matt/underworld/Lava.W: 88 312
+:matt/underworld/Lava.W: 176 272
+:matt/underworld/Lava.W: 136 312
+:matt/underworld/Lava.W: 224 272
+:matt/underworld/Lava.W: 184 312
 :geoo/construction/sawblade.F: -8 224
 :geoo/construction/sawblade.F: 184 224
-:matt/underworld/Lava.W: 0 352
-:matt/underworld/Lava.W: 48 352
-:matt/underworld/Lava.W: 96 352
-:matt/underworld/Lava.W: 144 352
-:matt/underworld/Lava.W: 192 352
-:matt/underworld/Lava.W: 240 304
-:matt/underworld/Lava.W: 240 352
+:matt/underworld/Lava.W: -16 352
+:matt/underworld/Lava.W: 32 352
+:matt/underworld/Lava.W: 80 352
+:matt/underworld/Lava.W: 128 352
+:matt/underworld/Lava.W: 176 352
+:matt/underworld/Lava.W: 232 312
+:matt/underworld/Lava.W: 224 352
 :simon/water.W: 496 16
 :simon/water.W: 544 16
 :simon/water.W: 592 16

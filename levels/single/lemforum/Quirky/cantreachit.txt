@@ -1,4 +1,4 @@
-$BUILT 2016-07-21 22:34:14
+$BUILT 2023-01-22 06:41:20
 $AUTHOR geoo
 $ENGLISH Can't Reach it – Don't Need it
 
@@ -23,7 +23,7 @@ $ENGLISH Can't Reach it – Don't Need it
 :matt/underworld/Goal.G: 96 128
 :matt/underworld/Goal.G: 96 320
 
-:matt/underworld/Lava.W: 384 320
+:matt/underworld/Lava.W: 374 328
 :matt/underworld/Lava.W: 384 368
 :geoo/sandstone/brazier.F: 64 130
 :geoo/sandstone/torch.F: 344 96

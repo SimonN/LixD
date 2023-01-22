@@ -1,12 +1,10 @@
-$BUILT 2016-07-26 19:31:35
+$BUILT 2023-01-22 06:32:45
 $AUTHOR Nortaneous
 $ENGLISH The Ring of Fnargl
 
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
 #SIZE_Y 400
-#START_X 0
-#START_Y 0
 
 #INITIAL 40
 #REQUIRED 10
@@ -26,48 +24,60 @@ $ENGLISH The Ring of Fnargl
 
 :geoo/construction/Goal2.G: 288 -16
 
-:matt/underworld/Lava.W: 208 368
-:matt/underworld/Lava.W: 16 368
-:matt/underworld/Lava.W: 64 368
-:matt/underworld/Lava.W: 112 368
-:matt/underworld/Lava.W: 160 368
-:matt/underworld/Lava.W: -32 368
-:matt/underworld/Lava.W: 384 368
-:matt/underworld/Lava.W: 480 320
-:matt/underworld/Lava.W: 528 320
-:matt/underworld/Lava.W: 576 320
-:matt/underworld/Lava.W: 624 320
-:matt/underworld/Lava.W: -32 320
-:matt/underworld/Lava.W: 16 320
-:matt/underworld/Lava.W: 64 320
-:matt/underworld/Lava.W: 112 320
-:matt/underworld/Lava.W: 160 320
-:matt/underworld/Lava.W: 432 320
-:matt/underworld/Lava.W: 432 368
-:matt/underworld/Lava.W: 480 368
-:matt/underworld/Lava.W: 528 368
-:matt/underworld/Lava.W: 576 368
-:matt/underworld/Lava.W: 624 368
-:matt/underworld/Lava.W: 16 272
-:matt/underworld/Lava.W: 64 272
-:matt/underworld/Lava.W: 112 272
-:matt/underworld/Lava.W: -32 272
-:matt/underworld/Lava.W: 96 224
-:matt/underworld/Lava.W: 48 224
-:matt/underworld/Lava.W: 0 224
-:matt/underworld/Lava.W: 480 272
-:matt/underworld/Lava.W: 528 272
-:matt/underworld/Lava.W: 576 272
-:matt/underworld/Lava.W: 624 272
-:matt/underworld/Lava.W: 512 224
-:matt/underworld/Lava.W: 560 224
-:matt/underworld/Lava.W: 608 224
-:matt/underworld/Lava.W: 80 176
-:matt/underworld/Lava.W: 32 176
+:matt/underworld/Lava.W: -56 336
+:matt/underworld/Lava.W: 640 296
+:matt/underworld/Lava.W: -48 296
+:matt/underworld/Lava.W: 648 336
 :matt/underworld/Lava.W: -16 176
 :matt/underworld/Lava.W: 496 176
 :matt/underworld/Lava.W: 544 176
+:matt/underworld/Lava.W: 512 216
+:matt/underworld/Lava.W: 480 256
+:matt/underworld/Lava.W: 448 296
 :matt/underworld/Lava.W: 592 176
+:matt/underworld/Lava.W: 560 216
+:matt/underworld/Lava.W: 528 256
+:matt/underworld/Lava.W: 496 296
+:matt/underworld/Lava.W: 608 216
+:matt/underworld/Lava.W: 624 256
+:matt/underworld/Lava.W: 576 256
+:matt/underworld/Lava.W: 592 296
+:matt/underworld/Lava.W: 544 296
+:matt/underworld/Lava.W: 80 176
+:matt/underworld/Lava.W: 96 216
+:matt/underworld/Lava.W: 112 256
+:matt/underworld/Lava.W: 144 296
+:matt/underworld/Lava.W: 184 336
+:matt/underworld/Lava.W: 208 360
+:matt/underworld/Lava.W: 32 176
+:matt/underworld/Lava.W: 48 216
+:matt/underworld/Lava.W: 64 256
+:matt/underworld/Lava.W: 96 296
+:matt/underworld/Lava.W: 136 336
+:matt/underworld/Lava.W: 160 360
+:matt/underworld/Lava.W: 0 216
+:matt/underworld/Lava.W: 16 256
+:matt/underworld/Lava.W: 48 296
+:matt/underworld/Lava.W: 88 336
+:matt/underworld/Lava.W: 112 360
+:matt/underworld/Lava.W: -32 256
+:matt/underworld/Lava.W: 0 296
+:matt/underworld/Lava.W: 40 336
+:matt/underworld/Lava.W: 64 360
+:matt/underworld/Lava.W: -8 336
+:matt/underworld/Lava.W: 16 360
+:matt/underworld/Lava.W: -32 360
+:matt/underworld/Lava.W: 456 336
+:matt/underworld/Lava.W: 504 336
+:matt/underworld/Lava.W: 472 360
+:matt/underworld/Lava.W: 600 336
+:matt/underworld/Lava.W: 616 360
+:matt/underworld/Lava.W: 552 336
+:matt/underworld/Lava.W: 568 360
+:matt/underworld/Lava.W: 520 360
+:matt/underworld/Lava.W: 408 336
+:matt/underworld/Lava.W: 424 360
+:matt/underworld/Lava.W: 376 360
 
 :geoo/steel/16x16o.S: 192 336
 :geoo/steel/16x16o.S: 464 256
