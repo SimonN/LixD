@@ -1,7 +1,5 @@
 module graphic.color;
 
-import std.random;
-
 public import basics.alleg5 :
     Alcol,
     al_map_rgb, al_unmap_rgb, al_map_rgb_f, al_unmap_rgb_f,
@@ -40,15 +38,6 @@ void computeColors(in int r, in int g, in int b)
 }
 
 private class ColorPrivate {
-
-    @property Alcol random()
-    {
-        alias rnd = uniform01!float;
-        float[] arr = [rnd(), 0.7 + 0.3 * rnd(), 0.3 * rnd()];
-        arr.randomShuffle();
-        return al_map_rgb_f(arr[0], arr[1], arr[2]);
-    }
-
     // This can't be an alias to al_map_rgb because al_map_rgb expects ubytes.
     Alcol makecol(in int r, in int g, in int b)
     {

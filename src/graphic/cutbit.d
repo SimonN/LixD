@@ -79,8 +79,9 @@ public:
     {
         // Try loading the file. If not found, don't crash, but log.
         bitmap = al_load_bitmap(fn.stringForReading.toStringz);
-        if (bitmap)
-            al_convert_mask_to_alpha(bitmap, color.pink);
+        if (bitmap) {
+            bitmap.convertPinkToAlpha();
+        }
         this(bitmap, cut);
     }
 

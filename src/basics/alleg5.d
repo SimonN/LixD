@@ -124,6 +124,45 @@ Albit albitCreateSmoothlyScalable(in int xl, in int yl)
     bool isTargetBitmap(in Albit b) { return al_get_target_bitmap() == b; }
 }
 
+/*
+ * My custom variant of al_convert_mask_to_alpha to debug github issue #431:
+ * Magic pink won't become transparent on macOS (both Intel and ARM64)
+ */
+void convertPinkToAlpha(Albit bitmap)
+{
+    auto region = LockReadWrite(bitmap);
+    auto target = TargetBitmap(bitmap);
+    immutable xl = bitmap.xl;
+    immutable yl = bitmap.yl;
+    immutable Alcol transp = al_map_rgba(0, 0, 0, 0);
+    for (int y = 0; y < yl; y++) {
+        for (int x = 0; x < xl; x++) {
+            immutable Alcol pixel = al_get_pixel(bitmap, x, y);
+            if (pixel.r == 1f && pixel.g == 0f && pixel.b == 1f) {
+                al_put_pixel(x, y, transp);
+            }
+        }
+    }
+}
+
+/*
+ * The reason for above custom variant of al_convert_mask_to_alpha() is
+ * that A5's version compares colors with memcmp, but memcmp fails for float
+ * color components +0 and -0 which must compare equal as color components:
+ */
+unittest {
+    union Float {
+        float f;
+        ubyte[4] arr;
+    }
+    Float a;
+    Float b;
+    a.f = +0f;
+    b.f = -0f;
+    assert (a.f == b.f);
+    assert (a.arr != b.arr);
+}
+
 // The following structs implement RAII.
 struct TargetBitmap
 {

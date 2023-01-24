@@ -10,7 +10,6 @@ import std.algorithm; // find
 import basics.alleg5;
 import basics.globals : dirDataBitmap;
 import file.filename;
-import graphic.color;
 import graphic.cutbit;
 import graphic.internal.getters;
 import graphic.internal.names;
@@ -33,7 +32,7 @@ do {
         return;
     }
     loadedCutbitMayBeScaled[id] = new Cutbit(fn, Cutbit.Cut.ifGridExists);
-    al_convert_mask_to_alpha(loadedCutbitMayBeScaled[id].albit, color.pink);
+    loadedCutbitMayBeScaled[id].albit.convertPinkToAlpha();
     if (id.needGuiRecoloring) {
         eidrecol(loadedCutbitMayBeScaled[id], 0);
     }
