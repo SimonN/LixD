@@ -1,12 +1,10 @@
-$BUILT 2016-09-13 01:19:47
+$BUILT 2023-01-10 02:56:58
 $AUTHOR geoo
 $ENGLISH One-Way Road
 
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
 #SIZE_Y 400
-#START_X 0
-#START_Y 0
 
 #INITIAL 30
 #REQUIRED 30
@@ -15,7 +13,6 @@ $ENGLISH One-Way Road
 #CLIMBER 1
 #FLOATER 1
 #BUILDER 1
-#PLATFORMER 1
 #BASHER 1
 #DIGGER 1
 #EXPLODER2 0
@@ -25,7 +22,6 @@ $ENGLISH One-Way Road
 :matt/goldmine/Hatch.H: 512 80
 
 :matt/goldmine/Goal.G: 48 256
-
 
 :geoo/sandstone/torch.F: 16 128
 :geoo/sandstone/torch.F: 112 128
@@ -47,6 +43,7 @@ $ENGLISH One-Way Road
 :matt/goldmine/plank: 452 128
 :matt/goldmine/01: 282 342
 :matt/goldmine/00: 326 314
+:matt/goldmine/06: 338 320
 :matt/goldmine/crate64: 576 64
 :matt/goldmine/07: 176 276
 :matt/goldmine/00: 314 348

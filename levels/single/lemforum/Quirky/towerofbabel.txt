@@ -1,4 +1,4 @@
-$BUILT 2017-07-28 22:57:02
+$BUILT 2023-01-22 15:08:43
 $AUTHOR mobius
 $ENGLISH Tower of Babel
 
@@ -54,11 +54,11 @@ $ENGLISH Tower of Babel
 :raymanni/toys/letter_blank: 0 64
 :raymanni/toys/letter_blank: 0 32
 :raymanni/toys/brick_10: 32 152 r
-:raymanni/toys/brick_3: 32 112 rrr
+:raymanni/toys/brick_3: 32 112 fr
 :raymanni/toys/brick_3: 160 112 rrr
-:raymanni/toys/brick_1: 96 112 rrr
-:raymanni/toys/brick_3: 160 112 rrr
-:raymanni/toys/brick_1: 224 112 rrr
+:raymanni/toys/brick_1: 96 112 fr
+:raymanni/toys/brick_3: 160 112 fr
+:raymanni/toys/brick_1: 224 112 fr
 :raymanni/toys/chalk_2: 256 320
 :raymanni/toys/chalk_2: 264 320
 :raymanni/toys/chalk_2: 272 320
@@ -111,11 +111,10 @@ $ENGLISH Tower of Babel
 :raymanni/toys/letter_blank: 608 96
 :raymanni/toys/letter_blank: 608 64
 :raymanni/toys/letter_blank: 608 32
-:raymanni/toys/brick_4: 480 112 rrr
-:raymanni/toys/brick_2: 544 112 rrr
-:raymanni/toys/brick_4: 352 112 rrr
-:raymanni/toys/brick_2: 416 112 rrr
-:raymanni/toys/brick_13: 576 152 rrr
+:raymanni/toys/brick_4: 480 112 fr
+:raymanni/toys/brick_2: 544 112 fr
+:raymanni/toys/brick_4: 352 112 fr
+:raymanni/toys/brick_2: 416 112 fr
 :raymanni/toys/car_2: 416 80
 :raymanni/toys/cracker: 544 48
 :raymanni/toys/letter_2: 0 224
@@ -127,3 +126,23 @@ $ENGLISH Tower of Babel
 :geoo/steel/dark_32x32o.S: 0 160
 :geoo/steel/dark_32x32o.S: 608 128
 :geoo/steel/dark_32x32o.S: 608 160
+:raymanni/toys/chalk_2: 256 328 f
+:raymanni/toys/chalk_2: 264 328 f
+:raymanni/toys/chalk_2: 272 328 f
+:raymanni/toys/chalk_2: 280 328 f
+:raymanni/toys/chalk_2: 288 328 f
+:raymanni/toys/chalk_2: 296 328 f
+:raymanni/toys/chalk_2: 304 328 f
+:raymanni/toys/chalk_2: 312 328 f
+:raymanni/toys/chalk_2: 320 328 f
+:raymanni/toys/chalk_2: 328 328 f
+:raymanni/toys/chalk_2: 336 328 f
+:raymanni/toys/chalk_2: 344 328 f
+:raymanni/toys/chalk_2: 352 328 f
+:raymanni/toys/chalk_2: 360 328 f
+:raymanni/toys/chalk_2: 344 328 f
+:raymanni/toys/chalk_2: 352 328 f
+:raymanni/toys/chalk_2: 360 328 f
+:raymanni/toys/chalk_2: 368 328 f
+:raymanni/toys/chalk_2: 376 328 f
+:raymanni/toys/brick_14: 576 152 fr

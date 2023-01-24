@@ -1,4 +1,4 @@
-$BUILT 2022-12-09 21:16:38
+$BUILT 2016-07-29 20:35:22
 $AUTHOR mobius/Michael
 $ENGLISH Tinker Tailor Soldier Lix
 
@@ -16,7 +16,7 @@ $ENGLISH Tinker Tailor Soldier Lix
 #DIGGER 1
 #EXPLODER2 0
 
-:matt/marble/Hatch.H: 32 128
+:matt/marble/Hatch.H: 48 128
 
 :matt/marble/Goal.G: 680 288
 
@@ -118,4 +118,3 @@ $ENGLISH Tinker Tailor Soldier Lix
 :matt/marble/05b: 600 192
 :matt/marble/09: 600 224 d
 :matt/marble/09: 600 272 d
-:geoo/steel/dark_16x32o.S: 96 208

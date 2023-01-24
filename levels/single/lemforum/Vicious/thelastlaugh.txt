@@ -1,4 +1,4 @@
-$BUILT 2022-12-07 20:27:50
+$BUILT 2023-01-23 20:13:01
 $AUTHOR Pieuw/mobius
 $ENGLISH The Last Laugh
 
@@ -22,8 +22,8 @@ $ENGLISH The Last Laugh
 :matt/bricks/Goal.G: 16 240
 :matt/bricks/Goal.G: 512 336
 
-:simon/water.W: 512 64
-:simon/water.W: 560 64
+:geoo/construction/factory.T: 544 192
+
 :simon/water.W: 168 376
 :simon/water.W: 216 376
 :simon/water.W: 72 376
@@ -103,3 +103,42 @@ $ENGLISH The Last Laugh
 :geoo/steel/dark_64x64o.S: 576 320
 :matt/bricks/06: 48 288
 :matt/bricks/05: -16 288
+:geoo/steel/dark_32x32o.S: 480 256
+:geoo/steel/dark_32x32o.S: 480 288
+:geoo/steel/dark_32x32o.S: 480 320
+:geoo/steel/dark_32x32o.S: 480 352
+:geoo/steel/dark_32x32o.S: 480 384
+:matt/bricks/03: 512 16
+:matt/bricks/03: 576 16
+:matt/bricks/03: 512 80
+:matt/bricks/03: 576 80
+:simon/oriental/culm_half1: 504 8
+:simon/oriental/culm_half1: 504 32
+:simon/oriental/culm_half1: 512 24 r
+:simon/oriental/culm_half1: 528 8
+:simon/oriental/culm_half1: 528 32
+:simon/oriental/culm_d_half: 544 40
+:simon/oriental/culm_d_half: 552 32
+:simon/oriental/culm_d_half: 560 24
+:simon/oriental/culm_d_half: 568 16
+:simon/oriental/culm_half1: 560 40 r
+:simon/oriental/culm_d_half: 600 40 frr
+:simon/oriental/culm_d_half: 592 32 frr
+:simon/oriental/culm_d_half: 584 24 frr
+:simon/oriental/culm_d_half: 576 16 frr
+:simon/oriental/culm_half1: 576 40 r
+:simon/oriental/culm_half1: 504 72
+:simon/oriental/culm_half1: 504 96
+:simon/oriental/culm_half1: 512 88 r
+:simon/oriental/culm_half1: 528 72
+:simon/oriental/culm_half1: 528 96
+:simon/oriental/culm_d_half: 544 104
+:simon/oriental/culm_d_half: 552 96
+:simon/oriental/culm_d_half: 560 88
+:simon/oriental/culm_d_half: 568 80
+:simon/oriental/culm_half1: 560 104 r
+:simon/oriental/culm_d_half: 600 104 frr
+:simon/oriental/culm_d_half: 592 96 frr
+:simon/oriental/culm_d_half: 584 88 frr
+:simon/oriental/culm_d_half: 576 80 frr
+:simon/oriental/culm_half1: 576 104 r

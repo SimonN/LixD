@@ -1,4 +1,4 @@
-$BUILT 2023-01-02 22:04:34
+$BUILT 2023-01-17 15:59:25
 $AUTHOR mobius
 $ENGLISH Theresa Falls Up the Stairs
 
@@ -6,8 +6,8 @@ $ENGLISH Theresa Falls Up the Stairs
 #SIZE_X 640
 #SIZE_Y 400
 
-#INITIAL 10
-#REQUIRED 10
+#INITIAL 20
+#REQUIRED 20
 #SPAWN_INTERVAL 6
 
 #RUNNER 2
@@ -21,7 +21,8 @@ $ENGLISH Theresa Falls Up the Stairs
 #BATTER 1
 #EXPLODER2 0
 
-:raymanni/toys/hatch.H: 298 40
+:raymanni/toys/hatch.H: 296 40
+:raymanni/toys/hatch.H: 296 272
 
 :raymanni/toys/goal.G: 64 48
 
@@ -123,21 +124,21 @@ $ENGLISH Theresa Falls Up the Stairs
 :raymanni/toys/letter_3: 608 304
 :raymanni/toys/brick_2: 352 448
 :matt/bricks/20: 134 36 rr
-:raymanni/toys/brick_2: 0 0 frrr
+:raymanni/toys/brick_2: 0 0 fr
 :raymanni/toys/brick_2: 336 448 rrr
-:raymanni/toys/brick_3: 64 0 frrr
-:raymanni/toys/brick_4: 128 0 frrr
+:raymanni/toys/brick_3: 64 0 fr
+:raymanni/toys/brick_4: 128 0 fr
 :matt/bricks/18: 198 18 rr
 :matt/bricks/18: 198 48 rr
-:raymanni/toys/brick_1: 192 0 frrr
+:raymanni/toys/brick_1: 192 0 fr
 :matt/bricks/20: 190 76 rr
-:raymanni/toys/brick_2: 256 0 frrr
+:raymanni/toys/brick_2: 256 0 fr
 :matt/bricks/18: 376 35 rr
-:raymanni/toys/brick_3: 320 0 frrr
-:raymanni/toys/brick_4: 384 0 frrr
-:raymanni/toys/brick_1: 448 0 frrr
-:raymanni/toys/brick_2: 512 0 frrr
-:raymanni/toys/brick_3: 576 0 frrr
+:raymanni/toys/brick_3: 320 0 fr
+:raymanni/toys/brick_4: 384 0 fr
+:raymanni/toys/brick_1: 448 0 fr
+:raymanni/toys/brick_2: 512 0 fr
+:raymanni/toys/brick_3: 576 0 fr
 :raymanni/toys/brick_4: 640 64 rrr
 :raymanni/toys/brick_1: 704 64 rrr
 :raymanni/toys/brick_4: 600 40

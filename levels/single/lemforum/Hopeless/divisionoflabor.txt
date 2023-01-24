@@ -1,4 +1,4 @@
-$BUILT 2017-08-16 02:24:07
+$BUILT 2023-01-22 20:07:06
 $AUTHOR Pieuw/mobius
 $ENGLISH Division of Labor
 
@@ -22,6 +22,8 @@ $ENGLISH Division of Labor
 
 :geoo/sandstone/Goal.G: 1416 216
 
+:geoo/sandstone/slopes/32x32lt: 624 240
+:geoo/sandstone/slopes/32x32rt: 651 240
 :geoo/sandstone/slopes/32x32rb: 630 240
 :geoo/sandstone/ebony/v16a: 304 56
 :geoo/sandstone/ebony/h8a: 1111 210 f
@@ -112,7 +114,6 @@ $ENGLISH Division of Labor
 :geoo/sandstone/64x32: 688 240
 :geoo/sandstone/64x32: 496 240
 :geoo/sandstone/slopes/32x32rt: 528 240
-:geoo/sandstone/slopes/32x32lt: 624 240
 :geoo/sandstone/slopes/32x32lt: 496 240
 :geoo/sandstone/64x32: 816 240
 :geoo/sandstone/64x32: 944 240
@@ -181,3 +182,4 @@ $ENGLISH Division of Labor
 :geoo/sandstone/slopes/32x32rt: 368 272
 :geoo/sandstone/slopes/32x32lt: 208 272
 :geoo/sandstone/32x32: 656 240
+:geoo/steel/dark_32x32o.S: 224 252

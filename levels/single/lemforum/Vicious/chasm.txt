@@ -1,12 +1,10 @@
-$BUILT 2016-07-21 13:28:20
+$BUILT 2023-01-17 23:27:54
 $AUTHOR Insane Steve
 $ENGLISH Chasm
 
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 1104
 #SIZE_Y 400
-#START_X 0
-#START_Y -20
 
 #INITIAL 50
 #REQUIRED 45
@@ -161,9 +159,6 @@ $ENGLISH Chasm
 :geoo/steel/32x32o.S: 1072 16
 :geoo/steel/32x32o.S: 1040 16
 :geoo/steel/32x32o.S: 1008 16
-:geoo/steel/32x32o.S: 1072 -16
-:geoo/steel/32x32o.S: 1040 -16
-:geoo/steel/32x32o.S: 1008 -16
 :geoo/steel/32x16o.S: 888 48
 :geoo/steel/32x16o.S: 856 48
 :geoo/steel/32x16o.S: 784 48
@@ -299,3 +294,13 @@ $BEGIN_TILE_GROUP 1
 :geoo/abstract/cvblocks/015: 20 0 d
 $END_TILE_GROUP
 :Group-1: 816 48
+:geoo/steel/32x16o.S: 1072 0
+:geoo/steel/32x16o.S: 1008 0
+:geoo/steel/32x16o.S: 1040 0
+:geoo/steel/16x16o.S: 488 64
+:geoo/steel/16x16o.S: 504 96
+:geoo/steel/16x16o.S: 504 112
+:geoo/steel/16x16o.S: 496 80
+:geoo/steel/16x16o.S: 512 80
+:geoo/steel/16x16o.S: 504 64
+:geoo/steel/16x16o.S: 520 64
