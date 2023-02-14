@@ -57,10 +57,10 @@ void updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
             }
     }
     else if (pan.framestepAheadOne) {
-        game.upd();
+        game.upd(1, DuringTurbo.no);
     }
     else if (pan.framestepAheadMany) {
-        game.upd(updatesAheadMany);
+        game.upd(updatesAheadMany, DuringTurbo.no);
     }
     else if (pan.paused && isMouseOnLand && mouseClickLeft) {
         // Clicking into the non-panel screen advances physics once.
@@ -68,18 +68,18 @@ void updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
         // merely advance 1 frame, but keep the game paused, on assignment.
         // This happens either because you've assigned something, or because
         // you have cancelled the replay.
-        game.upd();
+        game.upd(1, DuringTurbo.no);
     }
     else if (! pan.paused) {
         if (pan.speedIsNormal) {
             if (game.shallWeUpdateAtAdjustedNormalSpeed())
-                game.upd();
+                game.upd(1, DuringTurbo.no);
         }
         else if (pan.speedIsTurbo)
-            game.upd(updatesDuringTurbo, DuringTurbo.yes);
+            game.upd(9, DuringTurbo.yes);
         else {
             assert (pan.speedIsFast);
-            game.upd();
+            game.upd(1, DuringTurbo.no);
         }
     }
 }}
@@ -99,24 +99,22 @@ void recordServersWishSinceGameStart(
     Game game,
     in Duration sinceServerStartedGame
 ) {
-with (game) with (game.nurse)
-{
     /*
      * How many alticks have elapsed on our side since game start?
      * This is the number of completed Phyus converted to ticks,
      * plus leftover ticks that didn't yet make a complete Phyu.
      */
-    immutable long ourTicks = updatesSinceZero * ticksNormalSpeed
-                            + (timerTicks - altickLastPhyu);
+    immutable long ourTicks
+        = game.nurse.updatesSinceZero * game.ticksNormalSpeed
+        + (timerTicks - game.altickLastPhyu);
     /*
      * How many ticks does the server wish to have elapsed on our side
      * since game start?
      */
     enum Duration durOneTick = 1.seconds / basics.globals.ticksPerSecond;
     immutable long suggTicks = sinceServerStartedGame / durOneTick;
-
     game._alticksToAdjust = suggTicks - ourTicks;
-}}
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 private: //////////////////////////////////////////////////////////////////////
@@ -126,39 +124,37 @@ struct LoadStateRAII
 {
     private Game _game;
     this(Game g) { _game = g; }
-    ~this()      { _game.setLastPhyuToNow();    }
+    ~this() { _game.setLastPhyuToNow(); }
 }
 
 // Combat the network time-lag, affect _alticksToAdjust.
 // _alticksToAdjust is < 0 if we have to slow down, > 0 if we have to speed up.
-bool shallWeUpdateAtAdjustedNormalSpeed(Game game) { with (game)
+bool shallWeUpdateAtAdjustedNormalSpeed(Game game)
 {
     immutable long updAgo = timerTicks - game.altickLastPhyu;
-    immutable long adjust = _alticksToAdjust < -20 ? 2
-                        :   _alticksToAdjust <   0 ? 1
-                        :   _alticksToAdjust >  20 ? -2
-                        :   _alticksToAdjust >   0 ? -1 : 0;
-    if (updAgo >= ticksNormalSpeed + adjust) {
-        _alticksToAdjust += adjust;
-        return true;
+    immutable long adjust
+        = game._alticksToAdjust < -20 ? 2
+        : game._alticksToAdjust <   0 ? 1
+        : game._alticksToAdjust >  20 ? -2
+        : game._alticksToAdjust >   0 ? -1 : 0;
+    if (updAgo < game.ticksNormalSpeed + adjust) {
+        return false; // Caller shouldn't update physics yet.
     }
-    return false;
-}}
+    game._alticksToAdjust += adjust;
+    return true;
+}
 
 // Call upd() only during updatePhysicsAccordingToSpeedButtons()
 // Dispatch new assignments, then move forward in the gametime
-private void upd(
-    Game game,
-    in int howmany = 1,
-    in DuringTurbo duringTurbo = DuringTurbo.no) { with (game)
+private void upd(Game game, in int howmany, in DuringTurbo duringTurbo)
 {
-    if (nurse.doneAnimating())
+    if (game.nurse.doneAnimating())
         return;
-    immutable before = nurse.now;
+    immutable before = game.nurse.now;
     // Don't send undispatched via network, we did that earlier already.
     // Some from undispatchedAssignments have even come from the net.
-    nurse.addPlyMaybeGoBack(undispatchedAssignments);
-    undispatchedAssignments = null;
-    nurse.updateTo(Phyu(before + howmany), duringTurbo);
+    game.nurse.addPlyMaybeGoBack(game.undispatchedAssignments);
+    game.undispatchedAssignments = null;
+    game.nurse.updateTo(Phyu(before + howmany), duringTurbo);
     game.setLastPhyuToNow();
-}}
+}

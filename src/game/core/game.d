@@ -100,7 +100,6 @@ private:
 
 public:
     enum ticksNormalSpeed = ticksPerSecond / phyusPerSecondAtNormalSpeed;
-    enum updatesDuringTurbo = 9;
     enum updatesAheadMany = ticksPerSecond / ticksNormalSpeed * 10;
     enum tweakerXlg = 170f;
 
