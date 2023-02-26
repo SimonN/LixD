@@ -30,11 +30,11 @@ struct Version {
     // parse version string a la "1.234.56"
     this(in string src) pure @safe
     {
-        src.splitter('.')
-            .take(3)
-            .map!toIntPossiblyNegative
-            .zip(only(&major, &minor, &patch))
-            .each!"*a[1] = a[0]";
+        int* next = &major;
+        foreach (num; src.splitter('.').take(3)) {
+            *next = num.toIntPossiblyNegative;
+            next = (next == &major ? &minor : &patch);
+        }
         // A4/C++ Lix used dates as versioning numbers, and saved the
         // version as one integer, e.g., 2015010100 for 2015-01-01 with patch
         // number 00. These dates fit into the lower 31 bit of a signed int.

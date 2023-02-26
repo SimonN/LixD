@@ -67,8 +67,6 @@ public:
         lookup = null;
     }
 
-    int numTribes() const @nogc { return tribes.length & 0xFFFF; }
-
     // With dmd 2.0715.1, inout doesn't seem to work for this.
     // Let's duplicate the function, once for const, once for mutable.
     void foreachConstGadget(void delegate(const(Gadget)) func) const
@@ -80,13 +78,18 @@ public:
         chain(hatches, goals, waters, traps, flingPerms, flingTrigs).each!func;
     }
 
-    @property bool multiplayer() const @nogc
+    int numTribes() const pure nothrow @safe @nogc
+    {
+        return tribes.length & 0xFFFF;
+    }
+
+    bool multiplayer() const pure nothrow @safe @nogc
     {
         assert (numTribes > 0);
         return numTribes > 1;
     }
 
-    @property Style singleplayerStyle() const @nogc nothrow
+    Style singleplayerStyle() const pure nothrow @safe @nogc
     in { assert (! multiplayer, "call this only in singleplayer"); }
     do { return tribes.byKey.front; }
 

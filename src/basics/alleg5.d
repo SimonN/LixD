@@ -267,6 +267,6 @@ private int vramConsumption(Albit bmp)
     immutable xl = al_get_bitmap_width(bmp);
     immutable yl = al_get_bitmap_height(bmp);
 
-    int f(int n) { return 2^^(n.log2.ceil.to!int); }
+    int f(float n) { return 2^^(n.log2.ceil.to!int); }
     return f(xl * yl);
 }
