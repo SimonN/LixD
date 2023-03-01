@@ -24,17 +24,20 @@ public:
         _undrawColor = color.gui.m;
     }
 
-    // these functions return the position/length in geoms. See geometry.d
-    // for the difference between measuring in geoms and in screen pixels.
-    @property float xg()  const { return _geom.xg;  }
-    @property float yg()  const { return _geom.yg;  }
-    @property float xlg() const { return _geom.xlg; }
-    @property float ylg() const { return _geom.ylg; }
+    const nothrow @safe @nogc {
+        // Return the position/length in geoms. See geometry.d
+        // for the difference between measuring in geoms and in screen pixels.
+        float xg() { return _geom.xg;  }
+        float yg() { return _geom.yg;  }
+        float xlg() pure { return _geom.xlg; }
+        float ylg() pure { return _geom.ylg; }
 
-    @property float xs()  const { return _geom.xs;  }
-    @property float ys()  const { return _geom.ys;  }
-    @property float xls() const { return _geom.xls; }
-    @property float yls() const { return _geom.yls; }
+        // Return position/length in screen pixels.
+        float xs() { return _geom.xs;  }
+        float ys() { return _geom.ys;  }
+        float xls() { return _geom.xls; }
+        float yls() { return _geom.yls; }
+    }
 
     // to edit the geom, use Element.move(x, y) and Element.resize(xl, yl).
     const(Geom) geom() const pure nothrow @safe @nogc { return _geom; }
@@ -81,8 +84,15 @@ public:
         _children = _children.remove(_children.length - found.length);
     }
 
-    @property inout(Element[]) children() inout { return _children; }
-    bool isParentOf(in Element ch) const { return _geom is ch._geom.parent; }
+    inout(Element[]) children() inout pure nothrow @safe @nogc
+    {
+        return _children;
+    }
+
+    bool isParentOf(in Element ch) const pure nothrow @safe @nogc
+    {
+        return _geom is ch._geom.parent;
+    }
 
     void move(in float ax, in float ay)
     {
@@ -111,7 +121,7 @@ public:
         _children.each!(c => c.reqDraw);
     }
 
-    bool isMouseHere() const
+    bool isMouseHere() const nothrow @safe @nogc
     {
         return _shown && mouseX() >= xs && mouseX() < xs + xls
                       && mouseY() >= ys && mouseY() < ys + yls;

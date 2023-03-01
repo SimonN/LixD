@@ -93,41 +93,56 @@ class Geom {
         this(g.x, g.y, g.xl, g.yl, g.from);
     }
 
-    const pure @safe {
-        From xFrom() { return to!From(from & 0x0F | 0x20); }
-        From yFrom() { return to!From(from & 0xF0 | 0x02); }
-    }
+    const nothrow @safe @nogc {
+        float xlg() pure { return xl; }
+        float ylg() pure { return yl; }
+        float xs() { return xg  * gui.context.stretchFactor; }
+        float ys() { return yg  * gui.context.stretchFactor; }
+        float xls() { return xlg * gui.context.stretchFactor; }
+        float yls() { return ylg * gui.context.stretchFactor; }
 
-    @property float xlg() const { return xl; }
-    @property float ylg() const { return yl; }
-    @property float xs()  const { return xg  * gui.context.stretchFactor; }
-    @property float ys()  const { return yg  * gui.context.stretchFactor; }
-    @property float xls() const { return xlg * gui.context.stretchFactor; }
-    @property float yls() const { return ylg * gui.context.stretchFactor; }
+        float xg()
+        {
+            immutable float pXg  = parent ? parent.xg  : 0;
+            immutable float pXlg = parent ? parent.xlg : gui.context.screenXlg;
 
-    @property float xg() const
-    {
-        immutable float pXg  = parent ? parent.xg  : 0;
-        immutable float pXlg = parent ? parent.xlg : gui.context.screenXlg;
-
-        switch (xFrom) {
-            case From.LEFT:   return pXg + x;
-            case From.CENTER: return pXg + pXlg/2 - xl/2 + x;
-            case From.RIGHT:  return pXg + pXlg   - xl   - x;
-            default: assert (false);
+            switch (xFrom) {
+                case From.LEFT:   return pXg + x;
+                case From.CENTER: return pXg + pXlg/2 - xl/2 + x;
+                case From.RIGHT:  return pXg + pXlg   - xl   - x;
+                default: assert (false);
+            }
         }
-    }
 
-    @property float yg() const
-    {
-        immutable float pYg  = parent ? parent.yg  : 0;
-        immutable float pYlg = parent ? parent.ylg : gui.context.screenYlg;
+        float yg()
+        {
+            immutable float pYg  = parent ? parent.yg  : 0;
+            immutable float pYlg = parent ? parent.ylg : gui.context.screenYlg;
 
-        switch (yFrom) {
-            case From.TOP:    return pYg + y;
-            case From.CENTER: return pYg + pYlg/2 - yl/2 + y;
-            case From.BOTTOM: return pYg + pYlg   - yl   - y;
-            default: assert (false);
+            switch (yFrom) {
+                case From.TOP:    return pYg + y;
+                case From.CENTER: return pYg + pYlg/2 - yl/2 + y;
+                case From.BOTTOM: return pYg + pYlg   - yl   - y;
+                default: assert (false);
+            }
+        }
+
+        From xFrom() pure
+        {
+            switch (from & 0x0F) {
+                case 0x02: return From.CENTER;
+                case 0x04: return From.RIGHT;
+                default: return From.LEFT;
+            }
+        }
+
+        From yFrom() pure
+        {
+            switch (from & 0xF0) {
+                case 0x20: return From.CENTER;
+                case 0x40: return From.BOTTOM;
+                default: return From.TOP;
+            }
         }
     }
 

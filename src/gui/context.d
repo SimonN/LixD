@@ -26,8 +26,12 @@ void initialize(in int aScreenXl, in int aScreenYl)
         return;
     }
     _scaled = new Context(aScreenXl, aScreenYl);
-    if (aScreenXl == 640 && aScreenYl == 480)
+    if (aScreenXl == 640 && aScreenYl == 480) {
         _unscaled = _scaled;
+    }
+    else {
+        _unscaled = new Context(640, 480);
+    }
 }
 
 void deinitialize()
@@ -44,22 +48,24 @@ void deinitialize()
 
 bool forceUnscaledGUIDrawing = false; // public, set to true to choose context
 
-// thickg != 2, because thicks was floored from 2!
-@property thickg() { return currentContext._thicks / stretchFactor; }
-@property thicks()        { return currentContext._thicks; }
-@property screenXlg()     { return currentContext._screenXlg; }
-@property screenYlg()     { return currentContext._screenYlg; }
-@property screenXls()     { return currentContext._screenXls; }
-@property screenYls()     { return currentContext._screenYls; }
-@property stretchFactor() { return currentContext._stretchFactor; }
-@property mapYls()        { return currentContext.mapYls; }
-@property panelYls()      { return screenYls - mapYls; }
-@property panelYlg()      { return panelYls / stretchFactor; }
-@property mapYlg()        { return mapYls   / stretchFactor; }
+nothrow @safe @nogc {
+    // thickg != 2, because thicks was floored from 2!
+    float thickg() { return currentContext._thicks / stretchFactor; }
+    int thicks() { return currentContext._thicks; }
+    float screenXlg() { return currentContext._screenXlg; }
+    float screenYlg() { return currentContext._screenYlg; }
+    float screenXls() { return currentContext._screenXls; }
+    float screenYls() { return currentContext._screenYls; }
+    float stretchFactor() { return currentContext._stretchFactor; }
+    float mapYls() { return currentContext.mapYls; }
+    float panelYls() { return screenYls - mapYls; }
+    float panelYlg() { return panelYls / stretchFactor; }
+    float mapYlg() { return mapYls / stretchFactor; }
+}
 
-@property djvuS() { return currentContext.djvuS; } // terrain browser names
-@property djvuM() { return currentContext.djvuM; } // most labels
-@property djvuL() { return currentContext.djvuL; } // skill button labels
+Alfont djvuS() { return currentContext.djvuS; } // terrain browser names
+Alfont djvuM() { return currentContext.djvuM; } // most labels
+Alfont djvuL() { return currentContext.djvuL; } // skill button labels
 
 void drawText(int tplFlag = ALLEGRO_ALIGN_LEFT)(
     in Alfont f, in string str, float x, float y, in Alcol col
@@ -79,20 +85,20 @@ private:
 Context _scaled;
 Context _unscaled;
 
-const(Context) currentContext()
+Context currentContext() nothrow @safe @nogc
 {
     if (forceUnscaledGUIDrawing) {
-        if (! _unscaled)
-            _unscaled = new Context(640, 480);
+        assert (_unscaled, "call initialize() before using unscaled context");
         return _unscaled;
     }
     else {
-        assert (_scaled, "call initialize() before using the context");
+        assert (_scaled, "call initialize() before using scaled context");
         return _scaled;
     }
 }
 
 final class Context {
+private:
     immutable float _screenXlg;
     enum      float _screenYlg = 480f;
     immutable float _screenXls;
@@ -107,16 +113,13 @@ final class Context {
     // We compute this offset. This affects the y pos for djvuM only.
     // djvuMOffset should be set such that the font centers nicely on a
     // GUI button/bar having a height of 20 geoms.
-    immutable(float) _djvuMOffset;
+    float _djvuMOffset;
 
-    // To combat blurry screens, print djvuS without shadow on small screens,
-    // but print with a dark surrounding
-    immutable(bool) _smallScreenDjvuSSurround;
+    ALLEGRO_FONT* _djvuL; // must be non-const to allow destruction
+    ALLEGRO_FONT* _djvuM;
+    ALLEGRO_FONT* _djvuS;
 
-    ALLEGRO_FONT* djvuL; // must be non-const to allow destruction
-    ALLEGRO_FONT* djvuM;
-    ALLEGRO_FONT* djvuS;
-
+public:
     this(in int aScreenXl, in int aScreenYl)
     in { assert (aScreenYl > 0); }
     do {
@@ -125,33 +128,12 @@ final class Context {
         _stretchFactor = _screenYls / _screenYlg;
         _screenXlg     = _screenXls / _stretchFactor;
         _thicks = std.math.floor(2.0 * _stretchFactor).to!int;
-
-        // We want the fonts to be in relative size to our resolution.
-        // See gui.geometry for details. Loading the fonts in size 16 gives
-        // correct height for 24 text lines stacked vertically on 640x480.
-        // Other resolutions require us to scale the font size.
-        // Unscaled is equivalent to magnif == 1f.
-        immutable float magnif = min(aScreenXl / 640f, aScreenYl / 480f);
-        djvuS = makeFont((8 * magnif).floor.to!int);
-        djvuM = makeFont((14 * magnif).floor.to!int);
-        djvuL = makeFont((20 * magnif).floor.to!int);
-        _smallScreenDjvuSSurround = magnif <= 1.3f;
         _shaOffset = () {
-            if (_smallScreenDjvuSSurround) {
+            if (smallScreenDjvuSSurround) {
                 return 1;
             }
             immutable float unrounded = min(magnif, magnif / 2f + 2f);
             return ((14 * unrounded).floor / 14f).ceil;
-        }();
-        _djvuMOffset = () {
-            immutable float ylsOf20geom = (aScreenYl / 24f);
-            immutable float ylsText = al_get_font_line_height(djvuM);
-            immutable float goodIfNoShadow = (ylsOf20geom - ylsText) / 2f;
-            immutable float goodWithShadow
-                = goodIfNoShadow - _shaOffset / 2f;
-            return aScreenYl <= 400 ? goodWithShadow
-                : aScreenYl <= 500 ? goodWithShadow.ceil
-                : goodWithShadow.floor;
         }();
     }
 
@@ -162,17 +144,28 @@ final class Context {
             al_destroy_font(fo);
             fo = null;
         }
-        disposeImpl(djvuS);
-        disposeImpl(djvuM);
-        disposeImpl(djvuL);
+        disposeImpl(_djvuS);
+        disposeImpl(_djvuM);
+        disposeImpl(_djvuL);
     }
 
-    ALLEGRO_FONT* makeFont(in int size)
+    Alfont djvuS() { return _djvuS ? _djvuS : (_djvuS = makeFont(8)); }
+    Alfont djvuL() { return _djvuL ? _djvuL : (_djvuL = makeFont(20)); }
+    Alfont djvuM()
     {
-        immutable fn = new VfsFilename("./data/fonts/djvusans.ttf");
-        ALLEGRO_FONT* f = al_load_ttf_font(
-            fn.stringForReading.toStringz, size, 0);
-        return f ? f : al_create_builtin_font();
+        if (_djvuM) {
+            return _djvuM;
+        }
+        _djvuM = makeFont(14);
+        immutable float ylsOf20geom = (_screenYls / 24f);
+        immutable float ylsText = al_get_font_line_height(djvuM);
+        immutable float goodIfNoShadow = (ylsOf20geom - ylsText) / 2f;
+        immutable float goodWithShadow
+            = goodIfNoShadow - _shaOffset / 2f;
+        _djvuMOffset = _screenYls <= 400 ? goodWithShadow
+                : _screenYls <= 500 ? goodWithShadow.ceil
+                : goodWithShadow.floor;
+        return _djvuM;
     }
 
     void drawText(int tplFlag = ALLEGRO_ALIGN_LEFT)(
@@ -188,10 +181,10 @@ final class Context {
         else static if (tplFlag == ALLEGRO_ALIGN_RIGHT)
             x = (x - _shaOffset).ceil.to!int;
 
-        y = to!int(y + (f == djvuM ? _djvuMOffset : 0));
+        y = to!int(y + (f == _djvuM ? _djvuMOffset : 0));
         enum fla = tplFlag | ALLEGRO_ALIGN_INTEGER;
 
-        if (f == djvuS && _smallScreenDjvuSSurround) {
+        if (f == _djvuS && smallScreenDjvuSSurround) {
             // On small screens like 640x480 (where _yls20g is 20),
             // print sharper the small font. Re Nepster's complaint.
             al_draw_text(f, color.guiSha, x - _shaOffset, y, fla, s);
@@ -209,10 +202,10 @@ final class Context {
 
     // Screen pixels (in y direction) that the map should occupy, i.e.,
     // the part of the screen that is _not_ covered by the panel at the bottom.
-    @property float mapYls() const
+    float mapYls() const pure nothrow @safe @nogc
     out (result) {
         assert (result >= 0);
-        assert (result <= screenYls);
+        assert (result <= _screenYls);
     }
     do {
         immutable float unroundedMapYls
@@ -226,7 +219,7 @@ final class Context {
 
     // 1 / panelYlgDivisor is the ratio of vertical space occupied by the
     // game/editor panels. Higher values mean less y-space for panels.
-    float panelYlgDivisor() const
+    float panelYlgDivisor() const pure nothrow @safe @nogc
     {
         assert (_screenXls > 0, "necessary for division; bad init?");
         assert (_screenYls > 0, "necessary for division; bad init?");
@@ -249,5 +242,34 @@ final class Context {
             return 5.6f;
         }
         return 6;
+    }
+
+private:
+    float magnif() const pure nothrow @safe @nogc
+    {
+        assert (_screenXls != float.init);
+        assert (_screenYls != float.init);
+        // We want the fonts to be in relative size to our resolution.
+        // See gui.geometry for details. Loading the fonts in size 16 gives
+        // correct height for 24 text lines stacked vertically on 640x480.
+        // Other resolutions require us to scale the font size.
+        // Unscaled is equivalent to magnif == 1f.
+        return min(_screenXls / 640f, _screenYls / 480f);
+    }
+
+    bool smallScreenDjvuSSurround() const pure nothrow @safe @nogc
+    {
+        // To combat blurry screens, print djvuS without shadow on small
+        // screens, but print with a dark surrounding
+        return magnif <= 1.3f;
+    }
+
+    ALLEGRO_FONT* makeFont(in int unscaledSize)
+    {
+        immutable fn = new VfsFilename("./data/fonts/djvusans.ttf");
+        immutable scaledSize = (unscaledSize * magnif).floor.to!int;
+        ALLEGRO_FONT* f = al_load_ttf_font(
+            fn.stringForReading.toStringz, scaledSize, 0);
+        return f ? f : al_create_builtin_font();
     }
 }
