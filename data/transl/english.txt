@@ -320,11 +320,12 @@ $optionMusicEnabled Music|Enable background music.
 $optionSoundDecibels Sound gain in dB|Adjust the sound volume. 0 is already pretty loud.|Raise/lower by 10 dB to double/halve the sound volume.
 $optionMusicDecibels Music gain in dB|Adjust the music volume. −10 dB should be loud enough.|Raise/lower by 10 dB to double/halve the music volume.
 
-$optionScreenMode Screen mode|Windowed and software fullscreen allow for good Alt+Tab.|Windowed and hardware fullscreen use the resolution on the right.
+$optionScreenMode Screen mode|Windowed and software fullscreen allow for good Alt+Tab.|Hardware fullscreen takes a few seconds to enter and exit.
 $optionScreenWindowed Windowed
 $optionScreenSoftwareFullscreen Software fullscreen
 $optionScreenHardwareFullscreen Hardware fullscreen
-$optionScreenWindowedRes Windowed/hardware resolution|Size of the Lix window when you have chosen windowed mode.|Monitor resolution for hardware fullscreen. Software fullscreen ignores this.
+$optionScreenWindowedRes Windowed resolution|Size of the Lix window when you have chosen windowed mode.
+$optionScreenHardwareFullscreenRes Hardware fullscreen resolution|Monitor resolution for hardware fullscreen.|Software fullscreen ignores this.
 $optionPaintTorusSeams Paint torus seams|Mark the wrapping seam with a thin line whenever a level wraps around.|This doesn't affect game physics, but may improve your orientation.
 $optionIngameTooltips Tooltips during game|Explain buttons and lix-selecting hotkeys during play, e.g., to select left-facing lix.|Some buttons have two functions: One on left-click, one on right-click.
 $optionShowFPS Count physics and FPS|Print number of physics updates since the game started.|Print the number of video frames per second, during play or editor.

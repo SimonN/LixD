@@ -309,11 +309,12 @@ $optionMusicEnabled Musik|Musik einschalten.
 $optionSoundDecibels Tonverstärkung in dB|Tonlautstärke anpassen. 0 ist schon recht laut.|Erhöhe/senke um 10 dB, um die Tonlautstärke zu verdoppeln/halbieren.
 $optionMusicDecibels Musikverstärkung in dB|Musiklautstärke anpassen. −10 dB sollte laut genug sein.|Erhöhe/senke um 10 dB, um die Musiklautstärke zu verdoppeln/halbieren.
 
-$optionScreenMode Bildschirmmodus|Fenstermodus und Software-Vollbild erlauben gutes Alt+Tab.|Fenstermodus und Hardware-Vollbild benutzen die Auflösung rechts.
+$optionScreenMode Bildschirmmodus|Fenstermodus und Software-Vollbild erlauben gutes Alt+Tab.|Hardware-Vollbild dauert einige Sekunden beim Einstieg und Verlassen.
 $optionScreenWindowed Fenstermodus
 $optionScreenSoftwareFullscreen Software-Vollbild
 $optionScreenHardwareFullscreen Hardware-Vollbild
-$optionScreenWindowedRes Fenster-/Hardware-Auflösung|Größe des Lix-Fensters im Fenstermodus.|Monitor-Auflösung im Hardware-Vollbild. Software-Vollbild ignoriert dies.
+$optionScreenWindowedRes Fenster-Auflösung|Größe des Lix-Fensters im Fenstermodus.
+$optionScreenWindowedRes Hardware-Vollbild-Auflösung|Monitor-Auflösung im Hardware-Vollbild.|Software-Vollbild ignoriert diese Einstellung.
 $optionPaintTorusSeams Torus-Nahtstellen anmalen|Torus-Nahtstellen in der Landschaft mit einer dünnen Linie kennzeichnen.|Dies hat keine Auswirkung auf die Physik; es dient zur Orientierung.
 $optionIngameTooltips Tooltips im Spiel|Buttons und Lix-wählende Hotkeys im Spiel erklären, z.B. nur Linksläufer.|Einige Buttons haben eine Linksklick- und eine Rechtsklick-Funktion.
 $optionShowFPS Physik und FPS zählen|Anzahl Physik-Updates seit Spielbeginn anzeigen.|Im Editor und Spiel: Frames pro Sekunde anzeigen.

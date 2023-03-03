@@ -320,11 +320,12 @@ $optionMusicEnabled Musik|Aktivera bakgrundsmusik.
 $optionSoundDecibels Ljudökning i dB|Justera ljudvolymen. 0 är redan ganska högt.|Höj/sänk med 10 dB för att dubbla/halvera ljudvolymen.
 $optionMusicDecibels Musikökning i dB|Justera musikvolymen. −10 dB borde vara nog så högt.|Höj/sänk med 10 dB för att dubbla/halvera musikvolymen.
 
-$optionScreenMode Skärmläge|Fönsterläge och helskärm programvara fungerar bra för Alt+Tab.|Fönsterläge och helskärm hårdvara använder upplösningen till höger.
+$optionScreenMode Skärmläge|Fönsterläge och helskärm programvara fungerar bra för Alt+Tab.|Helskärm hårdvara: Det tar några sekunder att komma in och komma ut.
 $optionScreenWindowed Fönsterläge
 $optionScreenSoftwareFullscreen Helskärm programvara
 $optionScreenHardwareFullscreen Helskärm hårdvara
-$optionScreenWindowedRes Fönsterläge/hårdvaruupplösning|Storlek på Lixfönstret då du har valt fönsterläge.|Skärmupplösning för helskärm hårdvara. Helskärm programvara ignorerar detta.
+$optionScreenWindowedRes Fönsterläge|Storlek på Lixfönstret då du har valt fönsterläge.
+$optionScreenHardwareFullscreenRes Hårdvaruupplösning|Skärmupplösning för helskärm hårdvara.|Helskärm programvara ignorerar detta.
 $optionPaintTorusSeams Måla torussömmar|Markera omslagssömmen med en tunn linje då en bana snurrar runt.|Detta påverkar inte spelfysiken, men kan förbättra din orientering.
 $optionIngameTooltips Inforutor under spelsession|Förklara knappar och lix-markerande snabbtangenter under pågående spel, dvs för att välja vänsterriktade lix.|Några knappar har två funktioner: En på vänsterklick, en på högerklick.
 $optionShowFPS Räkna fysik och bps|Skriv ut antal fysikuppdateringar sedan spelet startades.|Skriv ut antal bilder per sekund under pågående spel eller redigering.

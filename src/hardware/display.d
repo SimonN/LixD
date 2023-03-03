@@ -32,10 +32,13 @@ private:
 
 public:
 
-@property @nogc nothrow {
+nothrow @safe @nogc {
     bool displayCloseWasClicked() { return _displayCloseWasClicked; }
     bool displayActive() { return _displayActive; }
     int displayFps() { return _fpsArr.len; }
+}
+
+nothrow @nogc {
     int displayXl()
     {
         assert (theA5display, "display hasn't been created");
@@ -48,13 +51,13 @@ public:
         return al_get_display_height(theA5display);
     }
 
-    ScreenChoice currentMode()
+    ScreenChoice screenChoiceOfCurrentDisplay() nothrow @nogc
     in { assert (theA5display, "no current mode because no display exists"); }
     do {
         ScreenChoice ret;
+        ret.type = flagsToScreenType(al_get_display_flags(theA5display));
         ret.x = displayXl;
         ret.y = displayYl;
-        ret.type = flagsToScreenType(al_get_display_flags(theA5display));
         return ret;
     }
 }
@@ -74,7 +77,7 @@ void setScreenMode(in Cmdargs cmdargs)
         & ~ ALLEGRO_FULLSCREEN
         & ~ ALLEGRO_FULLSCREEN_WINDOW;
     foreach (ref tryMode; cmdArgModes(cmdargs)
-        ~ file.option.screen.screenChoice
+        ~ screenChoiceInUserOptions
         ~ ScreenChoice(ScreenType.windowed, 640, 480) // a fallback mode
     ) {
         deinitialize();
@@ -174,7 +177,7 @@ void loadIcon()
         al_set_display_icon(theA5display, _appIcon);
 }
 
-ScreenType flagsToScreenType(in int flags) pure nothrow @nogc
+ScreenType flagsToScreenType(in int flags) pure nothrow @safe @nogc
 {
     if (flags & ALLEGRO_WINDOWED)
         return ScreenType.windowed;

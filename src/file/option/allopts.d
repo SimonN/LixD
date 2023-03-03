@@ -89,6 +89,8 @@ UserOption!bool replayAlwaysInsert;
 UserOption!int screenType; // Read through file.option.screen.screenChoice
 UserOption!int screenWindowedX;
 UserOption!int screenWindowedY;
+UserOption!int screenHardwareFullscreenX;
+UserOption!int screenHardwareFullscreenY;
 UserOption!int splatRulerDesign;
 UserOption!bool paintTorusSeams;
 UserOption!bool ingameTooltips;
@@ -269,6 +271,9 @@ do {
         defaultScreenType.to!int);
     screenWindowedX = newOpt("screenWindowedX", Lang.optionScreenWindowedRes, 1280);
     screenWindowedY = newOpt("screenWindowedY", 720);
+    screenHardwareFullscreenX = newOpt("screenHardwareFullscreenX",
+        Lang.optionScreenHardwareFullscreenRes, 640);
+    screenHardwareFullscreenY = newOpt("screenHardwareFullscreenY", 480);
     splatRulerDesign = newOpt("splatRulerDesign", Lang.optionSplatRulerDesign, 2);
     paintTorusSeams = newOpt("paintTorusSeams", Lang.optionPaintTorusSeams, false);
     ingameTooltips = newOpt("ingameTooltips", Lang.optionIngameTooltips, true);

@@ -52,10 +52,10 @@ private bool weHaveAReasonToChange()
     if (! theA5display) {
         return true;
     }
-    if (screenChoice.type == ScreenType.softwareFullscreen
-        && currentMode.type == ScreenType.softwareFullscreen
+    if (screenChoiceInUserOptions.type == ScreenType.softwareFullscreen
+        && screenChoiceOfCurrentDisplay.type == ScreenType.softwareFullscreen
     ) {
         return false;
     }
-    return screenChoice != currentMode;
+    return screenChoiceInUserOptions != screenChoiceOfCurrentDisplay;
 }

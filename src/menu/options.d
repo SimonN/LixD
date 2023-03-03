@@ -231,8 +231,13 @@ void populateGraphics()
         fac.factory!BoolOption(showFPS),
     ];
     fac = facRight();
+    fac.incrementY = 40;
     grp ~= [
         fac.factory!ResolutionOption(screenWindowedX, screenWindowedY),
+    ];
+    grp ~= [
+        fac.factory!ResolutionOption(screenHardwareFullscreenX,
+            screenHardwareFullscreenY),
     ];
     fac.y = bottomHalfY;
     grp ~= [
