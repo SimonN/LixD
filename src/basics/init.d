@@ -10,6 +10,7 @@ import file.option;
 import file.language;
 import file.filename;
 import file.trophy;
+import gui.context;
 import graphic.color;
 import graphic.internal;
 import hardware.keyboard;
@@ -32,7 +33,7 @@ void initialize(in Cmdargs cmdargs)
 {
     initializeNoninteractive(cmdargs.mode); // common to interactive and nonint
     if (cmdargs.mode == Runmode.INTERACTIVE)
-        // This initializes tiles and many other things.
+        // This initializes tiles, GUI context, many other things.
         changeResolutionBasedOnCmdargsThenUserFile(cmdargs);
 }
 
@@ -62,15 +63,24 @@ void initializeNoninteractive(Runmode mode)
     al_init_primitives_addon();
     hardware.tharsis.initialize();
 
-    if (ia) hardware.keyboard.initialize();
-    // Mouse will be (re)initialized whenever we change resolution.
-            graphic.color.initialize();
-    if (ph) physics.mask.initialize();
-    // Sound will be lazily initialized when required.
+    if (ia) {
+        hardware.keyboard.initialize();
+        // Mouse will be (re)initialized whenever we change resolution.
+    }
+    graphic.color.initialize();
+    if (ph) {
+        physics.mask.initialize();
+        // Sound will be lazily initialized when required.
+    }
 
     if (! ia) {
         // We need tiles and some graphics in any case
         graphic.internal.initialize(mode);
+        if (gr) {
+            assert (mode == Runmode.EXPORT_IMAGES);
+            // For the export-image unittest. This keeps all init here.
+            gui.context.initialize(640, 480);
+        }
     }
 }
 
@@ -98,6 +108,7 @@ void deinitialize()
 
 void deinitializeAfterUnittest()
 {
+    gui.context.deinitialize();
     tile.tilelib.deinitialize();
     graphic.internal.deinitialize();
     hardware.tharsis.deinitialize();

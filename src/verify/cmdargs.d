@@ -7,6 +7,7 @@ import core.memory;
 import basics.cmdargs;
 import basics.globals;
 import basics.init;
+import gui.context;
 import file.filename;
 import level.level; // for image export
 import verify.counter;
@@ -39,6 +40,10 @@ public void processFileArgsForRunmode(Cmdargs cmdargs)
         vc.writeStatistics();
     }
     else if (cmdargs.exportImages) {
+        gui.context.initialize(640, 480);
+        scope (exit) {
+            gui.context.deinitialize();
+        }
         cmdargs.dispatch((Filename fn) {
             auto l = new Level(fn);
             l.exportImageTo(Level.exportImageFilename(fn));
