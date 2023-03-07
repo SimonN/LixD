@@ -32,9 +32,9 @@ import file.filename;
 import net.ac;
 
 nothrow @nogc @safe {
-    string transl(in Lang key) { return _lang[key].transl; }
-    string[] descr(in Lang key) { return _lang[key].descr; }
-    string skillTooltip(in Ac ac) { return _skillTooltips[ac]; }
+    string transl(in Lang key) { return _globLoaded.words[key].transl; }
+    string[] descr(in Lang key) { return _globLoaded.words[key].descr; }
+    string skillTooltip(in Ac ac) { return _globLoaded.skillTooltips[ac]; }
 }
 
 // Get a translated string after %d/%s substitution.
@@ -60,16 +60,25 @@ nothrow string translf(FormatArgs...)(in Lang key, FormatArgs args)
 }
 
 void loadUserLanguageAndIfNotExistSetUserOptionToEnglish()
-{
-    _fnWrittenToLog = false;
-    IoLine[] lines = readFileUserLanguageOrNullArray();
-    foreach (line; lines.filter!(l => l.type == '$')) {
-        if (line.text1 == skillTooltipKeyword)
-            parseSkillTooltip(line.text2);
-        else
-            parseTranslation(line.text1, line.text2);
+in {
+    assert (languageBasenameNoExt !is null,
+        "Initialize user options before reading language files");
+}
+do {
+    assert (fileLanguage !is null);
+    if (fileLanguage.fileExists) {
+        _globLoaded = Language(fileLanguage);
+        return;
     }
-    warnAboutUndefinedLanguageIds();
+    logf("Language file not found: %s", fileLanguage.rootless);
+    if (! languageIsEnglish) {
+        log("    -> Falling back to English.");
+        languageBasenameNoExt = englishBasenameNoExt;
+        loadUserLanguageAndIfNotExistSetUserOptionToEnglish();
+    }
+    else {
+        log("    -> English language file not found. Broken installation?");
+    }
 }
 
 string formattedWinTopologyWarnSize2() // strange here, but it's needed 2x
@@ -488,50 +497,47 @@ enum Lang {
 
 /////////////////////////////////////////////////////////////////////// private
 
+private enum string skillTooltipKeyword = "skillTooltip";
+
+private Language _globLoaded;
+
+// translated strings of a loaded language
+private struct Word {
+    string transl;
+    string[] descr;
+}
+
+private struct Language {
 private:
-    enum string skillTooltipKeyword = "skillTooltip";
-
-    // translated strings of currently loaded language
-    struct Transl {
-        string transl;
-        string[] descr;
-    }
-    Transl[Lang.MAX] _lang;
-    Enumap!(Ac, string) _skillTooltips;
-
+    MutFilename _source;
     bool _fnWrittenToLog = false;
 
-    void localLogf(T...)(string formatstr, T formatargs)
+public:
+    Word[Lang.MAX] words;
+    Enumap!(Ac, string) skillTooltips;
+
+    this(in Filename source)
+    {
+        _source = source;
+        auto lines = fillVectorFromFile(_source);
+        foreach (line; lines.filter!(l => l.type == '$')) {
+            if (line.text1 == skillTooltipKeyword) {
+                parseSkillTooltip(line.text2);
+            }
+            else {
+                parseTranslation(line.text1, line.text2);
+            }
+        }
+        warnAboutMissingWords();
+    }
+
+    void langlog(T...)(string formatstr, T formatargs)
     {
         if (! _fnWrittenToLog) {
             _fnWrittenToLog = true;
-            logf("While reading `%s':", fileLanguage.rootless);
+            logfEvenDuringUnittest("In language %s:", _source.rootless);
         }
-        logf("    -> " ~ formatstr, formatargs);
-    }
-
-    IoLine[] readFileUserLanguageOrNullArray()
-    in {
-        assert (languageBasenameNoExt !is null,
-            "Initialize user options before reading language files");
-    }
-    do {
-        try {
-            assert (fileLanguage !is null);
-            return fillVectorFromFile(fileLanguage);
-        }
-        catch (Exception e) {
-            log(e.msg);
-            if (! languageIsEnglish) {
-                log("Falling back to English.");
-                languageBasenameNoExt = englishBasenameNoExt;
-                return readFileUserLanguageOrNullArray();
-            }
-            else {
-                log("English language file not found. Broken installation?");
-                return null;
-            }
-        }
+        logfEvenDuringUnittest("    -> " ~ formatstr, formatargs);
     }
 
     void parseTranslation(in string key, in string translFromFile)
@@ -541,17 +547,17 @@ private:
             langId = key.to!Lang;
         }
         catch (ConvException) {
-            localLogf("Unnecessary line: %s", key);
+            langlog("Unnecessary line: %s", key);
             return;
         }
         auto range = translFromFile.splitter('|');
         if (range.empty)
             return;
-        _lang[langId].transl = range.front;
+        words[langId].transl = range.front;
         range.popFront;
         if (range.empty)
             return;
-        _lang[langId].descr = range.array; // all remaining fields
+        words[langId].descr = range.array; // all remaining fields
     }
 
     void parseSkillTooltip(in string acBarTooltip)
@@ -561,20 +567,34 @@ private:
             return;
         Ac ac = stringToAc(range.front);
         if (ac == Ac.max) {
-            localLogf("Unknown skill: %s", range.front);
+            langlog("Unknown skill: %s", range.front);
             return;
         }
         range.popFront;
-        _skillTooltips[ac] = range.empty ? "" : range.front;
+        skillTooltips[ac] = range.empty ? "" : range.front;
     }
 
-    void warnAboutUndefinedLanguageIds()
+    void warnAboutMissingWords()
     {
         foreach (int id; 0 .. Lang.MAX) {
-            if (_lang[id].transl.length > 0)
+            if (words[id].transl.length > 0)
                 continue;
             string langIdStr = id.to!Lang.to!string;
-            localLogf("New translation required: %s", langIdStr);
-            _lang[id].transl = "!" ~ langIdStr ~ "!";
+            langlog("New translation required: %s", langIdStr);
+            words[id].transl = "!" ~ langIdStr ~ "!";
         }
     }
+}
+
+unittest {
+    auto installedLangs = dirDataTransl.findFiles();
+    assert (installedLangs.length >= 3, "English, German, Swedish expected.");
+    assert (installedLangs.canFind!(
+        fn => (fn.fileNoExtNoPre == englishBasenameNoExt)),
+        "English should be among the installed languages.");
+    foreach (fn; installedLangs) {
+        // Write to stdout the missing and unnecessary words.
+        // They don't abort the unittests.
+        Language(fn);
+    }
+}

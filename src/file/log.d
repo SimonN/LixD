@@ -89,6 +89,16 @@ logf(T...)(string formatstr, T formatargs)
     catch (Exception) { }
 }
 
+nothrow static void
+logfEvenDuringUnittest(Args...)(string formatstr, Args args)
+{
+    try {
+        version (unittest) std.stdio.writefln(formatstr, args);
+        else logf(args);
+    }
+    catch (Exception) {}
+}
+
 ///////////////////////////////////////////////////////////////////////////////
 
 private static void
