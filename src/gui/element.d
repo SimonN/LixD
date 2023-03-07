@@ -42,15 +42,15 @@ public:
     // to edit the geom, use Element.move(x, y) and Element.resize(xl, yl).
     const(Geom) geom() const pure nothrow @safe @nogc { return _geom; }
 
-    @property Alcol undrawColor() const  { return _undrawColor;     }
-    @property Alcol undrawColor(Alcol c) { return _undrawColor = c; }
+    Alcol undrawColor() const  { return _undrawColor;     }
+    Alcol undrawColor(Alcol c) { return _undrawColor = c; }
 
     final void hide() pure nothrow @nogc { shown = false; }
     final void show() pure nothrow @nogc { shown = true; }
 
     // Both have to be virtual because Button overrides one >_>
-    @property bool shown() const pure nothrow @nogc { return _shown; }
-    @property bool shown(in bool b) pure nothrow @nogc
+    bool shown() const pure nothrow @nogc { return _shown; }
+    bool shown(in bool b) pure nothrow @nogc
     {
         if (b != _shown) {
             reqDraw();
@@ -115,7 +115,7 @@ public:
 
     // Require a redraw because some data of the element has changed,
     // or because things that would be drawn below need a redraw.
-    void reqDraw() nothrow pure @nogc
+    void reqDraw() nothrow pure @safe @nogc
     {
         drawRequired = true;
         _children.each!(c => c.reqDraw);
@@ -195,15 +195,15 @@ protected:
     }
 }
 
-template GetSetWithReqDraw(string s)
+template GetSetWithReqDraw(string s, string setterQualifiers = "")
 {
     enum string GetSetWithReqDraw = q{
-        @property typeof(_%s) %s() const pure nothrow @safe @nogc
+        typeof(_%s) %s() const pure nothrow @safe @nogc
         {
             return _%s;
         }
 
-        @property typeof(_%s) %s(in typeof(_%s) arg)
+        typeof(_%s) %s(in typeof(_%s) arg) %s
         {
             if (_%s == arg)
                 return arg;
@@ -211,5 +211,5 @@ template GetSetWithReqDraw(string s)
             reqDraw();
             return arg;
         }
-    }.format(s, s, s, s, s, s, s, s);
+    }.format(s, s, s, s, s, s, setterQualifiers, s, s);
 }

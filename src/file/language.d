@@ -100,7 +100,6 @@ enum Lang {
     // used in various dialogues
     commonOk,
     commonCancel,
-    commonNo,
     commonBack,
     commonExit,
     mainMenuGetMusic,
@@ -393,7 +392,6 @@ enum Lang {
     optionReplayAfterFrameBack,
     optionReplayAlwaysInsert,
 
-    optionScreenMode,
     optionScreenWindowed,
     optionScreenSoftwareFullscreen,
     optionScreenHardwareFullscreen,
@@ -415,7 +413,6 @@ enum Lang {
     optionKeyZoomIn,
     optionKeyZoomOut,
     optionKeyScreenshot,
-    optionSplatRulerDesign,
     optionSplatRulerDesignTwoBars,
     optionSplatRulerDesign094,
     optionSplatRulerDesignSuperSnap,

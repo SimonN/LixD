@@ -4,15 +4,16 @@ module gui.option.explain;
 
 import std.algorithm;
 
+import optional;
+
 import file.language;
 import gui;
-import gui.option.base;
 
 class Explainer : Element {
 private:
     Frame _frame;
     Label[2] _lines;
-    Option _alreadyExplained = null;
+    Optional!Lang _currentlyExplained;
 
 public:
     this(Geom g)
@@ -28,16 +29,30 @@ public:
         addChildren(_frame, _lines[0], _lines[1]);
     }
 
-    void explain(Option opt)
+    void explainNothing()
     {
-        if (opt is _alreadyExplained)
+        if (_currentlyExplained.empty) {
             return;
-        _alreadyExplained = opt;
+        }
+        _currentlyExplained = no!Lang;
         reqDraw();
-        auto range = opt !is null ? opt.lang.descr[] : [];
         foreach (line; _lines) {
-            if (range.length == 0)
+            line.hide();
+        }
+    }
+
+    void explain(Lang lang)
+    {
+        if (lang == _currentlyExplained) {
+            return;
+        }
+        _currentlyExplained = lang;
+        reqDraw();
+        auto range = lang.descr[];
+        foreach (line; _lines) {
+            if (range.length == 0) {
                 line.hide();
+            }
             else {
                 line.show();
                 line.text = range[0];

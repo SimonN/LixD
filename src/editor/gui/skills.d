@@ -50,14 +50,14 @@ protected:
     {
         foreach (Ac ac, ref int sk; level.skills)
             sk = 0;
-        level.ploder = _useExploder.checked ? Ac.exploder : Ac.imploder;
+        level.ploder = _useExploder.isChecked ? Ac.exploder : Ac.imploder;
         _skillSetters[].each!(b => level.skills[b.skill] = b.number);
     }
 
     override void calcSelf()
     {
         if (_useExploder.execute)
-            setUseExploder(_useExploder.checked);
+            setUseExploder(_useExploder.isChecked);
         if (_allToZero.execute)
             _skillSetters.each!(b => b.number = 0);
         if (_allToNum.execute)

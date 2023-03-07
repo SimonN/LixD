@@ -18,7 +18,6 @@ $versioningForOperatingSystem för
 // used in various dialogues
 $commonOk Okej
 $commonCancel Avbryt
-$commonNo Nej
 $commonBack Tillbaka
 $commonExit Avsluta
 
@@ -320,10 +319,9 @@ $optionMusicEnabled Musik|Aktivera bakgrundsmusik.
 $optionSoundDecibels Ljudökning i dB|Justera ljudvolymen. 0 är redan ganska högt.|Höj/sänk med 10 dB för att dubbla/halvera ljudvolymen.
 $optionMusicDecibels Musikökning i dB|Justera musikvolymen. −10 dB borde vara nog så högt.|Höj/sänk med 10 dB för att dubbla/halvera musikvolymen.
 
-$optionScreenMode Skärmläge|Fönsterläge och helskärm programvara fungerar bra för Alt+Tab.|Helskärm hårdvara: Det tar några sekunder att komma in och komma ut.
-$optionScreenWindowed Fönsterläge
-$optionScreenSoftwareFullscreen Helskärm programvara
-$optionScreenHardwareFullscreen Helskärm hårdvara
+$optionScreenWindowed Fönsterläge|Kör Lix i ett fönster. Välj fönsterstorlek till höger.|Alt+Tab är snabb.
+$optionScreenSoftwareFullscreen Helskärm programvara|Detta skapar ett kantlöst fönster som fyller hela skärmen.|Alt+Tab är snabb.
+$optionScreenHardwareFullscreen Helskärm hårdvara|Helskärm hårdvara: Det tar några sekunder att komma in och komma ut.|Alt+Tab är långsam.
 $optionScreenWindowedRes Fönsterläge|Storlek på Lixfönstret då du har valt fönsterläge.
 $optionScreenHardwareFullscreenRes Hårdvaruupplösning|Skärmupplösning för helskärm hårdvara.|Helskärm programvara ignorerar detta.
 $optionPaintTorusSeams Måla torussömmar|Markera omslagssömmen med en tunn linje då en bana snurrar runt.|Detta påverkar inte spelfysiken, men kan förbättra din orientering.
@@ -335,10 +333,9 @@ $optionKeyZoomOut Zoom −|Zooma ut ifrån banan.
 $optionKeyScroll Håll för att rulla|Håll detta (standard: höger musknapp ⟁) och rör musen för att rulla.|Detta är lättare, snabbare och mer exakt än att rulla vid skärmkanten.
 $optionKeyPriorityInvert Omvänd prioritering|Håll för att tilldela förmågor till den lix med lägst prioritet istället för den med högst.|Håll för att välja den understa plattläggningen istället för den översta i redigeraren.
 $optionKeyScreenshot Skärmdump|Ta en skärmdump av hela Lix-fönstret.|Skärmdumpar sparas i ./export/ eller ~/.local/share/lix/export/.
-$optionSplatRulerDesign Splat-linjalsdesign|Växla splat-linjal på/av under pågående spel med "Töm fysik" via Game Keys tab.|3-raderslinjaler snärtar mot kanter, mät sedan splat-avståndet ovanför och nedanför.
-$optionSplatRulerDesignTwoBars 2-rader splatlinjal, liten snärt
-$optionSplatRulerDesign094 3-rader splatlinjal, bakom terräng
-$optionSplatRulerDesignSuperSnap 3-rader splatlinjal, stor snärt
+$optionSplatRulerDesignTwoBars 2-rader splatlinjal, liten snärt|Splatlinjalen mäter det maximala överlevnadsavståndet.|Aktivera splatlinjalen under spelets gång med en panelknapp, se fliken Speltangenter.
+$optionSplatRulerDesign094 3-rader splatlinjal, bakom terräng|Splatlinjalen mäter det maximala överlevnadsavståndet.|Aktivera splatlinjalen under spelets gång med en panelknapp, se fliken Speltangenter.
+$optionSplatRulerDesignSuperSnap 3-rader splatlinjal, stor snärt|Splatterlinjalen mäter det maximala överlevnadsavståndet.|Aktivera splatlinjalen under spelets gång med en panelknapp, se fliken Speltangenter.
 
 $optionMouseSpeed Mushastighet|Musmarkörens rörelsehastighet.
 $optionScrollSpeedEdge Rullhastighet vid skärmkant|Rullhastighet då musmarkören vidrör skärmkanten.

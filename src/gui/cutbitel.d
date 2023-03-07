@@ -26,11 +26,13 @@ public:
 
     this(Geom g, const(Cutbit) cb) { super(g); cutbit = cb; }
 
-    @property auto xfs() const { return cutbit ? cutbit.xfs : 0; }
-    @property auto yfs() const { return cutbit ? cutbit.yfs : 0; }
-    mixin (GetSetWithReqDraw!"xf");
-    mixin (GetSetWithReqDraw!"yf");
-    mixin (GetSetWithReqDraw!"allowUpscaling");
+    pure nothrow @safe @nogc {
+        int xfs() const { return cutbit ? cutbit.xfs : 0; }
+        int yfs() const { return cutbit ? cutbit.yfs : 0; }
+        mixin (GetSetWithReqDraw!"xf");
+        mixin (GetSetWithReqDraw!"yf");
+        mixin (GetSetWithReqDraw!"allowUpscaling");
+    }
 
 protected:
     override void drawSelf()

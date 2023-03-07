@@ -28,6 +28,7 @@ public:
 
     this(Geom g, Lang cap)
     {
+        g.yl = 20f;
         // Hack use of this class: I use it in Editor's skill window.
         // opt will be null there, you may not call load/saveValue then.
         _checkbox = new Checkbox(new Geom(0, 0, 20, 20));
@@ -35,9 +36,11 @@ public:
         addChild(_checkbox);
     }
 
-    bool checked() const { return _checkbox.checked; }
-    void checked(bool b) { _checkbox.checked = b; }
-    bool execute() const { return _execute; }
+    pure nothrow @safe @nogc {
+        bool isChecked() const { return _checkbox.isChecked; }
+        void checked(bool b) { _checkbox.checked = b; }
+        bool execute() const { return _execute; }
+    }
 
     override void loadValue()
     {
@@ -48,10 +51,10 @@ public:
     override void saveValue()
     {
         assert (_userOption);
-        _userOption = _checkbox.checked;
+        _userOption = _checkbox.isChecked;
     }
 
-    override @property Lang lang() const { return _userOption.lang; }
+    override Lang lang() const { return _userOption.lang; }
 
 protected:
     override void calcSelf()
@@ -90,10 +93,10 @@ public:
 
     override void loadValue() { _texttype.text = _userOption.value; }
     override void saveValue() { _userOption = _texttype.text.strip; }
-    override @property Lang lang() const { return _userOption.lang; }
+    override Lang lang() const { return _userOption.lang; }
 
     // hack, to enable immediate check of nonempty
-    @property inout(Texttype) texttype() inout { return _texttype; }
+    inout(Texttype) texttype() inout { return _texttype; }
 }
 
 
@@ -127,7 +130,7 @@ public:
 
     override void loadValue() { _keyb.keySet = _userOption.value; }
     override void saveValue() { _userOption = _keyb.keySet; }
-    override @property Lang lang() const { return _userOption.lang; }
+    override Lang lang() const { return _userOption.lang; }
 }
 
 class SkillHotkeyOption : Option
@@ -150,7 +153,7 @@ class SkillHotkeyOption : Option
         registerAtWatcher(watcher, _keyb);
     }
 
-    override @property Lang lang() const { return Lang.commonOk; } // hack
+    override Lang lang() const { return Lang.commonOk; } // hack
     override void loadValue() { _keyb.keySet = _userOption.value; }
     override void saveValue() { _userOption = _keyb.keySet; }
 }
@@ -163,7 +166,7 @@ class NumPickOption : Option
     private UserOption!int _userOption;
 
     // hack, to enable immediate updates of the GUI menu colors
-    public @property inout(NumPick) num() inout { return _num; }
+    public inout(NumPick) num() inout { return _num; }
 
     this(Geom g, NumPickConfig cfg, UserOption!int opt)
     {
@@ -180,37 +183,97 @@ class NumPickOption : Option
         _userOption = opt;
     }
 
-    @property int  value()   const { return _num.number;     }
-    @property bool execute() const { return _num.execute;    }
+    int value() const { return _num.number; }
+    bool execute() const { return _num.execute; }
     override void loadValue() { _num.number = _userOption.value; }
     override void saveValue() { _userOption = _num.number; }
-    override @property Lang lang() const { return _userOption.lang; }
+    override Lang lang() const { return _userOption.lang; }
 }
 
 
 
-class RadioButtonsOption : Option {
+class RadioIntOption : Option {
 private:
     RadioButtons _radio;
+    Lang[] _choiceLangs;
     UserOption!int _userOption;
 
 public:
-    this(Geom g, UserOption!int target, string[] choices...)
-    in { assert (choices.length >= 1); }
+    this(Geom g, UserOption!int target, Lang[] choices...)
+    in {
+        assert (choices.length >= 1);
+    }
     do {
+        g.yl = 20f * choices.length;
         _radio = new RadioButtons(new Geom(0, 0, g.xl, g.yl));
-        choices[].each!(ch => _radio.addChoice(ch));
-
+        foreach (ch; choices) {
+            _radio.addChoice(ch.transl);
+            _choiceLangs ~= ch;
+        }
         // super(..., null) means no label. The RadioButtons have labels.
-        g.yl = _radio.ylg;
         super(g, null);
         _userOption = target;
         addChild(_radio);
     }
 
     override void loadValue() { _radio.choose(_userOption.value); }
-    override void saveValue() { _userOption = _radio.chosen; }
-    override @property Lang lang() const { return _userOption.lang; }
+    override void saveValue() { _userOption = _radio.theChosen; }
+    override Lang lang() const
+    {
+        immutable int hov = _radio.theHovered;
+        if (hov >= 0 && hov < _choiceLangs.length) {
+            return _choiceLangs[hov];
+        }
+        return _userOption.lang; // Ideally, we won't get here.
+    }
+}
+
+class RadioBoolOption : Option {
+private:
+    RadioButtons _radio;
+    Lang _choiceA;
+    Lang _choiceB;
+    bool _choiceAinFile; // If false, then "false" in file means: choice A.
+    UserOption!bool _userOption; // Always choice A first, then choice B.
+
+public:
+    this(Geom g, UserOption!bool target,
+        in Lang choiceA, in bool choiceAinFile,
+        in Lang choiceB, in bool choiceBinFile)
+    in {
+        assert (choiceAinFile != choiceBinFile);
+    }
+    do {
+        g.yl = 40f;
+        _radio = new RadioButtons(new Geom(0, 0, g.xl, g.yl));
+        _choiceA = choiceA;
+        _choiceB = choiceB;
+        _choiceAinFile = choiceAinFile;
+        _radio.addChoice(_choiceA.transl);
+        _radio.addChoice(_choiceB.transl);
+
+        // super(..., null) means no label. The RadioButtons have labels.
+        super(g, null);
+        _userOption = target;
+        addChild(_radio);
+    }
+
+    override void loadValue()
+    {
+        _radio.choose(_userOption.value == _choiceAinFile ? 0 : 1);
+    }
+
+    override void saveValue()
+    {
+        _userOption = (_radio.theChosen == 0
+            ? _choiceAinFile : ! _choiceAinFile);
+    }
+
+    override Lang lang() const
+    {
+        immutable int hov = _radio.theHovered;
+        return hov == 0 ? _choiceA : hov == 1 ? _choiceB : _userOption.lang;
+    }
 }
 
 
@@ -253,5 +316,5 @@ public:
             _userOptions[i] = _texttype[i].number;
     }
 
-    override @property Lang lang() const { return _userOptions[0].lang; }
+    override Lang lang() const { return _userOptions[0].lang; }
 }

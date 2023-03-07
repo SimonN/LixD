@@ -44,14 +44,14 @@ public:
 }
 
 struct OptionFactory {
-    float x, y, xl, yl = 20f;
-    float incrementY   = 30f;
-    Geom.From from     = From.TOP_LEFT;
+    float x, y, xl = 20f;
+    float spaceBelow = 10f;
+    Geom.From from = From.TOP_LEFT;
 
     Option factory(T, Args...)(Args argsToForward)
     {
-        auto ret = new T(new Geom(x, y, xl, yl, from), argsToForward);
-        y += incrementY;
+        auto ret = new T(new Geom(x, y, xl, 20f, from), argsToForward);
+        y += ret.ylg + spaceBelow; // That T may increase its ylg from 20f.
         return ret;
     }
 }

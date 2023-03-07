@@ -124,11 +124,11 @@ private:
             // us a legal default value
             { }
 
-        networkConnectionMethod = _radio.chosen;
+        networkConnectionMethod = _radio.theChosen;
 
         INetClient ret;
         try {
-            switch (_radio.chosen) {
+            switch (_radio.theChosen) {
             case 0:
                 ret = new NetClient(cfg);
                 break;

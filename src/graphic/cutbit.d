@@ -97,7 +97,7 @@ public:
 
     bool opEquals(const Cutbit rhs) const { return bitmap == rhs.bitmap; }
 
-    @property const pure nothrow @nogc {
+    const pure nothrow @safe @nogc {
         // get size of a single frame, not necessarily size of entire bitmap
         int xl() { return _xl;  }
         int yl() { return _yl;  }

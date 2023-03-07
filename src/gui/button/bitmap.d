@@ -18,10 +18,20 @@ public:
         addChild(_cbe);
     }
 
-    @property int xf(in int i) { reqDraw(); return _cbe.xf = i; }
-    @property int xf()  const  { return _cbe.xf;  }
-    @property int xfs() const  { return _cbe.xfs; }
-    @property int yf()  const  { return this.on && ! this.down ? 1 : 0; }
+    void xf(in int i) pure nothrow @safe @nogc
+    {
+        if (i == xf) {
+            return;
+        }
+        _cbe.xf = i;
+        reqDraw();
+    }
+
+    const pure nothrow @safe @nogc {
+        int xf() { return _cbe.xf;  }
+        int yf() { return this.on && ! this.down ? 1 : 0; }
+        int xfs() { return _cbe.xfs; }
+    }
 
 protected:
     override void drawOntoButton()
@@ -51,20 +61,11 @@ public:
         this.onExecute = (){ this.toggle; };
     }
 
-    bool checked() const
-    {
-        return xf == _xfWhenChecked;
-    }
-
-    void checked(bool b)
-    {
-        xf = b ? _xfWhenChecked : 0;
-        reqDraw();
-    }
-
-    void toggle()
-    {
-        checked = ! checked;
-    }
+pure nothrow @safe @nogc:
+    bool isChecked() const { return xf == _xfWhenChecked; }
+    void check() { xf = _xfWhenChecked; }
+    void uncheck() { xf = 0; }
+    void checked(in bool b) { b ? check() : uncheck(); }
+    void toggle() { isChecked ? uncheck() : check(); }
 }
 // end class Checkbox

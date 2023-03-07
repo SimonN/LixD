@@ -18,7 +18,6 @@ $versioningForOperatingSystem for
 // used in various dialogues
 $commonOk Okay
 $commonCancel Cancel
-$commonNo No
 $commonBack Back
 $commonExit Exit
 
@@ -320,12 +319,11 @@ $optionMusicEnabled Music|Enable background music.
 $optionSoundDecibels Sound gain in dB|Adjust the sound volume. 0 is already pretty loud.|Raise/lower by 10 dB to double/halve the sound volume.
 $optionMusicDecibels Music gain in dB|Adjust the music volume. −10 dB should be loud enough.|Raise/lower by 10 dB to double/halve the music volume.
 
-$optionScreenMode Screen mode|Windowed and software fullscreen allow for good Alt+Tab.|Hardware fullscreen takes a few seconds to enter and exit.
-$optionScreenWindowed Windowed
-$optionScreenSoftwareFullscreen Software fullscreen
-$optionScreenHardwareFullscreen Hardware fullscreen
-$optionScreenWindowedRes Windowed resolution|Size of the Lix window when you have chosen windowed mode.
-$optionScreenHardwareFullscreenRes Hardware fullscreen resolution|Monitor resolution for hardware fullscreen.|Software fullscreen ignores this.
+$optionScreenWindowed Windowed|Run Lix in a window. Choose the window size at the right.|Alt+Tab is fast.
+$optionScreenSoftwareFullscreen Software fullscreen|This creates a borderless Lix window that fills your monitor.|Alt+Tab is fast.
+$optionScreenHardwareFullscreen Hardware fullscreen|Hardware fullscreen takes a few seconds to enter and exit.|Alt+Tab is slow.
+$optionScreenWindowedRes Window size|Size of the Lix window when you have chosen windowed mode.
+$optionScreenHardwareFullscreenRes Fullscreen resolution|Hardware fullscreen uses this resolution for your monitor.|Software fullscreen uses this only when it cannot deduce your desktop resolution.
 $optionPaintTorusSeams Paint torus seams|Mark the wrapping seam with a thin line whenever a level wraps around.|This doesn't affect game physics, but may improve your orientation.
 $optionIngameTooltips Tooltips during game|Explain buttons and lix-selecting hotkeys during play, e.g., to select left-facing lix.|Some buttons have two functions: One on left-click, one on right-click.
 $optionShowFPS Count physics and FPS|Print number of physics updates since the game started.|Print the number of video frames per second, during play or editor.
@@ -335,10 +333,10 @@ $optionKeyZoomOut Zoom −|Zoom out of the level.
 $optionKeyScroll Hold to scroll|Hold this (standard: right mouse button ⟁) and move the mouse to scroll.|This is easier, faster, and more precise than scrolling at the screen edge.
 $optionKeyPriorityInvert Priority invert|Hold to assign skills to the lix with the lowest priority instead of the highest.|In the editor, hold to select the bottommost tile instead of the topmost.
 $optionKeyScreenshot Screenshot|Take a screenshot of the entire Lix window.|Screenshots are saved in ./export/ or ~/.local/share/lix/export/.
-$optionSplatRulerDesign Splat ruler design|Toggle splat ruler on/off during play with "Clear Physics" on the Game Keys tab.|3-bar rulers snap to ledges, then measure splat distance above and below.
-$optionSplatRulerDesignTwoBars 2-bar splat ruler, little snap
-$optionSplatRulerDesign094 3-bar splat ruler, behind terrain
-$optionSplatRulerDesignSuperSnap 3-bar splat ruler, huge snap
+
+$optionSplatRulerDesignTwoBars 2-bar splat ruler, little snap|The splat ruler measures the maximal survivable fall distance.|Activate the splat ruler during play with a panel button, see the Game Keys tab.
+$optionSplatRulerDesign094 3-bar splat ruler, behind terrain|The splat ruler measures the maximal survivable fall distance.|Activate the splat ruler during play with a panel button, see the Game Keys tab.
+$optionSplatRulerDesignSuperSnap 3-bar splat ruler, huge snap|The splat ruler measures the maximal survivable fall distance.|Activate the splat ruler during play with a panel button, see the Game Keys tab.
 
 $optionMouseSpeed Mouse speed|Movement speed of the mouse cursor.
 $optionScrollSpeedEdge Scroll speed at screen edge|Scroll speed when the mouse cursor touches the screen edge.

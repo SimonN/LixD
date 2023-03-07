@@ -20,8 +20,9 @@ private:
     string _basenameNoExtLastChosen;
 
 public:
-    this(Geom g)
+    this(Geom g, in float realYg)
     {
+        g.yl = realYg;
         super(g, new Label(new Geom(mostButtonsXl + spaceGuiTextX, 0,
                             g.xlg - mostButtonsXl + spaceGuiTextX, 20),
                             Lang.optionLanguage.transl));

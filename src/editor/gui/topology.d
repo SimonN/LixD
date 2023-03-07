@@ -73,7 +73,7 @@ protected:
         __global__suggestedTopologyChangeState = [];
         __global__suggestedTopologyChangeState ~= TopologyChange.State(
             new immutable Topology(
-            suggestedXl, suggestedYl, _torusX.checked, _torusY.checked),
+            suggestedXl, suggestedYl, _torusX.isChecked, _torusY.isChecked),
             suggestedColor);
         __global__moveAllTilesBy = Point(_left.number, _top.number);
         __global__newResultForTheEditor = true;

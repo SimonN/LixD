@@ -39,7 +39,7 @@ private:
     NumPick guiRed, guiGreen, guiBlue;
     Texttype _userName;
 
-public @property bool gotoMainMenu() const pure nothrow @safe @nogc
+public bool gotoMainMenu() const pure nothrow @safe @nogc
 {
     return _gotoMainMenu;
 }
@@ -122,7 +122,7 @@ void explainOptions()
         // design one solution to accomodate both. Until then, the options
         // menu won't explain editor options.
         if (group is groups[OptionGroup.editorKeys]) {
-            explainer.explain(null);
+            explainer.explainNothing();
             return;
         }
     }
@@ -130,10 +130,10 @@ void explainOptions()
         return;
     foreach (opt; group)
         if (opt.isMouseHere) {
-            explainer.explain(opt);
+            explainer.explain(opt.lang);
             return;
         }
-    explainer.explain(null);
+    explainer.explainNothing();
 }
 
 void showGroup(in OptionGroup gr)
@@ -176,7 +176,7 @@ auto facKeys(int column)()
     if (column >= 0 && column < 3)
 {
     immutable float xl = (this.xlg - 40f) / 3;
-    return OptionFactory(20 + xl*column, 100, xl, 20, 20);
+    return OptionFactory(20 + xl*column, 100, xl, 0);
 }
 
 void populateGeneral()
@@ -196,11 +196,8 @@ void populateGeneral()
     fac = facRight();
     grp ~= fac.factory!TextOption(userNameOption);
     _userName = (cast (TextOption) grp[$-1]).texttype;
+    grp ~= fac.factory!LanguageOption(100f);
 
-    fac.yl = 100;
-    grp ~= fac.factory!LanguageOption();
-
-    fac.yl = 20;
     fac.y  = 250;
     auto cfg = NumPickConfig();
     cfg.digits = 3;
@@ -218,33 +215,33 @@ void populateGraphics()
         groups[OptionGroup.graphics] = grp;
     auto fac = facLeft();
     grp ~= [
-        fac.factory!RadioButtonsOption(screenType,
-            Lang.optionScreenWindowed.transl,
-            Lang.optionScreenSoftwareFullscreen.transl,
-            Lang.optionScreenHardwareFullscreen.transl),
+        fac.factory!RadioIntOption(screenType,
+            Lang.optionScreenWindowed,
+            Lang.optionScreenSoftwareFullscreen,
+            Lang.optionScreenHardwareFullscreen),
     ];
-    fac.y += fac.incrementY + 40; // 40 = 20+20 for the 2 extra radio buttons
-    immutable bottomHalfY = fac.y;
+    immutable bottomHalfY = 250f;
+    fac.y = bottomHalfY;
     grp ~= [
         fac.factory!BoolOption(paintTorusSeams),
         fac.factory!BoolOption(ingameTooltips),
         fac.factory!BoolOption(showFPS),
     ];
     fac = facRight();
-    fac.incrementY = 40;
     grp ~= [
         fac.factory!ResolutionOption(screenWindowedX, screenWindowedY),
     ];
+    fac.y += 10;
     grp ~= [
         fac.factory!ResolutionOption(screenHardwareFullscreenX,
             screenHardwareFullscreenY),
     ];
     fac.y = bottomHalfY;
     grp ~= [
-        fac.factory!RadioButtonsOption(splatRulerDesign,
-            Lang.optionSplatRulerDesignTwoBars.transl,
-            Lang.optionSplatRulerDesign094.transl,
-            Lang.optionSplatRulerDesignSuperSnap.transl),
+        fac.factory!RadioIntOption(splatRulerDesign,
+            Lang.optionSplatRulerDesignTwoBars,
+            Lang.optionSplatRulerDesign094,
+            Lang.optionSplatRulerDesignSuperSnap),
     ];
 }
 
@@ -258,7 +255,7 @@ void populateControls()
         fac.factory!HotkeyOption(keyPriorityInvert),
         fac.factory!HotkeyOption(keyScreenshot),
     ];
-    fac.y += fac.incrementY;
+    fac.y += 30f;
     groups[OptionGroup.controls] ~= [
         fac.factory!BoolOption(holdToScrollInvert),
         fac.factory!BoolOption(fastMovementFreesMouse),
@@ -294,7 +291,7 @@ void populateGameKeys()
         fac.factory!HotkeyOption(keyForceLeft, watcher),
         fac.factory!HotkeyOption(keyForceRight, watcher),
     ];
-    fac.y += fac.incrementY / 2;
+    fac.y += 10f;
     groups[OptionGroup.gameKeys] ~= [
         fac.factory!HotkeyOption(keyRestart, watcher),
         fac.factory!HotkeyOption(keyStateLoad, watcher),
@@ -309,7 +306,7 @@ void populateGameKeys()
         fac.factory!HotkeyOption(keySpeedFast, watcher),
         fac.factory!HotkeyOption(keySpeedTurbo, watcher),
     ];
-    fac.y += fac.incrementY / 2;
+    fac.y += 10f;
     groups[OptionGroup.gameKeys] ~= [
         fac.factory!HotkeyOption(keyFrameBackMany, watcher),
         fac.factory!HotkeyOption(keyFrameBackOne, watcher),
@@ -324,7 +321,7 @@ void populateGameKeys()
         fac.factory!HotkeyOption(keyNuke, watcher),
         fac.factory!HotkeyOption(keyGameExit, watcher),
     ];
-    fac.y += fac.incrementY / 2;
+    fac.y += 10f;
     groups[OptionGroup.gameKeys] ~= [
         fac.factory!HotkeyOption(keyChat, watcher),
         fac.factory!HotkeyOption(keyHighlightGoals, watcher),
@@ -334,7 +331,7 @@ void populateGameKeys()
     enum belowAllGameKeys = 310f;
     fac = facLeft();
     fac.y = belowAllGameKeys;
-    fac.incrementY = 20f; // Hack because it's too crowded
+    fac.spaceBelow = 0f; // Hack because it's too crowded
     fac.xl = fac.xl - 10; // Mouse hover area shouldn't obscure other options
     groups[OptionGroup.gameKeys] ~= [
         fac.factory!BoolOption(unpauseOnAssign),
@@ -363,18 +360,18 @@ void populateEditorKeys()
         fac.factory!HotkeyOption(keyEditorUp, watcher),
         fac.factory!HotkeyOption(keyEditorDown, watcher),
     ];
-    fac.y += fac.incrementY;
+    fac.y += 10f;
     groups[OptionGroup.editorKeys] ~= [
         fac.factory!HotkeyOption(keyEditorUndo, watcher),
         fac.factory!HotkeyOption(keyEditorRedo, watcher),
     ];
-    fac.y += fac.incrementY;
+    fac.y += 10f;
     groups[OptionGroup.editorKeys] ~= [
         fac.factory!HotkeyOption(keyEditorCopy, watcher),
         fac.factory!HotkeyOption(keyEditorDelete, watcher),
         fac.factory!HotkeyOption(keyEditorGrid, watcher),
     ];
-    fac.y += fac.incrementY;
+    fac.y += 40f;
     fac.xl = this.xlg - 40;
     auto cfg = NumPickConfig();
     cfg.max = 96;
@@ -388,7 +385,7 @@ void populateEditorKeys()
         fac.factory!HotkeyOption(keyEditorSelectFrame, watcher),
         fac.factory!HotkeyOption(keyEditorSelectAdd, watcher),
     ];
-    fac.y += fac.incrementY / 2;
+    fac.y += 10f;
     groups[OptionGroup.editorKeys] ~= [
         fac.factory!HotkeyOption(keyEditorGroup, watcher),
         fac.factory!HotkeyOption(keyEditorUngroup, watcher),
@@ -408,13 +405,13 @@ void populateEditorKeys()
         fac.factory!HotkeyOption(keyEditorAddGoal, watcher),
         fac.factory!HotkeyOption(keyEditorAddHazard, watcher),
     ];
-    fac.y += fac.incrementY;
+    fac.y += 10f;
     groups[OptionGroup.editorKeys] ~= [
         fac.factory!HotkeyOption(keyEditorMenuConstants, watcher),
         fac.factory!HotkeyOption(keyEditorMenuTopology, watcher),
         fac.factory!HotkeyOption(keyEditorMenuSkills, watcher),
     ];
-    fac.y += fac.incrementY;
+    fac.y += 10f;
     groups[OptionGroup.editorKeys] ~= [
         fac.factory!HotkeyOption(keyEditorSave, watcher),
         fac.factory!HotkeyOption(keyEditorSaveAs, watcher),
@@ -480,7 +477,7 @@ void populateMenuKeys()
     guiCol.stepSmall  = 0x02;
     fac = facKeys!0;
     fac.y = 260;
-    fac.incrementY = 30;
+    fac.spaceBelow = 10;
     grp ~= [
         fac.factory!NumPickOption(guiCol, guiColorRed),
         fac.factory!NumPickOption(guiCol, guiColorGreen),
