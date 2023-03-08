@@ -5,9 +5,8 @@ module gui.label;
  */
 
 import std.conv;
-import std.range;  // walkLength
 import std.string; // toStringz
-import std.uni;    // .byGrapheme.walkLength, find size of displayed string
+static import std.utf;
 
 import basics.alleg5; // filled rectangle undraw
 import basics.help; // backspace when shortening a string
@@ -81,14 +80,17 @@ public:
     Geom.From aligned() const pure @safe { return geom.xFrom; }
     bool shortened() const pure nothrow @safe @nogc { return _shortened; }
 
-    float textLg() const { return textLg(this._text); }
-    float textLg(string s) const
+    float textLg() const nothrow @safe { return textLg(this._text); }
+    float textLg(string s) const nothrow @trusted
     {
         return s.empty ? 0f
             : al_get_text_width(font, s.toStringz) / gui.stretchFactor;
     }
 
-    bool tooLong(string s) const { return s.len && textLg(s) > xlg; }
+    bool tooLong(string s) const nothrow @safe
+    {
+        return s.len && textLg(s) > xlg - 2 * gui.thicks;
+    }
 
 protected:
     override void resizeSelf() { shortenText(); }
@@ -100,13 +102,17 @@ protected:
             return;
         switch (aligned) {
         case Geom.From.LEFT:
-            drawText(_font, _textShort, xs, ys, _color);
+            // Keep space (gui.thicks) at left border, for "J", which
+            // has a long hook protruding out of the left edge.
+            drawText(_font, _textShort, xs + gui.thicks, ys, _color);
             break;
         case Geom.From.CENTER:
             drawTextCentered(_font, _textShort, xs + xls / 2, ys, _color);
             break;
         case Geom.From.RIGHT:
-            drawTextRight(_font, _textShort, xs + xls, ys, _color);
+            // Keep space at right border, for "t",
+            // which has its shadow and hooks protruding out of the right edge.
+            drawTextRight(_font, _textShort, xs + xls - gui.thicks, ys, _color);
             break;
         default:
             assert (false);
@@ -117,9 +123,9 @@ protected:
     {
         // Some letters extend further left/right than our border. Thus:
         al_draw_filled_rectangle(
-            xs - gui.thicks, // Paint left of left border, for "J".
+            xs,
             ys,
-            xs + xls + gui.thicks, // Paint right of right border, for "t".
+            xs + xls,
             ys + yls, undrawColor);
     }
 
@@ -138,7 +144,13 @@ private:
         reqDraw();
         _textShort = _text;
         _shortened = false;
-        if (! text.length) {
+        if (text.length == 0 || std.utf.stride(text) == text.length) {
+            /*
+             * Don't shorten empty string.
+             * Hack: Allow single-character strings to pass unshortened.
+             * This is to let the "+"/"-" labels on the small key-binding
+             * buttons pass unshortened. Those would get shortened to ".".
+             */
             return;
         }
         _shortened = tooLong(_text);
@@ -151,4 +163,3 @@ private:
         _textShort = addAbbrevDots(_textShort);
     }
 }
-// end class Label

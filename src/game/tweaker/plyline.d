@@ -83,10 +83,10 @@ public:
     {
         super(g);
         addChildren(
-            new Label(new Geom(xlg - 50 + thickg, 0,
-                50 - 2 * thickg, ylg, From.RIGHT), // compare with PlyLineDesc
+            // About the first label: Compare with PlyLineDesc.
+            new Label(new Geom(xlg - 50, 0, 50, ylg, From.RIGHT),
                 Lang.tweakerHeaderLixID.transl),
-            new Label(new Geom(40 + thickg, 0, xlg/2f, 20, From.RIGHT),
+            new Label(new Geom(40, 0, xlg/2f, 20, From.RIGHT),
                 Lang.tweakerHeaderPhyu.transl),
         );
     }
@@ -95,8 +95,6 @@ public:
 /*
  * +-------------+-------+--------------+
  * |    Lix ID   | Skill |     Phyu     |
- * | incl thickg |       |              |
- * | 1x per side |       |              |
  * |    = 30     |  20   |     40       |
  * +-------------+-------+--------------+
  * |                     |              |
@@ -119,12 +117,10 @@ public:
     this(Geom g)
     {
         super(g);
-        _lixID = new Label(new Geom(xlg - 30 + thickg, 0,
-            30 - 2 * thickg, ylg, From.RIGHT));
+        _lixID = new Label(new Geom(xlg - 30, 0, 30, ylg, From.RIGHT));
         _skillIcon = new CutbitElement(new Geom(30, 0, 20, ylg),
             InternalImage.skillsInTweaker.toCutbit);
-        _nukeName = new Label(new Geom(
-            NowLine.textButtonDistXg(g), 0,
+        _nukeName = new Label(new Geom(0, 0,
             NowLine.textXlg(g) + 3 * 20f /* 3*20 == 3 * butXlg */, ylg));
         addChildren(_lixID, _skillIcon, _nukeName);
     }

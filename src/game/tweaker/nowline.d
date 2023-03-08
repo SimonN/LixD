@@ -18,22 +18,13 @@ public:
     this(Geom g)
     {
         super(g);
-        _nowText = new Label(new Geom(
-            butXlg + textButtonDistXg(g), 0, textXlg(g), ylg),
+        _nowText = new Label(new Geom(butXlg, 0, textXlg(g), ylg),
             Lang.tweakerLineNow.transl);
         addChild(_nowText);
     }
 
-    static float textButtonDistXg(in Geom fullLineGeom)
-    {
-        // Space between the leftmost button (X) and the "Now" text.
-        return thickg;
-    }
-
     static float textXlg(in Geom fullLineGeom)
     {
-        return fullLineGeom.xlg
-            - textButtonDistXg(fullLineGeom) - phyuXlg - 3 * butXlg;
-            //+ 10f; // Add back a little to allow some overlap with phyu.
+        return fullLineGeom.xlg - phyuXlg - 3 * butXlg;
     }
 }

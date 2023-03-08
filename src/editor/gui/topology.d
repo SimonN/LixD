@@ -104,19 +104,19 @@ protected:
     }
 
 private:
-    @property int suggestedXl() const
+    int suggestedXl() const
     {
         return clamp(_oldXl + _left.number + _right.number,
                      Level.minXl, Level.maxXl);
     }
 
-    @property int suggestedYl() const
+    int suggestedYl() const
     {
         return clamp(_oldYl + _top.number + _bottom.number,
                      Level.minYl, Level.maxYl);
     }
 
-    @property Alcol suggestedColor() const
+    Alcol suggestedColor() const
     {
         return al_map_rgb(
             _bgColors[0].number & 0xFF,
@@ -211,7 +211,7 @@ private:
             ret.number = startValue;
             this.addChild(ret);
             this.addChild(new Label(new Geom(20, y,
-                xlg-colorPickXl - 100 - 80, 20), // -100 for OK, -80 for spaces
+                xlg-colorPickXl - 100 - 60, 20), // -100 for OK, -60 for spaces
                 desc.transl));
             return ret;
         }
@@ -250,21 +250,21 @@ public:
         static assert (Level.maxYl < valueMax);
     }
     do {
-        super(new Geom(20f, y, 150f, 20f, From.TOP_RIGHT));
+        super(new Geom(20f, y, 165f, 20f, From.TOP_RIGHT));
         undrawColor = color.gui.m; // erase old labels before writing
         _oldValue = oldValue;
         _decOrHex = decOrHex;
-        _old    = new Label(new Geom(110, 0, 40, 0, From.TOP_RIGHT));
-        _sign   = new Label(new Geom( 95, 0, 15, 0, From.TOP_RIGHT));
-        _change = new Label(new Geom( 55, 0, 40, 0, From.TOP_RIGHT));
-        _equals = new Label(new Geom( 40, 0, 15, 0, From.TOP_RIGHT), "=");
-        _result = new Label(new Geom(  0, 0, 40, 0, From.TOP_RIGHT));
+        _old    = new Label(new Geom(120, 0, 45, 0, From.TOP_RIGHT));
+        _sign   = new Label(new Geom(105, 0, 15, 0, From.TOP_RIGHT));
+        _change = new Label(new Geom( 60, 0, 45, 0, From.TOP_RIGHT));
+        _equals = new Label(new Geom( 45, 0, 15, 0, From.TOP_RIGHT), "=");
+        _result = new Label(new Geom(  0, 0, 45, 0, From.TOP_RIGHT));
         _old.text = formatEquationString(_oldValue);
         addChildren(_old, _sign, _change, _equals, _result);
         change = 0;
     }
 
-    @property void change(in int aChange)
+    void change(in int aChange)
     {
         _sign  .text = (aChange >= 0 ? "+" : "\u2212"); // unicode minus sign
         _change.text = formatEquationString(aChange.abs);

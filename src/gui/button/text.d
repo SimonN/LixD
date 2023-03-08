@@ -31,13 +31,14 @@ private:
 public:
     static float textXFromLeft()
     {
-        // *2 for nice spacing at both ends
-        return gui.thickg * 2;
+        // This gui.thickg is in addition to the thicks at left/right
+        // from class Label.
+        return gui.thickg;
     }
 
     static Geom newGeomForLeftAlignedLabelInside(in Geom g)
     {
-        return new Geom(textXFromLeft, 0, g.xl - 2 * textXFromLeft, 0);
+        return new Geom(textXFromLeft, 0, g.xl - textXFromLeft, 0);
     }
 
     this(Geom g, string caption = "")
@@ -51,8 +52,8 @@ public:
         alias ctr = Geom.From.CENTER;
         left        = new Label(newGeomForLeftAlignedLabelInside(g));
         leftCheck   = new Label(new Geom(th, 0, g.xl - th-chXlg, 0));
-        center      = new Label(new Geom(0,  0, g.xl - 1*th,     0, ctr));
-        centerCheck = new Label(new Geom(0,  0, g.xl - 2*chXlg,  0, ctr));
+        center      = new Label(new Geom(0, 0, g.xl, 0, ctr));
+        centerCheck = new Label(new Geom(0, 0, g.xl - 2*chXlg, 0, ctr));
         // See override this.onResize for copypasta
 
         checkGeom = new Geom(0, 0, chXlg, chXlg, Geom.From.RIGHT);
@@ -62,8 +63,8 @@ public:
         text = caption;
     }
 
-    @property bool alignLeft() const { return _alignLeft; }
-    @property bool alignLeft(bool b)
+    bool alignLeft() const { return _alignLeft; }
+    bool alignLeft(bool b)
     {
         if (_alignLeft == b)
             return b;
@@ -72,8 +73,8 @@ public:
         return _alignLeft;
     }
 
-    @property string text() const { return _text; }
-    @property string text(in string s)
+    string text() const { return _text; }
+    string text(in string s)
     {
         if (_text == s)
             return s;
@@ -82,8 +83,8 @@ public:
         return s;
     }
 
-    @property int checkFrame() const { return _checkFrame; }
-    @property int checkFrame(int i)
+    int checkFrame() const { return _checkFrame; }
+    int checkFrame(int i)
     {
         if (_checkFrame == i)
             return i;
@@ -119,9 +120,9 @@ protected:
     {
         // See constructor for copypasta
         alias th  = textXFromLeft;
-        left       .resize(xlg - 2*th,       left.ylg);
+        left       .resize(xlg - th, left.ylg);
         leftCheck  .resize(xlg - th - chXlg, leftCheck.ylg);
-        center     .resize(xlg - th,         center.ylg);
-        centerCheck.resize(xlg - 2 * chXlg,  centerCheck.ylg);
+        center     .resize(xlg, center.ylg);
+        centerCheck.resize(xlg - 2 * chXlg, centerCheck.ylg);
     }
 }

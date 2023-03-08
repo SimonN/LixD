@@ -26,8 +26,8 @@ public:
          * Therefore, our owner will redraw itself entirely after deleting us.
          * It's a hack.
          */
-        _phyuText = new Label(new Geom(
-            thickg + 2 * butXlg, 0, phyuXlg - thickg + 5f, // +5 to be lenient.
+        _phyuText = new Label(new Geom(2 * butXlg, 0,
+            phyuXlg + 5f, // +5 to be lenient.
             g.ylg, From.RIGHT)); // +5 is necessary for 5 digits on 640x480.
         _phyuText.abbreviateNear = Label.AbbreviateNear.beginning;
         addChild(_phyuText);
