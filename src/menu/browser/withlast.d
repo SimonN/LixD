@@ -73,7 +73,7 @@ private:
                     deleteFileRecentHighlightNeighbor();
                     _boxDelete = null;
                 });
-            box.addButton(Lang.commonNo.transl,
+            box.addButton(Lang.commonCancel.transl,
                 KeySet(keyMenuDelete, keyMenuExit), () { _boxDelete = none; });
             addFocus(box);
         }

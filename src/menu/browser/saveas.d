@@ -105,7 +105,7 @@ private:
                                       maybe.fileNoExtNoPre));
             box.addButton(Lang.saveBoxOverwrite.transl, _saveAsTexttype.hotkey,
                 () { _chosenFile = maybe; });
-            box.addButton(Lang.commonNo.transl, keyMenuExit,
+            box.addButton(Lang.commonCancel.transl, keyMenuExit,
                 () { _texttype.on = true; });
             addFocus(box);
         }
