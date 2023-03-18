@@ -27,11 +27,14 @@ Get Lix
 * openSUSE: [Lix openSUSE Build Service
     package](https://build.opensuse.org/package/show/games/lix),
     maintained by Martin
+* Flatpak: [Lix Flathub
+    package](https://flathub.org/apps/details/com.lixgame.Lix),
+    maintained by Matthias Mailänder
 * macOS, other Linuxes, other OSes: Build from source, see below.
 
 Thanks to our awesome package maintainers!
 
-License/Copying/Public domain
+License/Copying/Public Domain
 -----------------------------
 
 Lix's code, graphic sets, sprites, levels, sound effects, and some music
@@ -42,7 +45,7 @@ The text font DejaVu Sans and some music tracks have their own licenses.
 [Full license/copying
 text](https://raw.githubusercontent.com/SimonN/LixD/master/doc/copying.txt)
 
-Networked multiplayer
+Networked Multiplayer
 ---------------------
 
 Lix has competitive multiplayer: Route as many lix as possible into your exit,
@@ -63,7 +66,7 @@ switch back to Lix's base directory with `$ cd ../../` and run the server
 with `$ bin/lixserv`. The server will listen on UDP port 22934; you can choose
 a different port by `$ bin/lixserv --port=<number>`.
 
-Build instructions
+Build Instructions
 ------------------
 
 Instructions are in the directory `./doc/build/` or online:
@@ -79,6 +82,28 @@ Quick instructions: You need a D compiler, dub, Allegro 5.2, and enet 1.3.
 Build Lix with `$ dub build -b release`, then
 [download the game music](http://www.lixgame.com/dow/lix-music.zip)
 and extract it in Lix's directory.
+
+Command-Line Switches
+---------------------
+
+To play, run `$ lix` without switches.
+
+To force a graphics mode, overriding what you've chosen in the options menu:
+
+    $ lix -w                     run windowed at 640x480
+    $ lix --resol=800x600        run windowed at the given resolution
+    $ lix --fullscreen           use software fullscreen mode (good Alt+Tab)
+    $ lix --hardfull=1600x900    use hardware fullscreen at given resolution
+    $ lix --help                 list all supported switches (there are more)
+
+There are more switches. Read the [command-line switch reference](
+https://raw.githubusercontent.com/SimonN/LixD/master/doc/cmdargs.txt)
+in `.doc/cmdargs.txt`.
+
+Level designers may be interested in
+[batch replay verification](
+https://raw.githubusercontent.com/SimonN/LixD/master/doc/levmaint.txt)
+in `./doc/levmaint.txt`.
 
 Contact
 -------
