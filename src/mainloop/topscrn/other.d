@@ -298,7 +298,7 @@ private:
 public:
     this()
     {
-        suggestMusic(fileMusicMenu);
+        // Don't play music during name entry. Play it only during main menu.
         _askName = new MenuAskName;
         super(_askName);
     }
