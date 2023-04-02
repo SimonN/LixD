@@ -24,7 +24,7 @@ Build Lix with:
 Please update when I bump minor version (y in x.y.z), to support netplay.
 Many thanks! <3 See section below for files to exclude from a binary package.
 
-Extract music into read-only dir: http://www.lixgame.com/dow/lix-music.zip
+Extract music into read-only dir: https://www.lixgame.com/dow/lix-music.zip
 Dektop icon: data/images/lix_logo.svg
 Manpage: doc/lix.6
 
@@ -98,7 +98,7 @@ reference compiler DMD.
 Lix has music, but the music is not in version control. I encourage you to
 ship the music inside your package. To get the music, download:
 
-    http://www.lixgame.com/dow/lix-music.zip
+    https://www.lixgame.com/dow/lix-music.zip
 
 If you extract this in Lix's directory, you'll get a subdirectory `./music/'.
 This subdirectory `./music/' should be installed to the read-only directory.

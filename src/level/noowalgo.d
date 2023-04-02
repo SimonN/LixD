@@ -23,7 +23,7 @@ import tile.tilelib;
  * Input: TerOcc[], some occurrences are no-overwrite
  * Output: TerOcc[], no occurrences are no-overwrite, may have more TileGroups.
  *
- * Theory: http://www.lemmingsforums.net/index.php?topic=2695.0
+ * Theory: https://www.lemmingsforums.net/index.php?topic=2695.0
  */
 TerOcc[] noowAlgorithm(TerOcc[] terrain, in Topology topol)
 out (ret) {

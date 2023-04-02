@@ -15,7 +15,7 @@
   </description>
   <screenshots>
     <screenshot type="default">
-      <image type="source">http://lixgame.com/img/lix-d-screenshot.png</image>
+      <image type="source">https://lixgame.com/img/lix-d-screenshot.png</image>
     </screenshot>
   </screenshots>
   <releases>
@@ -98,7 +98,7 @@
       <url>https://github.com/SimonN/LixD/releases/tag/v0.9.22</url>
     </release>
   </releases>
-  <url type="homepage">http://www.lixgame.com/</url>
+  <url type="homepage">https://www.lixgame.com/</url>
   <url type="bugtracker">https://github.com/SimonN/LixD/issues</url>
   <content_rating type="oars-1.1">
     <content_attribute id="violence-cartoon">mild</content_attribute>

@@ -10,13 +10,13 @@ Design your own levels with the included editor.
 Attack and defend in real-time multiplayer for 2 to 8 players:
 Who can save the most lix?
 
-![Lix screenshot](http://lixgame.com/img/lix-d-screenshot.png)
+![Lix screenshot](https://lixgame.com/img/lix-d-screenshot.png)
 
 Get Lix
 -------
 
 * Windows:
-    [![Download icon](http://lixgame.com/img/download-icon.png)](https://github.com/SimonN/LixD/releases)
+    [![Download icon](https://lixgame.com/img/download-icon.png)](https://github.com/SimonN/LixD/releases)
     [Download Lix for Windows](https://github.com/SimonN/LixD/releases)
 * Arch Linux: [Lix AUR
     package](https://aur.archlinux.org/packages/lix/),
@@ -80,7 +80,7 @@ https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/package.txt)
 
 Quick instructions: You need a D compiler, dub, Allegro 5.2, and enet 1.3.
 Build Lix with `$ dub build -b release`, then
-[download the game music](http://www.lixgame.com/dow/lix-music.zip)
+[download the game music](https://www.lixgame.com/dow/lix-music.zip)
 and extract it in Lix's directory.
 
 Command-Line Switches
@@ -108,12 +108,12 @@ in `./doc/levmaint.txt`.
 Contact
 -------
 
-* [Lix Homepage](http://www.lixgame.com)
+* [Lix Homepage](https://www.lixgame.com)
 * [Bugs & Suggestions](https://github.com/SimonN/LixD/issues)
 * [Lemmings Forums](https://www.lemmingsforums.net/index.php?board=8.0),
     I'm Simon
 * E-Mail: `s.naarmann@gmail.com`
 * IRC: `#lix` on QuakeNet, for Lix development and finding players.
-    [Web IRC client](http://webchat.quakenet.org/?channels=lix)
+    [Web IRC client](https://webchat.quakenet.org/?channels=lix)
 * IRC: `#lix` on FreeGameDev, a community of libre game players.
     [Web IRC client](https://freegamedev.net/irc/#lix)

@@ -30,7 +30,7 @@ Text encoding
 -------------
 
 Everything -- source, levels, gadget definitions, documentation -- is UTF-8.
-Never use byte-order marks. Rationale: http://utf8everywhere.org/
+Never use byte-order marks. Rationale: https://utf8everywhere.org/
 
 Source code shall have LF terminators.
 
@@ -110,7 +110,7 @@ Source code style
 Source code style is, in order of influence from lots to little, a mixture
 of The D Style, personal taste, Linux kernel style, and vibe.d style.
 
-Indentation is 4 spaces. Rationale: The D Style (http://dlang.org/dstyle.html)
+Indentation is 4 spaces. Rationale: The D Style (https://dlang.org/dstyle.html)
 says that each indentation will be 4 spaces, and I have said for 10 years that
 each indentation will be 4 spaces. Therefore, indentation will be 4 spaces.
 
@@ -178,7 +178,7 @@ instead of following the above rule. This happens often with class properties.
     @property int someValue()      { return _someValue;     }
     @property int someValue(int i) { return _someValue = i; }
 
-The D style (http://dlang.org/dstyle.html) recommends properties over
+The D style (https://dlang.org/dstyle.html) recommends properties over
 get/set_some_value(). The private variable should be prefixed with an
 underscore, because it needs a name different from the property functions.
 

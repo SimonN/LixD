@@ -121,7 +121,7 @@ void minimizeSelectionSelboxByMovingSomeAcrossTorus(Occurrences)(
         (occ, by) { occ.loc.y += by; });
 }}
 
-/* http://www.lemmingsforums.net/index.php?topic=2720.msg58235#msg58235
+/* https://www.lemmingsforums.net/index.php?topic=2720.msg58235#msg58235
  * As explained by Nepster: For each dimension, you want to compute
  *
  *  min over all R1 in the list L
