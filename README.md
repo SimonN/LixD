@@ -30,6 +30,8 @@ Get Lix
 * Flatpak: [Lix Flathub
     package](https://flathub.org/apps/details/com.lixgame.Lix),
     maintained by Matthias Mailänder
+* Fedora: [Unofficial COPR package](https://copr.fedorainfracloud.org/coprs/szpak/lix/),
+    maintained by Marcin Zajączkowski
 * macOS, other Linuxes, other OSes: Build from source, see below.
 
 Thanks to our awesome package maintainers!

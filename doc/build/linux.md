@@ -22,6 +22,10 @@ Debian/Ubuntu:
 
     # apt-get install ldc dub
 
+Fedora:
+
+    # dnf install ldc dub
+
 macOS: First, install [Homebrew](https://brew.sh/). Then run
 
     $ brew install ldc dub
@@ -58,7 +62,7 @@ Debian/Ubuntu:
 
     # apt-get install pkgconf liballegro5-dev liballegro-acodec5-dev liballegro-audio5-dev liballegro-image5-dev liballegro-ttf5-dev libenet-dev
 
-Fedora 29:
+Fedora 37:
 
     # dnf install pkgconf-pkg-config allegro5-devel allegro5-addon-acodec-devel allegro5-addon-audio-devel allegro5-addon-image-devel allegro5-addon-ttf-devel enet-devel
 
