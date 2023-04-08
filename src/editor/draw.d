@@ -36,7 +36,7 @@ private:
 
 void updateTopologies(Editor editor)
 {
-    if (editor.level.topology.matches(editor._map)) {
+    if (editor.level.topology.matches(editor._map.torbit)) {
         return;
     }
     with (editor.level.topology) {
@@ -66,8 +66,8 @@ void drawTerrainToSeparateMap(Editor editor) {
     mixin nATT;
     version (tharsisprofiling)
         auto zone = Zone(profiler, "Editor.drawMapTerrain");
-    with (TargetTorbit(_mapTerrain)) {
-        _mapTerrain.clearToColor(color.transp);
+    with (TargetTorbit(_mapTerrain.torbit)) {
+        _mapTerrain.torbit.clearToColor(color.transp);
         level.terrain.filter!notAboutToTrash.each!drawOccurrence;
     }
 }}
@@ -76,12 +76,12 @@ void drawMainMap(Editor editor)
 {
     version (tharsisprofiling)
         auto zone = Zone(profiler, "Editor.drawMapMain");
-    with (TargetTorbit(editor._map))
+    with (TargetTorbit(editor._map.torbit))
     with (editor)
     with (editor.level) {
         editor._map.clearSourceThatWouldBeBlitToTarget(level.bgColor);
         editor.drawGadgets();
-        editor._map.loadCameraRect(_mapTerrain);
+        editor._map.loadCameraRect(_mapTerrain.torbit);
         editor.drawGadgetAnnotations();
         editor.drawGadgetTriggerAreas();
         editor.drawHovers(_hover, false);
@@ -103,9 +103,12 @@ void drawGadgetTriggerAreas(Editor editor)
 {
     version (tharsisprofiling)
         auto zone = Zone(profiler, "Editor.annotateGadgets");
-    foreach (gadgetList; editor.level.gadgets)
-        foreach (g; gadgetList)
-            editor._map.drawRectangle(g.triggerAreaOnMap, color.triggerArea);
+    foreach (gadgetList; editor.level.gadgets) {
+        foreach (g; gadgetList) {
+            editor._map.torbit.drawRectangle(g.triggerAreaOnMap,
+                color.triggerArea);
+        }
+    }
 }
 
 void drawGadgetAnnotations(Editor editor) {
@@ -118,7 +121,7 @@ void drawGadgetAnnotations(Editor editor) {
         void print(const(typeof(gadgets[0][0])) g, in int plusY, in string str)
         {
             forceUnscaledGUIDrawing = true;
-            editor._map.useDrawingDelegate((int x, int y) {
+            editor._map.torbit.useDrawingDelegate((int x, int y) {
                 drawTextCentered(djvuL, str,
                 x + g.tile.cb.xl/2, y + plusY, color.guiText); }, g.loc);
             forceUnscaledGUIDrawing = false;
@@ -155,15 +158,15 @@ void drawGadgetAnnotations(Editor editor) {
         annotate(gadgets[GadType.GOAL]);
 }}
 
-void drawDraggedFrame(Editor editor) { with (editor)
+void drawDraggedFrame(Editor editor)
 {
-    if (! _dragger.framing)
+    if (! editor._dragger.framing)
         return;
     immutable val = hoverColorLightness(false);
     assert (val >= 0x40 && val < 0xC0); // because we'll be varying by 0x40
     immutable col = color.makecol(val + 0x40, val, val - 0x40);
-    _map.drawRectangle(_dragger.frame(_map), col);
-}}
+    editor._map.torbit.drawRectangle(editor._dragger.frame(editor._map), col);
+}
 
 void drawToScreen(Editor editor)
 {

@@ -23,7 +23,7 @@ void drawHovers(
     foreach (oil; list) {
         const occ = oil.occ(editor.level);
         occ.tile.accept(visitor);
-        editor._map.drawRectangle(occ.selboxOnMap, visitor.ret);
+        editor._map.torbit.drawRectangle(occ.selboxOnMap, visitor.ret);
     }
 }
 

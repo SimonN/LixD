@@ -1,6 +1,7 @@
 module graphic.camera.mapncam;
 
-/* (class Map : Torbit) has a camera pointing somewhere inside the entire
+/*
+ * class Map has a camera pointing somewhere inside the entire
  * torbit. The camera specifies the center of a rectangle.
  */
 
@@ -11,8 +12,6 @@ import std.range;
 
 import enumap;
 
-// Don't import all of alleg5, because that imports xl(Albit) which interferes
-// with our (alias torbit this).xl.
 import basics.alleg5 : al_draw_filled_rectangle, al_draw_bitmap_region,
                        al_draw_scaled_bitmap, Albit;
 import basics.help;
@@ -85,8 +84,12 @@ public:
         float zoom() { return chosenCam.zoom; }
     }
 
-    alias torbit this;
-    inout(Torbit) torbit() inout pure @safe @nogc
+    const(Topology) topology() const pure nothrow @safe @nogc
+    {
+        return torbit;
+    }
+
+    inout(Torbit) torbit() inout pure nothrow @safe @nogc
     {
         assert (_nearestNeighbor);
         assert (_blurryScaling);
@@ -97,9 +100,10 @@ public:
 // This function shall intercept calls to Torbit.resize.
 void resize(in int newXl, in int newYl)
 {
-    if (xl == newXl && yl == newYl)
+    if (topology.xl == newXl && topology.yl == newYl) {
         // the Torbits would get no-op calls, but we shouldn't reset zoom.
         return;
+    }
     _nearestNeighbor.resize(newXl, newYl);
     _blurryScaling.resize(newXl, newYl);
     reinitializeCamera();
@@ -108,7 +112,7 @@ void resize(in int newXl, in int newYl)
 // This function shall intercept calls to Torbit.setTorusXY.
 void setTorusXY(in bool aTx, in bool aTy)
 {
-    if (torusX == aTx && torusY == aTy)
+    if (torbit.torusX == aTx && torbit.torusY == aTy)
         return;
     _nearestNeighbor.setTorusXY(aTx, aTy);
     _blurryScaling.setTorusXY(aTx, aTy);
@@ -133,7 +137,7 @@ private void reinitializeCamera()
         _chosenCam = next;
     }
 
-    private inout(Camera) chosenCam() inout pure @safe @nogc
+    private inout(Camera) chosenCam() inout pure nothrow @safe @nogc
     {
         return _cams[_chosenCam];
     }
@@ -141,7 +145,9 @@ private void reinitializeCamera()
 void centerOnAverage(Rx, Ry)(Rx rangeX, Ry rangeY)
     if (isInputRange!Rx && isInputRange!Ry)
 {
-    chosenCam.focus = Point(torusAverageX(rangeX), torusAverageY(rangeY));
+    chosenCam.focus = Point(
+        topology.torusAverageX(rangeX),
+        topology.torusAverageY(rangeY));
 }
 
 void zoomIn() { chosenCam.zoomInKeepingTargetPointFixed(mouseOnTarget); }
@@ -153,27 +159,27 @@ void snapToBoundary() { chosenCam.snapToBoundary(); }
 // These are 0 on torus maps, only > 0 for small non-torus maps.
 // If something > 0 is returned, we will draw a dark border around the level.
 // The border is split into two equally thick sides in the x direction.
-private @property int borderOneSideXl() const
+private int borderOneSideXl() const
 {
-    if (torusX || xl * zoom >= chosenCam.targetLen.x)
+    if (topology.torusX || topology.xl * zoom >= chosenCam.targetLen.x)
         return 0;
-    return (chosenCam.targetLen.x - xl * zoom).ceilInt / 2;
+    return (chosenCam.targetLen.x - topology.xl * zoom).ceilInt / 2;
 }
 
-private @property int borderUpperSideYl() const
+private int borderUpperSideYl() const
 {
-    if (torusY || yl * zoom >= chosenCam.targetLen.y)
+    if (topology.torusY || topology.yl * zoom >= chosenCam.targetLen.y)
         return 0;
-    return (chosenCam.targetLen.y - yl * zoom).ceilInt;
+    return (chosenCam.targetLen.y - topology.yl * zoom).ceilInt;
 }
 
-@property Point mouseOnTarget() const
+Point mouseOnTarget() const
 {
     return hardware.mouse.mouseOnScreen
         - Point(borderOneSideXl, borderUpperSideYl);
 }
 
-@property Point mouseOnLand() const
+Point mouseOnLand() const
 {
     return chosenCam.sourceOf(mouseOnTarget);
 }
@@ -279,8 +285,8 @@ private void drawCameraBorderless(in Camera cam)
 {
     immutable int overallMaxX = cam.targetLen.x - borderOneSideXl;
     immutable int overallMaxY = cam.targetLen.y;
-    immutable int plusX = (xl * zoom).ceil.to!int;
-    immutable int plusY = (yl * zoom).ceil.to!int;
+    immutable int plusX = (topology.xl * zoom).ceil.to!int;
+    immutable int plusY = (topology.yl * zoom).ceil.to!int;
     for (int x = borderOneSideXl; x < overallMaxX; x += plusX) {
         for (int y = borderUpperSideYl; y < overallMaxY; y += plusY) {
             // maxXl, maxYl describe the size of the image to be drawn
@@ -328,8 +334,8 @@ drawCamera_with_target_corner(
             al_draw_scaled_bitmap(torbit.albit, sx, sy, sxl, syl,
                                   tx, ty, zoom * sxl, zoom * syl, 0);
     }
-    immutable drtx = torusX && sxl2 > 0;
-    immutable drty = torusY && syl2 > 0;
+    immutable drtx = topology.torusX && sxl2 > 0;
+    immutable drty = topology.torusY && syl2 > 0;
                       blitOnce(r.x, r.y, sxl1, syl1, tcx,  tcy);
     if (drtx        ) blitOnce(0,   r.y, sxl2, syl1, tcx2, tcy);
     if (        drty) blitOnce(r.x, 0,   sxl1, syl2, tcx,  tcy2);
@@ -343,7 +349,7 @@ drawCamera_with_target_corner(
 
     void clearSourceThatWouldBeBlitToTarget(Alcol col)
     {
-        this.drawFilledRectangle(chosenCam.sourceSeen, col);
+        torbit.drawFilledRectangle(chosenCam.sourceSeen, col);
     }
 
 }

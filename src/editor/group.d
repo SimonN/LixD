@@ -109,12 +109,12 @@ void minimizeSelectionSelboxByMovingSomeAcrossTorus(Occurrences)(
             while (occEnd  (occ) > s.start + s.len) occMove(occ, -torusLen);
         }
     }
-    moveSomeOneDimension(_map.torusX, _map.xl,
+    moveSomeOneDimension(_map.topology.torusX, _map.topology.xl,
         (occ) { return occ.selboxOnMap.sideX; },
         (occ) { return occ.selboxOnMap.x; },
         (occ) { return occ.selboxOnMap.x + occ.selboxOnMap.xl; },
         (occ, by) { occ.loc.x += by; });
-    moveSomeOneDimension(_map.torusY, _map.yl,
+    moveSomeOneDimension(_map.topology.torusY, _map.topology.yl,
         (occ) { return occ.selboxOnMap.sideY; },
         (occ) { return occ.selboxOnMap.y; },
         (occ) { return occ.selboxOnMap.y + occ.selboxOnMap.yl; },

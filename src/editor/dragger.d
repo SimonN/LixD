@@ -35,8 +35,10 @@ private:
     enum DragMode { none, frame, move }
 
 public:
-    @property bool framing() const { return _mode == DragMode.frame; }
-    @property bool moving()  const { return _mode == DragMode.move;  }
+    const pure nothrow @safe @nogc {
+        bool framing() { return _mode == DragMode.frame; }
+        bool moving() { return _mode == DragMode.move; }
+    }
 
     void stop()
     {
@@ -57,11 +59,11 @@ public:
     Rect frame(const(MapAndCamera) map) const
     {
         assert (framing);
-        auto mol = map.mouseOnLand;
-        auto xPart = framePart(_fromMap.x, mol.x, _fromScreen.x,
-                               hardware.mouse.mouseX, map.xl, map.torusX);
-        auto yPart = framePart(_fromMap.y, mol.y, _fromScreen.y,
-                               hardware.mouse.mouseY, map.yl, map.torusY);
+        immutable mol = map.mouseOnLand;
+        immutable xPart = framePart(_fromMap.x, mol.x, _fromScreen.x,
+            hardware.mouse.mouseX, map.topology.xl, map.topology.torusX);
+        immutable yPart = framePart(_fromMap.y, mol.y, _fromScreen.y,
+            hardware.mouse.mouseY, map.topology.yl, map.topology.torusY);
         return Rect(xPart.start, yPart.start, xPart.len + 1, yPart.len + 1);
     }
 

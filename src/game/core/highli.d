@@ -79,8 +79,8 @@ PotentialAssignee findPotentialAssigneeAssumingMouseOnLand(Game game) { with (ga
     immutable mol = map.mouseOnLand;
 
     foreach (id, ConstLix lixxie; localTribe.lixvec.enumerate!int) {
-        immutable int distX = map.distanceX(lixxie.ex, mol.x);
-        immutable int distY = map.distanceY(lixxie.ey, mol.y);
+        immutable int distX = map.topology.distanceX(lixxie.ex, mol.x);
+        immutable int distY = map.topology.distanceY(lixxie.ey, mol.y);
         if (   distX <= mmldX && distX >= -mmldX
             && distY <= mmldD && distY >= -mmldU
             && lixxie.cursorShouldOpenOverMe
@@ -129,7 +129,7 @@ PotentialAssignee generatePotentialAssignee(
     PotentialAssignee potAss;
     potAss.lixxie = lixxie;
     potAss.id = id;
-    potAss.distanceToCursor = game.map.hypotSquared(
+    potAss.distanceToCursor = game.map.topology.hypotSquared(
         mouseOnLand.x, mouseOnLand.y, lixxie.ex,
                                       lixxie.ey + roundInt(dMinusU/2));
     potAss.priority = currentSkill !is null

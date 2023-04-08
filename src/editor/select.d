@@ -101,7 +101,7 @@ auto rangeOfAllOilsFromBackgroundToForeground(Editor editor) { with (editor)
 void hoverTilesInRect(Editor editor, Rect rect) { with (editor)
 {
     _hover = editor.rangeOfAllOilsFromBackgroundToForeground
-        .filter!(oil => _map.rectIntersectsRect(
+        .filter!(oil => _map.topology.rectIntersectsRect(
             rect, oil.occ(level).selboxOnMap))
         .toOilSet;
 }}
@@ -118,7 +118,7 @@ void hoverTileAtMouse(OilRan)(Editor editor, OilRan range) { with (editor)
 {
     _hover.clear();
     auto inSelbox = range
-        .filter!(oil => _map.isPointInRectangle(
+        .filter!(oil => _map.torbit.isPointInRectangle(
         _map.mouseOnLand, oil.occ(level).selboxOnMap));
     if (inSelbox.empty) {
         return;
@@ -149,10 +149,10 @@ bool isMouseOnSolidPixel(Editor editor, in TerOcc pos) { with (editor)
     auto mol = _map.mouseOnLand;
     immutable tile = pos.selboxOnMap;
 
-    while (mol.x >= tile.x + tile.xl) mol.x -= _map.xl;
-    while (mol.y >= tile.y + tile.yl) mol.y -= _map.yl;
-    while (mol.x < tile.x) mol.x += _map.xl;
-    while (mol.y < tile.y) mol.y += _map.yl;
+    while (mol.x >= tile.x + tile.xl) mol.x -= _map.topology.xl;
+    while (mol.y >= tile.y + tile.yl) mol.y -= _map.topology.yl;
+    while (mol.x < tile.x) mol.x += _map.topology.xl;
+    while (mol.y < tile.y) mol.y += _map.topology.yl;
     version (assert) {
         string str()
         {

@@ -35,7 +35,7 @@ implGameDraw(Game game) { with (game)
         // speeding up drawing by setting the drawing target now.
         // This RAII struct is used in each innermost loop, too, but it does
         // nothing except comparing two pointers there if we've set stuff here.
-        auto drata = TargetTorbit(map);
+        auto drata = TargetTorbit(map.torbit);
         map.clearSourceThatWouldBeBlitToTarget(level.bgColor);
         game.drawGadgets();
 
@@ -47,10 +47,10 @@ implGameDraw(Game game) { with (game)
             _splatRuler.considerBackgroundColor(level.bgColor);
             _splatRuler.determineSnap(nurse.constStateForDrawingOnly.lookup,
                 map.mouseOnLand);
-            _splatRuler.drawBelowLand(map);
+            _splatRuler.drawBelowLand(map.torbit);
             game.drawLand();
             game.pingOwnGadgets();
-            _splatRuler.drawAboveLand(map);
+            _splatRuler.drawAboveLand(map.torbit);
         }
         assert (_effect);
         _effect.draw(_chatArea.console);
@@ -108,8 +108,8 @@ void pingOwnGadgets(Game game) { with (game)
             enum th = 5; // thickness of the border
             Rect outer = Rect(g.loc - Point(th, th), g.xl + 2*th, g.yl + 2*th);
             Rect inner = Rect(g.loc, g.xl, g.yl);
-            map.drawFilledRectangle(outer, color.white);
-            map.drawFilledRectangle(inner, color.black);
+            map.torbit.drawFilledRectangle(outer, color.white);
+            map.torbit.drawFilledRectangle(inner, color.black);
             g.draw(localTribe.style);
         }
     }
@@ -151,7 +151,7 @@ void showSpawnIntervalOnHatches(Game game)
 {
     game.pan.dontShowSpawnInterval();
     if (game.nurse.constStateForDrawingOnly.hatches.any!(h =>
-        game.map.isPointInRectangle(game.map.mouseOnLand, h.rect)))
+        game.map.torbit.isPointInRectangle(game.map.mouseOnLand, h.rect)))
         game.pan.showSpawnInterval(game.localTribe.rules.spawnInterval);
 }
 
