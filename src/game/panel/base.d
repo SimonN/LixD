@@ -29,9 +29,6 @@ private:
     RightButtons _rb;
 
 public:
-    inout(RightButtons) rb() inout { return _rb; }
-    alias rb this;
-
     /*
      * After you create this, add names for the multiplayer score board.
      * lixRequired is ignored for multiplayer games.
@@ -73,6 +70,23 @@ public:
         addChild(_rb);
     }
 
+    // Copy-pasted function names from RightButtons.
+    static foreach (field; ["paused", "speedIsNormal", "speedIsFast",
+        "speedIsTurbo", "restart", "saveState", "loadState",
+        "framestepBackOne", "framestepBackMany", "framestepAheadOne",
+        "framestepAheadMany", "splatRulerIsOn", "tweakerIsOn",
+        "highlightGoalsExecute", "zoomIn", "zoomOut", "nukeDoubleclicked"]
+    ) {
+        import std.format;
+        mixin("const bool %s() { return _rb.%s(); }".format(field, field));
+    }
+    auto nuke() inout { return _rb.nuke; }
+    void setSpeedNormal() { _rb.setSpeedNormal(); }
+    void pause(bool b) { _rb.pause = b; }
+    void ourStyle(in Style st) { _rb.ourStyle = st; }
+    void update(in Score sco) { _rb.update = sco; }
+    void add(in Style style, in string name) { _rb.add(style, name); }
+
     // call this from the Game
     void setLikeTribe(in Tribe tr, in Ac ploderToDisplay,
                       in bool overtimeRunning, in int overtimeRemainingInPhyus
@@ -103,7 +117,7 @@ public:
                                                 (sk) { makeCurrent(sk); });
     }
 
-    @property inout(SkillButton) currentSkill() inout
+    inout(SkillButton) currentSkill() inout
     {
         foreach (b; _skills)
             if (b.on && b.skill != Ac.nothing && b.number != 0)
@@ -117,7 +131,7 @@ public:
     void showSpawnInterval(in int si) { stats.showSpawnInterval(si); }
     void suggestTooltip(in Tooltip.ID id) { stats.suggestTooltip(id); }
 
-    @property Phyu age(in Phyu phyu) { return stats.age = phyu; }
+    Phyu age(in Phyu phyu) { return stats.age = phyu; }
 
 protected:
     override void calcSelf()
@@ -136,10 +150,8 @@ protected:
     }
 
 private:
-    @property float skillYl() const { return this.geom.ylg - 20; }
-    @property float skillXl() const {
-        return gui.screenXlg / (skillSort.length + 4);
-    }
+    float skillYl() const { return this.geom.ylg - 20; }
+    float skillXl() const { return gui.screenXlg / (skillSort.length + 4); }
 
     void makeCurrent(SkillButton skill)
     {
