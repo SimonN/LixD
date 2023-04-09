@@ -54,7 +54,7 @@ private:
             _outsideWorld = null;
     };
 
-    @property inout(Phymap) lookup() inout
+    inout(Phymap) lookup() inout
     {
         assert (_outsideWorld, "need outsideWorld for ex/ey movement");
         return outsideWorld.state.lookup;
@@ -64,7 +64,7 @@ package:
     enum jobOffset = _job.offsetof;
     static assert (_job.offsetof % size_t.sizeof == 0); // emplace alignment
 
-    @property const(Topology) env() const
+    const(Topology) env() const
     {
         assert (_outsideWorld, "need outsideWorld for ex/ey movement");
         return outsideWorld.state.lookup;
@@ -81,32 +81,29 @@ public:
         short ey() { return _ey; } // deprecate eventually, use foot
     }
 
-            @property const(Job) constJob() const { return _job.asClass; }
-    package @property inout(Job) job()      inout { return _job.asClass; }
+    const(Job) constJob() const { return _job.asClass; }
+    package inout(Job) job() inout { return _job.asClass; }
 
-    @property Ac ac() const { return job.ac; }
-    @property PhyuOrder updateOrder() const { return job.updateOrder; }
+    Ac ac() const { return job.ac; }
+    PhyuOrder updateOrder() const { return job.updateOrder; }
 
-    package @property inout(OutsideWorld*) outsideWorld() inout
+    package inout(OutsideWorld*) outsideWorld() inout
     {
         assert (_outsideWorld !is null, "can't access _outsideWorld here");
         return _outsideWorld;
     }
 
-            @property int  ploderTimer() const   { return _ploderTimer; }
-    package @property void ploderTimer(in int i) { _ploderTimer = i.to!byte; }
+    int ploderTimer() const { return _ploderTimer; }
+    package void ploderTimer(in int i) { _ploderTimer = i.to!byte; }
 
-    @property int  flingX()   const { return _flingX;   }
-    @property int  flingY()   const { return _flingY;   }
+    int flingX() const { return _flingX; }
+    int flingY() const { return _flingY; }
+    int frame() const { return job.frame; }
+    void frame(in int i) { return job.frame = i; }
+    int xf() const { return this.frame; }
+    int yf() const { return this.ac; }
 
-    @property int frame() const   { return job.frame;     }
-    @property int frame(in int i) { return job.frame = i; }
-
-    @property int xf() const { return this.frame; }
-    @property int yf() const { return this.ac;    }
-
-    @property auto footEncounters() const { return _encFoot; }
-
+    auto footEncounters() const { return _encFoot; }
     void forceFootEncounters(Phybitset ft) { _encFoot = ft; }
     void setNoEncountersNoBlockerFlags()
     {
@@ -118,11 +115,11 @@ public:
 
     private template flagsProperty(int bit, string name) {
         enum string flagsProperty = format(q{
-            @property bool %s() const pure nothrow @safe @nogc
+            bool %s() const pure nothrow @safe @nogc
             {
                 return (_flags & %d) != 0;
             }
-            @property bool %s(in bool b) pure nothrow @safe @nogc
+            bool %s(in bool b) pure nothrow @safe @nogc
             {
                 return b ? (_flags |= %d) != 0 : (_flags &= ~%d) != 0;
             }

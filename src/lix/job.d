@@ -48,12 +48,12 @@ public:
         return cast (inout(Lixxie)) (cast (void*) this - Lixxie.jobOffset);
     }
 
-    @property final ac()            const pure { return _ac;            }
-    @property final frame()         const pure { return _frame;         }
-    @property final spriteOffsetX() const pure { return _spriteOffsetX; }
+    final ac() const pure { return _ac; }
+    final frame() const pure { return _frame; }
+    final spriteOffsetX() const pure { return _spriteOffsetX; }
 
-    @property PhyuOrder updateOrder() const { return PhyuOrder.peaceful; }
-    @property bool      blockable()   const { return true; }
+    PhyuOrder updateOrder() const { return PhyuOrder.peaceful; }
+    bool blockable() const { return true; }
 
     AfterAssignment onManualAssignment(Job)
     {
@@ -62,7 +62,7 @@ public:
     }
 
     void onBecome(in Job) { } // we have definitely new job, arg = old
-    void perform()        { } // the main method to override
+    void perform() { } // the main method to override
     void returnSkillsDontCallLixxieInHere(Tribe) { } // see Lixxie.perform why
 
 protected:
@@ -76,15 +76,8 @@ protected:
     }
 
 package:
-    @property int frame        (in int a) { return _frame        = a.to!byte; }
-    @property int spriteOffsetX(in int a) { return _spriteOffsetX= a.to!byte; }
-}
-
-mixin template JobChild() {
-    static assert (__traits(classInstanceSize, typeof(this))
-        <= JobUnion.sizeof, "Child class of Job doesn't fit into JobUnion. "
-            ~ "Enlarge JobUnion or pack the bits of child classes.");
-    private alias lixxie this;
+    void frame(in int a) { _frame = a.to!byte; }
+    void spriteOffsetX(in int a) { _spriteOffsetX = a.to!byte; }
 }
 
 unittest {
@@ -158,4 +151,11 @@ struct JobUnion {
         assert (asClass.ac == Ac.nothing);
         asClass._ac = ac;
     }
+
+    /+
+     + Can we add this static assert for the emplaced class somewhere?
+        static assert (__traits(classInstanceSize, TheNewJobClass)
+        <= JobUnion.sizeof, "Child class of Job doesn't fit into JobUnion. "
+            ~ "Enlarge JobUnion or pack the bits of child classes.");
+    +/
 }

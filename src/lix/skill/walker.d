@@ -3,8 +3,7 @@ module lix.skill.walker;
 import lix;
 
 class Walker : Job {
-    mixin JobChild;
-
+public:
     enum highestStepUp = 12;
 
     override AfterAssignment onManualAssignment(Job old)
@@ -13,28 +12,30 @@ class Walker : Job {
         // if we decide to become walker after all, we have to set our frame
         // manually.
         if (old.ac == Ac.walker || old.ac == Ac.runner || old.ac == Ac.lander){
-            turn();
+            lixxie.turn();
             old.frame = -1;
             return AfterAssignment.doNotBecome;
         }
         else if (old.ac == Ac.stunner || old.ac == Ac.ascender) {
             // priority allows to get here only when the frame is high enough
-            become(Ac.walker);
-            turn();
+            lixxie.become(Ac.walker);
+            lixxie.turn();
             lixxie.frame = -1;
             return AfterAssignment.weAlreadyBecame;
         }
         else if (old.ac == Ac.blocker) {
-            if (old.frame < 20)
+            if (old.frame < 20) {
                 // Setting the frame to 21 copies a bug from C++ Lix. There
                 // is a frame in the spritesheet (1st of blocker->walker anim)
                 // that is not shown at all. The fast resolution of the blocker
                 // isn't problematic though. We'll keep it as in C++ for now.
                 old.frame = 21;
-            else
+            }
+            else {
                 // during the blocker->walker transistion, allow turning
                 // by a second walker assignment
-                turn();
+                lixxie.turn();
+            }
             return AfterAssignment.doNotBecome;
         }
         else if (old.ac == Ac.platformer && old.frame > 5) {
@@ -46,13 +47,13 @@ class Walker : Job {
             // Clicking twice on the platformer shall turn it around.
         }
         else if (old.ac == Ac.shrugger || old.ac == Ac.shrugger2) {
-            become(Ac.walker);
-            turn();
+            lixxie.become(Ac.walker);
+            lixxie.turn();
             lixxie.frame = -1;
             return AfterAssignment.weAlreadyBecame;
         }
         else {
-            become(Ac.walker);
+            lixxie.become(Ac.walker);
             lixxie.frame = -1;
             return AfterAssignment.weAlreadyBecame;
         }
@@ -60,58 +61,61 @@ class Walker : Job {
 
     override void onBecome(in Job old)
     {
-        if (abilityToRun)
-            become(Ac.runner);
-        else
+        if (lixxie.abilityToRun) {
+            lixxie.become(Ac.runner);
+        }
+        else {
             this.setFrameAfterShortFallTo(old, 8);
+        }
     }
 
     override void perform()
     {
-        if (isLastFrame)
+        if (lixxie.isLastFrame) {
             frame = 3;
-        else
-            advanceFrame();
-
+        }
+        else {
+            lixxie.advanceFrame();
+        }
         performWalkingOrRunning();
     }
 
 protected:
     final void performWalkingOrRunning()
     {
-        immutable oldEx = ex;
-        immutable oldEy = ey;
-        immutable oldEncFoot = footEncounters;
+        immutable oldEx = lixxie.ex;
+        immutable oldEy = lixxie.ey;
+        immutable oldEncFoot = lixxie.footEncounters;
 
         // The first frame is a short break taken after standing up or
         // falling onto this position. perform has already advanced
         // the frame, so we have to check frame 0, not frame -1.
-        if (frame != 0)
-            moveAhead();
-
+        if (frame != 0) {
+            lixxie.moveAhead();
+        }
         immutable bool turnAfterAll = handleWallOrPitHere();
 
         if (turnAfterAll) {
             // Start climbing or turn. Either happens at the old position, so
             // we have to reset position and encounters to where we started.
-            ex = oldEx;
-            ey = oldEy;
-            forceFootEncounters(oldEncFoot);
+            lixxie.ex = oldEx;
+            lixxie.ey = oldEy;
+            lixxie.forceFootEncounters(oldEncFoot);
             bool climbedAfterAll = false;
 
-            if (abilityToClimb) {
+            if (lixxie.abilityToClimb) {
                 bool enoughSpaceToClimb = true;
                 for (int i = 1; i <= highestStepUp; ++i)
-                    if (isSolid(0, -i)) {
+                    if (lixxie.isSolid(0, -i)) {
                         enoughSpaceToClimb = false;
                         break;
                     }
                 if (enoughSpaceToClimb) {
-                    become(Ac.climber);
+                    lixxie.become(Ac.climber);
                     return;
                 }
             }
-            turn();
+            lixxie.turn();
             handleWallOrPitHere();
         }
     }
@@ -139,25 +143,25 @@ private:
         // Check for floor at the new position. If there is none, check
         // slightly above -- we don't want to fall through checkerboards,
         // but we want to ascend them.
-        if (isSolid() || isSolid(0, 1)) {
+        if (lixxie.isSolid() || lixxie.isSolid(0, 1)) {
             // do the wall check to turn or ascend
-            immutable int upBy = solidWallHeight(0);
+            immutable int upBy = lixxie.solidWallHeight(0);
             if (upBy > highestStepUp)
                 return true;
             else if (upBy >= 6)
-                become(Ac.ascender);
+                lixxie.become(Ac.ascender);
             else
-                moveUp(upBy);
+                lixxie.moveUp(upBy);
         }
 
         // No floor? Then step down or start falling
         else {
-            assert (! isSolid(0, 1) && ! isSolid(0, 2));
+            assert (! lixxie.isSolid(0, 1) && ! lixxie.isSolid(0, 2));
             immutable spaceBelowForAnyFalling = 7;
             immutable spaceBelowForNormalFalling = 9;
             int       spaceBelow = 1; // because of the assertions
             while (spaceBelow < spaceBelowForNormalFalling
-                && ! isSolid(0, spaceBelow + 2)
+                && ! lixxie.isSolid(0, spaceBelow + 2)
             ) {
                 ++spaceBelow;
             }
@@ -169,7 +173,7 @@ private:
                 // Space >= 9 -> fall 2, but that's handled by the 'if' above.
                 Faller.becomeAndFallPixels(lixxie, spaceBelow - 4);
             else
-                moveDown(spaceBelow);
+                lixxie.moveDown(spaceBelow);
         }
         return false;
     }
@@ -179,14 +183,13 @@ private:
 
 
 class Runner : Walker {
-    mixin JobChild;
-
+public:
     override AfterAssignment onManualAssignment(Job old)
     {
-        assert (! abilityToRun);
-        abilityToRun = true;
+        assert (! lixxie.abilityToRun);
+        lixxie.abilityToRun = true;
         if (old.ac == Ac.walker) {
-            become(Ac.runner);
+            lixxie.become(Ac.runner);
             lixxie.frame = 2; // looks best, with a foot on the ground behind
             return AfterAssignment.weAlreadyBecame;
         }
@@ -196,21 +199,23 @@ class Runner : Walker {
 
     override void onBecome(in Job old)
     {
-        assert (abilityToRun);
+        assert (lixxie.abilityToRun);
         this.setFrameAfterShortFallTo(old, 6);
     }
 
     override void perform()
     {
-        if (isLastFrame)
+        if (lixxie.isLastFrame) {
             frame = 1;
-        else
-            advanceFrame();
+        }
+        else {
+            lixxie.advanceFrame();
+        }
 
         // A runner performs two walker cycles per frame, unless stuff happens.
-        immutable oldDir = dir;
+        immutable oldDir = lixxie.dir;
         performWalkingOrRunning();
-        if (lixxie.ac == Ac.runner && oldDir == dir)
+        if (lixxie.ac == Ac.runner && oldDir == lixxie.dir)
             performWalkingOrRunning();
     }
 }

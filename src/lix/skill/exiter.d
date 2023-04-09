@@ -12,16 +12,14 @@ private:
     int xOffsetFromGoal;
 
 public:
-    mixin JobChild;
-
     void scoreForTribe(Tribe tribe)
     {
-        tribe.addSaved(this.style, outsideWorld.state.age);
+        tribe.addSaved(lixxie.style, lixxie.outsideWorld.state.age);
     }
 
     void determineSidewaysMotion(in Goal goal)
     {
-        xOffsetFromGoal = env.distanceX(goal.loc.x + goal.tile.trigger.x
+        xOffsetFromGoal = lixxie.env.distanceX(goal.loc.x + goal.tile.trigger.x
             + goal.tile.triggerXl / 2, lixxie.ex);
         if (xOffsetFromGoal % 2 == 0)
             // From C++ Lix: The +1 is necessary because this counts
@@ -32,16 +30,16 @@ public:
 
     void playSound(in Goal goal)
     {
-        if (goal.hasTribe(style)) {
+        if (goal.hasTribe(lixxie.style)) {
             lixxie.playSound(Sound.GOAL);
         }
         else {
             lixxie.playSound(Sound.GOAL_BAD);
             foreach (tr; goal.tribes)
-                outsideWorld.effect.addSound(
-                    outsideWorld.state.age,
+                lixxie.outsideWorld.effect.addSound(
+                    lixxie.outsideWorld.state.age,
                     // arbitrary ID because not same tribe
-                    Passport(tr, outsideWorld.passport.id),
+                    Passport(tr, lixxie.outsideWorld.passport.id),
                     Sound.GOAL);
         }
     }

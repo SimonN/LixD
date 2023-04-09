@@ -5,9 +5,7 @@ import std.algorithm;
 import lix;
 
 class Ascender : Job {
-    mixin JobChild;
-
-    override @property bool blockable() const { return false; }
+    override bool blockable() const { return false; }
 
     override void onBecome(in Job old)
     {
@@ -27,7 +25,7 @@ class Ascender : Job {
         // a further bug when all pixels are solid, but I don't think
         // become_ascender is ever called when that is the case.
         if (swh == checkBelowHeight) {
-            become(Ac.faller);
+            lixxie.become(Ac.faller);
             return;
         }
         // Available frames are 0, 1, 2, 3, 4, 5.
@@ -35,17 +33,19 @@ class Ascender : Job {
         frame = std.algorithm.clamp(6 - (swh / 2), 0, 5);
         immutable int swhLeftToAscendDuringPerform = 10 - frame * 2;
         assert (swh >= swhLeftToAscendDuringPerform);
-        moveUp(swh - swhLeftToAscendDuringPerform);
+        lixxie.moveUp(swh - swhLeftToAscendDuringPerform);
     }
 
     override void perform()
     {
-        if (frame != 5)
-            moveUp(2);
-
-        if (isLastFrame)
-            become(Ac.walker);
-        else
-            advanceFrame();
+        if (frame != 5) {
+            lixxie.moveUp(2);
+        }
+        if (lixxie.isLastFrame) {
+            lixxie.become(Ac.walker);
+        }
+        else {
+            lixxie.advanceFrame();
+        }
     }
 }

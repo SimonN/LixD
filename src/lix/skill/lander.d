@@ -3,8 +3,6 @@ module lix.skill.lander;
 import lix;
 
 class Lander : Job {
-    mixin JobChild;
-
     override void onBecome(in Job old) {
         if (old.ac == Ac.faller) {
             auto faller = cast (const(Faller)) old;
@@ -17,9 +15,11 @@ class Lander : Job {
 
     override void perform()
     {
-        if (isLastFrame)
-            become(Ac.walker);
-        else
-            advanceFrame();
+        if (lixxie.isLastFrame) {
+            lixxie.become(Ac.walker);
+        }
+        else {
+            lixxie.advanceFrame();
+        }
     }
 }

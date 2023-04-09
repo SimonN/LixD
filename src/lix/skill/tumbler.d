@@ -21,12 +21,10 @@ private enum PleaseDo : ubyte {
 }
 
 abstract class BallisticFlyer : Job {
-
+public:
     int speedX; // should be >= 0. Is really speed ahead, not absolute x dir.
     int speedY;
     int pixelsFallen; // always >= 0. Upflinginging keeps 0. Resets on fling.
-
-    mixin JobChild;
 
     enum speedYToFloat = 15;
     enum pixelsSafeToFall = {
@@ -52,20 +50,23 @@ abstract class BallisticFlyer : Job {
         speedY += accel(speedY);
         selectFrame();
         if (speedY >= speedYToFloat) {
-            if      (abilityToFloat)  become(Ac.floater);
-            else if (ac == Ac.jumper) become(Ac.tumbler);
+            if (lixxie.abilityToFloat) {
+                lixxie.become(Ac.floater);
+            }
+            else if (ac == Ac.jumper) {
+                lixxie.become(Ac.tumbler);
+            }
         }
     }
 
 protected:
-
     struct Collision {
         BecomeCalled becomeCalled;
         PleaseDo pleaseDo;
     }
 
-    final bool wall  (in int y) { return isSolid(0, y); }
-    final bool behind(in int y) { return wall(y) && isSolid(-2, y); }
+    final bool wall(in int y) { return lixxie.isSolid(0, y); }
+    final bool behind(in int y) { return wall(y) && lixxie.isSolid(-2, y); }
 
     enum int biggestLargeAccelSpeedY = 12;
     final static int accel(int ysp) pure
@@ -80,12 +81,11 @@ protected:
     abstract void selectFrame();
 
 private:
-
     final BecomeCalled landOnFloor()
     {
-        if (pixelsFallen > pixelsSafeToFall && ! abilityToFloat) {
+        if (pixelsFallen > pixelsSafeToFall && ! lixxie.abilityToFloat) {
             immutable sud = this.splatUpsideDown();
-            become(Ac.splatter);
+            lixxie.become(Ac.splatter);
             if (sud)
                 lixxie.frame = 10;
             return BecomeCalled.yes;
@@ -103,10 +103,10 @@ private:
         // advance diagonally, examine collisions at each step.
         BREAK_MOTION:
         foreach(int step; 0 .. max(yAbs, speedX)) {
-            immutable oldEx = ex;
-            immutable oldEy = ey;
+            immutable oldEx = lixxie.ex;
+            immutable oldEy = lixxie.ey;
             immutable oldFallen = pixelsFallen;
-            immutable oldEncFoot = footEncounters;
+            immutable oldEncFoot = lixxie.footEncounters;
 
             void moveDownCounting(int by)
             {
@@ -122,38 +122,42 @@ private:
                 immutable int halfX = (step + 1) * speedX / 2 / yAbs
                                     - (step)     * speedX / 2 / yAbs;
                 assert (halfX == 0 || halfX == 1);
-                moveAhead(2 * halfX);
+                lixxie.moveAhead(2 * halfX);
                 moveDownCounting(ySgn);
             }
             else {
                 // move down occasionally only
                 moveDownCounting(ySgn * ( (step + 1) * yAbs / speedX
                                         - (step)     * yAbs / speedX));
-                moveAhead(2 * (step & 1));
+                lixxie.moveAhead(2 * (step & 1));
             }
 
             Collision col = collision();
             if (col.pleaseDo == PleaseDo.nothing ||
-                col.pleaseDo == PleaseDo.resetPositionIfMovedX && ex == oldEx)
-                { }
+                col.pleaseDo == PleaseDo.resetPositionIfMovedX
+                    && lixxie.ex == oldEx
+            ) {
+                // Nothing to do.
+            }
             else if (col.pleaseDo == PleaseDo.stopMovement) {
                 return col.becomeCalled;
             }
             else if (col.pleaseDo == PleaseDo.resetEncounters) {
-                forceFootEncounters(oldEncFoot);
-                ey = ey; // re-check encounters here
+                lixxie.forceFootEncounters(oldEncFoot);
+                lixxie.ey = lixxie.ey; // re-check encounters here
                 return col.becomeCalled;
             }
             else if (col.pleaseDo == PleaseDo.resetPosition ||
-                col.pleaseDo == PleaseDo.resetPositionIfMovedX && ex != oldEx
+                col.pleaseDo == PleaseDo.resetPositionIfMovedX
+                && lixxie.ex != oldEx
             ) {
-                forceFootEncounters(oldEncFoot);
-                ex = oldEx;
-                ey = oldEy;
+                lixxie.forceFootEncounters(oldEncFoot);
+                lixxie.ex = oldEx;
+                lixxie.ey = oldEy;
                 pixelsFallen = oldFallen;
-                if (isSolid(0, 1)) {
+                if (lixxie.isSolid(0, 1)) {
                     // completely immobilized
-                    become(Ac.stunner);
+                    lixxie.become(Ac.stunner);
                     return BecomeCalled.yes;
                 }
                 return col.becomeCalled;
@@ -207,10 +211,12 @@ private:
 
         // floor
         immutable bool down = (speedY > 0);
-        if (   (swh <= 2 && isSolid(0, 1) && (isSolid(2, 0) || down))
-            || (swh <= 2 && isSolid(0, 2) && (isSolid(2, 1) || down))
+        if (   (swh <= 2 && lixxie.isSolid(0, 1) && (lixxie.isSolid(2, 0) || down))
+            || (swh <= 2 && lixxie.isSolid(0, 2) && (lixxie.isSolid(2, 1) || down))
         ) {
-            while (isSolid(0, 1)) moveUp(1);
+            while (lixxie.isSolid(0, 1)) {
+                lixxie.moveUp(1);
+            }
             auto bec = landOnFloor();
             return Collision(bec, PleaseDo.resetEncounters);
         }
@@ -218,9 +224,9 @@ private:
         if (lowest_floor != -999
             && ac == Ac.jumper
             && (lowest_floor > -9
-                || (abilityToClimb && ! behind(lowest_floor)))
+                || (lixxie.abilityToClimb && ! behind(lowest_floor)))
         ) {
-            become(Ac.ascender);
+            lixxie.become(Ac.ascender);
             return Collision(BecomeCalled.yes, PleaseDo.resetEncounters);
         }
         // bump head into ceilings
@@ -229,15 +235,15 @@ private:
         ) {
             auto bec = BecomeCalled.no;
             if (ac != Ac.tumbler) {
-                become(Ac.tumbler);
+                lixxie.become(Ac.tumbler);
                 bec = BecomeCalled.yes;
             }
             auto tumbling = cast (BallisticFlyer) lixxie.job;
             assert (tumbling);
             tumbling.speedY = 4;
             tumbling.speedX = this.speedX / 2;
-            return Collision(bec, isSolid(0, 1) ? PleaseDo.resetPosition
-                                                : PleaseDo.stopMovement);
+            return Collision(bec, lixxie.isSolid(0, 1)
+                ? PleaseDo.resetPosition : PleaseDo.stopMovement);
         }
         // Jumping against a wall
         if (wall_count_t)
@@ -249,18 +255,11 @@ private:
 
 
 
-// ############################################################################
-// ############################################################################
-// ############################################################################
-
-
-
 class Jumper : BallisticFlyer {
-    mixin JobChild;
-
+public:
     override void onBecome(in Job old)
     {
-        if (abilityToRun) {
+        if (lixxie.abilityToRun) {
             speedX =   8;
             speedY = -12;
             frame  =  13; // 1 will be deducted from this
@@ -270,18 +269,17 @@ class Jumper : BallisticFlyer {
             speedY = -8;
         }
         for (int i = -4; i > -16; --i)
-            if (isSolid(0, i)) {
-                become(Ac.stunner);
+            if (lixxie.isSolid(0, i)) {
+                lixxie.become(Ac.stunner);
                 return;
             }
     }
 
 protected:
-
     override BecomeCalled onLandingWithoutSplatting()
     {
         immutable soft = speedY < 12;
-        become(Ac.lander);
+        lixxie.become(Ac.lander);
         if (soft)
             lixxie.advanceFrame(); // of the landing anim
         return BecomeCalled.yes;
@@ -289,37 +287,32 @@ protected:
 
     override Collision onHittingWall()
     {
-        if (abilityToClimb) {
-            moveAhead(-2);
-            become(Ac.climber);
+        if (lixxie.abilityToClimb) {
+            lixxie.moveAhead(-2);
+            lixxie.become(Ac.climber);
             return Collision(BecomeCalled.yes, PleaseDo.stopMovement);
         }
         else {
-            turn();
+            lixxie.turn();
             return Collision(BecomeCalled.no, PleaseDo.resetPosition);
         }
     }
 
     override void selectFrame()
     {
-        if (isLastFrame)
-            frame = (abilityToRun ? 12 : frame - 1);
-        else
-            advanceFrame();
+        if (lixxie.isLastFrame) {
+            frame = (lixxie.abilityToRun ? 12 : frame - 1);
+        }
+        else {
+            lixxie.advanceFrame();
+        }
     }
 }
 
 
 
-// ############################################################################
-// ############################################################################
-// ############################################################################
-
-
-
 class Tumbler : BallisticFlyer {
-    mixin JobChild;
-
+public:
     static applyFlingXY(Lixxie lix)
     {
         if (! lix.flingNew)
@@ -346,21 +339,21 @@ class Tumbler : BallisticFlyer {
 
     override void onBecome(in Job old)
     {
-        if (isSolid(0, 1) && old.ac == Ac.ascender)
+        if (lixxie.isSolid(0, 1) && old.ac == Ac.ascender)
             // unglitch out of wall, but only back and up
             for (int dist = 1; dist <= Walker.highestStepUp; ++dist) {
-                if (! isSolid(0, 1 - dist)) {
-                    moveUp(dist);
+                if (! lixxie.isSolid(0, 1 - dist)) {
+                    lixxie.moveUp(dist);
                     break;
                 }
-                else if (! isSolid(- even(dist), 1)) {
-                    moveAhead(- even(dist));
+                else if (! lixxie.isSolid(- even(dist), 1)) {
+                    lixxie.moveAhead(- even(dist));
                     break;
                 }
             }
 
-        if (isSolid(0, 1)) {
-            become(Ac.stunner);
+        if (lixxie.isSolid(0, 1)) {
+            lixxie.become(Ac.stunner);
         }
         else if (old.ac == Ac.jumper) {
             this.copyFrom(cast (Jumper) old);
@@ -371,12 +364,11 @@ class Tumbler : BallisticFlyer {
     }
 
 protected:
-
     override bool splatUpsideDown() const { return this.frame >= 9; }
 
     override BecomeCalled onLandingWithoutSplatting()
     {
-        become(Ac.stunner);
+        lixxie.become(Ac.stunner);
         return BecomeCalled.yes;
     }
 
@@ -386,7 +378,7 @@ protected:
             || (wall(-1) && ! behind(-1))
             || (wall(-2) && ! behind(-2))
         ) {
-            turn();
+            lixxie.turn();
             return Collision(BecomeCalled.no, PleaseDo.resetPositionIfMovedX);
         }
         return Collision(BecomeCalled.no, PleaseDo.nothing);

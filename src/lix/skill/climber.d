@@ -8,43 +8,47 @@ private:
     enum ceilingY = -16;
 
 public:
-    mixin JobChild;
-
-    override @property bool blockable() const { return false; }
+    override bool blockable() const { return false; }
 
     override AfterAssignment onManualAssignment(Job old)
     {
-        assert (! abilityToClimb);
-        abilityToClimb = true;
+        assert (! lixxie.abilityToClimb);
+        lixxie.abilityToClimb = true;
         return AfterAssignment.doNotBecome;
     }
 
     override void onBecome(in Job old)
     {
-        if (old.ac == Ac.jumper)
-            playSound(Sound.CLIMBER);
-        else
+        if (old.ac == Ac.jumper) {
+            lixxie.playSound(Sound.CLIMBER);
+        }
+        else {
             frame = 3;
+        }
         stickSpriteToWall();
         maybeBecomeAscenderImmediatelyOnBecome();
     }
 
     override void perform()
     {
-        if (isLastFrame)
+        if (lixxie.isLastFrame) {
             frame = 4;
-        else
-            advanceFrame();
+        }
+        else {
+            lixxie.advanceFrame();
+        }
         foreach (unused; 0 .. upwardsMovementThisFrame) {
-            if (isSolid(0, ceilingY)) {
-                turn();
-                become(Ac.faller);
+            if (lixxie.isSolid(0, ceilingY)) {
+                lixxie.turn();
+                lixxie.become(Ac.faller);
                 return;
             }
-            else if (ascendHoistableLedge)
+            else if (ascendHoistableLedge) {
                 return;
-            else
-                moveUp(1);
+            }
+            else {
+                lixxie.moveUp(1);
+            }
         }
         assert (this is lixxie.job);
         if (ascendHoistableLedge)
@@ -59,14 +63,15 @@ private:
         // The climber should appear snugly close to the wall.
         // Since physically, for a right-facing climber, a wall at ex+2 and
         // ex+3 are the same, move the sprite horizontally to match the wall.
-        spriteOffsetX = dir * (facingRight && ! isSolidSingle(2, -6)
-                            || facingLeft  && ! isSolidSingle(1, -6));
+        spriteOffsetX = lixxie.dir
+            * (lixxie.facingRight && ! lixxie.isSolidSingle(2, -6)
+             || lixxie.facingLeft && ! lixxie.isSolidSingle(1, -6));
     }
 
     void maybeBecomeAscenderImmediatelyOnBecome()
     {
         for (int i = 8; i < 18; ++i) {
-            if (isSolid(0, -i)) {
+            if (lixxie.isSolid(0, -i)) {
                 stopAndBecomeWalker();
                 break;
             }
@@ -77,9 +82,9 @@ private:
             // ascend right in the midde of the wall.
             // Of course, it looks slightly unusual to stick to a wall that's
             // got this much air below, but we leave it like this for now.
-            else if (i > 9 && ! isSolid(2, -i)) {
-                moveAhead();
-                become(Ac.ascender);
+            else if (i > 9 && ! lixxie.isSolid(2, -i)) {
+                lixxie.moveAhead();
+                lixxie.become(Ac.ascender);
                 break;
             }
         }
@@ -97,19 +102,18 @@ private:
 
     bool ascendHoistableLedge()
     {
-        if (! isSolid(2, ceilingY)) {
-            moveAhead();
-            become(Ac.ascender);
-            return true;
-        }
-        else
+        if (lixxie.isSolid(2, ceilingY)) {
             return false;
+        }
+        lixxie.moveAhead();
+        lixxie.become(Ac.ascender);
+        return true;
     }
 
     void stopAndBecomeWalker()
     {
-        turn();
-        if (isSolid()) {
+        lixxie.turn();
+        if (lixxie.isSolid()) {
             // This method can be called during become, then lixxie.ac might
             // still be walker or runner from before.
             // My OO model shows its weaknesses here. I should call a special
@@ -118,11 +122,12 @@ private:
             immutable int oldWalkerFrame =
                 (lixxie.ac == Ac.walker || lixxie.ac == Ac.runner)
                 ? lixxie.frame : -999;
-            become(Ac.walker);
+            lixxie.become(Ac.walker);
             if (oldWalkerFrame >= 0)
                 lixxie.frame = oldWalkerFrame;
         }
-        else
-            become(Ac.faller);
+        else {
+            lixxie.become(Ac.faller);
+        }
     }
 }

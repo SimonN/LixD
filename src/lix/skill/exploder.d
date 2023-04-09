@@ -15,10 +15,8 @@ import physics.mask;
 import physics.terchang;
 
 abstract class Ploder : Leaver {
-    mixin JobChild;
-
     override PhyuOrder updateOrder() const { return PhyuOrder.flinger; }
-    override @property bool blockable() const { return false; }
+    override bool blockable() const { return false; }
 
     final override AfterAssignment onManualAssignment(Job old)
     {
@@ -61,41 +59,41 @@ private:
 
 
 class Imploder : Ploder {
-    mixin JobChild;
+
 
 protected:
     override void makeEffect()
     {
-        outsideWorld.effect.addImplosion(
-            outsideWorld.state.age, outsideWorld.passport, foot);
+        lixxie.outsideWorld.effect.addImplosion(lixxie.outsideWorld.state.age,
+            lixxie.outsideWorld.passport, lixxie.foot);
     }
 }
 
 
 
 class Exploder : Ploder {
-    mixin JobChild;
+
 
 protected:
     override void makeEffect()
     {
-        outsideWorld.effect.addExplosion(
-            outsideWorld.state.age, outsideWorld.passport, foot);
+        lixxie.outsideWorld.effect.addExplosion(lixxie.outsideWorld.state.age,
+            lixxie.outsideWorld.passport, lixxie.foot);
     }
 
     override void flingOtherLix()
     {
-        foreach (targetTribe; outsideWorld.state.tribes)
+        foreach (targetTribe; lixxie.outsideWorld.state.tribes)
             foreach (target; targetTribe.lixvec)
                 if (target.healthy)
-                    flingOtherLix(target, targetTribe.style == this.style);
+                    flingOtherLix(target, targetTribe.style == lixxie.style);
     }
 
 private:
     void flingOtherLix(Lixxie target, in bool targetTribeIsOurTribe)
     {
-        immutable dx = env.distanceX(ex,     target.ex);
-        immutable dy = env.distanceY(ey + 4, target.ey);
+        immutable dx = lixxie.env.distanceX(lixxie.ex,     target.ex);
+        immutable dy = lixxie.env.distanceY(lixxie.ey + 4, target.ey);
         // +4 moves makes dy positive if target.ey == this.ey,
         // it's desirable to fling such targets up a little
 

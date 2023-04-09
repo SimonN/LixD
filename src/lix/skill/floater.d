@@ -6,17 +6,15 @@ import basics.help;
 import lix;
 
 class Floater : Job {
-
+public:
     int speedX = 0;
     int speedY = 0;
     bool accelerateY = false; // if we come from a tumbler, accelerate still
 
-    mixin JobChild;
-
     override AfterAssignment onManualAssignment(Job old)
     {
-        assert (! abilityToFloat);
-        abilityToFloat = true;
+        assert (! lixxie.abilityToFloat);
+        lixxie.abilityToFloat = true;
         return AfterAssignment.doNotBecome;
     }
 
@@ -44,13 +42,14 @@ class Floater : Job {
     }
 
 private:
-
     void adjustFrame()
     {
-        if (isLastFrame)
+        if (lixxie.isLastFrame) {
             frame = 9;
-        else
-            advanceFrame();
+        }
+        else {
+            lixxie.advanceFrame();
+        }
     }
 
     void adjustSpeed()
@@ -93,11 +92,11 @@ private:
 
         while (flownAhead < speedX || flownDown < speedY) {
             // Collide with the terrain before moving
-            if (this.isSolid(0, 2)) {
-                this.become(Ac.lander);
+            if (lixxie.isSolid(0, 2)) {
+                lixxie.become(Ac.lander);
                 return;
             }
-            else if (this.isSolid(2, 0)) {
+            else if (lixxie.isSolid(2, 0)) {
                 speedX = 0;
                 flownAhead = 0;
                 if (flownDown >= speedY)
@@ -115,11 +114,11 @@ private:
             // Now, we move orthogonally only, and check in between.
             // That should prevent https://github.com/SimonN/LixD/issues/129.
             if (ahead) {
-                moveAhead();
+                lixxie.moveAhead();
                 flownAhead += 2;
             }
             else {
-                moveDown(1);
+                lixxie.moveDown(1);
                 flownDown += 1;
             }
         }

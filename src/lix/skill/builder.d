@@ -6,11 +6,9 @@ import physics;
 
 // base class for Builder and Platformer
 abstract class BrickCounter : Job {
-
+public:
     int skillsQueued;
     int bricksLeft;
-
-    mixin JobChild;
 
     enum bricksAtStart = 12;
 
@@ -48,19 +46,21 @@ abstract class BrickCounter : Job {
     abstract void onPerform(); // You can call buildBrick again from this
     final override void perform()
     {
-        if (turnedByBlocker)
+        if (lixxie.turnedByBlocker) {
             buildBrickForFree();
+        }
         onPerform();
     }
 
     private final void buildBrickForFree() { onBuildingBrick(); }
     protected abstract void onBuildingBrick();
+
     final void buildBrick()
     {
         assert (bricksLeft > 0);
         --bricksLeft;
         if (bricksLeft < 3 && skillsQueued == 0)
-            playSound(Sound.BRICK);
+            lixxie.playSound(Sound.BRICK);
         onBuildingBrick();
     }
 
@@ -78,33 +78,23 @@ abstract class BrickCounter : Job {
             return BecomeCalled.no;
         }
         else {
-            become(shruggingAc);
+            lixxie.become(shruggingAc);
             return BecomeCalled.yes;
         }
     }
-
 }
-// end class BrickCounter
-
-
-
-// ############################################################################
-// ############################################################################
-// ############################################################################
 
 
 
 class Builder : BrickCounter {
-
+public:
     bool fullyInsideTerrain;
-
-    mixin JobChild;
 
     override int startFrame(in Job) const { return 6; }
 
     override void onPerform()
     {
-        advanceFrame();
+        lixxie.advanceFrame();
 
         if (frame == 0) {
             maybeBecomeShrugger(Ac.shrugger);
@@ -113,28 +103,29 @@ class Builder : BrickCounter {
             // To not glitch up through steel, but still get killed by top of
             // screen: first see whether we're trapped, only then make brick.
             // If we are fully inside terrain, we'll move down later.
-            fullyInsideTerrain = solidWallHeight(0, 2) > Walker.highestStepUp;
+            fullyInsideTerrain
+                = lixxie.solidWallHeight(0, 2) > Walker.highestStepUp;
 
-            moveUp(2);
+            lixxie.moveUp(2);
             buildBrick();
         }
         else if (frame == 12) {
             bumpAgainstTerrain();
         }
         else if (frame == 13 || frame == 14) {
-            moveAhead();
+            lixxie.moveAhead();
         }
     }
 
     override void onBuildingBrick()
     {
         TerrainAddition tc;
-        tc.update = outsideWorld.state.age;
+        tc.update = lixxie.outsideWorld.state.age;
         tc.type   = TerrainAddition.Type.build;
-        tc.style  = style;
-        tc.x      = facingRight ? ex : ex - 10;
-        tc.y      = ey + 2;
-        outsideWorld.physicsDrawer.add(tc);
+        tc.style  = lixxie.style;
+        tc.x      = lixxie.facingRight ? lixxie.ex : lixxie.ex - 10;
+        tc.y      = lixxie.ey + 2;
+        lixxie.outsideWorld.physicsDrawer.add(tc);
     }
 
     private BecomeCalled bumpAgainstTerrain()
@@ -165,40 +156,32 @@ class Builder : BrickCounter {
         // a thin horizontal beam. To stop at that beam, we have do check
         // separately for insideThinHorizontalBeam.
         immutable bool wallNearFoot
-            =  (isSolid(4, 1) && isSolid(4, -2))
-            || (isSolid(2, 1) && isSolid(2, -2));
+            =  (lixxie.isSolid(4, 1) && lixxie.isSolid(4, -2))
+            || (lixxie.isSolid(2, 1) && lixxie.isSolid(2, -2));
         // Height +1 is the coordinate above the brick, not height 0, because:
         // In rare cases, e.g. lix inside thin horizontal beam, the lix
         // wouldn't build up high enough to make the staircase
         // connect with the beam.
-        immutable bool insideThinHorizontalBeam
-            = isSolid(4, 1) && isSolid(2, 1) && isSolid(0, 1);
+        immutable bool insideThinHorizontalBeam = lixxie.isSolid(4, 1)
+            && lixxie.isSolid(2, 1) && lixxie.isSolid(0, 1);
         // The check for hitHead is not shown in the ASCII art comment above.
-        immutable bool hitHead = isSolid(4, -16);
+        immutable bool hitHead = lixxie.isSolid(4, -16);
         if (wallNearFoot || insideThinHorizontalBeam || hitHead) {
-            turn();
+            lixxie.turn();
             if (fullyInsideTerrain)
-                moveDown(2);
-            become(Ac.walker);
+                lixxie.moveDown(2);
+            lixxie.become(Ac.walker);
             return BecomeCalled.yes;
         }
         else
             return BecomeCalled.no;
     }
 }
-// end class Builder
-
-
-
-// ############################################################################
-// ############################################################################
-// ############################################################################
 
 
 
 class Platformer : BrickCounter {
-    mixin JobChild;
-
+public:
     enum standingUpFrame = 9;
 
     override int startFrame(in Job old) const
@@ -215,14 +198,14 @@ class Platformer : BrickCounter {
         enum loopBackToFrame = 10;
         bool loopCompleted = false;
 
-        if (isLastFrame) {
+        if (lixxie.isLastFrame) {
             assert (frame == 25, "fix the switch below if you alter frames");
             frame = loopBackToFrame;
             loopCompleted = true;
         }
-        else
-            advanceFrame();
-
+        else {
+            lixxie.advanceFrame();
+        }
         // Platforming starts with (loobBackToFrame)-many frames 0, 1, ...
         // that then merge into the looping 16 frames. In the first set of
         // frames, one brick is built, and it is higher than the floor height.
@@ -269,14 +252,15 @@ class Platformer : BrickCounter {
         immutable bool firstCycle = (frame == 2);
 
         TerrainAddition tc;
-        tc.update = outsideWorld.state.age;
+        tc.update = lixxie.outsideWorld.state.age;
         tc.type   = firstCycle ? TerrainAddition.Type.platformLong
                                : TerrainAddition.Type.platformShort;
-        tc.style  = style;
-        tc.y      = firstCycle ? ey : ey + 2;
-        tc.x      = firstCycle ? (facingRight ? ex     : ex - 6)
-                               : (facingRight ? ex + 4 : ex - 8);
-        outsideWorld.physicsDrawer.add(tc);
+        tc.style  = lixxie.style;
+        tc.y      = firstCycle ? lixxie.ey : lixxie.ey + 2;
+        tc.x      = firstCycle
+            ? (lixxie.facingRight ? lixxie.ex     : lixxie.ex - 6)
+            : (lixxie.facingRight ? lixxie.ex + 4 : lixxie.ex - 8);
+        lixxie.outsideWorld.physicsDrawer.add(tc);
     }
 
     private bool platformerTreatsAsSolid(in int x, in int y)
@@ -284,14 +268,14 @@ class Platformer : BrickCounter {
         // If the pixel is solid, return false nontheless if there is free air
         // over the pixel. Strange code from C++ Lix, this had a loop that
         // checked the exact same set of pixels 3 times.
-        if (! isSolid(x, y))
+        if (! lixxie.isSolid(x, y))
             return false;
-        if (isSolid(x + 2, y) && isSolid(x + 4, y))
+        if (lixxie.isSolid(x + 2, y) && lixxie.isSolid(x + 4, y))
             return true;
-        assert (isSolid(x, y));
-        return isSolid(x+2, y-2)
-            || isSolid(x,   y-2)
-            || isSolid(x-2, y-2);
+        assert (lixxie.isSolid(x, y));
+        return lixxie.isSolid(x+2, y-2)
+            || lixxie.isSolid(x,   y-2)
+            || lixxie.isSolid(x-2, y-2);
     }
 
     private void planNextBrickFirstCycle()
@@ -302,25 +286,30 @@ class Platformer : BrickCounter {
         if (    platformerTreatsAsSolid( 6, -1)
              && platformerTreatsAsSolid( 8, -1)
              && platformerTreatsAsSolid(10, -1)
-        )
-            become(Ac.walker);
+        ) {
+            lixxie.become(Ac.walker);
+        }
     }
 
     private void moveUpAndCollide()
     {
-        immutable airAbove = ! isSolid(0, -1);
-        if (airAbove)
-            moveUp(2);
-        else
+        immutable airAbove = ! lixxie.isSolid(0, -1);
+        if (airAbove) {
+            lixxie.moveUp(2);
+        }
+        else {
             abortAndStandUp(lixxie);
+        }
     }
 
     private void moveAheadAndCollide()
     {
-        if (! platformerTreatsAsSolid(2, 1))
-            moveAhead();
-        else
+        if (! platformerTreatsAsSolid(2, 1)) {
+            lixxie.moveAhead();
+        }
+        else {
             abortAndStandUp(lixxie);
+        }
     }
 
     private void planNextBrickSubsequentCycles()
@@ -329,19 +318,22 @@ class Platformer : BrickCounter {
         if (   platformerTreatsAsSolid(2, 1)
             && platformerTreatsAsSolid(4, 1)
             && platformerTreatsAsSolid(6, 1)
-        )
+        ) {
             abortAndStandUp(lixxie);
+        }
     }
 }
 
 
 
 class Shrugger : Job {
-    mixin JobChild;
-
     override void perform()
     {
-        if (isLastFrame) become(Ac.walker);
-        else             advanceFrame();
+        if (lixxie.isLastFrame) {
+            lixxie.become(Ac.walker);
+        }
+        else {
+            lixxie.advanceFrame();
+        }
     }
 }

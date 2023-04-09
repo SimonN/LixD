@@ -9,13 +9,11 @@ import lix;
 import physics.tribe;
 
 class Batter : Job {
-    mixin JobChild;
-
     enum flingAfterFrame = 2;
     enum flingSpeedX =  10;
     enum flingSpeedY = -12;
 
-    override @property bool blockable() const { return false; }
+    override bool blockable() const { return false; }
 
     override PhyuOrder updateOrder() const
     {
@@ -25,24 +23,24 @@ class Batter : Job {
 
     override void perform()
     {
-        if (! isSolid) {
-            become(Ac.faller);
+        if (! lixxie.isSolid) {
+            lixxie.become(Ac.faller);
             return;
         }
-        else if (isLastFrame) {
-            become(Ac.walker);
+        else if (lixxie.isLastFrame) {
+            lixxie.become(Ac.walker);
             return;
         }
         if (updateOrder == PhyuOrder.flinger)
             flingEverybody();
-        advanceFrame();
+        lixxie.advanceFrame();
     }
 
 private:
     void flingEverybody()
     {
         bool hit = false;
-        foreach (Tribe battedTribe; outsideWorld.state.tribes)
+        foreach (Tribe battedTribe; lixxie.outsideWorld.state.tribes)
             foreach (id, Lixxie target; battedTribe.lixvec.enumerate!int) {
                 if (! shouldWeFling(target))
                     continue;
@@ -57,10 +55,13 @@ private:
 
     bool shouldWeFling(in Lixxie target)
     {
-        if (! target.healthy)
+        if (! target.healthy) {
             return false;
-
-        Rect sweetZone = Rect(ex - 12 + 6 * dir, ey - 16, 26, 25);
+        }
+        Rect sweetZone = Rect(
+            lixxie.ex - 12 + 6 * lixxie.dir,
+            lixxie.ey - 16,
+            26, 25);
         if (target.ac == Ac.blocker) {
             /*
              * Extend the backwards range as far as possible so that this:
@@ -76,26 +77,26 @@ private:
             enum extraBackward = Blocker.forceFieldXlEachSide - 8;
             enum extraForward = 8; // Keep 0.9 behavior, even though it's a lot
             static assert (extraBackward > 0);
-            sweetZone.x -= facingRight ? extraBackward : extraForward;
+            sweetZone.x -= lixxie.facingRight ? extraBackward : extraForward;
             sweetZone.xl += extraBackward + extraForward;
         }
-        return env.isPointInRectangle(Point(target.ex, target.ey), sweetZone)
-            && lixxie !is target
+        return lixxie.env.isPointInRectangle(Point(target.ex, target.ey),
+            sweetZone) && lixxie !is target
             // Do not allow the same player's batters to bat each other.
             // This is important for singleplayer: two lixes shall not be able
             // to travel together without any help, one shall stay behind.
             // Solution: If we already have a fling assignment, probably
             // from other batters, we cannot bat batters from our own tribe.
-            && ! (this.flingNew && target.style == this.style
+            && ! (lixxie.flingNew && target.style == lixxie.style
                     && target.ac == Ac.batter && target.frame == frame);
     }
 
     void fling(Lixxie target, in int targetId)
     {
-        target.addFling(flingSpeedX * dir, flingSpeedY, style == target.style);
-        assert (outsideWorld);
-        if (outsideWorld.effect)
-            outsideWorld.effect.addSound(lixxie.outsideWorld.state.age,
-                Passport(target.style, targetId), Sound.BATTER_HIT);
+        target.addFling(flingSpeedX * lixxie.dir, flingSpeedY,
+            lixxie.style == target.style);
+        assert (lixxie.outsideWorld);
+        lixxie.outsideWorld.effect.addSound(lixxie.outsideWorld.state.age,
+            Passport(target.style, targetId), Sound.BATTER_HIT);
     }
 }

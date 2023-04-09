@@ -10,7 +10,7 @@ private:
 public:
     int ySpeed = 4;
 
-    mixin JobChild;
+
 
     enum ySpeedTerminal = 8;
     enum pixelsSafeToFall = 126;
@@ -36,7 +36,7 @@ public:
     perform()
     {
         for (int i = 0; i <= ySpeed; ++i) {
-            if (isSolid(0, i + 2)) {
+            if (lixxie.isSolid(0, i + 2)) {
                 fallBy(i);
                 land();
                 return;
@@ -49,7 +49,7 @@ public:
 private:
     void fallBy(in int numPixelsY)
     {
-        moveDown(numPixelsY);
+        lixxie.moveDown(numPixelsY);
         if (pixelsFallen > pixelsSafeToFall) {
             // Guard against int overflow of _pixelsFallen.
             return;
@@ -59,15 +59,15 @@ private:
 
     void land()
     {
-        if (pixelsFallen > pixelsSafeToFall && ! abilityToFloat) {
-            become(Ac.splatter);
+        if (pixelsFallen > pixelsSafeToFall && ! lixxie.abilityToFloat) {
+            lixxie.become(Ac.splatter);
             return;
         }
         immutable bool hasFallenVeryLittle =
             pixelsFallen <= 9 && this.frame < 1
             || pixelsFallen == 0
             || this.frame < 2; // on frame < 2, walker will select other frame
-        become(hasFallenVeryLittle ? Ac.walker : Ac.lander);
+        lixxie.become(hasFallenVeryLittle ? Ac.walker : Ac.lander);
     }
 
     void housekeepDuringFreeFall()
@@ -75,14 +75,17 @@ private:
         if (ySpeed < ySpeedTerminal) {
             ++ySpeed;
         }
-        if (isLastFrame) {
+        if (lixxie.isLastFrame) {
             frame = frame - 1;
-        } else {
-            advanceFrame();
         }
-        if (abilityToFloat && pixelsFallen >= pixelsFallenToBecomeFloater) {
+        else {
+            lixxie.advanceFrame();
+        }
+        if (lixxie.abilityToFloat
+            && pixelsFallen >= pixelsFallenToBecomeFloater
+        ) {
             // it's important we have incremented ySpeed correctly for this
-            become(Ac.floater);
+            lixxie.become(Ac.floater);
         }
     }
 }

@@ -24,8 +24,6 @@ private:
     bool[futureLength] futureGroundIsSolid;
 
 public:
-    mixin JobChild;
-
     enum futureLength = 4;
     enum maxGapDepth = 3;
 
@@ -33,7 +31,7 @@ public:
 
     override void perform()
     {
-        advanceFrame();
+        lixxie.advanceFrame();
         if (frame == 1) {
             checkFutureGround();
             antiShock(maxGapDepth);
@@ -57,19 +55,21 @@ public:
 private:
     void antiShock(in int resiliance) {
         int downThisFrame = antiShockMoveDown(resiliance);
-        if (! isSolid || movedDownSinceSwing > resiliance)
+        if (! lixxie.isSolid || movedDownSinceSwing > resiliance)
             Faller.becomeWithAlreadyFallenPixels(lixxie, downThisFrame);
     }
 
     int antiShockMoveDown(in int maxDepth)
     {
         int downThisFrame = 0;
-        while (downThisFrame < maxDepth && ! isSolid(0, 2 + downThisFrame)) {
+        while (downThisFrame < maxDepth
+            && ! lixxie.isSolid(0, 2 + downThisFrame)
+        ) {
             ++downThisFrame;
             ++movedDownSinceSwing;
         }
-        if (isSolid(0, 2 + downThisFrame)) {
-            moveDown(downThisFrame);
+        if (lixxie.isSolid(0, 2 + downThisFrame)) {
+            lixxie.moveDown(downThisFrame);
             return downThisFrame;
         }
         else
@@ -80,24 +80,25 @@ private:
     void removeEarth()
     {
         TerrainDeletion tc;
-        tc.update = outsideWorld.state.age;
-        tc.type = facingRight ? TerrainDeletion.Type.mineRight
-                              : TerrainDeletion.Type.mineLeft;
-        tc.x = ex - masks[tc.type].offsetX;
-        tc.y = ey - masks[tc.type].offsetY;
-        outsideWorld.physicsDrawer.add(tc);
-        if (wouldHitSteel(masks[tc.type])) {
-            outsideWorld.effect.addPickaxe(
-                outsideWorld.state.age, outsideWorld.passport, foot, dir);
-            turn();
-            become(Ac.walker);
+        tc.update = lixxie.outsideWorld.state.age;
+        tc.type = lixxie.facingRight
+            ? TerrainDeletion.Type.mineRight : TerrainDeletion.Type.mineLeft;
+        tc.x = lixxie.ex - masks[tc.type].offsetX;
+        tc.y = lixxie.ey - masks[tc.type].offsetY;
+        lixxie.outsideWorld.physicsDrawer.add(tc);
+        if (lixxie.wouldHitSteel(masks[tc.type])) {
+            lixxie.outsideWorld.effect.addPickaxe(
+                lixxie.outsideWorld.state.age,
+                lixxie.outsideWorld.passport, lixxie.foot, lixxie.dir);
+            lixxie.turn();
+            lixxie.become(Ac.walker);
         }
     }
 
     void checkFutureGround()
     {
         for (int j = 0; j < futureLength; ++j)
-            futureGroundIsSolid[j] = isSolid(2*j + 2,
+            futureGroundIsSolid[j] = lixxie.isSolid(2 * j + 2,
                 // Use (movedDownSinceSwing - j) because the lix might have
                 // been moved down this frame already, and then it advances
                 // horizontally for a few frames
@@ -109,9 +110,9 @@ private:
     {
         int downThisFrame;
         if (frame != 9) {
-            moveAhead();
+            lixxie.moveAhead();
             if (movedDownSinceSwing == 0) {
-                moveDown(1);
+                lixxie.moveDown(1);
                 downThisFrame = 1;
             }
             else
@@ -127,10 +128,11 @@ private:
             downThisFrame += antiShockMoveDown(maxGapDepth);
 
         immutable bool downTooFar = movedDownSinceSwing > maxGapDepth;
-        immutable bool solid  = isSolid(0, 2) || futureGroundIsSolid[future];
-        immutable bool leeway = (frame == 7 || frame == 10) && isSolid(0, 3);
+        immutable bool solid = lixxie.isSolid(0, 2)
+            || futureGroundIsSolid[future];
+        immutable bool leeway
+            = (frame == 7 || frame == 10) && lixxie.isSolid(0, 3);
         if (downTooFar || (! solid && ! leeway))
             Faller.becomeWithAlreadyFallenPixels(lixxie, downThisFrame);
     }
 }
-// end class Miner

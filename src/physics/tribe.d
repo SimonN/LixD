@@ -24,12 +24,27 @@ import physics.handimrg;
 import physics.score;
 
 final class Tribe {
+private:
+    int _lixSpawned; // 0 at start
+    int _lixOut;
+    int _lixLeaving; // these have been scored, but keep game running
+    int _lixSaved; // query with score()
+
+    Optional!Phyu _previousSpawn = none;
+    Optional!Phyu _firstScoring = none;
+    Optional!Phyu _recentScoring = none;
+    Optional!Phyu _outOfLixSince = none;
+    Optional!Phyu _nukePressedAt = none;
+
+public:
     immutable RuleSet rules;
-    ValueFields valueFields;
-    alias valueFields this;
 
     LixxieImpl[] lixvecImpl;
+    Enumap!(Ac, int) skillsUsed;
+    int nextHatch; // Initialized by the state initalizer with the permu.
+                   // We don't need the permu afterwards for spawns.
 
+public:
     struct RuleSet {
         enum MustNukeWhen : ubyte {
             normalOvertime,
@@ -44,36 +59,25 @@ final class Tribe {
         MergedHandicap handicap;
     }
 
-    private static struct ValueFields {
-    private:
-        Optional!Phyu _previousSpawn = none;
-        Optional!Phyu _firstScoring = none;
-        Optional!Phyu _recentScoring = none;
-        Optional!Phyu _outOfLixSince = none;
-        Optional!Phyu _nukePressedAt = none;
-
-        int _lixSpawned; // 0 at start
-        int _lixOut;
-        int _lixLeaving; // these have been scored, but keep game running
-        int _lixSaved; // query with score()
-
-    public:
-        Enumap!(Ac, int) skillsUsed;
-        int nextHatch; // Initialized by the state initalizer with the permu.
-                       // We don't need the permu afterwards for spawns.
-    }
-
     enum Phyu firstSpawnWithoutHandicap = Phyu(60);
 
-public:
     this(in RuleSet r) { rules = r; }
 
     this(in Tribe rhs)
     {
         assert (rhs, "don't copy-construct from a null Tribe");
-        valueFields = rhs.valueFields;
-        lixvecImpl = rhs.lixvecImpl.clone; // only value types since 2017-09!
+        _lixSpawned = rhs._lixSpawned;
+        _lixOut = rhs._lixOut;
+        _lixLeaving = rhs._lixLeaving;
+        _lixSaved = rhs._lixSaved;
+        _previousSpawn = rhs._previousSpawn;
+        _firstScoring = rhs._firstScoring;
+        _outOfLixSince = rhs._outOfLixSince;
+        _nukePressedAt = rhs._nukePressedAt;
         rules = rhs.rules;
+        skillsUsed = rhs.skillsUsed;
+        lixvecImpl = rhs.lixvecImpl.clone; // only value types since 2017-09!
+        nextHatch = rhs.nextHatch;
     }
 
     Tribe clone() const { return new Tribe(this); }

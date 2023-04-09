@@ -8,8 +8,6 @@ private:
     bool _upstrokeDone; // Takes out terrain on first swing above normal mask
 
 public:
-    mixin JobChild;
-
     enum tunnelWidth = 18;
 
     override PhyuOrder updateOrder() const { return PhyuOrder.remover; }
@@ -18,26 +16,32 @@ public:
     private bool hitEnoughSteel()
     {
         enum midLoRes = 5; // stop if steel in the middle N of 9 lo-res pixels
-        immutable bool enoughSteel = countSteel(1-midLoRes, 2, midLoRes, 2) >0;
+        immutable bool enoughSteel
+            = lixxie.countSteel(1 - midLoRes, 2, midLoRes, 2) > 0;
         if (enoughSteel) {
-            outsideWorld.effect.addDigHammer(
-                outsideWorld.state.age, outsideWorld.passport, foot, dir);
-            become(Ac.walker);
+            lixxie.outsideWorld.effect.addDigHammer(
+                lixxie.outsideWorld.state.age,
+                lixxie.outsideWorld.passport, lixxie.foot, lixxie.dir);
+            lixxie.become(Ac.walker);
         }
         return enoughSteel;
     }
 
     private bool shouldWeFallHere() const
     {
-        return ! isSolid(-2, 2) && ! isSolid(0, 2) && ! isSolid(2, 2);
+        return ! lixxie.isSolid(-2, 2)
+            && ! lixxie.isSolid(0, 2)
+            && ! lixxie.isSolid(2, 2);
     }
 
     override void perform()
     {
-        if (isLastFrame)
+        if (lixxie.isLastFrame) {
             frame = 4;
-        else
-            advanceFrame();
+        }
+        else {
+            lixxie.advanceFrame();
+        }
 
         bool weWillFall = false;
         if (frame != 16) {
@@ -50,7 +54,7 @@ public:
                 if (hitEnoughSteel)
                     break;
                 ++rowsToDig;
-                moveDown(1);
+                lixxie.moveDown(1);
                 weWillFall = shouldWeFallHere();
                 if (weWillFall)
                     break;
@@ -64,18 +68,18 @@ public:
             _upstrokeDone = true;
         }
         if (weWillFall)
-            become(Ac.faller);
+            lixxie.become(Ac.faller);
     }
 
     private void removeRowsYInterval(in int y, in int yl)
     {
         TerrainDeletion tc;
-        tc.update = outsideWorld.state.age;
+        tc.update = lixxie.outsideWorld.state.age;
         tc.type   = TerrainDeletion.Type.dig;
-        tc.x      = ex - 8;
-        tc.y      = ey + y;
+        tc.x      = lixxie.ex - 8;
+        tc.y      = lixxie.ey + y;
         tc.digYl  = yl;
-        outsideWorld.physicsDrawer.add(tc);
+        lixxie.outsideWorld.physicsDrawer.add(tc);
     }
 }
 // end class Digger

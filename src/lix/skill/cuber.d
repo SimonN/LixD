@@ -4,17 +4,16 @@ import lix;
 import physics;
 
 class Cuber : Leaver {
-    mixin JobChild;
-
+public:
     enum cubeSize = 16;
 
     override PhyuOrder updateOrder() const { return PhyuOrder.adder; }
 
     override void onBecomeLeaver(in Job old)
     {
-        if (facingLeft) {
-            turn();      // moveAhead() makes the two directions balanced,
-            moveAhead(); // just as the hatch spawn positions' moveAhead()
+        if (lixxie.facingLeft) {
+            lixxie.turn(); // moveAhead() makes the two directions balanced,
+            lixxie.moveAhead(); // like hatch spawn positions' moveAhead().
         }
     }
 
@@ -22,18 +21,18 @@ class Cuber : Leaver {
     {
         if (frame >= 2) {
             TerrainAddition tc;
-            tc.update = outsideWorld.state.age;
+            tc.update = lixxie.outsideWorld.state.age;
             tc.type   = TerrainAddition.Type.cube;
-            tc.style  = style;
-            tc.x      = ex - cubeSize/2;
+            tc.style  = lixxie.style;
+            tc.x      = lixxie.ex - cubeSize/2;
 
-            assert (isLastFrame == (frame == 5),
+            assert (lixxie.isLastFrame == (frame == 5),
                 "the following ?: is written assuming frame 5 is last");
-            tc.cubeYl = isLastFrame ? cubeSize : 2*frame - 2;
+            tc.cubeYl = lixxie.isLastFrame ? cubeSize : 2 * lixxie.frame - 2;
             assert (tc.cubeYl > 0);
 
-            tc.y = ey - tc.cubeYl + 2;
-            outsideWorld.physicsDrawer.add(tc);
+            tc.y = lixxie.ey - tc.cubeYl + 2;
+            lixxie.outsideWorld.physicsDrawer.add(tc);
         }
         super.advanceFrameAndLeave();
     }
