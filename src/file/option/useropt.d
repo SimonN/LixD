@@ -35,7 +35,7 @@ public:
         _lang = aLang;
     }
 
-    final @property Lang lang() const { return _lang; }
+    final Lang lang() const pure nothrow @safe @nogc { return _lang; }
 
     final void set(in IoLine ioLine)
     {
@@ -86,13 +86,21 @@ public:
         _value        = aValue;
     }
 
-    @property nothrow @nogc @safe {
+    nothrow @nogc @safe {
         T defaultValue() const { return _defaultValue; }
         T value()        const { return _value; }
         T opAssign(const(T) aValue) { return _value = aValue; }
     }
 
-    alias value this;
+    static if (is (T == KeySet)) {
+        bool keyTapped() const { return _value.keyTapped; }
+        bool keyHeld() const { return _value.keyHeld; }
+        bool keyReleased() const { return _value.keyReleased; }
+        bool keyTappedAllowingRepeats() const
+        {
+            return _value.keyTappedAllowingRepeats;
+        }
+    }
 
 protected:
     override void setImpl(in IoLine ioLine)
@@ -192,7 +200,7 @@ public:
         _value        = aValue;
     }
 
-    @property nothrow @nogc @safe {
+    nothrow @nogc @safe {
         Filename defaultValue() const { return _defaultValue; }
         Filename value()        const { return _value; }
         Filename opAssign(Filename aValue)
@@ -201,8 +209,6 @@ public:
             return _value;
         }
     }
-
-    alias value this;
 
 protected:
     override void setImpl(in IoLine ioLine)

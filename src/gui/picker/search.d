@@ -22,7 +22,7 @@ import std.string;
 
 import basics.alleg5;
 import basics.globals;
-import file.option;
+import opt = file.option.allopts;
 import file.language;
 import file.filename;
 import file.log;
@@ -67,7 +67,8 @@ public:
         _results = new SearchResultList(new Geom(20, 40, xlg - 40, ylg - 120));
 
         _query = new Texttype(new Geom(20, 20, 400, 20, From.BOTTOM_LEFT));
-        _query.hotkey = KeySet(keyMenuSearch, KeySet(ALLEGRO_KEY_ENTER));
+        _query.hotkey = KeySet(opt.keyMenuSearch.value,
+            KeySet(ALLEGRO_KEY_ENTER));
         _query.on = true;
         _query.onEnter = () {
             matchesInDatabase.takeOne.each!((cachedFn) {
@@ -77,7 +78,7 @@ public:
 
         _back = new TextButton(new Geom(20, 20, 100, 40, From.BOTTOM_RIGHT),
             Lang.commonBack.transl);
-        _back.hotkey = keyMenuExit;
+        _back.hotkey = opt.keyMenuExit.value;
 
         addChildren(_prompt, _results, _query, _back);
         updatePrompt();

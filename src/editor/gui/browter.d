@@ -9,9 +9,9 @@ import optional;
 
 import basics.help : len;
 import basics.globals;
-import file.option;
+import glo = file.option.allopts;
+import file.option.useropt;
 import file.language;
-import file.option;
 import gui;
 import gui.picker;
 import hardware.mouse;
@@ -55,7 +55,7 @@ public:
         _picker = makePicker(allHoveredTiles, allowedPreExts, merge);
         _cancel = new TextButton(new Geom(
             20, 40, 80, 30, From.TOP_RIGHT), Lang.commonCancel.transl);
-        _cancel.hotkey = keyMenuExit;
+        _cancel.hotkey = glo.keyMenuExit.value;
         addChildren(_picker, _cancel);
     }
 

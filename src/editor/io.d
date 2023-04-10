@@ -7,7 +7,7 @@ import std.string;
 import enumap;
 
 import basics.globals;
-import file.option;
+import opt = file.option.allopts;
 import editor.dragger;
 import editor.editor;
 import editor.gui.panel;
@@ -60,7 +60,7 @@ void onNewLevelButtonExecuted(Editor editor)
 auto newEmptyLevel = delegate Level()
 {
     Level l = new Level;
-    l.md.author = file.option.userName;
+    l.md.author = opt.userName;
     l.overtimeSeconds = 30; // Level discards this if saved as 1-pl
     return l;
 };
@@ -69,7 +69,7 @@ void saveToExistingFile(Editor editor) {
     with (editor)
 {
     if (Filename fn = _panel.currentFilenameOrNull) {
-        file.option.singleLastLevel = fn;
+        opt.singleLastLevel = fn;
         if (level != _levelToCompareForDataLoss) {
             levelRefacme.md.touch();
         }
@@ -88,7 +88,7 @@ void openSaveAsBrowser(Editor editor) {
     _saveBrowser = new SaveBrowser(dirLevels);
     {
         Filename fn = _panel.currentFilenameOrNull;
-        Filename single = singleLastLevel;
+        Filename single = opt.singleLastLevel.value;
         _saveBrowser.highlight(fn ? fn : single);
     }
     addFocus(_saveBrowser);
@@ -118,19 +118,18 @@ void askForDataLossThenExecute(
         if (level.name != null)
             box.addMsg("%s %s".format(Lang.saveBoxLevelName.transl,
                                       level.name));
-        box.addButton(Lang.saveBoxYesSave.transl, keyMenuOkay, () {
+        box.addButton(Lang.saveBoxYesSave.transl, opt.keyMenuOkay.value, () {
             _askForDataLoss = null;
             editor.saveToExistingFile();
             unlessCancelledExecuteThis();
         });
-        box.addButton(Lang.saveBoxNoDiscard.transl, keyMenuDelete, () {
+        box.addButton(Lang.saveBoxNoDiscard.transl, opt.keyMenuDelete.value, () {
             _askForDataLoss = null;
             unlessCancelledExecuteThis();
         });
         box.addButton(Lang.saveBoxNoCancel.transl,
-                      KeySet(keyMenuExit, keyEditorExit), () {
-            _askForDataLoss = null;
-        });
+            KeySet(opt.keyMenuExit.value, opt.keyEditorExit.value),
+            () { _askForDataLoss = null; });
         addFocus(box);
         _askForDataLoss = box;
     }

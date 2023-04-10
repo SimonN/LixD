@@ -5,7 +5,7 @@ import std.math; // abs
 import basics.alleg5;
 import basics.globals;
 import basics.rect;
-import file.option;
+import opt = file.option.allopts;
 import hardware.display;
 
 void initialize();
@@ -139,7 +139,8 @@ void consumeAllegroMouseEvents()
         switch (event.type) {
         case ALLEGRO_EVENT_MOUSE_AXES:
             if (! isBuggyJump(&event)) {
-                _mickey += Point(event.mouse.dx, event.mouse.dy) * mouseSpeed;
+                _mickey += Point(event.mouse.dx, event.mouse.dy)
+                        * opt.mouseSpeed.value;
             }
             _wheelNotches -= event.mouse.dz;
             break;
@@ -209,7 +210,7 @@ void handleTrappedMouse()
     }
     bool isCloseToEdge(in int pos, in int length)
     {
-        return ! file.option.fastMovementFreesMouse.value
+        return ! opt.fastMovementFreesMouse.value
             ? pos != length/2 // hard to leave
             : pos * 16 < length || pos * 16 >= length * 15; // easy to leave
     }

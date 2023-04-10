@@ -6,7 +6,7 @@ public import basics.alleg5 :
     al_map_rgba, al_unmap_rgba, al_map_rgba_f, al_unmap_rgba_f;
 
 import basics.alleg5;
-import file.option;
+import opt = file.option.allopts;
 
 public ColorPrivate color;
 
@@ -23,9 +23,9 @@ public struct Alcol3D {
 
 void initialize()
 {
-    computeColors(file.option.guiColorRed,
-                  file.option.guiColorGreen,
-                  file.option.guiColorBlue);
+    computeColors(opt.guiColorRed.value,
+                  opt.guiColorGreen.value,
+                  opt.guiColorBlue.value);
 }
 
 void deinitialize() { destroy(color); color = null; }

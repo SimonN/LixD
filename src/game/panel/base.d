@@ -9,7 +9,7 @@ module game.panel.base;
 import std.algorithm;
 import std.range;
 
-import file.option;
+import opt = file.option.allopts;
 import game.core.view;
 import game.panel.infobar;
 import game.panel.tooltip;
@@ -36,12 +36,12 @@ public:
     this(in View aView, in int lixRequired)
     {
         super(new Geom(0, 0, gui.screenXlg, gui.panelYlg, From.BOTTOM));
-        _skills.length = file.option.skillSort.length;
-        foreach (int id, ac; file.option.skillSort) {
+        _skills.length = opt.skillSort.length;
+        foreach (int id, ac; opt.skillSort) {
             _skills[id] = new SkillButton(new Geom(id * skillXl, 0,
                                      skillXl, skillYl, From.BOTTOM_LEFT));
             _skills[id].skill = ac;
-            _skills[id].hotkey = file.option.keySkill[skillSort[id]];
+            _skills[id].hotkey = opt.keySkill[opt.skillSort[id]].value;
             addChild(_skills[id]);
         }
         {
@@ -151,7 +151,7 @@ protected:
 
 private:
     float skillYl() const { return this.geom.ylg - 20; }
-    float skillXl() const { return gui.screenXlg / (skillSort.length + 4); }
+    float skillXl() const { return gui.screenXlg / (opt.skillSort.length+4); }
 
     void makeCurrent(SkillButton skill)
     {

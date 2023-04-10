@@ -15,7 +15,7 @@ static import std.file;
 
 import optional;
 
-import file.option; // hotkeys
+import opt = file.option.allopts;
 import file.filename;
 import file.language;
 import file.log;
@@ -49,7 +49,7 @@ public:
         super(title, baseDir, cfg);
         _buttonPlay = new TextButton(new Geom(infoX, 20,
             infoXl/2, 40, From.BOTTOM_LEFT), Lang.browserPlay.transl);
-        _buttonPlay.hotkey = file.option.keyMenuOkay;
+        _buttonPlay.hotkey = opt.keyMenuOkay.value;
         addChild(_buttonPlay);
     }
 
@@ -128,7 +128,7 @@ protected:
             assert (_fileRecent !is null);
             onPlay(_fileRecent);
         }
-        else if (keyMenuOkay.keyTapped && _upDownToCanBeNull) {
+        else if (opt.keyMenuOkay.keyTapped && _upDownToCanBeNull) {
             super.navigateTo(_upDownToCanBeNull);
             highlightIfInCurrentDir(_fileRecent);
             _upDownToCanBeNull = null;

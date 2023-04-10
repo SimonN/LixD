@@ -1,7 +1,7 @@
 module menu.browser.network;
 
 import basics.globals;
-import file.option;
+import opt = file.option.allopts;
 import file.language;
 import file.filename;
 import gui;
@@ -19,7 +19,7 @@ public:
         super(Lang.browserNetworkTitle.transl, basics.globals.dirLevels,
             ylOfNameplateForLevels, super.pickerConfig());
         scope (success)
-            super.highlight(file.option.networkLastLevel);
+            super.highlight(opt.networkLastLevel.value);
     }
 
     override @property inout(Level) levelRecent() inout
@@ -48,7 +48,7 @@ protected:
         // the super class guarantees that on_file_select is only called after
         // onFileHighlight has been called with the same fn immediately before
         if (_levelRecent.playable) {
-            file.option.networkLastLevel = fileRecent;
+            opt.networkLastLevel = fileRecent;
             gotoGame = true;
         }
     }

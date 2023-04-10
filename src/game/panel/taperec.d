@@ -6,7 +6,8 @@ module game.panel.taperec;
 
 import std.algorithm;
 
-import file.option;
+import opt = file.option.allopts;
+import file.option.useropt;
 import game.panel.nuke;
 import game.panel.tooltip;
 import graphic.internal;
@@ -32,23 +33,26 @@ public:
         immutable ylg2 = ylg/2f;
 
         void newBut(T)(ref T b, int x, int y, int frame,
-            in KeySet keyLeft = 0, in KeySet keyRight = 0)
+            in UserOption!KeySet keyLeft = null,
+            in UserOption!KeySet keyRight = null)
             if (is(T : BitmapButton))
         {
             b = new T(new Geom(x * xlg/4f, ylg1 * (y >= 1) + ylg2 * (y >= 2),
                                xlg/4f, y == 0 ? ylg1 : ylg2),
                 InternalImage.gamePanel.toCutbit);
             b.xf = frame;
-            b.hotkey = keyLeft;
+            b.hotkey = keyLeft ? keyLeft.value : KeySet();
             static if (is (T == TwoTasksButton))
-                b.hotkeyRight = keyRight;
+                b.hotkeyRight = keyRight ? keyRight.value : KeySet();
             addChild(b);
         }
-        newBut(_zoom,       0, 1,  2, keyZoomIn, keyZoomOut);
-        newBut(_speedBack,  0, 2, 10, keyFrameBackOne, keyFrameBackMany);
-        newBut(_speedAhead, 1, 2,  3, keyFrameAheadOne, keyFrameAheadMany);
-        newBut(_speedFast,  2, 2, frameFast, keySpeedFast, keySpeedTurbo);
-        newBut(_restart,    1, 1,  8, keyRestart);
+        newBut(_zoom, 0, 1,  2, opt.keyZoomIn, opt.keyZoomOut);
+        newBut(_speedBack, 0, 2, 10, opt.keyFrameBackOne, opt.keyFrameBackMany);
+        newBut(_speedAhead, 1, 2, 3,
+            opt.keyFrameAheadOne, opt.keyFrameAheadMany);
+        newBut(_speedFast, 2, 2, frameFast,
+            opt.keySpeedFast, opt.keySpeedTurbo);
+        newBut(_restart, 1, 1,  8, opt.keyRestart);
 
         _nuke = new NukeButton(new Geom(xlg/2f, ylg1, xlg/4f, ylg2),
                                NukeButton.WithTimeLabel.no);
@@ -57,7 +61,7 @@ public:
         _pause = new BitmapButton(
             new Geom(0, 0, xlg/4f, ylg - ylg1, From.BOTTOM_RIGHT),
             InternalImage.gamePause.toCutbit);
-        _pause.hotkey = keyPause;
+        _pause.hotkey = opt.keyPause.value;
         addChild(_pause);
     }
 
@@ -160,9 +164,9 @@ public:
         _stateLoad.xf = GamePanel2Xf.quickload;
         _stateSave.xf = GamePanel2Xf.quicksave;
         _showTweaker.xf = GamePanel2Xf.showTweaker;
-        _stateLoad.hotkey = keyStateLoad;
-        _stateSave.hotkey = keyStateSave;
-        _showTweaker.hotkey = keyShowTweaker;
+        _stateLoad.hotkey = opt.keyStateLoad.value;
+        _stateSave.hotkey = opt.keyStateSave.value;
+        _showTweaker.hotkey = opt.keyShowTweaker.value;
         addChildren(_stateSave, _stateLoad, _showTweaker);
         showLoadState(false);
     }

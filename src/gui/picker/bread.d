@@ -16,7 +16,7 @@ module gui.picker.bread;
 import std.algorithm;
 
 import basics.help; // len
-import file.option;
+import opt = file.option.allopts;
 import gui;
 import file.filename;
 
@@ -44,15 +44,15 @@ public:
         addChild(_innermost);
     }
 
-    @property bool execute() const { return _execute; }
+    bool execute() const { return _execute; }
 
-    @property Filename baseDir() const { return _baseDir; }
+    Filename baseDir() const { return _baseDir; }
 
-    @property Filename currentDir() const
+    Filename currentDir() const
     out (ret) { assert (ret is null || ret.file == ""); }
     do { return _currentDir; }
 
-    @property Filename currentDir(Filename fn)
+    Filename currentDir(Filename fn)
     {
         assert (baseDir, "set basedir before setting current dir");
         MutFilename newCur = (fn && fn.isChildOf(baseDir))
@@ -86,7 +86,7 @@ protected:
         super.drawSelf();
     }
 
-    final @property float buttonsTotalXlg() const
+    final float buttonsTotalXlg() const
     {
         return _buttons.map!(b => b.xlg).sum;
     }
@@ -97,7 +97,7 @@ protected:
             _buttons[$-1].hotkey = _buttons[$-1].hotkey.init;
         _buttons ~= new TextButton(new Geom(
             buttonsTotalXlg, 0, butXl, ylg), caption);
-        _buttons[$-1].hotkey = keyMenuUpDir;
+        _buttons[$-1].hotkey = opt.keyMenuUpDir.value;
         addChild(_buttons[$-1]);
     }
 

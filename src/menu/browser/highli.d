@@ -2,7 +2,7 @@ module menu.browser.highli;
 
 import optional;
 
-import file.option;
+import opt = file.option.allopts;
 import file.filename;
 import file.language;
 import gui;
@@ -40,7 +40,7 @@ public:
 
         _buttonExit = new TextButton(new Geom(infoX + infoXl/2, 20,
             infoXl/2, 40, From.BOTTOM_LEFT), Lang.commonBack.transl);
-        _buttonExit.hotkey = file.option.keyMenuExit;
+        _buttonExit.hotkey = opt.keyMenuExit.value;
         addChildren(_picker, _buttonExit);
     }
 

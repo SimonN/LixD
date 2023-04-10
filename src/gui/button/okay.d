@@ -2,7 +2,7 @@ module gui.button.okay;
 
 import std.algorithm : clamp;
 
-import file.option;
+import opt = file.option.allopts;
 import file.language;
 import gui;
 import hardware.mouse;
@@ -10,14 +10,14 @@ import hardware.mouse;
 TextButton newOkay(Geom g)
 {
     auto b = new TextButton(g, Lang.commonOk.transl);
-    b.hotkey = file.option.keyMenuOkay;
+    b.hotkey = opt.keyMenuOkay.value;
     return b;
 }
 
 TextButton newCancel(Geom g)
 {
     auto b = new TextButton(g, Lang.commonCancel.transl);
-    b.hotkey = file.option.keyMenuExit;
+    b.hotkey = opt.keyMenuExit.value;
     return b;
 }
 

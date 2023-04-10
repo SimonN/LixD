@@ -11,7 +11,7 @@ module menu.browser.replay;
 import optional;
 
 import basics.globals : dirLevels;
-import file.option;
+import opt = file.option.allopts;
 import file.filename;
 import file.language;
 import file.replay;
@@ -38,7 +38,7 @@ public:
             ylOfNameplateForReplays, PickerConfig!(Breadcrumb, ReplayTiler)());
         commonConstructor();
         // Final class calls:
-        super.highlight(file.option.replayLastLevel);
+        super.highlight(opt.replayLastLevel.value);
     }
 
     // Override method with assert(false): Violates fundamental OO principles.
@@ -77,7 +77,7 @@ protected:
             // But how to handle doubleclick on replay then? Thus, for now:
             || matcher.pointedToIsGood
         ) {
-            file.option.replayLastLevel = super.fileRecent;
+            opt.replayLastLevel = super.fileRecent;
             gotoGame = true;
         }
     }
@@ -91,11 +91,11 @@ protected:
         ) {
             // like onFileSelect, but for pointedTo
             matcher.forcePointedTo();
-            file.option.replayLastLevel = super.fileRecent;
+            opt.replayLastLevel = super.fileRecent;
             gotoGame = true;
         }
         else if (_buttonVerify.execute) {
-            file.option.replayLastLevel = currentDir;
+            opt.replayLastLevel = currentDir;
             auto win = new VerifyMenu(currentDir);
             addFocus(win);
         }
@@ -123,9 +123,9 @@ private:
             return b;
         }
         _buttonPlayWithPointedTo = newInfo(1, 100,
-            Lang.browserReplayPointedTo.transl, keyMenuEdit);
+            Lang.browserReplayPointedTo.transl, opt.keyMenuEdit.value);
         _buttonVerify = newInfo(1, 60,
-            Lang.browserReplayVerifyDir.transl, keyMenuNewLevel);
+            Lang.browserReplayVerifyDir.transl, opt.keyMenuNewLevel.value);
 
         addChildren(_buttonPlayWithPointedTo, _buttonVerify);
     }

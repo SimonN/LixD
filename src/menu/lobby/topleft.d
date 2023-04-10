@@ -16,7 +16,7 @@ module menu.lobby.topleft;
 import optional;
 
 import file.language;
-import file.option.allopts;
+import opt = file.option.allopts;
 import graphic.internal;
 import gui;
 import menu.lobby.colpick;
@@ -61,7 +61,7 @@ public:
         _declareReady = new TextButton(
             new Geom(0, 0, butXl, 20, From.BOTTOM_LEFT),
             Lang.winLobbyReady.transl);
-        _declareReady.hotkey = keyMenuOkay;
+        _declareReady.hotkey = opt.keyMenuOkay.value;
         _handiButton = new BitmapButton(new Geom(0, _colPick.ylg,
             _colPick.xlg, _peerList.ylg - _colPick.ylg, From.TOP_RIGHT),
             InternalImage.lobbySpec.toCutbit);

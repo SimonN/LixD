@@ -16,7 +16,7 @@ import std.string;
 
 import gui;
 import file.language;
-import file.option;
+import opt = file.option.allopts;
 import hardware.keyset;
 import net.client.client;
 import net.client.impl;
@@ -73,11 +73,12 @@ public:
         _radio.addChoice(Lang.winLobbyStartServer.transl);
         _radio.addChoice(Lang.winLobbyStartCustom.transl);
         _radio.onExecute = &this.handleChosenRadioButton;
-        _radio.choose(networkConnectionMethod);
+        _radio.choose(opt.networkConnectionMethod.value);
 
         _connect = new TextButton( new Geom(0, 0, 100, 40, From.BOTTOM));
         _connect.text = Lang.commonOk.transl;
-        _connect.hotkey = KeySet(keyMenuOkay, keyMenuMainNetwork);
+        _connect.hotkey = KeySet(opt.keyMenuOkay.value,
+            opt.keyMenuMainNetwork.value);
         _connect.onExecute = &this.connect;
 
         addChildren(_radio, _connect, _hostname, _port);
@@ -89,18 +90,18 @@ private:
         switch (chosen) {
         case 0:
             _hostname.show();
-            _hostname.fixedValue = networkCentralServerAddress;
-            _port.fixedValue = networkCentralServerPort.value.to!string;
+            _hostname.fixedValue = opt.networkCentralServerAddress.value;
+            _port.fixedValue = opt.networkCentralServerPort.value.to!string;
             break;
         case 1:
             _hostname.hide();
-            _hostname.fixedValue = networkOwnServerAddress;
-            _port.customValue = networkOwnServerPort.value.to!string;
+            _hostname.fixedValue = opt.networkOwnServerAddress.value;
+            _port.customValue = opt.networkOwnServerPort.value.to!string;
             break;
         case 2:
             _hostname.show();
-            _hostname.customValue = networkConnectToAddress;
-            _port.customValue = networkConnectToPort.value.to!string;
+            _hostname.customValue = opt.networkConnectToAddress.value;
+            _port.customValue = opt.networkConnectToPort.value.to!string;
             break;
         default:
             assert (false, "unhandled radio button");
@@ -116,15 +117,15 @@ private:
         cfg.hostname = _hostname.value;
         cfg.port = _port.number;
         cfg.clientVersion = gameVersion;
-        cfg.ourPlayerName = file.option.userName;
+        cfg.ourPlayerName = opt.userName;
         try
-            cfg.ourStyle = file.option.networkLastStyle.value.to!Style;
+            cfg.ourStyle = opt.networkLastStyle.value.to!Style;
         catch (Exception)
             // Both client and server handle illegal values and will give
             // us a legal default value
             { }
 
-        networkConnectionMethod = _radio.theChosen;
+        opt.networkConnectionMethod = _radio.theChosen;
 
         INetClient ret;
         try {
@@ -133,12 +134,12 @@ private:
                 ret = new NetClient(cfg);
                 break;
             case 1:
-                networkOwnServerPort = _port.number;
+                opt.networkOwnServerPort = _port.number;
                 ret = new ClientWithServer(cfg);
                 break;
             case 2:
-                networkConnectToAddress = _hostname.value;
-                networkConnectToPort = _port.number;
+                opt.networkConnectToAddress = _hostname.value;
+                opt.networkConnectToPort = _port.number;
                 ret = new NetClient(cfg);
                 break;
             default:

@@ -4,7 +4,7 @@ import std.string; // strip whitespace
 
 import basics.alleg5; // return accepts the file, too
 import basics.globals; // extension
-import file.option; // hotkey
+import opt = file.option.allopts;
 import menu.browser.highli;
 import menu.browser.mkdir;
 import file.language;
@@ -30,7 +30,7 @@ public:
 
         _mkdirButton = new TextButton(new Geom(infoX, 140, infoXl/2, 40,
             From.BOTTOM_LEFT), Lang.browserMkdirTitle.transl);
-        _mkdirButton.hotkey = keyMenuNewLevel;
+        _mkdirButton.hotkey = opt.keyMenuNewLevel.value;
         _mkdirButton.onExecute = () {
             _mkdirBrowser = new MkdirDialog(new Geom(20, 20,
                 xlg - infoX - 20, 160, From.BOTTOM_RIGHT), currentDir);
@@ -43,7 +43,7 @@ public:
         _texttype.onEnter = () { this.askForOverwriteOrReturn(); };
         _saveAsTexttype = new TextButton(new Geom(infoX, 20,
             infoXl/2, 40, From.BOTTOM_LEFT), Lang.commonOk.transl);
-        _saveAsTexttype.hotkey = KeySet(keyMenuOkay,
+        _saveAsTexttype.hotkey = KeySet(opt.keyMenuOkay.value,
                                         KeySet(ALLEGRO_KEY_ENTER));
         addChildren(_mkdirButton, _texttype, _saveAsTexttype,
             new Label(new Geom(infoX, 100, infoXl, 20, From.BOTTOM_LEFT),
@@ -105,7 +105,7 @@ private:
                                       maybe.fileNoExtNoPre));
             box.addButton(Lang.saveBoxOverwrite.transl, _saveAsTexttype.hotkey,
                 () { _chosenFile = maybe; });
-            box.addButton(Lang.commonCancel.transl, keyMenuExit,
+            box.addButton(Lang.commonCancel.transl, opt.keyMenuExit.value,
                 () { _texttype.on = true; });
             addFocus(box);
         }

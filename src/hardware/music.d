@@ -16,9 +16,8 @@ import basics.globals;
 import file.filename;
 import file.io;
 import file.log;
+import opt = file.option.allopts;
 import hardware.sound;
-
-static import file.option;
 
 // Suggest that the given music be played. If the filename is null or the
 // file doesn't exist on disk, a random music plays instead.
@@ -66,7 +65,7 @@ bool _wantRandom;
 
 bool isMusicEnabled()
 {
-    return file.option.musicEnabled.value && hardware.sound.tryInitialize();
+    return opt.musicEnabled.value && hardware.sound.tryInitialize();
 }
 
 bool isAcceptableMusicExtension(in string ext) pure @nogc
@@ -172,7 +171,7 @@ void setGain(in Filename fn)
     catch (Exception)
         { } // gain file not found is OK, play everything at normal volume
     al_set_audio_stream_gain(_music,
-        dbToGain(dBFromFile + file.option.musicDecibels));
+        dbToGain(dBFromFile + opt.musicDecibels.value));
 }
 
 /*

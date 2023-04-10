@@ -10,7 +10,9 @@ import std.algorithm;
 import std.file; // FileException
 import std.conv;
 
+import file.language;
 import file.log;
+import opt = file.option.allopts;
 import gui;
 import gui.picker;
 
@@ -44,7 +46,7 @@ private:
     // allows subclasses to do that, and we fully control the subclass.
     static final class ScrolledFiles : ScrolledList {
         FileTiler _tiler;
-        override @property inout(FileTiler) tiler() inout { return _tiler; }
+        override inout(FileTiler) tiler() inout { return _tiler; }
         this(Geom g, FileTiler delegate(Geom) newTiler) {
             super(g);
             addChild(_tiler = newTiler(newGeomForTiler()));
@@ -81,9 +83,9 @@ public:
         _onFileSelect = cfg.onFileSelect;
     }
 
-    @property Filename baseDir() const { return _bread.baseDir; }
-    @property Filename currentDir() const { return _bread.currentDir; }
-    @property Filename currentDir(Filename fn)
+    Filename baseDir() const { return _bread.baseDir; }
+    Filename currentDir() const { return _bread.currentDir; }
+    Filename currentDir(Filename fn)
     {
         if (! currentDir || (fn && fn.dirRootless != currentDir.dirRootless)) {
             _bread.currentDir = fn;
@@ -189,11 +191,9 @@ private:
         ~ "need the search button, to do something at all with the result");
     }
     do {
-        import file.option;
-        import file.language;
         _searchButton = new TextButton(new Geom(0, 0, Breadcrumb.butXl,
             _bread.ylg, From.TOP_RIGHT), Lang.browserSearch.transl);
-        _searchButton.hotkey = file.option.keyMenuSearch;
+        _searchButton.hotkey = opt.keyMenuSearch.value;
 
         _searchButton.onExecute = ()
         {

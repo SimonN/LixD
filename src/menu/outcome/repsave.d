@@ -6,7 +6,7 @@ module menu.outcome.repsave;
 
 import optional;
 
-import glo = file.option.allopts;
+import opt = file.option.allopts;
 import file.language;
 import file.replay;
 import file.trophy;
@@ -51,23 +51,23 @@ public:
                 ? Lang.harvestReplaySaveManuallyToo.transl
                 : Lang.harvestReplaySaveManuallyAtAll.transl);
         _saveManually.onExecute = () { onSavingManually(); };
-        _saveManually.hotkey = glo.keyOutcomeSaveReplay;
+        _saveManually.hotkey = opt.keyOutcomeSaveReplay.value;
         addChild(_saveManually);
     }
 
 private:
     bool shouldWeAutoSave() const
     {
-        if (! _theReplay.wasPlayedBy(glo.userName)) {
+        if (! _theReplay.wasPlayedBy(opt.userName)) {
             return false;
         }
         if (_theReplay.numPlayers == 1) {
             return _trophy.lixSaved >= _previous.level.required
-                && glo.replayAutoSolutions.value
+                && opt.replayAutoSolutions.value
                 && (_previous.loadedReplay.empty
                     || _previous.loadedReplay.front != _theReplay);
         }
-        return glo.replayAutoMulti.value;
+        return opt.replayAutoMulti.value;
     }
 
     void maybeAutoSave() const

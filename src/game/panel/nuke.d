@@ -4,7 +4,7 @@ import std.string;
 
 import basics.alleg5;
 import basics.globals;
-import file.option;
+import opt = file.option.allopts;
 import game.panel.tooltip;
 import graphic.color;
 import graphic.internal;
@@ -26,7 +26,7 @@ public:
     this(Geom g, in WithTimeLabel withTimeLabel)
     {
         super(g);
-        hotkey = keyNuke;
+        hotkey = opt.keyNuke.value;
 
         if (withTimeLabel == WithTimeLabel.no) {
             _icon = new CutbitElement(new Geom(0, 0, xlg, ylg,
@@ -102,7 +102,7 @@ public:
     {
         super(g, InternalImage.gamePanel2.toCutbit);
         xf = GamePanel2Xf.showSplatRuler;
-        hotkey = file.option.keyShowSplatRuler;
+        hotkey = opt.keyShowSplatRuler.value;
     }
 
     @property bool isSuggestingTooltip() const { return this.isMouseHere; }
@@ -127,7 +127,7 @@ public:
     {
         super(g, InternalImage.gamePanel2.toCutbit);
         xf = GamePanel2Xf.highlightGoals;
-        hotkey = file.option.keyHighlightGoals;
+        hotkey = opt.keyHighlightGoals.value;
     }
 
     @property bool isSuggestingTooltip() const { return this.isMouseHere; }

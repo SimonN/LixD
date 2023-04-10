@@ -16,7 +16,7 @@ import file.filename;
 import file.language;
 import file.nextlev;
 import file.trophy;
-static import glo = file.option.allopts;
+import opt = file.option.allopts;
 import game.argscrea;
 import gui;
 import hardware.keyset;
@@ -65,7 +65,7 @@ public:
         _offeredLevels ~= new NextLevelButton(
             new Geom(20, 40, nextLevelXlg, 160, From.TOP_RIGHT),
             won ? Lang.outcomeYouSolvedOldLevel : Lang.outcomeRetryOldLevel,
-            glo.keyOutcomeOldLevel,
+            opt.keyOutcomeOldLevel.value,
             ArgsToCreateGame(
                 previous.level,
                 previous.levelFilename,
@@ -73,7 +73,7 @@ public:
         addChild(_offeredLevels[$-1]);
         _gotoBrowser = new TextButton(new Geom(0, 20, 300, 20, From.BOTTOM),
             Lang.outcomeExitToSingleBrowser.transl);
-        _gotoBrowser.hotkey = glo.keyMenuExit;
+        _gotoBrowser.hotkey = opt.keyMenuExit.value;
         addChild(_gotoBrowser);
 
         if (_cache is null) {
@@ -87,7 +87,7 @@ public:
             offerUpToTwoLevels(old);
         }
         // ...and only after above rendering the trophies, improve.
-        if (won && justPlayed.wasPlayedBy(glo.userName)) {
+        if (won && justPlayed.wasPlayedBy(opt.userName)) {
             /*
              * These two calls -- improve trophy, then recache the improvement
              * for the next-level database -- should ideally be a single call
@@ -115,7 +115,7 @@ public:
     do {
         // find will return nonempty array because of the in contract
         auto next = _offeredLevels[].find!(but => but.execute)[0].nextLevel;
-        glo.singleLastLevel = next.levelFilename;
+        opt.singleLastLevel = next.levelFilename;
         return next;
     }
 
@@ -153,14 +153,15 @@ private:
         auto nextU = nextUnsolvedLevelAfter(old);
         if (next == nextU) {
             offer(From.BOTTOM, Lang.outcomeAttemptNextLevel,
-                KeySet(glo.keyOutcomeNextLevel, glo.keyOutcomeNextUnsolved),
+                KeySet(opt.keyOutcomeNextLevel.value,
+                    opt.keyOutcomeNextUnsolved.value),
                 next);
         }
         else {
             offer(From.BOT_LEF, Lang.outcomeResolveNextLevel,
-                glo.keyOutcomeNextLevel, next);
+                opt.keyOutcomeNextLevel.value, next);
             offer(From.BOT_RIG, Lang.outcomeAttemptNextUnsolvedLevel,
-                glo.keyOutcomeNextUnsolved, nextU);
+                opt.keyOutcomeNextUnsolved.value, nextU);
         }
     }
 

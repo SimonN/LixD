@@ -5,7 +5,7 @@ import std.algorithm;
 import optional;
 
 import basics.globals;
-import file.option;
+import opt = file.option.allopts;
 import file.language;
 import file.filename;
 import gui;
@@ -25,7 +25,7 @@ public:
         super(title, baseDir, ylOfNameplate, t);
         _delete = new TextButton(newDeleteButtonGeom,
             Lang.browserDelete.transl);
-        _delete.hotkey = file.option.keyMenuDelete;
+        _delete.hotkey = opt.keyMenuDelete.value;
         addChildren(_delete);
     }
 
@@ -67,14 +67,15 @@ private:
             assert (fileRecent);
             MsgBox box = newMsgBoxDelete();
             _boxDelete = some(box);
-            box.addButton(Lang.browserDelete.transl,
-                keyMenuOkay, () {
+            box.addButton(Lang.browserDelete.transl, opt.keyMenuOkay.value,
+                () {
                     assert (fileRecent);
                     deleteFileRecentHighlightNeighbor();
                     _boxDelete = null;
                 });
             box.addButton(Lang.commonCancel.transl,
-                KeySet(keyMenuDelete, keyMenuExit), () { _boxDelete = none; });
+                KeySet(opt.keyMenuDelete.value, opt.keyMenuExit.value),
+                () { _boxDelete = none; });
             addFocus(box);
         }
     }

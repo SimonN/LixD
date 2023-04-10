@@ -1,6 +1,6 @@
 module game.exitwin;
 
-import file.option; // hotkeys
+import opt = file.option.allopts;
 import file.language;
 import gui;
 import hardware.keyset;
@@ -19,10 +19,10 @@ public:
             Lang.winAbortNetgameTitle.transl);
         _resume = new TextButton(new Geom(0, 40, butXl, butYl, From.TOP));
         _resume.text = Lang.winAbortNetgameContinuePlaying.transl;
-        _resume.hotkey = KeySet(keyPause, keyGameExit);
+        _resume.hotkey = KeySet(opt.keyPause.value, opt.keyGameExit.value);
         _exitGame = new TextButton(new Geom(0, 70, butXl, butYl, From.TOP));
         _exitGame.text = Lang.winAbortNetgameExitToLobby.transl;
-        _exitGame.hotkey = keyMenuDelete;
+        _exitGame.hotkey = opt.keyMenuDelete.value;
         addChildren(_resume, _exitGame);
     }
 

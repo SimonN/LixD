@@ -6,7 +6,6 @@ import std.string;
 
 import basics.globals;
 import basics.rect;
-import file.option;
 import editor.editor;
 import editor.group;
 import editor.io;
@@ -20,6 +19,7 @@ import editor.gui.topology;
 import editor.undoable.clone;
 import editor.undoable.compound;
 import editor.undoable.zorder;
+import opt = file.option.allopts;
 import file.language;
 import file.filename;
 import gui;
@@ -44,44 +44,44 @@ void makePanel(Editor editor)
                 });
             }
         );
-        onExecute(Lang.editorButtonFileExit, keyEditorExit, () {
+        onExecute(Lang.editorButtonFileExit, opt.keyEditorExit.value, () {
             editor.askForDataLossThenExecute(() {
                 editor._gotoMainMenuOnceAllWindowsAreClosed = true;
             });
         });
-        onExecute(Lang.editorButtonFileSave, keyEditorSave, () {
+        onExecute(Lang.editorButtonFileSave, opt.keyEditorSave.value, () {
             editor.saveToExistingFile();
         });
-        onExecute(Lang.editorButtonFileSaveAs, keyEditorSaveAs, () {
+        onExecute(Lang.editorButtonFileSaveAs, opt.keyEditorSaveAs.value, () {
             editor.openSaveAsBrowser();
         });
         // Changing the grid is done manually in Editor.calc, not with a
         // delegate passed to these buttons.
-        onExecute(Lang.editorButtonGrid2,      keyEditorGrid, null);
-        onExecute(Lang.editorButtonGridCustom, keyEditorGrid, null);
-        onExecute(Lang.editorButtonGrid16,     keyEditorGrid, null);
-        onExecute(Lang.editorButtonSelectAll, keyEditorSelectAll, () {
+        onExecute(Lang.editorButtonGrid2,      opt.keyEditorGrid.value, null);
+        onExecute(Lang.editorButtonGridCustom, opt.keyEditorGrid.value, null);
+        onExecute(Lang.editorButtonGrid16,     opt.keyEditorGrid.value, null);
+        onExecute(Lang.editorButtonSelectAll, opt.keyEditorSelectAll.value, () {
             editor.selectAll();
         });
-        onExecute(Lang.editorButtonSelectFrame, keyEditorSelectFrame, () {
+        onExecute(Lang.editorButtonSelectFrame, opt.keyEditorSelectFrame.value, () {
             buttonFraming.on = ! buttonFraming.on;
         });
-        onExecute(Lang.editorButtonSelectAdd, keyEditorSelectAdd, () {
+        onExecute(Lang.editorButtonSelectAdd, opt.keyEditorSelectAdd.value, () {
             buttonSelectAdd.on = ! buttonSelectAdd.on;
         });
-        onExecute(Lang.editorButtonUndo, keyEditorUndo, () {
+        onExecute(Lang.editorButtonUndo, opt.keyEditorUndo.value, () {
             editor.undoOne();
         }, Button.WhenToExecute.whenMouseClickAllowingRepeats);
-        onExecute(Lang.editorButtonRedo, keyEditorRedo, () {
+        onExecute(Lang.editorButtonRedo, opt.keyEditorRedo.value, () {
             editor.redoOne();
         }, Button.WhenToExecute.whenMouseClickAllowingRepeats);
-        onExecute(Lang.editorButtonGroup, keyEditorGroup, () {
+        onExecute(Lang.editorButtonGroup, opt.keyEditorGroup.value, () {
             editor.createGroup();
         });
-        onExecute(Lang.editorButtonUngroup, keyEditorUngroup, () {
+        onExecute(Lang.editorButtonUngroup, opt.keyEditorUngroup.value, () {
             editor.ungroup();
         });
-        onExecute(Lang.editorButtonSelectCopy, keyEditorCopy, () {
+        onExecute(Lang.editorButtonSelectCopy, opt.keyEditorCopy.value, () {
             if (editor._selection.empty)
                 return;
             editor.apply(new CopyPaste(
@@ -90,41 +90,41 @@ void makePanel(Editor editor)
                 editor._dragger.clonedShouldMoveBy));
             // editor._dragger.startRecordingCopyMove(); -- unimplemented;
         });
-        onExecute(Lang.editorButtonSelectDelete, keyEditorDelete, () {
+        onExecute(Lang.editorButtonSelectDelete, opt.keyEditorDelete.value, () {
             editor.removeFromLevelTheSelection();
             if (editor._dragger.moving)
                 editor._dragger.stop();
         });
-        onExecute(Lang.editorButtonBackground, keyEditorBackground, () {
+        onExecute(Lang.editorButtonBackground, opt.keyEditorBackground.value, () {
             // see "Comment on correct zOrdering calls" in editor.hover.
             editor.zOrderSelectionTowards(FgBg.bg);
             }, Button.WhenToExecute.whenMouseClickAllowingRepeats);
-        onExecute(Lang.editorButtonForeground, keyEditorForeground, () {
+        onExecute(Lang.editorButtonForeground, opt.keyEditorForeground.value, () {
             editor.zOrderSelectionTowards(FgBg.fg);
             }, Button.WhenToExecute.whenMouseClickAllowingRepeats);
 
         // Zoom execute is handled in Editor.calc()
-        buttonZoom.hotkey = keyZoomIn;
-        buttonZoom.hotkeyRight = keyZoomOut;
+        buttonZoom.hotkey = opt.keyZoomIn.value;
+        buttonZoom.hotkeyRight = opt.keyZoomOut.value;
 
         onExecute(Lang.editorButtonMirrorHorizontally,
-            keyEditorMirrorHorizontally, () {
+            opt.keyEditorMirrorHorizontally.value, () {
                 editor.mirrorSelectionHorizontally;
             });
         onExecute(Lang.editorButtonFlipVertically,
-            keyEditorFlipVertically, () {
+            opt.keyEditorFlipVertically.value, () {
                 editor.flipSelectionVertically;
             });
-        onExecute(Lang.editorButtonSelectRotate, keyEditorRotate, () {
+        onExecute(Lang.editorButtonSelectRotate, opt.keyEditorRotate.value, () {
             editor.rotateSelectionClockwise;
         });
-        onExecute(Lang.editorButtonSelectDark, keyEditorDark, () {
+        onExecute(Lang.editorButtonSelectDark, opt.keyEditorDark.value, () {
             editor.toggleDarkTheSelection();
         });
         template mkSubwin(string forWhat) {
             enum string mkSubwin = q{
                 onExecuteText(Lang.editorButtonMenu%s, Lang.win%sTitle,
-                    keyEditorMenu%s, () {
+                    opt.keyEditorMenu%s.value, () {
                         if (! editor.mainUIisActive)
                             return;
                         editor._dragger.stop();
@@ -141,7 +141,10 @@ void makePanel(Editor editor)
         mixin (mkSubwin!"Skills");
         template mkBrowser(string name, string constructorArgs) {
             enum string mkBrowser = q{
-                    onExecute(Lang.editorButtonAdd%s, keyEditorAdd%s, () {
+                onExecute(
+                    Lang.editorButtonAdd%s,
+                    opt.keyEditorAdd%s.value,
+                    () {
                         if (! editor.mainUIisActive)
                             return;
                         editor._terrainBrowser = new TerrainBrowser(%s);
@@ -158,12 +161,12 @@ void makePanel(Editor editor)
         // anything, you shouldn't affect the browser's starting directory.
         enum edMap = "editor._selection[].map!(o => o.occ(editor.level).tile)";
         mixin (mkBrowser!("Terrain",
-            "[0], editorLastDirTerrain, MergeDirs.depthTwo, " ~ edMap));
-        mixin (mkBrowser!("Steel", "[preExtSteel], editorLastDirSteel,"
+            "[0], opt.editorLastDirTerrain, MergeDirs.depthTwo, " ~ edMap));
+        mixin (mkBrowser!("Steel", "[preExtSteel], opt.editorLastDirSteel,"
             ~ " MergeDirs.allIntoRoot, " ~ edMap));
-        mixin (mkBrowser!("Hatch", "[preExtHatch], editorLastDirHatch"));
-        mixin (mkBrowser!("Goal", "[preExtGoal], editorLastDirGoal"));
-        mixin (mkBrowser!("Hazard", "['W','T','F'], editorLastDirHazard"));
+        mixin (mkBrowser!("Hatch", "[preExtHatch], opt.editorLastDirHatch"));
+        mixin (mkBrowser!("Goal", "[preExtGoal], opt.editorLastDirGoal"));
+        mixin (mkBrowser!("Hazard", "['W','T','F'], opt.editorLastDirHazard"));
     }
 }
 

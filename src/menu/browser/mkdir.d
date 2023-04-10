@@ -4,7 +4,7 @@ module menu.browser.mkdir;
  * We remove our own focus once we're done.
  */
 
-import file.option; // hotkeys
+import opt = file.option.allopts;
 import file.filename;
 import file.language;
 import file.log;
@@ -41,13 +41,13 @@ public:
         _cancel = new TextButton(newButtonGeom(1), Lang.commonCancel.transl);
         _okay.onExecute = () { this.tryToCreateDir(); };
         _cancel.onExecute = () { setDone(); };
-        _okay.hotkey = keyMenuOkay;
-        _cancel.hotkey = keyMenuExit;
+        _okay.hotkey = opt.keyMenuOkay.value;
+        _cancel.hotkey = opt.keyMenuExit.value;
         addChildren(_pleaseEnter, _name, _okay, _cancel);
     }
 
-    @property bool done() const { return _done; }
-    @property Filename createdDir() const { return _createdDir; }
+    bool done() const pure nothrow @safe @nogc { return _done; }
+    Filename createdDir() const pure nothrow @safe @nogc { return _createdDir;}
 
 protected:
     override void calcSelf()

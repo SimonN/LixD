@@ -8,7 +8,7 @@ import std.range;
 import optional;
 
 import basics.globals;
-import file.option;
+import opt = file.option.allopts;
 import file.language;
 import file.filename;
 import file.trophy;
@@ -39,7 +39,7 @@ public:
             ylOfNameplateForLevels, super.pickerConfig());
         commonConstructor();
         // Final class calls:
-        super.highlight(file.option.singleLastLevel);
+        super.highlight(opt.singleLastLevel.value);
     }
 
     override @property inout(Level) levelRecent() inout
@@ -104,7 +104,7 @@ protected:
         // the super class guarantees that on_file_select is only called after
         // onFileHighlight has been called with the same fn immediately before
         if (_levelRecent.playable) {
-            file.option.singleLastLevel = fileRecent;
+            opt.singleLastLevel = fileRecent;
             gotoGame = true;
         }
     }
@@ -130,27 +130,27 @@ private:
         buttonPlayYFromBottom = 100f;
         _edit = new TextButton(new Geom(infoX + infoXl/2, 100,
             infoXl/2, 40, From.BOTTOM_LEFT), Lang.browserEdit.transl);
-        _edit.hotkey = file.option.keyMenuEdit;
+        _edit.hotkey = opt.keyMenuEdit.value;
         _edit.onExecute = () {
             assert (fileRecent !is null);
-            file.option.singleLastLevel = fileRecent;
+            opt.singleLastLevel = fileRecent;
             _gotoEditorLoadFileRecent = true;
         };
         _newLevel = new TextButton(new Geom(infoX + infoXl/2, 60,
             infoXl/2, 40, From.BOTTOM_LEFT), Lang.browserNewLevel.transl);
-        _newLevel.hotkey = file.option.keyMenuNewLevel;
+        _newLevel.hotkey = opt.keyMenuNewLevel.value;
         _newLevel.onExecute = () {
-            file.option.singleLastLevel = currentDir.guaranteedDirOnly;
+            opt.singleLastLevel = currentDir.guaranteedDirOnly;
             _gotoEditorNewLevel = true;
         };
 
         _repForLev = new TextButton(new Geom(infoX, 20 + 40, infoXl/2, 40,
             From.BOTTOM_LEFT), Lang.browserOpenRepForLev.transl);
-        _repForLev.hotkey = file.option.keyMenuRepForLev;
+        _repForLev.hotkey = opt.keyMenuRepForLev.value;
         _repForLev.onExecute = () {
             assert (fileRecent !is null);
             assert (levelRecent !is null);
-            file.option.singleLastLevel = fileRecent;
+            opt.singleLastLevel = fileRecent;
             _gotoRepForLev = true;
         };
 
@@ -158,7 +158,7 @@ private:
             40, infoXl/2, 20, From.BOTTOM), Lang.browserExportImage.transl);
         _exportImage = new TextButton(new Geom(infoX, 20 + 20, infoXl/2, 20,
             From.BOTTOM_LEFT), Lang.browserExportImage.transl);
-        _exportImage.hotkey = file.option.keyMenuExport;
+        _exportImage.hotkey = opt.keyMenuExport.value;
         _exportImage.onExecute = () {
             assert (fileRecent !is null);
             assert (levelRecent !is null);

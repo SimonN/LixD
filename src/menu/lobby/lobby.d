@@ -4,7 +4,7 @@ import std.algorithm;
 import std.range;
 import std.string;
 
-import file.option;
+import opt = file.option.allopts;
 import file.language;
 import file.log;
 import gui;
@@ -122,7 +122,7 @@ protected:
         }
         if (_topLeft.execute) { // must be in workSelf(), reason: Handi focuses
             immutable wish = _topLeft.chosenProfile;
-            file.option.networkLastStyle = wish.style;
+            opt.networkLastStyle = wish.style;
             _netClient.setOurProfile(wish);
         }
         if (_netClient)
@@ -145,7 +145,7 @@ private:
     {
         _buttonExit = new TextButton(new Geom(20, 20, 120, 20, From.BOT_RIG),
             Lang.commonBack.transl);
-        _buttonExit.hotkey = file.option.keyMenuExit;
+        _buttonExit.hotkey = opt.keyMenuExit.value;
         _buttonExit.onExecute = &this.onExitButtonExecute;
         addChild(_buttonExit);
 
@@ -177,7 +177,7 @@ private:
             _browser = new BrowserNetwork();
             addFocus(_browser);
         };
-        _chooseLevel.hotkey = keyMenuEdit;
+        _chooseLevel.hotkey = opt.keyMenuEdit.value;
         _showDuringGameRoom ~= _chooseLevel;
 
         _levelTitle = new Label(new Geom(30 + _chooseLevel.xlg,
@@ -199,7 +199,7 @@ private:
             _chat.text = "";
         };
         _chat.onEsc = () { _chat.text = ""; };
-        _chat.hotkey = file.option.keyChat;
+        _chat.hotkey = opt.keyChat.value;
         _showWhenConnected ~= _chat;
         _showWhenConnected ~= new Label(new Geom(20, 20, chatLabelXl,
                                 20, From.BOT_LEF), Lang.winLobbyChat.transl);
@@ -371,7 +371,8 @@ public:
     {
         refreshPeerList();
         destroySubwindows(); // Or observing players get stuck in their browser
-        _console.add(Lang.netGameHowToChat.translf(keyChat.nameLong));
+        _console.add(Lang.netGameHowToChat.translf(
+            opt.keyChat.value.nameLong));
         _gotoGame = true;
     }
 

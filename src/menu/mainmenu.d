@@ -7,8 +7,7 @@ module menu.mainmenu;
 
 import basics.arch;
 import basics.globals;
-import file.option;
-import file.option;
+import opt = file.option.allopts;
 import file.language;
 import gui;
 import menu.menubg;
@@ -73,11 +72,11 @@ private:
         _replays.text = Lang.browserReplayTitle.transl;
         _options.text = Lang.optionTitle.transl;
         _exit   .text = Lang.commonExit.transl;
-        _single .hotkey = file.option.keyMenuMainSingle;
-        _network.hotkey = file.option.keyMenuMainNetwork;
-        _replays.hotkey = file.option.keyMenuMainReplays;
-        _options.hotkey = file.option.keyMenuMainOptions;
-        _exit   .hotkey = file.option.keyMenuExit;
+        _single .hotkey = opt.keyMenuMainSingle.value;
+        _network.hotkey = opt.keyMenuMainNetwork.value;
+        _replays.hotkey = opt.keyMenuMainReplays.value;
+        _options.hotkey = opt.keyMenuMainOptions.value;
+        _exit   .hotkey = opt.keyMenuExit.value;
         addChildren(_single, _network, _replays, _options, _exit);
     }
 
@@ -108,7 +107,7 @@ private:
             addChild(l);
         }
         int y = 0;
-        if (file.option.musicEnabled.value && ! dirDataMusic.dirExists) {
+        if (opt.musicEnabled.value && ! dirDataMusic.dirExists) {
             printLine(y + 20, Lang.mainMenuGetMusic.transl);
             printLine(y +  0, musicDownloadURL);
             y += 40;

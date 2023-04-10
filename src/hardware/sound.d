@@ -9,7 +9,7 @@ module hardware.sound;
 
 import basics.alleg5;
 import basics.globals;
-import file.option;
+import opt = file.option.allopts;
 import file.filename;
 import file.log;
 import hardware.music;
@@ -169,14 +169,14 @@ public:
     {
         if (_loud || (_quiet && !_lastWasLoud))
             stop();
-        if ((_loud || _quiet) && file.option.soundEnabled.value) {
+        if ((_loud || _quiet) && opt.soundEnabled.value) {
             _lastWasLoud = _loud;
             loadFromDisk();
             if (! _sample)
                 return;
             assert (_isAudioInitialized);
             al_play_sample(_sample,
-                dbToGain(soundDecibels) * (_loud ? 1 : 0.2f),
+                dbToGain(opt.soundDecibels.value) * (_loud ? 1 : 0.2f),
                 ALLEGRO_AUDIO_PAN_NONE, 1.0f, // speed factor
                 ALLEGRO_PLAYMODE.ALLEGRO_PLAYMODE_ONCE, &_playID);
         }

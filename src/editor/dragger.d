@@ -9,7 +9,7 @@ import std.algorithm;
 import std.math;
 import std.typecons;
 
-static import file.option.allopts;
+import opt = file.option.allopts;
 import basics.rect;
 import graphic.camera.mapncam;
 import level.level;
@@ -97,7 +97,7 @@ public:
         // DTODO: Implement something smart instead of returning the constant
         // offset. Remember how far we have moved the last copied piece,
         // then move by that amount.
-        immutable int x = file.option.allopts.editorCopiedTilesOffest;
+        immutable int x = opt.editorCopiedTilesOffest.value;
         return Point(x, x);
     }
 

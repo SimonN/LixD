@@ -8,7 +8,7 @@ import optional;
 
 import basics.help;
 import basics.topology;
-import file.option; // hotkeys for movement
+import opt = file.option.allopts;
 import editor.editor;
 import editor.guiapply;
 import editor.io;
@@ -87,16 +87,17 @@ void handleNonstandardPanelButtons(Editor editor) { with (editor)
 
 void selectGrid(Editor editor)
 {
-    int g = editorGridSelected;
+    int g = opt.editorGridSelected.value;
     scope (exit)
-        editorGridSelected = g;
-    g = (g == 1 || g == 2 || g == 16 || g == editorGridCustom.value) ? g : 1;
+        opt.editorGridSelected = g;
+    g = (g == 1 || g == 2 || g == 16
+        || g == opt.editorGridCustom.value) ? g : 1;
     assert (editor._panel.button(Lang.editorButtonGrid2));
-    if (keyEditorGrid.keyTapped)
+    if (opt.keyEditorGrid.keyTapped)
         g = () { switch (g) {
             case 16: return 1;
             case  1: return 2;
-            case  2: return editorGridCustom;
+            case  2: return opt.editorGridCustom.value;
             default: return 16;
         }}();
     else {
@@ -108,7 +109,8 @@ void selectGrid(Editor editor)
         }
         with (editor._panel) {
             check(button(Lang.editorButtonGrid2), 2);
-            check(button(Lang.editorButtonGridCustom), editorGridCustom);
+            check(button(Lang.editorButtonGridCustom),
+                opt.editorGridCustom.value);
             check(button(Lang.editorButtonGrid16), 16);
         }
     }
@@ -143,11 +145,11 @@ Occurrence makeAndPositionOccFor(Editor editor, const(AbstractTile) tile) {
     // Prevent from entering beyond the bottom/right sides of the level.
     {
         immutable Point padding = Point(
-            max(tile.cb.len.x, editorGridSelected.value),
-            max(tile.cb.len.y, editorGridSelected.value));
+            max(tile.cb.len.x, opt.editorGridSelected.value),
+            max(tile.cb.len.y, opt.editorGridSelected.value));
         occ.loc = level.topology.clamp(occ.loc + padding) - padding;
     }
-    occ.loc = occ.loc.roundTo(editorGridSelected);
+    occ.loc = occ.loc.roundTo(opt.editorGridSelected.value);
     /*
      * Satisfy TileMove's requirement that TileMove's ctor can't assert:
      * On torus maps, all coordinates must be nicely wrapped before and after

@@ -5,6 +5,7 @@ import std.range;
 
 import basics.alleg5;
 import basics.rect;
+import opt = file.option.allopts;
 import game.core.game;
 import graphic.torbit;
 import lix.skill.faller; // pixelsSafeToFall
@@ -24,8 +25,7 @@ package:
  */
 SplatRuler createSplatRuler()
 {
-    import file.option;
-    switch (splatRulerDesign) {
+    switch (opt.splatRulerDesign.value) {
         case 0: default: return new SplatRulerTwoBars;
         case 1: return new SplatRuler094;
         case 2: return new SplatRulerSuperSnap;

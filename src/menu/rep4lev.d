@@ -13,9 +13,9 @@ import std.algorithm;
 import optional;
 
 import basics.globals;
-import file.option;
 import file.filename;
 import file.language;
+import opt = file.option.allopts;
 import gui;
 import gui.picker;
 import hardware.mouse;
@@ -89,7 +89,7 @@ private:
         }
         _back = new TextButton(new Geom(20, 20, 100, 40, From.BOTTOM_RIGHT),
             Lang.commonBack.transl);
-        _back.hotkey = keyMenuExit;
+        _back.hotkey = opt.keyMenuExit.value;
         addChildren(_picker, _back);
     }
 }

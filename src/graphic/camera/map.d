@@ -16,12 +16,12 @@ import basics.alleg5 : al_draw_filled_rectangle, al_draw_bitmap_region,
                        al_draw_scaled_bitmap, Albit;
 import basics.help;
 import basics.topology;
+import opt = file.option.allopts;
 import graphic.camera.camera;
 import graphic.camera.zoom;
 import graphic.color;
 import graphic.torbit;
 
-static import file.option;
 static import hardware.display;
 static import hardware.keyboard;
 static import hardware.mouse;
@@ -194,10 +194,10 @@ private void calcEdgeScrolling(Camera cam)
 {
     _suggestTooltip = false;
     if (! scrollable || ! hardware.mouse.hardwareMouseInsideWindow
-        || file.option.scrollSpeedEdge.value <= 0)
+        || opt.scrollSpeedEdge.value <= 0)
         return;
 
-    float scrd = file.option.scrollSpeedEdge;
+    float scrd = opt.scrollSpeedEdge.value;
     if (hardware.mouse.mouseHeldRight())
         scrd *= 4;
     scrd /= zoom;
@@ -228,11 +228,11 @@ private void calcHoldScrolling(Camera cam)
         _isHoldScrolling = false;
         return;
     }
-    if (file.option.keyScroll.keyHeld && ! _isHoldScrolling) {
+    if (opt.keyScroll.keyHeld && ! _isHoldScrolling) {
         // first frame of scrolling
         _scrollGrabbed = hardware.mouse.mouseOnScreen;
     }
-    _isHoldScrolling = file.option.keyScroll.keyHeld;
+    _isHoldScrolling = opt.keyScroll.keyHeld;
     if (! _isHoldScrolling)
         return;
 
@@ -240,14 +240,14 @@ private void calcHoldScrolling(Camera cam)
         in int grabbed, in int mouse, in int mickey,
         void function() freeze
     ) {
-        immutable dir = file.option.holdToScrollInvert.value ? -1 : 1;
+        immutable dir = opt.holdToScrollInvert.value ? -1 : 1;
         immutable uninvertedScrollingAllowed =
                (minus && mouse <= grabbed && mickey < 0)
             || (plus  && mouse >= grabbed && mickey > 0);
         if (dir == 1 && uninvertedScrollingAllowed
             || dir == -1 && (plus || minus)
         ) {
-            immutable ret = roundInt(mickey * file.option.holdToScrollSpeed
+            immutable ret = roundInt(mickey * opt.holdToScrollSpeed.value
                     * dir / zoom / 4); // the factor /4 comes from C++ Lix
             freeze();
             return ret;
@@ -404,7 +404,7 @@ void loadCameraRectImpl(in Torbit src, Torbit target, in Camera cam)
     immutable bool drty = target.torusY && r.yl < cam.sourceSeen.yl;
 
     auto targetTorbit = TargetTorbit(target);
-    if (file.option.paintTorusSeams.value) {
+    if (opt.paintTorusSeams.value) {
         drawTorusSeams(target);
     }
     void drawHere(int ax, int ay, int axl, int ayl)
