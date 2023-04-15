@@ -1,6 +1,28 @@
 Version history
 ===============
 
+0.10.8
+------
+
+2023-04-15
+
+Don't re-trap the mouse cursor on mere mouseover after the mouse cursor has
+left Lix. To re-trap, you must now click into Lix.
+
+Added one singleplayer level, Cache Lines, in misc/simon/.
+
+Link to the Fedora Lix package by Marcin Zajączkowski on Lix's main readme.
+Thank you for packaging Lix for Fedora!
+
+Switch documentation from HTTP to HTTPS weblinks wherever possible.
+Thanks for the patch, Marcin!
+
+Fixed the new compilation warnings from DMD 2.103.0: Deprecation: alias this
+for classes/interfaces is deprecated. Now, Lix compiles without warnings
+again, even with DMD 2.103.0.
+
+
+
 0.10.7
 ------
 
