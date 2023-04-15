@@ -165,8 +165,6 @@ void consumeAllegroMouseEvents()
             break;
 
         case ALLEGRO_EVENT_MOUSE_ENTER_DISPLAY:
-            if (hardware.display.displayActive)
-                _trapMouse = true;
             // Nepster 2016-06: When entering the display, the ingame
             // cursor should jump to where we entered.
             // This would sometimes trigger when the hardware mouse is close
