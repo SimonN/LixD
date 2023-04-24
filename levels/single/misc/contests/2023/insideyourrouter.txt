@@ -1,0 +1,120 @@
+$BUILT 2023-01-10 19:13:33
+$AUTHOR Simon
+$ENGLISH Inside Your Router
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 576
+#SIZE_Y 296
+
+#INITIAL 14
+#REQUIRED 13
+#SPAWN_INTERVAL 43
+
+#EXPLODER 1
+#BUILDER 9
+
+:matt/marble/Hatch.H: 32 144
+:matt/marble/Hatch.H: 480 144 r
+:matt/marble/Hatch.H: 32 144 r
+:matt/marble/Hatch.H: 480 144
+
+:matt/marble/Goal.G: 256 220
+
+:geoo/construction/Laser_hz_64.F: 268 154
+:geoo/construction/Laser_hz_64.F: 244 154
+:geoo/construction/Laser_hz_64.F: 268 166
+:geoo/construction/Laser_hz_64.F: 244 166
+:geoo/construction/Laser_vr_16.F: 238 160
+:geoo/construction/Laser_vr_16.F: 322 160
+
+:geoo/construction/spring_fast.T: 88 240
+:geoo/construction/spring_fast.T: 456 240
+:geoo/construction/spring.T: 514 12
+:geoo/construction/spring.T: 530 28
+:geoo/construction/spring.T: 546 44
+:geoo/construction/spring.T: 30 12
+:geoo/construction/spring.T: 14 28
+:geoo/construction/spring.T: -2 44
+
+:raymanni/lab/elev_up.T: 0 208
+:raymanni/lab/elev_up.T: 0 176
+:raymanni/lab/elev_up.T: 0 144
+:raymanni/lab/elev_up.T: 0 112
+:raymanni/lab/launcher_right.T: 0 80
+:raymanni/lab/elev_up.T: 544 208
+:raymanni/lab/elev_up.T: 544 176
+:raymanni/lab/elev_up.T: 544 144
+:raymanni/lab/elev_up.T: 544 112
+:raymanni/lab/launcher_left.T: 544 80
+
+:matt/marble/08c: 32 248
+:matt/marble/08c: 480 248
+:matt/marble/01c: 8 240
+:matt/marble/01c: 552 240
+:matt/marble/03c: 552 248
+:matt/marble/001c: 544 268
+:matt/marble/03c: 8 248
+:matt/marble/001c: 24 268
+:matt/marble/001c: 544 244
+:matt/marble/001c: 24 244
+:matt/marble/01c: 8 280
+:matt/marble/01c: 552 280
+:matt/marble/00c: 544 260
+:matt/marble/00c: 24 260
+$BEGIN_TILE_GROUP 0
+:matt/marble/08: 0 0
+:geoo/abstract/cvblocks/007: 0 24 d
+:geoo/abstract/cvblocks/006: 48 24 d
+$END_TILE_GROUP
+:Group-0: 144 224
+:Group-0: 144 176
+:Group-0: 144 128
+:Group-0: 144 80
+:Group-0: 144 32
+:Group-0: 256 152
+:Group-0: 256 104
+:Group-0: 256 56
+:Group-0: 368 224
+:Group-0: 368 176
+:Group-0: 368 128
+:Group-0: 368 80
+:Group-0: 368 32
+:matt/marble/01c: 96 272
+:matt/marble/01c: 464 272
+:matt/marble/19: -24 -16
+:matt/marble/25: 46 -24 r
+:matt/marble/18: 22 -30
+:matt/marble/18: -40 40
+:matt/marble/06c: -24 100
+:matt/marble/26: -16 32
+:matt/marble/26: 48 -32
+:matt/marble/26: -14 -14
+:matt/marble/25: 222 -24 r
+:matt/marble/25: 100 -24 r
+:matt/marble/25: 458 -24 r
+:matt/marble/19: 490 -30
+:matt/marble/18: 536 -16
+:matt/marble/26: 448 -32 frr
+:matt/marble/19: 552 40
+:matt/marble/06c: 568 100
+:matt/marble/26: 512 32 frr
+:matt/marble/26: 510 -14 frr
+:matt/marble/25: 348 -24 r
+:matt/marble/06c: -24 228
+:matt/marble/06c: -24 164
+:matt/marble/06c: 568 228
+:matt/marble/06c: 568 164
+:matt/marble/09: 256 236
+:matt/marble/04: 272 252 d
+:geoo/abstract/cvblocks/006: 272 240 d
+:geoo/abstract/cvblocks/007: 288 240 d
+:geoo/abstract/cvblocks/021: 304 260 d
+:geoo/abstract/cvblocks/022: 240 260 d
+:matt/marble/08c: 256 276 d
+:matt/marble/04: 272 248 d
+:geoo/construction/platformbrick_single: 260 158 rd
+:geoo/construction/platformbrick_single: 266 158 rd
+:geoo/construction/platformbrick_single: 308 158 rd
+:geoo/construction/platformbrick_single: 314 158 rd
+:geoo/construction/platformbrick_single: 272 158 rd
+:geoo/construction/platformbrick_single: 302 158 rd

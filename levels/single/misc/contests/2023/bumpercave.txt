@@ -1,0 +1,72 @@
+$BUILT 2023-01-31 02:36:35
+$AUTHOR Simon
+$ENGLISH Bumper Cave
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 344
+#SIZE_Y 192
+
+#INITIAL 4
+#REQUIRED 4
+#SPAWN_INTERVAL 49
+
+#WALKER 1
+#RUNNER 4
+#BLOCKER 1
+#JUMPER 6
+#EXPLODER2 0
+
+:geoo/sandstone/Hatch.H: 48 72
+
+:geoo/sandstone/Goal.G: 8 8
+
+:geoo/sandstone/32x32: 32 72
+$BEGIN_TILE_GROUP 0
+:geoo/sandstone/arc_big: 0 0
+:geoo/sandstone/64x64: 64 0 d
+:geoo/sandstone/32x32: 62 0 d
+$END_TILE_GROUP
+:Group-0: 0 72
+$BEGIN_TILE_GROUP 1
+:geoo/sandstone/pillar_top_ext: 6 0
+:geoo/sandstone/slopes/32x16lb: 0 0 d
+$END_TILE_GROUP
+:Group-1: 104 88
+:geoo/sandstone/pillar_bottom_ext: 90 72
+:geoo/sandstone/64x16: 64 72
+:geoo/sandstone/ribbon_end: 32 152 frr
+:geoo/sandstone/arc_small: 0 136
+:geoo/sandstone/arc_small: 96 136
+:geoo/sandstone/pillar_top_shaded: 80 168
+:geoo/sandstone/pillar_top_shaded: -16 168
+$BEGIN_TILE_GROUP 2
+:geoo/sandstone/pillar_top_shaded: 0 0
+:geoo/sandstone/pillar_top_shaded: 5 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 3
+:geoo/sandstone/pillar_top_shaded: 16 0
+:Group-2: 32 0
+:geoo/sandstone/pillar_top_shaded: 0 0 d
+$END_TILE_GROUP
+:Group-3: 176 168
+:geoo/sandstone/pillar_top_ext: 304 0
+:geoo/sandstone/pillar_top_shaded: 320 16
+:geoo/sandstone/pillar_top_shaded: 232 124
+:geoo/sandstone/pillar_top_ext: 216 108
+:geoo/sandstone/pillar_32: 232 156
+:geoo/sandstone/pillar_bottom: 232 174
+:geoo/sandstone/pillar_bottom_ext: 160 24
+:geoo/sandstone/pillar_bottom: 176 -8
+:geoo/sandstone/ribbon_end: 92 12
+:geoo/sandstone/ribbon_main: 92 -20
+:geoo/sandstone/ribbon_end: 248 0
+:geoo/sandstone/slopes/32x32rb: 76 40
+:geoo/sandstone/slopes/32x32lb: 108 40
+:Group-1: 120 88
+:geoo/sandstone/slopes/32x16rt: 96 88
+:geoo/sandstone/slopes/32x16lt: 64 88
+:geoo/sandstone/pillar_32: 320 48
+:geoo/sandstone/pillar_32: 320 80
+:geoo/sandstone/pillar_32: 320 136
+:geoo/sandstone/pillar_32: 320 112
+:geoo/sandstone/pillar_bottom: 320 168
