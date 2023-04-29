@@ -1,0 +1,429 @@
+// Translations file for Lix
+
+// English opening quote: “
+// English closing quote: ”
+// German opening quote: „
+// German closing quote: “ (this closing quote is the English opening quote)
+// File/shell output: " (ASCII double quote, both opening and closing)
+
+// mainNameOfLanguage: This is how your translated language appears in the
+// options dialogue. Translate this to your language ("Deutsch" or "Français"),
+// don't have your language's name in English (don't put "German" or "French")
+$mainNameOfLanguage Català
+
+// Printing of current version in the main menu
+$versioningVersion Versió
+$versioningForOperatingSystem per
+
+// used in various dialogues
+$commonOk D'acord
+$commonCancel Cancel·lar
+$commonBack Enrere
+$commonExit Sortir
+
+$mainMenuGetMusic Extreu la música al directori del Lix:
+
+// level browsers
+$browserSingleTitle Un sol jugador |Va al navegador d'un sol jugador des del menú principal
+$browserNetworkTitle Tria el nivell Multijugador
+$browserPlay Jugar
+$browserEdit Editar
+$browserNewLevel Crear nivell
+$browserDelete Esborrar
+$browserSearch Cercar
+$browserOpenRepForLev Carregar Repetició
+$browserExportImage Exportar Imatge
+$browserExportImageDone Exportada a:
+$browserMkdirTitle Crear Directori
+$browserMkdirPleaseEnter Nom del nou directori:
+
+$browserReplayTitle Replays|From the main menu, go to the replay browser.
+$browserReplayTitle Repeticions|Va al navegador de repeticions des del menú pincipal.
+$browserReplayPointedTo Escollir nivell
+$browserReplayVerifyDir Verificar el directori
+
+$winVerifyTitle Verificador de repeticions
+$winVerifyOutputWrittenTo Sortida escrita a “%s”. Fes clic per tornar.
+$verifyHeader Resultat,Repetició,Nivell,Jugador,Desat,Requerit,Habilitats,Phyus
+$verifyStatisticsFrom Estadístiques de %d repeticions:
+$verifyTrophiesUpdated %d Trofeus per %s actualitzats.
+$verifyLevelsNoProof Aquests %d nivells no tenen cap prova:
+$verifyDirectoryCoverage  Cobertura dels directoris:
+$verifyAllLevelsCovered Tots %d nivells es poden resoldre.
+$verifySomeLevelsCovered %d de %d nivells es poden resoldre, %d poden no tenir solució.
+$verifyStatusMultiplayer Repetició ignorada, és de multijugador.
+$verifyStatusNoPointer La repetició no apunta a cap nom de nivell.
+$verifyStatusMissingLevel La repetició apunta a un fitxer de nivell inexistent.
+$verifyStatusBadLevel La repetició apunta a un fitxer de nivell amb un format incorrecte.
+$verifyStatusFailed La repetició no resol el fitxer de nivell apuntat.
+$verifyStatusMercyKilled La repetició s'ha executat durant %d minuts després de l'habilitat final.
+$verifyStatusSolved La repetició resol el nivell apuntat.
+
+$previewLevelAuthor per
+$previewLevelSingleGoal Objectiu:
+$previewLevelSingleTrophySaved Millors:
+$previewLevelSingleTrophySkills Habilitats:
+$previewLevelMultiIntendedNumPlayers Jugadors:
+$previewReplayPlayer Jugador:
+$previewReplayFilenameOfReplay Repetició:
+$previewReplayPointsTo ⟶
+$previewMissingTiles Manquen %d tessel·les:
+$previewMissingTilesMoreSee i %d més, veure “%s”
+
+$harvestYouSavedThisTime Has salvat %d lix!
+$harvestReplayAutoSaved Repetició desada automàticament.
+$harvestReplaySaveManuallyAtAll Desar la repetició
+$harvestReplaySaveManuallyToo Desar manualment
+
+$winSearchTitle Cerca de nivells
+$winSearchPrompt Cerca per títol, autor o nom de fitxer en %d nivells:
+
+$repForLevTitle Carrega la repetició per “%s”
+
+$outcomeRetryOldLevel Torna-ho a provar:
+$outcomeYouSolvedOldLevel Enhorabona! Has resolt:
+$outcomeAttemptNextLevel Següent nivell:
+$outcomeResolveNextLevel Següent nivell (resolt):
+$outcomeAttemptNextUnsolvedLevel Següent nivell no resolt:
+$outcomeExitToSingleBrowser Tornar al navegador de nivells
+
+$outcomeTrophyLixSaved Lix
+$outcomeTrophySkillsUsed Habilitats
+$outcomeTrophyYourAttempt El teu resultat
+$outcomeTrophyPreviousRecord Récord
+
+// networking lobby
+$winLobbyTitle Joc en xarxa|Va a la sala d'espera des del menú principal.
+$winLobbyDisconnect Desconnectar
+$winLobbyStartCentral Jugar al servidor central.
+$winLobbyStartServer Allotjar una partida.
+$winLobbyStartCustom Connectar-se a algú altre.
+$winLobbyTitleAddress Adreça
+$winLobbyTitlePort port UDP
+$winLobbyChat Chat:
+$winLobbySelectLevel Triar el nivell
+$winLobbyReady Preparat per començar
+$winLobbyRoomNumber Sala #%d
+$winLobbyRoomInhabitants %d jugadors
+$winLobbyRoomCreate Obrir una sala nova
+$winLobbyRoomLeave Sortir de la sala
+
+$handicapTitle Limitacions
+$handicapPhilosophy1 Amb una limitació, comences amb un desavantatge.
+$handicapPhilosophy2 Quan un jugador fort juga contra un jugador més feble, el jugador fort
+$handicapPhilosophy3 pot triar una limitació per fer el joc més emocionant per a tothom.
+$handicapInitialLix Lix inicials|Els teus caus començen amb menys lix.
+$handicapInitialLixNormal Lix inicials normals
+$handicapInitialSkills Habilitats|El teu plafó d'habilitats comença amb menys habilitats
+$handicapInitialSkillsNormal Plafó normal
+$handicapSpawnDelay Retard d'aparació|Els teus lix apareixen més tard
+$handicapSpawnDelayNormal Retard normal
+$handicapScore Puntuació|Els teus objectius donen menys punts per cada lix entrant.
+$handicapScoreNormal 1 punt per lix
+
+// Multiplayer interruption dialog
+$winAbortNetgameTitle Menú del joc|Obre el diàleg de menú durant les partides en xarxa.|Permet sortir la partida abans d'hora. No fa pausa.
+$winAbortNetgameContinuePlaying Continua jugant
+$winAbortNetgameExitToLobby Torna a la sala d'espera
+
+// help texts inside the game
+$gameForceLeft [%s] per encarar a l'esquerra
+$gameForceRight [%s] per encarar a la dreta.
+$gamePriorityInvert [%s] pel darrer lix.
+$gameQueueBuilder Torna a fer clic per posar a la cua.
+$gameQueuePlatformer Torna a fer clic per posar a la cua.
+$gameHoldToScroll Fes clic i manté premut [%s] i mou el ratolí per desplaçar
+$gameClickToCancelReplay Fes clic per cancel·lar la repetició
+$gameFramestepOrQuit Rebobina el temps (◀▮) o surt amb [%s].
+$gamePause Pausar.
+$gameZoom %s per ampliar, %s per reduir.
+$gameShowSplatRuler Mostra el regle d'esclafades.
+$gameHighlightGoals Ressalta els teus propis caus i objectius.
+$gameStateSave Desa la posició ràpidament.
+$gameStateLoad Carrrega ràpidament una posició.
+$gameShowTweaker Mostra l'ajustador de repeticions
+$gameFramestepBack %s per fer un pas enrere, %s per saltar enrere.
+$gameFramestepAhead %s per fer un pas endavant, %s per saltar endavant.
+$gameFastForward %s per avançar ràpidament, %s per a avanç turbo.
+$gameRestart Reiniciar el nivell.
+$gameNuke Bomba nuclear. Fes doble clic per activar-la.
+
+$tweakerHeaderLixID Lix
+$tweakerHeaderPhyu Phyu
+$tweakerLineNow Ara
+$tweakerEmptyListTitle     Ajustador
+
+$tweakerEmptyListDesc1 Primer, assigna una
+$tweakerEmptyListDesc2 habilitat a algun
+$tweakerEmptyListDesc3 lix.
+
+$skillTooltip walker|Caminador. Camina enrere o cancela els blocadors.
+$skillTooltip jumper|Saltador. Salta un cop. Els corredors salten més lluny.
+$skillTooltip climber|Escalador. Escala totes les parets verticals.
+$skillTooltip floater|Flotador.  Flota per sobreviure totes les caigudes.
+$skillTooltip runner|Corredor. Córre més ràpid que els caminadors.
+$skillTooltip exploder|Implosionador. Implosiona per destruïr terra o bé cancelar blocadors.
+$skillTooltip exploder2|Explotador. Explota per llançar altres lix.
+$skillTooltip blocker|Blocador. Bloca of fes girar altres lix.
+$skillTooltip batter|Batedor. Bat altres lix, llançant-los.
+$skillTooltip cuber|Cuber. Es transforma en un cub per generar terra ràpidament.
+$skillTooltip builder|Constructor. Construeix unes escales horitzontals.
+$skillTooltip platformer|Pontí. Contstrueix un pont horitzontal.
+$skillTooltip basher|Tunelador. Cava un túnel horitzontal.
+$skillTooltip miner|Miner. Cava un túnel diagonal.
+$skillTooltip digger|Cavador. Cava un forat vertical.
+
+// main editor screen
+$editorHotkey Drecera de teclat:
+$editorBarAt a
+$editorBarGroup -grup-de-tessel·les
+$editorBarHover tessel·les a seleccionar
+$editorBarSelection tessel·les seleccionades
+
+// editor buttons
+$editorButtonFileNew Nou: Ho esborra tot de la pantalla i comença un nivell nou.
+$editorButtonFileExit Sortir: Surt de l'editor i demana de desar les dades canviades.
+$editorButtonFileSave Desar:
+$editorButtonFileSaveAs Anomenar i desar: Desa el nivell actual amb un nou nom.
+$editorButtonGrid2 Graella 2: Les tessel·les es mouran de 2 en 2 píxels.
+$editorButtonGridCustom Graella personalitzada: Aquesta graella es pot configurar a les opcions.
+$editorButtonGrid16 Graella 16: Les tessel·les es mouran de 16 en 16 píxels.
+$editorButtonSelectAll Tot: Selecciona totes les tessel·les del nivell.
+$editorButtonSelectFrame Finestra: Arrossega una finestra amb el ratolí per seleccionar tessel·Les.
+$editorButtonSelectAdd Afegir: Manté les tessel·les selecionades a l'hora de seleccionar noves tessel·les.
+$editorButtonUndo Desfer: Reverteix els darrers canvis del nivell.
+$editorButtonRedo Refer: Torna a refer els canvis desfets del nivell.
+$editorButtonGroup Agrupar: Crea un a sola tessel·la a partir de les tessel·les seleccionades.
+$editorButtonUngroup Desagrupar: Retrieve the individual tiles from selected groups.
+$editorButtonUngroup Desagrupar: Reverteix a les tessel·les individuals a partir dels grups seleccionats.
+$editorButtonSelectCopy Copiar: Clona les tessel·les seleccionades per posar-les a altres llocs.
+$editorButtonSelectDelete Esborrar: Esborra les tessel·les seleccionades del nivell.
+$editorButtonBackground Fons: Posa les tessel·les seleccionades al darrere de les altres.
+$editorButtonForeground Primer pla: Posa les tessel·les seleccionades al davant de les altres.
+$editorButtonMirrorHorizontally Enmirallar: Enmiralla el terreny seleccionat horitzontalment.
+$editorButtonFlipVertically Girar: Gira el terreny seleccionat verticalment.
+$editorButtonSelectRotate Rotar: Gira el terreny seleccionat un quart de torn.
+$editorButtonSelectDark Buidar: Fa servir el terreny seleccionat per fer un forat.
+$editorButtonViewZoom Zoom: El clic esquerre augmenta el zoom del mapa, el clic dret el redueix.
+$editorButtonAddTerrain Terreny: Afegeix una tessel·la de terreny.
+$editorButtonAddSteel Acer: Afegeix una tessel·la d'acer que no es pot cavar.
+$editorButtonAddHatch Cau: Afegeix un cau d'entrada dels lix.
+$editorButtonAddGoal Objectiu: Afegeix un objectiu, és a dir, una sortida pels lix.
+$editorButtonAddHazard Perill: Afegeix una trampa, aigua o foc.
+$editorButtonMenuConstants Constants: Anomena el nivell, especifica valors fonamentals.
+$editorButtonMenuTopology Mapa: Redimensiona el nivell, connecta les vores.
+$editorButtonMenuSkills Habilitats: Decideix quantes habilitats de lix pot assignar cada jugador.
+
+$saveBrowserTitle Anomena i desa com
+$saveBrowserWhatToType Nom del fitxer sense extensió:
+$saveBoxOverwriteTitle Sobreescriure?
+$saveBoxOverwriteQuestion Estàs segur que vols sobreescriure aquest nivell?
+$saveBoxOverwrite Sobreescriure
+
+$saveBoxTitleDelete Esborrar?
+$saveBoxTitleSave Desar?
+$saveBoxQuestionUnsavedChangedLevel Vols desar els canvis d'aquest nivell?
+$saveBoxQuestionUnsavedNewLevel Vols desar aquest nou nivell?
+$saveBoxQuestionDeleteReplay Estàs segur que vols esborrar aquesta repetició?
+$saveBoxQuestionDeleteLevel Estàs segur que vols esborrar aquest nivell?
+$saveBoxDirectory Directori:
+$saveBoxFileName Fitxer:
+$saveBoxLevelName Títol:
+$saveBoxYesSave Desar
+$saveBoxNoDiscard Descartar
+$saveBoxNoCancel Cancelar
+
+// BitmapBrowser
+$addTerrain Afegir un terreny
+$addSteel Afegir un acer
+$addHatch Afegir un cau
+$addGoal Afegir un objectiu
+$addHazard Afegir un perill
+
+// editor window about the size of map
+$winTopologyTitle Mapa
+$winTopologyL Esquerra:
+$winTopologyR Dreta:
+$winTopologyU Amunt:
+$winTopologyD Avall:
+$winTopologyTorusX Ajust cíclic horitzontal
+$winTopologyTorusY Ajust cíclic vertical
+$winTopologyWarnSize1 Un nivell tan gran en
+$winTopologyWarnSize2 píxels,
+$winTopologyWarnSize3 falla en alguns ordinadors.
+
+// scrolling start position
+$winLooksTitle Looks
+$winLooksRed Fons vermell
+$winLooksGreen Fons verd
+$winLooksBlue Fons blau
+
+// editor window to set level variables
+$winConstantsTitle Constants
+$winConstantsAuthor Autor
+$winConstantsLevelName Títol del nivell
+$winConstantsPlayers Jugadors
+$winConstantsInitial Lix inicials
+$winConstantsRequired Lix a salvar
+$winConstantsSpawnint Intèrval d'aparició
+$winConstantsOvertime Temps sobrepassat
+
+// editor window to set skills
+$winSkillsTitle Habilitats
+$winSkillsUseExploder Explotador
+$winSkillsClear Tots a zero
+$winSkillsEightTo Clàssics 8 a:
+$winSkillsAllTo Tots 14 a:
+
+// exporting a level into a file
+$exportSingleInitial Lix:
+$exportSingleRequired Salvar:
+$exportSingleSpawnint SI:
+
+// network chat messages
+$netChatEnetDLLMissing El mode en xarxa no es pot utilitzar, manca la DLL enet:
+$netChatStartClient Connectant a
+$netChatStartCancel S'ha cancel·lat l'intent de conexió.
+$netChatYouLoggedOut Has sortit de la xarxa.
+$netChatYouCannotConnect No s'ha trobat el servidor.
+$netChatYouLostConnection S'ha perdut la conexió al servidor.
+$netChatPeerDisconnected %s ha deixat la xarxa.
+$netChatVersionRoomRequires No us hi podeu unir: La sala #%d requereix la versió de Lix %s,
+$netChatVersionServerSuggests No s'hi pot connectar: El servidor suggereix la versió de Lix %s,
+$netChatVersionYours però teniu la versió de Lix %s.
+$netChatPleaseDownload Baixa la versió més nova:
+$netChatWeInRoom Has entrat a la sala #%d.
+$netChatWeInLobby Ets a la sala d'espera.
+$netChatPlayerInRoom %s s'ha unit a la sala #%d.
+$netChatPlayerInLobby %s ha entrat a la sala d'espera.
+$netChatPlayerOutRoom %s ha entrat a la sala #%d.
+$netChatPlayerOutLobby %s ha abandonat la sala.
+$netChatHandicapSet %s jugarà amb limitacions: %s
+$netChatHandicapUnset %s jugarà sense limitacions.
+$netChatLevelChange %s ha seleccionat “%s”.
+$netGameHowToChat Prem [%s] per xatejar.
+$netGameEnd La partida ha acabat.
+$netGameEndResult Resultat de la partida:
+$netGameOvertimeNukeIn Estàs en temps d'excés! Bomba nuclear en
+
+$optionTitle Opcions|Va al menú d'opcions des del menú principal.
+$optionGroupGraphics Gràfics
+$optionGroupGeneral General
+$optionGroupControls Controls
+$optionGroupGameKeys Tecles del joc
+$optionGroupEditorKeys Tecles de l'editor
+$optionGroupMenuKeys Tecles del menú
+$optionUserName Nom del jugador|El teu nom apareix a les repeticions i jocs multijugador.|El Lix desa la configuració al fitxer ./user/options.sdl.
+$optionLanguage Idioma|Idioma usat a l'interfíce del Lix.
+$optionReplayAutoSolutions Desar solucions automàticament|Desa la repetició automàticament quan es resol un nivell d'un sol jugador.
+$optionReplayAutoMulti Desar partides automàticament|Desa la repetició automàticament quan s'acaba una partida multijugador.
+$optionSoundEnabled So|Activa els efectes de so.
+$optionMusicEnabled Música|Activa la música de fons.
+$optionSoundDecibels Guany de so en dB|Ajusta el volum del so. 0 ja és força fort.|Alça/baixa de 10 en 10 dB per doblar/reduir a la meitat el volum de so.
+$optionMusicDecibels Guany de la música en dB|Ajusta el volum de la música. -10 dB hauria de ser prou fort.|Alça/baixa de 10 en 10 dB per doblar/reduir a la meitat el volum de so.
+
+$optionScreenWindowed En finestra|Executa el Lix en una finestra. Tria la mida de la finestra a la dreta.|Es pot canviar de finestres (per exemple amb Alt+Tab) ràpidament.
+$optionScreenSoftwareFullscreen Pantalla completa per programari|Crea una finestra de Lix sense vores omplint el monitor.|Es pot canviar de finestres (per exemple amb Alt+Tab) ràpidament.
+$optionScreenHardwareFullscreen Pantalla completa per maquinari|Es triga uns segons en entrar i sortir de la pantalla completa per maquinari|Canviar de finestres (per exemple amb Alt+Tab) és lent.
+$optionScreenWindowedRes Mida de la finestra|Mida de la finestra del Lix quan s'ha triat el mode de finestra.
+$optionScreenHardwareFullscreenRes Resolució en pantalla completa|La pantalla completa per maquinari fa servir aquesta resolució pel teu monitor.|Només fa la fa servir quan no pot deduir la resolució de l'escriptori.
+$optionPaintTorusSeams Pintar les costures del torus|Marca la costura q
+$optionPaintTorusSeams Pintar les costures del torus|Marca les costures d'embolcall cada cop que el nivell fa una volta.|Això no afecta la física del joc, però pot millorar la teva orientació.
+$optionIngameTooltips Indicadors durant la partida|Explica els botons i dreceres de teclat per seleccionar lix durant la partida, per exemple com seleccionar lix mirant a l'esquerra.|Alguns botons tenen dues funcions: Una al clic esquerra, una altra al clic dret.
+$optionShowFPS Comptador de física i FPS|Mostra el nombre d'actualitzacions de la física des del principi de la partida.|Mostra el nombre de fotogrames de vídeo per segon durant el joc o l'editor.
+
+$optionKeyZoomIn Zoom +|Augmenta el nivell de zoom del nivell.
+$optionKeyZoomOut Zoom −|Redueix el nivell de zoom del nivell.
+$optionKeyScroll Desplaçament|Manté (per defecte: botó dret del ratolí ⟁) i mou el ratolí per desplaçar-te.|Això és més fàcil, ràpid i precís que arrossegar el ratolí al límit de la pantalla.
+$optionKeyPriorityInvert Invertir la prioritat|Mantenir per assignar habilitats als lix amb la prioritat més baixa enlloc de la més alta.|A l'editor, mantenir per seleccionar la tessel·la de més abaix enlloc de la de més amunt.
+$optionKeyScreenshot Captura de pantalla|Fes una captura de la finestra sencera del Lix.|Les captures de pantalla es desen a ./export/ or ~/.local/share/lix/export/.
+
+$optionSplatRulerDesignTwoBars Regle d'escafament de 2 barres, s'ajusta  poc|El regle d'esclafades mesura la caiguda màxima que es pot sobreviure.|Activa el regle d'esclafades durant la partida amb el botó del panell, veure la pestanya "Tecles de joc".
+$optionSplatRulerDesign094 Regle d'escafament de 3 barres, darrere el terreny|El regle d'esclafades mesura la caiguda màxima que es pot sobreviure.|Activa el regle d'esclafades durant la partida amb el botó del panell, veure la pestanya "Tecles de joc".
+$optionSplatRulerDesignSuperSnap Regle d'esclafades de 3 barres, s'ajusta molt|El regle d'esclafades mesura la caiguda màxima que es pot sobreviure.|Activa el regle d'esclafades durant la partida amb el botó del panell, veure la pestanya "Tecles de joc".
+
+$optionMouseSpeed Velocitat del ratolí|Velocitat del moviment del cursor del ratolí.
+$optionScrollSpeedEdge Velocitat de desplaçament a la vora de la pantalla|Velocitat de desplaçament del mapa quan el ratolí toca la vora de la pantalla.
+$optionHoldToScrollSpeed Velocitat de desplaçament amb la tecla de desplaçament|Velocitat de desplaçament del mapa quan es mou el ratolí mantenint la tecla de desplaçament.|La tecla de desplaçament per defecte és el botó dret del ratolí ⟁, veure a l'esquerra per reassignar.
+$optionHoldToScrollInvert Invertir "Desplaçament"|Es desplaça al contrari del moviment del ratolí mentre es manté la tecla de desplaçament.|La tecla de desplaçament per defecte és el botó dret del ratolí ⟁, veure a l'esquerra per reassignar.
+$optionFastMovementFreesMouse  Alliberar el ratolí|El retolí surt de la finestra del Lix quan es mou ràpidament cap a les vores.|Si no està habilitat es pot alliberar el ratolí amb Alt+Tab.
+
+$optionKeyForceLeft Forçar l'esquerra|Mantenir per assignar habilitats als lix encarats a l'esquerra.|És útil en un manat dens de lix.
+$optionKeyForceRight Forçar la dreta|Mantenir per assignar habilitats als lix encarats a la dreta.|És útil en un manat dens de lix.
+$optionKeyPause Pausar|Pausar el joc.|Pots escollir si assignar habilitats hauria de despausar o no, veure avall.
+$optionKeyFrameBackMany ◀▮ 1 segon.|Rebobina el joc 1 segon.
+$optionKeyFrameBackOne ◀▮ 1 fotograma|Rebobina el joc 1 fotograma, és a dir, ¹⁄₁₅ de segon.
+$optionKeyFrameAheadOne ▮▶ 1 fotograma|Avança el joc 1 fotograma, és a dir, ¹⁄₁₅ de segon.
+$optionKeyFrameAheadMany ▮▶ 10 segons|Avança el joc 10 segons.
+$optionKeySpeedFast ▶▶|Activa l'avanç ràpid.|L'avanç ràpid és 4 vegades més ràpid que la velocitat normal.
+$optionKeySpeedTurbo ▶▶▶|Activa l'avanç turbo|L'avanç turbo és 36 vegades més ràpid que la velocitat normal.
+$optionKeyRestart Reiniciar|Reinicia el nivell des del començament. Totes les accions es repetiran.|Per interrompre la repetició, fes clic a l'aire.
+$optionKeyStateLoad Carregar estat|Torna a l'estat del joc desat.|Es poden desar les posicions amb "Desar estat".
+$optionKeyStateSave Desar estat|Recorda la posició exacta del joc.|Es pot tornar a aquesta posició amb "Carregar estat".
+$optionKeyShowTweaker Ajustador de repeticions|Mostra l'ajustador de repeticions per ajustar amb precisió els intents de solucions.|Les assignacions d'habilitats es poden esborrar i moure arbitràriament.
+$optionKeyChat Xat|Obre la consola per xatejar durant una partida multijugador.
+$optionKeyShowSplatRuler Regle d'esclafades|Mostra un regle per mesurar l'alçada de les esclafades durant la partida.
+$optionKeyHighlightGoals Ressalta els objectius|Ressalta els propis caus i objectius durant una partida en xarxa.
+$optionKeyNuke Bomba nuclear|Al mode d'un sol jugador, fa explotar tots els lix per acabar el nivell.|Al multijugador, comença el temps d'excés si has salvat almenys 1 lix.
+
+$optionAvoidBuilderQueuing Preferir spam enlloc d'encuar|Prefereix les assignacions de construir a no-constructors per sobre d'encuar constructors existents.|Es pot mantenir "Invertir prioritat" (veure la pestanya de controls) per fer el que no prefereixes.
+$optionAvoidBatterToExploder Preferir batedors per sobre de no explotadors|Prefereix les assignacions als caminadors per sobre del les assignacions de batedor als explotadors amb temps.|Es pot mantenir "Invertir prioritat" (veure la pestanya de controls) per fer el que no prefereixes.
+$optionUnpauseOnAssign Despausar durant l'assignació|Despausa el joc quan s'assigna una habilitat durant la pausa.|Si no està habilitat, les assignacions d'habilitats avançaran el joc 1 fotograma durant la pausa.
+$optionReplayAfterFrameBack Mantenir la repetició després ◀▮|Quan es rebobina (◀▮), manté les accions futures de la repetició fins que es faci clic a l'aire.| Si no està habilitat, les accions de la repetció s'esborraran quan es desfacin rebobinant.
+$optionReplayAlwaysInsert Insertar durant la repetició|Durant la repetició les noves assignacions canvien només el futur del mateix lix.|Quan no està habilitat, les assignacions canvien el futur global com si haguessis fet clic a l'aire.
+
+$optionKeyMenuOkay D'acord/Sí|Juga el nivell seleccionat. Desa i tanca un diàleg.
+$optionKeyMenuEdit Editar|Obre el nivell seleccionat a l'editor.
+$optionKeyMenuNewLevel Crear|Obre un nivell en blanc a l'editor.
+$optionKeyMenuRepForLev Carregar Repetició|Al navegador d'un sol jugador carrega una repetició pel nivell seleccionat.
+$optionKeyMenuExport Exportar|Exporta el nivell seleccionat com a imatge.
+$optionKeyMenuDelete Perd dades|Esborra un fitxer. Quan l'editor t'avisi es perdran les dades no desades.
+$optionKeyMenuUpDir Directori pare|Torna al nivell superior.|Es pot navegar a altres nivells, repeticions o tessel·les.
+$optionKeyMenuUpBy5 Amunt 5|Mou la selecció cap amunt 5 fitxers.|D'aquesta manera es pot navegar els nivells sense ratolí.
+$optionKeyMenuUpBy1 Amunt 1|Mou la selecció cap amunt 1 fitxer.|D'aquesta manera es pot navegar els nivells sense ratolí.
+$optionKeyMenuDownBy1 Avall 1|Mou la selecció cap avall 1 fitxer.|D'aquesta manera es pot navegar els nivells sense ratolí.
+$optionKeyMenuDownBy5 Avall 5|Mou la selecció cap avall 5 fitxers.|D'aquesta manera es pot navegar els nivells sense ratolí.
+$optionKeyMenuExit Enrere/cancel·lar|Surt d'un navegador. Tanca un diàleg sense desar.
+$optionGuiColorRed Menú vermell|Reacoloreix l'interfície gràfica del Lix.
+$optionGuiColorGreen Menú verd|Reacoloreix l'interfície gràfica del Lix.
+$optionGuiColorBlue Menú blau|Reacoloreix l'interfície gràfica del Lix.
+
+$optionKeyOutcomeSaveReplay Desar repetició|A la pantalla a continuació d'acabar un nivell d'un sol jugador:|Desa la repetició manualment.
+$optionKeyOutcomeOldLevel Repetir nivell|A la pantalla a continuació d'acabar un nivell d'un sol jugador:|Juga el mateix nivell un altre cop.
+$optionKeyOutcomeNextLevel Next level|In the screen after finishing a singleplayer level:|Play the immediate next level, whether solved or not.
+$optionKeyOutcomeNextLevel Proper nivell|A la pantalla després d'acabar un nivell:|Juga el proper nivell, tant si està resolt com si no.
+$optionKeyOutcomeNextUnsolved Proper no resolt|A la pantalla després d'acabar un nivell d'un sol jugador:|Juga el proper nivell no resolt.
+
+$optionEdLeft Moure cap a l'esquerra|Mou les tessel·les seleccionades cap a l'esquerra.|El moviment respecta la graella. Manté aquesta tecla per moure ràpidament.
+$optionEdRight Moure cap a la dreta|Mou les tessel·les seleccionades cap a la dreta.|El moviment respecta la graella. Manté aquesta tecla per moure ràpidament.
+$optionEdUp Moure amunt|Mou les tessel·les seleccionades cap amunt.|El moviment respecta la graella. Manté aquesta tecla per moure ràpidament.
+$optionEdDown Moure avall|Moure les tessel·les seleccionades cap avall.|El moviment respecta la graella. Manté la tecla per moure ràpidament.
+$optionEdSave Desar
+$optionEdSaveAs Desar i anomenar
+$optionEdGrid Mida de la graella
+$optionEdGridCustom Mida de la graella personalitzada
+$optionEdSelectAll Seleccionar-ho tot
+$optionEdSelectFrame Seleccionar fotograma
+$optionEdSelectAdd Afegir a la selecció
+$optionEdUndo Desfer
+$optionEdRedo Refer
+$optionEdGroup Agrupar
+$optionEdUngroup Desagrupar
+$optionEdCopy Copiar
+$optionEdDelete Esborrar
+$optionEdForeground Primer pla
+$optionEdBackground Segon pla
+$optionEdMirrorHorizontally Enmirallar
+$optionEdFlipVertically Invertir
+$optionEdRotate Rotar
+$optionEdDark Buidar
+$optionEdAddTerrain Afegir terreny
+$optionEdAddSteel Afegir acer
+$optionEdAddHatch Afegir cau
+$optionEdAddGoal Afegir objectiu
+$optionEdAddHazard Afegir perill
+
+// mini-dialogue to greet a new player
+$windowAskNameTitle Lix
+$windowAskNameFirst Salut i benvingut!
+$windowAskNameSecond Com et dius?
