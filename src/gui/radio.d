@@ -39,13 +39,15 @@ public:
     // Returns -1 when the mouse is over neither choice.
     int theHovered() const
     {
-        return _choices.countUntil!(ch => ch.isMouseHere) & 0xFFFF;
+        immutable ret = _choices.countUntil!(ch => ch.isMouseHere);
+        return ret == -1 ? -1 : ret & 0xFFFF;
     }
 
     // Returns -1 when nothing has been chosen yet
     int theChosen() const
     {
-        return _choices.countUntil!(ch => ch.isChosen) & 0xFFFF;
+        immutable ret = _choices.countUntil!(ch => ch.isChosen);
+        return ret == -1 ? -1 : ret & 0xFFFF;
     }
 
     void choose(int nr)
@@ -58,6 +60,9 @@ public:
             ch.unchoose();
         }
         _choices[nr].choose();
+        assert (_choices.count!(ch => ch.isChosen) == 1,
+            "This is the first goal of foreach() unchoose(); [nr].choose()");
+        assert (theChosen == nr, "This is the second goal of [nr].choose()");
         if (_onExecute)
             _onExecute(nr);
     }
@@ -74,24 +79,22 @@ protected:
     }
 }
 
-private alias ChoiceButton = Checkbox;
-
-private class Choice : Element {
-    ChoiceButton _button;
+private final class Choice : Element {
+    CheckableButton _button;
     Label _label;
     bool _labelWasExecuted;
 
     this(Geom g, string s) {
         super(g);
-        // 6 is the x-frame for the active radio button.
-        _button = new ChoiceButton(new Geom(0, 0, 20, 20), 6);
+        // X-frame 6 is the x-frame for the active radio button.
+        _button = new CheckableButton(new Geom(0, 0, 20, 20), 6);
         _label = new Label(new Geom(30, 0, xlg - 30, 20), s);
         addChildren(_button, _label);
     }
 
     pure nothrow @safe @nogc {
         bool execute() const { return _button.execute || _labelWasExecuted; }
-        bool isChosen() const { return _button.isChecked;}
+        bool isChosen() const { return _button.isChecked; }
         void choose() { _button.checked = true; }
         void unchoose() { _button.checked = false; }
     }

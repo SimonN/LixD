@@ -43,29 +43,39 @@ protected:
         _cbe.draw();
     }
 }
-// end class BitmapButton
 
 
 
-class Checkbox : BitmapButton {
+class CheckableButton : BitmapButton {
 private:
-    immutable int _xfWhenChecked = 2; // 2 is the checkmark, or caller sets it.
+    immutable int _xfWhenChecked;
 
 public:
-    this(Geom g, in int xfWhenChecked = 2)
-    {
+    this(Geom g, in int xfWhenChecked)
+    in { assert (xfWhenChecked != 0, "0 means empty button"); }
+    do {
         g.xl = 20;
         g.yl = 20;
         super(g, InternalImage.menuCheckmark.toCutbit);
         _xfWhenChecked = xfWhenChecked;
-        this.onExecute = (){ this.toggle; };
     }
 
-pure nothrow @safe @nogc:
-    bool isChecked() const { return xf == _xfWhenChecked; }
-    void check() { xf = _xfWhenChecked; }
-    void uncheck() { xf = 0; }
-    void checked(in bool b) { b ? check() : uncheck(); }
-    void toggle() { isChecked ? uncheck() : check(); }
+    final pure nothrow @safe @nogc {
+        bool isChecked() const { return xf == _xfWhenChecked; }
+        void check() { xf = _xfWhenChecked; }
+        void uncheck() { xf = 0; }
+        void checked(in bool b) { b ? check() : uncheck(); }
+        void toggle() { isChecked ? uncheck() : check(); }
+    }
 }
-// end class Checkbox
+
+
+
+class Checkbox : CheckableButton {
+public:
+    this(Geom g)
+    {
+        super(g, 2); // X-frame 2 is the checkmark.
+        this.onExecute = () { toggle(); };
+    }
+}
