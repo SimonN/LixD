@@ -319,9 +319,9 @@ $optionMusicEnabled Music|Enable background music.
 $optionSoundDecibels Sound gain in dB|Adjust the sound volume. 0 is already pretty loud.|Raise/lower by 10 dB to double/halve the sound volume.
 $optionMusicDecibels Music gain in dB|Adjust the music volume. −10 dB should be loud enough.|Raise/lower by 10 dB to double/halve the music volume.
 
-$optionScreenWindowed Windowed|Run Lix in a window. Choose the window size at the right.|Alt+Tab is fast.
-$optionScreenSoftwareFullscreen Software fullscreen|This creates a borderless Lix window that fills your monitor.|Alt+Tab is fast.
-$optionScreenHardwareFullscreen Hardware fullscreen|Hardware fullscreen takes a few seconds to enter and exit.|Alt+Tab is slow.
+$optionScreenWindowed Windowed|Run Lix in a window. Choose the window size at the right.|Switching windows (e.g., with Alt+Tab) works quickly.
+$optionScreenSoftwareFullscreen Software fullscreen|This creates a borderless Lix window that fills your monitor.|Switching windows (e.g., with Alt+Tab) works quickly.
+$optionScreenHardwareFullscreen Hardware fullscreen|Hardware fullscreen takes a few seconds to enter and exit.|Switching windows (e.g., with Alt+Tab) takes a few seconds.
 $optionScreenWindowedRes Window size|Size of the Lix window when you have chosen windowed mode.
 $optionScreenHardwareFullscreenRes Fullscreen resolution|Hardware fullscreen uses this resolution for your monitor.|Software fullscreen uses this only when it cannot deduce your desktop resolution.
 $optionPaintTorusSeams Paint torus seams|Mark the wrapping seam with a thin line whenever a level wraps around.|This doesn't affect game physics, but may improve your orientation.

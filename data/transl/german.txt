@@ -308,9 +308,9 @@ $optionMusicEnabled Musik|Musik einschalten.
 $optionSoundDecibels Tonverstärkung in dB|Tonlautstärke anpassen. 0 ist schon recht laut.|Erhöhe/senke um 10 dB, um die Tonlautstärke zu verdoppeln/halbieren.
 $optionMusicDecibels Musikverstärkung in dB|Musiklautstärke anpassen. −10 dB sollte laut genug sein.|Erhöhe/senke um 10 dB, um die Musiklautstärke zu verdoppeln/halbieren.
 
-$optionScreenWindowed Fenstermodus|Lix läuft in einem Fenster. Bestimme rechts die Fenstergröße.|Alt+Tab ist schnell.
-$optionScreenSoftwareFullscreen Software-Vollbild|Dies erstellt ein randloses Fenster, das den Bildschirm komplett ausfüllt.|Alt+Tab ist schnell.
-$optionScreenHardwareFullscreen Hardware-Vollbild|Hardware-Vollbild braucht einige Sekunden zum Einstieg und Verlassen.|Alt+Tab ist langsam.
+$optionScreenWindowed Fenstermodus|Lix läuft in einem Fenster. Bestimme rechts die Fenstergröße.|Fensterwechsel (z.B. mit Alt+Tab) erfolgt schnell.
+$optionScreenSoftwareFullscreen Software-Vollbild|Dies erstellt ein randloses Fenster, das den Bildschirm komplett ausfüllt.|Fensterwechsel (z.B. mit Alt+Tab) erfolgt schnell.
+$optionScreenHardwareFullscreen Hardware-Vollbild|Hardware-Vollbild braucht einige Sekunden zum Einstieg und Verlassen.|Fensterwechsel (z.B. mit Alt+Tab) dauert einige Sekunden.
 $optionScreenWindowedRes Fenstergröße|Größe des Lix-Fensters im Fenstermodus.
 $optionScreenHardwareFullscreenRes Vollbild-Auflösung|Hardware-Vollbild nutzt diese Monitor-Auflösung.|Software-Vollbild nutzt dies nur, falls es die Desktop-Auflösung nicht erkennt.
 $optionPaintTorusSeams Torus-Nahtstellen anmalen|Torus-Nahtstellen in der Landschaft mit einer dünnen Linie kennzeichnen.|Dies hat keine Auswirkung auf die Physik; es dient zur Orientierung.
