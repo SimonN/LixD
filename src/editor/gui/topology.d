@@ -126,8 +126,14 @@ private:
 
     void warnIfTooLarge()
     {
-        foreach (label; _warnTooLarge)
-            label.shown = suggestedXl * suggestedYl >= levelPixelsToWarn;
+        immutable warnedBefore = _warnTooLarge[0].shown;
+        immutable warnNow = (suggestedXl * suggestedYl >= levelPixelsToWarn);
+        foreach (label; _warnTooLarge) {
+            label.shown = warnNow;
+        }
+        if (warnNow != warnedBefore) {
+            reqDraw(); // Text overlaps between warning and bool options.
+        }
     }
 
     void makeWarningChildren()
@@ -136,15 +142,18 @@ private:
         assert (_torusX !is null);
     }
     do {
-        const float textXl = this.xlg/2 - 20; // -> makeTopologyChildren.boolXl
+        const float textXl = this.xlg/2; // -> makeTopologyChildren.boolXl
         _warnTooLarge ~= new Label(new Geom(20, -this.yg + _torusX.yg,
             textXl, 20, From.TOP_RIGHT), Lang.winTopologyWarnSize1.transl);
         _warnTooLarge ~= new Label(new Geom(20, -this.yg + _torusX.yg + 15,
             textXl, 20, From.TOP_RIGHT), formattedWinTopologyWarnSize2());
         _warnTooLarge ~= new Label(new Geom(20, -this.yg + _torusX.yg + 30,
             textXl, 20, From.TOP_RIGHT), Lang.winTopologyWarnSize3.transl);
-        foreach (label; _warnTooLarge)
+        foreach (label; _warnTooLarge) {
             addChild(label);
+            label.color = color.red; // Color is a feeble attempt at
+            // differentiating warnings from overlapped bool option text.
+        }
         warnIfTooLarge();
     }
 
@@ -152,7 +161,7 @@ private:
     {
         enum butX   = 100f;
         enum textXl = 80f;
-        enum boolXl = thisXl/2 + 20; // overlaps makeWarningChildren.textXl
+        enum boolXl = thisXl - 40; // overlaps makeWarningChildren.textXl
         void label(in float y, in Lang cap)
         {
             addChild(new Label(new Geom(20, y, textXl, 20), cap.transl));
