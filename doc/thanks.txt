@@ -91,6 +91,10 @@ Sanchez
     * Swedish translation of Lix's user interface:
         data/transl/swedish.txt
 
+Rampoina
+    * Catalan translation of Lix's user interface:
+        data/transl/catalan.txt
+
 CyberShadow
     * Contributing code to early D Lix to for better bitmap buttons
         on large resolutions.
