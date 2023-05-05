@@ -9,8 +9,8 @@ import std.string; // format
 import basics.alleg5;
 import basics.globals : ticksPerSecond;
 import file.option : showFPS;
+import game.core.assignee;
 import game.core.game;
-import game.core.highli;
 import game.panel.tooltip;
 import graphic.camera.mapncam;
 import graphic.color;
@@ -141,8 +141,7 @@ void drawAllLixes(Game game)
         }
         drawTribe(localTribe);
     }
-    const hi = game.findAndDescribePotentialAssignee();
-    if (hi.lixxie !is null) {
+    foreach (hi; game.findAndDescribePotentialAssignee()) {
         hi.lixxie.drawAgainHighlit();
     }
 }

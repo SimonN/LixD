@@ -1,4 +1,4 @@
-module game.core.highli;
+module game.core.assignee;
 
 import std.range;
 
@@ -14,20 +14,15 @@ import hardware.keyboard; // priority invert held
 import hardware.semantic; // force left/right held
 import lix;
 
-struct PotentialAssignee {
-    ConstLix lixxie; // May be null! PotentialAssignee is implicitly nullable.
+struct Assignee {
+    ConstLix lixxie; // Should never be null. Use Optional!Assignee otherwise.
     int id;
     int priority;
     double distanceToCursor;
 
     Passport passport() const pure nothrow @safe @nogc
-    in { assert (lixxie !is null); }
+    in { assert (lixxie !is null, "Wrap nulls in Optional!Assignee."); }
     do { return Passport(lixxie.style, id); }
-
-    Optional!Passport optionalPassport() const pure nothrow @safe @nogc
-    {
-        return lixxie is null ? no!Passport : some(passport());
-    }
 
     // Compare lixes for, priority:
     // 1. priority number from lixxie.priorityForNewAc
@@ -36,10 +31,8 @@ struct PotentialAssignee {
     // Holding the priority inversion key, or right mouse button (configurable
     // in the options) inverts the sorting of (1.), but not of the others.
     // Never invert priority for unclickable lix (priority == 0 or == 1).
-    bool isBetterThan(in PotentialAssignee rhs) const {
-        return lixxie    is null ? false
-            : rhs.lixxie is null ? true
-            : priority <= 1 && rhs.priority >  1 ? false
+    bool isBetterThan(in Assignee rhs) const {
+        return priority <= 1 && rhs.priority > 1 ? false
             : priority >  1 && rhs.priority <= 1 ? true
             : priority > rhs.priority ? ! keyPriorityInvert.keyHeld
             : priority < rhs.priority ?   keyPriorityInvert.keyHeld
@@ -49,13 +42,13 @@ struct PotentialAssignee {
     }
 }
 
-PotentialAssignee findAndDescribePotentialAssignee(Game game)
+Optional!Assignee findAndDescribePotentialAssignee(Game game)
 {
     if (game.isMouseOnLand) {
         return game.findPotentialAssigneeAssumingMouseOnLand();
     }
     game.pan.describeTarget(null, 0);
-    return PotentialAssignee(null);
+    return no!Assignee;
 }
 
 // ############################################################################
@@ -65,13 +58,14 @@ private:
 /* Main function to determine lix under cursor.
  * Side effect: Calls pan.describeTarget with some other than the returned.
  */
-PotentialAssignee findPotentialAssigneeAssumingMouseOnLand(Game game) { with (game)
+Optional!Assignee findPotentialAssigneeAssumingMouseOnLand(Game game)
+{ with (game)
 {
     assert (localTribe);
 
-    PotentialAssignee best; // clicks go to her, priority is already considered
-    PotentialAssignee worst; // if different from best, make tooltip
-    PotentialAssignee described; // her action is described on the panel
+    Optional!Assignee best; // clicks go to her, priority is already considered
+    Optional!Assignee worst; // if different from best, make tooltip
+    Optional!Assignee described; // her action is described on the panel
     int lixesUnderCursor = 0;
     bool leftFound  = false; // if both left/right true,
     bool rightFound = false; // make a tooltip
@@ -93,76 +87,75 @@ PotentialAssignee findPotentialAssigneeAssumingMouseOnLand(Game game) { with (ga
             && lixxie.cursorShouldOpenOverMe
         ) {
             ++lixesUnderCursor;
-            PotentialAssignee potAss = game.generatePotentialAssignee(
+            Assignee a = game.generateAssignee(
                 lixxie, id, mol, mmldD - mmldU, currentSkill);
-            if (potAss.isBetterThan(described)) {
-                described = potAss;
-            }
-            comparePotentialWithBestWorst(potAss, best, worst,
+            described = described.empty || a.isBetterThan(described.front)
+                ? some(a) : described;
+            comparePotentialWithBestWorst(a, best, worst,
                 leftFound, rightFound);
         }
         // end if under cursor
     }
     // end loop through all lixes
 
-    if (best.lixxie !is null && leftFound && rightFound)
-        pan.suggestTooltip(best.lixxie.facingLeft ? Tooltip.ID.forceRight
-                                                  : Tooltip.ID.forceLeft);
-    else if (best.priority != worst.priority && ! keyPriorityInvert.keyHeld)
+    if (! best.empty && leftFound && rightFound)
+        pan.suggestTooltip(best.front.lixxie.facingLeft
+            ? Tooltip.ID.forceRight : Tooltip.ID.forceLeft);
+    else if (! best.empty && ! worst.empty
+        && best.front.priority != worst.front.priority
+        && ! keyPriorityInvert.keyHeld
+    ) {
         pan.suggestTooltip(Tooltip.ID.priorityInvert);
-
+    }
     mouseCursor.xf = (forcingLeft ? 1 : forcingRight ? 2 : mouseCursor.xf);
-    mouseCursor.yf = best.lixxie !is null;
-    pan.describeTarget(described.lixxie, lixesUnderCursor);
+    mouseCursor.yf = ! best.empty;
+    pan.describeTarget(described.empty ? null : described.front.lixxie,
+        lixesUnderCursor);
 
-    if (best.lixxie !is null && currentSkill !is null) {
-        if (best.lixxie.ac == Ac.builder)
+    if (! best.empty && currentSkill !is null) {
+        if (best.front.lixxie.ac == Ac.builder)
             pan.suggestTooltip(Tooltip.ID.queueBuilder);
-        else if (best.lixxie.ac == Ac.platformer)
+        else if (best.front.lixxie.ac == Ac.platformer)
             pan.suggestTooltip(Tooltip.ID.queuePlatformer);
     }
     return best;
 }}
 
-PotentialAssignee generatePotentialAssignee(
+Assignee generateAssignee(
     Game game,
-    in Lixxie lixxie,
+    in ConstLix lixxie,
     in int id,
     in Point mouseOnLand,
     in float dMinusU,
     in SkillButton currentSkill
 ) {
     import basics.help;
-    PotentialAssignee potAss;
-    potAss.lixxie = lixxie;
-    potAss.id = id;
-    potAss.distanceToCursor = game.map.topology.hypotSquared(
+    Assignee ret;
+    ret.lixxie = lixxie;
+    ret.id = id;
+    ret.distanceToCursor = game.map.topology.hypotSquared(
         mouseOnLand.x, mouseOnLand.y, lixxie.ex,
                                       lixxie.ey + roundInt(dMinusU/2));
-    potAss.priority = currentSkill !is null
+    ret.priority = currentSkill !is null
         ? lixxie.priorityForNewAc(currentSkill.skill) : 1;
-
-    return potAss;
+    return ret;
 }
 
 void comparePotentialWithBestWorst(
-    in PotentialAssignee potAss,
-    ref PotentialAssignee best,
-    ref PotentialAssignee worst,
+    Assignee a,
+    ref Optional!Assignee best,
+    ref Optional!Assignee worst,
     ref bool anyFoundLeft,
     ref bool anyFoundRight,
 ) {
-    assert (potAss.lixxie !is null);
-    immutable bool eligibleAccordingToDirSelect =
-           ! (potAss.lixxie.facingLeft  && forcingRight)
-        && ! (potAss.lixxie.facingRight && forcingLeft);
-
-    if (eligibleAccordingToDirSelect) {
-        anyFoundLeft = anyFoundLeft || potAss.lixxie.facingLeft;
-        anyFoundRight = anyFoundRight || potAss.lixxie.facingRight;
-        if (potAss.isBetterThan(best))
-            best = potAss;
-        if (worst.lixxie is null || worst.isBetterThan(potAss))
-            worst = potAss;
+    const ConstLix li = a.lixxie;
+    assert (li !is null);
+    if (li.facingLeft && forcingRight || li.facingRight && forcingLeft) {
+        return;
     }
+    anyFoundLeft = anyFoundLeft || li.facingLeft;
+    anyFoundRight = anyFoundRight || li.facingRight;
+    best = best.empty || a.isBetterThan(best.front) ? some(a) : best;
+    worst = worst.empty || a.isBetterThan(worst.front) ? worst : some(a);
 }
+

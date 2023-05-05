@@ -2,11 +2,13 @@ module game.core.calc;
 
 import std.algorithm; // all
 
+import optional;
+
 import file.option;
 import basics.cmdargs;
+import game.core.assignee;
 import game.core.game;
 import game.core.active;
-import game.core.highli;
 import game.core.passive;
 import game.core.speed;
 import game.exitwin;
@@ -18,15 +20,9 @@ import physics.score;
 package void
 implGameCalc(Game game) { with (game)
 {
-    void noninputCalc()
-    {
-        if (_netClient)
-            _netClient.calc();
-        game.updatePhysicsAccordingToSpeedButtons();
-    }
     if (modalWindow) {
         game.calcModalWindow;
-        noninputCalc();
+        game.noninputCalc();
     }
     else if (keyGameExit.keyTapped) {
         if (multiplayer) {
@@ -39,18 +35,25 @@ implGameCalc(Game game) { with (game)
     }
     else {
         auto potAss = game.findAndDescribePotentialAssignee();
-        game.calcPassive(potAss.optionalPassport);
+        game.calcPassive(potAss.oc.passport.toOptional);
         if (game.view.canAssignSkills) {
             game.calcNukeButton();
             game.calcClicksIntoMap(potAss);
         }
         game.dispatchTweaks(); // Not yet impl'ed: feed into net
-        noninputCalc();
+        game.noninputCalc();
         game.considerToEndGame();
     }
 }}
 
 private:
+
+void noninputCalc(Game game)
+{
+    if (game._netClient)
+        game._netClient.calc();
+    game.updatePhysicsAccordingToSpeedButtons();
+}
 
 void calcModalWindow(Game game) { with (game)
 {

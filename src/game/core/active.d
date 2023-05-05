@@ -4,10 +4,12 @@ module game.core.active;
  * Game.calc() should afterwards calc the network, that flushes the network.
  */
 
+import optional;
+
 import net.repdata;
 static import file.option; // unpause on assign
+import game.core.assignee;
 import game.core.game;
-import game.core.highli : PotentialAssignee;
 import hardware.sound;
 import hardware.mouse;
 import hardware.semantic;
@@ -33,7 +35,7 @@ do { with (game)
     _effect.addSound(Phyu(nurse.now + 1), Passport(localStyle, 0), Sound.NUKE);
 }}
 
-void calcClicksIntoMap(Game game, PotentialAssignee potAss)
+void calcClicksIntoMap(Game game, Optional!Assignee potAss)
 in {
     assert (!game.modalWindow);
     assert (game.view.canAssignSkills);
@@ -43,13 +45,13 @@ do {
         return;
     }
     else if (game.canAssignTo(potAss)) {
-        game.cutReplayAccordingToOptions(potAss.passport);
-        game.assignTo(potAss);
+        game.cutReplayAccordingToOptions(potAss.front.passport);
+        game.assignTo(potAss.front);
         if (file.option.unpauseOnAssign.value == true) {
             game.pan.pause = false;
         }
     }
-    else if (potAss.lixxie is null) {
+    else if (potAss.empty) {
         game.cutGlobalFutureFromReplay(); // We've clicked air, not a lix.
     }
     else if (game.view.canAssignSkills && game.pan.currentSkill is null) {
@@ -81,12 +83,12 @@ void cutGlobalFutureFromReplay(Game game)
 
 private:
 
-bool canAssignTo(Game game, in PotentialAssignee potAss)
+bool canAssignTo(Game game, in Optional!Assignee potAss)
 {
     return game.view.canAssignSkills
         && game.pan.currentSkill !is null
-        && potAss.lixxie !is null
-        && potAss.priority >= 2;
+        && ! potAss.empty
+        && potAss.front.priority >= 2;
 }
 
 Ply newPlyForNextPhyu(Game game)
@@ -108,16 +110,16 @@ bool alwaysForceWhenAssigning(in Ac ac) pure nothrow @safe @nogc
         || ac == Ac.miner;
 }
 
-void assignTo(Game game, in PotentialAssignee potAss)
-in { assert (game.canAssignTo(potAss)); }
+void assignTo(Game game, in Assignee assignee)
+in { assert (game.pan.currentSkill !is null, "Don't call assignTo() then."); }
 do { with (game)
 {
     Ply i = game.newPlyForNextPhyu();
     i.skill = game.pan.currentSkill.skill;
-    i.toWhichLix = potAss.id;
+    i.toWhichLix = assignee.id;
     i.isDirectionallyForced
         = alwaysForceWhenAssigning(i.skill) || forcingLeft || forcingRight;
-    i.lixShouldFace = potAss.lixxie.facingLeft
+    i.lixShouldFace = assignee.lixxie.facingLeft
         ? Ply.LixShouldFace.left : Ply.LixShouldFace.right;
 
     if (game.pan.currentSkill.number != skillInfinity) {
@@ -131,8 +133,8 @@ do { with (game)
     // React faster to the new assignment than during its evaluation next
     // update. The evaluation could be several ticks ticks later.
     assert (game._effect);
-    game._effect.addArrowDontShow(i.when, potAss.passport);
-    game._effect.addSound(i.when, potAss.passport, Sound.ASSIGN);
+    game._effect.addArrowDontShow(i.when, assignee.passport);
+    game._effect.addSound(i.when, assignee.passport, Sound.ASSIGN);
 }}
 
 void includeOurNew(Game game, in Ply data) { with (game)
