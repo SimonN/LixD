@@ -8,6 +8,8 @@ module game.core.passive;
  * and game.physseq (updating physics with replayed and new assignments).
  */
 
+import optional;
+
 import basics.alleg5;
 import basics.globals;
 import game.core.game;
@@ -17,16 +19,20 @@ import gui;
 import hardware.keyboard;
 import hardware.mousecur;
 import hardware.sound;
+import lix.fields;
 
 package void
-calcPassive(Game game) { with (game)
+calcPassive(
+    Game game,
+    in Optional!Passport lixToHighlightInTweaker
+) { with (game)
 {
     if (pan.zoomIn)
         map.zoomIn();
     if (pan.zoomOut)
         map.zoomOut();
     map.calcScrolling();
-    game.activateOrDeactivateTweaker();
+    game.activateOrDeactivateTweaker(lixToHighlightInTweaker);
 
     if (map.suggestHoldScrollingTooltip)
         game.pan.suggestTooltip(Tooltip.ID.holdToScroll);
@@ -40,17 +46,18 @@ calcPassive(Game game) { with (game)
 
 private:
 
-void activateOrDeactivateTweaker(Game game) { with (game)
+void activateOrDeactivateTweaker(Game game, in Optional!Passport toHighlight)
 {
-    if (pan.tweakerIsOn) {
-        _tweaker.shown = true;
-        _tweaker.formatButtonsAccordingTo(
-            nurse.constReplay.allPlies, nurse.now);
+    if (game.pan.tweakerIsOn) {
+        game._tweaker.shown = true;
+        game._tweaker.formatButtonsAccordingTo(
+            game.nurse.constReplay.allPlies,
+            game.nurse.now, toHighlight);
     }
-    else if (_tweaker.shown) {
-        _tweaker.shown = false;
+    else if (game._tweaker.shown) {
+        game._tweaker.shown = false;
         gui.requireCompleteRedraw();
     }
-    map.choose(_tweaker.shown ? MapAndCamera.CamSize.withTweaker
+    game.map.choose(game._tweaker.shown ? MapAndCamera.CamSize.withTweaker
         : MapAndCamera.CamSize.fullWidth);
-}}
+}

@@ -39,7 +39,7 @@ implGameCalc(Game game) { with (game)
     }
     else {
         auto potAss = game.findAndDescribePotentialAssignee();
-        game.calcPassive();
+        game.calcPassive(potAss.optionalPassport);
         if (game.view.canAssignSkills) {
             game.calcNukeButton();
             game.calcClicksIntoMap(potAss);

@@ -53,12 +53,12 @@ public:
         return _desc.ply;
     }
 
-    @property bool suggestsChange() const pure nothrow @nogc
+    bool suggestsChange() const pure nothrow @nogc
     {
         return _del.execute || earlierExecuted || laterExecuted;
     }
 
-    @property ChangeRequest suggestedChange() const pure nothrow @nogc
+    ChangeRequest suggestedChange() const pure nothrow @nogc
     in {
         assert (suggestsChange,
             "check suggestsChange before calling suggestedChange");
@@ -70,8 +70,11 @@ public:
             : ChangeVerb.moveThisLater);
     }
 
+protected:
+    override void onWhite(in bool b) { _desc.white = b; }
+
 private:
-    @property const pure nothrow @nogc {
+    const pure nothrow @nogc {
         bool earlierExecuted() { return _earlier.execute; }
         bool laterExecuted() { return _later.execute; }
     }
@@ -123,6 +126,11 @@ public:
         _nukeName = new Label(new Geom(0, 0,
             NowLine.textXlg(g) + 3 * 20f /* 3*20 == 3 * butXlg */, ylg));
         addChildren(_lixID, _skillIcon, _nukeName);
+    }
+
+    void white(in bool b)
+    {
+        _lixID.color = b ? color.white : color.guiText;
     }
 
     Ply ply() const pure nothrow @safe @nogc

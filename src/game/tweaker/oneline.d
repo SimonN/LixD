@@ -33,23 +33,36 @@ public:
         addChild(_phyuText);
     }
 
-    @property Phyu phyu() const pure nothrow @nogc
-    {
-        return _phyu;
-    }
+    final Phyu phyu() const pure nothrow @safe @nogc { return _phyu; }
 
-    @property Phyu phyu(in Phyu aPhyu)
+    final void phyu(in Phyu aPhyu)
     {
         if (_phyu == aPhyu) {
-            return _phyu;
+            return;
         }
         _phyu = aPhyu;
         _phyuText.text = tweakerFormat(_phyu);
         reqDraw(); // labels can't easily undraw
-        return _phyu;
+    }
+
+    final bool isWhite() const nothrow @safe @nogc
+    {
+        return _phyuText.color == color.white;
+    }
+
+    final void white(in bool b)
+    {
+        if (b == isWhite) {
+            return;
+        }
+        _phyuText.color = b ? color.white : color.guiText;
+        onWhite(b);
+        reqDraw();
     }
 
 protected:
+    void onWhite(in bool b) {}
+
     override void drawSelf()
     {
         undrawColor = color.gui.m; // Erase the labels, they can't undraw

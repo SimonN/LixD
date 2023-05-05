@@ -2,6 +2,8 @@ module game.core.highli;
 
 import std.range;
 
+import optional;
+
 import basics.rect;
 import file.option; // hotkeys
 import game.core.game;
@@ -13,7 +15,7 @@ import hardware.semantic; // force left/right held
 import lix;
 
 struct PotentialAssignee {
-    ConstLix lixxie;
+    ConstLix lixxie; // May be null! PotentialAssignee is implicitly nullable.
     int id;
     int priority;
     double distanceToCursor;
@@ -21,6 +23,11 @@ struct PotentialAssignee {
     Passport passport() const pure nothrow @safe @nogc
     in { assert (lixxie !is null); }
     do { return Passport(lixxie.style, id); }
+
+    Optional!Passport optionalPassport() const pure nothrow @safe @nogc
+    {
+        return lixxie is null ? no!Passport : some(passport());
+    }
 
     // Compare lixes for, priority:
     // 1. priority number from lixxie.priorityForNewAc

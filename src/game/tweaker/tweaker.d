@@ -8,6 +8,8 @@ import std.algorithm;
 import std.conv;
 import std.range;
 
+import optional;
+
 import basics.help;
 import file.language;
 import file.replay;
@@ -15,6 +17,7 @@ import game.tweaker.nowline;
 import game.tweaker.plyline;
 import graphic.color;
 import gui;
+import lix.fields;
 
 class Tweaker : Element {
 private:
@@ -63,23 +66,24 @@ public:
 
     void formatButtonsAccordingTo(
         const(Ply)[] dat,
-        in Phyu now)
+        in Phyu now,
+        in Optional!Passport lixLinesToHighlight)
     out {
         assert (_entries.all!(e => e !is null));
     }
     do {
         const(Ply)[] cutDat = cullPliesSoTheyFitIntoOnePage(dat, now);
         resizeListOfGuiEntriesTo(cutDat.len);
-        formatListOfGuiEntries(cutDat, now);
+        formatListOfGuiEntries(cutDat, now, lixLinesToHighlight);
         showOrHideEmptyListDescs();
     }
 
-    @property bool suggestsChange() const pure nothrow @nogc
+    bool suggestsChange() const pure nothrow @nogc
     {
         return _entries.any!(e => e.suggestsChange);
     }
 
-    @property ChangeRequest suggestedChange() const pure nothrow @nogc
+    ChangeRequest suggestedChange() const pure nothrow @nogc
     in {
         assert (this.suggestsChange);
     }
@@ -138,15 +142,18 @@ private:
      */
     void formatListOfGuiEntries(
         const(Ply)[] pliesToMatch,
-        in Phyu now)
+        in Phyu now,
+        in Optional!Passport lixToHighlight)
     in {
         assert (_entries.all!(e => e !is null));
     }
     do {
         mixin liesInPast;
         foreach (size_t id, ref PlyLine e; _entries) {
-            if (e.ply != pliesToMatch[id]) {
+            immutable bool whi = shouldBeWhite(e, lixToHighlight);
+            if (e.ply != pliesToMatch[id] || e.isWhite != whi) {
                 e.ply = pliesToMatch[id];
+                e.white = whi;
                 reqDraw(); // redraw all our lines, they can't easily undraw
             }
             e.move(e.geom.x, 30 + 20 * id.to!float
@@ -175,4 +182,18 @@ private:
         _emptyListTitle.shown = _entries.empty;
         _emptyListDescs.each!(e => e.shown = _entries.empty);
     }
+}
+
+private bool shouldBeWhite(in PlyLine plyLine, in Optional!Passport lix) pure
+{
+    if (lix.empty || ! plyLine.ply.isAssignment) {
+        return false;
+    }
+    return lix.front.id == plyLine.ply.toWhichLix;
+    /*
+     * We don't check the style for equality. Reason: Passports know styles,
+     * but Plies don't know styles, they only know player numbers. The
+     * tweaker doesn't know how to get styles from player numbers, and it
+     * shouldn't have to do that in singleplayer anyway.
+     */
 }
