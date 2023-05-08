@@ -27,9 +27,12 @@ Alcol3D[Style.max] alcol3DforStyles;
 
 Matrix!Point eyesOnSpritesheet;
 
-immutable int magicnrSpritesheets = 1;
-immutable int magicnrPanelInfoIcons = 2;
-immutable int magicnrSkillButtonIcons = 3;
+enum SpecialRecol {
+    ordinary,
+    spritesheets,
+    panelInfoIcons,
+    skillButtonIcons,
+}
 
 string scaleDir() // From which dir should we load?
 {

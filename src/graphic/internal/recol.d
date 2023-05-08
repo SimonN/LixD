@@ -13,13 +13,14 @@ import hardware.tharsis;
 
 package:
 
-void eidrecol(Cutbit cutbit, int magicnr)
-{
-    // don't do anything for magicnr == magicnrSpritesheets. This function
-    // is about GUI recoloring, not player color recoloring. All GUI portions
-    // of the spritesheets have been moved to the skill buttons in 2015-10.
-    assert (magicnr != magicnrSpritesheets);
-
+void eidrecol(Cutbit cutbit, in SpecialRecol magicnr)
+in  {
+    assert (magicnr != SpecialRecol.spritesheets,
+        "Don't do anything for magicnr == SpecialRecol.spritesheets."
+        ~ " This function is about GUI recoloring without player colors."
+        ~ " Player-dependant GUI code is with the skill button rocoloring.");
+}
+do {
     makeColorDicts();
     version (tharsisprofiling)
         auto zone = Zone(profiler, "eidrecol magicnr = %d".format(magicnr));
@@ -27,35 +28,40 @@ void eidrecol(Cutbit cutbit, int magicnr)
         return;
     Albit bitmap = cutbit.albit;
 
-    if (magicnr == 0) {
+    if (magicnr == SpecialRecol.ordinary) {
         auto region = al_lock_bitmap(bitmap,
          ALLEGRO_PIXEL_FORMAT.ALLEGRO_PIXEL_FORMAT_ANY,
          ALLEGRO_LOCK_READWRITE);
-        assert (region, "can't lock bitmap despite magicnr == 0");
+        assert (region, "can't lock bitmap despite SpecialRecol.ordinary");
     }
     scope (exit)
-        if (magicnr == 0)
+        if (magicnr == SpecialRecol.ordinary)
             al_unlock_bitmap(bitmap);
 
     auto targetBitmap = TargetBitmap(bitmap);
     immutable bmp_yl = al_get_bitmap_height(bitmap);
-    if (magicnr == 0)
+    final switch (magicnr) {
+    case SpecialRecol.ordinary:
         for (int y = 0; y < bmp_yl; ++y)
             applyToRow(y > cutbit.yl ? dictGuiLight
                                      : dictGuiNormal, bitmap, y);
-    else if (magicnr == magicnrSkillButtonIcons) {
+        break;
+    case SpecialRecol.spritesheets:
+        assert (false, "See in-contract.");
+    case SpecialRecol.skillButtonIcons:
         recolorAllShadows(bitmap);
         for (int y = cutbit.yl + 1; y < bmp_yl; ++y) // only row 1 (of 0, 1)
             dictGuiNormalNoShadow.applyToRow(bitmap, y);
-    }
-    else if (magicnr == magicnrPanelInfoIcons) {
+        break;
+    case SpecialRecol.panelInfoIcons:
         recolorAllShadows(bitmap);
         for (int y = cutbit.yl + 1; y < 2 * (cutbit.yl + 1); ++y)
             dictGuiNormalNoShadow.applyToRow(bitmap, y);
+        break;
     }
 }
 
-Cutbit lockThenRecolor(int magicnr)(
+Cutbit lockThenRecolor(SpecialRecol magicnr)(
     Cutbit sourceCb,
     in Style st
 ) {
@@ -76,21 +82,21 @@ Cutbit lockThenRecolor(int magicnr)(
         Alcol[Alcol] recolArray = generateRecolArray(st);
 
         Y_LOOP: for (int y = 0; y < lixYl; y++) {
-            static if (magicnr == magicnrSkillButtonIcons) {
+            static if (magicnr == SpecialRecol.skillButtonIcons) {
                 // The skill button icons have two rows: the first has the
                 // skills in player colors, the second has them greyed out.
                 // Ignore the second row here.
                 if (y >= sourceCb.yl + 1)
                     break Y_LOOP;
             }
-            else static if (magicnr == magicnrPanelInfoIcons) {
+            else static if (magicnr == SpecialRecol.panelInfoIcons) {
                 // Skip all x pixels in the second row of the little icons.
                 if (y >= sourceCb.yl + 1 && y < 2 * (sourceCb.yl + 1))
                     continue Y_LOOP;
             }
             X_LOOP: for (int x = 0; x < lixXl; x++) {
                 immutable Alcol col = al_get_pixel(lix, x, y);
-                static if (magicnr == magicnrSpritesheets) {
+                static if (magicnr == SpecialRecol.spritesheets) {
                     // on two consecutive pixels with colBreak, skip for speed
                     if (col == colBreak && x < lixXl - 1
                         && al_get_pixel(lix, x+1, y) == colBreak)
@@ -118,11 +124,13 @@ Cutbit lockThenRecolor(int magicnr)(
     auto targetBitmap = TargetBitmap(targetCb.albit);
 
     recolorTargetForStyle();
-    if (magicnr == magicnrSpritesheets && ! eyesOnSpritesheet)
+    if (magicnr == SpecialRecol.spritesheets && ! eyesOnSpritesheet)
         findEyesOnSpritesheet(sourceCb, colBreak);
-
-    // eidrecol invoked with magicnr != 0 expects already-locked bitmap
-    static if (magicnr != magicnrSpritesheets)
+    /*
+     * eidrecol() invoked with magicnr != SpecialRecol.ordinary
+     * expects an already-locked bitmap.
+     */
+    static if (magicnr != SpecialRecol.spritesheets)
         eidrecol(targetCb, magicnr);
     return targetCb;
 

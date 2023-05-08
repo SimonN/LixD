@@ -34,7 +34,7 @@ do {
     loadedCutbitMayBeScaled[id] = new Cutbit(fn, Cutbit.Cut.ifGridExists);
     loadedCutbitMayBeScaled[id].albit.convertPinkToAlpha();
     if (id.needGuiRecoloring) {
-        eidrecol(loadedCutbitMayBeScaled[id], 0);
+        eidrecol(loadedCutbitMayBeScaled[id], SpecialRecol.ordinary);
     }
 }
 
@@ -42,18 +42,18 @@ void makeLixSprites(in Style st)
 {
     assert (spritesheets[st] is null);
     auto src = getLixRawSprites;
-    spritesheets[st] = lockThenRecolor!magicnrSpritesheets(src, st);
+    spritesheets[st] = lockThenRecolor!(SpecialRecol.spritesheets)(src, st);
 }
 
 void makePanelInfoIcon(in Style st)
 {
-    recolorForGuiAndPlayer!magicnrPanelInfoIcons(
+    recolorForGuiAndPlayer!(SpecialRecol.panelInfoIcons)(
         InternalImage.gameIcon, panelInfoIcons, st);
 }
 
 void makeSkillButtonIcon(in Style st)
 {
-    recolorForGuiAndPlayer!magicnrSkillButtonIcons(
+    recolorForGuiAndPlayer!(SpecialRecol.skillButtonIcons)(
         InternalImage.skillsInPanel, skillButtonIcons, st);
 }
 
@@ -62,7 +62,7 @@ in { assert (goalMarkers[st] is null); }
 do {
     // magicnrSkillButtonIcons isn't a perfect descripition: It recolors
     // exactly the first row. But goal markers have only one frame, thus OK.
-    recolorForGuiAndPlayer!magicnrSkillButtonIcons(
+    recolorForGuiAndPlayer!(SpecialRecol.skillButtonIcons)(
         InternalImage.goalMarker, goalMarkers, st);
 }
 
@@ -82,7 +82,7 @@ Filename toBestScaledFilenameOrNull(in InternalImage id)
     return null;
 }
 
-void recolorForGuiAndPlayer(int magicnr)(
+void recolorForGuiAndPlayer(SpecialRecol magicnr)(
     in InternalImage id,
     ref Cutbit[Style.max] vec,
     in Style st
