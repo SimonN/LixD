@@ -80,6 +80,7 @@ public:
     Geom.From aligned() const pure @safe { return geom.xFrom; }
     bool shortened() const pure nothrow @safe @nogc { return _shortened; }
 
+    float textLgs() const nothrow @safe { return textLg() * gui.stretchFactor;}
     float textLg() const nothrow @safe { return textLg(this._text); }
     float textLg(string s) const nothrow @trusted
     {
@@ -97,7 +98,7 @@ protected:
     override void drawSelf()
     {
         if (undrawBeforeDraw)
-            undraw();
+            undrawSelf();
         if (! text.length)
             return;
         switch (aligned) {
@@ -117,16 +118,6 @@ protected:
         default:
             assert (false);
         }
-    }
-
-    override void undrawSelf()
-    {
-        // Some letters extend further left/right than our border. Thus:
-        al_draw_filled_rectangle(
-            xs,
-            ys,
-            xs + xls,
-            ys + yls, undrawColor);
     }
 
 private:

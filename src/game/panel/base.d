@@ -20,7 +20,7 @@ import lix; // forward method of InfoBar to our users
 import net.phyu;
 import physics.tribe;
 
-class Panel : Element {
+class Panel : Element, TooltipSuggester {
 private:
     SkillButton[] _skills;
     SkillButton lastOnForRestoringAfterStateLoad;
@@ -135,9 +135,19 @@ public:
     void showInfo(in Tribe tr) { stats.showTribe(tr); }
     void dontShowSpawnInterval() { stats.dontShowSpawnInterval(); }
     void showSpawnInterval(in int si) { stats.showSpawnInterval(si); }
-    void suggestTooltip(in Tooltip.ID id) { stats.suggestTooltip(id); }
 
     Phyu age(in Phyu phyu) { return stats.age = phyu; }
+
+    bool isSuggestingTooltip() const { return _rb.isSuggestingTooltip; }
+    Tooltip.ID suggestedTooltip() const { return _rb.suggestedTooltip; }
+    Ac hoveredSkillOnlyForTooltip() const
+    {
+        foreach (sk; _skills.filter!(sk => sk.isMouseHere)) {
+            return sk.skill;
+        }
+        return Ac.nothing;
+    }
+
 
 protected:
     override void calcSelf()
@@ -152,7 +162,6 @@ protected:
             else
                 hardware.sound.playQuiet(Sound.PANEL_EMPTY);
         });
-        suggestTooltips();
     }
 
 private:
@@ -166,14 +175,5 @@ private:
         if (skill && skill.number != 0)
             skill.on = true;
         lastOnForRestoringAfterStateLoad = skill; // even if currently 0
-    }
-
-    void suggestTooltips()
-    {
-        if (_rb.isSuggestingTooltip) {
-            suggestTooltip(_rb.suggestedTooltip);
-        }
-        foreach (sk; _skills.filter!(sk => sk.isMouseHere).takeOne)
-            stats.suggestTooltip(sk.skill);
     }
 }

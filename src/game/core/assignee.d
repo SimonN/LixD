@@ -97,13 +97,13 @@ Optional!Assignee findPotentialAssigneeAssumingMouseOnLand(Game game)
     // end loop through all lixes
 
     if (! best.empty && leftFound && rightFound)
-        pan.suggestTooltip(best.front.lixxie.facingLeft
+        _tooltipLine.suggestTooltip(best.front.lixxie.facingLeft
             ? Tooltip.ID.forceRight : Tooltip.ID.forceLeft);
     else if (! best.empty && ! worst.empty
         && best.front.priority != worst.front.priority
         && ! keyPriorityInvert.keyHeld
     ) {
-        pan.suggestTooltip(Tooltip.ID.priorityInvert);
+        _tooltipLine.suggestTooltip(Tooltip.ID.priorityInvert);
     }
     mouseCursor.xf = (forcingLeft ? 1 : forcingRight ? 2 : mouseCursor.xf);
     mouseCursor.yf = ! best.empty;
@@ -112,9 +112,9 @@ Optional!Assignee findPotentialAssigneeAssumingMouseOnLand(Game game)
 
     if (! best.empty && best.front.lixxie.ac == game.pan.chosenSkill) {
         if (best.front.lixxie.ac == Ac.builder)
-            pan.suggestTooltip(Tooltip.ID.queueBuilder);
+            _tooltipLine.suggestTooltip(Tooltip.ID.queueBuilder);
         else if (best.front.lixxie.ac == Ac.platformer)
-            pan.suggestTooltip(Tooltip.ID.queuePlatformer);
+            _tooltipLine.suggestTooltip(Tooltip.ID.queuePlatformer);
     }
     return best;
 }}

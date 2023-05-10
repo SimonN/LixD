@@ -35,7 +35,7 @@ calcPassive(
     game.activateOrDeactivateTweaker(lixToHighlightInTweaker);
 
     if (map.suggestHoldScrollingTooltip)
-        game.pan.suggestTooltip(Tooltip.ID.holdToScroll);
+        game._tooltipLine.suggestTooltip(Tooltip.ID.holdToScroll);
     if (map.isHoldScrolling)
         mouseCursor.xf = 3;
 

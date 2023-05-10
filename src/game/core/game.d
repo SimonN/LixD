@@ -30,7 +30,7 @@ import basics.help : len;
 import file.filename;
 import file.trophy;
 import file.replay;
-import file.option;
+import opt = file.option.allopts;
 
 import game.argscrea;
 import game.core.calc;
@@ -39,6 +39,7 @@ import game.core.draw;
 import game.core.scrstart;
 import game.core.speed;
 import game.core.splatrul;
+import game.core.tooltip;
 import game.effect;
 import game.exitwin;
 import game.nurse.interact;
@@ -90,6 +91,7 @@ package:
 
     ReallyExitWindow modalWindow;
     Panel pan;
+    TooltipLine _tooltipLine;
     Tweaker _tweaker; // Never null, but often hidden
     ChatArea _chatArea;
     SplatRuler _splatRuler;
@@ -137,6 +139,10 @@ public:
         if (pan) {
             gui.rmElder(pan);
             pan = null;
+        }
+        if (_tooltipLine) {
+            gui.rmElder(_tooltipLine);
+            _tooltipLine = null;
         }
         if (_tweaker) {
             gui.rmElder(_tweaker);
@@ -298,7 +304,7 @@ private:
             (fn) => Replay.newForLevel(fn, level.built));
         if (! _netClient) {
             Profile single;
-            single.name = file.option.userName;
+            single.name = opt.userName;
             single.style = Style.garden;
             rp.addPlayer(PlNr(0), single);
         }
@@ -322,7 +328,7 @@ private:
                 return ptr.style;
         }
         foreach (plNr, pl; rp.players)
-            if (pl.name == userName)
+            if (pl.name == opt.userName)
                 return pl.style;
         // We aren't in the players list, but it's nonempty. Observe randomly.
         import std.random;
@@ -336,6 +342,8 @@ private:
         assert (nurse.constReplay);
         assert (level);
         assert (pan is null);
+        assert (_tooltipLine is null);
+        assert (_tweaker is null);
     }
     do {
         pan = new Panel(view, level.required);
@@ -345,12 +353,21 @@ private:
         gui.addElder(pan);
         setLastPhyuToNow(); // to fill skills, needed for highlightFirstSkill
         pan.highlightFirstSkill();
+
+        _tooltipLine = new TooltipLine(new Geom(
+            0, panelYlg, screenXlg - tweakerXlg, 20, From.BOTTOM_RIGHT));
+        _tooltipLine.shown = opt.ingameTooltips.value;
+        gui.addElder(_tooltipLine);
+
+        _tweaker = new Tweaker(
+            new Geom(0, 0, tweakerXlg, screenYlg - panelYlg, From.TOP_RIGHT));
+        _tweaker.hide();
+        gui.addElder(_tweaker);
     }
 
     void initializeMapAndRepEdit()
     in {
         assert (map is null);
-        assert (_tweaker is null);
     }
     do {
         immutable mapXls = gui.screenXls.to!int;
@@ -360,11 +377,6 @@ private:
             MapAndCamera.CamSize.fullWidth, Point(mapXls, mapYls),
             MapAndCamera.CamSize.withTweaker, Point(mapXls - tweXls, mapYls)));
         this.centerCameraOnHatchAverage();
-
-        _tweaker = new Tweaker(
-            new Geom(0, 0, tweakerXlg, screenYlg - panelYlg, From.TOP_RIGHT));
-        _tweaker.hide();
-        gui.addElder(_tweaker);
     }
 
     void initializeConsole()

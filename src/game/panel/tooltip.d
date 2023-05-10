@@ -23,9 +23,11 @@ struct Tooltip {
     bool formatWithButtons;
     UserOption!KeySet keyToHold;
 
+    alias IdSet = uint; // A bitset of a possible set of Tooltip.ID.
+
     // Sorted from most important (smallest ID) to least important.
     // When several are requested, only the most important is shown.
-    enum ID : int {
+    enum ID : IdSet {
         pause = 0x1,
         zoom = 0x2,
         showSplatRuler = 0x4,
@@ -49,7 +51,7 @@ struct Tooltip {
         framestepOrQuit = 0x8_0000,
     }
 
-    static string format(int manyIDs) nothrow
+    static string format(IdSet manyIDs) nothrow
     {
         for (int i = 1; i <= ID.max; i *= 2)
             if (manyIDs & i) {
@@ -62,6 +64,11 @@ struct Tooltip {
     }
 
     static string format(ID id) { return makeTooltip(id).format; }
+
+    static bool isAboutMapClicks(in IdSet ids) pure nothrow @safe @nogc
+    {
+        return ids >= ID.forceLeft; // Contains one of these high bits.
+    }
 
     string format()
     {

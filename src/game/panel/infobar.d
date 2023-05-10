@@ -3,17 +3,15 @@ module game.panel.infobar;
 import std.string; // format;
 import std.typecons; // Rebindable;
 
-import basics.globals; // game panel icons
-import net.repdata; // Phyu
-import file.option; // languageIsEnglish
 import file.language;
-import game.panel.tooltip;
+import opt = file.option.allopts;
 import graphic.color;
 import graphic.internal;
 import gui;
 import hardware.display; // show fps
 import hardware.sound; // warn when too few lix alive to win
 import lix;
+import net.repdata; // Phyu
 import physics.tribe;
 
 abstract class InfoBar : Button {
@@ -21,15 +19,13 @@ private:
     bool _showSpawnInterval;
     int _spawnInterval;
     int _targetDescNumber;
-    int _tooltipsSuggested; // bitset, values are in enum Tooltip
-    Ac _skillTooltipSuggested; // Ac.nothing unless caller wants one this frame
     static assert (Ac.init == Ac.nothing);
 
     Phyu _age;
     ConstLix _targetDescLixxie;
     Rebindable!(const(Tribe))  _tribe;
     CutbitElement _bOut, _bHatch;
-    Label         _lOut, _lHatch, _tooltip, _targetDesc;
+    Label _lOut, _lHatch, _targetDesc, _fps;
 
 public:
     this(Geom g)
@@ -38,9 +34,9 @@ public:
         makeElements(_bHatch, _lHatch,   4, 56, 4);
         makeElements(_bOut,   _lOut,    60, 60, 3);
         _targetDesc = new Label(new Geom(190, 0, this.xlg - 190, this.ylg));
-        _tooltip = new Label(new Geom(
+        _fps = new Label(new Geom(
             TextButton.textXFromLeft, 0, this.xlg, this.ylg, From.RIGHT));
-        addChildren(_tooltip, _targetDesc);
+        addChildren(_targetDesc, _fps);
     }
 
     void describeTarget(in Lixxie l, in int nr)
@@ -49,22 +45,6 @@ public:
             reqDraw();
         _targetDescLixxie = l;
         _targetDescNumber = nr;
-    }
-
-    void suggestTooltip(Tooltip.ID id)
-    {
-        if (_tooltipsSuggested & id)
-            return;
-        reqDraw();
-        _tooltipsSuggested |= id;
-    }
-
-    void suggestTooltip(in Ac ac)
-    {
-        if (ac == _skillTooltipSuggested)
-            return;
-        reqDraw();
-        _skillTooltipSuggested = ac;
     }
 
     void dontShowSpawnInterval()
@@ -115,7 +95,7 @@ protected:
     override void drawOntoButton()
     {
         formatTargetDesc();
-        formatTooltip();
+        formatFPS();
     }
 
     // Helper function to make children.
@@ -158,7 +138,7 @@ private:
             s = "%d %s%s".format(
                 _targetDescNumber,
                 ac.acToNiceCase,
-                _targetDescNumber > 1 && languageIsEnglish ? "s" : "");
+                _targetDescNumber > 1 && opt.languageIsEnglish ? "s" : "");
             if (auto bc = cast (const BrickCounter) constJob)
                 s ~= " [%d]".format(bc.skillsQueued * bc.bricksAtStart
                                     + bc.bricksLeft);
@@ -174,19 +154,12 @@ private:
         _targetDesc.text = s;
     }}
 
-    void formatTooltip()
+    void formatFPS()
     {
-        string s;
-        if (file.option.ingameTooltips.value) {
-            s = Tooltip.format(_tooltipsSuggested);
-            if (s == "")
-                s = file.language.skillTooltip(_skillTooltipSuggested);
+        if (! opt.showFPS.value) {
+            return; // _fps.txt will remain "" forever.
         }
-        if (file.option.showFPS.value && s == "")
-            s = format!"Phyu: %d   FPS: %d"(_age, displayFps);
-        _tooltip.text = s;
-        _tooltipsSuggested = 0;
-        _skillTooltipSuggested = Ac.nothing;
+        _fps.text = format!"Phyu: %d   FPS: %d"(_age, displayFps);
     }
 }
 

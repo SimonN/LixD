@@ -180,6 +180,13 @@ public:
         return ret;
     }
 
+    final void forceUndrawToTransparent()
+    {
+        with (BlenderMinus) {
+            al_draw_filled_rectangle(xs, ys, xs + xls, ys + yls, color.white);
+        }
+    }
+
 protected:
     // override these
     void calcSelf() { } // do computations when GUI element has focus

@@ -163,6 +163,7 @@ void drawMapToA5Display(Game game)
         game.map.drawCamera();
     }
     game.drawReplaySign();
+    game.drawTooltips();
 }
 
 void drawReplaySign(Game game)
@@ -175,10 +176,21 @@ void drawReplaySign(Game game)
         rep.drawToCurrentAlbitNotTorbit(Point(0,
             (rep.yl/5 * (1 + sin(timerTicks * 0.08f))).to!int));
     }
-    if (game.view.canInterruptReplays && game.isMouseOnLand
-        && ! showFPS.value // power user setting, it overrides us
+}
+
+void drawTooltips(Game game)
+{
+    game._tooltipLine.move(game._tweaker.shown
+        ? game._tweaker.xlg : 0, game._tooltipLine.geom.y);
+    if (game.view.canInterruptReplays
+        && game.nurse.hasFuturePlies
+        && game.isMouseOnLand
     ) {
-        game.pan.suggestTooltip(Tooltip.ID.clickToCancelReplay);
+        game._tooltipLine.suggestTooltip(Tooltip.ID.clickToCancelReplay);
+    }
+    game._tooltipLine.suggestTooltip(game.pan.hoveredSkillOnlyForTooltip);
+    if (game.pan.isSuggestingTooltip) {
+        game._tooltipLine.suggestTooltip(game.pan.suggestedTooltip);
     }
 }
 
