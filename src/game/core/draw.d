@@ -167,8 +167,9 @@ void drawMapToA5Display(Game game)
 
 void drawReplaySign(Game game)
 {
-    if (! game.replaying)
+    if (game.nurse.constReplay.latestPhyu <= game.nurse.now) {
         return;
+    }
     if (game.view.showReplaySign) {
         const(Cutbit) rep = InternalImage.gameReplay.toCutbit;
         rep.drawToCurrentAlbitNotTorbit(Point(0,

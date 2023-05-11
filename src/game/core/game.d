@@ -212,41 +212,30 @@ package:
             /  (displayFps     + 1) / ticksNormalSpeed;
     }
 
-    @property bool replaying() const
-    {
-        assert (nurse);
-        // Replay data for update n means: this will be used when updating
-        // from update n-1 to n. If there is still unapplied replay data,
-        // then we are replaying.
-        // DTODONETWORKING: Add a check that we are never replaying while
-        // we're connected with other players.
-        return nurse.constReplay.latestPhyu > nurse.now;
-    }
-
-    @property bool isMouseOnLand() const
+    bool isMouseOnLand() const
     {
         assert (pan);
         assert (_tweaker, "even if hidden, this should be non-null");
         return ! pan.isMouseHere && ! _tweaker.isMouseHere;
     }
 
-    @property bool multiplayer() const
+    bool multiplayer() const
     {
         return nurse.stateOnlyPrivatelyForGame.multiplayer;
     }
 
-    @property Style localStyle() const @nogc nothrow
+    Style localStyle() const @nogc nothrow
     in { assert (_effect, "create effect manager before querying style"); }
     do { return _effect.localTribe; }
 
-    @property const(Tribe) localTribe() const
+    const(Tribe) localTribe() const
     {
         auto ptr = localStyle in cs.tribes;
         assert (ptr, "badly cloned cs? Local style isn't there");
         return *ptr;
     }
 
-    @property View view() const
+    View view() const pure nothrow @safe @nogc
     {
         assert (nurse && nurse.constReplay, "call view() after replay init");
         return createView(nurse.constReplay.numPlayers, _netClient);
@@ -268,19 +257,19 @@ package:
         altickLastPhyu = timerTicks;
     }
 
-    @property bool singleplayerHasWon() const
+    bool singleplayerHasWon() const
     {
         return ! multiplayer && nurse && level
             && nurse.singleplayerHasSavedAtLeast(level.required);
     }
 
-    @property bool singleplayerHasNuked() const
+    bool singleplayerHasNuked() const
     {
         return ! multiplayer && nurse && level && nurse.singleplayerHasNuked;
     }
 
 private:
-    @property cs() inout
+    auto cs() inout
     {
         assert (nurse);
         return nurse.stateOnlyPrivatelyForGame;

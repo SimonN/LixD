@@ -34,8 +34,6 @@ interface NetClientObserver {
     void onPeerChangesProfile(in Profile2022 old, in Profile2022 theNew);
     void onWeChangeRoom(in Room toRoom);
 
-    // Structure of arrays: The n-th room ID from the first array belongs
-    // to the n-th player from the second array.
     void onListOfExistingRooms(in RoomListEntry2022[]);
     void onLevelSelect(in string peerNameOfChooser, in ubyte[] data);
     void onGameStart(Permu);
@@ -49,21 +47,25 @@ interface NetClientObserver {
 
 interface INetClient {
     void disconnectAndDispose(); // This unregisters all observers.
-    void calc(); // call this frequently, this shovels incoming networking
-                 // data into refined structs to fetch from other methods
+    /*
+     * Call calc() frequently; this receives and sends all due networking
+     * packets. The INetClient will then call its NetClinetObservers that
+     * you registered beforehand with register().
+     */
+    void calc();
 
     void register(NetClientObserver);
     void unregister(NetClientObserver);
 
-    bool connected() const pure;
-    bool connecting() const pure;
-
-    string enetLinkedVersion() const;
-    const(Profile2022[PlNr]) profilesInOurRoom() const in { assert(connected); }
-    PlNr ourPlNr() const pure in { assert(connected); }
-    Room ourRoom() const pure in { assert(connected); }
-    const(Profile2022) ourProfile() const pure in { assert(connected); }
-    bool mayWeDeclareReady() const in { assert(connected); }
+    const pure nothrow @safe @nogc {
+        bool connected();
+        bool connecting();
+        const(Profile2022[PlNr]) profilesInOurRoom() in { assert(connected); }
+        PlNr ourPlNr() in { assert(connected); }
+        Room ourRoom() in { assert(connected); }
+        const(Profile2022) ourProfile() in { assert(connected); }
+        bool mayWeDeclareReady() in { assert(connected); }
+    }
 
     void setOurProfile(in Profile2022);
     void gotoExistingRoom(Room);
@@ -72,4 +74,6 @@ interface INetClient {
     void sendChatMessage(string);
     void selectLevel(const(void[])); // accepts file that's read into a buffer
     void sendPly(in Ply);
+
+    string enetLinkedVersion() const;
 }
