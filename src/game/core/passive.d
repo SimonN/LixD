@@ -27,11 +27,7 @@ calcPassive(
     in Optional!Passport lixToHighlightInTweaker
 ) { with (game)
 {
-    if (pan.zoomIn)
-        map.zoomIn();
-    if (pan.zoomOut)
-        map.zoomOut();
-    map.calcScrolling();
+    map.calcZoomAndScrolling();
     game.activateOrDeactivateTweaker(lixToHighlightInTweaker);
 
     if (map.suggestHoldScrollingTooltip)

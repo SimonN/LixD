@@ -75,7 +75,7 @@ public:
         "speedIsTurbo", "restart", "saveState", "loadState",
         "framestepBackOne", "framestepBackMany", "framestepAheadOne",
         "framestepAheadMany", "splatRulerIsOn", "tweakerIsOn",
-        "highlightGoalsExecute", "zoomIn", "zoomOut", "nukeDoubleclicked"]
+        "highlightGoalsExecute", "nukeDoubleclicked"]
     ) {
         import std.format;
         mixin("const bool %s() { return _rb.%s(); }".format(field, field));

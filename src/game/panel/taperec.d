@@ -23,7 +23,7 @@ private:
     // All the buttons are non-null, always
     BitmapButton _restart, _pause;
     NukeButton _nuke;
-    TwoTasksButton _zoom, _speedBack, _speedAhead, _speedFast;
+    TwoTasksButton _speedBack, _speedAhead, _speedFast;
 
 public:
     this(Geom g)
@@ -46,7 +46,6 @@ public:
                 b.hotkeyRight = keyRight ? keyRight.value : KeySet();
             addChild(b);
         }
-        newBut(_zoom, 0, 1,  2, opt.keyZoomIn, opt.keyZoomOut);
         newBut(_speedBack, 0, 2, 10, opt.keyFrameBackOne, opt.keyFrameBackMany);
         newBut(_speedAhead, 1, 2, 3,
             opt.keyFrameAheadOne, opt.keyFrameAheadMany);
@@ -65,7 +64,7 @@ public:
         addChild(_pause);
     }
 
-    @property const {
+    const {
         bool paused()        { return _pause.on; }
         bool speedIsNormal() { return ! paused && ! _speedFast.on; }
         bool speedIsFast()   { return ! paused && _speedFast.on
@@ -73,8 +72,6 @@ public:
         bool speedIsTurbo()  { return ! paused && _speedFast.on
                                                && _speedFast.xf == frameTurbo;}
         bool restart()            { return _restart.execute; }
-        bool zoomIn()             { return _zoom.executeLeft; }
-        bool zoomOut()            { return _zoom.executeRight; }
         bool framestepBackOne()   { return _speedBack.executeLeft; }
         bool framestepBackMany()  { return _speedBack.executeRight; }
         bool framestepAheadOne()  { return _speedAhead.executeLeft; }
@@ -92,7 +89,6 @@ public:
             return _restart.isMouseHere ? Tooltip.ID.restart
                 : _pause.isMouseHere ? Tooltip.ID.pause
                 : _nuke.isMouseHere ? Tooltip.ID.nuke
-                : _zoom.isMouseHere ? Tooltip.ID.zoom
                 : _speedBack.isMouseHere ? Tooltip.ID.framestepBack
                 : _speedAhead.isMouseHere ? Tooltip.ID.framestepAhead
                 : Tooltip.ID.fastForward;
@@ -171,7 +167,7 @@ public:
         showLoadState(false);
     }
 
-    @property const {
+    const {
         bool loadState() { return _stateLoad.execute; }
         bool saveState() { return _stateSave.execute; }
         bool tweakerIsOn() { return _showTweaker.on; }

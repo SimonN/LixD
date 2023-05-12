@@ -29,7 +29,6 @@ struct Tooltip {
     // When several are requested, only the most important is shown.
     enum ID : IdSet {
         pause = 0x1,
-        zoom = 0x2,
         showSplatRuler = 0x4,
         highlightGoals = 0x8,
         stateSave = 0x10,
@@ -108,7 +107,6 @@ Tooltip makeTooltip(Tooltip.ID id) nothrow @nogc @safe
         case ID.framestepOrQuit:
             return key(Lang.gameFramestepOrQuit, keyGameExit);
         case ID.pause: return none(Lang.gamePause);
-        case ID.zoom: return mouse(Lang.gameZoom);
         case ID.showSplatRuler: return none(Lang.gameShowSplatRuler);
         case ID.highlightGoals: return none(Lang.gameHighlightGoals);
         case ID.stateSave: return none(Lang.gameStateSave);

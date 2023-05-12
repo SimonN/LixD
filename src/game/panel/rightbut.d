@@ -26,7 +26,7 @@ public:
 
     abstract inout(NukeButton) nuke() inout;
 
-    const @property {
+    const {
         bool paused() { return false; }
         bool speedIsNormal() { return true; }
         bool speedIsFast() { return false; }
@@ -42,28 +42,19 @@ public:
         bool splatRulerIsOn() { return false; }
         bool tweakerIsOn() { return false; }
         bool highlightGoalsExecute() { return false; }
-
-        /*
-         * Even when there are no zoom buttons due to lack of UI space,
-         * we still want the hotkeys to operate as if there were a zoom button.
-         * Override this and replace its behavior completely with the button
-         * if you have a button.
-         */
-        bool zoomIn() { return keyZoomIn.value.keyTappedAllowingRepeats; }
-        bool zoomOut() { return keyZoomOut.value.keyTappedAllowingRepeats; }
     }
 
-    final @property bool nukeDoubleclicked() const
+    final bool nukeDoubleclicked() const
     {
         return nuke.doubleclicked;
     }
 
-    final @property bool isSuggestingTooltip() const
+    final bool isSuggestingTooltip() const
     {
         return _suggesters.any!(sug => sug.isSuggestingTooltip);
     }
 
-    final @property Tooltip.ID suggestedTooltip() const
+    final Tooltip.ID suggestedTooltip() const
     {
         // TooltipSuggester's contract requires that front exists here:
         return _suggesters.filter!(sug => sug.isSuggestingTooltip)
@@ -73,7 +64,7 @@ public:
     void setSpeedNormal() {}
     void pause(bool b) {}
 
-    @property void ourStyle(in Style) {}
+    void ourStyle(in Style) {}
     void update(in Score) {}
     void add(Style style, string name) {}
 
@@ -82,8 +73,8 @@ protected:
     in { assert (! _suggesters.canFind(sug), "Don't add a suggester twice."); }
     do { _suggesters ~= sug; }
 
-    @property float skillXl() const { return this.geom.xlg / 4f; }
-    @property float skillYl() const { return this.geom.ylg - 20f; }
+    float skillXl() const { return this.geom.xlg / 4f; }
+    float skillYl() const { return this.geom.ylg - 20f; }
 }
 
 // ############################################################################
@@ -153,7 +144,7 @@ public:
         makeSplatRuler(shadesGeom);
     }
 
-    override const @property {
+    override const {
         bool saveState() { return _ssbs.saveState; }
         bool loadState() { return _ssbs.loadState; }
         bool tweakerIsOn() { return _ssbs.tweakerIsOn; }
@@ -199,7 +190,7 @@ mixin template TapeRecorderMixin() {
     public override void setSpeedNormal() { _trbs.setSpeedNormal(); }
     public override void pause(bool b) { _trbs.pause(b); }
 
-    public override const @property {
+    public override const {
         bool paused()             { return _trbs.paused; }
         bool speedIsNormal()      { return _trbs.speedIsNormal; }
         bool speedIsFast()        { return _trbs.speedIsFast; }
@@ -209,8 +200,6 @@ mixin template TapeRecorderMixin() {
         bool framestepBackMany()  { return _trbs.framestepBackMany; }
         bool framestepAheadOne()  { return _trbs.framestepAheadOne; }
         bool framestepAheadMany() { return _trbs.framestepAheadMany; }
-        bool zoomIn()             { return _trbs.zoomIn; }
-        bool zoomOut()            { return _trbs.zoomOut; }
     }
 
     private void makeTapeRecorderWithYl(in float tapeYlg)
@@ -232,13 +221,13 @@ mixin template ScoreMixin() {
     private ScoreGraph _scoreGraph;
     private ScoreBoard _scoreBoard; // Present but usually hidden.
 
-    public override @property void ourStyle(in Style st)
+    public override void ourStyle(in Style st)
     {
         _scoreGraph.ourStyle = st;
         _scoreBoard.ourStyle = st;
     }
 
-    public override @property void update(in Score score)
+    public override void update(in Score score)
     {
         _scoreGraph.update(score);
         _scoreBoard.update(score);
@@ -292,7 +281,7 @@ mixin template SplatRulerMixin() {
         addSuggester(_splatRuler);
     }
 
-    public override const @property {
+    public override const {
         bool splatRulerIsOn() { return _splatRuler.on; }
     }
 }

@@ -17,8 +17,7 @@ import hardware.keyset;
 class EditorPanel : Element {
 private:
     TextButton     _info;
-    BitmapButton[] _buttons; // except zoom button, but still has slot for it
-    TwoTasksButton _zoom;
+    BitmapButton[] _buttons;
     TextButton[]   _textButtons;
     Label          _fps;
     MutFilename    _currentFilenameOrNull; // null if unsaved new level
@@ -78,7 +77,6 @@ public:
             : _textButtons[langToButtonIndex(id)];
     }
 
-    @property buttonZoom() inout { return _zoom; }
     @property buttonFraming() inout {
         return button(Lang.editorButtonSelectFrame);
     }
@@ -133,7 +131,13 @@ private:
         addChildren(_info, _fps);
     }
 
-    int langToButtonXf(Lang l) const { return l - Lang.editorButtonFileNew; }
+    int langToButtonXf(Lang l) const
+    {
+        return l - Lang.editorButtonFileNew
+            // Skip the obsolete zoom sprite.
+            + (l >= Lang.editorButtonAddTerrain ? 1 : 0);
+    }
+
     int langToButtonIndex(Lang lang) const
     {
         assert (lang >= Lang.editorButtonFileNew);
@@ -151,17 +155,24 @@ private:
 
     void makeButtons()
     {
-        immutable int bitmaps = Lang.editorButtonAddHazard + 1
+        immutable int bitmaps = Lang.editorButtonAddHazard + 1 // [a, b[
                               - Lang.editorButtonFileNew;
         immutable int texts = 3;
-        immutable bitmapXl = infoXl * 2f / bitmaps;
+        immutable bitmapXl = infoXl * 2f / (bitmaps + 1); // +1 for AddTerrain
         immutable bitmapYl = (gui.panelYlg - _info.ylg) / 2;
         immutable textXl = gui.screenXlg - infoXl();
         immutable textYl = gui.panelYlg / texts;
         const cutbit = InternalImage.editPanel.toCutbit;
 
-        Geom newGeomForButton(int i)
+        Geom newGeomForButton(in int rawIndex)
         {
+            immutable int i
+                = (rawIndex > langToButtonIndex(Lang.editorButtonAddTerrain))
+                ? rawIndex + 1 : rawIndex; // Accommodate for its full height.
+            if (rawIndex == langToButtonIndex(Lang.editorButtonAddTerrain)) {
+                return new Geom(i/2 * bitmapXl, _info.ylg,
+                    bitmapXl, 2 * bitmapYl); // Full height
+            }
             return new Geom(i/2*bitmapXl, _info.ylg + i%2*bitmapYl,
                             bitmapXl, bitmapYl);
         }
@@ -171,11 +182,6 @@ private:
             if (langToButtonIndex(Lang.editorButtonGridCustom) == i) {
                 _buttons ~= new CustGridButton(g);
                 _buttons[$-1].xf = -1;
-            }
-            else if (langToButtonIndex(Lang.editorButtonViewZoom) == i) {
-                _zoom = new TwoTasksButton(g, cutbit);
-                _zoom.xf = langToButtonXf(Lang.editorButtonViewZoom);
-                _buttons ~= _zoom;
             }
             else {
                 _buttons ~= new BitmapButton(g, cutbit);

@@ -102,11 +102,6 @@ void makePanel(Editor editor)
         onExecute(Lang.editorButtonForeground, opt.keyEditorForeground.value, () {
             editor.zOrderSelectionTowards(FgBg.fg);
             }, Button.WhenToExecute.whenMouseClickAllowingRepeats);
-
-        // Zoom execute is handled in Editor.calc()
-        buttonZoom.hotkey = opt.keyZoomIn.value;
-        buttonZoom.hotkeyRight = opt.keyZoomOut.value;
-
         onExecute(Lang.editorButtonMirrorHorizontally,
             opt.keyEditorMirrorHorizontally.value, () {
                 editor.mirrorSelectionHorizontally;

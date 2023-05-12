@@ -51,7 +51,7 @@ void implEditorCalc(Editor editor) {
     with (editor)
 {
     assert (_panel);
-    _map.calcScrolling();
+    _map.calcZoomAndScrolling();
     if (aboutToTrash)
         mouseCursor.yf = 2; // trashcan
     else if (_map.isHoldScrolling)
@@ -77,12 +77,6 @@ void handleNonstandardPanelButtons(Editor editor) { with (editor)
     with (_panel.buttonSelectAdd)
         on = hotkey.keyHeld     ? true
            : hotkey.keyReleased ? false : on;
-    with (_panel.buttonZoom) {
-        if (executeLeft)
-            _map.zoomIn();
-        if (executeRight)
-            _map.zoomOut();
-    }
 }}
 
 void selectGrid(Editor editor)

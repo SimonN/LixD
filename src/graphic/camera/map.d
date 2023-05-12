@@ -150,8 +150,6 @@ void centerOnAverage(Rx, Ry)(Rx rangeX, Ry rangeY)
         topology.torusAverageY(rangeY));
 }
 
-void zoomIn() { chosenCam.zoomInKeepingTargetPointFixed(mouseOnTarget); }
-void zoomOut() { chosenCam.zoomOutKeepingTargetPointFixed(mouseOnTarget); }
 void zoomOutToSeeEntireMap() { chosenCam.zoomOutToSeeEntireSource(); }
 void snapToBoundary() { chosenCam.snapToBoundary(); }
 
@@ -184,8 +182,14 @@ Point mouseOnLand() const
     return chosenCam.sourceOf(mouseOnTarget);
 }
 
-void calcScrolling()
+void calcZoomAndScrolling()
 {
+    if (opt.keyZoomIn.value.keyTappedAllowingRepeats) {
+        chosenCam.zoomInKeepingTargetPointFixed(mouseOnTarget);
+    }
+    if (opt.keyZoomOut.value.keyTappedAllowingRepeats) {
+        chosenCam.zoomOutKeepingTargetPointFixed(mouseOnTarget);
+    }
     calcEdgeScrolling(chosenCam);
     calcHoldScrolling(chosenCam);
 }
