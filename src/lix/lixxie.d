@@ -402,7 +402,8 @@ int priorityForNewAc(in Ac newAc) const
      || (newAc == Ac.exploder && ploderTimer > 0)
      || (newAc == Ac.runner && abilityToRun)
      || (newAc == Ac.climber && abilityToClimb)
-     || (newAc == Ac.floater && abilityToFloat) ) return 1;
+     || (newAc == Ac.floater && abilityToFloat)
+     || (newAc == Ac.nothing)) return 1;
 
     immutable base = basePriorityForNewAcGivenOldAc(newAc);
     if (base < 2) {

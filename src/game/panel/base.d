@@ -112,12 +112,18 @@ public:
 
     void highlightFirstSkill()
     {
-        assert (currentSkill is null);
+        assert (chosenSkillButtonOrNull is null);
         _skills.filter!(sk => sk.number != 0).takeOne.each!(
                                                 (sk) { makeCurrent(sk); });
     }
 
-    inout(SkillButton) currentSkill() inout
+    Ac chosenSkill() const
+    {
+        const(SkillButton) b = chosenSkillButtonOrNull();
+        return b is null ? Ac.nothing : b.skill;
+    }
+
+    inout(SkillButton) chosenSkillButtonOrNull() inout
     {
         foreach (b; _skills)
             if (b.on && b.skill != Ac.nothing && b.number != 0)
@@ -136,7 +142,7 @@ public:
 protected:
     override void calcSelf()
     {
-        SkillButton oldSkill = currentSkill();
+        SkillButton oldSkill = chosenSkillButtonOrNull();
         _skills.filter!(sk => sk.execute && sk != oldSkill)
                .filter!(sk => sk.number != 0 || sk.hotkey.keyTapped).each!((sk)
         {
@@ -155,8 +161,8 @@ private:
 
     void makeCurrent(SkillButton skill)
     {
-        if (currentSkill !is null)
-            currentSkill.on = false;
+        if (chosenSkillButtonOrNull !is null)
+            chosenSkillButtonOrNull.on = false;
         if (skill && skill.number != 0)
             skill.on = true;
         lastOnForRestoringAfterStateLoad = skill; // even if currently 0

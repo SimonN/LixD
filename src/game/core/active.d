@@ -55,7 +55,7 @@ do {
     else if (potAss.empty) {
         game.cutGlobalFutureFromReplay(); // We've clicked air, not a lix.
     }
-    else if (game.view.canAssignSkills && game.pan.currentSkill is null) {
+    else if (game.view.canAssignSkills && game.pan.chosenSkill == Ac.nothing) {
         hardware.sound.playLoud(Sound.PANEL_EMPTY);
     }
 }
@@ -98,7 +98,7 @@ private:
 bool canAssignTo(Game game, in Optional!Assignee potAss)
 {
     return game.view.canAssignSkills
-        && game.pan.currentSkill !is null
+        && game.pan.chosenSkill != Ac.nothing
         && ! potAss.empty
         && potAss.front.priority >= 2;
 }
@@ -123,22 +123,26 @@ bool alwaysForceWhenAssigning(in Ac ac) pure nothrow @safe @nogc
 }
 
 void assignTo(Game game, in Assignee assignee)
-in { assert (game.pan.currentSkill !is null, "Don't call assignTo() then."); }
+in {
+    assert (game.pan.chosenSkillButtonOrNull !is null,
+    "Don't call assignTo() then.");
+}
 do { with (game)
 {
     Ply i = game.newPlyForNextPhyu();
-    i.skill = game.pan.currentSkill.skill;
+    i.skill = game.pan.chosenSkill;
     i.toWhichLix = assignee.id;
     i.isDirectionallyForced
         = alwaysForceWhenAssigning(i.skill) || forcingLeft || forcingRight;
     i.lixShouldFace = assignee.lixxie.facingLeft
         ? Ply.LixShouldFace.left : Ply.LixShouldFace.right;
 
-    if (game.pan.currentSkill.number != skillInfinity) {
+    if (game.pan.chosenSkillButtonOrNull.number != skillInfinity) {
         // Decrease the visible number on the panel. This is mostly eye candy.
         // It doesn't affect physics, including judging what's coming in over
         // the network, but it affects the assignment user interface.
-        game.pan.currentSkill.number = game.pan.currentSkill.number - 1;
+        game.pan.chosenSkillButtonOrNull.number
+            = game.pan.chosenSkillButtonOrNull.number - 1;
     }
     game.includeOurNew(i);
 

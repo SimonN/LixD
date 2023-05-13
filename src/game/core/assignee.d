@@ -70,9 +70,7 @@ Optional!Assignee findPotentialAssigneeAssumingMouseOnLand(Game game)
     bool leftFound  = false; // if both left/right true,
     bool rightFound = false; // make a tooltip
 
-    const(SkillButton) currentSkill = game.pan.currentSkill;
     assert (map.zoom > 0);
-
     immutable float cursorThicknessOnLand = 12 / map.zoom;
     immutable float mmldX = cursorThicknessOnLand +  2; // + lix thickness
     immutable float mmldU = cursorThicknessOnLand + 15; // + lix height
@@ -88,7 +86,7 @@ Optional!Assignee findPotentialAssigneeAssumingMouseOnLand(Game game)
         ) {
             ++lixesUnderCursor;
             Assignee a = game.generateAssignee(
-                lixxie, id, mol, mmldD - mmldU, currentSkill);
+                lixxie, id, mol, mmldD - mmldU);
             described = described.empty || a.isBetterThan(described.front)
                 ? some(a) : described;
             comparePotentialWithBestWorst(a, best, worst,
@@ -112,7 +110,7 @@ Optional!Assignee findPotentialAssigneeAssumingMouseOnLand(Game game)
     pan.describeTarget(described.empty ? null : described.front.lixxie,
         lixesUnderCursor);
 
-    if (! best.empty && currentSkill !is null) {
+    if (! best.empty && best.front.lixxie.ac == game.pan.chosenSkill) {
         if (best.front.lixxie.ac == Ac.builder)
             pan.suggestTooltip(Tooltip.ID.queueBuilder);
         else if (best.front.lixxie.ac == Ac.platformer)
@@ -127,7 +125,6 @@ Assignee generateAssignee(
     in int id,
     in Point mouseOnLand,
     in float dMinusU,
-    in SkillButton currentSkill
 ) {
     import basics.help;
     Assignee ret;
@@ -136,8 +133,7 @@ Assignee generateAssignee(
     ret.distanceToCursor = game.map.topology.hypotSquared(
         mouseOnLand.x, mouseOnLand.y, lixxie.ex,
                                       lixxie.ey + roundInt(dMinusU/2));
-    ret.priority = currentSkill !is null
-        ? lixxie.priorityForNewAc(currentSkill.skill) : 1;
+    ret.priority = lixxie.priorityForNewAc(game.pan.chosenSkill);
     return ret;
 }
 
