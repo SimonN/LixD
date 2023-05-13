@@ -97,7 +97,7 @@ private:
     }
 
 package:
-    @property Optional!Filename levelFilename(Filename fn) @nogc nothrow
+    Optional!Filename levelFilename(Filename fn) @nogc nothrow
     {
         _levelFnCanBeNullInNetgames = fn;
         return levelFilename();
@@ -119,13 +119,13 @@ public:
             return false;
     }
 
-    @property Optional!Filename levelFilename() const @nogc nothrow
+    Optional!Filename levelFilename() const @nogc nothrow
     {
         return _levelFnCanBeNullInNetgames is null ? no!Filename
             : some!Filename(_levelFnCanBeNullInNetgames.get);
     }
 
-    @property const pure nothrow @safe @nogc {
+    const pure nothrow @safe @nogc {
         Date levelBuiltRequired() {return _levelBuiltRequired; }
         Version gameVersionRequired() { return _gameVersionRequired; }
         int numPlayers() { return _players.length & 0x7FFF_FFFF; }
@@ -151,9 +151,9 @@ public:
         }
     }
 
-    @property Permu permu(Permu p) { _permu = p; return p; }
+    Permu permu(Permu p) { _permu = p; return p; }
 
-    @property string styleToNames(in Style st) const
+    string styleToNames(in Style st) const
     {
         auto range = _players.byValue.filter!(p => p.style == st)
                                      .map!(p => p.name);
@@ -281,34 +281,11 @@ public:
     }
 
     /*
-     * We assume that we'll only call cutSingleLixFutureAfter() during
-     * singleplayer, where there is only one tribe and we don't have to
-     * compare players/styles/... We only look for matching lix IDs.
-     */
-    void cutSingleLixFutureAfter(in Phyu upd, in int lixID)
-    {
-        bool toCut(in Ply p) pure nothrow @safe @nogc
-        {
-            if (p.when <= upd) {
-                return false;
-            }
-            return p.isNuke || p.isAssignment && p.toWhichLix == lixID;
-        }
-        if (_plies.empty
-            || _plies[$-1].when <= upd
-            || ! _plies.canFind!toCut
-        ) {
-            return; // Nothing to cut.
-        }
-        _plies = _plies.filter!(ply => ! toCut(ply)).array;
-        touch();
-    }
-
-    /*
      * See file.replay.change for what it returns.
      */
     TweakResult tweak(in ChangeRequest rq)
     {
+        touch();
         return this.tweakImpl(rq);
     }
 
@@ -359,22 +336,4 @@ unittest {
     assert (! b.equalBefore(a, Phyu(30)));
     assert (a.equalBefore(b, Phyu(10)));
     assert (b.equalBefore(a, Phyu(10)));
-}
-
-unittest {
-    Replay a = Replay.newNoLevelFilename(Date.now());
-    for (int x = 100; x < 200; x += 10) {
-        Ply ply;
-        ply.isDirectionallyForced = true;
-        ply.lixShouldFace = x % 20 == 10
-            ? Ply.LixShouldFace.left : Ply.LixShouldFace.right;
-        ply.skill = x % 40 < 20 ? Ac.digger : Ac.climber;
-        ply.toWhichLix = 3;
-        ply.when = Phyu(x);
-        a.add(ply);
-    }
-    assert (a.allPlies.length == 10);
-    a.cutSingleLixFutureAfter(Phyu(150), 3);
-    assert (a.allPlies.length == 6); // 100, 110, 120, 130, 140, 150
-    assert (a.allPlies[$-1].when == Phyu(150));
 }

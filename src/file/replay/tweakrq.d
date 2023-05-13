@@ -1,8 +1,10 @@
 module file.replay.tweakrq;
 
 /*
- * Each ChangeRequest belongs to exactly one Ply entry.
- * That connection exists only outside this module game.repedit.changerq.
+ * Most ChangeRequests refer to exactly one Ply entry.
+ *
+ * ChangeVerb.eraseThisAndFutureOfSameLix refers to later plies, not the given.
+ * The given ply is only examined for its phyu and lix ID, not for its skill.
  *
  * See also net.repdata.Ply.opCmp:
  * In the same frame, order by player number. From same player in same frame,
@@ -48,28 +50,12 @@ enum ChangeVerb {
     moveThisEarlier,
 
     /*
-     * For this entry X, consider the set of entries Y such that
-     * Y either is X or appears after (sorted later) than X.
-     * Increase the phyu of all Y by one. Preserve order within the set of Ys.
+     * Don't erase the single entry X from the replay, but
+     * erase all other entries Y that satisfy all of the following:
+     *  -   X and Y refer to the same lix,
+     *  -   and Y's phyu > X's phyu.
      */
-    moveTailBeginningWithThisLater,
-
-    /*
-     * For this entry X, consider the set of entries Y such that
-     * Y's phyu >= X's phyu. (This is a different set than that of
-     * moveTailBeginningWithThisPhyuLater!)
-     *
-     * Decrease the phyu of all the Ys in the set by one.
-     * Preserve order within the set of Ys.
-     * If some moved entries Y now share a phyu with entries Z that weren't
-     * moved, the rule of inserting as last applies to the Y.
-     */
-    moveTailBeginningWithPhyuEarlier,
-
-    /*
-     * Erase the single entry X from the replay.
-     */
-    eraseThis,
+    cutFutureOfOneLix,
 }
 
 struct ChangeRequest {
@@ -78,6 +64,8 @@ struct ChangeRequest {
 }
 
 struct TweakResult {
+    // If false, ignore the other fields.
+    bool somethingChanged;
     /*
      * The first phyu in which (the replay before the tweak) differs from
      * (the replay after the tweak). See the general comment of

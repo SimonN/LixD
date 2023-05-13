@@ -33,8 +33,9 @@ TweakResult tweakImpl(
     Replay rep,
     in ChangeRequest rq,
 ) in {
-    assert (rep.indexOf(rq.what) >= 0,
-        "file.replay.replay should guarantee that (what) exists in the data: "
+    assert (rq.how == ChangeVerb.cutFutureOfOneLix
+        || rep.indexOf(rq.what) >= 0,
+        "Most ChangeVerbs should refer to an existant Ply. "
         ~ rq.what.to!string);
 }
 out {
@@ -51,11 +52,8 @@ do {
             return rep.moveThisLaterImpl(rq);
         case ChangeVerb.moveThisEarlier:
             return rep.moveThisEarlierImpl(rq);
-        case ChangeVerb.eraseThis:
-            return rep.eraseThisImpl(rq);
-        case ChangeVerb.moveTailBeginningWithThisLater:
-        case ChangeVerb.moveTailBeginningWithPhyuEarlier:
-            assert (false, "not yet implemented");
+        case ChangeVerb.cutFutureOfOneLix:
+            return rep.cutFutureOfOneLixImpl(rq);
     }
 }
 
@@ -139,6 +137,7 @@ TweakResult moveThisLaterImpl(
         ++id; // The changed entry sits at a higher position now. Check again.
     }
     TweakResult ret;
+    ret.somethingChanged = true;
     ret.firstDifference = oldPhyu;
     ret.goodPhyuToView = newPhyu;
     return ret;
@@ -157,25 +156,40 @@ TweakResult moveThisEarlierImpl(
         --id;
     }
     TweakResult ret;
+    ret.somethingChanged = true;
     ret.firstDifference = newPhyu;
     ret.goodPhyuToView = newPhyu; // Yes, same as firstDifference
     return ret;
 }
 
-TweakResult eraseThisImpl(
+TweakResult cutFutureOfOneLixImpl(
     Replay rep,
-    in ChangeRequest rq
-) {
-    int id = rep.indexOf(rq.what);
-    assert (id < rep._plies.len);
-    memmove(
-        &rep._plies[id],
-        &rep._plies[id] + 1, // if outside array, 0 bytes will be copied...
-        Ply.sizeof * (rep._plies.len - id - 1)); // ...because of this number.
-    rep._plies.length -= 1;
+    in ChangeRequest rq,
+) pure nothrow @safe @nogc
+{
+    /*
+     * This doesn't guard against different tribes or PlNrs.
+     * This assumes we'll always cut in singleplayer, where assignable
+     * lixes can be identified already by rq.what.toWhichLix alone.
+     */
+    bool toCut(in Ply p) pure nothrow @safe @nogc
+    {
+        if (p.when <= rq.what.when) {
+            return false;
+        }
+        return p.isNuke
+            || p.isAssignment && p.toWhichLix == rq.what.toWhichLix;
+    }
+    assert (! toCut(rq.what), "We cut after rq.what, not including rq.what.");
+    if (! rep._plies.canFind!toCut) {
+        return TweakResult(false);
+    }
+    rep._plies = rep._plies.remove!(ply => toCut(ply));
     TweakResult ret;
+    ret.somethingChanged = true;
     ret.firstDifference = rq.what.when;
-    ret.goodPhyuToView = rq.what.when;
+    ret.goodPhyuToView = Phyu(0); // Don't jump weirdly into the future.
+    // Reason: We erased the future, we didn't put something exciting there.
     return ret;
 }
 
@@ -272,15 +286,32 @@ unittest {
     rep.add(b);
     rep.add(c);
 
-    rep.tweakImpl(ChangeRequest(b, ChangeVerb.eraseThis));
+    rep.tweakImpl(ChangeRequest(b, ChangeVerb.cutFutureOfOneLix));
     assert (rep._plies.length == 2);
     assert (rep._plies[0] == a);
-    assert (rep._plies[1] == c);
+    assert (rep._plies[1] == b);
 
-    rep.tweakImpl(ChangeRequest(c, ChangeVerb.eraseThis));
+    rep.tweakImpl(ChangeRequest(a, ChangeVerb.cutFutureOfOneLix));
     assert (rep._plies.length == 1);
     assert (rep._plies[0] == a);
+}
 
-    rep.tweakImpl(ChangeRequest(a, ChangeVerb.eraseThis));
-    assert (rep._plies.length == 0);
+unittest {
+    Replay a = Replay.newNoLevelFilename(Date.now());
+    for (int x = 100; x < 200; x += 10) {
+        Ply ply;
+        ply.isDirectionallyForced = true;
+        ply.lixShouldFace = x % 20 == 10
+            ? Ply.LixShouldFace.left : Ply.LixShouldFace.right;
+        ply.skill = x % 40 < 20 ? Ac.digger : Ac.climber;
+        ply.toWhichLix = 3;
+        ply.when = Phyu(x);
+        a.add(ply);
+    }
+    assert (a.allPlies.length == 10);
+    a.cutFutureOfOneLixImpl(ChangeRequest(
+        Ply(PlNr(0), Phyu(150), false, Ac.nothing, 3),
+        ChangeVerb.cutFutureOfOneLix));
+    assert (a.allPlies.length == 6); // 100, 110, 120, 130, 140, 150
+    assert (a.allPlies[$-1].when == Phyu(150));
 }

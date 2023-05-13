@@ -8,6 +8,7 @@ import optional;
 
 import net.repdata;
 static import file.option; // unpause on assign
+import file.replay;
 import game.core.assignee;
 import game.core.game;
 import hardware.sound;
@@ -64,8 +65,8 @@ void cutReplayAccordingToOptions(Game game, in Passport ofWhom)
     if (! game.view.canInterruptReplays) {
         return;
     }
-    if (file.option.replayAlwaysInsert.value == true) {
-        game.nurse.cutSingleLixFutureFromReplay(ofWhom);
+    if (file.option.replayAlwaysInsert.value) {
+        game.cutSingleLixFutureFromReplay(ofWhom);
     }
     else {
         game.nurse.cutGlobalFutureFromReplay();
@@ -77,6 +78,17 @@ void cutGlobalFutureFromReplay(Game game)
     if (game.view.canInterruptReplays) {
         game.nurse.cutGlobalFutureFromReplay();
     }
+}
+
+void cutSingleLixFutureFromReplay(Game game, in Passport ofWhom)
+{
+    assert (game.view == View.solveAlone,
+        "We're adding PlNr(0) to the ply. This will fail View.solveTogether."
+        ~ " If we ever implement solveTogether, add more logic here and"
+        ~ " also support that in the replay's ChangeRequest.");
+    game.nurse.tweakReplayRecomputePhysics(ChangeRequest(
+        Ply(PlNr(0), game.nurse.now, false, Ac.nothing, ofWhom.id),
+        ChangeVerb.cutFutureOfOneLix));
 }
 
 // ############################################################################

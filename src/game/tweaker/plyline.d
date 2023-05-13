@@ -64,10 +64,14 @@ public:
             "check suggestsChange before calling suggestedChange");
     }
     do {
-        return ChangeRequest(_desc.ply,
-            _del.execute ? ChangeVerb.eraseThis
-            : earlierExecuted ? ChangeVerb.moveThisEarlier
-            : ChangeVerb.moveThisLater);
+        if (_del.execute) {
+            // Weird design. See assert in Game.cutSingleLixFutureFromReplay().
+            Ply cutAfter = _desc.ply;
+            cutAfter.when = Phyu(cutAfter.when - 1);
+            return ChangeRequest(cutAfter, ChangeVerb.cutFutureOfOneLix);
+        }
+        return ChangeRequest(_desc.ply, earlierExecuted
+            ? ChangeVerb.moveThisEarlier : ChangeVerb.moveThisLater);
     }
 
 protected:

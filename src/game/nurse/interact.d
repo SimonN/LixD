@@ -45,7 +45,7 @@ protected:
         model.applyChangesToLand();
     }
 
-    override void onCutGlobalFutureFromReplay()
+    override void onCuttingSomethingFromReplay()
     {
         playLoud(Sound.SCISSORS);
     }

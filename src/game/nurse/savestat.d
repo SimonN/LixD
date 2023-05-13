@@ -40,21 +40,13 @@ public:
     bool userStateExists() { return _cache.userStateExists; }
     void saveUserState()   { _cache.saveUser(cs, replay); }
 
-    void cutGlobalFutureFromReplay()
+    final void cutGlobalFutureFromReplay()
     {
         if (replay.latestPhyu <= now) {
             return;
         }
-        onCutGlobalFutureFromReplay();
         replay.cutGlobalFutureAfter(now);
-    }
-
-    void cutSingleLixFutureFromReplay(in Passport ofWhom)
-    {
-        if (replay.latestPhyu <= now) {
-            return;
-        }
-        replay.cutSingleLixFutureAfter(now, ofWhom.id);
+        onCuttingSomethingFromReplay();
     }
 
     void loadUserState()
@@ -69,7 +61,7 @@ public:
             replay = loaded.replay.clone();
             if (! eqb) {
                 // A visible difference already at now().
-                onCutGlobalFutureFromReplay(); // Don't cut, but play sound.
+                onCuttingSomethingFromReplay(); // Don't cut, but play sound.
             }
         }
         if (! replayAfterFrameBack.value) {
@@ -114,6 +106,11 @@ public:
         immutable tweakResult = replay.tweak(rq);
         framestepBackTo(Phyu(tweakResult.firstDifference - 1));
         updateTo(max(current, tweakResult.goodPhyuToView));
+        if (tweakResult.somethingChanged
+            && rq.how == ChangeVerb.cutFutureOfOneLix
+        ) {
+            onCuttingSomethingFromReplay();
+        }
     }
 
     void updateTo(in Phyu targetPhyu)
@@ -135,7 +132,7 @@ protected:
 
     // Override this, e.g., if you want to draw from the InteractiveNurse
     void onAutoSave() { }
-    void onCutGlobalFutureFromReplay() { }
+    void onCuttingSomethingFromReplay() { }
 
     final void considerAutoSavestateIfCloseTo(
         in Phyu target, in DuringTurbo turbo
