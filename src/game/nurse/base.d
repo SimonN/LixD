@@ -60,37 +60,42 @@ public:
 
     Phyu now() const { return _model.cs.age; }
 
+    bool hasFuturePlies() const
+    {
+        return constReplay.latestPhyu > now;
+    }
+
     final const pure nothrow @safe @nogc {
         const(Replay) constReplay() const { return _replay; }
 
         // this is bad, DTODO: refactor
-        @property constStateForDrawingOnly()  const { return _model.cs; }
-        @property stateOnlyPrivatelyForGame() const { return _model.cs; }
+        auto constStateForDrawingOnly()  const { return _model.cs; }
+        auto stateOnlyPrivatelyForGame() const { return _model.cs; }
         // end bad
     }
 
-    @property bool everybodyOutOfLix() const
+    bool everybodyOutOfLix() const
     {
         return cs.tribes.byValue.all!(a => a.outOfLix);
     }
 
-    @property bool doneAnimating() const
+    bool doneAnimating() const
     {
         return cs.tribes.byValue.all!(a => a.doneAnimating)
             && cs.traps.all!(a => ! a.isEating(now));
     }
 
-    @property bool singleplayerHasSavedAtLeast(in int lixRequired) const
+    bool singleplayerHasSavedAtLeast(in int lixRequired) const
     {
         return cs.singleplayerHasSavedAtLeast(lixRequired);
     }
 
-    @property bool singleplayerHasNuked() const
+    bool singleplayerHasNuked() const
     {
         return cs.singleplayerHasNuked();
     }
 
-    final @property auto scores() const
+    final auto scores() const
     {
         return cs.tribes.byValue.map!(tr => tr.score);
     }
@@ -114,11 +119,11 @@ public:
 protected:
     void onDispose() { }
 
-    @property inout(GameModel) model() inout { return _model; }
-    @property inout(Replay) replay() inout { return _replay; }
-    @property Replay replay(Replay r) { return _replay = r; }
+    inout(GameModel) model() inout { return _model; }
+    inout(Replay) replay() inout { return _replay; }
+    Replay replay(Replay r) { return _replay = r; }
 
-    @property inout(GameState) cs() inout
+    inout(GameState) cs() inout
     in { assert (_model); }
     do { return _model.cs; }
 

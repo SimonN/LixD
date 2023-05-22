@@ -167,7 +167,7 @@ void drawMapToA5Display(Game game)
 
 void drawReplaySign(Game game)
 {
-    if (game.nurse.constReplay.latestPhyu <= game.nurse.now) {
+    if (! game.nurse.hasFuturePlies) {
         return;
     }
     if (game.view.showReplaySign) {
