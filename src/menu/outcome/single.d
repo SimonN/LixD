@@ -187,7 +187,7 @@ private:
     {
         auto next = oldLevel.nextLevel;
         while (! next.empty && next.front.numCompletedAfterRecaching != 0) {
-            next = next.oc.nextLevel;
+            next = next.front.nextLevel;
         }
         return next;
     }

@@ -84,7 +84,9 @@ public:
         if (_sortedChildren.length) {
             return _sortedChildren[0].firstLeafInside.toOptionalRhino;
         }
-        return _parent.oc.nextLevelAfter(this).toOptionalRhino;
+        // Replacing .oc. with empty/front here. See the closed github #452.
+        return _parent.empty ? Optional!Rhino()
+            : _parent.front.nextLevelAfter(this).toOptionalRhino;
     }
 
     Optional!TreeRhino nextLevelAfter(in TreeRhino afterThis)
@@ -93,7 +95,9 @@ public:
         if (tail.length >= 2) {
             return tail[1].firstLeafInside;
         }
-        return _parent.oc.nextLevelAfter(this);
+        // Replacing .oc. with empty/front here. See the closed github #452.
+        return _parent.empty ? Optional!TreeRhino()
+            : _parent.front.nextLevelAfter(this);
     }
 
     Optional!TreeRhino firstLeafInside()
