@@ -38,7 +38,7 @@ public:
             From.BOTTOM_LEFT));
         addChild(_skillbar);
         {
-            auto statsGeom = new Geom(0, 0, statsBarXl(view), 20);
+            auto statsGeom = new Geom(0, 0, statsBarXl(), 20);
             stats = view.showTapeRecorderButtons && ! view.showScoreGraph
                 ? new InfoBarSingleplayer(statsGeom, lixRequired)
                 : new InfoBarMultiplayer(statsGeom);
@@ -131,9 +131,9 @@ private:
         return xlg / (opt.skillSort.length + 4);
     }
 
-    float statsBarXl(in View v) const nothrow @safe @nogc
+    float statsBarXl() const nothrow @safe @nogc
     {
-        return xlg - (oneSkillXl * (v.canInterruptReplays ? 5f : 3f));
+        return xlg - (oneSkillXl * 4f);
     }
 
     float skillBarXl() const nothrow @safe @nogc

@@ -1,15 +1,15 @@
 module game.panel.savestat;
 
 /*
- * Two buttons.
- * +-------------+---------------------------+
- * |   Restart   |         Save state        |
- * +-------------+---------------------------+
+ * One button.
+ * +---------------------------+
+ * |         Save state        |
+ * +---------------------------+
  *
- * They expand in-place to three buttons after saving a state:
- * +-------------+-------------+-------------+
- * |   Restart   |  Load state |  Save state |
- * +-------------+-------------+-------------+
+ * Expands in-place to two buttons after saving a state:
+ * +-------------+-------------+
+ * |  Load state |  Save state |
+ * +-------------+-------------+
  */
 
 import opt = file.option.allopts;
@@ -20,24 +20,23 @@ import hardware.keyset;
 
 class SaveStateButtons : Element, TooltipSuggester {
 private:
-    BitmapButton _load, _save, _restart;
+    BitmapButton _load, _save;
 
 public:
     this(Geom g)
     {
         super(g);
-        BitmapButton mkButton(in int nr, in int xFrame, in KeySet aHotkey)
+        BitmapButton mkButton(in int xFrame, in KeySet aHotkey)
         {
-            auto ret = new BitmapButton(new Geom(nr * (xlg / 3f), 0,
-                xlg / 3f, ylg), InternalImage.gamePanel2.toCutbit);
+            auto ret = new BitmapButton(new Geom(0, 0, xlg/2f, ylg),
+                InternalImage.gamePanel2.toCutbit);
             ret.xf = xFrame;
             ret.hotkey = aHotkey;
             addChild(ret);
             return ret;
         }
-        _restart = mkButton(0, GamePanel2Xf.restart, opt.keyRestart.value);
-        _load = mkButton(1, GamePanel2Xf.quickload, opt.keyStateLoad.value);
-        _save = mkButton(2, GamePanel2Xf.quicksave, opt.keyStateSave.value);
+        _load = mkButton(GamePanel2Xf.quickload, opt.keyStateLoad.value);
+        _save = mkButton(GamePanel2Xf.quicksave, opt.keyStateSave.value);
         _save.onExecute = () { showLoadState(true); };
         showLoadState(false);
     }
@@ -45,19 +44,16 @@ public:
     const nothrow @safe @nogc {
         bool loadState() pure { return _load.execute; }
         bool saveState() pure { return _save.execute; }
-        bool restart() pure { return _restart.execute; }
 
         bool isSuggestingTooltip()
         {
-            return _load.isMouseHere || _save.isMouseHere
-                || _restart.isMouseHere;
+            return _load.isMouseHere || _save.isMouseHere;
         }
 
         Tooltip.ID suggestedTooltip()
         in { assert (isSuggestingTooltip); }
         do {
-            return _restart.isMouseHere ? Tooltip.ID.restart
-                : _load.isMouseHere ? Tooltip.ID.stateLoad
+            return _load.isMouseHere ? Tooltip.ID.stateLoad
                 : Tooltip.ID.stateSave;
         }
     }
@@ -67,8 +63,8 @@ private:
     // states saved). For now, I call this via _save.onExecute, see our ctor.
     void showLoadState(bool b)
     {
-        _save.resize((2 - b) * xlg/3f, _save.ylg);
-        _save.move((1 + b) * xlg/3f, 0);
+        _save.resize(b ? xlg/2f : xlg, _save.ylg);
+        _save.move(b ? xlg/2f : 0, 0);
         _load.shown = b;
     }
 }

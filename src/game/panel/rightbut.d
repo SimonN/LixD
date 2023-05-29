@@ -134,16 +134,15 @@ public:
     this(Geom g)
     {
         super(g);
-        makeTapeRecorder(new Geom(
-            0, 0, xlg * 3f/5f, skillYl, From.BOTTOM_RIGHT));
+        makeTapeRecorder(new Geom(0, 0, xlg, skillYl, From.BOTTOM));
         Geom mkGeom(in int nr, in int widthInButtons)
         {
-            return new Geom(nr * (xlg / 5f), 0,
-                widthInButtons * xlg / 5f, topRowYl);
+            return new Geom(nr * (xlg / 4f), 0,
+                widthInButtons * xlg / 4f, topRowYl);
         }
-        makeSplatRuler(mkGeom(0, 1));
-        makeTweaker(mkGeom(1, 1));
-        makeSaveState(mkGeom(2, 3));
+        makeSaveState(mkGeom(0, 2));
+        makeTweaker(mkGeom(2, 1));
+        makeSplatRuler(mkGeom(3, 1));
     }
 }
 
@@ -191,6 +190,7 @@ mixin template TapeRecorderMixin() {
         bool speedIsNormal()      { return _trbs.speedIsNormal; }
         bool speedIsFast()        { return _trbs.speedIsFast; }
         bool speedIsTurbo()       { return _trbs.speedIsTurbo; }
+        bool restart()            { return _trbs.restart; }
         bool framestepBackOne()   { return _trbs.framestepBackOne; }
         bool framestepBackMany()  { return _trbs.framestepBackMany; }
         bool framestepAheadOne()  { return _trbs.framestepAheadOne; }
@@ -312,7 +312,6 @@ mixin template SaveStateMixin() {
     }
 
     public override const pure nothrow @safe @nogc {
-        bool restart() { return _saveStateButtons.restart; }
         bool loadState() { return _saveStateButtons.loadState; }
         bool saveState() { return _saveStateButtons.saveState; }
     }

@@ -33,7 +33,7 @@ private:
     enum frameTurbo = 5;
 
     // All the buttons are non-null, always
-    BitmapButton _pause;
+    BitmapButton _pause, _restart;
     NukeButton _nuke;
     TwoTasksButton _speedBack, _speedAhead, _speedFast;
 
@@ -41,16 +41,12 @@ public:
     this(Geom g)
     {
         super(g);
-        immutable ylg1 = 0f;
-        immutable ylg2 = ylg/2f;
-
         void newBut(T)(ref T b, int x, int y, int frame,
             in UserOption!KeySet keyLeft = null,
             in UserOption!KeySet keyRight = null)
             if (is(T : BitmapButton))
         {
-            b = new T(new Geom(x * xlg/3f, ylg1 * (y >= 1) + ylg2 * (y >= 2),
-                               xlg/3f, y == 0 ? ylg1 : ylg2),
+            b = new T(new Geom(x * xlg/4f, y * ylg/2f, xlg/4f, ylg/2f),
                 InternalImage.gamePanel.toCutbit);
             b.xf = frame;
             b.hotkey = keyLeft ? keyLeft.value : KeySet();
@@ -58,18 +54,21 @@ public:
                 b.hotkeyRight = keyRight ? keyRight.value : KeySet();
             addChild(b);
         }
-        newBut(_speedBack, 0, 2, 10, opt.keyFrameBackOne, opt.keyFrameBackMany);
-        newBut(_speedAhead, 1, 2, 3,
+        newBut(_restart, 0, 0, 8, opt.keyRestart);
+        _restart.resize(xlg/2f, ylg/2f); // Until we have a better layout idea.
+
+        newBut(_speedBack, 0, 1, 10, opt.keyFrameBackOne, opt.keyFrameBackMany);
+        newBut(_speedAhead, 1, 1, 3,
             opt.keyFrameAheadOne, opt.keyFrameAheadMany);
-        newBut(_speedFast, 1, 1, frameFast,
+        newBut(_speedFast, 2, 1, frameFast,
             opt.keySpeedFast, opt.keySpeedTurbo);
 
-        _nuke = new NukeButton(new Geom(0, ylg1, xlg/3f, ylg2),
+        _nuke = new NukeButton(new Geom(2 * xlg/4f, 0, xlg/4f, ylg/2f),
                                NukeButton.WithTimeLabel.no);
         addChild(_nuke);
 
         _pause = new BitmapButton(
-            new Geom(0, 0, xlg/3f, ylg - ylg1, From.BOTTOM_RIGHT),
+            new Geom(0, 0, xlg/4f, ylg, From.BOTTOM_RIGHT),
             InternalImage.gamePause.toCutbit);
         _pause.hotkey = opt.keyPause.value;
         addChild(_pause);
@@ -82,6 +81,7 @@ public:
                                                && _speedFast.xf == frameFast; }
         bool speedIsTurbo()  { return ! paused && _speedFast.on
                                                && _speedFast.xf == frameTurbo;}
+        bool restart()            { return _restart.execute; }
         bool framestepBackOne()   { return _speedBack.executeLeft; }
         bool framestepBackMany()  { return _speedBack.executeRight; }
         bool framestepAheadOne()  { return _speedAhead.executeLeft; }
@@ -102,6 +102,7 @@ public:
                 : _nuke.isMouseHere ? Tooltip.ID.nuke
                 : _speedBack.isMouseHere ? Tooltip.ID.framestepBack
                 : _speedAhead.isMouseHere ? Tooltip.ID.framestepAhead
+                : _restart.isMouseHere ? Tooltip.ID.restart
                 : Tooltip.ID.fastForward;
         }
     }
