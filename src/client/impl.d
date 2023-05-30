@@ -107,45 +107,52 @@ public:
         chat.enetSendTo(_serverPeer);
     }
 
-    @property bool connected() const
+    bool connected() const
     {
         return _ourClient && _serverPeer && _ourPlNr in _profilesInOurRoom;
     }
 
-    @property bool connecting() const
+    bool connecting() const
     {
         return _ourClient && _serverPeer && ! (_ourPlNr in _profilesInOurRoom);
     }
 
-    @property string enetLinkedVersion() const
+    string enetLinkedVersion() const
     {
         return net.enetglob.enetLinkedVersion();
     }
 
-    @property PlNr ourPlNr() const pure
+    PlNr ourPlNr() const pure
     {
         assert (connected, "call this function only when you're connected");
         return _ourPlNr;
     }
 
-    @property Room ourRoom() const pure
+    Room ourRoom() const pure
     {
         assert (connected, "call this function only when you're connected");
         return _ourRoom;
     }
 
-    @property const(Profile2022) ourProfile() const
-    {
-        assert (connected, "call this function only when you're connected");
-        return _profilesInOurRoom[_ourPlNr];
+    const(Profile2022) ourProfile() const pure nothrow @safe @nogc
+    in { assert (connected, "call this function only when you're connected"); }
+    do {
+        /*
+         * Normally, we'd return _profilesInOurRoom[_ourPlNr] which is @nogc,
+         * but DMD before 2.102.0 had a bug that saw that line as yes-gc.
+         * Let's code around that fixed DMD bug for Flathub and Debian 12.
+         */
+        const ptr = _ourPlNr in _profilesInOurRoom;
+        assert (ptr !is null, "connected() should require that ptr != null");
+        return *ptr;
     }
 
-    @property const(Profile2022[PlNr]) profilesInOurRoom() const
+    const(Profile2022[PlNr]) profilesInOurRoom() const
     {
         return _profilesInOurRoom;
     }
 
-    @property bool mayWeDeclareReady() const
+    bool mayWeDeclareReady() const
     {
         if (! connected
             || _ourRoom == Room(0)
@@ -164,7 +171,7 @@ public:
 
     // Call this when the GUI has chosen a new Lix style.
     // The GUI may update ahead of time, but what the server knows, decides.
-    @property void setOurProfile(in Profile wish)
+    void setOurProfile(in Profile wish)
     {
         if (! connected)
             return;
