@@ -325,9 +325,11 @@ $optionKeyZoomOut Zoom −|Level kleiner darstellen, dafür mehr auf einmal sehe
 $optionKeyScroll Halten zum Scrollen|Halte dies (Standard: rechte Maustaste ⟁) und bewege die Maus zum Scrollen.|Das ist einfacher, schneller und präziser als Scrollen am Bildschirmrand.
 $optionKeyPriorityInvert Priorität invertieren|Halte dies, um Fähigkeiten der Lix mit der niedrigsten Priorität zuzuweisen.|Halte dies im Editor, um das hinterste Element anstatt des vordersten zu wählen.
 $optionKeyScreenshot Screenshot|Screenshot (Bildschirmfoto) des gesamten Lix-Fensters speichern.|Screenshots werden gespeichert in ./export/ oder ~/.local/share/lix/export/.
-$optionSplatRulerDesignTwoBars 2-Strich-Lineal, schwaches Einrasten|Das Fallhöhen-Lineal misst die maximale überlebbare Falldistanz.|Aktiviere das Fallhöhen-Lineal im Spiel mit einem Button, siehe Spieltasten.
+
+$optionSplatRulerDesign2Bars 2-Strich-Lineal|Das Fallhöhen-Lineal misst die maximale überlebbare Falldistanz.|Aktiviere das Fallhöhen-Lineal im Spiel mit einem Button, siehe Spieltasten.
 $optionSplatRulerDesign094 3-Strich-Lineal, hinter Terrain|Das Fallhöhen-Lineal misst die maximale überlebbare Falldistanz.|Aktiviere das Fallhöhen-Lineal im Spiel mit einem Button, siehe Spieltasten.
-$optionSplatRulerDesignSuperSnap 3-Strich-Lineal, empfindliches Einrasten|Das Fallhöhen-Lineal misst die maximale überlebbare Falldistanz.|Aktiviere das Fallhöhen-Lineal im Spiel mit einem Button, siehe Spieltasten.
+$optionSplatRulerDesign3Bars 3-Strich-Lineal, groß|Das Fallhöhen-Lineal misst die maximale überlebbare Falldistanz.|Aktiviere das Fallhöhen-Lineal im Spiel mit einem Button, siehe Spieltasten.
+$optionSplatRulerSnapPixels Einrast-Distanz in Pixeln|Das Fallhöhen-Lineal rastet an Terrainkanten über/unter der Maus ein.|Setze dies auf 0, um nie einzurasten. Standard ist 126, die maximale überlebbare Falldistanz.
 
 $optionMouseSpeed Mausgeschwindigkeit|Geschwindigkeit des Mauszeigers im Spiel, im Editor und im Menü.
 $optionScrollSpeedEdge Scroll-Geschw. am Bildrand|Scroll-Geschwindigkeit, wenn die Maus am Rand des Bildschirms ist.

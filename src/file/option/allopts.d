@@ -92,6 +92,7 @@ UserOption!int screenWindowedY;
 UserOption!int screenHardwareFullscreenX;
 UserOption!int screenHardwareFullscreenY;
 UserOption!int splatRulerDesign;
+UserOption!int splatRulerSnapPixels;
 UserOption!bool paintTorusSeams;
 UserOption!bool ingameTooltips;
 UserOption!bool showFPS;
@@ -274,8 +275,8 @@ do {
     screenHardwareFullscreenX = newOpt("screenHardwareFullscreenX",
         Lang.optionScreenHardwareFullscreenRes, 640);
     screenHardwareFullscreenY = newOpt("screenHardwareFullscreenY", 480);
-    splatRulerDesign = newOpt("splatRulerDesign",
-        Lang.optionSplatRulerDesignSuperSnap, 2);
+    splatRulerDesign = newOpt("splatRulerDesign", Lang.optionSplatRulerDesign3Bars, 2);
+    splatRulerSnapPixels = newOpt("splatRulerSnapPixels", Lang.optionSplatRulerSnapPixels, 126);
     paintTorusSeams = newOpt("paintTorusSeams", Lang.optionPaintTorusSeams, false);
     ingameTooltips = newOpt("ingameTooltips", Lang.optionIngameTooltips, true);
     version (assert) {

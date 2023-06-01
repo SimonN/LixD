@@ -237,11 +237,18 @@ void populateGraphics()
             screenHardwareFullscreenY),
     ];
     fac.y = bottomHalfY;
+    auto cfg = NumPickConfig();
+    cfg.digits = 3;
+    cfg.min = 0;
+    cfg.max = 300;
+    cfg.stepSmall = 2;
+    cfg.stepMedium = 20;
     grp ~= [
         fac.factory!RadioIntOption(splatRulerDesign,
-            Lang.optionSplatRulerDesignTwoBars,
+            Lang.optionSplatRulerDesign2Bars,
             Lang.optionSplatRulerDesign094,
-            Lang.optionSplatRulerDesignSuperSnap),
+            Lang.optionSplatRulerDesign3Bars),
+        fac.factory!NumPickOption(cfg, splatRulerSnapPixels),
     ];
 }
 

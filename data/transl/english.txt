@@ -334,9 +334,10 @@ $optionKeyScroll Hold to scroll|Hold this (standard: right mouse button ⟁) and
 $optionKeyPriorityInvert Priority invert|Hold to assign skills to the lix with the lowest priority instead of the highest.|In the editor, hold to select the bottommost tile instead of the topmost.
 $optionKeyScreenshot Screenshot|Take a screenshot of the entire Lix window.|Screenshots are saved in ./export/ or ~/.local/share/lix/export/.
 
-$optionSplatRulerDesignTwoBars 2-bar splat ruler, little snap|The splat ruler measures the maximal survivable fall distance.|Activate the splat ruler during play with a panel button, see the Game Keys tab.
+$optionSplatRulerDesign2Bars 2-bar splat ruler|The splat ruler measures the maximal survivable fall distance.|Activate the splat ruler during play with a panel button, see the Game Keys tab.
 $optionSplatRulerDesign094 3-bar splat ruler, behind terrain|The splat ruler measures the maximal survivable fall distance.|Activate the splat ruler during play with a panel button, see the Game Keys tab.
-$optionSplatRulerDesignSuperSnap 3-bar splat ruler, huge snap|The splat ruler measures the maximal survivable fall distance.|Activate the splat ruler during play with a panel button, see the Game Keys tab.
+$optionSplatRulerDesign3Bars 3-bar splat ruler, large|The splat ruler measures the maximal survivable fall distance.|Activate the splat ruler during play with a panel button, see the Game Keys tab.
+$optionSplatRulerSnapPixels Snap Distance in Pixels|The splat ruler snaps to ledges above/below the mouse cursor.|To disable snapping, set this to 0. Default is 126, the maximal survivable fall distance.
 
 $optionMouseSpeed Mouse speed|Movement speed of the mouse cursor.
 $optionScrollSpeedEdge Scroll speed at screen edge|Scroll speed when the mouse cursor touches the screen edge.

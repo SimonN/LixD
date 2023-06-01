@@ -338,9 +338,10 @@ $optionKeyScroll Desplaçament|Manté (per defecte: botó dret del ratolí ⟁) 
 $optionKeyPriorityInvert Invertir la prioritat|Mantenir per assignar habilitats als lix amb la prioritat més baixa enlloc de la més alta.|A l'editor, mantenir per seleccionar la tessel·la de més abaix enlloc de la de més amunt.
 $optionKeyScreenshot Captura de pantalla|Fes una captura de la finestra sencera del Lix.|Les captures de pantalla es desen a ./export/ or ~/.local/share/lix/export/.
 
-$optionSplatRulerDesignTwoBars Regle d'escafament de 2 barres, s'ajusta  poc|El regle d'esclafades mesura la caiguda màxima que es pot sobreviure.|Activa el regle d'esclafades durant la partida amb el botó del panell, veure la pestanya "Tecles de joc".
+$optionSplatRulerDesign2Bars Regle d'escafament de 2 barres|El regle d'esclafades mesura la caiguda màxima que es pot sobreviure.|Activa el regle d'esclafades durant la partida amb el botó del panell, veure la pestanya "Tecles de joc".
 $optionSplatRulerDesign094 Regle d'escafament de 3 barres, darrere el terreny|El regle d'esclafades mesura la caiguda màxima que es pot sobreviure.|Activa el regle d'esclafades durant la partida amb el botó del panell, veure la pestanya "Tecles de joc".
-$optionSplatRulerDesignSuperSnap Regle d'esclafades de 3 barres, s'ajusta molt|El regle d'esclafades mesura la caiguda màxima que es pot sobreviure.|Activa el regle d'esclafades durant la partida amb el botó del panell, veure la pestanya "Tecles de joc".
+$optionSplatRulerDesign3Bars Regle d'esclafades de 3 barres, gran|El regle d'esclafades mesura la caiguda màxima que es pot sobreviure.|Activa el regle d'esclafades durant la partida amb el botó del panell, veure la pestanya "Tecles de joc".
+$optionSplatRulerSnapPixels Distància d'ajustament en píxels|El regle d'esclafades s'ajusta a les cornises per sobre/sota del cursor del ratolí.|Per desactivar l'ajustament, establiu-lo a 0. Per defecte és 126, la distància màxima segura.
 
 $optionMouseSpeed Velocitat del ratolí|Velocitat del moviment del cursor del ratolí.
 $optionScrollSpeedEdge Velocitat de desplaçament a la vora de la pantalla|Velocitat de desplaçament del mapa quan el ratolí toca la vora de la pantalla.

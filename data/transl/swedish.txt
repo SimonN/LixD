@@ -333,9 +333,11 @@ $optionKeyZoomOut Zoom −|Zooma ut ifrån banan.
 $optionKeyScroll Håll för att rulla|Håll detta (standard: höger musknapp ⟁) och rör musen för att rulla.|Detta är lättare, snabbare och mer exakt än att rulla vid skärmkanten.
 $optionKeyPriorityInvert Omvänd prioritering|Håll för att tilldela förmågor till den lix med lägst prioritet istället för den med högst.|Håll för att välja den understa plattläggningen istället för den översta i redigeraren.
 $optionKeyScreenshot Skärmdump|Ta en skärmdump av hela Lix-fönstret.|Skärmdumpar sparas i ./export/ eller ~/.local/share/lix/export/.
-$optionSplatRulerDesignTwoBars 2-rader splatlinjal, liten snärt|Splatlinjalen mäter det maximala överlevnadsavståndet.|Aktivera splatlinjalen under spelets gång med en panelknapp, se fliken Speltangenter.
+
+$optionSplatRulerDesign2Bars 2-rader splatlinjal|Splatlinjalen mäter det maximala överlevnadsavståndet.|Aktivera splatlinjalen under spelets gång med en panelknapp, se fliken Speltangenter.
 $optionSplatRulerDesign094 3-rader splatlinjal, bakom terräng|Splatlinjalen mäter det maximala överlevnadsavståndet.|Aktivera splatlinjalen under spelets gång med en panelknapp, se fliken Speltangenter.
-$optionSplatRulerDesignSuperSnap 3-rader splatlinjal, stor snärt|Splatterlinjalen mäter det maximala överlevnadsavståndet.|Aktivera splatlinjalen under spelets gång med en panelknapp, se fliken Speltangenter.
+$optionSplatRulerDesign3Bars 3-rader splatlinjal, stor|Splatterlinjalen mäter det maximala överlevnadsavståndet.|Aktivera splatlinjalen under spelets gång med en panelknapp, se fliken Speltangenter.
+$optionSplatRulerSnapPixels Avstånd i pixlar för snäpping|Splatlinjalen snäpper till avsatser ovanför/under muspekaren.|För att inaktivera snäppning, sätt detta till 0. Standard är 126, det maximala säkra fallavståndet.
 
 $optionMouseSpeed Mushastighet|Musmarkörens rörelsehastighet.
 $optionScrollSpeedEdge Rullhastighet vid skärmkant|Rullhastighet då musmarkören vidrör skärmkanten.

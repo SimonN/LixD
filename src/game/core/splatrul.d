@@ -13,22 +13,12 @@ import tile.phymap;
 
 package:
 
-/*
- * PreferredSplatRuler has been replaced with a hidden user option: To set it,
- * run the game to generate `data/user/yourname.txt', exit the game,
- * open that file with a text editor, change the number in the line
- * #SPLAT_RULER_DESIGN 0 to either 0, 1, or 2:
- *
- * 0: SplatRulerTwoBars   -- Always draw, both top and bottom edge snap
- * 1: SplatRuler094       -- Three-bar ruler, drawn when snapped, like in 0.9.4
- * 2: SplatRulerSuperSnap -- Three-bar ruler, massive snap distance, long bars
- */
 SplatRuler createSplatRuler()
 {
     switch (opt.splatRulerDesign.value) {
         case 0: default: return new SplatRulerTwoBars;
         case 1: return new SplatRuler094;
-        case 2: return new SplatRulerSuperSnap;
+        case 2: return new SplatRulerHuge;
     }
 }
 
@@ -57,7 +47,7 @@ public:
     void determineSnap(in Phymap phy, in Point mouseOnLand)
     {
         enum maxSnap = 10; // maximal snap distance near either end
-        _snapTarget = max(Snap(true, int.max, mouseOnLand),
+        _snapTarget = max(
             findSnapNear(phy, mouseOnLand, Point(0, half), maxSnap),
             findSnapNear(phy, mouseOnLand, Point(0, -half), maxSnap)).snapTo;
     }
@@ -89,23 +79,29 @@ public:
     void drawAboveLand(Torbit) const { }
 
 protected:
-    override @property int barXl() const { return 80; }
-    override @property int maxSnap() const { return 64; }
+    override int barXl() const { return 80; }
+
+    override bool canDrawWhenNotSnapped() const nothrow @safe @nogc
+    {
+        return opt.splatRulerSnapPixels.value == 0;
+    }
 }
 
 /*
- * Simon's preferred splat ruler: Gigantic snap distance, never draw when
- * it doesn't snap. This is an even more glaring variant of the
- * 0.9.5-to-0.9.10 ruler.
+ * Simon's preferred splat ruler: Huge, wide, lots of default snap distance.
  */
-class SplatRulerSuperSnap : SplatRulerThreeBars {
+class SplatRulerHuge : SplatRulerThreeBars {
 public:
     void drawBelowLand(Torbit) const { }
     void drawAboveLand(Torbit tb) const { draw(tb); }
 
 protected:
-    override @property int barXl() const { return 120; }
-    override @property int maxSnap() const { return 200; }
+    override int barXl() const { return 120; }
+
+    override bool canDrawWhenNotSnapped() const nothrow @safe @nogc
+    {
+        return true;
+    }
 
     override void onDraw(Torbit tb, Point snapTarget) const
     {
@@ -116,16 +112,13 @@ protected:
 
 abstract class SplatRulerThreeBars : SplatRuler {
 private:
-    bool _snapAtAll;
-    Point _snapTarget; // location of green line, the measuring point
+    Snap _snap;
     bool _topBarIsBlack;
 
 public:
     void determineSnap(in Phymap phy, in Point mouseOnLand)
     {
-        Snap snap = findSnapNear(phy, mouseOnLand, Point(0, 0), maxSnap);
-        _snapAtAll = snap.atAll;
-        _snapTarget = snap.snapTo;
+        _snap = findSnapNear(phy, mouseOnLand, Point(0, 0), maxSnap);
     }
 
     void considerBackgroundColor(in Alcol levelBg)
@@ -137,17 +130,18 @@ public:
     }
 
 protected:
-    abstract @property int barXl() const;
-    abstract @property int maxSnap() const;
+    abstract int barXl() const;
+    abstract bool canDrawWhenNotSnapped() const nothrow @safe @nogc;
     void onDraw(Torbit tb, Point snapTarget) const { }
 
     final void draw(Torbit tb) const
     {
-        if (! _snapAtAll)
+        if (! _snap.atAll && ! canDrawWhenNotSnapped) {
             return;
-        onDraw(tb, _snapTarget);
+        }
+        onDraw(tb, _snap.snapTo);
 
-        immutable Point ledge = _snapTarget + Point(-barXl() / 2, 0);
+        immutable Point ledge = _snap.snapTo + Point(-barXl() / 2, 0);
         immutable Point upper = ledge - Point(0, Faller.pixelsSafeToFall);
         immutable Point lower = ledge + Point(0, Faller.pixelsSafeToFall);
         drawColoredBar(tb, upper, barXl, _topBarIsBlack
@@ -157,6 +151,12 @@ protected:
             al_map_rgb_f(0, 0.8f, 0), InvertBar.no);
         drawColoredBar(tb, lower, barXl,
             al_map_rgb_f(1, 0.2f, 0.2f), InvertBar.no);
+    }
+
+private:
+    int maxSnap() const nothrow @safe @nogc
+    {
+        return opt.splatRulerSnapPixels.value;
     }
 }
 
@@ -189,7 +189,7 @@ Snap findSnapNear(
         if (phy.getSolidEven(e) && ! phy.getSolidEven(e - Point(0, 1)))
             return Snap(true, badness, p - searchOffset);
     }
-    return Snap(false);
+    return Snap(false, int.max, mouse);
 }
 
 void drawVerticalLine(Torbit tb, in Point topMiddle, in int height)
