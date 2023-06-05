@@ -7,6 +7,8 @@ module hardware.sound;
  * that burden to our clients.
  */
 
+import std.algorithm : max;
+
 import basics.alleg5;
 import basics.globals;
 import opt = file.option.allopts;
@@ -14,8 +16,6 @@ import file.filename;
 import file.log;
 import hardware.music;
 import hardware.tharsis;
-
-enum Loudness { loud, quiet }
 
 enum Sound {
     NOTHING,
@@ -86,17 +86,9 @@ void deinitialize()
     _isAudioInitialized = false;
 }
 
-void playLoud (in Sound id) { play(id, Loudness.loud); }
-void playQuiet(in Sound id) { play(id, Loudness.quiet); }
-void play(in Sound id, in Loudness loudness)
-{
-    if (! tryInitialize() || ! samples[id])
-        return;
-    final switch (loudness) {
-        case Loudness.loud: samples[id].scheduleLoud(); break;
-        case Loudness.quiet: samples[id].scheduleQuiet(); break;
-    }
-}
+void playLoud(in Sound id) { play(id, opt.soundDecibels.value); }
+void playQuiet(in Sound id) { play(id, opt.soundDecibels.value - 12); }
+void playWithCustomDBFS(in Sound id, in int dBFS) { play(id, dBFS); }
 
 // Call this once per main loop, after scheduling sounds with playLoud et al.
 void draw()
@@ -113,7 +105,7 @@ package: ///////////////////////////////////////////////////////////// :package
 
 package bool isAudioInitialized() { return _isAudioInitialized; }
 
-package float dbToGain(in int db) pure @nogc nothrow
+package float dbToGain(in int db) pure nothrow @safe @nogc
 {
     return (2.0f) ^^ (db / 5f);
 }
@@ -144,16 +136,11 @@ private:
     Filename _filename;
     AlSamp _sample; // may be null if file was missing or bad file
     PlayId _playID;
-    bool   _loud; // if true, scheduled to be played normally
-    bool   _quiet; // if true, scheduled to be played quietly
-    bool   _lastWasLoud;
-    bool   _loadedFromDisk;
+    int _scheduledDBFS = int.min; // if != int.min, play this loud
+    int _lastPlayedDBFS = int.min;
+    bool _loadedFromDisk;
 
 public:
-    const(Filename) filename() const { return _filename; }
-    void scheduleLoud (in bool b = true) { _loud  = b; }
-    void scheduleQuiet(in bool b = true) { _quiet = b; }
-
     this(in Filename fn) { _filename = fn; }
 
     ~this()
@@ -164,25 +151,30 @@ public:
         _loadedFromDisk = false;
     }
 
-    // draw plays each sample if it was scheduled by setting (loud) or (quiet)
+    Filename filename() const pure nothrow @safe @nogc { return _filename; }
+
+    void scheduleWithDBFS(in int requestedDBFS) pure nothrow @safe @nogc
+    {
+        _scheduledDBFS = max(_scheduledDBFS, requestedDBFS);
+    }
+
     void draw()
     {
-        if (_loud || (_quiet && !_lastWasLoud))
+        if (_scheduledDBFS == int.min) {
+            return;
+        }
+        if (_scheduledDBFS >= _lastPlayedDBFS) {
             stop();
-        if ((_loud || _quiet) && opt.soundEnabled.value) {
-            _lastWasLoud = _loud;
-            loadFromDisk();
-            if (! _sample)
-                return;
+        }
+        loadFromDisk();
+        if (_sample) {
             assert (_isAudioInitialized);
-            al_play_sample(_sample,
-                dbToGain(opt.soundDecibels.value) * (_loud ? 1 : 0.2f),
+            al_play_sample(_sample, dbToGain(_scheduledDBFS),
                 ALLEGRO_AUDIO_PAN_NONE, 1.0f, // speed factor
                 ALLEGRO_PLAYMODE.ALLEGRO_PLAYMODE_ONCE, &_playID);
         }
-        // reset the scheduling variables
-        _loud  = false;
-        _quiet = false;
+        _lastPlayedDBFS = _scheduledDBFS;
+        _scheduledDBFS = int.min;
     }
 
     void stop()
@@ -213,6 +205,14 @@ private:
     }   }   }
 }
 // end class Sample
+
+private void play(in Sound id, in int requestedDBFS)
+{
+    if (! opt.soundEnabled.value || ! tryInitialize() || ! samples[id]) {
+        return;
+    }
+    samples[id].scheduleWithDBFS(requestedDBFS);
+}
 
 void initialize()
 {

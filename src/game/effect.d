@@ -32,6 +32,8 @@ import gui.console;
 import graphic.torbit;
 
 private struct Effect {
+    enum Loudness { loud, quiet, };
+
     Phyu phyu;
     Passport pa; // if no Lixxie required (e.g., nuke), set pa.id = 0.
     Sound sound; // if not necessary, set to 0 == Sound::NOTHING
@@ -44,6 +46,17 @@ private struct Effect {
             : sound != rhs.sound ? sound - rhs.sound
             : loudness != rhs.loudness ? loudness - rhs.loudness
             : 0;
+    }
+
+    void playSound() const
+    {
+        if (sound == Sound.NOTHING) {
+            return;
+        }
+        final switch (loudness) {
+            case Loudness.loud: hardware.sound.playLoud(sound); return;
+            case Loudness.quiet: hardware.sound.playQuiet(sound); return;
+        }
     }
 }
 
@@ -146,7 +159,7 @@ public:
         immutable e = Effect(upd, pa, sound, loudness(pa));
         if (e !in _alreadyPlayed) {
             _alreadyPlayed.insert(e);
-            hardware.sound.play(e.sound, e.loudness);
+            e.playSound();
         }
     }
 
@@ -195,7 +208,7 @@ public:
             Sound.OVERTIME, Loudness.loud);
         if (e !in _alreadyPlayed) {
             _alreadyPlayed.insert(e);
-            hardware.sound.play(e.sound, e.loudness);
+            e.playSound();
             _overtimeInPhyusToAnnounce = overtimeInPhyus;
         }
     }
@@ -227,6 +240,8 @@ public:
     }
 
 private:
+    alias Loudness = Effect.Loudness;
+
     Loudness loudness(in Passport pa) const pure nothrow @nogc
     {
         return isLocal(pa) ? Loudness.loud : Loudness.quiet;
@@ -246,7 +261,7 @@ private:
             return;
         }
         _alreadyPlayed.insert(e);
-        hardware.sound.play(e.sound, e.loudness);
+        e.playSound();
         static if (axe) {
             _debris ~= newDebris!Pickaxe.ctor(foot, dir);
         }
@@ -262,7 +277,7 @@ private:
             return;
         }
         _alreadyPlayed.insert(e);
-        hardware.sound.play(e.sound, e.loudness);
+        e.playSound();
         static if (ex) {
             _debris ~= newDebris!ExplosionCenter.ctor(foot);
         }
