@@ -124,7 +124,7 @@ Filename dirLevels, dirLevelsSingle, dirLevelsNetwork, dirReplays, dirData,
 
 Filename fileGlobalConfigLegacy, fileLog, fileReplayVerifier, fileTharsisProf,
     fileHotkeys, fileOptions, fileTrophies,
-    fileMusicMenu, fileMusicGain,
+    fileMusicMenu,
     fileSingleplayerFirstLevel;
 
 Filename fileImageAppIcon;
@@ -157,7 +157,6 @@ shared static this()
 
     fileGlobalConfigLegacy = new Fn("data/config.txt");
     fileMusicMenu = new Fn(dirDataMusic.rootless ~ "menulix");
-    fileMusicGain = new Fn(dirDataMusic.rootless ~ "gain.txt");
     fileSingleplayerFirstLevel = new Fn(dirLevelsSingle.rootless
                                     ~ "lemforum/Lovely/anyway.txt");
 

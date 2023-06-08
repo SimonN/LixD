@@ -162,16 +162,7 @@ void setGain(in Filename fn)
     }
     assert (isAudioInitialized(), "we should land here only if we have"
         ~ " already called sound.tryInitialize before and it succeeded");
-    int dBFromFile = 0;
-    try fillVectorFromFile(basics.globals.fileMusicGain)
-            .find!(line => line.text1.length > 2
-                        && fn.rootless.canFind(line.text1))
-            .takeOne
-            .each!(line => dBFromFile = line.nr1);
-    catch (Exception)
-        { } // gain file not found is OK, play everything at normal volume
-    al_set_audio_stream_gain(_music,
-        dbToGain(dBFromFile + opt.musicDecibels.value));
+    al_set_audio_stream_gain(_music, dbToGain(opt.musicDecibels.value));
 }
 
 /*
