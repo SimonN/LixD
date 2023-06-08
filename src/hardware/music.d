@@ -12,42 +12,55 @@ import std.algorithm;
 import std.range;
 
 import basics.alleg5;
-import basics.globals;
+import glo = basics.globals;
 import file.filename;
 import file.io;
 import file.log;
 import opt = file.option.allopts;
 import hardware.sound;
 
+struct Music {
+    Filename fn; // Should never be null.
+    bool atAll; // if false, don't play the music and ignore other fields.
+    int dbfs; // if atAll, play the music at this dB from full scale.
+}
+
+Music theMusicFor(in Filename fn) nothrow @safe @nogc
+{
+    return Music(fn, opt.musicEnabled.value, opt.musicDecibels.value);
+}
+
+Music theMenuMusic() nothrow @safe @nogc
+{
+    return theMusicFor(glo.fileMusicMenu);
+}
+
+Music someRandomMusic()
+{
+    return theMusicFor(someRandomFilenameFromTheMusicDir);
+}
+
 // Suggest that the given music be played. If the filename is null or the
 // file doesn't exist on disk, a random music plays instead.
 // If the file is unplayable, stop all music and don't play anything.
-void suggestMusic(in Filename fn)
+void playMusic(in Music m)
 {
-    _sched = fn;
-    _wantRandom = false;
-}
-
-void suggestRandomMusic()
-{
-    _sched = null;
-    _wantRandom = true;
+    ensurePlaying(m);
 }
 
 void stopMusic()
 {
-    if (_music) {
-        assert (isAudioInitialized(), "we should land here only if we have"
-            ~ " already called sound.tryInitialize before and it succeeded");
-        al_destroy_audio_stream(_music);
+    if (! _music) {
+        return;
     }
+    assert (isAudioInitialized(), "we should land here only if we have"
+        ~ " already called sound.tryInitialize before and it succeeded");
+    al_destroy_audio_stream(_music);
     _music = null;
-    _last = null;
+    _current = null;
 }
 
-bool isMusicPlaying() { return !! _music; }
-void reapplyVolumeMusic() { setGain(_last); }
-void drawMusic() { loadMusicFromDisk(scheduledMusic); }
+bool isMusicPlaying() { return _music !is null; }
 void deinitialize() { stopMusic(); }
 
 
@@ -58,111 +71,101 @@ private: /////////////////////////////////////////////////////////////: private
 
 
 
-ALLEGRO_AUDIO_STREAM *_music;
-MutFilename _last; // full filename including extension
-MutFilename _sched; // can be a filename stub that must be extended
-bool _wantRandom;
+ALLEGRO_AUDIO_STREAM *_music = null; // Null if and only if ! _playing.atAll.
+MutFilename _current; // Null if _music is null.
+int _currentDbfs;
 
-bool isMusicEnabled()
+void ensurePlaying(in Music wanted)
 {
-    return opt.musicEnabled.value && hardware.sound.tryInitialize();
+    if (! wanted.atAll || ! tryInitialize) {
+        stopMusic();
+        return;
+    }
+    if (_current is null || _current.rootlessNoExt != wanted.fn.rootlessNoExt){
+        playFromBeginning(wanted.fn.thisOrRandomIfIsIsBad);
+        forceGain(wanted.dbfs);
+        return;
+    }
+    if (_currentDbfs != wanted.dbfs) {
+        forceGain(wanted.dbfs);
+    }
 }
 
-bool isAcceptableMusicExtension(in string ext) pure @nogc
+bool hasAcceptableMusicExtension(in Filename fn)
 {
-    if (ext == filenameExtConfig)
+    return fn.extension != ".txt" && fn.extension != ".mp3";
+}
+
+Filename thisOrRandomIfIsIsBad(in Filename sug)
+{
+    if (sug is null) {
+        return someRandomFilenameFromTheMusicDir();
+    }
+    /*
+     * Re-find (sug) in a full-tree search.
+     * Reason: (sug) might be extensionless, e.g., the menu music constant
+     * or a music hint from a level. Output here: Always an extensionful fn.
+     */
+    auto files = glo.dirDataMusic.findTree()
+        .filter!(fn => fn.hasAcceptableMusicExtension
+            && fn.rootlessNoExt == sug.rootlessNoExt);
+    return files.empty ? someRandomFilenameFromTheMusicDir() : files.front;
+}
+
+bool isGoodRandomChoice(in Filename next)
+{
+    if (next is null || next.rootlessNoExt == glo.fileMusicMenu.rootlessNoExt){
         return false;
-    return true;
-}
-
-Filename scheduledMusic()
-{
-    if (! _wantRandom && ! goodConcreteScheduled)
-        return null;
-    if (! isMusicEnabled)
-        return null;
-    MutFilename ret = _sched;
-    if (_wantRandom || ret && ! ret.fileExists)
-        ret = resolveBySearching();
-    if (ret && ! ret.fileExists) {
-        logfMusicOnce("Missing music file `%s'.", ret);
-        if (_sched == ret)
-            _sched = null;
     }
-    return ret;
+    return _current is null || next.rootlessNoExt != _current.rootlessNoExt;
 }
 
-bool goodConcreteScheduled()
+// Choose a random non-menu music from this. No suggestion.
+// But avoid the currently-playing music.
+Filename someRandomFilenameFromTheMusicDir()
 {
-    if (! _sched || _last && _last.rootless.startsWith(_sched.rootless))
-        _sched = null;
-    return _sched !is null;
-}
-
-Filename resolveBySearching()
-{
-    import std.random;
-    auto files = dirDataMusic.findTree()
-        .filter!(fn => fn.extension.isAcceptableMusicExtension
-            && ! (_last && fn.rootless.startsWith(_last.rootless)));
-    if (_sched) {
-        auto cool = files
-            .filter!(fn => fn.rootless.startsWith(_sched.rootless));
-        if (! cool.empty)
-            return cool.front;
-        else
-            _sched = null; // loadMusicFromDisk will set _last accordingly
-    }
-    if (files.empty)
+    auto files = glo.dirDataMusic.findTree()
+        .filter!(fn => fn.hasAcceptableMusicExtension);
+    if (files.empty) {
         return null;
-    auto notMenuMusic = files.filter!(fn =>
-        fn.rootlessNoExt != fileMusicMenu.rootlessNoExt);
-    if (notMenuMusic.empty)
-        return files.drop(uniform(0, files.walkLength)).front;
-    return notMenuMusic.drop(uniform(0, notMenuMusic.walkLength)).front;
+    }
+    import std.random : uniform;
+    auto good = files.save.filter!isGoodRandomChoice;
+    return good.empty
+        ? files.drop(uniform(0, files.save.walkLength)).front
+        : good.drop(uniform(0, good.save.walkLength)).front;
 }
 
-// When ! isAudioInitialized, it's still okay to call this with fn is null,
-// but calling this with fn !is null requires isAudioInitialized.
-void loadMusicFromDisk(in Filename fn)
+void playFromBeginning(in Filename next)
 {
-    if (! fn)
+    stopMusic();
+    if (next is null)
         return;
     assert (isAudioInitialized(), "we should land here only if we have"
         ~ " already called sound.tryInitialize before and it succeeded");
-    if (_music)
-        al_destroy_audio_stream(_music);
-    _music = al_load_audio_stream(fn.stringForReading.toStringz, 3, 1024);
+    _music = al_load_audio_stream(next.stringForReading.toStringz, 3, 1024);
     if (_music) {
+        _current = next;
         al_set_audio_stream_playmode(_music,
             ALLEGRO_PLAYMODE.ALLEGRO_PLAYMODE_LOOP);
         al_attach_audio_stream_to_mixer(_music, al_get_default_mixer());
-        setGain(fn);
     }
     else {
-        logfMusicOnce("Unplayable music `%s'.", fn);
+        _current = null;
+        logfMusicOnce("Unplayable music `%s'.", _current);
         logAllegroSupportsFormat();
     }
-    _last = _music ? fn : null;
-    _sched = null;
-    _wantRandom = false;
 }
 
-void setGain(in Filename fn)
+void forceGain(in int wantedDbfs)
 {
-    if (! fn || ! isMusicEnabled) {
-        auto remember = _last;
-        stopMusic(); // resets _last, but we need _last for next setGain() call
-        _last = remember;
+    if (! _music) {
         return;
-    }
-    if (_last && ! _music) {
-        loadMusicFromDisk(_last);
-        return; // because loadMusicFromDisk calls setGain anyway
     }
     assert (isAudioInitialized(), "we should land here only if we have"
         ~ " already called sound.tryInitialize before and it succeeded");
-    al_set_audio_stream_gain(_music, dbToGain(opt.musicDecibels.value));
+    al_set_audio_stream_gain(_music, dbToGain(wantedDbfs));
+    _currentDbfs = wantedDbfs;
 }
 
 /*

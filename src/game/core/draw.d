@@ -186,6 +186,6 @@ void ensureMusic(const(Game) game)
 {
     with (game.nurse.constStateForDrawingOnly) {
         if (! isMusicPlaying && age >= Tribe.firstSpawnWithoutHandicap)
-            suggestRandomMusic();
+            playMusic(someRandomMusic);
     }
 }

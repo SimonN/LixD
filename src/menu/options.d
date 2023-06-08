@@ -17,7 +17,6 @@ import gui;
 import gui.option;
 import graphic.color;
 import hardware.mouse; // RMB to OK the window away
-import hardware.music; // reapplyVolumeMusic
 
 class OptionsMenu : Window {
 private:
@@ -92,7 +91,6 @@ protected override void calcSelf()
     }
     if (okay.execute || hardware.mouse.mouseClickRight) {
         saveEverything();
-        reapplyVolumeMusic(); // ideally, do this on all music numpick changes
         _gotoMainMenu = true; // main menu will change resolution if necessary
     }
     else if (cancel.execute) {

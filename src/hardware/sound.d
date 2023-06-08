@@ -14,7 +14,6 @@ import basics.globals;
 import opt = file.option.allopts;
 import file.filename;
 import file.log;
-import hardware.music;
 import hardware.tharsis;
 
 enum Sound {
@@ -96,7 +95,6 @@ void draw()
     foreach (sample; samples)
         if (sample)
             sample.draw();
-    drawMusic();
 }
 
 ///////////////////////////////////////////////////////////////////////////////

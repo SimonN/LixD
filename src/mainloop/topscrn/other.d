@@ -36,7 +36,7 @@ private:
 public:
     this()
     {
-        suggestMusic(fileMusicMenu);
+        playMusic(theMenuMusic); // Also resets volume after the Option screen.
         _menu = new MainMenu();
         super(_menu);
     }

@@ -88,7 +88,7 @@ public:
 
     final TopLevelScreen nextTopLevelScreen()
     {
-        suggestMusic(fileMusicMenu);
+        playMusic(theMenuMusic);
         return onNextTopLevelScreen();
     }
 
