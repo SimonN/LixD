@@ -32,7 +32,7 @@ private:
     Profile[PlNr] ret;
 
 public:
-    void parse(in ref IoLine i)
+    void parse(in IoLine i)
     {
         if (i.text1 != basics.globals.replayPlayer
             && i.text1 != basics.globals.replayFriend
@@ -70,13 +70,13 @@ private:
         }
     }
 
-    static void addNameAndStyleTo(ref Profile p, in ref IoLine i)
+    static void addNameAndStyleTo(ref Profile p, in IoLine i)
     {
         p.style = stringToStyle(i.text2);
         p.name = i.text3;
     }
 
-    static void addHandicapTo(ref Handicap h, in ref IoLine i)
+    static void addHandicapTo(ref Handicap h, in IoLine i)
     {
         foreach (key, word; handiKeywords.byKeyValue) {
             if (word == i.text2) {
