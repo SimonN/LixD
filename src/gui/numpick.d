@@ -24,6 +24,7 @@ struct NumPickConfig {
     int  stepSmall  =   1;
     int  stepMedium =  10;
     int  stepBig    = 100;
+    bool allowWrap  = true; // Allow wrapping between minimum and maximum
     bool whiteZero  = false;
     bool time       = false; // the colon counts towards the digits needed
     bool hex        = false;
@@ -32,7 +33,17 @@ struct NumPickConfig {
 }
 
 class NumPick : Element {
+private:
+    enum int fixedCharXSpacing = 10;
 
+    int _value;
+    int _previousValue; // Only to compute execute().
+    bool _execute;
+    NumPickConfig cfg;
+    BitmapButton[] but;
+    Label[] lab; // one per digit
+
+public:
     this(Geom g,
         in NumPickConfig newCfg = NumPickConfig(),
         in int initial = 0
@@ -40,32 +51,32 @@ class NumPick : Element {
         g.yl = 20;
         super(g);
         cfg = newCfg;
-        val = clamp(initial, cfg.min, cfg.max);
+        _value = clamp(initial, cfg.min, cfg.max);
+        _previousValue = _value;
         implConstructor();
     }
 
-    @property int number() const { return val; }
-    @property int number(in int i)
+    int number() const pure nothrow @safe @nogc { return _value; }
+    int number(in int i)
     {
-        val = clamp(i, cfg.min, cfg.max);
+        _value = clamp(i, cfg.min, cfg.max);
+        _previousValue = _value;
         formatVal();
         return i;
     }
 
-    @property bool execute() const { return but.any!(b => b.execute); }
+    bool execute() const pure nothrow @safe @nogc { return _execute; }
 
-    protected override void drawSelf() { undraw(); super.drawSelf(); }
+protected:
+    override void calcSelf()
+    {
+        _execute = _value != _previousValue;
+        _previousValue = _value;
+    }
+
+    override void drawSelf() { undraw(); super.drawSelf(); }
 
 private:
-    enum int fixedCharXSpacing = 10;
-
-    int val;
-    NumPickConfig  cfg;
-
-    BitmapButton[] but;
-    Label[]        lab; // one per digit
-
-
 
 private void
 implConstructor()
@@ -109,17 +120,17 @@ implConstructor()
 private void
 buttonCallback(in int change)
 {
-    val = (change > 0 && val == cfg.max) ? val = cfg.min
-        : (change < 0 && val == cfg.min) ? val = cfg.max
-        : clamp(val + change, cfg.min, cfg.max);
+    _value
+        = (cfg.allowWrap && change > 0 && _value == cfg.max) ? cfg.min
+        : (cfg.allowWrap && change < 0 && _value == cfg.min) ? cfg.max
+        : clamp(_value + change, cfg.min, cfg.max);
     formatVal();
 }
 
-private void
-formatVal()
+private void formatVal()
 {
     reqDraw();
-    if (val == -1 && cfg.minusOneChar != 0)
+    if (_value == -1 && cfg.minusOneChar != 0)
         foreach (la; lab) {
             la.text  = [cfg.minusOneChar];
             la.color = color.guiTextOn;
@@ -131,14 +142,14 @@ formatVal()
 
 private void formatValDecimal()
 {
-    if (val == 0 && lab.len > 0) {
+    if (_value == 0 && lab.len > 0) {
         lab[$-1].text = "0";
         lab[$-1].color = cfg.whiteZero ? color.guiTextOn : color.guiText;
         foreach (la; lab[0 .. $-1])
             la.text = "";
     }
     else {
-        int remainder = val.abs;
+        int remainder = _value.abs;
         int pos = lab.len - 1;
         while (pos >= 0 && remainder != 0) {
             lab[pos].text  = [remainder % 10 + '0'];
@@ -146,9 +157,9 @@ private void formatValDecimal()
             remainder /= 10;
             --pos;
         }
-        if (pos >= 0 && (cfg.signAlways || val < 0)) {
-            lab[pos].text  = val < 0 ? "\u2212"        : "+"; // unicode minus
-            lab[pos].color = val < 0 ? color.guiTextOn : color.guiText;
+        if (pos >= 0 && (cfg.signAlways || _value < 0)) {
+            lab[pos].text  = _value < 0 ? "\u2212" : "+"; // unicode minus
+            lab[pos].color = _value < 0 ? color.guiTextOn : color.guiText;
             --pos;
         }
         while (pos >= 0)
@@ -166,7 +177,7 @@ formatValHex()
         lab[0].text  = "\u2080\u2093"; // subscript of 0x
         lab[0].color = color.guiText;
     }
-    int remainder = val.abs;
+    int remainder = _value.abs;
     for (int i = lab.len - 1; i >= 1; --i) {
         lab[i].text  = ["0123456789ABCDEF"[remainder % 16]];
         lab[i].color = remainder != 0 ? color.guiTextOn : color.guiText;
@@ -180,7 +191,7 @@ private void formatValTime()
 {
     // Treat val as seconds, format as mm:ss.
     // Time always prints leading zeroes.
-    int remainder = val.abs;
+    int remainder = _value.abs;
     for (int pos = lab.len - 1; pos >= 0; --pos) {
         lab[pos].color = remainder > 0 ? color.guiTextOn : color.guiText;
         if (pos == lab.len - 1) {

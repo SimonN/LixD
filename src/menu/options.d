@@ -187,23 +187,19 @@ void populateGeneral()
     grp ~= fac.factory!BoolOption(replayAutoSolutions);
     grp ~= fac.factory!BoolOption(replayAutoMulti);
 
-    fac.y = 250;
-    grp ~= fac.factory!BoolOption(soundEnabled);
-    grp ~= fac.factory!BoolOption(musicEnabled);
-
     fac = facRight();
     grp ~= fac.factory!TextOption(userNameOption);
     _userName = (cast (TextOption) grp[$-1]).texttype;
     grp ~= fac.factory!LanguageOption(100f);
 
+    fac = facLeft();
     fac.y  = 250;
-    auto cfg = NumPickConfig();
-    cfg.digits = 3;
-    cfg.signAlways = true;
-    cfg.min = -50;
-    cfg.max = 20;
-    grp ~= fac.factory!NumPickOption(cfg, soundDecibels);
-    grp ~= fac.factory!NumPickOption(cfg, musicDecibels);
+    fac.xl = xlg - 20;
+    immutable xOfSecondOption = facRight().x - facLeft().x;
+    grp ~= fac.factory!VolumePreviewingOption(xOfSecondOption,
+        soundEnabled, soundDecibels, new SoundEffectExamplePlayer);
+    grp ~= fac.factory!VolumePreviewingOption(xOfSecondOption,
+        musicEnabled, musicDecibels, new MusicExamplePlayer);
 }
 
 void populateGraphics()
