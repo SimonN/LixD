@@ -1,4 +1,4 @@
-$BUILT 2023-01-06 21:33:46
+$BUILT 2023-06-14 05:46:00
 $AUTHOR geoo
 $ENGLISH All Aboard the Pain Train
 
@@ -36,12 +36,9 @@ $ENGLISH All Aboard the Pain Train
 
 :geoo/steel/16x16o.S: 670 152
 :amanda/occult/wax_details_drip_b: 884 96
-:matt/steel/8x8.S: 885 121
 :amanda/occult/wax_details_drip_b: 874 100
-:matt/steel/8x8.S: 782 115
 :amanda/occult/wax_details_drip_b: 770 98
 :amanda/occult/wax_details_drip_b: 378 106
-:matt/steel/8x8.S: 182 120
 :amanda/occult/wax_details_drip_b: 170 104
 :amanda/occult/wax_details_drip: 662 130
 :amanda/occult/overlay32x32_d: 662 98
@@ -53,7 +50,6 @@ $ENGLISH All Aboard the Pain Train
 :amanda/occult/wax32x16: 296 98
 :amanda/occult/wax32x16_b: 328 98
 :amanda/occult/wax16x16: 392 98
-:matt/steel/8x8.S: 372 132
 :amanda/occult/wax_details_drip_b: 362 114
 :amanda/occult/wax32x16: 360 98
 :amanda/occult/wax32x16: 584 98

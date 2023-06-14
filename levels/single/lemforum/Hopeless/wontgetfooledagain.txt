@@ -1,12 +1,10 @@
-$BUILT 2017-05-02 12:36:13
+$BUILT 2023-06-14 05:31:03
 $AUTHOR ccx
 $ENGLISH Won't Get Fooled Again
 
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 896
 #SIZE_Y 464
-#START_X 128
-#START_Y 0
 
 #INITIAL 30
 #REQUIRED 23
@@ -36,30 +34,30 @@ $ENGLISH Won't Get Fooled Again
 :geoo/construction/sawblade.F: 428 14
 
 $BEGIN_TILE_GROUP 0
-:geoo/construction/concrete/016h: 0 3
-:geoo/construction/concrete/016h: 14 3 d
-:geoo/construction/concrete/016h: 0 0 d
-$END_TILE_GROUP
-$BEGIN_TILE_GROUP 1
-:geoo/construction/concrete/016h: 12 0
-:geoo/construction/concrete/016h: 12 3 d
-:geoo/construction/concrete/016h: 0 0 d
-$END_TILE_GROUP
-$BEGIN_TILE_GROUP 2
 :geoo/construction/concrete/016h: 6 7
 :geoo/construction/concrete/016h: 8 0 d
 :geoo/construction/concrete/016h: 0 7 d
 $END_TILE_GROUP
-$BEGIN_TILE_GROUP 3
+$BEGIN_TILE_GROUP 1
 :geoo/construction/concrete/016h: 0 0
 :geoo/construction/concrete/016h: 14 0 d
 :geoo/construction/concrete/016h: 0 8 d
 $END_TILE_GROUP
+$BEGIN_TILE_GROUP 2
+:geoo/construction/concrete/016h: 0 3
+:geoo/construction/concrete/016h: 14 3 d
+:geoo/construction/concrete/016h: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 3
+:geoo/construction/concrete/016h: 12 0
+:geoo/construction/concrete/016h: 12 3 d
+:geoo/construction/concrete/016h: 0 0 d
+$END_TILE_GROUP
 $BEGIN_TILE_GROUP 4
-:Group-2: 14 3
-:Group-3: 0 0
-:Group-0: 0 7
-:Group-1: 8 0
+:Group-0: 14 3
+:Group-1: 0 0
+:Group-2: 0 7
+:Group-3: 8 0
 $END_TILE_GROUP
 :Group-4: 569 14 fr
 :Group-4: 539 14 fr
@@ -159,8 +157,6 @@ $END_TILE_GROUP
 :matt/bricks/01b: 553 19 rrrd
 :matt/marble/001a: 176 328
 :matt/marble/001a: 712 328
-:geoo/steel/16x16o.S: 168 376
-:geoo/steel/16x16o.S: 152 392
 :geoo/steel/16x16o.S: 712 376
 :matt/marble/001a: 176 344
 :matt/marble/001a: 176 360
@@ -264,17 +260,8 @@ $END_TILE_GROUP
 :matt/marble/23a: 528 104
 :matt/marble/23a: 328 104 d
 :matt/marble/23a: 536 104 d
-:geoo/steel/16x16o.S: 728 392
 :geoo/steel/16x16o.S: 744 408
-:matt/steel/8x8.S: 728 384
-:matt/steel/8x8.S: 720 392
-:matt/steel/8x8.S: 744 400
-:matt/steel/8x8.S: 736 408
 :geoo/steel/16x16o.S: 136 408
-:matt/steel/8x8.S: 160 384
-:matt/steel/8x8.S: 168 392
-:matt/steel/8x8.S: 144 400
-:matt/steel/8x8.S: 152 408
 :Group-4: 529 14
 :Group-4: 569 14
 :Group-4: 529 4
@@ -288,3 +275,22 @@ $END_TILE_GROUP
 :Group-4: 869 429
 :matt/marble/23a: 848 448
 :matt/marble/23a: 880 448
+$BEGIN_TILE_GROUP 6
+:geoo/steel/16x16o.S: 4 4
+:matt/marble/11a: 0 0 d
+:matt/marble/11a: 8 10 rrd
+$END_TILE_GROUP
+:Group-6: 720 384
+:Group-6: 728 392
+:Group-6: 736 400
+:Group-6: 744 408
+$BEGIN_TILE_GROUP 7
+:geoo/steel/16x16o.S: 3 4
+:matt/marble/11a: 8 0 rd
+:matt/marble/11a: 0 9 fd
+$END_TILE_GROUP
+:Group-7: 144 400
+:Group-7: 152 392
+:geoo/steel/16x16o.S: 168 376
+:Group-7: 160 384
+:Group-7: 168 376
