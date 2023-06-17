@@ -108,7 +108,8 @@ public:
     this(ArgsToCreateGame args)
     in {
         assert (args.level !is null);
-        assert (args.level.playable);
+        assert (args.level.playable,
+            "Level is not playable. Don't create a Game for this.");
         assert (args.levelFilename !is null);
     }
     do {

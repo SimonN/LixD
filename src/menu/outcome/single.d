@@ -221,5 +221,10 @@ public:
         return _nextLevel;
     }
 
+    override bool execute() const pure nothrow @safe @nogc
+    {
+        return super.execute && _nextLevel.level.playable;
+    }
+
     void dispose() { _preview.dispose(); }
 }
