@@ -12,19 +12,17 @@ import std.range;
 import opt = file.option.allopts;
 import game.core.view;
 import game.panel.infobar;
-import game.panel.tooltip;
 import game.panel.rightbut;
+import game.panel.skillbar;
+import game.panel.tooltip;
 import gui;
-import hardware.sound;
 import lix; // forward method of InfoBar to our users
 import net.phyu;
 import physics.tribe;
 
 class Panel : Element, TooltipSuggester {
 private:
-    SkillButton[] _skills;
-    SkillButton lastOnForRestoringAfterStateLoad;
-
+    SkillBar _skillbar;
     InfoBar stats;
     RightButtons _rb;
 
@@ -33,39 +31,31 @@ public:
      * After you create this, add names for the multiplayer score board.
      * lixRequired is ignored for multiplayer games.
      */
-    this(in View aView, in int lixRequired)
+    this(in View view, in int lixRequired)
     {
         super(new Geom(0, 0, gui.screenXlg, gui.panelYlg, From.BOTTOM));
-        _skills.length = opt.skillSort.length;
-        foreach (int id, ac; opt.skillSort) {
-            _skills[id] = new SkillButton(new Geom(id * skillXl, 0,
-                                     skillXl, skillYl, From.BOTTOM_LEFT));
-            _skills[id].skill = ac;
-            _skills[id].hotkey = opt.keySkill[opt.skillSort[id]].value;
-            addChild(_skills[id]);
-        }
+        _skillbar = new SkillBar(new Geom(0, 0, skillBarXl, ylg - 20,
+            From.BOTTOM_LEFT));
+        addChild(_skillbar);
         {
-            auto barGeom = new Geom(0, 0, xlg - 4 * skillXl, ylg - skillYl);
-            stats = aView.showTapeRecorderButtons && ! aView.showScoreGraph
-                ? new InfoBarSingleplayer(barGeom, lixRequired)
-                : new InfoBarMultiplayer(barGeom);
+            auto statsGeom = new Geom(0, 0, statsBarXl(view), 20);
+            stats = view.showTapeRecorderButtons && ! view.showScoreGraph
+                ? new InfoBarSingleplayer(statsGeom, lixRequired)
+                : new InfoBarMultiplayer(statsGeom);
         }
         addChild(stats);
         {
-            /*
-             * [1] We don't have SaveStateButtons in this mode to preserve UI
-             * space, and we don't have cool shades to preserve space.
-             *
-             * [3] This is the branch for (yes score graph, no tape recorder).
-             * Hack: Even if neither score graph or trbs shown, still
-             * enter this branch: Show the score graph to fill the void.
-             */
             auto rbGeom = new Geom(0, 0, xlg - stats.xlg, ylg, From.TOP_RIGHT);
-            _rb = (aView.showTapeRecorderButtons && aView.showScoreGraph)
-                ? new BattleReplayRightButtons(rbGeom) // [1]
-                : aView.showTapeRecorderButtons
+            _rb = (view.showTapeRecorderButtons && view.showScoreGraph)
+                ? new BattleReplayRightButtons(rbGeom)
+                : view.showTapeRecorderButtons
                 ? new SinglePlayerRightButtons(rbGeom)
-                : new BattleRightButtons(rbGeom); // [3]
+                /*
+                 * This is the branch for (yes score graph, no tape recorder).
+                 * Hack: Even if neither score graph or trbs shown, still
+                 * enter this branch: Show the score graph to fill the void.
+                 */
+                : new BattleRightButtons(rbGeom);
         }
         addChild(_rb);
     }
@@ -95,85 +85,59 @@ public:
             return;
         immutable bool multiNuking = tr.style != Style.garden
             && overtimeRunning && overtimeRemainingInPhyus == 0;
-        foreach (b; _skills) {
-            b.style = tr.style;
-            if (b.skill.isPloder)
-                b.skill = ploderToDisplay;
-            // Skill buttons shouldn't show any skills left when we're nuking,
-            // even though we still haven't used all skills yet.
-            b.number = tr.hasNuked || multiNuking ? 0 : tr.usesLeft(b.skill);
+        _skillbar.setLikeTribe(tr, ploderToDisplay);
+        if (multiNuking) {
+            // Eye candy, to clarify that nobody can do anything more.
+            _skillbar.setAllSkillsToZero();
         }
         nuke.on = tr.hasNuked || multiNuking;
         nuke.overtimeRunning = overtimeRunning;
         nuke.overtimeRemainingInPhyus = overtimeRemainingInPhyus;
         _rb.ourStyle = tr.style;
-        makeCurrent(lastOnForRestoringAfterStateLoad);
     }
 
-    void highlightFirstSkill()
+    // Can return null. Should refactor to Optional!SkillButton.
+    inout(SkillButton) chosenSkillButtonOrNull() inout pure nothrow @safe @nogc
     {
-        assert (chosenSkillButtonOrNull is null);
-        _skills.filter!(sk => sk.number != 0).takeOne.each!(
-                                                (sk) { makeCurrent(sk); });
+        return _skillbar.currentSkillOrNull;
     }
 
-    Ac chosenSkill() const
+    Ac chosenSkill() const pure nothrow @safe @nogc
     {
         const(SkillButton) b = chosenSkillButtonOrNull();
         return b is null ? Ac.nothing : b.skill;
     }
 
-    inout(SkillButton) chosenSkillButtonOrNull() inout
+    void chooseLeftmostSkill() nothrow @safe
     {
-        foreach (b; _skills)
-            if (b.on && b.skill != Ac.nothing && b.number != 0)
-                return b;
-        return null;
+        _skillbar.chooseLeftmostSkill();
     }
 
     void describeTarget(in Lixxie l, int nr) { stats.describeTarget(l, nr); }
     void showInfo(in Tribe tr) { stats.showTribe(tr); }
     void dontShowSpawnInterval() { stats.dontShowSpawnInterval(); }
     void showSpawnInterval(in int si) { stats.showSpawnInterval(si); }
+    void age(in Phyu phyu) { stats.age = phyu; }
 
-    Phyu age(in Phyu phyu) { return stats.age = phyu; }
-
-    bool isSuggestingTooltip() const { return _rb.isSuggestingTooltip; }
-    Tooltip.ID suggestedTooltip() const { return _rb.suggestedTooltip; }
-    Ac hoveredSkillOnlyForTooltip() const
-    {
-        foreach (sk; _skills.filter!(sk => sk.isMouseHere)) {
-            return sk.skill;
-        }
-        return Ac.nothing;
-    }
-
-
-protected:
-    override void calcSelf()
-    {
-        SkillButton oldSkill = chosenSkillButtonOrNull();
-        _skills.filter!(sk => sk.execute && sk != oldSkill)
-               .filter!(sk => sk.number != 0 || sk.hotkey.keyTapped).each!((sk)
-        {
-            makeCurrent(sk);
-            if (sk.number != 0)
-                hardware.sound.playLoud(Sound.PANEL);
-            else
-                hardware.sound.playQuiet(Sound.PANEL_EMPTY);
-        });
+    const nothrow @safe @nogc {
+        bool isSuggestingTooltip() { return _rb.isSuggestingTooltip; }
+        Tooltip.ID suggestedTooltip() { return _rb.suggestedTooltip; }
+        Ac hoveredSkillOnlyForTooltip() { return _skillbar.hoveredSkill(); }
     }
 
 private:
-    float skillYl() const { return this.geom.ylg - 20; }
-    float skillXl() const { return gui.screenXlg / (opt.skillSort.length+4); }
-
-    void makeCurrent(SkillButton skill)
+    float oneSkillXl() const nothrow @safe @nogc
     {
-        if (chosenSkillButtonOrNull !is null)
-            chosenSkillButtonOrNull.on = false;
-        if (skill && skill.number != 0)
-            skill.on = true;
-        lastOnForRestoringAfterStateLoad = skill; // even if currently 0
+        return xlg / (opt.skillSort.length + 4);
+    }
+
+    float statsBarXl(in View v) const nothrow @safe @nogc
+    {
+        return xlg - (oneSkillXl * (v.canInterruptReplays ? 5f : 3f));
+    }
+
+    float skillBarXl() const nothrow @safe @nogc
+    {
+        return oneSkillXl * opt.skillSort.length;
     }
 }

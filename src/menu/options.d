@@ -27,7 +27,7 @@ private:
     Explainer explainer;
 
     enum OptionGroup {
-        general, graphics, controls, gameKeys, editorKeys, menuKeys
+        general, graphics, controls, replay, gameKeys, editorKeys, menuKeys
     }
 
     Enumap!(OptionGroup, TextButton) groupButtons;
@@ -62,12 +62,13 @@ public this()
         groupButtons[grp].onExecute = () { this.showGroup(grp); };
         addChild(groupButtons[grp]);
     }
-    mkGrpButton(OptionGroup.general,    Lang.optionGroupGeneral);
-    mkGrpButton(OptionGroup.graphics,   Lang.optionGroupGraphics);
-    mkGrpButton(OptionGroup.controls,   Lang.optionGroupControls);
-    mkGrpButton(OptionGroup.gameKeys,   Lang.optionGroupGameKeys);
+    mkGrpButton(OptionGroup.general, Lang.optionGroupGeneral);
+    mkGrpButton(OptionGroup.graphics, Lang.optionGroupGraphics);
+    mkGrpButton(OptionGroup.controls, Lang.optionGroupControls);
+    mkGrpButton(OptionGroup.replay, Lang.optionGroupReplay);
+    mkGrpButton(OptionGroup.gameKeys, Lang.optionGroupGameKeys);
     mkGrpButton(OptionGroup.editorKeys, Lang.optionGroupEditorKeys);
-    mkGrpButton(OptionGroup.menuKeys,   Lang.optionGroupMenuKeys);
+    mkGrpButton(OptionGroup.menuKeys, Lang.optionGroupMenuKeys);
 
     populateOptionGroups();
     foreach (enumVal, group; groups) {
@@ -162,6 +163,7 @@ void populateOptionGroups()
     populateGeneral();
     populateGraphics();
     populateControls();
+    populateReplayOptions();
     populateGameKeys();
     populateEditorKeys();
     populateMenuKeys();
@@ -274,6 +276,22 @@ void populateControls()
     addNumPick(holdToScrollSpeed, 1);
 }
 
+void populateReplayOptions()
+{
+    auto fac = facLeft();
+    groups[OptionGroup.replay] ~= [
+        fac.factory!RadioBoolOption(replayAfterFrameBack,
+            Lang.optionRewindIsBrowse, true,
+            Lang.optionRewindIsUndo, false),
+        fac.factory!HeadingAndBoolOptions(Lang.optionWhenTweakerHidden,
+            airClicksCutWhenTweakerHidden,
+            insertAssignmentsWhenTweakerHidden),
+        fac.factory!HeadingAndBoolOptions(Lang.optionWhenTweakerShown,
+            airClicksCutWhenTweakerShown,
+            insertAssignmentsWhenTweakerShown),
+    ];
+}
+
 void populateGameKeys()
 {
     KeyDuplicationWatcher watcher = new KeyDuplicationWatcher();
@@ -289,15 +307,15 @@ void populateGameKeys()
     auto fac = facKeys!0;
     fac.y += plusBelowSkills;
     groups[OptionGroup.gameKeys] ~= [
-        fac.factory!HotkeyOption(keyForceLeft, watcher),
-        fac.factory!HotkeyOption(keyForceRight, watcher),
-    ];
-    fac.y += 10f;
-    groups[OptionGroup.gameKeys] ~= [
+        fac.factory!HotkeyOption(keyPause, watcher),
         fac.factory!HotkeyOption(keyRestart, watcher),
         fac.factory!HotkeyOption(keyStateLoad, watcher),
         fac.factory!HotkeyOption(keyStateSave, watcher),
-        fac.factory!HotkeyOption(keyShowTweaker, watcher),
+    ];
+    fac.y += 10f;
+    groups[OptionGroup.gameKeys] ~= [
+        fac.factory!HotkeyOption(keyForceLeft, watcher),
+        fac.factory!HotkeyOption(keyForceRight, watcher),
     ];
 
     fac = facKeys!1;
@@ -318,7 +336,6 @@ void populateGameKeys()
     fac = facKeys!2;
     fac.y += plusBelowSkills;
     groups[OptionGroup.gameKeys] ~= [
-        fac.factory!HotkeyOption(keyPause, watcher),
         fac.factory!HotkeyOption(keyNuke, watcher),
         fac.factory!HotkeyOption(keyGameExit, watcher),
     ];
@@ -327,21 +344,18 @@ void populateGameKeys()
         fac.factory!HotkeyOption(keyChat, watcher),
         fac.factory!HotkeyOption(keyHighlightGoals, watcher),
         fac.factory!HotkeyOption(keyShowSplatRuler, watcher),
+        fac.factory!HotkeyOption(keyShowTweaker, watcher),
     ];
 
-    enum belowAllGameKeys = 310f;
     fac = facLeft();
-    fac.y = belowAllGameKeys;
-    fac.spaceBelow = 0f; // Hack because it's too crowded
+    fac.y = 310f;
     fac.xl = fac.xl - 10; // Mouse hover area shouldn't obscure other options
     groups[OptionGroup.gameKeys] ~= [
         fac.factory!BoolOption(unpauseOnAssign),
-        fac.factory!BoolOption(replayAfterFrameBack),
-        fac.factory!BoolOption(replayAlwaysInsert),
     ];
     fac = facRight();
     fac.x = xForBoolOptionsBelowHotkeys + keyButtonXl - 20f;
-    fac.y = belowAllGameKeys;
+    fac.y = 310f;
     groups[OptionGroup.gameKeys] ~= [
         fac.factory!BoolOption(avoidBuilderQueuing),
         fac.factory!BoolOption(avoidBatterToExploder),

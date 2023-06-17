@@ -7,11 +7,12 @@ module game.panel.rightbut;
 
 import std.algorithm;
 
-import file.option;
+import opt = file.option.allopts;
 import game.core.view;
 import game.panel.nuke;
 import game.panel.taperec;
 import game.panel.tooltip;
+import game.panel.savestat;
 import graphic.internal;
 import gui;
 import hardware.sound;
@@ -73,8 +74,8 @@ protected:
     in { assert (! _suggesters.canFind(sug), "Don't add a suggester twice."); }
     do { _suggesters ~= sug; }
 
-    float skillXl() const { return this.geom.xlg / 4f; }
-    float skillYl() const { return this.geom.ylg - 20f; }
+    float skillYl() const pure nothrow @safe @nogc { return geom.ylg - 20f; }
+    float topRowYl() const pure nothrow @safe @nogc { return 20f; }
 }
 
 // ############################################################################
@@ -93,17 +94,17 @@ public:
     this(Geom g)
     {
         super(g);
-        immutable float butYl = ylg - skillYl;
-        makeGraphWithYl(ylg - butYl);
+        immutable float butXl = xlg / 4f;
+        makeGraphWithYl(skillYl);
 
-        makeSplatRuler(new Geom(0, 0, skillXl, butYl, From.BOT_RIG));
+        makeSplatRuler(new Geom(0, 0, butXl, topRowYl, From.BOT_RIG));
         _highlightGoals = new HighlightGoalsButton(
-            new Geom(skillXl, 0, skillXl, butYl, From.BOT_RIG));
+            new Geom(butXl, 0, butXl, topRowYl, From.BOT_RIG));
         addChild(_highlightGoals);
         addSuggester(_highlightGoals);
 
         _nukeMulti = new NukeButton(
-            new Geom(2 * skillXl, 0, 2 * skillXl, butYl, From.BOT_RIG),
+            new Geom(0, 0, 2 * butXl, topRowYl, From.BOTTOM_LEFT),
             NukeButton.WithTimeLabel.yes);
         addChild(_nukeMulti);
         addSuggester(_nukeMulti);
@@ -125,29 +126,24 @@ protected:
 class SinglePlayerRightButtons : RightButtons {
 private:
     mixin TapeRecorderMixin;
-    SaveStateButtons _ssbs;
-
     mixin SplatRulerMixin;
+    mixin TweakerMixin;
+    mixin SaveStateMixin;
 
 public:
     this(Geom g)
     {
         super(g);
-        auto shadesGeom = new Geom(0, 0, skillXl, ylg - skillYl,
-            From.TOP_RIGHT);
-
-        _ssbs = new SaveStateButtons(new Geom(shadesGeom.xlg, 0,
-            4 * skillXl - shadesGeom.xlg, ylg - skillYl, From.TOP_RIGHT));
-        addChild(_ssbs);
-        addSuggester(_ssbs);
-        makeTapeRecorderWithYl(skillYl);
-        makeSplatRuler(shadesGeom);
-    }
-
-    override const {
-        bool saveState() { return _ssbs.saveState; }
-        bool loadState() { return _ssbs.loadState; }
-        bool tweakerIsOn() { return _ssbs.tweakerIsOn; }
+        makeTapeRecorder(new Geom(
+            0, 0, xlg * 3f/5f, skillYl, From.BOTTOM_RIGHT));
+        Geom mkGeom(in int nr, in int widthInButtons)
+        {
+            return new Geom(nr * (xlg / 5f), 0,
+                widthInButtons * xlg / 5f, topRowYl);
+        }
+        makeSplatRuler(mkGeom(0, 1));
+        makeTweaker(mkGeom(1, 1));
+        makeSaveState(mkGeom(2, 3));
     }
 }
 
@@ -162,7 +158,7 @@ public:
         super(g);
         immutable tapeYlg = this.ylg * 0.6f;
         makeGraphWithYl(this.ylg - tapeYlg);
-        makeTapeRecorderWithYl(tapeYlg);
+        makeTapeRecorder(new Geom(0, 0, xlg, tapeYlg, From.BOTTOM_LEFT));
     }
 
 protected:
@@ -195,17 +191,15 @@ mixin template TapeRecorderMixin() {
         bool speedIsNormal()      { return _trbs.speedIsNormal; }
         bool speedIsFast()        { return _trbs.speedIsFast; }
         bool speedIsTurbo()       { return _trbs.speedIsTurbo; }
-        bool restart()            { return _trbs.restart; }
         bool framestepBackOne()   { return _trbs.framestepBackOne; }
         bool framestepBackMany()  { return _trbs.framestepBackMany; }
         bool framestepAheadOne()  { return _trbs.framestepAheadOne; }
         bool framestepAheadMany() { return _trbs.framestepAheadMany; }
     }
 
-    private void makeTapeRecorderWithYl(in float tapeYlg)
+    private void makeTapeRecorder(Geom g)
     {
-        _trbs = new TapeRecorderButtons(new Geom(
-            0, 0, 4 * skillXl, tapeYlg, From.BOTTOM_RIGHT));
+        _trbs = new TapeRecorderButtons(g);
         addChild(_trbs);
         addSuggester(_trbs);
     }
@@ -241,7 +235,7 @@ mixin template ScoreMixin() {
     private void makeGraphWithYl(in float graphYl)
     {
         _scoreGraph = new ScoreGraph(
-            new Geom(0, 0, 4 * skillXl, graphYl, From.TOP_RIGHT));
+            new Geom(0, 0, xlg, graphYl, From.TOP_RIGHT));
         _scoreBoard = new ScoreBoardOn3DBackground(
             new Geom(0, this.ylg, 400, 100, From.BOTTOM_RIGHT));
 
@@ -272,16 +266,54 @@ mixin template ScoreMixin() {
  * Call makeSplatRuler(Geom) in that class's constructor.
  */
 mixin template SplatRulerMixin() {
-    private SplatRulerButton _splatRuler;
+    private ToggleableTooltipSuggestingButton _splatRuler;
 
     private void makeSplatRuler(Geom g)
     {
-        _splatRuler = new SplatRulerButton(g);
+        _splatRuler = new ToggleableTooltipSuggestingButton(g,
+            GamePanel2Xf.showSplatRuler,
+            opt.keyShowSplatRuler.value,
+            Tooltip.ID.showSplatRuler);
         addChild(_splatRuler);
         addSuggester(_splatRuler);
     }
 
     public override const {
         bool splatRulerIsOn() { return _splatRuler.on; }
+    }
+}
+
+mixin template TweakerMixin() {
+    private ToggleableTooltipSuggestingButton _tweaker;
+
+    private void makeTweaker(Geom g)
+    {
+        _tweaker = new ToggleableTooltipSuggestingButton(g,
+            GamePanel2Xf.showTweaker,
+            opt.keyShowTweaker.value,
+            Tooltip.ID.showTweaker);
+        addChild(_tweaker);
+        addSuggester(_tweaker);
+    }
+
+    public override const {
+        bool tweakerIsOn() { return _tweaker.on; }
+    }
+}
+
+mixin template SaveStateMixin() {
+    private SaveStateButtons _saveStateButtons;
+
+    private void makeSaveState(Geom g)
+    {
+        _saveStateButtons = new SaveStateButtons(g);
+        addChild(_saveStateButtons);
+        addSuggester(_saveStateButtons);
+    }
+
+    public override const pure nothrow @safe @nogc {
+        bool restart() { return _saveStateButtons.restart; }
+        bool loadState() { return _saveStateButtons.loadState; }
+        bool saveState() { return _saveStateButtons.saveState; }
     }
 }

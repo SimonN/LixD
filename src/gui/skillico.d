@@ -14,7 +14,7 @@ public:
         super(g, st.getSkillButtonIcon);
     }
 
-    @property Ac ac(in Ac _ac)
+    Ac ac(in Ac _ac) pure nothrow @safe @nogc
     {
         xf = _ac.acToSkillIconXf;
         return _ac;

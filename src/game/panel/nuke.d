@@ -9,6 +9,7 @@ import game.panel.tooltip;
 import graphic.color;
 import graphic.internal;
 import gui;
+import hardware.keyset;
 
 class NukeButton : Button, TooltipSuggester {
 private:
@@ -52,9 +53,9 @@ public:
         }
     }
 
-    @property bool doubleclicked() const { return _doubleclicked; }
+    bool doubleclicked() const { return _doubleclicked; }
 
-    @property overtimeRunning(in bool ru)
+    void overtimeRunning(in bool ru)
     {
         if (ru == _overtimeRunning || ! _label)
             return;
@@ -63,7 +64,7 @@ public:
         reqDraw();
     }
 
-    @property overtimeRemainingInPhyus(in int re)
+    void overtimeRemainingInPhyus(in int re)
     in { assert (re >= 0); }
     do {
         if (re == _overtimeRemainingInPhyus || ! _label)
@@ -75,8 +76,8 @@ public:
         reqDraw();
     }
 
-    @property bool isSuggestingTooltip() const { return this.isMouseHere; }
-    @property Tooltip.ID suggestedTooltip() const { return Tooltip.ID.nuke; }
+    bool isSuggestingTooltip() const { return this.isMouseHere; }
+    Tooltip.ID suggestedTooltip() const { return Tooltip.ID.nuke; }
 
 protected:
     override void calcSelf()
@@ -96,29 +97,22 @@ protected:
     }
 }
 
-class SplatRulerButton : BitmapButton, TooltipSuggester {
+class ToggleableTooltipSuggestingButton : BitmapButton, TooltipSuggester {
+private:
+    Tooltip.ID _tooltipId;
+
 public:
-    this(Geom g)
+    this(Geom g, in int aXf, in KeySet aHotkey, in Tooltip.ID tooltipId)
     {
         super(g, InternalImage.gamePanel2.toCutbit);
-        xf = GamePanel2Xf.showSplatRuler;
-        hotkey = opt.keyShowSplatRuler.value;
+        xf = aXf;
+        hotkey = aHotkey;
+        _tooltipId = tooltipId;
+        onExecute = () { on = ! on; };
     }
 
-    @property bool isSuggestingTooltip() const { return this.isMouseHere; }
-    @property Tooltip.ID suggestedTooltip() const
-    {
-        return Tooltip.ID.showSplatRuler;
-    }
-
-protected:
-    override void calcSelf()
-    {
-        super.calcSelf();
-        if (execute) {
-            on = ! on;
-        }
-    }
+    bool isSuggestingTooltip() const { return this.isMouseHere; }
+    Tooltip.ID suggestedTooltip() const { return _tooltipId; }
 }
 
 class HighlightGoalsButton : BitmapButton, TooltipSuggester {
@@ -130,8 +124,8 @@ public:
         hotkey = opt.keyHighlightGoals.value;
     }
 
-    @property bool isSuggestingTooltip() const { return this.isMouseHere; }
-    @property Tooltip.ID suggestedTooltip() const
+    bool isSuggestingTooltip() const { return this.isMouseHere; }
+    Tooltip.ID suggestedTooltip() const
     {
         return Tooltip.ID.highlightGoals;
     }

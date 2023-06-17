@@ -5,7 +5,7 @@ import std.range;
 import optional;
 
 import basics.rect;
-import file.option; // hotkeys
+import opt = file.option.allopts; // hotkeys
 import game.core.game;
 import game.panel.tooltip;
 import gui : SkillButton;
@@ -34,8 +34,8 @@ struct Assignee {
     bool isBetterThan(in Assignee rhs) const {
         return priority <= 1 && rhs.priority > 1 ? false
             : priority >  1 && rhs.priority <= 1 ? true
-            : priority > rhs.priority ? ! keyPriorityInvert.keyHeld
-            : priority < rhs.priority ?   keyPriorityInvert.keyHeld
+            : priority > rhs.priority ? ! opt.keyPriorityInvert.keyHeld
+            : priority < rhs.priority ?   opt.keyPriorityInvert.keyHeld
             : distanceToCursor < rhs.distanceToCursor ? true
             : distanceToCursor > rhs.distanceToCursor ? false
             : id < rhs.id;
@@ -101,7 +101,7 @@ Optional!Assignee findPotentialAssigneeAssumingMouseOnLand(Game game)
             ? Tooltip.ID.forceRight : Tooltip.ID.forceLeft);
     else if (! best.empty && ! worst.empty
         && best.front.priority != worst.front.priority
-        && ! keyPriorityInvert.keyHeld
+        && ! opt.keyPriorityInvert.keyHeld
     ) {
         _tooltipLine.suggestTooltip(Tooltip.ID.priorityInvert);
     }

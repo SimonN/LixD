@@ -51,14 +51,14 @@ private auto newOpt(T)(string fileKey, T defaultVal)
     return newOpt(fileKey, Lang.min, defaultVal);
 }
 
-@property Filename fileLanguage()
+Filename fileLanguage()
 {
     return new VfsFilename(dirDataTransl.dirRootless
         ~ (languageBasenameNoExt is null ? "" : languageBasenameNoExt.value)
         ~ ".txt");
 }
 
-@property bool languageIsEnglish()
+bool languageIsEnglish()
 {
     assert (fileLanguage !is null);
     return fileLanguage.fileNoExtNoPre == basics.globals.englishBasenameNoExt;
@@ -70,22 +70,13 @@ UserOption!string userNameOption; // userName is string for back-compat
 UserOption!string languageBasenameNoExt;
 UserOption!int optionGroup;
 
-UserOption!int mouseSpeed;
-UserOption!int scrollSpeedEdge;
-UserOption!int holdToScrollSpeed;
-UserOption!bool holdToScrollInvert;
-UserOption!bool fastMovementFreesMouse;
-UserOption!bool avoidBuilderQueuing;
-UserOption!bool avoidBatterToExploder;
-UserOption!bool unpauseOnAssign;
-UserOption!bool replayAfterFrameBack;
-UserOption!bool replayAlwaysInsert;
+UserOption!bool soundEnabled;
+UserOption!bool musicEnabled;
+UserOption!int soundDecibels;
+UserOption!int musicDecibels;
+UserOption!bool replayAutoSolutions;
+UserOption!bool replayAutoMulti;
 
-/*
- * screenMode and related: See file.option.screen for access methods.
- * screenMode is an int, but shall be interpreted as of type ScreenMode,
- * also defined in file.option.screen.
- */
 UserOption!int screenType; // Read through file.option.screen.screenChoice
 UserOption!int screenWindowedX;
 UserOption!int screenWindowedY;
@@ -96,20 +87,22 @@ UserOption!int splatRulerSnapPixels;
 UserOption!bool paintTorusSeams;
 UserOption!bool ingameTooltips;
 UserOption!bool showFPS;
-UserOption!int guiColorRed;
-UserOption!int guiColorGreen;
-UserOption!int guiColorBlue;
 
-UserOption!bool soundEnabled;
-UserOption!bool musicEnabled;
-UserOption!int soundDecibels;
-UserOption!int musicDecibels;
+UserOption!int mouseSpeed;
+UserOption!int scrollSpeedEdge;
+UserOption!int holdToScrollSpeed;
+UserOption!bool holdToScrollInvert;
+UserOption!bool fastMovementFreesMouse;
 
-UserOptionFilename singleLastLevel;
-UserOptionFilename networkLastLevel;
-UserOptionFilename replayLastLevel;
-UserOption!bool replayAutoSolutions;
-UserOption!bool replayAutoMulti;
+UserOption!bool replayAfterFrameBack;
+UserOption!bool airClicksCutWhenTweakerHidden;
+UserOption!bool airClicksCutWhenTweakerShown;
+UserOption!bool insertAssignmentsWhenTweakerHidden;
+UserOption!bool insertAssignmentsWhenTweakerShown;
+
+UserOption!bool avoidBuilderQueuing;
+UserOption!bool avoidBatterToExploder;
+UserOption!bool unpauseOnAssign;
 
 UserOption!int networkLastStyle;
 UserOption!int networkConnectionMethod;
@@ -120,9 +113,17 @@ UserOption!int networkOwnServerPort;
 UserOption!string networkConnectToAddress;
 UserOption!int networkConnectToPort;
 
-UserOption!int  editorGridSelected;
-UserOption!int  editorGridCustom;
-UserOption!int  editorCopiedTilesOffest;
+UserOption!int editorGridSelected;
+UserOption!int editorGridCustom;
+UserOption!int editorCopiedTilesOffest;
+
+UserOption!int guiColorRed;
+UserOption!int guiColorGreen;
+UserOption!int guiColorBlue;
+
+UserOptionFilename singleLastLevel;
+UserOptionFilename networkLastLevel;
+UserOptionFilename replayLastLevel;
 UserOptionFilename editorLastDirTerrain;
 UserOptionFilename editorLastDirSteel;
 UserOptionFilename editorLastDirHatch;
@@ -212,7 +213,7 @@ UserOption!KeySet
 
 Enumap!(Ac, UserOption!KeySet) keySkill;
 
-@property const(Ac[14]) skillSort() { return _skillSort; }
+const(Ac[14]) skillSort() nothrow @safe @nogc { return _skillSort; }
 
 private Ac[14] _skillSort = [
     Ac.walker,
@@ -248,26 +249,13 @@ do {
     languageBasenameNoExt = newOpt("language", Lang.optionLanguage, englishBasenameNoExt);
     optionGroup = newOpt("optionGroup", 0);
 
-    scrollSpeedEdge = newOpt("edgeScrollSpeed", Lang.optionScrollSpeedEdge, mouseStandardDivisor);
-    holdToScrollSpeed = newOpt("holdToScrollSpeed", Lang.optionHoldToScrollSpeed, mouseStandardDivisor / 2);
-    holdToScrollInvert = newOpt("holdToScrollInvert", Lang.optionHoldToScrollInvert, false);
-    version (linux) {
-        mouseSpeed = newOpt("mouseSpeed", Lang.optionMouseSpeed,
-            mouseStandardDivisor / 2);
-        fastMovementFreesMouse = newOpt("fastMovementFreesMouse",
-            Lang.optionFastMovementFreesMouse, false);
-    }
-    else {
-        mouseSpeed = newOpt("mouseSpeed", Lang.optionMouseSpeed,
-            mouseStandardDivisor);
-        fastMovementFreesMouse = newOpt("fastMovementFreesMouse",
-            Lang.optionFastMovementFreesMouse, true);
-    }
-    avoidBuilderQueuing = newOpt("avoidBuilderQueuing", Lang.optionAvoidBuilderQueuing, true);
-    avoidBatterToExploder = newOpt("avoidBatterToExploder", Lang.optionAvoidBatterToExploder, false);
-    unpauseOnAssign = newOpt("unpauseOnAssign", Lang.optionUnpauseOnAssign, false);
-    replayAfterFrameBack = newOpt("replayAfterFrameBack", Lang.optionReplayAfterFrameBack, true);
-    replayAlwaysInsert = newOpt("replayAlwaysInsert", Lang.optionReplayAlwaysInsert, false);
+    soundEnabled = newOpt("soundEnabled", Lang.optionSoundEnabled, true);
+    musicEnabled = newOpt("musicEnabled", Lang.optionMusicEnabled, true);
+    soundDecibels = newOpt("soundDecibels", Lang.optionSoundDecibels, 0);
+    musicDecibels = newOpt("musicDecibels", Lang.optionMusicDecibels, -10);
+    replayAutoSolutions = newOpt("replayAutoSaveSolutions", Lang.optionReplayAutoSolutions, true);
+    replayAutoMulti = newOpt("replayAutoSaveMulti", Lang.optionReplayAutoMulti, true);
+
     screenType = newOpt("screenMode", Lang.optionScreenWindowed,
         defaultScreenType.to!int);
     screenWindowedX = newOpt("screenWindowedX", Lang.optionScreenWindowedRes, 1280);
@@ -285,20 +273,37 @@ do {
     else {
         showFPS = newOpt("showFramesPerSecond", Lang.optionShowFPS, false);
     }
-    guiColorRed = newOpt("guiColorRed", Lang.optionGuiColorRed, 0x60);
-    guiColorGreen = newOpt("guiColorGreen", Lang.optionGuiColorGreen, 0x80);
-    guiColorBlue = newOpt("guiColorBlue", Lang.optionGuiColorBlue, 0xB0);
 
-    soundEnabled = newOpt("soundEnabled", Lang.optionSoundEnabled, true);
-    musicEnabled = newOpt("musicEnabled", Lang.optionMusicEnabled, true);
-    soundDecibels = newOpt("soundDecibels", Lang.optionSoundDecibels, 0);
-    musicDecibels = newOpt("musicDecibels", Lang.optionMusicDecibels, -10);
+    version (linux) {
+        mouseSpeed = newOpt("mouseSpeed", Lang.optionMouseSpeed,
+            mouseStandardDivisor / 2);
+        fastMovementFreesMouse = newOpt("fastMovementFreesMouse",
+            Lang.optionFastMovementFreesMouse, false);
+    }
+    else {
+        mouseSpeed = newOpt("mouseSpeed", Lang.optionMouseSpeed,
+            mouseStandardDivisor);
+        fastMovementFreesMouse = newOpt("fastMovementFreesMouse",
+            Lang.optionFastMovementFreesMouse, true);
+    }
+    scrollSpeedEdge = newOpt("edgeScrollSpeed", Lang.optionScrollSpeedEdge, mouseStandardDivisor);
+    holdToScrollSpeed = newOpt("holdToScrollSpeed", Lang.optionHoldToScrollSpeed, mouseStandardDivisor / 2);
+    holdToScrollInvert = newOpt("holdToScrollInvert", Lang.optionHoldToScrollInvert, false);
 
-    singleLastLevel = newOpt("singleLastLevel", fileSingleplayerFirstLevel);
-    networkLastLevel = newOpt("networkLastLevel", dirLevelsNetwork);
-    replayLastLevel = newOpt("replayLastLevel", dirReplays);
-    replayAutoSolutions = newOpt("replayAutoSaveSolutions", Lang.optionReplayAutoSolutions, true);
-    replayAutoMulti = newOpt("replayAutoSaveMulti", Lang.optionReplayAutoMulti, true);
+    replayAfterFrameBack = newOpt("replayAfterFrameBack",
+        Lang.optionRewindIsBrowse, true);
+    airClicksCutWhenTweakerHidden = newOpt("airClicksCutWhenTweakerHidden",
+        Lang.optionAirClicksCut, true);
+    airClicksCutWhenTweakerShown = newOpt("airClicksCutWhenTweakerShown",
+        Lang.optionAirClicksCut, false);
+    insertAssignmentsWhenTweakerHidden = newOpt("insertAssignmentsWhenTweakerHidden",
+        Lang.optionInsertAssignments, false);
+    insertAssignmentsWhenTweakerShown = newOpt("insertAssignmentsWhenTweakerShown",
+        Lang.optionInsertAssignments, true);
+
+    avoidBuilderQueuing = newOpt("avoidBuilderQueuing", Lang.optionAvoidBuilderQueuing, true);
+    avoidBatterToExploder = newOpt("avoidBatterToExploder", Lang.optionAvoidBatterToExploder, false);
+    unpauseOnAssign = newOpt("unpauseOnAssign", Lang.optionUnpauseOnAssign, false);
 
     networkLastStyle = newOpt("networkLastStyle", Style.red.to!int);
     networkConnectionMethod = newOpt("networkConnectionMethod", Lang.winLobbyStartCustom, 0);
@@ -309,16 +314,23 @@ do {
     networkConnectToAddress = newOpt("networkConnectToAddress", "127.0.0.1");
     networkConnectToPort = newOpt("networkConnectToPort", 22934);
 
+    editorGridSelected = newOpt("editorGridSelected", 2);
+    editorGridCustom = newOpt("editorGridCustom", Lang.optionEdGridCustom, 8);
+    editorCopiedTilesOffest = newOpt("editorCopiedTilesOffest", 16);
+
+    guiColorRed = newOpt("guiColorRed", Lang.optionGuiColorRed, 0x60);
+    guiColorGreen = newOpt("guiColorGreen", Lang.optionGuiColorGreen, 0x80);
+    guiColorBlue = newOpt("guiColorBlue", Lang.optionGuiColorBlue, 0xB0);
+
+    singleLastLevel = newOpt("singleLastLevel", fileSingleplayerFirstLevel);
+    networkLastLevel = newOpt("networkLastLevel", dirLevelsNetwork);
+    replayLastLevel = newOpt("replayLastLevel", dirReplays);
     editorLastDirTerrain = newOpt("editorLastDirTerrain", Lang.addTerrain, dirImages);
     editorLastDirSteel = newOpt("editorLastDirSteel", Lang.addSteel,
         cast (Filename) new VfsFilename(dirImages.rootless ~ "geoo/steel/"));
     editorLastDirHatch = newOpt("editorLastDirHatch", Lang.addHatch, dirImages);
     editorLastDirGoal = newOpt("editorLastDirGoal", Lang.addGoal, dirImages);
     editorLastDirHazard = newOpt("editorLastDirHazard", Lang.addHazard, dirImages);
-
-    editorGridSelected = newOpt("editorGridSelected", 2);
-    editorGridCustom = newOpt("editorGridCustom", Lang.optionEdGridCustom, 8);
-    editorCopiedTilesOffest = newOpt("editorCopiedTilesOffest", 16);
 
     void newSkillKey(Ac ac, int singleKey)
     {

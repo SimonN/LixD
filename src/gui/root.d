@@ -63,7 +63,7 @@ void rmElder(IDrawable to_rm)
     _clearNextDraw = true;
 }
 
-void addFocus(Element toAdd)
+void addFocus(Element toAdd) nothrow @safe
 {
     focus = focus.remove!(e => e is toAdd);
     focus ~= toAdd;
@@ -76,15 +76,15 @@ void addFocus(Element toAdd)
                 swap(focus[i-1], focus[i]);
 }   }   }   }
 
-void rmFocus(Element toRm)
+void rmFocus(Element toRm) nothrow @safe
 {
     focus = focus.remove!(a => a is toRm);
     _clearNextDraw = true;
 }
 
-bool hasFocus(Element elem)
+bool hasFocus(Element elem) nothrow @safe @nogc
 {
-    return focus.length && focus[$-1] == elem;
+    return focus.length && focus[$-1] is elem;
 }
 
 void requireCompleteRedraw() { _clearNextDraw = true; }

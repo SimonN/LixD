@@ -132,10 +132,9 @@ $gamePriorityInvert [%s] för lix längst bak
 $gameQueueBuilder Klicka igen för att kölägga.
 $gameQueuePlatformer Klicka igen för att kölägga.
 $gameHoldToScroll Håll [%s] och rör musen för att rulla.
-$gameClickToCancelReplay Klicka för att avbryta reprisen.
+$gameClickToCancelReplay Repris är på. Klicka i luften för att spela upp själv.
 $gameFramestepOrQuit Spola tillbaka tid (◀▮) eller avsluta med [%s].
 $gamePause Pausat.
-$gameZoom %s för att zooma in, %s för att zooma ut.
 $gameShowSplatRuler Visa splat-linjal.
 $gameHighlightGoals Markera egna luckor och mål.
 $gameStateSave Snabbspara spelposition.
@@ -201,7 +200,6 @@ $editorButtonMirrorHorizontally Spegel: Speglar den markerade terrängen horizon
 $editorButtonFlipVertically Vrid: Vrider den markerade terrängen vertikalt.
 $editorButtonSelectRotate Rotera: Vrider markerad terräng ett kvarts varv.
 $editorButtonSelectDark Mörk: Markerad terräng raderar normal terräng.
-$editorButtonViewZoom Zoom: Vänsterklick zoomar in i kartan, högerklick zoomar ut.
 $editorButtonAddTerrain Terräng: Lägg till en terrängplattläggning.
 $editorButtonAddSteel Stål: Lägg till en stålplattläggninng som inte kan grävas igenom.
 $editorButtonAddHatch Lucka: Lägg till en entrélucka för lix.
@@ -304,9 +302,10 @@ $netGameEndResult Spelresultat:
 $netGameOvertimeNukeIn Övertid pågår! Dags att spränga
 
 $optionTitle Inställningar|Gå till menyn för inställningar från huvudmenyn.
-$optionGroupGraphics Grafik
 $optionGroupGeneral Allmänt
+$optionGroupGraphics Grafik
 $optionGroupControls Kontroller
+$optionGroupReplay Repris
 $optionGroupGameKeys Speltangenter
 $optionGroupEditorKeys Redigerartangenter
 $optionGroupMenuKeys Menytangenter
@@ -345,6 +344,13 @@ $optionHoldToScrollSpeed Rullhastighet med rulltangent|Rullhastighet när du rö
 $optionHoldToScrollInvert Invertera håll-för-att-rulla|Rulla mot musrörelsen samtidigt som du håller rulltangenten.|Som standard är rulltangenten höger musknapp ⟁, se ovanför för att ändra.
 $optionFastMovementFreesMouse Snabb rörelse frigör mus|Musen lämnar Lix-fönstret då du fort rör dig mot sidorna.|Om inte förbockat kan du frigöra musen med Alt+Tab.
 
+$optionRewindIsBrowse ◀▮ behåller tilldelningen|When you rewind an assignment (with ◀▮ on Game Keys), it stays in the replay|and will play back later. To erase assignments, cut the replay (see below).
+$optionRewindIsUndo ◀▮ raderar tilldelningen|Rewind (◀▮ on Game Keys) is undo: Rewound assignments are|immediately erased from the replay. You won't enter replay mode.
+$optionWhenTweakerHidden Utan repristrimmare:|When you start a singleplayer game, the Tweaker starts hidden.|Show/hide the Tweaker with a panel button (see Game Keys).
+$optionWhenTweakerShown Med repristrimmare:|These controls apply while the Tweaker is shown.|Show/hide the Tweaker with a panel button (see Game Keys).
+$optionAirClicksCut Luftklick avbryter repris|Air clicks interrupt the replay, i.e., erase all future assignments for all lix.|If not checked, air clicks do nothing. Erase assignments via the Tweaker.
+$optionInsertAssignments Infoga ny tilldelningen|After ◀▮, assigning skills preserves the future of other lix.|If not checked, an assignment first interrupts the replay, i.e., cuts all lix' future.
+
 $optionKeyForceLeft Tvinga vänster|Håll för att tildela förmågor till vänsterriktade lix.|Detta är användbart i en tät grupp av lix.
 $optionKeyForceRight Tvinga höger|Håll för att tilldela förmågor till högerriktade lix.|Detta är användbart i en tät grupp av lix.
 $optionKeyPause Pausa|Pausa spelet.|Du kan välja om tilldelning av förmågor borde opausa, se nedanför.
@@ -366,8 +372,6 @@ $optionKeyNuke Spräng|Spräng alla dina lix i enspelarläge för att klara bana
 $optionAvoidBuilderQueuing Föredra spamning framför köläggning|Föredra byggaretilldelningar framför icke-byggare istället för att kölägga till existerande byggare.|Du kan hålla omvänd prioritering för att göra det du inte föredrar.
 $optionAvoidBatterToExploder Föredra slagmän framför icke-exploderare.|Föredra slagmäntilldelningar framför gångare istället för slagmäntilldeningar framför tidsinställda exploderare|Du kan hålla omvänd prioritering.
 $optionUnpauseOnAssign Fortsätt spelet vid tilldelning av förmåga|Fortsätt spelet då du tilldelar en förmåga under paus.|Om inte förbockat kommer tilldelning av förmågor under paus att fortsätta spelet med 1 bild.
-$optionReplayAfterFrameBack Behåll repris efter ◀▮|Behåll framtida reprisåtgärder vid framesteppning bakåt (◀▮), tills att du klickar i luften.|Utan krok: Reprisåtgärder att tas bort då du ångrar dem med framsteppning.
-$optionReplayAlwaysInsert Infoga under repris|Under repris ny tilldelningen av förmagor bara bort framtiden för samma lix.|Utan krok: Tilldelningen skär av den globala framtiden, som om du klickade på air.
 
 $optionKeyMenuOkay Okej/ja|Spela den markerade banan. Spara och stäng dialogfönster.
 $optionKeyMenuEdit Redigera|Öppna redigeraren för den markerade banan.

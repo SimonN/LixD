@@ -41,21 +41,26 @@ public:
 
     this(Geom g) { super(g); }
 
-    // execute is read-only. Derived classes should make their own bool
-    // and then override execute().
-    @property bool execute() const pure nothrow @safe @nogc { return _execute;}
-    @property void onExecute(void delegate() f) { _onExecute = f;  }
+    pure nothrow @safe @nogc {
+        // execute is read-only. Derived classes should make their own bool
+        // and then override execute().
+        bool execute() const { return _execute;}
+        void onExecute(void delegate() f) { _onExecute = f; }
 
-    mixin (GetSetWithReqDraw!"hotkey");
-    mixin (GetSetWithReqDraw!"down");
-    mixin (GetSetWithReqDraw!"on");
+        mixin (GetSetWithReqDraw!"hotkey");
+        mixin (GetSetWithReqDraw!"down");
+    }
 
-    override @property bool shown() const nothrow pure @nogc
+    nothrow @safe {
+        mixin (GetSetWithReqDraw!"on");
+    }
+
+    override bool shown() const nothrow pure @nogc
     {
         return super.shown;
     }
 
-    override @property bool shown(in bool b) nothrow pure
+    override bool shown(in bool b) nothrow pure
     {
         if (super.shown != b) {
             super.shown = b;
@@ -65,7 +70,7 @@ public:
         return super.shown;
     }
 
-    Alcol colorText() const
+    Alcol colorText() const nothrow @safe @nogc
     {
         return _on && ! _down ? color.guiTextOn : color.guiText;
     }

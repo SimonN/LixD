@@ -28,12 +28,12 @@ enum PhyuOrder {
 pure:
 @safe:
 
-nothrow bool isPloder(in Ac ac)
+bool isPloder(in Ac ac) nothrow @nogc
 {
     return ac == Ac.imploder || ac == Ac.exploder;
 }
 
-nothrow @property int acToSkillIconXf(in Ac ac)
+int acToSkillIconXf(in Ac ac) nothrow @nogc
 {
     // We had xf = _ac before instead of xf = _ac - Ac.walker.
     // But the smallest skill in the panel is walker.
@@ -42,7 +42,7 @@ nothrow @property int acToSkillIconXf(in Ac ac)
         - (ac > Ac.ascender) - (ac > Ac.shrugger) - (ac > Ac.shrugger2);
 }
 
-nothrow Ac stringToAc(in string str)
+Ac stringToAc(in string str) nothrow
 {
     try {
         string lower = str.toLower;

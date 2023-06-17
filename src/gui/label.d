@@ -15,7 +15,6 @@ import gui;
 
 class Label : Element {
 private:
-
     string _text;
     string _textShort; // shortened version of text, can't be returned
     bool   _shortened;  // true if textShort != text
@@ -50,8 +49,8 @@ public:
     }
 
     string text() const pure nothrow @safe @nogc { return _text; }
-    void number(in int i) { text = i.to!string; }
-    void text(string s)
+    void number(in int i) nothrow @safe { text = i.to!string; }
+    void text(string s) nothrow @safe
     {
         if (s == _text)
             return;
@@ -60,7 +59,7 @@ public:
     }
 
     Alcol color() const pure nothrow @safe @nogc { return _color; }
-    void color(in Alcol c)
+    void color(in Alcol c) pure nothrow @safe @nogc
     {
         if (c == _color)
             return;
@@ -129,19 +128,22 @@ private:
         }
     }
 
-    void shortenText()
+    void shortenText() nothrow @safe
     out { assert (_shortened == (_textShort != _text)); }
     do {
         reqDraw();
         _textShort = _text;
         _shortened = false;
-        if (text.length == 0 || std.utf.stride(text) == text.length) {
+        try if (text.length == 0 || std.utf.stride(text) == text.length) {
             /*
              * Don't shorten empty string.
              * Hack: Allow single-character strings to pass unshortened.
              * This is to let the "+"/"-" labels on the small key-binding
              * buttons pass unshortened. Those would get shortened to ".".
              */
+            return;
+        }
+        catch (Exception) {
             return;
         }
         _shortened = tooLong(_text);

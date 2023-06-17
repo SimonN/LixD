@@ -21,11 +21,11 @@ import hardware.keyset;
 import hardware.mouse;
 
 interface KeyButton {
-    @property void onChange(void delegate());
-    @property bool warnAboutDuplicateBindings() const;
-    @property bool warnAboutDuplicateBindings(in bool);
-    @property const(KeySet) keySet() const;
-    @property const(KeySet) keySet(in KeySet);
+    void onChange(void delegate());
+    bool warnAboutDuplicateBindings() const;
+    bool warnAboutDuplicateBindings(in bool);
+    const(KeySet) keySet() const;
+    const(KeySet) keySet(in KeySet);
 }
 
 class SingleKeyButton : TextButton, KeyButton {
@@ -39,8 +39,8 @@ public:
 
     mixin (GetSetWithReqDraw!"warnAboutDuplicateBindings");
 
-    @property const(KeySet) keySet() const { return _keySet; }
-    @property const(KeySet) keySet(in KeySet sc)
+    const(KeySet) keySet() const { return _keySet; }
+    const(KeySet) keySet(in KeySet sc)
     {
         if (sc == _keySet)
             return sc;
@@ -49,10 +49,10 @@ public:
         return sc;
     }
 
-    @property void onChange(void delegate() f) { _onChange = f; }
+    void onChange(void delegate() f) { _onChange = f; }
 
-    @property override bool on() const { return super.on(); }
-    @property override bool on(in bool b)
+    override bool on() const pure nothrow @safe @nogc { return super.on(); }
+    override bool on(in bool b) @safe nothrow
     {
         if (b == on)
             return b;
@@ -62,7 +62,7 @@ public:
         return b;
     }
 
-    @property override Alcol colorText() const
+    override Alcol colorText() const
     {
         return _warnAboutDuplicateBindings ? color.red : super.colorText();
     }
@@ -139,8 +139,8 @@ public:
         formatButtonsAndCallCallback();
     }
 
-    @property const(KeySet) keySet() const { return _big.keySet; }
-    @property const(KeySet) keySet(in KeySet set)
+    const(KeySet) keySet() const { return _big.keySet; }
+    const(KeySet) keySet(in KeySet set)
     {
         if (_big.keySet == set)
             return set;
@@ -149,14 +149,14 @@ public:
         return set;
     }
 
-    @property void onChange(void delegate() f) { _onChange = f; }
+    void onChange(void delegate() f) { _onChange = f; }
 
-    @property bool warnAboutDuplicateBindings() const
+    bool warnAboutDuplicateBindings() const
     {
         return _big.warnAboutDuplicateBindings;
     }
 
-    @property bool warnAboutDuplicateBindings(in bool b)
+    bool warnAboutDuplicateBindings(in bool b)
     {
         if (_big.warnAboutDuplicateBindings == b)
             return b;
@@ -207,7 +207,7 @@ private:
 
     static class SmallButton : TextButton {
         this(Geom g, in string s) { super(g, s); }
-        @property override Alcol colorText() const
+        override Alcol colorText() const
         {
             return on ? super.colorText : color.guiTextDark;
         }

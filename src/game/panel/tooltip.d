@@ -10,12 +10,15 @@ import hardware.keyset;
 
 interface TooltipSuggester {
 public:
-    @property bool isSuggestingTooltip() const;
-    @property Tooltip.ID suggestedTooltip() const
-        in {
-            assert (isSuggestingTooltip,
-                "Call suggestedTooltip only when isSuggestingTooltip.");
-        }
+    // Not pure because implementors usually ask themselves isMouseHere.
+    bool isSuggestingTooltip() const nothrow @safe @nogc;
+
+    // Not pure because implementors usually ask childrens isMouseHere.
+    Tooltip.ID suggestedTooltip() const nothrow @safe @nogc
+    in {
+        assert (isSuggestingTooltip,
+            "Call suggestedTooltip only when isSuggestingTooltip.");
+    }
 }
 
 struct Tooltip {
@@ -47,7 +50,7 @@ struct Tooltip {
         queuePlatformer = 0x1_0000,
         holdToScroll = 0x2_0000,
         clickToCancelReplay = 0x4_0000,
-        framestepOrQuit = 0x8_0000,
+        framestepOrQuit = 0x20_0000,
     }
 
     static string format(IdSet manyIDs) nothrow
@@ -104,6 +107,7 @@ Tooltip makeTooltip(Tooltip.ID id) nothrow @nogc @safe
         case ID.queuePlatformer: return none(Lang.gameQueuePlatformer);
         case ID.holdToScroll: return key(Lang.gameHoldToScroll, keyScroll);
         case ID.clickToCancelReplay: return none(Lang.gameClickToCancelReplay);
+
         case ID.framestepOrQuit:
             return key(Lang.gameFramestepOrQuit, keyGameExit);
         case ID.pause: return none(Lang.gamePause);

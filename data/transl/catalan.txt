@@ -127,16 +127,15 @@ $winAbortNetgameContinuePlaying Continua jugant
 $winAbortNetgameExitToLobby Torna a la sala d'espera
 
 // help texts inside the game
-$gameForceLeft [%s] per encarar a l'esquerra
+$gameForceLeft [%s] per encarar a l'esquerra.
 $gameForceRight [%s] per encarar a la dreta.
 $gamePriorityInvert [%s] pel darrer lix.
 $gameQueueBuilder Torna a fer clic per posar a la cua.
 $gameQueuePlatformer Torna a fer clic per posar a la cua.
-$gameHoldToScroll Fes clic i manté premut [%s] i mou el ratolí per desplaçar
-$gameClickToCancelReplay Fes clic per cancel·lar la repetició
+$gameHoldToScroll Fes clic i manté premut [%s] i mou el ratolí per desplaçar.
+$gameClickToCancelReplay Repetitió. Fes clic a l'aire per jugar.
 $gameFramestepOrQuit Rebobina el temps (◀▮) o surt amb [%s].
 $gamePause Pausar.
-$gameZoom %s per ampliar, %s per reduir.
 $gameShowSplatRuler Mostra el regle d'esclafades.
 $gameHighlightGoals Ressalta els teus propis caus i objectius.
 $gameStateSave Desa la posició ràpidament.
@@ -204,7 +203,6 @@ $editorButtonMirrorHorizontally Enmirallar: Enmiralla el terreny seleccionat hor
 $editorButtonFlipVertically Girar: Gira el terreny seleccionat verticalment.
 $editorButtonSelectRotate Rotar: Gira el terreny seleccionat un quart de torn.
 $editorButtonSelectDark Buidar: Fa servir el terreny seleccionat per fer un forat.
-$editorButtonViewZoom Zoom: El clic esquerre augmenta el zoom del mapa, el clic dret el redueix.
 $editorButtonAddTerrain Terreny: Afegeix una tessel·la de terreny.
 $editorButtonAddSteel Acer: Afegeix una tessel·la d'acer que no es pot cavar.
 $editorButtonAddHatch Cau: Afegeix un cau d'entrada dels lix.
@@ -307,9 +305,10 @@ $netGameEndResult Resultat de la partida:
 $netGameOvertimeNukeIn Estàs en temps d'excés! Bomba nuclear en
 
 $optionTitle Opcions|Va al menú d'opcions des del menú principal.
-$optionGroupGraphics Gràfics
 $optionGroupGeneral General
+$optionGroupGraphics Gràfics
 $optionGroupControls Controls
+$optionGroupReplay Repetitió
 $optionGroupGameKeys Tecles del joc
 $optionGroupEditorKeys Tecles de l'editor
 $optionGroupMenuKeys Tecles del menú
@@ -349,6 +348,13 @@ $optionHoldToScrollSpeed Velocitat de desplaçament amb la tecla de desplaçamen
 $optionHoldToScrollInvert Invertir "Desplaçament"|Es desplaça al contrari del moviment del ratolí mentre es manté la tecla de desplaçament.|La tecla de desplaçament per defecte és el botó dret del ratolí ⟁, veure a l'esquerra per reassignar.
 $optionFastMovementFreesMouse  Alliberar el ratolí|El retolí surt de la finestra del Lix quan es mou ràpidament cap a les vores.|Si no està habilitat es pot alliberar el ratolí amb Alt+Tab.
 
+$optionRewindIsBrowse ◀▮ manté habilitats|When you rewind an assignment (with ◀▮ on Game Keys), it stays in the replay|and will play back later. To erase assignments, cut the replay (see below).
+$optionRewindIsUndo ◀▮ esborra habilitats|Rewind (◀▮ on Game Keys) is undo: Rewound assignments are|immediately erased from the replay. You won't enter replay mode.
+$optionWhenTweakerHidden Sense Ajustador:|When you start a singleplayer game, the Tweaker starts hidden.|Show/hide the Tweaker with a panel button (see Game Keys).
+$optionWhenTweakerShown Amb Ajustador:|These controls apply while the Tweaker is shown.|Show/hide the Tweaker with a panel button (see Game Keys).
+$optionAirClicksCut Clics aeris interrompen|Air clicks interrupt the replay, i.e., erase all future assignments for all lix.|If not checked, air clicks do nothing. Erase assignments via the Tweaker.
+$optionInsertAssignments Insertar habilitats|After ◀▮, assigning skills preserves the future of other lix.|If not checked, an assignment first interrupts the replay, i.e., cuts all lix' future.
+
 $optionKeyForceLeft Forçar l'esquerra|Mantenir per assignar habilitats als lix encarats a l'esquerra.|És útil en un manat dens de lix.
 $optionKeyForceRight Forçar la dreta|Mantenir per assignar habilitats als lix encarats a la dreta.|És útil en un manat dens de lix.
 $optionKeyPause Pausar|Pausar el joc.|Pots escollir si assignar habilitats hauria de despausar o no, veure avall.
@@ -370,8 +376,6 @@ $optionKeyNuke Bomba nuclear|Al mode d'un sol jugador, fa explotar tots els lix 
 $optionAvoidBuilderQueuing Preferir spam enlloc d'encuar|Prefereix les assignacions de construir a no-constructors per sobre d'encuar constructors existents.|Es pot mantenir "Invertir prioritat" (veure la pestanya de controls) per fer el que no prefereixes.
 $optionAvoidBatterToExploder Preferir batedors per sobre de no explotadors|Prefereix les assignacions als caminadors per sobre del les assignacions de batedor als explotadors amb temps.|Es pot mantenir "Invertir prioritat" (veure la pestanya de controls) per fer el que no prefereixes.
 $optionUnpauseOnAssign Despausar durant l'assignació|Despausa el joc quan s'assigna una habilitat durant la pausa.|Si no està habilitat, les assignacions d'habilitats avançaran el joc 1 fotograma durant la pausa.
-$optionReplayAfterFrameBack Mantenir la repetició després ◀▮|Quan es rebobina (◀▮), manté les accions futures de la repetició fins que es faci clic a l'aire.| Si no està habilitat, les accions de la repetció s'esborraran quan es desfacin rebobinant.
-$optionReplayAlwaysInsert Insertar durant la repetició|Durant la repetició les noves assignacions canvien només el futur del mateix lix.|Quan no està habilitat, les assignacions canvien el futur global com si haguessis fet clic a l'aire.
 
 $optionKeyMenuOkay D'acord/Sí|Juga el nivell seleccionat. Desa i tanca un diàleg.
 $optionKeyMenuEdit Editar|Obre el nivell seleccionat a l'editor.

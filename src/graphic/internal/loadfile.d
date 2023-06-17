@@ -34,7 +34,10 @@ do {
     loadedCutbitMayBeScaled[id] = new Cutbit(fn, Cutbit.Cut.ifGridExists);
     loadedCutbitMayBeScaled[id].albit.convertPinkToAlpha();
     if (id.needGuiRecoloring) {
-        eidrecol(loadedCutbitMayBeScaled[id], SpecialRecol.ordinary);
+        eidrecol(loadedCutbitMayBeScaled[id],
+            // Hack! This shouldn't depend on id. Move this decision elsewhere.
+            id == InternalImage.scissorsInPanel
+                ? SpecialRecol.skillButtonIcons : SpecialRecol.ordinary);
     }
 }
 

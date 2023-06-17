@@ -123,10 +123,10 @@ public:
         }
     }
 
-    @property Ac  skill()  const { return _main.skill;      }
-    @property Ac  skill(Ac ac)   { return _main.skill = ac; }
-    @property int number() const { return _main.number;     }
-    @property int number(int i)  { return _main.number = i; }
+    Ac skill() const pure nothrow @safe @nogc { return _main.skill; }
+    void skill(in Ac ac) pure nothrow @safe @nogc { _main.skill = ac; }
+    int number() const pure nothrow @safe @nogc { return _main.number; }
+    void number(in int i) nothrow @safe { _main.number = i; }
 
 protected:
     override void calcSelf()

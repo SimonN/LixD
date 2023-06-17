@@ -128,10 +128,9 @@ $gamePriorityInvert [%s] für hintere Lix.
 $gameQueueBuilder Klicke zum Vormerken.
 $gameQueuePlatformer Klicke zum Vormerken.
 $gameHoldToScroll Halte [%s] und bewege Maus zum Scrollen.
-$gameClickToCancelReplay Klicke zum Unterbrechen des Replays.
+$gameClickToCancelReplay Replay läuft. Klicke in die Luft, um selbst zu spielen.
 $gameFramestepOrQuit Gehe zurück (◀▮) oder beende mit [%s].
 $gamePause Pause.
-$gameZoom %s zum Hineinzoomen, %s zum Herauszoomen.
 $gameShowSplatRuler Fallhöhen-Lineal anzeigen.
 $gameHighlightGoals Eigene Klappen und Ziele hervorheben.
 $gameStateSave Spielstand schnellspeichern.
@@ -195,7 +194,6 @@ $editorButtonMirrorHorizontally Spiegeln: Ausgewähltes Terrain horizontal spieg
 $editorButtonFlipVertically Kopfüber: Ausgewähltes Terrain vertikal spiegeln.
 $editorButtonSelectRotate Drehen: Ausgewähltes Terrain um ein Viertel drehen.
 $editorButtonSelectDark Dunkel: Ausgewähltes Terrain im Spiel schwarz zeichnen.
-$editorButtonViewZoom Zoom: Linksklick zoomt in die Karte, Rechtsklick zoomt heraus.
 $editorButtonAddTerrain Terrain: Ein durchgrabbares Terrainstück platzieren.
 $editorButtonAddSteel Stahl: Ein nicht-durchgrabbares Stahlobjekt platzieren.
 $editorButtonAddHatch Klappe: Eine Lix-Eingangsklappe platzieren.
@@ -296,6 +294,7 @@ $optionTitle Optionen|Vom Hauptmenü das Optionsmenü aufrufen.
 $optionGroupGeneral Allgemein
 $optionGroupGraphics Grafik
 $optionGroupControls Steuerung
+$optionGroupReplay Replay
 $optionGroupGameKeys Spieltasten
 $optionGroupEditorKeys Editortasten
 $optionGroupMenuKeys Menütasten
@@ -337,6 +336,13 @@ $optionHoldToScrollSpeed Scroll-Geschw. mit Scrolltaste|Scroll-Geschwindigkeit b
 $optionHoldToScrollInvert Halte-Scrollen invertieren|Entgegen der Mausbewegung scrollen, während du die Scrolltaste hältst.|Die Standard-Scrolltaste ist die rechte Maustaste ⟁, änderbar oben.
 $optionFastMovementFreesMouse Schnelle Beweg. befreit Maus|Die Maus verlässt das Lix-Fenster, wenn du sie ruckartig bewegst.|Ohne Haken: Befreie die Maus mit Alt+Tab.
 
+$optionRewindIsBrowse ◀▮ behält Zuweisungen|Wenn du Fähigkeitszuweisungen zurückspulst (mit ◀▮), bleiben sie im Replay|und werden später erneut abgespielt. Unterbrich das Replay, um sie zu löschen.
+$optionRewindIsUndo ◀▮ löscht Zuweisungen|Zurückgespulte Fähigkeitszuweisungen werden sofort aus dem Replay gelöscht.|Durch ◀▮ wirst du somit nie in den Replaymodus kommen.
+$optionWhenTweakerHidden Ohne Justierer:|Wenn du ein Einzelspielerspiel beginnst, ist der Replay-Justierer aus.|Öffne/schließe den Justierer mit einem Button, siehe Spieltasten.
+$optionWhenTweakerShown Mit Justierer:|Diese Steuerungen gelten, während der Replay-Justierer sichtbar ist.|Öffne/schließe den Justierer mit einem Button, siehe Spieltasten.
+$optionAirClicksCut Luftklick unterbricht Replay|Klicke in die Luft, um alle zukünftigen Zuweisungen aus dem Replay zu löschen.|Ohne Haken: Luftklicks haben keine Wirkung. Lösche Zuweisungen im Justierer.
+$optionInsertAssignments Zuweisungen einfügen|Nach ◀▮ belassen neue Zuweisungen die Zukunft anderer Lix.|Ohne Haken: Neue Zuweisungen löschen die Zukunft aus dem Replay.
+
 $optionKeyForceLeft Nur links|Halte gedrückt, um Fähigkeiten an Linksläufer zuzuweisen.|Das ist nützlich in dichten Ansammlungen von Lix.
 $optionKeyForceRight Nur rechts|Halte gedrückt, um Fähigkeiten an Rechtsläufer zuzuweisen.|Das ist nützlich in dichten Ansammlungen von Lix.
 $optionKeyPause Pause|Das Spiel pausieren.|Du kannst unten bestimmen, ob Fähigkeitszuweisungen die Pause beenden.
@@ -358,8 +364,6 @@ $optionKeyNuke Atombombe|Im Einzelspieler alle Lix sprengen, um den Level zu bee
 $optionAvoidBuilderQueuing Builder eher an Nicht-Builder|Builder vorrangig an Nicht-Builder zuweisen anstatt an bestehende Builder.|Halte „Priorität invertieren“ (Reiter „Steuerung“), um das jeweils andere zu tun.
 $optionAvoidBatterToExploder Batter eher an Nicht-Exploder|Batter vorrangig an normale Lix zuweisen anstatt an brennende Exploder.|Halte „Priorität invertieren“ (Reiter „Steuerung“), um das jeweils andere zu tun.
 $optionUnpauseOnAssign Pause aus bei Fähigk.-Zwsg.|Die Pause ausschalten, wenn du eine Fähigkeit zuweist.|Ohne Haken: Nur 1 Physik-Update weiter, wenn du eine Fähigkeit zuweist.
-$optionReplayAfterFrameBack Replay bei ◀▮ behalten|Replay-Aktionen beim Zurückspulen (◀▮) behalten, bis du in die Luft klickst.|Ohne Haken: Replay-Aktionen entfernen, die durch ◀▮ ungeschehen werden.
-$optionReplayAlwaysInsert Einfügen während Replay|Neue Fähigkeitszuweisungen verwerfen nur die Zukunft derselben Lix.|Ohne Haken: Fähigkeitszuweisungen unterbrechen das Replay wie ein Luftklick.
 
 $optionKeyMenuOkay Okay/ja|Den markierten Level spielen.|Dialog-Einstellungen übernehmen und Dialoge beenden.
 $optionKeyMenuEdit Bearbeiten|Den markierten Level mit dem Leveleditor öffnen.

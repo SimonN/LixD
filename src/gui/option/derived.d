@@ -4,8 +4,10 @@ import std.algorithm;
 import std.conv;
 import std.string; // strip
 
+import basics.help;
 import file.language;
 import file.option;
+import graphic.color;
 import graphic.internal;
 import gui;
 import gui.option;
@@ -317,4 +319,40 @@ public:
     }
 
     override Lang lang() const { return _userOptions[0].lang; }
+}
+
+
+
+class HeadingAndBoolOptions : Option {
+private:
+    Lang _title;
+    Label _whenTweakerIs; // "Tweaker closed" or "Tweaker open"
+    BoolOption[] _subOptions;
+
+public:
+    this(Geom g, in Lang title, UserOption!bool[] severalOptions...)
+    do {
+        g.yl = 20f + 20f * severalOptions.len;
+        super(g);
+        _title = title;
+        _whenTweakerIs = new Label(new Geom(30f, 0, xlg - 30f, 20f),
+            _title.transl);
+        _whenTweakerIs.color = color.guiTextDark;
+        addChild(_whenTweakerIs);
+        foreach (size_t i, op; severalOptions) {
+            _subOptions ~= new BoolOption(
+                new Geom(0, (i + 1) * 20f, xlg, 20f), op);
+            addChild(_subOptions[$-1]);
+        }
+    }
+
+    override void loadValue() { foreach (op; _subOptions) op.loadValue(); }
+    override void saveValue() { foreach (op; _subOptions) op.saveValue(); }
+    override Lang lang() const
+    {
+        foreach (op; _subOptions)
+            if (op.isMouseHere)
+                return op.lang();
+        return _title;
+    }
 }

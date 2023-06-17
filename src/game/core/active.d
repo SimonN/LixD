@@ -6,8 +6,7 @@ module game.core.active;
 
 import optional;
 
-import net.repdata;
-static import file.option; // unpause on assign
+import opt = file.option.allopts;
 import file.replay;
 import game.core.assignee;
 import game.core.game;
@@ -15,6 +14,7 @@ import hardware.sound;
 import hardware.mouse;
 import hardware.semantic;
 import lix;
+import net.repdata;
 
 package:
 
@@ -28,7 +28,9 @@ do { with (game)
     if (! pan.nukeDoubleclicked)
         return;
     pan.pause = false;
-    game.cutGlobalFutureFromReplay();
+    if (game.view.canInterruptReplays) {
+        game.nurse.cutGlobalFutureFromReplay();
+    }
     auto data = game.newPlyForNextPhyu();
     data.isNuke = true;
     game.includeOurNew(data);
@@ -46,37 +48,36 @@ do {
         return;
     }
     else if (game.canAssignTo(potAss)) {
-        game.cutReplayAccordingToOptions(potAss.front.passport);
-        game.assignTo(potAss.front);
-        if (file.option.unpauseOnAssign.value == true) {
-            game.pan.pause = false;
-        }
+        game.resolveClickThatWillAssign(potAss.front);
     }
     else if (potAss.empty) {
-        game.cutGlobalFutureFromReplay(); // We've clicked air, not a lix.
+        // We have clicked air.
+        if (game.canWeClickAirNowToCutGlobalFuture) {
+            game.nurse.cutGlobalFutureFromReplay();
+        }
+        // The click will also advance physics. That's handled in speed.d.
     }
     else if (game.view.canAssignSkills && game.pan.chosenSkill == Ac.nothing) {
         hardware.sound.playLoud(Sound.PANEL_EMPTY);
     }
 }
 
-void cutReplayAccordingToOptions(Game game, in Passport ofWhom)
-{
-    if (! game.view.canInterruptReplays) {
-        return;
-    }
-    if (file.option.replayAlwaysInsert.value) {
-        game.cutSingleLixFutureFromReplay(ofWhom);
-    }
-    else {
-        game.nurse.cutGlobalFutureFromReplay();
-    }
-}
-
-void cutGlobalFutureFromReplay(Game game)
+void resolveClickThatWillAssign(Game game, Assignee assignee)
 {
     if (game.view.canInterruptReplays) {
-        game.nurse.cutGlobalFutureFromReplay();
+        immutable bool weMayInsert = game._tweaker.shown
+            ? opt.insertAssignmentsWhenTweakerShown.value
+            : opt.insertAssignmentsWhenTweakerHidden.value;
+        if (weMayInsert) {
+            game.cutSingleLixFutureFromReplay(assignee.passport);
+        }
+        else {
+            game.nurse.cutGlobalFutureFromReplay();
+        }
+    }
+    game.assignTo(assignee);
+    if (opt.unpauseOnAssign.value) {
+        game.pan.pause = false;
     }
 }
 

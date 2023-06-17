@@ -218,11 +218,21 @@ package:
             /  (displayFps     + 1) / ticksNormalSpeed;
     }
 
-    bool isMouseOnLand() const
+    bool isMouseOnLand() const nothrow @safe @nogc
     {
         assert (pan);
         assert (_tweaker, "even if hidden, this should be non-null");
         return ! pan.isMouseHere && ! _tweaker.isMouseHere;
+    }
+
+    bool canWeClickAirNowToCutGlobalFuture() const
+    {
+        return view.canInterruptReplays
+            && nurse.hasFuturePlies
+            && isMouseOnLand
+            && (_tweaker.shown
+                ? opt.airClicksCutWhenTweakerShown.value
+                : opt.airClicksCutWhenTweakerHidden.value);
     }
 
     bool multiplayer() const
@@ -352,7 +362,7 @@ private:
         }
         gui.addElder(pan);
         setLastPhyuToNow(); // to fill skills, needed for highlightFirstSkill
-        pan.highlightFirstSkill();
+        pan.chooseLeftmostSkill();
 
         _tooltipLine = new TooltipLine(new Geom(
             0, panelYlg, screenXlg - tweakerXlg, 20, From.BOTTOM_RIGHT));

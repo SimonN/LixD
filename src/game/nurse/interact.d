@@ -7,8 +7,8 @@ public import game.nurse.savestat;
 
 class InteractiveNurse : SaveStatingNurse {
     /*
-     * Forwarding constructor. We get to own the replay, but not the level
-     * or the EffectManager. EffectManager must exist for interactive mode.
+     * Forwarding constructor. Our parent class gets to own the replay,
+     * but will merely hold references to level or EffectManager.
      */
     this(in Level lev, Replay rp, EffectSink ef)
     {

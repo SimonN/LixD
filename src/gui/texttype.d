@@ -44,10 +44,10 @@ public:
     mixin (GetSetWithReqDraw!"invisibleBG");
     mixin (GetSetWithReqDraw!"allowScrolling");
 
-    @property onEnter(void delegate() f) { _onEnter = f; }
-    @property onEsc  (void delegate() f) { _onEsc   = f; }
-    @property string text() const { return _text; }
-    @property string text(in string s)
+    void onEnter(void delegate() f) { _onEnter = f; }
+    void onEsc  (void delegate() f) { _onEsc   = f; }
+    string text() const pure nothrow @safe @nogc { return _text; }
+    string text(in string s)
     {
         if (s == _text)
             return s;
@@ -57,14 +57,14 @@ public:
         return s;
     }
 
-    @property nothrow int number() const
+    int number() const pure nothrow @safe
     {
         try               return _text.to!int;
         catch (Exception) return 0;
     }
 
-    override @property bool on() const { return super.on; }
-    override @property bool on(in bool b)
+    override bool on() const pure nothrow @safe @nogc { return super.on; }
+    override bool on(in bool b) nothrow @safe
     {
         if (b == on)
             return b;

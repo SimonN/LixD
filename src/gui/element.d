@@ -45,12 +45,12 @@ public:
     Alcol undrawColor() const  { return _undrawColor;     }
     Alcol undrawColor(Alcol c) { return _undrawColor = c; }
 
-    final void hide() pure nothrow @nogc { shown = false; }
-    final void show() pure nothrow @nogc { shown = true; }
+    final void hide() pure nothrow @safe @nogc { shown = false; }
+    final void show() pure nothrow @safe @nogc { shown = true; }
 
     // Both have to be virtual because Button overrides one >_>
-    bool shown() const pure nothrow @nogc { return _shown; }
-    bool shown(in bool b) pure nothrow @nogc
+    bool shown() const pure nothrow @safe @nogc { return _shown; }
+    bool shown(in bool b) pure nothrow @safe @nogc
     {
         if (b != _shown) {
             reqDraw();
@@ -61,22 +61,34 @@ public:
 
     // The children are a set, you can have each child only once in there.
     // The argument must be mutable, since e.geom.parent will be set.
-    void addChildren(Element[] elems...) { elems.each!(e => addChild(e)); }
-    void addChild(Element e)
+    void addChildren(Element[] elems...) pure nothrow @safe
+    {
+        foreach (e; elems) {
+            addChild(e);
+        }
+    }
+
+    void addChild(Element e) pure nothrow @safe
     {
         assert (e !is null, "can't add null child");
-        assert (_children.find!"a is b"(e) == [], "child was added before");
+        assert (! _children.canFind!"a is b"(e), "child was added before");
         assert (e._geom.parent is null, "child has a parent already");
         e._geom.parent = this._geom;
         _children ~= e;
     }
 
-    void rmAllChildren() { while (_children.length) rmChild(_children[0]); }
-    void rmChild(Element e)
+    void rmAllChildren()
+    {
+        while (_children.length) {
+            rmChild(_children[0]);
+        }
+    }
+
+    void rmChild(Element e) pure nothrow @safe
     {
         assert (e !is null, "can't rm null child");
         auto found = _children.find!"a is b"(e);
-        assert (found != [], "child doesn't exist, can't be removed");
+        assert (found.length, "child doesn't exist, can't be removed");
         assert (found[0]._geom.parent is this._geom,
             "gui element in child list without its parent set");
         found[0]._geom.parent = null;

@@ -168,24 +168,19 @@ void drawMapToA5Display(Game game)
 
 void drawReplaySign(Game game)
 {
-    if (! game.nurse.hasFuturePlies) {
+    if (! game.nurse.hasFuturePlies || ! game.view.showReplaySign) {
         return;
     }
-    if (game.view.showReplaySign) {
-        const(Cutbit) rep = InternalImage.gameReplay.toCutbit;
-        rep.drawToCurrentAlbitNotTorbit(Point(0,
-            (rep.yl/5 * (1 + sin(timerTicks * 0.08f))).to!int));
-    }
+    const(Cutbit) rep = InternalImage.gameReplay.toCutbit;
+    rep.drawToCurrentAlbitNotTorbit(Point(0,
+        (rep.yl/5 * (1 + sin(timerTicks * 0.08f))).to!int));
 }
 
 void drawTooltips(Game game)
 {
     game._tooltipLine.move(game._tweaker.shown
         ? game._tweaker.xlg : 0, game._tooltipLine.geom.y);
-    if (game.view.canInterruptReplays
-        && game.nurse.hasFuturePlies
-        && game.isMouseOnLand
-    ) {
+    if (game.canWeClickAirNowToCutGlobalFuture && game.isMouseOnLand) {
         game._tooltipLine.suggestTooltip(Tooltip.ID.clickToCancelReplay);
     }
     game._tooltipLine.suggestTooltip(game.pan.hoveredSkillOnlyForTooltip);

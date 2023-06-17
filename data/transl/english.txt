@@ -132,10 +132,9 @@ $gamePriorityInvert [%s] for hindmost lix.
 $gameQueueBuilder Click again to queue.
 $gameQueuePlatformer Click again to queue.
 $gameHoldToScroll Hold [%s] and move mouse to scroll.
-$gameClickToCancelReplay Click to interrupt the replay.
+$gameClickToCancelReplay Replaying. To play yourself, click into air.
 $gameFramestepOrQuit Rewind time (◀▮) or quit with [%s].
 $gamePause Pause.
-$gameZoom %s to zoom in, %s to zoom out.
 $gameShowSplatRuler Show splat ruler.
 $gameHighlightGoals Highlight own hatches and goals.
 $gameStateSave Quicksave game position.
@@ -201,7 +200,6 @@ $editorButtonMirrorHorizontally Mirror: Mirrors the selected terrain horizontall
 $editorButtonFlipVertically Flip: Flips the selected terrain vertically.
 $editorButtonSelectRotate Rotate: Performs a quarter turn on the selected terrain.
 $editorButtonSelectDark Dark: Selected terrain erases normal terrain.
-$editorButtonViewZoom Zoom: Left-click zooms into the map, right-click zooms out.
 $editorButtonAddTerrain Terrain: Add a terrain tile.
 $editorButtonAddSteel Steel: Add a steel tile that cannot be dug through.
 $editorButtonAddHatch Hatch: Add a lix entrance hatch.
@@ -304,12 +302,13 @@ $netGameEndResult Game outcome:
 $netGameOvertimeNukeIn Overtime is running! Nuke in
 
 $optionTitle Options|From the main menu, go to the options menu.
-$optionGroupGraphics Graphics
 $optionGroupGeneral General
+$optionGroupGraphics Graphics
 $optionGroupControls Controls
-$optionGroupGameKeys Game keys
-$optionGroupEditorKeys Editor keys
-$optionGroupMenuKeys Menu keys
+$optionGroupReplay Replay
+$optionGroupGameKeys Game Keys
+$optionGroupEditorKeys Editor Keys
+$optionGroupMenuKeys Menu Keys
 $optionUserName Player name|Your name appears in replays and in multiplayer games.|Lix saves settings to the file ./user/options.sdl.
 $optionLanguage Language|Language throughout Lix's user interface.
 $optionReplayAutoSolutions Auto-save level solutions|Saves a replay automatically when you solve a singleplayer level.
@@ -345,6 +344,13 @@ $optionHoldToScrollSpeed Scroll speed with scroll key|Scroll speed when you move
 $optionHoldToScrollInvert Invert hold-to-scroll|Scroll against the mouse movement while you hold the scrolling key.|The standard scrolling key is the right mouse button ⟁, see above to remap.
 $optionFastMovementFreesMouse Fast movement untraps mouse|The mouse leaves the Lix window when you move quickly against the sides.|If not checked, untrap the mouse by Alt+Tab.
 
+$optionRewindIsBrowse ◀▮ keeps assignments|When you rewind an assignment (with ◀▮ on Game Keys), it stays in the replay|and will play back later. To erase assignments, cut the replay (see below).
+$optionRewindIsUndo ◀▮ erases assignments|Rewind (◀▮ on Game Keys) is undo: Rewound assignments are|immediately erased from the replay. You won't enter replay mode.
+$optionWhenTweakerHidden When Tweaker is Hidden:|When you start a singleplayer game, the Tweaker starts hidden.|Show/hide the Tweaker with a panel button (see Game Keys).
+$optionWhenTweakerShown When Tweaker is Shown:|These controls apply while the Tweaker is shown.|Show/hide the Tweaker with a panel button (see Game Keys).
+$optionAirClicksCut Air Clicks Interrupt|Air clicks interrupt the replay, i.e., erase all future assignments for all lix.|If not checked, air clicks do nothing. Erase assignments via the Tweaker.
+$optionInsertAssignments Insert Assignments|After ◀▮, assigning skills preserves the future of other lix.|If not checked, an assignment first interrupts the replay, i.e., cuts all lix' future.
+
 $optionKeyForceLeft Force left|Hold to assign skills to lix facing left.|This is useful in a dense bunch of lix.
 $optionKeyForceRight Force right|Hold to assign skills to lix facing right.|This is useful in a dense bunch of lix.
 $optionKeyPause Pause|Pause the game.|You can choose whether skill assignments should unpause, see below.
@@ -366,8 +372,6 @@ $optionKeyNuke Nuke|In singleplayer, explode all your lix to finish the level.|I
 $optionAvoidBuilderQueuing Prefer spamming over queuing|Prefer builder assignments to non-builders over queuing to existing builders.|You can hold priority invert (see Controls tab) to do what you don't prefer.
 $optionAvoidBatterToExploder Prefer batters to non-exploders|Prefer batter assignments to walkers over batter assignments to timed exploders.|You can hold priority invert (see Controls tab) to do what you don't prefer.
 $optionUnpauseOnAssign Unpause on skill assignment|Unpause the game when you assign a skill during pause.|If not checked, skill assignments during pause advance the game by 1 frame.
-$optionReplayAfterFrameBack Keep replay after ◀▮|On framestepping back (◀▮), keep future replay actions until you click air.|If not checked, replay actions are removed when you undo them by framestepping.
-$optionReplayAlwaysInsert Insert during replay|During replay, new skill assignments cut only the same lix's future.|If not checked, assignments cut the global future, as if you clicked air.
 
 $optionKeyMenuOkay Okay/yes|Play the highlighted level. Save and close a dialog.
 $optionKeyMenuEdit Edit|Open the editor on the highlighted level.

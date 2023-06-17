@@ -8,103 +8,124 @@ import graphic.color;
 import graphic.internal;
 import graphic.graphic;
 
-class SkillButton : Button {
+class SkillOrScissorsButton : Button {
+private:
+    CutbitElement _iconOrNull;
+    Label _big;
+    Label _med;
+
+public:
+    this(Geom g)
+    do {
+        super(g);
+        _big = new Label(new Geom(0, 2, xlg, 30, From.TOP));
+        _big.font = djvuL;
+        _big.color = color.white;
+        _med = new Label(new Geom(0, 3, xlg, 20, From.TOP));
+        _med.font = djvuM;
+        _med.color = color.white;
+        addChildren(_big, _med);
+    }
+
+    abstract bool available() const pure nothrow @safe @nogc;
+
+protected:
+    inout(Label) largeLabel() inout pure nothrow @safe @nogc { return _big; }
+    inout(Label) mediumLabel() inout pure nothrow @safe @nogc { return _med; }
+
+    IconT replaceIcon(IconT, Args...)(Args args)
+        if (is (IconT : CutbitElement))
+    {
+        if (_iconOrNull !is null)
+            rmChild(_iconOrNull);
+        auto ret = new IconT(new Geom(0, 0, xlg, ylg * 2f / 3f, From.BOTTOM),
+            args);
+        _iconOrNull = ret;
+        addChild(_iconOrNull);
+        return ret;
+    }
+
+    final override string hotkeyString() const
+    {
+        return available ? super.hotkeyString() : null;
+    }
+
+    final override void drawOntoButton()
+    {
+        if (_iconOrNull is null) {
+            return;
+        }
+        _iconOrNull.yf = 1 - available; // 0 == colorful, 1 == greyed out
+        _iconOrNull.draw(); // see comment in BitmapButton.drawOntoButton()
+    }
+}
+
+class SkillButton : SkillOrScissorsButton {
 private:
     Style _style = Style.max;
     int _number;
     Ac  _skill;
-
-    SkillIcon _icon;
-    Label _labelNumL;
-    Label _labelNumM;
+    SkillIcon _icon; // The very same object as in SkillOrScissorsButton.
 
 public:
     this(Geom g, Style sty = Style.garden)
     {
         super(g);
-        style = sty;
         whenToExecute = WhenToExecute.whenMouseHeld;
-
-        _labelNumL = new Label(new Geom(0, 2, g.xlg, 30, From.TOP));
-        _labelNumL.color = color.white;
-        _labelNumL.font  = djvuL;
-
-        _labelNumM = new Label(new Geom(0, 3, g.xlg, 20, From.TOP));
-        _labelNumM.color = color.white;
-        _labelNumM.font  = djvuM;
-        addChildren(_labelNumL, _labelNumM);
+        style = sty;
     }
 
-    @property Ac skill() const { return _skill; }
-    @property Ac skill(in Ac a)
+    override bool available() const pure nothrow @safe @nogc
+    {
+        return _number != 0;
+    }
+
+    Ac skill() const pure nothrow @safe @nogc { return _skill; }
+    void skill(in Ac a) pure nothrow @safe @nogc
     {
         if (_skill == a)
-            return a;
+            return;
+        _skill = a;
+        _icon.ac = _skill;
         reqDraw();
-        return _skill = a;
     }
 
-    @property int number() const { return _number; }
-    @property int number(in int i)
+    int number() const pure nothrow @safe @nogc { return _number; }
+    void number(in int i) nothrow @safe
     {
         assert (i >= 0 || i == skillInfinity);
         if (_number == i)
-            return i;
+            return;
         _number = i;
-        _labelNumL.text = "";
-        _labelNumM.text = "";
-        if (_number == skillInfinity)
-            _labelNumL.text = "\u221E"; // lemniscate
-        else if (_number >= 100)
-            _labelNumM.number = _number;
-        else if (_number >= 1)
-            _labelNumL.number = _number;
-        else if (number == 0)
+        if (_number == skillInfinity) {
+            largeLabel.text = "\u221E"; // lemniscate
+            mediumLabel.text = "";
+        }
+        else if (_number >= 100) {
+            largeLabel.text = "";
+            mediumLabel.number = _number;
+        }
+        else if (_number >= 1) {
+            largeLabel.number = _number;
+            mediumLabel.text = "";
+        }
+        else if (number == 0) {
+            largeLabel.text = "";
+            mediumLabel.text = "";
             on = false;
+        }
         reqDraw();
-        return _number;
     }
 
-    @property Style style() const { return _style; }
-    @property Style style(in Style st)
+    Style style() const pure nothrow @safe @nogc { return _style; }
+    void style(in Style st)
     {
         assert (st != Style.max);
         if (_style == st)
-            return st;
+            return;
         _style = st;
-
-        if (_icon !is null)
-            rmChild(_icon);
-        _icon = new SkillIcon(new Geom(0, 0, xlg, ylg * 2f / 3f,
-            From.BOTTOM), _style);
-        addChild(_icon);
-        reqDraw();
-        return st;
-    }
-
-protected:
-
-    override string hotkeyString() const
-    {
-        if (_number != 0)
-            return super.hotkeyString();
-        else
-            return null;
-    }
-
-    override void calcSelf()
-    {
-        super.calcSelf();
-        down = false;
-    }
-
-    override void drawOntoButton()
-    {
-        assert (_icon);
-        _icon.yf = _number == 0 ? 1 : 0; // 0 == colorful, 1 == greyed out
+        _icon = replaceIcon!SkillIcon(_style);
         _icon.ac = _skill;
-        _icon.draw(); // see comment in BitmapButton.drawOntoButton()
+        reqDraw();
     }
-
 }
-// end class SkillButton
