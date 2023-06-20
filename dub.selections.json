@@ -1,7 +1,7 @@
 {
 	"fileVersion": 1,
 	"versions": {
-		"allegro": "4.0.4+5.2.0",
+		"allegro": "4.0.6+5.2.0",
 		"bolts": "1.3.1",
 		"derelict-enet": "4.2.0",
 		"derelict-util": "3.0.0-beta.2",
