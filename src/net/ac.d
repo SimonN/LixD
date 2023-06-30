@@ -33,6 +33,11 @@ bool isPloder(in Ac ac) nothrow @nogc
     return ac == Ac.imploder || ac == Ac.exploder;
 }
 
+bool isPermanentAbility(in Ac ac) nothrow @nogc
+{
+    return ac == Ac.climber || ac == Ac.floater || ac == Ac.runner;
+}
+
 int acToSkillIconXf(in Ac ac) nothrow @nogc
 {
     // We had xf = _ac before instead of xf = _ac - Ac.walker.

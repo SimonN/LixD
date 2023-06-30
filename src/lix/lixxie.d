@@ -417,32 +417,26 @@ int priorityForNewAc(in Ac newAc) const
 private int basePriorityForNewAcGivenOldAc(in Ac newAc) const
 out (ret) { assert(ret < 2 || ret % 1000 == 0); }
 do {
+    int basePriorityWhileBusy()
+    {
+        return newAc.isPloder || newAc.isPermanentAbility ? 2000 : 1;
+    }
+
     switch (ac) {
         // When a blocker shall be freed/exploded, the blocker has extremely
         // high priority, more than anything else on the field.
         case Ac.blocker:
-            if (newAc == Ac.walker
-                || newAc == Ac.imploder
-                || newAc == Ac.exploder)
-                return 6000;
-            // New in Lix 0.10: Allow ability assignments to blocker.
-            if (newAc == Ac.runner
-                || newAc == Ac.climber
-                || newAc == Ac.floater)
-                return 1000;
-            goto WE_ARE_REALLY_TOO_BUSY;
+            return newAc == Ac.walker || newAc.isPloder ? 6000
+                // New in Lix 0.10: Allow ability assignments to blocker.
+                : newAc.isPermanentAbility ? 1000 : 1;
 
         // Stunners/ascenders may be turned in their later frames, but
         // otherwise act like regular mostly unassignable-to acitivities
         case Ac.stunner:
-            if (frame >= 16)
-                return 3000;
-            goto WE_ARE_REALLY_TOO_BUSY;
+            return frame >= 16 ? 3000 : basePriorityWhileBusy;
 
         case Ac.ascender:
-            if (frame >= 5)
-                return 3000;
-            goto WE_ARE_REALLY_TOO_BUSY;
+            return frame >= 5 ? 3000 : basePriorityWhileBusy;
 
         // further activities that take all of the lix's attention; she
         // canot be assigned anything except permanent skills
@@ -451,14 +445,7 @@ do {
         case Ac.climber:
         case Ac.floater:
         case Ac.jumper:
-        WE_ARE_REALLY_TOO_BUSY:
-            if (newAc == Ac.runner
-                 || newAc == Ac.climber
-                 || newAc == Ac.floater
-                 || newAc == Ac.imploder
-                 || newAc == Ac.exploder)
-                return 2000;
-            return 1;
+            return basePriorityWhileBusy;
 
         // standard activities, not considered working lixes
         case Ac.walker:
@@ -473,11 +460,10 @@ do {
         // in the UI, but allow the same networking actions.
         case Ac.builder:
         case Ac.platformer:
-            if (newAc == ac)
-                return avoidBuilderQueuing.value ? 1000 : 4000;
-            return 5000;
+            return newAc != ac ? 5000
+                : avoidBuilderQueuing.value ? 1000 : 4000;
 
-        // Usually, anything different from the current activity can be assign.
+        // Workers other than builders.
         default:
             return (newAc != ac) ? 5000 : 1;
     }
