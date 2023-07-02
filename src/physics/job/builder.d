@@ -1,7 +1,7 @@
-module lix.skill.builder;
+module physics.job.builder;
 
-import lix;
 import hardware.sound;
+import physics.job;
 import physics;
 
 // base class for Builder and Platformer

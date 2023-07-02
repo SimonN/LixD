@@ -1,11 +1,11 @@
-module lix.skill.tumbler;
+module physics.job.tumbler;
 
 import std.algorithm;
 import std.format; // assert errors
 import std.math; // abs
 
 import basics.help;
-import lix;
+import physics.job;
 
 private enum PleaseDo : ubyte {
     nothing,         // nothing hit, keep moving
@@ -27,9 +27,7 @@ public:
     int pixelsFallen; // always >= 0. Upflinginging keeps 0. Resets on fling.
 
     enum speedYToFloat = 15;
-    enum pixelsSafeToFall = {
-       import lix.skill.faller; return Faller.pixelsSafeToFall;
-    }();
+    enum pixelsSafeToFall = Faller.pixelsSafeToFall;
 
     protected void copyFrom(in BallisticFlyer rhs)
     {
@@ -87,7 +85,7 @@ private:
             immutable sud = this.splatUpsideDown();
             lixxie.become(Ac.splatter);
             if (sud)
-                lixxie.frame = 10;
+                frame = 10;
             return BecomeCalled.yes;
         }
         else

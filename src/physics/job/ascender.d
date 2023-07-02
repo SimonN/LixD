@@ -1,8 +1,8 @@
-module lix.skill.ascender;
+module physics.job.ascender;
 
 import std.algorithm;
 
-import lix;
+import physics.job;
 
 class Ascender : Job {
     override bool blockable() const { return false; }

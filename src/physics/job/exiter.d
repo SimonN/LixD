@@ -1,8 +1,8 @@
-module lix.skill.exiter;
+module physics.job.exiter;
 
 import graphic.gadget.goal;
 import hardware.sound;
-import lix;
+import physics.job;
 import physics.tribe;
 
 class Exiter : Leaver {

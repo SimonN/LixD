@@ -14,8 +14,8 @@ import file.filename;
 import game.nurse.savestat;
 import file.replay;
 import level.level;
-import lix.lixxie;
 import net.profile;
+import physics.lixxie.lixxie;
 
 private:
 

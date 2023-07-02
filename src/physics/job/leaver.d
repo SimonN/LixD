@@ -1,7 +1,7 @@
-module lix.skill.leaver;
+module physics.job.leaver;
 
-import lix;
 import hardware.sound;
+import physics.job;
 
 class RemovedLix : Job {
     override bool blockable() const { return false; }

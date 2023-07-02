@@ -17,7 +17,7 @@ import game.tweaker.nowline;
 import game.tweaker.plyline;
 import graphic.color;
 import gui;
-import lix.fields;
+import physics.lixxie.fields;
 
 class Tweaker : Element {
 private:

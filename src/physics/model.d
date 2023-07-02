@@ -1,13 +1,17 @@
 module physics.model;
 
 /*
- * Everything from the physics collected in one class, according to MVC.
+ * GameModel: Applies to the GameState/RawGameState all physics logic that
+ * isn't yet part of a single lix, or a single gadget. E.g., in GameModel,
+ * we define the order of the many updates during a single physics update.
  *
- * Does not manage the replay. Whenever you want to advance physics, cut off
- * from the replay the correct hunk, and feed it one-by-one to the model.
+ * GameModel does not manage the replay. Whenever you want to advance physics,
+ * cut off from the replay (that you hold elsewhere, usually in a Nurse) the
+ * correct hunk, and feed it one-by-one to the model.
  *
- * To do automated replay checking, don't use a model directly! Make a nurse,
- * and have her check the replay!
+ * For automated replay verification a.k.a. replay checking a.k.a. mass replay
+ * verification, don't use a model directly. Make a VerifyingNurse that holds
+ * a GameModel and a Replay.
  */
 
 import std.algorithm;
@@ -22,8 +26,10 @@ import file.replay;
 import graphic.gadget;
 import graphic.torbit;
 import hardware.sound;
-import lix;
 import physics.effect;
+import physics.lixxie.fields;
+import physics.lixxie.fuse;
+import physics.lixxie.lixxie;
 import physics.physdraw;
 import physics.state;
 import physics.statinit;
@@ -100,7 +106,7 @@ public:
     }
 
 private:
-    lix.OutsideWorld makeGypsyWagon(in Passport pa) pure nothrow @nogc
+    OutsideWorld makeGypsyWagon(in Passport pa) pure nothrow @nogc
     {
         return OutsideWorld(_cs, _physicsDrawer, _effect, pa);
     }

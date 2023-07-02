@@ -1,8 +1,8 @@
-module lix.skill.blocker;
+module physics.job.blocker;
 
 import std.math; // abs
 
-import lix;
+import physics.job;
 import physics.tribe;
 
 class Blocker : Job {

@@ -1,7 +1,6 @@
-module lix.skill.faller;
+module physics.job.faller;
 
-import lix;
-import tile.phymap;
+import physics.job;
 
 final class Faller : Job {
 private:
@@ -9,8 +8,6 @@ private:
 
 public:
     int ySpeed = 4;
-
-
 
     enum ySpeedTerminal = 8;
     enum pixelsSafeToFall = 126;
@@ -86,6 +83,28 @@ private:
         ) {
             // it's important we have incremented ySpeed correctly for this
             lixxie.become(Ac.floater);
+        }
+    }
+}
+
+final class Lander : Job {
+    override void onBecome(in Job old) {
+        if (old.ac == Ac.faller) {
+            auto faller = cast (const(Faller)) old;
+            assert (faller);
+            if (faller.frame < 3)
+                frame = 1;
+            // otherwise, use the regular frame 0
+        }
+    }
+
+    override void perform()
+    {
+        if (lixxie.isLastFrame) {
+            lixxie.become(Ac.walker);
+        }
+        else {
+            lixxie.advanceFrame();
         }
     }
 }

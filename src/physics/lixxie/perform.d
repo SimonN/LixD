@@ -1,4 +1,4 @@
-module lix.perform;
+module physics.lixxie.perform;
 
 import std.algorithm; // find
 import std.conv;
@@ -8,7 +8,8 @@ import std.range;
 import tile.phymap;
 import graphic.gadget;
 import hardware.sound;
-import lix;
+import physics.job;
+import physics.lixxie.lixxie;
 import physics.tribe;
 
 // called from Lixxie.perform(OutsideWorld*)

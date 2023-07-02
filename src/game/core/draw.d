@@ -22,6 +22,7 @@ import hardware.display;
 import hardware.music;
 import hardware.tharsis;
 import physics.tribe;
+import physics.lixxie.fuse : drawAbilities; // onto opponents, behind our own
 
 package void
 implGameDraw(Game game) { with (game)
@@ -135,7 +136,6 @@ void drawAllLixes(Game game)
         foreach (otherTribe; nurse.constStateForDrawingOnly.tribes)
             if (otherTribe !is game.localTribe)
                 drawTribe(otherTribe);
-        import lix.fuse : drawAbilities; // onto opponents, behind our own
         foreach (li; localTribe.lixvec.retro) {
             li.drawAbilities();
         }

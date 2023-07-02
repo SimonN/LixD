@@ -1,4 +1,4 @@
-module lix.fields;
+module physics.lixxie.fields;
 
 import optional;
 

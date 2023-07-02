@@ -1,9 +1,8 @@
-module lix.job;
+module physics.job.job;
 
-/* The Job hierarchy. What does a Lixxie do?
- *
- * Usage:
- * Mix (CloneByCopyFrom!"SubclassName") into every subclass.
+/*
+ * The Job hierarchy. What does a Lixxie do? A.k.a. implementation of
+ * the current activity, implementation of the current skill.
  *
  * Only ever create new Jobs by JobUnion.this(Ac). Reason:
  * Jobs will sometimes be copied by value. This is done by assigning JobUnions.
@@ -11,13 +10,15 @@ module lix.job;
  * on the extra space in JobUnion after a potentially shorter class.
  */
 
+package import physics.lixxie.fields;
+package import physics.lixxie.lixxie;
+package import net.ac;
+
 import std.algorithm;
-import std.conv : to;
 import std.string;
 import physics.tribe; // interface for returnSkills
-import lix;
 
-package enum AfterAssignment : ubyte {
+enum AfterAssignment : ubyte {
     becomeNormally,
     doNotBecome,
     weAlreadyBecame,
@@ -49,7 +50,12 @@ public:
     }
 
     final ac() const pure { return _ac; }
-    final frame() const pure { return _frame; }
+    final int frame() const pure nothrow @safe @nogc { return _frame; }
+    final void frame(in int a) pure nothrow @safe @nogc
+    {
+        _frame = cast (byte) a;
+    }
+
     final spriteOffsetX() const pure { return _spriteOffsetX; }
 
     PhyuOrder updateOrder() const { return PhyuOrder.peaceful; }
@@ -76,8 +82,10 @@ protected:
     }
 
 package:
-    void frame(in int a) { _frame = a.to!byte; }
-    void spriteOffsetX(in int a) { _spriteOffsetX = a.to!byte; }
+    void spriteOffsetX(in int a) pure nothrow @safe @nogc
+    {
+        _spriteOffsetX = cast (byte) a;
+    }
 }
 
 unittest {
@@ -101,6 +109,7 @@ struct JobUnion {
     static bool healthy(in Ac ac)
     out (ret) {
         JobUnion job = JobUnion(ac);
+        import physics.job.leaver;
         if (! ret)
             assert (ac == Ac.nothing || cast (Leaver) job.asClass,
                 format!"healthy(%s) == false, but should be true"(ac));
@@ -116,6 +125,7 @@ struct JobUnion {
 
     this(in Ac ac) {
         import basics.emplace; // work around segfault in Lix on dmd 2.077
+        import physics.job;
         final switch (ac) {
             case Ac.nothing:    emplace!RemovedLix(data[]); break;
             case Ac.faller:     emplace!Faller(data[]);     break;

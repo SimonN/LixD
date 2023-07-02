@@ -35,10 +35,10 @@ import graphic.cutbit;
 import graphic.torbit;
 import graphic.internal; // must be initialized first
 import hardware.tharsis;
-import lix.skill.cuber; // Cuber.cubeSize
-import lix.skill.digger; // diggerTunnelWidth
 import net.ac;
 import net.style;
+import physics.job.cuber; // Cuber.cubeSize
+import physics.job.digger; // diggerTunnelWidth
 import physics.mask;
 import physics.terchang;
 

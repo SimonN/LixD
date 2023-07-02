@@ -1,4 +1,4 @@
-module lix.fuse;
+module physics.lixxie.fuse;
 
 import std.math;
 
@@ -8,7 +8,9 @@ import basics.help;
 import basics.rect;
 import graphic.color;
 import graphic.internal;
-import lix;
+import net.ac;
+import physics.lixxie.fields;
+import physics.lixxie.lixxie;
 
 void handlePloderTimer(Lixxie li, OutsideWorld* ow)
 {

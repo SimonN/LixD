@@ -12,7 +12,9 @@ import gui : SkillButton;
 import hardware.mousecur;
 import hardware.keyboard; // priority invert held
 import hardware.semantic; // force left/right held
-import lix;
+import net.ac;
+import physics.lixxie.fields;
+import physics.lixxie.lixxie;
 
 struct Assignee {
     ConstLix lixxie; // Should never be null. Use Optional!Assignee otherwise.

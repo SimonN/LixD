@@ -8,7 +8,7 @@ import basics.rect;
 import opt = file.option.allopts;
 import game.core.game;
 import graphic.torbit;
-import lix.skill.faller; // pixelsSafeToFall
+import physics.job.faller; // pixelsSafeToFall
 import tile.phymap;
 
 package:

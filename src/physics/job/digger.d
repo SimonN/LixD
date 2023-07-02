@@ -1,7 +1,7 @@
-module lix.skill.digger;
+module physics.job.digger;
 
-import lix;
-import physics;
+import physics.job;
+import physics.terchang;
 
 class Digger : Job {
 private:

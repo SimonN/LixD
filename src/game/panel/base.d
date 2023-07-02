@@ -16,8 +16,8 @@ import game.panel.rightbut;
 import game.panel.skillbar;
 import game.panel.tooltip;
 import gui;
-import lix; // forward method of InfoBar to our users
 import net.phyu;
+import physics.lixxie.lixxie;
 import physics.tribe;
 
 class Panel : Element, TooltipSuggester {

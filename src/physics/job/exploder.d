@@ -1,4 +1,4 @@
-module lix.skill.exploder;
+module physics.job.exploder;
 
 /* This is about the assignment of exploders and imploders, and about
  * their final explosion.
@@ -10,8 +10,8 @@ module lix.skill.exploder;
 import std.math; // sqrt
 
 import basics.help; // roundInt
-import lix;
 import physics.mask;
+import physics.job;
 import physics.terchang;
 
 abstract class Ploder : Leaver {

@@ -1,6 +1,6 @@
-module lix.skill.walker;
+module physics.job.walker;
 
-import lix;
+import physics.job;
 
 class Walker : Job {
 public:
@@ -20,7 +20,7 @@ public:
             // priority allows to get here only when the frame is high enough
             lixxie.become(Ac.walker);
             lixxie.turn();
-            lixxie.frame = -1;
+            frame = -1;
             return AfterAssignment.weAlreadyBecame;
         }
         else if (old.ac == Ac.blocker) {
@@ -49,12 +49,12 @@ public:
         else if (old.ac == Ac.shrugger || old.ac == Ac.shrugger2) {
             lixxie.become(Ac.walker);
             lixxie.turn();
-            lixxie.frame = -1;
+            frame = -1;
             return AfterAssignment.weAlreadyBecame;
         }
         else {
             lixxie.become(Ac.walker);
-            lixxie.frame = -1;
+            frame = -1;
             return AfterAssignment.weAlreadyBecame;
         }
     }
@@ -190,7 +190,7 @@ public:
         lixxie.abilityToRun = true;
         if (old.ac == Ac.walker) {
             lixxie.become(Ac.runner);
-            lixxie.frame = 2; // looks best, with a foot on the ground behind
+            frame = 2; // looks best, with a foot on the ground behind
             return AfterAssignment.weAlreadyBecame;
         }
         else

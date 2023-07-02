@@ -1,10 +1,11 @@
-module lix.skill.basher;
+module physics.job.basher;
 
 import std.algorithm; // min, max
 
-import lix;
 import hardware.sound;
-import physics;
+import physics.job;
+import physics.mask;
+import physics.terchang;
 
 class Basher : Job {
 public:

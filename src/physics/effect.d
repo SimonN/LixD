@@ -11,7 +11,7 @@ import std.typecons;
 
 public import basics.rect;
 public import hardware.sound;
-public import lix.fields;
+public import physics.lixxie.fields : Passport;
 public import net.ac;
 public import net.phyu;
 

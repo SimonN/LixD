@@ -1,7 +1,7 @@
-module lix.skill.climber;
+module physics.job.climber;
 
 import hardware.sound;
-import lix;
+import physics.job;
 
 class Climber : Job {
 private:
@@ -124,7 +124,7 @@ private:
                 ? lixxie.frame : -999;
             lixxie.become(Ac.walker);
             if (oldWalkerFrame >= 0)
-                lixxie.frame = oldWalkerFrame;
+                frame = oldWalkerFrame;
         }
         else {
             lixxie.become(Ac.faller);

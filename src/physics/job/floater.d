@@ -1,9 +1,9 @@
-module lix.skill.floater;
+module physics.job.floater;
 
 import std.algorithm;
 
 import basics.help;
-import lix;
+import physics.job;
 
 class Floater : Job {
 public:

@@ -10,8 +10,9 @@ import graphic.internal;
 import gui;
 import hardware.display; // show fps
 import hardware.sound; // warn when too few lix alive to win
-import lix;
 import net.repdata; // Phyu
+import physics.job.builder;
+import physics.lixxie.lixxie;
 import physics.tribe;
 
 abstract class InfoBar : Button {

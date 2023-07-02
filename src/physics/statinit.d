@@ -13,7 +13,6 @@ import graphic.gadget;
 import graphic.torbit;
 import file.replay;
 import level.level;
-import lix;
 import net.permu;
 import physics.state;
 import physics.tribe;

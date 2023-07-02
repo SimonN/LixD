@@ -1,7 +1,7 @@
-module lix.skill.stunner;
+module physics.job.stunner;
 
 import hardware.sound;
-import lix;
+import physics.job;
 
 class Stunner : Job {
 private:

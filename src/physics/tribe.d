@@ -16,11 +16,13 @@ import optional;
 import basics.globals;
 import basics.help;
 import basics.rect;
-import lix;
 import level.level; // spawnintMax
 import net.repdata;
+import net.style;
 import physics.fracint;
 import physics.handimrg;
+import physics.lixxie.fields;
+import physics.lixxie.lixxie;
 import physics.score;
 
 final class Tribe {

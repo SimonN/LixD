@@ -1,7 +1,7 @@
-module lix.skill.cuber;
+module physics.job.cuber;
 
-import lix;
-import physics;
+import physics.job;
+import physics.terchang;
 
 class Cuber : Leaver {
 public:

@@ -13,8 +13,8 @@ import game.core.game;
 import hardware.sound;
 import hardware.mouse;
 import hardware.semantic;
-import lix;
 import net.repdata;
+import physics.lixxie.fields;
 
 package:
 

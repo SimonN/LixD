@@ -1,11 +1,12 @@
-module lix.skill.batter;
+module physics.job.batter;
 
 import std.math;
 import std.range;
 
 import basics.rect;
 import hardware.sound;
-import lix;
+import physics.job;
+import physics.lixxie.lixxie;
 import physics.tribe;
 
 class Batter : Job {

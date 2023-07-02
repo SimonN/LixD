@@ -1,4 +1,4 @@
-module lix.lixxie;
+module physics.lixxie.lixxie;
 
 import std.algorithm; // swap
 import std.conv;
@@ -17,7 +17,9 @@ import graphic.gadget;
 import graphic.internal;
 import graphic.torbit;
 import hardware.sound;
-import lix;
+import physics.job;
+import physics.lixxie.fuse;
+import physics.lixxie.perform;
 import physics.mask;
 
 alias Lixxie = LixxieImpl*;
@@ -54,15 +56,12 @@ private:
             _outsideWorld = null;
     };
 
+public:
     inout(Phymap) lookup() inout
     {
         assert (_outsideWorld, "need outsideWorld for ex/ey movement");
         return outsideWorld.state.lookup;
     }
-
-package:
-    enum jobOffset = _job.offsetof;
-    static assert (_job.offsetof % size_t.sizeof == 0); // emplace alignment
 
     const(Topology) env() const
     {
@@ -70,8 +69,9 @@ package:
         return outsideWorld.state.lookup;
     }
 
-public:
     enum int ploderDelay = 75; // explode once _ploderTimer >= ploderDelay
+    enum jobOffset = _job.offsetof;
+    static assert (_job.offsetof % size_t.sizeof == 0); // emplace alignment
 
     const pure nothrow @safe @nogc {
         Style style() { return _style; }
@@ -82,24 +82,23 @@ public:
     }
 
     const(Job) constJob() const { return _job.asClass; }
-    package inout(Job) job() inout { return _job.asClass; }
+    inout(Job) job() inout { return _job.asClass; }
 
     Ac ac() const { return job.ac; }
     PhyuOrder updateOrder() const { return job.updateOrder; }
 
-    package inout(OutsideWorld*) outsideWorld() inout
+    inout(OutsideWorld*) outsideWorld() inout pure nothrow @nogc
     {
         assert (_outsideWorld !is null, "can't access _outsideWorld here");
         return _outsideWorld;
     }
 
     int ploderTimer() const { return _ploderTimer; }
-    package void ploderTimer(in int i) { _ploderTimer = i.to!byte; }
+    void ploderTimer(in int i) { _ploderTimer = i.to!byte; }
 
     int flingX() const { return _flingX; }
     int flingY() const { return _flingY; }
     int frame() const { return job.frame; }
-    void frame(in int i) { return job.frame = i; }
     int xf() const { return this.frame; }
     int yf() const { return this.ac; }
 
@@ -166,7 +165,7 @@ this(OutsideWorld* ow, in Point aLoc)
     _ex = env.wrap(aLoc).x.even.to!(typeof(_ex));
     _ey = env.wrap(aLoc).y.to!(typeof(_ey));
     _job = JobUnion(Ac.faller);
-    frame = 4;
+    job.frame = 4;
     addEncountersFromHere();
 }
 
@@ -330,7 +329,7 @@ void playSound(in Sound sound)
 
 const(Cutbit) cutbit() const { return getLixSpritesheet(_style); }
 bool isLastFrame() const { return ! cutbit.frameExists(frame + 1, ac); }
-void advanceFrame() { frame = (isLastFrame() ? 0 : frame + 1); }
+void advanceFrame() { job.frame = (isLastFrame() ? 0 : frame + 1); }
 
 package Point locCutbit() const // top left of sprite
 {
@@ -527,7 +526,7 @@ private void becomeTemplate(bool manualAssignment)(in Ac newAc)
         job.onBecome(oldJob.asClass); // can call become() recursively
         static if (manualAssignment)
             // can go to -1, then after the update, frame 0 is displayed
-            frame = frame - 1;
+            job.frame = frame - 1;
     }
 }
 

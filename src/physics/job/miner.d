@@ -1,10 +1,11 @@
-module lix.skill.miner;
+module physics.job.miner;
 
 import std.algorithm; // max
 
 import hardware.sound;
-import lix;
-import physics;
+import physics.job;
+import physics.mask;
+import physics.terchang;
 
 class Miner : Job {
 private:

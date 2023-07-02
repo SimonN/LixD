@@ -19,7 +19,7 @@ import gui;
 import hardware.keyboard;
 import hardware.mousecur;
 import hardware.sound;
-import lix.fields;
+import physics.lixxie.fields;
 
 package void
 calcPassive(
