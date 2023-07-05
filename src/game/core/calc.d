@@ -97,7 +97,7 @@ void calcEndOfPhysicsWhileEffectsAreStillGoingOn(Game game) { with (game)
             _gotoMainMenu = true;
         }
         else
-            _tooltipLine.suggestTooltip(Tooltip.ID.framestepOrQuit);
+            _mapClickExplainer.suggestTooltip(Tooltip.ID.framestepOrQuit);
     }
 }}
 

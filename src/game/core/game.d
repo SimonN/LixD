@@ -91,7 +91,8 @@ package:
 
     ReallyExitWindow modalWindow;
     Panel pan;
-    TooltipLine _tooltipLine;
+    TooltipLine _panelExplainer;
+    TooltipLine _mapClickExplainer;
     Tweaker _tweaker; // Never null, but often hidden
     ChatArea _chatArea;
     SplatRuler _splatRuler;
@@ -137,22 +138,19 @@ public:
 
     void dispose()
     {
-        if (pan) {
-            gui.rmElder(pan);
-            pan = null;
+        void rmElderAndNull(T)(ref T anElder)
+        {
+            if (anElder is null) {
+                return;
+            }
+            gui.rmElder(anElder);
+            anElder = null;
         }
-        if (_tooltipLine) {
-            gui.rmElder(_tooltipLine);
-            _tooltipLine = null;
-        }
-        if (_tweaker) {
-            gui.rmElder(_tweaker);
-            _tweaker = null;
-        }
-        if (_chatArea) {
-            gui.rmElder(_chatArea);
-            _chatArea = null;
-        }
+        rmElderAndNull(pan);
+        rmElderAndNull(_panelExplainer);
+        rmElderAndNull(_mapClickExplainer);
+        rmElderAndNull(_tweaker);
+        rmElderAndNull(_chatArea);
         if (modalWindow) {
             gui.rmFocus(modalWindow);
             modalWindow = null;
@@ -353,7 +351,8 @@ private:
         assert (nurse.constReplay);
         assert (level);
         assert (pan is null);
-        assert (_tooltipLine is null);
+        assert (_panelExplainer is null);
+        assert (_mapClickExplainer is null);
         assert (_tweaker is null);
     }
     do {
@@ -365,10 +364,14 @@ private:
         setLastPhyuToNow(); // to fill skills, needed for highlightFirstSkill
         pan.chooseLeftmostSkill();
 
-        _tooltipLine = new TooltipLine(new Geom(
+        _panelExplainer = new TooltipLine(new Geom(
             0, panelYlg, screenXlg - tweakerXlg, 20, From.BOTTOM_RIGHT));
-        _tooltipLine.shown = opt.ingameTooltips.value;
-        gui.addElder(_tooltipLine);
+        _mapClickExplainer = new TooltipLine(new Geom(
+            0, 0, screenXlg - tweakerXlg, 20, From.TOP_RIGHT));
+        _panelExplainer.shown = opt.ingameTooltips.value;
+        _mapClickExplainer.shown = opt.ingameTooltips.value;
+        gui.addElder(_panelExplainer);
+        gui.addElder(_mapClickExplainer);
 
         _tweaker = new Tweaker(
             new Geom(0, 0, tweakerXlg, screenYlg - panelYlg, From.TOP_RIGHT));

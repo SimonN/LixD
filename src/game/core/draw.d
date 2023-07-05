@@ -178,14 +178,15 @@ void drawReplaySign(Game game)
 
 void drawTooltips(Game game)
 {
-    game._tooltipLine.move(game._tweaker.shown
-        ? game._tweaker.xlg : 0, game._tooltipLine.geom.y);
+    game._panelExplainer.move(game._tweaker.shown
+        ? game._tweaker.xlg : 0, game._panelExplainer.geom.y);
+    game._mapClickExplainer.move(game._panelExplainer.geom.x, 0);
     if (game.canWeClickAirNowToCutGlobalFuture && game.isMouseOnLand) {
-        game._tooltipLine.suggestTooltip(Tooltip.ID.clickToCancelReplay);
+        game._mapClickExplainer.suggestTooltip(Tooltip.ID.clickToCancelReplay);
     }
-    game._tooltipLine.suggestTooltip(game.pan.hoveredSkillOnlyForTooltip);
+    game._panelExplainer.suggestTooltip(game.pan.hoveredSkillOnlyForTooltip);
     if (game.pan.isSuggestingTooltip) {
-        game._tooltipLine.suggestTooltip(game.pan.suggestedTooltip);
+        game._panelExplainer.suggestTooltip(game.pan.suggestedTooltip);
     }
 }
 
