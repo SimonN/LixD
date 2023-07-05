@@ -115,8 +115,15 @@ public:
     {
         immutable int i = uniform(0, 4);
         immutable Sound chosen = _queue[i];
+        /*
+         * i = chosen =      2
+         * _queue now:   0 1 2 3 4 5 6 7
+         * Want to move:       3 4 5 6 7 (the hindmost _queue.len - i - 1)
+         * To here:          3 4 5 6 7
+         * Then insert:                2
+         */
         memmove(_queue.ptr + i, _queue.ptr + i + 1,
-            Sound.sizeof * (_queue.len - i));
+            Sound.sizeof * (_queue.len - i - 1));
         _queue[$ - 1] = chosen;
         hardware.sound.playWithCustomDBFS(chosen, dbfs);
     }
