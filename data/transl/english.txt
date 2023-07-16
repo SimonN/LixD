@@ -43,7 +43,7 @@ $browserReplayVerifyDir Verify directory
 
 $winVerifyTitle Replay Verifier
 $winVerifyOutputWrittenTo Output written to “%s”. Click to return.
-$verifyHeader Result,Replay,Level,Player,Saved,Required,Skills,Phyus
+$verifyHeader Result,Replay,Level,Player,Saved,Required,Skills,Ticks
 $verifyStatisticsFrom Statistics from %d replays:
 $verifyTrophiesUpdated %d trophies for %s updated.
 $verifyLevelsNoProof These %d levels have no proof:
@@ -132,7 +132,7 @@ $gamePriorityInvert [%s] for hindmost lix.
 $gameQueueBuilder Click again to queue.
 $gameQueuePlatformer Click again to queue.
 $gameHoldToScroll Hold [%s] and move mouse to scroll.
-$gameClickToCancelReplay Replaying. To play yourself, click into air.
+$gameClickToCancelReplay Replaying. To play, click into air.
 $gameFramestepOrQuit Rewind time (◀▮) or quit with [%s].
 $gamePause Pause.
 $gameShowSplatRuler Show splat ruler.
@@ -147,7 +147,7 @@ $gameRestart Restart level.
 $gameNuke Nuke. Double-click to activate.
 
 $tweakerHeaderLixID Lix
-$tweakerHeaderPhyu Phyu
+$tweakerHeaderTick Tick
 $tweakerLineNow Now
 $tweakerEmptyListTitle Replay Tweaker
 $tweakerEmptyListDesc1 Click some lix.

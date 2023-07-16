@@ -94,7 +94,7 @@ public:
             new Label(new Geom(xlg - 50, 0, 50, ylg, From.RIGHT),
                 Lang.tweakerHeaderLixID.transl),
             new Label(new Geom(40, 0, xlg/2f, 20, From.RIGHT),
-                Lang.tweakerHeaderPhyu.transl),
+                Lang.tweakerHeaderTick.transl),
         );
     }
 }

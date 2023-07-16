@@ -44,7 +44,7 @@ $browserReplayVerifyDir Verificar el directori
 
 $winVerifyTitle Verificador de repeticions
 $winVerifyOutputWrittenTo Sortida escrita a “%s”. Fes clic per tornar.
-$verifyHeader Resultat,Repetició,Nivell,Jugador,Desat,Requerit,Habilitats,Phyus
+$verifyHeader Resultat,Repetició,Nivell,Jugador,Desat,Requerit,Habilitats,Ticks
 $verifyStatisticsFrom Estadístiques de %d repeticions:
 $verifyTrophiesUpdated %d Trofeus per %s actualitzats.
 $verifyLevelsNoProof Aquests %d nivells no tenen cap prova:
@@ -148,7 +148,7 @@ $gameRestart Reiniciar el nivell.
 $gameNuke Bomba nuclear. Fes doble clic per activar-la.
 
 $tweakerHeaderLixID Lix
-$tweakerHeaderPhyu Phyu
+$tweakerHeaderTick Tick
 $tweakerLineNow Ara
 $tweakerEmptyListTitle     Ajustador
 

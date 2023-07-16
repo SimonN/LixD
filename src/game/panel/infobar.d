@@ -159,7 +159,8 @@ private:
         if (! opt.showFPS.value) {
             return; // _fps.txt will remain "" forever.
         }
-        _fps.text = format!"Phyu: %d   FPS: %d"(_age, displayFps);
+        _fps.text = "%s %d   FPS: %d".format(
+            Lang.tweakerHeaderTick.transl, _age, displayFps);
     }
 }
 

@@ -229,7 +229,7 @@ enum Lang {
     gameNuke,
 
     tweakerHeaderLixID,
-    tweakerHeaderPhyu,
+    tweakerHeaderTick,
     tweakerLineNow,
     tweakerEmptyListTitle,
     tweakerEmptyListDesc1,

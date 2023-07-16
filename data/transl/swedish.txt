@@ -43,7 +43,7 @@ $browserReplayVerifyDir Bekräfta katalog
 
 $winVerifyTitle Reprisbekräftare
 $winVerifyOutputWrittenTo Utmatning skriven till “%s”. Klicka för att återgå.
-$verifyHeader Resultat,Repris,Bana,Spelare,Sparat,Krävt,Förmågor,Phyus
+$verifyHeader Resultat,Repris,Bana,Spelare,Sparat,Krävt,Förmågor,Ticks
 $verifyStatisticsFrom Statistik från %d repriser:
 $verifyTrophiesUpdated %d troféer för %s uppdaterat.
 $verifyLevelsNoProof Dessa %d banor har inga bevis:
@@ -132,7 +132,7 @@ $gamePriorityInvert [%s] för lix längst bak
 $gameQueueBuilder Klicka igen för att kölägga.
 $gameQueuePlatformer Klicka igen för att kölägga.
 $gameHoldToScroll Håll [%s] och rör musen för att rulla.
-$gameClickToCancelReplay Repris är på. Klicka i luften för att spela upp själv.
+$gameClickToCancelReplay Repris är på. Klicka i luften för att spela.
 $gameFramestepOrQuit Spola tillbaka tid (◀▮) eller avsluta med [%s].
 $gamePause Pausat.
 $gameShowSplatRuler Visa splat-linjal.
@@ -147,7 +147,7 @@ $gameRestart Starta om bana.
 $gameNuke Spräng. Dubbelklicka för att aktivera.
 
 $tweakerHeaderLixID Lix
-$tweakerHeaderPhyu Phyu
+$tweakerHeaderTick Tick
 $tweakerLineNow Nu
 $tweakerEmptyListTitle Repristrimmare
 $tweakerEmptyListDesc1 Klicka lix. Senare

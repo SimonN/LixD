@@ -39,7 +39,7 @@ $browserReplayVerifyDir Ordner verifizieren
 
 $winVerifyTitle Replay-Verifizierer
 $winVerifyOutputWrittenTo Ausgabe auch in „%s“. Klicke, um zurückzukehren.
-$verifyHeader Ergebnis,Replay,Level,Spieler,Gerettet,Ziel,Fähigkeiten,Phyus
+$verifyHeader Ergebnis,Replay,Level,Spieler,Gerettet,Ziel,Fähigkeiten,Ticks
 $verifyStatisticsFrom Statistiken über %d Replays:
 $verifyTrophiesUpdated %d Trophäen für %s aktualisiert.
 $verifyLevelsNoProof Diesen %d Levels fehlen Beweise:
@@ -128,7 +128,7 @@ $gamePriorityInvert [%s] für hintere Lix.
 $gameQueueBuilder Klicke zum Vormerken.
 $gameQueuePlatformer Klicke zum Vormerken.
 $gameHoldToScroll Halte [%s] und bewege Maus zum Scrollen.
-$gameClickToCancelReplay Replay läuft. Klicke in die Luft, um selbst zu spielen.
+$gameClickToCancelReplay Replay läuft. Klicke in die Luft, um zu spielen.
 $gameFramestepOrQuit Gehe zurück (◀▮) oder beende mit [%s].
 $gamePause Pause.
 $gameShowSplatRuler Fallhöhen-Lineal anzeigen.
@@ -143,7 +143,7 @@ $gameRestart Level neu starten.
 $gameNuke Atombombe. Aktiviere per Doppelklick.
 
 $tweakerHeaderLixID Lix
-$tweakerHeaderPhyu Phyu
+$tweakerHeaderTick Tick
 $tweakerLineNow Jetzt
 $tweakerEmptyListTitle Replay-Justierer
 $tweakerEmptyListDesc1 Klicke Lix an.
