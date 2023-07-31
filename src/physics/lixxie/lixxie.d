@@ -25,7 +25,12 @@ import physics.mask;
 alias Lixxie = LixxieImpl*;
 alias ConstLix = const(LixxieImpl)*;
 
-struct LixxieImpl {
+/*
+ * The align (64) is only for speed: It makes the struct longer (56 -> 64
+ * bytes) and aligns it to 64-byte cache lines. There would be no misalignment
+ * of any field if you removed the align (64); you'd have alignment 8 on x64.
+ */
+align (64) struct LixxieImpl {
 private:
     /* _job refers back to Lixxie by counting backwards (Lixxie._job.offsetof).
      * This allows us to model the Job with D's OO features and be fast by
@@ -71,7 +76,8 @@ public:
 
     enum int ploderDelay = 75; // explode once _ploderTimer >= ploderDelay
     enum jobOffset = _job.offsetof;
-    static assert (_job.offsetof % size_t.sizeof == 0); // emplace alignment
+    static assert (_job.offsetof % 16 == 0, "Alignment, we'll emplace here.");
+    static assert (LixxieImpl.sizeof <= 64); // Fit into one cache line.
 
     const pure nothrow @safe @nogc {
         Style style() { return _style; }

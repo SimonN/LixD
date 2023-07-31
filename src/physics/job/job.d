@@ -98,6 +98,9 @@ unittest {
 
 struct JobUnion {
     ubyte[32] data; // make as small as you can! fit into one cache line
+    static assert (data.sizeof == JobUnion.sizeof,
+        "JobUnion.data should be the only field."
+        ~ " Add other fields to Job, not to JobUnion.");
 
     inout(Job) asClass() inout return pure
     {
