@@ -27,16 +27,16 @@ import basics.topology;
 import file.filename;
 import physics.mask;
 
-alias Phybitset = short;
+alias Phybitset = ubyte;
 enum  Phybit    : Phybitset {
-    terrain = 0x0001,
-    steel   = 0x0002,
-    goal    = 0x0010,
-    fire    = 0x0040,
-    water   = 0x0080,
-    trap    = 0x0100,
-    fling   = 0x0200,
-    all     = 0x7FFF,
+    terrain = 0x01,
+    steel   = 0x02,
+    goal    = 0x04,
+    fire    = 0x08,
+    water   = 0x10,
+    trap    = 0x20,
+    fling   = 0x40,
+    all     = 0xFF,
 }
 
 final class Phymap : Topology {
@@ -129,7 +129,7 @@ final class Phymap : Topology {
      * always return featureless air. Diggers should not see floor beneath
      * the lowermost row, and walkers should walk out of the deadly ceiling.
      */
-    Phybitset get(in Point p) const
+    Phybitset get(in Point p) const pure nothrow @safe @nogc
     {
         if ((p.y < 0 || p.y >= yl) && ! torusY) {
             // Always hollow out of top and bottom.
@@ -138,13 +138,16 @@ final class Phymap : Topology {
         return getAt(clamp(p));
     }
 
-    bool getSolid(in Point p) const { return (get(p) & Phybit.terrain) != 0; }
+    bool getSolid(in Point p) const pure nothrow @safe @nogc
+    {
+        return (get(p) & Phybit.terrain) != 0;
+    }
 
     /*
      * getSolidEven: Stuff is solid at a 2x1 physics unit iff at least one
      * of its 1x1 pixels is solid.
      */
-    bool getSolidEven(in Point p) const
+    bool getSolidEven(in Point p) const pure nothrow @safe @nogc
     in {
         assert (xl % 2 == 0, "can't call getSolidEven on an odd-xl Phymap");
         assert (p.x % 2 == 0, "can only query double-pixels at even x");
@@ -190,15 +193,6 @@ final class Phymap : Topology {
         for (int iy = 0; iy < re.yl; ++iy)
             for (int ix = 0; ix < re.xl; ++ix)
                 func(Point(re.x + ix, re.y + iy), args);
-    }
-
-    int rectSum(alias func, Args...)(Rect re, Args args)
-    {
-        int ret = 0;
-        for (int iy = 0; iy < re.yl; ++iy)
-            for (int ix = 0; ix < re.xl; ++ix)
-                ret += ! ! func(Point(re.x + ix, re.y + iy), args);
-        return ret;
     }
 
     void setSolidAlreadyColored(in Point p)
@@ -272,13 +266,13 @@ private:
     // written in C++ without it and works well
     Phybitset[] lt;
 
-    Phybitset getAt(in Point p) const { return lt[p.x * yl + p.y]; }
-    void  addAt(in Point p, Phybitset n) { lt[p.x * yl + p.y] |= n;   }
-    void  rmAt (in Point p, Phybitset n)
+    Phybitset getAt(in Point p) const pure nothrow @safe @nogc
     {
-        static assert (Phybitset.sizeof == 2);
-        lt[p.x * yl + p.y] &= ~ cast(int) n;
+        return lt[p.x * yl + p.y];
     }
+
+    void addAt(in Point p, Phybitset n) { lt[p.x * yl + p.y] |= n; }
+    void rmAt (in Point p, Phybitset n) { lt[p.x * yl + p.y] &= ~n; }
 
     bool inside(in Point p) const
     {
@@ -292,9 +286,9 @@ private alias allZero = all!(nr => nr == 0);
 
 unittest {
     import std.conv : to;
-    immutable Phybitset a = to!Phybitset(0x7F00);
-    immutable Phybitset b = to!Phybitset(0x0400);
-    immutable Phybitset difference = to!Phybitset(0x7B00);
+    immutable Phybitset a = to!Phybitset(0x3F);
+    immutable Phybitset b = to!Phybitset(0x04);
+    immutable Phybitset difference = to!Phybitset(0x3B);
     Phymap phymap = new Phymap(2, 2);
     phymap.add(Point(1, 1), a);
     phymap.rm (Point(1, 1), b);

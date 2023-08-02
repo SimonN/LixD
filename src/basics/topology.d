@@ -47,13 +47,11 @@ public:
         _ty = rhs._ty;
     }
 
-    final const nothrow pure @nogc {
-        @property @safe {
-            int xl() { return _xl; }
-            int yl() { return _yl; }
-            bool torusX() { return _tx; }
-            bool torusY() { return _ty; }
-        }
+    final const nothrow pure @nogc @safe {
+        int xl() { return _xl; }
+        int yl() { return _yl; }
+        bool torusX() { return _tx; }
+        bool torusY() { return _ty; }
 
         bool matches(in Topology rhs)
         {
@@ -200,7 +198,7 @@ bool lineIntersectsLine(
     int a, in int al, // first  line's start and length
     int b, in int bl, // second line's start and length
     in int len, in bool torus // underlying one-dimensional topology
-) pure nothrow @nogc
+) pure nothrow @safe @nogc
 {
     bool intersects() {
         return ! (b >= a + al)  // not lying alongside like so: --a--  ---b---
