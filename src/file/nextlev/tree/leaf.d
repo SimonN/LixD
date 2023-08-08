@@ -57,7 +57,7 @@ public:
 
     Optional!Rhino rhinoOfWithinThisOrChildren(Filename argFn)
     {
-        return _fn == argFn ? some!Rhino(this) : no!Rhino;
+        return _fn == argFn ? Optional!Rhino(this) : no!Rhino;
     }
 
     void recacheThisAndAncestors()
@@ -88,7 +88,7 @@ public:
 
     Optional!TreeRhino firstLeafInside()
     {
-        return some!TreeRhino(this);
+        return Optional!TreeRhino(this);
     }
 
 private:

@@ -53,7 +53,7 @@ public:
     Optional!Rhino rhinoOfWithinThisOrChildren(Filename argFn)
     {
         if (_fn == argFn) {
-            return some!Rhino(this);
+            return Optional!Rhino(this);
         }
         foreach (child; _sortedChildren) {
             if (argFn.rootless.startsWith(child.filename.rootless)) {
@@ -130,7 +130,7 @@ private:
         ls.currentDir = _fn;
         foreach (subdir; ls.dirs) {
             _sortedChildren ~= oldChildren.find!(o => o.filename == subdir)
-                .frontOr(new TreeDirRhino(some!TreeRhino(this), subdir));
+                .frontOr(new TreeDirRhino(Optional!TreeRhino(this), subdir));
         }
         foreach (subfile; ls.files) {
             _sortedChildren ~= oldChildren.find!(o => o.filename == subfile)
