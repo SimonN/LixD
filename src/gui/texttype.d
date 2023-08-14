@@ -17,6 +17,7 @@ import basics.help;
 import gui;
 import hardware.keyboard;
 import hardware.mouse;
+import hardware.display; // to get clipboard text
 
 class Texttype : Button {
     enum AllowedChars { unicode, filename, digits }
@@ -131,6 +132,12 @@ private:
         if (backspace) {
             _text = backspace(_text, CutAt.end);
             pruneText();
+        }
+        if (ctrlHeld && keyTapped(ALLEGRO_KEY_V)) {
+            // We'll own an al_malloc()'ed copy of the text. We must al_free().
+            char* alClipText = al_get_clipboard_text(theA5display);
+            _text ~= alClipText.to!string;
+            al_free(alClipText);
         }
         if (utf8Input != "") {
             _text ~= utf8Input();

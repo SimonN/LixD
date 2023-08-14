@@ -139,6 +139,7 @@ private void onceRlsdFromAllegro()
             immutable int c = event.keyboard.unichar;
             if ((c < 0 || c >= 0x20) // ignore nonprintable ASCII controls
                 && c != 0x7F  // ignore the delete character
+                && ! ctrlHeld // Ctrl+V shall not type 'v'
             ) {
                 char[4] buf;
                 auto bytesUsed = std.utf.encode(buf, c);
