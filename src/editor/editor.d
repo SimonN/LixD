@@ -62,8 +62,9 @@ public:
         this.implConstructor(newEmptyLevel, null);
     }
 
-    this(Filename fn) // may not be null; choose the other ctor for empty level
-    {
+    this(Filename fn) // may not be null;
+    in { assert (fn !is null, "Call this(), not this(fn), for empty level"); }
+    do {
         this.implConstructor(delegate Level() { return new Level(fn); }, fn);
     }
 

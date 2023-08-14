@@ -152,7 +152,7 @@ public:
         return _browSin.gotoRepForLev
             ? new RepForLevScreen(_browSin.fileRecent, _browSin.levelRecent)
             : _browSin.gotoEditorNewLevel
-            ? new EditorScreen(null)
+            ? new EditorScreen()
             : _browSin.gotoEditorLoadFileRecent
             ? new EditorScreen(_browSin.fileRecent)
             : _browSin.gotoMainMenu
@@ -213,6 +213,12 @@ private:
     Editor _editor;
 
 public:
+    this() // Start with a new empty level.
+    {
+        _editor = new Editor();
+        super(_editor);
+    }
+
     this(Filename fn)
     {
         _editor = new Editor(fn);
