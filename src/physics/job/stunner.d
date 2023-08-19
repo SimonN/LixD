@@ -2,6 +2,7 @@ module physics.job.stunner;
 
 import hardware.sound;
 import physics.job;
+import tile.phymap;
 
 class Stunner : Job {
 private:
@@ -10,7 +11,13 @@ private:
 public:
     override void onBecome(in Job old)
     {
-        lixxie.playSound(Sound.OUCH);
+        /*
+         * Fix github #448: Don't repeat "ouch" if stuck in permanent flinger.
+         * Asking for ! lixxie.flingNew didn't fix this. Directly ask physics.
+         */
+        if ((lixxie.lookup.get(lixxie.foot) & Phybit.flingPerm) == 0) {
+            lixxie.playSound(Sound.OUCH);
+        }
     }
 
     override void perform()

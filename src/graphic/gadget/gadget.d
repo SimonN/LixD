@@ -129,11 +129,11 @@ public:
             case GadType.MAX: return;
 
             case GadType.GOAL:  phyb = Phybit.goal; break;
-            case GadType.TRAP:  phyb = Phybit.trap; break;
+            case GadType.TRAP:  phyb = Phybit.trapTrig; break;
             case GadType.WATER: phyb = tile.subtype == 0 ? Phybit.water
                                                          : Phybit.fire; break;
-            case GadType.FLINGTRIG: phyb = Phybit.fling; break;
-            case GadType.FLINGPERM: phyb = Phybit.fling; break;
+            case GadType.FLINGTRIG: phyb = Phybit.flingTrig; break;
+            case GadType.FLINGPERM: phyb = Phybit.flingPerm; break;
         }
         lk.rect!(Phymap.add)(tile.triggerArea + this.loc, phyb);
     }

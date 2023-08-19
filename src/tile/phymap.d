@@ -28,15 +28,15 @@ import file.filename;
 import physics.mask;
 
 alias Phybitset = ubyte;
-enum  Phybit    : Phybitset {
+enum Phybit : Phybitset {
     terrain = 0x01,
-    steel   = 0x02,
-    goal    = 0x04,
-    fire    = 0x08,
-    water   = 0x10,
-    trap    = 0x20,
-    fling   = 0x40,
-    all     = 0xFF,
+    steel = 0x02,
+    goal = 0x04,
+    fire = 0x08,
+    water = 0x10,
+    trapTrig = 0x20,
+    flingPerm = 0x40,
+    flingTrig = 0x80,
 }
 
 final class Phymap : Topology {
@@ -248,14 +248,15 @@ final class Phymap : Topology {
         scope (exit)
             albitDestroy(outputBitmap);
         auto targetBitmap = TargetBitmap(outputBitmap);
+        enum anyTriggerArea = Phybit.goal | Phybit.fire | Phybit.water
+            | Phybit.trapTrig | Phybit.flingPerm | Phybit.flingTrig;
 
         foreach (x; 0 .. xl) foreach (y; 0 .. yl) {
             immutable Point p = Point(x, y);
-            immutable int red   = !!(get(p) & Phybit.terrain);
-            immutable int green = !!(get(p) & Phybit.steel);
-            immutable int blue  = !!(get(p) & (Phybit.goal | Phybit.fire
-                        | Phybit.water | Phybit.trap | Phybit.fling));
-            al_put_pixel(x, y, al_map_rgb_f(red, blue, green));
+            al_put_pixel(x, y, al_map_rgb_f(
+                !!(get(p) & Phybit.terrain),
+                !!(get(p) & Phybit.steel),
+                !!(get(p) & anyTriggerArea)));
         }
         al_save_bitmap(fn.stringForWriting.toStringz, outputBitmap);
     }
