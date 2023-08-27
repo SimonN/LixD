@@ -123,14 +123,14 @@ public:
             _big = new SingleKeyButton(new Geom(0, 0, xlg, ylg));
             immutable pYlg = ylg - 20f;
             immutable pY = ylg - pYlg;
-            _plus = new SmallButton(new Geom(xlg/2, pY, xlg/2, pYlg), "+");
-            _minus = new SmallButton(new Geom(0, pY, xlg/2, pYlg) ,"\u2212");
+            _plus = new DarkTextButton(new Geom(xlg/2, pY, xlg/2, pYlg), "+");
+            _minus = new DarkTextButton(new Geom(0, pY, xlg/2, pYlg) ,"\u2212");
         }
         else {
             enum pXlg = 15f;
             _big = new SingleKeyButton(new Geom(0, 0, xlg, ylg, From.RIGHT));
-            _plus = new SmallButton(new Geom(pXlg, 0, pXlg, ylg), "+");
-            _minus = new SmallButton(new Geom(0, 0, pXlg, ylg), "\u2212");
+            _plus = new DarkTextButton(new Geom(pXlg, 0, pXlg, ylg), "+");
+            _minus = new DarkTextButton(new Geom(0, 0, pXlg, ylg), "\u2212");
         }
         _big.onChange = () { this.formatButtonsAndCallCallback(); };
         assert (! this._onChange);
@@ -203,13 +203,5 @@ private:
         }
         if (_onChange !is null)
             _onChange();
-    }
-
-    static class SmallButton : TextButton {
-        this(Geom g, in string s) { super(g, s); }
-        override Alcol colorText() const
-        {
-            return on ? super.colorText : color.guiTextDark;
-        }
     }
 }

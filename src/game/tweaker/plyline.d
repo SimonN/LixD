@@ -23,21 +23,19 @@ import net.repdata;
 class PlyLine : OneLine {
 private:
     TextButton _del;
-    BitmapButton _earlier;
-    BitmapButton _later;
+    TextButton _earlier;
+    TextButton _later;
     PlyLineDesc _desc; // private class, defined below in this module
 
 public:
     this(Geom g)
     {
         super(g);
-        _del = new TextButton(new Geom(0, 0, butXlg, g.ylg), "\u2715");
-        _earlier = new BitmapButton(new Geom(20, 0, butXlg, g.ylg,
-            From.TOP_RIGHT), InternalImage.guiNumber.toCutbit);
-        _earlier.xf = 2;
-        _later = new BitmapButton(new Geom(0, 0, butXlg, g.ylg,
-            From.TOP_RIGHT), InternalImage.guiNumber.toCutbit);
-        _later.xf = 3;
+        _del = new DarkTextButton(new Geom(0, 0, butXlg, g.ylg), "\u2715");
+        _earlier = new DarkTextButton(new Geom(20, 0, butXlg, g.ylg,
+            From.TOP_RIGHT), "\u2212");
+        _later = new DarkTextButton(new Geom(0, 0, butXlg, g.ylg,
+            From.TOP_RIGHT), "+");
         _desc = new PlyLineDesc(new Geom(20, 0, g.xlg - 3 * butXlg, g.ylg));
         addChildren(_del, _earlier, _later, _desc);
     }

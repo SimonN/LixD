@@ -126,3 +126,11 @@ protected:
         centerCheck.resize(xlg - 2 * chXlg, centerCheck.ylg);
     }
 }
+
+class DarkTextButton : TextButton {
+    this(Geom g, in string s) { super(g, s); }
+    override Alcol colorText() const nothrow @safe @nogc
+    {
+        return on ? super.colorText : color.guiTextDark;
+    }
+}
