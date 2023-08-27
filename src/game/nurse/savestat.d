@@ -104,11 +104,12 @@ public:
     {
         immutable Phyu current = now;
         immutable tweakResult = replay.tweak(rq);
+        if (! tweakResult.somethingChanged) {
+            return;
+        }
         framestepBackTo(Phyu(tweakResult.firstDifference - 1));
         updateTo(max(current, tweakResult.goodPhyuToView));
-        if (tweakResult.somethingChanged
-            && rq.how == ChangeVerb.cutFutureOfOneLix
-        ) {
+        if (rq.how == ChangeVerb.cutFutureOfOneLix) {
             onCuttingSomethingFromReplay();
         }
     }
