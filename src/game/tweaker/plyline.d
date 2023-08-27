@@ -32,11 +32,11 @@ public:
     {
         super(g);
         _del = new DarkTextButton(new Geom(0, 0, butXlg, g.ylg), "\u2715");
-        _earlier = new DarkTextButton(new Geom(20, 0, butXlg, g.ylg,
+        _earlier = new DarkTextButton(new Geom(butXlg, 0, butXlg, g.ylg,
             From.TOP_RIGHT), "\u2212");
         _later = new DarkTextButton(new Geom(0, 0, butXlg, g.ylg,
             From.TOP_RIGHT), "+");
-        _desc = new PlyLineDesc(new Geom(20, 0, g.xlg - 3 * butXlg, g.ylg));
+        _desc = new PlyLineDesc(new Geom(butXlg, 0, g.xlg - 3*butXlg, g.ylg));
         addChildren(_del, _earlier, _later, _desc);
     }
 
@@ -89,10 +89,10 @@ public:
         super(g);
         addChildren(
             // About the first label: Compare with PlyLineDesc.
-            new Label(new Geom(xlg - 50, 0, 50, ylg, From.RIGHT),
-                Lang.tweakerHeaderLixID.transl),
-            new Label(new Geom(40, 0, xlg/2f, 20, From.RIGHT),
-                Lang.tweakerHeaderTick.transl),
+            new Label(new Geom(xlg - 30 - OneLine.butXlg,
+                0, 50, ylg, From.RIGHT), Lang.tweakerHeaderLixID.transl),
+            new Label(new Geom(2 * OneLine.butXlg,
+                0, xlg/2f, 20, From.RIGHT), Lang.tweakerHeaderTick.transl),
         );
     }
 }
@@ -121,12 +121,13 @@ private:
 public:
     this(Geom g)
     {
+        // This Geom doesn't contain the buttons. It's only the space between.
         super(g);
-        _lixID = new Label(new Geom(xlg - 30, 0, 30, ylg, From.RIGHT));
+        _lixID = new Label(new Geom(60, 0, 35, ylg, From.RIGHT));
         _skillIcon = new CutbitElement(new Geom(30, 0, 20, ylg),
             InternalImage.skillsInTweaker.toCutbit);
         _nukeName = new Label(new Geom(0, 0,
-            NowLine.textXlg(g) + 3 * 20f /* 3*20 == 3 * butXlg */, ylg));
+            NowLine.textXlg(g) + 3 * OneLine.butXlg, ylg));
         addChildren(_lixID, _skillIcon, _nukeName);
     }
 

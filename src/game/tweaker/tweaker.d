@@ -34,12 +34,18 @@ private:
     Label _emptyListTitle;
     Label[] _emptyListDescs;
 
+    /*
+     * Border thickness at each side (left, right) between the outer edge
+     * of the tweaker and buttons on the tweaker.
+     */
+    enum border = 10f;
+
 public:
     this(Geom g)
     {
         super(g);
-        _header = new TweakerHeader(new Geom(10, 10, xlg-20, 20));
-        _nowLine = new NowLine(new Geom(10, 0, xlg-20, 20));
+        _header = new TweakerHeader(new Geom(border, 10, elemXl, 20));
+        _nowLine = new NowLine(new Geom(border, 0, elemXl, 20));
         _emptyListTitle = new Label(new Geom(0, -40, xlg-10, 20, From.CENTER),
             Lang.tweakerEmptyListTitle.transl);
         _emptyListDescs = [
@@ -117,6 +123,11 @@ private:
         return plies;
     }
 
+    float elemXl() const pure nothrow @safe @nogc
+    {
+        return xlg - 2 * border;
+    }
+
     void resizeListOfGuiEntriesTo(in int newNumOfEntries)
     out {
         assert (_entries.all!(e => e !is null));
@@ -131,7 +142,7 @@ private:
         }
         while (_entries.len < newNumOfEntries) {
             // Add it with geom.y == 0. Other functions will set proper y.
-            _entries ~= new PlyLine(new Geom(10, 0, xlg-20, 20));
+            _entries ~= new PlyLine(new Geom(border, 0, elemXl, 20));
             addChild(_entries[$-1]);
         }
     }

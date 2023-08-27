@@ -11,11 +11,10 @@ private:
     Label _phyuText;
     Phyu _phyu;
 
-protected:
-    enum butXlg = 20;
+public:
+    enum butXlg = 50f/3f;
     enum phyuXlg = 40;
 
-public:
     this(Geom g)
     in { assert(g.xlg >= 4 * butXlg, "no space for row of text"); }
     do {

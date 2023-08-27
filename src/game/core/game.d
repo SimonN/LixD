@@ -104,7 +104,7 @@ private:
 public:
     enum ticksNormalSpeed = ticksPerSecond / phyusPerSecondAtNormalSpeed;
     enum updatesAheadMany = ticksPerSecond / ticksNormalSpeed * 10;
-    enum tweakerXlg = 170f;
+    enum tweakerXlg = 160f;
 
     this(ArgsToCreateGame args)
     in {
