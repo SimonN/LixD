@@ -91,11 +91,6 @@ void ensurePlaying(in Music wanted)
     }
 }
 
-bool hasAcceptableMusicExtension(in Filename fn)
-{
-    return fn.extension != ".txt" && fn.extension != ".mp3";
-}
-
 Filename thisOrRandomIfIsIsBad(in Filename sug)
 {
     if (sug is null) {
@@ -107,8 +102,7 @@ Filename thisOrRandomIfIsIsBad(in Filename sug)
      * or a music hint from a level. Output here: Always an extensionful fn.
      */
     auto files = glo.dirDataMusic.findTree()
-        .filter!(fn => fn.hasAcceptableMusicExtension
-            && fn.rootlessNoExt == sug.rootlessNoExt);
+        .filter!(fn => fn.rootlessNoExt == sug.rootlessNoExt);
     return files.empty ? someRandomFilenameFromTheMusicDir() : files.front;
 }
 
@@ -124,8 +118,7 @@ bool isGoodRandomChoice(in Filename next)
 // But avoid the currently-playing music.
 Filename someRandomFilenameFromTheMusicDir()
 {
-    auto files = glo.dirDataMusic.findTree()
-        .filter!(fn => fn.hasAcceptableMusicExtension);
+    auto files = glo.dirDataMusic.findTree();
     if (files.empty) {
         return null;
     }
