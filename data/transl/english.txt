@@ -323,6 +323,7 @@ $optionScreenSoftwareFullscreen Software fullscreen|This creates a borderless Li
 $optionScreenHardwareFullscreen Hardware fullscreen|Hardware fullscreen takes a few seconds to enter and exit.|Switching windows (e.g., with Alt+Tab) takes a few seconds.
 $optionScreenWindowedRes Window size|Size of the Lix window when you have chosen windowed mode.
 $optionScreenHardwareFullscreenRes Fullscreen resolution|Hardware fullscreen uses this resolution for your monitor.|Software fullscreen uses this only when it cannot deduce your desktop resolution.
+$optionAllowBlurryZoom Allow blurry zoom|Allow blurry fractional zoom factors that fit the level's width/height to screen.|If not checked, zoom will always be crisp and integral: 1x, 2x, 3x, ...
 $optionPaintTorusSeams Paint torus seams|Mark the wrapping seam with a thin line whenever a level wraps around.|This doesn't affect game physics, but may improve your orientation.
 $optionIngameTooltips Tooltips during game|Explain buttons and lix-selecting hotkeys during play, e.g., to select left-facing lix.|Some buttons have two functions: One on left-click, one on right-click.
 $optionShowFPS Count physics and FPS|Print number of physics updates since the game started.|Print the number of video frames per second, during play or editor.

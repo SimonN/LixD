@@ -323,6 +323,7 @@ $optionScreenSoftwareFullscreen Helskärm programvara|Detta skapar ett kantlöst
 $optionScreenHardwareFullscreen Helskärm hårdvara|Helskärm hårdvara: Det tar några sekunder att komma in och komma ut.|Alt+Tab är långsam.
 $optionScreenWindowedRes Fönsterläge|Storlek på Lixfönstret då du har valt fönsterläge.
 $optionScreenHardwareFullscreenRes Hårdvaruupplösning|Skärmupplösning för helskärm hårdvara.|Helskärm programvara ignorerar detta.
+$optionAllowBlurryZoom Tillåt oskarp zoom|Tillåt suddiga fraktionella zoomfaktorer som passar nivåns bredd/höjd på skärmen.|Om inte förbockat kommer zoom alltid att vara skarp och integrerad: 1x, 2x, 3x, ...
 $optionPaintTorusSeams Måla torussömmar|Markera omslagssömmen med en tunn linje då en bana snurrar runt.|Detta påverkar inte spelfysiken, men kan förbättra din orientering.
 $optionIngameTooltips Inforutor under spelsession|Förklara knappar och lix-markerande snabbtangenter under pågående spel, dvs för att välja vänsterriktade lix.|Några knappar har två funktioner: En på vänsterklick, en på högerklick.
 $optionShowFPS Räkna fysik och bps|Skriv ut antal fysikuppdateringar sedan spelet startades.|Skriv ut antal bilder per sekund under pågående spel eller redigering.

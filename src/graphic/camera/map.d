@@ -52,7 +52,8 @@ public:
         in Enumap!(CamSize, Point) targetSizes
     ) {
         foreach (key, val; targetSizes) {
-            _cams[key] = new Camera(topolOfSource, val);
+            _cams[key] = new Camera(topolOfSource, val,
+                opt.allowBlurryZoom.value);
         }
         auto cfg = Torbit.Cfg(topolOfSource);
         _nearestNeighbor = new Torbit(cfg);
@@ -123,7 +124,8 @@ private void reinitializeCamera()
 {
     foreach (key, oldCam; _cams) {
         immutable Point oldFocus = oldCam.focus;
-        _cams[key] = new Camera(torbit, oldCam.targetLen);
+        _cams[key] = new Camera(torbit, oldCam.targetLen,
+            opt.allowBlurryZoom.value);
         _cams[key].focus = oldFocus;
     }
 }

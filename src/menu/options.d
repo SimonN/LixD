@@ -215,6 +215,7 @@ void populateGraphics()
             Lang.optionScreenWindowed,
             Lang.optionScreenSoftwareFullscreen,
             Lang.optionScreenHardwareFullscreen),
+        fac.factory!BoolOption(allowBlurryZoom),
     ];
     immutable bottomHalfY = 250f;
     fac.y = bottomHalfY;

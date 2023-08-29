@@ -21,9 +21,9 @@ private:
     Camera1D _y;
 
 public:
-    this(in Topology source, in Point targetLen)
+    this(in Topology source, in Point targetLen, in bool allowBlur)
     {
-        _zoom = new Zoom(source, targetLen);
+        _zoom = new Zoom(source, targetLen, allowBlur);
         _x = new Camera1D(source.xl, source.torusX, targetLen.x, _zoom);
         _y = new Camera1D(source.yl, source.torusY, targetLen.y, _zoom);
     }
@@ -174,7 +174,7 @@ version (unittest) {
 
 unittest {
     Topology tp = new Topology(400, 300, false, false);
-    Camera c = new Camera(tp, Point(80, 50));
+    Camera c = new Camera(tp, Point(80, 50), true);
 
     void assertCIsLikeAtStart(in string msg)
     {
@@ -220,7 +220,7 @@ unittest {
 
 unittest {
     Topology tp = new Topology(200, 200, false, true);
-    Camera c = new Camera(tp, Point(50, 50));
+    Camera c = new Camera(tp, Point(50, 50), true);
 
     void assertCIsLikeAtStart(in string msg)
     {

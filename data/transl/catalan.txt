@@ -326,7 +326,7 @@ $optionScreenSoftwareFullscreen Pantalla completa per programari|Crea una finest
 $optionScreenHardwareFullscreen Pantalla completa per maquinari|Es triga uns segons en entrar i sortir de la pantalla completa per maquinari|Canviar de finestres (per exemple amb Alt+Tab) és lent.
 $optionScreenWindowedRes Mida de la finestra|Mida de la finestra del Lix quan s'ha triat el mode de finestra.
 $optionScreenHardwareFullscreenRes Resolució en pantalla completa|La pantalla completa per maquinari fa servir aquesta resolució pel teu monitor.|Només fa la fa servir quan no pot deduir la resolució de l'escriptori.
-$optionPaintTorusSeams Pintar les costures del torus|Marca la costura q
+$optionAllowBlurryZoom Permetre el zoom borrós|Permeteu els factors de zoom fraccionat que s'ajustin al nivell a la pantalla.|Si no està habilitat, el zoom sempre serà nítid i integral: 1x, 2x, 3x,...
 $optionPaintTorusSeams Pintar les costures del torus|Marca les costures d'embolcall cada cop que el nivell fa una volta.|Això no afecta la física del joc, però pot millorar la teva orientació.
 $optionIngameTooltips Indicadors durant la partida|Explica els botons i dreceres de teclat per seleccionar lix durant la partida, per exemple com seleccionar lix mirant a l'esquerra.|Alguns botons tenen dues funcions: Una al clic esquerra, una altra al clic dret.
 $optionShowFPS Comptador de física i FPS|Mostra el nombre d'actualitzacions de la física des del principi de la partida.|Mostra el nombre de fotogrames de vídeo per segon durant el joc o l'editor.

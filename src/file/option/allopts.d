@@ -82,6 +82,7 @@ UserOption!int screenWindowedX;
 UserOption!int screenWindowedY;
 UserOption!int screenHardwareFullscreenX;
 UserOption!int screenHardwareFullscreenY;
+UserOption!bool allowBlurryZoom;
 UserOption!int splatRulerDesign;
 UserOption!int splatRulerSnapPixels;
 UserOption!bool paintTorusSeams;
@@ -263,6 +264,7 @@ do {
     screenHardwareFullscreenX = newOpt("screenHardwareFullscreenX",
         Lang.optionScreenHardwareFullscreenRes, 640);
     screenHardwareFullscreenY = newOpt("screenHardwareFullscreenY", 480);
+    allowBlurryZoom = newOpt("allowBlurryZoom", Lang.optionAllowBlurryZoom, true);
     splatRulerDesign = newOpt("splatRulerDesign", Lang.optionSplatRulerDesign3Bars, 2);
     splatRulerSnapPixels = newOpt("splatRulerSnapPixels", Lang.optionSplatRulerSnapPixels, 126);
     paintTorusSeams = newOpt("paintTorusSeams", Lang.optionPaintTorusSeams, false);

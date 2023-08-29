@@ -394,6 +394,7 @@ enum Lang {
     optionScreenHardwareFullscreen,
     optionScreenWindowedRes,
     optionScreenHardwareFullscreenRes,
+    optionAllowBlurryZoom,
     optionPaintTorusSeams,
     optionIngameTooltips,
     optionShowFPS,

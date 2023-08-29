@@ -8,6 +8,7 @@ import std.range;
 
 import basics.help;
 import basics.topology;
+import opt = file.option.allopts;
 import level.level;
 
 class Zoom {
@@ -21,9 +22,9 @@ private:
     float[] _allowed;
 
 public:
-    this(in Topology level, in Point cameraLen)
+    this(in Topology level, in Point cameraLen, in bool allowBlur)
     {
-        populateAllowed(level, cameraLen);
+        populateAllowed(level, cameraLen, allowBlur);
         selectOneAllowed(level, cameraLen);
     }
 
@@ -51,11 +52,13 @@ private:
         immutable float b = 1f / level.yl * cameraLen.y;
     }
 
-    void populateAllowed(in Topology level, in Point cameraLen)
+    void populateAllowed(in Topology level, in Point cameraLen, bool allowBlur)
     {
         mixin aAndB;
         enum root2 = 1.41421f;
-        _allowed = [ a, b, 1f/2, root2/2, 1, root2, 2, 3, 4, 6, 8, 16 ]
+        float[] candidates = [1f, 2f, 3f, 4f, 6f, 8f, 16f]
+            ~ (allowBlur ? [a, b, 1f/2, root2/2, root2] : []);
+        _allowed = candidates
             .sort
             .filter!(x => x >= min(a, b, 1)) // even on torus maps? Probably
             .uniq.array;
@@ -98,12 +101,16 @@ private:
 }
 
 unittest {
-    Zoom z = new Zoom(new Topology(1000, 1000, false, false), Point(640, 400));
-    assert (z.current() >= 1,
-        "Don't zoom out to less than 1 on large levels.");
-    z = new Zoom(new Topology(768, 160, false, true), Point(800, 600));
-    assert (z.current() <= 2.2, "Github #323: Wide, flat level shouldn't start"
-        ~ " too zoomed-in. This issue was in 0.9.14, the zoom there was"
-        ~ " more than 3. Zoom now is: "
-        ~ z.current.to!string);
+    foreach (allowBlur; only(true, false)) {
+        Zoom z = new Zoom(new Topology(1000, 1000, false, false),
+            Point(640, 400), allowBlur);
+        assert (z.current() >= 1,
+            "Don't zoom out to less than 1 on large levels.");
+        z = new Zoom(new Topology(768, 160, false, true),
+            Point(800, 600), allowBlur);
+        assert (z.current() <= 2.2, "Github #323: Wide, flat level shouldn't"
+            ~ " start too zoomed-in. This issue was in 0.9.14, the zoom there"
+            ~ " was more than 3. Zoom now is: "
+            ~ z.current.to!string);
+    }
 }
