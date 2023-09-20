@@ -60,7 +60,8 @@ public:
         auto oilsAtEnd = _cloned[]; // _cloned is already populated
         foreach (oil; _source[]) {
             Occurrence clonedOcc = oil.occ(l).clone();
-            clonedOcc.loc += _moveEachClonedOccBy;
+            clonedOcc.loc
+                = l.topology.wrap(_moveEachClonedOccBy + clonedOcc.loc);
 
             // For each oil from _source[], we use one of oilsAtEnd.
             // The two ranges will thus exhaust at the same time.
