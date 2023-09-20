@@ -107,10 +107,13 @@ implConstructor()
     assert (cfg.digits >= 0);
     foreach (i; 0 .. cfg.digits) {
         int x = (-cfg.digits + 2*i + 1) * NumPick.fixedCharXSpacing/2;
-        if (i == 0 && cfg.hex)
+        int xl = 20;
+        if (i == 0 && cfg.hex) {
             // looks better with the small "0x" printed here
             x -= 1;
-        lab ~= new Label(new Geom(x, 0, 20, 20, From.TOP));
+            xl = 25;
+        }
+        lab ~= new Label(new Geom(x, 0, xl, 20, From.TOP));
         addChild(lab[$-1]);
         assert (lab[$-1].aligned == From.CENTER);
     }

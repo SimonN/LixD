@@ -263,11 +263,11 @@ public:
         undrawColor = color.gui.m; // erase old labels before writing
         _oldValue = oldValue;
         _decOrHex = decOrHex;
-        _old    = new Label(new Geom(120, 0, 45, 0, From.TOP_RIGHT));
+        _old    = new Label(new Geom(120, 0, 50, 0, From.TOP_RIGHT));
         _sign   = new Label(new Geom(105, 0, 15, 0, From.TOP_RIGHT));
-        _change = new Label(new Geom( 60, 0, 45, 0, From.TOP_RIGHT));
+        _change = new Label(new Geom( 60, 0, 50, 0, From.TOP_RIGHT));
         _equals = new Label(new Geom( 45, 0, 15, 0, From.TOP_RIGHT), "=");
-        _result = new Label(new Geom(  0, 0, 45, 0, From.TOP_RIGHT));
+        _result = new Label(new Geom(  0, 0, 50, 0, From.TOP_RIGHT));
         _old.text = formatEquationString(_oldValue);
         addChildren(_old, _sign, _change, _equals, _result);
         change = 0;

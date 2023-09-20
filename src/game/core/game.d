@@ -104,7 +104,6 @@ private:
 public:
     enum ticksNormalSpeed = ticksPerSecond / phyusPerSecondAtNormalSpeed;
     enum updatesAheadMany = ticksPerSecond / ticksNormalSpeed * 10;
-    enum tweakerXlg = 160f;
 
     this(ArgsToCreateGame args)
     in {
@@ -364,17 +363,17 @@ private:
         setLastPhyuToNow(); // to fill skills, needed for highlightFirstSkill
         pan.chooseLeftmostSkill();
 
-        _panelExplainer = new TooltipLine(new Geom(
-            0, panelYlg, screenXlg - tweakerXlg, 20, From.BOTTOM_RIGHT));
-        _mapClickExplainer = new TooltipLine(new Geom(
-            0, 0, screenXlg - tweakerXlg, 20, From.TOP_RIGHT));
+        _panelExplainer = new TooltipLine(new Geom(0, panelYlg,
+            screenXlg - Tweaker.suggestedTweakerXlg, 20, From.BOTTOM_RIGHT));
+        _mapClickExplainer = new TooltipLine(new Geom(0, 0,
+            screenXlg - Tweaker.suggestedTweakerXlg, 20, From.TOP_RIGHT));
         _panelExplainer.shown = opt.ingameTooltips.value;
         _mapClickExplainer.shown = opt.ingameTooltips.value;
         gui.addElder(_panelExplainer);
         gui.addElder(_mapClickExplainer);
 
-        _tweaker = new Tweaker(
-            new Geom(0, 0, tweakerXlg, screenYlg - panelYlg, From.TOP_RIGHT));
+        _tweaker = new Tweaker(new Geom(0, 0, Tweaker.suggestedTweakerXlg,
+            screenYlg - panelYlg, From.TOP_RIGHT));
         _tweaker.hide();
         gui.addElder(_tweaker);
     }
@@ -386,7 +385,8 @@ private:
     do {
         immutable mapXls = gui.screenXls.to!int;
         immutable mapYls = (gui.screenYls - gui.panelYls).to!int;
-        immutable tweXls = (tweakerXlg * gui.context.stretchFactor).to!int;
+        immutable tweXls
+            = (Tweaker.suggestedTweakerXlg * gui.context.stretchFactor).to!int;
         map = new MapAndCamera(cs.land, enumap.enumap(
             MapAndCamera.CamSize.fullWidth, Point(mapXls, mapYls),
             MapAndCamera.CamSize.withTweaker, Point(mapXls - tweXls, mapYls)));

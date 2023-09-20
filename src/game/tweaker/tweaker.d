@@ -41,6 +41,8 @@ private:
     enum border = 10f;
 
 public:
+    enum suggestedTweakerXlg = 165f;
+
     this(Geom g)
     {
         super(g);

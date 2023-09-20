@@ -89,7 +89,7 @@ public:
         super(g);
         addChildren(
             // About the first label: Compare with PlyLineDesc.
-            new Label(new Geom(xlg - 30 - OneLine.butXlg,
+            new Label(new Geom(xlg - 35 - OneLine.butXlg,
                 0, 50, ylg, From.RIGHT), Lang.tweakerHeaderLixID.transl),
             new Label(new Geom(2 * OneLine.butXlg,
                 0, xlg/2f, 20, From.RIGHT), Lang.tweakerHeaderTick.transl),
@@ -100,7 +100,7 @@ public:
 /*
  * +-------------+-------+--------------+
  * |    Lix ID   | Skill |     Phyu     |
- * |    = 30     |  20   |     40       |
+ * |    = 35     |  20   |     40       |
  * +-------------+-------+--------------+
  * |                     |              |
  * |<---- Nuke text ---->|<--- Phyu --->|
@@ -123,8 +123,8 @@ public:
     {
         // This Geom doesn't contain the buttons. It's only the space between.
         super(g);
-        _lixID = new Label(new Geom(60, 0, 35, ylg, From.RIGHT));
-        _skillIcon = new CutbitElement(new Geom(30, 0, 20, ylg),
+        _lixID = new Label(new Geom(60, 0, 40, ylg, From.RIGHT));
+        _skillIcon = new CutbitElement(new Geom(35, 0, 20, ylg),
             InternalImage.skillsInTweaker.toCutbit);
         _nukeName = new Label(new Geom(0, 0,
             NowLine.textXlg(g) + 3 * OneLine.butXlg, ylg));

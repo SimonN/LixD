@@ -13,7 +13,13 @@ private:
 
 public:
     enum butXlg = 50f/3f;
-    enum phyuXlg = 40;
+
+    /*
+     * phyuXlg = 40 for 4 digits is too small on 1920x1080.
+     * Four-digit number 1234 showed as "...34" instead of the good "1234".
+     * I changed this to phyuXlg = 45 in 2023-09-21.
+     */
+    enum phyuXlg = 45;
 
     this(Geom g)
     in { assert(g.xlg >= 4 * butXlg, "no space for row of text"); }

@@ -32,7 +32,7 @@ public:
     this(Geom g)
     {
         super(g);
-        makeElements(_bHatch, _lHatch,   4, 56, 4);
+        makeElements(_bHatch, _lHatch,   4, 60, 4);
         makeElements(_bOut,   _lOut,    60, 60, 3);
         _targetDesc = new Label(new Geom(190, 0, this.xlg - 190, this.ylg));
         _fps = new Label(new Geom(
