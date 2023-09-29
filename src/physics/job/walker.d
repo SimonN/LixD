@@ -104,6 +104,7 @@ protected:
             // Move forward or, if we can't, react to the wall that stops us.
             wall = lixxie.solidWallHeight(2, 0);
             floorIsSolid = canWeStandAt(2);
+            const xBeforeMoving = lixxie.ex;
             if (! floorIsSolid || wall <= highestStepUp) {
                 /*
                  * We are not in front of a tall wall.
@@ -111,6 +112,15 @@ protected:
                  * See: https://www.lemmingsforums.net/index.php?topic=4005.0
                  */
                 lixxie.moveAhead();
+                /*
+                 * We moved ahead unless we're in two opposing blocker fields.
+                 * If the moving-ahead failed (for any reason), recache ground.
+                 * This caching, and thus the re-caching, is a speed hack.
+                 */
+                if (lixxie.ex == xBeforeMoving) {
+                    wall = lixxie.solidWallHeight(0, 0);
+                    floorIsSolid = canWeStandAt(0);
+                }
             }
             // In front of a tall wall, either climb or turn.
             else if (lixxie.abilityToClimb && hasSpaceToClimbHere()) {
