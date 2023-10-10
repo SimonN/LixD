@@ -37,7 +37,6 @@ $browserExportImageDone Exportada a:
 $browserMkdirTitle Crear Directori
 $browserMkdirPleaseEnter Nom del nou directori:
 
-$browserReplayTitle Replays|From the main menu, go to the replay browser.
 $browserReplayTitle Repeticions|Va al navegador de repeticions des del menú pincipal.
 $browserReplayPointedTo Escollir nivell
 $browserReplayVerifyDir Verificar el directori
@@ -146,6 +145,8 @@ $gameFramestepAhead %s per fer un pas endavant, %s per saltar endavant.
 $gameFastForward %s per avançar ràpidament, %s per a avanç turbo.
 $gameRestart Reiniciar el nivell.
 $gameNuke Bomba nuclear. Fes doble clic per activar-la.
+$gameInfobarPlus1Lix + 1 lix
+$gameInfobarPlusNLix + %d lix
 
 $tweakerHeaderLixID Lix
 $tweakerHeaderTick Tick
@@ -156,21 +157,29 @@ $tweakerEmptyListDesc1 Primer, assigna una
 $tweakerEmptyListDesc2 habilitat a algun
 $tweakerEmptyListDesc3 lix.
 
-$skillTooltip walker|Caminador. Camina enrere o cancela els blocadors.
-$skillTooltip jumper|Saltador. Salta un cop. Els corredors salten més lluny.
-$skillTooltip climber|Escalador. Escala totes les parets verticals.
-$skillTooltip floater|Flotador.  Flota per sobreviure totes les caigudes.
-$skillTooltip runner|Corredor. Córre més ràpid que els caminadors.
-$skillTooltip exploder|Implosionador. Implosiona per destruïr terra o bé cancelar blocadors.
-$skillTooltip exploder2|Explotador. Explota per llançar altres lix.
-$skillTooltip blocker|Blocador. Bloca of fes girar altres lix.
-$skillTooltip batter|Batedor. Bat altres lix, llançant-los.
-$skillTooltip cuber|Cuber. Es transforma en un cub per generar terra ràpidament.
-$skillTooltip builder|Constructor. Construeix unes escales horitzontals.
-$skillTooltip platformer|Pontí. Contstrueix un pont horitzontal.
-$skillTooltip basher|Tunelador. Cava un túnel horitzontal.
-$skillTooltip miner|Miner. Cava un túnel diagonal.
-$skillTooltip digger|Cavador. Cava un forat vertical.
+$skill=walker Caminador|is walking|Camina enrere o cancela els blocadors.
+$skill=jumper Saltador|is jumping|Salta un cop. Els corredors salten més lluny.
+$skill=climber Escalador|is climbing|Escala totes les parets verticals.
+$skill=floater Flotador|is floating|Flota per sobreviure totes les caigudes.
+$skill=runner Corredor|is running|Córre més ràpid que els caminadors.
+$skill=exploder Implosionador|is imploding|Implosiona per destruïr terra o bé cancelar blocadors.
+$skill=exploder2 Explotador|is exploding|Explota per llançar altres lix.
+$skill=blocker Blocador|is blocking|Bloca of fes girar altres lix.
+$skill=batter Batedor|is batting|Bat altres lix, llançant-los.
+$skill=cuber Cuber|is cubing|Es transforma en un cub per generar terra ràpidament.
+$skill=builder Constructor|is building|Constructor. Construeix unes escales horitzontals.
+$skill=platformer Pontí|is platforming|Contstrueix un pont horitzontal.
+$skill=basher Tunelador|is bashing|Cava un túnel horitzontal.
+$skill=miner Miner|is mining|Cava un túnel diagonal.
+$skill=digger Cavador|is digging|Cava un forat vertical.
+
+$skill=faller Faller|is falling
+$skill=tumbler Tumbler|is tumbling
+$skill=stunner Stunner|is stunned
+$skill=lander Lander|is landing
+$skill=ascender Ascender|is ascending
+$skill=shrugger Shrugger|is shrugging
+$skill=shrugger2 Shrugger|is shrugging
 
 // main editor screen
 $editorHotkey Drecera de teclat:
@@ -427,6 +436,28 @@ $optionEdAddSteel Afegir acer
 $optionEdAddHatch Afegir cau
 $optionEdAddGoal Afegir objectiu
 $optionEdAddHazard Afegir perill
+
+$keyboardKeyCapsLock CapsLock
+$keyboardKeyLeftShift Shift
+$keyboardKeyRightShift Shift
+$keyboardKeyLeftCtrl Ctrl
+$keyboardKeyRightCtrl Ctrl
+$keyboardKeyLeftAlt Alt
+$keyboardKeyRightAlt Alt
+$keyboardKeyLeftWin Win
+$keyboardKeyRightWin Win
+$keyboardKeyContextMenu ContextMenu
+
+$keyboardKeyInsert Insert
+$keyboardKeyDelete Delete
+$keyboardKeyHome Home
+$keyboardKeyEnd End
+$keyboardKeyPageUp PgUp
+$keyboardKeyPageDown PgDn
+$keyboardKeyPrint Print
+$keyboardKeyScrollLock ScrollLock
+$keyboardKeyPause Pause
+$keyboardKeyNumLock NumLock
 
 // mini-dialogue to greet a new player
 $windowAskNameTitle Lix

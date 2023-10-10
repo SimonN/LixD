@@ -38,6 +38,35 @@ bool isPermanentAbility(in Ac ac) nothrow @nogc
     return ac == Ac.climber || ac == Ac.floater || ac == Ac.runner;
 }
 
+bool isLeaving(in Ac ac) nothrow @nogc
+{
+    return ac == Ac.nothing
+        || ac == Ac.splatter
+        || ac == Ac.burner
+        || ac == Ac.drowner
+        || ac == Ac.exiter
+        || ac == Ac.cuber;
+}
+
+bool appearsInPanel(in Ac ac) nothrow @nogc
+{
+    return ac == Ac.walker
+        || ac == Ac.runner
+        || ac == Ac.climber
+        || ac == Ac.floater
+        || ac == Ac.imploder
+        || ac == Ac.exploder
+        || ac == Ac.blocker
+        || ac == Ac.builder
+        || ac == Ac.platformer
+        || ac == Ac.basher
+        || ac == Ac.miner
+        || ac == Ac.digger
+        || ac == Ac.jumper
+        || ac == Ac.batter
+        || ac == Ac.cuber;
+}
+
 int acToSkillIconXf(in Ac ac) nothrow @nogc
 {
     // We had xf = _ac before instead of xf = _ac - Ac.walker.

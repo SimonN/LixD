@@ -18,6 +18,7 @@ import game.panel.tooltip;
 import gui;
 import net.phyu;
 import physics.lixxie.lixxie;
+import physics.lixxie.fields;
 import physics.tribe;
 
 class Panel : Element, TooltipSuggester {
@@ -113,7 +114,11 @@ public:
         _skillbar.chooseLeftmostSkill();
     }
 
-    void describeTarget(in Lixxie l, int nr) { stats.describeTarget(l, nr); }
+    void describeTarget(in Lixxie l, in Passport p, int numUnderCursor)
+    {
+        stats.describeTarget(l, p, numUnderCursor);
+    }
+
     void showInfo(in Tribe tr) { stats.showTribe(tr); }
     void dontShowSpawnInterval() { stats.dontShowSpawnInterval(); }
     void showSpawnInterval(in int si) { stats.showSpawnInterval(si); }

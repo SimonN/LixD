@@ -128,7 +128,7 @@ $gamePriorityInvert [%s] für hintere Lix.
 $gameQueueBuilder Klicke zum Vormerken.
 $gameQueuePlatformer Klicke zum Vormerken.
 $gameHoldToScroll Halte [%s] und bewege Maus zum Scrollen.
-$gameClickToCancelReplay Replay läuft. Klicke in die Luft, um zu spielen.
+$gameClickToCancelReplay Replay läuft. Klicke, um von hier zu spielen.
 $gameFramestepOrQuit Gehe zurück (◀▮) oder beende mit [%s].
 $gamePause Pause.
 $gameShowSplatRuler Fallhöhen-Lineal anzeigen.
@@ -141,6 +141,8 @@ $gameFramestepAhead %s für Schritt vorwärts, %s für Sprung vorwärts.
 $gameFastForward %s für schnellen Vorlauf, %s für Turbo.
 $gameRestart Level neu starten.
 $gameNuke Atombombe. Aktiviere per Doppelklick.
+$gameInfobarPlus1Lix + 1 Lix
+$gameInfobarPlusNLix + %d Lix
 
 $tweakerHeaderLixID Lix
 $tweakerHeaderTick Tick
@@ -150,21 +152,29 @@ $tweakerEmptyListDesc1 Klicke Lix an.
 $tweakerEmptyListDesc2 Justiere dann hier
 $tweakerEmptyListDesc3 den Spielverlauf.
 
-$skillTooltip walker|Walker. Dreht um, beendet Blocker.
-$skillTooltip jumper|Jumper. Runner springen weiter.
-$skillTooltip climber|Climber. Klettert alle Wände hoch.
-$skillTooltip floater|Floater. Überlebt jede Fallhöhe.
-$skillTooltip runner|Runner. Läuft doppelt so schnell.
-$skillTooltip exploder|Imploder. Zerstört Erde, beendet Blocker.
-$skillTooltip exploder2|Exploder. Schleudert andere Lix.
-$skillTooltip blocker|Blocker. Dreht andere Lix um.
-$skillTooltip batter|Batter. Schleudert andere Lix.
-$skillTooltip cuber|Cuber. Verwandelt sich in Erde.
-$skillTooltip builder|Builder. Baut diagonale Treppen.
-$skillTooltip platformer|Platformer. Baut horizontale Brücken.
-$skillTooltip basher|Basher. Gräbt horizontale Tunnel.
-$skillTooltip miner|Miner. Hackt diagonale Tunnel.
-$skillTooltip digger|Digger. Bohrt vertikale Löcher.
+$skill=walker Walker|geht|Walker. Dreht um, beendet Blocker.
+$skill=jumper Jumper|springt|Jumper. Runner springen weiter.
+$skill=climber Climber|klettert|Climber. Klettert alle Wände hoch.
+$skill=floater Floater|schwebt|Floater. Überlebt jede Fallhöhe.
+$skill=runner Runner|rennt|Runner. Läuft doppelt so schnell.
+$skill=exploder Imploder|implodiert|Imploder. Zerstört Erde, beendet Blocker.
+$skill=exploder2 Exploder|explodiert|Exploder. Schleudert andere Lix.
+$skill=blocker Blocker|blockt|Blocker. Dreht andere Lix um.
+$skill=batter Batter|battet|Batter. Schleudert andere Lix.
+$skill=cuber Cuber|cubt|Cuber. Verwandelt sich in Erde.
+$skill=builder Builder|baut|Builder. Baut diagonale Treppen.
+$skill=platformer Platformer|platformt|Platformer. Baut horizontale Brücken.
+$skill=basher Basher|bohrt|Basher. Bohrt horizontale Tunnel.
+$skill=miner Miner|hackt|Miner. Hackt diagonale Tunnel.
+$skill=digger Digger|gräbt|Digger. Gräbt vertikale Löcher.
+
+$skill=faller Faller|fällt
+$skill=tumbler Tumbler|purzelt
+$skill=stunner Stunner|liegt
+$skill=lander Lander|landet
+$skill=ascender Ascender|steigt
+$skill=shrugger Shrugger|zuckt
+$skill=shrugger2 Shrugger|zuckt
 
 $editorHotkey Hotkey:
 $editorBarAt an
@@ -412,6 +422,28 @@ $optionEdAddHatch Klappe hinzuf.
 $optionEdAddGoal Ziel hinzuf.
 $optionEdAddHazard Gefahr hinzuf.
 $optionEdGridCustom Benutzerdefinierte Rastergröße
+
+$keyboardKeyCapsLock ⇩
+$keyboardKeyLeftShift ⇧
+$keyboardKeyRightShift ⇧
+$keyboardKeyLeftCtrl Strg
+$keyboardKeyRightCtrl Strg
+$keyboardKeyLeftAlt Alt
+$keyboardKeyRightAlt AltGr
+$keyboardKeyLeftWin Win
+$keyboardKeyRightWin Win
+$keyboardKeyContextMenu Kontextmenü
+
+$keyboardKeyInsert Einfg
+$keyboardKeyDelete Entf
+$keyboardKeyHome Pos1
+$keyboardKeyEnd Ende
+$keyboardKeyPageUp Bild↑
+$keyboardKeyPageDown Bild↓
+$keyboardKeyPrint Druck
+$keyboardKeyScrollLock Rollen
+$keyboardKeyPause Pause
+$keyboardKeyNumLock Num
 
 // Neuen Spieler begruessen (Mini-Dialog)
 $windowAskNameTitle Lix

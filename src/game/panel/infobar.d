@@ -13,17 +13,19 @@ import hardware.sound; // warn when too few lix alive to win
 import net.repdata; // Phyu
 import physics.job.builder;
 import physics.lixxie.lixxie;
+import physics.lixxie.fields;
 import physics.tribe;
 
 abstract class InfoBar : Button {
 private:
     bool _showSpawnInterval;
     int _spawnInterval;
-    int _targetDescNumber;
+    int _numLixUnderCursor;
     static assert (Ac.init == Ac.nothing);
 
     Phyu _age;
-    ConstLix _targetDescLixxie;
+    ConstLix _highlitLix; // May be null.
+    Passport _highlitPassport; // Ignore whenever _highlitLix is null.
     Rebindable!(const(Tribe))  _tribe;
     CutbitElement _bOut, _bHatch;
     Label _lOut, _lHatch, _targetDesc, _fps;
@@ -40,12 +42,17 @@ public:
         addChildren(_targetDesc, _fps);
     }
 
-    void describeTarget(in Lixxie l, in int nr)
+    void describeTarget(
+        in Lixxie l,
+        in Passport p,
+        in int numLixUnderCursor)
     {
-        if (_targetDescLixxie !is l || _targetDescNumber != nr)
+        if (_highlitLix !is l || _numLixUnderCursor != numLixUnderCursor) {
             reqDraw();
-        _targetDescLixxie = l;
-        _targetDescNumber = nr;
+        }
+        _highlitLix = l;
+        _highlitPassport = p;
+        _numLixUnderCursor = numLixUnderCursor;
     }
 
     void dontShowSpawnInterval()
@@ -95,8 +102,8 @@ protected:
     override void calcSelf() { down = false; }
     override void drawOntoButton()
     {
-        formatTargetDesc();
-        formatFPS();
+        _targetDesc.text = formatTargetDesc();
+        _fps.text = formatFPS();
     }
 
     // Helper function to make children.
@@ -124,43 +131,55 @@ protected:
     }
 
 private:
-    void formatTargetDesc()
+    string formatTargetDesc()
     in {
-        assert (  _targetDesc);
-        assert (  _targetDescNumber >= 0,
-            format("_targetDescNumber == %d, not >= 0", _targetDescNumber));
-        assert ( (_targetDescNumber == 0) == (_targetDescLixxie is null),
-            format("_targetDescLixxie %s, but _targetDescNumber == %d",
-            _targetDescLixxie ? "exists" : "null", _targetDescNumber));
+        assert (_targetDesc);
+        assert (_numLixUnderCursor >= 0,
+            format("_numLixUnderCursor == %d, not >= 0", _numLixUnderCursor));
+        assert ((_numLixUnderCursor == 0) == (_highlitLix is null),
+            format("_highlitLix %s, but _numLixUnderCursor == %d",
+            _highlitLix ? "exists" : "null", _numLixUnderCursor));
     }
-    do { with (_targetDescLixxie) {
-        string s = "";
-        if (_targetDescLixxie) {
-            s = "%d %s%s".format(
-                _targetDescNumber,
-                ac.acToNiceCase,
-                _targetDescNumber > 1 && opt.languageIsEnglish ? "s" : "");
-            if (auto bc = cast (const BrickCounter) constJob)
-                s ~= " [%d]".format(bc.skillsQueued * bc.bricksAtStart
-                                    + bc.bricksLeft);
-            if (abilityToRun || abilityToClimb || abilityToFloat)
-                s ~= " (%s%s%s)".format(
-                    abilityToRun   ? "R" : "",
-                    abilityToClimb ? "C" : "",
-                    abilityToFloat ? "F" : "");
+    do {
+        if (_numLixUnderCursor >= 1) {
+            return formatTargetDescLix();
         }
-        else if (_showSpawnInterval)
-            s = "%s: %d".format(Lang.winConstantsSpawnint.transl,
-                                _spawnInterval);
-        _targetDesc.text = s;
-    }}
+        else if (_showSpawnInterval) {
+            return "%s: %d".format(Lang.winConstantsSpawnint.transl,
+                _spawnInterval);
+        }
+        return "";
+    }
 
-    void formatFPS()
+    string formatTargetDescLix()
+    in {
+        assert (_highlitLix !is null);
+        assert (_numLixUnderCursor >= 1);
+    }
+    do {
+        string s = format!"%s %s %s"(
+            Lang.tweakerHeaderLixID.transl,
+            _highlitPassport.id,
+            _highlitLix.ac.skillTransl.isPerforming);
+        if (auto bc = cast (const BrickCounter) _highlitLix.constJob) {
+            s ~= " [%d]".format(bc.skillsQueued * bc.bricksAtStart
+                + bc.bricksLeft);
+        }
+        if (_numLixUnderCursor >= 2) {
+            s ~= " ";
+            s ~= _numLixUnderCursor == 2 ? Lang.gameInfobarPlus1Lix.transl
+                : Lang.gameInfobarPlusNLix.translf(_numLixUnderCursor - 1);
+        }
+        s ~= ".";
+        return s;
+    }
+
+    string formatFPS()
     {
         if (! opt.showFPS.value) {
-            return; // _fps.txt will remain "" forever.
+            return "";
         }
-        _fps.text = "%s %d   FPS: %d".format(
+        return "%s %d   FPS: %d".format(
             Lang.tweakerHeaderTick.transl, _age, displayFps);
     }
 }

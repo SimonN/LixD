@@ -102,7 +102,7 @@ private:
 
         string s = Tooltip.format(_wantedByCaller.idset);
         if (s == "" && _wantedByCaller.ac != Ac.nothing) {
-            s = file.language.skillTooltip(_wantedByCaller.ac);
+            s = file.language.skillTransl(_wantedByCaller.ac).buttonTooltip;
         }
         bestLabelForWanted.show();
         bestLabelForWanted.text = s;

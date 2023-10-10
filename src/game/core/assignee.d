@@ -49,7 +49,7 @@ Optional!Assignee findAndDescribePotentialAssignee(Game game)
     if (game.isMouseOnLand) {
         return game.findPotentialAssigneeAssumingMouseOnLand();
     }
-    game.pan.describeTarget(null, 0);
+    game.pan.describeTarget(null, Passport(), 0);
     return no!Assignee;
 }
 
@@ -109,7 +109,9 @@ Optional!Assignee findPotentialAssigneeAssumingMouseOnLand(Game game)
     }
     mouseCursor.xf = (forcingLeft ? 1 : forcingRight ? 2 : mouseCursor.xf);
     mouseCursor.yf = ! best.empty;
-    pan.describeTarget(described.empty ? null : described.front.lixxie,
+    pan.describeTarget(
+        described.empty ? null : described.front.lixxie,
+        described.empty ? Passport() : described.front.passport,
         lixesUnderCursor);
 
     if (! best.empty && best.front.lixxie.ac == game.pan.chosenSkill) {

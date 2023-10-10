@@ -132,7 +132,7 @@ $gamePriorityInvert [%s] for hindmost lix.
 $gameQueueBuilder Click again to queue.
 $gameQueuePlatformer Click again to queue.
 $gameHoldToScroll Hold [%s] and move mouse to scroll.
-$gameClickToCancelReplay Replaying. To play, click into air.
+$gameClickToCancelReplay Replaying. Click to play from here.
 $gameFramestepOrQuit Rewind time (◀▮) or quit with [%s].
 $gamePause Pause.
 $gameShowSplatRuler Show splat ruler.
@@ -145,6 +145,8 @@ $gameFramestepAhead %s to step ahead, %s to jump ahead.
 $gameFastForward %s for fast-forward, %s for turbo.
 $gameRestart Restart level.
 $gameNuke Nuke. Double-click to activate.
+$gameInfobarPlus1Lix + 1 lix
+$gameInfobarPlusNLix + %d lix
 
 $tweakerHeaderLixID Lix
 $tweakerHeaderTick Tick
@@ -154,21 +156,29 @@ $tweakerEmptyListDesc1 Click some lix.
 $tweakerEmptyListDesc2 Later, tweak your
 $tweakerEmptyListDesc3 assignments here.
 
-$skillTooltip walker|Walk back or cancel blockers.
-$skillTooltip jumper|Jump once. Runners jump farther.
-$skillTooltip climber|Climb all vertical walls.
-$skillTooltip floater|Float to survive all falls.
-$skillTooltip runner|Run faster than walkers.
-$skillTooltip exploder|Implode to destroy earth/cancel blockers.
-$skillTooltip exploder2|Explode to fling other lix.
-$skillTooltip blocker|Block to turn other lix.
-$skillTooltip batter|Bat other lix, flinging them.
-$skillTooltip cuber|Cube to generate earth quickly.
-$skillTooltip builder|Build a diagonal staircase.
-$skillTooltip platformer|Platform a horizontal bridge.
-$skillTooltip basher|Bash a horizontal tunnel.
-$skillTooltip miner|Mine a diagonal tunnel.
-$skillTooltip digger|Dig a vertical hole.
+$skill=walker Walker|is walking|Walk back or cancel blockers.
+$skill=jumper Jumper|is jumping|Jump once. Runners jump farther.
+$skill=climber Climber|is climbing|Climb all vertical walls.
+$skill=floater Floater|is floating|Float to survive all falls.
+$skill=runner Runner|is running|Run faster than walkers.
+$skill=exploder Imploder|is imploding|Implode to destroy earth/cancel blockers.
+$skill=exploder2 Exploder|is exploding|Explode to fling other lix.
+$skill=blocker Blocker|is blocking|Block to turn other lix.
+$skill=batter Batter|is batting|Bat other lix, flinging them.
+$skill=cuber Cuber|is cubing|Cube to generate earth quickly.
+$skill=builder Builder|is building|Build a diagonal staircase.
+$skill=platformer Platformer|is platforming|Platform a horizontal bridge.
+$skill=basher Basher|is bashing|Bash a horizontal tunnel.
+$skill=miner Miner|is mining|Mine a diagonal tunnel.
+$skill=digger Digger|is digging|Dig a vertical hole.
+
+$skill=faller Faller|is falling
+$skill=tumbler Tumbler|is tumbling
+$skill=stunner Stunner|is stunned
+$skill=lander Lander|is landing
+$skill=ascender Ascender|is ascending
+$skill=shrugger Shrugger|is shrugging
+$skill=shrugger2 Shrugger|is shrugging
 
 // main editor screen
 $editorHotkey Hotkey:
@@ -423,6 +433,28 @@ $optionEdAddSteel Add steel
 $optionEdAddHatch Add hatch
 $optionEdAddGoal Add goal
 $optionEdAddHazard Add hazard
+
+$keyboardKeyCapsLock CapsLock
+$keyboardKeyLeftShift Shift
+$keyboardKeyRightShift Shift
+$keyboardKeyLeftCtrl Ctrl
+$keyboardKeyRightCtrl Ctrl
+$keyboardKeyLeftAlt Alt
+$keyboardKeyRightAlt Alt
+$keyboardKeyLeftWin Win
+$keyboardKeyRightWin Win
+$keyboardKeyContextMenu ContextMenu
+
+$keyboardKeyInsert Insert
+$keyboardKeyDelete Delete
+$keyboardKeyHome Home
+$keyboardKeyEnd End
+$keyboardKeyPageUp PgUp
+$keyboardKeyPageDown PgDn
+$keyboardKeyPrint Print
+$keyboardKeyScrollLock ScrollLock
+$keyboardKeyPause Pause
+$keyboardKeyNumLock NumLock
 
 // mini-dialogue to greet a new player
 $windowAskNameTitle Lix

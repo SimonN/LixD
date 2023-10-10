@@ -152,7 +152,7 @@ private:
 
     static string statusDesc(Status st)
     {
-        Lang la = Lang.MAX;
+        Lang la = void;
         final switch (st) {
             case Status.untested: assert (false, "Replay wasn't tested.");
             case Status.multiplayer: la = Lang.verifyStatusMultiplayer; break;

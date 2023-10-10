@@ -145,6 +145,8 @@ $gameFramestepAhead %s för att kliva framåt, %s för att hoppa framåt.
 $gameFastForward %s för att snabbspola framåt, %s för turbo.
 $gameRestart Starta om bana.
 $gameNuke Spräng. Dubbelklicka för att aktivera.
+$gameInfobarPlus1Lix + 1 lix
+$gameInfobarPlusNLix + %d lix
 
 $tweakerHeaderLixID Lix
 $tweakerHeaderTick Tick
@@ -154,21 +156,29 @@ $tweakerEmptyListDesc1 Klicka lix. Senare
 $tweakerEmptyListDesc2 kan du trimma dina
 $tweakerEmptyListDesc3 tilldelningar här.
 
-$skillTooltip walker|Walker. Gå tillbaka eller avbryt blocker.
-$skillTooltip jumper|Jumper. Hoppar en gång. Runner hoppar längre.
-$skillTooltip climber|Climber. Klättra uppför alla vertikala väggar.
-$skillTooltip floater|Floater. Svävar för att överleva alla fall.
-$skillTooltip runner|Runner. Spring fortare än walker.
-$skillTooltip exploder|Imploder. Implodera för att förstöra jord/avbryta blocker.
-$skillTooltip exploder2|Exploder. Explodera för att kasta iväg andra lix.
-$skillTooltip blocker|Blocker. Blockera andra lix, och vända dem.
-$skillTooltip batter|Batter.. Slå andra lix, och kasta iväg dem.
-$skillTooltip cuber|Cuber. Gör kub för att fort generera jord.
-$skillTooltip builder|Builder. Bygg en diagonal trappa.
-$skillTooltip platformer|Platformer. Gör en horizontal brygga.
-$skillTooltip basher|Basher. Slå sönder en horizontal tunnel.
-$skillTooltip miner|Miner. Gräv en diagonal tunnel.
-$skillTooltip digger|Digger. Gräv ett vertikalt hål.
+$skill=walker Går|går|Gå tillbaka eller avbryt blocker.
+$skill=jumper Hoppare|hoppar|Hoppar en gång. Löpare hoppar längre.
+$skill=climber Klättrare|klättrar|Klättra uppför alla vertikala väggar.
+$skill=floater Skärmflygare|svävar|Svävar för att överleva alla fall.
+$skill=runner Löpare|löpar|Löpar fortare än walker.
+$skill=exploder Imploderare|imploderar|Implodera för att förstöra jord/avbryta blocker.
+$skill=exploder2 Exploderare|exploderar|Explodera för att kasta iväg andra lix.
+$skill=blocker Blockerare|blockerar|Blockera andra lix, och vända dem.
+$skill=batter Batter|slår|Slå andra lix, och kasta iväg dem.
+$skill=cuber Kuber|gör kub|Gör kub för att fort generera jord.
+$skill=builder Bygger|bygger|Bygg en diagonal trappa.
+$skill=platformer Brobyggare|bryggar|Gör en horizontal brygga.
+$skill=basher Skyfflare|skyfflar|Skyfflar en horizontal tunnel.
+$skill=miner Hackare|hackar|Hackar en diagonal tunnel.
+$skill=digger Grävare|gräver|Gräv ett vertikalt hål.
+
+$skill=faller Fallare|faller
+$skill=tumbler Tumlare|tumlar
+$skill=stunner Omtumladar|är omtumlad
+$skill=lander Landere|landar
+$skill=ascender Ascendarare|ascendarar
+$skill=shrugger Ryckare|rycker
+$skill=shrugger2 Ryckare|rycker
 
 // main editor screen
 $editorHotkey Snabbtangent:
@@ -423,6 +433,28 @@ $optionEdAddSteel Lägg till stål
 $optionEdAddHatch Lägg till lucka
 $optionEdAddGoal Lägg till mål
 $optionEdAddHazard Lägg till fara
+
+$keyboardKeyCapsLock CapsLock
+$keyboardKeyLeftShift Shift
+$keyboardKeyRightShift Shift
+$keyboardKeyLeftCtrl Ctrl
+$keyboardKeyRightCtrl Ctrl
+$keyboardKeyLeftAlt Alt
+$keyboardKeyRightAlt Alt
+$keyboardKeyLeftWin Win
+$keyboardKeyRightWin Win
+$keyboardKeyContextMenu ContextMenu
+
+$keyboardKeyInsert Insert
+$keyboardKeyDelete Delete
+$keyboardKeyHome Home
+$keyboardKeyEnd End
+$keyboardKeyPageUp PgUp
+$keyboardKeyPageDown PgDn
+$keyboardKeyPrint Print
+$keyboardKeyScrollLock ScrollLock
+$keyboardKeyPause Pause
+$keyboardKeyNumLock NumLock
 
 // mini-dialogue to greet a new player
 $windowAskNameTitle Lix
