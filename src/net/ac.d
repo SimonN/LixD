@@ -55,7 +55,7 @@ Ac stringToAc(in string str) nothrow
             :  lower == "exploder2" ? Ac.exploder : lower.to!Ac;
     }
     catch (Exception)
-        return Ac.max;
+        return Ac.nothing;
 }
 
 string acToString(in Ac ac)
@@ -114,6 +114,4 @@ enum Ac : ubyte {
     jumper,
     batter,
     cuber,
-
-    max
 }

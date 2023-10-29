@@ -569,7 +569,7 @@ public:
         if (range.empty)
             return;
         Ac ac = stringToAc(range.front);
-        if (ac == Ac.max) {
+        if (ac == Ac.nothing) {
             langlog("Unknown skill: %s", range.front);
             return;
         }

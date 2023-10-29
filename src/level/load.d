@@ -116,8 +116,7 @@ private void load_from_vector(Level level, in IoLine[] lines) { with (level)
             Ac ac = stringToAc(text1);
             if (ac.isPloder)
                 ploder = ac;
-            if (ac != Ac.max)
-                skills[ac] = nr1;
+            skills[ac] = nr1;
         }
         break;
 

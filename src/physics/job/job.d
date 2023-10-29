@@ -159,7 +159,6 @@ struct JobUnion {
             case Ac.jumper:     emplace!Jumper(data[]);     break;
             case Ac.batter:     emplace!Batter(data[]);     break;
             case Ac.cuber:      emplace!Cuber(data[]);      break;
-            case Ac.max: assert (false);
         }
         assert (asClass.ac == Ac.nothing);
         asClass._ac = ac;

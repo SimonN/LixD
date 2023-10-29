@@ -131,7 +131,7 @@ void implLoadFromFile(Replay replay, Filename fn) { with (replay)
                  : assign == replayNuke        ? RepAc.NUKE
                  : RepAc.NOTHING);
         d.skill = skill.stringToAc;
-        if (d.skill != Ac.max || d.isNuke) {
+        if (d.skill != Ac.nothing || d.isNuke) {
             replay.addWithoutTouching(d);
         }
         break; }
