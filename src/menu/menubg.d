@@ -54,7 +54,6 @@ out (ret) {
 do {
     immutable double scalingFactor
         = max(1.0 * toCover.xl / toScale.xl, 1.0 * toCover.yl / toScale.yl);
-    import std.stdio;
     immutable Point retLength = Point(
         (toScale.xl * scalingFactor).to!int,
         (toScale.yl * scalingFactor).to!int);
