@@ -14,6 +14,7 @@ import std.string;
 import basics.alleg5; // we shorten the hotkey label ourselves, not a Label
 import basics.help;
 import file.option; // hotkey display option
+import file.language; // hotkey names
 
 import graphic.color;
 import gui;

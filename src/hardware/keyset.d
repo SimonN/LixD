@@ -8,13 +8,9 @@ import std.algorithm;
 import std.array;
 import std.conv;
 import std.exception; // assumeUnique
-import std.string;
-import std.uni;
-import std.utf;
 
 import basics.alleg5;
 import hardware.keyboard;
-import hardware.keynames;
 
 struct KeySet {
 private:
@@ -42,14 +38,16 @@ public:
         }
     }
 
-    @property bool empty() const pure { return _keys.empty; }
-    @property int  len()   const pure { return _keys.length & 0x7FFF_FFFFu; }
+    bool empty() const pure nothrow @safe @nogc { return _keys.empty; }
+    int len() const pure nothrow @safe @nogc
+    {
+        return _keys.length & 0x7FFF_FFFFu;
+    }
 
-    @property keyTapped()   const { return _keys.any!(k => k.keyTapped);   }
-    @property keyHeld()     const { return _keys.any!(k => k.keyHeld);     }
-    @property keyReleased() const { return _keys.any!(k => k.keyReleased); }
-
-    @property keyTappedAllowingRepeats() const
+    bool keyTapped()   const { return _keys.any!(k => k.keyTapped);   }
+    bool keyHeld()     const { return _keys.any!(k => k.keyHeld);     }
+    bool keyReleased() const { return _keys.any!(k => k.keyReleased); }
+    bool keyTappedAllowingRepeats() const
     {
         return _keys.any!(k => k.keyTappedAllowingRepeats);
     }
@@ -59,23 +57,9 @@ public:
         _keys = _keys.filter!(k => k != keyToRm).array;
     }
 
-    @property immutable(int)[] keysAsInts() const { return _keys; }
-
-    @property string nameLong() const {
-        switch (_keys.length) {
-            case 0:  return null;
-            case 1:  return _keys[0].hotkeyNiceLong;
-            default: return nameShort();
-        }
-    }
-
-    @property string nameShort() const {
-        switch (_keys.length) {
-            case 0:  return null;
-            case 1:  return _keys[0].hotkeyNiceShort(3);
-            case 2:  return _keys.map!(k => k.hotkeyNiceShort(3)).join('/');
-            default: return _keys.map!(k => k.hotkeyNiceShort(2)).join;
-        }
+    immutable(int)[] keysAsInts() const pure nothrow @safe @nogc
+    {
+        return _keys;
     }
 }
 
@@ -87,49 +71,4 @@ unittest {
     c.remove(4);
     c.remove(6);
     assert (c._keys == [3, 5]);
-}
-
-// ############################################################################
-// ########################################################## private functions
-
-private string hotkeyNiceShort(in int hotkey, in int maxLen)
-{
-    string s = hotkeyNiceLong(hotkey);
-    try {
-        // return up to maxLen unicode chars of s
-        int index = 0;
-        int charsEaten = 0;
-        while (index < s.length && charsEaten < maxLen) {
-            index += s.stride(index);
-            ++charsEaten;
-        }
-        return s[0 .. index];
-    }
-    catch (Exception)
-        return s;
-}
-
-private string hotkeyNiceLong(in int hotkey)
-{
-    assert (hotkey >= 0);
-    assert (hotkey < hardwareKeyboardArrLen);
-    if (keyNames[hotkey] != null)
-        return keyNames[hotkey];
-    if (! al_is_keyboard_installed())
-        return null;
-    string s = al_keycode_to_name(hotkey).to!string;
-    string ret;
-    foreach (size_t i, dchar c; s) {
-        if (i == 0) {
-            ret ~= std.uni.toUpper(c);
-        }
-        else if (c != '_') {
-            ret ~= std.uni.toLower(c);
-        }
-    }
-    // On Windows Allgero, unknown keys are called KEY79. We have changed
-    // this to Key97, but still, remove uninformative bloat.
-    if (ret.length >= 3 && ret[0] == 'K' && ret[1] == 'e' && ret[2] == 'y')
-        ret = ret[3 .. $];
-    return ret;
 }

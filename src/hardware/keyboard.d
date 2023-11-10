@@ -11,8 +11,8 @@ import std.utf;
 
 import basics.alleg5;
 import file.log;
-import hardware.keynames;
 import hardware.mouse;
+import hardware.keyenum;
 
 static import basics.globals;
 

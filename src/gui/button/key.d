@@ -14,6 +14,7 @@ module gui.button.key;
 
 import basics.alleg5; // timerTicks
 import basics.globals; // ticksForDoubleClick
+import file.language; // Hotkey names
 import graphic.color;
 import gui;
 import hardware.keyboard;

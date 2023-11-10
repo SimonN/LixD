@@ -401,6 +401,29 @@ enum Lang {
     optionEdAddGoal,
     optionEdAddHazard,
 
+    // Names of keyboard keys, these will appear as hotkey labels
+    keyboardKeyCapsLock,
+    keyboardKeyLeftShift,
+    keyboardKeyRightShift,
+    keyboardKeyLeftCtrl,
+    keyboardKeyRightCtrl,
+    keyboardKeyLeftAlt,
+    keyboardKeyRightAlt,
+    keyboardKeyLeftWin,
+    keyboardKeyRightWin,
+    keyboardKeyContextMenu,
+
+    keyboardKeyInsert,
+    keyboardKeyDelete,
+    keyboardKeyHome,
+    keyboardKeyEnd,
+    keyboardKeyPageUp,
+    keyboardKeyPageDown,
+    keyboardKeyPrint,
+    keyboardKeyScrollLock,
+    keyboardKeyPause,
+    keyboardKeyNumLock,
+
     // mini-dialogue to greet a new player
     windowAskNameTitle,
     windowAskNameFirst,

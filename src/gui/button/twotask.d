@@ -9,6 +9,7 @@ module gui.button.twotask;
 
 import std.format;
 
+import file.language; // Hotkey names
 import graphic.cutbit;
 import graphic.internal;
 import gui;

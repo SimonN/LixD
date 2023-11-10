@@ -24,7 +24,7 @@ import file.filename;
 import file.io;
 import file.language;
 import file.option;
-import hardware.keynames;
+import hardware.keyenum;
 import hardware.keyset;
 import hardware.tharsis;
 import net.ac;
@@ -363,17 +363,17 @@ do {
         return newOpt(str, lang, KeySet(KeySet(key1), KeySet(key2)));
     }
     // Global keys -- these work in editor and game
-    keyScroll = newKey("keyHoldToScroll", Lang.optionKeyScroll, keyRMB);
-    keyPriorityInvert = newKey("keyPriorityInvert", Lang.optionKeyPriorityInvert, keyRMB);
-    keyZoomIn = newKey("keyZoomIn", Lang.optionKeyZoomIn, hardware.keynames.keyWheelUp);
-    keyZoomOut = newKey("keyZoomOut", Lang.optionKeyZoomOut, hardware.keynames.keyWheelDown);
+    keyScroll = newKey("keyHoldToScroll", Lang.optionKeyScroll, hardware.keyenum.keyRMB);
+    keyPriorityInvert = newKey("keyPriorityInvert", Lang.optionKeyPriorityInvert, hardware.keyenum.keyRMB);
+    keyZoomIn = newKey("keyZoomIn", Lang.optionKeyZoomIn, hardware.keyenum.keyWheelUp);
+    keyZoomOut = newKey("keyZoomOut", Lang.optionKeyZoomOut, hardware.keyenum.keyWheelDown);
     keyScreenshot = newOpt("keyScreenshot", Lang.optionKeyScreenshot,
         KeySet());
 
     // Game keys
     keyForceLeft = newKey2("keyForceLeft", Lang.optionKeyForceLeft, ALLEGRO_KEY_S, ALLEGRO_KEY_LEFT);
     keyForceRight = newKey2("keyForceRight", Lang.optionKeyForceRight, ALLEGRO_KEY_F, ALLEGRO_KEY_RIGHT);
-    keyPause = newKey2("keyPause", Lang.optionKeyPause, ALLEGRO_KEY_SPACE, keyMMB);
+    keyPause = newKey2("keyPause", Lang.optionKeyPause, ALLEGRO_KEY_SPACE, hardware.keyenum.keyMMB);
     keyFrameBackMany = newKey("keySpeedBackMany", Lang.optionKeyFrameBackMany, ALLEGRO_KEY_1);
     keyFrameBackOne = newKey("keySpeedBackOne", Lang.optionKeyFrameBackOne, ALLEGRO_KEY_2);
     keyFrameAheadOne = newKey("keySpeedAheadOne", Lang.optionKeyFrameAheadOne, ALLEGRO_KEY_3);

@@ -26,17 +26,23 @@ import std.format;
 
 import basics.globals; // fileLanguageEnglish
 import file.lang.enum_;
+import file.lang.keynames;
 import file.option; // fileLanguage, which file does the user want
 import file.io;
 import file.log;
 import file.filename;
+import hardware.keyset;
 import net.ac;
 
 nothrow @nogc @safe {
     string transl(in Lang key) { return _globLoaded.words[key].transl; }
     string[] descr(in Lang key) { return _globLoaded.words[key].descr; }
+
     SkillTranslation skillTransl(in Ac ac) { return _globLoaded.skills[ac]; }
 }
+
+string nameShort(in KeySet set) { return _globLoaded.keys.nameShort(set); }
+string nameLong(in KeySet set) { return _globLoaded.keys.nameLong(set); }
 
 struct SkillTranslation {
     string name; // "Climber"
@@ -114,6 +120,7 @@ private:
 public:
     Enumap!(Lang, Word) words;
     Enumap!(Ac, SkillTranslation) skills;
+    KeyNamesForOneLanguage keys;
 
     this(in Filename source)
     {
@@ -153,6 +160,7 @@ public:
         if (range.empty)
             return;
         words[langId].transl = range.front;
+        keys.addTranslatedKeyName(langId, range.front);
         range.popFront;
         if (range.empty)
             return;
