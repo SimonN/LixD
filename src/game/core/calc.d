@@ -80,24 +80,30 @@ void considerToEndGame(Game game)
 
 void calcEndOfPhysicsWhileEffectsAreStillGoingOn(Game game) { with (game)
 {
-    immutable singleplayerHasLost = ! multiplayer && ! singleplayerHasWon;
-    if (singleplayerHasLost) {
-        // We check the nuke button here in addition to checking it during
-        // physics in game.core.active. In game.core.active, it generates
-        // the nuke input for the replay, but we won't process any further
-        // replay updates after all lixes have died. Thus, after all lixes
-        // have died, cancel the game immediately here without affecting
-        // physics.
-        if (pan.nukeDoubleclicked || ! view.canInterruptReplays) {
-            /*
-             * view.canInterruptReplays can only be false here while we don't
-             * have proper multiplayer puzzle solving. Meanwhile, we're reusing
-             * View.battle for that half-baked feature.
-             */
-            _gotoMainMenu = true;
-        }
-        else
-            _mapClickExplainer.suggestTooltip(Tooltip.ID.framestepOrQuit);
+    if (multiplayer || singleplayerHasWon) {
+        return; // Singleplayer has not lost.
+    }
+    /*
+     * We check the nuke button here in addition to checking it during
+     * physics in game.core.active. In game.core.active, it generates
+     * the nuke input for the replay, but we won't process any further
+     * replay updates after all lixes have died. Thus, after all lixes
+     * have died, quit the game now here without affecting physics.
+     *
+     * pan.nukeDoubleclicked does _not_ tell us if the single player has
+     * nuked in the past (= if the nuke button is red). It tells us if
+     * he's doubleclicking. singleplayerHasNuked tells us about the past.
+     */
+    if (pan.nukeDoubleclicked || ! view.canInterruptReplays) {
+        /*
+         * view.canInterruptReplays can only be false here while we don't
+         * have proper multiplayer puzzle solving. Meanwhile, we're reusing
+         * View.battle for that half-baked feature.
+         */
+        _gotoMainMenu = true;
+    }
+    else if (! singleplayerHasNuked) {
+        _mapClickExplainer.suggestTooltip(Tooltip.ID.framestepOrQuit);
     }
 }}
 
