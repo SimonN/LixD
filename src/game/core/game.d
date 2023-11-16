@@ -296,6 +296,7 @@ private:
         // make the effect manager depend on what the GUI chooses.
         _effect = new EffectManager(determineLocalStyle(rp));
         nurse = new InteractiveNurse(level, rp, _effect);
+        // After the nurse has been created here, this.view() works.
 
         initializePanel();
         initializeMapAndRepEdit();
@@ -367,8 +368,13 @@ private:
             screenXlg - Tweaker.suggestedTweakerXlg, 20, From.BOTTOM_RIGHT));
         _mapClickExplainer = new TooltipLine(new Geom(0, 0,
             screenXlg - Tweaker.suggestedTweakerXlg, 20, From.TOP_RIGHT));
-        _panelExplainer.shown = opt.ingameTooltips.value;
-        _mapClickExplainer.shown = opt.ingameTooltips.value;
+
+        // Workaround for github #473: Tooltips and the big score board
+        // don't get along. For now, hide tooltips in modes with the board.
+        immutable bool github473
+            = opt.ingameTooltips.value && ! view.showScoreGraph;
+        _panelExplainer.shown = github473;
+        _mapClickExplainer.shown = github473;
         gui.addElder(_panelExplainer);
         gui.addElder(_mapClickExplainer);
 
