@@ -157,29 +157,29 @@ $tweakerEmptyListDesc1 Primer, assigna una
 $tweakerEmptyListDesc2 habilitat a algun
 $tweakerEmptyListDesc3 lix.
 
-$skill=walker Caminador|is walking|Camina enrere o cancela els blocadors.
-$skill=jumper Saltador|is jumping|Salta un cop. Els corredors salten més lluny.
-$skill=climber Escalador|is climbing|Escala totes les parets verticals.
-$skill=floater Flotador|is floating|Flota per sobreviure totes les caigudes.
-$skill=runner Corredor|is running|Córre més ràpid que els caminadors.
-$skill=exploder Implosionador|is imploding|Implosiona per destruïr terra o bé cancelar blocadors.
-$skill=exploder2 Explotador|is exploding|Explota per llançar altres lix.
-$skill=blocker Blocador|is blocking|Bloca of fes girar altres lix.
-$skill=batter Batedor|is batting|Bat altres lix, llançant-los.
-$skill=cuber Cuber|is cubing|Es transforma en un cub per generar terra ràpidament.
-$skill=builder Constructor|is building|Constructor. Construeix unes escales horitzontals.
-$skill=platformer Pontí|is platforming|Contstrueix un pont horitzontal.
-$skill=basher Tunelador|is bashing|Cava un túnel horitzontal.
-$skill=miner Miner|is mining|Cava un túnel diagonal.
-$skill=digger Cavador|is digging|Cava un forat vertical.
+$skill=walker Caminador|està caminant|Camina enrere o cancela els blocadors.
+$skill=jumper Saltador|està saltant|Salta un cop. Els corredors salten més lluny.
+$skill=climber Grimpaire|està grimpant|Grimpa totes les parets verticals.
+$skill=floater Flotador|està flotant|Flota per sobreviure totes les caigudes.
+$skill=runner Corredor|està corrent|Córre més ràpid que els caminadors.
+$skill=exploder Implosionador|està implosionant|Implosiona per destruïr terra o bé cancelar blocadors.
+$skill=exploder2 Explotador|està explotant|Explota per llançar altres lix.
+$skill=blocker Blocador|està blocant|Bloca o fes girar altres lix.
+$skill=batter Batedor|està batent|Bat altres lix, llançant-los.
+$skill=cuber Cuber|s'està transformant en un cub|Es transforma en un cub per generar terra ràpidament.
+$skill=builder Constructor|està construint|Constructor. Construeix unes escales horitzontals.
+$skill=platformer Pontí|està construint un pont|Contstrueix un pont horitzontal.
+$skill=basher Tunelador|està cavant|Cava un túnel horitzontal.
+$skill=miner Miner|està cavant|Cava un túnel diagonal.
+$skill=digger Excavador|està excavant|Cava un forat vertical.
 
-$skill=faller Faller|is falling
-$skill=tumbler Tumbler|is tumbling
-$skill=stunner Stunner|is stunned
-$skill=lander Lander|is landing
-$skill=ascender Ascender|is ascending
-$skill=shrugger Shrugger|is shrugging
-$skill=shrugger2 Shrugger|is shrugging
+$skill=faller Caigudista|està caient
+$skill=tumbler Volador|està volant
+$skill=stunner Atordidor|està atordit
+$skill=lander Terrejador|està aterrant
+$skill=ascender Aixecador|s'està aixecant
+$skill=shrugger Arronsador|s'està arronsant d'espatlles
+$skill=shrugger2 Arronsador|s'està arronsant d'espatlles
 
 // main editor screen
 $editorHotkey Drecera de teclat:
@@ -437,7 +437,7 @@ $optionEdAddHatch Afegir cau
 $optionEdAddGoal Afegir objectiu
 $optionEdAddHazard Afegir perill
 
-$keyboardKeyCapsLock CapsLock
+$keyboardKeyCapsLock BloqMajús
 $keyboardKeyLeftShift Shift
 $keyboardKeyRightShift Shift
 $keyboardKeyLeftCtrl Ctrl
@@ -448,16 +448,16 @@ $keyboardKeyLeftWin Win
 $keyboardKeyRightWin Win
 $keyboardKeyContextMenu ContextMenu
 
-$keyboardKeyInsert Insert
-$keyboardKeyDelete Delete
-$keyboardKeyHome Home
-$keyboardKeyEnd End
-$keyboardKeyPageUp PgUp
-$keyboardKeyPageDown PgDn
-$keyboardKeyPrint Print
-$keyboardKeyScrollLock ScrollLock
-$keyboardKeyPause Pause
-$keyboardKeyNumLock NumLock
+$keyboardKeyInsert Insertar
+$keyboardKeyDelete Suprimir
+$keyboardKeyHome Inici
+$keyboardKeyEnd Fi
+$keyboardKeyPageUp AvPàg
+$keyboardKeyPageDown RePàg
+$keyboardKeyPrint ImprPant
+$keyboardKeyScrollLock BloqDespl
+$keyboardKeyPause Pausa
+$keyboardKeyNumLock BloqNum
 
 // mini-dialogue to greet a new player
 $windowAskNameTitle Lix
