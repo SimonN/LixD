@@ -1,4 +1,4 @@
-$BUILT 2018-08-19 16:01:49
+$BUILT 2023-11-28 07:50:02
 $AUTHOR Michael S. Repton
 $ENGLISH The Continuum Hypothesis
 
@@ -10,10 +10,10 @@ $ENGLISH The Continuum Hypothesis
 #REQUIRED 48
 #SPAWN_INTERVAL 50
 
-#WALKER 2
+#WALKER 1
 #CLIMBER 10
-#EXPLODER 2
-#BLOCKER 2
+#EXPLODER 1
+#BLOCKER 1
 #BUILDER 4
 #DIGGER 10
 
@@ -168,12 +168,6 @@ $END_TILE_GROUP
 :geoo/sandstone/arc_small: 1184 0 f
 :Group-0: 193 353
 :proxima/tile/red1: 256 352
-:proxima/tile/orange3a: 192 256
-:proxima/tile/orange3a: 224 256
-:proxima/tile/orange3a: 256 256
-:proxima/tile/orange3a: 288 256
-:geoo/sandstone/64x16: 192 256 d
-:geoo/sandstone/64x16: 256 256 d
 :proxima/tile/orange1: 352 368
 :proxima/tile/orange1: 416 368
 :proxima/tile/orange1: 480 368
