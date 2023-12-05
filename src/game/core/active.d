@@ -101,7 +101,8 @@ bool canAssignTo(Game game, in Optional!Assignee potAss)
     return game.view.canAssignSkills
         && game.pan.chosenSkill != Ac.nothing
         && ! potAss.empty
-        && potAss.front.priority >= 2;
+        && potAss.front.priority >= 2
+        && ! game.localTribe.hasNuked;
 }
 
 Ply newPlyForNextPhyu(Game game)

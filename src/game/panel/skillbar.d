@@ -3,6 +3,7 @@ module game.panel.skillbar;
 import optional;
 
 import opt = file.option.allopts;
+import game.core.view;
 import gui;
 import hardware.sound;
 import physics.tribe;
@@ -11,11 +12,13 @@ class SkillBar : Element {
 private:
     SkillButton[] _skills;
     Ac _previouslyOn;
+    View _view;
 
 public:
-    this(Geom g)
+    this(Geom g, in View v)
     {
         super(g);
+        _view = v;
         _skills.length = opt.skillSort.length;
         immutable float skillXl = xlg / opt.skillSort.length;
         foreach (int id, ac; opt.skillSort) {
@@ -34,7 +37,8 @@ public:
             if (b.skill.isPloder) {
                 b.skill = ploderToDisplay;
             }
-            b.number = tr.usesLeft(b.skill);
+            b.number = tr.hasNuked && ! _view.showSkillsInPanelAfterNuking
+                ? 0 : tr.usesLeft(b.skill);
         }
         choose(_previouslyOn);
     }

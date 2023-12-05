@@ -36,7 +36,7 @@ public:
     {
         super(new Geom(0, 0, gui.screenXlg, gui.panelYlg, From.BOTTOM));
         _skillbar = new SkillBar(new Geom(0, 0, skillBarXl, ylg - 20,
-            From.BOTTOM_LEFT));
+            From.BOTTOM_LEFT), view);
         addChild(_skillbar);
         {
             auto statsGeom = new Geom(0, 0, statsBarXl(), 20);

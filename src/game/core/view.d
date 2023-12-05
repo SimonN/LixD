@@ -70,6 +70,11 @@ bool showTapeRecorderButtons(in View v)
         || v == View.replayBattle;
 }
 
+bool showSkillsInPanelAfterNuking(in View v)
+{
+    return v.canInterruptReplays;
+}
+
 bool printResultToConsole(in View v)
 {
     return v == View.battle || v == View.observeBattle
