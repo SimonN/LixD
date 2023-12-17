@@ -235,9 +235,9 @@ package:
         return nurse.stateOnlyPrivatelyForGame.multiplayer;
     }
 
-    Style localStyle() const @nogc nothrow
+    Style localStyle() const pure nothrow @safe @nogc
     in { assert (_effect, "create effect manager before querying style"); }
-    do { return _effect.localTribe; }
+    do { return _effect.localStyle; }
 
     const(Tribe) localTribe() const
     {
@@ -288,10 +288,9 @@ private:
 
     void commonConstructor(Replay rp)
     {
-        // DTODONETWORK: Eventually, observers shall cycle through the
-        // spectating teams. Don't set a final style here, but somehow
-        // make the effect manager depend on what the GUI chooses.
-        _effect = new EffectManager(determineLocalStyle(rp));
+        _effect = new EffectManager(
+            determineLocalStyle(rp),
+            _netClient is null && level.intendedNumberOfPlayers > 1);
         nurse = new InteractiveNurse(level, rp, _effect);
         // After the nurse has been created here, this.view() works.
 
@@ -303,16 +302,26 @@ private:
         setLastPhyuToNow();
     }
 
+    enum playtestStyles = [
+        Style.red, Style.blue, Style.yellow, Style.green,
+        Style.purple, Style.orange, Style.black, Style.grey ];
+
     Replay generateFreshReplay(Optional!Filename levelFilename)
     {
         auto rp = levelFilename.match!(
             () => Replay.newNoLevelFilename(level.built),
             (fn) => Replay.newForLevel(fn, level.built));
         if (! _netClient) {
-            Profile single;
-            single.name = opt.userName;
-            single.style = Style.garden;
-            rp.addPlayer(PlNr(0), single);
+            // Either playing singleplayer or playtesting multiplayer alone.
+            immutable numPl = level.intendedNumberOfPlayers.toPlNr;
+            rp.permu = new Permu(iota(PlNr(0), numPl).array);
+            for (PlNr i = PlNr(0); i < numPl; ++i) {
+                Profile p;
+                p.name = opt.userName;
+                p.style = numPl > 1 && i < playtestStyles.len
+                    ? playtestStyles[i] : Style.garden;
+                rp.addPlayer(PlNr(i), p);
+            }
         }
         else {
             rp.permu = _netClient.permu;

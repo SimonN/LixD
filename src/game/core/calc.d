@@ -25,7 +25,7 @@ implGameCalc(Game game) { with (game)
         game.noninputCalc();
     }
     else if (keyGameExit.keyTapped) {
-        if (multiplayer) {
+        if (game.view.askBeforeExitingGame) {
             modalWindow = new ReallyExitWindow();
             addFocus(game.modalWindow);
         }

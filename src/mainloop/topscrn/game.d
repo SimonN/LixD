@@ -42,15 +42,7 @@ public:
 protected:
     override TopLevelScreen onNextTopLevelScreen()
     {
-        if (game.replay.numPlayers > 1) {
-            /*
-             * As it stands, we use SinglePlayerGameScreen also for re-watching
-             * old multiplayer replays, and we don't have a multiplayer outcome
-             * screen. Don't re-autosave replays in the singleplayer outcome
-             * screen. Long-term solution: A multiplayer outcome screen.
-             */
-            return new BrowserReplayScreen();
-        }
+        // Long-term solution: Add a multiplayer outcome screen here.
         return new SinglePlayerOutcomeScreen(
             ArgsToCreateGame(game.level, _fnOfPlayedLevel, _lastLoaded),
             game.replay.iClone, game.halfTrophyOfLocalTribe, _after);

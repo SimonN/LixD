@@ -7,6 +7,7 @@ import optional;
 import basics.rect;
 import opt = file.option.allopts; // hotkeys
 import game.core.game;
+import graphic.camera.mapncam;
 import game.panel.tooltip;
 import gui : SkillButton;
 import hardware.mousecur;
@@ -14,6 +15,7 @@ import hardware.keyboard; // priority invert held
 import net.ac;
 import physics.lixxie.fields;
 import physics.lixxie.lixxie;
+import physics.tribe;
 
 struct Assignee {
     ConstLix lixxie; // Should never be null. Use Optional!Assignee otherwise.
@@ -63,7 +65,7 @@ bool forcingRight() nothrow @safe @nogc
 
 struct UnderCursor {
     Optional!Assignee best = no!Assignee;
-    int numLix = 0;
+    int numLix = 0; // numLix == 0 if and only if best.empty.
     Tooltip.IdSet goodTooltips; // Suggestions for how to assign to hindmost.
 }
 
@@ -74,42 +76,21 @@ UnderCursor findUnderCursor(
     if (! game.isMouseOnLand) {
         return UnderCursor();
     }
-    assert (game.localTribe);
-    UnderCursor ret;
-
-    assert (game.map.zoom > 0);
-    immutable float cursorThicknessOnLand = 12 / game.map.zoom;
-    immutable float mmldX = cursorThicknessOnLand +  2; // + lix thickness
-    immutable float mmldU = cursorThicknessOnLand + 15; // + lix height
-    immutable float mmldD = cursorThicknessOnLand +  0;
-    immutable mol = game.map.mouseOnLand;
-
-    foreach (id, ConstLix lixxie; game.localTribe.lixvec.enumerate!int) {
-        immutable int distX = game.map.topology.distanceX(lixxie.ex, mol.x);
-        immutable int distY = game.map.topology.distanceY(lixxie.ey, mol.y);
-        if (   distX <= mmldX && distX >= -mmldX
-            && distY <= mmldD && distY >= -mmldU
-            && lixxie.cursorShouldOpenOverMe
-        ) {
-            ++ret.numLix;
-            Assignee a = game.generateAssignee(
-                chosenInPanel, lixxie, id, mol, mmldD - mmldU);
-            if (ret.best.empty) {
-                ret.best = a;
-            }
-            else if (a.isBetterThan(ret.best.front)) {
-                ret.goodTooltips |= tooltipsFor1Surpassing2(a, ret.best.front);
-                ret.best = a;
-            }
-            else {
-                ret.goodTooltips |= tooltipsFor1Surpassing2(ret.best.front, a);
-            }
-        }
-        // end if under cursor
+    auto ret = findUnderCursor(game.map, game.localTribe, chosenInPanel);
+    if (! game._effect.weControlAllStyles) {
+        return ret;
     }
-    // end loop through all lixes
-    if (! ret.best.empty) {
-        ret.goodTooltips |= tooltipsForTheBest(ret.best.front, chosenInPanel);
+    // When observing multiplayer or playtesting n-player maps alone:
+    foreach (sty, tri; game.nurse.stateOnlyPrivatelyForGame.tribes) {
+        if (sty == game.localStyle) {
+            continue; // We've already searched this tribe above.
+        }
+        auto forSty = findUnderCursor(game.map, tri, chosenInPanel);
+        if (forSty.numLix > 0 && (ret.best.empty
+            || forSty.best.front.isBetterThan(ret.best.front))
+        ) {
+            ret = forSty;
+        }
     }
     return ret;
 }
@@ -118,8 +99,53 @@ UnderCursor findUnderCursor(
 
 private:
 
+UnderCursor findUnderCursor(
+    const(MapAndCamera) gameMap,
+    const(Tribe) fromTribe,
+    in Ac chosenInPanel,
+) {
+    UnderCursor ret;
+    assert (gameMap.zoom > 0);
+    immutable float cursorThicknessOnLand = 12 / gameMap.zoom;
+    immutable float mmldX = cursorThicknessOnLand +  2; // + lix thickness
+    immutable float mmldU = cursorThicknessOnLand + 15; // + lix height
+    immutable float mmldD = cursorThicknessOnLand +  0;
+    immutable mol = gameMap.mouseOnLand;
+
+    foreach (id, ConstLix lixxie; fromTribe.lixvec.enumerate!int) {
+        if (! lixxie.cursorShouldOpenOverMe)
+            continue;
+        immutable int distX = gameMap.topology.distanceX(lixxie.ex, mol.x);
+        if (distX < -mmldX || distX > mmldX)
+            continue;
+        immutable int distY = gameMap.topology.distanceY(lixxie.ey, mol.y);
+        if (distY < -mmldU || distY > mmldD)
+            continue;
+
+        // We found a lix under the cursor.
+        ++ret.numLix;
+        Assignee a = generateAssignee(
+            gameMap, chosenInPanel, lixxie, id, mol, mmldD - mmldU);
+        if (ret.best.empty) {
+            ret.best = a;
+        }
+        else if (a.isBetterThan(ret.best.front)) {
+            ret.goodTooltips |= tooltipsFor1Surpassing2(a, ret.best.front);
+            ret.best = a;
+        }
+        else {
+            ret.goodTooltips |= tooltipsFor1Surpassing2(ret.best.front, a);
+        }
+    }
+    // end loop through all lixes
+    if (! ret.best.empty) {
+        ret.goodTooltips |= tooltipsForTheBest(ret.best.front, chosenInPanel);
+    }
+    return ret;
+}
+
 Assignee generateAssignee(
-    Game game,
+    const(MapAndCamera) onMap,
     in Ac chosenInPanel,
     in ConstLix lixxie,
     in int id,
@@ -130,7 +156,7 @@ Assignee generateAssignee(
     Assignee ret;
     ret.lixxie = lixxie;
     ret.id = id;
-    ret.distanceToCursor = game.map.topology.hypotSquared(
+    ret.distanceToCursor = onMap.topology.hypotSquared(
         mouseOnLand.x, mouseOnLand.y, lixxie.ex,
                                       lixxie.ey + roundInt(dMinusU/2));
     ret.priority = lixxie.priorityForNewAc(chosenInPanel);

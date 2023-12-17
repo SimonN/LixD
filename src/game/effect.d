@@ -101,13 +101,34 @@ private:
     int _overtimeInPhyusToAnnounce; // keep at 0 if nothing to announce
 
 public:
-    Style localTribe;
+    Style _localStyle; // Always meaningful for Game, even if Effects don't ...
+    bool _weControlAllStyles; // ... care if weControlAllStyles is true.
 
-    this(Style st)
+    this(in Style lsty, in bool controlAll)
     {
-        localTribe = st;
+        _localStyle = lsty;
+        _weControlAllStyles = controlAll;
         _alreadyPlayed = new RedBlackTree!Effect;
         _playedWhenLastQuicksaved = _alreadyPlayed.dup;
+    }
+
+    Style localStyle() const pure nothrow @safe @nogc
+    {
+        return _localStyle;
+    }
+
+    bool weControlAllStyles() const pure nothrow @safe @nogc
+    {
+        return _weControlAllStyles;
+    }
+
+    void changeLocalStyleToAlsoControlled(in Style s) pure nothrow @safe @nogc
+    in {
+        assert (weControlAllStyles || s == _localStyle,
+            "Can't change to an uncontrolled style.");
+    }
+    do {
+        _localStyle = s;
     }
 
     bool nothingGoingOn() const
@@ -144,7 +165,7 @@ public:
 
     void addSoundGeneral(in Phyu upd, in Sound sound)
     {
-        addSound(upd, Passport(localTribe, 0), sound);
+        addSound(upd, Passport(_localStyle, 0), sound);
     }
 
     void addSound(in Phyu upd, in Passport pa, in Sound sound)
@@ -205,7 +226,7 @@ public:
 
     void announceOvertime(in Phyu whenOvertimeStarted, in int overtimeInPhyus)
     {
-        Effect e = Effect(whenOvertimeStarted, Passport(localTribe, 0),
+        Effect e = Effect(whenOvertimeStarted, Passport(_localStyle, 0),
             Sound.OVERTIME, Loudness.loud);
         if (e !in _alreadyPlayed) {
             _alreadyPlayed.insert(e);
@@ -250,7 +271,7 @@ private:
 
     bool isLocal(in Passport pa) const pure nothrow @nogc
     {
-        return pa.style == localTribe;
+        return _weControlAllStyles || pa.style == _localStyle;
     }
 
     private void addDigHammerOrPickaxe(bool axe)(

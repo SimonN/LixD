@@ -67,7 +67,11 @@ private:
                 && (_previous.loadedReplay.empty
                     || _previous.loadedReplay.front != _theReplay);
         }
-        return opt.replayAutoMulti.value;
+        return false;
+        /*
+         * This is the singleplayer replay-saving functionality.
+         * Don't return opt.replayAutoMulti.value.
+         */
     }
 
     void maybeAutoSave() const

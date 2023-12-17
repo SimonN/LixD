@@ -26,9 +26,8 @@ package void
 calcPassive(
     Game game,
     in UnderCursor underCursor,
-) { with (game)
-{
-    map.calcZoomAndScrolling();
+) {
+    game.map.calcZoomAndScrolling();
     game.activateOrDeactivateTweaker(underCursor.best.empty
         ? no!Passport : some(underCursor.best.front.passport));
 
@@ -38,13 +37,17 @@ calcPassive(
         : forcingLeft ? 1
         : forcingRight ? 2 : mouseCursor.xf;
 
-    if (map.suggestHoldScrollingTooltip)
+    if (game.map.suggestHoldScrollingTooltip)
         game._panelExplainer.suggestTooltip(Tooltip.ID.holdToScroll);
 
-    if (pan.highlightGoalsExecute) {
-        _altickHighlightGoalsUntil = timerTicks + ticksPerSecond * 3 / 2;
+    if (game.pan.highlightGoalsExecute) {
+        game._altickHighlightGoalsUntil = timerTicks + ticksPerSecond * 3 / 2;
     }
-}}
+    if (! underCursor.best.empty) {
+        game._effect.changeLocalStyleToAlsoControlled(
+            underCursor.best.front.lixxie.style);
+    }
+}
 
 private:
 

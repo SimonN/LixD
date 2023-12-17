@@ -15,7 +15,8 @@ enum View {
 
     battle, // many players compete against each other
     observeBattle, // observe via network others battling each other
-    replayBattle, // one player watches the replay of a a multiplayer battle
+    solotestBattle, // one player watches the replay of a a multiplayer battle
+                    // or one player playtests all sides of a multiplayer map
 }
 
 // netClient may be null.
@@ -28,7 +29,7 @@ View createView(
             ? View.observeBattle : View.battle;
     }
     else {
-        return numPlayers >= 2 ? View.replayBattle : View.solveAlone;
+        return numPlayers >= 2 ? View.solotestBattle : View.solveAlone;
     }
 }
 
@@ -40,7 +41,8 @@ pure nothrow @safe @nogc:
 
 bool canInterruptReplays(in View v)
 {
-    return v == View.solveAlone || v == View.solveTogether;
+    return v == View.solveAlone || v == View.solveTogether
+        || v == View.solotestBattle;
 }
 
 bool canAssignSkills(in View v)
@@ -55,24 +57,31 @@ bool startZoomedOutToSeeEntireMap(in View v)
 
 bool showReplaySign(in View v)
 {
-    return v.canInterruptReplays || v == View.replayBattle;
+    return v.canInterruptReplays;
 }
 
 bool showScoreGraph(in View v)
 {
     return v == View.battle || v == View.observeBattle
-        || v == View.replayBattle;
+        || v == View.solotestBattle;
 }
 
 bool showTapeRecorderButtons(in View v)
 {
     return v == View.solveAlone || v == View.solveTogether
-        || v == View.replayBattle;
+        || v == View.solotestBattle;
 }
 
 bool showSkillsInPanelAfterNuking(in View v)
 {
-    return v.canInterruptReplays;
+    return v == View.solveAlone || v == View.solveTogether
+        || v == View.observeSolving;
+}
+
+bool askBeforeExitingGame(in View v)
+{
+    return v == View.battle || v == View.observeBattle
+        || v == View.observeSolving || v == View.solveTogether;
 }
 
 bool printResultToConsole(in View v)

@@ -30,7 +30,7 @@ do { with (game)
     if (game.view.canInterruptReplays) {
         game.nurse.cutGlobalFutureFromReplay();
     }
-    auto data = game.newPlyForNextPhyu();
+    auto data = game.newPlyForNextPhyu(localStyle);
     data.isNuke = true;
     game.includeOurNew(data);
     assert (_effect);
@@ -105,12 +105,34 @@ bool canAssignTo(Game game, in Optional!Assignee potAss)
         && ! game.localTribe.hasNuked;
 }
 
-Ply newPlyForNextPhyu(Game game)
+Ply newPlyForNextPhyu(Game game, in Style styleOfAssignee)
 {
-    Ply data;
-    data.by = game._netClient ? game._netClient.ourPlNr : PlNr(0);
-    data.when = game.nurse.now + 1;
-    return data;
+    Ply ret;
+    ret.by = game.bestPlNrForAssignmentTo(styleOfAssignee);
+    ret.when = game.nurse.now + 1;
+    return ret;
+}
+
+PlNr bestPlNrForAssignmentTo(Game game, in Style styleOfAssignee)
+{
+    if (game._netClient !is null) {
+        return game._netClient.ourPlNr; // Battling yourself.
+    }
+    if (styleOfAssignee == Style.garden) {
+        return PlNr(0); // Conventional player number for singleplayer.
+    }
+    assert (game._effect.weControlAllStyles);
+    foreach (plNr, prof; game.replay.players) {
+        if (prof.style == styleOfAssignee && prof.name == opt.userName) {
+            return plNr;
+        }
+    }
+    foreach (plNr, prof; game.replay.players) {
+        if (prof.style == styleOfAssignee) {
+            return plNr; // We're editing a replay for an opponent.
+        }
+    }
+    assert (false, "No suitable PlNr in the replays.");
 }
 
 bool alwaysForceWhenAssigning(in Ac ac) pure nothrow @safe @nogc
@@ -131,7 +153,7 @@ in {
 }
 do { with (game)
 {
-    Ply i = game.newPlyForNextPhyu();
+    Ply i = game.newPlyForNextPhyu(assignee.lixxie.style);
     i.skill = game.pan.chosenSkill;
     i.toWhichLix = assignee.id;
     i.isDirectionallyForced

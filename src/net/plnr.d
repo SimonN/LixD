@@ -15,6 +15,15 @@ struct PlNr {
     alias n this;
 }
 
+PlNr toPlNr(in int x) pure nothrow @safe @nogc
+in {
+    assert (x >= 0);
+    assert (x <= PlNr.maxExclusive);
+}
+do {
+    return PlNr(x & 0xFF);
+}
+
 struct Room {
     enum int len = 1;
     enum int maxExclusive = 255;
