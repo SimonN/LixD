@@ -34,11 +34,11 @@ implGameCalc(Game game) { with (game)
         }
     }
     else {
-        auto potAss = game.findAndDescribePotentialAssignee();
-        game.calcPassive(potAss.oc.passport.toOptional);
+        auto underCursor = game.findUnderCursor(game.pan.chosenSkill);
+        game.calcPassive(underCursor);
         if (game.view.canAssignSkills) {
             game.calcNukeButton();
-            game.calcClicksIntoMap(potAss);
+            game.calcClicksIntoMap(underCursor.best);
         }
         game.dispatchTweaks(); // Not yet impl'ed: feed into net
         game.noninputCalc();

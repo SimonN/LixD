@@ -16,25 +16,25 @@ import hardware.keyenum;
 
 static import basics.globals;
 
-bool keyTapped  (int alkey) { return _once[alkey];     }
-bool keyHeld    (int alkey) { return _hold[alkey] > 0; }
-bool keyReleased(int alkey) { return _rlsd[alkey];     }
+bool keyTapped(int alkey) nothrow @safe @nogc { return _once[alkey]; }
+bool keyHeld(int alkey) nothrow @safe @nogc { return _hold[alkey] > 0; }
+bool keyReleased(int alkey) nothrow @safe @nogc { return _rlsd[alkey]; }
 
 // For moving around terrain in the editor, and similar things that are
 // meaningful if executed many times in a row. Move once, wait for repetitions.
-bool keyTappedAllowingRepeats(int alkey)
+bool keyTappedAllowingRepeats(int alkey) nothrow @safe @nogc
 {
     enum repeatSpeed = basics.globals.ticksForDoubleClick * 3 / 5;
     return _once[alkey]
         || _hold[alkey] > repeatSpeed;
 }
 
-@property bool backspace()  { return _backspace;   } // detects hold-repeats
-@property bool ctrlHeld ()  { return _ctrl;        }
-@property bool shiftHeld()  { return _shift;       }
-@property bool altHeld  ()  { return _alt;         }
+bool backspace() nothrow @safe @nogc { return _backspace; }
+bool ctrlHeld() nothrow @safe @nogc { return _ctrl; }
+bool shiftHeld() nothrow @safe @nogc { return _shift; }
+bool altHeld() nothrow @safe @nogc { return _alt; }
 
-@property int scancodeTapped() // For the hotkey-mapping button
+int scancodeTapped() // For the hotkey-mapping button
 {
     foreach (int scancode, bool tapped; _once)
         if (tapped)

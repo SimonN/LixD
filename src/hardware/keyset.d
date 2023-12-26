@@ -44,12 +44,14 @@ public:
         return _keys.length & 0x7FFF_FFFFu;
     }
 
-    bool keyTapped()   const { return _keys.any!(k => k.keyTapped);   }
-    bool keyHeld()     const { return _keys.any!(k => k.keyHeld);     }
-    bool keyReleased() const { return _keys.any!(k => k.keyReleased); }
-    bool keyTappedAllowingRepeats() const
-    {
-        return _keys.any!(k => k.keyTappedAllowingRepeats);
+    const nothrow @safe @nogc {
+        bool keyTapped() { return _keys.any!(k => k.keyTapped); }
+        bool keyHeld() { return _keys.any!(k => k.keyHeld); }
+        bool keyReleased() { return _keys.any!(k => k.keyReleased); }
+        bool keyTappedAllowingRepeats()
+        {
+            return _keys.any!(k => k.keyTappedAllowingRepeats);
+        }
     }
 
     void remove(int keyToRm)

@@ -12,7 +12,6 @@ import game.core.assignee;
 import game.core.game;
 import hardware.sound;
 import hardware.mouse;
-import hardware.semantic;
 import net.repdata;
 import physics.lixxie.fields;
 
@@ -101,6 +100,7 @@ bool canAssignTo(Game game, in Optional!Assignee potAss)
     return game.view.canAssignSkills
         && game.pan.chosenSkill != Ac.nothing
         && ! potAss.empty
+        && potAss.front.facingOkay
         && potAss.front.priority >= 2
         && ! game.localTribe.hasNuked;
 }

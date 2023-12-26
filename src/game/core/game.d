@@ -227,10 +227,7 @@ package:
     {
         return view.canInterruptReplays
             && nurse.hasFuturePlies
-            && isMouseOnLand
-            && (_tweaker.shown
-                ? opt.airClicksCutWhenTweakerShown.value
-                : opt.airClicksCutWhenTweakerHidden.value);
+            && isMouseOnLand;
     }
 
     bool multiplayer() const

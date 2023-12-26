@@ -141,9 +141,28 @@ void drawAllLixes(Game game)
         }
         drawTribe(localTribe);
     }
-    foreach (hi; game.findAndDescribePotentialAssignee()) {
-        hi.lixxie.drawAgainHighlit();
+    const underCursor = game.findUnderCursor(game.pan.chosenSkill);
+    game.describeInPanel(underCursor);
+    // We'll show these tooltips in _panelExplainer. Better semantically is
+    // _mapClickExplainer, but that will be big and glaring. Good or annoying?
+    game._panelExplainer.suggestTooltip(underCursor.goodTooltips);
+    if (! underCursor.best.empty && underCursor.best.front.facingOkay) {
+        underCursor.best.front.lixxie.drawAgainHighlit();
     }
+}
+
+void describeInPanel(Game game, in UnderCursor underCursor)
+{
+    if (underCursor.numLix == 0) {
+        game.pan.dontDescribeTarget();
+        return;
+    }
+    assert (! underCursor.best.empty);
+    assert (underCursor.best.front.lixxie !is null);
+    game.pan.describeTarget(
+        underCursor.best.front.lixxie,
+        underCursor.best.front.passport,
+        underCursor.numLix);
 }
 
 void showSpawnIntervalOnHatches(Game game)

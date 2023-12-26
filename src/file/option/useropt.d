@@ -93,10 +93,11 @@ public:
     }
 
     static if (is (T == KeySet)) {
-        bool keyTapped() const { return _value.keyTapped; }
-        bool keyHeld() const { return _value.keyHeld; }
-        bool keyReleased() const { return _value.keyReleased; }
-        bool keyTappedAllowingRepeats() const
+        const nothrow @safe @nogc:
+        bool keyTapped() { return _value.keyTapped; }
+        bool keyHeld() { return _value.keyHeld; }
+        bool keyReleased() { return _value.keyReleased; }
+        bool keyTappedAllowingRepeats()
         {
             return _value.keyTappedAllowingRepeats;
         }

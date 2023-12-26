@@ -12,6 +12,7 @@ import optional;
 
 import basics.alleg5;
 import basics.globals;
+import game.core.assignee;
 import game.core.game;
 import game.panel.tooltip;
 import graphic.camera.mapncam;
@@ -24,16 +25,21 @@ import physics.lixxie.fields;
 package void
 calcPassive(
     Game game,
-    in Optional!Passport lixToHighlightInTweaker
+    in UnderCursor underCursor,
 ) { with (game)
 {
     map.calcZoomAndScrolling();
-    game.activateOrDeactivateTweaker(lixToHighlightInTweaker);
+    game.activateOrDeactivateTweaker(underCursor.best.empty
+        ? no!Passport : some(underCursor.best.front.passport));
+
+    mouseCursor.yf = underCursor.numLix >= 1;
+    mouseCursor.xf
+        = game.map.isHoldScrolling ? 3
+        : forcingLeft ? 1
+        : forcingRight ? 2 : mouseCursor.xf;
 
     if (map.suggestHoldScrollingTooltip)
         game._panelExplainer.suggestTooltip(Tooltip.ID.holdToScroll);
-    if (map.isHoldScrolling)
-        mouseCursor.xf = 3;
 
     if (pan.highlightGoalsExecute) {
         _altickHighlightGoalsUntil = timerTicks + ticksPerSecond * 3 / 2;

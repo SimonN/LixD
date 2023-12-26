@@ -55,6 +55,16 @@ public:
         _numLixUnderCursor = numLixUnderCursor;
     }
 
+    void dontDescribeTarget()
+    {
+        if (_highlitLix is null && _numLixUnderCursor == 0) {
+            return;
+        }
+        _highlitLix = null;
+        _highlitPassport = Passport();
+        _numLixUnderCursor = 0;
+    }
+
     void dontShowSpawnInterval()
     {
         if (! _showSpawnInterval)

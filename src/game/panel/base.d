@@ -114,6 +114,7 @@ public:
         _skillbar.chooseLeftmostSkill();
     }
 
+    void dontDescribeTarget() { stats.dontDescribeTarget(); }
     void describeTarget(in Lixxie l, in Passport p, int numUnderCursor)
     {
         stats.describeTarget(l, p, numUnderCursor);

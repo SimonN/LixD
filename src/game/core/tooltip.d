@@ -51,10 +51,10 @@ public:
         reqDraw();
     }
 
-    void suggestTooltip(in Tooltip.ID id)
+    void suggestTooltip(in Tooltip.IdSet set)
     {
-        _wantedByCaller.idset |= id;
-        if (id & _alreadyRendered.idset) {
+        _wantedByCaller.idset |= set;
+        if ((set & _alreadyRendered.idset) == set) {
             return;
         }
         reqDraw();
