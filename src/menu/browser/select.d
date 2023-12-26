@@ -21,7 +21,6 @@ import file.language;
 import file.log;
 import gui;
 import gui.picker;
-import hardware.semantic; // up/down change of highlighted file
 import hardware.sound;
 import menu.browser.highli;
 
@@ -142,11 +141,19 @@ protected:
     }
 
 private:
-    @property void highlightIfInCurrentDir(Filename fn)
+    void highlightIfInCurrentDir(Filename fn)
     {
         if (fn && fn.dirRootless == currentDir.dirRootless)
             highlight(fn);
         else
             highlightNone();
+    }
+
+    static private int keyMenuMoveByTotal()
+    {
+        return opt.keyMenuUpBy1  .keyTappedAllowingRepeats * -1
+            +  opt.keyMenuUpBy5  .keyTappedAllowingRepeats * -5
+            +  opt.keyMenuDownBy1.keyTappedAllowingRepeats * 1
+            +  opt.keyMenuDownBy5.keyTappedAllowingRepeats * 5;
     }
 }
