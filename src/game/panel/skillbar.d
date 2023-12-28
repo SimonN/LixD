@@ -82,6 +82,9 @@ public:
 protected:
     override void calcSelf()
     {
+        if (! _view.canAssignSkills) {
+            return;
+        }
         foreach (candidate; _skills) {
             if (candidate.on || ! candidate.execute) {
                 continue;
@@ -100,14 +103,13 @@ protected:
 private:
     /*
      * Soft-choose the skill, maybe because we've rewound and now have it
-     * available again. Mode.cutOnly blocks all soft-choosing; our caller
-     * is responsible to deactivate Mode.cutOnly if he wants to override that.
+     * available again.
      */
     void choose(in Ac wanted) nothrow @safe
     {
         _previouslyOn = wanted;
         foreach (b; _skills) {
-            b.on = b.skill == wanted && b.available;
+            b.on = b.skill == wanted && b.available && _view.canAssignSkills;
         }
     }
 }
