@@ -32,8 +32,7 @@
         "allegro_primitives",
         "allegro_ttf",
     ],
-    "lflags-windows-x86-dmd": ["-L/subsystem:windows"],
-    "lflags-windows-x86_64-dmd": [
+    "lflags-windows-dmd": [
         "-subsystem:windows",
         "-entry:mainCRTStartup"
     ],
