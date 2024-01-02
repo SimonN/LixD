@@ -39,40 +39,15 @@ During the installation, when asked:
 
 * Add the programs to PATH. You want to call them from the command line later.
 * You don't need to add anything to the start menu.
-* You don't need 64-bit support (32-bit building is easier to set up).
+* You don't need 64-bit support.
 * You don't need D1 support.
-
-If you would like, you may test the D environment. See appendix 1 at the
-bottom of this file for how to write and compile a hello world program.
 
 DMD already ships with dub, the D package manager.
 
 
 
-Clone the Lix repo and test dub
--------------------------------
-
-If you don't have git, download the source as a zip archive here, and unzip:
-
-    https://github.com/SimonN/LixD/archive/master.zip
-
-If you have git, you can instead clone the repository:
-
-    git clone https://github.com/SimonN/LixD.git
-
-Open a command line shell, navigate into the Lix root directory (where the
-file dub.json sits) and run:
-
-    dub
-
-The package manager will download and set up D bindings for libraries I use.
-It should finish the compilation, but error out during linking, because we
-haven't installed the Allegro libraries. We will do that now.
-
-
-
-Install Allegro 5
------------------
+Install Allegro 5 and enet
+--------------------------
 
 Locate your D installation directory, and look for the windows/ subdir.
 It might be in one of these paths:
@@ -81,70 +56,46 @@ It might be in one of these paths:
     C:/"Program Files"/D/dmd2/windows/
     ~/.wine/drive_c/D/dmd2/windows/ (if you're cross-compiling on Linux)
 
-This also has subdirectories bin/ and lib/. If you like, make backups of these
-directories, so you can retry if something goes wrong.
+Your D installation directory has subdirectories bin/ and lib32mscoff/.
+If you like, make backups of these subdirectories, so you can retry if
+something goes wrong.
 
-To install Allegro 5, you have a choice between two methods.
+I have prepared the DLLs for Allegro 5 and enet in a single archive. Download:
 
-Method 1:
-    Download the Allegro DLLs and *.lib files from my website:
+    https://www.lixgame.com/dow/lix-dlls-libs-dmd32.zip
 
-        https://www.lixgame.com/dow/lix-dlls-libs-dmd32.zip
-
-    Extract this into your D installation's windows/ directory. This way, the
-    DLLs should automatically land in windows/bin/, and the *.lib files should
-    land in windows/lib/.
-
-Method 2:
-    Build Allegro 5.2 DLLs yourself, then follow the instructions by SiegeLord
-    on how to generate your .lib files from your own DLLs:
-
-        https://github.com/SiegeLord/DAllegro5#windows-notes
-
-    Summary: Find implib.exe, then, for each Allegro DLL xyz, call:
-
-        implib /s allegro_xyz.lib allegro_xyz-5.2.dll
-
-    You can automate these calls with this batch file:
-    https://github.com/SiegeLord/DAllegro5/blob/master/create_import_libs.bat
-
-    Put the resulting .lib files in the D installation's lib/ dir. Remove the
-    version number, e.g., `-5.2', from Allegro's .lib files in lib/. Do not
-    remove the version number from the DLL files, and keep those in bin/.
-
-    If it's not clear, ask me. See top of file for contact details.
+Extract this into your D installation's windows/ directory, preserving the
+archive's directory structure. This way, the DLLs should automatically land
+in windows/bin/, and the *.lib files should land in windows/lib32mscoff/.
 
 
 
-Install enet
-------------
+Get the Lix source
+------------------
 
-Method 1:
-    If you extracted the `alleg-5.2-dlls-libs.zip' to which I pointed in the
-    earlier section on installing Allegro, Option 1, you already have the
-    enet DLL in the correct place, and don't have to do anything here.
+If you have git:
 
-Method 2:
-    Find an enet DLL of version 1.3.x or build one yourself from enet's source.
-    Put enet.dll in the D installation directory's `windows/bin/'.
+    git clone https://github.com/SimonN/LixD.git
 
-In a pinch, Lix singleplayer works without the enet DLL, but Lix will
-terminate with an error once you try to connect to a networking server.
+Otherwise, download the source as a zip archive here:
+
+    https://github.com/SimonN/LixD/archive/master.zip
+
+Extract to a directory of your choice. You should have write permissions there.
 
 
 
 Compile Lix
 -----------
 
-Enter the Lix directory, and run:
+Open a command line window. Navigate to the Lix directory, then run:
 
     dub --compiler=dmd --arch=x86
 
 It should build the game, finding and linking against the Allegro 5 libraries
 in the progress.
 
-If the game starts and runs without errors, compile a release build
-for performance:
+If Lix starts and runs well, compile a release build for better performance:
 
     dub build -b release --compiler=dmd --arch=x86
 
@@ -157,15 +108,35 @@ Add music
 ---------
 
 Lix has music, but the music is not in version control. I encourage you to
-add the music for a more complete experience. To get the music, download:
+add the music for the complete experience. Download:
 
     https://www.lixgame.com/dow/lix-music.zip
 
-Extract this into Lix's directory, you'll get a subdirectory `./music/'.
+Extract this into Lix's directory, you'll get a subdirectory ./music/.
 
 
 
 Appendix 1
+----------
+
+You may choose the D compiler LDC instead of DMD. LDC takes more time to build
+Lix, but the resulting Lix executable will run with better performance.
+
+Download and install the LDC multilib release.
+Then download these library files for Allegro and enet:
+
+    https://www.lixgame.com/dow/lix-dlls-libs-ldc32.zip
+
+Extract this archive into your LDC installation directory (multilib),
+thus adding its files into the existing directories bin/ and lib32/.
+
+To build Lix, run:
+
+    dub build -b release --compiler=ldc2 --arch=x86
+
+
+
+Appendix 2
 ----------
 
 To test whether the D compiler is set up, copy this into a file hello.d:
@@ -177,25 +148,14 @@ To test whether the D compiler is set up, copy this into a file hello.d:
         writeln("Hello World!");
     }
 
-Open a command line shell, and run:
+Open a command line shell. Depending on which D compiler you want to test
+(DMD or LDC), run one of these two commands:
 
     dmd hello.d
+    ldc2 hello.d
 
 It should generate an executable file, hello.exe, and an intermediate object
-file, which you can safely delete.
-
-
-
-Appendix 2
-----------
-
-If you want to use the D compiler LDC instead of DMD for building Windows
-32-bit Lix, download these library files for Allegro and enet instead:
-
-    https://www.lixgame.com/dow/lix-dlls-libs-ldc32.zip
-
-Extract this archive into your LDC installation directory, thus adding its
-files into the existing directories `bin` and `lib32`.
+file, hello.o, which you can safely delete.
 
 
 
