@@ -1,4 +1,4 @@
-$BUILT 2022-04-24 15:30:09
+$BUILT 2023-02-19 14:34:44
 $AUTHOR Flopsy
 $ENGLISH Something in the Way 2P
 
@@ -30,8 +30,11 @@ $ENGLISH Something in the Way 2P
 :geoo/construction/Hatch.H: 1504 0
 :geoo/construction/Hatch.H: 592 0
 
-:geoo/construction/Goal2.G: 960 96
 :geoo/construction/Goal2.G: 48 96
+:geoo/construction/Goal2.G: 960 96
+
+:raymanni/lab/launcher_left.T: 1792 0
+:raymanni/lab/launcher_left.T: 880 0
 
 :geoo/construction/concrete/032v: 1792 160
 :geoo/construction/concrete/032v: 1792 96
@@ -228,3 +231,9 @@ $ENGLISH Something in the Way 2P
 :geoo/construction/concrete/016d: 16 16
 :geoo/construction/concrete/016b: 144 176
 :geoo/construction/concrete/016b: 1056 176
+:geoo/steel/32x64o.S: 880 32
+:geoo/steel/32x64o.S: 880 96
+:geoo/steel/32x64o.S: 880 160
+:geoo/steel/32x64o.S: 1792 32
+:geoo/steel/32x64o.S: 1792 96
+:geoo/steel/32x64o.S: 1792 160

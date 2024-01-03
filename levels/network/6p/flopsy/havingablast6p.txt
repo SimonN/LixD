@@ -1,9 +1,10 @@
-$BUILT 2021-02-26 15:50:03
+$BUILT 2023-03-04 13:44:40
 $AUTHOR Flopsy
 $ENGLISH Having A Blast 6P
-$TAG difficult
 
 #INTENDED_NUMBER_OF_PLAYERS 6
+$TAG difficult
+
 #SIZE_X 720
 #SIZE_Y 1536
 #TORUS_X 0
@@ -11,7 +12,7 @@ $TAG difficult
 
 #SECONDS 120
 #INITIAL 50
-#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL 31
 
 #WALKER 50
 #RUNNER 10
@@ -19,6 +20,7 @@ $TAG difficult
 #FLOATER 10
 #EXPLODER2 30
 #BLOCKER 2
+#BUILDER 1
 #PLATFORMER 50
 #JUMPER 50
 #BATTER 30
@@ -450,3 +452,15 @@ $TAG difficult
 :amanda/steel/steel16x16.S: 216 1360
 :raymanni/lab/block_6: 240 1472
 :raymanni/lab/block_6: 272 1472
+:geoo/construction/platformbrick_single: 256 568 d
+:geoo/construction/platformbrick_single: 184 568 d
+:geoo/construction/platformbrick_single: 184 824 d
+:geoo/construction/platformbrick_single: 256 824 d
+:geoo/construction/platformbrick_single: 256 1080 d
+:geoo/construction/platformbrick_single: 184 1080 d
+:geoo/construction/platformbrick_single: 184 1336 d
+:geoo/construction/platformbrick_single: 256 1336 d
+:geoo/construction/platformbrick_single: 256 56 d
+:geoo/construction/platformbrick_single: 184 56 d
+:geoo/construction/platformbrick_single: 184 312 d
+:geoo/construction/platformbrick_single: 256 312 d

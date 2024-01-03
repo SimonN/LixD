@@ -1,0 +1,213 @@
+$BUILT 2022-08-06 19:17:04
+$AUTHOR Flopsy
+$ENGLISH A Pessimist Is Never Disappointed 6P
+
+#INTENDED_NUMBER_OF_PLAYERS 6
+#SIZE_X 1728
+#SIZE_Y 480
+#TORUS_X 1
+#TORUS_Y 1
+
+#SECONDS 90
+#INITIAL 80
+#SPAWN_INTERVAL 31
+
+#WALKER 20
+#RUNNER 5
+#CLIMBER 5
+#EXPLODER2 1
+#BUILDER 30
+#PLATFORMER 10
+#BASHER 15
+#MINER 15
+#JUMPER 10
+#BATTER 20
+
+:matt/earth/Hatch.H: 52 460 r
+:matt/earth/Hatch.H: 628 460 r
+:matt/earth/Hatch.H: 1488 224 r
+:matt/earth/Hatch.H: 336 220 r
+:matt/earth/Hatch.H: 1204 460 r
+:matt/earth/Hatch.H: 912 224 r
+
+:matt/earth/Goal.G: 448 144
+:matt/earth/Goal.G: 1024 144
+:matt/earth/Goal.G: 160 384
+:matt/earth/Goal.G: 736 384
+:matt/earth/Goal.G: 1600 144
+:matt/earth/Goal.G: 1312 384
+
+:matt/earth/00: 78 52
+:matt/earth/01: 70 104
+:matt/earth/02: 134 58 rrr
+:matt/earth/11: 0 160
+:matt/earth/03: 0 200
+:matt/earth/30: 142 168
+:matt/earth/02: 110 122
+:matt/earth/26: 238 128
+:matt/earth/30: 190 120
+:matt/earth/01: 216 80
+:matt/earth/20: 440 208 frr
+:matt/earth/16: 344 120
+:geoo/steel/32x16o.S: 412 120
+:geoo/steel/32x16o.S: 444 120
+:geoo/steel/32x16o.S: 476 120
+:geoo/steel/16x16o.S: 472 210
+:matt/earth/19: 308 478 rrr
+:matt/earth/01: 296 470
+:matt/earth/26: 526 56 rrr
+:matt/earth/25: 530 24 rrr
+:matt/earth/00: 456 0
+:matt/earth/09: 408 34
+:matt/earth/12: 378 18
+:matt/earth/03: 374 38
+:matt/earth/09: 372 40
+:matt/earth/07: 116 44
+:matt/earth/06: 76 46
+:matt/earth/09: 148 66
+:matt/earth/09: 196 72
+:matt/earth/00: 654 52
+:matt/earth/01: 646 104
+:matt/earth/02: 710 58 rrr
+:matt/earth/11: 576 160
+:matt/earth/03: 576 200
+:matt/earth/30: 718 168
+:matt/earth/02: 686 122
+:matt/earth/26: 814 128
+:matt/earth/30: 766 120
+:matt/earth/01: 792 80
+:matt/earth/20: 1016 208 frr
+:matt/earth/16: 920 120
+:geoo/steel/32x16o.S: 988 120
+:geoo/steel/32x16o.S: 1020 120
+:geoo/steel/32x16o.S: 1052 120
+:geoo/steel/16x16o.S: 1048 210
+:matt/earth/19: 884 478 rrr
+:matt/earth/01: 872 470
+:matt/earth/26: 1102 56 rrr
+:matt/earth/25: 1106 24 rrr
+:matt/earth/00: 1032 0
+:matt/earth/09: 984 34
+:matt/earth/12: 954 18
+:matt/earth/03: 950 38
+:matt/earth/09: 948 40
+:matt/earth/07: 692 44
+:matt/earth/06: 652 46
+:matt/earth/09: 724 66
+:matt/earth/09: 772 72
+:matt/earth/00: 942 292
+:matt/earth/01: 934 344
+:matt/earth/02: 998 298 rrr
+:matt/earth/11: 864 400
+:matt/earth/03: 864 440
+:matt/earth/30: 1006 408
+:matt/earth/02: 974 362
+:matt/earth/26: 1102 368
+:matt/earth/30: 1054 360
+:matt/earth/01: 1080 320
+:matt/earth/20: 152 448 frr
+:matt/earth/16: 56 360
+:geoo/steel/32x16o.S: 124 360
+:geoo/steel/32x16o.S: 156 360
+:geoo/steel/32x16o.S: 188 360
+:geoo/steel/16x16o.S: 184 450
+:matt/earth/19: 20 238 rrr
+:matt/earth/01: 8 230
+:matt/earth/26: 238 296 rrr
+:matt/earth/25: 242 264 rrr
+:matt/earth/00: 168 240
+:matt/earth/09: 120 274
+:matt/earth/12: 90 258
+:matt/earth/03: 86 278
+:matt/earth/09: 84 280
+:matt/earth/07: 980 284
+:matt/earth/06: 940 286
+:matt/earth/09: 1012 306
+:matt/earth/09: 1060 312
+:matt/earth/00: 366 292
+:matt/earth/01: 358 344
+:matt/earth/02: 422 298 rrr
+:matt/earth/11: 288 400
+:matt/earth/03: 288 440
+:matt/earth/30: 430 408
+:matt/earth/02: 398 362
+:matt/earth/26: 526 368
+:matt/earth/30: 478 360
+:matt/earth/01: 504 320
+:matt/earth/20: 728 448 frr
+:matt/earth/16: 632 360
+:geoo/steel/32x16o.S: 700 360
+:geoo/steel/32x16o.S: 732 360
+:geoo/steel/32x16o.S: 764 360
+:geoo/steel/16x16o.S: 760 450
+:matt/earth/19: 596 238 rrr
+:matt/earth/01: 584 230
+:matt/earth/26: 814 296 rrr
+:matt/earth/25: 818 264 rrr
+:matt/earth/00: 744 240
+:matt/earth/09: 696 274
+:matt/earth/12: 666 258
+:matt/earth/03: 662 278
+:matt/earth/09: 660 280
+:matt/earth/07: 404 284
+:matt/earth/06: 364 286
+:matt/earth/09: 436 306
+:matt/earth/09: 484 312
+:matt/earth/00: 1230 52
+:matt/earth/01: 1222 104
+:matt/earth/02: 1286 58 rrr
+:matt/earth/11: 1152 160
+:matt/earth/03: 1152 200
+:matt/earth/30: 1294 168
+:matt/earth/02: 1262 122
+:matt/earth/26: 1390 128
+:matt/earth/30: 1342 120
+:matt/earth/01: 1368 80
+:matt/earth/20: 1592 208 frr
+:matt/earth/16: 1496 120
+:geoo/steel/32x16o.S: 1564 120
+:geoo/steel/32x16o.S: 1596 120
+:geoo/steel/32x16o.S: 1628 120
+:geoo/steel/16x16o.S: 1624 210
+:matt/earth/19: 1460 478 rrr
+:matt/earth/01: 1448 470
+:matt/earth/26: 1678 56 rrr
+:matt/earth/25: 1682 24 rrr
+:matt/earth/00: 1608 0
+:matt/earth/09: 1560 34
+:matt/earth/12: 1530 18
+:matt/earth/03: 1526 38
+:matt/earth/09: 1524 40
+:matt/earth/07: 1268 44
+:matt/earth/06: 1228 46
+:matt/earth/09: 1300 66
+:matt/earth/09: 1348 72
+:matt/earth/00: 1518 292
+:matt/earth/01: 1510 344
+:matt/earth/02: 1574 298 rrr
+:matt/earth/11: 1440 400
+:matt/earth/03: 1440 440
+:matt/earth/30: 1582 408
+:matt/earth/02: 1550 362
+:matt/earth/26: 1678 368
+:matt/earth/30: 1630 360
+:matt/earth/01: 1656 320
+:matt/earth/07: 1556 284
+:matt/earth/06: 1516 286
+:matt/earth/09: 1588 306
+:matt/earth/09: 1636 312
+:matt/earth/20: 1304 448 frr
+:matt/earth/16: 1208 360
+:geoo/steel/32x16o.S: 1276 360
+:geoo/steel/32x16o.S: 1308 360
+:geoo/steel/32x16o.S: 1340 360
+:geoo/steel/16x16o.S: 1336 450
+:matt/earth/19: 1172 238 rrr
+:matt/earth/01: 1160 230
+:matt/earth/26: 1390 296 rrr
+:matt/earth/25: 1394 264 rrr
+:matt/earth/00: 1320 240
+:matt/earth/09: 1272 274
+:matt/earth/12: 1242 258
+:matt/earth/03: 1238 278
+:matt/earth/09: 1236 280

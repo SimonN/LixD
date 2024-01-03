@@ -1,9 +1,10 @@
-$BUILT 2021-02-26 16:12:18
+$BUILT 2023-03-04 13:51:35
 $AUTHOR Flopsy
 $ENGLISH Having A Blast 8P
-$TAG difficult
 
 #INTENDED_NUMBER_OF_PLAYERS 8
+$TAG difficult
+
 #SIZE_X 1472
 #SIZE_Y 1024
 #TORUS_X 1
@@ -11,7 +12,7 @@ $TAG difficult
 
 #SECONDS 120
 #INITIAL 50
-#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL 31
 
 #WALKER 50
 #RUNNER 10
@@ -19,6 +20,7 @@ $TAG difficult
 #FLOATER 10
 #EXPLODER2 30
 #BLOCKER 2
+#BUILDER 1
 #PLATFORMER 50
 #JUMPER 50
 #BATTER 30
@@ -609,3 +611,19 @@ $END_TILE_GROUP
 :Group-0: 1456 544
 :Group-0: 1456 800
 :Group-0: 1456 32
+:geoo/construction/platformbrick_single: 184 568 d
+:geoo/construction/platformbrick_single: 256 568 d
+:geoo/construction/platformbrick_single: 256 824 d
+:geoo/construction/platformbrick_single: 184 824 d
+:geoo/construction/platformbrick_single: 184 56 d
+:geoo/construction/platformbrick_single: 256 56 d
+:geoo/construction/platformbrick_single: 256 312 d
+:geoo/construction/platformbrick_single: 184 312 d
+:geoo/construction/platformbrick_single: 920 312 d
+:geoo/construction/platformbrick_single: 992 312 d
+:geoo/construction/platformbrick_single: 992 568 d
+:geoo/construction/platformbrick_single: 920 568 d
+:geoo/construction/platformbrick_single: 920 824 d
+:geoo/construction/platformbrick_single: 992 824 d
+:geoo/construction/platformbrick_single: 992 56 d
+:geoo/construction/platformbrick_single: 920 56 d

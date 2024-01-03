@@ -1,0 +1,98 @@
+$BUILT 2022-05-21 18:34:47
+$AUTHOR Flopsy
+$ENGLISH Keep In Touch 4P
+$TAG fall-survival
+
+#INTENDED_NUMBER_OF_PLAYERS 4
+#SIZE_X 640
+#SIZE_Y 416
+#TORUS_X 0
+#TORUS_Y 1
+
+#SECONDS 60
+#INITIAL 80
+#SPAWN_INTERVAL 20
+
+#WALKER 30
+#RUNNER 5
+#CLIMBER 1
+#EXPLODER2 10
+#BUILDER 30
+#PLATFORMER 30
+#BASHER 10
+#MINER 10
+#JUMPER 30
+#BATTER 20
+#CUBER 10
+
+:geoo/abstract/hatch.H: 480 144
+:geoo/abstract/hatch.H: 480 352
+:geoo/abstract/hatch.H: 128 40 r
+:geoo/abstract/hatch.H: 128 248 r
+
+:geoo/abstract/goal.G: 592 360
+:geoo/abstract/goal.G: 592 152
+:geoo/abstract/goal.G: 16 256
+:geoo/abstract/goal.G: 16 48
+
+:geoo/abstract/pipes/central0: 0 96
+:geoo/abstract/pipes/central0: 32 96
+:geoo/abstract/pipes/central0: 64 96
+:geoo/abstract/pipes/central0: 96 96
+:geoo/abstract/pipes/central0: 128 96
+:geoo/abstract/pipes/central0: 160 96
+:geoo/abstract/cvblocks/030: 80 64
+:geoo/abstract/pipes/central0: 192 96
+:geoo/abstract/pipes/central1: 0 304
+:geoo/abstract/pipes/central1: 32 304
+:geoo/abstract/pipes/central1: 64 304
+:geoo/abstract/pipes/central1: 96 304
+:geoo/abstract/pipes/central1: 128 304
+:geoo/abstract/pipes/central1: 160 304
+:geoo/abstract/pipes/central1: 192 304
+:geoo/abstract/cvblocks/030: 80 272
+:geoo/abstract/cvblocks/030: 176 272
+:geoo/abstract/cvblocks/030: 176 64
+:geoo/abstract/pipes/central5: 608 200
+:geoo/abstract/pipes/central5: 576 200
+:geoo/abstract/pipes/central5: 544 200
+:geoo/abstract/pipes/central5: 512 200
+:geoo/abstract/pipes/central5: 480 200
+:geoo/abstract/pipes/central5: 448 200
+:geoo/abstract/pipes/central5: 416 200
+:geoo/abstract/cvblocks/030: 432 168
+:geoo/abstract/cvblocks/030: 528 168
+:geoo/abstract/pipes/central0: 224 96
+:geoo/abstract/pipes/central1: 224 304
+:geoo/abstract/pipes/central5: 384 200
+:geoo/abstract/cvblocks/025: 312 0
+:geoo/abstract/cvblocks/025: 312 32
+:geoo/abstract/cvblocks/025: 312 64
+:geoo/abstract/cvblocks/025: 312 96
+:geoo/abstract/cvblocks/025: 312 128
+:geoo/abstract/cvblocks/025: 312 160
+:geoo/abstract/cvblocks/025: 312 192
+:geoo/abstract/cvblocks/025: 312 224
+:geoo/abstract/cvblocks/025: 312 256
+:geoo/abstract/cvblocks/025: 312 288
+:geoo/abstract/cvblocks/025: 312 320
+:geoo/abstract/pipes/central6: 384 408
+:geoo/abstract/pipes/central6: 416 408
+:geoo/abstract/pipes/central6: 448 408
+:geoo/abstract/pipes/central6: 480 408
+:geoo/abstract/pipes/central6: 512 408
+:geoo/abstract/pipes/central6: 544 408
+:geoo/abstract/pipes/central6: 576 408
+:geoo/abstract/pipes/central6: 608 408
+:geoo/abstract/cvblocks/030: 432 376
+:geoo/abstract/cvblocks/030: 528 376
+:geoo/abstract/cvblocks/025: 312 352
+:geoo/abstract/cvblocks/025: 312 384
+:amanda/steel/steel24x8.S: 596 200
+:amanda/steel/steel24x8.S: 596 408
+:amanda/steel/steel24x8.S: 484 408
+:amanda/steel/steel24x8.S: 484 200
+:amanda/steel/steel24x8.S: 132 304
+:amanda/steel/steel24x8.S: 132 96
+:amanda/steel/steel24x8.S: 20 96
+:amanda/steel/steel24x8.S: 20 304

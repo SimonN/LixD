@@ -1,0 +1,71 @@
+$BUILT 2023-03-05 02:05:46
+$AUTHOR Flopsy
+$ENGLISH Huckerby's Field 4P
+
+#INTENDED_NUMBER_OF_PLAYERS 4
+$TAG asymmetric
+$TAG classic
+$TAG short-play
+
+#SIZE_X 384
+#SIZE_Y 224
+#TORUS_X 1
+#TORUS_Y 0
+
+#INITIAL 2
+#SPAWN_INTERVAL 32
+
+#WALKER -1
+#RUNNER 2
+#FLOATER 2
+#EXPLODER2 2
+#BUILDER -1
+#PLATFORMER -1
+#JUMPER -1
+#BATTER 10
+
+:matt/carnival/Hatch.H: 352 128
+:matt/carnival/Hatch.H: 352 128 r
+
+:matt/earth/Goal.G: 312 -8
+:matt/earth/Goal.G: 0 -8
+:matt/earth/Goal.G: 143 -8
+:matt/earth/Goal.G: 175 -8
+
+:matt/earth/09: 0 212
+:matt/earth/09: 46 212
+:matt/earth/09: 94 212
+:matt/earth/09: 142 212
+:matt/earth/09: 190 212
+:matt/earth/09: 238 212
+:matt/earth/09: 286 212
+:matt/earth/09: 334 212
+:matt/earth/30: 336 72 frr
+:matt/earth/30: 376 72
+$BEGIN_TILE_GROUP 0
+:matt/earth/19: 0 16
+:matt/marble/09: 80 0 d
+:matt/marble/09: 128 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:Group-0: 0 0
+:Group-0: 80 0 frr
+$END_TILE_GROUP
+:Group-1: 304 49
+:matt/earth/21: 144 56
+:matt/earth/21: 168 56
+:matt/earth/21: 192 56
+:matt/earth/09: 320 72
+:matt/earth/09: 48 -8
+:matt/earth/09: 96 -8
+:matt/earth/09: 144 -8
+:matt/earth/09: 192 -8
+:matt/earth/09: 240 -8
+:matt/earth/09: 288 -8
+:matt/earth/09: 336 -8
+:matt/earth/09: 0 64
+:matt/earth/06: 0 80
+:matt/earth/07b: 32 72
+:matt/earth/09: 336 112
+:matt/earth/06: 336 80
+:matt/earth/09: 8 -8

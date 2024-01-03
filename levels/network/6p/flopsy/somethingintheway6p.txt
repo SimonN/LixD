@@ -1,4 +1,4 @@
-$BUILT 2022-04-24 15:37:25
+$BUILT 2023-02-19 14:30:01
 $AUTHOR Flopsy
 $ENGLISH Something in the Way 6P
 
@@ -40,6 +40,13 @@ $ENGLISH Something in the Way 6P
 :geoo/construction/Goal2.G: 48 320
 :geoo/construction/Goal2.G: 1872 320
 :geoo/construction/Goal2.G: 960 320
+
+:raymanni/lab/launcher_left.T: 880 0
+:raymanni/lab/launcher_left.T: 880 224
+:raymanni/lab/launcher_left.T: 1792 0
+:raymanni/lab/launcher_left.T: 1792 224
+:raymanni/lab/launcher_left.T: 2704 0
+:raymanni/lab/launcher_left.T: 2704 224
 
 :geoo/construction/concrete/032v: 1792 160
 :geoo/construction/concrete/032v: 1792 96
@@ -627,3 +634,21 @@ $ENGLISH Something in the Way 6P
 :geoo/construction/concrete/016b: 144 400
 :geoo/construction/concrete/016b: 1056 400
 :geoo/construction/concrete/016b: 1968 400
+:geoo/steel/32x64o.S: 1792 32
+:geoo/steel/32x64o.S: 1792 96
+:geoo/steel/32x64o.S: 1792 160
+:geoo/steel/32x64o.S: 1792 256
+:geoo/steel/32x64o.S: 1792 320
+:geoo/steel/32x64o.S: 1792 384
+:geoo/steel/32x64o.S: 2704 256
+:geoo/steel/32x64o.S: 2704 320
+:geoo/steel/32x64o.S: 2704 384
+:geoo/steel/32x64o.S: 2704 32
+:geoo/steel/32x64o.S: 2704 96
+:geoo/steel/32x64o.S: 2704 160
+:geoo/steel/32x64o.S: 880 32
+:geoo/steel/32x64o.S: 880 96
+:geoo/steel/32x64o.S: 880 160
+:geoo/steel/32x64o.S: 880 256
+:geoo/steel/32x64o.S: 880 320
+:geoo/steel/32x64o.S: 880 384

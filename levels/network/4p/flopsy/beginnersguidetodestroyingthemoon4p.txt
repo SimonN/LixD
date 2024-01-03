@@ -1,0 +1,81 @@
+$BUILT 2022-10-16 17:24:11
+$AUTHOR Flopsy
+$ENGLISH Beginner's Guide 2 destroying Moon 4P
+$TAG fall-survival
+
+#INTENDED_NUMBER_OF_PLAYERS 4
+#SIZE_X 560
+#SIZE_Y 288
+#TORUS_X 1
+#TORUS_Y 1
+
+#SECONDS 90
+#INITIAL 60
+#SPAWN_INTERVAL 31
+
+#WALKER 40
+#RUNNER 10
+#CLIMBER 10
+#BLOCKER 1
+#BUILDER 50
+#PLATFORMER 30
+#BASHER 20
+#MINER 20
+#DIGGER 3
+#JUMPER 40
+#BATTER 20
+#CUBER 5
+#EXPLODER2 0
+
+:matt/carnival/Hatch.H: 184 88
+:matt/carnival/Hatch.H: 464 88
+:matt/carnival/Hatch.H: 328 232
+:matt/carnival/Hatch.H: 48 232
+
+:raymanni/toys/goal.G: 50 34
+:raymanni/toys/goal.G: 330 34
+:raymanni/toys/goal.G: 186 178
+:raymanni/toys/goal.G: 466 178
+
+$BEGIN_TILE_GROUP 0
+:proxima/tile/spheres/cyan: 32 2
+:proxima/tile/spheres/cyan: 32 66
+:proxima/tile/spheres/cyan: 60 34
+:proxima/tile/spheres/cyan: 4 34
+:proxima/tile/spheres/cyan: 20 50
+:proxima/tile/spheres/cyan: 46 50
+:proxima/tile/spheres/cyan: 46 14
+:proxima/tile/spheres/cyan: 20 14
+:proxima/tile/spheres/cyan: 28 4
+:proxima/tile/spheres/cyan: 6 28
+:proxima/tile/spheres/cyan: 14 12
+:proxima/tile/spheres/cyan: 42 6
+:proxima/tile/spheres/cyan: 50 14
+:proxima/tile/spheres/cyan: 58 24
+:proxima/tile/spheres/cyan: 60 40
+:proxima/tile/spheres/cyan: 56 50
+:proxima/tile/spheres/cyan: 48 60
+:proxima/tile/spheres/cyan: 40 66
+:proxima/tile/spheres/cyan: 32 66
+:proxima/tile/spheres/cyan: 22 62
+:proxima/tile/spheres/cyan: 16 58
+:proxima/tile/spheres/cyan: 8 50
+:proxima/tile/spheres/cyan: 0 40
+:proxima/tile/spheres/cyan: 0 32
+:proxima/tile/spheres/cyan: 2 22
+:proxima/tile/spheres/cyan: 6 12
+:proxima/tile/spheres/cyan: 14 4
+:proxima/tile/spheres/cyan: 22 0
+$END_TILE_GROUP
+:Group-0: 299 15
+:Group-0: 437 159
+:Group-0: 155 159
+:Group-0: 19 15
+:proxima/tile/spheres/cyansmall: 202 210 d
+:proxima/tile/spheres/cyansmall: 482 210 d
+:proxima/tile/spheres/cyansmall: 346 66 d
+:proxima/tile/spheres/cyansmall: 66 66 d
+:geoo/steel/16x16o.S: 72 16
+:geoo/steel/16x16o.S: 352 16
+:geoo/steel/16x16o.S: 488 160
+:geoo/steel/16x16o.S: 208 160

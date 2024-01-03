@@ -1,0 +1,317 @@
+$BUILT 2023-03-04 13:55:41
+$AUTHOR Flopsy
+$ENGLISH Having A Blast (Shortest) 4P
+
+#INTENDED_NUMBER_OF_PLAYERS 4
+$TAG difficult
+
+#SIZE_X 560
+#SIZE_Y 1024
+#TORUS_X 0
+#TORUS_Y 1
+
+#SECONDS 120
+#INITIAL 50
+#SPAWN_INTERVAL 31
+
+#WALKER 50
+#RUNNER 10
+#CLIMBER 10
+#FLOATER 10
+#EXPLODER2 20
+#BLOCKER 2
+#BUILDER 1
+#PLATFORMER 50
+#JUMPER 50
+#BATTER 30
+#CUBER 5
+
+:raymanni/lab/hatch.H: 208 32
+:raymanni/lab/hatch.H: 208 288
+:raymanni/lab/hatch.H: 208 544
+:raymanni/lab/hatch.H: 208 800
+
+:raymanni/lab/goal.G: 480 384
+:raymanni/lab/goal.G: 480 640
+:raymanni/lab/goal.G: 480 896
+:raymanni/lab/goal.G: 480 128
+
+:raymanni/lab/block_5: 384 0
+:raymanni/lab/pipe_2: 403 32
+:raymanni/lab/block_6: 160 80
+:raymanni/lab/block_6: 192 80
+:raymanni/lab/block_6: 224 80
+:raymanni/lab/slope_1: 256 48
+:raymanni/lab/block_6: 256 80
+:raymanni/lab/slope_1: 160 48 frr
+:amanda/steel/steel16x16.S: 320 0
+:amanda/steel/steel16x16.S: 320 16
+:amanda/steel/steel16x16.S: 320 32
+:amanda/steel/steel16x16.S: 320 48
+:amanda/steel/steel16x16.S: 320 64
+:amanda/steel/steel16x16.S: 320 80
+:amanda/steel/steel16x16.S: 320 96
+:amanda/steel/steel16x16.S: 320 112
+:raymanni/lab/pipe_1: 336 0 r
+:raymanni/lab/pipe_1: 352 0 r
+:raymanni/lab/pipe_1: 416 0 r
+:raymanni/lab/pipe_1: 432 0 r
+:raymanni/lab/block_5: 384 0
+:raymanni/lab/pipe_2: 403 32
+:raymanni/lab/pipe_1: 416 0 r
+:raymanni/lab/pipe_1: 432 0 r
+:raymanni/lab/block_5: 384 0
+:raymanni/lab/pipe_2: 403 32
+:raymanni/lab/pipe_2: 403 64
+:raymanni/lab/pipe_2: 403 96
+:raymanni/lab/pipe_2: 403 128
+:raymanni/lab/pipe_2: 403 160
+:raymanni/lab/pipe_2: 403 64
+:raymanni/lab/pipe_2: 403 96
+:raymanni/lab/pipe_2: 403 128
+:raymanni/lab/pipe_2: 403 160
+:raymanni/lab/pipe_2: 403 64
+:raymanni/lab/pipe_2: 403 96
+:raymanni/lab/pipe_2: 403 128
+:raymanni/lab/pipe_2: 403 160
+:raymanni/lab/pipe_2: 403 192
+:raymanni/lab/pipe_2: 403 192
+:raymanni/lab/pipe_2: 403 192
+:raymanni/lab/block_7: 0 192
+:raymanni/lab/block_7: 64 192
+:raymanni/lab/block_6: 64 128
+:raymanni/lab/block_6: 96 128
+:raymanni/lab/scen_6: 0 128
+:raymanni/lab/block_2: 0 114
+:raymanni/lab/scen_5: 0 50
+:raymanni/lab/block_6: 0 35
+:raymanni/lab/block_6: 32 35
+:raymanni/lab/pipe_2: 403 224
+:raymanni/lab/pipe_2: 403 224
+:raymanni/lab/pipe_2: 403 224
+:raymanni/lab/block_8: 464 192
+:raymanni/lab/block_6: 528 192
+:raymanni/lab/block_6: 528 224
+:raymanni/lab/pipe_1: 416 0 r
+:raymanni/lab/pipe_1: 448 0 r
+:raymanni/lab/pipe_1: 480 0 r
+:raymanni/lab/pipe_1: 512 0 r
+:raymanni/lab/pipe_1: 528 0 r
+:raymanni/lab/block_5: 384 256
+:raymanni/lab/pipe_2: 403 288
+:raymanni/lab/block_6: 160 336
+:raymanni/lab/block_6: 192 336
+:raymanni/lab/block_6: 224 336
+:raymanni/lab/slope_1: 256 304
+:raymanni/lab/block_6: 256 336
+:raymanni/lab/slope_1: 160 304 frr
+:amanda/steel/steel16x16.S: 320 256
+:amanda/steel/steel16x16.S: 320 272
+:amanda/steel/steel16x16.S: 320 288
+:amanda/steel/steel16x16.S: 320 304
+:amanda/steel/steel16x16.S: 320 320
+:amanda/steel/steel16x16.S: 320 336
+:amanda/steel/steel16x16.S: 320 352
+:amanda/steel/steel16x16.S: 320 368
+:raymanni/lab/pipe_1: 336 256 r
+:raymanni/lab/pipe_1: 352 256 r
+:raymanni/lab/pipe_1: 416 256 r
+:raymanni/lab/pipe_1: 432 256 r
+:raymanni/lab/block_5: 384 256
+:raymanni/lab/pipe_2: 403 288
+:raymanni/lab/pipe_1: 416 256 r
+:raymanni/lab/pipe_1: 432 256 r
+:raymanni/lab/block_5: 384 256
+:raymanni/lab/pipe_2: 403 288
+:raymanni/lab/pipe_2: 403 320
+:raymanni/lab/pipe_2: 403 352
+:raymanni/lab/pipe_2: 403 384
+:raymanni/lab/pipe_2: 403 416
+:raymanni/lab/pipe_2: 403 320
+:raymanni/lab/pipe_2: 403 352
+:raymanni/lab/pipe_2: 403 384
+:raymanni/lab/pipe_2: 403 416
+:raymanni/lab/pipe_2: 403 320
+:raymanni/lab/pipe_2: 403 352
+:raymanni/lab/pipe_2: 403 384
+:raymanni/lab/pipe_2: 403 416
+:raymanni/lab/pipe_2: 403 448
+:raymanni/lab/pipe_2: 403 448
+:raymanni/lab/pipe_2: 403 448
+:raymanni/lab/block_7: 0 448
+:raymanni/lab/block_7: 64 448
+:raymanni/lab/block_6: 64 384
+:raymanni/lab/block_6: 96 384
+:raymanni/lab/scen_6: 0 384
+:raymanni/lab/block_2: 0 370
+:raymanni/lab/scen_5: 0 306
+:raymanni/lab/block_6: 0 291
+:raymanni/lab/block_6: 32 291
+:raymanni/lab/pipe_2: 403 480
+:raymanni/lab/pipe_2: 403 480
+:raymanni/lab/pipe_2: 403 480
+:raymanni/lab/block_8: 464 448
+:raymanni/lab/block_6: 528 448
+:raymanni/lab/block_6: 528 480
+:raymanni/lab/pipe_1: 416 256 r
+:raymanni/lab/pipe_1: 448 256 r
+:raymanni/lab/pipe_1: 480 256 r
+:raymanni/lab/pipe_1: 512 256 r
+:raymanni/lab/pipe_1: 528 256 r
+:raymanni/lab/block_6: 128 224
+:raymanni/lab/block_6: 160 496
+:raymanni/lab/block_6: 160 240
+:raymanni/lab/block_6: 128 480
+:amanda/steel/steel16x16.S: 504 192
+:amanda/steel/steel16x16.S: 504 448
+:amanda/steel/steel16x16.S: 216 80
+:amanda/steel/steel16x16.S: 216 336
+:raymanni/lab/block_6: 240 448
+:raymanni/lab/block_6: 272 448
+:raymanni/lab/block_6: 240 192
+:raymanni/lab/block_6: 272 192
+:raymanni/lab/block_5: 384 512
+:raymanni/lab/pipe_2: 403 544
+:raymanni/lab/block_6: 160 592
+:raymanni/lab/block_6: 192 592
+:raymanni/lab/block_6: 224 592
+:raymanni/lab/slope_1: 256 560
+:raymanni/lab/block_6: 256 592
+:raymanni/lab/slope_1: 160 560 frr
+:amanda/steel/steel16x16.S: 320 512
+:amanda/steel/steel16x16.S: 320 528
+:amanda/steel/steel16x16.S: 320 544
+:amanda/steel/steel16x16.S: 320 560
+:amanda/steel/steel16x16.S: 320 576
+:amanda/steel/steel16x16.S: 320 592
+:amanda/steel/steel16x16.S: 320 608
+:amanda/steel/steel16x16.S: 320 624
+:raymanni/lab/pipe_1: 336 512 r
+:raymanni/lab/pipe_1: 352 512 r
+:raymanni/lab/pipe_1: 416 512 r
+:raymanni/lab/pipe_1: 432 512 r
+:raymanni/lab/block_5: 384 512
+:raymanni/lab/pipe_2: 403 544
+:raymanni/lab/pipe_1: 416 512 r
+:raymanni/lab/pipe_1: 432 512 r
+:raymanni/lab/block_5: 384 512
+:raymanni/lab/pipe_2: 403 544
+:raymanni/lab/pipe_2: 403 576
+:raymanni/lab/pipe_2: 403 608
+:raymanni/lab/pipe_2: 403 640
+:raymanni/lab/pipe_2: 403 672
+:raymanni/lab/pipe_2: 403 576
+:raymanni/lab/pipe_2: 403 608
+:raymanni/lab/pipe_2: 403 640
+:raymanni/lab/pipe_2: 403 672
+:raymanni/lab/pipe_2: 403 576
+:raymanni/lab/pipe_2: 403 608
+:raymanni/lab/pipe_2: 403 640
+:raymanni/lab/pipe_2: 403 672
+:raymanni/lab/pipe_2: 403 704
+:raymanni/lab/pipe_2: 403 704
+:raymanni/lab/pipe_2: 403 704
+:raymanni/lab/block_7: 0 704
+:raymanni/lab/block_7: 64 704
+:raymanni/lab/block_6: 64 640
+:raymanni/lab/block_6: 96 640
+:raymanni/lab/scen_6: 0 640
+:raymanni/lab/block_2: 0 626
+:raymanni/lab/scen_5: 0 562
+:raymanni/lab/block_6: 0 547
+:raymanni/lab/block_6: 32 547
+:raymanni/lab/pipe_2: 403 736
+:raymanni/lab/pipe_2: 403 736
+:raymanni/lab/pipe_2: 403 736
+:raymanni/lab/block_8: 464 704
+:raymanni/lab/block_6: 528 704
+:raymanni/lab/block_6: 528 736
+:raymanni/lab/pipe_1: 416 512 r
+:raymanni/lab/pipe_1: 448 512 r
+:raymanni/lab/pipe_1: 480 512 r
+:raymanni/lab/pipe_1: 512 512 r
+:raymanni/lab/pipe_1: 528 512 r
+:raymanni/lab/block_6: 160 752
+:raymanni/lab/block_6: 160 496
+:raymanni/lab/block_6: 128 736
+:amanda/steel/steel16x16.S: 504 704
+:amanda/steel/steel16x16.S: 216 592
+:raymanni/lab/block_6: 240 704
+:raymanni/lab/block_6: 272 704
+:raymanni/lab/block_6: 160 752
+:raymanni/lab/block_5: 384 768
+:raymanni/lab/pipe_2: 403 800
+:raymanni/lab/block_6: 160 848
+:raymanni/lab/block_6: 192 848
+:raymanni/lab/block_6: 224 848
+:raymanni/lab/slope_1: 256 816
+:raymanni/lab/block_6: 256 848
+:raymanni/lab/slope_1: 160 816 frr
+:amanda/steel/steel16x16.S: 320 768
+:amanda/steel/steel16x16.S: 320 784
+:amanda/steel/steel16x16.S: 320 800
+:amanda/steel/steel16x16.S: 320 816
+:amanda/steel/steel16x16.S: 320 832
+:amanda/steel/steel16x16.S: 320 848
+:amanda/steel/steel16x16.S: 320 864
+:amanda/steel/steel16x16.S: 320 880
+:raymanni/lab/pipe_1: 336 768 r
+:raymanni/lab/pipe_1: 352 768 r
+:raymanni/lab/pipe_1: 416 768 r
+:raymanni/lab/pipe_1: 432 768 r
+:raymanni/lab/block_5: 384 768
+:raymanni/lab/pipe_2: 403 800
+:raymanni/lab/pipe_1: 416 768 r
+:raymanni/lab/pipe_1: 432 768 r
+:raymanni/lab/block_5: 384 768
+:raymanni/lab/pipe_2: 403 800
+:raymanni/lab/pipe_2: 403 832
+:raymanni/lab/pipe_2: 403 864
+:raymanni/lab/pipe_2: 403 896
+:raymanni/lab/pipe_2: 403 928
+:raymanni/lab/pipe_2: 403 832
+:raymanni/lab/pipe_2: 403 864
+:raymanni/lab/pipe_2: 403 896
+:raymanni/lab/pipe_2: 403 928
+:raymanni/lab/pipe_2: 403 832
+:raymanni/lab/pipe_2: 403 864
+:raymanni/lab/pipe_2: 403 896
+:raymanni/lab/pipe_2: 403 928
+:raymanni/lab/pipe_2: 403 960
+:raymanni/lab/pipe_2: 403 960
+:raymanni/lab/pipe_2: 403 960
+:raymanni/lab/block_7: 0 960
+:raymanni/lab/block_7: 64 960
+:raymanni/lab/block_6: 64 896
+:raymanni/lab/block_6: 96 896
+:raymanni/lab/scen_6: 0 896
+:raymanni/lab/block_2: 0 882
+:raymanni/lab/scen_5: 0 818
+:raymanni/lab/block_6: 0 803
+:raymanni/lab/block_6: 32 803
+:raymanni/lab/pipe_2: 403 992
+:raymanni/lab/pipe_2: 403 992
+:raymanni/lab/pipe_2: 403 992
+:raymanni/lab/block_8: 464 960
+:raymanni/lab/block_6: 528 960
+:raymanni/lab/block_6: 528 992
+:raymanni/lab/pipe_1: 416 768 r
+:raymanni/lab/pipe_1: 448 768 r
+:raymanni/lab/pipe_1: 480 768 r
+:raymanni/lab/pipe_1: 512 768 r
+:raymanni/lab/pipe_1: 528 768 r
+:raymanni/lab/block_6: 160 1008
+:raymanni/lab/block_6: 160 752
+:raymanni/lab/block_6: 128 992
+:amanda/steel/steel16x16.S: 504 960
+:amanda/steel/steel16x16.S: 216 848
+:raymanni/lab/block_6: 240 960
+:raymanni/lab/block_6: 272 960
+:geoo/construction/platformbrick_single: 184 568 d
+:geoo/construction/platformbrick_single: 256 568 d
+:geoo/construction/platformbrick_single: 256 824 d
+:geoo/construction/platformbrick_single: 184 824 d
+:geoo/construction/platformbrick_single: 184 56 d
+:geoo/construction/platformbrick_single: 256 56 d
+:geoo/construction/platformbrick_single: 256 312 d
+:geoo/construction/platformbrick_single: 184 312 d

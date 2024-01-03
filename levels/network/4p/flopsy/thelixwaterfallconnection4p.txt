@@ -1,0 +1,878 @@
+$BUILT 2023-09-06 15:13:46
+$AUTHOR Flopsy
+$ENGLISH The Lix Waterfall Connection 4P
+
+#INTENDED_NUMBER_OF_PLAYERS 4
+#SIZE_X 2560
+#SIZE_Y 352
+#TORUS_X 1
+#TORUS_Y 0
+
+#SECONDS 210
+#INITIAL 80
+#SPAWN_INTERVAL 31
+
+#WALKER 40
+#RUNNER 5
+#CLIMBER 10
+#FLOATER 10
+#BLOCKER 1
+#BUILDER 50
+#PLATFORMER 10
+#BASHER 20
+#MINER 40
+#DIGGER 5
+#JUMPER 20
+#BATTER -1
+#CUBER 5
+#EXPLODER2 0
+
+:matt/carnival/Hatch.H: 64 0
+:matt/carnival/Hatch.H: 704 0
+:matt/carnival/Hatch.H: 1344 0
+:matt/carnival/Hatch.H: 1984 0
+
+:matt/carnival/Goal.G: 384 32
+:matt/carnival/Goal.G: 1024 32
+:matt/carnival/Goal.G: 1664 32
+:matt/carnival/Goal.G: 2304 32
+
+:amanda/forest/frog_catch.T: 384 144
+:amanda/forest/frog_catch.T: 704 144
+:amanda/forest/frog_catch.T: 1024 144
+:amanda/forest/frog_catch.T: 64 144
+:amanda/forest/frog_catch.T: 1664 144
+:amanda/forest/frog_catch.T: 1344 144
+:amanda/forest/frog_catch.T: 2304 144
+:amanda/forest/frog_catch.T: 1984 144
+
+:raymanni/toys/water.W: 0 92
+:raymanni/toys/water.W: 0 108
+:raymanni/toys/water.W: 0 124
+:raymanni/toys/water.W: 0 140
+:raymanni/toys/water.W: 0 156
+:raymanni/toys/water.W: 0 172
+:raymanni/toys/water.W: 0 188
+:raymanni/toys/water.W: 0 204
+:raymanni/toys/water.W: 0 284
+:raymanni/toys/water.W: 0 300
+:raymanni/toys/water.W: 0 316
+:raymanni/toys/water.W: 0 320
+:raymanni/toys/water.W: 320 284
+:raymanni/toys/water.W: 320 300
+:raymanni/toys/water.W: 320 316
+:raymanni/toys/water.W: 320 320
+:raymanni/toys/water.W: 320 92
+:raymanni/toys/water.W: 320 108
+:raymanni/toys/water.W: 320 124
+:raymanni/toys/water.W: 320 140
+:raymanni/toys/water.W: 320 156
+:raymanni/toys/water.W: 320 172
+:raymanni/toys/water.W: 320 188
+:raymanni/toys/water.W: 320 204
+:raymanni/toys/water.W: 320 92
+:raymanni/toys/water.W: 320 108
+:raymanni/toys/water.W: 320 124
+:raymanni/toys/water.W: 320 140
+:raymanni/toys/water.W: 320 156
+:raymanni/toys/water.W: 320 172
+:raymanni/toys/water.W: 320 188
+:raymanni/toys/water.W: 320 204
+:raymanni/toys/water.W: 320 284
+:raymanni/toys/water.W: 320 300
+:raymanni/toys/water.W: 320 316
+:raymanni/toys/water.W: 320 320
+:raymanni/toys/water.W: 640 92
+:raymanni/toys/water.W: 640 108
+:raymanni/toys/water.W: 640 124
+:raymanni/toys/water.W: 640 140
+:raymanni/toys/water.W: 640 156
+:raymanni/toys/water.W: 640 172
+:raymanni/toys/water.W: 640 188
+:raymanni/toys/water.W: 640 204
+:raymanni/toys/water.W: 640 284
+:raymanni/toys/water.W: 640 300
+:raymanni/toys/water.W: 640 316
+:raymanni/toys/water.W: 640 320
+:raymanni/toys/water.W: 960 284
+:raymanni/toys/water.W: 960 300
+:raymanni/toys/water.W: 960 316
+:raymanni/toys/water.W: 960 320
+:raymanni/toys/water.W: 960 92
+:raymanni/toys/water.W: 960 108
+:raymanni/toys/water.W: 960 124
+:raymanni/toys/water.W: 960 140
+:raymanni/toys/water.W: 960 156
+:raymanni/toys/water.W: 960 172
+:raymanni/toys/water.W: 960 188
+:raymanni/toys/water.W: 960 204
+:raymanni/toys/water.W: 960 92
+:raymanni/toys/water.W: 960 108
+:raymanni/toys/water.W: 960 124
+:raymanni/toys/water.W: 960 140
+:raymanni/toys/water.W: 960 156
+:raymanni/toys/water.W: 960 172
+:raymanni/toys/water.W: 960 188
+:raymanni/toys/water.W: 960 204
+:raymanni/toys/water.W: 960 284
+:raymanni/toys/water.W: 960 300
+:raymanni/toys/water.W: 960 316
+:raymanni/toys/water.W: 960 320
+:raymanni/toys/water.W: 1280 284
+:raymanni/toys/water.W: 1280 300
+:raymanni/toys/water.W: 1280 316
+:raymanni/toys/water.W: 1280 320
+:raymanni/toys/water.W: 1280 92
+:raymanni/toys/water.W: 1280 108
+:raymanni/toys/water.W: 1280 124
+:raymanni/toys/water.W: 1280 140
+:raymanni/toys/water.W: 1280 156
+:raymanni/toys/water.W: 1280 172
+:raymanni/toys/water.W: 1280 188
+:raymanni/toys/water.W: 1280 204
+:raymanni/toys/water.W: 1280 92
+:raymanni/toys/water.W: 1280 108
+:raymanni/toys/water.W: 1280 124
+:raymanni/toys/water.W: 1280 140
+:raymanni/toys/water.W: 1280 156
+:raymanni/toys/water.W: 1280 172
+:raymanni/toys/water.W: 1280 188
+:raymanni/toys/water.W: 1280 204
+:raymanni/toys/water.W: 1280 284
+:raymanni/toys/water.W: 1280 300
+:raymanni/toys/water.W: 1280 316
+:raymanni/toys/water.W: 1280 320
+:raymanni/toys/water.W: 1600 92
+:raymanni/toys/water.W: 1600 108
+:raymanni/toys/water.W: 1600 124
+:raymanni/toys/water.W: 1600 140
+:raymanni/toys/water.W: 1600 156
+:raymanni/toys/water.W: 1600 172
+:raymanni/toys/water.W: 1600 188
+:raymanni/toys/water.W: 1600 204
+:raymanni/toys/water.W: 1600 284
+:raymanni/toys/water.W: 1600 300
+:raymanni/toys/water.W: 1600 316
+:raymanni/toys/water.W: 1600 320
+:raymanni/toys/water.W: 1920 92
+:raymanni/toys/water.W: 1920 108
+:raymanni/toys/water.W: 1920 124
+:raymanni/toys/water.W: 1920 140
+:raymanni/toys/water.W: 1920 156
+:raymanni/toys/water.W: 1920 172
+:raymanni/toys/water.W: 1920 188
+:raymanni/toys/water.W: 1920 204
+:raymanni/toys/water.W: 1920 284
+:raymanni/toys/water.W: 1920 300
+:raymanni/toys/water.W: 1920 316
+:raymanni/toys/water.W: 1920 320
+:raymanni/toys/water.W: 2240 92
+:raymanni/toys/water.W: 2240 108
+:raymanni/toys/water.W: 2240 124
+:raymanni/toys/water.W: 2240 140
+:raymanni/toys/water.W: 2240 156
+:raymanni/toys/water.W: 2240 172
+:raymanni/toys/water.W: 2240 188
+:raymanni/toys/water.W: 2240 204
+:raymanni/toys/water.W: 2240 284
+:raymanni/toys/water.W: 2240 300
+:raymanni/toys/water.W: 2240 316
+:raymanni/toys/water.W: 2240 320
+
+:matt/marble/05c: 32 32
+:matt/marble/05c: 32 64
+:matt/marble/05c: 32 96
+:matt/marble/05c: 64 96
+:matt/marble/05c: 96 96
+:matt/marble/05c: 128 96
+:matt/marble/05c: 160 96
+:matt/marble/05c: 192 96
+:matt/marble/05c: 224 96
+:matt/marble/05c: 256 96
+:matt/marble/05c: 288 96
+:matt/marble/05c: 288 128
+:matt/marble/05c: 256 128
+:matt/marble/05c: 224 128
+:matt/marble/05c: 288 64
+:matt/marble/05c: 288 32
+:matt/marble/05c: 288 160
+:matt/marble/05c: 288 192
+:matt/marble/05c: 256 192
+:matt/marble/05c: 224 192
+:matt/marble/05c: 192 192
+:matt/marble/05c: 160 192
+:matt/marble/05c: 128 192
+:matt/marble/05c: 96 192
+:matt/marble/05c: 64 192
+:matt/marble/05c: 32 192
+:matt/marble/05c: 32 160
+:matt/marble/05c: 32 128
+:matt/marble/05c: 288 224
+:matt/marble/05c: 256 224
+:matt/marble/05c: 224 224
+:matt/marble/05c: 192 224
+:matt/marble/05c: 160 224
+:matt/marble/05c: 128 224
+:matt/marble/05c: 96 224
+:matt/marble/05c: 64 224
+:matt/marble/05c: 32 224
+:matt/marble/05c: 96 256
+:matt/marble/05c: 64 256
+:matt/marble/05c: 32 256
+:matt/marble/05c: 32 288
+:matt/marble/05c: 288 320
+:matt/marble/05c: 256 320
+:matt/marble/05c: 224 320
+:matt/marble/05c: 192 320
+:matt/marble/05c: 160 320
+:matt/marble/05c: 128 320
+:matt/marble/05c: 96 320
+:matt/marble/05c: 64 320
+:matt/marble/05c: 32 320
+:matt/marble/05c: 288 288
+:matt/marble/05c: 32 0
+:matt/marble/05c: 64 0
+:matt/marble/05c: 96 0
+:matt/marble/05c: 128 0
+:matt/marble/05c: 160 0
+:matt/marble/05c: 192 0
+:matt/marble/05c: 224 0
+:matt/marble/05c: 256 0
+:matt/marble/05c: 288 0
+:geoo/construction/rod_steel/straight32.S: 332 68 rrr
+:geoo/construction/rod_steel/straight32.S: 320 96
+:geoo/construction/rod_steel/straight32.S: 332 36 rrr
+:geoo/construction/rod_steel/straight32.S: 320 46 rrr
+:geoo/construction/rod_steel/straight32.S: 320 20 rrr
+:geoo/construction/rod_steel/straight32.S: 320 -12 rrr
+:geoo/construction/rod_steel/straight32.S: 332 12 rrr
+:geoo/construction/rod_steel/straight32.S: 344 4 rrr
+:geoo/construction/rod_steel/straight32.S: 320 0
+:geoo/construction/rod_steel/straight32.S: 344 28 rrr
+:geoo/construction/rod_steel/straight32.S: 344 46 rrr
+:geoo/construction/rod_steel/straight32.S: 12 68 rrr
+:geoo/construction/rod_steel/straight32.S: 0 96
+:geoo/construction/rod_steel/straight32.S: 12 36 rrr
+:geoo/construction/rod_steel/straight32.S: 0 46 rrr
+:geoo/construction/rod_steel/straight32.S: 0 20 rrr
+:geoo/construction/rod_steel/straight32.S: 0 -12 rrr
+:geoo/construction/rod_steel/straight32.S: 12 12 rrr
+:geoo/construction/rod_steel/straight32.S: 24 4 rrr
+:geoo/construction/rod_steel/straight32.S: 0 0
+:geoo/construction/rod_steel/straight32.S: 24 28 rrr
+:geoo/construction/rod_steel/straight32.S: 24 46 rrr
+:geoo/construction/rod_steel/straight32.S: 320 288
+:geoo/construction/rod_steel/straight32.S: 320 232
+:geoo/construction/rod_steel/straight32.S: 0 288
+:geoo/construction/rod_steel/straight32.S: 0 232
+:matt/marble/05c: 352 32
+:matt/marble/05c: 352 64
+:matt/marble/05c: 352 96
+:matt/marble/05c: 384 96
+:matt/marble/05c: 416 96
+:matt/marble/05c: 448 96
+:matt/marble/05c: 480 96
+:matt/marble/05c: 512 96
+:matt/marble/05c: 544 96
+:matt/marble/05c: 576 96
+:matt/marble/05c: 608 96
+:matt/marble/05c: 608 128
+:matt/marble/05c: 576 128
+:matt/marble/05c: 544 128
+:matt/marble/05c: 608 64
+:matt/marble/05c: 608 32
+:matt/marble/05c: 608 160
+:matt/marble/05c: 608 192
+:matt/marble/05c: 576 192
+:matt/marble/05c: 544 192
+:matt/marble/05c: 512 192
+:matt/marble/05c: 480 192
+:matt/marble/05c: 448 192
+:matt/marble/05c: 416 192
+:matt/marble/05c: 384 192
+:matt/marble/05c: 352 192
+:matt/marble/05c: 352 160
+:matt/marble/05c: 352 128
+:matt/marble/05c: 608 224
+:matt/marble/05c: 576 224
+:matt/marble/05c: 544 224
+:matt/marble/05c: 512 224
+:matt/marble/05c: 480 224
+:matt/marble/05c: 448 224
+:matt/marble/05c: 416 224
+:matt/marble/05c: 384 224
+:matt/marble/05c: 352 224
+:matt/marble/05c: 416 256
+:matt/marble/05c: 384 256
+:matt/marble/05c: 352 256
+:matt/marble/05c: 352 288
+:matt/marble/05c: 608 320
+:matt/marble/05c: 576 320
+:matt/marble/05c: 544 320
+:matt/marble/05c: 512 320
+:matt/marble/05c: 480 320
+:matt/marble/05c: 448 320
+:matt/marble/05c: 416 320
+:matt/marble/05c: 384 320
+:matt/marble/05c: 352 320
+:matt/marble/05c: 608 288
+:matt/marble/05c: 352 0
+:matt/marble/05c: 384 0
+:matt/marble/05c: 416 0
+:matt/marble/05c: 448 0
+:matt/marble/05c: 480 0
+:matt/marble/05c: 512 0
+:matt/marble/05c: 544 0
+:matt/marble/05c: 576 0
+:matt/marble/05c: 608 0
+:geoo/construction/rod_steel/straight32.S: 332 68 rrr
+:geoo/construction/rod_steel/straight32.S: 320 96
+:geoo/construction/rod_steel/straight32.S: 332 36 rrr
+:geoo/construction/rod_steel/straight32.S: 320 46 rrr
+:geoo/construction/rod_steel/straight32.S: 320 20 rrr
+:geoo/construction/rod_steel/straight32.S: 320 -12 rrr
+:geoo/construction/rod_steel/straight32.S: 332 12 rrr
+:geoo/construction/rod_steel/straight32.S: 344 4 rrr
+:geoo/construction/rod_steel/straight32.S: 320 0
+:geoo/construction/rod_steel/straight32.S: 344 28 rrr
+:geoo/construction/rod_steel/straight32.S: 344 46 rrr
+:geoo/construction/rod_steel/straight32.S: 320 288
+:geoo/construction/rod_steel/straight32.S: 320 232
+:matt/marble/05_2: 672 32
+:matt/marble/05_2: 672 64
+:matt/marble/05_2: 672 96
+:matt/marble/05_2: 704 96
+:matt/marble/05_2: 736 96
+:matt/marble/05_2: 768 96
+:matt/marble/05_2: 800 96
+:matt/marble/05_2: 832 96
+:matt/marble/05_2: 864 96
+:matt/marble/05_2: 896 96
+:matt/marble/05_2: 928 96
+:matt/marble/05_2: 928 128
+:matt/marble/05_2: 896 128
+:matt/marble/05_2: 864 128
+:matt/marble/05_2: 928 64
+:matt/marble/05_2: 928 32
+:matt/marble/05_2: 928 160
+:matt/marble/05_2: 928 192
+:matt/marble/05_2: 896 192
+:matt/marble/05_2: 864 192
+:matt/marble/05_2: 832 192
+:matt/marble/05_2: 800 192
+:matt/marble/05_2: 768 192
+:matt/marble/05_2: 736 192
+:matt/marble/05_2: 704 192
+:matt/marble/05_2: 672 192
+:matt/marble/05_2: 672 160
+:matt/marble/05_2: 672 128
+:matt/marble/05_2: 928 224
+:matt/marble/05_2: 896 224
+:matt/marble/05_2: 864 224
+:matt/marble/05_2: 832 224
+:matt/marble/05_2: 800 224
+:matt/marble/05_2: 768 224
+:matt/marble/05_2: 736 224
+:matt/marble/05_2: 704 224
+:matt/marble/05_2: 736 256
+:matt/marble/05_2: 704 256
+:matt/marble/05_2: 672 256
+:matt/marble/05_2: 672 288
+:matt/marble/05_2: 928 320
+:matt/marble/05_2: 896 320
+:matt/marble/05_2: 864 320
+:matt/marble/05_2: 832 320
+:matt/marble/05_2: 800 320
+:matt/marble/05_2: 768 320
+:matt/marble/05_2: 736 320
+:matt/marble/05_2: 704 320
+:matt/marble/05_2: 672 320
+:matt/marble/05_2: 928 288
+:matt/marble/05_2: 672 0
+:matt/marble/05_2: 704 0
+:matt/marble/05_2: 736 0
+:matt/marble/05_2: 768 0
+:matt/marble/05_2: 800 0
+:matt/marble/05_2: 832 0
+:matt/marble/05_2: 864 0
+:matt/marble/05_2: 896 0
+:matt/marble/05c: 928 0
+:geoo/construction/rod_steel/straight32.S: 972 68 rrr
+:geoo/construction/rod_steel/straight32.S: 960 96
+:geoo/construction/rod_steel/straight32.S: 972 36 rrr
+:geoo/construction/rod_steel/straight32.S: 960 46 rrr
+:geoo/construction/rod_steel/straight32.S: 960 20 rrr
+:geoo/construction/rod_steel/straight32.S: 960 -12 rrr
+:geoo/construction/rod_steel/straight32.S: 972 12 rrr
+:geoo/construction/rod_steel/straight32.S: 984 4 rrr
+:geoo/construction/rod_steel/straight32.S: 960 0
+:geoo/construction/rod_steel/straight32.S: 984 28 rrr
+:geoo/construction/rod_steel/straight32.S: 984 46 rrr
+:geoo/construction/rod_steel/straight32.S: 652 68 rrr
+:geoo/construction/rod_steel/straight32.S: 640 96
+:geoo/construction/rod_steel/straight32.S: 652 36 rrr
+:geoo/construction/rod_steel/straight32.S: 640 46 rrr
+:geoo/construction/rod_steel/straight32.S: 640 20 rrr
+:geoo/construction/rod_steel/straight32.S: 640 -12 rrr
+:geoo/construction/rod_steel/straight32.S: 652 12 rrr
+:geoo/construction/rod_steel/straight32.S: 664 4 rrr
+:geoo/construction/rod_steel/straight32.S: 640 0
+:geoo/construction/rod_steel/straight32.S: 664 28 rrr
+:geoo/construction/rod_steel/straight32.S: 664 46 rrr
+:geoo/construction/rod_steel/straight32.S: 960 288
+:geoo/construction/rod_steel/straight32.S: 960 232
+:geoo/construction/rod_steel/straight32.S: 640 288
+:geoo/construction/rod_steel/straight32.S: 640 232
+:matt/marble/05c: 992 32
+:matt/marble/05c: 992 64
+:matt/marble/05c: 992 96
+:matt/marble/05c: 1024 96
+:matt/marble/05c: 1056 96
+:matt/marble/05c: 1088 96
+:matt/marble/05c: 1120 96
+:matt/marble/05c: 1152 96
+:matt/marble/05c: 1184 96
+:matt/marble/05c: 1216 96
+:matt/marble/05_2: 1248 96
+:matt/marble/05_2: 1248 128
+:matt/marble/05c: 1216 128
+:matt/marble/05c: 1184 128
+:matt/marble/05_2: 1248 64
+:matt/marble/05_2: 1248 32
+:matt/marble/05_2: 1248 160
+:matt/marble/05_2: 1248 192
+:matt/marble/05c: 1216 192
+:matt/marble/05c: 1184 192
+:matt/marble/05c: 1152 192
+:matt/marble/05c: 1120 192
+:matt/marble/05c: 1088 192
+:matt/marble/05c: 1056 192
+:matt/marble/05c: 1024 192
+:matt/marble/05c: 992 192
+:matt/marble/05c: 992 128
+:matt/marble/05_2: 1248 224
+:matt/marble/05c: 1216 224
+:matt/marble/05c: 1184 224
+:matt/marble/05c: 1152 224
+:matt/marble/05c: 1120 224
+:matt/marble/05c: 1088 224
+:matt/marble/05c: 1056 224
+:matt/marble/05c: 1024 224
+:matt/marble/05c: 992 224
+:matt/marble/05c: 1056 256
+:matt/marble/05c: 1024 256
+:matt/marble/05c: 992 256
+:matt/marble/05c: 992 288
+:matt/marble/05_2: 1248 320
+:matt/marble/05c: 1216 320
+:matt/marble/05c: 1184 320
+:matt/marble/05c: 1152 320
+:matt/marble/05c: 1120 320
+:matt/marble/05c: 1088 320
+:matt/marble/05c: 1056 320
+:matt/marble/05c: 1024 320
+:matt/marble/05c: 992 320
+:matt/marble/05_2: 1248 288
+:matt/marble/05c: 992 0
+:matt/marble/05c: 1024 0
+:matt/marble/05c: 1056 0
+:matt/marble/05c: 1088 0
+:matt/marble/05c: 1120 0
+:matt/marble/05c: 1152 0
+:matt/marble/05c: 1184 0
+:matt/marble/05c: 1216 0
+:matt/marble/05_2: 1248 0
+:geoo/construction/rod_steel/straight32.S: 972 68 rrr
+:geoo/construction/rod_steel/straight32.S: 960 96
+:geoo/construction/rod_steel/straight32.S: 972 36 rrr
+:geoo/construction/rod_steel/straight32.S: 960 46 rrr
+:geoo/construction/rod_steel/straight32.S: 960 20 rrr
+:geoo/construction/rod_steel/straight32.S: 960 -12 rrr
+:geoo/construction/rod_steel/straight32.S: 972 12 rrr
+:geoo/construction/rod_steel/straight32.S: 984 4 rrr
+:geoo/construction/rod_steel/straight32.S: 960 0
+:geoo/construction/rod_steel/straight32.S: 984 28 rrr
+:geoo/construction/rod_steel/straight32.S: 984 46 rrr
+:geoo/construction/rod_steel/straight32.S: 960 288
+:geoo/construction/rod_steel/straight32.S: 960 232
+:matt/marble/05_2: 928 0
+:matt/marble/05_2: 992 32
+:matt/marble/05_2: 992 64
+:matt/marble/05_2: 992 96
+:matt/marble/05_2: 1024 96
+:matt/marble/05_2: 1056 96
+:matt/marble/05_2: 1088 96
+:matt/marble/05_2: 1120 96
+:matt/marble/05_2: 1152 96
+:matt/marble/05_2: 1184 96
+:matt/marble/05_2: 1216 96
+:matt/marble/05_2: 1216 128
+:matt/marble/05_2: 1184 128
+:matt/marble/05_2: 1216 192
+:matt/marble/05_2: 1184 192
+:matt/marble/05_2: 1152 192
+:matt/marble/05_2: 1120 192
+:matt/marble/05_2: 1088 192
+:matt/marble/05_2: 1056 192
+:matt/marble/05_2: 1024 192
+:matt/marble/05_2: 992 192
+:matt/marble/05_2: 992 128
+:matt/marble/05_2: 1216 224
+:matt/marble/05_2: 1184 224
+:matt/marble/05_2: 1152 224
+:matt/marble/05_2: 1120 224
+:matt/marble/05_2: 1088 224
+:matt/marble/05_2: 1056 224
+:matt/marble/05_2: 1024 224
+:matt/marble/05_2: 992 224
+:matt/marble/05_2: 1056 256
+:matt/marble/05_2: 1024 256
+:matt/marble/05_2: 992 256
+:matt/marble/05_2: 992 288
+:matt/marble/05_2: 1216 320
+:matt/marble/05_2: 1184 320
+:matt/marble/05_2: 1152 320
+:matt/marble/05_2: 1120 320
+:matt/marble/05_2: 1088 320
+:matt/marble/05_2: 1056 320
+:matt/marble/05_2: 1024 320
+:matt/marble/05_2: 992 320
+:matt/marble/05_2: 992 0
+:matt/marble/05_2: 1024 0
+:matt/marble/05_2: 1056 0
+:matt/marble/05_2: 1088 0
+:matt/marble/05_2: 1120 0
+:matt/marble/05_2: 1152 0
+:matt/marble/05_2: 1184 0
+:matt/marble/05_2: 1216 0
+:geoo/steel/16x16o.S: 408 96
+:geoo/steel/16x16o.S: 1048 96
+:geoo/construction/rod_steel/straight32.S: 344 238 rrr
+:geoo/construction/rod_steel/straight32.S: 664 238 rrr
+:geoo/construction/rod_steel/straight32.S: 984 238 rrr
+:geoo/construction/rod_steel/straight32.S: 24 238 rrr
+:geoo/steel/16x16o.S: 408 192
+:geoo/steel/16x16o.S: 728 192
+:geoo/steel/16x16o.S: 1048 192
+:geoo/steel/16x16o.S: 88 192
+:geoo/steel/16x16o.S: 88 96
+:geoo/steel/16x16o.S: 728 96
+:matt/marble/05_2: 672 224
+:matt/marble/05_2: 992 160
+:geoo/construction/rod_steel/straight32.S: 1292 68 rrr
+:geoo/construction/rod_steel/straight32.S: 1280 96
+:geoo/construction/rod_steel/straight32.S: 1292 36 rrr
+:geoo/construction/rod_steel/straight32.S: 1280 46 rrr
+:geoo/construction/rod_steel/straight32.S: 1280 20 rrr
+:geoo/construction/rod_steel/straight32.S: 1280 -12 rrr
+:geoo/construction/rod_steel/straight32.S: 1292 12 rrr
+:geoo/construction/rod_steel/straight32.S: 1304 4 rrr
+:geoo/construction/rod_steel/straight32.S: 1280 0
+:geoo/construction/rod_steel/straight32.S: 1304 28 rrr
+:geoo/construction/rod_steel/straight32.S: 1304 46 rrr
+:geoo/construction/rod_steel/straight32.S: 1280 288
+:geoo/construction/rod_steel/straight32.S: 1280 232
+:geoo/construction/rod_steel/straight32.S: 1292 68 rrr
+:geoo/construction/rod_steel/straight32.S: 1280 96
+:geoo/construction/rod_steel/straight32.S: 1292 36 rrr
+:geoo/construction/rod_steel/straight32.S: 1280 46 rrr
+:geoo/construction/rod_steel/straight32.S: 1280 20 rrr
+:geoo/construction/rod_steel/straight32.S: 1280 -12 rrr
+:geoo/construction/rod_steel/straight32.S: 1292 12 rrr
+:geoo/construction/rod_steel/straight32.S: 1304 4 rrr
+:geoo/construction/rod_steel/straight32.S: 1280 0
+:geoo/construction/rod_steel/straight32.S: 1304 28 rrr
+:geoo/construction/rod_steel/straight32.S: 1304 46 rrr
+:geoo/construction/rod_steel/straight32.S: 1280 288
+:geoo/construction/rod_steel/straight32.S: 1280 232
+:geoo/construction/rod_steel/straight32.S: 1304 238 rrr
+:matt/marble/05a: 1312 0
+:matt/marble/05a: 1344 0
+:matt/marble/05a: 1376 0
+:matt/marble/05a: 1408 0
+:matt/marble/05a: 1440 0
+:matt/marble/05a: 1472 0
+:matt/marble/05a: 1504 0
+:matt/marble/05a: 1536 0
+:matt/marble/05a: 1568 0
+:matt/marble/05a: 1568 32
+:matt/marble/05a: 1312 32
+:matt/marble/05a: 1312 64
+:matt/marble/05a: 1312 96
+:matt/marble/05a: 1312 128
+:matt/marble/05a: 1312 160
+:matt/marble/05a: 1312 192
+:matt/marble/05a: 1312 224
+:matt/marble/05a: 1312 256
+:matt/marble/05a: 1312 288
+:matt/marble/05a: 1312 320
+:matt/marble/05a: 1344 320
+:matt/marble/05a: 1376 320
+:matt/marble/05a: 1408 320
+:matt/marble/05a: 1440 320
+:matt/marble/05a: 1472 320
+:matt/marble/05a: 1504 320
+:matt/marble/05a: 1536 320
+:matt/marble/05a: 1568 320
+:matt/marble/05a: 1568 64
+:matt/marble/05a: 1344 96
+:matt/marble/05a: 1376 96
+:matt/marble/05a: 1408 96
+:matt/marble/05a: 1440 96
+:matt/marble/05a: 1472 96
+:matt/marble/05a: 1504 96
+:matt/marble/05a: 1536 96
+:matt/marble/05a: 1568 96
+:matt/marble/05a: 1568 128
+:matt/marble/05a: 1536 128
+:matt/marble/05a: 1504 128
+:matt/marble/05a: 1344 192
+:matt/marble/05a: 1376 192
+:matt/marble/05a: 1408 192
+:matt/marble/05a: 1440 192
+:matt/marble/05a: 1472 192
+:matt/marble/05a: 1504 192
+:matt/marble/05a: 1536 192
+:matt/marble/05a: 1568 192
+:matt/marble/05a: 1568 160
+:matt/marble/05a: 1568 224
+:matt/marble/05a: 1568 288
+:matt/marble/05a: 1344 224
+:matt/marble/05a: 1376 224
+:matt/marble/05a: 1408 224
+:matt/marble/05a: 1440 224
+:matt/marble/05a: 1472 224
+:matt/marble/05a: 1504 224
+:matt/marble/05a: 1536 224
+:matt/marble/05a: 1344 256
+:matt/marble/05a: 1376 256
+:geoo/construction/rod_steel/straight32.S: 1612 68 rrr
+:geoo/construction/rod_steel/straight32.S: 1600 96
+:geoo/construction/rod_steel/straight32.S: 1612 36 rrr
+:geoo/construction/rod_steel/straight32.S: 1600 46 rrr
+:geoo/construction/rod_steel/straight32.S: 1600 20 rrr
+:geoo/construction/rod_steel/straight32.S: 1600 -12 rrr
+:geoo/construction/rod_steel/straight32.S: 1612 12 rrr
+:geoo/construction/rod_steel/straight32.S: 1624 4 rrr
+:geoo/construction/rod_steel/straight32.S: 1600 0
+:geoo/construction/rod_steel/straight32.S: 1624 28 rrr
+:geoo/construction/rod_steel/straight32.S: 1624 46 rrr
+:geoo/construction/rod_steel/straight32.S: 1600 288
+:geoo/construction/rod_steel/straight32.S: 1600 232
+:geoo/construction/rod_steel/straight32.S: 1624 238 rrr
+:matt/marble/05a: 1632 0
+:matt/marble/05a: 1664 0
+:matt/marble/05a: 1696 0
+:matt/marble/05a: 1728 0
+:matt/marble/05a: 1760 0
+:matt/marble/05a: 1792 0
+:matt/marble/05a: 1824 0
+:matt/marble/05a: 1856 0
+:matt/marble/05a: 1888 0
+:matt/marble/05a: 1888 32
+:matt/marble/05a: 1632 32
+:matt/marble/05a: 1632 64
+:matt/marble/05a: 1632 96
+:matt/marble/05a: 1632 128
+:matt/marble/05a: 1632 160
+:matt/marble/05a: 1632 192
+:matt/marble/05a: 1632 224
+:matt/marble/05a: 1632 256
+:matt/marble/05a: 1632 288
+:matt/marble/05a: 1632 320
+:matt/marble/05a: 1664 320
+:matt/marble/05a: 1696 320
+:matt/marble/05a: 1728 320
+:matt/marble/05a: 1760 320
+:matt/marble/05a: 1792 320
+:matt/marble/05a: 1824 320
+:matt/marble/05a: 1856 320
+:matt/marble/05a: 1888 320
+:matt/marble/05a: 1888 64
+:matt/marble/05a: 1664 96
+:matt/marble/05a: 1696 96
+:matt/marble/05a: 1728 96
+:matt/marble/05a: 1760 96
+:matt/marble/05a: 1792 96
+:matt/marble/05a: 1824 96
+:matt/marble/05a: 1856 96
+:matt/marble/05a: 1888 96
+:matt/marble/05a: 1888 128
+:matt/marble/05a: 1856 128
+:matt/marble/05a: 1824 128
+:matt/marble/05a: 1664 192
+:matt/marble/05a: 1696 192
+:matt/marble/05a: 1728 192
+:matt/marble/05a: 1760 192
+:matt/marble/05a: 1792 192
+:matt/marble/05a: 1824 192
+:matt/marble/05a: 1856 192
+:matt/marble/05a: 1888 192
+:matt/marble/05a: 1888 160
+:matt/marble/05a: 1888 224
+:matt/marble/05a: 1888 288
+:matt/marble/05a: 1664 224
+:matt/marble/05a: 1696 224
+:matt/marble/05a: 1728 224
+:matt/marble/05a: 1760 224
+:matt/marble/05a: 1792 224
+:matt/marble/05a: 1824 224
+:matt/marble/05a: 1856 224
+:matt/marble/05a: 1664 256
+:matt/marble/05a: 1696 256
+:geoo/steel/16x16o.S: 1688 96
+:geoo/steel/16x16o.S: 1688 192
+:geoo/steel/16x16o.S: 1368 192
+:geoo/steel/16x16o.S: 1368 96
+:geoo/construction/rod_steel/straight32.S: 1932 68 rrr
+:geoo/construction/rod_steel/straight32.S: 1920 96
+:geoo/construction/rod_steel/straight32.S: 1932 36 rrr
+:geoo/construction/rod_steel/straight32.S: 1920 46 rrr
+:geoo/construction/rod_steel/straight32.S: 1920 20 rrr
+:geoo/construction/rod_steel/straight32.S: 1920 -12 rrr
+:geoo/construction/rod_steel/straight32.S: 1932 12 rrr
+:geoo/construction/rod_steel/straight32.S: 1944 4 rrr
+:geoo/construction/rod_steel/straight32.S: 1920 0
+:geoo/construction/rod_steel/straight32.S: 1944 28 rrr
+:geoo/construction/rod_steel/straight32.S: 1944 46 rrr
+:geoo/construction/rod_steel/straight32.S: 1920 288
+:geoo/construction/rod_steel/straight32.S: 1920 232
+:geoo/construction/rod_steel/straight32.S: 1944 238 rrr
+:matt/marble/05b: 1952 0
+:matt/marble/05b: 1984 0
+:matt/marble/05b: 2016 0
+:matt/marble/05b: 2048 0
+:matt/marble/05b: 2080 0
+:matt/marble/05b: 2112 0
+:matt/marble/05b: 2144 0
+:matt/marble/05b: 2176 0
+:matt/marble/05b: 2208 0
+:matt/marble/05b: 2208 32
+:matt/marble/05b: 2208 64
+:matt/marble/05b: 2208 96
+:matt/marble/05b: 2208 128
+:matt/marble/05b: 2208 160
+:matt/marble/05b: 2208 192
+:matt/marble/05b: 2208 224
+:matt/marble/05b: 2208 288
+:matt/marble/05b: 2208 320
+:matt/marble/05b: 1952 32
+:matt/marble/05b: 1952 64
+:matt/marble/05b: 1952 96
+:matt/marble/05b: 1952 128
+:matt/marble/05b: 1952 160
+:matt/marble/05b: 1952 192
+:matt/marble/05b: 1952 224
+:matt/marble/05b: 1952 288
+:matt/marble/05b: 1952 256
+:matt/marble/05b: 1952 320
+:matt/marble/05b: 1984 320
+:matt/marble/05b: 2016 320
+:matt/marble/05b: 2048 320
+:matt/marble/05b: 2080 320
+:matt/marble/05b: 2112 320
+:matt/marble/05b: 2144 320
+:matt/marble/05b: 2176 320
+:matt/marble/05b: 1984 96
+:matt/marble/05b: 2016 96
+:matt/marble/05b: 2048 96
+:matt/marble/05b: 2080 96
+:matt/marble/05b: 2112 96
+:matt/marble/05b: 2144 96
+:matt/marble/05b: 2176 96
+:matt/marble/05b: 2144 128
+:matt/marble/05b: 2176 128
+:matt/marble/05b: 1984 192
+:matt/marble/05b: 2016 192
+:matt/marble/05b: 2048 192
+:matt/marble/05b: 2080 192
+:matt/marble/05b: 2112 192
+:matt/marble/05b: 2144 192
+:matt/marble/05b: 2176 192
+:matt/marble/05b: 1984 224
+:matt/marble/05b: 2016 224
+:matt/marble/05b: 2048 224
+:matt/marble/05b: 2080 224
+:matt/marble/05b: 2112 224
+:matt/marble/05b: 2144 224
+:matt/marble/05b: 2176 224
+:matt/marble/05b: 1984 256
+:matt/marble/05b: 2016 256
+:geoo/construction/rod_steel/straight32.S: 2252 68 rrr
+:geoo/construction/rod_steel/straight32.S: 2240 96
+:geoo/construction/rod_steel/straight32.S: 2252 36 rrr
+:geoo/construction/rod_steel/straight32.S: 2240 46 rrr
+:geoo/construction/rod_steel/straight32.S: 2240 20 rrr
+:geoo/construction/rod_steel/straight32.S: 2240 -12 rrr
+:geoo/construction/rod_steel/straight32.S: 2252 12 rrr
+:geoo/construction/rod_steel/straight32.S: 2264 4 rrr
+:geoo/construction/rod_steel/straight32.S: 2240 0
+:geoo/construction/rod_steel/straight32.S: 2264 28 rrr
+:geoo/construction/rod_steel/straight32.S: 2264 46 rrr
+:geoo/construction/rod_steel/straight32.S: 2240 288
+:geoo/construction/rod_steel/straight32.S: 2240 232
+:geoo/construction/rod_steel/straight32.S: 2264 238 rrr
+:matt/marble/05b: 2272 0
+:matt/marble/05b: 2304 0
+:matt/marble/05b: 2336 0
+:matt/marble/05b: 2368 0
+:matt/marble/05b: 2400 0
+:matt/marble/05b: 2432 0
+:matt/marble/05b: 2464 0
+:matt/marble/05b: 2496 0
+:matt/marble/05b: 2528 0
+:matt/marble/05b: 2528 32
+:matt/marble/05b: 2528 64
+:matt/marble/05b: 2528 96
+:matt/marble/05b: 2528 128
+:matt/marble/05b: 2528 160
+:matt/marble/05b: 2528 192
+:matt/marble/05b: 2528 224
+:matt/marble/05b: 2528 288
+:matt/marble/05b: 2528 320
+:matt/marble/05b: 2272 32
+:matt/marble/05b: 2272 64
+:matt/marble/05b: 2272 96
+:matt/marble/05b: 2272 128
+:matt/marble/05b: 2272 160
+:matt/marble/05b: 2272 192
+:matt/marble/05b: 2272 224
+:matt/marble/05b: 2272 288
+:matt/marble/05b: 2272 256
+:matt/marble/05b: 2272 320
+:matt/marble/05b: 2304 320
+:matt/marble/05b: 2336 320
+:matt/marble/05b: 2368 320
+:matt/marble/05b: 2400 320
+:matt/marble/05b: 2432 320
+:matt/marble/05b: 2464 320
+:matt/marble/05b: 2496 320
+:matt/marble/05b: 2304 96
+:matt/marble/05b: 2336 96
+:matt/marble/05b: 2368 96
+:matt/marble/05b: 2400 96
+:matt/marble/05b: 2432 96
+:matt/marble/05b: 2464 96
+:matt/marble/05b: 2496 96
+:matt/marble/05b: 2464 128
+:matt/marble/05b: 2496 128
+:matt/marble/05b: 2304 192
+:matt/marble/05b: 2336 192
+:matt/marble/05b: 2368 192
+:matt/marble/05b: 2400 192
+:matt/marble/05b: 2432 192
+:matt/marble/05b: 2464 192
+:matt/marble/05b: 2496 192
+:matt/marble/05b: 2304 224
+:matt/marble/05b: 2336 224
+:matt/marble/05b: 2368 224
+:matt/marble/05b: 2400 224
+:matt/marble/05b: 2432 224
+:matt/marble/05b: 2464 224
+:matt/marble/05b: 2496 224
+:matt/marble/05b: 2304 256
+:matt/marble/05b: 2336 256
+:geoo/steel/16x16o.S: 2328 96
+:geoo/steel/16x16o.S: 2328 192
+:geoo/steel/16x16o.S: 2008 192
+:geoo/steel/16x16o.S: 2008 96

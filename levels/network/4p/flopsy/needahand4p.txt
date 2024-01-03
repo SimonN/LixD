@@ -1,0 +1,134 @@
+$BUILT 2023-09-07 22:05:06
+$AUTHOR Flopsy
+$ENGLISH Need A Hand? 4P
+
+#INTENDED_NUMBER_OF_PLAYERS 4
+#SIZE_X 640
+#SIZE_Y 336
+#TORUS_X 1
+#TORUS_Y 1
+
+#SECONDS 120
+#INITIAL 80
+#SPAWN_INTERVAL 31
+
+#WALKER -1
+#CLIMBER 1
+#FLOATER 1
+#EXPLODER2 5
+#BUILDER 80
+#BASHER 20
+#MINER 5
+#DIGGER 1
+#JUMPER 20
+#BATTER -1
+
+:matt/carnival/Hatch.H: 480 184
+:matt/carnival/Hatch.H: 0 184
+:matt/carnival/Hatch.H: 160 184
+:matt/carnival/Hatch.H: 320 184
+
+:geoo/abstract/goal.G: 496 112
+:geoo/abstract/goal.G: 16 112
+:geoo/abstract/goal.G: 176 112
+:geoo/abstract/goal.G: 336 112
+
+:geoo/construction/spring_fast.T: 308 176
+:geoo/construction/spring_fast.T: 148 176
+:geoo/construction/spring_fast.T: 628 176
+:geoo/construction/spring_fast.T: 44 176
+:geoo/construction/spring_fast.T: 204 176
+:geoo/construction/spring_fast.T: 364 176
+:geoo/construction/spring_fast.T: 524 176
+
+:matt/marble/05: 544 304
+:geoo/steel/16x32o.S: 528 304
+:matt/marble/05: 576 304
+:matt/marble/05: 608 304
+:geoo/steel/16x32o.S: 0 304
+:geoo/steel/32x32o.S: 16 304
+:geoo/steel/32x32o.S: 496 304
+:geoo/steel/16x32o.S: 480 304
+:geoo/steel/16x32o.S: 48 304
+:geoo/steel/16x32o.S: 504 272
+:geoo/steel/16x32o.S: 504 240
+:matt/marble/thinplatform128p: 528 256
+:geoo/steel/16x32o.S: 528 256
+:geoo/steel/16x32o.S: 528 224
+:matt/marble/thinplatform128p: 368 256
+:geoo/steel/16x32o.S: 480 256
+:geoo/steel/16x32o.S: 480 224
+:geoo/steel/32x16o.S: 480 208
+:matt/marble/thinplatform128p: 528 208
+:geoo/steel/32x16o.S: 512 208
+:geoo/steel/16x32o.S: 24 272
+:geoo/steel/16x32o.S: 24 240
+:matt/marble/thinplatform128p: 48 256
+:geoo/steel/16x32o.S: 48 256
+:geoo/steel/16x32o.S: 48 224
+:geoo/steel/16x32o.S: 0 256
+:geoo/steel/16x32o.S: 0 224
+:geoo/steel/32x16o.S: 0 208
+:geoo/steel/32x16o.S: 32 208
+:matt/marble/05a: 64 304
+:matt/marble/05a: 96 304
+:matt/marble/05a: 128 304
+:geoo/steel/16x32o.S: 160 304
+:geoo/steel/32x32o.S: 176 304
+:geoo/steel/16x32o.S: 208 304
+:geoo/steel/16x32o.S: 184 272
+:geoo/steel/16x32o.S: 184 240
+:matt/marble/thinplatform128p: 208 256
+:geoo/steel/16x32o.S: 208 256
+:geoo/steel/16x32o.S: 208 224
+:geoo/steel/16x32o.S: 160 256
+:geoo/steel/16x32o.S: 160 224
+:matt/marble/thinplatform128p: 64 208
+:geoo/steel/32x16o.S: 160 208
+:matt/marble/thinplatform128p: 208 208
+:geoo/steel/32x16o.S: 192 208
+:matt/marble/05b: 224 304
+:matt/marble/05b: 256 304
+:matt/marble/05b: 288 304
+:geoo/steel/16x32o.S: 320 304
+:geoo/steel/32x32o.S: 336 304
+:geoo/steel/16x32o.S: 368 304
+:geoo/steel/16x32o.S: 344 272
+:geoo/steel/16x32o.S: 344 240
+:geoo/steel/16x32o.S: 368 256
+:geoo/steel/16x32o.S: 368 224
+:geoo/steel/16x32o.S: 320 256
+:geoo/steel/16x32o.S: 320 224
+:geoo/steel/32x16o.S: 320 208
+:matt/marble/thinplatform128p: 352 208
+:geoo/steel/32x16o.S: 352 208
+:matt/marble/05c: 384 304
+:matt/marble/05c: 416 304
+:matt/marble/05c: 448 304
+:matt/marble/thinplatform128p: 64 160
+:matt/marble/thinplatform128p: 192 160
+:matt/marble/thinplatform128p: 320 160
+:matt/marble/thinplatform128p: 480 160
+:matt/marble/thinplatform128p: 544 160
+:matt/marble/thinplatform128p: 608 160
+:geoo/abstract/cvblocks/015: 208 160 d
+:geoo/abstract/cvblocks/015: 160 160 d
+:geoo/abstract/cvblocks/015: 48 160 d
+:geoo/abstract/cvblocks/015: 0 160 d
+:geoo/abstract/cvblocks/015: 528 160 d
+:geoo/abstract/cvblocks/015: 480 160 d
+:geoo/abstract/cvblocks/015: 320 160 d
+:matt/marble/thinplatform128p: 352 160
+:geoo/abstract/cvblocks/015: 368 160 d
+:amanda/steel/steel24x8.S: 340 160
+:amanda/steel/steel24x8.S: 180 160
+:amanda/steel/steel24x8.S: 20 160
+:amanda/steel/steel24x8.S: 500 160
+:geoo/construction/platform_single.S: 382 53 r
+:geoo/construction/platform_single.S: 320 53 r
+:geoo/construction/platform_single.S: 160 53 r
+:geoo/construction/platform_single.S: 0 53 r
+:geoo/construction/platform_single.S: 480 53 r
+:geoo/construction/platform_single.S: 542 53 r
+:geoo/construction/platform_single.S: 222 53 r
+:geoo/construction/platform_single.S: 62 53 r

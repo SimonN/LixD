@@ -1,0 +1,100 @@
+$BUILT 2023-05-26 22:41:09
+$AUTHOR Flopsy
+$ENGLISH Do do do, come on let's do the Conga!
+
+#INTENDED_NUMBER_OF_PLAYERS 5
+#SIZE_X 640
+#SIZE_Y 408
+#TORUS_X 1
+#TORUS_Y 0
+
+#SECONDS 60
+#INITIAL 100
+#SPAWN_INTERVAL 1
+
+#WALKER 5
+#JUMPER 5
+#BATTER -1
+#EXPLODER2 0
+
+:matt/carnival/Hatch.H: 24 320
+:matt/carnival/Hatch.H: 152 320
+:matt/carnival/Hatch.H: 280 320
+:matt/carnival/Hatch.H: 408 320
+:matt/carnival/Hatch.H: 536 320
+
+:matt/marble/Goal.G: 96 32
+:matt/marble/Goal.G: 224 32
+:matt/marble/Goal.G: 352 32
+:matt/marble/Goal.G: 480 32
+:matt/marble/Goal.G: 608 32
+
+:geoo/construction/steam_up.T: 568 136
+:geoo/construction/steam_up.T: 440 136
+:geoo/construction/steam_up.T: 312 136
+:geoo/construction/steam_up.T: 184 136
+:geoo/construction/steam_up.T: 56 136
+
+:geoo/construction/stairs_ru_32.S: 64 296
+:geoo/construction/stairs_ru_32.S: 128 264
+:geoo/construction/stairs_ru_32.S: 192 296
+:geoo/construction/stairs_ru_32.S: 256 264
+:geoo/construction/stairs_ru_32.S: 320 296
+:geoo/construction/stairs_ru_32.S: 384 264
+:geoo/construction/stairs_ru_32.S: 448 296
+:geoo/construction/stairs_ru_32.S: 512 264
+:matt/marble/thinplatform128p: 0 344
+:matt/marble/thinplatform128p: 128 344
+:matt/marble/thinplatform128p: 256 344
+:matt/marble/thinplatform128p: 384 344
+:matt/marble/thinplatform128p: 512 344
+:geoo/construction/stairs_ru_32.S: 576 296
+:geoo/construction/stairs_ru_32.S: 0 264
+:matt/marble/thinplatform128p: 128 264
+:matt/marble/thinplatform128p: 0 264
+:matt/marble/thinplatform128p: 256 264
+:matt/marble/thinplatform128p: 384 264
+:matt/marble/thinplatform128p: 512 264
+:geoo/construction/stairs_ru_32.S: 64 344
+:geoo/construction/stairs_ru_32.S: 192 344
+:geoo/construction/stairs_ru_32.S: 320 344
+:geoo/construction/stairs_ru_32.S: 448 344
+:geoo/construction/stairs_ru_32.S: 576 344
+:matt/marble/05e: 40 376
+:matt/marble/05_2: 168 376
+:matt/marble/05b: 296 376
+:matt/marble/05c: 424 376
+:matt/marble/05d: 552 376
+:geoo/construction/stairs_ru_32.S: 128 216
+:geoo/construction/stairs_ru_32.S: 192 184
+:geoo/construction/stairs_ru_32.S: 256 216
+:geoo/construction/stairs_ru_32.S: 320 184
+:geoo/construction/stairs_ru_32.S: 384 216
+:geoo/construction/stairs_ru_32.S: 448 184
+:geoo/construction/stairs_ru_32.S: 0 216
+:geoo/construction/stairs_ru_32.S: 64 184
+:geoo/construction/stairs_ru_32.S: 512 216
+:geoo/construction/stairs_ru_32.S: 576 184
+:matt/marble/thinplatform128p: 128 184
+:matt/marble/thinplatform128p: 0 184
+:matt/marble/thinplatform128p: 256 184
+:matt/marble/thinplatform128p: 384 184
+:matt/marble/thinplatform128p: 512 184
+:matt/marble/08d: 608 80
+:matt/marble/08d: 576 0
+:matt/marble/08c: 480 80
+:matt/marble/08c: 512 0
+:matt/marble/08c: 448 0
+:matt/marble/08d: 0 0
+:matt/marble/08b: 384 0
+:matt/marble/08b: 352 80
+:matt/marble/08b: 320 0
+:matt/marble/05e: 64 0
+:matt/marble/05e: 96 0
+:matt/marble/05e: 128 0
+:matt/marble/05e: 160 0
+:matt/marble/05e: 96 80
+:matt/marble/05e: 128 80
+:matt/marble/08: 192 0
+:matt/marble/08: 256 0
+:matt/marble/08: 224 80

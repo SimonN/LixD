@@ -1,4 +1,4 @@
-$BUILT 2022-04-24 16:27:52
+$BUILT 2023-02-19 16:45:01
 $AUTHOR Flopsy
 $ENGLISH Grey Will Fade 6P
 
@@ -293,7 +293,6 @@ $ENGLISH Grey Will Fade 6P
 :geoo/steel/dark_16x16o.S: 248 208
 :geoo/steel/dark_16x16o.S: 600 208
 :geoo/steel/dark_16x16o.S: 184 368
-:geoo/steel/dark_16x16o.S: 664 368
 :geoo/steel/dark_16x16o.S: 416 336
 :geoo/steel/dark_16x16o.S: 432 336
 :geoo/steel/dark_16x32o.S: 544 368
@@ -309,6 +308,7 @@ $ENGLISH Grey Will Fade 6P
 :raymanni/lab/block_6: 160 240
 :raymanni/lab/block_6: 0 240
 :raymanni/lab/block_1: 672 368
+:geoo/steel/dark_16x16o.S: 664 368
 :raymanni/lab/block_1: 704 368
 :raymanni/lab/block_1: 800 368
 :raymanni/lab/block_1: 832 368
@@ -472,7 +472,6 @@ $ENGLISH Grey Will Fade 6P
 :geoo/steel/dark_16x16o.S: 920 208
 :geoo/steel/dark_16x16o.S: 1272 208
 :geoo/steel/dark_16x16o.S: 856 368
-:geoo/steel/dark_16x16o.S: 1336 368
 :geoo/steel/dark_16x16o.S: 1088 336
 :geoo/steel/dark_16x16o.S: 1104 336
 :geoo/steel/dark_16x32o.S: 1216 368
@@ -488,6 +487,7 @@ $ENGLISH Grey Will Fade 6P
 :raymanni/lab/block_6: 832 240
 :raymanni/lab/block_6: 672 240
 :raymanni/lab/block_1: 1344 368
+:geoo/steel/dark_16x16o.S: 1336 368
 :raymanni/lab/block_1: 1376 368
 :raymanni/lab/block_1: 1472 368
 :raymanni/lab/block_1: 1504 368

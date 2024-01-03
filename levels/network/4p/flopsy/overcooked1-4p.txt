@@ -1,0 +1,333 @@
+$BUILT 2023-04-27 00:28:01
+$AUTHOR Flopsy
+$ENGLISH Overcooked! 1 - 4P
+
+#INTENDED_NUMBER_OF_PLAYERS 4
+#SIZE_X 1408
+#SIZE_Y 618
+#TORUS_X 1
+#TORUS_Y 0
+
+#SECONDS 180
+#INITIAL 60
+#SPAWN_INTERVAL 31
+
+#WALKER 40
+#RUNNER 5
+#CLIMBER 5
+#FLOATER 10
+#BLOCKER 1
+#BUILDER 60
+#PLATFORMER 20
+#BASHER 20
+#MINER 20
+#DIGGER 5
+#JUMPER 40
+#BATTER 40
+#CUBER 1
+#EXPLODER2 0
+
+:matt/carnival/Hatch.H: 418 308 r
+:matt/carnival/Hatch.H: 232 312
+:matt/carnival/Hatch.H: 1122 308 r
+:matt/carnival/Hatch.H: 936 312
+
+:raymanni/lab/goal.G: 1120 490
+:raymanni/lab/goal.G: 928 490
+:raymanni/lab/goal.G: 416 490
+:raymanni/lab/goal.G: 224 490
+
+:amanda/forest/frog_happy.T: 320 538
+:amanda/forest/frog_happy.T: 1376 474
+:amanda/forest/frog_happy.T: 672 474
+:amanda/forest/frog_happy.T: 1024 538
+
+:proxima/flame.F: 236 402
+:proxima/flame.F: 284 402
+:proxima/flame.F: 332 402
+:proxima/flame.F: 380 402
+:proxima/flame.F: 428 402
+:proxima/flame.F: 940 402
+:proxima/flame.F: 988 402
+:proxima/flame.F: 1036 402
+:proxima/flame.F: 1084 402
+:proxima/flame.F: 1132 402
+
+:geoo/steel/16x16o.S: 200 202
+:geoo/steel/16x32o.S: 192 202
+:geoo/steel/16x32o.S: 192 234
+:geoo/steel/16x16o.S: 176 306
+:geoo/steel/16x32o.S: 192 266
+:geoo/steel/16x32o.S: 192 298
+:geoo/steel/16x32o.S: 192 330
+:geoo/steel/16x32o.S: 192 362
+:geoo/steel/32x16o.S: 192 394
+:geoo/steel/32x16o.S: 224 394
+:geoo/steel/32x16o.S: 256 394
+:geoo/steel/32x16o.S: 288 394
+:geoo/steel/32x16o.S: 320 394
+:geoo/steel/32x16o.S: 352 394
+:geoo/steel/32x16o.S: 384 394
+:geoo/steel/32x16o.S: 416 394
+:geoo/steel/32x16o.S: 448 394
+:geoo/steel/32x16o.S: 480 394
+:geoo/steel/16x32o.S: 496 362
+:geoo/steel/16x32o.S: 496 330
+:geoo/steel/16x16o.S: 512 306
+:geoo/steel/16x32o.S: 496 298
+:geoo/steel/16x32o.S: 496 266
+:geoo/steel/16x32o.S: 496 234
+:geoo/steel/16x16o.S: 488 202
+:geoo/steel/16x32o.S: 496 202
+:amanda/steel/steel24x8.S: 240 450
+:amanda/steel/steel24x8.S: 264 450
+:amanda/steel/steel24x8.S: 288 450
+:amanda/steel/steel24x8.S: 312 450
+:amanda/steel/steel24x8.S: 336 450
+:amanda/steel/steel24x8.S: 360 450
+:amanda/steel/steel24x8.S: 384 450
+:amanda/steel/steel24x8.S: 408 450
+:amanda/steel/steel24x8.S: 432 450
+:amanda/steel/steel24x8.S: 440 450
+:geoo/abstract/cvblocks/035: 160 458
+:geoo/abstract/cvblocks/035: 224 458
+:geoo/abstract/cvblocks/035: 416 458
+:geoo/abstract/cvblocks/035: 480 458
+:geoo/abstract/cvblocks/035: 288 458
+:geoo/abstract/cvblocks/035: 352 458
+:geoo/construction/stairs_rd_32.S: 162 418
+:geoo/construction/stairs_rd_32.S: 462 418 frr
+$BEGIN_TILE_GROUP 0
+:raymanni/holiday/brick_green_a: 24 0 frr
+:raymanni/holiday/brick_green_a: 8 0
+:proxima/tile/spheres/red: 0 6
+$END_TILE_GROUP
+:Group-0: 418 290
+$BEGIN_TILE_GROUP 1
+:raymanni/holiday/snowlix: 26 46
+:raymanni/holiday/snow1: 14 4
+:raymanni/holiday/snow1: 0 2
+:raymanni/holiday/snow1: 18 2
+:raymanni/holiday/snow1: 6 0
+:raymanni/holiday/snow1: 14 0
+:raymanni/holiday/snow1: 22 2
+:raymanni/holiday/snow1: 26 4
+$END_TILE_GROUP
+:Group-1: 320 240
+$BEGIN_TILE_GROUP 2
+:raymanni/holiday/plank_d1: 20 0 frr
+:raymanni/holiday/plank_d2: 10 0
+:proxima/tile/spheres/gold: 0 2
+$END_TILE_GROUP
+:Group-2: 231 298
+$BEGIN_TILE_GROUP 3
+:amanda/steel/steel8x16.S: 0 24
+:amanda/steel/steel8x16.S: 0 0
+:amanda/steel/steel8x16.S: 0 8
+$END_TILE_GROUP
+:Group-3: 276 410
+:Group-3: 324 410
+:Group-3: 372 410
+:Group-3: 420 410
+:geoo/abstract/cvblocks/037: 544 458
+:geoo/abstract/cvblocks/037: 608 490
+:geoo/abstract/cvblocks/035: 544 490
+:geoo/abstract/cvblocks/038: 480 490
+:geoo/abstract/cvblocks/036: 96 458
+:geoo/abstract/cvblocks/036: 32 490
+:geoo/abstract/cvblocks/035: 96 490
+:geoo/abstract/cvblocks/039: 160 490
+:geoo/abstract/cvblocks/036: 480 522
+:geoo/abstract/cvblocks/037: 160 522
+:geoo/abstract/cvblocks/035: 224 554
+:geoo/abstract/cvblocks/035: 416 554
+:geoo/abstract/cvblocks/032: 288 554
+:geoo/abstract/cvblocks/031: 384 554
+:geoo/abstract/cvblocks/036: 512 586
+:geoo/abstract/cvblocks/039: 480 554
+:geoo/abstract/cvblocks/039: 544 522
+:geoo/abstract/cvblocks/038: 160 554
+:geoo/abstract/cvblocks/038: 96 522
+:geoo/abstract/cvblocks/020: 256 602
+:geoo/abstract/cvblocks/020: 224 602
+:geoo/abstract/cvblocks/020: 192 602
+:geoo/abstract/cvblocks/020: 160 602
+:geoo/abstract/cvblocks/020: 416 602
+:geoo/abstract/cvblocks/020: 448 602
+:geoo/abstract/cvblocks/020: 480 602
+:geoo/abstract/cvblocks/020: 512 602
+:geoo/steel/32x16o.S: 432 554
+:geoo/steel/32x16o.S: 240 554
+:geoo/abstract/cvblocks/020: 288 602
+:geoo/abstract/cvblocks/020: 320 602
+$BEGIN_TILE_GROUP 4
+:geoo/steel/64x32o.S: 0 0
+:geoo/abstract/cvblocks/039: 0 0 d
+$END_TILE_GROUP
+:Group-4: 290 588
+:geoo/abstract/cvblocks/020: 384 602
+:geoo/abstract/cvblocks/020: 352 602
+:Group-4: 352 588 frr
+:geoo/steel/32x16o.S: 384 602
+:geoo/steel/32x16o.S: 416 602
+:geoo/steel/32x16o.S: 448 602
+:geoo/steel/32x16o.S: 480 602
+:geoo/steel/32x16o.S: 512 602
+:geoo/steel/32x16o.S: 288 602
+:geoo/steel/32x16o.S: 256 602
+:geoo/steel/32x16o.S: 224 602
+:geoo/steel/32x16o.S: 192 602
+:geoo/abstract/cvblocks/037: 128 586
+:geoo/steel/32x16o.S: 160 602
+:geoo/abstract/cvblocks/036: 576 554
+:Group-4: 642 523
+:geoo/abstract/cvblocks/039: 640 554
+$BEGIN_TILE_GROUP 5
+:amanda/steel/steel24x8.S: 24 0
+:amanda/steel/steel24x8.S: 80 0
+:amanda/steel/steel24x8.S: 0 0
+:amanda/steel/steel24x8.S: 104 0
+:amanda/steel/steel24x8.S: 56 0
+:amanda/steel/steel24x8.S: 48 0
+$END_TILE_GROUP
+:Group-5: 288 586
+:Group-4: 704 523 frr
+:Group-5: 640 522
+:geoo/abstract/cvblocks/039: 96 522 frr
+:geoo/abstract/cvblocks/036: 64 554 frr
+:Group-4: 0 523 frr
+:geoo/abstract/cvblocks/039: 0 554 frr
+:Group-4: 1346 523
+:Group-5: 1344 522 frr
+:geoo/abstract/cvblocks/036: 800 458
+:geoo/abstract/cvblocks/036: 736 490
+:geoo/abstract/cvblocks/035: 800 490
+:geoo/abstract/cvblocks/035: 864 458
+:geoo/abstract/cvblocks/035: 928 458
+:geoo/abstract/cvblocks/035: 1120 458
+:geoo/abstract/cvblocks/035: 1184 458
+:geoo/abstract/cvblocks/035: 992 458
+:geoo/abstract/cvblocks/035: 1056 458
+:geoo/abstract/cvblocks/037: 1248 458
+:geoo/abstract/cvblocks/037: 1312 490
+:geoo/abstract/cvblocks/035: 1248 490
+:geoo/abstract/cvblocks/038: 1184 490
+:geoo/abstract/cvblocks/039: 864 490
+:geoo/abstract/cvblocks/036: 1184 522
+:geoo/abstract/cvblocks/037: 864 522
+:geoo/abstract/cvblocks/035: 928 554
+:geoo/abstract/cvblocks/035: 1120 554
+:geoo/abstract/cvblocks/032: 992 554
+:geoo/abstract/cvblocks/031: 1088 554
+:geoo/abstract/cvblocks/036: 1216 586
+:geoo/abstract/cvblocks/039: 1184 554
+:geoo/abstract/cvblocks/039: 1248 522
+:geoo/abstract/cvblocks/038: 864 554
+:geoo/abstract/cvblocks/038: 800 522
+:geoo/abstract/cvblocks/020: 960 602
+:geoo/abstract/cvblocks/020: 928 602
+:geoo/abstract/cvblocks/020: 896 602
+:geoo/abstract/cvblocks/020: 864 602
+:geoo/abstract/cvblocks/020: 1120 602
+:geoo/abstract/cvblocks/020: 1152 602
+:geoo/abstract/cvblocks/020: 1184 602
+:geoo/abstract/cvblocks/020: 1216 602
+:geoo/steel/32x16o.S: 1136 554
+:geoo/steel/32x16o.S: 944 554
+:geoo/abstract/cvblocks/020: 992 602
+:geoo/abstract/cvblocks/020: 1024 602
+:Group-4: 994 588
+:geoo/abstract/cvblocks/020: 1088 602
+:geoo/abstract/cvblocks/020: 1056 602
+:Group-4: 1056 588 frr
+:geoo/steel/32x16o.S: 1088 602
+:geoo/steel/32x16o.S: 1120 602
+:geoo/steel/32x16o.S: 1152 602
+:geoo/steel/32x16o.S: 1184 602
+:geoo/steel/32x16o.S: 1216 602
+:geoo/steel/32x16o.S: 992 602
+:geoo/steel/32x16o.S: 960 602
+:geoo/steel/32x16o.S: 928 602
+:geoo/steel/32x16o.S: 896 602
+:geoo/abstract/cvblocks/037: 832 586
+:geoo/steel/32x16o.S: 864 602
+:geoo/abstract/cvblocks/036: 1280 554
+:Group-5: 992 586
+:geoo/abstract/cvblocks/039: 800 522 frr
+:geoo/abstract/cvblocks/036: 768 554 frr
+:geoo/abstract/cvblocks/038: 704 554
+:geoo/abstract/cvblocks/039: 1344 554
+:geoo/abstract/cvblocks/039: 1280 586
+:geoo/abstract/cvblocks/039: 64 586 frr
+:geoo/abstract/cvblocks/039: 768 586 frr
+:geoo/abstract/cvblocks/039: 576 586
+:geoo/steel/32x16o.S: 128 602
+:geoo/steel/32x16o.S: 96 602
+:geoo/steel/32x16o.S: 64 602
+:geoo/steel/32x16o.S: 32 602
+:geoo/steel/32x16o.S: 0 602
+:geoo/steel/32x16o.S: 1376 602
+:geoo/steel/32x16o.S: 1344 602
+:geoo/steel/32x16o.S: 1312 602
+:geoo/steel/32x16o.S: 1280 602
+:geoo/steel/32x16o.S: 1248 602
+:geoo/steel/32x16o.S: 832 602
+:geoo/steel/32x16o.S: 800 602
+:geoo/steel/32x16o.S: 768 602
+:geoo/steel/32x16o.S: 736 602
+:geoo/steel/32x16o.S: 704 602
+:geoo/steel/32x16o.S: 672 602
+:geoo/steel/32x16o.S: 624 602
+:geoo/steel/32x16o.S: 640 602
+:geoo/steel/32x16o.S: 608 602
+:geoo/steel/32x16o.S: 576 602
+:geoo/steel/32x16o.S: 544 602
+:amanda/occult/scrawl_pentagram: 1352 0
+:amanda/occult/scrawl_pentagram: 1304 0
+:amanda/occult/scrawl_pentagram: 1256 0
+:amanda/occult/scrawl_pentagram: 1208 0
+:geoo/steel/16x16o.S: 904 202
+:geoo/steel/16x32o.S: 896 202
+:geoo/steel/16x32o.S: 896 234
+:geoo/steel/16x16o.S: 880 306
+:geoo/steel/16x32o.S: 896 266
+:geoo/steel/16x32o.S: 896 298
+:geoo/steel/16x32o.S: 896 330
+:geoo/steel/16x32o.S: 896 362
+:geoo/steel/32x16o.S: 896 394
+:geoo/steel/32x16o.S: 928 394
+:geoo/steel/32x16o.S: 960 394
+:geoo/steel/32x16o.S: 992 394
+:geoo/steel/32x16o.S: 1024 394
+:geoo/steel/32x16o.S: 1056 394
+:geoo/steel/32x16o.S: 1088 394
+:geoo/steel/32x16o.S: 1120 394
+:geoo/steel/32x16o.S: 1152 394
+:geoo/steel/32x16o.S: 1184 394
+:geoo/steel/16x32o.S: 1200 362
+:geoo/steel/16x32o.S: 1200 330
+:geoo/steel/16x16o.S: 1216 306
+:geoo/steel/16x32o.S: 1200 298
+:geoo/steel/16x32o.S: 1200 266
+:geoo/steel/16x32o.S: 1200 234
+:geoo/steel/16x16o.S: 1192 202
+:geoo/steel/16x32o.S: 1200 202
+:amanda/steel/steel24x8.S: 944 450
+:amanda/steel/steel24x8.S: 968 450
+:amanda/steel/steel24x8.S: 992 450
+:amanda/steel/steel24x8.S: 1016 450
+:amanda/steel/steel24x8.S: 1040 450
+:amanda/steel/steel24x8.S: 1064 450
+:amanda/steel/steel24x8.S: 1088 450
+:amanda/steel/steel24x8.S: 1112 450
+:amanda/steel/steel24x8.S: 1136 450
+:amanda/steel/steel24x8.S: 1144 450
+:geoo/construction/stairs_rd_32.S: 866 418
+:geoo/construction/stairs_rd_32.S: 1166 418 frr
+:Group-0: 1122 290
+:Group-1: 1024 240
+:Group-2: 935 298
+:Group-3: 980 410
+:Group-3: 1028 410
+:Group-3: 1076 410
+:Group-3: 1124 410
