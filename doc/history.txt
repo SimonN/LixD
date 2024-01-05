@@ -1,6 +1,42 @@
 Version history
 ===============
 
+0.10.18
+-------
+
+2024-01-05
+
+Solobattle: From the singleplayer browser, you can start a multiplayer map
+and you will control all teams (= all colors). Spawn order and timings will
+be as if you played the map with its intended number of players. Hover the
+mouse cursor over lix of different colors to see other teams' skill panels.
+
+Prevent accidental cutting of replays: To cut, you must click where no lix
+are on the map. It's not enough anymore to click on left-facing lix
+while you filter for right-facing lix (via rightward directional select).
+
+In singleplayer, after you nuke, the skill panel shows your remaining skills
+even though you can't assign them anymore. In multiplayer, after you nuke,
+you see zero leftover skills to make it clear that you cannot assign.
+
+When you observe a multiplayer battle, all of your skill buttons are
+unchosen (not highlit). You still can't switch teams, which would be nice.
+
+Hide the Windows command line console when you run Lix after you've built
+Lix from source with DMD. Reason: Newer DMD versions link with lld-link,
+not with optlink, and need different linker flags.
+
+Add over 60 of Flopsy's new multiplayer maps. Remove over 70 weaker maps
+by Flopsy according to Flopsy's own choice.
+
+Fix a backroute in Continuum Hypothesis (lemforum Hopeless).
+
+Fix player counts for Group Therapy and for One for Me, One for You.
+
+Update Catalan translations, thanks to Rampoina.
+
+
+
 0.10.17
 -------
 

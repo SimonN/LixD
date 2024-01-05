@@ -1,6 +1,6 @@
 Lix -- a single- and multiplayer action-puzzle game
 
-Written in 2006 to 2022 by Simon Naarmann <s.naarmann@gmail.com>.
+Written in 2006 to 2024 by Simon Naarmann <s.naarmann@gmail.com>.
 
 Most of Lix is public domain: The following parts of Lix are released
 into the public domain under the CC0 1.0 public domain dedication/waiver.
