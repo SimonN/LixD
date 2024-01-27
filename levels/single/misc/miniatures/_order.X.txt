@@ -7,6 +7,7 @@ deadlycells.txt
 overhead.txt
 centipede.txt
 jerboagarden.txt
+hopscotch.txt
 ifoisland.txt
 africanwigwam.txt
 spinmearound.txt

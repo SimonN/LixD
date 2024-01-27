@@ -1,0 +1,49 @@
+$BUILT 2023-09-13 19:19:51
+$AUTHOR geoo
+$ENGLISH Hopscotch
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 256
+#SIZE_Y 160
+#TORUS_X 0
+#TORUS_Y 1
+
+#INITIAL 9
+#REQUIRED 9
+#SPAWN_INTERVAL 20
+
+#RUNNER 1
+#BLOCKER 2
+#BUILDER 1
+#PLATFORMER 2
+#MINER 1
+#JUMPER 2
+#EXPLODER2 0
+
+:geoo/sandstone/fennec.H: 72 24
+
+:geoo/abstract/goal.G: 80 144
+
+:matt/water.W: 192 88
+:matt/water.W: 224 88
+:matt/water.W: 0 88
+:matt/water.W: 32 88
+:geoo/construction/sawblade_medium.F: 64 120
+
+:geoo/sandstone/64x32: 64 96
+:geoo/sandstone/ebony/h8b: 192 120
+:geoo/sandstone/64x32: 128 96
+:geoo/sandstone/ebony/h8b: 80 30
+:geoo/sandstone/ebony/h8a: 224 120
+:geoo/sandstone/ebony/h8b: 0 120
+:geoo/sandstone/ebony/h8a: 32 120
+:geoo/sandstone/64x16: 240 32 fr
+:geoo/sandstone/64x16: 240 128 fr
+:geoo/sandstone/64x16: 0 32 fr
+:geoo/sandstone/64x16: 0 128 fr
+$BEGIN_TILE_GROUP 0
+:geoo/sandstone/ebony/h8l: 0 0
+:geoo/sandstone/ebony/h8r: 40 0
+:geoo/sandstone/ebony/h8b: 8 0
+$END_TILE_GROUP
+:Group-0: 160 64
