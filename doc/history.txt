@@ -1,6 +1,38 @@
 Version history
 ===============
 
+0.10.19
+-------
+
+2024-01-30
+
+Fix #480: The networked game wouldn't start even though everybody was ready.
+The bug was: When a new player joined a room, the existing ready players
+became unready only on the server, not on each client. Now, the server and
+the clients agree that, after a new joiner, everybody becomes unready.
+The fix is client-side and doesn't affect physics. If the server starts
+the game at all, all 0.10.x clients start playing regardless of this fix.
+
+Add Eggs in One Basket, a new multiplayer map by geoo for 3-8 players.
+
+Add Hopscotch, a new miniature by geoo.
+
+Fix entrance order in the 6-player version of Rescue Ranger Trolls.
+
+Remove Cascade Squared 6p and 8p according to Flopsy's recommendation.
+
+Remove a zealous assertion that prevented you from re-entering the options
+menu after you've accidentally set an overly tall resolution, e.g., 300x800,
+when you ran a debug build of Lix.
+
+Update Allegro DLLs to 5.2.9.0 for the Windows 64-bit release.
+
+Rewrite the Windows 32-bit build notes. Offer DLLs/LIBs for building 32-bit
+Windows Lix and for linking with lld-link. (Both DMD and LDC now link with
+lld-link, not with Optlink. I still recommend everybody to choose 64-bit Lix.)
+
+
+
 0.10.18
 -------
 
