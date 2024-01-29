@@ -17,8 +17,17 @@ private:
 
 public:
     this(Geom g)
-    in { assert (g.xl >= 20); }
-    do { super(g); }
+    {
+        /*
+         * Don't assert assert g.xl >= 20 even though I'd normally want that.
+         * Such assertions crash when entering the options menu after you've
+         * set a super-tall resolution by mistake.
+         */
+        if (g.xl < 20) {
+            g.xl = 20;
+        }
+        super(g);
+    }
 
     void addChoice(string s)
     in {
