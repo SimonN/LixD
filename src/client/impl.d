@@ -361,6 +361,9 @@ private:
         else if (got[0] == PacketStoC.peerJoinsYourRoom) {
             const pkg = _adapter.receiveProfilePacket(got);
             insertReceivedProfile(pkg.subject, pkg.neck);
+            foreach (ref profile; _profilesInOurRoom) {
+                profile.setNotReady();
+            }
             foreach (obs; _observers) {
                 obs.onPeerJoinsRoom(pkg.neck);
             }
