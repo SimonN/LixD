@@ -32,24 +32,34 @@ void createGroup(Editor editor) {
     if (   occurrences.walkLength < 2
         || occurrences.all!(occ => occ.dark))
         return;
-    editor.minimizeSelectionSelboxByMovingSomeAcrossTorus(occurrences);
-    TileGroup group;
-    try
-        group = getGroup(TileGroupKey(occurrences));
-    catch (TileGroup.InvisibleException)
-        return;
 
-    TerOcc groupOcc = new TerOcc(group);
-    groupOcc.loc = occurrences
-        .map!(occ => occ.cutbitOnMap)
-        .reduce!(Rect.smallestContainer)
-        .topLeft + group.transpCutOff;
-    /*
-     * We must first first remove loose tiles, then add the group occ.
-     * Reason: The Oil of the inserted group occ must be valid after all
-     * the deletions to allow an immediate editor._selection of the newly
-     * inserted tile.
-     */
+    TileGroup group;
+    TerOcc groupOcc;
+    try {
+        editor.minimizeSelectionSelboxByMovingSomeAcrossTorus(occurrences);
+        /*
+         * Now the torus invariant (coordinates must be in [0, L[ and never
+         * < 0 or >= L) is violated until we restore it in the 'finally'.
+         * We need the violation during group creation and smallestContainer.
+         */
+        group = getGroup(TileGroupKey(occurrences)); // Or InvisibleException.
+        groupOcc = new TerOcc(group);
+        groupOcc.loc = occurrences
+            .map!(occ => occ.cutbitOnMap)
+            .reduce!(Rect.smallestContainer)
+            .topLeft + group.transpCutOff;
+        groupOcc.loc = editor.level.topology.wrap(groupOcc.loc);
+    }
+    catch (TileGroup.InvisibleException) {
+        return;
+    }
+    finally {
+        // Restore the torus invariant.
+        foreach (occ; occurrences) {
+            occ.loc = editor.level.topology.wrap(occ.loc);
+        }
+    }
+
     auto deletions = _selection[]
         .filter!(oil => null !is cast (TerOil) oil)
         .map!(oil => new TileRemoval(oil, oil.occ(level)))
@@ -197,6 +207,7 @@ public:
         const(Occurrence) moveToOurPosition(Occurrence part)
         {
             part.loc += theGroup.loc - groupTile.transpCutOff;
+            part.loc = _level.topology.wrap(part.loc);
             return part;
         }
         auto additions = groupTile.key.elements
