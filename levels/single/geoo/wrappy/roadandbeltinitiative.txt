@@ -1,0 +1,89 @@
+$BUILT 2023-09-23 11:09:22
+$AUTHOR geoo
+$ENGLISH Road and Belt Initiative
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 320
+#SIZE_Y 160
+#TORUS_X 1
+#TORUS_Y 1
+
+#INITIAL 40
+#REQUIRED 39
+#SPAWN_INTERVAL 16
+
+#WALKER 5
+#RUNNER 1
+#BLOCKER 3
+#BUILDER 4
+#BASHER 1
+#MINER 1
+#JUMPER 1
+#CUBER 1
+#EXPLODER2 0
+
+:geoo/sandstone/fennec.H: 120 24
+:geoo/sandstone/fennec.H: 8 24
+
+:geoo/abstract/goal.G: 176 112
+
+:geoo/sandstone/64x64: 0 128
+:geoo/sandstone/64x64: 64 96
+:geoo/sandstone/64x32: 256 0
+:geoo/sandstone/64x32: 128 80
+:geoo/sandstone/64x32: 0 96
+:geoo/sandstone/32x32: 128 128
+:geoo/sandstone/32x32: 224 128
+:geoo/sandstone/32x64: 96 32
+:geoo/sandstone/32x32: 64 48
+:geoo/sandstone/32x32: 288 48
+:geoo/sandstone/64x32: 192 16
+:geoo/sandstone/64x32: 128 16
+:geoo/sandstone/16x32: 160 128
+:geoo/sandstone/16x32: 208 128
+:geoo/sandstone/16x32: 0 48
+:geoo/sandstone/16x32: 48 48
+:geoo/sandstone/64x64: 256 96
+:geoo/sandstone/32x32: 224 48
+:geoo/sandstone/32x64: 256 32
+:geoo/sandstone/64x32: 64 0
+:geoo/sandstone/64x32: 160 48
+:geoo/sandstone/64x32: 192 80
+:amanda/steel/steel8x16.S: 64 80 fr
+:amanda/steel/steel8x16.S: 304 80 fr
+:amanda/steel/steel8x16.S: 144 0 fr
+:amanda/steel/steel8x16.S: 224 0 fr
+:amanda/steel/steel24x16.S: 160 0
+:amanda/steel/steel24x16.S: 200 0
+:amanda/steel/steel16x16.S: 184 0
+:amanda/steel/steel24x16.S: 0 80
+:amanda/steel/steel24x16.S: 40 80
+:amanda/steel/steel16x16.S: 24 80
+:amanda/steel/steel24x16.S: 8 32
+:amanda/steel/steel16x16.S: 312 32
+:amanda/steel/steel24x16.S: 32 32
+:amanda/steel/steel16x16.S: 56 32
+:amanda/steel/steel24x16.S: 168 112
+:amanda/steel/steel16x16.S: 152 112
+:amanda/steel/steel24x16.S: 192 112
+:amanda/steel/steel16x16.S: 216 112
+:geoo/sandstone/16x16: 288 80
+:geoo/sandstone/16x16: 80 80
+:geoo/sandstone/16x16: 128 0
+:geoo/sandstone/16x16: 240 0
+:geoo/sandstone/16x8: 304 88
+:geoo/sandstone/16x8: 64 88
+:geoo/sandstone/16x8: 144 8
+:geoo/sandstone/16x8: 224 8
+:amanda/steel/steel24x8.S: 232 120
+:amanda/steel/steel24x8.S: 128 120
+:amanda/steel/steel24x8.S: 72 40
+:amanda/steel/steel24x8.S: 288 40
+:geoo/sandstone/16x8: 288 32
+:geoo/sandstone/16x8: 80 32
+:geoo/sandstone/16x8: 128 112
+:geoo/sandstone/16x8: 240 112
+:geoo/sandstone/8x8: 304 32
+:geoo/sandstone/8x8: 72 32
+:geoo/sandstone/8x8: 144 112
+:geoo/sandstone/8x8: 232 112

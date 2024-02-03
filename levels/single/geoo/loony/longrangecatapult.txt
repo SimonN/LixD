@@ -1,0 +1,34 @@
+$BUILT 2023-09-13 19:17:47
+$AUTHOR geoo
+$ENGLISH Long-range Catapult
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 480
+#SIZE_Y 224
+
+#INITIAL 20
+#REQUIRED 16
+#SPAWN_INTERVAL 8
+
+#PLATFORMER 1
+#DIGGER 2
+#BATTER 1
+#CUBER 2
+#EXPLODER2 0
+
+:geoo/abstract/hatch.H: 64 32 r
+
+:geoo/abstract/goal.G: 384 64
+
+:geoo/abstract/pipes/central5: 16 112
+:geoo/abstract/pipes/central5: 48 112
+:geoo/abstract/pipes/central5: 336 112
+:geoo/abstract/pipes/central5: 368 112
+:geoo/abstract/pipes/central5: 80 112
+:geoo/abstract/pipes/central5: 112 112
+:geoo/abstract/pipes/central5: 400 112
+:geoo/abstract/pipes/central5: 432 112
+:geoo/abstract/pipes/endr5: 464 112
+:geoo/abstract/pipes/endr5: 144 112
+:geoo/abstract/pipes/endr5: 328 112 rr
+:geoo/abstract/pipes/endr5: 8 112 rr

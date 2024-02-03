@@ -1,0 +1,180 @@
+$BUILT 2018-12-02 10:55:52
+$AUTHOR geoo
+$ENGLISH Soaring
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 512
+#SIZE_Y 704
+
+#INITIAL 40
+#REQUIRED 11
+#SPAWN_INTERVAL 4
+
+#CLIMBER 1
+#FLOATER 30
+#EXPLODER2 30
+#PLATFORMER 1
+
+:geoo/abstract/hatch.H: 272 576
+:geoo/abstract/hatch.H: 272 576
+:geoo/abstract/hatch.H: 272 576
+:geoo/abstract/hatch.H: 144 464
+
+:geoo/abstract/goal.G: 16 464
+
+:simon/acid.W: 384 656
+:simon/acid.W: 432 656
+:simon/acid.W: 480 656
+:simon/acid.W: 528 656
+:simon/acid.W: 576 656
+:simon/acid.W: 624 656
+:simon/acid.W: 336 656
+:simon/acid.W: 288 656
+:simon/acid.W: 240 656
+
+:geoo/abstract/cvblocks/046: 0 576
+:geoo/abstract/cvblocks/046: 64 640
+:geoo/steel/64x64.S: 192 448
+:geoo/steel/64x64.S: 192 384
+:geoo/steel/64x64.S: 320 448
+:geoo/steel/64x64.S: 320 384
+:geoo/steel/64x64.S: 320 320
+:geoo/steel/64x64.S: 320 256
+:geoo/abstract/pipes/cshort3: 272 632
+:geoo/abstract/pipes/corner3: 278 632 rr
+:geoo/abstract/pipes/cshort3: 296 632
+:geoo/abstract/pipes/corner3: 290 632 r
+:geoo/abstract/pipes/cshort3: 284 648
+:geoo/abstract/pipes/corner3: 278 648
+:geoo/abstract/pipes/corner3: 290 648 rrr
+:geoo/abstract/pipes/central3: 310 640 rrr
+:geoo/abstract/pipes/cshort3: 304 632
+:geoo/abstract/pipes/corner3: 310 632 rr
+:geoo/abstract/pipes/cshort3: 264 632
+:geoo/abstract/pipes/corner3: 258 632 r
+:geoo/abstract/pipes/central3: 310 672 rrr
+:geoo/abstract/pipes/central3: 258 640 rrr
+:geoo/abstract/pipes/central3: 258 672 rrr
+:geoo/abstract/pipes/cshort3: 290 640 rrr
+:geoo/abstract/pipes/cshort3: 278 640 rrr
+:geoo/abstract/pipes/cshort3: 336 632
+:geoo/abstract/pipes/corner3: 342 632 rr
+:geoo/abstract/pipes/cshort3: 360 632
+:geoo/abstract/pipes/corner3: 354 632 r
+:geoo/abstract/pipes/cshort3: 348 648
+:geoo/abstract/pipes/corner3: 342 648
+:geoo/abstract/pipes/corner3: 354 648 rrr
+:geoo/abstract/pipes/central3: 374 640 rrr
+:geoo/abstract/pipes/cshort3: 368 632
+:geoo/abstract/pipes/corner3: 374 632 rr
+:geoo/abstract/pipes/cshort3: 328 632
+:geoo/abstract/pipes/corner3: 322 632 r
+:geoo/abstract/pipes/central3: 374 672 rrr
+:geoo/abstract/pipes/central3: 322 640 rrr
+:geoo/abstract/pipes/central3: 322 672 rrr
+:geoo/abstract/pipes/cshort3: 354 640 rrr
+:geoo/abstract/pipes/cshort3: 342 640 rrr
+:geoo/abstract/pipes/cshort3: 400 632
+:geoo/abstract/pipes/corner3: 406 632 rr
+:geoo/abstract/pipes/cshort3: 424 632
+:geoo/abstract/pipes/corner3: 418 632 r
+:geoo/abstract/pipes/cshort3: 412 648
+:geoo/abstract/pipes/corner3: 406 648
+:geoo/abstract/pipes/corner3: 418 648 rrr
+:geoo/abstract/pipes/central3: 438 640 rrr
+:geoo/abstract/pipes/cshort3: 432 632
+:geoo/abstract/pipes/corner3: 438 632 rr
+:geoo/abstract/pipes/cshort3: 392 632
+:geoo/abstract/pipes/corner3: 386 632 r
+:geoo/abstract/pipes/central3: 438 672 rrr
+:geoo/abstract/pipes/central3: 386 640 rrr
+:geoo/abstract/pipes/central3: 386 672 rrr
+:geoo/abstract/pipes/cshort3: 418 640 rrr
+:geoo/abstract/pipes/cshort3: 406 640 rrr
+:geoo/abstract/pipes/cshort3: 464 632
+:geoo/abstract/pipes/corner3: 470 632 rr
+:geoo/abstract/pipes/cshort3: 488 632
+:geoo/abstract/pipes/corner3: 482 632 r
+:geoo/abstract/pipes/cshort3: 476 648
+:geoo/abstract/pipes/corner3: 470 648
+:geoo/abstract/pipes/corner3: 482 648 rrr
+:geoo/abstract/pipes/central3: 502 640 rrr
+:geoo/abstract/pipes/cshort3: 496 632
+:geoo/abstract/pipes/corner3: 502 632 rr
+:geoo/abstract/pipes/cshort3: 456 632
+:geoo/abstract/pipes/corner3: 450 632 r
+:geoo/abstract/pipes/central3: 502 672 rrr
+:geoo/abstract/pipes/central3: 450 640 rrr
+:geoo/abstract/pipes/central3: 450 672 rrr
+:geoo/abstract/pipes/cshort3: 482 640 rrr
+:geoo/abstract/pipes/cshort3: 470 640 rrr
+:geoo/abstract/pipes/cshort3: 528 632
+:geoo/abstract/pipes/corner3: 534 632 rr
+:geoo/abstract/pipes/cshort3: 552 632
+:geoo/abstract/pipes/corner3: 546 632 r
+:geoo/abstract/pipes/cshort3: 540 648
+:geoo/abstract/pipes/corner3: 534 648
+:geoo/abstract/pipes/corner3: 546 648 rrr
+:geoo/abstract/pipes/central3: 566 640 rrr
+:geoo/abstract/pipes/cshort3: 560 632
+:geoo/abstract/pipes/corner3: 566 632 rr
+:geoo/abstract/pipes/cshort3: 520 632
+:geoo/abstract/pipes/corner3: 514 632 r
+:geoo/abstract/pipes/central3: 566 672 rrr
+:geoo/abstract/pipes/central3: 514 640 rrr
+:geoo/abstract/pipes/central3: 514 672 rrr
+:geoo/abstract/pipes/cshort3: 546 640 rrr
+:geoo/abstract/pipes/cshort3: 534 640 rrr
+:geoo/abstract/pipes/cshort3: 592 632
+:geoo/abstract/pipes/corner3: 598 632 rr
+:geoo/abstract/pipes/cshort3: 616 632
+:geoo/abstract/pipes/corner3: 610 632 r
+:geoo/abstract/pipes/cshort3: 604 648
+:geoo/abstract/pipes/corner3: 598 648
+:geoo/abstract/pipes/corner3: 610 648 rrr
+:geoo/abstract/pipes/central3: 630 640 rrr
+:geoo/abstract/pipes/cshort3: 624 632
+:geoo/abstract/pipes/corner3: 630 632 rr
+:geoo/abstract/pipes/cshort3: 584 632
+:geoo/abstract/pipes/corner3: 578 632 r
+:geoo/abstract/pipes/central3: 630 672 rrr
+:geoo/abstract/pipes/central3: 578 640 rrr
+:geoo/abstract/pipes/central3: 578 672 rrr
+:geoo/abstract/pipes/cshort3: 610 640 rrr
+:geoo/abstract/pipes/cshort3: 598 640 rrr
+:geoo/abstract/pipes/cshort3: 16 440
+:geoo/abstract/pipes/corner3: 22 440 rr
+:geoo/abstract/pipes/cshort3: 40 440
+:geoo/abstract/pipes/corner3: 34 440 r
+:geoo/abstract/pipes/cshort3: 28 456
+:geoo/abstract/pipes/corner3: 22 456
+:geoo/abstract/pipes/corner3: 34 456 rrr
+:geoo/abstract/pipes/central3: 54 448 rrr
+:geoo/abstract/pipes/cshort3: 48 440
+:geoo/abstract/pipes/corner3: 54 440 rr
+:geoo/abstract/pipes/cshort3: 8 440
+:geoo/abstract/pipes/corner3: 2 440 r
+:geoo/abstract/pipes/central3: 54 480 rrr
+:geoo/abstract/pipes/central3: 2 448 rrr
+:geoo/abstract/pipes/central3: 2 480 rrr
+:geoo/abstract/pipes/cshort3: 34 448 rrr
+:geoo/abstract/pipes/cshort3: 22 448 rrr
+:geoo/abstract/cvblocks/046: 64 512
+:geoo/steel/64x64.S: 192 512
+:geoo/steel/64x64.S: 192 576
+:geoo/steel/64x64.S: 192 640
+:geoo/abstract/cvblocks/045: 0 512
+:geoo/abstract/cvblocks/045: 0 640
+:geoo/abstract/cvblocks/045: 128 576
+:geoo/steel/64x64.S: 320 192
+:geoo/steel/64x64.S: 320 128
+:geoo/steel/64x64.S: 320 64
+:geoo/steel/64x64.S: 320 0
+:geoo/steel/64x64.S: 320 -64
+:geoo/steel/64x64.S: 320 -128
+:geoo/steel/64x64.S: 320 -192
+:geoo/steel/64x64.S: 320 -256
+:geoo/steel/64x64.S: 320 -320
+:geoo/steel/64x64.S: 320 -384
+:geoo/steel/64x64.S: 320 -448
+:geoo/steel/64x64.S: 320 -512

@@ -1,0 +1,79 @@
+$BUILT 2018-12-02 09:57:02
+$AUTHOR geoo
+$ENGLISH Three Little Men
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 544
+#SIZE_Y 256
+
+#INITIAL 3
+#REQUIRED 1
+#SPAWN_INTERVAL 5
+
+#EXPLODER2 1
+
+:geoo/abstract/hatch.H: 192 0
+
+:geoo/abstract/goal.G: 320 152
+
+:amanda/forest/frog_happy.T: 240 152
+
+:geoo/abstract/pipes/central0: 128 64
+:geoo/abstract/pipes/central0: 160 64
+:geoo/abstract/pipes/central0: 192 64
+:geoo/abstract/pipes/central0: 224 64
+:geoo/abstract/pipes/central0: 256 64
+:geoo/abstract/pipes/central0: 384 64
+:geoo/abstract/pipes/endr0: 416 64
+:geoo/abstract/pipes/endr0: 120 64 rr
+:geoo/abstract/pipes/central0: 288 64
+:geoo/abstract/pipes/central0: 320 64
+:geoo/abstract/pipes/central0: 320 96
+:geoo/abstract/pipes/central0: 352 96
+:geoo/abstract/pipes/endr0: 312 96 rr
+:geoo/abstract/pipes/central0: 448 96
+:geoo/abstract/pipes/central0: 192 96
+:geoo/abstract/pipes/endr0: 224 96
+:geoo/abstract/pipes/central0: 64 96
+:geoo/abstract/pipes/central0: 160 96
+:geoo/abstract/pipes/central0: 192 200
+:geoo/abstract/pipes/central0: 224 200
+:geoo/abstract/pipes/central0: 256 200
+:geoo/abstract/pipes/central0: 320 200
+:geoo/abstract/pipes/endr0: 352 200
+:geoo/abstract/pipes/endr0: 184 200 rr
+:geoo/abstract/pipes/central0: 384 96
+:geoo/abstract/pipes/central0: 416 96
+:geoo/abstract/pipes/central0: 128 96
+:geoo/abstract/pipes/central0: 96 96
+:geoo/abstract/pipes/central0: 288 200
+:geoo/abstract/cvblocks/047: 0 0
+:geoo/abstract/cvblocks/047: 0 128
+:geoo/abstract/cvblocks/047: 480 0
+:geoo/abstract/cvblocks/047: 480 128
+:geoo/abstract/pipes/central0: 352 64
+:geoo/abstract/pipes/central0: 320 128
+:geoo/abstract/pipes/endr0: 312 128 rr
+:geoo/abstract/pipes/central0: 192 128
+:geoo/abstract/pipes/endr0: 184 128 rr
+:geoo/abstract/pipes/endr0: 224 128
+:geoo/abstract/pipes/endr0: 352 128
+:geoo/abstract/pipes/central4: 272 64
+:geoo/abstract/pipes/central4: 304 64
+:geoo/abstract/pipes/endr4: 416 64
+:geoo/abstract/pipes/central4: 336 64
+:geoo/abstract/pipes/central4: 368 64
+:geoo/abstract/pipes/central4: 384 64
+:geoo/abstract/pipes/endr4: 224 96
+:geoo/abstract/pipes/central4: 192 96
+:geoo/abstract/pipes/central4: 160 96
+:geoo/abstract/pipes/central4: 128 96
+:geoo/abstract/pipes/central4: 96 96
+:geoo/abstract/pipes/central4: 64 96
+:geoo/abstract/pipes/endr4: 352 128
+:geoo/abstract/pipes/endr4: 312 128 rr
+:geoo/abstract/pipes/central4: 320 128
+:geoo/abstract/pipes/central4: 240 200
+:geoo/abstract/pipes/central4: 208 200
+:geoo/abstract/pipes/central4: 192 200
+:geoo/abstract/pipes/endr4: 184 200 rr

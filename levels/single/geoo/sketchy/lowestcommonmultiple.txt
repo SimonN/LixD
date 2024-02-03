@@ -1,0 +1,150 @@
+$BUILT 2023-01-21 17:28:34
+$AUTHOR geoo
+$ENGLISH Lowest Common Multiple
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 512
+#SIZE_Y 192
+
+#INITIAL 7
+#REQUIRED 6
+#SPAWN_INTERVAL 2
+
+#DIGGER 1
+#EXPLODER2 0
+
+:geoo/construction/Hatch.H: 320 32 r
+:geoo/construction/Hatch.H: 320 40 r
+:geoo/construction/Hatch.H: 320 48 r
+:geoo/construction/Hatch.H: 320 56 r
+:geoo/construction/Hatch.H: 320 64 r
+:geoo/construction/Hatch.H: 320 72 r
+:geoo/construction/Hatch.H: 340 0
+
+:geoo/construction/Goal2.G: 432 64
+
+:matt/10tons.T: 367 88
+
+$BEGIN_TILE_GROUP 0
+:geoo/construction/squarebrick_large: 0 2
+:geoo/construction/squarebrick_large: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:geoo/construction/squarebrick_large: 0 0
+:geoo/construction/squarebrick_large: 0 2 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 2
+:Group-0: 0 2
+:Group-1: 0 0
+$END_TILE_GROUP
+:Group-2: 32 52
+:Group-2: 64 52
+:Group-2: 96 52
+:Group-2: 128 52
+:Group-2: 160 52
+:Group-2: 192 52
+:Group-2: 224 52
+:Group-2: 256 52
+:Group-2: 288 52
+:Group-2: 320 52
+:Group-2: 128 60
+:Group-2: 160 60
+:Group-2: 192 60
+:Group-2: 224 60
+:Group-2: 256 60
+:Group-2: 288 60
+:Group-2: 320 60
+:Group-2: 160 68
+:Group-2: 192 68
+:Group-2: 224 68
+:Group-2: 256 68
+:Group-2: 288 68
+:Group-2: 320 68
+:Group-2: 192 76
+:Group-2: 224 76
+:Group-2: 256 76
+:Group-2: 288 76
+:Group-2: 320 76
+:Group-2: 256 84
+:Group-2: 288 84
+:Group-2: 320 84
+:Group-2: 288 92
+:Group-2: 320 92
+$BEGIN_TILE_GROUP 3
+:geoo/construction/squarebrick_large: 0 4
+:geoo/construction/squarebrick_large: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 4
+:geoo/construction/squarebrick_large: 0 0
+:geoo/construction/squarebrick_large: 0 4 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 5
+:Group-3: 0 4
+:Group-4: 0 0
+$END_TILE_GROUP
+:Group-5: 256 88
+:Group-5: 160 72
+:Group-5: 128 64
+:Group-5: 96 56
+:Group-5: 288 96
+:Group-5: 192 80
+:Group-5: 64 56
+:Group-5: 32 56
+:Group-5: 128 72
+$BEGIN_TILE_GROUP 6
+:geoo/construction/concrete/016d: 0 6
+:Group-5: 0 0 d
+$END_TILE_GROUP
+:Group-6: 288 88 d
+:Group-6: 256 80 d
+:Group-6: 192 72 d
+:Group-6: 160 64 d
+:Group-6: 128 56 d
+:Group-6: 32 48 d
+:matt/marble/24: 352 50
+:matt/marble/24: 352 62
+:geoo/construction/platformbrick_single: 352 42 fr
+:geoo/construction/platformbrick_single: 358 42 fr
+:geoo/construction/platformbrick_single: 352 34 fr
+:geoo/construction/platformbrick_single: 358 34 fr
+:geoo/construction/concrete/064h: 0 128
+:geoo/construction/concrete/064h: 128 128
+:geoo/construction/concrete/064h: 256 128
+:geoo/construction/concrete/064h: 384 128
+:geoo/construction/concrete/016vc: 16 0
+:geoo/construction/concrete/016vd: 32 0
+:geoo/construction/pillar_long: 376 -40
+:geoo/construction/pillar_base: 360 72
+:geoo/construction/squarebrick_large: 0 96
+:geoo/construction/squarebrick_large: 32 96
+:geoo/construction/squarebrick_large: 64 96
+:geoo/construction/squarebrick_large: 96 96
+:geoo/construction/squarebrick_large: 128 96
+:geoo/construction/squarebrick_large: 160 96
+:geoo/construction/squarebrick_large: 192 96
+:geoo/construction/squarebrick_large: 224 96
+:geoo/construction/squarebrick_large: 0 64
+:geoo/construction/squarebrick_large: 32 64
+:geoo/construction/squarebrick_large: 64 64
+:geoo/construction/squarebrick_large: 96 64
+$BEGIN_TILE_GROUP 7
+:geoo/construction/squarebrick_large: 0 0
+:geoo/construction/squarebrick_large: 0 8 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 8
+:geoo/construction/squarebrick_large: 0 8
+:geoo/construction/squarebrick_large: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 9
+:Group-8: 0 8
+:Group-7: 0 0
+$END_TILE_GROUP
+:Group-9: 128 80
+:Group-9: 160 80
+:Group-9: 224 80
+:Group-9: 0 48
+:Group-9: 288 112
+:Group-5: 288 104
+:geoo/construction/squarebrick_large: 256 96
+:geoo/construction/squarebrick_large: 320 96
+:Group-5: 192 88

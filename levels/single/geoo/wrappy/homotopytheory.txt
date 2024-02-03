@@ -1,0 +1,100 @@
+$BUILT 2023-09-26 15:46:56
+$AUTHOR geoo
+$ENGLISH Homotopy Theory
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 384
+#SIZE_Y 192
+#TORUS_X 1
+#TORUS_Y 1
+
+#INITIAL 80
+#REQUIRED 80
+#SPAWN_INTERVAL 13
+
+#BUILDER 1
+#PLATFORMER 1
+#BASHER 1
+#MINER 1
+#EXPLODER2 0
+
+:geoo/construction/Hatch.H: 0 128
+
+:raymanni/lab/goal.G: 272 160
+
+:matt/beach/decor/bonfire.F: 258 8
+:matt/beach/decor/bonfire.F: 322 8
+
+:geoo/shadow/tile2: 352 64
+:geoo/shadow/tile1: 320 64
+:geoo/shadow/tile1: 320 128
+:geoo/shadow/tile1: 352 160
+:geoo/shadow/tile1: 128 96
+:geoo/shadow/tile1: 128 64
+:geoo/shadow/tile1: 160 64
+:geoo/shadow/tile1: 160 96
+:geoo/shadow/tile1: 160 32
+:geoo/shadow/tile1: 192 32
+:geoo/shadow/tile1: 224 64
+:geoo/shadow/tile1: 192 96
+:geoo/shadow/tile1: 256 128
+:geoo/shadow/tile1: 192 160
+:geoo/shadow/tile1: 128 160
+:geoo/shadow/tile2: 352 32
+:geoo/shadow/tile2: 96 32
+:geoo/shadow/tile2: 128 32
+:geoo/shadow/tile2: 96 160
+:geoo/shadow/tile2: 128 128
+:geoo/shadow/tile2: 160 128
+:geoo/shadow/tile2: 160 160
+:geoo/shadow/tile2: 192 128
+:geoo/shadow/tile2: 288 128
+:geoo/shadow/tile2: 288 96
+:geoo/shadow/tile2: 224 96
+:geoo/shadow/tile2: 192 64
+:geoo/shadow/tile2: 224 32
+:geoo/shadow/tile2: 96 64
+:geoo/shadow/tile2: 96 96
+:geoo/shadow/tile1: 224 160
+:geoo/shadow/tile2: 224 128
+:geoo/construction/rod_steel/straight32.S: 320 160
+:geoo/construction/rod_steel/straight32.S: 288 160
+:geoo/construction/rod_steel/straight32.S: 256 160
+:geoo/shadow/tile1: 96 128
+:geoo/steel/32x16o.S: 288 32
+:geoo/shadow/tile1: 320 128
+:geoo/shadow/tile1: 320 64
+:geoo/shadow/tile1: 64 160
+:geoo/shadow/tile1: 64 32
+:geoo/shadow/tile1: 64 96
+:geoo/shadow/tile2: 64 64
+:geoo/shadow/tile1: 64 0
+:geoo/shadow/tile1: 128 0
+:geoo/shadow/tile2: 352 0
+:geoo/shadow/tile1: 0 64
+:geoo/shadow/tile1: 0 96
+:geoo/shadow/tile1: 32 64
+:geoo/shadow/tile2: 32 96
+:geoo/shadow/tile2: 32 32
+:geoo/shadow/tile2: 64 128
+:geoo/shadow/tile1: 192 0
+:geoo/shadow/tile2: 224 0
+:geoo/shadow/tile1: 0 160
+:geoo/shadow/tile1: 0 0
+:geoo/shadow/tile2: 32 0
+:geoo/shadow/tile2: 32 160
+:geoo/shadow/tile2: 96 0
+:geoo/shadow/tile1: 160 0
+:geoo/shadow/tile2: 0 32
+:geoo/shadow/tile1: 256 64
+:geoo/shadow/tile1: 352 128
+:geoo/shadow/tile2: 32 128
+:geoo/shadow/tile1: 320 96
+:geoo/shadow/tile2: 352 96
+:geoo/shadow/tile2: 288 64
+:geoo/shadow/tile2: 256 96
+:geoo/steel/32x16o.S: 288 168
+:geoo/shadow/pillar_hztl_32: 256 48
+:geoo/shadow/pillar_hztl_32: 288 48
+:geoo/shadow/pillar_hztl_32: 320 48
+:geoo/construction/rod_steel/straight32.S: 288 160

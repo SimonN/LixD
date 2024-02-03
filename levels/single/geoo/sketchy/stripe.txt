@@ -1,0 +1,56 @@
+$BUILT 2024-02-03 18:31:48
+$AUTHOR geoo
+$ENGLISH Stripe
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 224
+#SIZE_Y 352
+#TORUS_X 1
+#TORUS_Y 1
+
+#INITIAL 30
+#REQUIRED 30
+#SPAWN_INTERVAL 6
+
+#PLATFORMER 3
+#DIGGER 1
+#JUMPER 1
+#EXPLODER2 0
+
+:geoo/sandstone/fennec.H: 32 16
+:geoo/sandstone/fennec.H: 160 208 r
+
+:geoo/abstract/goal.G: 160 16
+
+:geoo/sandstone/torch.F: 220 32
+
+:geoo/sandstone/slopes/32x64lb: 64 96
+:geoo/sandstone/32x64: 32 96
+:geoo/sandstone/32x64: 0 96
+:geoo/sandstone/slopes/32x64rt: 192 96
+:geoo/sandstone/slopes/32x32lb: 32 64
+:geoo/sandstone/32x32: 0 64
+:geoo/sandstone/32x32: 192 64
+:geoo/sandstone/slopes/32x32rt: 64 256
+:geoo/sandstone/slopes/32x32lb: 160 256
+:geoo/sandstone/32x32: 128 256
+:geoo/sandstone/32x32: 96 256
+:geoo/sandstone/slopes/32x64lb: 128 192
+:geoo/sandstone/32x64: 96 192
+:geoo/sandstone/32x64: 64 192
+:geoo/sandstone/slopes/32x64rt: 32 192
+:geoo/sandstone/slopes/32x64lb: 192 288
+:geoo/sandstone/32x64: 160 288
+:geoo/sandstone/32x64: 128 288
+:geoo/sandstone/slopes/32x64rt: 96 288
+:geoo/sandstone/32x32: 160 0
+:geoo/sandstone/32x32: 192 0
+:geoo/sandstone/slopes/16x32lb: 0 0
+:geoo/sandstone/slopes/16x32lb: 16 32
+:geoo/sandstone/slopes/32x32lb: 96 160
+:geoo/sandstone/32x32: 64 160
+:geoo/sandstone/32x32: 32 160
+:geoo/sandstone/slopes/32x32rt: 0 160
+:geoo/sandstone/slopes/16x32rt: 128 0
+:geoo/sandstone/16x32: 144 0
+:geoo/sandstone/slopes/32x32rt: 160 64

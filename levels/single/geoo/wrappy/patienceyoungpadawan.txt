@@ -1,0 +1,47 @@
+$BUILT 2024-01-27 11:21:44
+$AUTHOR geoo
+$ENGLISH Patience, Young Padawan
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 256
+#SIZE_Y 192
+#TORUS_X 1
+#TORUS_Y 0
+
+#INITIAL 20
+#REQUIRED 19
+#SPAWN_INTERVAL 25
+
+#EXPLODER 1
+#BLOCKER 1
+
+:geoo/abstract/hatch.H: 16 16
+
+:geoo/abstract/goal.G: 208 112
+
+:geoo/abstract/pipes/central4: 0 64
+:geoo/abstract/pipes/central4: 32 64
+:geoo/abstract/pipes/central4: 64 64
+:geoo/abstract/pipes/central4: 96 64
+:geoo/abstract/pipes/central4: 128 64
+:geoo/abstract/pipes/central4: 160 64
+:geoo/abstract/pipes/central4: 192 64
+:geoo/abstract/pipes/central4: 224 64
+:geoo/abstract/pipes/central5: 224 96
+:geoo/abstract/pipes/central5: 192 96
+:geoo/abstract/pipes/central5: 160 96
+:geoo/abstract/pipes/central5: 128 96
+:geoo/abstract/pipes/central6: 0 128
+:geoo/abstract/pipes/central6: 32 128
+:geoo/abstract/pipes/central6: 64 128
+:geoo/abstract/pipes/central6: 96 128
+:geoo/abstract/pipes/central7: 224 160
+:geoo/abstract/pipes/central7: 192 160
+:geoo/abstract/pipes/central7: 0 160
+:geoo/abstract/pipes/central7: 32 160
+:geoo/abstract/pipes/endr7: 64 160
+:geoo/abstract/pipes/endr7: 184 160 rr
+:geoo/abstract/pipes/endr6: 128 128
+:geoo/abstract/pipes/endr6: 248 128 rr
+:geoo/abstract/pipes/endr5: 0 96
+:geoo/abstract/pipes/endr5: 120 96 rr

@@ -1,0 +1,83 @@
+$BUILT 2024-02-29 01:14:36
+$AUTHOR geoo
+$ENGLISH Bring It On
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 320
+#SIZE_Y 272
+
+#INITIAL 40
+#REQUIRED 40
+#SPAWN_INTERVAL 8
+
+#WALKER 10
+#CLIMBER 4
+#BLOCKER 4
+#DIGGER 2
+#BATTER 3
+#EXPLODER2 0
+
+:geoo/sandstone/fennec.H: 136 184
+
+:geoo/sandstone/Goal.G: 0 62
+:geoo/sandstone/Goal.G: 256 62
+
+:geoo/sandstone/64x32: 64 240
+$BEGIN_TILE_GROUP 0
+:geoo/sandstone/64x64: 0 0
+:geoo/sandstone/64x64: 0 16 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:geoo/sandstone/64x64: 0 6
+:Group-0: 0 32
+:geoo/sandstone/64x32: 0 0 d
+$END_TILE_GROUP
+:Group-1: 192 202
+:geoo/construction/platform.S: 191 222 fr
+:geoo/sandstone/64x32: 192 240
+:geoo/steel/64x32o.S: 192 240
+:Group-1: 64 202
+:Group-1: 64 164
+:Group-1: 192 164
+:Group-1: 256 202
+:Group-1: 256 164
+:Group-1: 0 202
+:Group-1: 0 164
+:geoo/steel/64x32o.S: 256 240
+:geoo/steel/64x32o.S: 0 240
+:geoo/sandstone/64x16: 64 16
+:geoo/sandstone/64x16: 128 16
+:geoo/sandstone/64x16: 192 16
+:geoo/sandstone/ebony/h16a: 0 0
+:geoo/sandstone/ebony/h16b: 32 0
+:geoo/sandstone/ebony/h16c: 64 0
+:geoo/sandstone/ebony/h16a: 160 0
+:geoo/sandstone/ebony/h16b: 192 0
+:geoo/sandstone/ebony/h16c: 224 0
+:geoo/sandstone/ebony/h16a: 256 0
+:geoo/sandstone/ebony/h16b: 288 0
+:geoo/sandstone/ebony/h16c: 320 0
+:geoo/sandstone/ebony/h16a: 96 0
+:geoo/sandstone/ebony/h16b: 128 0
+:geoo/sandstone/ribbon_start_sq: 144 16
+:geoo/sandstone/ribbon_end: 80 16
+:geoo/sandstone/ribbon_end: 144 48
+:geoo/sandstone/ribbon_end: 208 16
+$BEGIN_TILE_GROUP 2
+:Group-1: 0 0
+:geoo/sandstone/smaragd: 11 11
+:geoo/sandstone/smaragd: 37 11
+$END_TILE_GROUP
+:Group-2: 192 126
+:Group-2: 64 126
+:Group-2: 0 126
+:Group-2: 256 126
+:geoo/construction/platform.S: 191 126 fr
+:geoo/construction/platform.S: 191 158 fr
+:geoo/construction/platform.S: 191 190 fr
+:geoo/construction/platform.S: 127 222 fr
+:geoo/steel/64x32o.S: 64 240
+:geoo/steel/64x32o.S: 128 240
+:geoo/construction/platform.S: 127 126 fr
+:geoo/construction/platform.S: 127 158 fr
+:geoo/construction/platform.S: 127 190 fr

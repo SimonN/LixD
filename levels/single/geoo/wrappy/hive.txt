@@ -1,0 +1,120 @@
+$BUILT 2024-01-23 11:43:32
+$AUTHOR geoo
+$ENGLISH Hive
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 384
+#SIZE_Y 288
+#TORUS_X 1
+#TORUS_Y 1
+
+#INITIAL 60
+#REQUIRED 60
+#SPAWN_INTERVAL 1
+
+#WALKER -1
+#BLOCKER -1
+#MINER 1
+#EXPLODER2 0
+
+:geoo/construction/Hatch.H: 128 40
+:geoo/construction/Hatch.H: 272 16
+:geoo/construction/Hatch.H: 272 112
+:geoo/construction/Hatch.H: 32 136
+:geoo/construction/Hatch.H: 368 16
+:geoo/construction/Hatch.H: 80 208
+
+:geoo/abstract/goal.G: 320 216
+
+:geoo/construction/sawblade_medium.F: 160 96
+:geoo/construction/sawblade_medium.F: 16 72
+:geoo/construction/sawblade_medium.F: 208 216
+
+$BEGIN_TILE_GROUP 0
+:geoo/sandstone/16x32: 0 0
+:geoo/sandstone/16x32: 0 48
+:geoo/sandstone/16x32: 0 96
+:geoo/sandstone/16x32: 0 144
+:geoo/sandstone/16x32: 0 192
+:geoo/sandstone/16x32: 0 240
+:geoo/sandstone/16x16: 0 272
+:geoo/sandstone/16x16: 0 32
+:geoo/sandstone/16x16: 0 80
+:geoo/sandstone/16x16: 0 128
+:geoo/sandstone/16x16: 0 176
+:geoo/sandstone/16x16: 0 224
+$END_TILE_GROUP
+:Group-0: 16 112
+:Group-0: 64 112
+:Group-0: 112 112
+:Group-0: 160 112
+:Group-0: 208 112
+:Group-0: 256 112
+:Group-0: 304 112
+:Group-0: 352 112
+$BEGIN_TILE_GROUP 1
+:geoo/sandstone/slopes/32x16lb: 0 80
+:geoo/sandstone/slopes/32x16rt: 0 96
+:geoo/sandstone/slopes/32x16lb: 32 96
+:geoo/sandstone/slopes/32x16rt: 32 112
+:geoo/sandstone/slopes/32x16lb: 64 112
+:geoo/sandstone/slopes/32x16rt: 64 128
+:geoo/sandstone/slopes/32x16lb: 96 128
+:geoo/sandstone/slopes/32x16rt: 96 144
+:geoo/sandstone/slopes/32x16lb: 128 144
+:geoo/sandstone/slopes/32x16rt: 128 160
+:geoo/sandstone/slopes/32x16lb: 160 160
+:geoo/sandstone/slopes/32x16rt: 160 176
+:geoo/sandstone/slopes/32x16lb: 192 176
+:geoo/sandstone/slopes/32x16rt: 192 192
+:geoo/sandstone/slopes/32x16lb: 352 64
+:geoo/sandstone/slopes/32x16rt: 352 80
+:geoo/sandstone/slopes/32x16lb: 320 48
+:geoo/sandstone/slopes/32x16rt: 320 64
+:geoo/sandstone/slopes/32x16lb: 288 32
+:geoo/sandstone/slopes/32x16rt: 288 48
+:geoo/sandstone/slopes/32x16lb: 256 16
+:geoo/sandstone/slopes/32x16rt: 256 32
+:geoo/sandstone/slopes/32x16lb: 224 0
+:geoo/sandstone/slopes/32x16rt: 224 16
+$END_TILE_GROUP
+:Group-1: 128 96 frr
+:Group-1: 128 144 frr
+:Group-1: 128 192 frr
+:Group-1: 128 240 frr
+:Group-1: 128 0 frr
+:Group-1: 128 48 frr
+:Group-1: 128 80
+:Group-1: 128 128
+:Group-1: 128 176
+:Group-1: 128 224
+:Group-1: 128 272
+:Group-1: 128 32
+:matt/marble/02: 40 120
+:matt/marble/02: 40 168
+:matt/marble/02: 64 144
+:matt/marble/02: 16 144
+:matt/marble/02d: 112 48
+:matt/marble/02d: 160 48
+:matt/marble/02d: 136 24
+:matt/marble/02d: 136 72
+:matt/marble/02b: 280 96
+:matt/marble/02b: 304 120
+:matt/marble/02b: 280 144
+:matt/marble/02b: 256 120
+:matt/marble/02e: 280 48
+:matt/marble/02e: 304 24
+:matt/marble/02e: 280 0
+:matt/marble/02e: 256 24
+:matt/marble/02c: 88 240
+:matt/marble/02c: 88 192
+:matt/marble/02c: 112 216
+:matt/marble/02c: 64 216
+:matt/marble/02a: 376 0
+:matt/marble/02a: 16 24
+:matt/marble/02a: 376 48
+:matt/marble/02a: 352 24
+:geoo/steel/16x16o.S: 328 264
+:geoo/construction/concrete/016: 328 216
+:geoo/construction/concrete/016: 352 240
+:geoo/construction/concrete/016: 304 240

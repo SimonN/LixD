@@ -1,0 +1,33 @@
+$BUILT 2024-01-21 13:37:05
+$AUTHOR geoo
+$ENGLISH Stay Back!
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 320
+#SIZE_Y 160
+
+#INITIAL 10
+#REQUIRED 8
+#SPAWN_INTERVAL 32
+
+#EXPLODER 1
+#PLATFORMER 1
+#CUBER 1
+
+:geoo/abstract/hatch.H: 72 32 r
+
+:geoo/abstract/goal.G: 232 72
+
+:geoo/abstract/pipes/central4: 40 120
+:geoo/abstract/pipes/central4: 72 120
+:geoo/abstract/pipes/central4: 40 120
+:geoo/abstract/pipes/central4: 72 120
+:geoo/abstract/pipes/corner4: 32 120
+:geoo/abstract/pipes/central4: 32 88 r
+:geoo/abstract/pipes/endr4: 32 80 rrr
+:geoo/abstract/pipes/endr4: 136 120
+:geoo/abstract/pipes/central4: 104 120
+:geoo/abstract/pipes/central4: 216 120
+:geoo/abstract/pipes/endr4: 280 120
+:geoo/abstract/pipes/central4: 248 120
+:geoo/abstract/pipes/endr4: 208 120 rr

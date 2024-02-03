@@ -1,0 +1,71 @@
+$BUILT 2015-08-10 21:42:46
+$AUTHOR geoo
+$GERMAN 
+$ENGLISH Glade of Disbelief (Easy Version)
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 2
+#REQUIRED 2
+#SPAWN_INTERVAL 96
+#SPAWN_INTERVAL_FAST 96
+
+#RUNNER 1
+#BUILDER 4
+
+:geoo/construction/Hatch.H: 432 216
+:geoo/construction/Hatch.H: 176 184 r
+
+:geoo/construction/Goal2.G: 416 152
+
+:geoo/sandstone/torch.F: 16 176
+:geoo/sandstone/torch.F: 80 176
+:geoo/sandstone/torch.F: 592 200
+:geoo/sandstone/torch.F: 528 200
+
+:geoo/construction/concrete/128: 512 272
+:geoo/construction/concrete/128: 384 272
+:geoo/construction/concrete/128: 128 248
+:geoo/construction/concrete/128: 0 248
+:geoo/construction/pillar_base: 32 232
+:geoo/construction/pillar_32: 48 96
+:geoo/construction/pillar_32: 48 128
+:geoo/construction/pillar_32: 48 64
+:geoo/construction/pillar_32: 48 128
+:geoo/construction/pillar_32: 48 160
+:geoo/construction/pillar_32: 48 96
+:geoo/construction/pillar_32: 48 192
+:geoo/construction/pillar_32: 48 200
+:geoo/construction/pillar_base: 32 64
+:geoo/construction/pillar_top_shaded: 48 80
+:geoo/construction/pillar_bottom: 48 216
+:geoo/construction/concrete/128: 0 376
+:geoo/construction/concrete/128: 128 376
+:geoo/construction/pillar_base: 544 256
+:geoo/construction/pillar_32: 560 96
+:geoo/construction/pillar_32: 560 128
+:geoo/construction/pillar_32: 560 64
+:geoo/construction/pillar_32: 560 128
+:geoo/construction/pillar_32: 560 160
+:geoo/construction/pillar_32: 560 160
+:geoo/construction/pillar_32: 560 192
+:geoo/construction/pillar_32: 560 208
+:geoo/construction/pillar_base: 544 64
+:geoo/construction/pillar_top_shaded: 560 80
+:geoo/construction/pillar_bottom: 560 240
+:geoo/construction/concrete/064h: 0 0
+:geoo/construction/concrete/064h: 128 0
+:geoo/construction/concrete/064h: 256 0
+:geoo/construction/concrete/064h: 384 0
+:geoo/construction/concrete/064h: 512 0
+:geoo/construction/platform.S: 416 214
+:geoo/construction/platform.S: 384 214
+:geoo/construction/platform.S: 448 214
+:geoo/construction/platform.S: 480 214

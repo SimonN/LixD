@@ -1,0 +1,32 @@
+$BUILT 2024-02-03 18:22:41
+$AUTHOR geoo
+$ENGLISH Long-range Artillery
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 472
+#SIZE_Y 224
+
+#INITIAL 60
+#REQUIRED 55
+#SPAWN_INTERVAL 2
+
+#CLIMBER 1
+#EXPLODER 1
+#PLATFORMER 1
+#BASHER 1
+#DIGGER 3
+#BATTER 1
+#CUBER 1
+
+:geoo/abstract/hatch.H: 64 96
+
+:geoo/abstract/goal.G: 376 96
+
+:geoo/abstract/pipes/central5: 136 112 r
+:geoo/abstract/cvblocks/046: 16 144
+:geoo/abstract/pipes/central5: 136 80 r
+:geoo/abstract/cvblocks/046: 16 16
+:geoo/abstract/cvblocks/046: 328 144
+:geoo/abstract/pipes/central5: 328 112 r
+:geoo/abstract/pipes/central5: 328 80 r
+:geoo/abstract/cvblocks/046: 328 16

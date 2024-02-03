@@ -1,0 +1,115 @@
+$BUILT 2024-02-08 21:39:53
+$AUTHOR geoo
+$ENGLISH Cultist Congregation
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 608
+#SIZE_Y 352
+
+#INITIAL 24
+#REQUIRED 22
+#SPAWN_INTERVAL 2
+
+#WALKER 2
+#BLOCKER 2
+#EXPLODER2 0
+
+:amanda/occult/hatch_tentacle.H: 112 -32 r
+:amanda/occult/hatch_tentacle.H: 384 -32
+:amanda/occult/hatch_tentacle.H: 360 104
+
+:amanda/occult/goal_skull.G: 512 232
+
+:geoo/construction/factory.T: 488 244
+:geoo/construction/factory.T: 430 244
+
+:amanda/tar.W: 192 320
+:amanda/tar.W: 64 320
+:amanda/tar.W: -64 320
+:amanda/tar.W: 320 320
+:amanda/tar.W: 224 336
+:amanda/tar.W: 96 336
+:amanda/tar.W: -32 336
+:geoo/sandstone/torch.F: 180 150
+:geoo/sandstone/torch.F: 264 150
+:amanda/tar.W: 352 336
+
+:amanda/occult/wax64x48: 432 304
+:amanda/occult/wax_details_drip: 64 262
+:amanda/occult/wax64x64: 64 208
+:amanda/occult/wax_details_drip_b: 136 262
+:amanda/occult/wax64x48: 160 224
+:amanda/occult/wax32x48: 224 224
+:amanda/occult/wax32x48_cap_right_soft: 192 64
+:amanda/occult/wax_details_drip_b: 128 268
+:amanda/occult/wax32x48: 128 224
+:amanda/occult/wax32x48_cap_right_sheer: 112 176
+:amanda/occult/wax64x48: 128 64 frr
+:amanda/occult/wax64x48: 528 304
+:amanda/occult/wax32x48_cap_left_soft: 336 80
+:amanda/occult/wax64x48: 368 80
+:amanda/occult/wax32x16_cap_left_alt: 480 128
+:amanda/occult/wax64x64: 432 64
+:amanda/occult/wax_details_sunken_lix_b: 98 158
+:amanda/occult/wax_details_sunken_lix: 384 70 frr
+:amanda/occult/wax32x16_cap_left_alt: 400 64
+:amanda/occult/wax32x16_cap_left: 528 112
+:amanda/occult/skulls32x32: 538 8 frr
+:amanda/occult/skulls32x32: 536 34
+:amanda/occult/wax32x48_cap_left_sheer: 560 32
+:amanda/occult/wax32x48_cap_left_sheer: 560 -16
+:amanda/occult/wax64x48: 496 64
+:amanda/occult/wax_details_drip: 510 138
+:amanda/occult/wax32x16: 512 128
+:amanda/occult/wax32x48_cap_right_sheer: 496 80
+:amanda/occult/wax32x48_cap_right_soft: 64 128
+:amanda/occult/wax64x48: -32 224
+:amanda/occult/wax32x48: 32 224
+:amanda/occult/wax64x48: 48 176
+:amanda/occult/wax64x64: -16 160
+:amanda/occult/wax64x64: 0 112
+:amanda/occult/wax32x48: 96 64
+:amanda/occult/wax32x16_cap_right: 64 112
+:amanda/occult/wax32x48: 64 64
+:geoo/abstract/pipes/central3: 0 12 rr
+:geoo/abstract/pipes/central3: 32 12 rr
+:geoo/abstract/pipes/central3: 28 0 r
+:raymanni/lab/scen_6: 16 8
+:amanda/occult/wax64x64: 0 64
+:amanda/occult/wax64x48: 256 224 frr
+:amanda/occult/wax64x48: -64 16
+:amanda/occult/wax32x16_cap_left_alt: 368 176
+:amanda/occult/wax32x16_b: 400 176
+:amanda/occult/wax32x16: 432 176
+:amanda/occult/wax32x16_b: 464 176
+:amanda/occult/wax32x48_cap_right_soft: 384 224
+:amanda/occult/wax32x48: 400 304
+:amanda/occult/wax32x48_cap_left_soft: 368 304
+:amanda/occult/wax32x16_b: 496 176
+:amanda/occult/wax_details_drip: 498 146
+:amanda/occult/wax32x16_cap_left: 560 160
+:amanda/occult/wax64x64: 592 128
+:amanda/occult/wax32x16_cap_left_alt: 560 144
+:amanda/occult/wax32x16: 544 128
+:amanda/occult/wax32x16: 528 176
+:amanda/occult/wax64x48: 592 -16 frr
+:amanda/occult/wax32x48: 592 32
+:amanda/occult/wax64x64: 560 64
+:amanda/occult/wax32x16_b: 576 128
+:amanda/occult/wax32x48: 592 304
+:amanda/occult/wax32x48: 496 304
+:amanda/occult/wax32x16: 560 176
+:amanda/occult/wax_details_sunken_lix_b: 384 288
+:amanda/occult/wax_details_sunken_cube: 526 160
+:amanda/occult/wax_details_drip_b: 240 274
+:amanda/occult/wax_details_drip: 98 280
+:matt/underworld/02: 0 320
+:amanda/occult/wax_details_lump: 154 220
+:raymanni/toys/soldier_1: 8 272
+:geoo/abstract/pipes/central3: 76 -16 r
+:geoo/abstract/pipes/central3: 48 12 rr
+:geoo/abstract/pipes/corner3: 76 12 rrr
+:raymanni/lab/block_1: 32 320
+:raymanni/lab/block_1: 0 320
+:amanda/occult/wax32x48: 320 224
+:amanda/occult/wax32x48: 352 224

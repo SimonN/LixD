@@ -1,0 +1,62 @@
+$BUILT 2023-09-23 14:40:18
+$AUTHOR geoo
+$ENGLISH Orange Blues
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 256
+#SIZE_Y 192
+
+#INITIAL 9
+#REQUIRED 6
+#SPAWN_INTERVAL 5
+
+#FLOATER 1
+#EXPLODER 1
+#BLOCKER 2
+#BATTER 1
+
+:geoo/abstract/hatch.H: 104 0 r
+
+:geoo/abstract/goal.G: 216 136
+
+:matt/10tons.T: 24 0
+
+:geoo/abstract/pipes/central1: 56 40
+:geoo/abstract/pipes/central1: 88 40
+:geoo/abstract/pipes/central1: 0 64
+:geoo/abstract/pipes/central1: 32 64
+:geoo/abstract/pipes/central1: 64 64
+:geoo/abstract/pipes/central1: 96 64
+:geoo/abstract/pipes/central1: 128 64
+:geoo/abstract/pipes/central1: 40 184
+:geoo/abstract/pipes/central1: 72 184
+:geoo/abstract/pipes/central1: 96 184
+:geoo/abstract/pipes/central1: 160 64
+:geoo/abstract/pipes/central5: 184 32 r
+:geoo/abstract/pipes/central5: 0 32 r
+:geoo/abstract/pipes/central5: 40 152 r
+:geoo/abstract/pipes/central1: 120 40
+:geoo/abstract/pipes/central1: 24 40
+:geoo/abstract/pipes/central1: 208 184
+:geoo/abstract/pipes/central1: 224 184
+:geoo/abstract/pipes/central1: 136 40
+:geoo/abstract/pipes/central5: 184 0 r
+:geoo/abstract/pipes/central5: 0 0 r
+$BEGIN_TILE_GROUP 0
+:geoo/abstract/pipes/central5: 8 0 r
+:geoo/abstract/cvblocks/031: 0 8 d
+$END_TILE_GROUP
+:Group-0: 40 160
+:Group-0: 0 40
+:Group-0: 184 40 frr
+:geoo/abstract/pipes/ends1: 24 40
+:geoo/abstract/pipes/ends1: 160 40 rr
+:geoo/abstract/pipes/ends1: 120 184 rr
+:geoo/abstract/pipes/ends1: 208 184
+:Group-0: 248 160 frr
+:geoo/abstract/pipes/central5: 248 128 r
+:geoo/abstract/pipes/central5: 248 64 r
+:geoo/abstract/pipes/central5: 248 32 r
+:geoo/abstract/pipes/central5: 248 0 r
+:geoo/abstract/pipes/ends5: 40 152 r
+:geoo/abstract/pipes/central5: 248 96 r

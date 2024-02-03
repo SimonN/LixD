@@ -1,0 +1,114 @@
+$BUILT 2024-01-28 12:53:18
+$AUTHOR geoo
+$ENGLISH Tight is Right
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 512
+#SIZE_Y 184
+
+#INITIAL 25
+#REQUIRED 24
+#SPAWN_INTERVAL 5
+
+#CLIMBER 1
+#EXPLODER 1
+#PLATFORMER 1
+#BASHER 1
+
+:geoo/sandstone/fennec.H: 400 72
+
+:simon/tapir/goal.G: 64 104
+
+:simon/water.W: 112 152
+:simon/water.W: 160 152
+:geoo/sandstone/torch.F: 320 32
+:geoo/sandstone/torch.F: 56 72
+:geoo/sandstone/torch.F: 104 72
+:geoo/sandstone/torch.F: 184 72
+:geoo/sandstone/torch.F: 232 72
+:geoo/sandstone/torch.F: 408 32
+
+:geoo/sandstone/32x32: 272 120
+:geoo/sandstone/32x32: 368 120
+:geoo/sandstone/32x32: 368 120
+:geoo/sandstone/64x32: 304 120
+:geoo/sandstone/64x32: 272 88
+:geoo/sandstone/64x32: 336 88
+:geoo/steel/64x32o.S: 192 152
+:geoo/steel/64x32o.S: 256 152
+:geoo/steel/64x32o.S: 320 152
+:geoo/steel/64x32o.S: 384 152
+:geoo/steel/64x32o.S: 64 152
+:geoo/steel/64x32o.S: 448 152
+:geoo/sandstone/pillar_32: 464 120
+:geoo/sandstone/pillar_32: 464 88
+:geoo/sandstone/pillar_32: 464 56
+:geoo/sandstone/pillar_32: 464 24
+:geoo/sandstone/ebony/h16a: 64 0
+:geoo/sandstone/ebony/h16b: 96 0
+:geoo/sandstone/ebony/h16c: 128 0
+:geoo/sandstone/ebony/h16b: 176 0
+:geoo/sandstone/ebony/h16a: 208 0
+:geoo/sandstone/ebony/h16b: 240 0
+:geoo/sandstone/ebony/h16c: 272 0
+:geoo/sandstone/ebony/h16a: 304 0
+:geoo/sandstone/ebony/h16b: 336 0
+:geoo/sandstone/ebony/h16a: 368 0
+:geoo/sandstone/ebony/h16b: 400 0
+:geoo/sandstone/ebony/h16a: 432 0
+:geoo/sandstone/ebony/h16a: 480 0
+:geoo/sandstone/pillar_bottom_ext: 448 136
+:geoo/sandstone/pillar_top_ext: 448 16
+:geoo/sandstone/smaragd: 472 48
+:geoo/sandstone/smaragd: 472 64
+:geoo/sandstone/smaragd: 472 80
+:geoo/sandstone/smaragd: 472 96
+:geoo/sandstone/smaragd: 472 112
+:geoo/sandstone/ribbon_main: 448 64
+:geoo/sandstone/ribbon_end: 448 96
+:geoo/sandstone/ribbon_start_sq: 448 0
+:geoo/sandstone/ribbon_main: 448 32
+:geoo/sandstone/pillar_32: 16 120
+:geoo/sandstone/pillar_32: 16 88
+:geoo/sandstone/pillar_32: 16 56
+:geoo/sandstone/pillar_32: 16 24
+:geoo/sandstone/pillar_bottom_ext: 0 136
+:geoo/sandstone/pillar_top_ext: 0 16
+:geoo/sandstone/smaragd: 24 48
+:geoo/sandstone/smaragd: 24 64
+:geoo/sandstone/smaragd: 24 80
+:geoo/sandstone/smaragd: 24 96
+:geoo/sandstone/smaragd: 24 112
+:geoo/sandstone/ribbon_main: 32 64
+:geoo/sandstone/ribbon_end: 32 96
+:geoo/sandstone/ribbon_main: 32 32
+:geoo/sandstone/ribbon_start_sq: 32 0
+:geoo/sandstone/ebony/h16c: 0 0
+:geoo/steel/64x32o.S: 0 152
+:geoo/sandstone/ribbon_main: 144 32
+:geoo/sandstone/ribbon_end: 144 64
+:geoo/sandstone/ribbon_start_sq: 144 0
+:geoo/sandstone/ribbon_start_sq: 288 0
+:geoo/sandstone/ribbon_start_sq: 352 0
+:geoo/sandstone/ribbon_end: 288 32
+:geoo/sandstone/ribbon_end: 352 32
+:geoo/sandstone/ribbon_start_sq: 80 0
+:geoo/sandstone/ribbon_end: 80 32
+:amanda/forest/rope_c: 216 16
+:amanda/forest/rope_c: 216 32
+:amanda/forest/rope_c: 216 48
+:amanda/forest/rope_c: 216 64
+:amanda/forest/rope_c: 216 80
+:amanda/forest/rope_c: 216 104
+:amanda/forest/rope_c: 216 120
+:amanda/forest/rope_c: 216 136
+:amanda/forest/rope_c: 216 88
+:geoo/sandstone/16x8: 328 132
+:geoo/sandstone/smaragd: 344 128
+:geoo/sandstone/smaragd: 312 128
+:geoo/sandstone/16x8: 284 100
+:geoo/sandstone/16x8: 348 100
+:geoo/sandstone/16x8: 372 100
+:geoo/sandstone/16x8: 308 100
+:geoo/sandstone/smaragd: 280 128
+:geoo/sandstone/smaragd: 376 128

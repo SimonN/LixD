@@ -1,0 +1,157 @@
+$BUILT 2024-02-29 01:20:00
+$AUTHOR geoo
+$ENGLISH Steady Supply
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 896
+#SIZE_Y 232
+#BACKGROUND_RED 16
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 32
+
+#INITIAL 40
+#REQUIRED 34
+#SPAWN_INTERVAL 7
+
+#CLIMBER 1
+#EXPLODER 6
+#BLOCKER 5
+#BUILDER 7
+#PLATFORMER 5
+#MINER 1
+
+:raymanni/lab/hatch.H: 144 94
+:raymanni/lab/hatch.H: 144 142
+
+:raymanni/lab/goal.G: 800 -16
+
+:amanda/tar.W: 320 152
+:amanda/tar.W: 448 152
+:amanda/tar.W: 576 152
+:raymanni/lab/goo_fall.W: 808 152
+:amanda/tar.W: 704 152
+:raymanni/lab/goo_fall.W: 840 152
+:amanda/tar.W: 832 152
+:raymanni/lab/goo_fall.W: 808 136
+:raymanni/lab/goo_fall.W: 808 120
+:raymanni/lab/goo_fall.W: 808 104
+:raymanni/lab/goo_fall.W: 808 88
+:raymanni/lab/goo_fall.W: 840 136
+:raymanni/lab/goo_fall.W: 840 120
+:raymanni/lab/goo_fall.W: 840 104
+:raymanni/lab/goo_fall.W: 840 88
+
+:amanda/steel/steel8x16.S: 544 44
+:geoo/steel/16x16o.S: 544 48
+:amanda/steel/steel8x16.S: 608 44
+:geoo/steel/16x16o.S: 608 48
+:amanda/steel/steel8x16.S: 672 44
+:geoo/steel/16x16o.S: 672 48
+:amanda/steel/steel8x16.S: 736 44
+:geoo/steel/16x16o.S: 736 48
+:geoo/steel/64x32o.S: 528 0
+:geoo/steel/64x32o.S: 592 0
+:geoo/steel/64x32o.S: 656 0
+:geoo/steel/64x32o.S: 720 0
+:geoo/abstract/pipes/central6: 568 32 r
+:geoo/abstract/pipes/central6: 568 64 r
+:geoo/abstract/pipes/central6: 632 32 r
+:geoo/abstract/pipes/central6: 632 64 r
+:geoo/abstract/pipes/central6: 696 32 r
+:geoo/abstract/pipes/central6: 696 64 r
+:geoo/abstract/pipes/central6: 760 32 r
+:geoo/abstract/pipes/central6: 760 64 r
+:raymanni/lab/pipe_7: 808 64
+:raymanni/lab/pipe_7: 840 64
+:geoo/steel/64x32o.S: 800 48
+:geoo/abstract/pipes/central6: 504 32 r
+:geoo/abstract/pipes/central6: 504 64 r
+:geoo/abstract/pipes/central6: 476 -16 r
+:geoo/abstract/pipes/central6: 476 16 r
+:geoo/steel/64x32o.S: 464 0
+:geoo/steel/16x16o.S: 464 48
+:geoo/steel/16x16o.S: 480 48
+:geoo/steel/64x32o.S: 64 200
+:geoo/steel/64x32o.S: 128 200
+:geoo/steel/64x32o.S: 192 200
+:geoo/abstract/pipes/central6: 568 96 r
+:geoo/abstract/pipes/central6: 632 96 r
+:geoo/abstract/pipes/central6: 696 96 r
+:geoo/abstract/pipes/central6: 760 96 r
+:geoo/abstract/pipes/central6: 504 96 r
+:geoo/abstract/pipes/central6: 568 128 r
+:geoo/abstract/pipes/central6: 632 128 r
+:geoo/abstract/pipes/central6: 696 128 r
+:geoo/abstract/pipes/central6: 760 128 r
+:geoo/abstract/pipes/central6: 504 128 r
+:geoo/abstract/pipes/central6: 568 160 r
+:geoo/abstract/pipes/central6: 568 192 r
+:amanda/occult/wax64x64: 512 176
+:geoo/abstract/pipes/central6: 632 160 r
+:geoo/abstract/pipes/central6: 632 192 r
+:amanda/occult/wax64x64: 576 176
+:geoo/abstract/pipes/central6: 696 160 r
+:geoo/abstract/pipes/central6: 696 192 r
+:amanda/occult/wax64x48: 640 176
+:geoo/abstract/pipes/central6: 760 160 r
+:geoo/abstract/pipes/central6: 760 192 r
+:amanda/occult/wax64x64: 704 176
+:geoo/abstract/pipes/central6: 504 160 r
+:geoo/abstract/pipes/central6: 504 192 r
+:amanda/occult/wax64x48: 448 176
+:geoo/steel/64x32o.S: 256 200
+:geoo/steel/64x32o.S: 0 200
+:amanda/occult/wax64x48: 320 176
+:geoo/steel/64x32o.S: 320 200
+:geoo/steel/64x32o.S: 448 200
+:geoo/steel/64x32o.S: 512 200
+:geoo/steel/64x32o.S: 576 200
+:geoo/steel/64x32o.S: 640 200
+:amanda/occult/wax64x64: 384 176
+:geoo/steel/64x32o.S: 384 200
+:geoo/steel/64x32o.S: 704 200
+:amanda/occult/wax64x48: 768 176
+:geoo/steel/64x32o.S: 768 200
+:amanda/occult/wax64x64: 832 176
+:geoo/steel/64x32o.S: 832 200
+:raymanni/lab/block_1: 128 168
+:raymanni/lab/block_2: 160 168
+:raymanni/lab/block_7: 192 136
+:raymanni/lab/block_6: 400 48
+:raymanni/lab/block_6: 432 48
+:raymanni/lab/pipe_1: 40 48
+:raymanni/lab/scen_6: 32 56
+:raymanni/lab/pipe_1: 8 48
+:raymanni/lab/scen_5: 0 56
+$BEGIN_TILE_GROUP 0
+:raymanni/lab/pipe_7: 0 0 r
+:raymanni/lab/pipe_7: 32 0 fr
+$END_TILE_GROUP
+:Group-0: 256 120
+:raymanni/lab/block_8: 256 136
+:raymanni/lab/block_9: 64 136
+:raymanni/lab/block_7: 0 136
+:Group-0: 0 120
+:raymanni/lab/pipe_6: 40 24
+:raymanni/lab/pipe_1: 64 24 r
+:raymanni/lab/pipe_3: 88 8
+:raymanni/lab/pipe_1: 104 -16
+:raymanni/lab/pipe_1: 8 24
+:raymanni/lab/pipe_1: 8 0
+:raymanni/lab/scen_7: 56 0
+:raymanni/lab/pipe_3: 280 -8
+:raymanni/lab/pipe_1: 296 -32
+:raymanni/lab/pipe_5: 208 -8
+:raymanni/lab/scen_8: 224 0
+:raymanni/lab/pipe_1: 224 8 r
+:raymanni/lab/pipe_1: 256 8 r
+:raymanni/lab/scen_3: 160 -16
+:raymanni/lab/scen_1: 136 -40
+:raymanni/lab/scen_1: 865 120 r
+:raymanni/lab/scen_1: 873 96 r
+:amanda/occult/wax_details_sunken_lix_b: 432 162
+:amanda/occult/wax_details_sunken_lix: 768 166
+:amanda/occult/wax_details_sunken_cube: 326 162
+:amanda/occult/wax_details_sunken_cube: 646 162
+:raymanni/lab/pipe_2: 128 136 r
+:raymanni/lab/pipe_2: 160 136 r

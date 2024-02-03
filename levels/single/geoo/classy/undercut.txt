@@ -1,0 +1,172 @@
+$BUILT 2024-03-03 16:54:09
+$AUTHOR geoo
+$ENGLISH Undercut
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 688
+#SIZE_Y 432
+
+#INITIAL 50
+#REQUIRED 49
+#SPAWN_INTERVAL 25
+
+#WALKER 2
+#CLIMBER 3
+#BLOCKER 3
+#BUILDER 1
+#MINER 2
+#EXPLODER2 0
+
+:matt/marble/Hatch.H: 256 288 r
+:matt/marble/Hatch.H: 432 0
+
+:matt/marble/Goal.G: 0 256
+
+:matt/water.W: 320 368
+:matt/water.W: 336 368
+:matt/water.W: 312 384
+:matt/water.W: 344 384
+:matt/water.W: 304 400
+:matt/water.W: 336 400
+
+:matt/marble/08d: 128 240
+:matt/marble/08d: 96 272
+:matt/marble/08d: 160 272
+:matt/marble/08d: 128 304
+:matt/marble/05d: 192 240
+:matt/marble/05d: 96 240
+:matt/marble/08d: 96 336
+:matt/marble/thinplatform128p: 192 366
+:matt/marble/08d: 160 336
+:matt/marble/05d: 192 304
+:matt/marble/08d: 64 304
+:matt/marble/08d: 0 304
+:matt/marble/08d: 32 336
+:matt/marble/08d: 192 368
+:matt/marble/08d: 256 368
+:matt/marble/08d: 128 368
+:matt/marble/08d: 400 288
+:matt/marble/08d: 368 256
+:matt/marble/08d: 400 224
+:matt/marble/08d: 368 192
+:matt/marble/08d: 464 288
+:matt/marble/08d: 496 256
+:matt/marble/08d: 432 256
+:matt/marble/08d: 464 224
+:matt/marble/08d: 432 192
+:matt/marble/05e: 368 224
+:matt/marble/05e: 368 288
+:matt/marble/08d: 368 320
+:matt/marble/08d: 496 320
+:matt/marble/08d: 432 320
+:matt/marble/08d: 528 288
+:matt/marble/08d: 560 256
+:matt/marble/08d: 560 320
+:matt/marble/08d: 400 352
+:matt/marble/08d: 528 352
+:matt/marble/08d: 464 352
+:matt/marble/08d: 592 352
+:matt/marble/05e: 368 352
+:matt/marble/08d: 592 288
+:matt/marble/08d: 0 368
+:matt/marble/08d: 64 368
+:matt/marble/08d: -64 368
+:matt/marble/08d: -32 336
+:matt/marble/08d: 160 400
+:matt/marble/08d: 224 400
+:matt/marble/08d: 96 400
+:matt/marble/08d: -32 400
+:matt/marble/08d: 32 400
+:matt/marble/08d: -96 400
+:matt/marble/08d: 368 384
+:matt/marble/08d: 496 384
+:matt/marble/08d: 432 384
+:matt/marble/08d: 560 384
+:matt/marble/05e: 288 400
+:matt/marble/08a: 368 192
+:matt/marble/08a: 400 224
+:matt/marble/08a: 432 256
+:matt/marble/08a: 464 288
+:matt/marble/08a: 496 320
+:matt/marble/08a: 528 352
+:matt/marble/08a: 560 384
+:matt/marble/08a: 368 320
+:matt/marble/08a: 400 352
+:matt/marble/08a: 432 384
+:matt/marble/08a: 560 256
+:matt/marble/08a: 592 288
+:matt/marble/08a: 128 240
+:matt/marble/08a: 160 272
+:matt/marble/08a: 64 304
+:matt/marble/08a: 96 336
+:matt/marble/08a: 128 368
+:matt/marble/08a: 160 400
+:matt/marble/08a: 256 368
+:matt/marble/08a: 0 368
+:matt/marble/08a: 32 400
+:matt/marble/08a: -32 336
+:matt/marble/05a: 192 304
+:matt/marble/05e: 192 240
+:matt/marble/05e: 96 240
+:matt/marble/05e: 192 304
+:matt/marble/05e: 0 336
+:matt/marble/05e: 0 400
+:matt/marble/05e: 656 352
+:matt/marble/05e: 656 288
+:matt/marble/08d: 32 32
+:matt/marble/08d: 0 0
+:matt/marble/08d: 96 32
+:matt/marble/08d: 128 0
+:matt/marble/08d: 64 0
+:matt/marble/05e: 0 32
+:matt/marble/08d: 160 32
+:matt/marble/08d: 192 0
+:matt/marble/08d: 224 32
+:matt/marble/08a: 64 0
+:matt/marble/08a: 96 32
+:matt/marble/08a: 192 0
+:matt/marble/08a: 224 32
+:matt/marble/05e: 256 0
+:matt/marble/08d: 400 160
+:matt/marble/08d: 368 128
+:matt/marble/05e: 368 160
+:matt/marble/08a: 464 160
+:matt/marble/05e: 368 96
+:matt/marble/08d: 368 64
+:matt/marble/08a: 368 64
+:matt/marble/08a: 494 64
+:matt/marble/08d: 432 64
+:matt/marble/05e: 526 96
+:matt/marble/08d: 462 96
+:matt/marble/08a: 400 96
+:matt/marble/08a: 496 192
+:matt/marble/05e: 528 160
+:matt/marble/05e: 656 416
+:matt/marble/08d: 400 416
+:matt/marble/08d: 464 416
+:matt/marble/05e: 368 416
+:matt/marble/08d: 528 416
+:matt/marble/08d: 592 416
+:matt/marble/08a: 464 416
+:matt/marble/08a: 592 416
+:matt/marble/08d: 96 96
+:matt/marble/08d: 64 64
+:matt/marble/08d: 160 96
+:matt/marble/08d: 192 64
+:matt/marble/08d: 128 64
+:matt/marble/05e: 0 96
+:matt/marble/08d: 224 96
+:matt/marble/08d: 0 64
+:matt/marble/08a: 128 64
+:matt/marble/08a: 160 96
+:matt/marble/08a: 0 64
+:matt/marble/08a: 32 96
+:matt/marble/05e: 256 64
+:matt/marble/08d: 624 256
+:matt/marble/08d: 624 320
+:matt/marble/08d: 624 384
+:matt/marble/08a: 624 320
+:matt/marble/08d: 494 128
+:matt/marble/08a: 432 128
+:matt/marble/05e: 528 224
+:matt/marble/thinplatform128p: 560 254

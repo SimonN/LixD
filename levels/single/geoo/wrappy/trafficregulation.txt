@@ -1,0 +1,88 @@
+$BUILT 2023-09-25 19:01:01
+$AUTHOR geoo
+$ENGLISH Traffic Regulation
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 384
+#SIZE_Y 272
+#TORUS_X 1
+#TORUS_Y 1
+
+#INITIAL 60
+#REQUIRED 60
+#SPAWN_INTERVAL 9
+
+#BUILDER 3
+#MINER 4
+#EXPLODER2 0
+
+:geoo/abstract/hatch.H: 368 240 r
+
+:matt/marble/Goal.G: 160 232
+
+:geoo/construction/Laser_hz_64.F: 160 236
+:geoo/construction/Laseremit_hzl_16.F: 152 236
+:geoo/construction/Laseremit_hzr_16.F: 216 236
+:geoo/construction/Laser_hz_64.F: 128 188
+:geoo/construction/Laseremit_hzl_16.F: 128 188
+:geoo/construction/Laser_hz_64.F: 192 188
+:geoo/construction/Laseremit_hzr_16.F: 240 188
+
+:matt/goldmine/00: 260 222 rrr
+:matt/goldmine/04: 208 40
+:matt/goldmine/07: 136 0 rr
+:matt/goldmine/09: 47 144
+:geoo/construction/platform_single.S: 128 224
+:geoo/construction/platform_single.S: 248 224
+:geoo/steel/16x16o.S: 136 236
+:geoo/steel/16x16o.S: 232 236
+:matt/goldmine/04: 256 106
+$BEGIN_TILE_GROUP 0
+:matt/goldmine/plank: 0 0 fr
+:matt/goldmine/plank: 0 42 frd
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:matt/goldmine/plank: 0 56 fr
+:Group-0: 0 128
+:matt/goldmine/plank: 0 0 frd
+$END_TILE_GROUP
+:Group-1: 256 176 d
+:matt/goldmine/09: 306 222
+:matt/goldmine/08: 12 170 frr
+:matt/goldmine/05: 364 12 frr
+:matt/goldmine/07: 378 266
+:matt/goldmine/03: 104 8
+:matt/goldmine/07: 74 66
+:matt/goldmine/03: 128 143 rr
+:matt/goldmine/plank: 120 176
+$BEGIN_TILE_GROUP 2
+:matt/goldmine/plank: 38 0
+:matt/goldmine/plank: 0 0 d
+$END_TILE_GROUP
+:Group-2: 226 176
+:matt/goldmine/07: 272 48
+:matt/goldmine/04: 329 13
+:matt/goldmine/02: 49 84
+$BEGIN_TILE_GROUP 3
+:matt/goldmine/plank: 0 48 fr
+:Group-0: 0 128
+:matt/goldmine/plank: 0 0 frd
+$END_TILE_GROUP
+:Group-3: 264 176
+:Group-3: 112 176
+:geoo/steel/32x16o.S: 128 8
+:geoo/steel/32x16o.S: 160 8
+:geoo/steel/32x16o.S: 192 8
+:geoo/steel/32x16o.S: 224 8
+:geoo/steel/16x32o.S: 112 264
+:geoo/steel/16x32o.S: 256 264
+$BEGIN_TILE_GROUP 4
+:geoo/steel/16x32o.S: 0 0
+:geoo/steel/16x32o.S: 0 20 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 5
+:geoo/steel/16x32o.S: 0 8
+:Group-4: 0 0
+$END_TILE_GROUP
+:Group-5: 256 224
+:Group-5: 112 224

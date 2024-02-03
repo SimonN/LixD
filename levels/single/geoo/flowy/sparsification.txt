@@ -1,0 +1,94 @@
+$BUILT 2024-02-08 22:12:17
+$AUTHOR geoo
+$ENGLISH Sparsification
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 384
+
+#INITIAL 20
+#REQUIRED 18
+#SPAWN_INTERVAL 4
+
+#BLOCKER 1
+#MINER 1
+#EXPLODER2 0
+
+:geoo/abstract/hatch.H: 160 128
+
+:geoo/abstract/goal.G: 16 80
+
+:geoo/construction/spring.T: 478 224
+:geoo/construction/spring_fast.T: 128 160
+
+:geoo/abstract/cvblocks/046: 128 192
+:geoo/abstract/cvblocks/046: 256 192
+:geoo/abstract/cvblocks/046: 384 256
+:geoo/abstract/cvblocks/046: 512 320
+:geoo/abstract/cvblocks/046: 384 320
+:geoo/abstract/cvblocks/046: 352 384
+:geoo/abstract/cvblocks/046: 480 384
+:geoo/abstract/cvblocks/046: 224 384
+:geoo/abstract/cvblocks/046: 256 320
+:geoo/abstract/cvblocks/046: 256 256
+:geoo/abstract/cvblocks/046: 128 256
+:geoo/abstract/cvblocks/046: 128 320
+:geoo/abstract/cvblocks/046: 96 384
+:geoo/abstract/cvblocks/047: 0 256
+:geoo/abstract/cvblocks/047: 0 128
+:geoo/abstract/cvblocks/047: 512 64
+:geoo/abstract/cvblocks/047: 576 64
+$BEGIN_TILE_GROUP 0
+:matt/marble/23e: 0 0
+:matt/marble/23e: 32 0
+:matt/marble/23e: 64 0
+:matt/marble/23e: 96 0
+:matt/marble/23e: 0 32
+:matt/marble/23e: 32 32
+:matt/marble/23e: 64 32
+:matt/marble/23e: 96 32
+$END_TILE_GROUP
+:Group-0: 160 224
+:Group-0: 160 288
+:Group-0: 288 288
+:Group-0: 352 288
+:Group-0: 160 352
+:Group-0: 288 352
+:Group-0: 416 352
+:Group-0: 544 352
+:matt/marble/06a: 128 320
+:matt/marble/06a: 128 192
+:Group-0: 224 224
+:matt/marble/08d: 160 192
+:matt/marble/08d: 352 256
+:matt/marble/06a: 352 192
+:matt/marble/06a: 352 192
+:matt/marble/08a: 480 320
+:matt/marble/08a: 608 320
+:matt/marble/08a: 224 192
+:matt/marble/08d: 288 192
+:matt/marble/08a: 416 256
+:matt/marble/06d: 480 256
+:matt/marble/06d: 128 256
+:matt/marble/06d: 128 256
+:matt/marble/08d: 544 320
+:Group-0: 544 96
+:Group-0: 544 32
+:matt/marble/08d: 576 160
+:matt/marble/08a: 512 160
+:matt/marble/06a: 512 32
+:matt/marble/06d: 512 96
+:Group-0: 544 -32
+:matt/marble/06d: 512 -32
+:matt/marble/09a: 0 128
+:matt/marble/09d: 0 192
+:matt/marble/09a: 0 256
+:matt/marble/09d: 0 320
+:geoo/abstract/cvblocks/047: 160 -32
+:geoo/abstract/cvblocks/047: 224 -32
+:Group-0: 192 0
+:matt/marble/08d: 224 64
+:matt/marble/08a: 160 64
+:matt/marble/06d: 160 0
+:matt/marble/08a: 288 64
+:matt/marble/06d: 320 0

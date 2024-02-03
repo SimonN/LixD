@@ -1,0 +1,76 @@
+$BUILT 2024-02-29 01:03:45
+$AUTHOR geoo
+$ENGLISH Clam's Missing Cubes
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 592
+#SIZE_Y 304
+
+#INITIAL 31
+#REQUIRED 16
+#SPAWN_INTERVAL 14
+
+#BASHER 1
+#CUBER 15
+#EXPLODER2 0
+
+:matt/winter/Hatch.H: 512 176 r
+:matt/winter/Hatch.H: 360 8 r
+
+:matt/carnival/Goal.G: 16 192
+
+:geoo/shadow/wall/center: 32 256
+:geoo/shadow/wall/center: 16 272
+:geoo/shadow/wall/center: 64 256
+:matt/carnival/20: 80 224
+:geoo/shadow/wall/center: 48 272
+:geoo/shadow/wall/center: 80 272
+:geoo/shadow/wall/center: 112 272
+:geoo/shadow/wall/center: 144 272
+:geoo/shadow/wall/center: 176 272
+:matt/carnival/20: 128 224
+:matt/carnival/20: 176 224
+:matt/carnival/20: 224 224
+:matt/carnival/20: 272 224
+:matt/carnival/20: 320 224
+:matt/carnival/20: 368 224
+:matt/carnival/20: 416 224
+:matt/carnival/20: 464 224
+:geoo/shadow/wall/center: 208 272
+:geoo/shadow/wall/center: 240 272
+:geoo/shadow/wall/center: 272 272
+:geoo/shadow/wall/center: 304 272
+:geoo/shadow/wall/center: 336 272
+:geoo/shadow/wall/center: 368 272
+:geoo/shadow/wall/center: 400 272
+:geoo/shadow/wall/center: 432 272
+:geoo/shadow/wall/center: 464 272
+:geoo/shadow/wall/center: 496 272
+:geoo/shadow/wall/center: 528 272
+:geoo/shadow/wall/center: 560 272
+:geoo/shadow/wall/center: 512 256
+:geoo/shadow/wall/center: 544 256
+:geoo/shadow/wall/center: 576 256
+:geoo/shadow/wall/center: 0 256
+:geoo/shadow/wall/center: -16 272
+$BEGIN_TILE_GROUP 0
+:geoo/abstract/pipes/central4: 8 0
+:geoo/abstract/pipes/endr4: 0 0 rr
+:geoo/abstract/pipes/endr4: 40 0
+$END_TILE_GROUP
+:Group-0: 104 192
+$BEGIN_TILE_GROUP 1
+:matt/winter/06: 72 0 r
+:matt/winter/08: 136 0 r
+:matt/winter/06: 8 0 r
+:matt/winter/08: 0 0 fr
+$END_TILE_GROUP
+:Group-1: 176 128
+:Group-1: 320 88
+:Group-0: 248 192
+:Group-0: 392 192
+:Group-0: 152 168
+:Group-0: 296 168
+:Group-0: 440 168
+:matt/carnival/20: -32 224
+:matt/carnival/20: 576 224

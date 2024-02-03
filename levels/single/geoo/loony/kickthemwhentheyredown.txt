@@ -1,0 +1,132 @@
+$BUILT 2024-02-15 09:54:25
+$AUTHOR geoo
+$ENGLISH Kick Them When They're Down
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#INITIAL 25
+#REQUIRED 8
+#SPAWN_INTERVAL 10
+
+#EXPLODER2 -1
+
+:geoo/construction/Hatch.H: 230 86
+:geoo/construction/Hatch.H: 48 80
+:geoo/construction/Hatch.H: 528 48 r
+:geoo/construction/Hatch.H: 48 80
+
+:geoo/construction/Goal2.G: 576 304
+
+:geoo/construction/squisher.T: 392 304
+:geoo/construction/squisher.T: 432 304
+:geoo/construction/squisher.T: 472 304
+:geoo/construction/squisher.T: 512 304
+
+:simon/water.W: 272 368
+:simon/water.W: 224 368
+:simon/water.W: 176 368
+:simon/water.W: 128 368
+:geoo/construction/sawblade_small.F: 218 190
+:geoo/construction/sawblade_small.F: 290 196
+:geoo/construction/sawblade_small.F: 254 194
+
+:matt/earth/18: 444 190
+:geoo/steel/64x32o.S: 128 240
+:geoo/steel/64x32o.S: 192 240
+:geoo/steel/64x32o.S: 384 368
+:geoo/steel/64x32o.S: 448 368
+:geoo/steel/64x32o.S: 512 368
+:matt/earth/05: 416 218 r
+:matt/earth/17: 378 176 frr
+:geoo/steel/64x32o.S: 384 272
+:geoo/steel/64x32o.S: 448 272
+:geoo/steel/64x32o.S: 512 272
+:geoo/steel/64x32o.S: 576 368
+:geoo/steel/64x32o.S: 320 368
+:matt/earth/07b: 420 138
+:matt/earth/00: 406 128 f
+:matt/earth/03: 322 142
+:matt/earth/27: 350 174
+:matt/earth/29: 446 178
+:matt/earth/04: 530 122
+:geoo/steel/64x32o.S: 576 272
+:matt/earth/12: 566 200
+:matt/earth/04: 426 128 r
+:matt/earth/09: 438 126 frr
+:geoo/steel/dark_32x32o.S: 352 272 d
+:matt/earth/18: 392 160
+:matt/earth/29: 414 154
+:matt/earth/17: 612 132
+:matt/earth/08: 578 100 rrr
+:matt/earth/16: 578 60
+:matt/earth/17: 64 304
+:matt/earth/05: 94 224 r
+:matt/earth/18: 278 250 d
+:matt/earth/00: 158 224 rrr
+:matt/earth/18: 184 284 d
+:matt/earth/28: 164 284
+:matt/earth/01: 118 266
+:matt/earth/04: 0 224 rrr
+:matt/earth/09: 608 80
+:matt/earth/09: 614 86
+:matt/earth/19: 612 -76 r
+:matt/earth/18: 290 256 d
+:matt/earth/29: 152 312
+:matt/earth/29: 198 264
+:matt/earth/29: 234 268
+:matt/earth/08: 556 128 rrr
+:matt/earth/09: 498 132
+:matt/earth/07b: 482 130
+:matt/earth/07b: 546 144
+:matt/earth/15: 208 166
+:matt/earth/10: -26 214 rrr
+:matt/earth/00: 138 190 fr
+:matt/earth/01: 134 164
+:matt/earth/04: -28 194 rrr
+:matt/earth/00: 112 192 fr
+:matt/earth/10: -32 124
+:matt/earth/04: -64 16
+:matt/earth/04: 0 -112 frr
+:matt/earth/01: -32 -16
+:matt/earth/29: 78 10
+:matt/earth/29: 104 12
+:matt/earth/29: 190 274
+:matt/earth/09: 94 -42 rrr
+:matt/earth/29: 98 2
+:matt/earth/28: 82 2
+:matt/earth/29: 158 294
+:matt/earth/29: 302 252
+:matt/earth/13: 240 142 frr
+:matt/earth/18: 163 192
+$BEGIN_TILE_GROUP 0
+:geoo/construction/rod_steel/straight32.S: 0 8 fr
+:geoo/construction/rod_steel/end_rect.S: 0 40 rrr
+:geoo/construction/rod_steel/end_rect.S: 0 0 fr
+$END_TILE_GROUP
+:Group-0: 384 304
+:Group-0: 424 304
+:Group-0: 464 304
+:Group-0: 504 304
+:Group-0: 544 304
+:matt/earth/12: 248 248 d
+:matt/earth/12: 218 248 d
+:matt/earth/12: 210 272 rrd
+:matt/earth/28: 212 244
+:matt/earth/12: 250 264 rrd
+:matt/earth/29: 274 246
+$BEGIN_TILE_GROUP 1
+:matt/earth/27: 18 12
+:matt/earth/12: 0 0 d
+:matt/earth/12: 50 6 d
+$END_TILE_GROUP
+:Group-1: 234 242
+$BEGIN_TILE_GROUP 2
+:matt/earth/27: 0 20
+:matt/earth/12: 18 12 d
+:matt/earth/12: 48 0 d
+$END_TILE_GROUP
+:Group-2: 260 244
+:matt/earth/01: 242 102 d
+:matt/earth/01: 198 114 d

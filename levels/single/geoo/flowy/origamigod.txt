@@ -1,0 +1,69 @@
+$BUILT 2024-02-10 11:14:09
+$AUTHOR geoo
+$ENGLISH Origami God
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 512
+#SIZE_Y 368
+#TORUS_X 1
+#TORUS_Y 0
+
+#INITIAL 32
+#REQUIRED 29
+#SPAWN_INTERVAL 8
+
+#BLOCKER 3
+#PLATFORMER 3
+#DIGGER 4
+#EXPLODER 0
+
+:geoo/abstract/hatch.H: 336 32
+:geoo/abstract/hatch.H: 208 32 r
+:geoo/abstract/hatch.H: 80 32
+:geoo/abstract/hatch.H: 464 32 r
+
+:geoo/abstract/goal.G: 336 304
+
+$BEGIN_TILE_GROUP 0
+:geoo/construction/rod_steel/straight32.S: 0 0
+:geoo/construction/rod_steel/straight32.S: 32 0
+:geoo/construction/rod_steel/straight32.S: 96 0
+:geoo/construction/rod_steel/straight32.S: 64 0
+$END_TILE_GROUP
+:Group-0: 368 96
+:Group-0: 80 96
+:Group-0: 208 96
+:geoo/abstract/pipes/central6: 316 96
+:geoo/abstract/pipes/central6: 80 160
+:Group-0: 112 160
+:Group-0: 240 160
+:Group-0: 464 160
+:geoo/abstract/pipes/central6: 336 224
+:Group-0: 368 224
+:Group-0: 80 224
+:Group-0: 208 224
+:geoo/abstract/pipes/central6: 336 352
+:geoo/construction/rod_steel/straight32.S: 68 352
+:Group-0: 128 288
+:Group-0: 240 288
+:Group-0: 448 288
+:geoo/construction/rod_steel/end_rect.S: 60 352
+:geoo/construction/rod_steel/end_rect.S: 124 352 frr
+:geoo/abstract/pipes/ends6: 316 352
+:geoo/construction/rod_steel/straight32.S: 92 352
+:geoo/abstract/pipes/central6: 324 352
+:Group-0: 464 96
+:Group-0: 368 160
+:Group-0: 464 224
+:Group-0: 368 288
+:geoo/abstract/pipes/central6: 60 288
+:geoo/abstract/pipes/central6: 100 288
+:geoo/abstract/pipes/central6: 356 96
+:geoo/abstract/pipes/central6: 356 224
+:geoo/abstract/pipes/central6: 316 224
+:geoo/abstract/pipes/central6: 60 160
+:geoo/abstract/pipes/central6: 100 160
+:geoo/abstract/pipes/central6: 352 352
+:geoo/abstract/pipes/ends6: 380 352 frr
+:geoo/abstract/pipes/central6: 68 288
+:geoo/abstract/pipes/central6: 332 96

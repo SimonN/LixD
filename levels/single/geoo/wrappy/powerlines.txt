@@ -1,0 +1,65 @@
+$BUILT 2024-01-23 08:26:55
+$AUTHOR geoo
+$ENGLISH Power Lines
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 320
+#SIZE_Y 432
+#TORUS_X 1
+#TORUS_Y 0
+
+#INITIAL 10
+#REQUIRED 9
+#SPAWN_INTERVAL 8
+
+#CLIMBER 4
+#FLOATER 5
+#EXPLODER 1
+#BLOCKER 1
+
+:geoo/abstract/hatch.H: 152 32 r
+:geoo/abstract/hatch.H: 312 0
+
+:geoo/abstract/goal.G: 40 376
+
+:geoo/abstract/pipes/central2: 0 424
+:geoo/abstract/pipes/central2: 32 424
+:geoo/abstract/pipes/central2: 64 424
+:geoo/abstract/pipes/central2: 96 392 r
+:geoo/abstract/pipes/central2: 96 360 r
+:geoo/abstract/pipes/central2: 96 328 r
+:geoo/abstract/pipes/central2: 96 296 r
+:geoo/abstract/pipes/central2: 104 288
+:geoo/abstract/pipes/central2: 136 288
+:geoo/abstract/pipes/central2: 152 360
+:geoo/abstract/pipes/central2: 152 360
+:geoo/abstract/pipes/central2: 184 360
+:geoo/abstract/pipes/central2: 216 328 r
+:geoo/abstract/pipes/central2: 144 368 r
+:geoo/abstract/pipes/central2: 224 320
+:geoo/abstract/pipes/central2: 224 320
+:geoo/abstract/pipes/central2: 256 328 r
+:geoo/abstract/pipes/central2: 256 360 r
+:geoo/abstract/pipes/central2: 264 392
+:geoo/abstract/pipes/central2: 296 392
+:geoo/abstract/pipes/corner2: 256 392
+:geoo/abstract/pipes/corner2: 96 288 r
+:geoo/abstract/pipes/corner2: 144 360 r
+:geoo/abstract/pipes/corner2: 216 320 r
+:geoo/abstract/pipes/corner2: 256 320 rr
+:geoo/abstract/pipes/corner2: 216 360 rrr
+:geoo/abstract/pipes/corner2: 96 424 rrr
+:geoo/abstract/pipes/ends2: 312 424
+:geoo/abstract/pipes/ends2: 8 392 rr
+:geoo/abstract/pipes/ends2: 168 288 rr
+:geoo/abstract/pipes/ends2: 144 400 rrr
+:geoo/abstract/pipes/central2: 120 168
+:geoo/abstract/pipes/central2: 152 168
+:geoo/abstract/pipes/central2: 184 168
+:geoo/abstract/pipes/central2: 216 168
+:geoo/abstract/pipes/central2: 248 168
+:geoo/abstract/pipes/central2: 280 168
+:geoo/abstract/pipes/central2: 56 168
+:geoo/abstract/pipes/central2: 88 168
+:geoo/abstract/pipes/central2: 312 168
+:geoo/abstract/pipes/central2: 24 168

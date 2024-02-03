@@ -1,0 +1,69 @@
+$BUILT 2024-01-23 10:31:38
+$AUTHOR geoo
+$ENGLISH Die Raupe
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 352
+#SIZE_Y 160
+#TORUS_X 1
+#TORUS_Y 1
+
+#INITIAL 8
+#REQUIRED 5
+#SPAWN_INTERVAL 5
+
+#FLOATER -1
+#EXPLODER2 1
+#PLATFORMER 1
+#MINER 1
+
+:geoo/construction/Hatch.H: 218 118
+
+:raymanni/lab/goal.G: 116 36
+
+:geoo/sandstone/chopper.T: 184 94
+:geoo/sandstone/chopper.T: 160 82
+
+:matt/earth/04: 104 136
+:matt/earth/10: 121 151
+:matt/earth/17: 81 116
+:matt/earth/16: 0 116
+:matt/earth/04: 66 91
+:matt/earth/00: 118 126
+:matt/earth/10: 86 76
+:matt/earth/10: 83 31
+:geoo/construction/platform.S: 216 104 r
+:matt/earth/10: 130 85
+:matt/earth/10: 180 140
+:matt/earth/17: 6 7
+:matt/earth/17: 49 15
+:matt/earth/10: 261 50
+:matt/earth/04: 292 96 r
+:matt/earth/17: 136 50
+:matt/earth/18: 244 122
+:matt/earth/18: 226 144
+:matt/earth/18: 236 138
+:geoo/abstract/cvblocks/038: 154 110 d
+:geoo/construction/stairs_rd_32.S: 138 110
+:geoo/abstract/cvblocks/037: 154 62 d
+:geoo/construction/rod_steel/straight32.S: 130 54 fr
+:geoo/abstract/cvblocks/005: 200 108 d
+:geoo/construction/stairs_rd_32.S: 146 108
+:geoo/construction/stairs_rd_32.S: 122 102
+:geoo/construction/stairs_rd_32.S: 138 116
+:geoo/abstract/cvblocks/020: 154 94 d
+:geoo/abstract/cvblocks/038: 136 94 d
+:geoo/construction/stairs_rd_32.S: 122 96
+:geoo/construction/rod_steel/straight32.S: 130 76 fr
+:geoo/construction/stairs_rd_32.S: 150 116
+:geoo/abstract/cvblocks/040: 218 102 d
+:geoo/abstract/cvblocks/020: 218 86 d
+:geoo/abstract/cvblocks/020: 184 94 d
+:geoo/construction/stairs_rd_32.S: 122 108
+:geoo/abstract/cvblocks/037: 138 56 d
+:geoo/construction/stairs_rd_32.S: 122 52
+:geoo/construction/stairs_rd_32.S: 138 60
+:geoo/construction/platform.S: 216 104 r
+:geoo/construction/platform.S: 216 88 r
+:geoo/construction/platform.S: 214 88 rd
+:geoo/abstract/cvblocks/020: 138 78 d

@@ -1,0 +1,127 @@
+$BUILT 2024-02-26 19:20:14
+$AUTHOR geoo
+$ENGLISH This Level Socks!
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+#BACKGROUND_RED 16
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 32
+
+#INITIAL 30
+#REQUIRED 30
+#SPAWN_INTERVAL 32
+
+#NOTHING 4
+#WALKER 1
+#CLIMBER 2
+#BLOCKER 2
+#PLATFORMER 4
+#MINER 6
+#EXPLODER2 0
+
+:geoo/construction/Hatch.H: 16 240
+
+:geoo/abstract/goal.G: 544 288
+
+:amanda/forest/frog_happy.T: 528 96
+
+:geoo/shadow/wall/center: 64 176
+:geoo/shadow/wall/center: 96 176
+:geoo/shadow/wall/center: 128 176
+:geoo/shadow/wall/center: 64 208
+:geoo/shadow/wall/center: 96 208
+:geoo/shadow/wall/center: 128 208
+:geoo/shadow/wall/center: 64 272
+:geoo/shadow/wall/center: 96 272
+:geoo/shadow/wall/center: 128 272
+:geoo/shadow/wall/center: 64 304
+:geoo/shadow/wall/center: 96 304
+:geoo/shadow/wall/center: 128 304
+:geoo/shadow/door: 96 288
+:geoo/shadow/window: 96 192
+:geoo/shadow/rope1: 352 196
+:geoo/shadow/rope1: 416 196 frr
+:geoo/shadow/sock: 396 204
+:geoo/shadow/sock: 416 204
+:geoo/shadow/pillar_verti_32: 496 176
+:geoo/shadow/sock: 540 248
+:geoo/shadow/rope1: 496 240
+:geoo/shadow/pillar_verti_32: 496 208
+:geoo/shadow/pillar_verti_32: 496 240
+:geoo/shadow/pillar_verti_32: 496 272
+:geoo/shadow/pillar_verti_32: 496 304
+:geoo/shadow/pillar_verti_32: 608 176
+:geoo/shadow/sock: 556 246
+:geoo/shadow/rope1: 560 240 frr
+:geoo/shadow/pillar_verti_32: 608 208
+:geoo/shadow/pillar_verti_32: 608 240
+:geoo/shadow/pillar_verti_32: 608 272
+:geoo/shadow/pillar_verti_32: 608 304
+:geoo/shadow/wall/center: 480 144
+:geoo/shadow/wall/center: 512 144
+:geoo/shadow/wall/center: 544 144
+:geoo/shadow/wall/center: 608 144
+:geoo/shadow/wall/center: 224 176
+:geoo/shadow/wall/center: 256 176
+:geoo/shadow/wall/center: 288 176
+:geoo/shadow/wall/center: 320 176
+:geoo/shadow/wall/center: 224 208
+:geoo/shadow/wall/center: 256 208
+:geoo/shadow/wall/center: 288 208
+:geoo/shadow/wall/center: 320 208
+:geoo/shadow/wall/center: 224 272
+:geoo/shadow/wall/center: 256 272
+:geoo/shadow/wall/center: 288 272
+:geoo/shadow/wall/center: 320 272
+:geoo/shadow/wall/center: 224 304
+:geoo/shadow/wall/center: 256 304
+:geoo/shadow/wall/center: 288 304
+:geoo/shadow/wall/center: 320 304
+:geoo/shadow/door: 256 288
+:geoo/shadow/window: 256 192
+:geoo/shadow/wall/center: 224 144
+:geoo/shadow/wall/center: 256 144
+:geoo/shadow/wall/center: 288 144
+:geoo/shadow/wall/center: 320 144
+:geoo/shadow/wall/center: 64 240
+:geoo/shadow/wall/center: 96 240
+:geoo/shadow/wall/center: 128 240
+:geoo/shadow/wall/center: 224 240
+:geoo/shadow/wall/center: 256 240
+:geoo/shadow/wall/center: 288 240
+:geoo/shadow/wall/center: 320 240
+:geoo/shadow/sock: 520 246
+:geoo/shadow/sock: 578 244
+:geoo/shadow/window_broken: 96 192
+:geoo/shadow/window: 288 192
+:geoo/steel/silhouette_64x64.S: 0 336
+:geoo/shadow/wall/center: 576 144
+:geoo/shadow/pillar_verti_32: 480 176
+:geoo/shadow/pillar_verti_32: 480 208
+:geoo/shadow/pillar_verti_32: 480 240
+:geoo/shadow/pillar_verti_32: 480 272
+:geoo/shadow/pillar_verti_32: 480 304
+:geoo/shadow/pillar_verti_32: 624 176
+:geoo/shadow/pillar_verti_32: 624 208
+:geoo/shadow/pillar_verti_32: 624 240
+:geoo/shadow/pillar_verti_32: 624 272
+:geoo/shadow/pillar_verti_32: 624 304
+:geoo/steel/silhouette_64x64.S: 384 336
+:geoo/steel/silhouette_32x64.S: 448 336
+:geoo/steel/dark_32x64o.S: 544 336
+:geoo/steel/dark_64x64o.S: 480 336
+:geoo/steel/dark_64x64o.S: 576 336
+:geoo/steel/silhouette_32x64.S: 352 336
+:geoo/steel/dark_32x64o.S: 128 336
+:geoo/steel/dark_64x64o.S: 224 336
+:geoo/steel/dark_64x64o.S: 64 336
+:geoo/steel/silhouette_64x64.S: 160 336
+:geoo/steel/dark_64x64o.S: 288 336
+:geoo/shadow/wall/center: 64 144
+:geoo/steel/dark_32x16o.S: 64 144
+:geoo/shadow/wall/center: 96 144
+:geoo/steel/dark_32x16o.S: 96 144
+:geoo/shadow/wall/center: 128 144
+:geoo/steel/dark_32x16o.S: 128 144

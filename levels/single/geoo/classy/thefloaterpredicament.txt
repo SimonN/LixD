@@ -1,0 +1,255 @@
+$BUILT 2014-11-19 11:01:55
+$AUTHOR geoo
+$ENGLISH The Floater Predicament
+
+#SIZE_X 640
+#SIZE_Y 816
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 20
+#REQUIRED 20
+#SPAWN_INTERVAL 10
+#SPAWN_INTERVAL_FAST 10
+
+#CLIMBER 10
+#FLOATER 8
+#NOTHING 0
+#PLATFORMER 3
+#BUILDER 1
+#NOTHING 0
+#MINER 5
+#DIGGER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:geoo/abstract/hatch.H: 304 64
+:geoo/abstract/hatch.H: 456 640 r
+
+:geoo/abstract/goal.G: 304 504
+
+:geoo/construction/sawblade_medium.F: 344 280
+:geoo/construction/sawblade_medium.F: 232 280
+:geoo/construction/sawblade_medium.F: 288 304
+:geoo/construction/sawblade_medium.F: 232 200
+:geoo/construction/sawblade_medium.F: 344 200
+:geoo/construction/sawblade_medium.F: 344 152
+:geoo/construction/sawblade_medium.F: 232 152
+:geoo/construction/sawblade_medium.F: 288 176
+:geoo/construction/sawblade_medium.F: 344 328
+:geoo/construction/sawblade_medium.F: 232 328
+
+:matt/carnival/25: 384 496
+:matt/carnival/25: 192 496
+:geoo/abstract/pipes/central7: 264 496
+:geoo/abstract/pipes/central7: 280 496
+:geoo/abstract/pipes/central7: 256 504 rrr
+:geoo/abstract/pipes/central7: 256 520 rrr
+:geoo/abstract/pipes/corner7: 256 496 r
+:geoo/abstract/pipes/corner7: 256 552
+:geoo/abstract/pipes/central7: 264 552
+:geoo/abstract/pipes/central7: 296 552
+:matt/carnival/25: 256 560
+:matt/carnival/26: 192 432
+:matt/carnival/26: 384 432
+:matt/carnival/26: 384 560
+:matt/carnival/26: 192 560
+:matt/carnival/26: 256 624
+:matt/carnival/27: 192 624
+:matt/carnival/27: 384 624
+:geoo/steel/64x64.S: 0 752
+:geoo/steel/64x64.S: 64 752
+:geoo/steel/64x64.S: 128 752
+:geoo/steel/64x64.S: 192 752
+:geoo/steel/64x64.S: 256 752
+:geoo/steel/64x64.S: 320 752
+:geoo/steel/64x64.S: 384 752
+:geoo/steel/64x64.S: 448 752
+:geoo/steel/64x64.S: 512 752
+:geoo/steel/64x64.S: 576 752
+:matt/carnival/25: 496 496
+:matt/carnival/26: 496 432
+:matt/carnival/26: 496 560
+:matt/carnival/27: 496 624
+:matt/carnival/27: 496 368
+:matt/carnival/24: 496 304
+:matt/carnival/25: 80 496
+:matt/carnival/26: 80 432
+:matt/carnival/26: 80 560
+:matt/carnival/27: 80 624
+:matt/carnival/27: 80 368
+:matt/carnival/24: 80 304
+:geoo/abstract/pipes/central7: 24 496
+:geoo/abstract/pipes/central7: 40 496
+:geoo/abstract/pipes/central7: 16 504 rrr
+:geoo/abstract/pipes/central7: 16 520 rrr
+:geoo/abstract/pipes/corner7: 16 496 r
+:geoo/abstract/pipes/corner7: 72 496 rr
+:geoo/abstract/pipes/central7: 72 504 rrr
+:geoo/abstract/pipes/central7: 72 520 rrr
+:geoo/abstract/pipes/corner7: 16 552
+:geoo/abstract/pipes/corner7: 72 552 rrr
+:geoo/abstract/pipes/central7: 24 552
+:geoo/abstract/pipes/central7: 40 552
+:matt/carnival/25: 16 432
+:matt/carnival/25: 16 560
+:matt/carnival/26: 16 368
+:matt/carnival/27: 16 304
+:geoo/abstract/pipes/central7: 568 496
+:geoo/abstract/pipes/central7: 584 496
+:geoo/abstract/pipes/central7: 560 504 rrr
+:geoo/abstract/pipes/central7: 560 520 rrr
+:geoo/abstract/pipes/corner7: 560 496 r
+:geoo/abstract/pipes/corner7: 616 496 rr
+:geoo/abstract/pipes/central7: 616 504 rrr
+:geoo/abstract/pipes/central7: 616 520 rrr
+:geoo/abstract/pipes/corner7: 560 552
+:geoo/abstract/pipes/corner7: 616 552 rrr
+:geoo/abstract/pipes/central7: 568 552
+:geoo/abstract/pipes/central7: 584 552
+:matt/carnival/25: 560 432
+:matt/carnival/25: 560 560
+:matt/carnival/26: 560 368
+:matt/carnival/27: 560 304
+:matt/carnival/24: 16 48
+:matt/carnival/24: 560 112
+:matt/carnival/44: 528 48
+:matt/carnival/43: 80 48
+:geoo/abstract/pipes/central7: 344 496
+:geoo/abstract/pipes/corner7: 376 496 rr
+:geoo/abstract/pipes/central7: 376 504 rrr
+:geoo/abstract/pipes/central7: 376 520 rrr
+:geoo/abstract/pipes/corner7: 376 552 rrr
+:geoo/abstract/pipes/central7: 344 552
+:matt/carnival/25: 320 560
+:matt/carnival/26: 320 624
+:geoo/abstract/pipes/central7: 312 552
+:geoo/abstract/pipes/central7: 312 496
+:matt/carnival/27: 256 688
+:matt/carnival/24: 192 688
+:matt/carnival/24: 384 688
+:matt/carnival/27: 320 688
+:matt/carnival/24: 80 688
+:matt/carnival/27: 16 688
+:matt/carnival/24: 496 688
+:matt/carnival/27: 560 688
+:matt/carnival/24: 560 48
+:matt/carnival/24: 384 112
+:matt/carnival/24: 192 112
+:matt/carnival/24: 16 112
+:matt/carnival/24: 80 112
+:matt/carnival/24: 496 112
+:matt/carnival/26: 256 368
+:matt/carnival/26: 320 368
+:matt/carnival/27: 384 304
+:geoo/abstract/pipes/central7: 264 304
+:geoo/abstract/pipes/central7: 280 304
+:geoo/abstract/pipes/central7: 256 312 rrr
+:geoo/abstract/pipes/central7: 256 328 rrr
+:geoo/abstract/pipes/corner7: 256 304 r
+:geoo/abstract/pipes/corner7: 256 360
+:geoo/abstract/pipes/central7: 264 360
+:geoo/abstract/pipes/central7: 296 360
+:geoo/abstract/pipes/central7: 344 304
+:geoo/abstract/pipes/corner7: 376 304 rr
+:geoo/abstract/pipes/central7: 376 312 rrr
+:geoo/abstract/pipes/central7: 376 328 rrr
+:geoo/abstract/pipes/corner7: 376 360 rrr
+:geoo/abstract/pipes/central7: 344 360
+:geoo/abstract/pipes/central7: 312 360
+:geoo/abstract/pipes/central7: 312 304
+:matt/carnival/25: -48 496
+:matt/carnival/26: -48 432
+:matt/carnival/26: -48 560
+:matt/carnival/27: -48 624
+:matt/carnival/27: -48 368
+:matt/carnival/24: -48 304
+:matt/carnival/24: -48 688
+:matt/carnival/24: -48 112
+:matt/carnival/25: 624 496
+:matt/carnival/26: 624 432
+:matt/carnival/26: 624 560
+:matt/carnival/27: 624 624
+:matt/carnival/27: 624 368
+:matt/carnival/24: 624 304
+:matt/carnival/24: 624 688
+:matt/carnival/24: 624 112
+:matt/carnival/24: 624 48
+:matt/carnival/24: -48 48
+:matt/carnival/45: 192 80
+:matt/carnival/45: 224 48
+:matt/carnival/46: 416 80
+:matt/carnival/46: 384 48
+:matt/carnival/00: 224 80
+:matt/carnival/00: 384 80
+:matt/carnival/26: 16 624
+:matt/carnival/26: 560 624
+:matt/carnival/24: 560 176
+:matt/carnival/24: 384 176
+:matt/carnival/24: 192 176
+:matt/carnival/24: 16 176
+:matt/carnival/24: 80 176
+:matt/carnival/24: 496 176
+:matt/carnival/24: -48 176
+:matt/carnival/24: 624 176
+:matt/carnival/24: 560 240
+:matt/carnival/24: 16 240
+:matt/carnival/24: 80 240
+:matt/carnival/24: 496 240
+:matt/carnival/27: 256 240
+:matt/carnival/27: 320 240
+:matt/carnival/24: -48 240
+:matt/carnival/24: 624 240
+:geoo/abstract/pipes/central7: 264 176
+:geoo/abstract/pipes/central7: 280 176
+:geoo/abstract/pipes/central7: 256 184 rrr
+:geoo/abstract/pipes/central7: 256 200 rrr
+:geoo/abstract/pipes/corner7: 256 176 r
+:geoo/abstract/pipes/corner7: 256 232
+:geoo/abstract/pipes/central7: 264 232
+:geoo/abstract/pipes/central7: 296 232
+:geoo/abstract/pipes/central7: 344 176
+:geoo/abstract/pipes/corner7: 376 176 rr
+:geoo/abstract/pipes/central7: 376 184 rrr
+:geoo/abstract/pipes/central7: 376 200 rrr
+:geoo/abstract/pipes/corner7: 376 232 rrr
+:geoo/abstract/pipes/central7: 344 232
+:geoo/abstract/pipes/central7: 312 232
+:geoo/abstract/pipes/central7: 312 176
+:geoo/abstract/pipes/central7: 392 240
+:geoo/abstract/pipes/central7: 408 240
+:geoo/abstract/pipes/central7: 384 248 rrr
+:geoo/abstract/pipes/central7: 384 264 rrr
+:geoo/abstract/pipes/corner7: 384 240 r
+:geoo/abstract/pipes/corner7: 440 240 rr
+:geoo/abstract/pipes/central7: 440 248 rrr
+:geoo/abstract/pipes/central7: 440 264 rrr
+:geoo/abstract/pipes/corner7: 384 296
+:geoo/abstract/pipes/corner7: 440 296 rrr
+:geoo/abstract/pipes/central7: 392 296
+:geoo/abstract/pipes/central7: 408 296
+:geoo/abstract/pipes/central7: 200 240
+:geoo/abstract/pipes/central7: 216 240
+:geoo/abstract/pipes/central7: 192 248 rrr
+:geoo/abstract/pipes/central7: 192 264 rrr
+:geoo/abstract/pipes/corner7: 192 240 r
+:geoo/abstract/pipes/corner7: 248 240 rr
+:geoo/abstract/pipes/central7: 248 248 rrr
+:geoo/abstract/pipes/central7: 248 264 rrr
+:geoo/abstract/pipes/corner7: 192 296
+:geoo/abstract/pipes/corner7: 248 296 rrr
+:geoo/abstract/pipes/central7: 200 296
+:geoo/abstract/pipes/central7: 216 296
+:matt/carnival/27: 192 304
+:matt/carnival/27: 192 368
+:matt/carnival/27: 384 368
+:matt/carnival/24: 256 112
+:matt/carnival/24: 320 112
+:matt/carnival/25: 256 432
+:matt/carnival/25: 320 432

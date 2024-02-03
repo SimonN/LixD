@@ -1,0 +1,86 @@
+$BUILT 2016-08-02 00:20:12
+$AUTHOR geoo
+$ENGLISH Full Circle
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#INITIAL 20
+#REQUIRED 18
+#SPAWN_INTERVAL 4
+
+#RUNNER 1
+#CLIMBER 3
+#FLOATER 1
+#EXPLODER 2
+#BUILDER 2
+#PLATFORMER 3
+#BASHER 3
+#MINER 1
+#JUMPER 3
+
+:geoo/construction/Hatch.H: 272 160
+:geoo/construction/Hatch.H: 448 112
+
+:geoo/abstract/goal.G: 496 16
+
+:geoo/construction/Laser_vr_64.F: 326 16
+:geoo/construction/Laser_vr_64.F: 298 16
+:geoo/construction/Laser_hz_16.F: 304 102
+:geoo/construction/Laser_hz_16.F: 320 102
+:geoo/construction/Laser_hz_16.F: 304 10
+:geoo/construction/Laser_hz_16.F: 320 10
+:geoo/construction/Laser_vr_64.F: 326 48
+:geoo/construction/Laser_vr_64.F: 298 48
+
+:geoo/abstract/cvblocks/047: 0 96
+:geoo/abstract/cvblocks/047: 560 -32
+:geoo/abstract/cvblocks/047: 560 96
+:geoo/abstract/cvblocks/047: 560 224
+:geoo/abstract/cvblocks/047: 128 96
+:geoo/abstract/cvblocks/035: 256 216
+:geoo/abstract/cvblocks/035: 336 288
+:geoo/abstract/cvblocks/035: 400 320
+:geoo/abstract/cvblocks/035: 416 64
+:geoo/abstract/cvblocks/035: 480 64
+:geoo/abstract/cvblocks/015: 256 200
+:geoo/abstract/cvblocks/015: 304 200
+:geoo/abstract/cvblocks/032: 96 192
+:geoo/abstract/cvblocks/032: 64 160
+:geoo/abstract/cvblocks/031: 64 128
+:geoo/abstract/cvblocks/031: 96 96
+:geoo/abstract/cvblocks/035: 272 288
+:geoo/abstract/cvblocks/030: 64 192
+:geoo/abstract/cvblocks/030: 96 128
+:geoo/abstract/cvblocks/047: 128 224
+:geoo/abstract/cvblocks/035: 464 320
+:geoo/abstract/cvblocks/046: 0 352
+:geoo/abstract/cvblocks/046: 192 384
+:geoo/abstract/cvblocks/034: 192 96
+:geoo/abstract/cvblocks/035: 496 384
+:geoo/abstract/cvblocks/046: 432 160
+:geoo/steel/64x64.S: 352 0
+:geoo/abstract/cvblocks/046: 432 224
+:geoo/abstract/cvblocks/045: 352 64
+:geoo/abstract/cvblocks/045: 352 128
+:geoo/abstract/cvblocks/045: 0 32
+:geoo/abstract/cvblocks/035: 0 0
+:geoo/abstract/cvblocks/035: 64 0
+:geoo/abstract/cvblocks/034: 96 32
+:geoo/abstract/cvblocks/034: 64 64
+:geoo/abstract/cvblocks/030: 64 32
+:geoo/abstract/cvblocks/034: 128 0
+:geoo/abstract/cvblocks/031: 64 256
+:geoo/abstract/cvblocks/031: 96 224
+:geoo/abstract/cvblocks/030: 96 256
+:geoo/abstract/cvblocks/031: 0 320
+:geoo/abstract/cvblocks/031: 32 288
+:geoo/abstract/cvblocks/030: 32 320
+:geoo/abstract/cvblocks/045: 64 288
+:geoo/abstract/cvblocks/045: 128 352
+:geoo/abstract/cvblocks/045: 560 352
+:geoo/abstract/cvblocks/047: 624 288
+:geoo/abstract/cvblocks/047: 624 160
+:geoo/abstract/cvblocks/047: 624 32
+:geoo/abstract/cvblocks/047: 624 -96

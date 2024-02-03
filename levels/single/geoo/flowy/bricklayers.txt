@@ -1,0 +1,65 @@
+$BUILT 2024-01-30 09:52:36
+$AUTHOR geoo
+$ENGLISH Bricklayers
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 288
+
+#INITIAL 20
+#REQUIRED 15
+#SPAWN_INTERVAL 2
+
+#CUBER 3
+#EXPLODER2 0
+
+:geoo/abstract/hatch.H: 592 16 r
+:geoo/abstract/hatch.H: 176 176
+:geoo/abstract/hatch.H: 304 128
+:geoo/abstract/hatch.H: 432 64
+
+:geoo/abstract/goal.G: 16 176
+
+:geoo/construction/factory.T: 56 160
+:geoo/construction/factory.T: 112 160
+
+:matt/bricks/15: 512 64
+:matt/bricks/03: 576 64
+:matt/bricks/15: 448 96
+:matt/bricks/15: 384 128
+:matt/bricks/15: 320 160
+:matt/bricks/15: 256 192
+:matt/bricks/03: 512 96
+:matt/bricks/03: 448 128
+:matt/bricks/03: 384 160
+:matt/bricks/03: 320 192
+:matt/bricks/03: 576 128
+:matt/bricks/03: 512 160
+:matt/bricks/03: 448 192
+:matt/bricks/03: 576 192
+:matt/bricks/03: 512 224
+:matt/bricks/03: 384 224
+:matt/bricks/03: 256 224
+:matt/bricks/03: 192 224
+:matt/bricks/03: 64 224
+:matt/bricks/03: 128 224
+:matt/bricks/03: 0 224
+:matt/bricks/03: 320 224
+:matt/bricks/03: 448 224
+:matt/bricks/03: 576 224
+:matt/bricks/16b: 448 0
+:matt/bricks/16b: 384 32
+:matt/bricks/16b: 320 64
+:matt/bricks/16b: 256 96
+:matt/bricks/03b: 384 -32
+:matt/bricks/03b: 320 0
+:matt/bricks/03b: 256 32
+:matt/bricks/03b: 256 0
+:matt/bricks/03b: 192 0
+:matt/bricks/03b: 192 64
+:matt/bricks/03b: 128 0
+:matt/bricks/03b: 128 64
+:matt/bricks/03b: 64 0
+:matt/bricks/03b: 64 64
+:matt/bricks/03b: 0 0
+:matt/bricks/03b: 0 64

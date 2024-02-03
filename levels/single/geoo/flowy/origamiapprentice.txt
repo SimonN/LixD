@@ -1,0 +1,97 @@
+$BUILT 2023-09-18 16:53:21
+$AUTHOR geoo
+$ENGLISH Origami Apprentice
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 544
+#SIZE_Y 320
+
+#INITIAL 40
+#REQUIRED 37
+#SPAWN_INTERVAL 12
+
+#EXPLODER 1
+#BLOCKER 2
+#PLATFORMER 1
+#JUMPER 1
+
+:geoo/construction/Hatch.H: 240 0
+
+:geoo/construction/Goal2.G: 480 128
+
+:simon/water.W: 304 256
+:simon/water_main.W: 304 304
+:simon/water.W: 256 256
+:simon/water_main.W: 256 304
+:simon/water.W: 208 256
+:simon/water_main.W: 208 304
+:simon/water.W: 160 256
+:simon/water_main.W: 160 304
+:simon/water.W: 112 256
+:simon/water_main.W: 112 304
+:simon/water.W: 64 256
+:simon/water_main.W: 64 304
+:simon/water.W: 16 256
+:simon/water_main.W: 16 304
+:simon/water.W: -32 256
+:simon/water_main.W: -32 304
+
+:geoo/construction/spring_fast.T: 356 224
+
+:geoo/construction/concrete/064h: 32 192
+:geoo/construction/concrete/064h: 160 192
+:geoo/construction/rod_rust/straight32: 280 160 fr
+:geoo/construction/rod_rust/straight32: 280 128 fr
+:geoo/construction/platformbrick: 96 128
+:geoo/construction/platformbrick: 128 128
+:geoo/construction/platformbrick: 160 128
+:geoo/construction/platformbrick: 192 128
+:geoo/construction/platformbrick: 64 128
+:geoo/construction/platformbrick: 224 128
+:geoo/construction/concrete/064h: 352 256
+:geoo/construction/platformbrick_single: 56 128
+:geoo/construction/wall/small_64x64: 224 192
+:geoo/construction/wall/small_64x64: 160 192
+:geoo/construction/wall/small_64x64: 96 192
+:geoo/construction/wall/small_64x64: 32 192
+:geoo/construction/wall/small_square: 272 208
+:geoo/construction/wall/small_square: 272 240
+:geoo/construction/wall/small_64x64: 0 192
+:geoo/construction/wall/small_square: 0 208
+:geoo/construction/wall/small_square: 0 240
+:geoo/construction/pillar_long: 0 64
+:geoo/construction/pillar_bottom: 0 176
+:geoo/construction/platformbrick: 288 64
+:geoo/construction/platformbrick: 320 64
+:geoo/construction/platformbrick: 352 64
+:geoo/construction/platformbrick: 384 64
+:geoo/construction/platformbrick: 256 64
+:geoo/construction/platformbrick: 416 64
+:geoo/construction/platformbrick: 448 64
+:geoo/construction/platformbrick: 480 64
+:geoo/construction/rod_rust/straight32: 280 96 fr
+:geoo/construction/pillar_long: 0 -64
+:geoo/construction/platform.S: 512 96
+:geoo/construction/platform.S: 480 96
+:geoo/construction/platform.S: 256 96
+:geoo/construction/platform.S: 288 96
+:geoo/construction/platform.S: 320 96
+:geoo/construction/platform.S: 352 96
+:geoo/construction/platform.S: 384 96
+:geoo/construction/platform.S: 416 96
+:geoo/construction/platform.S: 448 96
+:geoo/construction/rod_steel/straight32.S: 536 64 rrr
+:geoo/construction/rod_steel/straight32.S: 536 0 rrr
+:geoo/construction/rod_steel/straight32.S: 536 32 rrr
+:geoo/construction/platformbrick: 416 192
+:geoo/construction/platformbrick: 448 192
+:geoo/construction/platformbrick: 400 192
+:geoo/construction/platformbrick_single: 344 256
+:geoo/construction/platformbrick_single: 336 256
+:geoo/construction/concrete/064: 480 256
+:geoo/construction/platformbrick: 480 192
+:geoo/construction/platformbrick: 512 192
+:geoo/construction/platformbrick: 464 192
+:geoo/construction/pillar_base: 480 240
+:geoo/construction/pillar_base: 480 192
+:geoo/construction/pillar_32: 496 208

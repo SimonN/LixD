@@ -1,0 +1,37 @@
+$BUILT 2024-01-29 06:18:12
+$AUTHOR geoo
+$ENGLISH Gotta Turn Around
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 192
+#SIZE_Y 192
+#TORUS_X 1
+#TORUS_Y 0
+
+#INITIAL 16
+#REQUIRED 15
+#SPAWN_INTERVAL 34
+
+#EXPLODER 1
+#BLOCKER 1
+#BUILDER 2
+#DIGGER 1
+
+:geoo/abstract/hatch.H: 16 24
+
+:geoo/abstract/goal.G: 176 120
+
+:geoo/construction/Laser_hz_64.F: 142 106
+:geoo/construction/Laser_vr_64.F: 136 128
+:geoo/construction/Laser_vr_16.F: 136 112
+:geoo/construction/Laseremit_hzr_16.F: 14 106
+
+:matt/marble/08b: 64 72
+:matt/marble/08b: 128 72
+:matt/marble/08b: 0 72
+:geoo/abstract/pipes/central0: 80 168
+:geoo/abstract/pipes/endr0: 112 168
+:geoo/abstract/pipes/endr0: 72 168 rr
+:geoo/abstract/pipes/central0: 176 168
+:geoo/abstract/pipes/endr0: 16 168
+:geoo/abstract/pipes/endr0: 168 168 rr

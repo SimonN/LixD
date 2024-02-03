@@ -1,0 +1,45 @@
+$BUILT 2024-02-03 09:04:46
+$AUTHOR geoo
+$ENGLISH Underground Club
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 192
+#SIZE_Y 192
+#TORUS_X 1
+#TORUS_Y 1
+
+#INITIAL 9
+#REQUIRED 6
+#SPAWN_INTERVAL 3
+
+#BLOCKER 1
+#BUILDER 3
+#PLATFORMER 1
+#MINER 1
+#CUBER 2
+#EXPLODER 0
+
+:geoo/abstract/hatch.H: 112 64 r
+:geoo/abstract/hatch.H: 48 64 r
+:geoo/abstract/hatch.H: 112 64
+:geoo/abstract/hatch.H: 48 64 r
+:geoo/abstract/hatch.H: 80 16
+
+:geoo/abstract/goal.G: 112 112
+
+:geoo/steel/32x32o.S: 80 64
+:geoo/construction/platformbrick: 142 128 r
+:geoo/steel/32x32o.S: 80 160
+:geoo/steel/32x16o.S: 48 64
+:geoo/steel/32x16o.S: 112 64
+:matt/carnival/04: 176 64 fr
+:matt/carnival/03: 144 64
+:matt/carnival/05: 80 96 fr
+:matt/carnival/07: 16 96 fr
+:matt/carnival/06: 144 96 fr
+:matt/carnival/04: 48 128 fr
+:matt/carnival/05: 176 128 fr
+:matt/carnival/06: 16 160 fr
+:matt/carnival/03: 176 160
+:amanda/steel/steel8x16.S: 112 160 fr
+:amanda/steel/steel8x16.S: 128 160 fr

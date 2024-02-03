@@ -1,0 +1,38 @@
+$BUILT 2023-09-23 12:09:54
+$AUTHOR geoo
+$ENGLISH Off the Grid
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 384
+#SIZE_Y 288
+#TORUS_X 1
+#TORUS_Y 1
+
+#INITIAL 20
+#REQUIRED 18
+#SPAWN_INTERVAL 32
+
+#EXPLODER 1
+#CUBER 1
+
+:geoo/abstract/hatch.H: 208 104
+:geoo/abstract/hatch.H: 112 176 r
+
+:geoo/abstract/goal.G: 16 88
+
+$BEGIN_TILE_GROUP 0
+:geoo/abstract/pipes/central2: 104 0
+:geoo/abstract/pipes/endr2: 136 0
+:geoo/abstract/pipes/endr2: 0 0 rr
+:geoo/abstract/pipes/central2: 72 0
+:geoo/abstract/pipes/central2: 40 0
+:geoo/abstract/pipes/central2: 8 0
+$END_TILE_GROUP
+:Group-0: 152 136
+:Group-0: 56 208
+:Group-0: 344 136
+:Group-0: 248 208
+:Group-0: 152 280
+:Group-0: 344 280
+:Group-0: 56 64
+:Group-0: 248 64

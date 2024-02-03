@@ -1,0 +1,41 @@
+$BUILT 2024-02-10 09:44:08
+$AUTHOR geoo
+$ENGLISH One is still not Enough!
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 192
+#SIZE_Y 192
+#TORUS_X 1
+#TORUS_Y 0
+
+#INITIAL 16
+#REQUIRED 15
+#SPAWN_INTERVAL 23
+
+#BLOCKER 1
+#PLATFORMER 1
+#DIGGER 1
+#EXPLODER2 0
+
+:geoo/abstract/hatch.H: 16 24
+
+:geoo/abstract/goal.G: 176 120
+
+:geoo/abstract/pipes/central2: 64 168
+:geoo/abstract/pipes/endr2: 128 168
+:geoo/abstract/pipes/endr2: 56 168 rr
+:geoo/abstract/pipes/central2: 176 168
+:geoo/abstract/pipes/endr2: 16 168
+:geoo/abstract/pipes/endr2: 168 168 rr
+:geoo/abstract/pipes/central2: 176 112
+:geoo/abstract/pipes/endr2: 16 112
+:geoo/abstract/pipes/endr2: 168 112 rr
+:geoo/abstract/pipes/central3: 64 72
+:geoo/abstract/pipes/central3: 96 72
+:geoo/abstract/pipes/central3: 128 72
+:geoo/abstract/pipes/central3: 160 72
+:geoo/abstract/pipes/central3: 0 72
+:geoo/abstract/pipes/central3: 32 72
+:geoo/abstract/pipes/central3: 0 72
+:geoo/abstract/pipes/central3: 32 72
+:geoo/abstract/pipes/central2: 96 168

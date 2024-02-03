@@ -1,0 +1,67 @@
+$BUILT 2024-02-03 09:23:45
+$AUTHOR geoo
+$ENGLISH Playground Hazard
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 384
+#SIZE_Y 192
+#TORUS_X 0
+#TORUS_Y 1
+
+#INITIAL 10
+#REQUIRED 7
+#SPAWN_INTERVAL 24
+
+#WALKER 1
+#EXPLODER2 1
+#DIGGER 1
+
+:raymanni/toys/hatch.H: 132 48 r
+
+:geoo/abstract/goal.G: 352 0
+
+:geoo/sandstone/chopper.T: 288 16
+:geoo/sandstone/chopper.T: 320 16
+
+:simon/tapir/032h: 64 112
+:simon/tapir/032h: 128 112
+:geoo/steel/64x32o.S: 256 48
+:geoo/steel/64x32o.S: 320 48
+:simon/tapir/032v: 0 48
+:simon/tapir/032h: 0 112
+:simon/tapir/032v: 0 176
+:simon/tapir/032v: 96 144
+:geoo/steel/32x16o.S: 288 16
+:geoo/steel/32x16o.S: 320 16
+:raymanni/toys/letter_4: 224 80
+:raymanni/toys/letter_2: 64 112
+:raymanni/toys/letter_3: 128 112
+:raymanni/toys/letter_1: 160 112
+:raymanni/toys/letter_blank: 0 112
+:raymanni/toys/letter_blank: 0 176
+:raymanni/toys/letter_blank: 224 112
+:raymanni/toys/letter_3: 96 176
+:raymanni/toys/letter_3: 0 80
+:raymanni/toys/letter_1: 0 48
+:raymanni/toys/letter_1: 32 112
+:raymanni/toys/letter_1: 96 144
+:raymanni/toys/letter_2: 96 112
+:raymanni/toys/letter_2: 192 112
+:raymanni/toys/letter_2: 0 16
+:raymanni/toys/letter_4: 64 176
+:raymanni/toys/letter_3: 32 144
+:raymanni/toys/letter_2: 0 144
+:raymanni/toys/letter_1: 32 176
+:raymanni/toys/letter_blank: 64 144
+:raymanni/toys/chalk_box: 288 152
+:geoo/steel/32x16o.S: 352 176
+:raymanni/toys/cracker: 344 112
+:raymanni/toys/soldier_3: 296 104 frr
+:raymanni/toys/letter_3: 32 16
+:raymanni/toys/letter_2: 64 16
+:raymanni/toys/letter_blank: 96 16
+:raymanni/toys/letter_3: 192 80
+:raymanni/toys/letter_3: 224 48
+:raymanni/toys/letter_1: 128 16
+:raymanni/toys/letter_2: 128 144
+:raymanni/toys/letter_4: 128 176

@@ -1,0 +1,69 @@
+$BUILT 2024-01-30 14:33:05
+$AUTHOR geoo
+$ENGLISH Just as You'd Expect
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 528
+#SIZE_Y 320
+
+#INITIAL 40
+#REQUIRED 40
+#SPAWN_INTERVAL 8
+
+#WALKER 1
+#CLIMBER 2
+#BUILDER 3
+#DIGGER 10
+#EXPLODER 0
+
+:geoo/construction/Hatch.H: 80 80
+
+:geoo/construction/Goal2.G: 368 96
+
+:simon/water.W: 192 272
+:simon/water.W: 240 272
+:simon/water.W: 288 272
+
+:geoo/construction/wall/big_128x128: 0 256
+:geoo/construction/wall/big_128x128: 64 256
+:geoo/construction/wall/big_128x128: 0 128
+:geoo/construction/wall/big_128x128: 64 128
+$BEGIN_TILE_GROUP 0
+:geoo/construction/wall/big_brick2: 32 0
+:geoo/construction/wall/big_brick2: 96 0
+:geoo/construction/wall/big_brick2: 0 0 d
+:geoo/construction/wall/big_brick2: 128 0 d
+$END_TILE_GROUP
+:Group-0: 464 160
+:geoo/construction/wall/big_brick3: 464 192
+:geoo/construction/wall/big_128x64: 400 256
+:geoo/construction/wall/big_128x64: 336 256
+:Group-0: 464 224
+:geoo/construction/wall/big_brick3: 336 192
+:Group-0: 336 224
+:geoo/construction/platformbrick: 432 160
+:geoo/construction/platformbrick: 400 160
+:geoo/construction/platformbrick: 400 160
+:geoo/construction/platformbrick: 400 160
+:geoo/construction/platformbrick: 368 160
+:geoo/construction/platformbrick: 336 160
+:geoo/construction/platformbrick: 192 128
+:geoo/construction/platformbrick: 304 192
+:geoo/construction/platformbrick: 272 192
+:geoo/construction/platformbrick: 240 192
+:geoo/construction/platformbrick: 224 192
+:geoo/construction/platformbrick: 336 160
+:geoo/construction/platformbrick: 320 160
+:geoo/construction/wall/big_128x64: 32 192 d
+:geoo/construction/wall/big_128x64: 32 160 d
+:geoo/construction/platformbrick: 128 254
+:geoo/construction/platformbrick: 96 254
+:geoo/construction/platformbrick: 64 254
+:geoo/construction/platformbrick: 32 254
+:geoo/construction/platformbrick: 432 254
+:geoo/construction/platformbrick: 400 254
+$BEGIN_TILE_GROUP 1
+:matt/winter/09a: 0 2
+:matt/winter/09a: 8 0 d
+$END_TILE_GROUP
+:Group-1: 452 20

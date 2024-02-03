@@ -1,0 +1,64 @@
+$BUILT 2024-02-03 19:22:05
+$AUTHOR geoo
+$ENGLISH Marching Band
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#INITIAL 30
+#REQUIRED 30
+#SPAWN_INTERVAL 8
+
+#PLATFORMER 5
+#BATTER 5
+#EXPLODER 0
+
+:geoo/construction/Hatch.H: 64 208
+:geoo/construction/Hatch.H: 528 192 r
+
+:geoo/construction/Goal2.G: 160 32
+:geoo/construction/Goal2.G: 416 32
+
+:geoo/construction/spring.T: 304 144
+
+:geoo/construction/concrete/032ha: 192 208
+:geoo/construction/concrete/032hb: 96 240
+:geoo/construction/concrete/128: 256 272
+:geoo/construction/concrete/128: 384 272
+:geoo/construction/concrete/128: 128 272
+:geoo/construction/concrete/podium_32: 288 176
+:geoo/construction/concrete/032ha: 480 240
+:geoo/construction/concrete/032hb: 384 208
+:geoo/construction/concrete/064h: 256 208
+:geoo/construction/concrete/032h: 384 240
+:geoo/construction/concrete/032h: 192 240
+:geoo/construction/concrete/032b: 448 240
+:geoo/construction/concrete/032a: 160 240
+:geoo/construction/concrete/032a: 64 240
+:geoo/construction/concrete/032b: 544 240
+:geoo/construction/concrete/032va: 32 272
+:geoo/construction/concrete/032vb: 576 272
+:geoo/construction/concrete/064v: 512 272
+:geoo/construction/concrete/064v: 64 272
+:geoo/construction/concrete/032b: 608 336
+:geoo/construction/concrete/032a: 0 336
+:geoo/construction/concrete/032v: 32 336
+:geoo/construction/concrete/032v: 576 336
+:geoo/construction/concrete/032: 0 368
+:geoo/construction/concrete/032: 608 368
+:geoo/construction/rod_steel/end_rect_du.S: 291 133 rr
+:geoo/construction/rod_steel/straight_diagd32.S: 260 96
+:geoo/construction/rod_steel/link_du_h.S: 376 84
+:geoo/construction/rod_steel/straight_diagu32.S: 342 102
+:geoo/construction/rod_steel/end_rect_dd.S: 334 126 fr
+:geoo/construction/rod_steel/link_h_dd.S: 244 96
+:geoo/construction/rod_steel/straight_diagu32.S: 344 100
+:geoo/construction/rod_steel/straight32.S: 392 96
+:geoo/construction/rod_steel/straight32.S: 216 96
+:geoo/construction/rod_steel/straight32.S: 184 96
+:geoo/construction/rod_steel/straight32.S: 152 96
+:geoo/construction/rod_steel/straight32.S: 424 96
+:geoo/construction/rod_steel/straight32.S: 456 96
+:geoo/construction/rod_steel/end_rect.S: 144 96
+:geoo/construction/rod_steel/end_rect.S: 488 96 frr

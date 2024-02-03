@@ -1,0 +1,68 @@
+$BUILT 2024-02-03 18:23:12
+$AUTHOR geoo
+$ENGLISH Pick Me Up
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 512
+#SIZE_Y 160
+
+#INITIAL 10
+#REQUIRED 7
+#SPAWN_INTERVAL 29
+
+#CLIMBER 10
+#EXPLODER 1
+#PLATFORMER 1
+
+:geoo/sandstone/fennec.H: 232 32
+
+:geoo/sandstone/Goal.G: 0 32
+:geoo/sandstone/Goal.G: 448 32
+
+:amanda/forest/frog_happy.T: 384 48
+:amanda/forest/frog.T: 64 48
+
+$BEGIN_TILE_GROUP 0
+:geoo/sandstone/ebony/v8a: 0 0
+:geoo/sandstone/ebony/v8b: 0 32
+$END_TILE_GROUP
+:Group-0: 312 32
+:Group-0: 192 32
+$BEGIN_TILE_GROUP 1
+:geoo/sandstone/64x32: 0 0
+:geoo/sandstone/64x32: 64 0
+$END_TILE_GROUP
+:Group-1: 0 96
+:Group-1: 384 96
+:Group-1: 192 96
+:geoo/sandstone/ribbon_end: 16 128
+:geoo/sandstone/ribbon_start_sq: 16 96
+:geoo/sandstone/ribbon_end: 80 128
+:geoo/sandstone/ribbon_start_sq: 80 96
+:geoo/sandstone/ribbon_end: 208 160
+:geoo/sandstone/ribbon_end: 272 160
+:geoo/sandstone/ribbon_end: 400 128
+:geoo/sandstone/ribbon_start_sq: 400 96
+:geoo/sandstone/ribbon_end: 464 128
+:geoo/sandstone/ribbon_start_sq: 464 96
+:geoo/sandstone/ribbon_end: 272 32
+:Group-1: 192 0
+:geoo/sandstone/ribbon_start_sq: 272 0
+:geoo/sandstone/ribbon_end: 208 32
+:geoo/sandstone/ribbon_start_sq: 208 0
+:geoo/sandstone/64x32: 384 0
+:geoo/sandstone/ribbon_end: 400 32
+:geoo/sandstone/ribbon_start_sq: 400 0
+:geoo/sandstone/64x32: 64 0
+:geoo/sandstone/ribbon_end: 80 32
+:geoo/sandstone/ribbon_start_sq: 80 0
+:geoo/sandstone/64x32: 0 0
+:geoo/sandstone/64x32: 448 0
+:geoo/sandstone/smaragd: 8 8
+:geoo/sandstone/smaragd: 40 8
+:geoo/sandstone/smaragd: 456 8
+:geoo/sandstone/smaragd: 488 8
+:geoo/sandstone/ribbon_end: 208 128
+:geoo/sandstone/ribbon_start_sq: 208 96
+:geoo/sandstone/ribbon_end: 272 128
+:geoo/sandstone/ribbon_start_sq: 272 96

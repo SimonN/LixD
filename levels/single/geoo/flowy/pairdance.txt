@@ -1,0 +1,207 @@
+$BUILT 2024-02-10 11:29:03
+$AUTHOR geoo
+$ENGLISH Pair Dance
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 688
+#SIZE_Y 432
+
+#INITIAL 17
+#REQUIRED 15
+#SPAWN_INTERVAL 3
+
+#WALKER 1
+#BLOCKER 1
+#EXPLODER2 0
+
+:matt/winter/Hatch.H: 80 0
+:matt/underworld/Hatch.H: 464 16 r
+
+:matt/winter/Goal.G: 32 336
+
+:geoo/construction/factory.T: 128 336
+:geoo/construction/factory.T: 192 336
+
+:simon/crystal.W: 120 258
+:matt/underworld/Lava.W: 496 384
+:matt/underworld/Lava.W: 544 384
+:matt/underworld/Lava.W: 592 384
+:simon/crystal.W: 168 258
+:simon/crystal.W: 216 258
+:proxima/flame.F: 620 330
+:proxima/flame.F: 620 50
+
+:matt/winter/18: 214 80
+:matt/winter/03: 132 81 rr
+$BEGIN_TILE_GROUP 0
+:matt/winter/07: 28 2 rr
+:matt/winter/15: 0 0 d
+$END_TILE_GROUP
+:Group-0: 139 108
+:Group-0: 123 114
+:matt/winter/14: 272 77 rrr
+:matt/winter/18: 330 76
+:matt/winter/15: 104 96
+:matt/winter/07: 354 116 rr
+:matt/winter/07: 362 142 rr
+:matt/winter/07: 376 118 rr
+:matt/winter/07: 368 128 rr
+:matt/winter/13: 298 73 r
+:matt/winter/02: 344 72
+:matt/winter/18: 358 73
+:matt/winter/14: 304 75 rrr
+:matt/winter/03: 354 76 frr
+:matt/winter/07: 416 106 rr
+:matt/winter/13: 224 78 r
+:matt/winter/05: 144 72 rrr
+:matt/winter/01: 359 72
+:matt/winter/07: 392 104 rr
+:matt/winter/07: 408 88 rr
+:matt/winter/01: 376 72
+:matt/winter/08: 48 100
+:matt/winter/06: 48 108
+:matt/winter/09c: 48 84
+:proxima/tile/cyan1b: 96 416
+:proxima/tile/cyan1b: 392 400
+:proxima/tile/orange3: 606 104
+:proxima/tile/orange3: 672 94
+:proxima/tile/orange3: 620 118
+:proxima/tile/orange3: 684 118
+:proxima/tile/orange3: 624 174
+:proxima/tile/cyan1b: 424 400
+:matt/underworld/02: 430 400
+:matt/underworld/09a: 494 383
+:matt/winter/10: 444 214
+:matt/underworld/09a: 663 300
+:matt/earth/15: 608 286
+:proxima/tile/cyan1a: 40 296
+:proxima/tile/cyan1a: 8 296
+:matt/marble/09a: -8 232
+:matt/winter/07: 32 248 rr
+:proxima/tile/cyan1a: 72 296
+:matt/winter/02: 56 208
+:matt/winter/07: 72 264 rr
+:matt/marble/09a: 56 232
+:matt/winter/07: 16 264 rr
+:proxima/tile/cyan1a: -24 296
+:matt/winter/04: -20 142
+:matt/winter/08: 0 344
+:matt/winter/06: 0 352
+:matt/winter/09c: 0 328
+:Group-0: 270 282
+:proxima/tile/blue2s: 248 264
+$BEGIN_TILE_GROUP 1
+:Group-0: 10 8
+:proxima/tile/blue2s: 0 0 d
+$END_TILE_GROUP
+:Group-1: 168 310
+:proxima/tile/cyan1a: 136 296
+:proxima/tile/cyan1a: 104 296
+:matt/underworld/09a: 571 395
+:matt/underworld/09a: 513 421
+:matt/underworld/02: 624 376
+:matt/winter/07: 160 210 rr
+:Group-0: 155 216
+:Group-0: 252 218
+:matt/winter/03: 112 200 frr
+:Group-0: 179 212
+:matt/winter/18: 168 198
+:Group-0: 380 102
+:Group-0: 174 304
+:Group-0: 190 296
+:proxima/tile/cyan1a: 168 296
+:proxima/tile/cyan1a: 200 296
+:Group-0: 129 120
+:matt/winter/15: 288 388 frr
+:proxima/tile/cyan1: 336 400
+:matt/winter/01: 256 380
+:proxima/tile/cyan1: 272 400
+:proxima/tile/cyan1: 208 400
+:proxima/tile/cyan1: 144 400
+:proxima/tile/cyan1: 80 400
+:proxima/tile/cyan1: -48 400
+:proxima/tile/cyan1: 16 400
+:proxima/tile/cyan1a: 232 296
+:Group-1: 206 342
+:Group-1: 171 357
+:Group-0: 300 402
+:Group-0: 288 390
+:matt/winter/18: 280 384
+:proxima/tile/cyan1a: 384 408
+:matt/underworld/00: 400 416
+:matt/winter/12: 348 392
+:matt/winter/13: 336 392 rr
+:matt/underworld/09b: 630 274
+:matt/winter/07: 2 4 rr
+:matt/winter/07: 10 30 rr
+:matt/winter/07: 24 6 rr
+:matt/winter/07: 40 -26 rr
+:matt/winter/07: 60 -42 rr
+:matt/winter/10: -154 -62 rr
+:matt/underworld/04: 480 300
+$BEGIN_TILE_GROUP 2
+:matt/winter/05: 45 0 f
+:matt/winter/05: 0 68 d
+$END_TILE_GROUP
+:Group-2: 442 254
+:matt/winter/07: -6 14 rr
+:matt/winter/05: -10 -54 frrr
+:matt/winter/07: 16 -16 rr
+:Group-0: 250 14
+:Group-0: 260 -12
+:Group-0: 288 -10
+:Group-0: 280 -2
+:matt/winter/07: 328 -46 rr
+:matt/winter/07: 334 -54 rr
+:matt/winter/10: 198 -92 f
+:Group-0: 244 -4
+:Group-0: 294 -4
+:Group-0: 406 298
+:Group-0: 397 308
+:matt/winter/15: 396 292 f
+:matt/winter/01: 420 268 frr
+:matt/winter/13: 432 304 rr
+:matt/underworld/05: 454 248
+:matt/winter/13: 498 272 rr
+:matt/underworld/04: 458 362 r
+:matt/underworld/04: 452 386 rrr
+$BEGIN_TILE_GROUP 3
+:proxima/tile/cyan1b: 20 8
+:proxima/tile/cyan1b: 20 0 d
+:proxima/tile/cyan1b: 50 10 d
+:proxima/tile/cyan1b: 50 10 d
+:proxima/tile/cyan1b: 0 12 d
+$END_TILE_GROUP
+:Group-3: 422 408
+:Group-3: 390 424
+:Group-3: 430 400
+:matt/winter/14: 289 32 rd
+:matt/winter/14: 314 31 rd
+:matt/winter/14: 341 30 rd
+:proxima/tile/orange3: 604 134
+:matt/underworld/08: 592 144 fr
+:matt/underworld/09b: 588 164
+:matt/underworld/09a: 592 146 rrr
+:matt/underworld/09b: 590 152
+:matt/underworld/09b: 590 144
+:matt/underworld/09b: 594 118
+:matt/underworld/09a: 626 110
+:matt/underworld/08: 576 224 d
+:matt/underworld/07: 632 184 frr
+:matt/underworld/09c: 586 280 frr
+:matt/winter/13: 606 250 frd
+:geoo/construction/pillar_long: 656 248
+:matt/underworld/09a: 616 372
+:amanda/forest/bark_06: 560 202 d
+:matt/underworld/04: 560 252
+:matt/underworld/09c: 586 210 d
+:matt/underworld/05: 608 196
+:Group-0: 579 98
+:Group-0: 473 100
+:matt/winter/03: 440 82 frr
+:matt/underworld/09b: 594 110
+:matt/underworld/09a: 600 102 rrr
+:matt/underworld/09a: 602 96
+:matt/underworld/09b: 656 82
+:matt/underworld/05: 550 -26
+:matt/underworld/07: 640 -56 frr

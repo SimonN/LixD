@@ -1,0 +1,183 @@
+$BUILT 2024-03-01 22:27:39
+$AUTHOR geoo
+$ENGLISH Frog Clog
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 1024
+#SIZE_Y 338
+
+#INITIAL 30
+#REQUIRED 28
+#SPAWN_INTERVAL 23
+
+#CLIMBER 2
+#PLATFORMER 1
+#MINER 6
+#JUMPER 9
+#EXPLODER2 0
+
+:simon/oriental/hatch.H: 208 216
+
+:matt/beach/goal.G: 736 208
+
+:amanda/forest/frog_happy.T: 720 224
+:amanda/forest/frog_happy.T: 656 152
+:amanda/forest/frog_happy.T: 848 152
+:amanda/forest/frog_happy.T: 824 112
+:amanda/forest/frog_happy.T: 752 104
+:amanda/forest/frog_happy.T: 560 288
+:amanda/forest/frog_catch.T: 400 288
+:amanda/forest/frog_happy.T: 720 144
+:amanda/forest/frog_happy.T: 816 184
+:amanda/forest/frog_happy.T: 912 178
+:amanda/forest/frog.T: 592 178
+:amanda/forest/frog.T: 608 136
+:amanda/forest/frog.T: 784 144
+:amanda/forest/frog.T: 784 224
+:amanda/forest/frog_catch.T: 688 184
+:amanda/forest/frog_catch.T: 896 136
+:amanda/forest/frog_catch.T: 864 200
+:amanda/forest/frog_catch.T: 680 112
+:amanda/forest/frog.T: 640 200
+:amanda/forest/frog_catch.T: 752 192
+:amanda/forest/frog.T: 680 240
+:amanda/forest/frog_catch.T: 824 240
+:amanda/forest/frog.T: 506 288
+:amanda/forest/frog_happy.T: 454 288
+
+:geoo/abstract/cvblocks/046: 176 272
+:geoo/abstract/cvblocks/038: 112 304
+:geoo/abstract/cvblocks/035: 112 272
+:geoo/abstract/cvblocks/037: 112 240
+:geoo/abstract/cvblocks/036: 304 240
+:geoo/abstract/cvblocks/039: 304 304
+:geoo/abstract/cvblocks/035: 304 272
+:geoo/abstract/cvblocks/038: 48 272
+:geoo/abstract/cvblocks/035: 48 240
+:geoo/abstract/cvblocks/035: 112 204
+:geoo/abstract/cvblocks/038: 48 204
+:geoo/abstract/cvblocks/039: 368 204
+:geoo/abstract/cvblocks/035: 304 204
+:geoo/abstract/cvblocks/039: 368 272
+:geoo/abstract/cvblocks/035: 368 240
+:geoo/abstract/cvblocks/046: 176 48
+:geoo/abstract/cvblocks/036: 48 80
+:geoo/abstract/cvblocks/039: 48 144
+:geoo/abstract/cvblocks/035: 48 112
+:geoo/abstract/cvblocks/036: 112 48
+:geoo/abstract/cvblocks/039: 112 112
+:geoo/abstract/cvblocks/035: 112 80
+:geoo/abstract/cvblocks/038: 368 144
+:geoo/abstract/cvblocks/035: 368 112
+:geoo/abstract/cvblocks/037: 368 80
+:geoo/abstract/cvblocks/038: 304 112
+:geoo/abstract/cvblocks/035: 304 80
+:geoo/abstract/cvblocks/037: 304 48
+:geoo/abstract/cvblocks/041: 16 112
+:geoo/abstract/cvblocks/043: 16 208
+:geoo/abstract/cvblocks/044: 432 208
+:geoo/abstract/cvblocks/042: 432 112
+:matt/winter/09a: 160 16
+:matt/winter/09a: 256 16
+:geoo/abstract/cvblocks/041: 48 272
+:geoo/abstract/cvblocks/044: 80 272
+:geoo/abstract/cvblocks/043: 368 272
+:geoo/abstract/cvblocks/042: 400 272
+:proxima/tile/spheres/bluesmall: 176 32
+:proxima/tile/spheres/bluesmall: 272 32
+:geoo/abstract/cvblocks/046: 48 112
+:geoo/abstract/cvblocks/046: 48 148
+:geoo/abstract/cvblocks/037: 48 208
+:geoo/abstract/cvblocks/046: 176 164
+:geoo/abstract/cvblocks/046: 176 204
+:geoo/abstract/cvblocks/038: 112 236
+:geoo/abstract/cvblocks/039: 304 236
+:geoo/abstract/cvblocks/046: 176 104
+:geoo/abstract/cvblocks/046: 304 112
+:geoo/abstract/cvblocks/046: 304 148
+:geoo/abstract/cvblocks/036: 368 208
+:geoo/abstract/cvblocks/046: 720 272
+:geoo/abstract/cvblocks/038: 656 304
+:geoo/abstract/cvblocks/035: 656 272
+:geoo/abstract/cvblocks/037: 656 240
+:geoo/abstract/cvblocks/036: 848 240
+:geoo/abstract/cvblocks/039: 848 304
+:geoo/abstract/cvblocks/035: 848 272
+:geoo/abstract/cvblocks/038: 592 272
+:geoo/abstract/cvblocks/035: 592 240
+:geoo/abstract/cvblocks/037: 592 208
+:geoo/abstract/cvblocks/036: 912 208
+:geoo/abstract/cvblocks/039: 912 272
+:geoo/abstract/cvblocks/035: 912 240
+:geoo/abstract/cvblocks/046: 720 48
+:geoo/abstract/cvblocks/036: 592 80
+:geoo/abstract/cvblocks/039: 592 144
+:geoo/abstract/cvblocks/035: 592 112
+:geoo/abstract/cvblocks/036: 656 48
+:geoo/abstract/cvblocks/039: 656 112
+:geoo/abstract/cvblocks/035: 656 80
+:geoo/abstract/cvblocks/038: 912 144
+:geoo/abstract/cvblocks/035: 912 112
+:geoo/abstract/cvblocks/037: 912 80
+:geoo/abstract/cvblocks/038: 848 112
+:geoo/abstract/cvblocks/035: 848 80
+:geoo/abstract/cvblocks/037: 848 48
+:geoo/abstract/cvblocks/041: 560 112
+:geoo/abstract/cvblocks/043: 560 208
+:geoo/abstract/cvblocks/044: 976 208
+:geoo/abstract/cvblocks/042: 976 112
+:matt/winter/09a: 704 16
+:matt/winter/09a: 800 16
+:geoo/abstract/cvblocks/041: 592 272
+:geoo/abstract/cvblocks/044: 624 272
+:geoo/abstract/cvblocks/043: 912 272
+:geoo/abstract/cvblocks/042: 944 272
+$BEGIN_TILE_GROUP 0
+:geoo/abstract/cvblocks/046: 0 0
+:matt/underworld/03: 48 8 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:proxima/tile/spheres/blue: 40 0
+:Group-0: 0 0 d
+$END_TILE_GROUP
+:Group-1: 712 24
+:proxima/tile/spheres/pinksmall: 720 32
+$BEGIN_TILE_GROUP 2
+:matt/winter/07: 16 0
+:geoo/abstract/cvblocks/035: 0 16 rd
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 3
+:Group-2: 13 0
+:Group-2: 13 16 rr
+:Group-2: 0 13 rrr
+:Group-2: 16 13 r
+$END_TILE_GROUP
+:Group-3: 728 24
+:Group-1: 808 24
+:proxima/tile/spheres/pinksmall: 816 32
+:Group-3: 824 24
+:matt/marble/thinplatform128p: 0 336
+:matt/marble/thinplatform128p: 128 336
+:matt/marble/thinplatform128p: 256 336
+:matt/marble/thinplatform128p: 384 336
+:matt/marble/thinplatform128p: 544 336
+:matt/marble/thinplatform128p: 672 336
+:matt/marble/thinplatform128p: 800 336
+:matt/marble/thinplatform128p: 896 336
+:geoo/abstract/cvblocks/030: 16 176
+:geoo/abstract/cvblocks/030: 432 176
+:geoo/abstract/cvblocks/030: 560 176
+:geoo/abstract/cvblocks/030: 976 176
+:matt/marble/thinplatform16p: 464 240
+:matt/marble/thinplatform16p: 480 240
+:matt/marble/thinplatform16p: 496 240
+:matt/marble/thinplatform16p: 512 240
+:matt/marble/thinplatform128p: 432 336
+$BEGIN_TILE_GROUP 4
+:proxima/tile/spheres/goldsmall: 16 22
+:raymanni/gore/tentacle_1: 0 0 d
+$END_TILE_GROUP
+:Group-4: 252 108 rr
+:Group-4: 196 108 f
+:matt/marble/thinplatform16p: 528 240
+:matt/marble/thinplatform16p: 544 240

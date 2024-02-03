@@ -1,0 +1,33 @@
+$BUILT 2024-01-23 08:30:02
+$AUTHOR geoo
+$ENGLISH First in Line
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 384
+#SIZE_Y 160
+
+#INITIAL 5
+#REQUIRED 3
+#SPAWN_INTERVAL 32
+
+#EXPLODER 1
+#PLATFORMER 1
+#CUBER 1
+
+:geoo/abstract/hatch.H: 152 32 r
+
+:geoo/abstract/goal.G: 296 72
+
+:geoo/abstract/pipes/central4: 40 120
+:geoo/abstract/pipes/central4: 72 120
+:geoo/abstract/pipes/central4: 104 120
+:geoo/abstract/pipes/central4: 136 120
+:geoo/abstract/pipes/corner4: 32 120
+:geoo/abstract/pipes/central4: 32 88 r
+:geoo/abstract/pipes/endr4: 32 80 rrr
+:geoo/abstract/pipes/endr4: 200 120
+:geoo/abstract/pipes/central4: 168 120
+:geoo/abstract/pipes/central4: 280 120
+:geoo/abstract/pipes/endr4: 344 120
+:geoo/abstract/pipes/central4: 312 120
+:geoo/abstract/pipes/endr4: 272 120 rr

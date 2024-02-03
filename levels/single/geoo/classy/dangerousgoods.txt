@@ -1,0 +1,247 @@
+$BUILT 2024-01-21 16:42:32
+$AUTHOR geoo
+$ENGLISH Dangerous Goods
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 896
+#SIZE_Y 656
+
+#INITIAL 2
+#REQUIRED 1
+#SPAWN_INTERVAL 32
+
+#FLOATER 1
+#EXPLODER 1
+#PLATFORMER 1
+#BASHER 3
+#DIGGER 1
+#JUMPER 1
+
+:matt/goldmine/Hatch.H: 82 144
+
+:simon/tapir/goal.G: 330 572
+
+:amanda/forest/frog_happy.T: 346 358
+:raymanni/toys/monkey.T: 546 358
+:raymanni/gore/eater.T: 460 128
+:raymanni/holiday/porcupine.T: 822 132
+:raymanni/crab.T: 278 162
+:geoo/construction/factory.T: 724 556
+:geoo/construction/factory.T: 544 128
+
+:geoo/construction/sawblade_medium.F: 402 368
+:geoo/construction/sawblade_medium.F: 384 582
+:proxima/flame.F: 538 574
+
+:geoo/construction/spring_fast.T: 791 620
+
+:geoo/construction/steam_up.T: 760 546
+:geoo/construction/steam_up.T: 580 118
+
+:geoo/sandstone/ebony/h8b: 330 418
+:geoo/sandstone/ebony/h8b: 394 418
+:amanda/forest/stone_01: 80 296
+:geoo/sandstone/ebony/h8b: 700 632
+$BEGIN_TILE_GROUP 0
+:raymanni/lab/block_1: 0 0
+:matt/winter/09c: 8 8 rd
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:raymanni/lab/block_1: 0 0
+:Group-0: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 2
+:matt/goldmine/minecart: 8 48
+:matt/goldmine/crate64: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 3
+:Group-1: 9 17
+:Group-1: 31 17
+:Group-2: 0 0
+$END_TILE_GROUP
+:Group-3: 722 620
+:geoo/sandstone/ebony/h8b: 577 632
+:geoo/sandstone/ebony/h8b: 640 632
+:amanda/occult/wax_details_sunken_lix: 662 608 frr
+:amanda/occult/wax_details_sunken_lix_b: 676 600
+:Group-3: 658 620
+:amanda/forest/leaves_05: 348 160
+:geoo/sandstone/ebony/h8b: 330 204
+:geoo/sandstone/ebony/h8b: 390 204
+:Group-3: 346 192
+:geoo/sandstone/ebony/h8b: 530 418
+:geoo/sandstone/ebony/h8b: 262 204
+:Group-3: 282 192
+:geoo/sandstone/ebony/h8b: 434 204
+:geoo/sandstone/ebony/h8b: 524 204
+:Group-3: 542 192
+:geoo/sandstone/ebony/h8b: 154 418
+$BEGIN_TILE_GROUP 4
+:Group-2: 0 0
+:Group-2: 22 0
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 5
+:Group-1: 8 16
+:Group-1: 30 16
+:Group-1: 52 16
+:Group-4: 0 0
+$END_TILE_GROUP
+:Group-5: 88 406
+:raymanni/toys/soldier_3: 446 584 frr
+:geoo/sandstone/ebony/h8b: 512 632
+:Group-3: 530 620
+:raymanni/toys/soldier_1: 476 584
+:geoo/sandstone/ebony/h8b: 230 632
+:geoo/sandstone/ebony/h8b: 310 632
+:Group-5: 248 620
+:geoo/sandstone/ebony/h8b: 382 632
+:Group-3: 334 620
+:geoo/sandstone/ebony/h8b: 424 632
+:raymanni/toys/soldier_2: 594 588
+:amanda/occult/skulls32x32: 222 154
+:amanda/occult/skulls32x32: 186 154
+:amanda/occult/skulls32x32: 180 134
+:geoo/sandstone/ebony/h8b: 134 204
+:amanda/occult/skulls32x32: 148 152
+:matt/goldmine/00: 176 224
+:raymanni/gore/eye: 411 174 rr
+:matt/goldmine/06: 464 240
+:matt/goldmine/02: 224 256 r
+:matt/goldmine/09: 320 240 r
+:matt/goldmine/00: 416 224 frr
+:geoo/sandstone/ebony/h8b: 442 418
+$BEGIN_TILE_GROUP 6
+:Group-2: 0 42
+:geoo/abstract/cvblocks/041: 24 0 d
+:geoo/abstract/cvblocks/041: 22 18 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 7
+:Group-1: 8 16
+:Group-6: 0 0
+$END_TILE_GROUP
+:Group-7: 400 620
+:Group-5: 444 620
+:matt/goldmine/tracks: 352 648
+:matt/goldmine/tracks: 472 648
+:Group-3: 594 620
+:matt/goldmine/tracks: 592 648
+:matt/goldmine/tracks: 712 648
+:amanda/forest/bark_03: 834 428
+:amanda/forest/leaves_02: 770 348
+:amanda/forest/leaves_05: 866 322
+:amanda/forest/leaves_04: 818 332
+:amanda/forest/bark_02: 850 492
+:amanda/forest/leaves_05: 890 478
+:raymanni/toys/cracker: 476 360
+:raymanni/toys/cracker: 456 360
+:raymanni/toys/cracker: 496 360
+:geoo/sandstone/ebony/h8b: 242 418
+:matt/beach/decor/moon: 268 360
+:Group-5: 176 406
+:matt/underworld/09a: 182 398
+:matt/goldmine/tracks: 232 648
+:matt/carnival/balloons: 206 510
+:raymanni/holiday/gift1: 255 588
+:raymanni/holiday/gift2: 264 524
+:raymanni/holiday/gift4: 272 556
+:Group-7: 206 620
+:matt/goldmine/tracks: 112 648
+:matt/goldmine/tracks: 80 434
+:Group-5: 262 406
+:matt/goldmine/tracks: 200 434
+:Group-7: 418 406
+:Group-3: 350 406
+:matt/goldmine/tracks: 320 434
+:Group-5: 462 406
+:matt/goldmine/tracks: 440 434
+:Group-3: 550 406
+:matt/goldmine/tracks: 488 434
+:Group-5: 454 192
+:matt/goldmine/tracks: 488 220
+:Group-7: 410 192
+:matt/goldmine/tracks: 368 220
+$BEGIN_TILE_GROUP 8
+:Group-4: 0 0
+:Group-4: 44 0
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 9
+:Group-1: 96 16
+:Group-1: 8 16
+:Group-1: 30 16
+:Group-1: 52 16
+:Group-1: 74 16
+:Group-8: 0 0
+$END_TILE_GROUP
+:Group-9: 152 192
+:matt/goldmine/tracks: 248 220
+:matt/goldmine/02: 32 224 rrr
+:Group-3: 86 192
+:matt/goldmine/tracks: 128 220
+:matt/goldmine/tracks: 56 220
+:matt/goldmine/tracks: 608 220
+:Group-3: 824 192
+:matt/goldmine/tracks: 728 220
+:matt/goldmine/tracks: 776 220
+:matt/goldmine/tracks: -40 220
+:matt/goldmine/tracks: -16 434
+:matt/goldmine/tracks: 16 648
+:matt/goldmine/tracks: -8 648
+:Group-3: 828 620
+:matt/goldmine/tracks: 784 648
+:raymanni/toys/cracker: 740 160
+$BEGIN_TILE_GROUP 10
+:raymanni/lab/block_5: 0 0
+:raymanni/lab/block_5: 18 0 d
+$END_TILE_GROUP
+:Group-10: 733 157
+:geoo/sandstone/smaragd: 732 173
+$BEGIN_TILE_GROUP 11
+:raymanni/holiday/garland: 39 16
+:geoo/construction/concrete/032v: 69 16 rd
+:geoo/construction/concrete/032v: 0 12 rd
+:geoo/construction/concrete/032v: 16 0 rd
+$END_TILE_GROUP
+:Group-11: 737 169
+:geoo/nopales/fruit_04: 737 160
+:raymanni/lab/pipe_2: 738 189
+$BEGIN_TILE_GROUP 12
+:matt/goldmine/03: 0 55
+:geoo/construction/concrete/064h: 10 0 d
+$END_TILE_GROUP
+:Group-12: 757 228
+:Group-12: 700 228
+:Group-12: -21 228
+:matt/goldmine/00: -32 240
+:matt/goldmine/06: 128 240
+:matt/goldmine/03: 192 240
+:Group-12: 107 228
+:Group-12: 235 228
+:Group-12: 363 228
+:Group-12: 483 228 frr
+:matt/goldmine/05: 144 448
+:Group-12: 102 442
+:Group-12: -32 442
+:matt/goldmine/07: -32 448 f
+:matt/goldmine/01: 80 448
+:Group-12: 212 442
+:Group-12: 336 442
+:matt/goldmine/07: -32 -32
+:matt/goldmine/05: 112 -32
+:matt/goldmine/04: 128 -64 r
+:matt/goldmine/08: 272 -32 rrr
+:matt/goldmine/07: 352 -32
+:matt/goldmine/04: 480 -64 frrr
+:matt/goldmine/09: 736 -32 r
+:matt/goldmine/07: 544 -32 rr
+:matt/goldmine/03: 768 -16
+:amanda/forest/leaves_05: 760 422
+:matt/underworld/thinplatform8: 610 447
+:matt/underworld/thinplatform8: 609 446
+$BEGIN_TILE_GROUP 13
+:matt/goldmine/03: 0 54
+:geoo/construction/concrete/064h: 10 0 d
+$END_TILE_GROUP
+:Group-13: 468 441
+:matt/earth/07b: 608 430 fd
+:amanda/forest/bark_02: 784 476 rrr
+:amanda/forest/leaves_05: 770 462

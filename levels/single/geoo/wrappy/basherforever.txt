@@ -1,0 +1,108 @@
+$BUILT 2019-12-29 23:26:05
+$AUTHOR geoo
+$ENGLISH Basher Forever
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 384
+#SIZE_Y 336
+#TORUS_X 1
+#TORUS_Y 0
+
+#INITIAL 11
+#REQUIRED 1
+#SPAWN_INTERVAL 18
+
+#BASHER 1
+#CUBER 10
+#EXPLODER2 0
+
+:geoo/sandstone/fennec.H: 288 24 r
+
+:geoo/abstract/goal.G: 128 240
+:geoo/abstract/goal.G: 192 240
+
+$BEGIN_TILE_GROUP 0
+:geoo/sandstone/ebony/h8a: 8 0
+:geoo/sandstone/ebony/h8l: 0 0
+:geoo/sandstone/ebony/h8r: 40 0
+$END_TILE_GROUP
+:Group-0: 96 124
+:Group-0: 144 122
+:Group-0: 192 120
+:Group-0: 240 118
+:Group-0: 288 116
+:Group-0: 336 114
+:Group-0: 0 144
+:Group-0: 48 142
+:Group-0: 144 138
+:Group-0: 192 136
+:Group-0: 240 134
+:Group-0: 0 128
+:Group-0: 0 160
+:Group-0: 96 156
+:Group-0: 192 152
+:Group-0: 288 148
+:Group-0: 336 146
+:Group-0: 48 174
+:Group-0: 96 172
+:Group-0: 144 170
+:Group-0: 192 168
+:Group-0: 240 166
+:Group-0: 0 192
+:Group-0: 48 190
+:Group-0: 144 186
+:Group-0: 192 184
+:Group-0: 288 180
+:Group-0: 0 208
+:Group-0: 48 206
+:Group-0: 96 204
+:Group-0: 144 202
+:Group-0: 240 198
+:Group-0: 288 196
+:Group-0: 192 216
+:Group-0: 240 214
+:Group-0: 288 212
+:Group-0: 0 112
+:Group-0: 48 110
+:Group-0: 96 108
+:Group-0: 144 106
+:geoo/sandstone/16x16: 192 104
+:geoo/sandstone/16x16: 176 210
+:geoo/steel/64x32o.S: 112 288
+$BEGIN_TILE_GROUP 1
+:geoo/sandstone/ebony/h8a: 0 0
+:geoo/sandstone/ebony/h8a: 4 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 2
+:geoo/sandstone/ebony/h8l: 0 0
+:geoo/sandstone/ebony/h8r: 40 0
+:geoo/sandstone/ebony/h8r: 12 0
+:geoo/sandstone/ebony/h8l: 28 0
+:Group-1: 8 0
+:Group-1: 36 0
+$END_TILE_GROUP
+:Group-2: 240 150
+:geoo/steel/64x32o.S: 176 288
+:Group-2: 336 130
+:Group-2: 288 132
+:Group-0: 48 126
+:Group-2: 96 140
+:Group-2: 96 188
+:Group-2: 192 200
+:Group-2: 0 176
+:Group-2: 288 164
+:geoo/sandstone/16x8: 160 194
+:geoo/sandstone/16x8: 208 176
+:Group-0: 336 162
+:Group-0: 336 178
+:Group-0: 336 194
+:Group-0: 336 210
+:geoo/sandstone/16x8: 16 152
+:geoo/sandstone/16x8: 352 170
+:Group-2: 144 154
+:geoo/sandstone/16x8: 208 144
+:Group-0: 48 158
+:geoo/sandstone/16x8: 304 204
+:geoo/sandstone/16x8: 160 130
+:geoo/sandstone/16x8: 352 186
+:Group-0: 240 182

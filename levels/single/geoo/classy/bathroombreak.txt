@@ -1,0 +1,178 @@
+$BUILT 2023-09-23 18:04:32
+$AUTHOR geoo
+$ENGLISH Bathroom Break
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#INITIAL 40
+#REQUIRED 36
+#SPAWN_INTERVAL 8
+
+#RUNNER 1
+#FLOATER 1
+#EXPLODER 3
+#PLATFORMER 5
+#BASHER 1
+#JUMPER 3
+#CUBER 1
+
+:geoo/sandstone/fennec.H: 216 32
+:geoo/sandstone/fennec.H: 24 48
+
+:geoo/sandstone/Goal.G: 0 240
+
+:matt/water.W: 224 304
+:matt/water.W: 256 304
+:matt/water.W: 352 304
+:matt/water.W: 384 304
+:simon/water_main.W: 368 336
+:simon/water_main.W: 352 336
+:simon/water_main.W: 352 352
+:simon/water_main.W: 352 368
+:simon/water_main.W: 368 352
+:simon/water_main.W: 368 368
+:simon/water_main.W: 240 336
+:simon/water_main.W: 224 336
+:simon/water_main.W: 224 352
+:simon/water_main.W: 224 368
+:simon/water_main.W: 240 352
+:simon/water_main.W: 240 368
+:geoo/sandstone/brazier.F: 400 252
+:geoo/sandstone/brazier.F: 336 252
+:geoo/sandstone/brazier.F: 272 252
+:geoo/sandstone/brazier.F: 208 252
+
+:geoo/sandstone/slopes/32x32rb: 448 176
+:geoo/sandstone/slopes/32x32rb: 480 144
+:geoo/sandstone/slopes/32x32rb: 512 112
+:geoo/sandstone/32x32: 512 176
+:geoo/sandstone/slopes/32x32rb: 416 208
+:geoo/sandstone/32x32: 480 208
+:geoo/sandstone/32x32: 576 112
+:geoo/sandstone/32x32: 544 144
+$BEGIN_TILE_GROUP 0
+:geoo/sandstone/32x32: 0 0
+:geoo/sandstone/8x8: 12 12
+$END_TILE_GROUP
+:Group-0: 512 144
+:Group-0: 544 112
+:Group-0: 480 176
+:Group-0: 448 208
+:Group-0: 512 208
+:Group-0: 576 144
+:Group-0: 608 112
+$BEGIN_TILE_GROUP 1
+:geoo/sandstone/32x32: 0 0
+:geoo/sandstone/smaragd: 8 8
+$END_TILE_GROUP
+:Group-1: 320 208
+:Group-1: 320 304
+:Group-1: 416 304
+:geoo/sandstone/32x32: 480 304
+:geoo/sandstone/32x32: 448 336
+:geoo/sandstone/32x32: 480 368
+:Group-0: 480 336
+:Group-0: 448 368
+:geoo/sandstone/32x32: 544 368
+:Group-0: 512 368
+:geoo/sandstone/32x32: 608 368
+:Group-0: 576 368
+:geoo/sandstone/32x32: 640 368
+:Group-0: 640 368
+:Group-1: 288 208
+:Group-1: 288 304
+:Group-1: 192 304
+:geoo/sandstone/32x32: 288 336
+:geoo/sandstone/32x32: 320 368
+:Group-0: 320 336
+:Group-0: 288 368
+:geoo/sandstone/32x32: 192 368
+:Group-0: 192 336
+:Group-0: 160 368
+:geoo/sandstone/slopes/32x32lb: 192 208
+:geoo/sandstone/slopes/32x32lb: 160 176
+:Group-0: 160 208
+:geoo/sandstone/32x32: 96 176
+:Group-0: 96 208
+:geoo/sandstone/32x32: 128 208
+:Group-0: 128 176
+:geoo/sandstone/slopes/32x32lb: 128 144
+:geoo/sandstone/slopes/32x32lb: 96 112
+:Group-0: 96 144
+:geoo/sandstone/32x32: 64 144
+:Group-0: 64 112
+:geoo/sandstone/32x32: 64 208
+:geoo/sandstone/32x32: 544 208
+:Group-0: 0 112
+:geoo/sandstone/32x32: 64 368
+:Group-0: 32 368
+:geoo/sandstone/32x32: 128 368
+:Group-0: 96 368
+:geoo/sandstone/32x32: 0 368
+:Group-0: 32 144
+:geoo/sandstone/32x32: 0 144
+:Group-0: 32 208
+:geoo/sandstone/32x32: 0 208
+:Group-0: 0 176
+:geoo/sandstone/32x32: 32 176
+:geoo/sandstone/32x32: 608 144
+:geoo/construction/platform.S: 0 240
+:geoo/construction/platform.S: 32 240
+:geoo/construction/platform.S: 64 240
+:geoo/construction/platform.S: 96 240
+:geoo/construction/platform.S: 128 240
+:geoo/construction/platform.S: 160 240
+:geoo/construction/platform.S: 192 240
+:geoo/construction/platform.S: 288 240
+:geoo/construction/platform.S: 320 240
+:geoo/construction/platform.S: 416 240
+:geoo/construction/platform.S: 448 240
+:geoo/construction/platform.S: 480 240
+:geoo/construction/platform.S: 512 240
+:geoo/construction/platform.S: 544 240
+:geoo/sandstone/32x32: 512 336
+:Group-0: 512 304
+:Group-0: 544 336
+:geoo/sandstone/32x32: 544 304
+:geoo/sandstone/32x32: 576 336
+:Group-0: 576 304
+:Group-0: 608 336
+:geoo/sandstone/32x32: 608 304
+:geoo/sandstone/32x32: 640 336
+:Group-0: 640 304
+:Group-0: 640 336
+:geoo/sandstone/32x32: 640 304
+:geoo/sandstone/32x32: 0 304
+:Group-0: 0 336
+:geoo/sandstone/32x32: 32 336
+:Group-0: 32 304
+:Group-0: 64 336
+:geoo/sandstone/32x32: 64 304
+:geoo/sandstone/32x32: 96 336
+:Group-0: 96 304
+:Group-0: 128 336
+:geoo/sandstone/32x32: 128 304
+:geoo/sandstone/32x32: 160 336
+:Group-0: 160 304
+:Group-0: 448 304
+:Group-0: 416 336
+:geoo/sandstone/32x32: 416 368
+:Group-1: 112 64
+:Group-1: 496 64
+:geoo/steel/64x32o.S: 576 304
+:geoo/steel/64x32o.S: 0 304
+:geoo/steel/64x32o.S: 224 368
+:geoo/steel/64x32o.S: 352 368
+:geoo/sandstone/ebony/h16l: 224 112
+:geoo/sandstone/ebony/h16r: 400 112
+:geoo/sandstone/ebony/h16a: 240 112
+:geoo/sandstone/ebony/h16b: 272 112
+:geoo/sandstone/ebony/h16c: 304 112
+:geoo/sandstone/ebony/h16a: 336 112
+:geoo/sandstone/ebony/h16c: 368 112
+:Group-1: 608 80
+:Group-1: 0 80
+:Group-0: 64 176
+:Group-0: 544 176

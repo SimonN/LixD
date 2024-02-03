@@ -1,0 +1,36 @@
+$BUILT 2023-09-23 12:10:30
+$AUTHOR geoo
+$ENGLISH Line Dance (Part 1)
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 256
+#SIZE_Y 400
+#TORUS_X 1
+#TORUS_Y 0
+
+#INITIAL 3
+#REQUIRED 1
+#SPAWN_INTERVAL 32
+
+#BUILDER 1
+#BATTER 2
+#EXPLODER2 0
+
+:geoo/abstract/hatch.H: 16 192 r
+:geoo/abstract/hatch.H: 16 192
+
+:geoo/abstract/goal.G: 192 144
+
+:geoo/abstract/pipes/central2: 0 256
+:geoo/abstract/pipes/central2: 32 256
+:geoo/abstract/pipes/central2: 64 256
+:geoo/abstract/pipes/central2: 96 256
+:geoo/abstract/pipes/central2: 128 256
+:geoo/abstract/pipes/central2: 160 256
+:geoo/abstract/pipes/central2: 192 256
+:geoo/abstract/pipes/central2: 224 256
+:geoo/abstract/pipes/central7: 192 192
+:geoo/abstract/pipes/corner7: 224 192 rrr
+:geoo/abstract/pipes/central7: 224 160 r
+:geoo/abstract/pipes/endr7: 224 152 rrr
+:geoo/abstract/pipes/endr7: 184 192 rr

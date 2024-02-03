@@ -1,0 +1,236 @@
+$BUILT 2023-09-20 23:24:09
+$AUTHOR geoo
+$ENGLISH Forever Mine
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 672
+#SIZE_Y 336
+#TORUS_X 1
+#TORUS_Y 1
+
+#INITIAL 10
+#REQUIRED 10
+#SPAWN_INTERVAL 26
+
+#WALKER 2
+#RUNNER 10
+#FLOATER 1
+#BLOCKER 1
+#BUILDER 6
+#MINER 1
+#DIGGER 6
+#EXPLODER2 0
+
+:raymanni/gore/hatch.H: 377 154
+
+:raymanni/gore/goal.G: 656 192
+
+:geoo/construction/Laser_hz_16.F: 64 170
+:geoo/construction/Laser_hz_16.F: 80 170
+:geoo/construction/Laser_hz_16.F: 96 170
+:geoo/construction/Laser_hz_16.F: 64 232
+:geoo/construction/Laser_hz_16.F: 80 232
+:geoo/construction/Laser_hz_16.F: 96 232
+:geoo/construction/Laser_vr_16.F: 650 160
+:geoo/construction/Laser_vr_64.F: 650 208
+:geoo/construction/Laser_vr_16.F: 650 192
+:geoo/construction/Laser_vr_64.F: 58 176
+:geoo/construction/Laser_vr_64.F: 118 176
+:geoo/construction/Laser_hz_16.F: 160 202
+:geoo/construction/Laser_hz_16.F: 176 202
+:geoo/construction/Laser_hz_16.F: 192 202
+:geoo/construction/Laser_hz_16.F: 160 264
+:geoo/construction/Laser_hz_16.F: 176 264
+:geoo/construction/Laser_hz_16.F: 192 264
+:geoo/construction/Laser_vr_64.F: 138 208
+:geoo/construction/Laser_vr_64.F: 198 208
+:geoo/construction/Laser_hz_16.F: 224 280
+:geoo/construction/Laser_hz_16.F: 240 280
+:geoo/construction/Laser_hz_16.F: 256 280
+:geoo/construction/Laser_vr_64.F: 218 224
+:geoo/construction/Laser_vr_64.F: 278 224
+:geoo/construction/sawblade.F: 10 282
+:geoo/construction/sawblade.F: 82 322
+:geoo/construction/Laser_hz_16.F: 224 170
+:geoo/construction/Laser_hz_16.F: 240 170
+:geoo/construction/Laser_hz_16.F: 256 170
+:geoo/construction/Laser_vr_64.F: 218 176
+:geoo/construction/Laser_vr_64.F: 278 176
+:geoo/construction/Laser_vr_64.F: 650 99
+:geoo/construction/Laser_vr_64.F: 38 99
+:geoo/construction/Laser_vr_16.F: 650 176
+:geoo/construction/Laser_hz_64.F: 656 92
+:geoo/construction/Laser_hz_64.F: 656 200
+:geoo/construction/Laser_vr_16.F: 38 162
+:geoo/construction/sawblade.F: 162 26
+:geoo/construction/Laser_vr_16.F: 38 178
+:geoo/construction/Laser_vr_16.F: 38 194
+:geoo/construction/Laser_hz_16.F: 144 202
+:geoo/construction/Laser_hz_16.F: 144 264
+:geoo/construction/Laser_hz_16.F: 112 170
+:geoo/construction/Laser_hz_16.F: 112 232
+:geoo/construction/Laser_hz_16.F: 272 170
+:geoo/construction/Laser_hz_16.F: 272 280
+:geoo/construction/sawblade.F: 242 66
+:geoo/construction/Laseremit_hzl_16.F: 61 320
+:geoo/construction/Laser_hz_16.F: 76 320
+:geoo/construction/Laser_hz_16.F: 92 320
+:geoo/construction/Laseremit_hzr_16.F: 106 320
+:geoo/construction/Laseremit_hzl_16.F: 141 16
+:geoo/construction/Laser_hz_16.F: 156 16
+:geoo/construction/Laser_hz_16.F: 172 16
+:geoo/construction/Laseremit_hzr_16.F: 186 16
+:geoo/construction/Laseremit_hzl_16.F: 221 48
+:geoo/construction/Laser_hz_16.F: 236 48
+:geoo/construction/Laser_hz_16.F: 252 48
+:geoo/construction/Laseremit_hzr_16.F: 266 48
+:geoo/construction/Laseremit_hzl_16.F: 221 64
+:geoo/construction/Laser_hz_16.F: 236 64
+:geoo/construction/Laser_hz_16.F: 252 64
+:geoo/construction/Laseremit_hzr_16.F: 266 64
+:geoo/construction/Laseremit_hzl_16.F: 141 24
+:geoo/construction/Laser_hz_16.F: 156 24
+:geoo/construction/Laser_hz_16.F: 172 24
+:geoo/construction/Laseremit_hzr_16.F: 186 24
+:geoo/construction/Laseremit_hzl_16.F: 61 312
+:geoo/construction/Laser_hz_16.F: 76 312
+:geoo/construction/Laser_hz_16.F: 92 312
+:geoo/construction/Laseremit_hzr_16.F: 106 312
+:geoo/construction/Laseremit_hzl_16.F: 141 8
+:geoo/construction/Laser_hz_16.F: 156 8
+:geoo/construction/Laser_hz_16.F: 172 8
+:geoo/construction/Laseremit_hzr_16.F: 186 8
+:geoo/construction/Laseremit_hzl_16.F: 221 40
+:geoo/construction/Laser_hz_16.F: 236 40
+:geoo/construction/Laser_hz_16.F: 252 40
+:geoo/construction/Laseremit_hzr_16.F: 266 40
+:geoo/construction/Laseremit_hzl_16.F: 221 56
+:geoo/construction/Laser_hz_16.F: 236 56
+:geoo/construction/Laser_hz_16.F: 252 56
+:geoo/construction/Laseremit_hzr_16.F: 266 56
+
+:raymanni/gore/blob_1: 264 304
+:geoo/steel/dark_48x32o.S: 272 16
+:guideline/build-L: 0 16
+:geoo/construction/concrete/032hb: 16 4
+:guideline/build-L: 288 160
+:geoo/construction/concrete/032hc: 272 164
+:raymanni/gore/blob_1: 292 294
+:raymanni/gore/blob_1: 256 288
+:raymanni/gore/blob_5: 334 280
+:raymanni/gore/blob_2: 272 264 frr
+:raymanni/gore/blob_4: 336 232
+:raymanni/gore/blob_3: 368 240 frr
+:raymanni/gore/blob_1: 434 42
+:raymanni/gore/blob_3: 582 288
+:raymanni/gore/blob_4: 544 96
+:guideline/build-L: 48 40
+:guideline/build-L: 96 64
+:guideline/build-L: 144 88
+:guideline/build-L: 192 112
+:guideline/build-L: 240 136
+:raymanni/gore/blob_5: 328 168
+:guideline/build-L: 336 184
+:raymanni/gore/bone_1: 48 240
+:raymanni/gore/bone_1: 48 272
+:raymanni/gore/bone_1: 128 272
+:raymanni/gore/bone_1: 128 304
+:raymanni/gore/bone_1: 208 304
+:raymanni/gore/bone_1: 208 0
+:raymanni/gore/bone_2: 32 304 f
+:geoo/steel/dark_48x32o.S: 64 288
+:raymanni/gore/bone_2: 112 0 f
+:geoo/steel/dark_48x32o.S: 160 320
+:geoo/steel/dark_64x32o.S: 144 320
+:raymanni/gore/bone_2: 192 32 f
+:geoo/steel/dark_64x32o.S: 656 256
+:guideline/build-L: 384 208
+:guideline/build-L: 432 232
+:guideline/build-L: 480 256
+:guideline/build-L: 528 280
+:guideline/build-L: 544 288
+:guideline/build-L: 592 312
+:raymanni/gore/blob_1: 408 16
+:raymanni/gore/blob_5: 400 288 rrr
+:raymanni/gore/blob_2: 418 170 frr
+:raymanni/gore/blob_5: 480 244 rrr
+:raymanni/gore/blob_2: 434 114 frr
+:raymanni/gore/blob_2: 389 136 frr
+:raymanni/gore/blob_2: 380 262 frrr
+:raymanni/gore/blob_5: 404 258 rrr
+:raymanni/gore/blob_5: 448 220 rrr
+:geoo/construction/concrete/032hb: 624 308
+:raymanni/gore/blob_5: 522 268 rrr
+:raymanni/gore/blob_3: 542 296
+:raymanni/gore/blob_3: 420 320
+:raymanni/gore/blob_3: 422 206
+:raymanni/gore/blob_1: 438 246
+:raymanni/gore/blob_1: 304 232
+:raymanni/gore/blob_2: 352 250 frrr
+:raymanni/gore/blob_3: 400 228 frr
+:raymanni/gore/blob_2: 338 204 frr
+:raymanni/gore/blob_2: 414 42 frrr
+:raymanni/gore/blob_2: 442 82 frr
+:raymanni/gore/blob_2: 466 136 frr
+:raymanni/gore/blob_2: 462 326 frrr
+:raymanni/gore/blob_2: 442 286 frrr
+:raymanni/gore/blob_4: 474 276
+:raymanni/gore/blob_3: 480 312
+:raymanni/gore/blob_1: 498 282
+:raymanni/gore/blob_4: 354 106 rr
+:raymanni/gore/blob_5: 400 58
+:raymanni/gore/blob_2: 376 334 rrr
+:raymanni/gore/blob_2: 484 312 frr
+:raymanni/gore/blob_2: 480 26 frr
+:raymanni/gore/blob_2: 478 58 frr
+:raymanni/gore/blob_4: 492 194
+$BEGIN_TILE_GROUP 0
+:raymanni/gore/bone_1: 5 18
+:raymanni/gore/goop_9: 0 0 d
+:raymanni/gore/goop_8: 9 9 d
+$END_TILE_GROUP
+:Group-0: 48 208
+:Group-0: 128 240
+:Group-0: 208 272
+:geoo/construction/stairs_ru_32.S: 264 320
+:geoo/construction/stairs_ru_32.S: 328 288
+:geoo/construction/stairs_ru_32.S: 264 272
+:geoo/construction/stairs_ru_32.S: 296 256
+:raymanni/gore/blob_4: 344 24 r
+:raymanni/gore/blob_4: 356 186 rrr
+:guideline/build-L: 360 190 d
+:guideline/build-L: 366 193 d
+:raymanni/gore/blob_1: 327 151
+:raymanni/gore/blob_4: 402 163
+:raymanni/gore/blob_4: 270 86 rr
+:raymanni/gore/blob_2: 318 52 rrr
+:raymanni/gore/blob_2: 336 332 rrr
+:raymanni/gore/blob_3: 345 87
+:geoo/construction/concrete/032hc: 624 4
+:raymanni/gore/blob_4: 574 335
+:raymanni/gore/blob_5: 530 160
+:raymanni/gore/blob_2: 536 172 r
+:raymanni/gore/blob_4: 552 230 rrr
+:raymanni/gore/blob_4: 602 288 rrr
+:geoo/construction/concrete/032hc: 16 36
+:geoo/construction/concrete/032hc: 80 68
+:geoo/construction/concrete/032hb: 80 36
+:geoo/construction/concrete/032hc: 144 100
+:geoo/construction/concrete/032hb: 144 68
+:geoo/construction/concrete/032hc: 208 132
+:geoo/construction/concrete/032hb: 208 100
+:geoo/construction/concrete/032hb: 272 132
+:raymanni/gore/blob_4: 576 288 rrr
+:raymanni/gore/blob_2: 292 318 frrr
+:raymanni/gore/blob_4: 292 118 r
+:raymanni/gore/blob_4: 606 20
+:raymanni/gore/blob_4: 572 58
+:geoo/steel/dark_48x32o.S: 224 16
+:geoo/steel/dark_64x32o.S: 64 288
+:raymanni/gore/blob_2: 394 302 frrr
+:raymanni/gore/blob_2: 470 10 frr
+:raymanni/gore/blob_2: 520 26 frr
+:raymanni/gore/blob_2: 546 322 frr
+:geoo/sandstone/16x8: 56 320 d
+:geoo/sandstone/16x8: 136 16 d
+:geoo/sandstone/16x8: 216 48 d

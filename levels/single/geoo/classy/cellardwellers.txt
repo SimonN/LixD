@@ -1,0 +1,74 @@
+$BUILT 2024-02-09 18:39:00
+$AUTHOR geoo
+$ENGLISH Cellar Dwellers
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 552
+#SIZE_Y 176
+
+#INITIAL 40
+#REQUIRED 38
+#SPAWN_INTERVAL 6
+
+#CLIMBER 1
+#EXPLODER2 2
+#MINER 2
+#DIGGER 1
+
+:geoo/abstract/hatch.H: 336 16
+:geoo/abstract/hatch.H: 184 16 r
+:geoo/abstract/hatch.H: 72 112
+:geoo/abstract/hatch.H: 448 112 r
+
+:geoo/abstract/goal.G: 260 0
+:geoo/abstract/goal.G: 12 0
+:geoo/abstract/goal.G: 508 0
+
+:geoo/abstract/cvblocks/040: 304 80
+:geoo/abstract/cvblocks/040: 336 80
+:geoo/abstract/cvblocks/040: 184 80
+:geoo/abstract/cvblocks/040: 216 80
+:geoo/abstract/cvblocks/038: 56 80
+:geoo/abstract/cvblocks/038: 120 112
+:geoo/abstract/cvblocks/035: 120 80
+:geoo/abstract/cvblocks/039: 432 80
+:geoo/abstract/cvblocks/039: 368 112
+:geoo/abstract/cvblocks/035: 368 80
+:geoo/abstract/pipes/central3: 216 168 rr
+:geoo/abstract/cvblocks/038: 184 144
+:geoo/abstract/pipes/central3: 184 168 rr
+:geoo/abstract/pipes/central3: 152 168 rr
+:geoo/abstract/pipes/central3: 120 168 rr
+:geoo/abstract/pipes/central3: 88 168 rr
+:geoo/abstract/pipes/central3: 56 168 rr
+:geoo/abstract/pipes/central3: 28 168 rr
+:geoo/abstract/pipes/central3: 476 168 rr
+:geoo/abstract/pipes/central3: 448 168 rr
+:geoo/abstract/pipes/central3: 416 168 rr
+:geoo/abstract/pipes/central3: 384 168 rr
+:geoo/abstract/pipes/central3: 352 168 rr
+:geoo/abstract/pipes/central3: 304 168 rr
+:geoo/abstract/cvblocks/039: 304 144
+:geoo/abstract/pipes/central3: 336 168 rr
+:geoo/abstract/pipes/central3: 336 168 rr
+$BEGIN_TILE_GROUP 0
+:geoo/abstract/cvblocks/035: 0 0
+:geoo/abstract/cvblocks/035: 32 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:geoo/abstract/cvblocks/035: 56 0
+:Group-0: 64 0
+:geoo/abstract/cvblocks/035: 0 0 d
+$END_TILE_GROUP
+:Group-1: 0 48
+:Group-1: 0 80
+:Group-1: 0 112
+:Group-1: 0 144
+:Group-1: 248 48
+:Group-1: 248 80
+:Group-1: 248 112
+:Group-1: 248 144
+:Group-1: 496 48
+:Group-1: 496 80
+:Group-1: 496 112
+:Group-1: 496 144

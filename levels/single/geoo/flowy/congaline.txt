@@ -1,0 +1,38 @@
+$BUILT 2024-02-03 18:19:15
+$AUTHOR geoo
+$ENGLISH Conga Line
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 560
+#SIZE_Y 208
+
+#INITIAL 15
+#REQUIRED 14
+#SPAWN_INTERVAL 1
+
+#WALKER 2
+#BLOCKER 2
+#EXPLODER2 0
+
+:geoo/construction/Hatch.H: 192 72
+:geoo/construction/Hatch.H: 320 72
+:geoo/construction/Hatch.H: 448 72
+
+:geoo/abstract/goal.G: 32 88
+
+:geoo/construction/factory.T: 112 72
+
+$BEGIN_TILE_GROUP 0
+:geoo/abstract/pipes/central2: 0 0
+:geoo/abstract/pipes/central2: 32 0
+:geoo/abstract/pipes/central2: 64 0
+:geoo/abstract/pipes/central2: 96 0
+$END_TILE_GROUP
+:Group-0: 152 136
+:Group-0: 280 136
+:Group-0: 408 136
+:geoo/abstract/pipes/central2: 536 104 r
+:geoo/abstract/pipes/corner2: 536 136 rrr
+:geoo/abstract/pipes/endr2: 16 136 rr
+:geoo/abstract/pipes/endr2: 536 96 rrr
+:Group-0: 24 136

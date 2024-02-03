@@ -1,0 +1,77 @@
+$BUILT 2023-09-17 08:48:36
+$AUTHOR geoo
+$ENGLISH Kruskal's Delight
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 768
+#SIZE_Y 400
+#TORUS_X 1
+#TORUS_Y 0
+
+#INITIAL 4
+#REQUIRED 4
+#SPAWN_INTERVAL 1
+
+#CLIMBER 4
+#BASHER 7
+#EXPLODER2 0
+
+:geoo/abstract/hatch.H: 368 32
+:geoo/abstract/hatch.H: 16 208
+:geoo/abstract/hatch.H: 192 176
+:geoo/abstract/hatch.H: 624 144
+
+:geoo/abstract/goal.G: 496 288
+
+:matt/carnival/24: 0 336
+:matt/carnival/25: 192 336
+:matt/carnival/26: 128 336
+:matt/carnival/27: 64 336
+:matt/carnival/24: 256 336
+:matt/carnival/25: 448 336
+:matt/carnival/26: 384 336
+:matt/carnival/27: 320 336
+:matt/carnival/24: 512 336
+:matt/carnival/25: 704 336
+:matt/carnival/26: 640 336
+:matt/carnival/27: 576 336
+:matt/carnival/25: 544 272
+:matt/carnival/26: 672 272
+:matt/carnival/25: 256 272
+:matt/carnival/00: 144 304
+:matt/carnival/01: 512 144
+:matt/carnival/02: 528 240
+:matt/carnival/25: 144 240
+:matt/carnival/26: 288 208
+:matt/carnival/27: 208 208
+:matt/carnival/24: 128 176
+:matt/carnival/26: 64 208
+:matt/carnival/25: 16 272
+:matt/carnival/27: 720 208
+:matt/carnival/24: 416 272
+:matt/carnival/27: 432 208
+:matt/carnival/25: 320 144
+:matt/carnival/24: 384 144
+:matt/carnival/24: 496 176
+:matt/carnival/03: 640 176
+:matt/carnival/26: 464 80
+:matt/carnival/27: 400 80
+:matt/carnival/24: 592 208
+:matt/carnival/25: 672 144
+:matt/carnival/02: 608 176
+:matt/carnival/27: 560 112
+:matt/carnival/24: 624 80
+:matt/carnival/24: 0 144
+:matt/carnival/25: 224 144
+:matt/carnival/02: 160 144
+:matt/carnival/27: 176 80
+:matt/carnival/27: 48 80
+:matt/carnival/26: 80 16
+:matt/carnival/25: 144 16
+:matt/carnival/25: 704 80
+:matt/carnival/25: 528 48
+:matt/carnival/24: 272 80
+:matt/carnival/02: 688 48
+:matt/carnival/26: 288 16
+:matt/carnival/01: 368 304
+:matt/carnival/03: 352 272

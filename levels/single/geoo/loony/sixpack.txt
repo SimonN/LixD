@@ -1,0 +1,60 @@
+$BUILT 2024-02-03 20:02:44
+$AUTHOR geoo
+$ENGLISH Six Pack
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 384
+#SIZE_Y 368
+
+#INITIAL 8
+#REQUIRED 6
+#SPAWN_INTERVAL 4
+
+#CLIMBER 4
+#FLOATER 4
+#EXPLODER2 1
+
+:geoo/construction/Hatch.H: 112 0 r
+:geoo/construction/Hatch.H: 246 0
+
+:raymanni/lab/goal.G: 336 184
+:raymanni/lab/goal.G: -16 184
+
+:geoo/construction/squisher.T: 176 152
+
+:geoo/construction/spring_fast.T: 176 272
+:geoo/construction/spring_fast.T: 32 272
+:geoo/construction/spring_fast.T: 320 272
+
+:geoo/sandstone/ebony/h8a: 64 272
+:geoo/sandstone/ebony/h8a: 96 272
+:geoo/sandstone/ebony/h8a: 128 272
+:geoo/construction/concrete/016h: 288 110
+:geoo/construction/concrete/016h: 246 48
+:geoo/construction/concrete/016h: 112 48
+:geoo/construction/concrete/016h: 64 110
+:geoo/construction/concrete/032h: 64 152
+:geoo/construction/concrete/008h: 64 88
+:geoo/construction/concrete/008h: 304 88
+:geoo/construction/concrete/032h: 256 152
+:geoo/construction/concrete/064h: 320 56 fr
+:geoo/construction/concrete/064h: 0 56 fr
+:geoo/construction/concrete/032h: 128 216
+:geoo/construction/concrete/032h: 192 216
+:geoo/sandstone/ebony/h8a: 160 272
+:geoo/sandstone/ebony/h8a: 192 272
+:geoo/sandstone/ebony/h8a: 224 272
+:geoo/sandstone/ebony/h8a: 256 272
+:geoo/sandstone/ebony/h8a: 288 272
+:geoo/construction/concrete/064h: 0 304
+:geoo/construction/concrete/064h: 128 304
+:geoo/construction/concrete/064h: 256 304
+:geoo/construction/concrete/032c: 288 248
+:geoo/construction/concrete/032d: 64 248
+:geoo/construction/concrete/032h: 288 184 fr
+:geoo/construction/concrete/032h: 64 184 fr
+:geoo/construction/squarebrick_large: 0 248
+:geoo/construction/squarebrick_large: 352 248
+:geoo/construction/wall/big_brickdiag_td: 0 24
+:geoo/construction/wall/big_brickdiag_tu: 320 24
+:geoo/construction/squarebrick_large: 176 120

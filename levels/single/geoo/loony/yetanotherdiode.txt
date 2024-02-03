@@ -1,0 +1,27 @@
+$BUILT 2024-01-27 10:33:00
+$AUTHOR geoo
+$ENGLISH Yet Another Diode
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 576
+#SIZE_Y 288
+
+#INITIAL 20
+#REQUIRED 18
+#SPAWN_INTERVAL 12
+
+#MINER 1
+#CUBER 1
+#EXPLODER 0
+
+:geoo/abstract/hatch.H: 152 136
+:geoo/abstract/hatch.H: 432 136 r
+
+:geoo/abstract/goal.G: 112 112
+
+:matt/underworld/thinplatform64: 96 160
+:matt/underworld/thinplatform64: 160 160
+:matt/underworld/thinplatform64: 224 160
+:matt/underworld/thinplatform64: 288 160
+:matt/underworld/thinplatform64: 352 160
+:matt/underworld/thinplatform64: 384 160

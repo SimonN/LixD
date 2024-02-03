@@ -1,0 +1,193 @@
+$BUILT 2023-01-09 00:55:14
+$AUTHOR geoo
+$ENGLISH The Last Shall Be First
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 608
+#SIZE_Y 432
+
+#INITIAL 12
+#REQUIRED 1
+#SPAWN_INTERVAL 8
+
+#RUNNER 12
+#CLIMBER 3
+#EXPLODER 4
+#JUMPER 2
+
+:geoo/construction/Hatch.H: 560 64 r
+:geoo/construction/Hatch.H: 96 48 r
+:geoo/construction/Hatch.H: 208 0
+:geoo/construction/Hatch.H: 64 336
+
+:simon/tapir/goal.G: 544 352
+
+:amanda/forest/frog_happy.T: 352 112
+:amanda/forest/frog_catch.T: 352 352
+:amanda/forest/frog.T: 288 208
+:amanda/forest/frog_catch.T: 160 208
+:amanda/forest/frog_happy.T: 512 352
+:amanda/forest/frog_catch.T: 432 352
+
+:matt/marble/thinplatform128p: 320 160
+:matt/marble/thinplatform128p: 224 112
+:matt/marble/thinplatform128p: 128 64
+:matt/marble/04: 416 128
+:matt/marble/04a: 448 128
+:matt/marble/04b: 480 128
+:matt/marble/04c: 512 128
+:matt/marble/04: 416 160
+:matt/marble/04: 544 128
+:matt/marble/04a: 576 128
+:matt/marble/04a: 320 160
+:matt/marble/04b: 352 160
+:matt/marble/04c: 384 160
+:matt/marble/04b: 224 112
+:matt/marble/04c: 256 112
+:matt/marble/04: 288 112
+:matt/marble/04a: 320 112
+:matt/marble/04: 160 64
+:matt/marble/04a: 192 64
+:matt/marble/04b: 224 64
+:matt/marble/04c: 128 64
+:matt/marble/04: 416 112
+:matt/marble/04b: 480 144
+:matt/marble/04b: 480 160
+:matt/marble/04b: 480 176
+:matt/marble/04b: 480 192
+:matt/marble/04b: 480 208
+:matt/marble/04: 416 208
+:matt/marble/04a: 320 208
+:matt/marble/04b: 352 208
+:matt/marble/04c: 384 208
+:matt/marble/04a: 448 208
+:matt/marble/04: 288 208
+:matt/marble/04a: 192 256
+:matt/marble/04b: 224 256
+:matt/marble/04c: 256 208
+:matt/marble/04: 160 256
+:matt/marble/04c: 128 256
+:matt/marble/04a: 64 112
+:matt/marble/04b: 96 112
+:matt/marble/04c: 128 112
+:matt/marble/04: 32 112
+:matt/marble/thinplatform128p: 128 160
+:matt/marble/04: 160 160
+:matt/marble/04a: 192 160
+:matt/marble/04b: 224 160
+:matt/marble/04c: 128 160
+:matt/marble/04a: 64 208
+:matt/marble/04b: 96 208
+:matt/marble/04c: 128 208
+:matt/marble/04: 32 208
+:matt/marble/04c: 0 64
+:matt/marble/04c: 0 256
+:matt/marble/04c: 0 112
+:matt/marble/04c: 0 160
+:matt/marble/04c: 0 208
+:matt/marble/04c: 0 48
+:matt/marble/04c: 0 240
+:matt/marble/04c: 0 96
+:matt/marble/04c: 0 144
+:matt/marble/04c: 0 192
+:matt/marble/04c: 0 32
+:matt/marble/04c: 0 224
+:matt/marble/04c: 0 80
+:matt/marble/04c: 0 128
+:matt/marble/04c: 0 176
+:matt/marble/04b: 224 128
+:matt/marble/04b: 224 144
+:matt/marble/04a: 64 320
+:matt/marble/04b: 96 320
+:matt/marble/04: 32 320
+:matt/marble/04c: 0 304
+:matt/marble/04c: 0 288
+:matt/marble/04c: 0 272
+:matt/marble/04a: 448 64
+:matt/marble/04b: 480 64
+:matt/marble/04c: 512 64
+:matt/marble/04a: 320 256
+:matt/marble/04: 288 256
+:matt/marble/04c: 256 256
+:matt/marble/04a: 192 416
+:matt/marble/04b: 224 416
+:matt/marble/04: 160 416
+:matt/marble/04c: 128 416
+:matt/marble/04c: 256 320
+:matt/marble/04: 288 416
+:matt/marble/04a: 64 416
+:matt/marble/04b: 96 416
+:matt/marble/04: 32 416
+:matt/marble/04c: 0 416
+:matt/marble/04c: 256 416
+:matt/marble/04c: 0 320
+:matt/marble/04c: 0 336
+:matt/marble/04c: 0 352
+:matt/marble/04c: 0 400
+:matt/marble/04a: 320 416
+:matt/marble/04b: 608 416
+:matt/marble/04: 544 208
+:matt/marble/04c: 512 208
+:matt/marble/04a: 576 208
+:matt/marble/04a: 576 400
+:matt/marble/04b: 608 384
+:matt/marble/04b: 608 400
+:matt/marble/04b: 624 368
+:matt/marble/04b: 624 384
+:matt/marble/04b: 624 400
+:matt/marble/04: 544 400
+:matt/marble/04c: 384 400
+:matt/marble/04c: 0 16
+:matt/marble/04c: 0 0
+:matt/marble/04b: 480 416
+:matt/marble/04: 416 416
+:matt/marble/04c: 384 416
+:matt/marble/04: 544 416
+:matt/marble/04b: 352 416
+:matt/marble/04c: 512 416
+:matt/marble/04a: 576 416
+:matt/marble/04a: 448 416
+:matt/marble/04c: 0 368
+:matt/marble/04c: 0 384
+:matt/marble/04c: 256 336
+:matt/marble/04c: 256 352
+:matt/marble/04c: 256 368
+:matt/marble/04c: 256 384
+:matt/marble/04: 288 400
+:matt/marble/04b: 224 336
+:matt/marble/04b: 352 400
+:matt/marble/04a: 448 400
+:matt/marble/04c: 512 400
+:matt/marble/04a: 192 336
+:matt/marble/04c: 256 304
+:matt/marble/04c: 256 288
+:matt/marble/04b: 224 288
+:geoo/steel/32x16o.S: 224 256
+:geoo/steel/32x16o.S: 256 256
+:geoo/steel/32x16o.S: 288 256
+:geoo/steel/32x16o.S: 320 256
+:geoo/steel/32x16o.S: 192 256
+:geoo/steel/32x16o.S: 160 256
+:geoo/steel/32x16o.S: 128 256
+:geoo/steel/dark_32x16o.S: 160 256
+:geoo/steel/dark_32x16o.S: 224 256
+:geoo/steel/dark_32x16o.S: 288 256
+:geoo/steel/dark_32x16o.S: 416 128
+:geoo/steel/dark_32x16o.S: 480 128
+:geoo/steel/dark_32x16o.S: 544 128
+:geoo/steel/32x16o.S: 448 128
+:geoo/steel/32x16o.S: 512 128
+:geoo/steel/dark_32x16o.S: 32 208
+:geoo/steel/dark_32x16o.S: 96 208
+:geoo/steel/32x16o.S: 128 208
+:geoo/steel/32x16o.S: 64 208
+:geoo/steel/dark_32x16o.S: 160 64
+:geoo/steel/dark_32x16o.S: 224 64
+:geoo/steel/32x16o.S: 192 64
+:geoo/steel/32x16o.S: 128 64
+:geoo/steel/dark_32x16o.S: 416 160
+:geoo/steel/32x16o.S: 576 128
+:geoo/steel/dark_32x16o.S: 352 160
+:geoo/steel/32x16o.S: 320 160
+:geoo/steel/32x16o.S: 384 160
+:geoo/steel/dark_32x16o.S: 416 112

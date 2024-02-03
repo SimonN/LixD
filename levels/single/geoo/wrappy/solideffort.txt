@@ -1,0 +1,69 @@
+$BUILT 2024-02-26 13:16:16
+$AUTHOR geoo
+$ENGLISH Solid Effort
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 276
+#SIZE_Y 224
+#TORUS_X 0
+#TORUS_Y 1
+
+#INITIAL 15
+#REQUIRED 15
+#SPAWN_INTERVAL 12
+
+#CLIMBER -1
+#FLOATER 1
+#BUILDER 2
+#PLATFORMER 2
+#DIGGER 1
+#JUMPER 2
+#EXPLODER2 0
+
+:geoo/sandstone/fennec.H: 124 112
+
+:simon/tapir/goal.G: 116 0
+
+:geoo/construction/Laser_hz_64.F: 116 216
+:geoo/construction/Laseremit_hzl_16.F: 116 216
+:geoo/construction/Laseremit_hzr_16.F: 164 216
+:geoo/construction/Laseremit_hzl_16.F: 68 88
+:geoo/construction/Laseremit_hzr_16.F: 96 88
+:geoo/construction/Laser_hz_16.F: 84 88
+
+:simon/tapir/016h: 148 176
+:simon/tapir/016h: 116 176
+:simon/tapir/016h: 116 48
+:simon/tapir/016h: 148 48
+:simon/tapir/032v: 32 208
+:simon/tapir/016hb: 32 176
+:simon/tapir/016hd: 32 160
+:simon/tapir/016h: 32 192
+:simon/tapir/016h: 32 144
+:simon/tapir/016hb: 148 80
+:simon/tapir/016hd: 148 64
+:simon/tapir/016ha: 116 80
+:simon/tapir/016hc: 116 64
+:simon/tapir/032b: 32 112
+:simon/tapir/032a: 32 80
+:simon/tapir/032d: 32 48
+:geoo/steel/32x16o.S: 116 176
+:geoo/steel/32x16o.S: 148 176
+$BEGIN_TILE_GROUP 0
+:simon/tapir/032: 0 0
+:simon/tapir/032: 0 16 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:simon/tapir/032: 0 8
+:Group-0: 0 0
+$END_TILE_GROUP
+:Group-1: 212 152
+:Group-1: 180 152
+:geoo/steel/32x64o.S: 244 96
+:geoo/steel/32x64o.S: 244 192
+:geoo/steel/32x64o.S: 244 32
+:geoo/steel/32x32o.S: 244 160
+:geoo/steel/32x64o.S: 0 96
+:geoo/steel/32x64o.S: 0 192
+:geoo/steel/32x64o.S: 0 32
+:geoo/steel/32x32o.S: 0 160

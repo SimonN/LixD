@@ -1,0 +1,80 @@
+$BUILT 2024-02-10 11:19:19
+$AUTHOR geoo
+$ENGLISH Threefold
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 384
+#SIZE_Y 256
+
+#INITIAL 40
+#REQUIRED 39
+#SPAWN_INTERVAL 4
+
+#MINER 2
+#EXPLODER 0
+
+:simon/oriental/hatch.H: 160 -16
+
+:simon/oriental/goal.G: 304 110
+
+:geoo/construction/factory.T: 256 126
+
+:simon/water.W: 224 224
+:simon/water.W: 272 224
+:simon/water.W: 320 224
+:simon/water.W: 368 224
+
+:amanda/forest/stone_01: -46 102 r
+:simon/oriental/pebbles5: 110 118
+:simon/oriental/branch6: 194 130 frr
+:simon/oriental/bush2: 168 116
+:simon/oriental/pebbles5: 174 120 rr
+:simon/oriental/pebbles5: 56 96 f
+:simon/oriental/leaf6: 88 116 rr
+:simon/oriental/pebbles6: 36 88
+:simon/oriental/pebbles5: 4 72 f
+:simon/oriental/02b: 0 0
+:simon/oriental/02b: 352 0
+:simon/oriental/branch3: -3 119 r
+:simon/oriental/leaf3: 22 86 rrr
+:simon/oriental/pebbles6: -24 70
+:simon/oriental/gate: 232 192
+:simon/oriental/gate: 254 192
+:matt/underworld/thinplatform128: 0 48
+:matt/underworld/thinplatform128: 128 48
+:matt/underworld/thinplatform128: 256 48
+:geoo/construction/platform.S: 246 190
+:geoo/construction/platform.S: 278 190
+:geoo/construction/platform.S: 308 190
+:geoo/construction/platform.S: 336 190
+:matt/beach/nighttime/04: 32 174 r
+:simon/oriental/leaf3: 86 186
+:simon/oriental/branch4: 202 190
+:simon/oriental/pebbles5: 176 176 fr
+:simon/oriental/pebbles6: 168 224 r
+:matt/beach/decor/grass06: 158 230
+:simon/oriental/leaf5: 163 143 rrr
+:simon/oriental/leaf1: 194 190 rr
+:simon/oriental/pebbles6: 160 144 r
+:simon/oriental/pebbles5: 82 134 f
+:simon/oriental/leaf2: 132 186
+:simon/oriental/leaf1: 118 154
+:simon/oriental/pebbles5: 102 160 frr
+:simon/oriental/leaf5: 32 152 frr
+:simon/oriental/pebbles5: 8 160 frr
+:simon/oriental/pebbles5: -7 203 frrr
+:matt/beach/decor/grass11: 22 226
+:simon/oriental/pebbles6: -16 172 r
+:simon/oriental/pebbles6: 48 126
+:simon/oriental/pebbles1: 98 218
+:simon/oriental/pebbles2: 126 244
+:simon/oriental/pebbles4: 58 242
+:simon/oriental/leaf2: -22 174 fr
+:geoo/construction/platformbrick: 140 48
+:geoo/construction/platformbrick: 172 48
+:geoo/construction/platformbrick: 204 48
+:geoo/construction/platformbrick: 212 48
+:matt/marble/thinplatform128p: 244 48
+:matt/marble/thinplatform128p: 256 48
+:matt/marble/thinplatform128p: 12 48
+:matt/marble/thinplatform128p: 0 48

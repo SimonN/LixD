@@ -1,0 +1,45 @@
+$BUILT 2024-02-10 09:19:46
+$AUTHOR geoo
+$ENGLISH Three Lane Highway
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 192
+#SIZE_Y 368
+#TORUS_X 1
+#TORUS_Y 0
+
+#INITIAL 80
+#REQUIRED 78
+#SPAWN_INTERVAL 2
+
+#WALKER 1
+#FLOATER 2
+#EXPLODER 2
+#BLOCKER 1
+#BUILDER 3
+#DIGGER 2
+#JUMPER 1
+#BATTER 1
+
+:matt/marble/Hatch.H: 0 0
+:matt/marble/Hatch.H: 64 0
+:matt/marble/Hatch.H: 128 0
+
+:matt/marble/Goal.G: 56 322
+
+:raymanni/gore/eater.T: 24 306
+
+:geoo/construction/Laser_hz_64.F: 40 300
+:geoo/construction/Laseremit_hzr_16.F: 88 300
+:geoo/construction/Laseremit_hzl_16.F: 40 300
+:geoo/construction/Laseremit_hzr_16.F: 104 334
+
+:matt/marble/thinplatform128p: 0 64
+:matt/marble/thinplatform128p: 0 208
+:matt/marble/thinplatform128p: 0 366
+:amanda/steel/steel24x8.S: 40 338
+:amanda/steel/steel24x8.S: 80 338
+:matt/marble/thinplatform128p: 128 64
+:matt/marble/thinplatform128p: 128 208
+:matt/marble/thinplatform128p: 128 366
+:amanda/steel/steel8x16.S: 64 338 fr

@@ -1,0 +1,58 @@
+$BUILT 2024-01-24 17:50:23
+$AUTHOR geoo
+$ENGLISH One Direction
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 704
+#SIZE_Y 288
+
+#INITIAL 25
+#REQUIRED 24
+#SPAWN_INTERVAL 16
+
+#MINER 2
+#EXPLODER2 0
+
+:geoo/construction/Hatch.H: 128 0
+
+:geoo/construction/Goal2.G: 0 128
+
+:geoo/construction/wall/big_128x64: 64 64
+:geoo/construction/wall/big_128x64: 192 64
+$BEGIN_TILE_GROUP 0
+:geoo/construction/stairs_rd_32.S: 0 0
+:geoo/construction/stairs_rd_32.S: 64 32
+$END_TILE_GROUP
+:Group-0: 64 64
+:Group-0: 136 64
+:geoo/construction/wall/big_128x64: 320 64
+:Group-0: 280 64
+:geoo/construction/wall/big_128x64: 448 64
+:Group-0: 424 64
+:geoo/construction/wall/big_128x64: 576 64
+:Group-0: 568 64
+:Group-0: 208 64
+:Group-0: 352 64
+:Group-0: 496 64
+:Group-0: 640 64
+:geoo/construction/wall/big_128x64: 640 0
+:Group-0: 568 64
+:Group-0: 584 0
+:Group-0: 656 0
+:Group-0: 608 48
+:geoo/construction/wall/big_128x64: 512 0 d
+:geoo/construction/wall/big_128x64: -64 64
+:geoo/construction/stairs_rd_32.S: 48 96
+:geoo/construction/wall/big_128x64: -64 0
+:Group-0: -8 64
+:Group-0: -80 64
+:Group-0: 8 0
+:Group-0: 8 0
+:Group-0: -64 0
+:geoo/construction/wall/big_128x64: 64 0 d
+:geoo/construction/wall/big_128x128: 0 192
+:geoo/construction/wall/big_128x128: 128 192
+:geoo/construction/wall/big_128x128: 256 192
+:geoo/construction/wall/big_128x128: 384 192
+:geoo/construction/wall/big_128x128: 512 192
+:geoo/construction/wall/big_128x128: 640 192

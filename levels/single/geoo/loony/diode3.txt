@@ -1,0 +1,34 @@
+$BUILT 2024-02-14 21:53:30
+$AUTHOR geoo
+$ENGLISH Diode (Part 3)
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 576
+#SIZE_Y 288
+
+#INITIAL 20
+#REQUIRED 19
+#SPAWN_INTERVAL 12
+
+#DIGGER 1
+#CUBER 1
+#EXPLODER 0
+
+:geoo/abstract/hatch.H: 152 112
+:geoo/abstract/hatch.H: 432 144 r
+
+:geoo/abstract/goal.G: 112 112
+
+:geoo/abstract/pipes/central0: 96 160
+:geoo/abstract/pipes/central0: 128 160
+:geoo/abstract/pipes/central0: 160 160
+:geoo/abstract/pipes/central0: 192 160
+:geoo/abstract/pipes/central0: 224 160
+:geoo/abstract/pipes/central0: 256 160
+:geoo/abstract/pipes/central0: 288 160
+:geoo/abstract/pipes/central0: 320 160
+:geoo/abstract/pipes/central0: 352 160
+:geoo/abstract/pipes/central0: 384 160
+:geoo/abstract/pipes/central0: 416 160
+:geoo/abstract/pipes/endr0: 444 160
+:geoo/abstract/pipes/endr0: 88 160 rr

@@ -1,0 +1,62 @@
+$BUILT 2023-09-23 12:10:08
+$AUTHOR geoo
+$ENGLISH Rainbow Road
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 512
+#SIZE_Y 328
+#TORUS_X 1
+#TORUS_Y 0
+
+#INITIAL 20
+#REQUIRED 17
+#SPAWN_INTERVAL 16
+
+#EXPLODER 3
+
+:geoo/abstract/hatch.H: 480 32
+:geoo/abstract/hatch.H: 224 32 r
+
+:geoo/abstract/goal.G: 224 272
+
+$BEGIN_TILE_GROUP 0
+:geoo/abstract/pipes/cshort0: 0 0
+:geoo/abstract/pipes/cshort1: 8 0
+:geoo/abstract/pipes/cshort2: 16 0
+:geoo/abstract/pipes/cshort3: 24 0
+:geoo/abstract/pipes/cshort4: 32 0
+:geoo/abstract/pipes/cshort5: 40 0
+:geoo/abstract/pipes/cshort6: 48 0
+:geoo/abstract/pipes/cshort7: 56 0
+$END_TILE_GROUP
+:Group-0: 0 80
+:Group-0: 64 80
+:Group-0: 128 80
+:Group-0: 192 80
+:Group-0: 256 80
+:Group-0: 320 80
+:Group-0: 384 80
+:Group-0: 448 80
+:Group-0: 32 144
+:Group-0: 96 144
+:Group-0: 160 144
+:Group-0: 224 144
+:Group-0: 288 144
+:Group-0: 352 144
+:Group-0: 416 144
+:Group-0: 480 144
+:Group-0: 0 208
+:Group-0: 64 208
+:Group-0: 128 208
+:Group-0: 256 208
+:Group-0: 320 208
+:Group-0: 384 208
+:Group-0: 208 320
+$BEGIN_TILE_GROUP 1
+:geoo/abstract/pipes/cshort0: 0 0
+:geoo/abstract/pipes/cshort1: 8 0
+:geoo/abstract/pipes/cshort2: 16 0
+:geoo/abstract/pipes/cshort3: 24 0
+$END_TILE_GROUP
+:Group-1: 192 208
+:Group-1: 448 208

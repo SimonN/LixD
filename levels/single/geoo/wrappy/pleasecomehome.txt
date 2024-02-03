@@ -1,0 +1,89 @@
+$BUILT 2024-02-08 18:29:53
+$AUTHOR geoo
+$ENGLISH Please Come Home
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 384
+#SIZE_Y 192
+#TORUS_X 1
+#TORUS_Y 1
+
+#INITIAL 40
+#REQUIRED 39
+#SPAWN_INTERVAL 7
+
+#EXPLODER 1
+#PLATFORMER 1
+#BASHER 1
+#MINER 1
+
+:amanda/forest/hatch.H: 110 46
+
+:simon/tapir/goal.G: 64 160
+
+:geoo/sandstone/brazier.F: 160 136
+:geoo/sandstone/brazier.F: 128 136
+:geoo/sandstone/brazier.F: 96 136
+:geoo/sandstone/brazier.F: 64 136
+:geoo/sandstone/brazier.F: 32 136
+:geoo/sandstone/brazier.F: 0 136
+
+:amanda/forest/stone_01: 16 6 rrr
+:amanda/forest/stone_01: 325 151 rrr
+$BEGIN_TILE_GROUP 0
+:amanda/forest/stone_00: 0 0
+:matt/underworld/thinplatform8: 23 59 d
+$END_TILE_GROUP
+:Group-0: 8 0 rrr
+:amanda/forest/leaves_05: 2 157
+:amanda/forest/bark_01: 124 164 r
+:amanda/forest/bark_01: 48 164 r
+:amanda/forest/bark_01: 64 168 r
+:amanda/forest/stone_02: 168 49
+:amanda/forest/stone_01: 118 168 r
+:geoo/steel/16x16o.S: 112 176
+:geoo/steel/16x16o.S: 64 176
+:amanda/forest/bark_02: 382 166 rr
+:amanda/forest/leaves_05: 350 176
+$BEGIN_TILE_GROUP 1
+:amanda/forest/bark_02: 10 2 rrr
+:amanda/forest/stone_02: 0 0 d
+$END_TILE_GROUP
+:Group-1: 16 171
+:geoo/steel/32x16o.S: 0 176
+:geoo/steel/32x16o.S: 32 176
+:geoo/steel/32x16o.S: 128 176
+:geoo/steel/32x16o.S: 160 176
+:amanda/forest/stone_02: 340 14
+:amanda/forest/moss_00: 368 14
+:amanda/forest/moss_00: 84 106
+:amanda/forest/stone_01: 14 42 r
+:geoo/steel/32x16o.S: 48 0
+:geoo/steel/32x16o.S: 64 16
+:geoo/steel/32x16o.S: 112 0
+:geoo/steel/32x16o.S: 96 16
+:amanda/forest/stone_00: 205 104
+:amanda/forest/stone_02: 186 154
+:amanda/forest/leaves_05: 104 92
+$BEGIN_TILE_GROUP 2
+:amanda/forest/bark_02: 0 0 frr
+:matt/carnival/33: 8 18 d
+$END_TILE_GROUP
+:Group-2: 125 80
+:amanda/forest/stone_00: 248 172
+:amanda/forest/stone_01: 281 146
+:amanda/forest/stone_02: 244 106
+:amanda/forest/stone_01: 218 6
+:amanda/forest/stone_01: 268 46 r
+:amanda/forest/rope: 142 84 d
+:geoo/steel/32x16o.S: 368 145 d
+$BEGIN_TILE_GROUP 3
+:matt/underworld/thinplatform16: 10 1
+:matt/underworld/thinplatform16: 0 2 d
+:matt/underworld/thinplatform16: 20 0 d
+$END_TILE_GROUP
+:Group-3: 272 176
+:Group-0: 307 118
+:amanda/forest/rope: 15 154 rd
+:amanda/forest/rope: 28 155 rd
+:geoo/abstract/cvblocks/020: 362 146 d

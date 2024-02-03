@@ -1,0 +1,77 @@
+$BUILT 2023-09-20 00:28:26
+$AUTHOR geoo
+$ENGLISH Downward Reduction Solitaire
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 448
+#SIZE_Y 384
+
+#INITIAL 150
+#REQUIRED 146
+#SPAWN_INTERVAL 2
+
+#MINER 5
+#EXPLODER2 0
+
+:geoo/sandstone/fennec.H: 200 0
+
+:geoo/sandstone/Goal.G: 192 288
+
+:geoo/sandstone/64x32: 32 80
+:geoo/sandstone/64x32: 96 80
+:geoo/sandstone/64x32: 160 80
+:geoo/sandstone/64x32: 224 80
+:geoo/sandstone/64x32: 352 80
+:geoo/sandstone/64x32: 64 112
+:geoo/sandstone/64x32: 128 112
+:geoo/sandstone/64x32: 192 112
+:geoo/sandstone/64x32: 320 112
+:geoo/sandstone/64x32: 32 144
+:geoo/sandstone/64x32: 96 144
+:geoo/sandstone/64x32: 160 144
+:geoo/sandstone/64x32: 224 144
+:geoo/sandstone/64x32: 352 144
+:geoo/sandstone/64x32: 64 176
+:geoo/sandstone/64x32: 128 176
+:geoo/sandstone/64x32: 192 176
+:geoo/sandstone/64x32: 320 176
+:geoo/sandstone/64x32: 32 208
+:geoo/sandstone/64x32: 96 208
+:geoo/sandstone/64x32: 160 208
+:geoo/sandstone/64x32: 224 208
+:geoo/sandstone/64x32: 352 208
+:geoo/sandstone/64x32: 64 240
+:geoo/sandstone/64x32: 128 240
+:geoo/sandstone/64x32: 192 240
+:geoo/sandstone/64x32: 320 240
+:geoo/sandstone/32x32: 32 112
+:geoo/sandstone/32x32: 32 176
+:geoo/sandstone/32x32: 32 240
+:geoo/sandstone/32x32: 384 112
+:geoo/sandstone/32x32: 384 176
+:geoo/sandstone/32x32: 384 240
+:geoo/steel/64x32o.S: 128 352
+:geoo/steel/32x32o.S: 112 320
+:geoo/steel/32x32o.S: 304 320
+:geoo/steel/64x32o.S: 256 352
+:geoo/sandstone/pillar_bottom_ext: 352 64
+:geoo/sandstone/pillar_bottom_ext: 32 64
+:geoo/sandstone/pillar_bottom: 48 32
+:geoo/sandstone/pillar_bottom: 368 32
+:geoo/sandstone/pillar_32: 48 0
+:geoo/sandstone/pillar_32: 368 0
+:geoo/sandstone/64x32: 288 80
+:geoo/sandstone/64x32: 256 112
+:geoo/sandstone/64x32: 288 144
+:geoo/sandstone/64x32: 256 176
+:geoo/sandstone/64x32: 288 208
+:geoo/sandstone/64x32: 256 240
+:geoo/sandstone/pillar_top_ext: 352 272
+:geoo/sandstone/pillar_top_ext: 32 272
+:geoo/sandstone/pillar_top: 368 288
+:geoo/sandstone/pillar_top: 48 288
+:geoo/sandstone/pillar_32: 48 320
+:geoo/sandstone/pillar_32: 48 352
+:geoo/sandstone/pillar_32: 368 320
+:geoo/sandstone/pillar_32: 368 352
+:geoo/steel/64x32o.S: 192 352

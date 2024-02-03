@@ -1,0 +1,41 @@
+$BUILT 2024-02-14 22:04:28
+$AUTHOR geoo
+$ENGLISH Ledge
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 576
+#SIZE_Y 288
+
+#INITIAL 20
+#REQUIRED 16
+#SPAWN_INTERVAL 12
+
+#EXPLODER 2
+#BATTER 1
+#CUBER 2
+
+:geoo/abstract/hatch.H: 158 136
+:geoo/abstract/hatch.H: 418 160 r
+
+:geoo/abstract/goal.G: 118 112
+
+$BEGIN_TILE_GROUP 0
+:geoo/abstract/pipes/central6: 8 0
+:geoo/abstract/pipes/central6: 40 0
+:geoo/abstract/pipes/central6: 72 0
+:geoo/abstract/pipes/central6: 104 0
+:geoo/abstract/pipes/central6: 136 0
+:geoo/abstract/pipes/endr6: 0 0 rr
+:geoo/abstract/pipes/endr6: 164 0
+$END_TILE_GROUP
+:Group-0: 104 160
+$BEGIN_TILE_GROUP 1
+:geoo/abstract/pipes/central6: 8 0
+:geoo/abstract/pipes/central6: 40 0
+:geoo/abstract/pipes/central6: 72 0
+:geoo/abstract/pipes/central6: 104 0
+:geoo/abstract/pipes/central6: 130 0
+:geoo/abstract/pipes/endr6: 0 0 rr
+:geoo/abstract/pipes/endr6: 158 0
+$END_TILE_GROUP
+:Group-1: 270 184

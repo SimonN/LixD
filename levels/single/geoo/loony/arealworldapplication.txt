@@ -1,0 +1,36 @@
+$BUILT 2024-01-27 10:32:32
+$AUTHOR geoo
+$ENGLISH A Real-World Application
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 384
+#SIZE_Y 160
+
+#INITIAL 20
+#REQUIRED 18
+#SPAWN_INTERVAL 8
+
+#EXPLODER 1
+#PLATFORMER 2
+#CUBER 1
+
+:geoo/abstract/hatch.H: 96 32 r
+:geoo/abstract/hatch.H: 160 32 r
+
+:geoo/abstract/goal.G: 296 72
+
+:geoo/abstract/pipes/central4: 40 120
+:geoo/abstract/pipes/central4: 72 120
+:geoo/abstract/pipes/central4: 104 120
+:geoo/abstract/pipes/central4: 136 120
+:geoo/abstract/pipes/corner4: 32 120
+:geoo/abstract/pipes/central4: 32 88 r
+:geoo/abstract/pipes/endr4: 32 48 rrr
+:geoo/abstract/pipes/endr4: 200 120
+:geoo/abstract/pipes/central4: 168 120
+:geoo/abstract/pipes/central4: 280 120
+:geoo/abstract/pipes/endr4: 344 120
+:geoo/abstract/pipes/central4: 312 120
+:geoo/abstract/pipes/endr4: 272 120 rr
+:geoo/abstract/cvblocks/032: 40 88
+:geoo/abstract/pipes/central4: 32 56 r

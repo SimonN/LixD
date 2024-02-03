@@ -1,0 +1,148 @@
+$BUILT 2024-02-03 19:09:00
+$AUTHOR geoo
+$ENGLISH Hanabi
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 336
+
+#INITIAL 40
+#REQUIRED 35
+#SPAWN_INTERVAL 13
+
+#EXPLODER 4
+#BUILDER 3
+#PLATFORMER 1
+#CUBER 1
+
+:geoo/construction/Hatch.H: 272 0
+:geoo/construction/Hatch.H: 80 240
+:geoo/construction/Hatch.H: 208 80
+
+:simon/oriental/goal.G: 544 144
+
+:simon/water.W: 464 296
+:simon/water.W: 416 296
+:simon/water.W: 368 296
+:simon/water.W: 320 296
+
+:simon/oriental/bush2: 184 113 frr
+:simon/oriental/pebbles5: 176 112
+:simon/oriental/leaf1: 180 117 rrr
+:simon/oriental/pebbles2: 424 158 frr
+:simon/oriental/leaf6: 272 195 rr
+:geoo/construction/concrete/008: 287 195 d
+:simon/oriental/pebble3: 287 203 frr
+:simon/oriental/pebbles2: 294 88
+:simon/oriental/pebbles4: 283 81
+:simon/oriental/bush2: 238 62
+:simon/oriental/pebbles3: 261 71 rr
+:simon/oriental/pebbles3: 310 119
+:simon/oriental/pebbles1: 304 102 r
+:simon/oriental/leaf2: 402 58
+:simon/oriental/culm_d_long: 368 46
+:simon/oriental/culm_d_long: 392 38
+:simon/oriental/leaf2: 314 4 rr
+:simon/oriental/leaf3: 382 30 rr
+:simon/oriental/05: 342 20
+:simon/oriental/branch5: 349 86 frr
+:simon/oriental/bush7: 386 76
+:simon/oriental/bush5: 336 77
+:simon/oriental/bush7: 322 86
+:simon/oriental/pebbles5: 330 78 f
+:simon/oriental/bush6: 336 96
+:simon/oriental/pebbles6: 311 82 fr
+:simon/oriental/leaf5: 324 114 rr
+:simon/oriental/bush3: 236 249
+:simon/oriental/leaf5: 291 192
+:simon/oriental/bush5: 293 198
+:simon/oriental/pebbles5: 281 203 frrr
+:simon/oriental/pebbles5: 252 233 frr
+:simon/oriental/pebble1: 278 229 d
+:simon/oriental/pebble3: 177 241 f
+:simon/oriental/pebbles5: 182 248 f
+:simon/oriental/pebbles5: 120 258 frr
+:simon/oriental/pebbles6: 76 275 r
+:simon/oriental/pebbles3: 151 249 f
+:simon/oriental/pebbles2: 166 235 fr
+:simon/oriental/pebble3: 209 243 rrr
+:simon/oriental/pebble3: 145 248 frr
+:simon/oriental/pebble1: 179 234 rr
+:simon/oriental/leaf3: 564 14 frr
+:simon/oriental/leaf2: 535 30 frr
+:simon/oriental/culm_long: 563 14 frr
+:simon/oriental/leaf1: 599 54 frr
+:simon/oriental/culm_long: 595 48 frr
+:simon/oriental/bush1: 583 100 frr
+:simon/oriental/bush7: 559 102 frr
+:simon/oriental/branch2: 594 132 rrr
+:simon/oriental/branch4: 530 134
+:simon/oriental/pebbles3: 512 150
+:simon/oriental/pebbles5: 520 104 rr
+:simon/oriental/leaf4: 548 132
+:simon/oriental/leaf6: 482 60
+:simon/oriental/culm_d_long: 478 50 frr
+:simon/oriental/leaf3: 200 2 r
+:simon/oriental/culm_long: 224 -16
+:simon/oriental/bush1: 198 42
+:simon/oriental/leaf5: 234 -6
+:simon/oriental/culm_long: 230 -40
+:simon/oriental/pebbles5: 194 42
+:simon/oriental/bush7: 176 94
+:simon/oriental/pebbles3: 174 94 r
+:simon/oriental/pebbles4: 288 76 r
+:simon/oriental/bush7: 330 192
+:simon/oriental/leaf1: 350 233 rr
+:simon/oriental/pebbles6: 304 192 rr
+:simon/oriental/bush7: 454 150
+:simon/oriental/leaf5: 454 140
+:simon/oriental/pebbles3: 450 148
+:simon/oriental/branch6: 384 174 frr
+:simon/oriental/bush5: 404 166
+:simon/oriental/pebbles3: 400 166
+:simon/oriental/pebble1: 470 244 rr
+:simon/oriental/bush7: 446 244
+:simon/oriental/branch4: 448 264 rrr
+:simon/oriental/branch3: 454 256 r
+:simon/oriental/pebbles3: 442 244
+:simon/oriental/pebbles6: 500 94 f
+:simon/oriental/gate: 512 224
+:simon/oriental/pebbles5: 572 104 rr
+:simon/oriental/bush2: 600 120
+:simon/oriental/branch1: 106 44 rrr
+:simon/oriental/branch5: 86 74
+:simon/oriental/bonsai: -110 98 frr
+:simon/oriental/earth: -8 272
+:simon/oriental/pebbles6: -18 300
+:simon/oriental/pebbles6: 32 294
+:simon/oriental/08: 576 288
+:simon/oriental/08: 496 288
+:simon/oriental/pebbles6: 152 288 rr
+:simon/oriental/pebbles5: 96 304 f
+:simon/oriental/leaf5: 502 54
+:simon/oriental/leaf1: 588 114
+:simon/oriental/leaf2: 616 128
+:simon/oriental/pebbles3: 602 126 rr
+:simon/oriental/bush5: 524 112
+:simon/oriental/leaf1: 518 118 rrr
+:simon/oriental/pebbles2: 528 116 rr
+:simon/oriental/05: 342 -60
+:simon/oriental/bridge1: 0 -16
+:simon/oriental/bridge1: 64 -48
+:simon/oriental/bridge1: 128 -80
+:simon/oriental/pebbles5: 280 264 fr
+:simon/oriental/pebbles6: 192 280 rr
+:simon/oriental/pebbles5: 216 272 f
+:simon/oriental/pebbles6: 248 296
+:simon/oriental/01: 96 80
+:simon/oriental/bush7: 128 72
+:simon/oriental/bush6: 90 56
+:simon/oriental/bush2: 98 36
+:simon/oriental/leaf4: 225 132
+:simon/oriental/bush5: 202 127
+:simon/oriental/pebbles3: 198 130 rr
+:simon/oriental/pebble1: 342 112
+:simon/oriental/leaf4: 223 68
+:geoo/construction/concrete/008: 272 206 d
+:geoo/construction/concrete/008: 276 215 d
+:geoo/construction/concrete/008: 275 208 d

@@ -1,0 +1,97 @@
+$BUILT 2018-12-02 10:43:27
+$AUTHOR geoo
+$ENGLISH Leavittation
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 228
+#SIZE_Y 400
+
+#INITIAL 15
+#REQUIRED 11
+#SPAWN_INTERVAL 95
+
+#FLOATER 4
+#EXPLODER2 4
+#PLATFORMER 1
+
+:geoo/abstract/hatch.H: 98 56
+
+:geoo/abstract/goal.G: 64 0
+:geoo/abstract/goal.G: 132 0
+
+:geoo/sandstone/pillar_32: 0 368 r
+:geoo/sandstone/pillar_32: 32 368 r
+:geoo/sandstone/pillar_32: 64 368 r
+:geoo/sandstone/pillar_32: 96 368 r
+:geoo/sandstone/pillar_32: 128 368 r
+:geoo/sandstone/pillar_32: 160 368 r
+:geoo/sandstone/pillar_32: 192 368 r
+:geoo/sandstone/pillar_32: 224 368 r
+:geoo/sandstone/pillar_32: 256 368 r
+:geoo/sandstone/slopes/32x16rb: 132 240
+:geoo/sandstone/slopes/32x16lt: 64 256
+:geoo/sandstone/slopes/32x16lb: 64 240
+:geoo/sandstone/slopes/32x16rt: 132 256
+:geoo/sandstone/slopes/32x32lt: 64 48
+:geoo/sandstone/slopes/32x32lt: 64 304
+:geoo/sandstone/slopes/32x16rb: 132 112
+:geoo/sandstone/slopes/32x16lt: 64 128
+:geoo/sandstone/slopes/32x16lb: 64 112
+:geoo/sandstone/slopes/32x16rt: 132 128
+:geoo/sandstone/slopes/32x32rt: 132 304
+:geoo/sandstone/slopes/32x32rt: 132 48
+:geoo/sandstone/slopes/32x32lb: 64 176
+:geoo/sandstone/slopes/32x32rb: 132 176
+:geoo/sandstone/slopes/32x32rb: 164 336
+:geoo/sandstone/slopes/32x32rb: 164 272
+:geoo/sandstone/slopes/32x32rb: 164 208
+:geoo/sandstone/slopes/32x32rb: 164 144
+:geoo/sandstone/slopes/32x32rb: 164 80
+:geoo/sandstone/slopes/32x32lb: 164 304
+:geoo/sandstone/slopes/32x32lb: 164 240
+:geoo/sandstone/slopes/32x32lb: 164 176
+:geoo/sandstone/slopes/32x32lb: 164 112
+:geoo/sandstone/slopes/32x32lb: 164 48
+:geoo/sandstone/slopes/32x32rb: 32 304
+:geoo/sandstone/slopes/32x32rb: 32 240
+:geoo/sandstone/slopes/32x32rb: 32 176
+:geoo/sandstone/slopes/32x32rb: 32 112
+:geoo/sandstone/slopes/32x32rb: 32 48
+:geoo/sandstone/slopes/32x32lb: 32 272
+:geoo/sandstone/slopes/32x32lb: 32 208
+:geoo/sandstone/slopes/32x32lb: 32 144
+:geoo/sandstone/slopes/32x32lb: 32 80
+:geoo/sandstone/slopes/32x32lb: 32 336
+:geoo/sandstone/pillar_32: 0 32
+:geoo/sandstone/pillar_32: 0 64
+:geoo/sandstone/pillar_32: 0 96
+:geoo/sandstone/pillar_32: 0 128
+:geoo/sandstone/pillar_32: 0 160
+:geoo/sandstone/pillar_32: 0 192
+:geoo/sandstone/pillar_32: 0 224
+:geoo/sandstone/pillar_32: 0 256
+:geoo/sandstone/pillar_32: 0 288
+:geoo/sandstone/pillar_32: 0 320
+:geoo/sandstone/pillar_32: 0 352
+:geoo/sandstone/pillar_32: 0 368
+:geoo/sandstone/pillar_top_jaggedr: 0 16
+:geoo/sandstone/pillar_32: 196 32
+:geoo/sandstone/pillar_32: 196 64
+:geoo/sandstone/pillar_32: 196 96
+:geoo/sandstone/pillar_32: 196 128
+:geoo/sandstone/pillar_32: 196 160
+:geoo/sandstone/pillar_32: 196 192
+:geoo/sandstone/pillar_32: 196 224
+:geoo/sandstone/pillar_32: 196 256
+:geoo/sandstone/pillar_32: 196 288
+:geoo/sandstone/pillar_32: 196 320
+:geoo/sandstone/pillar_32: 196 352
+:geoo/sandstone/pillar_top_jaggedr: 196 16
+:geoo/sandstone/pillar_top_jaggedl: 196 105 f
+:geoo/sandstone/pillar_top_jaggedr: 196 242
+:geoo/sandstone/pillar_32: 196 370
+:geoo/sandstone/pillar_top_jaggedl: 14 368 fr
+:geoo/sandstone/pillar_32: 196 368 r
+:geoo/sandstone/pillar_top_jaggedr: 0 162
+:geoo/sandstone/pillar_top_jaggedl: 0 292 f
+:geoo/sandstone/pillar_top_jaggedr: 0 210

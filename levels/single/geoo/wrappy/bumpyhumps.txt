@@ -1,0 +1,76 @@
+$BUILT 2023-09-26 18:53:51
+$AUTHOR geoo
+$ENGLISH Bumpy Humps
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 512
+#SIZE_Y 272
+#TORUS_X 1
+#TORUS_Y 0
+
+#INITIAL 60
+#REQUIRED 59
+#SPAWN_INTERVAL 4
+
+#PLATFORMER 2
+#BASHER 1
+#MINER 1
+#EXPLODER2 0
+
+:geoo/abstract/hatch.H: 112 48
+:geoo/abstract/hatch.H: 368 48
+:geoo/abstract/hatch.H: 240 176 r
+:geoo/abstract/hatch.H: 496 176 r
+
+:matt/marble/Goal.G: 224 64
+:matt/marble/Goal.G: 480 64
+
+:geoo/construction/Laser_hz_64.F: 160 112
+:geoo/construction/Laser_hz_64.F: 288 112
+:geoo/construction/Laseremit_hzl_16.F: 160 112
+:geoo/construction/Laseremit_hzr_16.F: 336 112
+:geoo/construction/Laser_hz_64.F: 416 112
+:geoo/construction/Laser_hz_64.F: 32 112
+:geoo/construction/Laseremit_hzl_16.F: 416 112
+:geoo/construction/Laseremit_hzr_16.F: 80 112
+
+:matt/marble/08a: 0 240
+:matt/marble/08a: 64 240
+:matt/marble/08a: 128 240
+:matt/marble/08a: 192 240
+:matt/marble/08a: 160 208
+:matt/marble/08a: 96 208
+:matt/marble/08a: 32 208
+:matt/marble/08a: 64 176
+:matt/marble/08a: 128 176
+:matt/marble/08a: 96 144
+:matt/marble/08d: 256 240
+:matt/marble/08d: 320 240
+:matt/marble/08d: 384 240
+:matt/marble/08d: 448 240
+:matt/marble/08d: 416 208
+:matt/marble/08d: 352 208
+:matt/marble/08d: 288 208
+:matt/marble/08d: 320 176
+:matt/marble/08d: 384 176
+:matt/marble/08d: 352 144
+:matt/marble/14d: 320 144
+:matt/marble/14d: 288 176
+:matt/marble/14d: 256 208
+:matt/marble/16d: 416 144
+:matt/marble/16d: 448 176
+:matt/marble/16d: 480 208
+:matt/marble/14a: 0 208
+:matt/marble/14a: 32 176
+:matt/marble/14a: 64 144
+:matt/marble/16a: 160 144
+:matt/marble/16a: 192 176
+:matt/marble/16a: 224 208
+:matt/marble/16a: 128 112
+:matt/marble/14a: 96 112
+:matt/marble/14d: 352 112
+:matt/marble/16d: 384 112
+:matt/marble/04e_1: 224 112
+:matt/marble/04e_2: 256 112
+:matt/marble/04e_1: 480 112
+:matt/marble/04e_2: 0 112

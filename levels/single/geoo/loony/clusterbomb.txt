@@ -1,0 +1,58 @@
+$BUILT 2023-08-14 22:31:08
+$AUTHOR geoo
+$ENGLISH Cluster Bomb
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 512
+#SIZE_Y 400
+
+#INITIAL 40
+#REQUIRED 31
+#SPAWN_INTERVAL 4
+
+#RUNNER 1
+#FLOATER 1
+#EXPLODER 3
+#DIGGER 1
+
+:matt/marble/Hatch.H: 160 0
+
+:matt/marble/Goal.G: 0 32
+:matt/marble/Goal.G: 448 288
+
+:amanda/forest/frog.T: 64 32
+:amanda/forest/frog.T: 384 288
+:amanda/forest/frog.T: 128 32
+:amanda/forest/frog.T: 320 288
+
+:matt/marble/09b: 128 144
+:matt/marble/09b: 192 144
+:matt/marble/09b: 256 144
+:matt/marble/09b: 320 144
+:matt/marble/09b: 384 144
+:matt/marble/09b: 64 144
+:matt/marble/09b: 0 144
+:matt/marble/09b: 448 144
+:matt/marble/09b: 128 80
+:matt/marble/09b: 192 80
+:matt/marble/09b: 256 80
+:matt/marble/09b: 320 80
+:matt/marble/09b: 384 80
+:matt/marble/09b: 64 80
+:matt/marble/09b: 0 80
+:matt/marble/09b: 448 80
+:geoo/steel/64x64.S: 64 80
+:matt/marble/09b: 128 336
+:matt/marble/09b: 192 336
+:matt/marble/09b: 256 336
+:matt/marble/09b: 320 336
+:matt/marble/09b: 384 336
+:matt/marble/09b: 64 336
+:matt/marble/09b: 0 336
+:matt/marble/09b: 448 336
+:matt/marble/09b: 384 336
+:geoo/steel/64x64.S: 384 336
+:matt/marble/09b: 128 80
+:geoo/steel/64x64.S: 128 80
+:matt/marble/09b: 320 336
+:geoo/steel/64x64.S: 320 336

@@ -1,0 +1,50 @@
+$BUILT 2024-01-27 10:31:42
+$AUTHOR geoo
+$ENGLISH Out of the Box
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 160
+#SIZE_Y 224
+
+#INITIAL 9
+#REQUIRED 9
+#SPAWN_INTERVAL 40
+
+#CLIMBER 1
+#BUILDER 1
+#PLATFORMER 1
+#DIGGER 1
+#EXPLODER 0
+
+:geoo/abstract/hatch.H: 40 32 r
+
+:geoo/abstract/goal.G: 24 168
+
+:raymanni/crab.T: 88 184
+
+:geoo/abstract/pipes/central2: 24 216
+:geoo/abstract/pipes/endr2: 56 216
+:geoo/abstract/pipes/endr2: 16 216 rr
+:geoo/abstract/pipes/central2: 104 216
+:geoo/abstract/pipes/endr2: 136 216
+:geoo/abstract/pipes/endr2: 96 216 rr
+:geoo/abstract/pipes/endr5: 48 80
+:geoo/abstract/pipes/central5: 16 80
+:geoo/abstract/pipes/corner5: 8 80
+:geoo/abstract/pipes/central5: 8 48 r
+:geoo/abstract/pipes/central5: 8 16 r
+:geoo/abstract/pipes/corner5: 8 8 r
+:geoo/abstract/pipes/central5: 16 8 rr
+:geoo/abstract/pipes/central5: 48 8 rr
+:geoo/abstract/pipes/central5: 80 8 rr
+:geoo/abstract/pipes/central5: 112 8 rr
+:geoo/abstract/pipes/central5: 144 48 r
+:geoo/abstract/pipes/central5: 144 16 r
+:geoo/abstract/pipes/corner5: 144 8 rr
+:geoo/abstract/pipes/corner5: 144 80 rrr
+:geoo/abstract/pipes/central5: 112 80
+:geoo/abstract/pipes/endr5: 104 80 rr
+:geoo/abstract/pipes/endr2: 88 128
+:geoo/abstract/pipes/endr2: 64 128 rr
+:geoo/abstract/pipes/cshort2: 72 128
+:geoo/abstract/pipes/cshort2: 80 128

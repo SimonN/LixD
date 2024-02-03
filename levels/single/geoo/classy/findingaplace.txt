@@ -1,0 +1,121 @@
+$BUILT 2024-02-26 18:28:55
+$AUTHOR geoo
+$ENGLISH Finding a Place to Stay
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 896
+#SIZE_Y 400
+
+#INITIAL 50
+#REQUIRED 48
+#SPAWN_INTERVAL 4
+
+#NOTHING 4
+#CLIMBER 1
+#FLOATER 1
+#EXPLODER 1
+#BLOCKER 2
+#BUILDER 1
+#PLATFORMER 1
+
+:geoo/construction/Hatch.H: 416 112
+
+:geoo/construction/Goal2.G: 768 240
+
+:simon/acid.W: 256 320
+:simon/acid.W: 304 320
+:simon/acid.W: 352 320
+:simon/acid.W: 224 344
+:simon/acid.W: 272 344
+:simon/acid.W: 320 344
+:simon/acid.W: 240 368
+:simon/acid.W: 288 368
+:simon/acid.W: 336 368
+:geoo/construction/Laseremit_hzl_16.F: 368 256
+:geoo/construction/Laseremit_hzl_16.F: 368 240
+:geoo/construction/Laseremit_hzr_16.F: 480 240
+:geoo/construction/Laseremit_hzr_16.F: 480 256
+:geoo/construction/Laser_hz_64.F: 384 240
+:geoo/construction/Laser_hz_64.F: 384 256
+:geoo/construction/Laser_hz_64.F: 416 256
+:geoo/construction/Laser_hz_64.F: 416 240
+:geoo/sandstone/brazier.F: 128 144
+:geoo/sandstone/torch.F: 752 160
+:geoo/sandstone/torch.F: 816 160
+:raymanni/lab/goo_fall.W: 651 339
+:raymanni/lab/goo_fall.W: 651 355
+:simon/acid.W: 608 352
+:simon/acid.W: 656 352
+:raymanni/lab/goo_fall.W: 657 347
+:raymanni/lab/goo_fall.W: 657 363
+:simon/acid.W: 616 360
+:simon/acid.W: 664 360
+
+:geoo/construction/stairsbrick_rd_32: 120 288
+:geoo/construction/wall/big_128x128: 576 16
+:geoo/construction/wall/big_128x128: 576 144
+:geoo/construction/platformbrick: 496 208
+:geoo/construction/platformbrick: 464 208
+:geoo/construction/platformbrick: 368 208
+:geoo/construction/platformbrick: 400 208
+:geoo/construction/platformbrick: 432 208
+:geoo/construction/stairsbrick_rd_8: 344 200
+:geoo/construction/stairsbrick_rd_8: 328 192
+:geoo/construction/squarebrick_large: 496 176
+:geoo/construction/squarebrick_large: 496 144
+:geoo/construction/squarebrick_large: 496 240
+:geoo/construction/squarebrick_large: 336 240
+:geoo/construction/stairsbrick_rd_32: 264 208
+:geoo/construction/platformbrick: 220 256
+:geoo/construction/platformbrick: 188 256
+:geoo/steel/dark_32x48o.S: 182 208
+:geoo/construction/stairsbrick_ru_32: 120 256
+:geoo/steel/dark_32x32o.S: 496 176
+:geoo/construction/wall/big_128x128: 352 304
+:geoo/construction/wall/big_128x128: 480 304
+:geoo/construction/wall/big_128x128: 704 304
+:geoo/construction/wall/big_128x128: 768 304
+:geoo/construction/stairsbrick_rd_32: 152 304
+:geoo/construction/platformbrick: 254 304
+:geoo/construction/wall/big_128x128: 128 336
+:geoo/construction/wall/big_128x128: 0 336
+:geoo/construction/wall/big_128x128: 0 208
+:geoo/construction/wall/big_128x128: 0 80
+:geoo/construction/wall/big_diag_td: 608 304
+:geoo/construction/rod_steel/straight32.S: 664 336 rrr
+$BEGIN_TILE_GROUP 0
+:geoo/construction/rod_steel/edge_ld.S: 7 0
+:geoo/construction/concrete/016d: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:geoo/construction/rod_steel/link_dd_h.S: 0 0 f
+:Group-0: 9 2
+$END_TILE_GROUP
+:Group-1: 657 342
+:geoo/construction/rod_steel/link_h_dd.S: 663 363 rr
+:geoo/construction/wall/big_brick2: 576 336
+:geoo/construction/wall/big_diag_bu: 608 368
+:geoo/construction/wall/big_diag_bd: 672 368
+:geoo/construction/wall/big_128x128: 576 -112
+:geoo/construction/wall/big_brick1: 576 208 rrrd
+:geoo/construction/wall/big_brick1: 576 144 rrrd
+:geoo/construction/wall/big_brick1: 576 80 rrrd
+:geoo/construction/wall/big_brick1: 592 16 rrrd
+:geoo/construction/wall/big_brick1: 592 -48 rrrd
+:geoo/construction/wall/big_128x128: 0 -48
+:geoo/construction/stairsbrick_rd_32: 248 200
+:geoo/construction/wall/big_brickdiag_bu: 96 176
+:geoo/construction/wall/small_diag_td: 240 320
+:geoo/construction/wall/big_128x128: 128 -48
+:geoo/construction/wall/big_128x128: 256 -48
+:geoo/construction/wall/big_128x128: 384 -48
+:geoo/construction/wall/big_128x128: 512 -48
+:geoo/construction/wall/big_128x128: 704 -48
+:geoo/construction/wall/big_128x128: 832 -48
+:geoo/construction/wall/big_diag_tu: 672 304
+:geoo/construction/wall/big_brick2: 672 336
+$BEGIN_TILE_GROUP 2
+:geoo/construction/rod_steel/link_dd_h.S: 0 0 f
+:Group-0: 15 2
+$END_TILE_GROUP
+:Group-2: 651 335

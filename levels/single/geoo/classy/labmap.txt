@@ -1,0 +1,220 @@
+$BUILT 2023-02-14 22:00:39
+$AUTHOR geoo
+$ENGLISH Lab Map
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 512
+#SIZE_Y 640
+#BACKGROUND_RED 12
+#BACKGROUND_GREEN 32
+#BACKGROUND_BLUE 0
+
+#INITIAL 40
+#REQUIRED 38
+#SPAWN_INTERVAL 6
+
+#CLIMBER 1
+#EXPLODER 1
+#BUILDER 1
+#PLATFORMER 1
+#BASHER 1
+#DIGGER 1
+#CUBER 1
+
+:raymanni/lab/hatch.H: 144 128 r
+
+:raymanni/lab/goal.G: 464 512
+
+:raymanni/lab/goo.W: 288 608
+:raymanni/lab/goo.W: 320 608
+:raymanni/lab/goo.W: 32 608
+:raymanni/lab/goo.W: 64 608
+:raymanni/lab/goo_fall.W: 17 610
+:raymanni/lab/goo.W: 0 608
+:raymanni/lab/goo_fall.W: 17 210
+:raymanni/lab/goo_fall.W: 17 226
+:raymanni/lab/goo_fall.W: 17 242
+:raymanni/lab/goo_fall.W: 17 258
+:raymanni/lab/goo_fall.W: 17 274
+:raymanni/lab/goo_fall.W: 17 290
+:raymanni/lab/goo_fall.W: 17 306
+:raymanni/lab/goo_fall.W: 17 322
+:raymanni/lab/goo_fall.W: 17 338
+:raymanni/lab/goo_fall.W: 17 354
+:raymanni/lab/goo_fall.W: 17 370
+:raymanni/lab/goo_fall.W: 17 386
+:raymanni/lab/goo_fall.W: 17 402
+:raymanni/lab/goo_fall.W: 17 418
+:raymanni/lab/goo_fall.W: 17 434
+:raymanni/lab/goo_fall.W: 17 450
+:raymanni/lab/goo_fall.W: 17 466
+:raymanni/lab/goo_fall.W: 17 482
+:raymanni/lab/goo_fall.W: 17 498
+:raymanni/lab/goo_fall.W: 17 514
+:raymanni/lab/goo_fall.W: 17 530
+:raymanni/lab/goo_fall.W: 17 546
+:raymanni/lab/goo_fall.W: 17 562
+:raymanni/lab/goo_fall.W: 17 578
+:raymanni/lab/goo_fall.W: 17 594
+:raymanni/lab/goo.W: 352 608
+
+:geoo/abstract/cvblocks/040: 560 240
+:geoo/abstract/cvblocks/040: 560 304
+:raymanni/lab/block_10: 224 256
+:raymanni/lab/block_8: 96 192
+:raymanni/lab/scen_6: 96 128
+:raymanni/lab/scen_5: 96 86 f
+:raymanni/lab/slope_1: 32 88
+:raymanni/lab/block_7: 160 256
+:raymanni/lab/block_7: 96 256
+:raymanni/lab/block_7: 224 320
+:raymanni/lab/block_7: 160 320
+:raymanni/lab/block_7: 96 320
+:raymanni/lab/block_7: 224 384
+:raymanni/lab/block_7: 96 384
+:raymanni/lab/block_9: 160 384
+:raymanni/lab/block_7: 224 448
+:raymanni/lab/block_7: 160 448
+:raymanni/lab/block_7: 96 448
+:raymanni/lab/block_7: 224 512
+:raymanni/lab/block_7: 160 512
+:raymanni/lab/block_7: 96 512
+:raymanni/lab/block_7: 224 576
+:raymanni/lab/block_7: 160 576
+:raymanni/lab/block_7: 96 576
+:raymanni/lab/block_7: 352 576
+:raymanni/lab/block_7: 448 576
+:raymanni/lab/block_1: 32 120
+:raymanni/lab/slope_2: 32 56
+:raymanni/lab/scen_2: 12 156
+:raymanni/lab/scen_7: 24 152
+:raymanni/lab/slope_1: 32 152 r
+:raymanni/lab/pipe_1: 64 58 r
+:raymanni/lab/pipe_1: 64 70 r
+:raymanni/lab/pipe_1: 96 58 r
+:raymanni/lab/pipe_1: 96 70 r
+:raymanni/lab/pipe_1: 128 58 r
+:raymanni/lab/pipe_1: 128 70 r
+:raymanni/lab/pipe_1: 160 58 r
+:raymanni/lab/pipe_1: 160 70 r
+:raymanni/lab/pipe_1: 192 58 r
+:raymanni/lab/pipe_1: 192 70 r
+:raymanni/lab/pipe_1: 224 58 r
+:raymanni/lab/pipe_1: 224 70 r
+:raymanni/lab/pipe_1: 256 58 r
+:raymanni/lab/pipe_1: 256 70 r
+:raymanni/lab/pipe_1: 288 58 r
+:raymanni/lab/block_1: 0 88
+:raymanni/lab/block_1: 0 120
+:raymanni/lab/scen_1: 8 152
+:raymanni/lab/scen_8: -8 168
+:raymanni/lab/block_1: 0 152
+:raymanni/lab/scen_4: 0 56
+:simon/oriental/pebble2: 22 213 d
+:simon/oriental/pebble2: 19 211 d
+:raymanni/lab/pipe_1: 304 58 r
+:raymanni/lab/pipe_1: 288 70 r
+:raymanni/lab/pipe_1: 336 102
+:raymanni/lab/pipe_5: 348 122
+:raymanni/lab/pipe_4: 320 70
+:raymanni/lab/pipe_1: 348 90
+:raymanni/lab/pipe_1: 380 138 r
+:raymanni/lab/pipe_1: 384 160
+:raymanni/lab/pipe_1: 368 150 r
+:raymanni/lab/pipe_1: 408 138 r
+:raymanni/lab/pipe_1: 400 150 r
+:raymanni/lab/pipe_4: 418 150
+:raymanni/lab/pipe_1: 434 180
+:raymanni/lab/pipe_1: 446 168
+:raymanni/lab/pipe_5: 434 196
+:raymanni/lab/pipe_1: 446 184
+$BEGIN_TILE_GROUP 0
+:raymanni/lab/pipe_3: 0 0
+:raymanni/lab/block_4: 0 16 d
+$END_TILE_GROUP
+:Group-0: 446 196
+:raymanni/lab/pipe_3: 432 348
+:raymanni/lab/pipe_3: 444 360
+:raymanni/lab/pipe_6: 370 364
+:raymanni/lab/pipe_1: 448 284
+:raymanni/lab/pipe_6: 448 252
+:raymanni/lab/pipe_1: 480 252 r
+:raymanni/lab/pipe_6: 460 264
+:raymanni/lab/pipe_1: 448 316
+:raymanni/lab/pipe_1: 460 328
+:raymanni/lab/pipe_1: 460 296
+:raymanni/lab/pipe_1: 492 264 r
+:raymanni/lab/scen_4: 480 220
+:raymanni/lab/pipe_1: 382 504
+:raymanni/lab/pipe_1: 370 504
+:raymanni/lab/pipe_7: 370 504
+:raymanni/lab/pipe_1: 370 392
+:raymanni/lab/pipe_6: 382 376
+:raymanni/lab/pipe_1: 370 424
+:raymanni/lab/pipe_1: 382 408
+:raymanni/lab/pipe_1: 382 440
+:raymanni/lab/block_6: 368 456
+:raymanni/lab/pipe_1: 370 488
+:raymanni/lab/pipe_7: 382 504
+:raymanni/lab/pipe_1: 382 488
+:raymanni/lab/pipe_1: 462 196 d
+$BEGIN_TILE_GROUP 1
+:raymanni/lab/pipe_4: 14 0
+:raymanni/lab/pipe_2: 0 13 rd
+$END_TILE_GROUP
+:Group-1: 332 58
+:Group-1: 430 138
+$BEGIN_TILE_GROUP 2
+:raymanni/lab/pipe_5: 0 14
+:raymanni/lab/pipe_2: 13 0 d
+$END_TILE_GROUP
+:Group-2: 336 134
+:raymanni/lab/pipe_1: 400 458 r
+:raymanni/lab/pipe_1: 400 470 r
+:raymanni/lab/pipe_1: 432 458 r
+:raymanni/lab/pipe_1: 432 470 r
+:raymanni/lab/pipe_1: 464 458 r
+:raymanni/lab/pipe_1: 464 470 r
+:raymanni/lab/pipe_1: 528 457 r
+:raymanni/lab/pipe_1: 528 469 r
+:raymanni/lab/block_1: 416 576
+:raymanni/lab/block_1: 416 608
+:raymanni/lab/pipe_1: 320 208
+:raymanni/lab/pipe_7: 320 208
+:raymanni/lab/pipe_6: 320 192
+:raymanni/lab/pipe_1: 336 192 r
+:raymanni/lab/pipe_1: 368 192 r
+:raymanni/lab/pipe_1: 384 208
+:raymanni/lab/pipe_1: 384 240
+:raymanni/lab/pipe_1: 384 272
+:raymanni/lab/pipe_7: 384 272
+:raymanni/lab/block_4: 384 192
+:raymanni/lab/block_4: 384 136
+:raymanni/lab/block_4: 384 152
+:raymanni/lab/block_4: 446 320
+:raymanni/lab/block_4: 462 320
+:raymanni/lab/pipe_1: 478 320 r
+:raymanni/lab/pipe_1: 494 320 r
+:raymanni/lab/pipe_1: 400 364 r
+:raymanni/lab/pipe_1: 400 376 r
+:raymanni/lab/pipe_1: 416 376 r
+:raymanni/lab/pipe_1: 496 458 r
+:raymanni/lab/pipe_1: 496 470 r
+:raymanni/lab/block_6: 444 456
+:raymanni/lab/pipe_1: 446 488
+:raymanni/lab/pipe_1: 458 488
+:raymanni/lab/pipe_1: 446 520
+:raymanni/lab/pipe_1: 458 520
+:raymanni/lab/pipe_1: 446 544
+:raymanni/lab/pipe_1: 458 544
+:raymanni/lab/scen_4: 416 544
+$BEGIN_TILE_GROUP 3
+:geoo/construction/rod_rust/straight_diagu32: 2 2
+:geoo/construction/rod_rust/straight_diagu32: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 4
+:Group-3: 30 0
+:Group-3: 0 30
+$END_TILE_GROUP
+:Group-4: 353 575 d
+:Group-4: 337 591 d

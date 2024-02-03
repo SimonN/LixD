@@ -1,0 +1,51 @@
+$BUILT 2023-01-07 19:42:02
+$AUTHOR geoo
+$ENGLISH Decompression Method (Part 2)
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#INITIAL 9
+#REQUIRED 6
+#SPAWN_INTERVAL 32
+
+#BATTER 2
+#EXPLODER2 0
+
+:geoo/construction/Hatch.H: 80 240
+
+:geoo/construction/Goal2.G: 512 16
+
+:geoo/construction/squisher.T: 208 240
+:geoo/construction/squisher.T: 272 240
+:geoo/construction/squisher.T: 336 240
+:geoo/construction/squisher.T: 144 240
+
+:geoo/construction/sawblade_medium.F: 416 272
+
+:geoo/construction/spring_fast.T: 384 272
+:geoo/construction/spring_fast.T: 464 176
+
+:geoo/construction/concrete/064v: 0 272
+:geoo/construction/concrete/064v: 448 208
+:geoo/construction/concrete/064v: 512 208
+:geoo/construction/concrete/064v: 512 80
+:geoo/construction/concrete/064v: 64 320
+:geoo/construction/concrete/064v: 128 304
+:geoo/construction/concrete/064v: 192 304
+:geoo/construction/concrete/064v: 256 304
+:geoo/construction/concrete/064v: 320 304
+:geoo/construction/concrete/064v: 384 304
+:geoo/construction/concrete/064v: 448 336
+:geoo/construction/concrete/064v: 512 336
+:geoo/construction/concrete/128: 128 96
+:geoo/construction/concrete/128: 256 96
+:geoo/construction/pillar_top_shaded: 144 224
+:geoo/construction/pillar_top_shaded: 208 224
+:geoo/construction/pillar_top_shaded: 272 224
+:geoo/construction/pillar_top_shaded: 336 224
+:geoo/construction/concrete/064v: 576 144
+:geoo/construction/concrete/064v: 576 16
+:geoo/construction/concrete/064v: 576 272
+:geoo/construction/concrete/064v: 0 144

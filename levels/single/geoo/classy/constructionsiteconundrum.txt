@@ -1,0 +1,55 @@
+$BUILT 2023-06-17 17:18:58
+$AUTHOR geoo
+$ENGLISH Construction Site Conundrum
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 320
+
+#INITIAL 16
+#REQUIRED 14
+#SPAWN_INTERVAL 8
+
+#BUILDER 2
+#PLATFORMER 4
+#MINER 1
+#EXPLODER2 0
+
+:geoo/abstract/hatch.H: 240 80
+
+:geoo/abstract/goal.G: 560 16
+
+:geoo/construction/factory.T: 280 64
+
+:geoo/construction/concrete/128: 192 192
+:geoo/construction/concrete/128: 320 192
+:geoo/construction/concrete/032h: 256 128
+:geoo/construction/concrete/032h: 256 160
+:geoo/construction/concrete/032a: 224 128
+:geoo/construction/concrete/032a: 192 160
+:geoo/construction/concrete/032: 224 160
+:geoo/steel/64x64.S: 0 128
+:geoo/construction/concrete/128: 512 64
+:geoo/construction/concrete/128: 512 192
+:geoo/steel/64x64.S: 0 256
+:geoo/steel/64x64.S: 0 192
+:geoo/steel/64x64.S: 0 64
+:geoo/steel/64x64.S: 0 0
+:geoo/construction/concrete/064h: 64 256
+:geoo/construction/concrete/032a: 160 192
+:geoo/construction/concrete/032a: 128 224
+:geoo/construction/concrete/032: 160 224
+:geoo/construction/concrete/032d: 160 128
+:geoo/construction/concrete/032d: 128 160
+:geoo/construction/concrete/064: 64 128
+:geoo/construction/concrete/032: 128 128
+:geoo/construction/concrete/032d: 96 192
+:geoo/construction/concrete/032d: 64 224
+:geoo/construction/concrete/032: 64 192
+:geoo/steel/64x64.S: 0 -64
+:geoo/steel/64x64.S: 0 -128
+:geoo/construction/concrete/032: 320 128
+:geoo/construction/concrete/032b: 320 96
+:geoo/construction/concrete/032b: 352 128
+:geoo/construction/concrete/032b: 384 160
+:geoo/construction/concrete/032h: 320 160

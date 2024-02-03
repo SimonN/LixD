@@ -1,0 +1,116 @@
+$BUILT 2024-02-03 17:56:33
+$AUTHOR geoo
+$ENGLISH Man in the Middle
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 320
+
+#INITIAL 9
+#REQUIRED 9
+#SPAWN_INTERVAL 8
+
+#PLATFORMER 2
+#BASHER 2
+#EXPLODER2 0
+
+:matt/beach/Hatch.H: 468 64 r
+
+:matt/beach/goal.G: 68 112
+
+:matt/beach/daytime/03: 439 172
+:matt/beach/daytime/01: 426 204
+:matt/beach/daytime/06: 610 162 r
+:matt/beach/daytime/04: 537 156
+$BEGIN_TILE_GROUP 0
+:matt/beach/decor/grass09: 8 0
+:matt/beach/decor/grass11: 0 14 frr
+$END_TILE_GROUP
+:Group-0: 584 118
+:matt/beach/daytime/00: 426 172
+:matt/beach/decor/grass02: 4 144
+:matt/beach/decor/grass04: 458 156
+:simon/oriental/branch3: 277 172
+:simon/oriental/branch1: 237 185 frr
+:matt/earth/19: 248 106 r
+:matt/beach/daytime/04: 207 249
+:matt/earth/09: 246 246
+:matt/earth/09: 232 80
+:matt/earth/09: 236 88
+:matt/earth/09: 236 96
+:matt/earth/09: 278 92
+:matt/earth/09: 276 96 rr
+:matt/earth/09: 224 100 rr
+:matt/earth/09: 210 92 rr
+:matt/earth/09: 212 84
+:matt/earth/09: 214 78 frr
+:matt/earth/09: 276 86 frr
+:matt/earth/07b: 322 92 frr
+:amanda/forest/leaves_04: 190 -4
+$BEGIN_TILE_GROUP 1
+:simon/oriental/branch4: 6 50
+:matt/earth/26: 18 32 rr
+:simon/oriental/bush7: 18 64
+:simon/oriental/bush5: 34 48
+:amanda/forest/leaves_05: 2 0
+:matt/earth/07b: 0 44
+$END_TILE_GROUP
+:Group-1: -6 8
+:matt/beach/daytime/06: 232 236 frr
+:amanda/forest/leaves_05: 372 136
+:matt/beach/daytime/14: 374 172 f
+:matt/earth/16: 386 232
+:matt/beach/daytime/13: 593 160 rr
+:matt/earth/00: 486 188
+:matt/earth/09: 502 186
+:matt/beach/daytime/13: 60 176 rr
+:matt/beach/daytime/13: 108 208 r
+:matt/beach/daytime/02: 184 272
+:matt/earth/13: 193 247 r
+:matt/earth/01: 440 216
+:matt/beach/nighttime/06: 92 256
+:matt/beach/daytime/04: -38 172 rrr
+:matt/earth/11: -4 240
+:matt/earth/14: 76 288 r
+:matt/earth/15: 44 272
+:matt/earth/11: 28 288 r
+:matt/earth/12: -4 288
+:matt/earth/10: 480 240
+:matt/earth/17: 464 240
+:matt/earth/06: 434 208
+$BEGIN_TILE_GROUP 2
+:matt/winter/09c: 6 18
+:matt/winter/06: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 3
+:matt/winter/09c: 0 20
+:matt/winter/06: 6 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 4
+:Group-2: 17 15
+:Group-3: 12 15
+:matt/winter/06: 0 0 rd
+:matt/winter/06: 0 30 rd
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 5
+:Group-4: 3 12
+:Group-4: 9 15
+:matt/earth/23: 0 21 r
+:matt/earth/08: 18 0 rd
+$END_TILE_GROUP
+:Group-5: 295 165
+:simon/oriental/bush7: 231 182
+$BEGIN_TILE_GROUP 6
+:amanda/forest/moss_00: 0 45
+:simon/oriental/pebbles6: 9 0 d
+:simon/oriental/pebbles6: 17 7 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 7
+:Group-6: 0 0
+:simon/oriental/bush7: 53 11 d
+$END_TILE_GROUP
+:Group-7: 289 175
+:matt/earth/12: 349 135 rd
+:Group-4: 369 156 d
+:matt/earth/13: -24 82 f
+:Group-4: 370 148 d
