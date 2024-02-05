@@ -64,15 +64,14 @@ void deinitialize()
     int vramAllocatedInMB() { return _totalPixelsAllocated / 1024 * 4 / 1024; }
 }
 
-string allegroDLLVersion()
+string allegroDllVersion()
 {
     static string ret = "";
     if (ret == "") {
         import std.format;
-        ret = format!"%d.%d.%d.%d"(al_get_allegro_version() >> 24,
+        ret = format!"Allegro %d.%d.%d"(al_get_allegro_version() >> 24,
             (al_get_allegro_version() >> 16) & 255,
-            (al_get_allegro_version() >> 8) & 255,
-            al_get_allegro_version() & 255);
+            (al_get_allegro_version() >> 8) & 255);
     }
     return ret;
 }

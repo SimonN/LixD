@@ -134,11 +134,11 @@ public:
         // only the version is to be printed, print it without decoration.
         if (versionAndExit && ! helpAndExit && good)
             writeln(gameVersion);
-        else
-            writeln(gameNameVersionOsAndArch);
+        else {
+            // allegroVersionAndExit will implicitly enter here, unless -v
+            writeln(gameNameVersionOsAndArch ~ ", " ~ allegroDllVersion());
+        }
 
-        if (allegroVersionAndExit)
-            writeln("Allegro DLL version ", allegroDLLVersion());
         if (helpAndExit)
             writeHelp();
         if (good)

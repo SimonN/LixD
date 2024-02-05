@@ -7,6 +7,7 @@ module menu.mainmenu;
 
 import basics.arch;
 import basics.globals;
+import basics.alleg5 : allegroDllVersion;
 import opt = file.option.allopts;
 import file.language;
 import gui;
@@ -80,15 +81,23 @@ private:
         addChildren(_single, _network, _replays, _options, _exit);
     }
 
+    void addLabelNearBottom(in float ygFromBot, in Alfont font, in string s)
+    {
+        auto l = new Label(new Geom(0, ygFromBot, xlg, 20, From.BOTTOM));
+        l.font = font;
+        l.text = s;
+        addChild(l);
+    }
+
     void addVersioning()
     {
         import std.conv : to;
-        addChild(new Label(new Geom(0, 60, xlg, 20, Geom.From.BOTTOM),
-            Lang.versioningVersion.transl ~ " " ~ gameVersion.toString));
-        addChild(new Label(new Geom(0, 40, xlg, 20, Geom.From.BOTTOM),
-            Lang.versioningForOperatingSystem.transl ~ " " ~ osAndArch));
-        addChild(new Label(new Geom(0, 20, xlg, 20, Geom.From.BOTTOM),
-            basics.globals.homepageURL));
+        addLabelNearBottom(60, djvuM,
+            Lang.versioningVersion.transl ~ " " ~ gameVersion.to!string);
+        addLabelNearBottom(41, djvuS,
+            Lang.versioningForOperatingSystem.transl ~ " " ~ osAndArch);
+        addLabelNearBottom(30, djvuS, allegroDllVersion);
+        addLabelNearBottom(20, djvuM, basics.globals.homepageURL);
     }
 
     void warnAboutMissingMusic()
