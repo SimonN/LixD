@@ -34,10 +34,7 @@ do {
     loadedCutbitMayBeScaled[id] = new Cutbit(fn, Cutbit.Cut.ifGridExists);
     loadedCutbitMayBeScaled[id].albit.convertPinkToAlpha();
     if (id.needGuiRecoloring) {
-        eidrecol(loadedCutbitMayBeScaled[id],
-            // Hack! This shouldn't depend on id. Move this decision elsewhere.
-            id == InternalImage.scissorsInPanel
-                ? SpecialRecol.skillButtonIcons : SpecialRecol.ordinary);
+        eidrecol(loadedCutbitMayBeScaled[id], SpecialRecol.ordinary);
     }
 }
 
@@ -73,16 +70,30 @@ private:
 
 Filename toBestScaledFilenameOrNull(in InternalImage id)
 {
-    immutable correctScale = new VfsFilename(scaleDir ~ id.toBasename);
-    if (correctScale.fileExists && correctScale.hasImageExtension) {
-        return correctScale;
+    immutable unscaled = new VfsFilename(
+        dirDataBitmap.rootless ~ id.toBasenameNoExt ~ ".png");
+    if (unscaled.fileExists && unscaled.hasImageExtension) {
+        return unscaled;
     }
-    immutable fallbackScale = new VfsFilename(
-        dirDataBitmap.dirRootless ~ id.toBasename);
-    if (fallbackScale.fileExists && fallbackScale.hasImageExtension) {
-        return fallbackScale;
+    foreach (candidate; candidateBasenames(_idealScale)) {
+        auto scaled = new VfsFilename(
+            dirDataBitmap.rootless ~ id.toBasenameNoExt ~ "/" ~ candidate);
+        assert (scaled.hasImageExtension,
+            "Expected hasImageExtension for " ~ scaled.rootless);
+        if (scaled.fileExists) {
+            return scaled;
+        }
     }
     return null;
+}
+
+string[] candidateBasenames(in float wantedScale)
+{
+    return wantedScale >= 6 ? ["3.png", "2.png", "1.5.png", "1.png"]
+        :  wantedScale >= 4 ? ["2.png", "3.png", "1.5.png", "1.png"]
+        :  wantedScale >= 3 ? ["3.png", "1.5.png", "2.png", "1.png"]
+        :  wantedScale >= 2 ? ["2.png", "1.5.png", "1.png"]
+        :  wantedScale >= 1.5f ? ["1.5.png", "1.png"] : ["1.png"];
 }
 
 void recolorForGuiAndPlayer(SpecialRecol magicnr)(

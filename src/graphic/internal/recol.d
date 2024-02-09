@@ -254,7 +254,7 @@ void logRecoloringError(
     import file.log;
     import std.conv;
     logf("Error with the recoloring map %s:",
-        InternalImage.styleRecol.toBasename);
+        InternalImage.styleRecol.toLoggableName);
     if (recol is null) {
         logf("    -> File doesn't exist or format not supported.");
         return;

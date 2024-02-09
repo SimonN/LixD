@@ -32,7 +32,7 @@ void initialize(Runmode runmode)
     }
 }
 
-void initializeScale(float scale) { implSetScale(scale); }
+void initializeScale(float scale) { _idealScale = scale; }
 void deinitialize()               { implDeinitialize();  }
 
 const(Cutbit) toCutbit(in InternalImage id) { return getInternalMutable(id); }

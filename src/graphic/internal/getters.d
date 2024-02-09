@@ -31,8 +31,7 @@ do {
     loadBestScaleFromDiskOrPutNullCutbit(InternalImage.spritesheet);
     enforce(valid(loadedCutbitMayBeScaled[InternalImage.spritesheet]),
         "Can't find Lix spritesheet at: "
-        ~ dirDataBitmap.dirRootless
-        ~ InternalImage.spritesheet.toBasename
+        ~ InternalImage.spritesheet.toLoggableName
         ~ ". The spritesheet is required for physics"
         ~ " because the number of sprites per row affect worker cycles."
         ~ " Is your Lix installation broken?");

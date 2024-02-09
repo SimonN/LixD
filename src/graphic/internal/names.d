@@ -1,5 +1,7 @@
 module graphic.internal.names;
 
+import glo = basics.globals;
+
 /*
  * Names for the internal bitmaps.
  * Names for the individual frames (in x direction) of those bitmaps.
@@ -33,7 +35,6 @@ enum InternalImage {
     menuCheckmark,
     mouse,
     previewIcon,
-    scissorsInPanel,
     skillsInPanel,
     skillsInTweaker,
 }
@@ -43,42 +44,46 @@ enum GamePanel2Xf {
     showSplatRuler, highlightGoals, unusedShades, restart
 }
 
-@safe pure nothrow @nogc:
+@safe pure nothrow:
 
-string toBasename(in InternalImage id)
+string toLoggableName(in InternalImage id)
 {
-    with (InternalImage) final switch (id) {
-    case ability: return "ability.I.png";
-    case guiNumber: return "api_numb.I.png";
-    case debris: return "debris.I.png";
-    case editPanel: return "edit_pan.I.png";
-    case explosion: return "explode.I.png";
-    case fuse: return "fuse.I.png";
-    case fuseFlame: return "fuse_fla.I.png";
-    case gameArrow: return "game_arr.I.png";
-    case gameIcon: return "game_ico.I.png";
-    case gamePanel: return "game_pan.I.png";
-    case gamePanel2: return "game_pa2.I.png";
-    case gamePause: return "game_pau.I.png";
-    case gameReplay: return "game_rep.I.png";
-    case goalMarker: return "goalmark.I.png";
-    case implosion: return "implode.I.png";
-    case spritesheet: return "lix.I.png";
-    case styleRecol: return "lixrecol.I.png";
-    case lobbySpec: return "lobby_sp.I.png";
-    case menuBackground: return "menu_bg.I.png";
-    case menuCheckmark: return "menu_chk.I.png";
-    case mouse: return "mouse.I.png";
-    case previewIcon: return "prev_ico.I.png";
-    case scissorsInPanel: return "scis_btn.I.png";
-    case skillsInPanel: return "skillpan.I.png";
-    case skillsInTweaker: return "skilltwk.I.png";
-    }
+    return glo.dirDataBitmap.dirRootless ~ id.toBasenameNoExt ~ ".png";
 }
 
 package:
 
-bool needGuiRecoloring(in InternalImage id)
+string toBasenameNoExt(in InternalImage id) @nogc
+{
+    with (InternalImage) final switch (id) {
+    case ability: return "abilityabovehead";
+    case guiNumber: return "guinumpick";
+    case debris: return "debris";
+    case editPanel: return "editorpanelbuttons";
+    case explosion: return "explode";
+    case fuse: return "fuse";
+    case fuseFlame: return "fuseflame";
+    case gameArrow: return "assignmentarrow";
+    case gameIcon: return "lixouticon";
+    case gamePanel: return "gamebigbuttons";
+    case gamePanel2: return "gamesmallbuttons";
+    case gamePause: return "gamepause";
+    case gameReplay: return "replayfloatingr";
+    case goalMarker: return "goalmarker";
+    case implosion: return "implode";
+    case spritesheet: return "lixsprites";
+    case styleRecol: return "lixrecol";
+    case lobbySpec: return "lobbyspectatehandi";
+    case menuBackground: return "mainmenubg";
+    case menuCheckmark: return "checkbox";
+    case mouse: return "mouse";
+    case previewIcon: return "toruspreview";
+    case skillsInPanel: return "skillsinpanel";
+    case skillsInTweaker: return "tweakerskills";
+    }
+}
+
+bool needGuiRecoloring(in InternalImage id) @nogc
 {
     with (InternalImage) switch (id) {
     case ability:
@@ -91,7 +96,6 @@ bool needGuiRecoloring(in InternalImage id)
     case lobbySpec:
     case menuCheckmark:
     case previewIcon:
-    case scissorsInPanel:
     case skillsInTweaker:
         return true;
     default:

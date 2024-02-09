@@ -160,5 +160,5 @@ shared static this()
     fileSingleplayerFirstLevel = new Fn(dirLevelsSingle.rootless
                                     ~ "lemforum/Lovely/anyway.txt");
 
-    fileImageAppIcon = new Fn("data/images/app_icon.I.png"); // with extension
+    fileImageAppIcon = new Fn("data/images/appwindowicon.png");
 }

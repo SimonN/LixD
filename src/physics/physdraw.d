@@ -500,8 +500,7 @@ private:
             import basics.globals : dirDataBitmap;
             throw new Exception("We lack the recoloring bitmap. "
                 ~ "Is Lix installed properly? We're looking for: "
-                ~ dirDataBitmap.dirRootless
-                ~ InternalImage.styleRecol.toBasename);
+                ~ InternalImage.styleRecol.toLoggableName);
         }
         assert (recol.xl >= 3);
 

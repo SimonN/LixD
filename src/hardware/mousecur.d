@@ -19,8 +19,10 @@ void initialize()
 {
     assert (mouseCursor is null, "mouse cursor is already initialized");
     const(Cutbit) cb = InternalImage.mouse.toCutbit;
-    if (! cb.valid)
-        logf("Mouse cursor not found: `%s'", InternalImage.mouse.toBasename);
+    if (! cb.valid) {
+        logf("Mouse cursor not found: `%s'",
+            InternalImage.mouse.toLoggableName);
+    }
     mouseCursor = new Graphic(cb, null);
 }
 
