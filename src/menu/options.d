@@ -27,7 +27,8 @@ private:
     Explainer explainer;
 
     enum OptionGroup {
-        general, graphics, controls, replay, gameKeys, editorKeys, menuKeys
+        general, graphics, controls, gameControls,
+        gameKeys, editorKeys, menuKeys
     }
 
     Enumap!(OptionGroup, TextButton) groupButtons;
@@ -65,7 +66,7 @@ public this()
     mkGrpButton(OptionGroup.general, Lang.optionGroupGeneral);
     mkGrpButton(OptionGroup.graphics, Lang.optionGroupGraphics);
     mkGrpButton(OptionGroup.controls, Lang.optionGroupControls);
-    mkGrpButton(OptionGroup.replay, Lang.optionGroupReplay);
+    mkGrpButton(OptionGroup.gameControls, Lang.optionGroupGameControls);
     mkGrpButton(OptionGroup.gameKeys, Lang.optionGroupGameKeys);
     mkGrpButton(OptionGroup.editorKeys, Lang.optionGroupEditorKeys);
     mkGrpButton(OptionGroup.menuKeys, Lang.optionGroupMenuKeys);
@@ -163,7 +164,7 @@ void populateOptionGroups()
     populateGeneral();
     populateGraphics();
     populateControls();
-    populateReplayOptions();
+    populateGameControls();
     populateGameKeys();
     populateEditorKeys();
     populateMenuKeys();
@@ -221,7 +222,6 @@ void populateGraphics()
     fac.y = bottomHalfY;
     grp ~= [
         fac.factory!BoolOption(paintTorusSeams),
-        fac.factory!BoolOption(ingameTooltips),
         fac.factory!BoolOption(showFPS),
     ];
     fac = facRight();
@@ -232,20 +232,6 @@ void populateGraphics()
     grp ~= [
         fac.factory!ResolutionOption(screenHardwareFullscreenX,
             screenHardwareFullscreenY),
-    ];
-    fac.y = bottomHalfY;
-    auto cfg = NumPickConfig();
-    cfg.digits = 3;
-    cfg.min = 0;
-    cfg.max = 300;
-    cfg.stepSmall = 2;
-    cfg.stepMedium = 20;
-    grp ~= [
-        fac.factory!RadioIntOption(splatRulerDesign,
-            Lang.optionSplatRulerDesign2Bars,
-            Lang.optionSplatRulerDesign094,
-            Lang.optionSplatRulerDesign3Bars),
-        fac.factory!NumPickOption(cfg, splatRulerSnapPixels),
     ];
 }
 
@@ -277,10 +263,10 @@ void populateControls()
     addNumPick(holdToScrollSpeed, 1);
 }
 
-void populateReplayOptions()
+void populateGameControls()
 {
     auto fac = facLeft();
-    groups[OptionGroup.replay] ~= [
+    groups[OptionGroup.gameControls] ~= [
         fac.factory!RadioBoolOption(replayAfterFrameBack,
             Lang.optionRewindIsBrowse, true,
             Lang.optionRewindIsUndo, false),
@@ -288,6 +274,27 @@ void populateReplayOptions()
             insertAssignmentsWhenTweakerHidden),
         fac.factory!HeadingAndBoolOptions(Lang.optionWhenTweakerShown,
             insertAssignmentsWhenTweakerShown),
+    ];
+    fac = facRight();
+    groups[OptionGroup.gameControls] ~= [
+        fac.factory!BoolOption(unpauseOnAssign),
+        fac.factory!BoolOption(avoidBuilderQueuing),
+        fac.factory!BoolOption(avoidBatterToExploder),
+        fac.factory!BoolOption(ingameTooltips),
+    ];
+    fac.y += 20 + fac.spaceBelow;
+    auto cfg = NumPickConfig();
+    cfg.digits = 3;
+    cfg.min = 0;
+    cfg.max = 300;
+    cfg.stepSmall = 2;
+    cfg.stepMedium = 20;
+    groups[OptionGroup.gameControls] ~= [
+        fac.factory!RadioIntOption(splatRulerDesign,
+            Lang.optionSplatRulerDesign2Bars,
+            Lang.optionSplatRulerDesign094,
+            Lang.optionSplatRulerDesign3Bars),
+        fac.factory!NumPickOption(cfg, splatRulerSnapPixels),
     ];
 }
 
@@ -326,10 +333,11 @@ void populateGameKeys()
     ];
     fac.y += 10f;
     groups[OptionGroup.gameKeys] ~= [
-        fac.factory!HotkeyOption(keyFrameBackMany, watcher),
-        fac.factory!HotkeyOption(keyFrameBackOne, watcher),
-        fac.factory!HotkeyOption(keyFrameAheadOne, watcher),
-        fac.factory!HotkeyOption(keyFrameAheadMany, watcher),
+        fac.factory!HotkeyOption(keyRewindPrevPly, watcher),
+        fac.factory!HotkeyOption(keyRewindOneSecond, watcher),
+        fac.factory!HotkeyOption(keyRewindOneTick, watcher),
+        fac.factory!HotkeyOption(keySkipOneTick, watcher),
+        fac.factory!HotkeyOption(keySkipTenSeconds, watcher),
     ];
 
     fac = facKeys!2;
@@ -344,20 +352,6 @@ void populateGameKeys()
         fac.factory!HotkeyOption(keyHighlightGoals, watcher),
         fac.factory!HotkeyOption(keyShowSplatRuler, watcher),
         fac.factory!HotkeyOption(keyShowTweaker, watcher),
-    ];
-
-    fac = facLeft();
-    fac.y = 310f;
-    fac.xl = fac.xl - 10; // Mouse hover area shouldn't obscure other options
-    groups[OptionGroup.gameKeys] ~= [
-        fac.factory!BoolOption(unpauseOnAssign),
-    ];
-    fac = facRight();
-    fac.x = xForBoolOptionsBelowHotkeys + keyButtonXl - 20f;
-    fac.y = 310f;
-    groups[OptionGroup.gameKeys] ~= [
-        fac.factory!BoolOption(avoidBuilderQueuing),
-        fac.factory!BoolOption(avoidBatterToExploder),
     ];
 }
 

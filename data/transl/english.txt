@@ -140,8 +140,9 @@ $gameHighlightGoals Highlight own hatches and goals.
 $gameStateSave Quicksave game position.
 $gameStateLoad Load quicksaved position.
 $gameShowTweaker Show replay tweaker.
-$gameFramestepBack %s to step back, %s to jump back.
-$gameFramestepAhead %s to step ahead, %s to jump ahead.
+$gameRewindPrevPly Rewind your previous skill assignment.
+$gameRewindOneTick %s to rewind 1 tick, %s to rewind 1 second.
+$gameSkipOneTick %s to advance 1 tick, %s to skip 10 seconds.
 $gameFastForward %s for fast-forward, %s for turbo.
 $gameRestart Restart level.
 $gameNuke Nuke. Double-click to activate.
@@ -315,7 +316,7 @@ $optionTitle Options|From the main menu, go to the options menu.
 $optionGroupGeneral General
 $optionGroupGraphics Graphics
 $optionGroupControls Controls
-$optionGroupReplay Replay
+$optionGroupGameControls Game Controls
 $optionGroupGameKeys Game Keys
 $optionGroupEditorKeys Editor Keys
 $optionGroupMenuKeys Menu Keys
@@ -365,10 +366,11 @@ $optionInsertAssignments Insert Assignments|After ◀▮, assigning skills prese
 $optionKeyForceLeft Force left|Hold to assign skills to lix facing left.|This is useful in a dense bunch of lix.
 $optionKeyForceRight Force right|Hold to assign skills to lix facing right.|This is useful in a dense bunch of lix.
 $optionKeyPause Pause|Pause the game.|You can choose whether skill assignments should unpause, see below.
-$optionKeyFrameBackMany ◀▮ 1 sec.|Rewind the game by 1 second.
-$optionKeyFrameBackOne ◀▮ 1 frame|Rewind the game by 1 frame, i.e., by ¹⁄₁₅ of a second.
-$optionKeyFrameAheadOne ▮▶ 1 frame|Advance the game by 1 frame, i.e., by ¹⁄₁₅ of a second.
-$optionKeyFrameAheadMany ▮▶ 10 sec.|Advance the game by 10 seconds.
+$optionKeyRewindPrevPly ⬚◀◀|Rewind your most recent skill assignment.|Then, click air to erase the assignment, or unpause to replay it.
+$optionKeyRewindOneSecond ◀▮ 1 Sec.|Rewind the game by 1 second.
+$optionKeyRewindOneTick ◀▮ 1 Tick|Rewind the game by 1 tick, i.e., by ¹⁄₁₅ of a second.
+$optionKeySkipOneTick ▮▶ 1 Tick|Advance the game by 1 tick, i.e., by ¹⁄₁₅ of a second.
+$optionKeySkipTenSeconds ▮▶ 10 Sec.|Advance the game by 10 seconds.
 $optionKeySpeedFast ▶▶|Toggle fast-forward.|Fast-forward is 4 times faster than normal speed.
 $optionKeySpeedTurbo ▶▶▶|Toggle turbo-fast-forward.|Turbo-fast-forward is 36 times faster than normal speed.
 $optionKeyRestart Restart|Restart the level from the beginning. All your actions will replay.|To interrupt the replay, click into the air.

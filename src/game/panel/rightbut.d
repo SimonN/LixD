@@ -35,10 +35,11 @@ public:
         bool restart() { return false; }
         bool saveState() { return false; }
         bool loadState() { return false; }
-        bool framestepBackOne() { return false; }
-        bool framestepBackMany() { return false; }
-        bool framestepAheadOne() { return false; }
-        bool framestepAheadMany() { return false; }
+        bool rewindPrevPly() { return false; }
+        bool rewindOneTick() { return false; }
+        bool rewindOneSecond() { return false; }
+        bool skipOneTick() { return false; }
+        bool skipTenSeconds() { return false; }
 
         bool splatRulerIsOn() { return false; }
         bool tweakerIsOn() { return false; }
@@ -191,10 +192,11 @@ mixin template TapeRecorderMixin() {
         bool speedIsFast()        { return _trbs.speedIsFast; }
         bool speedIsTurbo()       { return _trbs.speedIsTurbo; }
         bool restart()            { return _trbs.restart; }
-        bool framestepBackOne()   { return _trbs.framestepBackOne; }
-        bool framestepBackMany()  { return _trbs.framestepBackMany; }
-        bool framestepAheadOne()  { return _trbs.framestepAheadOne; }
-        bool framestepAheadMany() { return _trbs.framestepAheadMany; }
+        bool rewindPrevPly() { return _trbs.rewindPrevPly; }
+        bool rewindOneTick() { return _trbs.rewindOneTick; }
+        bool rewindOneSecond() { return _trbs.rewindOneSecond; }
+        bool skipOneTick()  { return _trbs.skipOneTick; }
+        bool skipTenSeconds() { return _trbs.skipTenSeconds; }
     }
 
     private void makeTapeRecorder(Geom g)

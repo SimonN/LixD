@@ -136,8 +136,9 @@ $gameHighlightGoals Eigene Klappen und Ziele hervorheben.
 $gameStateSave Spielstand schnellspeichern.
 $gameStateLoad Schnellgespeicherten Spielstand laden.
 $gameShowTweaker Replay-Justierer anzeigen.
-$gameFramestepBack %s für Schritt zurück, %s für Sprung zurück.
-$gameFramestepAhead %s für Schritt vorwärts, %s für Sprung vorwärts.
+$gameRewindPrevPly Deine letzte Fähigkeitszuweisung zurückspulen.
+$gameRewindOneTick %s spult 1 Tick zurück, %s spult 1 Sekunde zurück.
+$gameSkipOneTick %s geht 1 Tick vor, %s springt 10 Sekunden vor.
 $gameFastForward %s für schnellen Vorlauf, %s für Turbo.
 $gameRestart Level neu starten.
 $gameNuke Atombombe. Aktiviere per Doppelklick.
@@ -304,7 +305,7 @@ $optionTitle Optionen|Vom Hauptmenü das Optionsmenü aufrufen.
 $optionGroupGeneral Allgemein
 $optionGroupGraphics Grafik
 $optionGroupControls Steuerung
-$optionGroupReplay Replay
+$optionGroupGameControls Spielsteuerung
 $optionGroupGameKeys Spieltasten
 $optionGroupEditorKeys Editortasten
 $optionGroupMenuKeys Menütasten
@@ -357,10 +358,11 @@ $optionInsertAssignments Zuweisungen einfügen|Nach ◀▮ belassen neue Zuweisu
 $optionKeyForceLeft Nur links|Halte gedrückt, um Fähigkeiten an Linksläufer zuzuweisen.|Das ist nützlich in dichten Ansammlungen von Lix.
 $optionKeyForceRight Nur rechts|Halte gedrückt, um Fähigkeiten an Rechtsläufer zuzuweisen.|Das ist nützlich in dichten Ansammlungen von Lix.
 $optionKeyPause Pause|Das Spiel pausieren.|Du kannst unten bestimmen, ob Fähigkeitszuweisungen die Pause beenden.
-$optionKeyFrameBackMany ◀▮ 1 Sek.|Das Spiel um 1 Sekunde zurückspulen.
-$optionKeyFrameBackOne ◀▮ 1 Bild|Das Spiel um 1 Physik-Update zurückspulen, also um ¹⁄₁₅ einer Sekunde.
-$optionKeyFrameAheadOne ▮▶ 1 Bild|Das Spiel um 1 Physik-Update vorspulen, also um ¹⁄₁₅ einer Sekunde.
-$optionKeyFrameAheadMany ▮▶ 10 Sek.|Das Spiel um 10 Sekunden vorspulen.
+$optionKeyRewindPrevPly ⬚◀◀|Deine letzte Fähigkeitszuweisung zurückspulen.|Klicke anschließend in die Luft, um die Zuweisung zu löschen.
+$optionKeyRewindOneSecond ◀▮ 1 Sek.|Das Spiel um 1 Sekunde zurückspulen.
+$optionKeyRewindOneTick ◀▮ 1 Tick|Das Spiel um 1 Physik-Update zurückspulen, also um ¹⁄₁₅ einer Sekunde.
+$optionKeySkipOneTick ▮▶ 1 Tick|Das Spiel um 1 Physik-Update vorspulen, also um ¹⁄₁₅ einer Sekunde.
+$optionKeySkipTenSeconds ▮▶ 10 Sek.|Das Spiel um 10 Sekunden vorspulen.
 $optionKeySpeedFast ▶▶|Schnellen Vorlauf an- und ausschalten.|Schneller Vorlauf ist 4-mal so schnell wie normales Spiel.
 $optionKeySpeedTurbo ▶▶▶|Turbo-Vorlauf an- und ausschalten.|Turbo-Vorlauf ist 36-mal so schnell wie normales Spiel.
 $optionKeyRestart Neustart|Den Level komplett von vorne starten, mit Replay deiner Aktionen.|Um das Replay abzubrechen, klicke in die Luft.

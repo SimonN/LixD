@@ -64,8 +64,9 @@ public:
     // Copy-pasted function names from RightButtons.
     static foreach (field; ["paused", "speedIsNormal", "speedIsFast",
         "speedIsTurbo", "restart", "saveState", "loadState",
-        "framestepBackOne", "framestepBackMany", "framestepAheadOne",
-        "framestepAheadMany", "splatRulerIsOn", "tweakerIsOn",
+        "rewindPrevPly", "rewindOneSecond", "rewindOneTick",
+        "skipOneTick", "skipTenSeconds",
+        "splatRulerIsOn", "tweakerIsOn",
         "highlightGoalsExecute", "nukeDoubleclicked"]
     ) {
         import std.format;

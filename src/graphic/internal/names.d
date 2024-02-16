@@ -35,6 +35,7 @@ enum InternalImage {
     menuCheckmark,
     mouse,
     previewIcon,
+    rewindPrevPly,
     skillsInPanel,
     skillsInTweaker,
 }
@@ -78,6 +79,7 @@ string toBasenameNoExt(in InternalImage id) @nogc
     case menuCheckmark: return "checkbox";
     case mouse: return "mouse";
     case previewIcon: return "toruspreview";
+    case rewindPrevPly: return "rewindprevply";
     case skillsInPanel: return "skillsinpanel";
     case skillsInTweaker: return "tweakerskills";
     }
@@ -96,6 +98,7 @@ bool needGuiRecoloring(in InternalImage id) @nogc
     case lobbySpec:
     case menuCheckmark:
     case previewIcon:
+    case rewindPrevPly:
     case skillsInTweaker:
         return true;
     default:

@@ -33,34 +33,35 @@ private:
     enum frameTurbo = 5;
 
     // All the buttons are non-null, always
-    BitmapButton _pause, _restart;
+    BitmapButton _pause, _restart, _rewindPrevPly;
     NukeButton _nuke;
-    TwoTasksButton _speedBack, _speedAhead, _speedFast;
+    TwoTasksButton _rewind, _skip, _speedFast;
 
 public:
     this(Geom g)
     {
         super(g);
-        void newBut(T)(ref T b, int x, int y, int frame,
+        void newBut(T)(ref T b, int x, int y, InternalImage img, int frame,
             in UserOption!KeySet keyLeft = null,
             in UserOption!KeySet keyRight = null)
             if (is(T : BitmapButton))
         {
             b = new T(new Geom(x * xlg/4f, y * ylg/2f, xlg/4f, ylg/2f),
-                InternalImage.gamePanel.toCutbit);
+                img.toCutbit);
             b.xf = frame;
             b.hotkey = keyLeft ? keyLeft.value : KeySet();
             static if (is (T == TwoTasksButton))
                 b.hotkeyRight = keyRight ? keyRight.value : KeySet();
             addChild(b);
         }
-        newBut(_restart, 0, 0, 8, opt.keyRestart);
-        _restart.resize(xlg/2f, ylg/2f); // Until we have a better layout idea.
-
-        newBut(_speedBack, 0, 1, 10, opt.keyFrameBackOne, opt.keyFrameBackMany);
-        newBut(_speedAhead, 1, 1, 3,
-            opt.keyFrameAheadOne, opt.keyFrameAheadMany);
-        newBut(_speedFast, 2, 1, frameFast,
+        newBut(_rewindPrevPly, 0, 0, InternalImage.rewindPrevPly, 0,
+            opt.keyRewindPrevPly);
+        newBut(_restart, 1, 0, InternalImage.gamePanel, 8, opt.keyRestart);
+        newBut(_rewind, 0, 1, InternalImage.gamePanel, 10,
+            opt.keyRewindOneTick, opt.keyRewindOneSecond);
+        newBut(_skip, 1, 1, InternalImage.gamePanel, 3,
+            opt.keySkipOneTick, opt.keySkipTenSeconds);
+        newBut(_speedFast, 2, 1, InternalImage.gamePanel, frameFast,
             opt.keySpeedFast, opt.keySpeedTurbo);
 
         _nuke = new NukeButton(new Geom(2 * xlg/4f, 0, xlg/4f, ylg/2f),
@@ -82,10 +83,11 @@ public:
         bool speedIsTurbo()  { return ! paused && _speedFast.on
                                                && _speedFast.xf == frameTurbo;}
         bool restart()            { return _restart.execute; }
-        bool framestepBackOne()   { return _speedBack.executeLeft; }
-        bool framestepBackMany()  { return _speedBack.executeRight; }
-        bool framestepAheadOne()  { return _speedAhead.executeLeft; }
-        bool framestepAheadMany() { return _speedAhead.executeRight; }
+        bool rewindOneTick() { return _rewind.executeLeft; }
+        bool rewindOneSecond() { return _rewind.executeRight; }
+        bool rewindPrevPly() { return _rewindPrevPly.execute; }
+        bool skipOneTick()  { return _skip.executeLeft; }
+        bool skipTenSeconds() { return _skip.executeRight; }
         bool nukeDoubleclicked()  { return _nuke.doubleclicked; }
     }
 
@@ -100,8 +102,9 @@ public:
         do {
             return _pause.isMouseHere ? Tooltip.ID.pause
                 : _nuke.isMouseHere ? Tooltip.ID.nuke
-                : _speedBack.isMouseHere ? Tooltip.ID.framestepBack
-                : _speedAhead.isMouseHere ? Tooltip.ID.framestepAhead
+                : _rewindPrevPly.isMouseHere ? Tooltip.ID.rewindPrevPly
+                : _rewind.isMouseHere ? Tooltip.ID.rewindOneTick
+                : _skip.isMouseHere ? Tooltip.ID.skipOneTick
                 : _restart.isMouseHere ? Tooltip.ID.restart
                 : Tooltip.ID.fastForward;
         }
@@ -121,20 +124,13 @@ public:
 protected:
     override void calcSelf()
     {
-        assert (!!_pause && !!_speedBack && !!_speedAhead && !!_speedFast);
         if (_pause.execute)
             setSpeedTo(paused ? 1 : 0);
         else if (_speedFast.executeLeft)
             setSpeedTo(_speedFast.on ? 1 : 2);
         else if (_speedFast.executeRight)
             setSpeedTo(_speedFast.xf == frameTurbo ? 1 : 3);
-        else if (_speedBack.executeLeft || _speedBack.executeRight
-                                        || _speedAhead.executeLeft)
-            setSpeedTo(0);
-        // We don't handle (speed back to normal) on level restart.
-        // Game will tell us to set the speed. Reason: Not only we can
-        // restart the level, but the game can get that command from
-        // the end-of-level dialog.
+        // See game.core.speed for pausing/unpausing on framestepping.
     }
 
 private:

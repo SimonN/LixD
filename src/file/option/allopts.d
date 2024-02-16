@@ -139,10 +139,11 @@ UserOption!KeySet
     keyForceLeft,
     keyForceRight,
     keyPause,
-    keyFrameBackMany,
-    keyFrameBackOne,
-    keyFrameAheadOne,
-    keyFrameAheadMany,
+    keyRewindPrevPly,
+    keyRewindOneSecond,
+    keyRewindOneTick,
+    keySkipOneTick,
+    keySkipTenSeconds,
     keySpeedFast,
     keySpeedTurbo,
     keyRestart,
@@ -368,10 +369,16 @@ do {
     keyForceLeft = newKey2("keyForceLeft", Lang.optionKeyForceLeft, ALLEGRO_KEY_S, ALLEGRO_KEY_LEFT);
     keyForceRight = newKey2("keyForceRight", Lang.optionKeyForceRight, ALLEGRO_KEY_F, ALLEGRO_KEY_RIGHT);
     keyPause = newKey2("keyPause", Lang.optionKeyPause, ALLEGRO_KEY_SPACE, hardware.keyenum.keyMMB);
-    keyFrameBackMany = newKey("keySpeedBackMany", Lang.optionKeyFrameBackMany, ALLEGRO_KEY_1);
-    keyFrameBackOne = newKey("keySpeedBackOne", Lang.optionKeyFrameBackOne, ALLEGRO_KEY_2);
-    keyFrameAheadOne = newKey("keySpeedAheadOne", Lang.optionKeyFrameAheadOne, ALLEGRO_KEY_3);
-    keyFrameAheadMany = newKey("keySpeedAheadMany", Lang.optionKeyFrameAheadMany, ALLEGRO_KEY_6);
+    keyRewindPrevPly = newOpt("keyRewindPrevPly",
+        Lang.optionKeyRewindPrevPly, KeySet());
+    keyRewindOneSecond = newKey("keySpeedBackMany",
+        Lang.optionKeyRewindOneSecond, ALLEGRO_KEY_1);
+    keyRewindOneTick = newKey("keySpeedBackOne",
+        Lang.optionKeyRewindOneTick, ALLEGRO_KEY_2);
+    keySkipOneTick = newKey("keySpeedAheadOne",
+        Lang.optionKeySkipOneTick, ALLEGRO_KEY_3);
+    keySkipTenSeconds = newKey("keySpeedAheadMany",
+        Lang.optionKeySkipTenSeconds, ALLEGRO_KEY_6);
     keySpeedFast = newKey("keySpeedFast", Lang.optionKeySpeedFast, ALLEGRO_KEY_4);
     keySpeedTurbo = newKey("keySpeedTurbo", Lang.optionKeySpeedTurbo, ALLEGRO_KEY_5);
     keyRestart = newKey("keyRestart", Lang.optionKeyRestart, ALLEGRO_KEY_F1);

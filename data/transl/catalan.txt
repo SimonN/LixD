@@ -139,9 +139,10 @@ $gameShowSplatRuler Mostra el regle d'esclafades.
 $gameHighlightGoals Ressalta els teus propis caus i objectius.
 $gameStateSave Desa la posició ràpidament.
 $gameStateLoad Carrrega ràpidament una posició.
-$gameShowTweaker Mostra l'ajustador de repeticions
-$gameFramestepBack %s per fer un pas enrere, %s per saltar enrere.
-$gameFramestepAhead %s per fer un pas endavant, %s per saltar endavant.
+$gameShowTweaker Mostra l'ajustador de repeticions.
+$gameRewindPrevPly Rebobina l'habilitat més recent.
+$gameRewindOneTick %s per fer un pas enrere, %s per saltar enrere.
+$gameSkipOneTick %s per fer un pas endavant, %s per saltar endavant.
 $gameFastForward %s per avançar ràpidament, %s per a avanç turbo.
 $gameRestart Reiniciar el nivell.
 $gameNuke Bomba nuclear. Fes doble clic per activar-la.
@@ -317,7 +318,7 @@ $optionTitle Opcions|Va al menú d'opcions des del menú principal.
 $optionGroupGeneral General
 $optionGroupGraphics Gràfics
 $optionGroupControls Controls
-$optionGroupReplay Repetitió
+$optionGroupGameControls Controls del joc
 $optionGroupGameKeys Tecles del joc
 $optionGroupEditorKeys Tecles de l'editor
 $optionGroupMenuKeys Tecles del menú
@@ -367,10 +368,11 @@ $optionInsertAssignments Insertar habilitats|After ◀▮, assigning skills pres
 $optionKeyForceLeft Forçar l'esquerra|Mantenir per assignar habilitats als lix encarats a l'esquerra.|És útil en un manat dens de lix.
 $optionKeyForceRight Forçar la dreta|Mantenir per assignar habilitats als lix encarats a la dreta.|És útil en un manat dens de lix.
 $optionKeyPause Pausar|Pausar el joc.|Pots escollir si assignar habilitats hauria de despausar o no, veure avall.
-$optionKeyFrameBackMany ◀▮ 1 segon.|Rebobina el joc 1 segon.
-$optionKeyFrameBackOne ◀▮ 1 fotograma|Rebobina el joc 1 fotograma, és a dir, ¹⁄₁₅ de segon.
-$optionKeyFrameAheadOne ▮▶ 1 fotograma|Avança el joc 1 fotograma, és a dir, ¹⁄₁₅ de segon.
-$optionKeyFrameAheadMany ▮▶ 10 segons|Avança el joc 10 segons.
+$optionKeyRewindPrevPly ⬚◀◀|Rebobina l'habilitat més recent.|Then, click air to erase the assignment, or unpause to replay it.
+$optionKeyRewindOneSecond ◀▮ 1 segon.|Rebobina el joc 1 segon.
+$optionKeyRewindOneTick ◀▮ 1 fotograma|Rebobina el joc 1 tick, és a dir, ¹⁄₁₅ de segon.
+$optionKeySkipOneTick ▮▶ 1 fotograma|Avança el joc 1 tick, és a dir, ¹⁄₁₅ de segon.
+$optionKeySkipTenSeconds ▮▶ 10 segons|Avança el joc 10 segons.
 $optionKeySpeedFast ▶▶|Activa l'avanç ràpid.|L'avanç ràpid és 4 vegades més ràpid que la velocitat normal.
 $optionKeySpeedTurbo ▶▶▶|Activa l'avanç turbo|L'avanç turbo és 36 vegades més ràpid que la velocitat normal.
 $optionKeyRestart Reiniciar|Reinicia el nivell des del començament. Totes les accions es repetiran.|Per interrompre la repetició, fes clic a l'aire.

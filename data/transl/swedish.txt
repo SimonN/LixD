@@ -140,8 +140,9 @@ $gameHighlightGoals Markera egna luckor och mål.
 $gameStateSave Snabbspara spelposition.
 $gameStateLoad Läs in snabbsparad position.
 $gameShowTweaker Visa repristrimmare.
-$gameFramestepBack %s för att kliva bakåt, %s för att hoppa bakåt.
-$gameFramestepAhead %s för att kliva framåt, %s för att hoppa framåt.
+$gameRewindPrevPly Spola tillbaka din senaste tilldelning av förmågor.
+$gameRewindOneTick %s för att spola tillbaka 1 tick, %s för 1 sekund.
+$gameSkipOneTick %s för att flytta fram 1 tick, %s för 10 sekunder.
 $gameFastForward %s för att snabbspola framåt, %s för turbo.
 $gameRestart Starta om bana.
 $gameNuke Spräng. Dubbelklicka för att aktivera.
@@ -315,7 +316,7 @@ $optionTitle Inställningar|Gå till menyn för inställningar från huvudmenyn.
 $optionGroupGeneral Allmänt
 $optionGroupGraphics Grafik
 $optionGroupControls Kontroller
-$optionGroupReplay Repris
+$optionGroupGameControls Spelkontroller
 $optionGroupGameKeys Speltangenter
 $optionGroupEditorKeys Redigerartangenter
 $optionGroupMenuKeys Menytangenter
@@ -365,10 +366,11 @@ $optionInsertAssignments Infoga ny tilldelningen|After ◀▮, assigning skills 
 $optionKeyForceLeft Tvinga vänster|Håll för att tildela förmågor till vänsterriktade lix.|Detta är användbart i en tät grupp av lix.
 $optionKeyForceRight Tvinga höger|Håll för att tilldela förmågor till högerriktade lix.|Detta är användbart i en tät grupp av lix.
 $optionKeyPause Pausa|Pausa spelet.|Du kan välja om tilldelning av förmågor borde opausa, se nedanför.
-$optionKeyFrameBackMany ◀▮ 1 sek.|Spola tillbaka spelet med 1 sekund.
-$optionKeyFrameBackOne ◀▮ 1 bild|Spola tillbaka spelet med 1 bild, dvs med ¹⁄₁₅ av en sekund.
-$optionKeyFrameAheadOne ▮▶ 1 bild|Spola fram spelet med 1 bild, dvs med ¹⁄₁₅ av en sekund.
-$optionKeyFrameAheadMany ▮▶ 10 sek.|Spola fram spelet med 10 sekunder.
+$optionKeyRewindPrevPly ⬚◀◀|Spola tillbaka din senaste tilldelning av förmågor.|Klicka sedan i luften för att radera tilldelningen eller låta den spelas upp igen.
+$optionKeyRewindOneSecond ◀▮ 1 sek.|Spola tillbaka spelet med 1 sekund.
+$optionKeyRewindOneTick ◀▮ 1 tick|Spola tillbaka spelet med 1 tick, dvs med ¹⁄₁₅ av en sekund.
+$optionKeySkipOneTick ▮▶ 1 tick|Spola fram spelet med 1 tick, dvs med ¹⁄₁₅ av en sekund.
+$optionKeySkipTenSeconds ▮▶ 10 sek.|Spola fram spelet med 10 sekunder.
 $optionKeySpeedFast ▶▶|Växla snabbspolning framåt.|Snabbspolning framåt är 4 bilder snabbare än normal hastighet.
 $optionKeySpeedTurbo ▶▶▶|Växla turbosnabbspolning framåt.|Turbosnappspolning framåt är 36 bilder snabbare än normal hastighet.
 $optionKeyRestart Starta om|Starta om banan från början. Alla dina åtgärder kommer att repriseras.|Klicka i luften för att avbryta reprisen.
@@ -381,7 +383,7 @@ $optionKeyHighlightGoals Markera mål|Markera egna luckor och mål under nätver
 $optionKeyNuke Spräng|Spräng alla dina lix i enspelarläge för att klara banan.|Starta övertid i flerspelarläge om du har räddat minst 1 lix.
 
 $optionAvoidBuilderQueuing Föredra spamning framför köläggning|Föredra byggaretilldelningar framför icke-byggare istället för att kölägga till existerande byggare.|Du kan hålla omvänd prioritering för att göra det du inte föredrar.
-$optionAvoidBatterToExploder Föredra slagmän framför icke-exploderare.|Föredra slagmäntilldelningar framför gångare istället för slagmäntilldeningar framför tidsinställda exploderare|Du kan hålla omvänd prioritering.
+$optionAvoidBatterToExploder Föredra slagmän framför icke-exploderare.|Föredra slagmäntilldelningar framför gångare istället för slagmäntilldelningar framför tidsinställda exploderare|Du kan hålla omvänd prioritering.
 $optionUnpauseOnAssign Fortsätt spelet vid tilldelning av förmåga|Fortsätt spelet då du tilldelar en förmåga under paus.|Om inte förbockat kommer tilldelning av förmågor under paus att fortsätta spelet med 1 bild.
 
 $optionKeyMenuOkay Okej/ja|Spela den markerade banan. Spara och stäng dialogfönster.

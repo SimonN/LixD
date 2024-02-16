@@ -1,9 +1,10 @@
 module game.core.speed;
 
+import std.algorithm;
 import core.time;
-static import basics.globals;
 
 import basics.alleg5;
+static import basics.globals;
 import file.option; // replayAfterFrameBack
 import game.core.game;
 import game.nurse.cache : DuringTurbo;
@@ -32,16 +33,21 @@ void dispatchTweaks(Game game)
 
 void updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
 {
-    if (pan.framestepBackOne) {
-        with (LoadStateRAII(game))
-            game.nurse.framestepBackBy(1);
+    if (pan.rewindPrevPly) {
+        game.nurse.framestepBackBy(game.numPhyusToBackstepToPrevPly);
+        game.finishFramestepping(AndThen.pauseUnlessAtBeginning);
     }
-    else if (pan.framestepBackMany) {
-        with (LoadStateRAII(game))
-            game.nurse.framestepBackBy(Game.updatesBackMany);
+    else if (pan.rewindOneSecond) {
+        game.nurse.framestepBackBy(Game.updatesBackMany);
+        game.finishFramestepping(AndThen.pause);
+    }
+    if (pan.rewindOneTick) {
+        game.nurse.framestepBackBy(1);
+        game.finishFramestepping(AndThen.pause);
     }
     else if (pan.restart) {
-        game.restartLevel();
+        game.nurse.restartLevel();
+        game.finishFramestepping(AndThen.unpause);
     }
     else if (pan.saveState) {
         nurse.saveUserState();
@@ -50,17 +56,19 @@ void updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
         hardware.sound.playQuiet(Sound.CLOCK);
     }
     else if (pan.loadState) {
-        if (nurse.userStateExists)
-            with (LoadStateRAII(game)) {
-                nurse.loadUserState();
-                _effect.quickload();
-            }
+        if (nurse.userStateExists) {
+            nurse.loadUserState();
+            _effect.quickload();
+            game.finishFramestepping(AndThen.pause);
+        }
     }
-    else if (pan.framestepAheadOne) {
+    else if (pan.skipOneTick) {
         game.upd(1, DuringTurbo.no);
+        game.pan.pause = true;
     }
-    else if (pan.framestepAheadMany) {
+    else if (pan.skipTenSeconds) {
         game.upd(updatesAheadMany, DuringTurbo.no);
+        // Don't pause. Don't unpause either. Keep pause as-is.
     }
     else if (pan.paused && isMouseOnLand && mouseClickLeft) {
         // Clicking into the non-panel screen advances physics once.
@@ -83,14 +91,6 @@ void updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
         }
     }
 }}
-// end with (game), end function updatePhysicsAccordingToSpeedButtons
-
-void restartLevel(Game game)
-{
-    game.pan.setSpeedNormal();
-    with (LoadStateRAII(game))
-        game.nurse.restartLevel();
-}
 
 // The server tells us the milliseconds since game start, and the net client
 // has added our lag. We think in Phyus or Allegro ticks, not in millis,
@@ -120,11 +120,22 @@ void recordServersWishSinceGameStart(
 private: //////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 
-struct LoadStateRAII
+enum AndThen {
+    pause,
+    pauseUnlessAtBeginning,
+    unpause
+}
+
+void finishFramestepping(Game game, in AndThen andThen)
 {
-    private Game _game;
-    this(Game g) { _game = g; }
-    ~this() { _game.setLastPhyuToNow(); }
+    game.setLastPhyuToNow();
+    final switch (andThen) {
+        case AndThen.pause: game.pan.pause = true; return;
+        case AndThen.unpause: game.pan.pause = false; return;
+        case AndThen.pauseUnlessAtBeginning:
+            game.pan.pause = (game.nurse.updatesSinceZero != 0);
+            return;
+    }
 }
 
 // Combat the network time-lag, affect _alticksToAdjust.
@@ -157,4 +168,14 @@ private void upd(Game game, in int howmany, in DuringTurbo duringTurbo)
     game.undispatchedAssignments = null;
     game.nurse.updateTo(Phyu(before + howmany), duringTurbo);
     game.setLastPhyuToNow();
+}
+
+int numPhyusToBackstepToPrevPly(Game game)
+{
+    immutable Phyu now = game.nurse.now;
+    immutable Phyu target = game.replay.allPlies
+        .filter!(ply => ply.when <= now)
+        .map!(ply => ply.when)
+        .fold!max(Phyu(now - game.nurse.updatesSinceZero));
+    return now - target + 1; // The +1 goes back to the phyu before that ply.
 }

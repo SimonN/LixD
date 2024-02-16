@@ -32,13 +32,14 @@ struct Tooltip {
     // When several are requested, only the most important is shown.
     enum ID : IdSet {
         pause = 0x1,
-        showSplatRuler = 0x4,
-        highlightGoals = 0x8,
-        stateSave = 0x10,
-        stateLoad = 0x20,
-        showTweaker = 0x40,
-        framestepBack = 0x80,
-        framestepAhead = 0x100,
+        showSplatRuler = 0x2,
+        highlightGoals = 0x4,
+        stateSave = 0x8,
+        stateLoad = 0x10,
+        showTweaker = 0x20,
+        rewindPrevPly = 0x40,
+        rewindOneTick = 0x80,
+        skipOneTick = 0x100,
         fastForward = 0x200,
         restart = 0x400,
         nuke = 0x800,
@@ -116,8 +117,9 @@ Tooltip makeTooltip(Tooltip.ID id) nothrow @nogc @safe
         case ID.stateSave: return none(Lang.gameStateSave);
         case ID.stateLoad: return none(Lang.gameStateLoad);
         case ID.showTweaker: return none(Lang.gameShowTweaker);
-        case ID.framestepBack: return mouse(Lang.gameFramestepBack);
-        case ID.framestepAhead: return mouse(Lang.gameFramestepAhead);
+        case ID.rewindPrevPly: return none(Lang.gameRewindPrevPly);
+        case ID.rewindOneTick: return mouse(Lang.gameRewindOneTick);
+        case ID.skipOneTick: return mouse(Lang.gameSkipOneTick);
         case ID.fastForward: return mouse(Lang.gameFastForward);
         case ID.restart: return none(Lang.gameRestart);
         case ID.nuke: return none(Lang.gameNuke);
