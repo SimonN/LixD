@@ -103,4 +103,5 @@
   <content_rating type="oars-1.1">
     <content_attribute id="violence-cartoon">mild</content_attribute>
   </content_rating>
+  <launchable type="desktop-id">com.lixgame.Lix.desktop</launchable>
 </component>
