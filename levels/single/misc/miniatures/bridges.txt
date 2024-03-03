@@ -1,0 +1,60 @@
+$BUILT 2024-02-29 01:08:15
+$AUTHOR geoo
+$ENGLISH Bridges
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 320
+#SIZE_Y 160
+
+#INITIAL 8
+#REQUIRED 8
+#SPAWN_INTERVAL 16
+
+#BLOCKER 1
+#BUILDER 1
+#PLATFORMER 1
+#BATTER 1
+#EXPLODER2 0
+
+:raymanni/toys/hatch.H: 192 0 r
+
+:raymanni/toys/goal.G: 0 0
+
+:geoo/sandstone/brazier.F: 80 32
+:geoo/sandstone/brazier.F: 80 4
+
+:raymanni/toys/brick_3: 280 32
+:raymanni/toys/brick_13: 96 96
+:raymanni/toys/brick_9: 64 128
+:raymanni/toys/letter_blank: 96 128
+:raymanni/toys/letter_3: 128 96
+:raymanni/toys/brick_6: 128 128
+:raymanni/toys/chalk_box: 0 64
+:raymanni/toys/chalk_2: 248 72 r
+:raymanni/toys/chalk_4: 136 72 r
+:raymanni/toys/chalk_2: 128 72 fr
+:raymanni/toys/chalk_4: 168 72 r
+:raymanni/toys/chalk_4: 200 72 r
+:raymanni/toys/chalk_4: 216 72 r
+:raymanni/toys/car_2: 272 0
+:raymanni/toys/letter_2: 224 96
+:raymanni/toys/brick_7: 256 96
+:raymanni/toys/soldier_1: 264 112
+:raymanni/toys/letter_blank: 320 96
+:raymanni/toys/letter_1: 320 128
+$BEGIN_TILE_GROUP 0
+:raymanni/toys/brick_20: 0 0
+:raymanni/toys/brick_20: 8 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:raymanni/toys/brick_20: 12 0
+:Group-0: 40 0
+:raymanni/toys/brick_20: 0 0 d
+$END_TILE_GROUP
+:Group-1: 256 136
+:Group-1: 308 136
+:raymanni/toys/brick_5: -32 120
+:raymanni/toys/brick_16: 192 96 fr
+:raymanni/toys/brick_12: 192 128
+:raymanni/toys/brick_10: 160 96
+:raymanni/toys/brick_10: 224 128 fr

@@ -2,7 +2,9 @@ solitaryconfinement.txt
 atthepond.txt
 scrapingthescripture.txt
 frogfractions.txt
+bridges.txt
 sendingapostcard.txt
+minicellar.txt
 deadlycells.txt
 overhead.txt
 centipede.txt

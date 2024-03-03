@@ -1,0 +1,51 @@
+$BUILT 2024-02-10 17:54:06
+$AUTHOR geoo/Simon
+$ENGLISH Mini Cellar
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 256
+#SIZE_Y 160
+#TORUS_X 1
+#TORUS_Y 0
+
+#INITIAL 8
+#REQUIRED 7
+#SPAWN_INTERVAL 6
+
+#CLIMBER 1
+#EXPLODER2 1
+#MINER 2
+#DIGGER 1
+
+:geoo/abstract/hatch.H: 16 16
+:geoo/abstract/hatch.H: 144 16 r
+:geoo/abstract/hatch.H: 128 120
+:geoo/abstract/hatch.H: 32 120 r
+
+:geoo/abstract/goal.G: 208 8
+:geoo/abstract/goal.G: 80 8
+
+:geoo/abstract/pipes/central3: 96 152 rr
+:geoo/abstract/pipes/central3: 64 152 rr
+:geoo/abstract/pipes/central3: 32 152 rr
+:geoo/abstract/pipes/central3: 0 152 rr
+:geoo/abstract/pipes/central3: 224 152 rr
+:geoo/abstract/pipes/central3: 160 152 rr
+:geoo/abstract/pipes/central3: 128 152 rr
+:geoo/abstract/pipes/central3: 96 152 rr
+:geoo/abstract/pipes/central3: 64 152 rr
+:geoo/abstract/pipes/central3: 32 152 rr
+:geoo/abstract/pipes/central3: 0 152 rr
+:geoo/abstract/cvblocks/035: 64 56
+:geoo/abstract/cvblocks/035: 64 88
+:geoo/abstract/cvblocks/035: 64 120
+:geoo/abstract/cvblocks/035: 192 120
+:geoo/abstract/cvblocks/035: 192 88
+:geoo/abstract/cvblocks/035: 192 56
+:geoo/abstract/pipes/central3: 192 152 rr
+:geoo/abstract/cvblocks/033: 128 88
+:geoo/abstract/cvblocks/030: 160 88
+:geoo/abstract/cvblocks/034: 32 88
+:geoo/abstract/cvblocks/030: 0 88
+:geoo/abstract/cvblocks/033: 160 120
+:geoo/abstract/cvblocks/034: 0 120
