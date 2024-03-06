@@ -132,8 +132,10 @@ $gamePriorityInvert [%s] för lix längst bak
 $gameQueueBuilder Klicka igen för att kölägga.
 $gameQueuePlatformer Klicka igen för att kölägga.
 $gameHoldToScroll Håll [%s] och rör musen för att rulla.
+$gameClickToInsert Infogningsläge: Klicka för att infoga.
 $gameClickToCancelReplay Repris är på. Klicka i luften för att spela.
 $gameFramestepOrQuit Spola tillbaka tid (◀▮) eller avsluta med [%s].
+$gameMaxTicksReached Maximalt antal ticks (%s) uppnått. Spola tillbaka eller avsluta.
 $gamePause Pausat.
 $gameShowSplatRuler Visa splat-linjal.
 $gameHighlightGoals Markera egna luckor och mål.

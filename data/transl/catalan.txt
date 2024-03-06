@@ -132,8 +132,10 @@ $gamePriorityInvert [%s] pel darrer lix.
 $gameQueueBuilder Torna a fer clic per posar a la cua.
 $gameQueuePlatformer Torna a fer clic per posar a la cua.
 $gameHoldToScroll Fes clic i manté premut [%s] i mou el ratolí per desplaçar.
+$gameClickToInsert Mode d'Inserció: Fes clic per inserir.
 $gameClickToCancelReplay Repetitió. Fes clic a l'aire per jugar.
 $gameFramestepOrQuit Rebobina el temps (◀▮) o surt amb [%s].
+$gameMaxTicksReached Nombre màxim de ticks (%s) assolides. Rebobina o surt.
 $gamePause Pausar.
 $gameShowSplatRuler Mostra el regle d'esclafades.
 $gameHighlightGoals Ressalta els teus propis caus i objectius.

@@ -132,8 +132,10 @@ $gamePriorityInvert [%s] for hindmost lix.
 $gameQueueBuilder Click again to queue.
 $gameQueuePlatformer Click again to queue.
 $gameHoldToScroll Hold [%s] and move mouse to scroll.
+$gameClickToInsert Insert Mode: Click to insert.
 $gameClickToCancelReplay Replaying. Click to play from here.
 $gameFramestepOrQuit Rewind time (◀▮) or quit with [%s].
+$gameMaxTicksReached Maximal number of ticks (%s) reached. Rewind or quit.
 $gamePause Pause.
 $gameShowSplatRuler Show splat ruler.
 $gameHighlightGoals Highlight own hatches and goals.

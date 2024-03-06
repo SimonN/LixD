@@ -46,6 +46,12 @@ calcPassive(
     if (! underCursor.best.empty) {
         game._effect.changeLocalStyleToAlsoControlled(
             underCursor.best.front.lixxie.style);
+        if (game.isInsertMode && game.canWeClickAirNowToCutGlobalFuture) {
+            game._mapClickExplainer.suggestTooltip(Tooltip.ID.clickToInsert);
+        }
+    }
+    if (game.canWeClickAirNowToCutGlobalFuture) {
+        game._mapClickExplainer.suggestTooltip(Tooltip.ID.clickToCancelReplay);
     }
 }
 

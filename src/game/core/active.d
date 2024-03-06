@@ -64,10 +64,7 @@ do {
 void resolveClickThatWillAssign(Game game, Assignee assignee)
 {
     if (game.view.canInterruptReplays) {
-        immutable bool weMayInsert = game._tweaker.shown
-            ? opt.insertAssignmentsWhenTweakerShown.value
-            : opt.insertAssignmentsWhenTweakerHidden.value;
-        if (weMayInsert) {
+        if (game.isInsertMode) {
             game.cutSingleLixFutureFromReplay(assignee.passport);
         }
         else {

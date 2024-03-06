@@ -200,9 +200,6 @@ void drawTooltips(Game game)
     game._panelExplainer.move(game._tweaker.shown
         ? game._tweaker.xlg : 0, game._panelExplainer.geom.y);
     game._mapClickExplainer.move(game._panelExplainer.geom.x, 0);
-    if (game.canWeClickAirNowToCutGlobalFuture && game.isMouseOnLand) {
-        game._mapClickExplainer.suggestTooltip(Tooltip.ID.clickToCancelReplay);
-    }
     game._panelExplainer.suggestTooltip(game.pan.hoveredSkillOnlyForTooltip);
     if (game.pan.isSuggestingTooltip) {
         game._panelExplainer.suggestTooltip(game.pan.suggestedTooltip);

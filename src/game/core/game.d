@@ -230,6 +230,13 @@ package:
             && isMouseOnLand;
     }
 
+    bool isInsertMode() const
+    {
+        return _tweaker.shown
+            ? opt.insertAssignmentsWhenTweakerShown.value
+            : opt.insertAssignmentsWhenTweakerHidden.value;
+    }
+
     bool multiplayer() const
     {
         return nurse.stateOnlyPrivatelyForGame.multiplayer;

@@ -128,8 +128,10 @@ $gamePriorityInvert [%s] für hintere Lix.
 $gameQueueBuilder Klicke zum Vormerken.
 $gameQueuePlatformer Klicke zum Vormerken.
 $gameHoldToScroll Halte [%s] und bewege Maus zum Scrollen.
+$gameClickToInsert Einfügemodus: Klicke, um einzufügen.
 $gameClickToCancelReplay Replay läuft. Klicke, um von hier zu spielen.
 $gameFramestepOrQuit Gehe zurück (◀▮) oder beende mit [%s].
+$gameMaxTicksReached Maximale Anzahl Ticks (%s) erreicht. Spule zurück oder beende.
 $gamePause Pause.
 $gameShowSplatRuler Fallhöhen-Lineal anzeigen.
 $gameHighlightGoals Eigene Klappen und Ziele hervorheben.

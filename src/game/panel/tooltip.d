@@ -50,7 +50,8 @@ struct Tooltip {
         queueBuilder = 0x8000,
         queuePlatformer = 0x1_0000,
         holdToScroll = 0x2_0000,
-        clickToCancelReplay = 0x4_0000,
+        clickToInsert = 0x4_0000,
+        clickToCancelReplay = 0x8_0000,
         framestepOrQuit = 0x20_0000,
     }
 
@@ -108,6 +109,7 @@ Tooltip makeTooltip(Tooltip.ID id) nothrow @nogc @safe
         case ID.queuePlatformer: return none(Lang.gameQueuePlatformer);
         case ID.holdToScroll: return key(Lang.gameHoldToScroll, keyScroll);
         case ID.clickToCancelReplay: return none(Lang.gameClickToCancelReplay);
+        case ID.clickToInsert: return none(Lang.gameClickToInsert);
 
         case ID.framestepOrQuit:
             return key(Lang.gameFramestepOrQuit, keyGameExit);
