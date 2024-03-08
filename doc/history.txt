@@ -1,6 +1,24 @@
 Version history
 ===============
 
+0.10.21
+-------
+
+2024-03-08
+
+Added geoo's new singleplayer pack with 106 levels. They're sorted by theme:
+Wrappy puzzles on cylindrical/toroidal maps, flowy puzzles about crowd control,
+classy large-scale strategic puzzles, loony puzzles about physics curiosities,
+and sketchy outtakes.
+
+Added two new miniatures by geoo: Bridges, and Mini Cellar.
+
+During insert mode, change the tooltip "Replaying. Click to play from here."
+to "Insert Mode: Click to insert." (You're in insert mode while the tweaker
+is open, unless you reconfigure this in the options menu.)
+
+
+
 0.10.20
 -------
 
