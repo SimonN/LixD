@@ -1,5 +1,6 @@
 lemforum
 clam
+geoo
 nepster
 rubix
 misc
