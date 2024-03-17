@@ -78,12 +78,12 @@ void drawMainMap(Editor editor)
         auto zone = Zone(profiler, "Editor.drawMapMain");
     with (TargetTorbit(editor._map.torbit))
     with (editor)
-    with (editor.level) {
+    {
         editor._map.clearSourceThatWouldBeBlitToTarget(level.bgColor);
         editor.drawGadgets();
         editor._map.loadCameraRect(_mapTerrain.torbit);
         editor.drawGadgetAnnotations();
-        editor.drawGadgetTriggerAreas();
+        drawAllTriggerAreas(level.gadgets, _map.torbit);
         editor.drawHovers(_hover, false);
         editor.drawHovers(_selection, true);
         editor.drawDraggedFrame();
@@ -97,18 +97,6 @@ void drawGadgets(Editor editor)
     mixin nATT;
     foreach (gadgetList; editor.level.gadgets)
         gadgetList.filter!notAboutToTrash.each!(g => g.tile.cb.draw(g.loc));
-}
-
-void drawGadgetTriggerAreas(Editor editor)
-{
-    version (tharsisprofiling)
-        auto zone = Zone(profiler, "Editor.annotateGadgets");
-    foreach (gadgetList; editor.level.gadgets) {
-        foreach (g; gadgetList) {
-            editor._map.torbit.drawRectangle(g.triggerAreaOnMap,
-                color.triggerArea);
-        }
-    }
 }
 
 void drawGadgetAnnotations(Editor editor) {

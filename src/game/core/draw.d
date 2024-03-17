@@ -23,6 +23,7 @@ import hardware.music;
 import hardware.tharsis;
 import physics.tribe;
 import physics.lixxie.fuse : drawAbilities; // onto opponents, behind our own
+import tile.draw : drawAllTriggerAreas;
 
 package void
 implGameDraw(Game game) { with (game)
@@ -56,7 +57,12 @@ implGameDraw(Game game) { with (game)
         assert (_effect);
         _effect.draw(_chatArea.console);
         _effect.calc(); // --timeToLive, moves. No physics, so OK to calc here.
+
         game.drawAllLixes();
+
+        if (pan.splatRulerIsOn) {
+            drawAllTriggerAreas(level.gadgets, map.torbit);
+        }
     }
     pan.showInfo(localTribe);
     foreach (sc; nurse.scores)

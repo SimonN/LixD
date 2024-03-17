@@ -6,9 +6,11 @@ module tile.draw;
  */
 
 import basics.alleg5; // blender
+import graphic.color;
 import graphic.cutbit;
 import graphic.torbit;
 import hardware.tharsis;
+import tile.gadtile;
 import tile.occur;
 import tile.phymap;
 
@@ -63,4 +65,16 @@ do {
                     lookup.rm(p, Phybit.steel);
             }
         }
+}
+
+void drawAllTriggerAreas(
+    scope const ref GadOcc[][GadType.MAX] gadgets,
+    Torbit target,
+) {
+    // We assume that our caller has set the drawing target to (target).
+    foreach (oneList; gadgets) {
+        foreach (g; oneList) {
+            target.drawRectangle(g.triggerAreaOnMap, color.triggerArea);
+        }
+    }
 }
