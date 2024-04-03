@@ -71,7 +71,18 @@ struct Tooltip {
 
     static bool isAboutMapClicks(in IdSet ids) pure nothrow @safe @nogc
     {
-        return ids >= ID.forceLeft; // Contains one of these high bits.
+        return ids % ID.forceLeft == 0 // Contains no important low bit
+            && ids >= ID.forceLeft; // Contains at least one high bit.
+        /*
+         * Both sides of the && are necessary.
+         *
+         * Ruling out the low bits prevents a bug where the scrolling tooltip
+         * (unshown) for mouse at screen edge prints the pause button tooltip
+         * (shown) in big font instead of the correct small font.
+         *
+         * Requiring the map clicks prevents a bug where the skill buttons
+         * print their tooltips in big font instead of the correct small font.
+         */
     }
 
     string format()
