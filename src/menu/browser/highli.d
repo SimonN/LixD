@@ -48,7 +48,7 @@ public:
     final float infoX()  const { return pickerXl + 40;       }
     final float infoXl() const { return xlg - pickerXl - 60; }
 
-    @property bool gotoMainMenu()  const pure nothrow @safe @nogc
+    final bool gotoMainMenu() const pure nothrow @safe @nogc
     {
         return _gotoMainMenu;
     }

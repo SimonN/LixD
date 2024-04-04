@@ -62,7 +62,7 @@ private:
     void calcDeleteMixin()
     {
         assert (_delete);
-        if (_delete.execute) {
+        if (_delete.execute && ! gotoMainMenu) {
             assert (_boxDelete.empty);
             assert (fileRecent);
             MsgBox box = newMsgBoxDelete();
