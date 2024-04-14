@@ -1,0 +1,88 @@
+$BUILT 2024-04-14 22:12:19
+$AUTHOR geoo
+$ENGLISH Zick-Zack Kunterbunt
+
+#INTENDED_NUMBER_OF_PLAYERS 5
+#SIZE_X 320
+#SIZE_Y 272
+#TORUS_X 1
+#TORUS_Y 1
+
+#SECONDS 60
+#INITIAL 20
+#SPAWN_INTERVAL 29
+
+#WALKER 50
+#CLIMBER 5
+#FLOATER 5
+#EXPLODER2 10
+#BUILDER 50
+#PLATFORMER 20
+#BASHER 40
+#MINER 20
+#JUMPER 50
+#BATTER 30
+
+:geoo/abstract/hatch.H: 272 32
+:geoo/abstract/hatch.H: 16 32
+:geoo/abstract/hatch.H: 80 32
+:geoo/abstract/hatch.H: 144 32
+:geoo/abstract/hatch.H: 208 32
+
+:geoo/abstract/goal.G: 48 96
+:geoo/abstract/goal.G: 112 96
+:geoo/abstract/goal.G: 176 96
+:geoo/abstract/goal.G: 240 96
+:geoo/abstract/goal.G: 304 96
+
+:geoo/abstract/tbeam_up.T: 16 0
+:geoo/abstract/tbeam_left.T: 16 0
+:geoo/abstract/tbeam_up.T: 80 0
+:geoo/abstract/tbeam_left.T: 80 0
+:geoo/abstract/tbeam_up.T: 144 0
+:geoo/abstract/tbeam_left.T: 144 0
+:geoo/abstract/tbeam_up.T: 208 0
+:geoo/abstract/tbeam_left.T: 208 0
+:geoo/abstract/tbeam_up.T: 272 0
+:geoo/abstract/tbeam_left.T: 272 0
+
+:matt/marble/thinplatform64p: 0 64
+:geoo/steel/16x32o.S: 0 32
+:geoo/steel/16x32o.S: 48 32
+:geoo/steel/16x32o.S: 48 0
+:geoo/steel/16x32o.S: 0 0
+:geoo/steel/16x32o.S: 18 0
+:geoo/steel/16x32o.S: 30 0
+:amanda/steel/steel8x16.S: 56 144 r
+:matt/marble/thinplatform64p: 64 64
+:geoo/steel/16x32o.S: 64 32
+:geoo/steel/16x32o.S: 112 32
+:geoo/steel/16x32o.S: 112 0
+:geoo/steel/16x32o.S: 64 0
+:geoo/steel/16x32o.S: 82 0
+:geoo/steel/16x32o.S: 94 0
+:amanda/steel/steel8x16.S: 120 144 r
+:matt/marble/thinplatform64p: 128 64
+:geoo/steel/16x32o.S: 128 32
+:geoo/steel/16x32o.S: 176 32
+:geoo/steel/16x32o.S: 176 0
+:geoo/steel/16x32o.S: 128 0
+:geoo/steel/16x32o.S: 146 0
+:geoo/steel/16x32o.S: 158 0
+:amanda/steel/steel8x16.S: 184 144 r
+:matt/marble/thinplatform64p: 192 64
+:geoo/steel/16x32o.S: 192 32
+:geoo/steel/16x32o.S: 240 32
+:geoo/steel/16x32o.S: 240 0
+:geoo/steel/16x32o.S: 192 0
+:geoo/steel/16x32o.S: 210 0
+:geoo/steel/16x32o.S: 222 0
+:amanda/steel/steel8x16.S: 248 144 r
+:matt/marble/thinplatform64p: 256 64
+:geoo/steel/16x32o.S: 256 32
+:geoo/steel/16x32o.S: 304 32
+:geoo/steel/16x32o.S: 304 0
+:geoo/steel/16x32o.S: 256 0
+:geoo/steel/16x32o.S: 274 0
+:geoo/steel/16x32o.S: 286 0
+:amanda/steel/steel8x16.S: 312 144 r

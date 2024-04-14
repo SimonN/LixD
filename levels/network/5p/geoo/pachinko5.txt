@@ -1,0 +1,139 @@
+$BUILT 2024-04-13 23:35:31
+$AUTHOR geoo
+$ENGLISH Pachinko
+
+#INTENDED_NUMBER_OF_PLAYERS 5
+#SIZE_X 640
+#SIZE_Y 384
+#TORUS_X 1
+#TORUS_Y 1
+
+#SECONDS 60
+#INITIAL 90
+#SPAWN_INTERVAL 7
+
+#BASHER 4
+#CUBER 5
+#EXPLODER2 0
+
+:geoo/abstract/hatch.H: 192 16
+:geoo/abstract/hatch.H: 320 16
+:geoo/abstract/hatch.H: 448 16
+:geoo/abstract/hatch.H: 576 16
+:geoo/abstract/hatch.H: 64 16
+:geoo/abstract/hatch.H: 320 16
+:geoo/abstract/hatch.H: 448 16
+:geoo/abstract/hatch.H: 576 16
+:geoo/abstract/hatch.H: 64 16
+:geoo/abstract/hatch.H: 192 16
+:geoo/abstract/hatch.H: 448 16
+:geoo/abstract/hatch.H: 576 16
+:geoo/abstract/hatch.H: 64 16
+:geoo/abstract/hatch.H: 192 16
+:geoo/abstract/hatch.H: 320 16
+:geoo/abstract/hatch.H: 576 16
+:geoo/abstract/hatch.H: 64 16
+:geoo/abstract/hatch.H: 192 16
+:geoo/abstract/hatch.H: 320 16
+:geoo/abstract/hatch.H: 448 16
+:geoo/abstract/hatch.H: 64 16
+:geoo/abstract/hatch.H: 192 16
+:geoo/abstract/hatch.H: 320 16
+:geoo/abstract/hatch.H: 448 16
+:geoo/abstract/hatch.H: 576 16
+
+:geoo/abstract/goal.G: 192 328
+:geoo/abstract/goal.G: 320 328
+:geoo/abstract/goal.G: 448 328
+:geoo/abstract/goal.G: 576 328
+:geoo/abstract/goal.G: 64 328
+
+:matt/carnival/00: 0 64
+:matt/carnival/01: 384 64
+:matt/carnival/02: 256 64
+:matt/carnival/03: 128 64
+:matt/carnival/00: 64 64
+:matt/carnival/01: 448 64
+:matt/carnival/02: 320 64
+:matt/carnival/03: 192 64
+:matt/carnival/00: 32 112
+:matt/carnival/01: 416 112
+:matt/carnival/02: 288 112
+:matt/carnival/03: 160 112
+:matt/carnival/00: 96 112
+:matt/carnival/01: 480 112
+:matt/carnival/02: 352 112
+:matt/carnival/03: 224 112
+:matt/carnival/00: 0 160
+:matt/carnival/01: 384 160
+:matt/carnival/02: 256 160
+:matt/carnival/03: 128 160
+:matt/carnival/00: 64 160
+:matt/carnival/01: 448 160
+:matt/carnival/02: 320 160
+:matt/carnival/03: 192 160
+:matt/carnival/00: 32 208
+:matt/carnival/01: 416 208
+:matt/carnival/02: 288 208
+:matt/carnival/03: 160 208
+:matt/carnival/00: 96 208
+:matt/carnival/01: 480 208
+:matt/carnival/02: 352 208
+:matt/carnival/03: 224 208
+:matt/carnival/00: 0 256
+:matt/carnival/01: 384 256
+:matt/carnival/02: 256 256
+:matt/carnival/03: 128 256
+:matt/carnival/00: 64 256
+:matt/carnival/01: 448 256
+:matt/carnival/02: 320 256
+:matt/carnival/03: 192 256
+:matt/carnival/00: 32 304
+:matt/carnival/01: 416 304
+:matt/carnival/02: 288 304
+:matt/carnival/03: 160 304
+:matt/carnival/00: 96 304
+:matt/carnival/01: 480 304
+:matt/carnival/02: 352 304
+:matt/carnival/03: 224 304
+:matt/carnival/00: 32 16
+:matt/carnival/01: 416 16
+:matt/carnival/02: 288 16
+:matt/carnival/03: 160 16
+:matt/carnival/00: 96 16
+:matt/carnival/01: 480 16
+:matt/carnival/02: 352 16
+:matt/carnival/03: 224 16
+:geoo/steel/32x32o.S: 128 352
+:geoo/steel/32x32o.S: 256 352
+:geoo/steel/32x32o.S: 384 352
+:geoo/steel/32x32o.S: 512 352
+$BEGIN_TILE_GROUP 0
+:geoo/construction/rod_steel/straight32.S: 0 0 fr
+:geoo/construction/rod_steel/straight32.S: 24 0 fr
+:geoo/construction/rod_steel/straight32.S: 0 24
+:geoo/construction/rod_steel/end_rect.S: 0 0 fr
+:geoo/construction/rod_steel/end_rect.S: 24 0 fr
+:geoo/construction/rod_steel/edge_ru.S: 0 24
+:geoo/construction/rod_steel/edge_lu.S: 24 24
+$END_TILE_GROUP
+:Group-0: 448 352
+:Group-0: 320 352
+:Group-0: 192 352
+:Group-0: 576 352
+:matt/marble/05a: 544 16
+:matt/marble/05a: 608 16
+:matt/marble/05a: 512 64
+:matt/marble/05a: 576 64
+:matt/marble/05a: 544 112
+:matt/marble/05a: 608 112
+:matt/marble/05a: 512 160
+:matt/marble/05a: 576 160
+:matt/marble/05a: 544 208
+:matt/marble/05a: 608 208
+:matt/marble/05a: 512 256
+:matt/marble/05a: 576 256
+:matt/marble/05a: 544 304
+:matt/marble/05a: 608 304
+:geoo/steel/32x32o.S: 0 352
+:Group-0: 64 352
