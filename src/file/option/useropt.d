@@ -105,7 +105,8 @@ protected:
                 _value = KeySet(_value, KeySet(value.get!int));
         }
         else {
-            _value = tag.getValue!T;
+            // If the tag's value type-mismatches, set _value to _value.
+            _value = tag.getValue!T(_value);
         }
     }
 
