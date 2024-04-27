@@ -31,13 +31,28 @@ static import file.log;
 
 void initialize(in Cmdargs cmdargs)
 {
-    initializeNoninteractive(cmdargs.mode); // common to interactive and nonint
-    if (cmdargs.mode == Runmode.INTERACTIVE)
-        // This initializes tiles, GUI context, many other things.
-        changeResolutionBasedOnCmdargsThenUserFile(cmdargs);
+    file.filename.initialize(); // The virtual filesystem. Logfile needs it.
+    file.log.initialize();
+
+    try {
+        initializeEverythingExceptLogfileAndDisplay(cmdargs.mode);
+        if (cmdargs.mode == Runmode.INTERACTIVE)
+            // This initializes tiles, GUI context, many other things.
+            changeResolutionBasedOnCmdargsThenUserFile(cmdargs);
+    }
+    catch (Throwable uncaught) {
+        file.log.logThenRethrowToTerminate(uncaught);
+    }
 }
 
-void initializeNoninteractive(Runmode mode)
+void initializeForUnittest()
+{
+    file.filename.initialize();
+    initializeEverythingExceptLogfileAndDisplay(Runmode.VERIFY);
+    // The log file isn't used during unittest. Logging lands in stdout.
+}
+
+private void initializeEverythingExceptLogfileAndDisplay(in Runmode mode)
 {
     // ph == need physics, may or may not need graphics.
     // gr == need graphics, may or may not need physics.
@@ -48,8 +63,6 @@ void initializeNoninteractive(Runmode mode)
     if (ia) basics.alleg5.initializeInteractive();
     else    basics.alleg5.initializeNoninteractive();
 
-    file.filename.initialize(); // the virtual filesystem
-    file.log.initialize();
     loadUserOptions();
     loadTrophies();
 

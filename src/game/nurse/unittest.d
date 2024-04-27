@@ -200,7 +200,7 @@ version (unittest) {
 
 unittest {
     al_run_allegro(delegate int() {
-        initializeNoninteractive(Runmode.VERIFY);
+        initializeForUnittest();
         scope (exit)
             deinitializeAfterUnittest();
 

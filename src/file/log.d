@@ -1,10 +1,10 @@
 module file.log;
 
+import core.time;
 import std.file;
 import std.stdio;
 import std.string;
 
-import basics.alleg5;
 import basics.globals;
 import net.versioning;
 import file.date;
@@ -23,7 +23,8 @@ import file.date;
  */
 
 private:
-    bool _initialized;
+    bool _isInitialized = false;
+    MonoTime _timeOfInit;
     bool _somethingAlreadyLoggedThisSession;
     std.stdio.File _file;
 
@@ -32,18 +33,20 @@ public:
 nothrow static void
 initialize()
 {
-    if (_initialized)
+    if (_isInitialized)
         return;
     _somethingAlreadyLoggedThisSession = false;
+    _timeOfInit = MonoTime.currTime;
 
     version (unittest) {
     }
     else {
         try {
             _file = basics.globals.fileLog.openForWriting("a");
-            _initialized = true;
+            _isInitialized = true;
         }
         catch (Exception) {
+            _isInitialized = false;
             try _file = _file.init;
             catch (Exception) { }
         }
@@ -53,24 +56,24 @@ initialize()
 nothrow static void
 deinitialize()
 {
-    if (! _initialized)
+    if (! _isInitialized)
         return;
     try {
         _file.close();
         _file = _file.init;
     }
     catch (Exception) { }
-    _initialized = false;
+    _isInitialized = false;
 }
 
 nothrow static void
 log(string s)
 {
-    if (! _initialized)
+    if (! _isInitialized)
         return;
     try {
         logHeaderIfNecessary();
-        _file.writefln("%s %s", formatAlTicks(), s);
+        _file.writefln("%s %s", formatTimeSinceInit(), s);
         _file.flush();
     }
     catch (Exception) { }
@@ -79,11 +82,11 @@ log(string s)
 nothrow static void
 logf(T...)(string formatstr, T formatargs)
 {
-    if (! _initialized)
+    if (! _isInitialized)
         return;
     try {
         logHeaderIfNecessary();
-        _file.writefln("%s " ~ formatstr, formatAlTicks(), formatargs);
+        _file.writefln("%s " ~ formatstr, formatTimeSinceInit(), formatargs);
         _file.flush();
     }
     catch (Exception) { }
@@ -99,29 +102,52 @@ logfEvenDuringUnittest(Args...)(string formatstr, Args args)
     catch (Exception) {}
 }
 
+// Throws again its argument (firstThr).
+static void
+logThenRethrowToTerminate(Throwable firstThr)
+{
+    // Uncaught exceptions, assert errors, and assert (false) should
+    // fly straight out of main() and terminate the program. Since
+    // Windows users won't run the game from a shell, they should
+    // retrieve the error message from the logfile.
+    for (Throwable thr = firstThr; thr !is null; thr = thr.next) {
+        logf("%s:%d:", thr.file, thr.line);
+        log(thr.msg);
+        log(thr.info.toString());
+    }
+    throw firstThr;
+}
+
 ///////////////////////////////////////////////////////////////////////////////
 
 private static void
 logHeaderIfNecessary()
 {
-    if (! _initialized || _somethingAlreadyLoggedThisSession) {
+    if (! _isInitialized || _somethingAlreadyLoggedThisSession) {
         return;
     }
-    else {
-        _somethingAlreadyLoggedThisSession = true;
+    _somethingAlreadyLoggedThisSession = true;
+    _file.writefln("");
+    _file.writefln("Lix version:  " ~ gameVersion().toString());
+    _file.writefln("Session date: " ~ Date.now().toString);
+}
 
-        // a free line and then the current datetime in its own line
-        _file.writefln("");
-        _file.writefln("Lix version:  " ~ gameVersion().toString());
-        _file.writefln("Session date: " ~ Date.now().toString);
+private static string
+formatTimeSinceInit() nothrow
+{
+    try {
+        return format("%9.2f", secondsSinceInitAsDouble);
+    }
+    catch (Exception) {
+        return "Bad time!";
     }
 }
 
-private nothrow static string
-formatAlTicks()
+private static double
+secondsSinceInitAsDouble() nothrow @nogc
 {
-    try return format("%9.2f", timerTicks * 1.0 / ticksPerSecond);
-    catch (Exception) {
-        return "bad time!";
+    if (_timeOfInit == MonoTime.init) {
+        return 0.00;
     }
+    return (MonoTime.currTime - _timeOfInit).total!("msecs") / 1000.0;
 }

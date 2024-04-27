@@ -201,7 +201,7 @@ unittest {
     import file.replay.io;
 
     al_run_allegro(delegate int() {
-        initializeNoninteractive(Runmode.VERIFY);
+        initializeForUnittest();
         scope (exit)
             deinitializeAfterUnittest();
 
