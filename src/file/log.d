@@ -5,7 +5,7 @@ import std.file;
 import std.stdio;
 import std.string;
 
-import basics.globals;
+static import basics.globals;
 import net.versioning;
 import file.date;
 
@@ -115,6 +115,7 @@ logThenRethrowToTerminate(Throwable firstThr)
         log(thr.msg);
         log(thr.info.toString());
     }
+    showOsSpecificMessageBox(firstThr);
     throw firstThr;
 }
 
@@ -150,4 +151,35 @@ secondsSinceInitAsDouble() nothrow @nogc
         return 0.00;
     }
     return (MonoTime.currTime - _timeOfInit).total!("msecs") / 1000.0;
+}
+
+///////////////////////////////////////////////////////////////////////////////
+
+version (Windows) {
+    import core.sys.windows.windows;
+    import std.conv : wtext;
+
+    import basics.alleg5;
+    import hardware.display;
+
+    // 2024-05: This declaration belongs into DAllegro5. I'll submit a PR.
+    nothrow @nogc extern (C) {
+        HWND al_get_win_window_handle(ALLEGRO_DISPLAY *display);
+    }
+
+    private void showOsSpecificMessageBox(Throwable thr)
+    {
+        al_show_mouse_cursor(theA5display);
+        const messageBody = wtext(thr.msg,
+            "\n\n", "Lix has crashed at:",
+            "\n", thr.file, ":", thr.line,
+            "\n\n", "Details are in the logfile:",
+            "\n", basics.globals.fileLog.rootless,
+            "\0");
+        MessageBoxW(al_get_win_window_handle(theA5display),
+            messageBody.ptr, null, MB_ICONERROR);
+    }
+}
+else {
+    private void showOsSpecificMessageBox(Throwable) {}
 }

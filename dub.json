@@ -1,6 +1,6 @@
 {
     "name": "lix",
-    "description": "single-/multiplayer puzzle game, inspired by Lemmings",
+    "description": "Single-/multiplayer puzzle game, inspired by Lemmings",
     "homepage": "https://www.lixgame.com",
     "copyright": "public domain",
     "authors": ["Simon Naarmann"],
@@ -32,6 +32,7 @@
         "allegro_primitives",
         "allegro_ttf",
     ],
+    "libs-windows-dmd": ["user32"],
     "lflags-windows-x86_omf-dmd": ["-L/subsystem:windows"],
     "lflags-windows-x86-dmd": [
         "-subsystem:windows",
