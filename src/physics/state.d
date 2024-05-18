@@ -19,6 +19,7 @@ import hardware.tharsis;
 import net.repdata;
 import net.style;
 import physics.tribe;
+import physics.tribes;
 import tile.phymap;
 
 alias GameState = RefCounted!(RawGameState, RefCountedAutoInitialize.no);
@@ -36,7 +37,9 @@ public:
     Phyu age;
     int overtimeAtStartInPhyus;
 
-    Tribe[Style] tribes; // update order is garden, red, orange, yellow, ...
+    Torbit land;
+    Phymap lookup;
+    Tribes tribes; // update order is garden, red, orange, yellow, ...
 
     Hatch[] hatches;
     Goal[] goals;
@@ -44,9 +47,6 @@ public:
     TrapTrig[] traps;
     FlingPerm[] flingPerms;
     FlingTrig[] flingTrigs;
-
-    Torbit land;
-    Phymap lookup;
 
     this(this) { opAssignImpl(this); }
 
@@ -78,75 +78,62 @@ public:
         chain(hatches, goals, waters, traps, flingPerms, flingTrigs).each!func;
     }
 
-    int numTribes() const pure nothrow @safe @nogc
-    {
-        return tribes.length & 0xFFFF;
+    const pure nothrow @safe @nogc {
+        bool isPuzzle() { return tribes.isPuzzle; }
+        bool isBattle() { return tribes.isBattle; }
+        bool isSolvedPuzzle(in int req) { return tribes.isSolvedPuzzle(req); }
     }
 
-    bool multiplayer() const pure nothrow @safe @nogc
+    bool someoneDoesntYetPreferGameToEnd() const
     {
-        assert (numTribes > 0);
-        return numTribes > 1;
+        return tribes.playerTribes.any!(tr => ! tr.prefersGameToEnd);
     }
 
-    Style singleplayerStyle() const pure nothrow @safe @nogc
-    in { assert (! multiplayer, "call this only in singleplayer"); }
-    do { return tribes.byKey.front; }
-
-    @property bool singleplayerHasSavedAtLeast(in int lixRequired) const @nogc
-    {
-        return ! multiplayer
-            && tribes.byValue.front.score.lixSaved >= lixRequired;
-    }
-
-    @property bool singleplayerHasNuked() const @nogc
-    {
-        return ! multiplayer && tribes.byValue.front.hasNuked;
-    }
-
-    @property bool overtimeRunning() const
-    in { assert (tribes.length > 0); }
+    // False as long as overtime hasn't started running yet.
+    // True after overtime has started running, or after overtime has run out.
+    bool isOvertimeRunning() const pure nothrow @safe @nogc
+    in { assert (isBattle || isPuzzle, "Add players to avoid empty truth."); }
     do {
-        return tribes.byValue.all!(tr => tr.prefersGameToEnd)
-            || tribes.byValue.any!(tr => tr.triggersOvertime);
+        return tribes.playerTribes.all!(tr => tr.prefersGameToEnd)
+            || tribes.playerTribes.any!(tr => tr.triggersOvertime);
     }
 
-    // Call this only if overtimeRunning.
+    // Call this only if isOvertimeRunning.
     // Use this only for effect handling. For nuking or exit locking,
     // use nukeIsAssigningExploders or lixMayUseGoals.
     Phyu overtimeRunningSince() const
     in {
-        assert (overtimeRunning);
-        assert (tribes.length > 0);
+        assert (isOvertimeRunning);
     }
     do {
-        if (tribes.byValue.all!(tr => tr.prefersGameToEnd)) {
-            return tribes.byValue.map!(tr => tr.prefersGameToEndSince.front)
+        if (tribes.playerTribes.all!(tr => tr.prefersGameToEnd)) {
+            return tribes.playerTribes
+                .map!(tr => tr.prefersGameToEndSince.front)
                 .reduce!max;
         }
         else {
-            assert (tribes.byValue.any!(tr => tr.triggersOvertime));
-            return tribes.byValue
+            assert (tribes.playerTribes.any!(tr => tr.triggersOvertime));
+            return tribes.playerTribes
                 .filter!(tr => tr.triggersOvertime)
                 .map!(tr => tr.triggersOvertimeSince.front)
                 .reduce!min;
         }
     }
 
-    // This doesn't return Phyu because Phyu is a point in time, not a duration
-    @property int overtimeRemainingInPhyus() const
+    // Returns as int, not as Phyu. Phyu is a point in time, not a duration.
+    int overtimeRemainingInPhyus() const
     {
-        if (! overtimeRunning)
+        if (! isOvertimeRunning)
             return overtimeAtStartInPhyus;
-        if (tribes.byValue.all!(tr => tr.prefersGameToEnd))
+        if (tribes.playerTribes.all!(tr => tr.prefersGameToEnd))
             return 0;
         return clamp(overtimeAtStartInPhyus + overtimeRunningSince - age,
-                    0, overtimeAtStartInPhyus);
+            0, overtimeAtStartInPhyus);
     }
 
-    @property bool nukeIsAssigningExploders() const
+    bool nukeIsAssigningExploders() const
     {
-        return overtimeRunning() && overtimeRemainingInPhyus == 0;
+        return isOvertimeRunning() && overtimeRemainingInPhyus == 0;
     }
 
     // Extra check (other than nukeIsAssigningExploders) for edge case during
@@ -156,7 +143,7 @@ public:
     // the next comparison, change the nuke status before processing
     // the next player. The nuke prevents lixes from exiting.
     // Solution: In race maps, allow that one update to finish with scoring.
-    @property bool lixMayUseGoals() const
+    bool lixMayUseGoals() const
     {
         return ! nukeIsAssigningExploders || overtimeRunningSince == age;
     }
@@ -186,18 +173,12 @@ private:
     {
         overtimeAtStartInPhyus = rhs.overtimeAtStartInPhyus;
         age = rhs.age;
+        tribes = rhs.tribes.clone();
         hatches  = basics.help.clone(rhs.hatches);
         goals    = basics.help.clone(rhs.goals);
         waters   = basics.help.clone(rhs.waters);
         traps    = basics.help.clone(rhs.traps);
         flingPerms = basics.help.clone(rhs.flingPerms);
         flingTrigs = basics.help.clone(rhs.flingTrigs);
-
-        // Deep-clone this by hand, I haven't written a generic clone for AAs
-        // Don't start with (tribes = null;) because rhs could be this.
-        typeof(tribes) temp;
-        foreach (style, tribe; rhs.tribes)
-            temp[style] = tribe.clone();
-        tribes = temp;
     }
 }

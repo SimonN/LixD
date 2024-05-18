@@ -47,8 +47,7 @@ implGameDraw(Game game) { with (game)
         }
         else {
             _splatRuler.considerBackgroundColor(level.bgColor);
-            _splatRuler.determineSnap(nurse.constStateForDrawingOnly.lookup,
-                map.mouseOnLand);
+            _splatRuler.determineSnap(cs.lookup, map.mouseOnLand);
             _splatRuler.drawBelowLand(map.torbit);
             game.drawLand();
             game.pingOwnGadgets();
@@ -67,7 +66,7 @@ implGameDraw(Game game) { with (game)
     pan.showInfo(localTribe);
     foreach (sc; nurse.scores)
         pan.update(sc);
-    pan.age = nurse.constStateForDrawingOnly.age;
+    pan.age = cs.age;
 
     game.showSpawnIntervalOnHatches();
     game.drawMapToA5Display();
@@ -81,14 +80,10 @@ void drawGadgets(Game game) { with (game)
 {
     version (tharsisprofiling)
         auto zone = Zone(profiler, "game draws gadgets");
-    auto cs = nurse.constStateForDrawingOnly;
-
     cs.foreachConstGadget(delegate void (const(Gadget) g) {
         g.draw(localTribe.style);
     });
-    if (cs.nukeIsAssigningExploders
-		&& ! cs.tribes.byValue.all!(tr => tr.outOfLix)
-	) {
+    if (cs.nukeIsAssigningExploders && ! nurse.everybodyOutOfLix) {
         foreach (g; cs.goals)
             g.drawNoSign();
     }
@@ -96,7 +91,7 @@ void drawGadgets(Game game) { with (game)
 
 void pingOwnGadgets(Game game) { with (game)
 {
-    if (! multiplayer)
+    if (game.cs.isPuzzle)
         return;
     immutable remains = _altickHighlightGoalsUntil - timerTicks;
     if (remains < 0) {
@@ -126,7 +121,7 @@ void drawLand(Game game)
 {
     version (tharsisproftsriling)
         auto zone = Zone(profiler, "game draws land to map");
-    game.map.loadCameraRect(game.nurse.constStateForDrawingOnly.land);
+    game.map.loadCameraRect(game.cs.land);
 }
 
 void drawAllLixes(Game game)
@@ -139,7 +134,7 @@ void drawAllLixes(Game game)
         tr.lixvec.retro.filter!(l => l.marked).each!(l => l.draw);
     }
     with (game) {
-        foreach (otherTribe; nurse.constStateForDrawingOnly.tribes)
+        foreach (otherTribe; cs.tribes.allTribesEvenNeutral)
             if (otherTribe !is game.localTribe)
                 drawTribe(otherTribe);
         foreach (li; localTribe.lixvec.retro) {
@@ -174,7 +169,7 @@ void describeInPanel(Game game, in UnderCursor underCursor)
 void showSpawnIntervalOnHatches(Game game)
 {
     game.pan.dontShowSpawnInterval();
-    if (game.nurse.constStateForDrawingOnly.hatches.any!(h =>
+    if (game.cs.hatches.any!(h =>
         game.map.torbit.isPointInRectangle(game.map.mouseOnLand, h.rect)))
         game.pan.showSpawnInterval(game.localTribe.rules.spawnInterval);
 }
@@ -214,8 +209,6 @@ void drawTooltips(Game game)
 
 void ensureMusic(const(Game) game)
 {
-    with (game.nurse.constStateForDrawingOnly) {
-        if (! isMusicPlaying && age >= Tribe.firstSpawnWithoutHandicap)
-            playMusic(someRandomMusic);
-    }
+    if (! isMusicPlaying && game.cs.age >= Tribe.firstSpawnWithoutHandicap)
+        playMusic(someRandomMusic);
 }

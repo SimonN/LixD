@@ -41,13 +41,16 @@ private:
     void flingEverybody()
     {
         bool hit = false;
-        foreach (Tribe battedTribe; lixxie.outsideWorld.state.tribes)
+        foreach (Tribe battedTribe;
+            lixxie.outsideWorld.state.tribes.allTribesEvenNeutral
+        ) {
             foreach (id, Lixxie target; battedTribe.lixvec.enumerate!int) {
                 if (! shouldWeFling(target))
                     continue;
                 hit = true;
                 fling(target, id);
             }
+        }
         // Both the hitter and the target will play the hit sound.
         // This hitting sound isn't played even quietly if an enemy lix
         // hits an enemy lix, but we want the sound if we're involved.

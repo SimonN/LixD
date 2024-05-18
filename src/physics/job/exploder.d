@@ -83,10 +83,10 @@ protected:
 
     override void flingOtherLix()
     {
-        foreach (targetTribe; lixxie.outsideWorld.state.tribes)
-            foreach (target; targetTribe.lixvec)
+        foreach (tri; lixxie.outsideWorld.state.tribes.allTribesEvenNeutral)
+            foreach (target; tri.lixvec)
                 if (target.healthy)
-                    flingOtherLix(target, targetTribe.style == lixxie.style);
+                    flingOtherLix(target, tri.style == lixxie.style);
     }
 
 private:

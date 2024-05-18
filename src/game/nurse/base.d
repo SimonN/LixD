@@ -67,37 +67,23 @@ public:
 
     final const pure nothrow @safe @nogc {
         const(Replay) constReplay() const { return _replay; }
-
-        // this is bad, DTODO: refactor
-        auto constStateForDrawingOnly()  const { return _model.cs; }
-        auto stateOnlyPrivatelyForGame() const { return _model.cs; }
-        // end bad
+        auto stateForUI() { return cs; }
     }
 
     bool everybodyOutOfLix() const
     {
-        return cs.tribes.byValue.all!(a => a.outOfLix);
+        return cs.tribes.allTribesEvenNeutral.all!(a => a.outOfLix);
     }
 
     bool doneAnimating() const
     {
-        return cs.tribes.byValue.all!(a => a.doneAnimating)
+        return cs.tribes.allTribesEvenNeutral.all!(a => a.doneAnimating)
             && cs.traps.all!(a => ! a.isEating(now));
-    }
-
-    bool singleplayerHasSavedAtLeast(in int lixRequired) const
-    {
-        return cs.singleplayerHasSavedAtLeast(lixRequired);
-    }
-
-    bool singleplayerHasNuked() const
-    {
-        return cs.singleplayerHasNuked();
     }
 
     final auto scores() const
     {
-        return cs.tribes.byValue.map!(tr => tr.score);
+        return cs.tribes.playerTribes.map!(tr => tr.score);
     }
 
     auto gadgetsOfTeam(in Style st) const
@@ -109,7 +95,6 @@ public:
 
     HalfTrophy trophyForTribe(in Style style) const
     {
-        assert (style in cs.tribes);
         HalfTrophy ret;
         ret.lixSaved = cs.tribes[style].score.lixSaved.raw;
         ret.skillsUsed = cs.tribes[style].skillsUsed.byValue.sum();
@@ -123,7 +108,7 @@ protected:
     inout(Replay) replay() inout { return _replay; }
     Replay replay(Replay r) { return _replay = r; }
 
-    inout(GameState) cs() inout
+    inout(GameState) cs() inout pure nothrow @safe @nogc
     in { assert (_model); }
     do { return _model.cs; }
 

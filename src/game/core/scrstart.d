@@ -30,13 +30,12 @@ private:
 const(GadOcc)[] ourHatches(const(Game) game) { with (game)
 {
     assert (localTribe);
-    auto st = nurse.stateOnlyPrivatelyForGame;
-    assert (st.hatches.len > 0);
-    assert (localTribe.nextHatch < st.hatches.len);
+    assert (cs.hatches.len > 0);
+    assert (localTribe.nextHatch < cs.hatches.len);
     const(GadOcc)[] ret;
     for (int next = localTribe.nextHatch;
             next != localTribe.nextHatch || ret.len == 0;
-            next  = (next + st.numTribes) % st.hatches.len
+            next  = (next + cs.tribes.numPlayerTribes) % cs.hatches.len
     ) {
         ret ~= level.gadgets[GadType.HATCH][next];
     }

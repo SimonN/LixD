@@ -170,11 +170,11 @@ version (unittest) {
     const(Lixxie) theLix(Nurse nurse)
     in {
         assert (nurse);
-        assert (nurse.stateOnlyPrivatelyForGame.tribes[Style.garden]
+        assert (nurse.stateForUI.tribes[Style.garden]
             .lixvec.length >= 1);
     }
     do {
-        return nurse.stateOnlyPrivatelyForGame.tribes[Style.garden].lixvec[0];
+        return nurse.stateForUI.tribes[Style.garden].lixvec[0];
     }
 
     void testWithCuttingFramesteps()

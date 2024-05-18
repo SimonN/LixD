@@ -194,8 +194,7 @@ public:
         foreach (fn; nurse.constReplay.levelFilename)
             if (fn.fileNoExtNoPre != "")
                 return fn.fileNoExtNoPre;
-        return nurse.constStateForDrawingOnly.multiplayer
-            ? "multiplayer" : "singleplayer";
+        return cs.isBattle ? "battle" : "puzzle";
     }
 
     void work() { implGameCalc(this); }
@@ -237,9 +236,9 @@ package:
             : opt.insertAssignmentsWhenTweakerHidden.value;
     }
 
-    bool multiplayer() const
+    auto cs() const pure nothrow @safe @nogc
     {
-        return nurse.stateOnlyPrivatelyForGame.multiplayer;
+        return nurse.stateForUI;
     }
 
     Style localStyle() const pure nothrow @safe @nogc
@@ -248,9 +247,7 @@ package:
 
     const(Tribe) localTribe() const
     {
-        auto ptr = localStyle in cs.tribes;
-        assert (ptr, "badly cloned cs? Local style isn't there");
-        return *ptr;
+        return cs.tribes[localStyle];
     }
 
     View view() const pure nothrow @safe @nogc
@@ -266,7 +263,8 @@ package:
             _effect.deleteAfter(nurse.now);
         if (pan)
             pan.setLikeTribe(localTribe, level.ploder,
-                             cs.overtimeRunning, cs.overtimeRemainingInPhyus);
+                cs.isOvertimeRunning,
+                cs.overtimeRemainingInPhyus);
         if (nurse.updatesSinceZero == 0 && _setLastPhyuToNowLastCalled != 0) {
             hardware.sound.playLoud(Sound.LETS_GO);
         }
@@ -275,24 +273,13 @@ package:
         altickLastPhyu = timerTicks;
     }
 
-    bool singleplayerHasWon() const
-    {
-        return ! multiplayer && nurse && level
-            && nurse.singleplayerHasSavedAtLeast(level.required);
-    }
-
+    bool isSolvedPuzzle() const { return cs.isSolvedPuzzle(level.required); }
     bool singleplayerHasNuked() const
     {
-        return ! multiplayer && nurse && level && nurse.singleplayerHasNuked;
+        return cs.isPuzzle && cs.tribes.theSingleTribe.hasNuked;
     }
 
 private:
-    auto cs() inout
-    {
-        assert (nurse);
-        return nurse.stateOnlyPrivatelyForGame;
-    }
-
     void commonConstructor(Replay rp)
     {
         _effect = new EffectManager(

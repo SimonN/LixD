@@ -81,8 +81,8 @@ UnderCursor findUnderCursor(
         return ret;
     }
     // When observing multiplayer or playtesting n-player maps alone:
-    foreach (sty, tri; game.nurse.stateOnlyPrivatelyForGame.tribes) {
-        if (sty == game.localStyle) {
+    foreach (tri; game.cs.tribes.playerTribes) {
+        if (tri.style == game.localStyle) {
             continue; // We've already searched this tribe above.
         }
         auto forSty = findUnderCursor(game.map, tri, chosenInPanel);

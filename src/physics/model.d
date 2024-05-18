@@ -90,9 +90,7 @@ public:
         spawnLixxiesFromHatches();
         updateLixxies();
         finalizePhyuAnimateGadgets();
-        if (_cs.overtimeRunning
-            && _cs.tribes.byValue.any!(tr => ! tr.prefersGameToEnd)
-        ) {
+        if (_cs.isOvertimeRunning && _cs.someoneDoesntYetPreferGameToEnd) {
             _effect.announceOvertime(_cs.overtimeRunningSince,
                 _cs.overtimeAtStartInPhyus);
         }
@@ -115,11 +113,10 @@ private:
     {
         assert (i.when == _cs.age,
             "increase the state's age manually before applying replay data");
-
-        auto tribe = i.style in _cs.tribes;
-        if (! tribe)
+        if (! _cs.tribes.contains(i.style))
             // Ignore bogus data that can come from anywhere
             return;
+        auto tribe = _cs.tribes[i.style];
         if (tribe.hasNuked || _cs.nukeIsAssigningExploders) {
             // Game rule: After you call for the nuke, you may not assign
             // other things, nuke again, or do whatever we allow in the future.
@@ -167,7 +164,7 @@ private:
 
     void spawnLixxiesFromHatches()
     {
-        foreach (int teamNumber, Tribe tribe; _cs.tribes) {
+        foreach (tribe; _cs.tribes.allTribesEvenNeutral) {
             if (tribe.phyuOfNextSpawn() != _cs.age) {
                 continue;
             }
@@ -183,7 +180,7 @@ private:
     {
         if (! _cs.nukeIsAssigningExploders)
             return;
-        foreach (tribe; _cs.tribes) {
+        foreach (tribe; _cs.tribes.allTribesEvenNeutral) {
             tribe.stopSpawningAnyMoreLixBecauseWeAreNuking();
             foreach (int lixID, lix; tribe.lixvec.enumerate!int) {
                 if (! lix.healthy || lix.ploderTimer > 0)
@@ -201,18 +198,19 @@ private:
             Zone zone = Zone(profiler, "PhysSeq updateLixxies()");
         bool anyFlingers = false;
 
-        /* Refactoring idea:
-         * Put this sorting into State, and do it only once at the beginning
-         * of a game. Encapsulate (Tribe[Style] tribes) and offer methods that
-         * provide the mutable tribe, but don't allow to rewrite the array.
-         */
-        auto sortedTribes = _cs.tribes.byValue.array.sort!"a.style < b.style";
-
         void foreachLix(void delegate(Tribe, in int, Lixxie) func)
         {
-            foreach (tribe; sortedTribes)
+            version (assert) {
+                Style previousTribe = Style.min;
+            }
+            foreach (tribe; _cs.tribes.allTribesEvenNeutral) {
+                version (assert) {
+                    assert (previousTribe <= tribe.style);
+                    previousTribe = tribe.style;
+                }
                 foreach (int lixID, lixxie; tribe.lixvec.enumerate!int)
                     func(tribe, lixID, lixxie);
+            }
         }
 
         void performFlingersUnmarkOthers()

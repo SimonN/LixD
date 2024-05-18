@@ -47,8 +47,8 @@ do {
     s.foreachGadget((Gadget g) {
         g.drawLookup(s.lookup);
     });
-    s.age = s.multiplayer ? Phyu(0) : Phyu(45); // start quickly in 1-player
-    s.overtimeAtStartInPhyus = s.multiplayer
+    s.age = s.isBattle ? Phyu(0) : Phyu(45); // start quickly in 1-player
+    s.overtimeAtStartInPhyus = s.isBattle
         ? cfg.level.overtimeSeconds * phyusPerSecondAtNormalSpeed : 0;
     return s;
 }
@@ -57,7 +57,7 @@ private:
 
 void preparePlayers(GameState state, in GameStateInitCfg cfg)
 in {
-    assert (state.tribes == null);
+    assert (state.tribes.numPlayerTribes == 0);
     assert (cfg.tribes.length >= 1);
 }
 do {
@@ -65,7 +65,7 @@ do {
         ? Tribe.RuleSet.MustNukeWhen.raceToFirstSave
         : Tribe.RuleSet.MustNukeWhen.normalOvertime;
     foreach (style, mergedHandicap; cfg.tribes) {
-        Tribe tr = new Tribe(Tribe.RuleSet(
+        state.tribes.add(Tribe.RuleSet(
             style,
             cfg.level.initial,
             cfg.level.spawnint,
@@ -73,7 +73,6 @@ do {
             nukeRule,
             mergedHandicap,
         ));
-        state.tribes[style] = tr;
     }
 }
 
@@ -100,16 +99,17 @@ void assignTribesToGoals(GameState state, in Permu permu)
 in {
     import std.format;
     assert (state.hatches.len, "we'll do modulo on the hatches, 0 is bad");
-    assert (state.numTribes, "can't assign the goals to 0 players");
-    assert (permu.len == state.numTribes,
-        format!"permu length mismatch: permu len = %d, numTribes = %d"
-            (permu.len, state.numTribes));
+    assert (state.tribes.numPlayerTribes, "can't assign goals to 0 players");
+    assert (permu.len == state.tribes.numPlayerTribes,
+        format!"permu length mismatch: permu len = %d, playable tribes = %d"
+            (permu.len, state.tribes.numPlayerTribes));
 }
 out {
     assert (state.hatches.all!(h => ! h.tribes.empty));
 }
 do { with (state)
 {
+    immutable numTribes = state.tribes.numPlayerTribes;
     while (hatches.len % numTribes != 0 && numTribes % hatches.len != 0)
         hatches = hatches[0 .. $-1];
     assert (hatches.len);
@@ -117,7 +117,7 @@ do { with (state)
         && goals.len % numTribes != 0 && numTribes % goals.len != 0)
         goals = goals[0 .. $-1];
 
-    auto stylesInPlay = tribes.keys;
+    auto stylesInPlay = tribes.playerTribes.map!(tr => tr.style).array;
     stylesInPlay.sort();
 
     // Permu 0 3 1 2 for 2 goals and tribes red, orange, yellow, purple means:

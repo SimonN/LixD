@@ -26,13 +26,11 @@ public:
     in {
         assert (model);
         assert (replay);
-        assert (! model.cs.multiplayer, "don't evaluate multiplayer replays");
+        assert (cs.isPuzzle, "Don't evaluate battle replays.");
     }
     do {
         bool mercyKilled = false;
-        while (! cs.singleplayerHasSavedAtLeast(_required)
-            && ! everybodyOutOfLix
-        ) {
+        while (! everybodyOutOfLix && ! cs.isSolvedPuzzle(_required)) {
             updateOnce();
             // allow 5 minutes after the last replay data before cancelling
             if (now >= replay.latestPhyu + 5 * (60 * 15)) {
@@ -41,6 +39,6 @@ public:
             }
         }
         return EvalResult(
-            trophyForTribe(model.cs.singleplayerStyle), now, mercyKilled);
+            trophyForTribe(cs.tribes.theSingleTribe.style), now, mercyKilled);
     }
 }

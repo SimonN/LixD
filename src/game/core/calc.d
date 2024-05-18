@@ -80,8 +80,8 @@ void considerToEndGame(Game game)
 
 void calcEndOfPhysicsWhileEffectsAreStillGoingOn(Game game) { with (game)
 {
-    if (multiplayer || singleplayerHasWon) {
-        return; // Singleplayer has not lost.
+    if (game.cs.isBattle || game.isSolvedPuzzle) {
+        return; // Singleplayer has not lost yet. Nothing to do here.
     }
     /*
      * We check the nuke button here in addition to checking it during
@@ -109,8 +109,10 @@ void calcEndOfPhysicsWhileEffectsAreStillGoingOn(Game game) { with (game)
 
 void calcEndOfPhysicsAndEndOfEffects(Game game) { with (game)
 {
-    if (multiplayer || singleplayerHasWon || singleplayerHasNuked)
+    if (game.cs.isBattle || isSolvedPuzzle || singleplayerHasNuked) {
         _gotoMainMenu = true;
-    if (view.printResultToConsole)
+    }
+    if (view.printResultToConsole) {
         _chatArea.printScores(nurse.scores, nurse.constReplay, localStyle);
+    }
 }}

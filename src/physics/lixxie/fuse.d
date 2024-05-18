@@ -23,7 +23,7 @@ void handlePloderTimer(Lixxie li, OutsideWorld* ow)
 
     if (li.healthy) {
         // multiplayer has ploder countdown, singleplayer is instant
-        if (ow.state.numTribes <= 1 || li.ploderTimer == Lixxie.ploderDelay)
+        if (ow.state.isPuzzle || li.ploderTimer == Lixxie.ploderDelay)
             li.becomePloder(ow);
         else
             li.ploderTimer = li.ploderTimer + 1;

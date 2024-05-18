@@ -40,10 +40,13 @@ class Blocker : Job {
 
     private final void blockOtherLix()
     {
-        foreach (Tribe tribe; lixxie.outsideWorld.state.tribes)
-            foreach (Lixxie li; tribe.lixvec)
+        foreach (Tribe oneTribe;
+            lixxie.outsideWorld.state.tribes.allTribesEvenNeutral
+        ) {
+            foreach (Lixxie li; oneTribe.lixvec)
                 if (li.job.blockable)
                     blockSingleLix(li);
+        }
     }
 
     private final void blockSingleLix(Lixxie li)
