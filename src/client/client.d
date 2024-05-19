@@ -27,7 +27,7 @@ interface NetClientObserver {
     void onCannotConnect();
     void onVersionMisfit(in Version serverVersion);
     void onConnectionLost();
-    void onChatMessage(in string peerName, in string chat);
+    void onChatMessage(in Profile2022 from, in string chat);
     void onPeerDisconnect(in string peerName);
     void onPeerJoinsRoom(in Profile2022);
     void onPeerLeavesRoomTo(in string peerName, in Room toRoom);

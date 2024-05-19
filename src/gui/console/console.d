@@ -12,8 +12,10 @@ import std.math;
 import basics.alleg5;
 import basics.help;
 import graphic.color;
+import graphic.internal : getAlcol3DforStyle;
 import gui;
 import gui.console.line;
+import net.style;
 
 abstract class Console : Element {
 private:
@@ -22,11 +24,15 @@ private:
 public:
     this(Geom g) { super(g); }
 
-    void add     (in string textToPrint) { add(textToPrint, color.guiText); }
+    void add(in string textToPrint) { add(textToPrint, color.guiText); }
     void addWhite(in string textToPrint) { add(textToPrint, color.guiTextOn); }
+    void add(in Style peerColor, in string textToPrint)
+    {
+        add(textToPrint, getAlcol3DforStyle(peerColor).textColor);
+    }
 
-    @property const(Line[]) lines() const { return _lines; }
-    @property void lines(const(Line[]) aLines)
+    const(Line[]) lines() const { return _lines; }
+    void lines(const(Line[]) aLines)
     {
         if (_lines.len) {
             foreach (ref line; _lines)
@@ -45,12 +51,12 @@ public:
     }
 
 protected:
-    abstract @property Alfont lineFont() const;
-    abstract @property float lineYlg() const;
-    abstract @property long ticksToLive() const;
+    abstract Alfont lineFont() const;
+    abstract float lineYlg() const;
+    abstract long ticksToLive() const;
 
-    @property int maxLines() const { return ylg.to!int / lineYlg.floor.to!int;}
-    @property int numLines() const { return _lines.len; }
+    int maxLines() const { return ylg.to!int / lineYlg.floor.to!int;}
+    int numLines() const { return _lines.len; }
 
     void onLineChange() { }
     void moveLine(ref Line line, int whichFromTop)
@@ -100,9 +106,9 @@ public:
     }
 
 protected:
-    override @property Alfont lineFont() const { return djvuM; }
-    override @property float lineYlg() const { return 20; }
-    override @property long ticksToLive() const { return 999_999_999; } // inf
+    override Alfont lineFont() const { return djvuM; }
+    override float lineYlg() const { return 20; }
+    override long ticksToLive() const { return 999_999_999; } // inf
 
     override void moveLine(ref Line line, int whichFromTop)
     {
@@ -133,10 +139,10 @@ public:
     }
 
 protected:
-    override @property Alfont lineFont() const { return djvuS; }
-    override @property int maxLines() const { return 8; }
-    override @property float lineYlg() const { return 13; }
-    override @property long ticksToLive() const { return 10 * 60; }
+    override Alfont lineFont() const { return djvuS; }
+    override int maxLines() const { return 8; }
+    override float lineYlg() const { return 13; }
+    override long ticksToLive() const { return 10 * 60; }
 
     override void onLineChange()
     {

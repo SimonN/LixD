@@ -268,7 +268,7 @@ private:
         return "%d.%d.%d.%d".format(ptr[0], ptr[1], ptr[2], ptr[3]);
     }
 
-    string playerName(PlNr plNr)
+    string playerName(PlNr plNr) const pure nothrow @safe @nogc
     {
         auto ptr = plNr in _profilesInOurRoom;
         return ptr ? ptr.name : "?";
@@ -407,8 +407,19 @@ private:
         }
         else if (got[0] == PacketStoC.peerChatMessage) {
             auto chat = ChatPacket(got);
-            foreach (obs; _observers) {
-                obs.onChatMessage(playerName(chat.header.plNr), chat.text);
+            auto from = chat.header.plNr in _profilesInOurRoom;
+            if (from) {
+                foreach (obs; _observers) {
+                    obs.onChatMessage(*from, chat.text);
+                }
+            }
+            else {
+                auto dummy = Profile2022();
+                dummy.name = "?";
+                dummy.feeling = Profile2022.Feeling.observing;
+                foreach (obs; _observers) {
+                    obs.onChatMessage(dummy, chat.text);
+                }
             }
         }
         else if (got[0] == PacketStoC.peerLevelFile) {

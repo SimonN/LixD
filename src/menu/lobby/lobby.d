@@ -316,7 +316,7 @@ public:
         _netClient = null;
     }
 
-    void onChatMessage(in string, in string) {} // Console will print it
+    void onChatMessage(in Profile2022, in string) {} // Console will print
     void onPeerDisconnect(in string) { refreshPeerList(); }
     void onPeerJoinsRoom(in Profile profile)
     {

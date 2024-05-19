@@ -13,11 +13,20 @@ public ColorPrivate color;
 // bar graph 3D colors for a Lix style, or GUI button outlines
 public struct Alcol3D {
     Alcol l, m, d;
-    Alcol3D retro() const pure nothrow @safe @nogc { return Alcol3D(d, m, l); }
+
     bool isValid() const pure nothrow @safe @nogc
     {
         static assert (is (typeof(l.r) == const float));
         return l.r == l.r; // I.e., it's not NaN
+    }
+
+    Alcol3D retro() const pure nothrow @safe @nogc { return Alcol3D(d, m, l); }
+
+    Alcol textColor() const nothrow @nogc
+    {
+        float r = void, g = void, b = void;
+        al_unmap_rgb_f(m, &r, &g, &b);
+        return al_map_rgb_f(r/3 + 0.66f, g/3 + 0.66f, b/3 + 0.66f);
     }
 }
 

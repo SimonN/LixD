@@ -105,9 +105,15 @@ public:
         _console.add(Lang.netChatYouLostConnection.transl);
     }
 
-    void onChatMessage(in string peerName, in string chat)
+    void onChatMessage(in Profile2022 from, in string chat)
     {
-        _console.addWhite("%s: %s".format(peerName, chat));
+        const line = "%s: %s".format(from.name, chat);
+        if (from.feeling == Profile2022.Feeling.observing) {
+            _console.addWhite(line);
+        }
+        else {
+            _console.add(from.style, line);
+        }
     }
 
     void onPeerDisconnect(in string peerName)

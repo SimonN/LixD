@@ -147,7 +147,7 @@ public:
         _bar = new SimpleBar(new Geom(0, 0, barL, 20, From.RIGHT));
         _bar.score = Score(style, FracInt(0), 0);
         _nameLabel = new Label(new Geom(0, 0, teamL - 5f, 20));
-        _nameLabel.color = brighten(style);
+        _nameLabel.color = getAlcol3DforStyle(style).textColor;
 
         _alive = IconNumber(
             new Geom(aliveE+3, 0, 20, 20, From.RIGHT),
@@ -192,14 +192,6 @@ public:
         sort(_names);
         _nameLabel.text = _names.join(", ");
     }
-
-private:
-    static Alcol brighten(in Style st)
-    {
-        float r, g, b;
-        al_unmap_rgb_f(getAlcol3DforStyle(st).m, &r, &g, &b);
-        return al_map_rgb_f(r/3 + 0.66f, g/3 + 0.66f, b/3 + 0.66f);
-    }
 }
 
 struct IconNumber {
@@ -216,7 +208,7 @@ public:
         _icon.xf = xFrameForIcon;
         _icon.yf = xFrameForIcon == 5 ? 1 : 0; // exits should be greyed out
         _label = new Label(gl);
-        _label.color = AnnotatedBar.brighten(style);
+        _label.color = getAlcol3DforStyle(style).textColor;
         _previous = FracInt(-1); // merely different from 0, for number()
         number = FracInt(0);
     }
