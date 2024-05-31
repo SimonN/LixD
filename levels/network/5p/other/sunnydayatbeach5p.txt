@@ -1,0 +1,84 @@
+$BUILT 2024-06-01 16:39:49
+$AUTHOR Blitz
+$ENGLISH Thats Enough im Leaving!
+
+#INTENDED_NUMBER_OF_PLAYERS 5
+#SIZE_X 864
+#SIZE_Y 512
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 16
+#BACKGROUND_BLUE 80
+
+#SECONDS 120
+#INITIAL 100
+#SPAWN_INTERVAL 64
+
+#WALKER 50
+#RUNNER 3
+#CLIMBER 10
+#FLOATER 10
+#EXPLODER 3
+#BLOCKER 2
+#BUILDER 100
+#BASHER 30
+#MINER 10
+#DIGGER 10
+#JUMPER 50
+#BATTER 20
+#CUBER 5
+
+:geoo/sandstone/fennec.H: 104 104
+:geoo/sandstone/fennec.H: 124 342
+:geoo/sandstone/fennec.H: 696 388 r
+:geoo/sandstone/fennec.H: 706 98 r
+:geoo/sandstone/fennec.H: 402 198 r
+
+:matt/beach/goal.G: 372 430
+:matt/beach/goal.G: 370 114
+:geoo/abstract/goal.G: 716 202
+:geoo/abstract/goal.G: 116 202
+:geoo/abstract/goal.G: 374 50
+
+:matt/beach/decor/umbrella_red: 404 414 frr
+:matt/beach/decor/umbrella_red: 342 414
+:matt/beach/decor/umbrella_red: 404 90 frr
+:matt/beach/daytime/06: 322 196
+:matt/beach/daytime/14: 462 180
+:matt/beach/daytime/00: 428 170
+:matt/beach/decor/umbrella_red: 342 90
+:matt/beach/daytime/03: 340 264
+:matt/beach/daytime/00: 452 198
+:matt/beach/daytime/00: 330 170
+:matt/beach/daytime/01: 350 172
+:matt/beach/daytime/00: 432 492
+:matt/beach/daytime/00: 332 494
+:matt/beach/daytime/06: 342 496
+:matt/beach/daytime/01: 356 494
+:matt/beach/decor/moon: 98 156
+:matt/beach/decor/palmtree: 678 444 frr
+:matt/beach/daytime/06: 208 484
+:matt/beach/decor/palmtree: 106 398 frr
+:matt/beach/daytime/06: 98 442
+:matt/beach/daytime/06: 472 474
+:proxima/tile/32.S: 716 250
+:proxima/tile/32.S: 116 250
+:geoo/steel/32x16o.S: 404 494
+:matt/beach/daytime/00: 370 258
+:geoo/steel/32x32o.S: 404 232 d
+:geoo/abstract/pipes/central0: 374 90 d
+:matt/beach/decor/sun: 700 156
+:matt/beach/daytime/02: 296 188
+$BEGIN_TILE_GROUP 0
+:geoo/steel/32x16o.S: 48 0
+:geoo/steel/32x16o.S: 96 48 rrr
+:geoo/steel/32x16o.S: 96 16 rrr
+:geoo/steel/32x16o.S: 80 0 frr
+:geoo/steel/32x16o.S: 0 48 r
+:geoo/steel/32x16o.S: 16 0
+:geoo/steel/32x16o.S: 0 16 r
+:geoo/steel/16x16o.S: 0 0
+$END_TILE_GROUP
+:Group-0: 356 188
+:geoo/steel/32x32o.S: 404 204 d
+:geoo/steel/32x32o.S: 420 204 d
+:geoo/steel/32x32o.S: 420 232 d

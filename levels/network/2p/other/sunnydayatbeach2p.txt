@@ -1,0 +1,56 @@
+$BUILT 2024-06-01 16:38:41
+$AUTHOR Blitz
+$ENGLISH A nice day at the Beach with a Friend
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 672
+#SIZE_Y 400
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 16
+#BACKGROUND_BLUE 80
+
+#SECONDS 120
+#INITIAL 100
+#SPAWN_INTERVAL 64
+
+#WALKER 50
+#RUNNER 3
+#CLIMBER 10
+#FLOATER 10
+#EXPLODER 10
+#BLOCKER 2
+#BUILDER 100
+#PLATFORMER 2
+#BASHER 30
+#MINER 10
+#DIGGER 10
+#JUMPER 50
+#BATTER 20
+#CUBER 5
+
+:geoo/sandstone/fennec.H: 9 -9
+:geoo/sandstone/fennec.H: 622 268 r
+
+:matt/beach/goal.G: 276 318
+:matt/beach/goal.G: 274 -6
+
+:matt/beach/decor/umbrella_red: 308 302 frr
+:matt/beach/decor/umbrella_red: 246 302
+:matt/beach/decor/umbrella_red: 308 -22 frr
+:matt/beach/decor/umbrella_red: 246 -22
+:matt/beach/daytime/00: 330 58
+:matt/beach/daytime/00: 230 60
+:matt/beach/daytime/03: 266 80
+:matt/beach/daytime/06: 240 62
+:matt/beach/daytime/01: 254 60
+:matt/beach/daytime/00: 336 380
+:matt/beach/daytime/00: 236 382
+:matt/beach/daytime/06: 246 384
+:matt/beach/daytime/01: 260 382
+:matt/beach/decor/moon: 6 44
+:matt/beach/decor/palmtree: 606 334 frr
+:matt/beach/daytime/06: 112 372
+:matt/beach/daytime/06: 2 330
+:matt/beach/daytime/06: 376 362
+:geoo/steel/32x16o.S: 306 58
+:matt/beach/decor/sun: 603 42
