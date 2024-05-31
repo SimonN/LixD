@@ -135,7 +135,16 @@ private void reinitializeCamera()
         if (next == _chosenCam) {
             return;
         }
-        _cams[next].copyFocusAndZoomRoughlyFrom(chosenCam);
+        _cams[next].copyZoomRoughlyFrom(chosenCam);
+        /*
+         * Refocus (= choose camera's center land point) so that many land
+         * pixels stay where they were on screen using the old camera.
+         * Hardcoding Point(0, 0) assumes that the tweaker is on the right.
+         */
+        _cams[next].focus = chosenCam.focus;
+        immutable topLeftLand = chosenCam.sourceOf(Point(0, 0));
+        immutable topLeftWrong = _cams[next].sourceOf(Point(0, 0));
+        _cams[next].focus = _cams[next].focus - (topLeftWrong - topLeftLand);
         _chosenCam = next;
     }
 

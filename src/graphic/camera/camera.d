@@ -96,11 +96,10 @@ public:
         _y.snapToBoundary();
     }
 
-    void copyFocusAndZoomRoughlyFrom(in Camera other)
+    void copyZoomRoughlyFrom(in Camera other)
     {
         while (other.zoom > zoom && _zoom.zoomableIn) { _zoom.zoomIn(); }
         while (other.zoom < zoom && _zoom.zoomableOut) { _zoom.zoomOut(); }
-        focus = other.focus;
     }
 
     /*
