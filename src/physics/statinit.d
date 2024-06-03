@@ -90,9 +90,10 @@ void prepareGadgets(GameState state, in Level level)
     instantiateGadgetsFromArray(state.hatches,  GadType.HATCH);
     instantiateGadgetsFromArray(state.goals,    GadType.GOAL);
     instantiateGadgetsFromArray(state.traps,    GadType.TRAP);
-    instantiateGadgetsFromArray(state.waters,   GadType.WATER);
-    instantiateGadgetsFromArray(state.flingPerms, GadType.FLINGPERM);
-    instantiateGadgetsFromArray(state.flingTrigs, GadType.FLINGTRIG);
+    instantiateGadgetsFromArray(state.waters, GadType.water);
+    instantiateGadgetsFromArray(state.waters, GadType.fire);
+    instantiateGadgetsFromArray(state.flingTrigs, GadType.catapult);
+    instantiateGadgetsFromArray(state.flingPerms, GadType.steam);
 }
 
 void assignTribesToGoals(GameState state, in Permu permu)

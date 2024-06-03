@@ -127,12 +127,11 @@ out {
 }
 do {
     GadType type;
-    bool subtype = false;
     if      (pe == glo.preExtHatch) { type = GadType.HATCH; }
     else if (pe == glo.preExtGoal)  { type = GadType.GOAL;  }
     else if (pe == glo.preExtTrap)  { type = GadType.TRAP;  }
-    else if (pe == glo.preExtWater) { type = GadType.WATER; }
-    else if (pe == glo.preExtFire)  { type = GadType.WATER; subtype = true; }
+    else if (pe == glo.preExtWater) { type = GadType.water; }
+    else if (pe == glo.preExtFire)  { type = GadType.fire; }
     else {
         logBadTile!"Unknown pre-extension"(strNoExt);
         return;
@@ -162,7 +161,7 @@ do {
         }
     }
     gadgets[strNoExt] = GadgetTile.takeOverCutbit(
-        strNoExt, cb, type, subtype, defVec);
+        strNoExt, cb, type, defVec);
 }
 
 void loadTerrainFromDisk(in string strNoExt, in char pe, in Filename fn)

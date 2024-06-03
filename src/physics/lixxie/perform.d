@@ -48,7 +48,7 @@ void useNonconstantTraps(Lixxie lixxie) { with (lixxie)
             || ! trap.isOpenFor(outsideWorld.state.age, style))
             continue;
         trap.feed(outsideWorld.state.age, style);
-        playSound(trap.tile.sound);
+        playSound(Sound.SPLAT);
         become(Ac.nothing);
         return;
     }
@@ -67,8 +67,9 @@ void useFlingers(Lixxie lixxie) { with (lixxie) with (outsideWorld.state)
         outsideWorld.state.flingPerms.filter!(fl => inTriggerArea(fl)));
     foreach (Gadget fl; encounteredOpenFlingers) {
         assert (fl.tile);
-        addFling(fl.tile.subtype & 1 ? fl.tile.specialX // force direction
-                                     : fl.tile.specialX * lixxie.dir,
+        addFling(fl.tile.flingForward
+            ? fl.tile.specialX * lixxie.dir // fling forward
+            : fl.tile.specialX, // always fling in the tile's fixed direction
             fl.tile.specialY, false); // false == not from same tribe
     }
     // call this function once more; it may have been called by the game's

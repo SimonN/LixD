@@ -75,9 +75,10 @@ public:
             case GadType.HATCH:   return new Hatch   (top, levelpos);
             case GadType.GOAL:    return new Goal    (top, levelpos);
             case GadType.TRAP:    return new TrapTrig(top, levelpos);
-            case GadType.WATER:   return new Water   (top, levelpos);
-            case GadType.FLINGTRIG: return new FlingTrig(top, levelpos);
-            case GadType.FLINGPERM: return new FlingPerm(top, levelpos);
+            case GadType.water: return new Water(top, levelpos);
+            case GadType.fire: return new Fire(top, levelpos);
+            case GadType.catapult: return new FlingTrig(top, levelpos);
+            case GadType.steam: return new FlingPerm(top, levelpos);
             case GadType.MAX:
                 assert (false, "GadType isn't supported by Gadget.factory");
         }
@@ -96,7 +97,7 @@ public:
         tile = rhs.tile;
     }
 
-    @property final const pure nothrow @nogc {
+    final const pure nothrow @nogc {
         Point loc() { return _graphic.loc; }
         Rect rect() { return _graphic.rect; }
         int xl() { return _graphic.xl; }
@@ -130,16 +131,16 @@ public:
 
             case GadType.GOAL:  phyb = Phybit.goal; break;
             case GadType.TRAP:  phyb = Phybit.trapTrig; break;
-            case GadType.WATER: phyb = tile.subtype == 0 ? Phybit.water
-                                                         : Phybit.fire; break;
-            case GadType.FLINGTRIG: phyb = Phybit.flingTrig; break;
-            case GadType.FLINGPERM: phyb = Phybit.flingPerm; break;
+            case GadType.water: phyb = Phybit.water; break;
+            case GadType.fire: phyb = Phybit.fire; break;
+            case GadType.catapult: phyb = Phybit.flingTrig; break;
+            case GadType.steam: phyb = Phybit.flingPerm; break;
         }
         lk.rect!(Phymap.add)(tile.triggerArea + this.loc, phyb);
     }
 
 protected:
-    @property final nothrow @nogc pure {
+    final nothrow pure @nogc {
         // Subclasses should override animateForPhyu instead.
         // Game should call animateForPhyu instead.
         // Most graphics have only one animation. This can be in a row,

@@ -23,15 +23,15 @@ alias GadType = GadgetTile.Type;
 class GadgetTile : AbstractTile {
 private:
     Type _type;
+    immutable string _name;
 
     int  _triggerX;  // raw data, can be center or left
     int  _triggerY;  // raw data, can be center or top
     bool _triggerXc; // center around triggerX instead of going right from it
     bool _triggerYc; // center around triggerY instead of going down from it
-    immutable string _name;
 
 public:
-    bool subtype; // see Type enum for what subtype does
+    bool flingForward = true; // if false, always fling left or right
     int  triggerXl;
     int  triggerYl;
 
@@ -39,15 +39,14 @@ public:
     int  specialX; // FLING: x-direction, HATCH: start of opening anim
     int  specialY; // FLING: y-direction
 
-    Sound sound;
-
     enum Type {
         HATCH,
         GOAL,
         TRAP,
-        WATER, // subtype true = fire
-        FLINGTRIG, // subtype true = always same xdir
-        FLINGPERM, // subtype true = always same xdir
+        water,
+        fire,
+        catapult, // flingForward is important here
+        steam, // flingForward is important here
         MAX
     }
 
@@ -56,26 +55,25 @@ public:
         string aName,
         Cutbit aCb,
         Type   aType,
-        bool   aSubtype,
         const(IoLine)[] linesFromDefFile,
     ) {
         if (! aCb || ! aCb.valid)
             return null;
-        return new typeof(this)(aName, aCb, aType, aSubtype, linesFromDefFile);
+        return new typeof(this)(aName, aCb, aType, linesFromDefFile);
     }
 
-    @property type() const { return _type; }
-    override @property string name() const { return _name; }
+    Type type() const pure nothrow @safe @nogc { return _type; }
+    override string name() const { return _name; }
 
     override void accept(TileVisitor v) const { v.visit(this); }
 
-    @property Point trigger() const
+    Point trigger() const pure nothrow @safe @nogc
     {
         return Point(_triggerX - _triggerXc * triggerXl/2,
                      _triggerY - _triggerYc * triggerYl/2);
     }
 
-    @property Rect triggerArea() const
+    Rect triggerArea() const pure nothrow @safe @nogc
     {
         return Rect(trigger, triggerXl, triggerYl);
     }
@@ -85,13 +83,12 @@ protected:
         string aName,
         Cutbit aCb,
         Type   aType,
-        bool   aSubtype,
         const(IoLine)[] linesFromDefFile,
     ) {
         super(aCb); // take ownership
         _name   = aName;
         _type   = aType;
-        subtype = aSubtype;
+        flingForward = true;
         set_nice_defaults_based_on_type();
 
         with (LockReadOnly(cb.albit)) {
@@ -127,18 +124,18 @@ private:
             triggerYl = 6; // on a piece with width 16 and (lix-xl % 2 == 0)
             _triggerXc = true;
             _triggerYc = true;
-            sound      = Sound.SPLAT;
             break;
-        case Type.WATER:
+        case Type.water:
             _triggerX = 0;
             _triggerY = 20;
             triggerXl = cb.xl;
             triggerYl = cb.yl - 20;
-            if (subtype) {
-                // then it's fire, not water
-                _triggerY = 0;
-                triggerYl = cb.yl;
-            }
+            break;
+        case Type.fire:
+            _triggerX = 0;
+            _triggerY = 0;
+            triggerXl = cb.xl;
+            triggerYl = cb.yl;
             break;
         default:
             break;
@@ -184,21 +181,21 @@ private:
                 specialX = i.nr1;
             }
             else if (i.text1 == tileDefFlingNonpermanent) {
-                _type = Type.FLINGTRIG;
+                _type = Type.catapult;
             }
             else if (i.text1 == tileDefFlingIgnoreOrientation) {
-                if (_type != Type.FLINGTRIG)
-                    _type = Type.FLINGPERM;
-                subtype = true; // fixed direction
+                if (_type != Type.catapult)
+                    _type = Type.steam;
+                flingForward = false; // always fling left or always right
             }
             else if (i.text1 == tileDefFlingX) {
-                if (_type != Type.FLINGTRIG)
-                    _type = Type.FLINGPERM;
+                if (_type != Type.catapult)
+                    _type = Type.steam;
                 specialX = i.nr1;
             }
             else if (i.text1 == tileDefFlingY) {
-                if (_type != Type.FLINGTRIG)
-                    _type = Type.FLINGPERM;
+                if (_type != Type.catapult)
+                    _type = Type.steam;
                 specialY = i.nr1;
             }
         }
@@ -213,8 +210,7 @@ private:
      */
     void adaptFireTriggerAreaToOldBodyRules()
     {
-        if (_type != Type.WATER || ! subtype) {
-            // This isn't fire.
+        if (_type != Type.fire) {
             return;
         }
         // Downwards-extend trigger area by 12.
@@ -226,9 +222,8 @@ private:
     {
         if (! cb)
             return;
-        if ((type == Type.TRAP || type == Type.FLINGTRIG) && cb.yfs != 2) {
-            logf("Error: Triggered %s `%s':",
-                type == Type.TRAP ? "trap" : "flinger", name);
+        if ((type == Type.TRAP || type == Type.catapult) && cb.yfs != 2) {
+            logf("Error: Triggered %s %s:", type, name);
             logf("    -> Image has %d rows of frames, not 2.", cb.yfs);
         }
     }
