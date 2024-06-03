@@ -74,7 +74,27 @@ void drawAllTriggerAreas(
     // We assume that our caller has set the drawing target to (target).
     foreach (oneList; gadgets) {
         foreach (g; oneList) {
-            target.drawRectangle(g.triggerAreaOnMap, color.triggerArea);
+            auto rect = g.triggerAreaOnMap;
+            if (rect.xl == 0 && rect.yl == 0) {
+                // Make it look nice for hatches, which only tell us a point.
+                rect.x -= 1;
+                rect.y -= 1;
+                rect.xl = 3;
+                rect.yl = 3;
+            }
+            else if (g.tile.type != GadType.water) {
+                // Pretend to look for the bottom hi-res pixel of the
+                // foot's lo-res pixel, not for the top hi-res pixel.
+                rect.y += 1;
+                /*
+                 * Water won't pretend like this, which is inconsistent
+                 * w.r.t. all other gadget types. The only real fix will be
+                 * to change many tiles' trigger area definitions text files
+                 * (a physics change) and then remove this hack, or to change
+                 * how lix collide with triggers (also a physics change).
+                 */
+            }
+            target.drawRectangle(rect, color.triggerArea);
         }
     }
 }
