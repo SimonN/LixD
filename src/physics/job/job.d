@@ -16,6 +16,8 @@ package import net.ac;
 
 import std.algorithm;
 import std.string;
+
+import graphic.internal;
 import physics.tribe; // interface for returnSkills
 
 enum AfterAssignment : ubyte {
@@ -27,6 +29,7 @@ enum AfterAssignment : ubyte {
 abstract class Job {
 private:
     Ac  _ac;
+    Spritesheet _spritesheet = Spritesheet.allSkills;
     byte _frame;
     byte _spriteOffsetX;
 
@@ -49,14 +52,17 @@ public:
         return cast (inout(Lixxie)) (cast (void*) this - Lixxie.jobOffset);
     }
 
-    final ac() const pure { return _ac; }
-    final int frame() const pure nothrow @safe @nogc { return _frame; }
+    final const pure nothrow @safe @nogc {
+        Ac ac() { return _ac; }
+        Spritesheet spritesheet() { return _spritesheet; }
+        int frame() { return _frame; }
+        int spriteOffsetX() { return _spriteOffsetX; }
+    }
+
     final void frame(in int a) pure nothrow @safe @nogc
     {
         _frame = cast (byte) a;
     }
-
-    final spriteOffsetX() const pure { return _spriteOffsetX; }
 
     PhyuOrder updateOrder() const { return PhyuOrder.peaceful; }
     bool blockable() const { return true; }
@@ -82,9 +88,9 @@ protected:
     }
 
 package:
-    void spriteOffsetX(in int a) pure nothrow @safe @nogc
-    {
-        _spriteOffsetX = cast (byte) a;
+    final pure nothrow @safe @nogc {
+        void spritesheet(in Spritesheet spri) { _spritesheet = spri; }
+        void spriteOffsetX(in int a) { _spriteOffsetX = cast (byte) a; }
     }
 }
 

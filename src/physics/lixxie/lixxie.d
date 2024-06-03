@@ -50,9 +50,6 @@ private:
     OutsideWorld* _outsideWorld; // set whenever physics and tight coupling
                                  // are needed, nulled again at end of those
 
-    // Offset of our effective coordinate from top left sprite corner
-    enum Point footOffsetFromCutbit = Point(16, 26);
-
     enum string tmpOutsideWorld = q{
         assert (ow);
         assert (! _outsideWorld);
@@ -106,7 +103,10 @@ public:
     int flingY() const { return _flingY; }
     int frame() const { return job.frame; }
     int xf() const { return this.frame; }
-    int yf() const { return this.ac; }
+    int yf() const
+    {
+        return job.spritesheet == Spritesheet.allSkills ? ac : 0;
+    }
 
     auto footEncounters() const { return _encFoot; }
     void forceFootEncounters(Phybitset ft) { _encFoot = ft; }
@@ -335,15 +335,22 @@ void playSound(in Sound sound)
 
 const(Cutbit) cutbit() const
 {
-    return Spritesheet.allSkills.toCutbitFor(_style);
+    return job.spritesheet.toCutbitFor(_style);
 }
 
-bool isLastFrame() const { return ! cutbit.frameExists(frame + 1, ac); }
-void advanceFrame() { job.frame = (isLastFrame() ? 0 : frame + 1); }
+bool isLastFrame() const { return ! cutbit.frameExists(xf + 1, yf); }
+void advanceFrame() { job.frame = (isLastFrame() ? 0 : xf + 1); }
 
 package Point locCutbit() const // top left of sprite
 {
-    return foot - footOffsetFromCutbit + Point(job.spriteOffsetX, 0);
+    const cb = job.spritesheet.toCutbitFor(style);
+    immutable Point footInCutbit = Point(
+        // Convention: The foot (2x1)-unit is in the middle of the sprite.
+        cb.xl / 2 - 1, // E.g., if it's 26 wide: (12) + (2 foot) + (12).
+        // Old convention: There are 6 empty pixels under the foot.
+        // New convention: There are 4 empty pixels under the foot.
+        cb.yl - 6 - 2 * (job.spritesheet == Spritesheet.allSkills));
+    return foot - footInCutbit + Point(job.spriteOffsetX, 0);
 }
 
 void draw() const
@@ -361,7 +368,7 @@ final void drawAgainHighlit() const
 {
     assert (ac != Ac.nothing, "we shouldn't highlight dead lix");
     // No need to draw the fuse, because we draw on top of the old lix drawing.
-    const cb = Spritesheet.allSkills.toCutbitFor(Style.highlight);
+    const cb = job.spritesheet.toCutbitFor(Style.highlight);
     with (Blender(
         // cb is very light. We draw its colors like BlenderMinus and
         // its alpha like the standard blender's alpha. This will draw a near-
