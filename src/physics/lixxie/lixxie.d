@@ -333,7 +333,11 @@ void playSound(in Sound sound)
         outsideWorld.state.age, outsideWorld.passport, sound);
 }
 
-const(Cutbit) cutbit() const { return getLixSpritesheet(_style); }
+const(Cutbit) cutbit() const
+{
+    return Spritesheet.allSkills.toCutbitFor(_style);
+}
+
 bool isLastFrame() const { return ! cutbit.frameExists(frame + 1, ac); }
 void advanceFrame() { job.frame = (isLastFrame() ? 0 : frame + 1); }
 
@@ -357,7 +361,7 @@ final void drawAgainHighlit() const
 {
     assert (ac != Ac.nothing, "we shouldn't highlight dead lix");
     // No need to draw the fuse, because we draw on top of the old lix drawing.
-    const cb = graphic.internal.getLixSpritesheet(Style.highlight);
+    const cb = Spritesheet.allSkills.toCutbitFor(Style.highlight);
     with (Blender(
         // cb is very light. We draw its colors like BlenderMinus and
         // its alpha like the standard blender's alpha. This will draw a near-

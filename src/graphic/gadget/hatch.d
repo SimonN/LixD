@@ -65,7 +65,7 @@ protected:
     override void onDraw(in Style blinkStyle) const
     {
         if (_blinkNow && hasTribe(blinkStyle) && blinkStyle != Style.garden) {
-            const(Cutbit) c = getSkillButtonIcon(blinkStyle);
+            const c = Spritesheet.skillsInPanel.toCutbitFor(blinkStyle);
             c.draw(loc + tile.trigger - c.len/2,
                 Ac.walker.acToSkillIconXf, 0);
         }

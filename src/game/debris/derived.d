@@ -47,7 +47,7 @@ protected:
     final override void onDraw()
     {
         auto cbA = InternalImage.gameArrow.toCutbit;
-        auto cbI = getSkillButtonIcon(style);
+        auto cbI = Spritesheet.skillsInPanel.toCutbitFor(style);
         cbA.draw(foot - Point(cbA.xl/2, cbA.yl));
         cbI.draw(foot - Point(cbI.xl/2, cbA.yl*15/16), xf);
     }

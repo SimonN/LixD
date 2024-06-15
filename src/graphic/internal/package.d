@@ -21,11 +21,11 @@ void initialize(Runmode runmode)
 
     final switch (runmode) {
         case Runmode.VERIFY:
-            wantRecoloredGraphics = false;
+            _wantRecoloredGraphics = false;
             break;
         case Runmode.INTERACTIVE:
         case Runmode.EXPORT_IMAGES:
-            wantRecoloredGraphics = true;
+            _wantRecoloredGraphics = true;
             break;
         case Runmode.PRINT_AND_EXIT:
             assert (false);
@@ -36,19 +36,14 @@ void initializeScale(float scale) { _idealScale = scale; }
 void deinitialize()               { implDeinitialize();  }
 
 const(Cutbit) toCutbit(in InternalImage id) { return getInternalMutable(id); }
-// also public: Filename toFilename(InternalImage) in graphic.internal.names
-
-const(Cutbit) getLixSpritesheet (Style st) { return implGetLixSprites   (st); }
-const(Cutbit) getPanelInfoIcon  (Style st) { return implGetPanelInfoIcon(st); }
-const(Cutbit) getSkillButtonIcon(Style st) { return implGetSkillButton  (st); }
-const(Cutbit) getGoalMarker     (Style st) { return implGetGoalMarker   (st); }
+const(Cutbit) toCutbitFor(in Spritesheet sheet, in Style st)
+{
+    return implGetSprites(sheet, st);
+}
 
 const(Alcol3D) getAlcol3DforStyle(Style st) { return implGetAlcol3D(st); }
 
-const(typeof(graphic.internal.vars.eyesOnSpritesheet)) eyesOnSpritesheet()
+Point eyesForFrame(in Spritesheet sheet, in int xf, in int yf)
 {
-    assert (graphic.internal.vars.eyesOnSpritesheet,
-        "Generate at least one Lix style first before finding eyes."
-        ~ " We require this for efficiency to lock the bitmap only once.");
-    return graphic.internal.vars.eyesOnSpritesheet;
+    return _allSheets[sheet].eyesForFrame(xf, yf);
 }

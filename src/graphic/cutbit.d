@@ -1,6 +1,7 @@
 module graphic.cutbit;
 
 import std.algorithm; // max(-x, 0) in drawDirectlyToScreen()
+import std.exception : assumeUnique;
 import std.string; // format
 
 public import basics.rect;
@@ -20,33 +21,30 @@ import file.log; // log bad filename when trying to load a bitmap
  * Often, we do things only if the cutbit is not null and its bitmap exists.
  */
 pure nothrow @nogc {
-    bool valid(in Cutbit cb) { return cb && cb.bitmap; }
+    bool valid(in Cutbit cb) @safe { return cb && cb.bitmap; }
+
     inout(Albit) albit(inout Cutbit cb)
     {
         return cb ? cast(inout Albit) cb.bitmap : null;
     }
 }
 
-class Cutbit {
+final class Cutbit { // Final keyword only for speed. Remove as needed.
 private:
     Albit bitmap;
-    int _xl;
-    int _yl;
-    int _xfs; // number of x-frames existing: xf in the interval [0, _xfs[
-    int _yfs; // number of y-frames existing
-    Matrix!bool _existingFrames;
+    CutResult _cutting;
+    immutable(Matrix!bool) _existingFramesOrNullIfAllExist;
 
 public:
     enum Cut : bool { no = false, ifGridExists = true }
 
     this(Cutbit cb)
     {
-        if (! cb) return;
-        _xl = cb._xl;
-        _yl = cb._yl;
-        _xfs = cb._xfs;
-        _yfs = cb._yfs;
-        _existingFrames = new Matrix!bool (cb._existingFrames);
+        if (! cb) {
+            return;
+        }
+        _cutting = cb._cutting;
+        _existingFramesOrNullIfAllExist = cb._existingFramesOrNullIfAllExist;
         if (cb.bitmap) {
             bitmap = albitCreate(al_get_bitmap_width (cb.bitmap),
                                  al_get_bitmap_height(cb.bitmap));
@@ -63,15 +61,15 @@ public:
         if (! bitmap)
             return;
         if (cut == Cut.ifGridExists) {
-            cutBitmap();
+            auto lock = LockReadOnly(bitmap);
+            _cutting = cutIntoFrames_AssumesReadLocked(bitmap);
+            _existingFramesOrNullIfAllExist = makeMatrix_AssumesReadLocked();
         }
         else {
-            _xl = al_get_bitmap_width (bitmap);
-            _yl = al_get_bitmap_height(bitmap);
-            _xfs = 1;
-            _yfs = 1;
-            _existingFrames = new Matrix!bool(1, 1);
-            _existingFrames.set(0, 0, true);
+            _cutting = CutResult(1, 1,
+                al_get_bitmap_width (bitmap),
+                al_get_bitmap_height(bitmap));
+            _existingFramesOrNullIfAllExist = null;
         }
     }
 
@@ -99,11 +97,11 @@ public:
 
     const pure nothrow @safe @nogc {
         // get size of a single frame, not necessarily size of entire bitmap
-        int xl() { return _xl;  }
-        int yl() { return _yl;  }
-        Point len(){ return Point(_xl, _yl); }
-        int xfs() { return _xfs; }
-        int yfs() { return _yfs; }
+        int xl() { return _cutting.xl;  }
+        int yl() { return _cutting.yl;  }
+        Point len() { return Point(_cutting.xl, _cutting.yl); }
+        int xfs() { return _cutting.xfs; }
+        int yfs() { return _cutting.yfs; }
     }
 
     // These two are slow, consider frameExists() instead
@@ -112,15 +110,17 @@ public:
     Alcol get_pixel(int fx, int fy, in Point p) const
     {
         // frame doesn't exist, or pixel doesn't exist in the frame
-        if  (fx  < 0 || fy  < 0 || fx  >= _xfs || fy  >= _yfs
-         ||  p.x < 0 || p.y < 0 || p.x >= _xl  || p.y >= _yl) {
+        if (fx < 0 || fy  < 0 || fx >= _cutting.xfs || fy >= _cutting.yfs
+            || p.x < 0 || p.y < 0 || p.x >= _cutting.xl || p.y >= _cutting.yl
+        ) {
             return color.bad;
         }
         // otherwise, return the found color
-        else if (_xfs == 1 && _yfs == 1)
+        else if (_cutting.xfs == 1 && _cutting.xfs == 1)
              return al_get_pixel(cast (Albit) bitmap, p.x, p.y);
-        else return al_get_pixel(cast (Albit) bitmap, fx * (_xl+1) + 1 + p.x,
-                                                      fy * (_yl+1) + 1 + p.y);
+        else return al_get_pixel(cast (Albit) bitmap,
+            fx * (_cutting.xl + 1) + 1 + p.x,
+            fy * (_cutting.yl + 1) + 1 + p.y);
     }
 
     // Checks whether the given frame contains interesting image data,
@@ -130,9 +130,13 @@ public:
     // to consult this instead of querying for pixels later inside frames.
     bool frameExists(in int fx, in int fy) const
     {
-        if (fx < 0 || fx >= _xfs
-         || fy < 0 || fy >= _yfs) return false;
-        else return _existingFrames.get(fx, fy);
+        if (fx < 0 || fx >= _cutting.xfs || fy < 0 || fy >= _cutting.yfs) {
+            return false;
+        }
+        if (_existingFramesOrNullIfAllExist is null) {
+            return true;
+        }
+        return _existingFramesOrNullIfAllExist.get(fx, fy);
     }
 
     // Intended for free-form drawing without effect on land.
@@ -147,7 +151,9 @@ public:
         const double rot  = 0,
         const double scal = 0) const
     {
-        if (bitmap && xf >= 0 && yf >= 0 && xf < _xfs && yf < _yfs) {
+        if (bitmap && xf >= 0 && yf >= 0
+            && xf < _cutting.xfs && yf < _cutting.yfs
+        ) {
             Albit sprite = create_sub_bitmap_for_frame(xf, yf);
             scope (exit)
                 albitDestroy(sprite);
@@ -165,8 +171,8 @@ public:
     void drawToCurrentAlbitNotTorbit(in Point targetCorner,
         in int xf = 0, in int yf = 0) const
     {
-        if (! bitmap || xf < 0 || xf >= _xfs
-                     || yf < 0 || yf >= _yfs
+        if (! bitmap || xf < 0 || xf >= _cutting.xfs
+                     || yf < 0 || yf >= _cutting.yfs
         ) {
             drawMissingFrameError(targetCorner, xf, yf);
             return;
@@ -200,86 +206,98 @@ private:
         in int xec = 0, // extra cutting from top or left
         in int yec = 0) const
     in {
-        assert (xf >= 0 && xf < _xfs);
-        assert (yf >= 0 && yf < _yfs);
-        assert (xec >= 0 && xec < _xl); // _xl, _yl are either all the bitmap, or
-        assert (yec >= 0 && yec < _xl); // the size of a single frame without grid
+        assert (xf >= 0 && xf < _cutting.xfs);
+        assert (yf >= 0 && yf < _cutting.yfs);
+        assert (xec >= 0 && xec < _cutting.xl);
+        assert (yec >= 0 && yec < _cutting.xl);
     }
     do {
         // Create a sub-bitmap based on the wanted frames. If (Cutbit this)
         // doesn't have frames, don't compute +1 for the outermost frame.
-        if (_xfs == 1 && _yfs == 1)
+        if (_cutting.xfs == 1 && _cutting.yfs == 1)
             return al_create_sub_bitmap(cast (Albit) bitmap,
-             xec, yec, _xl - xec, _yl - yec);
+             xec, yec, _cutting.xl - xec, _cutting.yl - yec);
         else
             return al_create_sub_bitmap(cast (Albit) bitmap,
-             1 + xf * (_xl+1) + xec,
-             1 + yf * (_yl+1) + yec,
-             _xl - xec, _yl - yec);
+             1 + xf * (_cutting.xl + 1) + xec,
+             1 + yf * (_cutting.yl + 1) + yec,
+             _cutting.xl - xec,
+             _cutting.yl - yec);
     }
 
-    void cutBitmap()
+    immutable(Matrix!bool) makeMatrix_AssumesReadLocked() // may return null
     {
-        auto lock = LockReadOnly(bitmap);
-        immutable int xMax = al_get_bitmap_width (bitmap);
-        immutable int yMax = al_get_bitmap_height(bitmap);
-        // Called when the constructor was invoked with Cut.yes.
-        // Cut a bitmap into frames, check the top left 2x2 block. The three
-        // pixels of it touching the edge shall be of one color, and the inner
-        // pixel must be of a different color, to count as a frame grid.
-        Alcol c = al_get_pixel(bitmap, 0, 0);
-        if (xMax > 1 && yMax > 1
-         && al_get_pixel(bitmap, 0, 1) == c
-         && al_get_pixel(bitmap, 1, 0) == c
-         && al_get_pixel(bitmap, 1, 1) != c) {
-            // find the end of the first frame in each direction
-            for (_xl = 2; _xl < xMax; ++_xl) {
-                if (al_get_pixel(bitmap, _xl, 1) == c) {
-                    --_xl;
-                    break;
+        if (_cutting.xfs == 1 && _cutting.yfs == 1) {
+            return null;
+        }
+        immutable Point corner = Point(0, 0);
+        immutable Alcol frameColor = al_get_pixel(bitmap, 0, 0);
+        for (int yf = 0; yf < _cutting.yfs; ++yf) {
+            for (int xf = 0; xf < _cutting.xfs; ++xf) {
+                if (get_pixel(xf, yf, corner) == frameColor) {
+                    return makeNonzeroMatrix_AssumesReadLocked();
                 }
             }
-            for (_yl = 2; _yl < yMax; ++_yl) {
-                if (al_get_pixel(bitmap, 1, _yl) == c) {
-                    --_yl;
-                    break;
-                }
-            }
-
-            // don't cut the bitmap if at most 1-by-1 frame is possible
-            if (_xl * 2 > xMax && _yl * 2 > yMax) {
-                _xl = xMax;
-                _yl = yMax;
-                _xfs = 1;
-                _yfs = 1;
-            }
-            // ...otherwise compute the number of frames in each direction
-            else {
-                for (_xfs = 0; (_xfs+1)*(_xl+1) < xMax; ++_xfs) {}
-                for (_yfs = 0; (_yfs+1)*(_yl+1) < yMax; ++_yfs) {}
-            }
         }
-        // no frame apparent in the top left 2x2 block of pixels
-        else {
-            _xl = xMax;
-            _yl = yMax;
-            _xfs = 1;
-            _yfs = 1;
-        }
-        // done cutting, now generate matrix. The bitmap is still locked.
-        _existingFrames = new Matrix!bool(_xfs, _yfs);
-        if (_xfs == 1 && _yfs == 1) {
-            _existingFrames.set(0, 0, true);
-        }
-        else {
-            Point corner = Point(0, 0);
-            for (int yf = 0; yf < _yfs; ++yf)
-             for (int xf = 0; xf < _xfs; ++xf) {
-                immutable has_frame_color = (get_pixel(xf, yf, corner) == c);
-                _existingFrames.set(xf, yf, ! has_frame_color);
-            }
-        }
-        // done making the matrix
+        return null;
     }
-    // end void cutBitmap()
+
+    immutable(Matrix!bool) makeNonzeroMatrix_AssumesReadLocked()
+    {
+        Matrix!bool[1] ret; // Because assumeUnique will only work on arrays.
+        ret[0] = new Matrix!bool(_cutting.xfs, _cutting.yfs);
+        immutable Point corner = Point(0, 0);
+        immutable Alcol frameColor = al_get_pixel(bitmap, 0, 0);
+        for (int yf = 0; yf < _cutting.yfs; ++yf) {
+            for (int xf = 0; xf < _cutting.xfs; ++xf) {
+                ret[0].set(xf, yf, get_pixel(xf, yf, corner) != frameColor);
+            }
+        }
+        return ret.assumeUnique[0];
+    }
+}
+
+struct CutResult {
+    int xfs; // x-frames: Number of frames horiz. next to each other, >= 1
+    int yfs; // y-frames: Number of frames vertically under each other, >= 1
+    int xl; // Width of a single frame. If xf == yf == 1, it's bitmap->w.
+    int yl; // Height of a single frame. If xf == yf == 1, it's bitmap->w.
+}
+
+CutResult cutIntoFrames_AssumesReadLocked(Albit bitmap) @nogc
+{
+    immutable int xMax = al_get_bitmap_width (bitmap);
+    immutable int yMax = al_get_bitmap_height(bitmap);
+    if (xMax <= 1 || yMax <= 1) {
+        return CutResult(1, 1, xMax, yMax);
+    }
+    // Cut a bitmap into frames, check the top left 2x2 block. The three
+    // pixels of it touching the edge shall be of one color, and the inner
+    // pixel must be of a different color, to count as a frame grid.
+    immutable Alcol c = al_get_pixel(bitmap, 0, 0);
+    if (   al_get_pixel(bitmap, 0, 1) != c
+        || al_get_pixel(bitmap, 1, 0) != c
+        || al_get_pixel(bitmap, 1, 1) == c
+    ) {
+        // no frame apparent in the top left 2x2 block of pixels
+        return CutResult(1, 1, xMax, yMax);
+    }
+    // find the end of the first frame in each direction
+    immutable int xl = () {
+        for (int x = 2; x < xMax; ++x)
+            if (al_get_pixel(bitmap, x, 1) == c)
+                return x - 1;
+        return xMax;
+    }();
+    immutable int yl = () {
+        for (int y = 2; y < yMax; ++y)
+            if (al_get_pixel(bitmap, 1, y) == c)
+                return y - 1;
+        return yMax;
+    }();
+    immutable xf = max(1, (xMax - 1) / (xl + 1));
+    immutable yf = max(1, (yMax - 1) / (yl + 1));
+    return (xf > 1 || yf > 1)
+        ? CutResult(xf, yf, xl, yl)
+        : CutResult(1, 1, xMax, yMax);
 }

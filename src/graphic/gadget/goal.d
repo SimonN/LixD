@@ -53,7 +53,7 @@ private:
         if (st == Style.garden || ! tribes.canFind(st))
             return;
         int offset = tribes.countUntil(st) & 0x7FFF_FFFF;
-        auto icon = graphic.internal.getGoalMarker(st);
+        auto icon = Spritesheet.goalMarkers.toCutbitFor(st);
         icon.draw(Point(this.loc.x + tile.trigger.x
             + tile.triggerXl/2 - icon.xl/2
             + (20 * offset++) - 10 * (tribes.len - 1),

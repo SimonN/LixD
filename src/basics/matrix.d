@@ -14,8 +14,8 @@ private:
     T[] data;
 
 public:
-    @property int xl() const { return _xl; }
-    @property int yl() const { return _yl; }
+    int xl() const pure nothrow @safe @nogc { return _xl; }
+    int yl() const pure nothrow @safe @nogc { return _yl; }
 
     this(
         in int new_xl,
@@ -43,18 +43,18 @@ public:
         data = rhs.data.dup;
     }
 
-    inout(T) get(in int x, in int y) inout
+    inout(T) get(in int x, in int y) inout pure nothrow @safe @nogc
     in {
-        assert (x >= 0,  "x is %d, not >= 0".format(x));
-        assert (y >= 0,  "y is %d, not >= 0".format(y));
-        assert (x < _xl, "x is %d, not <= _xl == %d".format(x, _xl));
-        assert (y < _yl, "y is %d, not <= _yl == %d".format(y, _yl));
+        assert (x >= 0);
+        assert (y >= 0);
+        assert (x < _xl);
+        assert (y < _yl);
     }
     do {
         return data[y * _xl + x];
     }
 
-    void set(in int x, in int y, T value)
+    void set(in int x, in int y, in T value) pure nothrow @safe @nogc
     in {
         assert (x >= 0);
         assert (y >= 0);
@@ -63,6 +63,11 @@ public:
     }
     do {
         data[y * _xl + x] = value;
+    }
+
+    void setAllEntriesTo(in T value) pure nothrow @safe @nogc
+    {
+        data[] = value;
     }
 
     override bool opEquals(Object rhsObj) const

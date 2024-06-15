@@ -11,7 +11,7 @@ class SkillIcon : CutbitElement {
 public:
     this(Geom g, Style st = Style.garden)
     {
-        super(g, st.getSkillButtonIcon);
+        super(g, Spritesheet.skillsInPanel.toCutbitFor(st));
     }
 
     Ac ac(in Ac _ac) pure nothrow @safe @nogc

@@ -204,7 +204,8 @@ public:
     this(Geom gi, Geom gl, Style style, int xFrameForIcon)
     {
         import graphic.internal;
-        _icon = new CutbitElement(gi, getPanelInfoIcon(style));
+        _icon = new CutbitElement(gi,
+                    Spritesheet.infoBarIcons.toCutbitFor(style));
         _icon.xf = xFrameForIcon;
         _icon.yf = xFrameForIcon == 5 ? 1 : 0; // exits should be greyed out
         _label = new Label(gl);

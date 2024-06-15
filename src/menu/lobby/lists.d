@@ -37,7 +37,7 @@ public:
         }
         if (prof.feeling != Profile.Feeling.observing) {
             addChild(new CutbitElement(new Geom(20, 0, 20, 20),
-                getPanelInfoIcon(prof.style)));
+                Spritesheet.infoBarIcons.toCutbitFor(prof.style)));
         }
         if (prof.handicap == Handicap.init
             || prof.feeling == Profile.Feeling.observing

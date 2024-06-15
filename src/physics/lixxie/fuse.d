@@ -70,10 +70,11 @@ private:
 
 Point eyeOnMap(in Lixxie lixxie)
 {
-    Point eyeOnSprite = eyesOnSpritesheet.get(lixxie.xf, lixxie.yf);
-    if (lixxie.facingLeft)
-        eyeOnSprite.x = lixxie.cutbit.xl - eyeOnSprite.x;
-    return eyeOnSprite + lixxie.locCutbit;
+    Point eye = Spritesheet.allSkills.eyesForFrame(lixxie.xf, lixxie.yf);
+    if (lixxie.facingLeft) {
+        eye.x = lixxie.cutbit.xl - eye.x;
+    }
+    return eye + lixxie.locCutbit;
 }
 
 void drawFuseOrFlame(bool fuseIfFalseFlameIfTrue)(in Lixxie lixxie)

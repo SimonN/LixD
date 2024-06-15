@@ -122,8 +122,8 @@ protected:
     auto makeElements(ref CutbitElement cbe, ref Label lab,
         in int x, in int xl, in int xf
     ) {
-        cbe = new CutbitElement(new Geom(x, 0, this.ylg, this.ylg,
-                        From.LEFT), getPanelInfoIcon(Style.garden));
+        cbe = new CutbitElement(new Geom(x, 0, this.ylg, this.ylg, From.LEFT),
+            Spritesheet.infoBarIcons.toCutbitFor(Style.garden));
         cbe.xf = xf;
         lab = new Label(new Geom(x + this.ylg, 0, xl - this.ylg, this.ylg,
                         From.LEFT));

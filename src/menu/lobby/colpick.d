@@ -116,7 +116,7 @@ public:
     this(Geom g, Style st)
     {
         style = st;
-        super(g, getPanelInfoIcon(st));
+        super(g, Spritesheet.infoBarIcons.toCutbitFor(st));
     }
 
     override @property int yf() const { return 0; }
