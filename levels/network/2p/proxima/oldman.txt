@@ -1,5 +1,5 @@
 $BUILT 2017-09-27 19:04:52
-$AUTHOR Michael S. Repton
+$AUTHOR Proxima
 $ENGLISH Old Man of the Mountain
 
 #INTENDED_NUMBER_OF_PLAYERS 2

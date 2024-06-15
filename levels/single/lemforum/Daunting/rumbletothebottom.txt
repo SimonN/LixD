@@ -1,5 +1,5 @@
 $BUILT 2016-07-16 19:14:36
-$AUTHOR Michael S. Repton
+$AUTHOR Proxima
 $ENGLISH Rumble to the Bottom
 
 #INTENDED_NUMBER_OF_PLAYERS 1

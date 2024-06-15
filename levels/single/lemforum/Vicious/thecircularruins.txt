@@ -1,5 +1,5 @@
 $BUILT 2022-12-22 06:03:54
-$AUTHOR mobius/Michael
+$AUTHOR mobius & Proxima
 $ENGLISH The Circular Ruins
 
 #INTENDED_NUMBER_OF_PLAYERS 1

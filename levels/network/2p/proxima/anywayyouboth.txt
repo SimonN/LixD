@@ -1,5 +1,5 @@
 $BUILT 2017-09-27 19:01:01
-$AUTHOR I.S. / Michael
+$AUTHOR Insane Steve & Proxima
 $ENGLISH Any Way You Both Want
 
 #INTENDED_NUMBER_OF_PLAYERS 2

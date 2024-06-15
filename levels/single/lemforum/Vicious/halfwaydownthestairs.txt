@@ -1,5 +1,5 @@
 $BUILT 2017-08-09 00:56:33
-$AUTHOR Michael S. Repton
+$AUTHOR Proxima
 $ENGLISH Halfway Down the Stairs
 
 #INTENDED_NUMBER_OF_PLAYERS 1

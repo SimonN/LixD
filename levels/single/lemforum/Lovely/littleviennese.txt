@@ -1,5 +1,5 @@
 $BUILT 2018-03-28 03:13:06
-$AUTHOR Michael S. Repton
+$AUTHOR Proxima
 $ENGLISH Little Viennese Waltz
 
 #INTENDED_NUMBER_OF_PLAYERS 1

@@ -1,5 +1,5 @@
 $BUILT 2022-12-17 08:47:22
-$AUTHOR Michael S. Repton
+$AUTHOR Proxima
 $ENGLISH The Borderland
 
 #INTENDED_NUMBER_OF_PLAYERS 1

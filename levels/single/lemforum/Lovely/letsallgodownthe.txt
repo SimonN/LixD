@@ -1,5 +1,5 @@
 $BUILT 2018-08-10 19:11:00
-$AUTHOR I.S./Michael
+$AUTHOR Insane Steve & Proxima
 $ENGLISH Let's All Go Down the Strand
 
 #INTENDED_NUMBER_OF_PLAYERS 1

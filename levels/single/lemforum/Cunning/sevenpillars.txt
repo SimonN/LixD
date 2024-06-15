@@ -1,5 +1,5 @@
 $BUILT 2014-09-05 16:28:57
-$AUTHOR Michael S. Repton
+$AUTHOR Proxima
 $GERMAN 
 $ENGLISH Seven Pillars of Lixdom
 

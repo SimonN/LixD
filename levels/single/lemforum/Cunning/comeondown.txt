@@ -1,5 +1,5 @@
 $BUILT 2023-02-11 16:27:28
-$AUTHOR Michael S. Repton
+$AUTHOR Proxima
 $ENGLISH Come on Down to My Place
 
 #INTENDED_NUMBER_OF_PLAYERS 1

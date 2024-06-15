@@ -1,5 +1,5 @@
 $BUILT 2016-07-23 19:34:47
-$AUTHOR Michael S. Repton
+$AUTHOR Proxima
 $ENGLISH The Crimson Room
 
 #INTENDED_NUMBER_OF_PLAYERS 1

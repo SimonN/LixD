@@ -1,5 +1,5 @@
 $BUILT 2018-06-25 00:52:48
-$AUTHOR Michael S. Repton
+$AUTHOR Proxima
 $ENGLISH Metal City Mayhem
 
 #INTENDED_NUMBER_OF_PLAYERS 1

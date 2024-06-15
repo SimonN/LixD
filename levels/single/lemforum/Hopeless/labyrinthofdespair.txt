@@ -1,5 +1,5 @@
 $BUILT 2018-06-25 00:52:01
-$AUTHOR namida/Michael
+$AUTHOR namida & Proxima
 $ENGLISH Labyrinth of Despair
 
 #INTENDED_NUMBER_OF_PLAYERS 1

@@ -1,5 +1,5 @@
 $BUILT 2020-05-23 04:31:44
-$AUTHOR Michael
+$AUTHOR Proxima
 $ENGLISH Thirteen Little Skills
 
 #INTENDED_NUMBER_OF_PLAYERS 1

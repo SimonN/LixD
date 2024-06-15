@@ -1,5 +1,5 @@
 $BUILT 2018-03-08 23:29:44
-$AUTHOR Michael S. Repton
+$AUTHOR Proxima
 $ENGLISH Close to the Edge
 
 #INTENDED_NUMBER_OF_PLAYERS 1

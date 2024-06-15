@@ -1,5 +1,5 @@
 $BUILT 2016-08-08 01:00:45
-$AUTHOR Michael S. Repton
+$AUTHOR Proxima
 $ENGLISH Survival of the Craftiest
 
 #INTENDED_NUMBER_OF_PLAYERS 1

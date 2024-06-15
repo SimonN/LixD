@@ -1,5 +1,5 @@
 $BUILT 2014-01-19 18:00:28
-$AUTHOR Michael S. Repton
+$AUTHOR Proxima
 $GERMAN 
 $ENGLISH Finale
 

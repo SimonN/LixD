@@ -1,5 +1,5 @@
 $BUILT 2016-09-02 13:34:37
-$AUTHOR Michael S. Repton
+$AUTHOR Proxima
 $ENGLISH Charge of the Lix Brigade
 
 #INTENDED_NUMBER_OF_PLAYERS 1

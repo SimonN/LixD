@@ -1,5 +1,5 @@
 $BUILT 2016-03-27 17:58:37
-$AUTHOR Michael S. Repton
+$AUTHOR Proxima
 $ENGLISH Ascending and Descending
 
 #SIZE_X 832

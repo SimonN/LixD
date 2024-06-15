@@ -1,5 +1,5 @@
 $BUILT 2016-08-08 01:30:57
-$AUTHOR I.S./Michael
+$AUTHOR Insane Steve & Proxima
 $ENGLISH Lixster Quadrille
 
 #INTENDED_NUMBER_OF_PLAYERS 1

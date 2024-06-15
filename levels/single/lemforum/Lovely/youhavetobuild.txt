@@ -1,5 +1,5 @@
 $BUILT 2016-06-28 12:14:42
-$AUTHOR mobius/Michael
+$AUTHOR mobius & Proxima
 $ENGLISH You Have to Build a Bridge
 
 #INTENDED_NUMBER_OF_PLAYERS 1

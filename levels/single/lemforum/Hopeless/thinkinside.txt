@@ -1,5 +1,5 @@
 $BUILT 2016-07-29 20:17:55
-$AUTHOR Michael S. Repton
+$AUTHOR Proxima
 $ENGLISH Think Inside the Box
 
 #INTENDED_NUMBER_OF_PLAYERS 1

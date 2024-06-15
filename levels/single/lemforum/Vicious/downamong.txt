@@ -1,5 +1,5 @@
 $BUILT 2023-01-08 16:02:18
-$AUTHOR Michael S. Repton
+$AUTHOR Proxima
 $ENGLISH Down Among the Dead Lix
 
 #INTENDED_NUMBER_OF_PLAYERS 1

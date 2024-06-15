@@ -1,5 +1,5 @@
 $BUILT 2022-12-11 01:39:15
-$AUTHOR Michael S. Repton
+$AUTHOR Proxima
 $ENGLISH Compression Method 2
 
 #INTENDED_NUMBER_OF_PLAYERS 1

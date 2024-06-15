@@ -1,5 +1,5 @@
 $BUILT 2016-07-05 16:58:49
-$AUTHOR Michael S. Repton
+$AUTHOR Proxima
 $ENGLISH Buridan's Lix
 
 #INTENDED_NUMBER_OF_PLAYERS 1

@@ -1,5 +1,5 @@
 $BUILT 2022-12-17 08:39:12
-$AUTHOR Michael S. Repton
+$AUTHOR Proxima
 $ENGLISH Diamond Dash
 
 #INTENDED_NUMBER_OF_PLAYERS 1

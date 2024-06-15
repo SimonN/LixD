@@ -1,5 +1,5 @@
 $BUILT 2016-09-15 03:39:19
-$AUTHOR Michael S. Repton
+$AUTHOR Proxima
 $ENGLISH The Lion, Lix and the Wardrobe
 
 #INTENDED_NUMBER_OF_PLAYERS 1

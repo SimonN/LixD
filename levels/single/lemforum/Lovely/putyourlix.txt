@@ -1,5 +1,5 @@
 $BUILT 2022-12-22 06:02:23
-$AUTHOR Michael S. Repton
+$AUTHOR Proxima
 $ENGLISH Put Your Lix on Ice
 
 #INTENDED_NUMBER_OF_PLAYERS 1

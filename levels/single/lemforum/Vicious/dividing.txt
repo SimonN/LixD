@@ -1,5 +1,5 @@
 $BUILT 2018-06-25 00:48:55
-$AUTHOR Michael S. Repton
+$AUTHOR Proxima
 $ENGLISH Dividing Three By Two
 
 #INTENDED_NUMBER_OF_PLAYERS 1

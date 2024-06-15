@@ -1,5 +1,5 @@
 $BUILT 2017-09-27 19:07:08
-$AUTHOR Michael S. Repton
+$AUTHOR Proxima
 $ENGLISH We are A.T. and T.A.
 
 #INTENDED_NUMBER_OF_PLAYERS 2

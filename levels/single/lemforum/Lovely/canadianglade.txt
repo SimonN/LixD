@@ -1,5 +1,5 @@
 $BUILT 2016-07-22 02:57:31
-$AUTHOR Michael/Simon
+$AUTHOR Proxima & Simon
 $ENGLISH Canadian Glade
 
 #INTENDED_NUMBER_OF_PLAYERS 1

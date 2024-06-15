@@ -1,5 +1,5 @@
 $BUILT 2018-06-25 01:24:39
-$AUTHOR I.S./Michael
+$AUTHOR Insane Steve & Proxima
 $ENGLISH Path of Wickedness
 
 #INTENDED_NUMBER_OF_PLAYERS 1

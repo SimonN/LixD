@@ -1,5 +1,5 @@
 $BUILT 2018-04-29 16:26:34
-$AUTHOR Michael S. Repton
+$AUTHOR Proxima
 $ENGLISH From the Other Side
 
 #INTENDED_NUMBER_OF_PLAYERS 1

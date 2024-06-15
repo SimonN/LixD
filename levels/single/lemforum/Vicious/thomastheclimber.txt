@@ -1,5 +1,5 @@
 $BUILT 2018-06-25 00:50:26
-$AUTHOR Michael S. Repton
+$AUTHOR Proxima
 $ENGLISH Thomas the Climber
 
 #INTENDED_NUMBER_OF_PLAYERS 1

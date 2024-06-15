@@ -1,5 +1,5 @@
 $BUILT 2023-11-28 07:50:02
-$AUTHOR Michael S. Repton
+$AUTHOR Proxima
 $ENGLISH The Continuum Hypothesis
 
 #INTENDED_NUMBER_OF_PLAYERS 1

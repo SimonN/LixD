@@ -1,5 +1,5 @@
 $BUILT 2018-08-19 16:02:03
-$AUTHOR Michael S. Repton
+$AUTHOR Proxima
 $ENGLISH The Two Towers
 
 #INTENDED_NUMBER_OF_PLAYERS 1

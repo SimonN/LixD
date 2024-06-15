@@ -1,5 +1,5 @@
 $BUILT 2017-09-27 19:05:29
-$AUTHOR Michael S. Repton
+$AUTHOR Proxima
 $ENGLISH The Adventure Playground (3P)
 
 #INTENDED_NUMBER_OF_PLAYERS 3

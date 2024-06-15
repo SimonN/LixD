@@ -1,5 +1,5 @@
 $BUILT 2015-04-25 18:31:36
-$AUTHOR Michael S. Repton
+$AUTHOR Proxima
 $GERMAN
 $ENGLISH All Around the World
 

@@ -1,5 +1,5 @@
 $BUILT 2015-06-16 11:34:31
-$AUTHOR Michael S. Repton
+$AUTHOR Proxima
 $GERMAN 
 $ENGLISH Changing of the Guards
 

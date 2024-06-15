@@ -1,5 +1,5 @@
 $BUILT 2021-05-16 11:28:44
-$AUTHOR Michael S. Repton
+$AUTHOR Proxima
 $ENGLISH Lix Potion Number Nine
 
 #INTENDED_NUMBER_OF_PLAYERS 1

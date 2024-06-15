@@ -1,5 +1,5 @@
 $BUILT 2018-03-28 03:16:16
-$AUTHOR Michael S. Repton
+$AUTHOR Proxima
 $ENGLISH Waltz in C Sharp Miner
 
 #INTENDED_NUMBER_OF_PLAYERS 1

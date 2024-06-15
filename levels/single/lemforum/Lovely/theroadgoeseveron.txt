@@ -1,5 +1,5 @@
 $BUILT 2022-12-11 23:27:33
-$AUTHOR I.S./Michael
+$AUTHOR Insane Steve & Proxima
 $ENGLISH The Road Goes Ever On
 
 #INTENDED_NUMBER_OF_PLAYERS 1

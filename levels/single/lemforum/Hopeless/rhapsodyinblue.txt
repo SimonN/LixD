@@ -1,5 +1,5 @@
 $BUILT 2018-06-17 09:59:22
-$AUTHOR Michael S. Repton
+$AUTHOR Proxima
 $ENGLISH Rhapsody in Blue
 
 #INTENDED_NUMBER_OF_PLAYERS 1

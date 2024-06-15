@@ -1,5 +1,5 @@
 $BUILT 2017-09-30 16:35:17
-$AUTHOR Michael S. Repton
+$AUTHOR Proxima
 $ENGLISH Flying Batter-y Zone (8P)
 
 #INTENDED_NUMBER_OF_PLAYERS 8

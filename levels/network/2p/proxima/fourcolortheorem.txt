@@ -1,5 +1,5 @@
 $BUILT 2017-09-27 19:04:13
-$AUTHOR I.S. / Michael
+$AUTHOR Insane Steve & Proxima
 $ENGLISH Four Color Theorem
 
 #INTENDED_NUMBER_OF_PLAYERS 2

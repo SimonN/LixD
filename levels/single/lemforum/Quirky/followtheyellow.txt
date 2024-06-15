@@ -1,5 +1,5 @@
 $BUILT 2016-07-02 23:38:25
-$AUTHOR Michael S. Repton
+$AUTHOR Proxima
 $ENGLISH Follow the Yellow Brick Road
 
 #INTENDED_NUMBER_OF_PLAYERS 1

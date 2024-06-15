@@ -1,5 +1,5 @@
 $BUILT 2016-06-28 13:19:07
-$AUTHOR Michael S. Repton
+$AUTHOR Proxima
 $ENGLISH A Necklace of Raindrops
 
 #INTENDED_NUMBER_OF_PLAYERS 1
