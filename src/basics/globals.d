@@ -39,8 +39,6 @@ immutable filenameExtTransl          = ".txt";
 immutable filenameExtTileDefinitions = ".txt";
 
 immutable fileLevelDirOrder   = "_order.X.txt";
-immutable fileLevelDirEnglish = "_english.X.txt";
-immutable fileLevelDirGerman  = "_german.X.txt";
 
 // pre-extensions of image files
 immutable preExtInternal             = 'I';
