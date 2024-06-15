@@ -138,6 +138,12 @@ do {
         _trophies[key] = tro;
 }
 
+string fixOutdatedAuthor(in string oldAuthor) pure nothrow @safe @nogc
+{
+    // To convert trophies older than July 2024. Keep this line until 2029.
+    return oldAuthor == "Michael S. Repton" ? "Proxima" : oldAuthor;
+}
+
 void loadTrophiesSdlang()
 {
     version (tharsisprofiling)
@@ -148,7 +154,7 @@ void loadTrophiesSdlang()
         TrophyKey key;
         key.fileNoExt = tag.getAttribute(attrFileNoExt, "");
         key.title = tag.getAttribute(attrTitle, "");
-        key.author = tag.getAttribute(attrAuthor, "");
+        key.author = tag.getAttribute(attrAuthor, "").fixOutdatedAuthor;
         if (key.fileNoExt == "")
             continue;
 
