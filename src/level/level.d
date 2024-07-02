@@ -109,14 +109,14 @@ public:
         }
 
         bool errorFileNotFound() { return _fileNotFound; }
-        bool errorNoHatches() { return gadgets[GadType.HATCH].empty; }
+        bool errorNoHatches() { return gadgets[GadType.hatch].empty; }
         bool errorMissingTiles() { return ! _missingTiles.empty; }
         bool errorEmpty()
         {
             return terrain.empty && gadgets[].all!(list => list.empty);
         }
 
-        bool warningNoGoals() { return gadgets[GadType.GOAL].empty; }
+        bool warningNoGoals() { return gadgets[GadType.goal].empty; }
         bool warningTooLarge()
         {
             return topology.xl * topology.yl >= levelPixelsToWarn;

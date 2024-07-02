@@ -41,7 +41,7 @@ void useWater(Lixxie lixxie) { with (lixxie)
 
 void useNonconstantTraps(Lixxie lixxie) { with (lixxie)
 {
-    if (! (footEncounters & Phybit.trapTrig) || ! healthy)
+    if (! (footEncounters & Phybit.muncher) || ! healthy)
         return;
     foreach (Muncher trap; outsideWorld.state.munchers) {
         if (! inTriggerArea(trap)
@@ -58,7 +58,7 @@ void useNonconstantTraps(Lixxie lixxie) { with (lixxie)
 
 void useFlingers(Lixxie lixxie) { with (lixxie) with (outsideWorld.state)
 {
-    enum anyFlingBit = Phybit.flingPerm | Phybit.flingTrig;
+    enum anyFlingBit = Phybit.steam | Phybit.catapult;
     if (! (footEncounters & anyFlingBit) || ! healthy)
         return;
     auto encounteredOpenFlingers = chain(catapults

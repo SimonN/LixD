@@ -44,8 +44,8 @@ void implConstructor(
     _map        = newMap();
     _mapTerrain = newMap();
     _map.centerOnAverage(
-        level.gadgets[GadType.HATCH].map!(h => h.screenCenter.x),
-        level.gadgets[GadType.HATCH].map!(h => h.screenCenter.y));
+        level.gadgets[GadType.hatch].map!(h => h.screenCenter.x),
+        level.gadgets[GadType.hatch].map!(h => h.screenCenter.y));
     _dragger = new MouseDragger();
 }}
 

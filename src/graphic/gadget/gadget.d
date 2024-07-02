@@ -1,19 +1,9 @@
 module graphic.gadget.gadget;
 
-/* Gadget was called EdGraphic in A4/C++ Lix. It represents a Graphic that
- * was created from a Tile, not merely from any Cutbit. The original purpose
- * of EdGraphic was to represent instances of Tile in the editor.
- *
- * Because EdGraphics were extremely useful in the gameplay too, D/A5 Lix
- * treats that use as the main use, and the appropriate name is Gadget.
- * Terrain or steel is not realized in the game as Gadgets, they're drawn
- * onto the land and their Tile nature is immediately forgot afterwards.
- *
- * The editor will use Gadgets for all Tiles, and not call upon the more
- * sophisticated animation functions which the gameplay uses.
- *
- * DTODO: We're introducing a ton of special cases for GadType.HATCH here.
- * Consider making a subclass for that.
+/*
+ * A Gadget behaves like an object of class Graphic that was created from
+ * a Tile, not merely from any Cutbit. Terrain or steel is not a Gadget;
+ * those are drawn onto the land and their Tile nature is then forgotten.
  */
 
 import std.algorithm;
@@ -70,9 +60,9 @@ public:
     {
         assert (levelpos.tile);
         final switch (levelpos.tile.type) {
-            case GadType.HATCH:   return new Hatch   (top, levelpos);
-            case GadType.GOAL:    return new Goal    (top, levelpos);
-            case GadType.TRAP: return new Muncher(top, levelpos);
+            case GadType.hatch: return new Hatch(top, levelpos);
+            case GadType.goal: return new Goal(top, levelpos);
+            case GadType.muncher: return new Muncher(top, levelpos);
             case GadType.water: return new Water(top, levelpos);
             case GadType.fire: return new Fire(top, levelpos);
             case GadType.catapult: return new Catapult(top, levelpos);
@@ -119,15 +109,15 @@ public:
         assert (tile);
         Phybitset phyb = 0;
         final switch (tile.type) {
-            case GadType.HATCH:
+            case GadType.hatch:
             case GadType.MAX: return;
 
-            case GadType.GOAL:  phyb = Phybit.goal; break;
-            case GadType.TRAP:  phyb = Phybit.trapTrig; break;
+            case GadType.goal: phyb = Phybit.goal; break;
+            case GadType.muncher: phyb = Phybit.muncher; break;
             case GadType.water: phyb = Phybit.water; break;
             case GadType.fire: phyb = Phybit.fire; break;
-            case GadType.catapult: phyb = Phybit.flingTrig; break;
-            case GadType.steam: phyb = Phybit.flingPerm; break;
+            case GadType.catapult: phyb = Phybit.catapult; break;
+            case GadType.steam: phyb = Phybit.steam; break;
         }
         lk.rect!(Phymap.add)(tile.triggerArea + this.loc, phyb);
     }

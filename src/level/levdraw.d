@@ -40,7 +40,7 @@ private void drawGadgetOcc(in GadOcc occ)
         0, 0, // draw top-left frame. DTODO: Still OK for triggered traps?
         0, // mirroring
         // hatch rotation: not for drawing, only for spawn direction
-        occ.tile.type == GadType.HATCH ? 0 : occ.hatchRot);
+        occ.tile.type == GadType.hatch ? 0 : occ.hatchRot);
 }
 
 package Torbit implCreatePreview(

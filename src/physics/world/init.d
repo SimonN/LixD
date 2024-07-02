@@ -88,13 +88,13 @@ void prepareGadgets(World state, in Level level)
             // don't draw to the lookup map yet, we may remove some goals first
         }
     }
-    instantiateGadgetsFromArray(state.immutableHalf.hatches, GadType.HATCH);
-    instantiateGadgetsFromArray(state.immutableHalf.goals, GadType.GOAL);
+    instantiateGadgetsFromArray(state.immutableHalf.hatches, GadType.hatch);
+    instantiateGadgetsFromArray(state.immutableHalf.goals, GadType.goal);
     instantiateGadgetsFromArray(state.immutableHalf.waters, GadType.water);
     instantiateGadgetsFromArray(state.immutableHalf.waters, GadType.fire);
     instantiateGadgetsFromArray(state.immutableHalf.steams, GadType.steam);
 
-    instantiateGadgetsFromArray(state.munchers, GadType.TRAP);
+    instantiateGadgetsFromArray(state.munchers, GadType.muncher);
     instantiateGadgetsFromArray(state.catapults, GadType.catapult);
 }
 

@@ -31,7 +31,17 @@ private:
     bool _triggerYc; // center around triggerY instead of going down from it
 
 public:
-    bool flingForward = true; // if false, always fling left or right
+    /*
+     * flingForward matters only for Type.steam and Type.catapult.
+     *
+     * flingForward == true means that the lix always preserves her x-direction
+     * as long as specialX is >= 0, which it really should be for flingForward.
+     *
+     * flingForward == false means that specialX < 0 flings leftward and
+     * specialX > 0 flings rightward, regardless of the lix's earlier facing.
+     */
+    bool flingForward = true;
+
     int  triggerXl;
     int  triggerYl;
 
@@ -40,13 +50,13 @@ public:
     int  specialY; // FLING: y-direction
 
     enum Type {
-        HATCH,
-        GOAL,
-        TRAP,
-        water,
-        fire,
-        catapult, // flingForward is important here
-        steam, // flingForward is important here
+        hatch, // = entrance, entrance hatch, starting point
+        goal, // = exit, archway, where you want everybody to go
+        muncher, // = triggered trap, nonconstant trap
+        water, // = hazard, permanent trap
+        fire, // = hazard, permanent trap, laser, buzzsaw
+        catapult, // = nonconstant flinger, triggered flinger with cooldown
+        steam, // = constant flinger, transportation beam
         MAX
     }
 
@@ -104,12 +114,12 @@ private:
     {
         assert (cb);
         switch (type) {
-        case Type.HATCH:
+        case Type.hatch:
             _triggerX = cb.xl / 2;
             _triggerY = max(20, cb.yl - 24);
             specialX  = 1;
             break;
-        case Type.GOAL:
+        case Type.goal:
             _triggerX = cb.xl / 2;
             _triggerY = cb.yl - 2;
             triggerXl = 12;
@@ -117,7 +127,7 @@ private:
             _triggerXc = true;
             _triggerYc = true;
             break;
-        case Type.TRAP:
+        case Type.muncher:
             _triggerX = cb.xl / 2;
             _triggerY = cb.yl * 4 / 5;
             triggerXl = 4; // _xl was 6 before July 2014, but 6 isn't symmetric
@@ -177,7 +187,7 @@ private:
                 if (triggerYl < 0) triggerYl = 0;
             }
             else if (i.text1 == tileDefHatchOpeningFrame) {
-                _type = Type.HATCH;
+                _type = Type.hatch;
                 specialX = i.nr1;
             }
             else if (i.text1 == tileDefFlingNonpermanent) {
@@ -222,7 +232,7 @@ private:
     {
         if (! cb)
             return;
-        if ((type == Type.TRAP || type == Type.catapult) && cb.yfs != 2) {
+        if ((type == Type.muncher || type == Type.catapult) && cb.yfs != 2) {
             logf("Error: Triggered %s %s:", type, name);
             logf("    -> Image has %d rows of frames, not 2.", cb.yfs);
         }

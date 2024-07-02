@@ -127,11 +127,11 @@ out {
 }
 do {
     GadType type;
-    if      (pe == glo.preExtHatch) { type = GadType.HATCH; }
-    else if (pe == glo.preExtGoal)  { type = GadType.GOAL;  }
-    else if (pe == glo.preExtTrap)  { type = GadType.TRAP;  }
+    if      (pe == glo.preExtHatch) { type = GadType.hatch; }
+    else if (pe == glo.preExtGoal) { type = GadType.goal; }
+    else if (pe == glo.preExtTrap) { type = GadType.muncher; }
     else if (pe == glo.preExtWater) { type = GadType.water; }
-    else if (pe == glo.preExtFire)  { type = GadType.fire; }
+    else if (pe == glo.preExtFire) { type = GadType.fire; }
     else {
         logBadTile!"Unknown pre-extension"(strNoExt);
         return;

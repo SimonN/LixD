@@ -113,7 +113,7 @@ public:
     this(const(GadgetTile) t)
     {
         _tile = t;
-        super(Can(false, _tile.type == GadType.HATCH, false));
+        super(Can(false, _tile.type == GadType.hatch, false));
     }
 
     override GadOcc clone() const

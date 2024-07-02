@@ -34,9 +34,9 @@ enum Phybit : Phybitset {
     goal = 0x04,
     fire = 0x08,
     water = 0x10,
-    trapTrig = 0x20,
-    flingPerm = 0x40,
-    flingTrig = 0x80,
+    muncher = 0x20,
+    steam = 0x40,
+    catapult = 0x80,
 }
 
 final class Phymap : Topology {
@@ -249,7 +249,7 @@ final class Phymap : Topology {
             albitDestroy(outputBitmap);
         auto targetBitmap = TargetBitmap(outputBitmap);
         enum anyTriggerArea = Phybit.goal | Phybit.fire | Phybit.water
-            | Phybit.trapTrig | Phybit.flingPerm | Phybit.flingTrig;
+            | Phybit.muncher | Phybit.steam | Phybit.catapult;
 
         foreach (x; 0 .. xl) foreach (y; 0 .. yl) {
             immutable Point p = Point(x, y);

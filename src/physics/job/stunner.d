@@ -15,7 +15,7 @@ public:
          * Fix github #448: Don't repeat "ouch" if stuck in permanent flinger.
          * Asking for ! lixxie.flingNew didn't fix this. Directly ask physics.
          */
-        if ((lixxie.lookup.get(lixxie.foot) & Phybit.flingPerm) == 0) {
+        if ((lixxie.lookup.get(lixxie.foot) & Phybit.steam) == 0) {
             lixxie.playSound(Sound.OUCH);
         }
     }

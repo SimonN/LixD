@@ -212,7 +212,7 @@ protected:
     override void visit(const(GadgetTile) ga) {
         _candidateOrNull = makeZOrderingOrNull!GadOcc(
             _level.gadgets[ga.type],
-            ga.type == GadType.HATCH || ga.type == GadType.GOAL
+            ga.type == GadType.hatch || ga.type == GadType.goal
             ? MoveTowards.once : MoveTowards.untilIntersects);
     }
 

@@ -60,7 +60,7 @@ Occurrence addFromLine(
         {
             GadOcc newpos = new GadOcc(ga);
             newpos.loc = level.topology.wrap(cornerAt);
-            if (ga.type == GadType.HATCH)
+            if (ga.type == GadType.hatch)
                 foreach (char c; text2) switch (c) {
                     case 'r': newpos.mirrY = ! newpos.mirrY; break;
                     default: break;

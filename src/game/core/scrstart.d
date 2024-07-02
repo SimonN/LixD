@@ -37,7 +37,7 @@ const(GadOcc)[] ourHatches(const(Game) game) { with (game)
             next != localTribe.nextHatch || ret.len == 0;
             next  = (next + cs.tribes.numPlayerTribes) % cs.hatches.len
     ) {
-        ret ~= level.gadgets[GadType.HATCH][next];
+        ret ~= level.gadgets[GadType.hatch][next];
     }
     return ret;
 }}
