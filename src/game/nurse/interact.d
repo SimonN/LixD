@@ -1,6 +1,6 @@
 module game.nurse.interact;
 
-import game.nurse.cache;
+import physics.world.cache;
 import hardware.sound;
 
 public import game.nurse.savestat;

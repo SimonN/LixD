@@ -62,7 +62,7 @@ public:
     }
 
     ~this() { dispose(); }
-    void dispose()
+    void dispose() nothrow @nogc
     {
         if (bitmap) {
             albitDestroy(bitmap);

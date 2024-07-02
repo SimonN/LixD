@@ -1,9 +1,8 @@
-module physics.statinit;
+module physics.world.init;
 
 import std.algorithm;
 import std.array;
 import std.conv;
-import std.typecons;
 
 import basics.alleg5;
 import basics.globals;
@@ -14,7 +13,7 @@ import graphic.torbit;
 import file.replay;
 import level.level;
 import net.permu;
-import physics.state;
+import physics.world.world;
 import physics.tribe;
 import physics.handimrg;
 import tile.phymap;
@@ -28,34 +27,36 @@ struct GameStateInitCfg {
     Permu permu;
 }
 
-package:
-
-GameState newZeroState(in GameStateInitCfg cfg)
+WorldAsStruct newZeroState(in GameStateInitCfg cfg)
 in {
     assert (cfg.tribes.length >= 1);
 }
+out (ret) {
+    assert (ret.isValid, "newZeroState must be valid at least here");
+}
 do {
-    GameState s;
-    s.refCountedStore.ensureInitialized();
-    s.land   = new Torbit(Torbit.Cfg(cfg.level.topology));
-    s.lookup = new Phymap(cfg.level.topology);
-    cfg.level.drawTerrainTo(s.land, s.lookup);
+    typeof(return) ret;
+    ret.land   = new Torbit(Torbit.Cfg(cfg.level.topology));
+    ret.lookup = new Phymap(cfg.level.topology);
+    cfg.level.drawTerrainTo(ret.land, ret.lookup);
 
-    s.preparePlayers(cfg);
-    s.prepareGadgets(cfg.level);
-    s.assignTribesToGoals(cfg.permu);
-    s.foreachGadget((Gadget g) {
-        g.drawLookup(s.lookup);
+    (&ret).preparePlayers(cfg);
+    (&ret).prepareGadgets(cfg.level);
+    (&ret).assignTribesToGoals(cfg.permu);
+    (&ret).foreachConstGadget((const(Gadget) g) {
+        g.drawLookup(ret.lookup);
     });
-    s.age = s.isBattle ? Phyu(0) : Phyu(45); // start quickly in 1-player
-    s.overtimeAtStartInPhyus = s.isBattle
+    ret.age = ret.isBattle ? Phyu(0) : Phyu(45); // start quickly in 1-player
+
+    ret.immutableHalf.overtimeAtStartInPhyus = ret.isBattle
         ? cfg.level.overtimeSeconds * phyusPerSecondAtNormalSpeed : 0;
-    return s;
+
+    return ret;
 }
 
 private:
 
-void preparePlayers(GameState state, in GameStateInitCfg cfg)
+void preparePlayers(World state, in GameStateInitCfg cfg)
 in {
     assert (state.tribes.numPlayerTribes == 0);
     assert (cfg.tribes.length >= 1);
@@ -76,7 +77,7 @@ do {
     }
 }
 
-void prepareGadgets(GameState state, in Level level)
+void prepareGadgets(World state, in Level level)
 {
     assert (state.lookup);
     void instantiateGadgetsFromArray(T)(ref T[] gadgetVec, GadType tileType)
@@ -87,16 +88,17 @@ void prepareGadgets(GameState state, in Level level)
             // don't draw to the lookup map yet, we may remove some goals first
         }
     }
-    instantiateGadgetsFromArray(state.hatches,  GadType.HATCH);
-    instantiateGadgetsFromArray(state.goals,    GadType.GOAL);
-    instantiateGadgetsFromArray(state.traps,    GadType.TRAP);
-    instantiateGadgetsFromArray(state.waters, GadType.water);
-    instantiateGadgetsFromArray(state.waters, GadType.fire);
-    instantiateGadgetsFromArray(state.flingTrigs, GadType.catapult);
-    instantiateGadgetsFromArray(state.flingPerms, GadType.steam);
+    instantiateGadgetsFromArray(state.immutableHalf.hatches, GadType.HATCH);
+    instantiateGadgetsFromArray(state.immutableHalf.goals, GadType.GOAL);
+    instantiateGadgetsFromArray(state.immutableHalf.waters, GadType.water);
+    instantiateGadgetsFromArray(state.immutableHalf.waters, GadType.fire);
+    instantiateGadgetsFromArray(state.immutableHalf.steams, GadType.steam);
+
+    instantiateGadgetsFromArray(state.munchers, GadType.TRAP);
+    instantiateGadgetsFromArray(state.catapults, GadType.catapult);
 }
 
-void assignTribesToGoals(GameState state, in Permu permu)
+void assignTribesToGoals(World state, in Permu permu)
 in {
     import std.format;
     assert (state.hatches.len, "we'll do modulo on the hatches, 0 is bad");
@@ -112,11 +114,11 @@ do { with (state)
 {
     immutable numTribes = state.tribes.numPlayerTribes;
     while (hatches.len % numTribes != 0 && numTribes % hatches.len != 0)
-        hatches = hatches[0 .. $-1];
+        state.immutableHalf.hatches = state.immutableHalf.hatches[0 .. $-1];
     assert (hatches.len);
     while (goals.len
         && goals.len % numTribes != 0 && numTribes % goals.len != 0)
-        goals = goals[0 .. $-1];
+        state.immutableHalf.goals = state.immutableHalf.goals[0 .. $-1];
 
     auto stylesInPlay = tribes.playerTribes.map!(tr => tr.style).array;
     stylesInPlay.sort();
@@ -130,10 +132,10 @@ do { with (state)
         immutable int slot = permu[i.to!int];
         tribes[style].nextHatch = slot % hatches.len;
         for (int j = slot % hatches.len; j < hatches.len; j += numTribes)
-            hatches[j].addTribe(style);
+            state.immutableHalf.hatches[j].addTribe(style);
         if (goals.len == 0)
             continue;
         for (int j = slot % goals.len; j < goals.len; j += numTribes)
-            goals[j].addTribe(style);
+            state.immutableHalf.goals[j].addTribe(style);
     }
 }}

@@ -10,7 +10,7 @@ import physics;
 // blocking or batting other lixes, or returning extra builder assignments.
 // Each lix has a pointer to a struct. Game must keep the struct up-to-date.
 struct OutsideWorld {
-    GameState state;
+    World state;
     PhysicsDrawer physicsDrawer;
     EffectSink effect;
     Passport passport;

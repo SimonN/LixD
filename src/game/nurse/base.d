@@ -78,7 +78,7 @@ public:
     bool doneAnimating() const
     {
         return cs.tribes.allTribesEvenNeutral.all!(a => a.doneAnimating)
-            && cs.traps.all!(a => ! a.isEating(now));
+            && cs.munchers.all!(a => ! a.isEating(now));
     }
 
     final auto scores() const
@@ -108,7 +108,7 @@ protected:
     inout(Replay) replay() inout { return _replay; }
     Replay replay(Replay r) { return _replay = r; }
 
-    inout(GameState) cs() inout pure nothrow @safe @nogc
+    inout(World) cs() inout pure nothrow @safe @nogc
     in { assert (_model); }
     do { return _model.cs; }
 

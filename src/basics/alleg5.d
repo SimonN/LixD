@@ -83,7 +83,7 @@ Albit albitCreate(in int xl, in int yl)
     return albitCreateWithFlags(xl, yl, _defaultNewBitmapFlags);
 }
 
-void albitDestroy(Albit bmp)
+void albitDestroy(Albit bmp) nothrow @nogc
 {
     assert (bmp);
     if (! al_is_sub_bitmap(bmp))
@@ -299,12 +299,8 @@ private Albit albitCreateWithFlags(in int xl, in int yl, in int flags)
 
 // This is a ballpark estimation. It can underestimate the VRAM used or
 // reserved by the gfx driver. Monitor the VRAM externally for exact numbers.
-private int vramConsumption(Albit bmp)
+private int vramConsumption(Albit bmp) nothrow @nogc
 {
     assert (bmp);
-    immutable xl = al_get_bitmap_width(bmp);
-    immutable yl = al_get_bitmap_height(bmp);
-
-    int f(float n) { return 2^^(n.log2.ceil.to!int); }
-    return f(xl * yl);
+    return 2 * al_get_bitmap_width(bmp) * al_get_bitmap_height(bmp);
 }

@@ -3,9 +3,9 @@ module game.nurse.savestat;
 import std.algorithm;
 
 import file.option; // replayAfterFrameBack
-import game.nurse.cache;
 import hardware.tharsis;
-import physics.state;
+import physics.world.cache;
+import physics.world.world;
 
 public import game.nurse.base;
 
@@ -23,6 +23,7 @@ public:
     this(in Level lev, Replay rp, EffectSink ef)
     {
         super(lev, rp, ef);
+        assert (cs.isValid);
         _cache = new PhysicsCache();
         _cache.saveZero(cs);
     }
@@ -51,8 +52,8 @@ public:
 
     void loadUserState()
     {
-        auto loaded = _cache.loadUser(replay, Phyu(cs.age + 1));
-        model.takeOwnershipOf(loaded.state.clone);
+        auto loaded = _cache.loadUser;
+        model.takeOwnershipOf(loaded.state);
 
         // Now, 'now' is the loaded state's age, not our old 'now'.
         immutable bool eqb = replay.equalBefore(loaded.replay, Phyu(now + 1));
@@ -72,8 +73,8 @@ public:
     void restartLevel()
     {
         replay.eraseEarlySingleplayerNukes();
-        model.takeOwnershipOf(
-            _cache.loadBeforePhyu(_cache.zeroStatePhyu).clone);
+        auto deepCopy = _cache.loadBeforePhyu(_cache.zeroStatePhyu);
+        model.takeOwnershipOf(deepCopy);
     }
 
     void framestepBackBy(int backBy)
@@ -152,7 +153,8 @@ private:
     {
         if (u >= now)
             return;
-        model.takeOwnershipOf(_cache.loadBeforePhyu(Phyu(u + 1)).clone);
+        auto deepCopy = _cache.loadBeforePhyu(Phyu(u + 1));
+        model.takeOwnershipOf(deepCopy);
         replay.eraseEarlySingleplayerNukes(); // should bring no bugs
         updateTo(u);
     }

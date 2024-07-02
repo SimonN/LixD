@@ -7,6 +7,8 @@ module graphic.gadget.tribelis;
 
 import std.algorithm;
 
+import enumap;
+
 import basics.topology;
 import graphic.gadget;
 import net.style;
@@ -15,28 +17,39 @@ import tile.occur;
 class GadgetWithTribeList : Gadget {
 private:
     alias This = GadgetWithTribeList;
-    Style[] _tribes;
+    Enumap!(Style, bool) _tribeSet;
 
 public:
     mixin (StandardGadgetCtor);
     this(in This rhs)
     {
         super(rhs);
-        _tribes = rhs._tribes.dup;
+        _tribeSet = rhs._tribeSet;
     }
 
     override This clone() const { return new This(this); }
 
-    bool hasTribe(in Style st) const { return _tribes.canFind(st); }
-    void addTribe(in Style st)
+    bool hasTribe(in Style st) const pure nothrow @safe @nogc
     {
-        if (hasTribe(st))
-            return;
-        _tribes ~= st;
-        _tribes.sort();
+        return _tribeSet[st];
     }
 
-    void clearTribes() { _tribes = []; }
-    @property inout(Style)[] tribes() inout { return _tribes; }
+    void addTribe(in Style st) pure nothrow @safe @nogc
+    out { assert (hasTribe(st)); }
+    do {
+        _tribeSet[st] = true;
+    }
+
+    void clearTribes() pure nothrow @safe @nogc
+    out {
+        assert (! hasTribe(Style.garden));
+        assert (! hasTribe(Style.red));
+    }
+    do { _tribeSet = typeof(_tribeSet).init; }
+
+    const(Enumap!(Style, bool)) tribes() const pure nothrow @safe @nogc
+    {
+        return _tribeSet;
+    }
 }
 // end class GadgetWithTribeList

@@ -210,18 +210,10 @@ public:
 
     void spawnLixxie(OutsideWorld* ow)
     in {
-        if (! ow.state.hatches[this.nextHatch].hasTribe(this.style)) {
-            import std.string;
-            string msg = format("Style %s spawns from wrong hatch #%d.",
-                this.style, this.nextHatch);
-            foreach (const size_t i, hatch; ow.state.hatches) {
-                msg ~= format("\nHatch #%d has styles:", i);
-                foreach (Style st; hatch.tribes) {
-                    msg ~= " " ~ styleToString(st);
-                }
-            }
-            assert (false, msg);
-        }
+        import std.string;
+        assert (ow.state.hatches[this.nextHatch].hasTribe(this.style),
+            format("Style %s spawns from wrong hatch #%d.",
+                this.style, this.nextHatch));
     }
     do {
         const hatch = ow.state.hatches[nextHatch];

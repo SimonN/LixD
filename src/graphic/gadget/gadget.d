@@ -35,9 +35,9 @@ import tile.occur;
 import tile.gadtile;
 import net.style; // dubious, but I need it for fat interface antipattern
 
-public alias Water     = Gadget;
-public alias Fire      = Gadget;
-public alias FlingPerm = Gadget;
+public alias Water = Gadget;
+public alias Fire = Gadget;
+public alias Steam = Gadget;
 
 package immutable string StandardGadgetCtor =
     "this(const(Topology) top, in GadOcc levelpos)
@@ -48,7 +48,6 @@ package immutable string StandardGadgetCtor =
 class Gadget {
 private:
     Graphic _graphic;
-    int _frame; // between 0 incl. and (_graphic.xfs * _graphic.yfs) exclusive
 
 public:
     const(GadgetTile) tile;
@@ -62,7 +61,6 @@ protected:
     }
     do {
         _graphic = new Graphic(levelpos.tile.cb, top, levelpos.loc);
-        _frame = 0;
         tile = levelpos.tile;
     }
 
@@ -74,11 +72,11 @@ public:
         final switch (levelpos.tile.type) {
             case GadType.HATCH:   return new Hatch   (top, levelpos);
             case GadType.GOAL:    return new Goal    (top, levelpos);
-            case GadType.TRAP:    return new TrapTrig(top, levelpos);
+            case GadType.TRAP: return new Muncher(top, levelpos);
             case GadType.water: return new Water(top, levelpos);
             case GadType.fire: return new Fire(top, levelpos);
-            case GadType.catapult: return new FlingTrig(top, levelpos);
-            case GadType.steam: return new FlingPerm(top, levelpos);
+            case GadType.catapult: return new Catapult(top, levelpos);
+            case GadType.steam: return new Steam(top, levelpos);
             case GadType.MAX:
                 assert (false, "GadType isn't supported by Gadget.factory");
         }
@@ -93,29 +91,24 @@ public:
     }
     do {
         _graphic = rhs._graphic.clone;
-        _frame = rhs._frame;
         tile = rhs.tile;
     }
 
-    final const pure nothrow @nogc {
+    final const pure nothrow @safe @nogc {
         Point loc() { return _graphic.loc; }
         Rect rect() { return _graphic.rect; }
         int xl() { return _graphic.xl; }
         int yl() { return _graphic.yl; }
-        int frame() { return _frame; }
+        int frames() { return max(1, _graphic.xfs * _graphic.yfs); }
     }
 
-    // This affects physics. Call during physics update. It does not draw.
-    void perform(in Phyu upd, EffectSink ef)
+    final void draw(in Phyu now, in Style treatSpecially) const
     {
-        frame = upd;
-    }
+        const fra = frame(now);
+        _graphic.drawSpecificFrame(fra.forceSecondRow ? Point(fra.frame, 1)
+            : _graphic.xfs > 1 ? Point(fra.frame, 0) : Point(0, fra.frame));
 
-    protected void onDraw(in Style treatSpecially) const { }
-    final void draw(in Style treatSpecially) const
-    {
-        _graphic.draw();
-        onDraw(treatSpecially);
+        onDraw(now, treatSpecially);
     }
 
     // For semi-transparent goal markers in multiplayer.
@@ -140,31 +133,29 @@ public:
     }
 
 protected:
-    final nothrow pure @nogc {
-        // Subclasses should override animateForPhyu instead.
-        // Game should call animateForPhyu instead.
-        // Most graphics have only one animation. This can be in a row,
-        // in column, or in a rectangular sheet. We traverse a rectangular
-        // sheet row-majorly, like we read a western book.
-        // The rectangular sheet solves github issues #4 and #213 about
-        // graphics card limitation with Amanda's tar.
-        int frames() const { return max(1, _graphic.xfs * _graphic.yfs); }
-        int frame(in int fr)
-        {
-            _graphic.xf = positiveMod(fr, _graphic.xfs);
-            _graphic.yf = positiveMod(fr / _graphic.xfs, _graphic.yfs);
-            return _graphic.yf * _graphic.xfs + _graphic.xf;
-        }
-
-        // Traps need access to two different rows. Allow to break the
-        // abstraction of frame() earlier. >_>
-        Point exactXfYf() const { return Point(_graphic.xf, _graphic.yf); }
-        Point exactXfYf(Point p)
-        {
-            _graphic.xf = p.x;
-            _graphic.yf = p.y;
-            return exactXfYf;
-        }
+    static struct Frame {
+        /*
+         * frame: It means the graphic's xf normally. But some graphics are
+         * in a column, e.g., Amanda's tar. Class Gadget may interpret (frame)
+         * as yf in such a case, see draw(). But subclasses shouldn't worry.
+         */
+        int frame;
+        bool forceSecondRow; // For triggered traps
     }
+
+    /*
+     * Customization points for class Gadget's draw() template method pattern:
+     *
+     * frame: Via this, the subclass must report to base class Gadget
+     * which frame (xf, yf) they want to paint, given the current tick.
+     *
+     * onDraw: Optionally, the subclass may draw some after the base has drawn.
+     */
+    Frame frame(in Phyu now) const pure nothrow @safe @nogc
+    {
+        return Gadget.Frame(positiveMod(now, frames));
+    }
+
+    void onDraw(in Phyu now, in Style treatSpecially) const { }
 }
 // end class Gadget

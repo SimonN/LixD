@@ -41,22 +41,24 @@ public:
     }
 
 protected:
-    override void onDraw(in Style markWithArrow) const
+    override void onDraw(in Phyu now, in Style markWithArrow) const
     {
-        foreach (st; tribes)
-            drawOwner(st, hasTribe(markWithArrow) ? 1 : 0);
+        foreach (st, isHere; tribes)
+            if (isHere)
+                drawOwner(st, hasTribe(markWithArrow) ? 1 : 0);
     }
 
 private:
     void drawOwner(in Style st, in int xf) const
     {
-        if (st == Style.garden || ! tribes.canFind(st))
+        if (st == Style.garden || ! hasTribe(st))
             return;
-        int offset = tribes.countUntil(st) & 0x7FFF_FFFF;
+        immutable int numOwners = tribes.byValue.count!"a" & 0x7FFF_FFFF;
+        immutable int offset = tribes.byValue.countUntil(st) & 0x7FFF_FFFF;
         auto icon = Spritesheet.goalMarkers.toCutbitFor(st);
         icon.draw(Point(this.loc.x + tile.trigger.x
             + tile.triggerXl/2 - icon.xl/2
-            + (20 * offset++) - 10 * (tribes.len - 1),
+            + 20 * offset - 10 * (numOwners - 1),
             // Sit 12 pixels above the top of the trigger area.
             // Reason: Amanda's tent is very high, arrow should overlap tent.
             this.loc.y + tile.trigger.y - icon.yl - 12), xf, 0);

@@ -31,14 +31,14 @@ import physics.lixxie.fields;
 import physics.lixxie.fuse;
 import physics.lixxie.lixxie;
 import physics.physdraw;
-import physics.state;
-import physics.statinit;
+import physics.world.world;
+import physics.world.init;
 import physics.tribe;
 import tile.phymap;
 
 class GameModel {
 private:
-    GameState     _cs;            // owned (current state)
+    WorldAsStruct _cs; // owned (current state)
     PhysicsDrawer _physicsDrawer; // owned
     EffectSink _effect; // not owned, never null. May be the NullEffectSink.
 
@@ -61,19 +61,18 @@ public:
     do {
         _effect = ef;
         _cs = newZeroState(cfg);
+        assert (_cs.isValid);
         _physicsDrawer = new PhysicsDrawer(_cs.land, _cs.lookup);
-        finalizePhyuAnimateGadgets();
     }
 
     // Should be accsessible by the Nurse. Shouldn't be accessed straight from
     // the game, but it's the Nurse's task to hide that information.
-    inout(GameState) cs() inout pure nothrow @safe @nogc { return _cs; }
+    inout(World) cs() inout pure nothrow @safe @nogc { return &_cs; }
 
-    void takeOwnershipOf(GameState s)
+    void takeOwnershipOf(ref MutableHalfOfWorld mutWo)
     {
-        _cs = s;
+        _cs.takeOwnershipOf(mutWo);
         _physicsDrawer.rebind(_cs.land, _cs.lookup);
-        finalizePhyuAnimateGadgets();
     }
 
     void applyChangesToLand() {
@@ -86,10 +85,11 @@ public:
         ++_cs.age;
         range.each!(cd => applyPly(cd));
 
-        updateNuke(); // sets lixInHatch = 0, thus affects spawnLixxiesFromHatch
+        updateNuke(); // sets lixInHatch = 0, affecting spawnLixxiesFromHatch
         spawnLixxiesFromHatches();
         updateLixxies();
-        finalizePhyuAnimateGadgets();
+
+        Hatch.maybePlaySound(_cs.age, _effect);
         if (_cs.isOvertimeRunning && _cs.someoneDoesntYetPreferGameToEnd) {
             _effect.announceOvertime(_cs.overtimeRunningSince,
                 _cs.overtimeAtStartInPhyus);
@@ -98,15 +98,17 @@ public:
 
     void dispose()
     {
-        if (_physicsDrawer)
-            _physicsDrawer.dispose();
-        _physicsDrawer = null;
+        _cs.dispose;
+        if (_physicsDrawer) {
+            _physicsDrawer.dispose;
+            _physicsDrawer = null;
+        }
     }
 
 private:
     OutsideWorld makeGypsyWagon(in Passport pa) pure nothrow @nogc
     {
-        return OutsideWorld(_cs, _physicsDrawer, _effect, pa);
+        return OutsideWorld(cs, _physicsDrawer, _effect, pa);
     }
 
     void applyPly(in ColoredData i)
@@ -265,13 +267,5 @@ private:
         _physicsDrawer.applyChangesToPhymap();
 
         performUnmarked(PhyuOrder.peaceful);
-    }
-
-    void finalizePhyuAnimateGadgets()
-    {
-        // Animate after we had the traps eat lixes. Eating a lix sets a flag
-        // in the trap to run through the animation, showing the first killing
-        // frame after this next perform() call. Physics depend on this anim!
-        _cs.foreachGadget((Gadget g) { g.perform(_cs.age, _effect); });
     }
 }

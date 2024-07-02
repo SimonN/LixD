@@ -16,9 +16,6 @@ import net.style;
 import tile.occur;
 
 class Hatch : GadgetWithTribeList {
-private:
-    bool _blinkNow;
-
 public:
     immutable bool spawnFacingLeft;
 
@@ -38,37 +35,47 @@ public:
         assert (rhs);
         super(rhs);
         spawnFacingLeft = rhs.spawnFacingLeft;
-        _blinkNow       = rhs._blinkNow;
     }
 
     override Hatch clone() const { return new Hatch(this); }
 
-    override void perform(in Phyu u, EffectSink effect)
+    static void maybePlaySound(in Phyu now, EffectSink effect)
     {
-        // (of) is first absolute frame of opening. This is earlier if the
-        // sound shall match a later frame of the hatch, as given by specialX.
-        // xfs * yfs is length of animation, see Gadget.animateForPhyu.
-        immutable int of = updateOpen - tile.specialX;
-        frame = (u - of).clamp(0, frames - 1);
-
-        if (u >= updateBlinkStop)
-            _blinkNow = false;
-        else {
-            _blinkNow
-            = (u % (updatesBlinkOn + updatesBlinkOff) < updatesBlinkOn);
+        if (now == updateOpen) {
+            effect.addSoundGeneral(now, Sound.HATCH_OPEN);
         }
-        if (u == updateOpen)
-            effect.addSoundGeneral(u, Sound.HATCH_OPEN);
     }
 
 protected:
-    override void onDraw(in Style blinkStyle) const
+    override Gadget.Frame frame(in Phyu now) const pure nothrow @safe @nogc
     {
-        if (_blinkNow && hasTribe(blinkStyle) && blinkStyle != Style.garden) {
+        return Gadget.Frame((now - firstOpeningFrame).clamp(0, frames - 1));
+    }
+
+    override void onDraw(in Phyu now, in Style blinkStyle) const
+    {
+        if (shouldBlink(now)
+            && hasTribe(blinkStyle) && blinkStyle != Style.garden
+        ) {
             const c = Spritesheet.skillsInPanel.toCutbitFor(blinkStyle);
             c.draw(loc + tile.trigger - c.len/2,
                 Ac.walker.acToSkillIconXf, 0);
         }
+    }
+
+private:
+    // The first absolute frame of opening. This is earlier if the
+    // sound shall match a later frame of the hatch, as given by specialX.
+    // xfs * yfs is length of animation, see Gadget.animateForPhyu.
+    int firstOpeningFrame() const pure nothrow @safe @nogc
+    {
+        return updateOpen - tile.specialX;
+    }
+
+    bool shouldBlink(in Phyu now) const pure nothrow @safe @nogc
+    {
+        return now < updateBlinkStop
+            && now % (updatesBlinkOn + updatesBlinkOff) < updatesBlinkOn;
     }
 }
 // end class Hatch

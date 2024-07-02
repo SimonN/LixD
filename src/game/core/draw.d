@@ -81,7 +81,7 @@ void drawGadgets(Game game) { with (game)
     version (tharsisprofiling)
         auto zone = Zone(profiler, "game draws gadgets");
     cs.foreachConstGadget(delegate void (const(Gadget) g) {
-        g.draw(localTribe.style);
+        g.draw(cs.age, localTribe.style);
     });
     if (cs.nukeIsAssigningExploders && ! nurse.everybodyOutOfLix) {
         foreach (g; cs.goals)
@@ -112,7 +112,7 @@ void pingOwnGadgets(Game game) { with (game)
             Rect inner = Rect(g.loc, g.xl, g.yl);
             map.torbit.drawFilledRectangle(outer, color.white);
             map.torbit.drawFilledRectangle(inner, color.black);
-            g.draw(localTribe.style);
+            g.draw(cs.age, localTribe.style);
         }
     }
 }}

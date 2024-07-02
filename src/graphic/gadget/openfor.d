@@ -28,8 +28,8 @@ import tile.occur;
 import net.style;
 import physics.effect;
 
-public alias TrapTrig  = GadgetAnimsOnFeed;
-public alias FlingTrig = GadgetAnimsOnFeed; // see gadget.d for FlingPerm
+public alias Muncher  = GadgetAnimsOnFeed;
+public alias Catapult = GadgetAnimsOnFeed; // see gadget.d for FlingPerm
 
 private class GadgetAnimsOnFeed : GadgetWithTribeList {
 private:
@@ -85,7 +85,7 @@ public:
             return ! isEating(upd);
     }
 
-    bool isEating(in Phyu upd) const
+    bool isEating(in Phyu upd) const pure nothrow @safe @nogc
     {
         assert (upd >= _lastFed, "relics from the future");
         return upd < firstIdlingPhyuAfterEating;
@@ -94,20 +94,25 @@ public:
     void feed(in Phyu upd, in Style st)
     {
         assert (isOpenFor(upd, st), "don't feed what it's not open for");
-        super.addTribe(st);
-        _lastFed = upd;
+        assert (upd >= _lastFed, "Gadget ate in the future? Bad savestating.");
+        if (upd > _lastFed) {
+            _lastFed = upd;
+            clearTribes;
+        }
+        addTribe(st);
     }
 
-    override void perform(in Phyu upd, EffectSink ef)
+protected:
+    override Gadget.Frame frame(in Phyu now) const pure nothrow @safe @nogc
     {
-        exactXfYf = isEating(upd)
-            ? Point(upd - _lastFed, 1)
-            : Point((upd - firstIdlingPhyuAfterEating) % _idleAnimLen, 0);
-        clearTribes();
+        return isEating(now)
+            ? Gadget.Frame(now - _lastFed, true)
+            : Gadget.Frame((now - firstIdlingPhyuAfterEating) % _idleAnimLen,
+                false);
     }
 
 private:
-    Phyu firstIdlingPhyuAfterEating() const
+    Phyu firstIdlingPhyuAfterEating() const pure nothrow @safe @nogc
     {
         return _lastFed == 0 ? Phyu(0) // never eaten anything
             : Phyu(_lastFed + _eatingAnimLen);

@@ -32,15 +32,17 @@ public:
     {
         if (goal.hasTribe(lixxie.style)) {
             lixxie.playSound(Sound.GOAL);
+            return;
         }
-        else {
-            lixxie.playSound(Sound.GOAL_BAD);
-            foreach (tr; goal.tribes)
+        lixxie.playSound(Sound.GOAL_BAD);
+        foreach (opponent, isOwnerOfThisGoal; goal.tribes) {
+            if (isOwnerOfThisGoal) {
                 lixxie.outsideWorld.effect.addSound(
                     lixxie.outsideWorld.state.age,
                     // arbitrary ID because not same tribe
-                    Passport(tr, lixxie.outsideWorld.passport.id),
+                    Passport(opponent, lixxie.outsideWorld.passport.id),
                     Sound.GOAL);
+            }
         }
     }
 

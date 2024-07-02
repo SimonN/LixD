@@ -7,7 +7,7 @@ import basics.alleg5;
 static import basics.globals;
 import file.option; // replayAfterFrameBack
 import game.core.game;
-import game.nurse.cache : DuringTurbo;
+import physics.world.cache : DuringTurbo;
 import game.panel.base;
 import hardware.mouse;
 import hardware.sound;

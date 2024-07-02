@@ -15,7 +15,7 @@ import basics.topology;
 import graphic.cutbit;
 import graphic.torbit;
 
-class Graphic {
+final class Graphic {
 private:
     Point  _loc;
     bool   _mirror;
@@ -48,14 +48,14 @@ public:
         _yf     = rhs._yf;
     }
 
-    // This should go in the following "@property pure nothrow @nogc {",
+    const(Albit) albit() const pure nothrow @nogc { return cutbit.albit; }
+
+    // This should go in the following "pure nothrow @nogc {",
     // but fmod is not yet pure in the D standard library.
     // https://issues.dlang.org/show_bug.cgi?id=11320
     double rotation(double dbl) nothrow @nogc { return _rot = fmod(dbl, 4); }
 
-    @property pure nothrow @nogc {
-        const(Albit) albit() const { return cutbit.albit; }
-
+    pure nothrow @safe @nogc {
         bool mirror () const { return _mirror; }
         double rotation() const { return _rot; }
         bool mirror (bool b) { return _mirror = b; }
@@ -102,9 +102,18 @@ public:
     void draw() const
     {
         assert (env, "can't draw, no target environment specified");
-        // This calls the virtual xf(), yf() instead of using _xf, _yf.
-        // We want to allow Lixxie to override that with frame and ac.
-        cutbit.draw(_loc, xf, yf, _mirror, _rot);
+        cutbit.draw(_loc, _xf, _yf, _mirror, _rot);
+    }
+
+    /*
+     * Hack: This breaks the abstraction that Graphic knows about its selected
+     * frame (xf, yf). I need this break for gadgets that want to pick a frame
+     * and draw it once, all while the Gadget and the Graphic remain const.
+     */
+    void drawSpecificFrame(in Point xfyf) const
+    {
+        assert (env, "can't draw, no target environment specified");
+        cutbit.draw(_loc, xfyf.x, xfyf.y, _mirror, _rot);
     }
 
     // Ignore (Topology env) and mirr/rotat; and blit immediately.
