@@ -11,6 +11,7 @@ import std.string;
 
 import basics.alleg5 : OutOfVramException;
 import basics.globals : levelPixelsToWarn;
+import basics.topology;
 import file.replay;
 import net.repdata;
 import physics.world.world;
@@ -19,7 +20,7 @@ enum DuringTurbo : bool { no = false, yes = true }
 
 class PhysicsCache {
 private:
-    enum pairsToKeep = 4;
+    enum pairsToKeep = 5;
 
     MutableHalfOfWorld _zero; // for returning to the beginning
     MutableHalfOfWorld _userState; // for savestating
@@ -129,38 +130,51 @@ public:
     {
         immutable pair = duringTurbo ? 1 : 0;
         assert (pair >= 0 && pair < pairsToKeep);
-        if (s.age == 0 || s.age % updateMultipleForPair(pair) != 0)
+        if (s.age == 0 || s.age % updatesForPair(pair) != 0)
             return false;
         foreach (possible; pair .. pairsToKeep)
             // We save 2 states per update multiple. But when we want to update
             // 100 times, there is no need saving states after 10, 20, 30, ...
-            // updates, we would only keep the states at 90 and 100, anyway.
-            // And the state at 50 and 100, in a higher pair.
-            if (s.age > updTo - 2 * updateMultipleForPair(possible)
-                && s.age % updateMultipleForPair(possible) == 0)
+            // updates, we would only keep the states at 110 and 120, anyway.
+            // And the state at 60 and 120, in a higher pair.
+            if (s.age > updTo - 2 * updatesForPair(possible)
+                && s.age % updatesForPair(possible) == 0)
                 return true;
         return false;
     }
 
     void autoSave(in World s, in Phyu ultimatelyTo)
     {
-        if (! wouldAutoSave(s, ultimatelyTo, DuringTurbo.no))
+        if (! wouldAutoSave(s, ultimatelyTo, DuringTurbo.no)) {
             return;
+        }
         _recommendGC = true;
-        // For large maps, don't save the final pair. This is a feeble attempt
-        // at conserving RAM. See github issue 296 about RAM on Windows:
-        // https://github.com/SimonN/LixD/issues/296
-        static assert (pairsToKeep >= 2);
-        immutable int pairsToKeepForThisMap = s.land.xl * s.land.yl
-            > levelPixelsToWarn ? pairsToKeep - 1 : pairsToKeep;
+        immutable highestPair = pairsToKeepForThisMap(s.land) - 1;
 
-        for (int pair = pairsToKeepForThisMap - 1; pair >= 0; --pair) {
-            if (s.age % updateMultipleForPair(pair) != 0) {
+        for (int pair = highestPair; pair >= 0; --pair) {
+            // First, we decide into which pair we should save.
+            if (s.age % updatesForPair(pair) != 0) {
                 continue;
             }
-            bool leapfrog = (s.age / updateMultipleForPair(pair)) & 1;
+            /*
+             * bool leapfrog:
+             * Given the pair, we leapfrog, i.e., we alternately save into
+             * slot A, then slot B, then slot A, then slot B, ... of a pair.
+             *
+             * bool borrow:
+             * Pair 0 (the most frequently overwritten pair) is special. Early
+             * during a game, pair 0 covers really 4 slots, not 2 slots:
+             * We borrow the empty slots from the highest pair ("we farfrog")
+             * until the highest pair wants to save something.
+             */
+            immutable divided = s.age / updatesForPair(pair);
+            immutable bool leapfrog = (divided) & 1;
+            immutable bool borrow = pair == 0 && (divided & 2)
+                && s.age < updatesForPair(highestPair);
+
             auto deepCopy = s.mutableHalf.clone();
-            _auto[2 * pair + leapfrog].takeOwnershipOf(deepCopy);
+            _auto[(2 * pair) + (2 * highestPair * borrow) + leapfrog]
+                .takeOwnershipOf(deepCopy);
             return;
         }
     }
@@ -176,12 +190,27 @@ private:
         _recommendGC = true;
     }
 
-    int updateMultipleForPair(in int pair) const pure @nogc
+    static int updatesForPair(in int pair) pure nothrow @safe @nogc
     in { assert (pair >= 0 && pair < pairsToKeep); }
     do {
-        return pair == 0 ? 10
-            : pair == 1 ? 10*5
-            : pair == 2 ? 10*5*5 : 10*5*5*5;
+        enum updatesForFirstPair = 10;
+        return pair == 0 ? updatesForFirstPair
+            :  pair == 1 ? updatesForFirstPair * 6
+            :  pair == 2 ? updatesForFirstPair * 6 * 6
+            :  pair == 3 ? updatesForFirstPair * 6 * 6 * 6
+            :              updatesForFirstPair * 6 * 6 * 6 * 4;
+    }
+
+    int pairsToKeepForThisMap(in Topology s) const pure nothrow @safe @nogc
+    {
+        // For large maps, don't save the final pair. This is a feeble attempt
+        // at conserving RAM. See github issue 296 about RAM on Windows:
+        // https://github.com/SimonN/LixD/issues/296
+        static assert (pairsToKeep >= 3, "pairsToKeepForThisMap >= 1 needed.");
+        immutable int pixels = s.xl * s.yl;
+        return pixels > levelPixelsToWarn ? pairsToKeep - 2
+            : pixels * 3 > levelPixelsToWarn * 2 ? pairsToKeep - 1
+            : pairsToKeep;
     }
 }
 // end class StateManager
