@@ -4,6 +4,7 @@ import std.algorithm; // min
 
 import basics.help;
 import basics.globals; // hatch arrow graphic
+import basics.styleset;
 import basics.topology;
 import game.effect;
 import graphic.cutbit;
@@ -12,10 +13,12 @@ import graphic.internal;
 import hardware.sound;
 import net.ac;
 import net.repdata;
-import net.style;
 import tile.occur;
 
-class Hatch : GadgetWithTribeList {
+class Hatch : Gadget {
+private:
+    StyleSet _owners;
+
 public:
     immutable bool spawnFacingLeft;
 
@@ -34,10 +37,17 @@ public:
     {
         assert (rhs);
         super(rhs);
+        _owners = rhs._owners;
         spawnFacingLeft = rhs.spawnFacingLeft;
     }
 
     override Hatch clone() const { return new Hatch(this); }
+
+    void addOwner(in Style st) pure nothrow @safe @nogc { _owners.insert(st); }
+    bool hasOwner(in Style st) const pure nothrow @safe @nogc
+    {
+        return _owners.contains(st);
+    }
 
     static void maybePlaySound(in Phyu now, EffectSink effect)
     {
@@ -55,7 +65,7 @@ protected:
     override void onDraw(in Phyu now, in Style blinkStyle) const
     {
         if (shouldBlink(now)
-            && hasTribe(blinkStyle) && blinkStyle != Style.garden
+            && hasOwner(blinkStyle) && blinkStyle != Style.garden
         ) {
             const c = Spritesheet.skillsInPanel.toCutbitFor(blinkStyle);
             c.draw(loc + tile.trigger - c.len/2,

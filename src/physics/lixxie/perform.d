@@ -21,10 +21,7 @@ package void performUseGadgets(Lixxie l)
     l.useWater();
     l.useNonconstantTraps();
     l.useFlingers();
-
-    assert (l.outsideWorld);
-    if (l.outsideWorld.state.lixMayUseGoals)
-        l.useGoals();
+    l.maybeEnterGoals();
 }
 
 private:
@@ -54,8 +51,6 @@ void useNonconstantTraps(Lixxie lixxie) { with (lixxie)
     }
 }}
 
-
-
 void useFlingers(Lixxie lixxie) { with (lixxie) with (outsideWorld.state)
 {
     enum anyFlingBit = Phybit.steam | Phybit.catapult;
@@ -77,50 +72,21 @@ void useFlingers(Lixxie lixxie) { with (lixxie) with (outsideWorld.state)
     Tumbler.applyFlingXY(lixxie);
 }}
 
-
-
-void useGoals(Lixxie lixxie) { with (lixxie)
+void maybeEnterGoals(Lixxie lixxie)
 {
-    if (! (footEncounters & Phybit.goal)
-        || priorityForNewAc(Ac.exiter) <= 1
-    )
+    assert (lixxie.outsideWorld !is null);
+    if (! (lixxie.footEncounters & Phybit.goal)
+        || lixxie.priorityForNewAc(Ac.exiter) <= 1 // Prevents direct drop.
+        || ! lixxie.outsideWorld.state.lixMayUseGoals
+    ) {
         return;
-    const(Tribe)[] alreadyScoredFor;
-    foreach (goal; outsideWorld.state.goals)
-        if (inTriggerArea(goal))
-            lixxie.useGoal(goal, alreadyScoredFor);
-}}
-
-void useGoal(Lixxie li, in Goal goal, ref const(Tribe)[] alreadyScoredFor) {
-    with (li)
-{
-    // We may or may not be exiter already, by colliding with stacked goals
-    if (ac != Ac.exiter)
-        become(Ac.exiter);
-
-    Exiter exiter = cast (Exiter) job;
-    assert (exiter, "exiters shouldn't become anything else upon becoming");
-
-    exiter.determineSidewaysMotion(goal);
-    exiter.playSound(goal);
-
-    void scoreForTribe(Tribe tribe)
-    {
-        if (alreadyScoredFor.find(tribe) != null)
-            return;
-        alreadyScoredFor ~= tribe;
-        exiter.scoreForTribe(tribe);
     }
-
-    if (goal.hasTribe(style))
-        scoreForTribe(outsideWorld.tribe);
-    else
-        foreach (enemyTribe; outsideWorld.state.tribes.allTribesEvenNeutral)
-            if (goal.hasTribe(enemyTribe.style))
-                scoreForTribe(enemyTribe);
-}}
-
-
+    foreach (goal; lixxie.outsideWorld.state.goals) {
+        if (lixxie.inTriggerArea(goal)) {
+            Exiter.enterGoal(lixxie, goal);
+        }
+    }
+}
 
 void killOutOfBounds(Lixxie lixxie) {
     with (lixxie)

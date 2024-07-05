@@ -211,7 +211,7 @@ public:
     void spawnLixxie(OutsideWorld* ow)
     in {
         import std.string;
-        assert (ow.state.hatches[this.nextHatch].hasTribe(this.style),
+        assert (ow.state.hatches[this.nextHatch].hasOwner(this.style),
             format("Style %s spawns from wrong hatch #%d.",
                 this.style, this.nextHatch));
     }
@@ -228,7 +228,7 @@ public:
         do {
             nextHatch = (nextHatch + 1) % ow.state.hatches.len;
         }
-        while (! ow.state.hatches[nextHatch].hasTribe(this.style));
+        while (! ow.state.hatches[nextHatch].hasOwner(this.style));
     }
 
 

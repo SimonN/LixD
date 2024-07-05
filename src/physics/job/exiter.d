@@ -1,5 +1,6 @@
 module physics.job.exiter;
 
+import basics.styleset;
 import graphic.gadget.goal;
 import hardware.sound;
 import physics.job;
@@ -11,12 +12,45 @@ private:
     // endered closer to the side than to the center of the trigger area
     int xOffsetFromGoal;
 
+    /*
+     * Theoretically, you can encounter multiple exits during one physics
+     * update. We don't want multiple scorings for the same team, but,
+     * for sheer consistency, we allow to score for different teams.
+     * (stylesThatAlreadyScored) remembers which teams have already
+     * received a point for this particular exiter.
+     */
+    StyleSet _stylesThatAlreadyScored;
+
 public:
-    void scoreForTribe(Tribe tribe)
-    {
-        tribe.addSaved(lixxie.style, lixxie.outsideWorld.state.age);
+    /*
+     * Call enterGoal() only when you're sure that you want to enter that goal.
+     * For exiting eligibility tests (e.g., how Lix prevents direct drop),
+     * and for how the lix finds goals, see physics/lixxie/perform.d.
+     */
+    static void enterGoal(
+        Lixxie li,
+        in Goal goal,
+    ) {
+        // With stacked goals, it's possible that we are already an exiter.
+        if (li.ac != Ac.exiter) {
+            li.become(Ac.exiter);
+        }
+        Exiter exiter = cast (Exiter) li.job;
+        assert (exiter, "Exiters should never become anything else");
+        exiter.determineSidewaysMotion(goal);
+        exiter.scoreForGoalOwners(goal);
     }
 
+    override void perform()
+    {
+        int change = (xOffsetFromGoal < 0 ? 1 : xOffsetFromGoal > 0 ? -1 : 0);
+        spriteOffsetX = spriteOffsetX + change;
+        xOffsetFromGoal += change;
+
+        advanceFrameAndLeave();
+    }
+
+private:
     void determineSidewaysMotion(in Goal goal)
     {
         xOffsetFromGoal = lixxie.env.distanceX(goal.loc.x + goal.tile.trigger.x
@@ -28,30 +62,36 @@ public:
             xOffsetFromGoal += 1;
     }
 
-    void playSound(in Goal goal)
+    void scoreForGoalOwners(in Goal goal)
     {
-        if (goal.hasTribe(lixxie.style)) {
+        if (goal.hasOwner(lixxie.style)) {
+            // Lix A in exit ABC scores only for A, never for B nor C.
+            scoreForTribe(lixxie.outsideWorld.tribe);
+            return;
+        }
+        // But Lix A in exit DEF scores for all of D, E, F each.
+        lixxie.playSound(Sound.GOAL_BAD);
+        foreach (enemy; lixxie.outsideWorld.state.tribes.allTribesEvenNeutral)
+            if (goal.hasOwner(enemy.style))
+                scoreForTribe(enemy);
+    }
+
+    void scoreForTribe(Tribe beneficiary)
+    {
+        if (_stylesThatAlreadyScored.contains(beneficiary.style)) {
+            return;
+        }
+        _stylesThatAlreadyScored.insert(beneficiary.style);
+        beneficiary.addSaved(lixxie.style, lixxie.outsideWorld.state.age);
+
+        if (beneficiary.style == lixxie.style) {
             lixxie.playSound(Sound.GOAL);
             return;
         }
-        lixxie.playSound(Sound.GOAL_BAD);
-        foreach (opponent, isOwnerOfThisGoal; goal.tribes) {
-            if (isOwnerOfThisGoal) {
-                lixxie.outsideWorld.effect.addSound(
-                    lixxie.outsideWorld.state.age,
-                    // arbitrary ID because not same tribe
-                    Passport(opponent, lixxie.outsideWorld.passport.id),
-                    Sound.GOAL);
-            }
-        }
-    }
-
-    override void perform()
-    {
-        int change = (xOffsetFromGoal < 0 ? 1 : xOffsetFromGoal > 0 ? -1 : 0);
-        spriteOffsetX = spriteOffsetX + change;
-        xOffsetFromGoal += change;
-
-        advanceFrameAndLeave();
+        lixxie.outsideWorld.effect.addSound(
+            lixxie.outsideWorld.state.age,
+            // arbitrary ID because not same tribe
+            Passport(beneficiary.style, lixxie.outsideWorld.passport.id),
+            Sound.GOAL);
     }
 }

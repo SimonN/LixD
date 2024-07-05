@@ -89,8 +89,8 @@ public:
     auto gadgetsOfTeam(in Style st) const
     {
         return chain(
-            cs.goals.filter!(g => g.hasTribe(st)),
-            cs.hatches.filter!(h => h.hasTribe(st)));
+            cs.goals.filter!(g => g.hasOwner(st)),
+            cs.hatches.filter!(h => h.hasOwner(st)));
     }
 
     HalfTrophy trophyForTribe(in Style style) const

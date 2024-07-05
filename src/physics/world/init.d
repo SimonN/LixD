@@ -107,9 +107,6 @@ in {
         format!"permu length mismatch: permu len = %d, playable tribes = %d"
             (permu.len, state.tribes.numPlayerTribes));
 }
-out {
-    assert (state.hatches.all!(h => ! h.tribes.empty));
-}
 do { with (state)
 {
     immutable numTribes = state.tribes.numPlayerTribes;
@@ -132,10 +129,10 @@ do { with (state)
         immutable int slot = permu[i.to!int];
         tribes[style].nextHatch = slot % hatches.len;
         for (int j = slot % hatches.len; j < hatches.len; j += numTribes)
-            state.immutableHalf.hatches[j].addTribe(style);
+            state.immutableHalf.hatches[j].addOwner(style);
         if (goals.len == 0)
             continue;
         for (int j = slot % goals.len; j < goals.len; j += numTribes)
-            state.immutableHalf.goals[j].addTribe(style);
+            state.immutableHalf.goals[j].addOwner(style);
     }
 }}

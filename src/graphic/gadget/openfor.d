@@ -1,9 +1,6 @@
 module graphic.gadget.openfor;
 
-/* GadgetAnimsOnFeed : Gadget      has the method isOpenFor(Tribe).
- * Water       : GadgetAnimsOnFeed is a permanent trap, water or fire.
- * Triggerable : GadgetAnimsOnFeed is a cooldown trap or cooldown flinger.
- *
+/*
  * GadgetAnimsOnFeed allows for two different rows of animation: The first row
  * is looped while idle. When a lix enters, the game immediately jumps to the
  * second row, finishes one loop through the second row, then displays the
@@ -19,21 +16,20 @@ module graphic.gadget.openfor;
  * into frame 0 and show frame 0 at least once between two eatings.
  */
 
-import optional;
-
-import net.repdata;
+import basics.styleset;
 import basics.topology;
 import graphic.gadget;
 import tile.occur;
-import net.style;
+import net.repdata;
 import physics.effect;
 
 public alias Muncher  = GadgetAnimsOnFeed;
 public alias Catapult = GadgetAnimsOnFeed; // see gadget.d for FlingPerm
 
-private class GadgetAnimsOnFeed : GadgetWithTribeList {
+private class GadgetAnimsOnFeed : Gadget {
 private:
     Phyu _lastFed;
+    StyleSet _lastDish;
     immutable int _idleAnimLen;
     immutable int _eatingAnimLen;
 
@@ -80,7 +76,7 @@ public:
         // During a single update, the gadget can eat a lix from each tribe.
         // This is fairest in multiplayer.
         if (_lastFed == upd)
-            return ! hasTribe(st);
+            return ! _lastDish.contains(st);
         else
             return ! isEating(upd);
     }
@@ -97,9 +93,9 @@ public:
         assert (upd >= _lastFed, "Gadget ate in the future? Bad savestating.");
         if (upd > _lastFed) {
             _lastFed = upd;
-            clearTribes;
+            _lastDish.clear;
         }
-        addTribe(st);
+        _lastDish.insert(st);
     }
 
 protected:
