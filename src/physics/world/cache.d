@@ -9,6 +9,7 @@ import std.algorithm;
 import std.range;
 import std.string;
 
+import basics.help;
 import basics.alleg5 : OutOfVramException;
 import basics.globals : levelPixelsToWarn;
 import basics.topology;
@@ -20,20 +21,31 @@ enum DuringTurbo : bool { no = false, yes = true }
 
 class PhysicsCache {
 private:
-    enum pairsToKeep = 5;
-
     MutableHalfOfWorld _zero; // for returning to the beginning
-    MutableHalfOfWorld _userState; // for savestating
-    MutableHalfOfWorld[2 * pairsToKeep] _auto;
 
-    // For the user-triggered save (_user), remember the replay that was
+    LeapfrogPair[] _pairs; // Automatically taken savestates
+
+    // For the user-triggered savestate, we remember the replay that was
     // correct by then. Otherwise, the user could restart, do something
     // deviating, and then load the user state that supposes the old,
     // differing replay.
+    MutableHalfOfWorld _userState;
     Replay _userReplay;
+
     bool _recommendGC; // because we don't call the GC ourselves
 
 public:
+    this(in Topology levelThatWillBeSaved) pure nothrow @safe
+    {
+        _pairs = [
+            LeapfrogPair(10), // The most frequent pair saves every 10 ticks.
+            LeapfrogPair(10 * 6),
+            LeapfrogPair(10 * 6 * 6),
+            LeapfrogPair(10 * 6 * 6 * 6),
+            LeapfrogPair(10 * 6 * 6 * 6 * 4)
+        ].take(numPairsToKeepFor(levelThatWillBeSaved));
+    }
+
     void dispose()
     {
         _zero.dispose();
@@ -116,73 +128,66 @@ public:
     MutableHalfOfWorld loadBeforePhyu(in Phyu u)
     {
         MutableHalfOfWorld* ret = &_zero;
-        foreach (ref cand; _auto)
+        foreach (ref cand; allFrogs)
             if (cand.isValid && cand.age < u && cand.age > ret.age)
                 ret = &cand;
         forgetAutoSavesOnAndAfter(u);
         return ret.clone();
     }
 
+    /*
+     * Reason for why this needs the target Phyu (weWillUpdateTo):
+     *
+     * We save 2 states per update multiple. But when we want to update
+     * 120 times, there is no need saving states after 10, 20, 30, ...
+     * updates, we would only keep the states at 110 and 120, anyway.
+     * And we want to keep the state at 60 and 120, in a higher pair.
+     */
     bool wouldAutoSave(
-        in World s,
-        in Phyu updTo,
-        in DuringTurbo duringTurbo) const
+        in World worldToSave,
+        in Phyu weWillUpdateTo,
+        in DuringTurbo duringTurbo
+    ) const pure nothrow @safe @nogc
     {
-        immutable pair = duringTurbo ? 1 : 0;
-        assert (pair >= 0 && pair < pairsToKeep);
-        if (s.age == 0 || s.age % updatesForPair(pair) != 0)
-            return false;
-        foreach (possible; pair .. pairsToKeep)
-            // We save 2 states per update multiple. But when we want to update
-            // 100 times, there is no need saving states after 10, 20, 30, ...
-            // updates, we would only keep the states at 110 and 120, anyway.
-            // And the state at 60 and 120, in a higher pair.
-            if (s.age > updTo - 2 * updatesForPair(possible)
-                && s.age % updatesForPair(possible) == 0)
+        if (! _pairs[0].accepts(worldToSave.age)) {
+            return false; // Speed hack. If _pairs[0] won't bite, none will.
+        }
+        immutable firstAllowed = duringTurbo ? 1 : 0;
+        for (int pair = _pairs.len - 1; pair >= firstAllowed; --pair) {
+            if (_pairs[pair].accepts(worldToSave, weWillUpdateTo)) {
                 return true;
+            }
+        }
         return false;
     }
 
-    void autoSave(in World s, in Phyu ultimatelyTo)
-    {
-        if (! wouldAutoSave(s, ultimatelyTo, DuringTurbo.no)) {
-            return;
-        }
+    void autoSave(in World world)
+    in {
+        assert (wouldAutoSave(world, world.age, DuringTurbo.no),
+        "Call autoSave() only when wouldAutoSave() returns true for you");
+    }
+    do {
         _recommendGC = true;
-        immutable highestPair = pairsToKeepForThisMap(s.land) - 1;
-
-        for (int pair = highestPair; pair >= 0; --pair) {
-            // First, we decide into which pair we should save.
-            if (s.age % updatesForPair(pair) != 0) {
-                continue;
+        // First, attempt to save into a slower-frequency pair than _pairs[0].
+        for (int pair = _pairs.len - 1; pair >= 1; --pair) {
+            if (_pairs[pair].accepts(world.age)) {
+                _pairs[pair].save(world);
+                return;
             }
-            /*
-             * bool leapfrog:
-             * Given the pair, we leapfrog, i.e., we alternately save into
-             * slot A, then slot B, then slot A, then slot B, ... of a pair.
-             *
-             * bool borrow:
-             * Pair 0 (the most frequently overwritten pair) is special. Early
-             * during a game, pair 0 covers really 4 slots, not 2 slots:
-             * We borrow the empty slots from the highest pair ("we farfrog")
-             * until the highest pair wants to save something.
-             */
-            immutable divided = s.age / updatesForPair(pair);
-            immutable bool leapfrog = (divided) & 1;
-            immutable bool borrow = pair == 0 && (divided & 2)
-                && s.age < updatesForPair(highestPair);
-
-            auto deepCopy = s.mutableHalf.clone();
-            _auto[(2 * pair) + (2 * highestPair * borrow) + leapfrog]
-                .takeOwnershipOf(deepCopy);
-            return;
         }
+        saveIntoPair0ButMaybeBorrowSpaceFromHighestPair(world);
     }
 
 private:
+    auto allFrogs() pure nothrow @system @nogc
+    {
+        auto ref toFrogs(return ref LeapfrogPair pair) { return pair.frogs[]; }
+        return _pairs[].map!toFrogs.joiner;
+    }
+
     void forgetAutoSavesOnAndAfter(in Phyu u)
     {
-        foreach (ref state; _auto) {
+        foreach (ref state; allFrogs) {
             if (state.isValid && (u <= _zero.age || state.age >= u)) {
                 state.dispose();
             }
@@ -190,27 +195,88 @@ private:
         _recommendGC = true;
     }
 
-    static int updatesForPair(in int pair) pure nothrow @safe @nogc
-    in { assert (pair >= 0 && pair < pairsToKeep); }
-    do {
-        enum updatesForFirstPair = 10;
-        return pair == 0 ? updatesForFirstPair
-            :  pair == 1 ? updatesForFirstPair * 6
-            :  pair == 2 ? updatesForFirstPair * 6 * 6
-            :  pair == 3 ? updatesForFirstPair * 6 * 6 * 6
-            :              updatesForFirstPair * 6 * 6 * 6 * 4;
-    }
-
-    int pairsToKeepForThisMap(in Topology s) const pure nothrow @safe @nogc
+    int numPairsToKeepFor(in Topology lev) const pure nothrow @safe @nogc
     {
         // For large maps, don't save the final pair. This is a feeble attempt
         // at conserving RAM. See github issue 296 about RAM on Windows:
         // https://github.com/SimonN/LixD/issues/296
-        static assert (pairsToKeep >= 3, "pairsToKeepForThisMap >= 1 needed.");
-        immutable int pixels = s.xl * s.yl;
-        return pixels > levelPixelsToWarn ? pairsToKeep - 2
-            : pixels * 3 > levelPixelsToWarn * 2 ? pairsToKeep - 1
-            : pairsToKeep;
+        immutable int pixels = lev.xl * lev.yl;
+        return pixels     > levelPixelsToWarn     ? 3
+            :  pixels * 3 > levelPixelsToWarn * 2 ? 4
+                                                  : 5;
+    }
+
+    void saveIntoPair0ButMaybeBorrowSpaceFromHighestPair(in World world)
+    in { assert (_pairs[0].accepts(world.age), "See autoSave()'s contract"); }
+    do {
+        /*
+         * Quirk: _pairs[0] is special. Early in a level, the lowest-frequency
+         * pair _pairs[$-1] isn't in use yet. During this time, _pairs[0]
+         * behaves as having 4 frogs, not 2 frogs, and the extra 2 frogs
+         * are the unused frogs from the highest pair.
+         *
+         * I.e., early in a level, we save
+         * into _pairs[0].frog[0],
+         * then _pairs[0].frog[1],
+         * then _pairs[$-1].frog[0],
+         * then _pairs[$-1].frog[1],
+         * then _pairs[0].frog[0] again, and continue to cycle like this.
+         */
+        if (world.age >= _pairs[$-1].frequency - 2 * _pairs[0].frequency) {
+            // We're late in the game. Treat _pairs[0] as normal with 2 frogs.
+            _pairs[0].save(world);
+            return;
+        }
+        immutable int divided = world.age / _pairs[0].frequency;
+        immutable int whichPair = divided < 2 ? 0 : _pairs.len - 1;
+        _pairs[whichPair].saveIntoSpecificFrog(world, divided & 1);
+    }
+
+}
+// end class PhysicsCache
+
+/*
+ * LeapfrogPairs are pairs of automatic savestates that Lix takes in the
+ * background, both during singleplayer (for rewinding) and during
+ * multiplayer (for recalculating on newly arrived networking packets
+ * that affect past physics updates).
+ *
+ * The most frequently saved pair is PhysicsCache._pairs[0] with frequency 10.
+ * This means that we'll save every 10 ticks (physics updates) as follows:
+ * During tick 70, we save into _pairs[0].frog[0],
+ * during tick 80, we save into _pairs[0].frog[1],
+ * during tick 90, we forget tick 70 and save again into _pairs[0].frog[0],
+ * during tick 100, we forget tick 80 and save again into _pairs[0].frogs[1].
+ */
+private struct LeapfrogPair {
+    immutable int frequency;
+    MutableHalfOfWorld[2] frogs;
+
+    bool accepts(in Phyu now) const pure nothrow @safe @nogc
+    {
+        return now > 0
+            && now % frequency == 0;
+    }
+
+    bool accepts(
+        in World worldToSave,
+        in Phyu weWillUpdateTo
+    ) const pure nothrow @safe @nogc
+    {
+        return accepts(worldToSave.age)
+            && worldToSave.age > weWillUpdateTo - 2 * frequency;
+    }
+
+    void save(in World worldToSave)
+    in { assert (accepts(worldToSave.age)); }
+    do {
+        immutable int divided = worldToSave.age / frequency;
+        saveIntoSpecificFrog(worldToSave, divided & 1);
+    }
+
+    void saveIntoSpecificFrog(in World worldToSave, in bool frog0or1)
+    {
+        auto deepCopy = worldToSave.mutableHalf.clone();
+        frogs[frog0or1].takeOwnershipOf(deepCopy);
     }
 }
-// end class StateManager

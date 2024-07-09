@@ -24,7 +24,7 @@ public:
     {
         super(lev, rp, ef);
         assert (cs.isValid);
-        _cache = new PhysicsCache();
+        _cache = new PhysicsCache(lev.topology);
         _cache.saveZero(cs);
     }
 
@@ -144,7 +144,7 @@ protected:
             version (tharsisprofiling)
                 Zone zone = Zone(profiler, "SaveStatingNurse autosaves");
             onAutoSave();
-            _cache.autoSave(cs, target);
+            _cache.autoSave(cs);
         }
     }
 
