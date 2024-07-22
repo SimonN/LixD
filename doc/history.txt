@@ -1,6 +1,19 @@
 Version history
 ===============
 
+0.10.25
+-------
+
+2024-07-24
+
+Refactor the collision code between lix and goals a.k.a. exits.
+This speeds up rewinding and mass replay verification by at least 13 %.
+
+Refactor the world into a mutable and an immutable half to make savestates
+smaller and speed up rewinding. This brings only a small improvement.
+
+Add Rainbow Day, a 2-player and 4-player map by Miri.
+
 
 
 0.10.24
