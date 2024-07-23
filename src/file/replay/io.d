@@ -103,7 +103,7 @@ void implLoadFromFile(Replay replay, Filename fn) { with (replay)
         if (i.text1 == replayLevelBuiltRequired)
             _levelBuiltRequired = new Date(i.text2);
         else if (i.text1 == replayPermu)
-            _permu = new Permu(i.text2);
+            _permu = Permu(i.text2);
         else if (i.text1 == replayGameVersionRequired)
             _gameVersionRequired = Version(i.text2);
         else if (i.text1 == replayLevelFilename)

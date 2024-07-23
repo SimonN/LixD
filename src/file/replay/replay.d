@@ -81,7 +81,7 @@ public:
         rhs.levelFilename.match!(
             (fn) { levelFilename = fn; },
             () { _levelFnCanBeNullInNetgames = MutFilename(null); });
-        _permu = rhs._permu.clone();
+        _permu = rhs._permu;
         _plies = rhs._plies.dup;
 
         assert (! _players.length);
@@ -90,10 +90,11 @@ public:
 
 private:
     this()
-    {
+    out { assert (permu.len == 1, "We want the easiest permutation."
+        ~ " Since Permu is a struct, that's the unique singleplayer permu."); }
+    do {
         touch();
         _levelBuiltRequired = Date.now;
-        _permu = new Permu("0");
     }
 
 package:

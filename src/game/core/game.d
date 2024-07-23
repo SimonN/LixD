@@ -1,6 +1,7 @@
 module game.core.game;
 
-/* Game is the gameplay part of the program: The part of the program that has
+/*
+ * Game is the _visual_ gameplay screen of the program: The part of the program that has
  * a skill panel at the bottom, a level map above, and occasionally dialogs.
  *
  * You should only construct a Game in interactive mode.
@@ -127,7 +128,6 @@ public:
         enforce(client, "Game started without networking client.");
         enforce(client.level, "Networking game started without level.");
         enforce(client.level.playable, "Networking level is unplayable.");
-        enforce(client.permu, "Networking game has no player permutation.");
 
         level = client.level;
         _netClient = client;
@@ -308,7 +308,7 @@ private:
         if (! _netClient) {
             // Either playing singleplayer or playtesting multiplayer alone.
             immutable numPl = level.intendedNumberOfPlayers.toPlNr;
-            rp.permu = new Permu(iota(PlNr(0), numPl).array);
+            rp.permu = Permu(iota(PlNr(0), numPl).array);
             for (PlNr i = PlNr(0); i < numPl; ++i) {
                 Profile p;
                 p.name = opt.userName;

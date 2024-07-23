@@ -438,8 +438,8 @@ private:
             if (got.length >= 3) {
                 foreach (ref profile; _profilesInOurRoom)
                     profile.setNotReady();
-                auto pa = StartGameWithPermuPacket(got);
-                Permu permu = new Permu(pa.arr);
+                const pa = StartGameWithPermuPacket(got);
+                const permu = Permu(pa.arr);
                 foreach (obs; _observers) {
                     obs.onGameStart(permu);
                 }
