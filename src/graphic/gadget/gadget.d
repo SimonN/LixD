@@ -94,10 +94,24 @@ public:
 
     final void draw(in Phyu now, in Style treatSpecially) const
     {
-        const fra = frame(now);
-        _graphic.drawSpecificFrame(fra.forceSecondRow ? Point(fra.frame, 1)
-            : _graphic.xfs > 1 ? Point(fra.frame, 0) : Point(0, fra.frame));
-
+        if (frames <= 1) {
+            _graphic.drawSpecificFrame(Point(0, 0));
+        }
+        else {
+            const fra = frame(now);
+            if (fra.forceSecondRow) {
+                _graphic.drawSpecificFrame(Point(fra.frame, 1));
+            }
+            else if (_graphic.yfs == 1) {
+                _graphic.drawSpecificFrame(Point(fra.frame, 0));
+            }
+            else {
+                assert (_graphic.xfs >= 1, "We must compute modulo");
+                _graphic.drawSpecificFrame(Point(
+                    fra.frame % _graphic.xfs,
+                    fra.frame / _graphic.xfs));
+            }
+        }
         onDraw(now, treatSpecially);
     }
 
