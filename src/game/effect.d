@@ -252,11 +252,11 @@ public:
     {
         _debris.each!(a => a.draw());
         if (_overtimeInPhyusToAnnounce != 0 && console !is null) {
-            console.add(format!"%s %d:%02d..."(
+            immutable int seconds
+                = _overtimeInPhyusToAnnounce / phyusPerSecondAtNormalSpeed;
+            console.add(format("%s %d:%02d.",
                 Lang.netGameOvertimeNukeIn.transl,
-                _overtimeInPhyusToAnnounce / (60*phyusPerSecondAtNormalSpeed),
-                (_overtimeInPhyusToAnnounce / phyusPerSecondAtNormalSpeed)
-                % 60)); // The 60 means 60 seconds per minute, not 60 fps.
+                seconds / 60, seconds % 60));
             _overtimeInPhyusToAnnounce = 0; // don't print again on next draw
         }
     }

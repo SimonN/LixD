@@ -110,14 +110,19 @@ public:
                 rules.initialLixInHatchWithoutHandicap) - _lixSpawned;
         }
 
+        Phyu firstSpawnIncludingHandicap()
+        {
+            return Phyu(firstSpawnWithoutHandicap
+                + rules.handicap.delayInPhyus);
+        }
+
         Optional!Phyu phyuOfNextSpawn()
         {
             if (lixInHatch == 0) {
                 return no!Phyu;
             }
             return some(_previousSpawn.match!(
-                () => Phyu(firstSpawnWithoutHandicap
-                    + rules.handicap.delayInPhyus),
+                () => firstSpawnIncludingHandicap,
                 (prev) => Phyu(prev + rules.spawnInterval),
             ));
         }

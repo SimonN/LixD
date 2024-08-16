@@ -312,7 +312,7 @@ $netChatHandicapSet %s jugarà amb limitacions: %s
 $netChatHandicapUnset %s jugarà sense limitacions.
 $netChatLevelChange %s ha seleccionat “%s”.
 $netGameHowToChat Prem [%s] per xatejar.
-$netGameEnd La partida ha acabat.
+$netGameFirstSpawnIn Comença en
 $netGameEndResult Resultat de la partida:
 $netGameOvertimeNukeIn Estàs en temps d'excés! Bomba nuclear en
 

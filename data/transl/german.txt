@@ -298,7 +298,7 @@ $netChatHandicapSet %s spielt mit Handicap: %s
 $netChatHandicapUnset %s spielt ohne Handicap.
 $netChatLevelChange %s hat „%s“ gewählt.
 $netGameHowToChat Du kannst mit [%s] chatten.
-$netGameEnd Das Spiel ist zu Ende.
+$netGameFirstSpawnIn Los geht's in
 $netGameEndResult Spielergebnis:
 $netGameOvertimeNukeIn Die Nachspielzeit läuft! Atombombe in
 

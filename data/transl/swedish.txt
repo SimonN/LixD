@@ -310,7 +310,7 @@ $netChatHandicapSet %s spelar med handikapp: %s
 $netChatHandicapUnset %s spelar utan handikapp.
 $netChatLevelChange %s har markerat “%s”.
 $netGameHowToChat Tryck [%s] för att chatta.
-$netGameEnd Spelet är slut.
+$netGameFirstSpawnIn Start om
 $netGameEndResult Spelresultat:
 $netGameOvertimeNukeIn Övertid pågår! Dags att spränga
 

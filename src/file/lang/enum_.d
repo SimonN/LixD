@@ -279,7 +279,7 @@ enum Lang {
     netChatHandicapUnset,
     netChatLevelChange,
     netGameHowToChat,
-    netGameEnd,
+    netGameFirstSpawnIn,
     netGameEndResult,
     netGameOvertimeNukeIn,
 

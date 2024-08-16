@@ -1,8 +1,8 @@
 module game.panel.infobar;
 
 import std.string; // format;
-import std.typecons; // Rebindable;
 
+import glo = basics.globals;
 import file.language;
 import opt = file.option.allopts;
 import graphic.color;
@@ -26,7 +26,6 @@ private:
     Phyu _age;
     ConstLix _highlitLix; // May be null.
     Passport _highlitPassport; // Ignore whenever _highlitLix is null.
-    Rebindable!(const(Tribe))  _tribe;
     CutbitElement _bOut, _bHatch;
     Label _lOut, _lHatch, _targetDesc, _fps;
 
@@ -108,6 +107,7 @@ public:
 
 protected:
     abstract void onShowTribe(in Tribe tribe);
+    abstract string formatExtraDesc();
 
     override void calcSelf() { down = false; }
     override void drawOntoButton()
@@ -158,7 +158,7 @@ private:
             return "%s: %d".format(Lang.winConstantsSpawnint.transl,
                 _spawnInterval);
         }
-        return "";
+        return formatExtraDesc();
     }
 
     string formatTargetDescLix()
@@ -251,12 +251,17 @@ protected:
         _bSaved.yf = _bSaved.xf == 10 ? 0 // colorful warning sign
             : score.lixSaved >= _lixRequired ? 2 : 1; // green or grayed-out
     }}
+
+    override string formatExtraDesc() { return ""; }
 }
 
 class InfoBarMultiplayer : InfoBar {
 private:
     CutbitElement _bSaved; // same as in singleplayer. Abstract this sometime
     Label _lSaved;
+
+    bool _tribeHasSpawnHandicap;
+    Phyu _firstSpawn;
 
 public:
     this(Geom g)
@@ -269,9 +274,25 @@ protected:
     override void onShowTribe(in Tribe tribe)
     {
         _bSaved.shown = _lSaved.shown = tribe.hasScored;
+        _firstSpawn = tribe.firstSpawnIncludingHandicap;
+        _tribeHasSpawnHandicap
+            = (tribe.firstSpawnIncludingHandicap
+            != tribe.firstSpawnWithoutHandicap);
         if (tribe.hasScored) {
             _bSaved.yf = 1; // greyed out. Maybe invent something better
             _lSaved.text = tribe.score.lixSaved.asText;
         }
+    }
+
+    override string formatExtraDesc()
+    {
+        if (! _tribeHasSpawnHandicap || _age >= _firstSpawn) {
+            return "";
+        }
+        immutable int seconds
+            = (_firstSpawn - _age + (glo.phyusPerSecondAtNormalSpeed - 1))
+            / glo.phyusPerSecondAtNormalSpeed;
+        return format("%s %d:%02d", Lang.netGameFirstSpawnIn.transl,
+            seconds / 60, seconds % 60);
     }
 }
