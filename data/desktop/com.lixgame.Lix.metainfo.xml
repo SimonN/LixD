@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
 <component type="desktop">
-  <!--Created with jdAppdataEdit 4.2-->
   <id>com.lixgame.Lix</id>
   <name>Lix</name>
   <summary>Lemmings-like game with puzzles, editor, multiplayer</summary>
@@ -10,7 +9,7 @@
   <project_license>CC0-1.0</project_license>
   <description>
     <p>Lix is a puzzle game inspired by Lemmings (DMA Design, 1991). Lix is free and open source.</p>
-    <p>Assign skills to guide the lix through over 700 singleplayer puzzles. Design your own levels with the included editor.</p>
+    <p>Assign skills to guide the lix through over 850 singleplayer puzzles. Design your own levels with the included editor.</p>
     <p>Attack and defend in real-time multiplayer for 2 to 8 players: Who can save the most lix?</p>
   </description>
   <screenshots>
@@ -19,6 +18,9 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="v0.10.26" date="2024-08-17" type="stable">
+      <url>https://github.com/SimonN/LixD/releases/tag/v0.10.26</url>
+    </release>
     <release version="v0.10.25" date="2024-07-24" type="stable">
       <url>https://github.com/SimonN/LixD/releases/tag/v0.10.25</url>
     </release>

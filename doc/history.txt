@@ -1,6 +1,23 @@
 Version history
 ===============
 
+0.10.26
+-------
+
+2024-08-17
+
+In multiplayer, when you've selected a spawn delay handicap, the in-game panel
+shows you the remaining time until your first lix spawns.
+
+Fix an animation regression from Lix 0.10.25: Amanda's occult-style hatch
+animated only through its first row of frames, then disappeared. This didn't
+affect physics, the lix continued to spawn correctly from thin air. Now, all
+hatches animate correctly through all frames again.
+
+Refactor permutations to be allocation-free.
+
+
+
 0.10.25
 -------
 
