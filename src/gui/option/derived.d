@@ -108,7 +108,7 @@ private void registerAtWatcher(KeyDuplicationWatcher watcher, KeyButton button)
     if (watcher is null || button is null)
         return;
     watcher.watch(button);
-    button.onChange = () { watcher.checkForDuplicateBindings(); };
+    button.onChange = () { watcher.warnAboutDuplicateBindings(); };
 }
 
 class HotkeyOption : Option {

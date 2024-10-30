@@ -302,7 +302,7 @@ void populateGameKeys()
 {
     KeyDuplicationWatcher watcher = new KeyDuplicationWatcher();
     scope (success)
-        watcher.checkForDuplicateBindings();
+        watcher.warnAboutDuplicateBindings();
 
     immutable float skillXl = (xlg - 40) / skillSort.length;
     foreach (x, ac; skillSort)
@@ -359,7 +359,7 @@ void populateEditorKeys()
 {
     KeyDuplicationWatcher watcher = new KeyDuplicationWatcher();
     scope (success)
-        watcher.checkForDuplicateBindings();
+        watcher.warnAboutDuplicateBindings();
 
     auto fac = facKeys!0;
     groups[OptionGroup.editorKeys] ~= [
@@ -431,7 +431,7 @@ void populateMenuKeys()
 {
     KeyDuplicationWatcher watcher = new KeyDuplicationWatcher();
     scope (success)
-        watcher.checkForDuplicateBindings();
+        watcher.warnAboutDuplicateBindings();
 
     Option[] grp;
     scope (exit)
@@ -468,7 +468,7 @@ void populateMenuKeys()
 
     KeyDuplicationWatcher wat3 = new KeyDuplicationWatcher();
     scope (success)
-        wat2.checkForDuplicateBindings();
+        wat2.warnAboutDuplicateBindings();
     fac.y += 20;
     grp ~= [
         fac.factory!HotkeyOption(keyOutcomeSaveReplay, wat3),
