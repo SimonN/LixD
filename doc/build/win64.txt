@@ -161,16 +161,21 @@ To build Lix with DMD, adjust the following steps in above build instructions:
 
 Getting compiler and dub:
 
-Download DMD, the Digital Mars D compiler:
+Download and run the Windows installer for DMD:
 
     https://dlang.org/download
 
 During the installation, when asked:
 
-* Add the programs to PATH. You want to call them from the command line later.
-* You don't need to add anything to the start menu.
-* You don't need extra 64-bit support (DMD works self-contained since 2.079)
-* You don't need D1 support.
+    * Yes, add the programs to PATH. You'll call them from the command line.
+    * No, uncheck "Start Menu".
+    * No, don't check "Download Visual D".
+    * No, don't check "Download DMC".
+
+If the installer says "No Visual Studio Installation was found [...]"
+and asks you to "Select Install Type", choose:
+
+    * "Do nothing (you can manually install any of the options above later)"
 
 DMD already ships with dub, the D package manager.
 
