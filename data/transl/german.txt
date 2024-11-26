@@ -328,7 +328,7 @@ $optionScreenHardwareFullscreenRes Vollbild-Auflösung|Hardware-Vollbild nutzt d
 $optionAllowBlurryZoom Unscharfen Zoom erlauben|Unscharfe Zoom-Faktoren erlauben, die den Level an das Lix-Fenster anpassen.|Ohne Haken: Zoom ist immer scharf und ganzzahlig, also 1x, 2x, 3x, ...
 $optionPaintTorusSeams Torus-Nahtstellen anmalen|Torus-Nahtstellen in der Landschaft mit einer dünnen Linie kennzeichnen.|Dies hat keine Auswirkung auf die Physik; es dient zur Orientierung.
 $optionIngameTooltips Tooltips im Spiel|Buttons und Lix-wählende Hotkeys im Spiel erklären, z.B. nur Linksläufer.|Einige Buttons haben eine Linksklick- und eine Rechtsklick-Funktion.
-$optionShowFPS Physik und FPS zählen|Anzahl Physik-Updates seit Spielbeginn anzeigen.|Im Editor und Spiel: Frames pro Sekunde anzeigen.
+$optionShowFPS Ticks und FPS zählen|Anzahl Ticks (Physik-Updates) seit Spielbeginn anzeigen.|Im Editor und Spiel: Frames pro Sekunde anzeigen.
 $optionGuiColorRed Menü rot|Die Grafikoberfläche in Lix anders färben.
 $optionGuiColorGreen Menü grün|Die Grafikoberfläche in Lix anders färben.
 $optionGuiColorBlue Menü blau|Die Grafikoberfläche in Lix anders färben.

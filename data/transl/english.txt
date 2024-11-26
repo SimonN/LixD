@@ -339,7 +339,7 @@ $optionScreenHardwareFullscreenRes Fullscreen resolution|Hardware fullscreen use
 $optionAllowBlurryZoom Allow blurry zoom|Allow blurry fractional zoom factors that fit the level's width/height to screen.|If not checked, zoom will always be crisp and integral: 1x, 2x, 3x, ...
 $optionPaintTorusSeams Paint torus seams|Mark the wrapping seam with a thin line whenever a level wraps around.|This doesn't affect game physics, but may improve your orientation.
 $optionIngameTooltips Tooltips during game|Explain buttons and lix-selecting hotkeys during play, e.g., to select left-facing lix.|Some buttons have two functions: One on left-click, one on right-click.
-$optionShowFPS Count physics and FPS|Print number of physics updates since the game started.|Print the number of video frames per second, during play or editor.
+$optionShowFPS Count ticks and FPS|Print number of ticks (physics updates) since the start of play.|Print the number of video frames per second, during play or editor.
 
 $optionKeyZoomIn Zoom +|Zoom into the level.
 $optionKeyZoomOut Zoom −|Zoom out of the level.

@@ -341,7 +341,7 @@ $optionScreenHardwareFullscreenRes Resolució en pantalla completa|La pantalla c
 $optionAllowBlurryZoom Permetre el zoom borrós|Permeteu els factors de zoom fraccionat que s'ajustin al nivell a la pantalla.|Si no està habilitat, el zoom sempre serà nítid i integral: 1x, 2x, 3x,...
 $optionPaintTorusSeams Pintar les costures del torus|Marca les costures d'embolcall cada cop que el nivell fa una volta.|Això no afecta la física del joc, però pot millorar la teva orientació.
 $optionIngameTooltips Indicadors durant la partida|Explica els botons i dreceres de teclat per seleccionar lix durant la partida, per exemple com seleccionar lix mirant a l'esquerra.|Alguns botons tenen dues funcions: Una al clic esquerra, una altra al clic dret.
-$optionShowFPS Comptador de física i FPS|Mostra el nombre d'actualitzacions de la física des del principi de la partida.|Mostra el nombre de fotogrames de vídeo per segon durant el joc o l'editor.
+$optionShowFPS Comptador de ticks i FPS|Mostra el nombre de ticks (actualitzacions de la física) des del principi de la partida.|Mostra el nombre de fotogrames de vídeo per segon durant el joc o l'editor.
 
 $optionKeyZoomIn Zoom +|Augmenta el nivell de zoom del nivell.
 $optionKeyZoomOut Zoom −|Redueix el nivell de zoom del nivell.
