@@ -1,0 +1,101 @@
+$BUILT 2024-07-18 11:26:08
+$AUTHOR Hyperlodge
+$ENGLISH Those Two Goals
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 640
+#SIZE_Y 464
+#BACKGROUND_RED 111
+#BACKGROUND_GREEN 159
+#BACKGROUND_BLUE 0
+
+#SECONDS 60
+#INITIAL 999
+#SPAWN_INTERVAL 20
+
+#WALKER -1
+#EXPLODER2 -1
+#BLOCKER -1
+#BUILDER -1
+#DIGGER -1
+#JUMPER -1
+
+:simon/hatch001.H: 176 80
+:simon/hatch001.H: 400 80 r
+
+:matt/marble/Goal.G: 16 384
+:matt/marble/Goal.G: 560 384
+
+:geoo/construction/steam_up.T: 224 408
+:geoo/construction/steam_up.T: 240 408
+:geoo/construction/steam_up.T: 256 408
+:geoo/construction/steam_up.T: 272 408
+:geoo/construction/steam_up.T: 288 408
+:geoo/construction/steam_up.T: 304 408
+:geoo/construction/steam_up.T: 320 408
+:geoo/construction/steam_up.T: 336 408
+:geoo/construction/steam_up.T: 352 408
+:geoo/construction/steam_up.T: 368 408
+:geoo/construction/steam_up.T: 384 408
+:geoo/construction/steam_up.T: 400 408
+
+:raymanni/holiday/brick_green: 0 432
+:raymanni/holiday/brick_green: 32 432
+:raymanni/holiday/brick_green: 64 432
+:raymanni/holiday/brick_green: 96 432
+:raymanni/holiday/brick_green: 128 432
+:raymanni/holiday/brick_green: 160 432
+:raymanni/holiday/brick_green: 192 432
+:raymanni/holiday/brick_green: 224 432
+:raymanni/holiday/brick_green: 256 432
+:raymanni/holiday/brick_green: 288 432
+:geoo/steel/32x64o.S: 192 304
+:geoo/steel/32x64o.S: 192 240
+:geoo/steel/32x64o.S: 192 112
+:geoo/steel/32x16o.S: 160 112
+:geoo/steel/32x16o.S: 224 112
+:geoo/steel/32x16o.S: 256 112
+:geoo/steel/32x16o.S: 128 112
+:raymanni/holiday/cane_mid: 128 80
+:raymanni/holiday/cane_mid: 272 80
+:raymanni/holiday/cane_end1: 128 64
+:raymanni/holiday/cane_end1: 272 64
+:geoo/steel/32x64o.S: 192 176
+:raymanni/holiday/bauble_green: 144 128
+:raymanni/holiday/bauble_yellow: 240 128
+:raymanni/holiday/brick_green: 320 432
+:raymanni/holiday/brick_green: 352 432
+:raymanni/holiday/brick_green: 384 432
+:raymanni/holiday/brick_green: 416 432
+:raymanni/holiday/brick_green: 448 432
+:raymanni/holiday/brick_green: 480 432
+:raymanni/holiday/brick_green: 512 432
+:raymanni/holiday/brick_green: 544 432
+:raymanni/holiday/brick_green: 576 432
+:raymanni/holiday/brick_green: 608 432
+:geoo/steel/32x64o.S: 416 304
+:geoo/steel/32x64o.S: 416 240
+:geoo/steel/32x64o.S: 416 112
+:geoo/steel/32x16o.S: 384 112
+:geoo/steel/32x16o.S: 448 112
+:geoo/steel/32x16o.S: 480 112
+:geoo/steel/32x16o.S: 352 112
+:raymanni/holiday/cane_mid: 352 80
+:raymanni/holiday/cane_mid: 496 80
+:raymanni/holiday/cane_end1: 352 64
+:raymanni/holiday/cane_end1: 496 64
+:geoo/steel/32x64o.S: 416 176
+:raymanni/holiday/bauble_green: 368 128
+:raymanni/holiday/bauble_yellow: 464 128
+:geoo/steel/32x16o.S: 224 328
+:geoo/steel/32x16o.S: 384 328
+:raymanni/holiday/brick_green: 192 400
+:raymanni/holiday/brick_green: 192 368
+:raymanni/holiday/brick_green: 416 368
+:raymanni/holiday/brick_green: 416 400
+:raymanni/holiday/brick_green: 448 400
+:raymanni/holiday/brick_green: 160 400
+:raymanni/holiday/brick_green_a: 160 368
+:raymanni/holiday/brick_green_a: 128 400
+:raymanni/holiday/brick_green_b: 448 368
+:raymanni/holiday/brick_green_b: 480 400

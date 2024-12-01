@@ -1,0 +1,133 @@
+$BUILT 2024-07-18 12:07:10
+$AUTHOR Hyperlodge
+$ENGLISH Dead End
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1024
+#SIZE_Y 256
+
+#SECONDS 60
+#INITIAL 600
+#SPAWN_INTERVAL 10
+
+#RUNNER -1
+#EXPLODER2 -1
+#BUILDER -1
+#DIGGER -1
+#JUMPER -1
+#BATTER -1
+#CUBER -1
+
+:geoo/abstract/hatch.H: 48 192
+:geoo/abstract/hatch.H: 944 192 r
+
+:raymanni/toys/goal.G: 432 32
+:raymanni/toys/goal.G: 528 32
+:raymanni/toys/goal.G: 32 32
+:raymanni/toys/goal.G: 928 32
+
+:geoo/construction/sawblade_medium.F: 576 48
+:geoo/construction/sawblade_medium.F: 384 48
+:geoo/construction/sawblade_medium.F: 80 48
+:geoo/construction/sawblade_medium.F: 880 48
+:geoo/construction/sawblade_small.F: 752 64
+:geoo/construction/sawblade_small.F: 256 64
+:geoo/construction/sawblade_small.F: 256 160
+:geoo/construction/sawblade_small.F: 752 160
+:geoo/sandstone/brazier.F: 496 200
+
+:geoo/construction/spring.T: 480 192
+:geoo/construction/spring.T: 480 192
+:geoo/construction/spring.T: 512 192
+:geoo/construction/spring.T: 512 192
+
+:amanda/steel/steel32x32.S: 0 160
+:amanda/steel/steel32x32.S: 0 32
+:amanda/steel/steel32x32.S: 0 64
+:amanda/steel/steel32x32.S: 32 0
+:amanda/steel/steel32x32.S: 0 0
+:amanda/steel/steel32x32.S: 64 0
+:amanda/steel/steel32x32.S: 128 0
+:amanda/steel/steel32x32.S: 96 0
+:amanda/steel/steel32x32.S: 160 0
+:amanda/steel/steel32x32.S: 352 0
+:amanda/steel/steel32x32.S: 192 0
+:amanda/steel/steel32x32.S: 384 0
+:amanda/steel/steel32x32.S: 448 0
+:amanda/steel/steel32x32.S: 416 0
+:amanda/steel/steel32x32.S: 480 0
+:amanda/steel/steel32x32.S: 512 0 frr
+:amanda/steel/steel32x32.S: 32 224
+:amanda/steel/steel32x32.S: 0 224
+:amanda/steel/steel32x32.S: 64 224
+:amanda/steel/steel32x32.S: 128 224
+:amanda/steel/steel32x32.S: 96 224
+:amanda/steel/steel32x32.S: 160 224
+:amanda/steel/steel32x32.S: 352 224
+:amanda/steel/steel32x32.S: 192 224
+:amanda/steel/steel32x32.S: 384 224
+:amanda/steel/steel32x32.S: 448 224
+:amanda/steel/steel32x32.S: 416 224
+:amanda/steel/steel32x32.S: 480 224
+:amanda/steel/steel32x32.S: 512 224 frr
+:amanda/steel/steel32x32.S: 0 192
+:geoo/construction/fence_64x64.S: 160 96
+:geoo/construction/fence_64x64.S: 32 96
+:geoo/construction/fence_64x64.S: 96 96
+:geoo/construction/fence_64x64.S: 352 96
+:geoo/construction/fence_64x64.S: 416 96
+:amanda/steel/steel32x32.S: 0 96
+:amanda/steel/steel32x32.S: 0 128
+:amanda/steel/steel32x32.S: 992 160 frr
+:amanda/steel/steel32x32.S: 992 32 frr
+:amanda/steel/steel32x32.S: 992 64 frr
+:amanda/steel/steel32x32.S: 960 0 frr
+:amanda/steel/steel32x32.S: 992 0 frr
+:amanda/steel/steel32x32.S: 928 0 frr
+:amanda/steel/steel32x32.S: 864 0 frr
+:amanda/steel/steel32x32.S: 896 0 frr
+:amanda/steel/steel32x32.S: 832 0 frr
+:amanda/steel/steel32x32.S: 640 0 frr
+:amanda/steel/steel32x32.S: 800 0 frr
+:amanda/steel/steel32x32.S: 608 0 frr
+:amanda/steel/steel32x32.S: 544 0 frr
+:amanda/steel/steel32x32.S: 576 0 frr
+:amanda/steel/steel32x32.S: 960 224 frr
+:amanda/steel/steel32x32.S: 992 224 frr
+:amanda/steel/steel32x32.S: 928 224 frr
+:amanda/steel/steel32x32.S: 864 224 frr
+:amanda/steel/steel32x32.S: 896 224 frr
+:amanda/steel/steel32x32.S: 832 224 frr
+:amanda/steel/steel32x32.S: 640 224 frr
+:amanda/steel/steel32x32.S: 800 224 frr
+:amanda/steel/steel32x32.S: 608 224 frr
+:amanda/steel/steel32x32.S: 544 224 frr
+:amanda/steel/steel32x32.S: 576 224 frr
+:amanda/steel/steel32x32.S: 992 192 frr
+:geoo/construction/fence_64x64.S: 800 96 frr
+:geoo/construction/fence_64x64.S: 928 96 frr
+:geoo/construction/fence_64x64.S: 864 96 frr
+:geoo/construction/fence_64x64.S: 608 96 frr
+:geoo/construction/fence_64x64.S: 544 96 frr
+:amanda/steel/steel32x32.S: 992 96 frr
+:amanda/steel/steel32x32.S: 992 128 frr
+:geoo/construction/fence_64x64.S: 672 96 frr
+:geoo/construction/fence_64x64.S: 736 96 frr
+:amanda/steel/steel32x32.S: 736 0 frr
+:amanda/steel/steel32x32.S: 704 0 frr
+:amanda/steel/steel32x32.S: 672 0 frr
+:amanda/steel/steel32x32.S: 768 0 frr
+:amanda/steel/steel32x32.S: 736 224 frr
+:amanda/steel/steel32x32.S: 768 224 frr
+:amanda/steel/steel32x32.S: 704 224 frr
+:amanda/steel/steel32x32.S: 672 224 frr
+:amanda/steel/steel32x32.S: 224 0
+:amanda/steel/steel32x32.S: 256 0
+:amanda/steel/steel32x32.S: 224 224
+:amanda/steel/steel32x32.S: 256 224
+:geoo/construction/fence_64x64.S: 224 96
+:amanda/steel/steel32x32.S: 288 0
+:amanda/steel/steel32x32.S: 320 0
+:amanda/steel/steel32x32.S: 288 224
+:amanda/steel/steel32x32.S: 320 224
+:geoo/construction/fence_64x64.S: 288 96

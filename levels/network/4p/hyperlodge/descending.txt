@@ -1,0 +1,146 @@
+$BUILT 2024-09-15 19:56:11
+$AUTHOR Hyperlodge
+$ENGLISH Descending
+
+#INTENDED_NUMBER_OF_PLAYERS 4
+#SIZE_X 640
+#SIZE_Y 448
+#TORUS_X 1
+#TORUS_Y 0
+#BACKGROUND_RED 95
+#BACKGROUND_GREEN 47
+#BACKGROUND_BLUE 48
+
+#SECONDS 70
+#INITIAL 130
+#SPAWN_INTERVAL 70
+
+#CLIMBER -1
+#EXPLODER2 -1
+#BLOCKER -1
+#PLATFORMER -1
+#JUMPER -1
+#BATTER -1
+
+:simon/hatch001.H: 212 16 r
+:simon/hatch001.H: 372 16 r
+:simon/hatch001.H: 532 16 r
+:simon/hatch001.H: 52 16 r
+
+:geoo/abstract/goal.G: 336 288
+:geoo/abstract/goal.G: 496 288
+:geoo/abstract/goal.G: 16 288
+:geoo/abstract/goal.G: 176 288
+
+:geoo/construction/squisher.T: 568 192
+:geoo/construction/squisher.T: 408 192
+:geoo/construction/squisher.T: 248 192
+:geoo/construction/squisher.T: 88 192
+
+:proxima/flame.F: 288 16
+:proxima/flame.F: 448 16
+:proxima/flame.F: 128 16
+:proxima/flame.F: 608 16
+:geoo/construction/sawblade_small.F: 448 129
+:geoo/construction/sawblade_small.F: 384 129
+:geoo/construction/sawblade_small.F: 608 129
+:geoo/construction/sawblade_small.F: 544 129
+:geoo/construction/sawblade_small.F: 288 129
+:geoo/construction/sawblade_small.F: 224 129
+:geoo/construction/sawblade_small.F: 128 129
+:geoo/construction/sawblade_small.F: 64 129
+:geoo/construction/Laser_vr_16.F: 472 336
+:geoo/construction/Laser_vr_16.F: 472 352
+:geoo/construction/Laser_vr_16.F: 632 336
+:geoo/construction/Laser_vr_16.F: 632 352
+:geoo/construction/Laser_vr_16.F: 152 336
+:geoo/construction/Laser_vr_16.F: 152 352
+:geoo/construction/Laser_vr_16.F: 312 352
+:geoo/construction/Laser_vr_16.F: 312 336
+
+:matt/underworld/02: 0 336
+:matt/underworld/01: 80 288
+:matt/underworld/00: 128 256
+:matt/underworld/thinplatform64: 216 192
+:matt/underworld/02: 160 144
+:matt/underworld/01: 192 96
+:matt/underworld/00: 212 64
+:matt/underworld/00: 64 336
+:raymanni/gore/steel.S: 16 352
+:matt/underworld/02: 160 336
+:matt/underworld/01: 240 288
+:matt/underworld/00: 288 256
+:matt/underworld/thinplatform64: 376 192
+:matt/underworld/02: 320 144
+:matt/underworld/01: 352 96
+:matt/underworld/00: 372 64
+:matt/underworld/00: 224 336
+:raymanni/gore/steel.S: 176 352
+:matt/underworld/02: 320 336
+:matt/underworld/01: 400 288
+:matt/underworld/00: 448 256
+:matt/underworld/thinplatform64: 536 192
+:matt/underworld/02: 480 144
+:matt/underworld/01: 512 96
+:matt/underworld/00: 532 64
+:matt/underworld/00: 384 336
+:raymanni/gore/steel.S: 336 352
+:matt/underworld/02: 480 336
+:matt/underworld/01: 560 288
+:matt/underworld/00: 608 256
+:matt/underworld/thinplatform64: 56 192
+:matt/underworld/02: 0 144
+:matt/underworld/01: 32 96
+:matt/underworld/00: 52 64
+:matt/underworld/00: 544 336
+:raymanni/gore/steel.S: 496 352
+:matt/underworld/00: 576 368
+:matt/underworld/00: 544 400
+:matt/underworld/00: 64 400
+:matt/underworld/00: 96 368
+:matt/underworld/00: 224 400
+:matt/underworld/00: 256 368
+:matt/underworld/00: 384 400
+:matt/underworld/00: 416 368
+:matt/underworld/00: 16 432
+:matt/underworld/00: 144 432
+:matt/underworld/00: 80 432
+:matt/underworld/00: 208 432
+:matt/underworld/00: 336 432
+:matt/underworld/00: 272 432
+:matt/underworld/00: 400 432
+:matt/underworld/00: 528 432
+:matt/underworld/00: 464 432
+:matt/underworld/00: 592 432
+:matt/underworld/thinplatform16: 528 256
+:matt/underworld/thinplatform16: 576 256
+:matt/underworld/thinplatform16: 48 256
+:matt/underworld/thinplatform16: 96 256
+:matt/underworld/thinplatform16: 208 256
+:matt/underworld/thinplatform16: 256 256
+:matt/underworld/thinplatform16: 368 256
+:matt/underworld/thinplatform16: 416 256
+:matt/underworld/thinplatform64: 80 144
+:matt/underworld/thinplatform64: 240 144
+:matt/underworld/thinplatform64: 560 144
+:matt/underworld/thinplatform64: 400 144
+:matt/underworld/00: 596 64
+:matt/underworld/00: 116 64
+:matt/underworld/00: 276 64
+:matt/underworld/00: 436 64
+:amanda/steel/steel24x8.S: 232 106
+:amanda/steel/steel24x8.S: 392 108
+:amanda/steel/steel24x8.S: 552 106
+:amanda/steel/steel24x8.S: 72 106
+:amanda/steel/steel8x16.S: 416 96
+:amanda/steel/steel8x16.S: 416 112
+:amanda/steel/steel8x16.S: 576 96
+:amanda/steel/steel8x16.S: 576 112
+:amanda/steel/steel8x16.S: 96 96
+:amanda/steel/steel8x16.S: 96 112
+:amanda/steel/steel8x16.S: 256 96
+:amanda/steel/steel8x16.S: 256 112
+:amanda/steel/steel32x32.S: 336 176
+:amanda/steel/steel32x32.S: 496 176
+:amanda/steel/steel32x32.S: 16 176
+:amanda/steel/steel32x32.S: 176 176

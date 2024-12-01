@@ -1,0 +1,216 @@
+$BUILT 2024-07-18 12:44:23
+$AUTHOR Hyperlodge
+$ENGLISH Second Stage
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1024
+#SIZE_Y 512
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 32
+#BACKGROUND_BLUE 32
+
+#SECONDS 71
+#INITIAL 111
+#SPAWN_INTERVAL 11
+
+#RUNNER 100
+#EXPLODER2 100
+#BLOCKER 100
+#BUILDER 100
+#MINER 100
+#JUMPER 100
+#BATTER 100
+
+:raymanni/toys/hatch.H: 64 320
+:raymanni/toys/hatch.H: 896 320 r
+
+:geoo/sandstone/Goal.G: 32 192
+:geoo/sandstone/Goal.G: 928 192
+
+:geoo/construction/steam_up.T: 32 480
+:geoo/construction/steam_up.T: 48 480
+:geoo/construction/steam_up.T: 64 480
+:geoo/construction/steam_up.T: 80 480
+:geoo/construction/steam_up.T: 96 480
+:geoo/construction/steam_up.T: 112 480
+:geoo/construction/steam_up.T: 128 480
+:geoo/construction/steam_up.T: 144 480
+:geoo/construction/steam_up.T: 160 480
+:geoo/construction/steam_up.T: 176 480
+:geoo/construction/steam_up.T: 192 480
+:geoo/construction/steam_up.T: 208 480
+:geoo/construction/steam_up.T: 224 480
+:geoo/construction/steam_up.T: 240 480
+:geoo/construction/steam_up.T: 256 480
+:geoo/construction/steam_up.T: 272 480
+:geoo/construction/steam_up.T: 288 480
+:geoo/construction/steam_up.T: 304 480
+:geoo/construction/steam_up.T: 320 480
+:geoo/construction/steam_up.T: 336 480
+:geoo/construction/steam_up.T: 352 480
+:geoo/construction/steam_up.T: 368 480
+:geoo/construction/steam_up.T: 384 480
+:geoo/construction/steam_up.T: 400 480
+:geoo/construction/steam_up.T: 416 480
+:geoo/construction/steam_up.T: 432 480
+:geoo/construction/steam_up.T: 448 480
+:geoo/construction/steam_up.T: 464 480
+:geoo/construction/steam_up.T: 480 480
+:geoo/construction/steam_up.T: 496 480
+:geoo/construction/steam_up.T: 512 480
+:geoo/construction/steam_up.T: 528 480
+:geoo/construction/steam_up.T: 544 480
+:geoo/construction/steam_up.T: 560 480
+:geoo/construction/steam_up.T: 576 480
+:geoo/construction/steam_up.T: 592 480
+:geoo/construction/steam_up.T: 608 480
+:geoo/construction/steam_up.T: 624 480
+:geoo/construction/steam_up.T: 640 480
+:geoo/construction/steam_up.T: 656 480
+:geoo/construction/steam_up.T: 672 480
+:geoo/construction/steam_up.T: 688 480
+:geoo/construction/steam_up.T: 704 480
+:geoo/construction/steam_up.T: 720 480
+:geoo/construction/steam_up.T: 736 480
+:geoo/construction/steam_up.T: 752 480
+:geoo/construction/steam_up.T: 768 480
+:geoo/construction/steam_up.T: 784 480
+:geoo/construction/steam_up.T: 800 480
+:geoo/construction/steam_up.T: 816 480
+:geoo/construction/steam_up.T: 832 480
+:geoo/construction/steam_up.T: 848 480
+:geoo/construction/steam_up.T: 864 480
+:geoo/construction/steam_up.T: 880 480
+:geoo/construction/steam_up.T: 896 480
+:geoo/construction/steam_up.T: 912 480
+:geoo/construction/steam_up.T: 928 480
+:geoo/construction/steam_up.T: 944 480
+:geoo/construction/steam_up.T: 960 480
+:geoo/construction/steam_up.T: 976 480
+:raymanni/lab/launcher_right.T: 0 448
+:raymanni/lab/launcher_right.T: 0 416
+:raymanni/lab/launcher_right.T: 0 384
+:raymanni/lab/launcher_right.T: 0 352
+:raymanni/lab/launcher_right.T: 0 320
+:geoo/construction/steam_up.T: 16 480
+:geoo/construction/steam_up.T: 992 480
+:raymanni/lab/launcher_left.T: 992 448
+:raymanni/lab/launcher_left.T: 992 416
+:raymanni/lab/launcher_left.T: 992 384
+:raymanni/lab/launcher_left.T: 992 352
+:raymanni/lab/launcher_left.T: 992 320
+:raymanni/lab/launcher_right.T: 32 288
+:raymanni/lab/launcher_left.T: 960 288
+:raymanni/lab/launcher_left.T: 992 32
+:raymanni/lab/launcher_right.T: 0 128
+:raymanni/lab/launcher_right.T: 0 96
+:raymanni/lab/launcher_right.T: 0 64
+:raymanni/lab/launcher_right.T: 0 32
+:raymanni/lab/launcher_left.T: 992 64
+:raymanni/lab/launcher_left.T: 992 96
+:raymanni/lab/launcher_left.T: 992 128
+
+:simon/oriental/culm_long: 80 400 r
+:simon/oriental/culm_long: 176 400 r
+:simon/oriental/culm_long: 272 400 r
+:amanda/steel/steel32x32.S: 0 288
+:amanda/steel/steel32x32.S: 992 288
+:geoo/sandstone/arc_big: 0 192
+:amanda/steel/steel32x32.S: 0 256
+:amanda/steel/steel32x32.S: 32 256
+:amanda/steel/steel32x32.S: 64 256
+:amanda/steel/steel32x32.S: 96 256
+:amanda/steel/steel32x32.S: 256 256
+:amanda/steel/steel32x32.S: 288 256
+:amanda/steel/steel32x32.S: 256 224
+:amanda/steel/steel32x32.S: 256 192
+:amanda/steel/steel32x32.S: 288 224
+:amanda/steel/steel32x32.S: 320 256
+:amanda/steel/steel32x32.S: 224 256
+:amanda/steel/steel32x32.S: 224 224
+:amanda/steel/steel32x32.S: 224 192
+:amanda/steel/steel32x32.S: 224 160
+:amanda/steel/steel32x32.S: 192 192
+:amanda/steel/steel32x32.S: 192 160
+:amanda/steel/steel32x32.S: 192 128
+:amanda/steel/steel32x32.S: 160 192
+:amanda/steel/steel32x32.S: 160 160
+:amanda/steel/steel32x32.S: 160 128
+:amanda/steel/steel32x32.S: 160 96
+:amanda/steel/steel32x32.S: 192 256
+:amanda/steel/steel32x32.S: 192 224
+:amanda/steel/steel32x32.S: 160 256
+:amanda/steel/steel32x32.S: 160 224
+:geoo/sandstone/arc_big: 896 192
+:amanda/steel/steel32x32.S: 736 256 frr
+:amanda/steel/steel32x32.S: 704 256 frr
+:amanda/steel/steel32x32.S: 736 224 frr
+:amanda/steel/steel32x32.S: 736 192 frr
+:amanda/steel/steel32x32.S: 704 224 frr
+:amanda/steel/steel32x32.S: 672 256 frr
+:amanda/steel/steel32x32.S: 768 256 frr
+:amanda/steel/steel32x32.S: 768 224 frr
+:amanda/steel/steel32x32.S: 768 192 frr
+:amanda/steel/steel32x32.S: 768 160 frr
+:amanda/steel/steel32x32.S: 800 192 frr
+:amanda/steel/steel32x32.S: 800 160 frr
+:amanda/steel/steel32x32.S: 800 128 frr
+:amanda/steel/steel32x32.S: 832 192 frr
+:amanda/steel/steel32x32.S: 832 160 frr
+:amanda/steel/steel32x32.S: 832 128 frr
+:amanda/steel/steel32x32.S: 832 96 frr
+:amanda/steel/steel32x32.S: 800 256 frr
+:amanda/steel/steel32x32.S: 800 224 frr
+:amanda/steel/steel32x32.S: 832 256 frr
+:amanda/steel/steel32x32.S: 832 224 frr
+:amanda/steel/steel32x32.S: 896 256 frr
+:amanda/steel/steel32x32.S: 928 256 frr
+:amanda/steel/steel32x32.S: 960 256 frr
+:amanda/steel/steel32x32.S: 992 256 frr
+:geoo/sandstone/pillar_32: 992 160
+:geoo/sandstone/pillar_32: 0 160
+:geoo/sandstone/pillar_top_jaggedr: 864 160
+:geoo/sandstone/pillar_32: 864 192
+:geoo/sandstone/pillar_32: 864 224
+:geoo/sandstone/pillar_top_jaggedr: 128 160
+:geoo/sandstone/pillar_32: 128 192
+:geoo/sandstone/pillar_32: 128 224
+:simon/oriental/culm_long: 848 400 fr
+:simon/oriental/culm_long: 752 400 fr
+:simon/oriental/culm_long: 656 400 fr
+:geoo/sandstone/pillar_top_jaggedl: 0 0
+:geoo/sandstone/pillar_top_jaggedl: 992 0
+:geoo/sandstone/smaragd: 504 445
+:geoo/sandstone/smaragd: 504 413
+:geoo/sandstone/smaragd: 504 381
+:geoo/sandstone/smaragd: 504 349
+:geoo/sandstone/smaragd: 504 317
+:geoo/sandstone/smaragd: 504 285
+:geoo/sandstone/smaragd: 504 253
+:geoo/sandstone/smaragd: 504 221
+:geoo/sandstone/smaragd: 504 189
+:geoo/sandstone/smaragd: 504 157
+:geoo/sandstone/smaragd: 504 125
+:geoo/sandstone/smaragd: 504 93
+:geoo/sandstone/smaragd: 504 61
+:geoo/sandstone/smaragd: 504 29
+:geoo/sandstone/16x32: 0 480
+:geoo/sandstone/16x32: 1008 480
+:geoo/sandstone/32x32: 832 32
+:geoo/sandstone/32x32: 160 32
+:amanda/steel/steel32x32.S: 864 256 frr
+:amanda/steel/steel32x32.S: 128 256
+:amanda/steel/steel32x32.S: 352 256
+:amanda/steel/steel32x32.S: 640 256 frr
+:geoo/sandstone/64x32: 384 256
+:geoo/sandstone/64x32: 576 256
+:geoo/sandstone/32x32: 448 256
+:geoo/sandstone/32x32: 544 256
+:simon/oriental/culm_long: 192 32 r
+:simon/oriental/culm_long: 288 32 r
+:simon/oriental/culm_long: 384 32 r
+:simon/oriental/culm_long: 736 32 fr
+:simon/oriental/culm_long: 640 32 fr
+:simon/oriental/culm_long: 544 32 fr
+:amanda/steel/steel32x32.S: 832 64 frr
+:amanda/steel/steel32x32.S: 160 64

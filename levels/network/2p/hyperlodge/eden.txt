@@ -1,0 +1,608 @@
+$BUILT 2024-07-18 13:19:30
+$AUTHOR Hyperlodge
+$ENGLISH Eden
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1856
+#SIZE_Y 480
+#BACKGROUND_RED 32
+#BACKGROUND_GREEN 140
+#BACKGROUND_BLUE 179
+
+#SECONDS 120
+#INITIAL 150
+#SPAWN_INTERVAL 80
+
+#RUNNER 20
+#CLIMBER 20
+#FLOATER 20
+#EXPLODER2 20
+#BLOCKER 50
+#BUILDER 50
+#PLATFORMER 50
+#BASHER 10
+#MINER 10
+#DIGGER 10
+#JUMPER 20
+#BATTER 20
+
+:matt/goldmine/Hatch.H: 176 384
+:matt/goldmine/Hatch.H: 1616 384 r
+
+:matt/goldmine/Goal.G: 1616 256
+:matt/goldmine/Goal.G: 176 256
+
+:simon/crystal.W: 608 432
+:simon/crystal.W: 656 432
+:simon/crystal.W: 704 432
+:simon/crystal.W: 752 432
+:simon/crystal.W: 800 432
+:simon/crystal.W: 856 432
+:simon/crystal.W: 904 432
+:simon/crystal.W: 952 432
+:simon/crystal.W: 1200 432
+:simon/crystal.W: 1152 432
+:simon/crystal.W: 1104 432
+:simon/crystal.W: 1056 432
+:simon/crystal.W: 1008 432
+
+:geoo/construction/sawblade_small.F: 848 241
+:geoo/construction/sawblade_small.F: 976 241
+
+:geoo/construction/steam_up.T: 856 164
+:geoo/construction/steam_up.T: 856 196
+:geoo/construction/steam_up.T: 856 228
+:geoo/construction/steam_up.T: 32 448
+:geoo/construction/steam_up.T: 48 448
+:geoo/construction/steam_up.T: 64 448
+:geoo/construction/steam_up.T: 80 448
+:geoo/construction/steam_up.T: 96 448
+:geoo/construction/steam_up.T: 112 448
+:geoo/construction/steam_up.T: 984 164
+:geoo/construction/steam_up.T: 984 196
+:geoo/construction/steam_up.T: 984 228
+:geoo/construction/steam_up.T: 1808 448
+:geoo/construction/steam_up.T: 1792 448
+:geoo/construction/steam_up.T: 1776 448
+:geoo/construction/steam_up.T: 1760 448
+:geoo/construction/steam_up.T: 1744 448
+:geoo/construction/steam_up.T: 1728 448
+:geoo/construction/steam_up.T: 128 448
+:geoo/construction/steam_up.T: 144 448
+:geoo/construction/steam_up.T: 160 448
+:geoo/construction/steam_up.T: 176 448
+:geoo/construction/steam_up.T: 192 448
+:geoo/construction/steam_up.T: 208 448
+:geoo/construction/steam_up.T: 224 448
+:geoo/construction/steam_up.T: 240 448
+:geoo/construction/steam_up.T: 256 448
+:geoo/construction/steam_up.T: 272 448
+:geoo/construction/steam_up.T: 288 448
+:geoo/construction/steam_up.T: 304 448
+:geoo/construction/steam_up.T: 1616 448
+:geoo/construction/steam_up.T: 1600 448
+:geoo/construction/steam_up.T: 1584 448
+:geoo/construction/steam_up.T: 1568 448
+:geoo/construction/steam_up.T: 1552 448
+:geoo/construction/steam_up.T: 1536 448
+:geoo/construction/steam_up.T: 1648 448
+:geoo/construction/steam_up.T: 1632 448
+:geoo/construction/steam_up.T: 1680 448
+:geoo/construction/steam_up.T: 1664 448
+:geoo/construction/steam_up.T: 1712 448
+:geoo/construction/steam_up.T: 1696 448
+
+:matt/beach/decor/grass07: 442 199
+:matt/beach/decor/grass10: 459 197
+:matt/beach/decor/grass05: 443 212
+:matt/beach/decor/grass07: 475 200
+:matt/beach/decor/grass10: 492 198
+:matt/beach/decor/grass05: 476 213
+:matt/beach/decor/grass07: 525 201
+:matt/beach/decor/grass10: 529 199
+:matt/beach/decor/grass05: 513 214
+:matt/beach/decor/grass07: 545 202
+:matt/beach/decor/grass10: 562 200 rr
+:matt/beach/decor/grass05: 546 215
+:matt/beach/decor/grass07: 584 206
+:matt/beach/decor/grass10: 599 198
+:matt/beach/decor/grass05: 583 213
+:matt/beach/decor/grass05: 651 244
+:matt/beach/decor/grass10: 655 235 frr
+:matt/beach/decor/grass07: 615 201
+:raymanni/holiday/bauble_red: 647 229
+:matt/beach/decor/grass10: 632 199
+:matt/beach/decor/grass05: 616 214
+:matt/beach/decor/grass07: 655 198 rr
+:matt/beach/decor/grass10: 664 197
+:matt/beach/decor/grass05: 641 206
+:matt/beach/decor/grass07: 692 196
+:matt/beach/decor/grass10: 706 194
+:matt/beach/decor/grass05: 681 213
+:matt/beach/decor/grass07: 583 284 rr
+:matt/beach/decor/grass10: 667 229
+:matt/beach/decor/grass07: 683 232
+:matt/beach/decor/grass10: 700 230
+:matt/beach/decor/grass05: 684 245
+:matt/beach/decor/grass07: 431 238 rrr
+:matt/beach/decor/grass10: 551 268 rr
+:matt/beach/decor/grass05: 423 236 rrr
+:matt/earth/00: 549 434
+:matt/earth/19: 564 280 r
+:matt/beach/decor/grass07: 536 265 rr
+:raymanni/holiday/bauble_red: 508 297
+:matt/beach/decor/grass10: 518 267 rr
+:matt/beach/decor/grass05: 440 276 rrr
+:matt/beach/decor/grass07: 504 268 rr
+:matt/beach/decor/grass10: 482 284 rr
+:matt/beach/decor/grass05: 528 264 rr
+:matt/beach/decor/grass07: 469 263 rr
+:matt/beach/decor/grass10: 459 267 rr
+:matt/beach/decor/grass05: 483 273 rr
+:matt/beach/decor/grass07: 568 237
+:matt/beach/decor/grass10: 587 235
+:matt/beach/decor/grass05: 569 250
+:matt/beach/decor/grass07: 612 247
+:matt/beach/decor/grass10: 562 280 rr
+:matt/beach/decor/grass05: 602 251
+:matt/beach/decor/grass07: 584 260
+:matt/beach/decor/grass10: 619 283 rr
+:matt/beach/decor/grass05: 660 286 rr
+:matt/beach/decor/grass10: 517 236 rr
+:matt/beach/decor/grass07: 500 236 rr
+:matt/beach/decor/grass10: 482 238 rr
+:matt/beach/decor/grass05: 526 236 rr
+:matt/beach/decor/grass05: 479 204
+:matt/beach/decor/grass07: 467 235 rr
+:matt/beach/decor/grass10: 671 281 rr
+:matt/beach/decor/grass05: 493 235 rr
+:matt/beach/decor/grass10: 428 152
+:matt/beach/decor/grass10: 446 196
+:matt/beach/decor/grass07: 446 152
+:matt/beach/decor/grass10: 466 143
+:raymanni/holiday/bauble_red: 479 192
+:matt/beach/decor/grass07: 479 153
+:matt/beach/decor/grass10: 496 151
+:matt/beach/decor/grass05: 478 176 rr
+:matt/beach/decor/grass07: 615 223
+:matt/beach/decor/grass10: 511 140
+:matt/beach/decor/grass05: 463 188
+:matt/beach/decor/grass10: 430 180
+:matt/beach/decor/grass10: 454 122
+:matt/beach/decor/grass07: 493 182
+:matt/beach/decor/grass10: 495 131
+:matt/beach/decor/grass07: 512 111
+:matt/beach/decor/grass10: 512 167
+:matt/beach/decor/grass05: 496 182
+:matt/beach/decor/grass07: 454 235
+:matt/beach/decor/grass10: 512 160
+:matt/beach/decor/grass10: 540 178
+:matt/beach/decor/grass07: 556 181
+:matt/beach/decor/grass10: 573 179
+:matt/beach/decor/grass07: 658 182 frr
+:matt/beach/decor/grass10: 653 180 frr
+:matt/beach/decor/grass05: 594 195
+:matt/beach/decor/grass07: 638 183 frr
+:matt/beach/decor/grass05: 627 196
+:matt/beach/decor/grass10: 544 131
+:matt/beach/decor/grass10: 577 132
+:matt/beach/decor/grass07: 490 123
+:matt/beach/decor/grass10: 560 154
+:matt/beach/decor/grass07: 545 230
+:matt/beach/decor/grass10: 560 147
+:matt/beach/decor/grass07: 576 150
+:raymanni/holiday/bauble_red: 576 152
+:matt/beach/decor/grass10: 593 148
+:matt/beach/decor/grass05: 553 162
+:geoo/shadow/rope1: 736 256
+:matt/beach/decor/grass07: 728 200 r
+:matt/beach/decor/grass10: 644 140
+:matt/beach/decor/grass10: 626 165 frr
+:matt/beach/decor/grass07: 580 109 frr
+:matt/beach/decor/grass05: 571 147
+:matt/beach/decor/grass10: 670 166
+:matt/beach/decor/grass07: 703 169
+:matt/beach/decor/grass10: 707 167
+:matt/beach/decor/grass05: 691 182
+:matt/beach/decor/grass07: 409 205 rrr
+:matt/beach/decor/grass05: 731 187
+:matt/beach/decor/grass10: 622 118 frr
+:matt/beach/decor/grass07: 607 121 frr
+:matt/beach/decor/grass10: 674 119
+:matt/beach/decor/grass05: 633 134 frr
+:matt/beach/decor/grass07: 635 149 frr
+:matt/beach/decor/grass10: 542 116 frr
+:matt/beach/decor/grass07: 644 116 frr
+:matt/beach/decor/grass10: 606 134 frr
+:matt/beach/decor/grass07: 673 137
+:raymanni/holiday/bauble_red: 689 170
+:matt/beach/decor/grass10: 690 135
+:matt/beach/decor/grass05: 674 150
+:matt/beach/decor/grass07: 601 176 frr
+:matt/beach/decor/grass10: 673 157
+:matt/beach/decor/grass04: 654 168 frr
+:matt/beach/decor/grass07: 642 251
+:matt/beach/decor/grass10: 667 249
+:matt/beach/decor/grass10: 696 252 r
+:matt/beach/decor/grass05: 684 265
+:matt/beach/decor/grass10: 535 281 rr
+:raymanni/holiday/bauble_red: 678 299
+:matt/beach/decor/grass07: 684 270 rr
+:matt/beach/decor/grass10: 643 267
+:matt/beach/decor/grass05: 687 284 rr
+:matt/beach/decor/grass07: 670 220 frr
+:matt/beach/decor/grass07: 706 228 r
+:matt/beach/decor/grass10: 519 110
+:matt/beach/decor/grass07: 537 110
+:matt/beach/decor/grass10: 554 108
+:matt/beach/decor/grass07: 570 111
+:matt/beach/decor/grass10: 515 91
+:matt/beach/decor/grass10: 602 98
+:matt/beach/decor/grass10: 545 80
+:matt/beach/decor/grass10: 586 89
+:matt/beach/decor/grass07: 630 91
+:matt/beach/decor/grass10: 603 118
+:matt/beach/decor/grass07: 581 81
+:matt/earth/11: 508 442
+:raymanni/holiday/plank_long: 142 304
+:matt/earth/09: 464 450
+:raymanni/holiday/plank_d1: 111 288 frr
+:raymanni/holiday/plank_d1: 79 272 frr
+:raymanni/holiday/plank_d1: 79 256
+:raymanni/holiday/plank_d1: 111 240
+:raymanni/holiday/plank_d1: 111 224 frr
+:raymanni/holiday/plank_d1: 79 208 frr
+:raymanni/holiday/plank_d1: 111 352 frr
+:raymanni/holiday/plank_d1: 79 336 frr
+:raymanni/holiday/plank_d1: 79 320
+:raymanni/holiday/plank_d1: 111 304
+:raymanni/holiday/plank_long: 142 431
+:raymanni/holiday/plank_d1: 111 415 frr
+:raymanni/holiday/plank_d1: 79 399 frr
+:raymanni/holiday/plank_d1: 79 383
+:raymanni/holiday/plank_d1: 111 367
+:matt/earth/16: 248 368
+:matt/earth/16: 246 280 rrr
+:matt/earth/05: 344 272
+:matt/earth/03: 372 452
+:matt/earth/12: 344 454
+:matt/earth/09: 386 451
+:matt/earth/09: 423 449
+:raymanni/holiday/plank_d1: 79 192
+:raymanni/holiday/plank_d1: 111 176
+:raymanni/holiday/plank_d1: 111 160 frr
+:raymanni/holiday/plank_d1: 79 144 frr
+:raymanni/holiday/plank_d1: 79 128
+:raymanni/holiday/plank_d1: 111 112
+:raymanni/holiday/plank_long: 142 48
+:raymanni/holiday/plank_long: 264 48
+:matt/earth/15: 304 376 r
+:amanda/steel/steel32x32.S: 320 448
+:matt/earth/11: 318 366
+:amanda/steel/steel32x32.S: 320 416
+:amanda/steel/steel32x32.S: 320 384
+:matt/earth/12: 326 292 frr
+:amanda/steel/steel32x32.S: 320 352
+:amanda/steel/steel32x32.S: 320 320
+:amanda/steel/steel32x32.S: 320 288
+:amanda/steel/steel32x32.S: 320 256
+:amanda/steel/steel32x32.S: 320 224
+:amanda/steel/steel32x32.S: 320 192
+:amanda/steel/steel32x32.S: 320 160
+:amanda/steel/steel_flange_right24x16.S: 296 160
+:amanda/steel/steel_flange_left24x16.S: 352 160
+:raymanni/holiday/plank_broken: 409 48 frr
+:amanda/steel/steel24x8.S: 352 332
+:amanda/steel/steel24x8.S: 376 332
+:amanda/steel/steel8x16.S: 392 316
+:amanda/steel/steel8x16.S: 392 300
+:amanda/steel/steel24x8.S: 352 396
+:amanda/steel/steel24x8.S: 376 396
+:amanda/steel/steel24x8.S: 400 396
+:amanda/steel/steel8x16.S: 416 380
+:amanda/steel/steel8x16.S: 416 364
+:amanda/steel/steel24x8.S: 272 332
+:amanda/steel/steel24x8.S: 296 332
+:amanda/steel/steel8x16.S: 272 316
+:amanda/steel/steel8x16.S: 272 300
+:amanda/steel/steel24x8.S: 248 396
+:amanda/steel/steel24x8.S: 272 396
+:amanda/steel/steel24x8.S: 296 396
+:amanda/steel/steel8x16.S: 248 380
+:amanda/steel/steel8x16.S: 248 364
+:geoo/shadow/rope1: 800 256 frr
+:geoo/shadow/rope1: 864 256
+:geoo/shadow/rope1: 928 256 frr
+:geoo/construction/platform.S: 860 225 r
+:geoo/construction/platform.S: 863 257 r
+:geoo/construction/platform.S: 860 193 r
+:geoo/construction/platform.S: 863 289 r
+:geoo/construction/platform.S: 863 321 r
+:geoo/construction/platform.S: 863 353 r
+:geoo/construction/platform.S: 863 385 r
+:geoo/construction/platform.S: 847 417 r
+:geoo/construction/platform.S: 879 417 fr
+:geoo/construction/platform.S: 866 225 r
+:geoo/construction/platform.S: 866 193 r
+:matt/earth/11: 832 424
+:geoo/construction/platform.S: 848 416 rr
+:geoo/construction/platform.S: 832 352 rr
+:geoo/construction/platform.S: 831 321 r
+:geoo/construction/platform.S: 895 321 fr
+:geoo/construction/platform.S: 864 352 rr
+:amanda/steel/steel32x32.S: 0 448
+:amanda/steel/steel32x32.S: 0 416
+:amanda/steel/steel32x32.S: 0 384
+:amanda/steel/steel32x32.S: 0 352
+:amanda/steel/steel32x32.S: 0 320
+:amanda/steel/steel32x32.S: 0 288
+:amanda/steel/steel32x32.S: 0 256
+:amanda/steel/steel32x32.S: 0 224
+:amanda/steel/steel32x32.S: 0 192
+:amanda/steel/steel32x32.S: 0 160
+:amanda/steel/steel32x32.S: 0 128
+:amanda/steel/steel32x32.S: 0 96
+:amanda/steel/steel32x32.S: 0 64
+:amanda/steel/steel32x32.S: 0 32
+:amanda/steel/steel32x32.S: 0 0
+:raymanni/holiday/plank_d1: 111 96 frr
+:raymanni/holiday/plank_d1: 79 80 frr
+:raymanni/holiday/plank_d1: 79 64
+:raymanni/holiday/plank_d1: 111 48
+:raymanni/holiday/plank_long: 288 48
+:matt/beach/decor/grass07: 1372 199 frr
+:matt/beach/decor/grass10: 1354 197 frr
+:matt/beach/decor/grass05: 1398 212 frr
+:matt/beach/decor/grass07: 1339 200 frr
+:matt/beach/decor/grass10: 1321 198 frr
+:matt/beach/decor/grass05: 1365 213 frr
+:matt/beach/decor/grass07: 1289 201 frr
+:matt/beach/decor/grass10: 1284 199 frr
+:matt/beach/decor/grass05: 1328 214 frr
+:matt/beach/decor/grass07: 1269 202 frr
+:matt/beach/decor/grass10: 1251 200 f
+:matt/beach/decor/grass05: 1295 215 frr
+:matt/beach/decor/grass07: 1230 206 frr
+:matt/beach/decor/grass10: 1214 198 frr
+:matt/beach/decor/grass05: 1258 213 frr
+:matt/beach/decor/grass05: 1190 244 frr
+:matt/beach/decor/grass10: 1158 235
+:matt/beach/decor/grass07: 1199 201 frr
+:raymanni/holiday/bauble_red: 1177 229 frr
+:matt/beach/decor/grass10: 1181 199 frr
+:matt/beach/decor/grass05: 1225 214 frr
+:matt/beach/decor/grass07: 1159 198 f
+:matt/beach/decor/grass10: 1149 197 frr
+:matt/beach/decor/grass05: 1200 206 frr
+:matt/beach/decor/grass07: 1122 196 frr
+:matt/beach/decor/grass10: 1107 194 frr
+:matt/beach/decor/grass05: 1160 213 frr
+:matt/beach/decor/grass07: 1231 284 f
+:matt/beach/decor/grass10: 1146 229 frr
+:matt/beach/decor/grass07: 1131 232 frr
+:matt/beach/decor/grass10: 1113 230 frr
+:matt/beach/decor/grass05: 1157 245 frr
+:matt/beach/decor/grass07: 1379 238 frrr
+:matt/beach/decor/grass10: 1262 268 f
+:matt/beach/decor/grass05: 1400 236 frrr
+:matt/earth/00: 1227 434 frr
+:matt/earth/19: 1250 280 fr
+:matt/beach/decor/grass07: 1278 265 f
+:raymanni/holiday/bauble_red: 1316 297 frr
+:matt/beach/decor/grass10: 1295 267 f
+:matt/beach/decor/grass05: 1383 276 frrr
+:matt/beach/decor/grass07: 1310 268 f
+:matt/beach/decor/grass10: 1331 284 f
+:matt/beach/decor/grass05: 1313 264 f
+:matt/beach/decor/grass07: 1345 263 f
+:matt/beach/decor/grass10: 1354 267 f
+:matt/beach/decor/grass05: 1358 273 f
+:matt/beach/decor/grass07: 1246 237 frr
+:matt/beach/decor/grass10: 1226 235 frr
+:matt/beach/decor/grass05: 1272 250 frr
+:matt/beach/decor/grass07: 1202 247 frr
+:matt/beach/decor/grass10: 1251 280 f
+:matt/beach/decor/grass05: 1239 251 frr
+:matt/beach/decor/grass07: 1230 260 frr
+:matt/beach/decor/grass10: 1194 283 f
+:matt/beach/decor/grass05: 1181 286 f
+:matt/beach/decor/grass10: 1296 236 f
+:matt/beach/decor/grass07: 1314 236 f
+:matt/beach/decor/grass10: 1331 238 f
+:matt/beach/decor/grass05: 1315 236 f
+:matt/beach/decor/grass05: 1362 204 frr
+:matt/beach/decor/grass07: 1347 235 f
+:matt/beach/decor/grass10: 1142 281 f
+:matt/beach/decor/grass05: 1348 235 f
+:matt/beach/decor/grass10: 1385 152 frr
+:matt/beach/decor/grass10: 1367 196 frr
+:matt/beach/decor/grass07: 1368 152 frr
+:matt/beach/decor/grass10: 1347 143 frr
+:raymanni/holiday/bauble_red: 1345 192 frr
+:matt/beach/decor/grass07: 1335 153 frr
+:matt/beach/decor/grass10: 1317 151 frr
+:matt/beach/decor/grass05: 1363 176 f
+:matt/beach/decor/grass07: 1199 223 frr
+:matt/beach/decor/grass10: 1302 140 frr
+:matt/beach/decor/grass05: 1378 188 frr
+:matt/beach/decor/grass10: 1383 180 frr
+:matt/beach/decor/grass10: 1359 122 frr
+:matt/beach/decor/grass07: 1321 182 frr
+:matt/beach/decor/grass10: 1318 131 frr
+:matt/beach/decor/grass07: 1302 111 frr
+:matt/beach/decor/grass10: 1301 167 frr
+:matt/beach/decor/grass05: 1345 182 frr
+:matt/beach/decor/grass07: 1360 235 frr
+:matt/beach/decor/grass10: 1301 160 frr
+:matt/beach/decor/grass10: 1273 178 frr
+:matt/beach/decor/grass07: 1258 181 frr
+:matt/beach/decor/grass10: 1240 179 frr
+:matt/beach/decor/grass07: 1156 182
+:matt/beach/decor/grass10: 1160 180
+:matt/beach/decor/grass05: 1247 195 frr
+:matt/beach/decor/grass07: 1176 183
+:matt/beach/decor/grass05: 1214 196 frr
+:matt/beach/decor/grass10: 1269 131 frr
+:matt/beach/decor/grass10: 1236 132 frr
+:matt/beach/decor/grass07: 1324 123 frr
+:matt/beach/decor/grass10: 1253 154 frr
+:matt/beach/decor/grass07: 1269 230 frr
+:matt/beach/decor/grass10: 1253 147 frr
+:matt/beach/decor/grass07: 1238 150 frr
+:raymanni/holiday/bauble_red: 1248 152 frr
+:matt/beach/decor/grass10: 1220 148 frr
+:matt/beach/decor/grass05: 1288 162 frr
+:geoo/shadow/rope1: 1056 256 frr
+:matt/beach/decor/grass07: 1082 200 fr
+:matt/beach/decor/grass10: 1169 140 frr
+:matt/beach/decor/grass10: 1187 165
+:matt/beach/decor/grass07: 1234 109
+:matt/beach/decor/grass05: 1270 147 frr
+:matt/beach/decor/grass10: 1143 166 frr
+:matt/beach/decor/grass07: 1111 169 frr
+:matt/beach/decor/grass10: 1106 167 frr
+:matt/beach/decor/grass05: 1150 182 frr
+:matt/beach/decor/grass07: 1401 205 frrr
+:matt/beach/decor/grass05: 1110 187 frr
+:matt/beach/decor/grass10: 1191 118
+:matt/beach/decor/grass07: 1207 121
+:matt/beach/decor/grass10: 1139 119 frr
+:matt/beach/decor/grass05: 1208 134
+:matt/beach/decor/grass07: 1179 149
+:matt/beach/decor/grass10: 1271 116
+:matt/beach/decor/grass07: 1170 116
+:matt/beach/decor/grass10: 1207 134
+:matt/beach/decor/grass07: 1141 137 frr
+:raymanni/holiday/bauble_red: 1135 170 frr
+:matt/beach/decor/grass10: 1123 135 frr
+:matt/beach/decor/grass05: 1167 150 frr
+:matt/beach/decor/grass07: 1213 176
+:matt/beach/decor/grass10: 1140 157 frr
+:matt/beach/decor/grass04: 1178 168
+:matt/beach/decor/grass07: 1172 251 frr
+:matt/beach/decor/grass10: 1146 249 frr
+:matt/beach/decor/grass10: 1114 252 fr
+:matt/beach/decor/grass05: 1157 265 frr
+:matt/beach/decor/grass10: 1278 281 f
+:raymanni/holiday/bauble_red: 1146 299 frr
+:matt/beach/decor/grass07: 1130 270 f
+:matt/beach/decor/grass10: 1170 267 frr
+:matt/beach/decor/grass05: 1154 284 f
+:matt/beach/decor/grass07: 1144 220
+:matt/beach/decor/grass07: 1104 228 fr
+:matt/beach/decor/grass10: 1294 110 frr
+:matt/beach/decor/grass07: 1277 110 frr
+:matt/beach/decor/grass10: 1259 108 frr
+:matt/beach/decor/grass07: 1244 111 frr
+:matt/beach/decor/grass10: 1298 91 frr
+:matt/beach/decor/grass10: 1211 98 frr
+:matt/beach/decor/grass10: 1268 80 frr
+:matt/beach/decor/grass10: 1227 89 frr
+:matt/beach/decor/grass07: 1184 91 frr
+:matt/beach/decor/grass10: 1210 118 frr
+:matt/beach/decor/grass07: 1233 81 frr
+:matt/earth/11: 1286 442 frr
+:raymanni/holiday/plank_long: 1586 304 frr
+:matt/earth/09: 1337 450 frr
+:raymanni/holiday/plank_d1: 1713 288
+:raymanni/holiday/plank_d1: 1745 272
+:raymanni/holiday/plank_d1: 1745 256 frr
+:raymanni/holiday/plank_d1: 1713 240 frr
+:raymanni/holiday/plank_d1: 1713 224
+:raymanni/holiday/plank_d1: 1745 208
+:raymanni/holiday/plank_d1: 1713 352
+:raymanni/holiday/plank_d1: 1745 336
+:raymanni/holiday/plank_d1: 1745 320 frr
+:raymanni/holiday/plank_d1: 1713 304 frr
+:raymanni/holiday/plank_long: 1586 431 frr
+:raymanni/holiday/plank_d1: 1713 415
+:raymanni/holiday/plank_d1: 1745 399
+:raymanni/holiday/plank_d1: 1745 383 frr
+:raymanni/holiday/plank_d1: 1713 367 frr
+:matt/earth/16: 1503 368 frr
+:matt/earth/16: 1489 280 frrr
+:matt/earth/05: 1439 272 frr
+:matt/earth/03: 1334 452 frr
+:matt/earth/12: 1471 454 frr
+:matt/earth/09: 1415 451 frr
+:matt/earth/09: 1378 449 frr
+:raymanni/holiday/plank_d1: 1745 192 frr
+:raymanni/holiday/plank_d1: 1713 176 frr
+:raymanni/holiday/plank_d1: 1713 160
+:raymanni/holiday/plank_d1: 1745 144
+:raymanni/holiday/plank_d1: 1745 128 frr
+:raymanni/holiday/plank_d1: 1713 112 frr
+:raymanni/holiday/plank_long: 1586 48 frr
+:raymanni/holiday/plank_long: 1464 48 frr
+:matt/earth/15: 1522 376 fr
+:amanda/steel/steel32x32.S: 1504 448 frr
+:matt/earth/11: 1476 366 frr
+:amanda/steel/steel32x32.S: 1504 416 frr
+:amanda/steel/steel32x32.S: 1504 384 frr
+:matt/earth/12: 1489 292
+:amanda/steel/steel32x32.S: 1504 352 frr
+:amanda/steel/steel32x32.S: 1504 320 frr
+:amanda/steel/steel32x32.S: 1504 288 frr
+:amanda/steel/steel32x32.S: 1504 256 frr
+:amanda/steel/steel32x32.S: 1504 224 frr
+:amanda/steel/steel32x32.S: 1504 192 frr
+:amanda/steel/steel32x32.S: 1504 160 frr
+:amanda/steel/steel_flange_right24x16.S: 1536 160 frr
+:amanda/steel/steel_flange_left24x16.S: 1480 160 frr
+:raymanni/holiday/plank_broken: 1415 48
+:amanda/steel/steel24x8.S: 1480 332 frr
+:amanda/steel/steel24x8.S: 1456 332 frr
+:amanda/steel/steel8x16.S: 1456 316 frr
+:amanda/steel/steel8x16.S: 1456 300 frr
+:amanda/steel/steel24x8.S: 1480 396 frr
+:amanda/steel/steel24x8.S: 1456 396 frr
+:amanda/steel/steel24x8.S: 1432 396 frr
+:amanda/steel/steel8x16.S: 1432 380 frr
+:amanda/steel/steel8x16.S: 1432 364 frr
+:amanda/steel/steel24x8.S: 1560 332 frr
+:amanda/steel/steel24x8.S: 1536 332 frr
+:amanda/steel/steel8x16.S: 1576 316 frr
+:amanda/steel/steel8x16.S: 1576 300 frr
+:amanda/steel/steel24x8.S: 1584 396 frr
+:amanda/steel/steel24x8.S: 1560 396 frr
+:amanda/steel/steel24x8.S: 1536 396 frr
+:amanda/steel/steel8x16.S: 1600 380 frr
+:amanda/steel/steel8x16.S: 1600 364 frr
+:geoo/shadow/rope1: 992 256
+:geoo/construction/platform.S: 994 225 fr
+:geoo/construction/platform.S: 991 257 fr
+:geoo/construction/platform.S: 994 193 fr
+:geoo/construction/platform.S: 991 289 fr
+:geoo/construction/platform.S: 991 321 fr
+:geoo/construction/platform.S: 991 353 fr
+:geoo/construction/platform.S: 991 385 fr
+:geoo/construction/platform.S: 1007 417 fr
+:geoo/construction/platform.S: 975 417 r
+:geoo/construction/platform.S: 988 225 fr
+:geoo/construction/platform.S: 988 193 fr
+:matt/earth/11: 962 424 frr
+:geoo/construction/platform.S: 976 416 f
+:geoo/construction/platform.S: 992 352 f
+:geoo/construction/platform.S: 1023 321 fr
+:geoo/construction/platform.S: 959 321 r
+:geoo/construction/platform.S: 960 352 f
+:amanda/steel/steel32x32.S: 1824 448 frr
+:amanda/steel/steel32x32.S: 1824 416 frr
+:amanda/steel/steel32x32.S: 1824 384 frr
+:amanda/steel/steel32x32.S: 1824 352 frr
+:amanda/steel/steel32x32.S: 1824 320 frr
+:amanda/steel/steel32x32.S: 1824 288 frr
+:amanda/steel/steel32x32.S: 1824 256 frr
+:amanda/steel/steel32x32.S: 1824 224 frr
+:amanda/steel/steel32x32.S: 1824 192 frr
+:amanda/steel/steel32x32.S: 1824 160 frr
+:amanda/steel/steel32x32.S: 1824 128 frr
+:amanda/steel/steel32x32.S: 1824 96 frr
+:amanda/steel/steel32x32.S: 1824 64 frr
+:amanda/steel/steel32x32.S: 1824 32 frr
+:amanda/steel/steel32x32.S: 1824 0 frr
+:raymanni/holiday/plank_d1: 1713 96
+:raymanni/holiday/plank_d1: 1745 80
+:raymanni/holiday/plank_d1: 1745 64 frr
+:raymanni/holiday/plank_d1: 1713 48 frr
+:raymanni/holiday/plank_long: 1440 48 frr

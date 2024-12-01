@@ -1,0 +1,121 @@
+$BUILT 2024-07-21 13:45:42
+$AUTHOR Hyperlodge
+$ENGLISH Sliding Doors
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1728
+#SIZE_Y 352
+#TORUS_X 0
+#TORUS_Y 1
+#BACKGROUND_RED 64
+#BACKGROUND_GREEN 32
+#BACKGROUND_BLUE 63
+
+#SECONDS 60
+#INITIAL 100
+#SPAWN_INTERVAL 70
+
+#WALKER 1
+#RUNNER 1
+#CLIMBER 1
+#FLOATER 1
+#EXPLODER2 -1
+#BLOCKER -1
+#BUILDER -1
+#PLATFORMER 1
+#BASHER 1
+#MINER 1
+#DIGGER 1
+#JUMPER 1
+#BATTER 1
+#CUBER -1
+
+:raymanni/gore/hatch.H: 192 160
+:raymanni/gore/hatch.H: 1504 336 r
+
+:matt/goldmine/Goal.G: 1632 80
+:matt/goldmine/Goal.G: 32 256
+
+:geoo/abstract/tbeam_down.T: 48 48
+:geoo/abstract/tbeam_down.T: 1648 224
+:geoo/abstract/tbeam_down.T: 1648 0
+:geoo/abstract/tbeam_down.T: 48 176
+:geoo/abstract/tbeam_left.T: 1680 0
+:geoo/abstract/tbeam_right.T: 16 176
+:geoo/abstract/tbeam_right.T: 16 48
+:geoo/abstract/tbeam_left.T: 1680 224
+
+$BEGIN_TILE_GROUP 0
+:raymanni/holiday/cane_mid: 0 32
+:raymanni/holiday/cane_a: 0 0
+:raymanni/holiday/cane_end1: 32 0 r
+$END_TILE_GROUP
+:Group-0: 96 88 frr
+:Group-0: 1584 264
+:raymanni/holiday/plank_left: 1488 8 r
+$BEGIN_TILE_GROUP 1
+:raymanni/holiday/plank_left: 56 105 rrr
+:raymanni/holiday/plank_mid1: 40 27
+:raymanni/holiday/plank_d1: 16 24
+:raymanni/holiday/plank_long: 32 11 r
+:raymanni/holiday/plank_d1: 56 35 frr
+:raymanni/holiday/plank_d1: 40 27
+:raymanni/holiday/plank_d1: 72 11
+:raymanni/holiday/plank_left: 16 43
+:raymanni/holiday/plank_left: 16 59
+:raymanni/holiday/plank_left: 0 75
+:raymanni/holiday/plank_left: 16 91
+:raymanni/holiday/plank_left: 48 43 frr
+:raymanni/holiday/plank_d2: 88 51 frr
+:raymanni/holiday/plank_left: 48 59 frr
+:raymanni/holiday/plank_left: 56 75 frr
+:raymanni/holiday/plank_left: 48 91 frr
+:raymanni/holiday/plank_mid1: 32 75
+:raymanni/holiday/plank_d3: 94 0
+$END_TILE_GROUP
+:Group-1: 1456 10
+:Group-1: 146 186 frr
+:raymanni/holiday/plank_left: 224 184 fr
+$BEGIN_TILE_GROUP 2
+:matt/goldmine/03: 0 16 frr
+:matt/goldmine/crate32: 0 0
+:matt/goldmine/crate32: 32 0
+:matt/goldmine/crate32: 64 0
+:matt/goldmine/crate32: 96 0
+:matt/goldmine/03: 128 22 frr
+:matt/goldmine/crate32: 128 0
+:matt/goldmine/crate32: 160 0
+:matt/goldmine/crate32: 192 0
+:matt/goldmine/crate32: 224 0
+:matt/goldmine/crate32: 256 0
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 3
+:matt/goldmine/05: 264 16 rrr
+:Group-2: 0 0
+:matt/goldmine/02: 536 16
+:Group-2: 288 0
+:matt/goldmine/10: 840 24
+:Group-2: 576 0
+:matt/goldmine/06: 1272 24 frr
+:matt/goldmine/06: 1216 24
+:matt/goldmine/03: 1080 16 frr
+:Group-2: 864 0
+:matt/goldmine/crate32: 1152 0
+:matt/goldmine/crate32: 1184 0
+:matt/goldmine/crate32: 1216 0
+:matt/goldmine/crate32: 1248 0
+:matt/goldmine/03: 1336 22 frr
+:matt/goldmine/crate32: 1280 0
+:matt/goldmine/crate32: 1312 0
+:matt/goldmine/crate32: 1344 0
+:matt/goldmine/crate32: 1376 0
+:matt/goldmine/crate32: 1408 0
+:matt/goldmine/03: 1448 16
+:matt/goldmine/crate32: 1440 0
+:matt/goldmine/crate32: 1472 0
+:matt/goldmine/crate32: 1504 0
+:matt/goldmine/crate32: 1536 0
+:matt/goldmine/crate32: 1568 0
+$END_TILE_GROUP
+:Group-3: 96 128
+:Group-3: 32 304 frr

@@ -1,0 +1,199 @@
+$BUILT 2024-08-19 08:21:16
+$AUTHOR Hyperlodge
+$ENGLISH On Your Feet
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 896
+#SIZE_Y 496
+#BACKGROUND_RED 80
+#BACKGROUND_GREEN 255
+#BACKGROUND_BLUE 240
+
+#SECONDS 60
+#INITIAL 100
+#SPAWN_INTERVAL 40
+
+#WALKER 2
+#RUNNER 2
+#CLIMBER 2
+#FLOATER 2
+#EXPLODER2 -1
+#BLOCKER 30
+#BUILDER 90
+#PLATFORMER 2
+#BASHER 2
+#MINER 2
+#DIGGER 2
+#JUMPER 2
+#BATTER 2
+#CUBER -1
+
+:matt/bricks/Hatch.H: 88 240
+:matt/bricks/Hatch.H: 736 240 r
+
+:matt/carnival/Goal.G: 592 224
+:matt/carnival/Goal.G: 240 224
+
+:geoo/abstract/tbeam_up.T: 168 224
+:geoo/abstract/tbeam_right.T: 168 192
+:geoo/abstract/tbeam_up.T: 696 224
+:geoo/abstract/tbeam_left.T: 696 192
+:geoo/abstract/tbeam_right.T: 200 192
+:geoo/abstract/tbeam_left.T: 664 192
+:geoo/abstract/tbeam_up.T: 0 232
+:geoo/abstract/tbeam_up.T: 0 200
+:geoo/abstract/tbeam_up.T: 0 264
+:geoo/abstract/tbeam_up.T: 0 296
+:geoo/abstract/tbeam_up.T: 0 328
+:geoo/abstract/tbeam_up.T: 0 168
+:geoo/abstract/tbeam_right.T: 0 104
+:geoo/abstract/tbeam_right.T: 32 104
+:geoo/abstract/tbeam_up.T: 0 136
+:geoo/abstract/tbeam_right.T: 64 104
+:geoo/abstract/tbeam_right.T: 96 104
+:geoo/abstract/tbeam_right.T: 128 104
+:geoo/abstract/tbeam_right.T: 160 104
+:geoo/abstract/tbeam_up.T: 864 232
+:geoo/abstract/tbeam_up.T: 864 200
+:geoo/abstract/tbeam_up.T: 864 264
+:geoo/abstract/tbeam_up.T: 864 296
+:geoo/abstract/tbeam_up.T: 864 328
+:geoo/abstract/tbeam_up.T: 864 168
+:geoo/abstract/tbeam_up.T: 864 136
+:geoo/abstract/tbeam_left.T: 864 104
+:geoo/abstract/tbeam_left.T: 832 104
+:geoo/abstract/tbeam_left.T: 800 104
+:geoo/abstract/tbeam_left.T: 768 104
+:geoo/abstract/tbeam_left.T: 736 104
+:geoo/abstract/tbeam_left.T: 704 104
+:geoo/abstract/tbeam_left.T: 352 168
+:geoo/abstract/tbeam_left.T: 320 168
+:geoo/abstract/tbeam_right.T: 512 168
+:geoo/abstract/tbeam_right.T: 544 168
+:geoo/abstract/tbeam_left.T: 384 168
+:geoo/abstract/tbeam_right.T: 480 168
+:geoo/abstract/tbeam_right.T: 504 216
+:geoo/abstract/tbeam_up.T: 504 248
+:geoo/abstract/tbeam_up.T: 504 280
+:geoo/abstract/tbeam_up.T: 360 248
+:geoo/abstract/tbeam_up.T: 360 280
+:geoo/abstract/tbeam_left.T: 360 216
+:geoo/abstract/tbeam_left.T: 96 328
+:geoo/abstract/tbeam_left.T: 64 328
+:geoo/abstract/tbeam_left.T: 32 328
+:geoo/abstract/tbeam_left.T: 128 328
+:geoo/abstract/tbeam_right.T: 736 328
+:geoo/abstract/tbeam_right.T: 768 328
+:geoo/abstract/tbeam_right.T: 800 328
+:geoo/abstract/tbeam_right.T: 832 328
+:geoo/abstract/tbeam_left.T: 416 0
+:geoo/abstract/tbeam_left.T: 384 0
+:geoo/abstract/tbeam_left.T: 352 0
+:geoo/abstract/tbeam_left.T: 320 0
+:geoo/abstract/tbeam_left.T: 288 0
+:geoo/abstract/tbeam_right.T: 448 0
+:geoo/abstract/tbeam_right.T: 480 0
+:geoo/abstract/tbeam_right.T: 512 0
+:geoo/abstract/tbeam_right.T: 544 0
+:geoo/abstract/tbeam_right.T: 576 0
+:geoo/abstract/tbeam_right.T: 608 0
+:geoo/abstract/tbeam_right.T: 640 0
+:geoo/abstract/tbeam_left.T: 256 0
+:geoo/abstract/tbeam_left.T: 224 0
+
+:geoo/steel/64x64o.S: 240 104
+:geoo/steel/64x64o.S: 592 104
+:geoo/steel/64x64o.S: 416 152
+:geoo/steel/64x64o.S: 416 88
+:geoo/steel/64x32o.S: 272 72
+:geoo/steel/64x32o.S: 552 72
+:geoo/steel/64x32o.S: 376 56
+:geoo/steel/64x32o.S: 456 56
+:geoo/steel/64x32o.S: 400 232 r
+:geoo/steel/64x32o.S: 464 232 r
+:geoo/steel/64x32o.S: 504 328
+:geoo/steel/64x32o.S: 328 328
+:simon/tapir/064h: 72 368
+:simon/tapir/064: 232 368
+:simon/tapir/032h: 296 400
+:simon/tapir/032hb: 296 368
+:simon/tapir/032a: 40 368
+:simon/tapir/032v: 200 368
+:simon/tapir/032h: 264 432
+:simon/tapir/032h: 88 432
+:simon/tapir/032h: 152 432
+:simon/tapir/016v: 72 432
+:simon/tapir/032: 216 432
+:simon/tapir/016v: 248 432
+:simon/tapir/032v: 232 304
+:simon/tapir/032v: 136 304
+:simon/tapir/016v: 120 336
+:simon/tapir/032hc: 56 304
+:simon/tapir/016v: 120 304
+:simon/tapir/032hd: 280 304
+:simon/tapir/016v: 264 304
+:simon/tapir/016v: 264 336
+:simon/tapir/032: 40 400
+:simon/tapir/032vc: 40 432
+:simon/tapir/032h: 72 464
+:simon/tapir/032: 136 464
+:simon/tapir/032h: 168 464
+:simon/tapir/032h: 232 464
+:simon/tapir/032: 296 464
+:simon/tapir/032v: 328 432
+:simon/tapir/016h: 256 288
+:simon/tapir/008v: 248 288
+:simon/tapir/016: 232 288
+:simon/tapir/008v: 32 288
+:simon/tapir/016h: 40 288
+:simon/tapir/008v: 72 288
+:simon/tapir/016: 80 288
+:simon/tapir/016h: 96 288
+:simon/tapir/016: 128 288
+:simon/tapir/016: 152 288
+:simon/tapir/008v: 144 288
+:simon/tapir/016h: 304 288
+:simon/tapir/016: 288 288
+:simon/tapir/016: 336 288
+:simon/tapir/064h: 696 368 frr
+:simon/tapir/064: 600 368 frr
+:simon/tapir/032h: 536 400 frr
+:simon/tapir/032hb: 536 368 frr
+:simon/tapir/032a: 824 368 frr
+:simon/tapir/032v: 664 368 frr
+:simon/tapir/032h: 568 432 frr
+:simon/tapir/032h: 744 432 frr
+:simon/tapir/032h: 680 432 frr
+:simon/tapir/016v: 808 432 frr
+:simon/tapir/032: 648 432 frr
+:simon/tapir/016v: 632 432 frr
+:simon/tapir/032v: 632 304 frr
+:simon/tapir/032v: 728 304 frr
+:simon/tapir/016v: 760 336 frr
+:simon/tapir/032hc: 776 304 frr
+:simon/tapir/016v: 760 304 frr
+:simon/tapir/032hd: 552 304 frr
+:simon/tapir/016v: 616 304 frr
+:simon/tapir/016v: 616 336 frr
+:simon/tapir/032: 824 400 frr
+:simon/tapir/032vc: 824 432 frr
+:simon/tapir/032h: 760 464 frr
+:simon/tapir/032: 728 464 frr
+:simon/tapir/032h: 664 464 frr
+:simon/tapir/032h: 600 464 frr
+:simon/tapir/032: 568 464 frr
+:simon/tapir/032v: 536 432 frr
+:simon/tapir/016h: 608 288 frr
+:simon/tapir/008v: 640 288 frr
+:simon/tapir/016: 648 288 frr
+:simon/tapir/008v: 856 288 frr
+:simon/tapir/016h: 824 288 frr
+:simon/tapir/008v: 816 288 frr
+:simon/tapir/016: 800 288 frr
+:simon/tapir/016h: 768 288 frr
+:simon/tapir/016: 752 288 frr
+:simon/tapir/016: 728 288 frr
+:simon/tapir/008v: 744 288 frr
+:simon/tapir/016h: 560 288 frr
+:simon/tapir/016: 592 288 frr
+:simon/tapir/016: 544 288 frr

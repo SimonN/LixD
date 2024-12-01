@@ -1,0 +1,129 @@
+$BUILT 2024-07-18 11:49:47
+$AUTHOR Hyperlodge
+$ENGLISH Alternative Routes 2
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 896
+#SIZE_Y 424
+#BACKGROUND_RED 103
+#BACKGROUND_GREEN 52
+#BACKGROUND_BLUE 0
+
+#SECONDS 60
+#INITIAL 60
+#SPAWN_INTERVAL 60
+
+#RUNNER -1
+#FLOATER -1
+#EXPLODER2 -1
+#BLOCKER -1
+#BUILDER -1
+#DIGGER -1
+#JUMPER -1
+#BATTER -1
+
+:matt/goldmine/Hatch.H: 308 13
+:matt/goldmine/Hatch.H: 524 13 r
+
+:amanda/forest/exit.G: 750 50
+:amanda/forest/exit.G: 50 50
+
+:raymanni/gore/bonesaw.F: 416 288
+:raymanni/gore/bonesaw.F: 416 161
+:raymanni/gore/bonesaw.F: 402 33
+:raymanni/gore/bonesaw.F: 430 33
+
+:raymanni/lab/elev_up.T: 870 224
+:raymanni/lab/elev_up.T: -6 224
+:raymanni/lab/elev_up.T: -6 192
+:raymanni/lab/elev_up.T: -6 160
+:raymanni/lab/elev_up.T: -6 128
+:geoo/abstract/tbeam_left.T: 864 34
+:raymanni/lab/elev_up.T: 870 192
+:raymanni/lab/elev_up.T: 870 160
+:raymanni/lab/elev_up.T: 870 128
+:geoo/abstract/tbeam_right.T: 0 32
+:geoo/abstract/tbeam_right.T: 32 32
+:raymanni/lab/elev_up.T: -6 96
+:raymanni/lab/elev_up.T: -6 64
+:raymanni/lab/elev_up.T: 870 96
+:raymanni/lab/elev_up.T: 870 64
+:geoo/abstract/tbeam_left.T: 832 34
+:geoo/abstract/tbeam_left.T: 800 34
+:geoo/abstract/tbeam_left.T: 768 34
+:geoo/abstract/tbeam_left.T: 736 34
+:geoo/abstract/tbeam_left.T: 704 34
+:geoo/abstract/tbeam_left.T: 672 34
+:geoo/abstract/tbeam_left.T: 640 34
+:geoo/abstract/tbeam_right.T: 62 32
+:geoo/abstract/tbeam_right.T: 94 32
+:geoo/abstract/tbeam_right.T: 126 32
+:geoo/abstract/tbeam_right.T: 158 32
+:geoo/abstract/tbeam_right.T: 188 32
+:geoo/abstract/tbeam_right.T: 220 32
+:raymanni/lab/elev_up.T: -6 352
+:raymanni/lab/elev_up.T: -6 320
+:raymanni/lab/elev_up.T: -6 288
+:raymanni/lab/elev_up.T: -6 256
+:raymanni/lab/elev_up.T: 870 352
+:raymanni/lab/elev_up.T: 870 320
+:raymanni/lab/elev_up.T: 870 288
+:raymanni/lab/elev_up.T: 870 256
+:raymanni/lab/elev_up.T: 432 352
+
+:simon/oriental/03: 92 158
+:simon/oriental/08: 24 146
+:simon/oriental/fat_long: 260 86 r
+:geoo/construction/platform.S: 404 64 rr
+:simon/oriental/fat_long: 286 58 r
+:simon/oriental/fat_d_long: 196 60 rr
+:simon/oriental/08: 128 146
+:simon/oriental/08: 208 184
+:simon/oriental/03: 280 264 frr
+:simon/oriental/08: 288 244
+:simon/oriental/08: 368 284
+:simon/oriental/05: 264 376 frrr
+:simon/oriental/05: 344 376 frrr
+:simon/oriental/05: 368 376 frrr
+:simon/oriental/03: 756 156
+:simon/oriental/08: 792 146 frr
+:simon/oriental/fat_long: 508 86 fr
+:simon/oriental/fat_d_long: 602 60 f
+:simon/oriental/08: 688 146 frr
+:simon/oriental/08: 608 184 frr
+:simon/oriental/08: 528 244 frr
+:simon/oriental/08: 448 284 frr
+:simon/oriental/05: 552 376 rrr
+:simon/oriental/05: 472 376 rrr
+:simon/oriental/05: 448 376 rrr
+:simon/oriental/05: 184 376 frrr
+:simon/oriental/05: 104 376 frrr
+:simon/oriental/05: 24 376 frrr
+:simon/oriental/05: -56 376 frrr
+:simon/oriental/05: 792 376 frrr
+:simon/oriental/05: 712 376 frrr
+:simon/oriental/05: 632 376 frrr
+:simon/oriental/05: 872 376 frrr
+:simon/oriental/03: -24 158
+:simon/oriental/03: 872 156
+:simon/oriental/03: 184 264 frr
+:simon/oriental/03: 136 264
+:simon/oriental/03: 88 264 frr
+:simon/oriental/03: 40 264
+:simon/oriental/03: -8 264 frr
+:simon/oriental/03: 232 264
+:simon/oriental/03: 896 264 frr
+:simon/oriental/03: 800 264 frr
+:simon/oriental/03: 752 264
+:simon/oriental/03: 704 264 frr
+:simon/oriental/03: 656 264
+:simon/oriental/03: 608 264 frr
+:simon/oriental/03: 848 264
+:simon/oriental/04: 424 304 d
+:simon/oriental/04: 424 294 d
+:geoo/construction/platform.S: 447 192 r
+:geoo/construction/platform.S: 447 224 r
+:geoo/construction/platform.S: 447 256 r
+:geoo/construction/platform.S: 447 288 r
+:geoo/construction/platform.S: 460 64
+:simon/oriental/fat_long: 482 58 fr

@@ -1,0 +1,93 @@
+$BUILT 2024-07-18 12:56:12
+$AUTHOR Hyperlodge
+$ENGLISH What's for Dinner?
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1328
+#SIZE_Y 272
+#BACKGROUND_RED 48
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 75
+#INITIAL 75
+#SPAWN_INTERVAL 65
+
+#RUNNER -1
+#EXPLODER2 -1
+#BUILDER -1
+#MINER -1
+#JUMPER -1
+#CUBER -1
+
+:matt/goldmine/Hatch.H: 192 162
+:matt/goldmine/Hatch.H: 1072 162 r
+
+:raymanni/lab/goal.G: 1204 26
+:raymanni/lab/goal.G: 60 26
+
+:simon/crystal.W: 1210 232
+:simon/crystal.W: 1258 232
+:simon/crystal.W: 1306 232
+:simon/crystal.W: 22 232
+:simon/crystal.W: 70 232
+:simon/crystal.W: 118 232
+:simon/crystal.W: -26 232
+:simon/crystal.W: 1162 232
+
+:proxima/flame.F: 580 192
+:proxima/flame.F: 612 192
+:proxima/flame.F: 644 192
+:proxima/flame.F: 676 192
+:proxima/flame.F: 708 192
+
+:geoo/construction/steam_left.T: 512 123
+:geoo/construction/steam_right.T: 784 123
+
+:geoo/construction/rod_steel/straight_diagd32.S: 580 172
+:geoo/construction/rod_steel/link_dd_h.S: 612 204
+:geoo/construction/rod_steel/straight32.S: 632 212
+:geoo/construction/rod_steel/straight_diagu32.S: 710 178
+:geoo/construction/rod_steel/link_h_du.S: 694 210
+:geoo/construction/rod_steel/straight_diagd32.S: 548 140
+:geoo/construction/rod_steel/straight_diagu32.S: 742 146
+:geoo/construction/rod_steel/straight32.S: 664 212
+:geoo/steel/silhouette_64x32.S: 568 240
+:geoo/steel/silhouette_64x32.S: 632 240
+:geoo/steel/silhouette_64x32.S: 696 240
+:geoo/construction/rod_steel/link_h_dd.S: 542 129 fr
+:geoo/construction/rod_steel/link_h_du.S: 776 128 fr
+:geoo/sandstone/pillar_top_ext: 632 97
+:geoo/sandstone/slopes/32x16rb: 536 113
+:geoo/sandstone/64x16: 568 113
+:geoo/sandstone/64x16: 600 113
+:geoo/sandstone/64x16: 664 113 frr
+:geoo/sandstone/64x16: 696 113
+:geoo/sandstone/slopes/32x16rb: 760 113 frr
+:geoo/construction/rod_steel/straight_diagu32.S: 746 142
+:matt/earth/17: 336 212 r
+:matt/earth/10: 142 206
+:matt/earth/04: 418 188
+:simon/oriental/pebbles5: 506 232
+:simon/oriental/pebbles4: 476 252
+:simon/oriental/pebbles1: 324 236
+:simon/oriental/pebbles3: 420 218
+:simon/oriental/pebbles6: 124 238
+:geoo/construction/fence_32x32.S: 76 96
+:raymanni/toys/beam_13.S: 108 96
+:raymanni/toys/beam_13.S: 108 64
+:raymanni/toys/beam_13.S: 108 32
+:raymanni/toys/beam_13.S: 108 0
+:matt/earth/17: 876 212 fr
+:matt/earth/10: 973 206 frr
+:matt/earth/04: 788 188 frr
+:simon/oriental/pebbles5: 741 232 frr
+:simon/oriental/pebbles4: 825 252 frr
+:simon/oriental/pebbles1: 988 236 frr
+:simon/oriental/pebbles3: 872 218 frr
+:simon/oriental/pebbles6: 1136 238 frr
+:geoo/construction/fence_32x32.S: 1220 96 frr
+:raymanni/toys/beam_13.S: 1212 96 frr
+:raymanni/toys/beam_13.S: 1212 64 frr
+:raymanni/toys/beam_13.S: 1212 32 frr
+:raymanni/toys/beam_13.S: 1212 0 frr

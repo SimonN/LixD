@@ -1,0 +1,203 @@
+$BUILT 2024-07-18 13:20:01
+$AUTHOR Hyperlodge
+$ENGLISH Con, con... confusion!
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 656
+#SIZE_Y 408
+#BACKGROUND_RED 48
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 80
+
+#SECONDS 120
+#INITIAL 100
+#SPAWN_INTERVAL 60
+
+#WALKER 10
+#RUNNER 10
+#CLIMBER 10
+#FLOATER 10
+#EXPLODER2 100
+#BLOCKER 100
+#BUILDER 100
+#PLATFORMER 100
+#BASHER 10
+#MINER 10
+#DIGGER 10
+#JUMPER 10
+#BATTER 10
+
+:matt/carnival/Hatch.H: 224 336
+:matt/carnival/Hatch.H: 104 88 r
+:matt/carnival/Hatch.H: 488 336
+:matt/carnival/Hatch.H: 64 88 r
+:matt/carnival/Hatch.H: 528 88
+:matt/carnival/Hatch.H: 368 336 r
+:matt/carnival/Hatch.H: 488 88
+:matt/carnival/Hatch.H: 104 336 r
+
+:geoo/abstract/goal.G: 64 336
+:geoo/abstract/goal.G: 560 336
+
+:proxima/flame.F: 308 344
+:proxima/flame.F: 308 310
+:geoo/construction/Laser_vr_64.F: 320 256
+:geoo/construction/sawblade.F: 308 213
+
+:amanda/steel/steel24x8.S: 400 400
+:amanda/steel/steel24x8.S: 424 400
+:amanda/steel/steel24x8.S: 448 400
+:amanda/steel/steel24x8.S: 472 400
+:amanda/steel/steel24x8.S: 496 400
+:amanda/steel/steel24x8.S: 520 400
+:amanda/steel/steel24x8.S: 536 392
+:amanda/steel/steel24x8.S: 552 384
+:amanda/steel/steel24x8.S: 576 384
+:amanda/steel/steel24x8.S: 592 392
+:amanda/steel/steel24x8.S: 608 400
+:amanda/steel/steel24x8.S: 376 400
+:amanda/steel/steel24x8.S: 360 392
+:amanda/steel/steel24x8.S: 344 384
+:amanda/steel/steel24x8.S: 328 376
+:amanda/steel/steel24x8.S: 256 400
+:amanda/steel/steel24x8.S: 272 392
+:amanda/steel/steel24x8.S: 288 384
+:amanda/steel/steel24x8.S: 304 376
+:amanda/steel/steel24x8.S: 304 360
+:amanda/steel/steel24x8.S: 328 360
+:amanda/steel/steel24x8.S: 328 344
+:amanda/steel/steel24x8.S: 304 344
+:amanda/steel/steel24x8.S: 304 328
+:amanda/steel/steel24x8.S: 328 328
+:amanda/steel/steel24x8.S: 112 400
+:amanda/steel/steel24x8.S: 136 400
+:amanda/steel/steel24x8.S: 160 400
+:amanda/steel/steel24x8.S: 184 400
+:amanda/steel/steel24x8.S: 208 400
+:amanda/steel/steel24x8.S: 232 400
+:amanda/steel/steel24x8.S: 40 392
+:amanda/steel/steel24x8.S: 56 384
+:amanda/steel/steel24x8.S: 80 384
+:amanda/steel/steel24x8.S: 96 392
+:amanda/steel/steel24x8.S: 24 400
+:matt/bricks/18: 492 368
+:matt/bricks/18: 452 368
+:matt/bricks/18: 412 368
+:matt/bricks/18: 492 336
+:matt/bricks/18: 452 336
+:matt/bricks/18: 412 336
+:matt/bricks/18: 492 304
+:matt/bricks/18: 452 304
+:matt/bricks/18: 412 304
+:matt/bricks/18: 492 272
+:matt/bricks/18: 452 272
+:matt/bricks/18: 412 272
+:matt/bricks/20: 404 256
+:matt/bricks/20: 444 256
+:matt/bricks/20: 484 256
+:matt/bricks/19: 404 384
+:matt/bricks/19: 444 384
+:matt/bricks/19: 484 384
+:matt/bricks/18: 320 297
+:matt/bricks/18: 320 265
+:matt/bricks/19: 312 313
+:matt/bricks/20: 312 256
+:matt/bricks/18: 228 368
+:matt/bricks/18: 228 336
+:matt/bricks/18: 228 304
+:matt/bricks/18: 228 272
+:matt/bricks/20: 220 256
+:matt/bricks/19: 220 384
+:matt/bricks/18: 188 368
+:matt/bricks/18: 188 336
+:matt/bricks/18: 188 304
+:matt/bricks/18: 188 272
+:matt/bricks/20: 180 256
+:matt/bricks/19: 180 384
+:matt/bricks/18: 148 368
+:matt/bricks/18: 148 336
+:matt/bricks/18: 148 304
+:matt/bricks/18: 148 272
+:matt/bricks/20: 140 256
+:matt/bricks/19: 140 384
+:amanda/steel/steel24x8.S: 0 400
+:amanda/steel/steel24x8.S: 632 400
+:matt/bricks/17: 336 200
+:matt/bricks/17: 412 200
+:matt/bricks/17: 452 200
+:matt/bricks/17: 492 200
+:matt/bricks/17: 392 144
+:matt/bricks/17: 468 144
+:matt/bricks/17: 508 144
+:matt/bricks/17: 548 144
+:matt/bricks/17: 448 88
+:matt/bricks/17: 504 32
+:raymanni/lab/block_5: 600 32
+:matt/bricks/17: 536 32
+:raymanni/toys/beam_14.S: 560 328
+:raymanni/toys/beam_14.S: 528 328
+:raymanni/toys/beam_14.S: 568 312
+:raymanni/toys/beam_14.S: 536 312
+:raymanni/toys/beam_14.S: 576 296
+:raymanni/toys/beam_14.S: 544 296
+:raymanni/toys/beam_14.S: 584 280
+:raymanni/toys/beam_14.S: 552 280
+:raymanni/toys/beam_14.S: 592 264
+:raymanni/toys/beam_14.S: 560 264
+:raymanni/toys/beam_14.S: 600 248
+:raymanni/toys/beam_14.S: 568 248
+:raymanni/toys/beam_14.S: 552 232
+:raymanni/toys/beam_14.S: 592 232
+:raymanni/toys/beam_14.S: 616 216
+:raymanni/toys/beam_14.S: 592 200
+:raymanni/toys/beam_14.S: 616 152
+:raymanni/toys/beam_14.S: 648 128 r
+:raymanni/toys/beam_14.S: 576 216
+:raymanni/lab/slope_1: 608 112
+:matt/bricks/17: 256 200 frr
+:matt/bricks/17: 180 200 frr
+:matt/bricks/17: 140 200 frr
+:matt/bricks/17: 100 200 frr
+:matt/bricks/17: 200 144 frr
+:matt/bricks/17: 124 144 frr
+:matt/bricks/17: 84 144 frr
+:matt/bricks/17: 44 144 frr
+:matt/bricks/17: 144 88 frr
+:matt/bricks/17: 88 32 frr
+:raymanni/lab/block_5: 24 32 frr
+:matt/bricks/17: 56 32 frr
+:raymanni/toys/beam_14.S: 64 328 frr
+:raymanni/toys/beam_14.S: 96 328 frr
+:raymanni/toys/beam_14.S: 56 312 frr
+:raymanni/toys/beam_14.S: 88 312 frr
+:raymanni/toys/beam_14.S: 48 296 frr
+:raymanni/toys/beam_14.S: 80 296 frr
+:raymanni/toys/beam_14.S: 40 280 frr
+:raymanni/toys/beam_14.S: 72 280 frr
+:raymanni/toys/beam_14.S: 32 264 frr
+:raymanni/toys/beam_14.S: 64 264 frr
+:raymanni/toys/beam_14.S: 24 248 frr
+:raymanni/toys/beam_14.S: 56 248 frr
+:raymanni/toys/beam_14.S: 72 232 frr
+:raymanni/toys/beam_14.S: 32 232 frr
+:raymanni/toys/beam_14.S: 8 216 frr
+:raymanni/toys/beam_14.S: 32 200 frr
+:raymanni/toys/beam_14.S: 8 152 frr
+:raymanni/toys/beam_14.S: 0 128 frrr
+:raymanni/toys/beam_14.S: 48 216 frr
+:raymanni/lab/slope_1: 16 112 frr
+:geoo/construction/rod_steel/straight_diagd32.S: 288 192
+:geoo/construction/rod_steel/straight_diagd32.S: 256 160
+:geoo/construction/rod_steel/straight_diagd32.S: 224 128
+:geoo/construction/rod_steel/straight_diagd32.S: 192 96
+:geoo/construction/rod_steel/straight_diagd32.S: 160 64
+:geoo/construction/rod_steel/straight_diagd32.S: 128 32
+:geoo/construction/rod_steel/straight_diagd32.S: 330 192 frr
+:proxima/tile/spheres/greysmall.S: 312 218
+:geoo/construction/rod_steel/straight_diagd32.S: 362 160 frr
+:geoo/construction/rod_steel/straight_diagd32.S: 394 128 frr
+:geoo/construction/rod_steel/straight_diagd32.S: 426 96 frr
+:geoo/construction/rod_steel/straight_diagd32.S: 458 64 frr
+:geoo/construction/rod_steel/straight_diagd32.S: 490 32 frr
+:geoo/construction/rod_steel/end_rect_du.S: 120 24
+:geoo/construction/rod_steel/end_rect_du.S: 521 24 frr

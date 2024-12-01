@@ -1,0 +1,114 @@
+$BUILT 2024-07-18 11:42:14
+$AUTHOR Hyperlodge
+$ENGLISH This is Athens
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 928
+#SIZE_Y 576
+#BACKGROUND_RED 44
+#BACKGROUND_GREEN 39
+#BACKGROUND_BLUE 40
+
+#SECONDS 60
+#INITIAL 300
+#SPAWN_INTERVAL 30
+
+#WALKER 5
+#RUNNER 5
+#CLIMBER 5
+#FLOATER 5
+#EXPLODER2 -1
+#BLOCKER 5
+#BUILDER -1
+#PLATFORMER 5
+#BASHER 5
+#MINER 5
+#DIGGER 5
+#JUMPER 5
+#BATTER -1
+#CUBER -1
+
+:geoo/abstract/hatch.H: 160 400
+:geoo/abstract/hatch.H: 736 400 r
+
+:raymanni/lab/goal.G: 400 2
+:raymanni/lab/goal.G: 400 48
+:raymanni/lab/goal.G: 464 48
+:raymanni/lab/goal.G: 464 2
+
+:geoo/construction/rod_steel/straight32.S: 480 112
+:geoo/construction/rod_steel/straight32.S: 416 112
+:geoo/construction/rod_steel/straight32.S: 416 66
+:geoo/construction/pillar_long: 384 112 f
+:geoo/construction/pillar_long: 352 160 f
+:geoo/construction/pillar_long: 320 208 f
+:geoo/construction/pillar_long: 288 256 f
+:geoo/construction/pillar_long: 256 304 f
+:geoo/construction/pillar_long: 224 352 f
+:geoo/construction/pillar_long: 192 400 f
+:geoo/construction/pillar_long: 160 448 f
+:geoo/construction/pillar_long: 448 112 f
+:geoo/construction/pillar_long: 512 112 f
+:geoo/construction/pillar_long: 416 208 f
+:geoo/construction/pillar_long: 480 208 f
+:geoo/construction/pillar_long: 320 336 fr
+:geoo/construction/pillar_long: 480 336 fr
+:geoo/construction/pillar_long: 32 448 fr
+:geoo/construction/pillar_long: 0 448 f
+:geoo/construction/pillar_long: 192 528 fr
+:geoo/construction/pillar_long: 320 528 fr
+:geoo/construction/pillar_long: 480 528 fr
+:geoo/construction/pillar_long: 544 160 rr
+:geoo/construction/pillar_long: 576 208 rr
+:geoo/construction/pillar_long: 608 256 rr
+:geoo/construction/pillar_long: 640 304 rr
+:geoo/construction/pillar_long: 672 352 rr
+:geoo/construction/pillar_long: 704 400 rr
+:geoo/construction/pillar_long: 736 448 rr
+:geoo/construction/pillar_long: 768 448 r
+:geoo/construction/pillar_long: 896 448 rr
+:geoo/construction/pillar_long: 608 528 fr
+:geoo/construction/pillar_long: 448 448 f
+:geoo/construction/pillar_long: 448 336 f
+:geoo/construction/pillar_long: 32 544 fr
+:geoo/construction/pillar_long: 768 544 r
+:geoo/construction/rod_steel/straight32.S: 192 560
+:geoo/construction/rod_steel/straight32.S: 224 560
+:geoo/construction/rod_steel/straight32.S: 256 560
+:geoo/construction/rod_steel/straight32.S: 288 560
+:geoo/construction/rod_steel/straight32.S: 320 560
+:geoo/construction/rod_steel/straight32.S: 352 560
+:geoo/construction/rod_steel/straight32.S: 384 560
+:geoo/construction/rod_steel/straight32.S: 416 560
+:geoo/construction/rod_steel/straight32.S: 480 560
+:geoo/construction/rod_steel/straight32.S: 512 560
+:geoo/construction/rod_steel/straight32.S: 544 560
+:geoo/construction/rod_steel/straight32.S: 576 560
+:geoo/construction/rod_steel/straight32.S: 608 560
+:geoo/construction/rod_steel/straight32.S: 640 560
+:geoo/construction/rod_steel/straight32.S: 672 560
+:geoo/construction/rod_steel/straight32.S: 704 560
+:geoo/construction/rod_steel/straight32.S: 736 432
+:geoo/construction/rod_steel/straight32.S: 160 432
+:geoo/construction/rod_steel/straight32.S: 192 352
+:geoo/construction/rod_steel/straight32.S: 224 304
+:geoo/construction/rod_steel/straight32.S: 256 256
+:geoo/construction/rod_steel/straight32.S: 288 208
+:geoo/construction/rod_steel/straight32.S: 320 160
+:geoo/construction/rod_steel/straight32.S: 352 112
+:geoo/construction/rod_steel/straight32.S: 704 352 frr
+:geoo/construction/rod_steel/straight32.S: 672 304 frr
+:geoo/construction/rod_steel/straight32.S: 640 256 frr
+:geoo/construction/rod_steel/straight32.S: 608 208 frr
+:geoo/construction/rod_steel/straight32.S: 576 160 frr
+:geoo/construction/rod_steel/straight32.S: 544 112 frr
+:geoo/construction/rod_steel/straight32.S: 448 240 frr
+:geoo/construction/rod_steel/straight32.S: 544 288 frr
+:geoo/construction/rod_steel/straight32.S: 352 288 frr
+:geoo/construction/rod_steel/straight32.S: 672 480 frr
+:geoo/construction/rod_steel/straight32.S: 288 384 frr
+:geoo/construction/rod_steel/straight32.S: 224 480 frr
+:geoo/construction/rod_steel/straight32.S: 608 384 frr
+:geoo/construction/rod_steel/straight32.S: 480 368 frr
+:geoo/construction/rod_steel/straight32.S: 416 368 frr
+:geoo/construction/rod_steel/straight32.S: 480 66

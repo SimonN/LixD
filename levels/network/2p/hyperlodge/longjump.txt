@@ -1,0 +1,151 @@
+$BUILT 2024-07-18 11:45:01
+$AUTHOR Hyperlodge
+$ENGLISH Long Jump
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1696
+#SIZE_Y 240
+#BACKGROUND_RED 15
+#BACKGROUND_GREEN 47
+#BACKGROUND_BLUE 95
+
+#SECONDS 65
+#INITIAL 150
+#SPAWN_INTERVAL 30
+
+#RUNNER -1
+#CLIMBER -1
+#FLOATER -1
+#EXPLODER2 -1
+#BLOCKER -1
+#PLATFORMER -1
+#JUMPER -1
+
+:geoo/abstract/hatch.H: 368 200
+:geoo/abstract/hatch.H: 1296 200 r
+
+:raymanni/lab/goal.G: 1552 48
+:raymanni/lab/goal.G: 48 64
+:raymanni/lab/goal.G: 1584 64
+:raymanni/lab/goal.G: 80 48
+:raymanni/lab/goal.G: 1648 96
+:raymanni/lab/goal.G: 16 80
+:raymanni/lab/goal.G: 1616 80
+:raymanni/lab/goal.G: -16 96
+
+:geoo/construction/sawblade_small.F: 672 136
+:geoo/construction/sawblade_small.F: 544 136
+:geoo/construction/sawblade_small.F: 992 136
+:geoo/construction/sawblade_small.F: 1120 136
+
+:geoo/construction/steam_up.T: 496 200
+:geoo/construction/steam_up.T: 736 200
+:geoo/construction/steam_up.T: 1184 200
+:geoo/construction/steam_up.T: 944 200
+:geoo/abstract/tbeam_left.T: 488 0
+:geoo/abstract/tbeam_left.T: 456 0
+:geoo/abstract/tbeam_left.T: 424 0
+:geoo/abstract/tbeam_left.T: 392 0
+:geoo/abstract/tbeam_left.T: 360 0
+:geoo/abstract/tbeam_left.T: 328 0
+:geoo/abstract/tbeam_left.T: 296 0
+:geoo/abstract/tbeam_left.T: 264 0
+:geoo/abstract/tbeam_left.T: 232 0
+:geoo/abstract/tbeam_left.T: 200 0
+:geoo/abstract/tbeam_left.T: 168 0
+:geoo/abstract/tbeam_left.T: 136 0
+:geoo/abstract/tbeam_left.T: 456 64
+:geoo/abstract/tbeam_left.T: 424 64
+:geoo/abstract/tbeam_left.T: 392 64
+:geoo/abstract/tbeam_left.T: 360 64
+:geoo/abstract/tbeam_left.T: 328 64
+:geoo/abstract/tbeam_left.T: 296 64
+:geoo/abstract/tbeam_left.T: 264 64
+:geoo/abstract/tbeam_left.T: 232 64
+:geoo/abstract/tbeam_left.T: 200 64
+:geoo/abstract/tbeam_left.T: 168 64
+:geoo/abstract/tbeam_right.T: 1208 64
+:geoo/abstract/tbeam_right.T: 1240 64
+:geoo/abstract/tbeam_right.T: 1272 64
+:geoo/abstract/tbeam_right.T: 1304 64
+:geoo/abstract/tbeam_right.T: 1336 64
+:geoo/abstract/tbeam_right.T: 1368 64
+:geoo/abstract/tbeam_right.T: 1400 64
+:geoo/abstract/tbeam_right.T: 1432 64
+:geoo/abstract/tbeam_right.T: 1464 64
+:geoo/abstract/tbeam_right.T: 1496 64
+:geoo/abstract/tbeam_right.T: 1208 0
+:geoo/abstract/tbeam_right.T: 1240 0
+:geoo/abstract/tbeam_right.T: 1272 0
+:geoo/abstract/tbeam_right.T: 1304 0
+:geoo/abstract/tbeam_right.T: 1336 0
+:geoo/abstract/tbeam_right.T: 1368 0
+:geoo/abstract/tbeam_right.T: 1400 0
+:geoo/abstract/tbeam_right.T: 1432 0
+:geoo/abstract/tbeam_right.T: 1464 0
+:geoo/abstract/tbeam_right.T: 1496 0
+:geoo/abstract/tbeam_right.T: 1176 0
+:geoo/abstract/tbeam_right.T: 1528 0
+:geoo/abstract/tbeam_right.T: 1560 0
+:geoo/abstract/tbeam_right.T: 1144 0
+:geoo/abstract/tbeam_left.T: 520 0
+:geoo/abstract/tbeam_left.T: 104 0
+
+:geoo/construction/stairs_rd_32.S: 304 208
+:geoo/construction/rod_steel/straight32.S: 368 232
+:geoo/construction/rod_steel/straight32.S: 400 232
+:geoo/construction/rod_steel/straight32.S: 432 232
+:geoo/construction/rod_steel/straight32.S: 464 232
+:geoo/construction/rod_steel/straight32.S: 496 232
+:geoo/construction/rod_steel/straight32.S: 528 232
+:geoo/construction/rod_steel/straight32.S: 560 232
+:geoo/construction/rod_steel/straight32.S: 592 232
+:geoo/construction/rod_steel/straight32.S: 624 232
+:geoo/construction/rod_steel/straight32.S: 656 232
+:geoo/construction/rod_steel/straight32.S: 688 232
+:geoo/construction/rod_steel/straight32.S: 720 232
+:geoo/construction/rod_steel/straight32.S: 752 232
+:geoo/construction/rod_steel/straight32.S: 784 232
+:proxima/tile/32.S: 544 200
+:proxima/tile/32.S: 608 200
+:proxima/tile/32.S: 672 200
+:geoo/construction/fence_32x32.S: 608 168
+:geoo/construction/fence_32x32.S: 608 136
+:geoo/construction/stairs_rd_32.S: 240 176
+:geoo/construction/stairs_rd_32.S: 176 144
+:geoo/construction/stairs_rd_32.S: 112 112
+:geoo/construction/rod_steel/straight32.S: 96 112
+:geoo/construction/stairs_rd_32.S: 1312 208 frr
+:geoo/construction/rod_steel/straight32.S: 1296 232 frr
+:geoo/construction/rod_steel/straight32.S: 1264 232 frr
+:geoo/construction/rod_steel/straight32.S: 1232 232 frr
+:geoo/construction/rod_steel/straight32.S: 1200 232 frr
+:geoo/construction/rod_steel/straight32.S: 1168 232 frr
+:geoo/construction/rod_steel/straight32.S: 1136 232 frr
+:geoo/construction/rod_steel/straight32.S: 1104 232 frr
+:geoo/construction/rod_steel/straight32.S: 1072 232 frr
+:geoo/construction/rod_steel/straight32.S: 1040 232 frr
+:geoo/construction/rod_steel/straight32.S: 1008 232 frr
+:geoo/construction/rod_steel/straight32.S: 976 232 frr
+:geoo/construction/rod_steel/straight32.S: 944 232 frr
+:geoo/construction/rod_steel/straight32.S: 912 232 frr
+:geoo/construction/rod_steel/straight32.S: 816 232 frr
+:proxima/tile/32.S: 1120 200 frr
+:proxima/tile/32.S: 1056 200 frr
+:proxima/tile/32.S: 992 200 frr
+:geoo/construction/fence_32x32.S: 1056 168 frr
+:geoo/construction/fence_32x32.S: 1056 136 frr
+:geoo/construction/stairs_rd_32.S: 1376 176 frr
+:geoo/construction/stairs_rd_32.S: 1440 144 frr
+:geoo/construction/stairs_rd_32.S: 1504 112 frr
+:geoo/construction/rod_steel/straight32.S: 1568 112 frr
+:geoo/construction/rod_steel/straight32.S: 64 128
+:geoo/construction/rod_steel/straight32.S: 1600 128
+:geoo/construction/rod_steel/straight32.S: 1632 144
+:geoo/construction/rod_steel/straight32.S: 32 144
+:geoo/construction/rod_steel/straight32.S: 0 160
+:geoo/construction/rod_steel/straight32.S: 1664 160
+:geoo/construction/rod_steel/straight32.S: 848 232
+:geoo/construction/rod_steel/straight32.S: 880 232 frr
+:geoo/construction/fence_32x32.S: 608 104
+:geoo/construction/fence_32x32.S: 1056 104

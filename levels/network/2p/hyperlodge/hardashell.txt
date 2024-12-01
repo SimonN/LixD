@@ -1,0 +1,714 @@
+$BUILT 2024-07-18 11:45:26
+$AUTHOR Hyperlodge
+$ENGLISH Hard as Hell
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1288
+#SIZE_Y 400
+#TORUS_X 1
+#TORUS_Y 1
+#BACKGROUND_RED 79
+#BACKGROUND_GREEN 15
+#BACKGROUND_BLUE 63
+
+#SECONDS 90
+#INITIAL 20
+#SPAWN_INTERVAL 1
+
+#WALKER 1
+#RUNNER 1
+#CLIMBER 1
+#FLOATER 1
+#EXPLODER2 10
+#BLOCKER -1
+#BUILDER -1
+#PLATFORMER 1
+#BASHER 1
+#MINER 1
+#DIGGER 1
+#JUMPER 1
+#BATTER -1
+#CUBER 1
+
+:matt/winter/Hatch.H: 92 58
+:matt/winter/Hatch.H: 1132 58 r
+
+:matt/bricks/Goal.G: 660 344
+:matt/bricks/Goal.G: 564 344
+
+:amanda/steel/steel_flange_left24x16.S: 56 96
+:amanda/steel/steel_flange_right24x16.S: 1256 96
+:amanda/steel/steel24x8.S: 8 112
+:amanda/steel/steel24x8.S: 32 112
+:amanda/steel/steel24x8.S: 56 112
+:amanda/steel/steel_flange_left24x16.S: 136 96
+:amanda/steel/steel_flange_right24x16.S: 88 96
+:amanda/steel/steel24x8.S: 88 112
+:amanda/steel/steel24x8.S: 112 112
+:amanda/steel/steel24x8.S: 136 112
+:amanda/steel/steel_flange_left24x16.S: 216 96
+:amanda/steel/steel_flange_right24x16.S: 168 96
+:amanda/steel/steel24x8.S: 168 112
+:amanda/steel/steel24x8.S: 192 112
+:amanda/steel/steel24x8.S: 216 112
+:amanda/steel/steel_flange_left24x16.S: 296 96
+:amanda/steel/steel_flange_right24x16.S: 248 96
+:amanda/steel/steel24x8.S: 248 112
+:amanda/steel/steel24x8.S: 272 112
+:amanda/steel/steel24x8.S: 296 112
+:amanda/steel/steel_flange_left24x16.S: 376 96
+:amanda/steel/steel_flange_right24x16.S: 328 96
+:amanda/steel/steel24x8.S: 328 112
+:amanda/steel/steel24x8.S: 352 112
+:amanda/steel/steel24x8.S: 376 112
+:amanda/steel/steel_flange_left24x16.S: 456 96
+:amanda/steel/steel_flange_right24x16.S: 408 96
+:amanda/steel/steel24x8.S: 408 112
+:amanda/steel/steel24x8.S: 432 112
+:amanda/steel/steel24x8.S: 456 112
+:amanda/steel/steel_flange_left24x16.S: 536 96
+:amanda/steel/steel_flange_right24x16.S: 488 96
+:amanda/steel/steel24x8.S: 488 112
+:amanda/steel/steel24x8.S: 512 112
+:amanda/steel/steel24x8.S: 536 112
+:amanda/steel/steel_flange_left24x16.S: 616 96 frr
+:amanda/steel/steel_flange_right24x16.S: 568 96
+:amanda/steel/steel24x8.S: 568 112
+:amanda/steel/steel24x8.S: 592 112
+:amanda/steel/steel24x8.S: 616 112
+:amanda/steel/steel_flange_left24x16.S: 50 136
+:amanda/steel/steel_flange_right24x16.S: 1262 136
+:amanda/steel/steel24x8.S: 2 152
+:amanda/steel/steel24x8.S: 26 152
+:amanda/steel/steel24x8.S: 50 152
+:amanda/steel/steel_flange_left24x16.S: 128 136
+:amanda/steel/steel_flange_right24x16.S: 80 136
+:amanda/steel/steel24x8.S: 80 152
+:amanda/steel/steel24x8.S: 104 152
+:amanda/steel/steel24x8.S: 128 152
+:amanda/steel/steel_flange_left24x16.S: 208 136
+:amanda/steel/steel_flange_right24x16.S: 160 136
+:amanda/steel/steel24x8.S: 160 152
+:amanda/steel/steel24x8.S: 184 152
+:amanda/steel/steel24x8.S: 208 152
+:amanda/steel/steel_flange_left24x16.S: 288 136
+:amanda/steel/steel_flange_right24x16.S: 240 136
+:amanda/steel/steel24x8.S: 240 152
+:amanda/steel/steel24x8.S: 264 152
+:amanda/steel/steel24x8.S: 288 152
+:amanda/steel/steel_flange_left24x16.S: 368 136
+:amanda/steel/steel_flange_right24x16.S: 320 136
+:amanda/steel/steel24x8.S: 320 152
+:amanda/steel/steel24x8.S: 344 152
+:amanda/steel/steel24x8.S: 368 152
+:amanda/steel/steel_flange_left24x16.S: 448 136
+:amanda/steel/steel_flange_right24x16.S: 400 136
+:amanda/steel/steel24x8.S: 400 152
+:amanda/steel/steel24x8.S: 424 152
+:amanda/steel/steel24x8.S: 448 152
+:amanda/steel/steel_flange_left24x16.S: 528 136
+:amanda/steel/steel_flange_right24x16.S: 480 136
+:amanda/steel/steel24x8.S: 480 152
+:amanda/steel/steel24x8.S: 504 152
+:amanda/steel/steel24x8.S: 528 152
+:amanda/steel/steel_flange_left24x16.S: 608 136 frr
+:amanda/steel/steel_flange_right24x16.S: 560 136
+:amanda/steel/steel24x8.S: 560 152
+:amanda/steel/steel24x8.S: 584 152
+:amanda/steel/steel24x8.S: 608 152
+:amanda/steel/steel_flange_left24x16.S: 56 176
+:amanda/steel/steel_flange_right24x16.S: 1256 176
+:amanda/steel/steel24x8.S: 8 192
+:amanda/steel/steel24x8.S: 32 192
+:amanda/steel/steel24x8.S: 56 192
+:amanda/steel/steel_flange_left24x16.S: 136 176
+:amanda/steel/steel_flange_right24x16.S: 88 176
+:amanda/steel/steel24x8.S: 88 192
+:amanda/steel/steel24x8.S: 112 192
+:amanda/steel/steel24x8.S: 136 192
+:amanda/steel/steel_flange_left24x16.S: 216 176
+:amanda/steel/steel_flange_right24x16.S: 168 176
+:amanda/steel/steel24x8.S: 168 192
+:amanda/steel/steel24x8.S: 192 192
+:amanda/steel/steel24x8.S: 216 192
+:amanda/steel/steel_flange_left24x16.S: 296 176
+:amanda/steel/steel_flange_right24x16.S: 248 176
+:amanda/steel/steel24x8.S: 248 192
+:amanda/steel/steel24x8.S: 272 192
+:amanda/steel/steel24x8.S: 296 192
+:amanda/steel/steel_flange_left24x16.S: 376 176
+:amanda/steel/steel_flange_right24x16.S: 328 176
+:amanda/steel/steel24x8.S: 328 192
+:amanda/steel/steel24x8.S: 352 192
+:amanda/steel/steel24x8.S: 376 192
+:amanda/steel/steel_flange_left24x16.S: 456 176
+:amanda/steel/steel_flange_right24x16.S: 408 176
+:amanda/steel/steel24x8.S: 408 192
+:amanda/steel/steel24x8.S: 432 192
+:amanda/steel/steel24x8.S: 456 192
+:amanda/steel/steel_flange_left24x16.S: 536 176
+:amanda/steel/steel_flange_right24x16.S: 488 176
+:amanda/steel/steel24x8.S: 488 192
+:amanda/steel/steel24x8.S: 512 192
+:amanda/steel/steel24x8.S: 536 192
+:amanda/steel/steel_flange_left24x16.S: 616 176 frr
+:amanda/steel/steel_flange_right24x16.S: 568 176
+:amanda/steel/steel24x8.S: 568 192
+:amanda/steel/steel24x8.S: 592 192
+:amanda/steel/steel24x8.S: 616 192
+:amanda/steel/steel_flange_left24x16.S: 50 216
+:amanda/steel/steel_flange_right24x16.S: 1262 216
+:amanda/steel/steel24x8.S: 2 232
+:amanda/steel/steel24x8.S: 26 232
+:amanda/steel/steel24x8.S: 50 232
+:amanda/steel/steel_flange_left24x16.S: 128 216
+:amanda/steel/steel_flange_right24x16.S: 80 216
+:amanda/steel/steel24x8.S: 80 232
+:amanda/steel/steel24x8.S: 104 232
+:amanda/steel/steel24x8.S: 128 232
+:amanda/steel/steel_flange_left24x16.S: 208 216
+:amanda/steel/steel_flange_right24x16.S: 160 216
+:amanda/steel/steel24x8.S: 160 232
+:amanda/steel/steel24x8.S: 184 232
+:amanda/steel/steel24x8.S: 208 232
+:amanda/steel/steel_flange_left24x16.S: 288 216
+:amanda/steel/steel_flange_right24x16.S: 240 216
+:amanda/steel/steel24x8.S: 240 232
+:amanda/steel/steel24x8.S: 264 232
+:amanda/steel/steel24x8.S: 288 232
+:amanda/steel/steel_flange_left24x16.S: 368 216
+:amanda/steel/steel_flange_right24x16.S: 320 216
+:amanda/steel/steel24x8.S: 320 232
+:amanda/steel/steel24x8.S: 344 232
+:amanda/steel/steel24x8.S: 368 232
+:amanda/steel/steel_flange_left24x16.S: 448 216
+:amanda/steel/steel_flange_right24x16.S: 400 216
+:amanda/steel/steel24x8.S: 400 232
+:amanda/steel/steel24x8.S: 424 232
+:amanda/steel/steel24x8.S: 448 232
+:amanda/steel/steel_flange_left24x16.S: 528 216
+:amanda/steel/steel_flange_right24x16.S: 480 216
+:amanda/steel/steel24x8.S: 480 232
+:amanda/steel/steel24x8.S: 504 232
+:amanda/steel/steel24x8.S: 528 232
+:amanda/steel/steel_flange_left24x16.S: 608 216 frr
+:amanda/steel/steel_flange_right24x16.S: 560 216
+:amanda/steel/steel24x8.S: 560 232
+:amanda/steel/steel24x8.S: 584 232
+:amanda/steel/steel24x8.S: 608 232
+:amanda/steel/steel_flange_left24x16.S: 56 256
+:amanda/steel/steel_flange_right24x16.S: 1256 256
+:amanda/steel/steel24x8.S: 8 272
+:amanda/steel/steel24x8.S: 32 272
+:amanda/steel/steel24x8.S: 56 272
+:amanda/steel/steel_flange_left24x16.S: 136 256
+:amanda/steel/steel_flange_right24x16.S: 88 256
+:amanda/steel/steel24x8.S: 88 272
+:amanda/steel/steel24x8.S: 112 272
+:amanda/steel/steel24x8.S: 136 272
+:amanda/steel/steel_flange_left24x16.S: 216 256
+:amanda/steel/steel_flange_right24x16.S: 168 256
+:amanda/steel/steel24x8.S: 168 272
+:amanda/steel/steel24x8.S: 192 272
+:amanda/steel/steel24x8.S: 216 272
+:amanda/steel/steel_flange_left24x16.S: 296 256
+:amanda/steel/steel_flange_right24x16.S: 248 256
+:amanda/steel/steel24x8.S: 248 272
+:amanda/steel/steel24x8.S: 272 272
+:amanda/steel/steel24x8.S: 296 272
+:amanda/steel/steel_flange_left24x16.S: 376 256
+:amanda/steel/steel_flange_right24x16.S: 328 256
+:amanda/steel/steel24x8.S: 328 272
+:amanda/steel/steel24x8.S: 352 272
+:amanda/steel/steel24x8.S: 376 272
+:amanda/steel/steel_flange_left24x16.S: 456 256
+:amanda/steel/steel_flange_right24x16.S: 408 256
+:amanda/steel/steel24x8.S: 408 272
+:amanda/steel/steel24x8.S: 432 272
+:amanda/steel/steel24x8.S: 456 272
+:amanda/steel/steel_flange_left24x16.S: 536 256
+:amanda/steel/steel_flange_right24x16.S: 488 256
+:amanda/steel/steel24x8.S: 488 272
+:amanda/steel/steel24x8.S: 512 272
+:amanda/steel/steel24x8.S: 536 272
+:amanda/steel/steel_flange_left24x16.S: 616 256 frr
+:amanda/steel/steel_flange_right24x16.S: 568 256
+:amanda/steel/steel24x8.S: 568 272
+:amanda/steel/steel24x8.S: 592 272
+:amanda/steel/steel24x8.S: 616 272
+:amanda/steel/steel_flange_left24x16.S: 50 296
+:amanda/steel/steel_flange_right24x16.S: 1262 296
+:amanda/steel/steel24x8.S: 2 312
+:amanda/steel/steel24x8.S: 26 312
+:amanda/steel/steel24x8.S: 50 312
+:amanda/steel/steel_flange_left24x16.S: 128 296
+:amanda/steel/steel_flange_right24x16.S: 80 296
+:amanda/steel/steel24x8.S: 80 312
+:amanda/steel/steel24x8.S: 104 312
+:amanda/steel/steel24x8.S: 128 312
+:amanda/steel/steel_flange_left24x16.S: 208 296
+:amanda/steel/steel_flange_right24x16.S: 160 296
+:amanda/steel/steel24x8.S: 160 312
+:amanda/steel/steel24x8.S: 184 312
+:amanda/steel/steel24x8.S: 208 312
+:amanda/steel/steel_flange_left24x16.S: 288 296
+:amanda/steel/steel_flange_right24x16.S: 240 296
+:amanda/steel/steel24x8.S: 240 312
+:amanda/steel/steel24x8.S: 264 312
+:amanda/steel/steel24x8.S: 288 312
+:amanda/steel/steel_flange_left24x16.S: 368 296
+:amanda/steel/steel_flange_right24x16.S: 320 296
+:amanda/steel/steel24x8.S: 320 312
+:amanda/steel/steel24x8.S: 344 312
+:amanda/steel/steel24x8.S: 368 312
+:amanda/steel/steel_flange_left24x16.S: 448 296
+:amanda/steel/steel_flange_right24x16.S: 400 296
+:amanda/steel/steel24x8.S: 400 312
+:amanda/steel/steel24x8.S: 424 312
+:amanda/steel/steel24x8.S: 448 312
+:amanda/steel/steel_flange_left24x16.S: 528 296
+:amanda/steel/steel_flange_right24x16.S: 480 296
+:amanda/steel/steel24x8.S: 480 312
+:amanda/steel/steel24x8.S: 504 312
+:amanda/steel/steel24x8.S: 528 312
+:amanda/steel/steel_flange_left24x16.S: 608 296 frr
+:amanda/steel/steel_flange_right24x16.S: 560 296
+:amanda/steel/steel24x8.S: 560 312
+:amanda/steel/steel24x8.S: 584 312
+:amanda/steel/steel24x8.S: 608 312
+:amanda/steel/steel_flange_left24x16.S: 56 336
+:amanda/steel/steel_flange_right24x16.S: 1256 336
+:amanda/steel/steel24x8.S: 8 352
+:amanda/steel/steel24x8.S: 32 352
+:amanda/steel/steel24x8.S: 56 352
+:amanda/steel/steel_flange_left24x16.S: 136 336
+:amanda/steel/steel_flange_right24x16.S: 88 336
+:amanda/steel/steel24x8.S: 88 352
+:amanda/steel/steel24x8.S: 112 352
+:amanda/steel/steel24x8.S: 136 352
+:amanda/steel/steel_flange_left24x16.S: 216 336
+:amanda/steel/steel_flange_right24x16.S: 168 336
+:amanda/steel/steel24x8.S: 168 352
+:amanda/steel/steel24x8.S: 192 352
+:amanda/steel/steel24x8.S: 216 352
+:amanda/steel/steel_flange_left24x16.S: 296 336
+:amanda/steel/steel_flange_right24x16.S: 248 336
+:amanda/steel/steel24x8.S: 248 352
+:amanda/steel/steel24x8.S: 272 352
+:amanda/steel/steel24x8.S: 296 352
+:amanda/steel/steel_flange_left24x16.S: 376 336
+:amanda/steel/steel_flange_right24x16.S: 328 336
+:amanda/steel/steel24x8.S: 328 352
+:amanda/steel/steel24x8.S: 352 352
+:amanda/steel/steel24x8.S: 376 352
+:amanda/steel/steel_flange_left24x16.S: 456 336
+:amanda/steel/steel_flange_right24x16.S: 408 336
+:amanda/steel/steel24x8.S: 408 352
+:amanda/steel/steel24x8.S: 432 352
+:amanda/steel/steel24x8.S: 456 352
+:amanda/steel/steel_flange_left24x16.S: 536 336
+:amanda/steel/steel_flange_right24x16.S: 488 336
+:amanda/steel/steel24x8.S: 488 352
+:amanda/steel/steel24x8.S: 512 352
+:amanda/steel/steel24x8.S: 536 352
+:amanda/steel/steel_flange_left24x16.S: 616 336 frr
+:amanda/steel/steel_flange_right24x16.S: 568 336
+:amanda/steel/steel24x8.S: 568 352
+:amanda/steel/steel24x8.S: 592 352
+:amanda/steel/steel24x8.S: 616 352
+:amanda/steel/steel_flange_left24x16.S: 50 376
+:amanda/steel/steel_flange_right24x16.S: 1262 376
+:amanda/steel/steel24x8.S: 2 392
+:amanda/steel/steel24x8.S: 26 392
+:amanda/steel/steel24x8.S: 50 392
+:amanda/steel/steel_flange_left24x16.S: 128 376
+:amanda/steel/steel_flange_right24x16.S: 80 376
+:amanda/steel/steel24x8.S: 80 392
+:amanda/steel/steel24x8.S: 104 392
+:amanda/steel/steel24x8.S: 128 392
+:amanda/steel/steel_flange_left24x16.S: 208 376
+:amanda/steel/steel_flange_right24x16.S: 160 376
+:amanda/steel/steel24x8.S: 160 392
+:amanda/steel/steel24x8.S: 184 392
+:amanda/steel/steel24x8.S: 208 392
+:amanda/steel/steel_flange_left24x16.S: 288 376
+:amanda/steel/steel_flange_right24x16.S: 240 376
+:amanda/steel/steel24x8.S: 240 392
+:amanda/steel/steel24x8.S: 264 392
+:amanda/steel/steel24x8.S: 288 392
+:amanda/steel/steel_flange_left24x16.S: 368 376
+:amanda/steel/steel_flange_right24x16.S: 320 376
+:amanda/steel/steel24x8.S: 320 392
+:amanda/steel/steel24x8.S: 344 392
+:amanda/steel/steel24x8.S: 368 392
+:amanda/steel/steel_flange_left24x16.S: 448 376
+:amanda/steel/steel_flange_right24x16.S: 400 376
+:amanda/steel/steel24x8.S: 400 392
+:amanda/steel/steel24x8.S: 424 392
+:amanda/steel/steel24x8.S: 448 392
+:amanda/steel/steel_flange_left24x16.S: 528 376
+:amanda/steel/steel_flange_right24x16.S: 480 376
+:amanda/steel/steel24x8.S: 480 392
+:amanda/steel/steel24x8.S: 504 392
+:amanda/steel/steel24x8.S: 528 392
+:amanda/steel/steel_flange_left24x16.S: 656 376
+:amanda/steel/steel_flange_right24x16.S: 560 376
+:amanda/steel/steel24x8.S: 560 392
+:amanda/steel/steel24x8.S: 584 392
+:amanda/steel/steel24x8.S: 608 392
+:amanda/steel/steel_flange_left24x16.S: 1208 96 frr
+:amanda/steel/steel_flange_right24x16.S: 8 96 frr
+:amanda/steel/steel24x8.S: 1256 112 frr
+:amanda/steel/steel24x8.S: 1232 112 frr
+:amanda/steel/steel24x8.S: 1208 112 frr
+:amanda/steel/steel_flange_left24x16.S: 1128 96 frr
+:amanda/steel/steel_flange_right24x16.S: 1176 96 frr
+:amanda/steel/steel24x8.S: 1176 112 frr
+:amanda/steel/steel24x8.S: 1152 112 frr
+:amanda/steel/steel24x8.S: 1128 112 frr
+:amanda/steel/steel_flange_left24x16.S: 1048 96 frr
+:amanda/steel/steel_flange_right24x16.S: 1096 96 frr
+:amanda/steel/steel24x8.S: 1096 112 frr
+:amanda/steel/steel24x8.S: 1072 112 frr
+:amanda/steel/steel24x8.S: 1048 112 frr
+:amanda/steel/steel_flange_left24x16.S: 968 96 frr
+:amanda/steel/steel_flange_right24x16.S: 1016 96 frr
+:amanda/steel/steel24x8.S: 1016 112 frr
+:amanda/steel/steel24x8.S: 992 112 frr
+:amanda/steel/steel24x8.S: 968 112 frr
+:amanda/steel/steel_flange_left24x16.S: 888 96 frr
+:amanda/steel/steel_flange_right24x16.S: 936 96 frr
+:amanda/steel/steel24x8.S: 936 112 frr
+:amanda/steel/steel24x8.S: 912 112 frr
+:amanda/steel/steel24x8.S: 888 112 frr
+:amanda/steel/steel_flange_left24x16.S: 808 96 frr
+:amanda/steel/steel_flange_right24x16.S: 856 96 frr
+:amanda/steel/steel24x8.S: 856 112 frr
+:amanda/steel/steel24x8.S: 832 112 frr
+:amanda/steel/steel24x8.S: 808 112 frr
+:amanda/steel/steel_flange_left24x16.S: 728 96 frr
+:amanda/steel/steel_flange_right24x16.S: 776 96 frr
+:amanda/steel/steel24x8.S: 776 112 frr
+:amanda/steel/steel24x8.S: 752 112 frr
+:amanda/steel/steel24x8.S: 728 112 frr
+:amanda/steel/steel_flange_left24x16.S: 648 96
+:amanda/steel/steel_flange_right24x16.S: 696 96 frr
+:amanda/steel/steel24x8.S: 696 112 frr
+:amanda/steel/steel24x8.S: 672 112 frr
+:amanda/steel/steel24x8.S: 648 112 frr
+:amanda/steel/steel_flange_left24x16.S: 1214 136 frr
+:amanda/steel/steel_flange_right24x16.S: 2 136 frr
+:amanda/steel/steel24x8.S: 1262 152 frr
+:amanda/steel/steel24x8.S: 1238 152 frr
+:amanda/steel/steel24x8.S: 1214 152 frr
+:amanda/steel/steel_flange_left24x16.S: 1136 136 frr
+:amanda/steel/steel_flange_right24x16.S: 1184 136 frr
+:amanda/steel/steel24x8.S: 1184 152 frr
+:amanda/steel/steel24x8.S: 1160 152 frr
+:amanda/steel/steel24x8.S: 1136 152 frr
+:amanda/steel/steel_flange_left24x16.S: 1056 136 frr
+:amanda/steel/steel_flange_right24x16.S: 1104 136 frr
+:amanda/steel/steel24x8.S: 1104 152 frr
+:amanda/steel/steel24x8.S: 1080 152 frr
+:amanda/steel/steel24x8.S: 1056 152 frr
+:amanda/steel/steel_flange_left24x16.S: 976 136 frr
+:amanda/steel/steel_flange_right24x16.S: 1024 136 frr
+:amanda/steel/steel24x8.S: 1024 152 frr
+:amanda/steel/steel24x8.S: 1000 152 frr
+:amanda/steel/steel24x8.S: 976 152 frr
+:amanda/steel/steel_flange_left24x16.S: 896 136 frr
+:amanda/steel/steel_flange_right24x16.S: 944 136 frr
+:amanda/steel/steel24x8.S: 944 152 frr
+:amanda/steel/steel24x8.S: 920 152 frr
+:amanda/steel/steel24x8.S: 896 152 frr
+:amanda/steel/steel_flange_left24x16.S: 816 136 frr
+:amanda/steel/steel_flange_right24x16.S: 864 136 frr
+:amanda/steel/steel24x8.S: 864 152 frr
+:amanda/steel/steel24x8.S: 840 152 frr
+:amanda/steel/steel24x8.S: 816 152 frr
+:amanda/steel/steel_flange_left24x16.S: 736 136 frr
+:amanda/steel/steel_flange_right24x16.S: 784 136 frr
+:amanda/steel/steel24x8.S: 784 152 frr
+:amanda/steel/steel24x8.S: 760 152 frr
+:amanda/steel/steel24x8.S: 736 152 frr
+:amanda/steel/steel_flange_left24x16.S: 656 136
+:amanda/steel/steel_flange_right24x16.S: 704 136 frr
+:amanda/steel/steel24x8.S: 704 152 frr
+:amanda/steel/steel24x8.S: 680 152 frr
+:amanda/steel/steel24x8.S: 656 152 frr
+:amanda/steel/steel_flange_left24x16.S: 1208 176 frr
+:amanda/steel/steel_flange_right24x16.S: 8 176 frr
+:amanda/steel/steel24x8.S: 1256 192 frr
+:amanda/steel/steel24x8.S: 1232 192 frr
+:amanda/steel/steel24x8.S: 1208 192 frr
+:amanda/steel/steel_flange_left24x16.S: 1128 176 frr
+:amanda/steel/steel_flange_right24x16.S: 1176 176 frr
+:amanda/steel/steel24x8.S: 1176 192 frr
+:amanda/steel/steel24x8.S: 1152 192 frr
+:amanda/steel/steel24x8.S: 1128 192 frr
+:amanda/steel/steel_flange_left24x16.S: 1048 176 frr
+:amanda/steel/steel_flange_right24x16.S: 1096 176 frr
+:amanda/steel/steel24x8.S: 1096 192 frr
+:amanda/steel/steel24x8.S: 1072 192 frr
+:amanda/steel/steel24x8.S: 1048 192 frr
+:amanda/steel/steel_flange_left24x16.S: 968 176 frr
+:amanda/steel/steel_flange_right24x16.S: 1016 176 frr
+:amanda/steel/steel24x8.S: 1016 192 frr
+:amanda/steel/steel24x8.S: 992 192 frr
+:amanda/steel/steel24x8.S: 968 192 frr
+:amanda/steel/steel_flange_left24x16.S: 888 176 frr
+:amanda/steel/steel_flange_right24x16.S: 936 176 frr
+:amanda/steel/steel24x8.S: 936 192 frr
+:amanda/steel/steel24x8.S: 912 192 frr
+:amanda/steel/steel24x8.S: 888 192 frr
+:amanda/steel/steel_flange_left24x16.S: 808 176 frr
+:amanda/steel/steel_flange_right24x16.S: 856 176 frr
+:amanda/steel/steel24x8.S: 856 192 frr
+:amanda/steel/steel24x8.S: 832 192 frr
+:amanda/steel/steel24x8.S: 808 192 frr
+:amanda/steel/steel_flange_left24x16.S: 728 176 frr
+:amanda/steel/steel_flange_right24x16.S: 776 176 frr
+:amanda/steel/steel24x8.S: 776 192 frr
+:amanda/steel/steel24x8.S: 752 192 frr
+:amanda/steel/steel24x8.S: 728 192 frr
+:amanda/steel/steel_flange_left24x16.S: 648 176
+:amanda/steel/steel_flange_right24x16.S: 696 176 frr
+:amanda/steel/steel24x8.S: 696 192 frr
+:amanda/steel/steel24x8.S: 672 192 frr
+:amanda/steel/steel24x8.S: 648 192 frr
+:amanda/steel/steel_flange_left24x16.S: 1214 216 frr
+:amanda/steel/steel_flange_right24x16.S: 2 216 frr
+:amanda/steel/steel24x8.S: 1262 232 frr
+:amanda/steel/steel24x8.S: 1238 232 frr
+:amanda/steel/steel24x8.S: 1214 232 frr
+:amanda/steel/steel_flange_left24x16.S: 1136 216 frr
+:amanda/steel/steel_flange_right24x16.S: 1184 216 frr
+:amanda/steel/steel24x8.S: 1184 232 frr
+:amanda/steel/steel24x8.S: 1160 232 frr
+:amanda/steel/steel24x8.S: 1136 232 frr
+:amanda/steel/steel_flange_left24x16.S: 1056 216 frr
+:amanda/steel/steel_flange_right24x16.S: 1104 216 frr
+:amanda/steel/steel24x8.S: 1104 232 frr
+:amanda/steel/steel24x8.S: 1080 232 frr
+:amanda/steel/steel24x8.S: 1056 232 frr
+:amanda/steel/steel_flange_left24x16.S: 976 216 frr
+:amanda/steel/steel_flange_right24x16.S: 1024 216 frr
+:amanda/steel/steel24x8.S: 1024 232 frr
+:amanda/steel/steel24x8.S: 1000 232 frr
+:amanda/steel/steel24x8.S: 976 232 frr
+:amanda/steel/steel_flange_left24x16.S: 896 216 frr
+:amanda/steel/steel_flange_right24x16.S: 944 216 frr
+:amanda/steel/steel24x8.S: 944 232 frr
+:amanda/steel/steel24x8.S: 920 232 frr
+:amanda/steel/steel24x8.S: 896 232 frr
+:amanda/steel/steel_flange_left24x16.S: 816 216 frr
+:amanda/steel/steel_flange_right24x16.S: 864 216 frr
+:amanda/steel/steel24x8.S: 864 232 frr
+:amanda/steel/steel24x8.S: 840 232 frr
+:amanda/steel/steel24x8.S: 816 232 frr
+:amanda/steel/steel_flange_left24x16.S: 736 216 frr
+:amanda/steel/steel_flange_right24x16.S: 784 216 frr
+:amanda/steel/steel24x8.S: 784 232 frr
+:amanda/steel/steel24x8.S: 760 232 frr
+:amanda/steel/steel24x8.S: 736 232 frr
+:amanda/steel/steel_flange_left24x16.S: 656 216
+:amanda/steel/steel_flange_right24x16.S: 704 216 frr
+:amanda/steel/steel24x8.S: 704 232 frr
+:amanda/steel/steel24x8.S: 680 232 frr
+:amanda/steel/steel24x8.S: 656 232 frr
+:amanda/steel/steel_flange_left24x16.S: 1208 256 frr
+:amanda/steel/steel_flange_right24x16.S: 8 256 frr
+:amanda/steel/steel24x8.S: 1256 272 frr
+:amanda/steel/steel24x8.S: 1232 272 frr
+:amanda/steel/steel24x8.S: 1208 272 frr
+:amanda/steel/steel_flange_left24x16.S: 1128 256 frr
+:amanda/steel/steel_flange_right24x16.S: 1176 256 frr
+:amanda/steel/steel24x8.S: 1176 272 frr
+:amanda/steel/steel24x8.S: 1152 272 frr
+:amanda/steel/steel24x8.S: 1128 272 frr
+:amanda/steel/steel_flange_left24x16.S: 1048 256 frr
+:amanda/steel/steel_flange_right24x16.S: 1096 256 frr
+:amanda/steel/steel24x8.S: 1096 272 frr
+:amanda/steel/steel24x8.S: 1072 272 frr
+:amanda/steel/steel24x8.S: 1048 272 frr
+:amanda/steel/steel_flange_left24x16.S: 968 256 frr
+:amanda/steel/steel_flange_right24x16.S: 1016 256 frr
+:amanda/steel/steel24x8.S: 1016 272 frr
+:amanda/steel/steel24x8.S: 992 272 frr
+:amanda/steel/steel24x8.S: 968 272 frr
+:amanda/steel/steel_flange_left24x16.S: 888 256 frr
+:amanda/steel/steel_flange_right24x16.S: 936 256 frr
+:amanda/steel/steel24x8.S: 936 272 frr
+:amanda/steel/steel24x8.S: 912 272 frr
+:amanda/steel/steel24x8.S: 888 272 frr
+:amanda/steel/steel_flange_left24x16.S: 808 256 frr
+:amanda/steel/steel_flange_right24x16.S: 856 256 frr
+:amanda/steel/steel24x8.S: 856 272 frr
+:amanda/steel/steel24x8.S: 832 272 frr
+:amanda/steel/steel24x8.S: 808 272 frr
+:amanda/steel/steel_flange_left24x16.S: 728 256 frr
+:amanda/steel/steel_flange_right24x16.S: 776 256 frr
+:amanda/steel/steel24x8.S: 776 272 frr
+:amanda/steel/steel24x8.S: 752 272 frr
+:amanda/steel/steel24x8.S: 728 272 frr
+:amanda/steel/steel_flange_left24x16.S: 648 256
+:amanda/steel/steel_flange_right24x16.S: 696 256 frr
+:amanda/steel/steel24x8.S: 696 272 frr
+:amanda/steel/steel24x8.S: 672 272 frr
+:amanda/steel/steel24x8.S: 648 272 frr
+:amanda/steel/steel_flange_left24x16.S: 1214 296 frr
+:amanda/steel/steel_flange_right24x16.S: 2 296 frr
+:amanda/steel/steel24x8.S: 1262 312 frr
+:amanda/steel/steel24x8.S: 1238 312 frr
+:amanda/steel/steel24x8.S: 1214 312 frr
+:amanda/steel/steel_flange_left24x16.S: 1136 296 frr
+:amanda/steel/steel_flange_right24x16.S: 1184 296 frr
+:amanda/steel/steel24x8.S: 1184 312 frr
+:amanda/steel/steel24x8.S: 1160 312 frr
+:amanda/steel/steel24x8.S: 1136 312 frr
+:amanda/steel/steel_flange_left24x16.S: 1056 296 frr
+:amanda/steel/steel_flange_right24x16.S: 1104 296 frr
+:amanda/steel/steel24x8.S: 1104 312 frr
+:amanda/steel/steel24x8.S: 1080 312 frr
+:amanda/steel/steel24x8.S: 1056 312 frr
+:amanda/steel/steel_flange_left24x16.S: 976 296 frr
+:amanda/steel/steel_flange_right24x16.S: 1024 296 frr
+:amanda/steel/steel24x8.S: 1024 312 frr
+:amanda/steel/steel24x8.S: 1000 312 frr
+:amanda/steel/steel24x8.S: 976 312 frr
+:amanda/steel/steel_flange_left24x16.S: 896 296 frr
+:amanda/steel/steel_flange_right24x16.S: 944 296 frr
+:amanda/steel/steel24x8.S: 944 312 frr
+:amanda/steel/steel24x8.S: 920 312 frr
+:amanda/steel/steel24x8.S: 896 312 frr
+:amanda/steel/steel_flange_left24x16.S: 816 296 frr
+:amanda/steel/steel_flange_right24x16.S: 864 296 frr
+:amanda/steel/steel24x8.S: 864 312 frr
+:amanda/steel/steel24x8.S: 840 312 frr
+:amanda/steel/steel24x8.S: 816 312 frr
+:amanda/steel/steel_flange_left24x16.S: 736 296 frr
+:amanda/steel/steel_flange_right24x16.S: 784 296 frr
+:amanda/steel/steel24x8.S: 784 312 frr
+:amanda/steel/steel24x8.S: 760 312 frr
+:amanda/steel/steel24x8.S: 736 312 frr
+:amanda/steel/steel_flange_left24x16.S: 656 296
+:amanda/steel/steel_flange_right24x16.S: 704 296 frr
+:amanda/steel/steel24x8.S: 704 312 frr
+:amanda/steel/steel24x8.S: 680 312 frr
+:amanda/steel/steel24x8.S: 656 312 frr
+:amanda/steel/steel_flange_left24x16.S: 1208 336 frr
+:amanda/steel/steel_flange_right24x16.S: 8 336 frr
+:amanda/steel/steel24x8.S: 1256 352 frr
+:amanda/steel/steel24x8.S: 1232 352 frr
+:amanda/steel/steel24x8.S: 1208 352 frr
+:amanda/steel/steel_flange_left24x16.S: 1128 336 frr
+:amanda/steel/steel_flange_right24x16.S: 1176 336 frr
+:amanda/steel/steel24x8.S: 1176 352 frr
+:amanda/steel/steel24x8.S: 1152 352 frr
+:amanda/steel/steel24x8.S: 1128 352 frr
+:amanda/steel/steel_flange_left24x16.S: 1048 336 frr
+:amanda/steel/steel_flange_right24x16.S: 1096 336 frr
+:amanda/steel/steel24x8.S: 1096 352 frr
+:amanda/steel/steel24x8.S: 1072 352 frr
+:amanda/steel/steel24x8.S: 1048 352 frr
+:amanda/steel/steel_flange_left24x16.S: 968 336 frr
+:amanda/steel/steel_flange_right24x16.S: 1016 336 frr
+:amanda/steel/steel24x8.S: 1016 352 frr
+:amanda/steel/steel24x8.S: 992 352 frr
+:amanda/steel/steel24x8.S: 968 352 frr
+:amanda/steel/steel_flange_left24x16.S: 888 336 frr
+:amanda/steel/steel_flange_right24x16.S: 936 336 frr
+:amanda/steel/steel24x8.S: 936 352 frr
+:amanda/steel/steel24x8.S: 912 352 frr
+:amanda/steel/steel24x8.S: 888 352 frr
+:amanda/steel/steel_flange_left24x16.S: 808 336 frr
+:amanda/steel/steel_flange_right24x16.S: 856 336 frr
+:amanda/steel/steel24x8.S: 856 352 frr
+:amanda/steel/steel24x8.S: 832 352 frr
+:amanda/steel/steel24x8.S: 808 352 frr
+:amanda/steel/steel_flange_left24x16.S: 728 336 frr
+:amanda/steel/steel_flange_right24x16.S: 776 336 frr
+:amanda/steel/steel24x8.S: 776 352 frr
+:amanda/steel/steel24x8.S: 752 352 frr
+:amanda/steel/steel24x8.S: 728 352 frr
+:amanda/steel/steel_flange_left24x16.S: 648 336
+:amanda/steel/steel_flange_right24x16.S: 696 336 frr
+:amanda/steel/steel24x8.S: 696 352 frr
+:amanda/steel/steel24x8.S: 672 352 frr
+:amanda/steel/steel24x8.S: 648 352 frr
+:amanda/steel/steel_flange_left24x16.S: 1214 376 frr
+:amanda/steel/steel_flange_right24x16.S: 2 376 frr
+:amanda/steel/steel24x8.S: 1262 392 frr
+:amanda/steel/steel24x8.S: 1238 392 frr
+:amanda/steel/steel24x8.S: 1214 392 frr
+:amanda/steel/steel_flange_left24x16.S: 1136 376 frr
+:amanda/steel/steel_flange_right24x16.S: 1184 376 frr
+:amanda/steel/steel24x8.S: 1184 392 frr
+:amanda/steel/steel24x8.S: 1160 392 frr
+:amanda/steel/steel24x8.S: 1136 392 frr
+:amanda/steel/steel_flange_left24x16.S: 1056 376 frr
+:amanda/steel/steel_flange_right24x16.S: 1104 376 frr
+:amanda/steel/steel24x8.S: 1104 392 frr
+:amanda/steel/steel24x8.S: 1080 392 frr
+:amanda/steel/steel24x8.S: 1056 392 frr
+:amanda/steel/steel_flange_left24x16.S: 976 376 frr
+:amanda/steel/steel_flange_right24x16.S: 1024 376 frr
+:amanda/steel/steel24x8.S: 1024 392 frr
+:amanda/steel/steel24x8.S: 1000 392 frr
+:amanda/steel/steel24x8.S: 976 392 frr
+:amanda/steel/steel_flange_left24x16.S: 896 376 frr
+:amanda/steel/steel_flange_right24x16.S: 944 376 frr
+:amanda/steel/steel24x8.S: 944 392 frr
+:amanda/steel/steel24x8.S: 920 392 frr
+:amanda/steel/steel24x8.S: 896 392 frr
+:amanda/steel/steel_flange_left24x16.S: 816 376 frr
+:amanda/steel/steel_flange_right24x16.S: 864 376 frr
+:amanda/steel/steel24x8.S: 864 392 frr
+:amanda/steel/steel24x8.S: 840 392 frr
+:amanda/steel/steel24x8.S: 816 392 frr
+:amanda/steel/steel_flange_left24x16.S: 736 376 frr
+:amanda/steel/steel_flange_right24x16.S: 784 376 frr
+:amanda/steel/steel24x8.S: 784 392 frr
+:amanda/steel/steel24x8.S: 760 392 frr
+:amanda/steel/steel24x8.S: 736 392 frr
+:amanda/steel/steel_flange_left24x16.S: 608 376 frr
+:amanda/steel/steel_flange_right24x16.S: 704 376 frr
+:amanda/steel/steel24x8.S: 704 392 frr
+:amanda/steel/steel24x8.S: 680 392 frr
+:amanda/steel/steel24x8.S: 656 392 frr
+:amanda/steel/steel8x16.S: 544 0
+:amanda/steel/steel8x16.S: 544 16
+:amanda/steel/steel8x16.S: 544 32
+:amanda/steel/steel8x16.S: 736 0
+:amanda/steel/steel8x16.S: 736 16
+:amanda/steel/steel8x16.S: 736 32
+:amanda/steel/steel24x8.S: 536 48
+:amanda/steel/steel24x8.S: 560 48
+:amanda/steel/steel24x8.S: 584 48
+:amanda/steel/steel24x8.S: 680 48
+:amanda/steel/steel24x8.S: 704 48
+:amanda/steel/steel24x8.S: 728 48
+:amanda/steel/steel24x8.S: 608 48
+:amanda/steel/steel24x8.S: 632 48
+:amanda/steel/steel24x8.S: 656 48
+:amanda/steel/steel24x8.S: 536 56
+:amanda/steel/steel24x8.S: 560 56
+:amanda/steel/steel24x8.S: 584 56
+:amanda/steel/steel24x8.S: 680 56
+:amanda/steel/steel24x8.S: 704 56
+:amanda/steel/steel24x8.S: 728 56
+:amanda/steel/steel24x8.S: 608 56
+:amanda/steel/steel24x8.S: 632 56
+:amanda/steel/steel24x8.S: 656 56
+:amanda/steel/steel8x16.S: 536 0
+:amanda/steel/steel8x16.S: 536 16
+:amanda/steel/steel8x16.S: 536 32
+:amanda/steel/steel8x16.S: 744 0
+:amanda/steel/steel8x16.S: 744 16
+:amanda/steel/steel8x16.S: 744 32
+:amanda/steel/steel24x8.S: 560 0
+:amanda/steel/steel24x8.S: 584 0
+:amanda/steel/steel24x8.S: 608 0
+:amanda/steel/steel24x8.S: 704 0 frr
+:amanda/steel/steel24x8.S: 680 0 frr
+:amanda/steel/steel24x8.S: 656 0 frr

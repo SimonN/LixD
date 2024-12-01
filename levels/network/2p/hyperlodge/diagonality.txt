@@ -1,0 +1,163 @@
+$BUILT 2024-08-06 14:56:28
+$AUTHOR Hyperlodge
+$ENGLISH Diagonality
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 896
+#SIZE_Y 400
+#TORUS_X 1
+#TORUS_Y 1
+#BACKGROUND_RED 71
+#BACKGROUND_GREEN 119
+#BACKGROUND_BLUE 64
+
+#SECONDS 100
+#INITIAL 200
+#SPAWN_INTERVAL 20
+
+#WALKER -1
+#RUNNER 10
+#CLIMBER 10
+#FLOATER 10
+#EXPLODER2 -1
+#BLOCKER -1
+#BUILDER -1
+#PLATFORMER -1
+#JUMPER 10
+#CUBER -1
+
+:geoo/abstract/hatch.H: 848 256 r
+:geoo/abstract/hatch.H: 16 256
+
+:geoo/abstract/goal.G: 384 80
+:geoo/abstract/goal.G: 480 80
+
+:geoo/construction/steam_up.T: 424 128
+:geoo/construction/steam_up.T: 440 128
+:geoo/construction/steam_up.T: 456 128
+:geoo/construction/steam_up.T: 880 296
+:geoo/construction/steam_up.T: 0 296
+:geoo/construction/steam_up.T: 56 136
+:raymanni/lab/launcher_right.T: 24 136
+:raymanni/lab/launcher_left.T: 840 136
+:geoo/construction/steam_up.T: 72 136
+:geoo/construction/steam_up.T: 88 136
+:geoo/construction/steam_up.T: 792 136
+:geoo/construction/steam_up.T: 808 136
+:geoo/construction/steam_up.T: 824 136
+:geoo/construction/steam_up.T: 72 40
+:geoo/construction/steam_up.T: 88 40
+:geoo/construction/steam_up.T: 104 40
+:geoo/construction/steam_up.T: 776 40
+:geoo/construction/steam_up.T: 792 40
+:geoo/construction/steam_up.T: 808 40
+:geoo/construction/steam_up.T: 120 40
+:geoo/construction/steam_up.T: 136 40
+:geoo/construction/steam_up.T: 744 40
+:geoo/construction/steam_up.T: 760 40
+:geoo/construction/steam_up.T: 704 40
+:geoo/construction/steam_up.T: 176 40
+:geoo/construction/steam_up.T: 176 8
+:geoo/construction/steam_up.T: 704 8
+:geoo/construction/steam_up.T: 16 8
+:geoo/construction/steam_up.T: 32 8
+:geoo/construction/steam_up.T: 848 8
+:geoo/construction/steam_up.T: 864 8
+
+:geoo/construction/stairs_ru_32.S: 16 296
+:geoo/construction/stairs_ru_32.S: 80 264
+:geoo/construction/stairs_ru_32.S: 144 240 frrr
+:geoo/construction/stairs_ru_32.S: 176 176 frrr
+:geoo/construction/stairs_ru_32.S: 312 48 frr
+:geoo/construction/stairs_ru_32.S: 248 16 frr
+:geoo/construction/stairs_ru_32.S: 224 320 rrr
+:geoo/construction/stairs_ru_32.S: 192 256 rrr
+:geoo/construction/stairs_ru_32.S: 800 296 frr
+:geoo/construction/stairs_ru_32.S: 736 264 frr
+:geoo/construction/stairs_ru_32.S: 720 240 rrr
+:geoo/construction/stairs_ru_32.S: 688 176 rrr
+:geoo/construction/stairs_ru_32.S: 504 48
+:geoo/construction/stairs_ru_32.S: 568 16
+:geoo/construction/stairs_ru_32.S: 640 320 frrr
+:geoo/construction/stairs_ru_32.S: 672 256 frrr
+:geoo/construction/stairs_ru_32.S: 480 216 frrr
+:geoo/construction/stairs_ru_32.S: 512 152 frrr
+:geoo/construction/stairs_ru_32.S: 384 216 rrr
+:geoo/construction/stairs_ru_32.S: 352 152 rrr
+:geoo/construction/stairs_ru_32.S: 544 88 frrr
+:geoo/construction/stairs_ru_32.S: 320 88 rrr
+:geoo/construction/stairs_ru_32.S: 280 288
+:geoo/construction/stairs_ru_32.S: 536 288 frr
+:geoo/construction/stairs_ru_32.S: 248 144 frr
+:geoo/construction/stairs_ru_32.S: 568 144
+:geoo/construction/stairs_ru_32.S: 184 112 frr
+:geoo/construction/stairs_ru_32.S: 632 112
+:simon/tapir/016: 720 56
+:simon/tapir/008v: 736 56
+:simon/tapir/016: 728 40
+:simon/tapir/016: 720 24
+:simon/tapir/016: 728 8
+:raymanni/gore/bone_2: 496 352 r
+:raymanni/gore/bone_1: 432 368 r
+:raymanni/gore/bone_2: 368 352 fr
+:raymanni/gore/bone_1: 400 368 r
+:raymanni/gore/bone_1: 464 368 r
+:simon/tapir/008v: 720 40
+:simon/tapir/008v: 736 24
+:simon/tapir/008v: 720 8
+:simon/tapir/016h: 872 136
+:simon/tapir/016: 8 136
+:simon/tapir/016h: 888 152
+:simon/tapir/016: 872 152
+:simon/tapir/016: 152 56
+:simon/tapir/008v: 168 56
+:simon/tapir/016: 160 40
+:simon/tapir/016: 152 24
+:simon/tapir/016: 160 8
+:simon/tapir/008v: 152 40
+:simon/tapir/008v: 168 24
+:simon/tapir/008v: 152 8
+:simon/tapir/016vd: 16 340
+:simon/tapir/016: 16 324
+:simon/tapir/016: 864 324
+:simon/tapir/016vc: 864 340
+:simon/tapir/016v: 16 40
+:simon/tapir/008h: 32 64
+:simon/tapir/016: 32 48
+:simon/tapir/008h: 32 40
+:simon/tapir/016: 56 40
+:simon/tapir/008v: 48 56
+:simon/tapir/008v: 48 40
+:simon/tapir/016: 56 56
+:simon/tapir/016v: 864 40
+:simon/tapir/008h: 848 64
+:simon/tapir/016: 848 48
+:simon/tapir/008h: 848 40
+:simon/tapir/016: 824 40
+:simon/tapir/008v: 840 56
+:simon/tapir/008v: 840 40
+:simon/tapir/016: 824 56
+:simon/tapir/016v: 880 328
+:simon/tapir/016v: 0 328
+:simon/tapir/016h: 880 312
+:simon/tapir/016h: 880 392
+:simon/tapir/032: 880 360
+:simon/tapir/032: 880 8
+:simon/tapir/032: 880 56
+:simon/tapir/016h: 880 40
+:simon/tapir/016v: 0 88
+:simon/tapir/016: 880 88
+:simon/tapir/016v: 880 104
+:simon/tapir/016: 0 120
+:simon/tapir/016h: 376 128
+:simon/tapir/016: 408 128
+:simon/tapir/016h: 392 144
+:simon/tapir/016: 376 144
+:simon/tapir/016h: 472 128
+:simon/tapir/016: 504 128
+:simon/tapir/016h: 488 144
+:simon/tapir/016: 472 144
+:simon/tapir/008v: 432 352
+:simon/tapir/008v: 456 352
+:simon/tapir/016: 440 344
+:simon/tapir/008h: 440 336

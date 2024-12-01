@@ -1,0 +1,631 @@
+$BUILT 2024-09-20 10:12:26
+$AUTHOR Hyperlodge
+$ENGLISH Indastria
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1472
+#SIZE_Y 1184
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 16
+#BACKGROUND_BLUE 48
+
+#SECONDS 180
+#INITIAL 211
+#SPAWN_INTERVAL 50
+
+#WALKER 20
+#RUNNER 20
+#CLIMBER 20
+#FLOATER 20
+#EXPLODER2 -1
+#BLOCKER -1
+#BUILDER -1
+#MINER -1
+#JUMPER 20
+#BATTER 20
+
+:raymanni/lab/hatch.H: 272 248
+:raymanni/lab/hatch.H: 1168 248 r
+
+:raymanni/toys/goal.G: 1392 800
+:raymanni/toys/goal.G: 16 800
+
+:geoo/construction/concrete/032a: 176 192
+:geoo/construction/concrete/032ha: 208 160
+:geoo/construction/concrete/032hb: 304 160
+:geoo/construction/concrete/032b: 368 192
+:geoo/construction/concrete/032v: 272 160
+:geoo/construction/concrete/032h: 208 192
+:geoo/construction/concrete/032h: 304 192
+:geoo/construction/concrete/032: 272 128
+:geoo/construction/concrete/032hc: 208 96
+:geoo/construction/concrete/032hc: 144 64
+:geoo/construction/concrete/064h: 176 224
+:geoo/construction/concrete/064h: 272 224
+:geoo/construction/concrete/032v: 272 224
+:geoo/construction/concrete/032h: 208 64
+:geoo/construction/concrete/032v: 272 64
+:geoo/construction/concrete/032h: 304 64
+:geoo/construction/concrete/032hd: 304 96
+:geoo/construction/concrete/032hd: 368 64
+:geoo/construction/concrete/064h: 176 288
+:geoo/construction/concrete/064h: 272 288
+:geoo/construction/concrete/032v: 272 288
+:geoo/construction/concrete/064h: 176 352
+:geoo/construction/concrete/064h: 272 352
+:geoo/construction/concrete/032v: 272 352
+$BEGIN_TILE_GROUP 0
+:geoo/construction/concrete/008v: 0 0
+:geoo/construction/concrete/008v: 32 0
+:geoo/construction/concrete/008v: 64 0
+:geoo/construction/concrete/008v: 100 0
+:geoo/construction/concrete/008v: 136 0
+:geoo/construction/concrete/008v: 168 0
+:geoo/construction/concrete/008v: 200 0
+$END_TILE_GROUP
+:Group-0: 184 264 d
+:Group-0: 184 392 d
+:geoo/construction/concrete/064h: 176 416
+:geoo/construction/concrete/064h: 272 416
+:geoo/construction/concrete/032v: 272 416
+:geoo/construction/concrete/064h: 176 480
+:geoo/construction/concrete/064h: 272 480
+:geoo/construction/concrete/032v: 272 480
+:Group-0: 184 520 d
+:geoo/construction/concrete/064h: 176 544
+:geoo/construction/concrete/064h: 272 544
+:geoo/construction/concrete/032v: 272 544
+:geoo/construction/concrete/064h: 176 608
+:geoo/construction/concrete/064h: 272 608
+:geoo/construction/concrete/032v: 272 608
+:Group-0: 184 648 d
+:geoo/construction/concrete/064h: 176 672
+:geoo/construction/concrete/064h: 272 672
+:geoo/construction/concrete/032v: 272 672
+:geoo/construction/concrete/064h: 176 736
+:geoo/construction/concrete/064h: 272 736
+:geoo/construction/concrete/032v: 272 736
+:Group-0: 184 776 d
+:geoo/construction/concrete/064h: 176 800
+:geoo/construction/concrete/064h: 272 800
+:geoo/construction/concrete/032v: 272 800
+:matt/goldmine/06: 82 950 rr
+:matt/goldmine/00: 688 928
+$BEGIN_TILE_GROUP 1
+:matt/goldmine/07: 0 35 f
+:matt/goldmine/02: 119 44
+:matt/goldmine/04: 135 0 r
+:matt/goldmine/02: 270 37
+:matt/goldmine/02: 491 71 frr
+:matt/goldmine/00: 423 39
+:matt/goldmine/04: 302 20 rrr
+:matt/goldmine/07: 549 39 rr
+:matt/goldmine/02: 469 35 r
+:matt/goldmine/07: 558 195 frr
+:matt/goldmine/04: 470 220 rrr
+:matt/goldmine/02: 437 195 rr
+:matt/goldmine/02: 216 161 f
+:matt/goldmine/00: 268 229 rr
+:matt/goldmine/04: 303 200 r
+:matt/goldmine/07: 16 205
+:matt/goldmine/02: 192 243 rrr
+:matt/goldmine/09: 0 187
+:matt/goldmine/09: 672 107 frr
+$END_TILE_GROUP
+:Group-1: 736 911
+:Group-1: -34 911 frr
+:geoo/construction/concrete/064h: 176 864
+:geoo/construction/concrete/064h: 272 864
+:geoo/construction/concrete/032v: 272 864
+:Group-0: 184 904 d
+:geoo/construction/pillar_top_shaded: 400 912 f
+:geoo/construction/pillar_top_shaded: 400 880 f
+:geoo/construction/pillar_top_shaded: 400 848 f
+:geoo/construction/pillar_top_shaded: 400 816 f
+:geoo/construction/pillar_top_shaded: 400 784 f
+:geoo/construction/pillar_top_shaded: 400 752 f
+:geoo/construction/pillar_top_shaded: 400 720 f
+:geoo/construction/pillar_top_shaded: 400 688 f
+:geoo/construction/pillar_top_shaded: 400 656 f
+:geoo/construction/pillar_top_shaded: 400 592 f
+:geoo/construction/pillar_top_shaded: 400 624 f
+:geoo/construction/pillar_top_shaded: 400 560 f
+:geoo/construction/pillar_top_shaded: 400 528 f
+:geoo/construction/pillar_top_shaded: 400 496 f
+:geoo/construction/pillar_top_shaded: 400 464 f
+:geoo/construction/pillar_top_shaded: 400 432 f
+:geoo/construction/pillar_top_shaded: 400 400 f
+:geoo/construction/pillar_top_shaded: 400 368 f
+:geoo/construction/pillar_top_shaded: 400 336 f
+:geoo/construction/pillar_top_shaded: 400 304 f
+:geoo/construction/pillar_top_shaded: 400 272 f
+:geoo/construction/pillar_top_shaded: 432 912 rr
+:geoo/construction/pillar_top_shaded: 432 880 rr
+:geoo/construction/pillar_top_shaded: 432 848 rr
+:geoo/construction/pillar_top_shaded: 432 816 rr
+:geoo/construction/pillar_top_shaded: 432 784 rr
+:geoo/construction/pillar_top_shaded: 432 752 rr
+:geoo/construction/pillar_top_shaded: 432 720 rr
+:geoo/construction/pillar_top_shaded: 432 688 rr
+:geoo/construction/pillar_top_shaded: 432 656 rr
+:geoo/construction/pillar_top_shaded: 432 592 rr
+:geoo/construction/pillar_top_shaded: 432 624 rr
+:geoo/construction/pillar_top_shaded: 432 560 rr
+:geoo/construction/pillar_top_shaded: 432 528 rr
+:geoo/construction/pillar_top_shaded: 432 496 rr
+:geoo/construction/pillar_top_shaded: 432 464 rr
+:geoo/construction/pillar_top_shaded: 432 432 rr
+:geoo/construction/pillar_top_shaded: 432 400 rr
+:geoo/construction/pillar_top_shaded: 432 368 rr
+:geoo/construction/pillar_top_shaded: 432 336 rr
+:geoo/construction/pillar_top_shaded: 432 304 rr
+:geoo/construction/pillar_top_shaded: 432 272 rr
+:geoo/construction/pillar_top_shaded: 464 912 f
+:geoo/construction/pillar_top_shaded: 464 880 f
+:geoo/construction/pillar_top_shaded: 464 848 f
+:geoo/construction/pillar_top_shaded: 464 816 f
+:geoo/construction/pillar_top_shaded: 464 784 f
+:geoo/construction/pillar_top_shaded: 464 752 f
+:geoo/construction/pillar_top_shaded: 464 720 f
+:geoo/construction/pillar_top_shaded: 464 688 f
+:geoo/construction/pillar_top_shaded: 464 656 f
+:geoo/construction/pillar_top_shaded: 464 592 f
+:geoo/construction/pillar_top_shaded: 464 624 f
+:geoo/construction/pillar_top_shaded: 464 560 f
+:geoo/construction/pillar_top_shaded: 464 528 f
+:geoo/construction/pillar_top_shaded: 464 496 f
+:geoo/construction/pillar_top_shaded: 464 464 f
+:geoo/construction/pillar_top_shaded: 464 432 f
+:geoo/construction/pillar_top_shaded: 464 400 f
+:geoo/construction/pillar_top_shaded: 464 368 f
+:geoo/construction/pillar_top_shaded: 464 336 f
+:geoo/construction/pillar_top_shaded: 464 304 f
+:geoo/construction/pillar_top_shaded: 464 272 f
+:geoo/construction/pillar_top_shaded: 496 912 rr
+:geoo/construction/pillar_top_shaded: 496 880 rr
+:geoo/construction/pillar_top_shaded: 496 848 rr
+:geoo/construction/pillar_top_shaded: 496 816 rr
+:geoo/construction/pillar_top_shaded: 496 784 rr
+:geoo/construction/pillar_top_shaded: 496 752 rr
+:geoo/construction/pillar_top_shaded: 496 720 rr
+:geoo/construction/pillar_top_shaded: 496 688 rr
+:geoo/construction/pillar_top_shaded: 496 656 rr
+:geoo/construction/pillar_top_shaded: 496 592 rr
+:geoo/construction/pillar_top_shaded: 496 624 rr
+:geoo/construction/pillar_top_shaded: 496 560 rr
+:geoo/construction/pillar_top_shaded: 496 528 rr
+:geoo/construction/pillar_top_shaded: 496 496 rr
+:geoo/construction/pillar_top_shaded: 496 464 rr
+:geoo/construction/pillar_top_shaded: 496 432 rr
+:geoo/construction/pillar_top_shaded: 496 400 rr
+:geoo/construction/pillar_top_shaded: 496 368 rr
+:geoo/construction/pillar_top_shaded: 496 336 rr
+:geoo/construction/pillar_top_shaded: 496 304 rr
+:geoo/construction/pillar_top_shaded: 496 272 rr
+:geoo/construction/pillar_top_shaded: 528 912 f
+:geoo/construction/pillar_top_shaded: 528 880 f
+:geoo/construction/pillar_top_shaded: 528 848 f
+:geoo/construction/pillar_top_shaded: 528 816 f
+:geoo/construction/pillar_top_shaded: 528 784 f
+:geoo/construction/pillar_top_shaded: 528 752 f
+:geoo/construction/pillar_top_shaded: 528 720 f
+:geoo/construction/pillar_top_shaded: 528 688 f
+:geoo/construction/pillar_top_shaded: 528 656 f
+:geoo/construction/pillar_top_shaded: 528 592 f
+:geoo/construction/pillar_top_shaded: 528 624 f
+:geoo/construction/pillar_top_shaded: 528 560 f
+:geoo/construction/pillar_top_shaded: 528 528 f
+:geoo/construction/pillar_top_shaded: 528 496 f
+:geoo/construction/pillar_top_shaded: 528 464 f
+:geoo/construction/pillar_top_shaded: 528 432 f
+:geoo/construction/pillar_top_shaded: 528 400 f
+:geoo/construction/pillar_top_shaded: 528 368 f
+:geoo/construction/pillar_top_shaded: 528 336 f
+:geoo/construction/pillar_top_shaded: 528 304 f
+:geoo/construction/pillar_top_shaded: 528 272 f
+:geoo/construction/pillar_top_shaded: 560 912 rr
+:geoo/construction/pillar_top_shaded: 560 880 rr
+:geoo/construction/pillar_top_shaded: 560 848 rr
+:geoo/construction/pillar_top_shaded: 560 816 rr
+:geoo/construction/pillar_top_shaded: 560 784 rr
+:geoo/construction/pillar_top_shaded: 560 752 rr
+:geoo/construction/pillar_top_shaded: 560 720 rr
+:geoo/construction/pillar_top_shaded: 560 688 rr
+:geoo/construction/pillar_top_shaded: 560 656 rr
+:geoo/construction/pillar_top_shaded: 560 592 rr
+:geoo/construction/pillar_top_shaded: 560 624 rr
+:geoo/construction/pillar_top_shaded: 560 560 rr
+:geoo/construction/pillar_top_shaded: 560 528 rr
+:geoo/construction/pillar_top_shaded: 560 496 rr
+:geoo/construction/pillar_top_shaded: 560 464 rr
+:geoo/construction/pillar_top_shaded: 560 432 rr
+:geoo/construction/pillar_top_shaded: 560 400 rr
+:geoo/construction/pillar_top_shaded: 560 368 rr
+:geoo/construction/pillar_top_shaded: 560 336 rr
+:geoo/construction/pillar_top_shaded: 560 304 rr
+:geoo/construction/pillar_top_shaded: 560 272 rr
+:geoo/construction/pillar_top_shaded: 592 912 f
+:geoo/construction/pillar_top_shaded: 592 880 f
+:geoo/construction/pillar_top_shaded: 592 848 f
+:geoo/construction/pillar_top_shaded: 592 816 f
+:geoo/construction/pillar_top_shaded: 592 784 f
+:geoo/construction/pillar_top_shaded: 592 752 f
+:geoo/construction/pillar_top_shaded: 592 720 f
+:geoo/construction/pillar_top_shaded: 592 688 f
+:geoo/construction/pillar_top_shaded: 592 656 f
+:geoo/construction/pillar_top_shaded: 592 592 f
+:geoo/construction/pillar_top_shaded: 592 624 f
+:geoo/construction/pillar_top_shaded: 592 560 f
+:geoo/construction/pillar_top_shaded: 592 528 f
+:geoo/construction/pillar_top_shaded: 592 496 f
+:geoo/construction/pillar_top_shaded: 592 464 f
+:geoo/construction/pillar_top_shaded: 592 432 f
+:geoo/construction/pillar_top_shaded: 592 400 f
+:geoo/construction/pillar_top_shaded: 592 368 f
+:geoo/construction/pillar_top_shaded: 592 336 f
+:geoo/construction/pillar_top_shaded: 592 304 f
+:geoo/construction/pillar_top_shaded: 592 272 f
+:geoo/construction/concrete/032a: 624 192
+:geoo/construction/concrete/032ha: 656 160
+:geoo/construction/concrete/032hb: 752 160
+:geoo/construction/concrete/032b: 816 192
+:geoo/construction/concrete/032v: 720 160
+:geoo/construction/concrete/032h: 656 192
+:geoo/construction/concrete/032h: 752 192
+:geoo/construction/concrete/032: 720 128
+:geoo/construction/concrete/032hc: 656 96
+:geoo/construction/concrete/032hc: 592 64
+:geoo/construction/concrete/064h: 624 224
+:geoo/construction/concrete/064h: 720 224
+:geoo/construction/concrete/032v: 720 224
+:geoo/construction/concrete/032h: 656 64
+:geoo/construction/concrete/032v: 720 64
+:geoo/construction/concrete/032h: 752 64
+:geoo/construction/concrete/032hd: 752 96
+:geoo/construction/concrete/032hd: 816 64
+:geoo/construction/concrete/064h: 624 288
+:geoo/construction/concrete/064h: 720 288
+:geoo/construction/concrete/032v: 720 288
+:geoo/construction/concrete/064h: 624 352
+:geoo/construction/concrete/064h: 720 352
+:geoo/construction/concrete/032v: 720 352
+:Group-0: 632 264 d
+:Group-0: 632 392 d
+:geoo/construction/concrete/064h: 624 416
+:geoo/construction/concrete/064h: 720 416
+:geoo/construction/concrete/032v: 720 416
+:geoo/construction/concrete/064h: 624 480
+:geoo/construction/concrete/064h: 720 480
+:geoo/construction/concrete/032v: 720 480
+:Group-0: 632 520 d
+:geoo/construction/concrete/064h: 624 544
+:geoo/construction/concrete/064h: 720 544
+:geoo/construction/concrete/032v: 720 544
+:geoo/construction/concrete/064h: 624 608
+:geoo/construction/concrete/064h: 720 608
+:geoo/construction/concrete/032v: 720 608
+:Group-0: 632 648 d
+:geoo/construction/concrete/064h: 624 672
+:geoo/construction/concrete/064h: 720 672
+:geoo/construction/concrete/032v: 720 672
+:geoo/construction/concrete/064h: 624 736
+:geoo/construction/concrete/064h: 720 736
+:geoo/construction/concrete/032v: 720 736
+:Group-0: 632 776 d
+:geoo/construction/concrete/064h: 624 800
+:geoo/construction/concrete/064h: 720 800
+:geoo/construction/concrete/032v: 720 800
+:matt/goldmine/06: 1304 952 rr
+:geoo/construction/pillar_long: 1248 928 r
+:geoo/construction/concrete/064h: 624 864
+:geoo/construction/concrete/064h: 720 864
+:geoo/construction/concrete/032v: 720 864
+:Group-0: 632 904 d
+:matt/goldmine/00: 736 928
+:geoo/construction/pillar_top_shaded: 848 912 f
+:geoo/construction/pillar_top_shaded: 848 880 f
+:geoo/construction/pillar_top_shaded: 848 848 f
+:geoo/construction/pillar_top_shaded: 848 816 f
+:geoo/construction/pillar_top_shaded: 848 784 f
+:geoo/construction/pillar_top_shaded: 848 752 f
+:geoo/construction/pillar_top_shaded: 848 720 f
+:geoo/construction/pillar_top_shaded: 848 688 f
+:geoo/construction/pillar_top_shaded: 848 656 f
+:geoo/construction/pillar_top_shaded: 848 592 f
+:geoo/construction/pillar_top_shaded: 848 624 f
+:geoo/construction/pillar_top_shaded: 848 560 f
+:geoo/construction/pillar_top_shaded: 848 528 f
+:geoo/construction/pillar_top_shaded: 848 496 f
+:geoo/construction/pillar_top_shaded: 848 464 f
+:geoo/construction/pillar_top_shaded: 848 432 f
+:geoo/construction/pillar_top_shaded: 848 400 f
+:geoo/construction/pillar_top_shaded: 848 368 f
+:geoo/construction/pillar_top_shaded: 848 336 f
+:geoo/construction/pillar_top_shaded: 848 304 f
+:geoo/construction/pillar_top_shaded: 848 272 f
+:geoo/construction/pillar_top_shaded: 880 912 rr
+:geoo/construction/pillar_top_shaded: 880 880 rr
+:geoo/construction/pillar_top_shaded: 880 848 rr
+:geoo/construction/pillar_top_shaded: 880 816 rr
+:geoo/construction/pillar_top_shaded: 880 784 rr
+:geoo/construction/pillar_top_shaded: 880 752 rr
+:geoo/construction/pillar_top_shaded: 880 720 rr
+:geoo/construction/pillar_top_shaded: 880 688 rr
+:geoo/construction/pillar_top_shaded: 880 656 rr
+:geoo/construction/pillar_top_shaded: 880 592 rr
+:geoo/construction/pillar_top_shaded: 880 624 rr
+:geoo/construction/pillar_top_shaded: 880 560 rr
+:geoo/construction/pillar_top_shaded: 880 528 rr
+:geoo/construction/pillar_top_shaded: 880 496 rr
+:geoo/construction/pillar_top_shaded: 880 464 rr
+:geoo/construction/pillar_top_shaded: 880 432 rr
+:geoo/construction/pillar_top_shaded: 880 400 rr
+:geoo/construction/pillar_top_shaded: 880 368 rr
+:geoo/construction/pillar_top_shaded: 880 336 rr
+:geoo/construction/pillar_top_shaded: 880 304 rr
+:geoo/construction/pillar_top_shaded: 880 272 rr
+:geoo/construction/pillar_top_shaded: 912 912 f
+:geoo/construction/pillar_top_shaded: 912 880 f
+:geoo/construction/pillar_top_shaded: 912 848 f
+:geoo/construction/pillar_top_shaded: 912 816 f
+:geoo/construction/pillar_top_shaded: 912 784 f
+:geoo/construction/pillar_top_shaded: 912 752 f
+:geoo/construction/pillar_top_shaded: 912 720 f
+:geoo/construction/pillar_top_shaded: 912 688 f
+:geoo/construction/pillar_top_shaded: 912 656 f
+:geoo/construction/pillar_top_shaded: 912 592 f
+:geoo/construction/pillar_top_shaded: 912 624 f
+:geoo/construction/pillar_top_shaded: 912 560 f
+:geoo/construction/pillar_top_shaded: 912 528 f
+:geoo/construction/pillar_top_shaded: 912 496 f
+:geoo/construction/pillar_top_shaded: 912 464 f
+:geoo/construction/pillar_top_shaded: 912 432 f
+:geoo/construction/pillar_top_shaded: 912 400 f
+:geoo/construction/pillar_top_shaded: 912 368 f
+:geoo/construction/pillar_top_shaded: 912 336 f
+:geoo/construction/pillar_top_shaded: 912 304 f
+:geoo/construction/pillar_top_shaded: 912 272 f
+:geoo/construction/pillar_top_shaded: 944 912 rr
+:geoo/construction/pillar_top_shaded: 944 880 rr
+:geoo/construction/pillar_top_shaded: 944 848 rr
+:geoo/construction/pillar_top_shaded: 944 816 rr
+:geoo/construction/pillar_top_shaded: 944 784 rr
+:geoo/construction/pillar_top_shaded: 944 752 rr
+:geoo/construction/pillar_top_shaded: 944 720 rr
+:geoo/construction/pillar_top_shaded: 944 688 rr
+:geoo/construction/pillar_top_shaded: 944 656 rr
+:geoo/construction/pillar_top_shaded: 944 592 rr
+:geoo/construction/pillar_top_shaded: 944 624 rr
+:geoo/construction/pillar_top_shaded: 944 560 rr
+:geoo/construction/pillar_top_shaded: 944 528 rr
+:geoo/construction/pillar_top_shaded: 944 496 rr
+:geoo/construction/pillar_top_shaded: 944 464 rr
+:geoo/construction/pillar_top_shaded: 944 432 rr
+:geoo/construction/pillar_top_shaded: 944 400 rr
+:geoo/construction/pillar_top_shaded: 944 368 rr
+:geoo/construction/pillar_top_shaded: 944 336 rr
+:geoo/construction/pillar_top_shaded: 944 304 rr
+:geoo/construction/pillar_top_shaded: 944 272 rr
+:geoo/construction/pillar_top_shaded: 976 912 f
+:geoo/construction/pillar_top_shaded: 976 880 f
+:geoo/construction/pillar_top_shaded: 976 848 f
+:geoo/construction/pillar_top_shaded: 976 816 f
+:geoo/construction/pillar_top_shaded: 976 784 f
+:geoo/construction/pillar_top_shaded: 976 752 f
+:geoo/construction/pillar_top_shaded: 976 720 f
+:geoo/construction/pillar_top_shaded: 976 688 f
+:geoo/construction/pillar_top_shaded: 976 656 f
+:geoo/construction/pillar_top_shaded: 976 592 f
+:geoo/construction/pillar_top_shaded: 976 624 f
+:geoo/construction/pillar_top_shaded: 976 560 f
+:geoo/construction/pillar_top_shaded: 976 528 f
+:geoo/construction/pillar_top_shaded: 976 496 f
+:geoo/construction/pillar_top_shaded: 976 464 f
+:geoo/construction/pillar_top_shaded: 976 432 f
+:geoo/construction/pillar_top_shaded: 976 400 f
+:geoo/construction/pillar_top_shaded: 976 368 f
+:geoo/construction/pillar_top_shaded: 976 336 f
+:geoo/construction/pillar_top_shaded: 976 304 f
+:geoo/construction/pillar_top_shaded: 976 272 f
+:geoo/construction/pillar_top_shaded: 1008 912 rr
+:geoo/construction/pillar_top_shaded: 1008 880 rr
+:geoo/construction/pillar_top_shaded: 1008 848 rr
+:geoo/construction/pillar_top_shaded: 1008 816 rr
+:geoo/construction/pillar_top_shaded: 1008 784 rr
+:geoo/construction/pillar_top_shaded: 1008 752 rr
+:geoo/construction/pillar_top_shaded: 1008 720 rr
+:geoo/construction/pillar_top_shaded: 1008 688 rr
+:geoo/construction/pillar_top_shaded: 1008 656 rr
+:geoo/construction/pillar_top_shaded: 1008 592 rr
+:geoo/construction/pillar_top_shaded: 1008 624 rr
+:geoo/construction/pillar_top_shaded: 1008 560 rr
+:geoo/construction/pillar_top_shaded: 1008 528 rr
+:geoo/construction/pillar_top_shaded: 1008 496 rr
+:geoo/construction/pillar_top_shaded: 1008 464 rr
+:geoo/construction/pillar_top_shaded: 1008 432 rr
+:geoo/construction/pillar_top_shaded: 1008 400 rr
+:geoo/construction/pillar_top_shaded: 1008 368 rr
+:geoo/construction/pillar_top_shaded: 1008 336 rr
+:geoo/construction/pillar_top_shaded: 1008 304 rr
+:geoo/construction/pillar_top_shaded: 1008 272 rr
+:geoo/construction/pillar_top_shaded: 1040 912 f
+:geoo/construction/pillar_top_shaded: 1040 880 f
+:geoo/construction/pillar_top_shaded: 1040 848 f
+:geoo/construction/pillar_top_shaded: 1040 816 f
+:geoo/construction/pillar_top_shaded: 1040 784 f
+:geoo/construction/pillar_top_shaded: 1040 752 f
+:geoo/construction/pillar_top_shaded: 1040 720 f
+:geoo/construction/pillar_top_shaded: 1040 688 f
+:geoo/construction/pillar_top_shaded: 1040 656 f
+:geoo/construction/pillar_top_shaded: 1040 592 f
+:geoo/construction/pillar_top_shaded: 1040 624 f
+:geoo/construction/pillar_top_shaded: 1040 560 f
+:geoo/construction/pillar_top_shaded: 1040 528 f
+:geoo/construction/pillar_top_shaded: 1040 496 f
+:geoo/construction/pillar_top_shaded: 1040 464 f
+:geoo/construction/pillar_top_shaded: 1040 432 f
+:geoo/construction/pillar_top_shaded: 1040 400 f
+:geoo/construction/pillar_top_shaded: 1040 368 f
+:geoo/construction/pillar_top_shaded: 1040 336 f
+:geoo/construction/pillar_top_shaded: 1040 304 f
+:geoo/construction/pillar_top_shaded: 1040 272 f
+:geoo/construction/concrete/032a: 1072 192
+:geoo/construction/concrete/032ha: 1104 160
+:geoo/construction/concrete/032hb: 1200 160
+:geoo/construction/concrete/032b: 1264 192
+:geoo/construction/concrete/032v: 1168 160
+:geoo/construction/concrete/032h: 1104 192
+:geoo/construction/concrete/032h: 1200 192
+:geoo/construction/concrete/032: 1168 128
+:geoo/construction/concrete/032hc: 1104 96
+:geoo/construction/concrete/032hc: 1040 64
+:geoo/construction/concrete/064h: 1072 224
+:geoo/construction/concrete/064h: 1168 224
+:geoo/construction/concrete/032v: 1168 224
+:geoo/construction/concrete/032h: 1104 64
+:geoo/construction/concrete/032v: 1168 64
+:geoo/construction/concrete/032h: 1200 64
+:geoo/construction/concrete/032hd: 1200 96
+:geoo/construction/concrete/032hd: 1264 64
+:geoo/construction/concrete/064h: 1072 288
+:geoo/construction/concrete/064h: 1168 288
+:geoo/construction/concrete/032v: 1168 288
+:geoo/construction/concrete/064h: 1072 352
+:geoo/construction/concrete/064h: 1168 352
+:geoo/construction/concrete/032v: 1168 352
+:Group-0: 1080 264 d
+:Group-0: 1080 392 d
+:geoo/construction/concrete/064h: 1072 416
+:geoo/construction/concrete/064h: 1168 416
+:geoo/construction/concrete/032v: 1168 416
+:geoo/construction/concrete/064h: 1072 480
+:geoo/construction/concrete/064h: 1168 480
+:geoo/construction/concrete/032v: 1168 480
+:Group-0: 1080 520 d
+:geoo/construction/concrete/064h: 1072 544
+:geoo/construction/concrete/064h: 1168 544
+:geoo/construction/concrete/032v: 1168 544
+:geoo/construction/concrete/064h: 1072 608
+:geoo/construction/concrete/064h: 1168 608
+:geoo/construction/concrete/032v: 1168 608
+:Group-0: 1080 648 d
+:geoo/construction/concrete/064h: 1072 672
+:geoo/construction/concrete/064h: 1168 672
+:geoo/construction/concrete/032v: 1168 672
+:geoo/construction/concrete/064h: 1072 736
+:geoo/construction/concrete/064h: 1168 736
+:geoo/construction/concrete/032v: 1168 736
+:Group-0: 1080 776 d
+:geoo/construction/concrete/064h: 1072 800
+:geoo/construction/concrete/064h: 1168 800
+:geoo/construction/concrete/032v: 1168 800
+:geoo/construction/concrete/064h: 1072 864
+:geoo/construction/concrete/064h: 1168 864
+:geoo/construction/concrete/032v: 1168 864
+:Group-0: 1080 904 d
+$BEGIN_TILE_GROUP 2
+:geoo/construction/pillar_long: 256 0 r
+:geoo/construction/pillar_long: 384 0 r
+:geoo/construction/pillar_long: 0 0 r
+:geoo/construction/pillar_long: 128 0 r
+$END_TILE_GROUP
+:Group-2: -32 928
+:geoo/construction/platform.S: 176 928
+:geoo/construction/platform.S: 208 928
+:geoo/construction/platform.S: 240 928
+:geoo/construction/platform.S: 272 928
+:geoo/construction/platform.S: 304 928
+:geoo/construction/platform.S: 336 928
+:geoo/construction/platform.S: 368 928
+:geoo/construction/platform.S: 400 928
+:geoo/construction/platform.S: 432 928
+:Group-2: 480 928
+:geoo/construction/platform.S: 464 928
+:geoo/construction/platform.S: 496 928
+:geoo/construction/platform.S: 528 928
+:geoo/construction/platform.S: 560 928
+:geoo/construction/platform.S: 592 928
+:geoo/construction/platform.S: 848 928
+:geoo/construction/platform.S: 880 928
+:geoo/construction/platform.S: 912 928
+:geoo/construction/platform.S: 944 928
+:geoo/construction/pillar_long: 992 928 r
+:geoo/construction/platform.S: 976 928
+:geoo/construction/platform.S: 1008 928
+:geoo/construction/platform.S: 1040 928
+:geoo/construction/platform.S: 1072 928
+:geoo/construction/pillar_long: 1120 928 r
+:geoo/construction/platform.S: 1104 928
+:geoo/construction/platform.S: 1136 928
+:geoo/construction/platform.S: 1168 928
+:geoo/construction/platform.S: 1200 928
+:geoo/construction/platform.S: 1264 928
+:geoo/construction/platform.S: 1264 928
+:geoo/construction/platform.S: 1295 865 r
+:geoo/construction/platform.S: 1295 897 r
+:geoo/construction/platform.S: 1295 801 r
+:geoo/construction/platform.S: 1295 833 r
+:geoo/construction/platform.S: 1295 737 r
+:geoo/construction/platform.S: 1295 769 r
+:geoo/construction/platform.S: 1295 673 r
+:geoo/construction/platform.S: 1295 705 r
+:geoo/construction/platform.S: 1295 609 r
+:geoo/construction/platform.S: 1295 641 r
+:geoo/construction/platform.S: 1295 545 r
+:geoo/construction/platform.S: 1295 577 r
+:geoo/construction/platform.S: 1295 481 r
+:geoo/construction/platform.S: 1295 513 r
+:geoo/construction/platform.S: 1295 417 r
+:geoo/construction/platform.S: 1295 449 r
+:geoo/construction/platform.S: 1295 353 r
+:geoo/construction/platform.S: 1295 385 r
+:geoo/construction/platform.S: 1295 289 r
+:geoo/construction/platform.S: 1295 321 r
+:geoo/construction/platform.S: 1295 225 r
+:geoo/construction/platform.S: 1295 257 r
+:geoo/construction/platform.S: 175 865 r
+:geoo/construction/platform.S: 175 897 r
+:geoo/construction/platform.S: 175 801 r
+:geoo/construction/platform.S: 175 833 r
+:geoo/construction/platform.S: 175 737 r
+:geoo/construction/platform.S: 175 769 r
+:geoo/construction/platform.S: 175 673 r
+:geoo/construction/platform.S: 175 705 r
+:geoo/construction/platform.S: 175 609 r
+:geoo/construction/platform.S: 175 641 r
+:geoo/construction/platform.S: 175 545 r
+:geoo/construction/platform.S: 175 577 r
+:geoo/construction/platform.S: 175 481 r
+:geoo/construction/platform.S: 175 513 r
+:geoo/construction/platform.S: 175 417 r
+:geoo/construction/platform.S: 175 449 r
+:geoo/construction/platform.S: 175 353 r
+:geoo/construction/platform.S: 175 385 r
+:geoo/construction/platform.S: 175 289 r
+:geoo/construction/platform.S: 175 321 r
+:geoo/construction/platform.S: 175 225 r
+:geoo/construction/platform.S: 175 257 r
+:geoo/construction/pillar_long: 1344 928 r
+:geoo/construction/platform.S: 624 928
+:geoo/construction/platform.S: 752 928
+:geoo/construction/platform.S: 816 928
+:geoo/construction/platform.S: 688 928
+:geoo/construction/platform.S: 720 928
+:geoo/construction/concrete/podium_32: 1392 896
+:geoo/construction/concrete/podium_32: 16 896
+:geoo/construction/concrete/032: 32 864
+:geoo/construction/concrete/032: 1408 864
+:geoo/construction/platform.S: 623 929 r
+:geoo/construction/platform.S: 623 961 r
+:geoo/construction/platform.S: 623 993 r
+:geoo/construction/platform.S: 623 1025 r
+:geoo/construction/platform.S: 623 1057 r
+:geoo/construction/platform.S: 623 1089 r
+:geoo/construction/platform.S: 847 929 r
+:geoo/construction/platform.S: 847 961 r
+:geoo/construction/platform.S: 847 993 r
+:geoo/construction/platform.S: 847 1025 r
+:geoo/construction/platform.S: 847 1057 r
+:geoo/construction/platform.S: 847 1089 r
+:matt/goldmine/00: 688 1136
+:geoo/construction/platform.S: 1232 928

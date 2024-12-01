@@ -1,0 +1,243 @@
+$BUILT 2024-07-18 12:59:33
+$AUTHOR Hyperlodge
+$ENGLISH Cristiano Garros
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1056
+#SIZE_Y 642
+#BACKGROUND_RED 92
+#BACKGROUND_GREEN 40
+#BACKGROUND_BLUE 16
+
+#SECONDS 40
+#INITIAL 40
+#SPAWN_INTERVAL 80
+
+#WALKER 15
+#RUNNER 15
+#CLIMBER 15
+#FLOATER 15
+#EXPLODER2 99
+#BLOCKER 99
+#BUILDER 99
+#PLATFORMER 15
+#BASHER 15
+#MINER 99
+#DIGGER 15
+#JUMPER 15
+#BATTER 99
+#CUBER 15
+
+:geoo/abstract/hatch.H: 120 504 r
+:geoo/abstract/hatch.H: 904 504
+
+:raymanni/lab/goal.G: 496 -16
+
+:geoo/construction/Laser_hz_16.F: 512 64
+:geoo/construction/Laser_hz_16.F: 528 64
+:geoo/construction/Laser_hz_16.F: 528 560
+:geoo/construction/Laser_hz_16.F: 512 560
+
+:geoo/construction/fence_32x32.S: 512 144
+:geoo/construction/fence_32x32.S: 512 176
+:geoo/construction/fence_32x32.S: 512 208
+:geoo/construction/fence_32x32.S: 512 240
+:geoo/construction/fence_32x32.S: 512 272
+:geoo/construction/fence_32x32.S: 512 304
+:geoo/construction/fence_32x32.S: 512 336
+:geoo/construction/fence_32x32.S: 512 368
+:geoo/construction/fence_32x32.S: 512 400
+:geoo/construction/fence_32x32.S: 512 432
+:geoo/construction/fence_32x32.S: 512 464
+:geoo/construction/concrete/016h: 480 80
+:geoo/construction/concrete/016h: 448 80
+:geoo/construction/concrete/016h: 416 80
+:geoo/construction/concrete/016h: 384 80
+:geoo/construction/concrete/016h: 352 80
+:geoo/construction/concrete/016h: 320 80
+:geoo/construction/concrete/016h: 288 80
+:geoo/construction/concrete/016h: 256 80
+:geoo/construction/concrete/016h: 768 80
+:geoo/construction/concrete/016h: 736 80
+:geoo/construction/concrete/016h: 704 80
+:geoo/construction/concrete/016h: 672 80
+:geoo/construction/concrete/016h: 640 80
+:geoo/construction/concrete/016h: 608 80
+:geoo/construction/concrete/016h: 576 80
+:geoo/construction/concrete/016h: 544 80
+:geoo/construction/concrete/016h: 480 544
+:geoo/construction/concrete/016h: 448 544
+:geoo/construction/concrete/016h: 416 544
+:geoo/construction/concrete/016h: 384 544
+:geoo/construction/concrete/016h: 352 544
+:geoo/construction/concrete/016h: 320 544
+:geoo/construction/concrete/016h: 288 544
+:geoo/construction/concrete/016h: 256 544
+:geoo/construction/concrete/016h: 768 544
+:geoo/construction/concrete/016h: 736 544
+:geoo/construction/concrete/016h: 704 544
+:geoo/construction/concrete/016h: 672 544
+:geoo/construction/concrete/016h: 640 544
+:geoo/construction/concrete/016h: 608 544
+:geoo/construction/concrete/016h: 576 544
+:geoo/construction/concrete/016h: 544 544
+:geoo/construction/fence_32x32.S: 512 496
+:geoo/construction/fence_32x32.S: 512 528
+:geoo/construction/fence_32x32.S: 512 80
+:geoo/construction/fence_32x32.S: 512 112
+:geoo/construction/concrete/016h: 928 80
+:geoo/construction/concrete/016h: 800 80
+:geoo/construction/concrete/016h: 928 544
+:geoo/construction/concrete/016h: 800 544
+:geoo/construction/concrete/016h: 224 80
+:geoo/construction/concrete/016h: 128 80
+:geoo/construction/concrete/016h: 224 544
+:geoo/construction/concrete/016h: 128 544
+:geoo/construction/concrete/016v: 944 96
+:geoo/construction/concrete/016v: 944 128
+:geoo/construction/concrete/016v: 944 160
+:geoo/construction/concrete/016v: 944 192
+:geoo/construction/concrete/016v: 944 224
+:geoo/construction/concrete/016v: 944 256
+:geoo/construction/concrete/016v: 944 288
+:geoo/construction/concrete/016v: 944 320
+:geoo/construction/concrete/016v: 944 352
+:geoo/construction/concrete/016v: 944 384
+:geoo/construction/concrete/016v: 944 416
+:geoo/construction/concrete/016v: 944 448
+:geoo/construction/concrete/016v: 944 480
+:geoo/construction/concrete/016v: 944 512
+:geoo/construction/concrete/016v: 96 96
+:geoo/construction/concrete/016v: 96 128
+:geoo/construction/concrete/016v: 96 160
+:geoo/construction/concrete/016v: 96 192
+:geoo/construction/concrete/016v: 96 224
+:geoo/construction/concrete/016v: 96 256
+:geoo/construction/concrete/016v: 96 288
+:geoo/construction/concrete/016v: 96 320
+:geoo/construction/concrete/016v: 96 352
+:geoo/construction/concrete/016v: 96 384
+:geoo/construction/concrete/016v: 96 416
+:geoo/construction/concrete/016v: 96 448
+:geoo/construction/concrete/016v: 96 480
+:geoo/construction/concrete/016v: 96 512
+:geoo/construction/concrete/016h: 96 80
+:geoo/construction/concrete/016h: 96 544
+:geoo/construction/concrete/016h: 896 80
+:geoo/construction/concrete/016h: 896 544
+:geoo/construction/concrete/016h: 832 80
+:geoo/construction/concrete/016h: 832 544
+:geoo/construction/concrete/016h: 864 80
+:geoo/construction/concrete/016h: 864 544
+:geoo/construction/concrete/016h: 192 80
+:geoo/construction/concrete/016h: 192 544
+:geoo/construction/concrete/016h: 160 80
+:geoo/construction/concrete/016h: 160 544
+:geoo/construction/concrete/016v: 752 96
+:geoo/construction/concrete/016v: 752 128
+:geoo/construction/concrete/016v: 752 160
+:geoo/construction/concrete/016v: 752 192
+:geoo/construction/concrete/016v: 752 224
+:geoo/construction/concrete/016v: 752 256
+:geoo/construction/concrete/016v: 752 288
+:geoo/construction/concrete/016v: 752 320
+:geoo/construction/concrete/016v: 752 352
+:geoo/construction/concrete/016v: 752 384
+:geoo/construction/concrete/016v: 752 416
+:geoo/construction/concrete/016v: 752 448
+:geoo/construction/concrete/016v: 752 480
+:geoo/construction/concrete/016v: 752 512
+:geoo/construction/concrete/016v: 288 96
+:geoo/construction/concrete/016v: 288 128
+:geoo/construction/concrete/016v: 288 160
+:geoo/construction/concrete/016v: 288 192
+:geoo/construction/concrete/016v: 288 224
+:geoo/construction/concrete/016v: 288 256
+:geoo/construction/concrete/016v: 288 288
+:geoo/construction/concrete/016v: 288 320
+:geoo/construction/concrete/016v: 288 352
+:geoo/construction/concrete/016v: 288 384
+:geoo/construction/concrete/016v: 288 416
+:geoo/construction/concrete/016v: 288 448
+:geoo/construction/concrete/016v: 288 480
+:geoo/construction/concrete/016v: 288 512
+:geoo/construction/concrete/016h: 416 312
+:geoo/construction/concrete/016h: 384 312
+:geoo/construction/concrete/016h: 288 312
+:geoo/construction/concrete/016h: 352 312
+:geoo/construction/concrete/016h: 320 312
+:geoo/construction/concrete/016h: 480 312
+:geoo/construction/concrete/016h: 448 312
+:geoo/construction/concrete/016h: 672 312
+:geoo/construction/concrete/016h: 640 312
+:geoo/construction/concrete/016h: 544 312
+:geoo/construction/concrete/016h: 608 312
+:geoo/construction/concrete/016h: 576 312
+:geoo/construction/concrete/016h: 736 312
+:geoo/construction/concrete/016h: 704 312
+:geoo/construction/platform.S: 928 640
+:geoo/construction/platform.S: 896 640
+:geoo/construction/platform.S: 864 640
+:geoo/construction/platform.S: 832 640
+:geoo/construction/platform.S: 800 640
+:geoo/construction/platform.S: 768 640
+:geoo/construction/platform.S: 736 640
+:geoo/construction/platform.S: 704 640
+:geoo/construction/platform.S: 672 640
+:geoo/construction/platform.S: 640 640
+:geoo/construction/platform.S: 608 640
+:geoo/construction/platform.S: 576 640
+:geoo/construction/platform.S: 544 640
+:geoo/construction/platform.S: 512 640
+:geoo/construction/platform.S: 480 640
+:geoo/construction/platform.S: 448 640
+:geoo/construction/platform.S: 416 640
+:geoo/construction/platform.S: 384 640
+:geoo/construction/platform.S: 352 640
+:geoo/construction/platform.S: 320 640
+:geoo/construction/platform.S: 288 640
+:geoo/construction/platform.S: 256 640
+:geoo/construction/platform.S: 224 640
+:geoo/construction/platform.S: 192 640
+:geoo/construction/platform.S: 160 640
+:geoo/construction/platform.S: 128 640
+:geoo/construction/platform.S: 96 640
+:geoo/construction/platform.S: 928 0
+:geoo/construction/platform.S: 896 0
+:geoo/construction/platform.S: 864 0
+:geoo/construction/platform.S: 832 0
+:geoo/construction/platform.S: 800 0
+:geoo/construction/platform.S: 768 0
+:geoo/construction/platform.S: 736 0
+:geoo/construction/platform.S: 704 0
+:geoo/construction/platform.S: 672 0
+:geoo/construction/platform.S: 640 0
+:geoo/construction/platform.S: 608 0
+:geoo/construction/platform.S: 576 0
+:geoo/construction/platform.S: 544 0
+:geoo/construction/platform.S: 512 0
+:geoo/construction/platform.S: 480 0
+:geoo/construction/platform.S: 448 0
+:geoo/construction/platform.S: 416 0
+:geoo/construction/platform.S: 384 0
+:geoo/construction/platform.S: 352 0
+:geoo/construction/platform.S: 320 0
+:geoo/construction/platform.S: 288 0
+:geoo/construction/platform.S: 256 0
+:geoo/construction/platform.S: 224 0
+:geoo/construction/platform.S: 192 0
+:geoo/construction/platform.S: 160 0
+:geoo/construction/platform.S: 128 0
+:geoo/construction/platform.S: 96 0
+:geoo/construction/platform.S: 1024 640
+:geoo/construction/platform.S: 992 640
+:geoo/construction/platform.S: 960 640
+:geoo/construction/platform.S: 64 640
+:geoo/construction/platform.S: 32 640
+:geoo/construction/platform.S: 0 640
+:geoo/construction/platform.S: 64 0
+:geoo/construction/platform.S: 32 0
+:geoo/construction/platform.S: 0 0
+:geoo/construction/platform.S: 1024 0
+:geoo/construction/platform.S: 992 0
+:geoo/construction/platform.S: 960 0

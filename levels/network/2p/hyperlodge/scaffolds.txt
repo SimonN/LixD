@@ -1,0 +1,605 @@
+$BUILT 2024-07-18 13:14:35
+$AUTHOR Hyperlodge
+$ENGLISH Scaffolds
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1424
+#SIZE_Y 528
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 32
+#BACKGROUND_BLUE 16
+
+#SECONDS 90
+#INITIAL 150
+#SPAWN_INTERVAL 15
+
+#RUNNER 100
+#CLIMBER 100
+#FLOATER 100
+#EXPLODER2 100
+#BLOCKER 100
+#BUILDER 100
+#MINER 100
+#JUMPER 100
+#BATTER 100
+
+:geoo/abstract/hatch.H: 0 456
+:geoo/abstract/hatch.H: 1392 456 r
+
+:geoo/abstract/goal.G: 880 80
+:geoo/abstract/goal.G: 512 80
+
+:proxima/flame.F: 40 480
+:proxima/flame.F: 1344 480
+
+:geoo/construction/steam_up.T: 72 488
+:geoo/construction/steam_up.T: 208 360
+:geoo/construction/steam_up.T: 360 232
+:geoo/construction/steam_up.T: 88 488
+:geoo/construction/steam_up.T: 224 360
+:geoo/construction/steam_up.T: 344 232
+:raymanni/lab/launcher_right.T: 96 208
+:raymanni/lab/launcher_right.T: 96 176
+:raymanni/lab/launcher_right.T: 96 144
+:raymanni/lab/launcher_right.T: 96 112
+:raymanni/lab/launcher_right.T: 96 304
+:raymanni/lab/launcher_right.T: 96 272
+:raymanni/lab/launcher_right.T: 96 240
+:raymanni/lab/launcher_right.T: 96 80
+:raymanni/lab/launcher_right.T: 96 48
+:raymanni/lab/launcher_right.T: 96 16
+:raymanni/lab/launcher_right.T: 96 336
+:geoo/construction/steam_up.T: 360 168
+:geoo/construction/steam_up.T: 344 168
+:raymanni/lab/launcher_right.T: 0 208
+:raymanni/lab/launcher_right.T: 0 176
+:raymanni/lab/launcher_right.T: 0 144
+:raymanni/lab/launcher_right.T: 0 112
+:raymanni/lab/launcher_right.T: 0 304
+:raymanni/lab/launcher_right.T: 0 272
+:raymanni/lab/launcher_right.T: 0 240
+:raymanni/lab/launcher_right.T: 0 80
+:raymanni/lab/launcher_right.T: 0 48
+:raymanni/lab/launcher_right.T: 0 16
+:raymanni/lab/launcher_right.T: 0 336
+:raymanni/lab/launcher_right.T: 0 400
+:raymanni/lab/launcher_right.T: 0 368
+:geoo/construction/steam_up.T: 1336 488
+:geoo/construction/steam_up.T: 1200 360
+:geoo/construction/steam_up.T: 1048 232
+:geoo/construction/steam_up.T: 1320 488
+:geoo/construction/steam_up.T: 1184 360
+:geoo/construction/steam_up.T: 1064 232
+:geoo/construction/steam_up.T: 1048 168
+:geoo/construction/steam_up.T: 1064 168
+:raymanni/lab/launcher_left.T: 1296 16
+:raymanni/lab/launcher_left.T: 1296 48
+:raymanni/lab/launcher_left.T: 1296 80
+:raymanni/lab/launcher_left.T: 1296 112
+:raymanni/lab/launcher_left.T: 1296 144
+:raymanni/lab/launcher_left.T: 1296 176
+:raymanni/lab/launcher_left.T: 1296 208
+:raymanni/lab/launcher_left.T: 1296 240
+:raymanni/lab/launcher_left.T: 1296 272
+:raymanni/lab/launcher_left.T: 1296 304
+:raymanni/lab/launcher_left.T: 1296 336
+:raymanni/lab/launcher_left.T: 1392 16
+:raymanni/lab/launcher_left.T: 1392 48
+:raymanni/lab/launcher_left.T: 1392 80
+:raymanni/lab/launcher_left.T: 1392 112
+:raymanni/lab/launcher_left.T: 1392 144
+:raymanni/lab/launcher_left.T: 1392 176
+:raymanni/lab/launcher_left.T: 1392 208
+:raymanni/lab/launcher_left.T: 1392 240
+:raymanni/lab/launcher_left.T: 1392 272
+:raymanni/lab/launcher_left.T: 1392 304
+:raymanni/lab/launcher_left.T: 1392 336
+:raymanni/lab/launcher_left.T: 1392 368
+:raymanni/lab/launcher_left.T: 1392 400
+:raymanni/lab/launcher_left.T: 672 16
+:raymanni/lab/launcher_right.T: 720 16
+
+:matt/marble/00: 0 488
+:matt/marble/00: 8 488
+:matt/marble/00: 16 488
+:matt/marble/00: 24 488
+:matt/marble/00: 32 488
+:matt/marble/00: 40 488
+:matt/marble/00: 48 488
+:matt/marble/00: 56 488
+:matt/marble/00: 64 488
+:matt/marble/00b: 456 88
+:matt/marble/00b: 464 88
+:matt/marble/00b: 472 88
+:matt/marble/00b: 480 88
+:matt/marble/00b: 488 88
+:matt/marble/00b: 496 88
+:matt/marble/00b: 504 88
+:matt/marble/00b: 456 48
+:matt/marble/00b: 464 48
+:matt/marble/00b: 472 48
+:matt/marble/00b: 480 48
+:matt/marble/00b: 488 48
+:matt/marble/00b: 496 48
+:matt/marble/00b: 504 48
+:matt/marble/00b: 512 48
+:matt/marble/00b: 520 48
+:matt/marble/00b: 528 48
+:matt/marble/00b: 536 48
+:matt/marble/00b: 544 48
+:matt/marble/00b: 552 48
+:matt/marble/00b: 560 48
+:matt/marble/00b: 568 48
+:matt/marble/00b: 576 48
+:matt/marble/00b: 584 48
+:matt/marble/00b: 592 48
+:matt/marble/00b: 600 48
+:matt/marble/00b: 608 48
+:matt/marble/00b: 616 48
+:matt/marble/00b: 624 48
+:matt/marble/00b: 632 48
+:matt/marble/00b: 640 48
+:matt/marble/00b: 648 48
+:matt/marble/00b: 656 48
+:matt/marble/00b: 664 48
+:amanda/steel/steel24x8.S: 456 128
+:amanda/steel/steel24x8.S: 480 128
+:amanda/steel/steel24x8.S: 504 128
+:amanda/steel/steel24x8.S: 528 128
+:amanda/steel/steel24x8.S: 552 128
+:amanda/steel/steel24x8.S: 576 128
+:amanda/steel/steel24x8.S: 600 128
+:amanda/steel/steel24x8.S: 624 128
+:amanda/steel/steel24x8.S: 648 128
+:geoo/construction/fence_rust_32x32: 696 144
+:raymanni/lab/steel_1.S: 672 123
+:raymanni/lab/steel_1.S: 672 91
+:amanda/steel/steel24x8.S: 0 520
+:amanda/steel/steel24x8.S: 24 520
+:amanda/steel/steel24x8.S: 48 520
+:amanda/steel/steel24x8.S: 72 520
+:amanda/steel/steel24x8.S: 96 520
+:amanda/steel/steel24x8.S: 120 520
+:amanda/steel/steel24x8.S: 144 520
+:amanda/steel/steel24x8.S: 168 520
+:amanda/steel/steel24x8.S: 192 520
+:amanda/steel/steel24x8.S: 216 520
+:amanda/steel/steel24x8.S: 240 520
+:amanda/steel/steel24x8.S: 264 520
+:amanda/steel/steel24x8.S: 288 520
+:amanda/steel/steel24x8.S: 312 520
+:amanda/steel/steel24x8.S: 336 520
+:amanda/steel/steel24x8.S: 360 520
+:amanda/steel/steel24x8.S: 384 520
+:amanda/steel/steel24x8.S: 408 520
+:amanda/steel/steel24x8.S: 432 520
+:amanda/steel/steel24x8.S: 456 520
+:geoo/construction/stairs_rd_32.S: 464 496
+:amanda/steel/steel24x8.S: 480 520
+:amanda/steel/steel24x8.S: 504 520
+:amanda/steel/steel24x8.S: 528 520
+:amanda/steel/steel24x8.S: 552 520
+:amanda/steel/steel24x8.S: 576 520
+:amanda/steel/steel24x8.S: 600 520
+:amanda/steel/steel24x8.S: 624 520
+:amanda/steel/steel24x8.S: 648 520
+:amanda/steel/steel24x8.S: 208 392
+:amanda/steel/steel24x8.S: 232 392
+:geoo/construction/stairs_rd_32.S: 272 400
+:amanda/steel/steel24x8.S: 256 392
+:amanda/steel/steel24x8.S: 344 264
+:amanda/steel/steel24x8.S: 368 264
+:amanda/steel/steel24x8.S: 392 264
+:geoo/construction/stairs_rd_32.S: 336 432
+:geoo/construction/stairs_rd_32.S: 400 464
+:geoo/construction/stairs_rd_32.S: 440 128
+:geoo/construction/stairs_rd_32.S: 504 160
+:geoo/construction/stairs_rd_32.S: 480 208 frr
+:geoo/construction/stairs_rd_32.S: 416 240 frr
+:geoo/construction/stairs_rd_32.S: 544 176 frr
+:amanda/steel/steel8x16.S: 448 112
+:matt/marble/00b: 448 88
+:matt/marble/00b: 448 48
+:amanda/steel/steel24x8.S: 352 272
+:amanda/steel/steel24x8.S: 376 272
+:amanda/steel/steel24x8.S: 216 400
+:amanda/steel/steel24x8.S: 240 400
+:amanda/steel/steel24x8.S: 264 400
+:amanda/steel/steel8x16.S: 608 160
+:geoo/construction/stairs_rd_32.S: 408 272
+:amanda/steel/steel24x8.S: 400 272
+:geoo/construction/stairs_rd_32.S: 368 328 frr
+:geoo/construction/stairs_rd_32.S: 432 296 frr
+:geoo/construction/stairs_rd_32.S: 304 360 frr
+:geoo/construction/stairs_rd_32.S: 288 368 frr
+:amanda/steel/steel8x16.S: 496 280
+:amanda/steel/steel8x16.S: 408 248
+:geoo/construction/fence_rust_32x32: 696 48
+:raymanni/lab/steel_1.S: 672 48
+:geoo/construction/fence_rust_32x32: 696 240
+:raymanni/lab/steel_1.S: 672 248
+:geoo/construction/fence_rust_32x32: 696 208
+:raymanni/lab/steel_1.S: 672 216
+:geoo/construction/fence_rust_32x32: 696 176
+:raymanni/lab/steel_1.S: 672 184
+:raymanni/lab/steel_1.S: 672 152
+:geoo/construction/fence_rust_32x32: 696 368
+:raymanni/lab/steel_1.S: 672 371
+:geoo/construction/fence_rust_32x32: 696 336
+:raymanni/lab/steel_1.S: 672 339
+:geoo/construction/fence_rust_32x32: 696 304
+:raymanni/lab/steel_1.S: 672 307
+:geoo/construction/fence_rust_32x32: 696 272
+:raymanni/lab/steel_1.S: 672 275
+:geoo/construction/fence_rust_32x32: 696 464
+:raymanni/lab/steel_1.S: 672 464
+:geoo/construction/fence_rust_32x32: 696 432
+:raymanni/lab/steel_1.S: 672 432
+:geoo/construction/fence_rust_32x32: 696 400
+:raymanni/lab/steel_1.S: 672 400
+:raymanni/lab/steel_1.S: 536 488
+:raymanni/lab/steel_1.S: 536 456
+:raymanni/lab/steel_1.S: 536 424
+:raymanni/lab/steel_1.S: 640 464
+:raymanni/lab/steel_1.S: 608 464
+:raymanni/lab/steel_1.S: 640 336
+:raymanni/lab/steel_1.S: 536 392
+:raymanni/lab/steel_1.S: 568 392
+:raymanni/lab/steel_1.S: 608 336
+:raymanni/lab/steel_1.S: 536 360
+:raymanni/lab/steel_1.S: 536 328
+:raymanni/lab/steel_1.S: 536 296
+:raymanni/lab/steel_1.S: 536 264
+:raymanni/lab/steel_1.S: 568 264
+:raymanni/lab/steel_1.S: 600 264
+:raymanni/lab/steel_1.S: 600 392
+:matt/marble/00b: 584 56
+:matt/marble/00b: 600 56
+:matt/marble/00b: 616 56
+:matt/marble/00b: 632 56
+:matt/marble/00b: 648 56
+:matt/marble/00b: 664 56
+:matt/marble/00b: 592 64
+:matt/marble/00b: 608 64
+:matt/marble/00b: 624 64
+:matt/marble/00b: 640 64
+:matt/marble/00b: 656 64
+:matt/marble/00b: 584 72
+:matt/marble/00b: 600 72
+:matt/marble/00b: 616 72
+:matt/marble/00b: 632 72
+:matt/marble/00b: 648 72
+:matt/marble/00b: 664 72
+:matt/marble/00b: 592 80
+:matt/marble/00b: 608 80
+:matt/marble/00b: 624 80
+:matt/marble/00b: 640 80
+:matt/marble/00b: 656 80
+:matt/marble/00b: 584 88
+:matt/marble/00b: 600 88
+:matt/marble/00b: 616 88
+:matt/marble/00b: 632 88
+:matt/marble/00b: 648 88
+:matt/marble/00b: 664 88
+:matt/marble/00b: 592 96
+:matt/marble/00b: 608 96
+:matt/marble/00b: 624 96
+:matt/marble/00b: 640 96
+:matt/marble/00b: 656 96
+:matt/marble/00b: 584 104
+:matt/marble/00b: 600 104
+:matt/marble/00b: 616 104
+:matt/marble/00b: 632 104
+:matt/marble/00b: 648 104
+:matt/marble/00b: 664 104
+:matt/marble/00b: 592 112
+:matt/marble/00b: 608 112
+:matt/marble/00b: 624 112
+:matt/marble/00b: 640 112
+:matt/marble/00b: 656 112
+:matt/marble/00b: 584 120
+:matt/marble/00b: 600 120
+:matt/marble/00b: 616 120
+:matt/marble/00b: 632 120
+:matt/marble/00b: 648 120
+:matt/marble/00b: 664 120
+:matt/marble/00: 1416 488 frr
+:matt/marble/00: 1408 488 frr
+:matt/marble/00: 1400 488 frr
+:matt/marble/00: 1392 488 frr
+:matt/marble/00: 1384 488 frr
+:matt/marble/00: 1376 488 frr
+:matt/marble/00: 1368 488 frr
+:matt/marble/00: 1360 488 frr
+:matt/marble/00: 1352 488 frr
+:matt/marble/00b: 960 88 frr
+:matt/marble/00b: 952 88 frr
+:matt/marble/00b: 944 88 frr
+:matt/marble/00b: 936 88 frr
+:matt/marble/00b: 928 88 frr
+:matt/marble/00b: 920 88 frr
+:matt/marble/00b: 912 88 frr
+:matt/marble/00b: 960 48 frr
+:matt/marble/00b: 952 48 frr
+:matt/marble/00b: 944 48 frr
+:matt/marble/00b: 936 48 frr
+:matt/marble/00b: 928 48 frr
+:matt/marble/00b: 920 48 frr
+:matt/marble/00b: 912 48 frr
+:matt/marble/00b: 904 48 frr
+:matt/marble/00b: 896 48 frr
+:matt/marble/00b: 888 48 frr
+:matt/marble/00b: 880 48 frr
+:matt/marble/00b: 872 48 frr
+:matt/marble/00b: 864 48 frr
+:matt/marble/00b: 856 48 frr
+:matt/marble/00b: 848 48 frr
+:matt/marble/00b: 840 48 frr
+:matt/marble/00b: 832 48 frr
+:matt/marble/00b: 824 48 frr
+:matt/marble/00b: 816 48 frr
+:matt/marble/00b: 808 48 frr
+:matt/marble/00b: 800 48 frr
+:matt/marble/00b: 792 48 frr
+:matt/marble/00b: 784 48 frr
+:matt/marble/00b: 776 48 frr
+:matt/marble/00b: 768 48 frr
+:matt/marble/00b: 760 48 frr
+:matt/marble/00b: 752 48 frr
+:amanda/steel/steel24x8.S: 944 128 frr
+:amanda/steel/steel24x8.S: 920 128 frr
+:amanda/steel/steel24x8.S: 896 128 frr
+:amanda/steel/steel24x8.S: 872 128 frr
+:amanda/steel/steel24x8.S: 848 128 frr
+:amanda/steel/steel24x8.S: 824 128 frr
+:amanda/steel/steel24x8.S: 800 128 frr
+:amanda/steel/steel24x8.S: 776 128 frr
+:amanda/steel/steel24x8.S: 752 128 frr
+:raymanni/lab/steel_1.S: 720 123 frr
+:raymanni/lab/steel_1.S: 720 91 frr
+:amanda/steel/steel24x8.S: 1400 520 frr
+:amanda/steel/steel24x8.S: 1376 520 frr
+:amanda/steel/steel24x8.S: 1352 520 frr
+:amanda/steel/steel24x8.S: 1328 520 frr
+:amanda/steel/steel24x8.S: 1304 520 frr
+:amanda/steel/steel24x8.S: 1280 520 frr
+:amanda/steel/steel24x8.S: 1256 520 frr
+:amanda/steel/steel24x8.S: 1232 520 frr
+:amanda/steel/steel24x8.S: 1208 520 frr
+:amanda/steel/steel24x8.S: 1184 520 frr
+:amanda/steel/steel24x8.S: 1160 520 frr
+:amanda/steel/steel24x8.S: 1136 520 frr
+:amanda/steel/steel24x8.S: 1112 520 frr
+:amanda/steel/steel24x8.S: 1088 520 frr
+:amanda/steel/steel24x8.S: 1064 520 frr
+:amanda/steel/steel24x8.S: 1040 520 frr
+:amanda/steel/steel24x8.S: 1016 520 frr
+:amanda/steel/steel24x8.S: 992 520 frr
+:amanda/steel/steel24x8.S: 968 520 frr
+:amanda/steel/steel24x8.S: 944 520 frr
+:geoo/construction/stairs_rd_32.S: 880 496 frr
+:amanda/steel/steel24x8.S: 920 520 frr
+:amanda/steel/steel24x8.S: 896 520 frr
+:amanda/steel/steel24x8.S: 872 520 frr
+:amanda/steel/steel24x8.S: 848 520 frr
+:amanda/steel/steel24x8.S: 824 520 frr
+:amanda/steel/steel24x8.S: 800 520 frr
+:amanda/steel/steel24x8.S: 776 520 frr
+:amanda/steel/steel24x8.S: 752 520 frr
+:amanda/steel/steel24x8.S: 1192 392 frr
+:amanda/steel/steel24x8.S: 1168 392 frr
+:geoo/construction/stairs_rd_32.S: 1072 400 frr
+:amanda/steel/steel24x8.S: 1144 392 frr
+:amanda/steel/steel24x8.S: 1056 264 frr
+:amanda/steel/steel24x8.S: 1032 264 frr
+:amanda/steel/steel24x8.S: 1008 264 frr
+:geoo/construction/stairs_rd_32.S: 1008 432 frr
+:geoo/construction/stairs_rd_32.S: 944 464 frr
+:geoo/construction/stairs_rd_32.S: 904 128 frr
+:geoo/construction/stairs_rd_32.S: 840 160 frr
+:geoo/construction/stairs_rd_32.S: 864 208
+:geoo/construction/stairs_rd_32.S: 928 240
+:geoo/construction/stairs_rd_32.S: 800 176
+:amanda/steel/steel8x16.S: 968 112 frr
+:matt/marble/00b: 968 88 frr
+:matt/marble/00b: 968 48 frr
+:amanda/steel/steel24x8.S: 1048 272 frr
+:amanda/steel/steel24x8.S: 1024 272 frr
+:amanda/steel/steel24x8.S: 1184 400 frr
+:amanda/steel/steel24x8.S: 1160 400 frr
+:amanda/steel/steel24x8.S: 1136 400 frr
+:amanda/steel/steel8x16.S: 808 160 frr
+:geoo/construction/stairs_rd_32.S: 936 272 frr
+:amanda/steel/steel24x8.S: 1000 272 frr
+:geoo/construction/stairs_rd_32.S: 976 328
+:geoo/construction/stairs_rd_32.S: 912 296
+:geoo/construction/stairs_rd_32.S: 1040 360
+:geoo/construction/stairs_rd_32.S: 1056 368
+:amanda/steel/steel8x16.S: 920 280 frr
+:amanda/steel/steel8x16.S: 1008 248 frr
+:raymanni/lab/steel_1.S: 720 48 frr
+:raymanni/lab/steel_1.S: 720 248 frr
+:raymanni/lab/steel_1.S: 720 216 frr
+:raymanni/lab/steel_1.S: 720 184 frr
+:raymanni/lab/steel_1.S: 720 152 frr
+:raymanni/lab/steel_1.S: 720 371 frr
+:raymanni/lab/steel_1.S: 720 339 frr
+:raymanni/lab/steel_1.S: 720 307 frr
+:raymanni/lab/steel_1.S: 720 275 frr
+:raymanni/lab/steel_1.S: 720 464 frr
+:raymanni/lab/steel_1.S: 720 432 frr
+:raymanni/lab/steel_1.S: 720 400 frr
+:raymanni/lab/steel_1.S: 856 488 frr
+:raymanni/lab/steel_1.S: 856 456 frr
+:raymanni/lab/steel_1.S: 856 424 frr
+:raymanni/lab/steel_1.S: 752 464 frr
+:raymanni/lab/steel_1.S: 784 464 frr
+:raymanni/lab/steel_1.S: 752 336 frr
+:raymanni/lab/steel_1.S: 856 392 frr
+:raymanni/lab/steel_1.S: 824 392 frr
+:raymanni/lab/steel_1.S: 784 336 frr
+:raymanni/lab/steel_1.S: 856 360 frr
+:raymanni/lab/steel_1.S: 856 328 frr
+:raymanni/lab/steel_1.S: 856 296 frr
+:raymanni/lab/steel_1.S: 856 264 frr
+:raymanni/lab/steel_1.S: 824 264 frr
+:raymanni/lab/steel_1.S: 792 264 frr
+:raymanni/lab/steel_1.S: 792 392 frr
+:matt/marble/00b: 832 56 frr
+:matt/marble/00b: 816 56 frr
+:matt/marble/00b: 800 56 frr
+:matt/marble/00b: 784 56 frr
+:matt/marble/00b: 768 56 frr
+:matt/marble/00b: 752 56 frr
+:matt/marble/00b: 824 64 frr
+:matt/marble/00b: 808 64 frr
+:matt/marble/00b: 792 64 frr
+:matt/marble/00b: 776 64 frr
+:matt/marble/00b: 760 64 frr
+:matt/marble/00b: 832 72 frr
+:matt/marble/00b: 816 72 frr
+:matt/marble/00b: 800 72 frr
+:matt/marble/00b: 784 72 frr
+:matt/marble/00b: 768 72 frr
+:matt/marble/00b: 752 72 frr
+:matt/marble/00b: 824 80 frr
+:matt/marble/00b: 808 80 frr
+:matt/marble/00b: 792 80 frr
+:matt/marble/00b: 776 80 frr
+:matt/marble/00b: 760 80 frr
+:matt/marble/00b: 832 88 frr
+:matt/marble/00b: 816 88 frr
+:matt/marble/00b: 800 88 frr
+:matt/marble/00b: 784 88 frr
+:matt/marble/00b: 768 88 frr
+:matt/marble/00b: 752 88 frr
+:matt/marble/00b: 824 96 frr
+:matt/marble/00b: 808 96 frr
+:matt/marble/00b: 792 96 frr
+:matt/marble/00b: 776 96 frr
+:matt/marble/00b: 760 96 frr
+:matt/marble/00b: 832 104 frr
+:matt/marble/00b: 816 104 frr
+:matt/marble/00b: 800 104 frr
+:matt/marble/00b: 784 104 frr
+:matt/marble/00b: 768 104 frr
+:matt/marble/00b: 752 104 frr
+:matt/marble/00b: 824 112 frr
+:matt/marble/00b: 808 112 frr
+:matt/marble/00b: 792 112 frr
+:matt/marble/00b: 776 112 frr
+:matt/marble/00b: 760 112 frr
+:matt/marble/00b: 832 120 frr
+:matt/marble/00b: 816 120 frr
+:matt/marble/00b: 800 120 frr
+:matt/marble/00b: 784 120 frr
+:matt/marble/00b: 768 120 frr
+:matt/marble/00b: 752 120 frr
+:amanda/steel/steel24x8.S: 672 520
+:amanda/steel/steel24x8.S: 728 520 frr
+:amanda/steel/steel24x8.S: 680 512
+:amanda/steel/steel24x8.S: 720 512 frr
+:matt/marble/00c: 632 264
+:matt/marble/00c: 640 272
+:matt/marble/00c: 648 280
+:matt/marble/00c: 656 288
+:matt/marble/00c: 632 280
+:matt/marble/00c: 640 288
+:matt/marble/00c: 656 272
+:matt/marble/00c: 648 264
+:matt/marble/00c: 664 264
+:matt/marble/00c: 664 280
+:matt/marble/00c: 784 264 frr
+:matt/marble/00c: 776 272 frr
+:matt/marble/00c: 768 280 frr
+:matt/marble/00c: 760 288 frr
+:matt/marble/00c: 784 280 frr
+:matt/marble/00c: 776 288 frr
+:matt/marble/00c: 760 272 frr
+:matt/marble/00c: 768 264 frr
+:matt/marble/00c: 752 264 frr
+:matt/marble/00c: 752 280 frr
+:matt/marble/00c: 848 336 frr
+:matt/marble/00c: 840 344 frr
+:matt/marble/00c: 832 352 frr
+:matt/marble/00c: 824 360 frr
+:matt/marble/00c: 848 352 frr
+:matt/marble/00c: 840 360 frr
+:matt/marble/00c: 824 344 frr
+:matt/marble/00c: 832 336 frr
+:matt/marble/00c: 816 336 frr
+:matt/marble/00c: 816 352 frr
+:matt/marble/00c: 784 392 frr
+:matt/marble/00c: 776 400 frr
+:matt/marble/00c: 768 408 frr
+:matt/marble/00c: 760 416 frr
+:matt/marble/00c: 784 408 frr
+:matt/marble/00c: 776 416 frr
+:matt/marble/00c: 760 400 frr
+:matt/marble/00c: 768 392 frr
+:matt/marble/00c: 752 392 frr
+:matt/marble/00c: 752 408 frr
+:matt/marble/00c: 848 464 frr
+:matt/marble/00c: 840 472 frr
+:matt/marble/00c: 832 480 frr
+:matt/marble/00c: 824 488 frr
+:matt/marble/00c: 848 480 frr
+:matt/marble/00c: 840 488 frr
+:matt/marble/00c: 824 472 frr
+:matt/marble/00c: 832 464 frr
+:matt/marble/00c: 816 464 frr
+:matt/marble/00c: 816 480 frr
+:matt/marble/00c: 568 336
+:matt/marble/00c: 576 344
+:matt/marble/00c: 584 352
+:matt/marble/00c: 592 360
+:matt/marble/00c: 568 352
+:matt/marble/00c: 576 360
+:matt/marble/00c: 592 344
+:matt/marble/00c: 584 336
+:matt/marble/00c: 600 336
+:matt/marble/00c: 600 352
+:matt/marble/00c: 632 392
+:matt/marble/00c: 640 400
+:matt/marble/00c: 648 408
+:matt/marble/00c: 656 416
+:matt/marble/00c: 632 408
+:matt/marble/00c: 640 416
+:matt/marble/00c: 656 400
+:matt/marble/00c: 648 392
+:matt/marble/00c: 664 392
+:matt/marble/00c: 664 408
+:matt/marble/00c: 568 464
+:matt/marble/00c: 576 472
+:matt/marble/00c: 584 480
+:matt/marble/00c: 592 488
+:matt/marble/00c: 568 480
+:matt/marble/00c: 576 488
+:matt/marble/00c: 592 472
+:matt/marble/00c: 584 464
+:matt/marble/00c: 600 464
+:matt/marble/00c: 600 480
+:matt/marble/00b: 664 32
+:matt/marble/00b: 664 40
+:matt/marble/00b: 664 24
+:matt/marble/00b: 752 32 frr
+:matt/marble/00b: 752 40 frr
+:matt/marble/00b: 752 24 frr
+:matt/marble/00b: 656 32
+:matt/marble/00b: 656 40
+:matt/marble/00b: 656 24
+:matt/marble/00b: 648 32
+:matt/marble/00b: 648 40
+:matt/marble/00b: 640 40
+:matt/marble/00b: 760 32 frr
+:matt/marble/00b: 760 40 frr
+:matt/marble/00b: 760 24 frr
+:matt/marble/00b: 768 32 frr
+:matt/marble/00b: 768 40 frr
+:matt/marble/00b: 776 40 frr
+:amanda/steel/steel8x16.S: 448 128
+:amanda/steel/steel24x8.S: 432 160
+:amanda/steel/steel8x16.S: 448 144
+:amanda/steel/steel8x16.S: 968 128 frr
+:amanda/steel/steel8x16.S: 968 144 frr
+:amanda/steel/steel24x8.S: 976 152 frr

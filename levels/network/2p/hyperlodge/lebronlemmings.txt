@@ -1,0 +1,160 @@
+$BUILT 2022-07-24 18:25:06
+$AUTHOR Hyperlodge
+$ENGLISH Lebron Lemmings
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1664
+#SIZE_Y 552
+#BACKGROUND_RED 12
+#BACKGROUND_GREEN 16
+#BACKGROUND_BLUE 32
+
+#SECONDS 30
+#INITIAL 50
+#SPAWN_INTERVAL 50
+
+#WALKER -1
+#RUNNER -1
+#CLIMBER -1
+#FLOATER -1
+#EXPLODER2 -1
+#BLOCKER -1
+#BUILDER -1
+#PLATFORMER -1
+#JUMPER -1
+#BATTER -1
+#CUBER -1
+
+:geoo/abstract/hatch.H: 1360 432 r
+:geoo/abstract/hatch.H: 272 432
+
+:geoo/abstract/goal.G: 368 158
+:geoo/abstract/goal.G: 1263 158
+
+:geoo/construction/spring.T: 1104 464
+:geoo/construction/spring.T: 528 464
+:geoo/construction/spring.T: 816 464
+:geoo/construction/spring.T: 1168 464
+:geoo/construction/spring.T: 464 464
+:geoo/construction/spring.T: 596 464
+:geoo/construction/spring.T: 1036 464
+:geoo/construction/spring.T: 964 464
+:geoo/construction/spring.T: 668 464
+
+:raymanni/lab/launcher_right.T: 320 72
+:raymanni/lab/launcher_left.T: 1312 72
+:geoo/construction/steam_up.T: 952 464
+:geoo/construction/steam_up.T: 696 464
+:geoo/construction/steam_up.T: 728 368
+:geoo/construction/steam_up.T: 920 368
+:geoo/construction/steam_up.T: 712 368
+:geoo/construction/steam_up.T: 936 368
+:geoo/construction/steam_up.T: 1080 248
+:geoo/construction/steam_up.T: 568 248
+:geoo/construction/steam_up.T: 904 464
+:geoo/construction/steam_up.T: 744 464
+:geoo/construction/steam_up.T: 1144 464
+:geoo/construction/steam_up.T: 504 464
+:geoo/construction/steam_up.T: 1344 432
+:geoo/construction/steam_up.T: 304 432
+:geoo/construction/steam_up.T: 1344 304
+:geoo/construction/steam_up.T: 304 304
+
+:geoo/construction/pillar_long: 256 496 r
+:geoo/construction/pillar_long: 128 496 r
+:geoo/construction/squarebrick_large: 160 520
+:geoo/construction/squarebrick_large: 128 520
+:geoo/construction/squarebrick_large: 224 520
+:geoo/construction/squarebrick_large: 192 520
+:geoo/construction/squarebrick_large: 288 520
+:geoo/construction/squarebrick_large: 256 520
+:geoo/construction/squarebrick_large: 352 520
+:geoo/construction/squarebrick_large: 320 520
+:geoo/construction/pillar_long: 384 496 r
+:geoo/construction/squarebrick_large: 416 520
+:geoo/construction/squarebrick_large: 384 520
+:geoo/construction/squarebrick_large: 480 520
+:geoo/construction/squarebrick_large: 448 520
+:geoo/construction/pillar_long: 512 496 r
+:geoo/construction/squarebrick_large: 544 520
+:geoo/construction/squarebrick_large: 512 520
+:geoo/construction/squarebrick_large: 608 520
+:geoo/construction/squarebrick_large: 576 520
+:geoo/construction/pillar_long: 640 496 r
+:geoo/construction/squarebrick_large: 672 520
+:geoo/construction/squarebrick_large: 640 520
+:geoo/construction/squarebrick_large: 736 520
+:geoo/construction/squarebrick_large: 704 520
+:geoo/construction/pillar_long: 768 496 r
+:geoo/construction/squarebrick_large: 800 520
+:geoo/construction/squarebrick_large: 768 520
+:geoo/construction/squarebrick_large: 864 520
+:geoo/construction/squarebrick_large: 832 520
+:geoo/construction/pillar_long: 896 496 r
+:geoo/construction/squarebrick_large: 896 520
+:geoo/construction/squarebrick_large: 960 520
+:geoo/construction/squarebrick_large: 928 520
+:geoo/construction/pillar_long: 1024 496 r
+:geoo/construction/squarebrick_large: 1024 520
+:geoo/construction/squarebrick_large: 992 520
+:geoo/construction/squarebrick_large: 1088 520
+:geoo/construction/squarebrick_large: 1056 520
+:geoo/construction/squarebrick_large: 1120 520
+:geoo/construction/pillar_long: 1152 496 r
+:geoo/construction/squarebrick_large: 1152 520
+:geoo/construction/squarebrick_large: 1216 520
+:geoo/construction/squarebrick_large: 1184 520
+:geoo/construction/squarebrick_large: 1248 520
+:geoo/construction/pillar_long: 1280 496 r
+:geoo/construction/squarebrick_large: 1280 520
+:geoo/construction/squarebrick_large: 1344 520
+:geoo/construction/squarebrick_large: 1312 520
+:geoo/construction/squarebrick_large: 1376 520
+:geoo/construction/pillar_long: 1408 496 r
+:geoo/construction/squarebrick_large: 1408 520
+:geoo/construction/squarebrick_large: 1472 520
+:geoo/construction/squarebrick_large: 1440 520
+:geoo/construction/squarebrick_large: 1504 520
+$BEGIN_TILE_GROUP 0
+:geoo/construction/fence_32x32.S: 137 165
+:geoo/construction/fence_32x32.S: 153 165
+:geoo/construction/fence_32x32.S: 145 173
+:geoo/construction/fence_32x32.S: 129 125
+:geoo/construction/fence_32x32.S: 161 125
+:matt/goldmine/plank: 1 125 rr
+:matt/goldmine/plankdiag: 64 126
+:geoo/construction/rod_steel/straight32.S: 95 96 fr
+:geoo/construction/fence_32x32.S: 137 149
+:geoo/construction/fence_32x32.S: 153 149
+:matt/underworld/thinplatform64: 129 125
+:geoo/construction/rod_steel/straight32.S: 95 64 fr
+:geoo/construction/rod_steel/straight32.S: 95 32 fr
+:geoo/construction/rod_steel/straight32.S: 95 0 fr
+:geoo/construction/rod_steel/straight32.S: 103 125 frr
+:geoo/construction/rod_steel/straight32.S: 95 128 fr
+:matt/goldmine/plankdiag: 32 158
+:matt/goldmine/plankdiag: 0 190
+:matt/goldmine/plank: 8 125 r
+:matt/goldmine/plank: 0 125 r
+:matt/goldmine/plank: 8 294 r
+:matt/goldmine/plank: 0 294 r
+:geoo/construction/rod_steel/straight32.S: 0 415 frr
+:geoo/construction/rod_steel/straight32.S: 32 415 frr
+:geoo/construction/rod_steel/straight32.S: 64 415 frr
+:geoo/construction/rod_steel/straight32.S: 96 415 frr
+:matt/goldmine/plank: 8 221 r
+:matt/goldmine/plank: 0 221 r
+$END_TILE_GROUP
+:Group-0: 223 73
+:Group-0: 1247 73 frr
+:proxima/tile/spheres/red: 800 240
+:geoo/construction/pillar_long: 1536 496 r
+:geoo/construction/squarebrick_large: 1536 520
+:geoo/construction/squarebrick_large: 1600 520
+:geoo/construction/squarebrick_large: 1568 520
+:geoo/construction/squarebrick_large: 1632 520
+:geoo/construction/pillar_long: 0 496 r
+:geoo/construction/squarebrick_large: 0 520
+:geoo/construction/squarebrick_large: 64 520
+:geoo/construction/squarebrick_large: 32 520
+:geoo/construction/squarebrick_large: 96 520

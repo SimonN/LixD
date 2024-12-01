@@ -1,0 +1,55 @@
+$BUILT 2024-07-18 13:31:52
+$AUTHOR Hyperlodge
+$ENGLISH One More Chance
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 512
+#SIZE_Y 300
+#BACKGROUND_RED 255
+#BACKGROUND_GREEN 96
+#BACKGROUND_BLUE 96
+
+#SECONDS 60
+#INITIAL 10
+#SPAWN_INTERVAL 96
+
+#RUNNER 10
+#CLIMBER 10
+#BLOCKER 10
+#BUILDER 20
+#PLATFORMER 20
+#MINER 20
+#DIGGER 20
+#JUMPER 10
+#BATTER 10
+#EXPLODER2 0
+
+:matt/marble/Hatch.H: 96 196 r
+:matt/marble/Hatch.H: 352 196
+
+:matt/marble/Goal.G: 352 100
+:matt/marble/Goal.G: 96 100
+
+:geoo/steel/64x64o.S: 352 148
+:geoo/steel/64x64o.S: 96 148
+:geoo/steel/64x64o.S: 0 172
+:geoo/steel/64x64o.S: 160 68
+:geoo/steel/64x64o.S: 224 148
+:geoo/steel/64x64o.S: 288 68
+:geoo/steel/64x64o.S: 448 236
+:geoo/steel/dark_64x64o.S: 0 236
+:geoo/steel/dark_64x64o.S: 128 236
+:geoo/steel/dark_64x64o.S: 256 236
+:geoo/steel/dark_64x64o.S: 384 236
+:geoo/steel/dark_64x64o.S: 448 172
+:geoo/steel/dark_64x64o.S: 448 44
+:geoo/steel/dark_64x64o.S: 96 68
+:geoo/steel/dark_64x64o.S: 160 148
+:geoo/steel/dark_64x64o.S: 288 148
+:geoo/steel/dark_64x64o.S: 352 68
+:geoo/steel/dark_64x64o.S: 0 108
+:geoo/steel/64x64o.S: 0 44
+:geoo/steel/64x64o.S: 448 108
+:geoo/steel/64x64o.S: 64 236
+:geoo/steel/64x64o.S: 192 236
+:geoo/steel/64x64o.S: 320 236

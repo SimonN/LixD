@@ -1,0 +1,64 @@
+$BUILT 2024-07-18 11:41:42
+$AUTHOR Hyperlodge
+$ENGLISH Headache Recipe
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1440
+#SIZE_Y 416
+#TORUS_X 1
+#TORUS_Y 1
+#BACKGROUND_RED 211
+#BACKGROUND_GREEN 111
+#BACKGROUND_BLUE 143
+
+#SECONDS 60
+#INITIAL 200
+#SPAWN_INTERVAL 10
+
+#RUNNER -1
+#CLIMBER -1
+#EXPLODER2 -1
+#PLATFORMER -1
+#JUMPER -1
+
+:geoo/abstract/hatch.H: 304 0
+:geoo/abstract/hatch.H: 1104 0 r
+
+:geoo/construction/Goal2.G: 224 192
+:geoo/construction/Goal2.G: 1152 192
+
+:geoo/construction/sawblade_medium.F: 1408 384
+:geoo/construction/sawblade_medium.F: 688 176
+
+$BEGIN_TILE_GROUP 0
+:geoo/construction/concrete/032b: 0 16
+:geoo/construction/concrete/032c: 16 0
+:geoo/construction/concrete/032b: 32 48
+:geoo/construction/concrete/032c: 48 32
+:geoo/construction/concrete/032: 48 0
+:geoo/construction/concrete/032: 0 48
+:geoo/construction/concrete/032b: 64 80
+:geoo/construction/concrete/032c: 80 64
+:geoo/construction/concrete/032b: 96 112
+:geoo/construction/concrete/032c: 112 96
+:geoo/construction/concrete/032: 112 64
+:geoo/construction/concrete/032: 64 112
+:geoo/construction/concrete/064: 0 80
+:geoo/construction/concrete/064: 80 0
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:Group-0: 0 0
+:Group-0: 1296 16
+:Group-0: 1152 32
+:Group-0: 1008 48
+:Group-0: 864 64
+:Group-0: 144 0 frr
+:Group-0: 288 16 frr
+:Group-0: 432 32 frr
+:Group-0: 576 48 frr
+:Group-0: 720 64 frr
+$END_TILE_GROUP
+:Group-1: 576 208
+:Group-1: 864 0 rr
+:geoo/construction/platform.S: 1104 32
+:geoo/construction/platform.S: 304 32

@@ -1,0 +1,95 @@
+$BUILT 2024-08-20 11:54:32
+$AUTHOR Hyperlodge
+$ENGLISH Mickeys
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 832
+#SIZE_Y 400
+#TORUS_X 1
+#TORUS_Y 1
+#BACKGROUND_RED 255
+#BACKGROUND_GREEN 255
+#BACKGROUND_BLUE 0
+
+#SECONDS 60
+#INITIAL 500
+#SPAWN_INTERVAL 10
+
+#WALKER 10
+#RUNNER 10
+#CLIMBER 10
+#FLOATER 10
+#EXPLODER2 -1
+#BLOCKER -1
+#BUILDER 10
+#PLATFORMER -1
+#BASHER 10
+#MINER 10
+#DIGGER 10
+#JUMPER 10
+#BATTER -1
+#CUBER -1
+
+:amanda/forest/hatch.H: 80 48
+:amanda/forest/hatch.H: 656 48 r
+
+:raymanni/lab/goal.G: 752 208
+:raymanni/lab/goal.G: 16 208
+
+$BEGIN_TILE_GROUP 0
+:proxima/tile/spheres/redsmall: 24 0
+:proxima/tile/red1a: 64 130
+:proxima/tile/spheres/redsmall: 64 0
+:proxima/tile/red1a: 26 78
+:proxima/tile/red1a: 64 76
+:proxima/tile/red1a: 84 82
+:proxima/tile/red1a: 96 130
+:proxima/tile/red1a: 92 114
+:proxima/tile/red1a: 88 98
+:proxima/tile/red1a: 46 78
+:proxima/tile/spheres/red: 28 18
+:proxima/tile/red1a: 18 84
+:proxima/tile/red1a: 12 88
+:proxima/tile/red1a: 0 130
+:proxima/tile/red1a: 4 114
+:proxima/tile/red1a: 8 100
+:proxima/tile/red3: 28 82
+$END_TILE_GROUP
+:Group-0: 382 258 rr
+:Group-0: 382 106
+:Group-0: 554 30 rr
+:geoo/steel/silhouette_32x64.S: 800 304
+:geoo/steel/silhouette_32x64.S: 0 304
+:geoo/steel/silhouette_32x64.S: 800 208
+:geoo/steel/silhouette_32x64.S: 0 208
+:geoo/steel/silhouette_64x32.S: 0 272
+:geoo/steel/silhouette_64x32.S: 768 272
+:geoo/steel/silhouette_64x32.S: 768 368
+:geoo/steel/silhouette_64x32.S: 704 368
+:geoo/steel/silhouette_64x32.S: 640 368
+:geoo/steel/silhouette_64x32.S: 576 368
+:geoo/steel/silhouette_64x32.S: 512 368
+:geoo/steel/silhouette_64x32.S: 256 368
+:geoo/steel/silhouette_64x32.S: 192 368
+:geoo/steel/silhouette_64x32.S: 128 368
+:geoo/steel/silhouette_64x32.S: 64 368
+:geoo/steel/silhouette_64x32.S: 0 368
+:geoo/steel/silhouette_64x32.S: 0 176
+:geoo/steel/silhouette_64x32.S: 64 176
+:geoo/steel/silhouette_64x32.S: 704 176
+:geoo/steel/silhouette_64x32.S: 768 176
+:geoo/steel/silhouette_32x32.S: 488 336
+:geoo/steel/silhouette_32x32.S: 312 336
+:geoo/steel/silhouette_32x32.S: 0 144
+:geoo/steel/silhouette_32x32.S: 800 144
+:Group-0: 608 177
+:Group-0: 505 177 frr
+:Group-0: 428 14 fr
+:Group-0: 670 14 r
+:Group-0: 322 258 f
+:Group-0: 322 106 frr
+:Group-0: 150 30 f
+:Group-0: 96 177 frr
+:Group-0: 199 177
+:Group-0: 259 14 r
+:Group-0: 17 14 fr

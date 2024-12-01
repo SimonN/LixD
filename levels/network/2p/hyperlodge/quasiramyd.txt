@@ -1,0 +1,110 @@
+$BUILT 2024-07-18 11:23:44
+$AUTHOR Hyperlodge
+$ENGLISH Quasiramyd
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 768
+#SIZE_Y 544
+#BACKGROUND_RED 32
+#BACKGROUND_GREEN 128
+#BACKGROUND_BLUE 192
+
+#SECONDS 60
+#INITIAL 400
+#SPAWN_INTERVAL 4
+
+#WALKER 10
+#RUNNER 10
+#CLIMBER 10
+#FLOATER 10
+#EXPLODER2 -1
+#BLOCKER -1
+#BUILDER 50
+#PLATFORMER 10
+#BASHER 10
+#MINER 10
+#DIGGER 10
+#JUMPER 10
+#BATTER -1
+#CUBER -1
+
+:geoo/abstract/hatch.H: 48 432
+:geoo/abstract/hatch.H: 688 432 r
+
+:geoo/abstract/goal.G: 352 0
+:geoo/abstract/goal.G: 384 0
+
+:simon/crystal.W: 48 496
+:simon/crystal.W: 96 496
+:simon/crystal.W: 144 496
+:simon/crystal.W: 192 496
+:simon/crystal.W: 240 496
+:simon/crystal.W: 288 496
+:simon/crystal.W: 336 496
+:simon/crystal.W: 384 496
+:simon/crystal.W: 432 496
+:simon/crystal.W: 480 496
+:simon/crystal.W: 528 496
+:simon/crystal.W: 576 496
+:simon/crystal.W: 624 496
+:simon/crystal.W: 672 496
+:simon/crystal.W: 720 496
+:simon/crystal.W: 0 496
+
+:geoo/construction/wall/big_brick3: 64 480
+:geoo/construction/wall/big_brick3: 128 480
+:geoo/construction/wall/big_brick3: 192 480
+:geoo/construction/wall/big_brick3: 256 480
+:geoo/construction/wall/big_brick3: 320 480
+:geoo/construction/wall/big_brick3: 384 480
+:geoo/construction/wall/big_brick3: 448 480
+:geoo/construction/wall/big_brick3: 512 480
+:geoo/construction/wall/big_brick3: 576 480
+:geoo/construction/wall/big_brick3: 640 480
+:geoo/construction/wall/big_brick3: 352 432
+:geoo/construction/wall/big_brick3: 320 384
+:geoo/construction/wall/big_brick3: 352 336
+:geoo/construction/wall/big_brick3: 288 432
+:geoo/construction/wall/big_brick3: 416 432
+:geoo/construction/wall/big_brick3: 480 432
+:geoo/construction/wall/big_brick3: 544 432
+:geoo/construction/wall/big_brick3: 224 432
+:geoo/construction/wall/big_brick3: 160 432
+:geoo/construction/wall/big_brick3: 256 384
+:geoo/construction/wall/big_brick3: 448 384
+:geoo/construction/wall/big_brick3: 384 384
+:geoo/construction/wall/big_brick3: 288 336
+:geoo/construction/wall/big_brick3: 416 336
+:geoo/construction/wall/big_brick3: 320 288
+:geoo/construction/wall/big_brick3: 384 288
+:geoo/construction/wall/big_brick3: 608 432
+:geoo/construction/wall/big_brick3: 96 432
+:geoo/construction/wall/big_brick3: 192 384
+:geoo/construction/wall/big_brick3: 128 384
+:geoo/construction/wall/big_brick3: 512 384
+:geoo/construction/wall/big_brick3: 576 384
+:geoo/construction/wall/big_brick3: 224 336
+:geoo/construction/wall/big_brick3: 160 336
+:geoo/construction/wall/big_brick3: 544 336
+:geoo/construction/wall/big_brick3: 480 336
+:geoo/construction/wall/big_brick3: 192 288
+:geoo/construction/wall/big_brick3: 256 288
+:geoo/construction/wall/big_brick3: 448 288
+:geoo/construction/wall/big_brick3: 512 288
+:geoo/construction/wall/big_brick3: 352 240
+:geoo/construction/wall/big_brick3: 416 240
+:geoo/construction/wall/big_brick3: 224 240
+:geoo/construction/wall/big_brick3: 288 240
+:geoo/construction/wall/big_brick3: 480 240
+:geoo/construction/wall/big_brick3: 384 192
+:geoo/construction/wall/big_brick3: 448 192
+:geoo/construction/wall/big_brick3: 256 192
+:geoo/construction/wall/big_brick3: 320 192
+:geoo/construction/wall/big_brick3: 416 144
+:geoo/construction/wall/big_brick3: 288 144
+:geoo/construction/wall/big_brick3: 352 144
+:geoo/construction/wall/big_brick3: 384 96
+:geoo/construction/wall/big_brick3: 320 96
+:geoo/construction/wall/big_brick3: 352 48
+:geoo/construction/wall/big_brick3: 0 480
+:geoo/construction/wall/big_brick3: 704 480

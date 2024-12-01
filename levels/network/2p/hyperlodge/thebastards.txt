@@ -1,0 +1,114 @@
+$BUILT 2024-07-18 12:00:13
+$AUTHOR Hyperlodge
+$ENGLISH The Bastards
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 608
+#SIZE_Y 320
+#BACKGROUND_RED 143
+#BACKGROUND_GREEN 127
+#BACKGROUND_BLUE 111
+
+#SECONDS 60
+#INITIAL 100
+#SPAWN_INTERVAL 50
+
+#RUNNER -1
+#CLIMBER -1
+#EXPLODER2 -1
+#BLOCKER -1
+#JUMPER -1
+#BATTER -1
+
+:raymanni/lab/hatch.H: 160 32
+:raymanni/lab/hatch.H: 416 32 r
+
+:raymanni/lab/goal.G: 256 64
+:raymanni/lab/goal.G: 288 64
+
+:raymanni/lab/steel_1.S: 112 160
+:raymanni/lab/steel_1.S: 112 128
+:raymanni/lab/steel_1.S: 112 96
+:raymanni/lab/steel_1.S: 144 112
+:raymanni/lab/steel_1.S: 176 112
+:raymanni/lab/steel_1.S: 112 256
+:raymanni/lab/steel_1.S: 112 224
+:raymanni/lab/steel_1.S: 112 192
+:raymanni/lab/steel_1.S: 112 288
+:raymanni/lab/steel_1.S: 320 176
+:raymanni/lab/steel_1.S: 288 224
+:raymanni/lab/steel_1.S: 288 192
+:raymanni/lab/steel_1.S: 256 176
+:raymanni/lab/steel_1.S: 288 160
+:raymanni/lab/steel_1.S: 304 128
+:raymanni/lab/steel_1.S: 272 128
+:raymanni/lab/steel_1.S: 464 160 frr
+:raymanni/lab/steel_1.S: 464 128 frr
+:raymanni/lab/steel_1.S: 464 96 frr
+:raymanni/lab/steel_1.S: 432 112 frr
+:raymanni/lab/steel_1.S: 400 112 frr
+:raymanni/lab/steel_1.S: 464 256 frr
+:raymanni/lab/steel_1.S: 464 224 frr
+:raymanni/lab/steel_1.S: 464 192 frr
+:raymanni/lab/steel_1.S: 464 288 frr
+:raymanni/lab/steel_1.S: 96 0
+:raymanni/lab/steel_1.S: 128 0
+:raymanni/lab/steel_1.S: 160 0
+:raymanni/lab/steel_1.S: 192 0
+:raymanni/lab/steel_1.S: 224 0
+:raymanni/lab/steel_1.S: 256 0
+:raymanni/lab/steel_1.S: 288 16
+:raymanni/lab/steel_1.S: 480 0 frr
+:raymanni/lab/steel_1.S: 448 0 frr
+:raymanni/lab/steel_1.S: 416 0 frr
+:raymanni/lab/steel_1.S: 384 0 frr
+:raymanni/lab/steel_1.S: 352 0 frr
+:raymanni/lab/steel_1.S: 320 0 frr
+:geoo/construction/concrete/032: 208 160
+:geoo/construction/concrete/032: 208 192
+:geoo/construction/concrete/032: 224 224
+:geoo/construction/concrete/032: 208 256
+:geoo/construction/concrete/032: 368 160
+:geoo/construction/concrete/032: 368 192
+:geoo/construction/concrete/032: 352 224
+:geoo/construction/concrete/032: 368 256
+:geoo/construction/concrete/032: 64 256
+:geoo/construction/concrete/032: 80 288
+:geoo/construction/concrete/032: 48 288
+:geoo/construction/concrete/032: 32 256
+:geoo/construction/concrete/032: 16 224
+:geoo/construction/concrete/032: 48 224
+:geoo/construction/concrete/032: 0 192
+:geoo/construction/concrete/032: 32 192
+:geoo/construction/concrete/032: 512 256 frr
+:geoo/construction/concrete/032: 496 288 frr
+:geoo/construction/concrete/032: 528 288 frr
+:geoo/construction/concrete/032: 544 256 frr
+:geoo/construction/concrete/032: 560 224 frr
+:geoo/construction/concrete/032: 528 224 frr
+:geoo/construction/concrete/032: 576 192 frr
+:geoo/construction/concrete/032: 544 192 frr
+:geoo/construction/concrete/032: 560 160 frr
+:geoo/construction/concrete/032: 544 0 frr
+:geoo/construction/concrete/032: 16 160
+:geoo/construction/concrete/032: 32 0
+:geoo/construction/pillar_long: 560 32
+:geoo/construction/pillar_long: 16 32
+:geoo/construction/concrete/032d: 48 32
+:geoo/construction/concrete/032c: 528 32
+:raymanni/lab/steel_1.S: 64 0
+:raymanni/lab/steel_1.S: 512 0 frr
+:geoo/construction/concrete/podium_32: 0 128 rr
+:geoo/construction/concrete/podium_32: 544 128 rr
+:geoo/construction/concrete/podium_32: 272 256
+:raymanni/lab/steel_1.S: 208 96
+:raymanni/lab/steel_1.S: 368 96 frr
+:geoo/construction/concrete/032a: 224 128
+:geoo/construction/concrete/032b: 352 128
+:geoo/construction/concrete/032hb: 400 192
+:geoo/construction/concrete/032ha: 144 192
+:geoo/construction/concrete/032hb: 144 272
+:geoo/construction/concrete/032ha: 400 272
+:geoo/construction/pillar_long: 240 288 r
+:geoo/construction/concrete/032b: 368 288
+:geoo/construction/concrete/032a: 208 288

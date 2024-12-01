@@ -1,0 +1,419 @@
+$BUILT 2024-07-18 13:20:33
+$AUTHOR Hyperlodge
+$ENGLISH Storage Place
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1840
+#SIZE_Y 400
+#BACKGROUND_RED 48
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 16
+
+#SECONDS 80
+#INITIAL 120
+#SPAWN_INTERVAL 20
+
+#RUNNER 10
+#CLIMBER 10
+#FLOATER 10
+#EXPLODER2 50
+#BLOCKER 50
+#PLATFORMER -1
+#BASHER 50
+#MINER 50
+#DIGGER 50
+#JUMPER 10
+#BATTER 10
+
+:geoo/abstract/hatch.H: 13 0
+:geoo/abstract/hatch.H: 1795 0 r
+
+:raymanni/lab/goal.G: 1680 56
+:raymanni/lab/goal.G: 96 56
+
+:geoo/construction/steam_up.T: 48 368
+:geoo/construction/steam_up.T: 64 368
+:geoo/construction/steam_up.T: 80 368
+:geoo/construction/steam_up.T: 96 368
+:geoo/construction/steam_up.T: 112 368
+:geoo/construction/steam_up.T: 128 368
+:geoo/construction/steam_up.T: 144 368
+:geoo/construction/steam_up.T: 160 368
+:geoo/construction/steam_up.T: 176 368
+:geoo/construction/steam_up.T: 192 368
+:geoo/construction/steam_up.T: 208 368
+:geoo/construction/steam_up.T: 224 368
+:geoo/construction/steam_up.T: 240 368
+:geoo/construction/steam_up.T: 256 368
+:geoo/construction/steam_up.T: 272 368
+:geoo/construction/steam_up.T: 288 368
+:geoo/construction/steam_up.T: 304 368
+:geoo/construction/steam_up.T: 320 368
+:geoo/construction/steam_up.T: 336 368
+:geoo/construction/steam_up.T: 352 368
+:geoo/construction/steam_up.T: 368 368
+:geoo/construction/steam_up.T: 384 368
+:geoo/construction/steam_up.T: 400 368
+:geoo/construction/steam_up.T: 416 368
+:geoo/construction/steam_up.T: 432 368
+:geoo/construction/steam_up.T: 448 368
+:geoo/construction/steam_up.T: 464 368
+:geoo/construction/steam_up.T: 480 368
+:geoo/construction/steam_up.T: 496 368
+:geoo/construction/steam_up.T: 512 368
+:geoo/construction/steam_up.T: 528 368
+:geoo/construction/steam_up.T: 544 368
+:geoo/construction/steam_up.T: 560 368
+:geoo/construction/steam_up.T: 576 368
+:geoo/construction/steam_up.T: 592 368
+:geoo/construction/steam_up.T: 608 368
+:geoo/construction/steam_up.T: 624 368
+:geoo/construction/steam_up.T: 640 368
+:geoo/construction/steam_up.T: 656 368
+:geoo/construction/steam_up.T: 672 368
+:geoo/construction/steam_up.T: 688 368
+:geoo/construction/steam_up.T: 704 368
+:geoo/construction/steam_up.T: 720 368
+:geoo/construction/steam_up.T: 736 368
+:geoo/construction/steam_up.T: 752 368
+:geoo/construction/steam_up.T: 768 368
+:geoo/construction/steam_up.T: 784 368
+:geoo/construction/steam_up.T: 800 368
+:geoo/construction/steam_up.T: 816 368
+:geoo/construction/steam_up.T: 832 368
+:geoo/construction/steam_up.T: 848 368
+:geoo/construction/steam_up.T: 864 368
+:geoo/construction/steam_up.T: 880 368
+:geoo/construction/steam_up.T: 896 368
+:geoo/construction/steam_up.T: 912 368
+:geoo/construction/steam_up.T: 1776 368
+:geoo/construction/steam_up.T: 1760 368
+:geoo/construction/steam_up.T: 1744 368
+:geoo/construction/steam_up.T: 1728 368
+:geoo/construction/steam_up.T: 1712 368
+:geoo/construction/steam_up.T: 1696 368
+:geoo/construction/steam_up.T: 1680 368
+:geoo/construction/steam_up.T: 1664 368
+:geoo/construction/steam_up.T: 1648 368
+:geoo/construction/steam_up.T: 1632 368
+:geoo/construction/steam_up.T: 1616 368
+:geoo/construction/steam_up.T: 1600 368
+:geoo/construction/steam_up.T: 1584 368
+:geoo/construction/steam_up.T: 1568 368
+:geoo/construction/steam_up.T: 1552 368
+:geoo/construction/steam_up.T: 1536 368
+:geoo/construction/steam_up.T: 1520 368
+:geoo/construction/steam_up.T: 1504 368
+:geoo/construction/steam_up.T: 1488 368
+:geoo/construction/steam_up.T: 1472 368
+:geoo/construction/steam_up.T: 1456 368
+:geoo/construction/steam_up.T: 1440 368
+:geoo/construction/steam_up.T: 1424 368
+:geoo/construction/steam_up.T: 1408 368
+:geoo/construction/steam_up.T: 1392 368
+:geoo/construction/steam_up.T: 1376 368
+:geoo/construction/steam_up.T: 1360 368
+:geoo/construction/steam_up.T: 1344 368
+:geoo/construction/steam_up.T: 1328 368
+:geoo/construction/steam_up.T: 1312 368
+:geoo/construction/steam_up.T: 1296 368
+:geoo/construction/steam_up.T: 1280 368
+:geoo/construction/steam_up.T: 1264 368
+:geoo/construction/steam_up.T: 1248 368
+:geoo/construction/steam_up.T: 1232 368
+:geoo/construction/steam_up.T: 1216 368
+:geoo/construction/steam_up.T: 1200 368
+:geoo/construction/steam_up.T: 1184 368
+:geoo/construction/steam_up.T: 1168 368
+:geoo/construction/steam_up.T: 1152 368
+:geoo/construction/steam_up.T: 1136 368
+:geoo/construction/steam_up.T: 1120 368
+:geoo/construction/steam_up.T: 1104 368
+:geoo/construction/steam_up.T: 1088 368
+:geoo/construction/steam_up.T: 1072 368
+:geoo/construction/steam_up.T: 1056 368
+:geoo/construction/steam_up.T: 1040 368
+:geoo/construction/steam_up.T: 1024 368
+:geoo/construction/steam_up.T: 1008 368
+:geoo/construction/steam_up.T: 992 368
+:geoo/construction/steam_up.T: 976 368
+:geoo/construction/steam_up.T: 960 368
+:geoo/construction/steam_up.T: 944 368
+:geoo/construction/steam_up.T: 928 368
+
+:geoo/construction/rod_steel/straight_diagd32.S: 21 32
+:geoo/construction/rod_steel/straight_diagu32.S: 45 16
+:geoo/construction/rod_steel/straight_diagd32.S: 69 32
+:geoo/construction/rod_steel/straight_diagu32.S: 93 16
+:geoo/construction/rod_steel/straight_diagd32.S: 117 32
+:geoo/construction/rod_steel/straight_diagu32.S: 141 16
+:geoo/construction/rod_steel/straight_diagd32.S: 165 32
+:geoo/construction/rod_steel/straight_diagu32.S: 189 16
+:geoo/construction/rod_steel/straight_diagd32.S: 213 32
+:geoo/construction/rod_steel/straight_diagu32.S: 237 16
+:geoo/construction/rod_steel/straight_diagd32.S: 261 32
+:geoo/construction/rod_steel/straight_diagu32.S: 285 16
+:geoo/construction/rod_steel/straight_diagd32.S: 309 32
+:geoo/construction/rod_steel/straight_diagu32.S: 333 16
+:geoo/construction/rod_steel/straight_diagd32.S: 357 32
+:geoo/construction/rod_steel/straight_diagu32.S: 381 16
+:geoo/construction/rod_steel/straight_diagd32.S: 405 32
+:geoo/construction/rod_steel/straight_diagu32.S: 429 16
+:geoo/construction/rod_steel/straight_diagd32.S: 453 32
+:geoo/construction/rod_steel/straight_diagu32.S: 477 16
+:geoo/construction/rod_steel/straight_diagd32.S: 501 32
+:geoo/construction/rod_steel/straight_diagu32.S: 525 16
+:geoo/construction/rod_steel/straight_diagd32.S: 549 32
+:geoo/construction/rod_steel/straight_diagd32.S: 617 26
+:geoo/construction/rod_steel/straight_diagd32.S: 641 50
+:geoo/construction/rod_steel/straight_diagd32.S: 616 56
+:geoo/construction/rod_steel/straight32.S: 617 32 rrr
+:geoo/construction/rod_steel/straight_diagu32.S: 573 16
+:geoo/construction/rod_steel/straight_diagu32.S: 584 64
+:geoo/construction/rod_steel/link_h_du.S: 568 96
+:geoo/construction/rod_steel/straight32.S: 536 98
+:geoo/construction/rod_steel/straight32.S: 504 98
+:geoo/construction/rod_steel/straight32.S: 472 98
+:geoo/construction/rod_steel/straight32.S: 440 98
+:geoo/construction/rod_steel/straight32.S: 408 98
+:geoo/construction/rod_steel/straight32.S: 376 98
+:geoo/construction/rod_steel/straight32.S: 344 98
+:geoo/construction/rod_steel/straight32.S: 312 98
+:geoo/construction/rod_steel/straight32.S: 280 98
+:geoo/construction/rod_steel/straight32.S: 248 98
+:geoo/construction/rod_steel/link_du_h.S: 228 86
+:geoo/construction/rod_steel/straight_diagu32.S: 196 102
+:raymanni/holiday/plank_long: 16 152
+:raymanni/holiday/plank_long: 24 136
+:geoo/construction/rod_steel/straight_diagu32.S: 164 134
+:geoo/construction/rod_steel/straight_diagu32.S: 132 166
+:raymanni/holiday/plank_right: 32 184
+:raymanni/holiday/plank_right: 40 184
+:raymanni/holiday/plank_right: 64 184
+:raymanni/holiday/plank_right: 24 168
+:raymanni/holiday/plank_right: 40 168
+:raymanni/holiday/plank_right: 64 168
+:raymanni/holiday/plank_right: 88 168
+:raymanni/holiday/plank_broken: 96 184 frr
+:geoo/construction/rod_steel/link_h_du.S: 116 198
+:geoo/construction/rod_steel/straight32.S: 52 200
+:raymanni/holiday/plank_long: 32 120
+:geoo/construction/rod_steel/straight32.S: 84 200
+:geoo/construction/rod_steel/link_h_du.S: 615 49 fr
+:raymanni/holiday/plank_broken: 160 120 frr
+:raymanni/holiday/plank_broken: 144 136 frr
+:raymanni/holiday/plank_broken: 128 152 frr
+:raymanni/holiday/plank_broken: 112 168 frr
+:raymanni/holiday/plank_long: 639 88
+:raymanni/holiday/plank_long: 639 88 r
+:raymanni/holiday/plank_long: 639 200 rr
+:raymanni/holiday/plank_long: 751 88 rrr
+:raymanni/holiday/plank_long: 639 232
+:raymanni/holiday/plank_long: 639 232 r
+:raymanni/holiday/plank_long: 639 344 rr
+:raymanni/holiday/plank_long: 751 232 rrr
+:raymanni/holiday/plank_long: 783 88
+:raymanni/holiday/plank_long: 783 88 r
+:raymanni/holiday/plank_long: 783 200 rr
+:raymanni/holiday/plank_long: 895 88 rrr
+:raymanni/holiday/plank_long: 783 232
+:raymanni/holiday/plank_long: 783 232 r
+:raymanni/holiday/plank_long: 783 344 rr
+:raymanni/holiday/plank_long: 895 232 rrr
+:raymanni/holiday/plank_long: 495 232
+:raymanni/holiday/plank_long: 495 232 r
+:raymanni/holiday/plank_long: 495 344 rr
+:raymanni/holiday/plank_long: 607 232 rrr
+:raymanni/holiday/plank_long: 351 232
+:raymanni/holiday/plank_long: 351 232 r
+:raymanni/holiday/plank_long: 351 344 rr
+:raymanni/holiday/plank_long: 463 232 rrr
+:raymanni/holiday/plank_long: 207 232
+:raymanni/holiday/plank_long: 207 232 r
+:raymanni/holiday/plank_long: 207 344 rr
+:raymanni/holiday/plank_long: 319 232 rrr
+:raymanni/holiday/plank_long: 63 232
+:raymanni/holiday/plank_long: 63 232 r
+:raymanni/holiday/plank_long: 63 344 rr
+:raymanni/holiday/plank_long: 175 232 rrr
+:geoo/construction/rod_steel/link_h_du.S: 568 104
+:geoo/construction/rod_steel/straight32.S: 536 106
+:geoo/construction/rod_steel/straight32.S: 504 106
+:geoo/construction/rod_steel/straight32.S: 472 106
+:geoo/construction/rod_steel/straight32.S: 440 106
+:geoo/construction/rod_steel/straight32.S: 408 106
+:geoo/construction/rod_steel/straight32.S: 376 106
+:geoo/construction/rod_steel/straight32.S: 344 106
+:geoo/construction/rod_steel/straight32.S: 312 106
+:geoo/construction/rod_steel/straight32.S: 280 106
+:geoo/construction/rod_steel/straight32.S: 248 106
+:geoo/construction/rod_steel/link_du_h.S: 228 94
+:geoo/construction/rod_steel/straight_diagu32.S: 196 110
+:geoo/construction/rod_steel/straight_diagu32.S: 164 142
+:geoo/construction/rod_steel/straight_diagu32.S: 132 174
+:geoo/construction/rod_steel/link_h_du.S: 116 206
+:geoo/construction/rod_steel/straight32.S: 52 208
+:geoo/construction/rod_steel/straight32.S: 84 208
+:geoo/construction/rod_steel/straight32.S: 24 208
+:geoo/construction/rod_steel/straight_diagu32.S: 584 72
+:geoo/construction/rod_steel/link_h_du.S: 615 57 fr
+:geoo/construction/rod_steel/straight32.S: 0 198 rrr
+:geoo/construction/rod_steel/straight32.S: 0 230 rrr
+:geoo/construction/rod_steel/straight32.S: 0 262 rrr
+:geoo/construction/rod_steel/straight32.S: 0 294 rrr
+:geoo/construction/rod_steel/straight32.S: 0 326 rrr
+:geoo/construction/rod_steel/straight32.S: 0 358 rrr
+:geoo/construction/rod_steel/straight32.S: 8 232
+:geoo/construction/rod_steel/straight32.S: 0 384
+:geoo/construction/rod_steel/straight32.S: 16 384
+:geoo/construction/rod_steel/straight_diagd32.S: 863 32 frr
+:geoo/construction/rod_steel/straight_diagu32.S: 823 16 frr
+:geoo/construction/rod_steel/straight_diagu32.S: 727 16 frr
+:geoo/construction/rod_steel/straight_diagu32.S: 695 16 frr
+:geoo/construction/rod_steel/straight_diagu32.S: 663 16 frr
+:geoo/construction/rod_steel/straight_diagu32.S: 631 16 frr
+:geoo/construction/rod_steel/straight32.S: 896 68
+:geoo/construction/rod_steel/straight_diagu32.S: 759 16 frr
+:geoo/construction/rod_steel/straight_diagu32.S: 791 16 frr
+:geoo/construction/rod_steel/straight_diagd32.S: 855 32 frr
+:geoo/construction/rod_steel/straight_diagd32.S: 847 32 frr
+:geoo/construction/rod_steel/straight32.S: 864 68
+:geoo/construction/rod_steel/straight32.S: 848 68
+:geoo/construction/rod_steel/straight_diagd32.S: 1781 32 frr
+:geoo/construction/rod_steel/straight_diagu32.S: 1757 16 frr
+:geoo/construction/rod_steel/straight_diagd32.S: 1733 32 frr
+:geoo/construction/rod_steel/straight_diagu32.S: 1709 16 frr
+:geoo/construction/rod_steel/straight_diagd32.S: 1685 32 frr
+:geoo/construction/rod_steel/straight_diagu32.S: 1661 16 frr
+:geoo/construction/rod_steel/straight_diagd32.S: 1637 32 frr
+:geoo/construction/rod_steel/straight_diagu32.S: 1613 16 frr
+:geoo/construction/rod_steel/straight_diagd32.S: 1589 32 frr
+:geoo/construction/rod_steel/straight_diagu32.S: 1565 16 frr
+:geoo/construction/rod_steel/straight_diagd32.S: 1541 32 frr
+:geoo/construction/rod_steel/straight_diagu32.S: 1517 16 frr
+:geoo/construction/rod_steel/straight_diagd32.S: 1493 32 frr
+:geoo/construction/rod_steel/straight_diagu32.S: 1469 16 frr
+:geoo/construction/rod_steel/straight_diagd32.S: 1445 32 frr
+:geoo/construction/rod_steel/straight_diagu32.S: 1421 16 frr
+:geoo/construction/rod_steel/straight_diagd32.S: 1397 32 frr
+:geoo/construction/rod_steel/straight_diagu32.S: 1373 16 frr
+:geoo/construction/rod_steel/straight_diagd32.S: 1349 32 frr
+:geoo/construction/rod_steel/straight_diagu32.S: 1325 16 frr
+:geoo/construction/rod_steel/straight_diagd32.S: 1301 32 frr
+:geoo/construction/rod_steel/straight_diagu32.S: 1277 16 frr
+:geoo/construction/rod_steel/straight_diagd32.S: 1253 32 frr
+:geoo/construction/rod_steel/straight_diagd32.S: 1185 26 frr
+:geoo/construction/rod_steel/straight_diagd32.S: 1161 50 frr
+:geoo/construction/rod_steel/straight_diagd32.S: 1186 56 frr
+:geoo/construction/rod_steel/straight32.S: 1215 32 frrr
+:geoo/construction/rod_steel/straight_diagu32.S: 1229 16 frr
+:geoo/construction/rod_steel/straight_diagu32.S: 1218 64 frr
+:geoo/construction/rod_steel/link_h_du.S: 1250 96 frr
+:geoo/construction/rod_steel/straight32.S: 1272 98 frr
+:geoo/construction/rod_steel/straight32.S: 1304 98 frr
+:geoo/construction/rod_steel/straight32.S: 1336 98 frr
+:geoo/construction/rod_steel/straight32.S: 1368 98 frr
+:geoo/construction/rod_steel/straight32.S: 1400 98 frr
+:geoo/construction/rod_steel/straight32.S: 1432 98 frr
+:geoo/construction/rod_steel/straight32.S: 1464 98 frr
+:geoo/construction/rod_steel/straight32.S: 1496 98 frr
+:geoo/construction/rod_steel/straight32.S: 1528 98 frr
+:geoo/construction/rod_steel/straight32.S: 1560 98 frr
+:geoo/construction/rod_steel/link_du_h.S: 1592 86 frr
+:geoo/construction/rod_steel/straight_diagu32.S: 1606 102 frr
+:raymanni/holiday/plank_long: 1696 152 frr
+:raymanni/holiday/plank_long: 1688 136 frr
+:geoo/construction/rod_steel/straight_diagu32.S: 1638 134 frr
+:geoo/construction/rod_steel/straight_diagu32.S: 1670 166 frr
+:raymanni/holiday/plank_right: 1776 184 frr
+:raymanni/holiday/plank_right: 1768 184 frr
+:raymanni/holiday/plank_right: 1744 184 frr
+:raymanni/holiday/plank_right: 1784 168 frr
+:raymanni/holiday/plank_right: 1768 168 frr
+:raymanni/holiday/plank_right: 1744 168 frr
+:raymanni/holiday/plank_right: 1720 168 frr
+:raymanni/holiday/plank_broken: 1712 184
+:geoo/construction/rod_steel/link_h_du.S: 1702 198 frr
+:geoo/construction/rod_steel/straight32.S: 1756 200 frr
+:raymanni/holiday/plank_long: 1680 120 frr
+:geoo/construction/rod_steel/straight32.S: 1724 200 frr
+:geoo/construction/rod_steel/link_h_du.S: 1215 49 r
+:raymanni/holiday/plank_broken: 1648 120
+:raymanni/holiday/plank_broken: 1664 136
+:raymanni/holiday/plank_broken: 1680 152
+:raymanni/holiday/plank_broken: 1696 168
+:raymanni/holiday/plank_long: 1073 88 frr
+:raymanni/holiday/plank_long: 1185 88 fr
+:raymanni/holiday/plank_long: 1073 200 f
+:raymanni/holiday/plank_long: 1073 88 frrr
+:raymanni/holiday/plank_long: 1073 232 frr
+:raymanni/holiday/plank_long: 1185 232 fr
+:raymanni/holiday/plank_long: 1073 344 f
+:raymanni/holiday/plank_long: 1073 232 frrr
+:raymanni/holiday/plank_long: 929 88 frr
+:raymanni/holiday/plank_long: 1041 88 fr
+:raymanni/holiday/plank_long: 929 200 f
+:raymanni/holiday/plank_long: 929 88 frrr
+:raymanni/holiday/plank_long: 929 232 frr
+:raymanni/holiday/plank_long: 1041 232 fr
+:raymanni/holiday/plank_long: 929 344 f
+:raymanni/holiday/plank_long: 929 232 frrr
+:raymanni/holiday/plank_long: 1217 232 frr
+:raymanni/holiday/plank_long: 1329 232 fr
+:raymanni/holiday/plank_long: 1217 344 f
+:raymanni/holiday/plank_long: 1217 232 frrr
+:raymanni/holiday/plank_long: 1361 232 frr
+:raymanni/holiday/plank_long: 1473 232 fr
+:raymanni/holiday/plank_long: 1361 344 f
+:raymanni/holiday/plank_long: 1361 232 frrr
+:raymanni/holiday/plank_long: 1505 232 frr
+:raymanni/holiday/plank_long: 1617 232 fr
+:raymanni/holiday/plank_long: 1505 344 f
+:raymanni/holiday/plank_long: 1505 232 frrr
+:raymanni/holiday/plank_long: 1649 232 frr
+:raymanni/holiday/plank_long: 1761 232 fr
+:raymanni/holiday/plank_long: 1649 344 f
+:raymanni/holiday/plank_long: 1649 232 frrr
+:geoo/construction/rod_steel/link_h_du.S: 1250 104 frr
+:geoo/construction/rod_steel/straight32.S: 1272 106 frr
+:geoo/construction/rod_steel/straight32.S: 1304 106 frr
+:geoo/construction/rod_steel/straight32.S: 1336 106 frr
+:geoo/construction/rod_steel/straight32.S: 1368 106 frr
+:geoo/construction/rod_steel/straight32.S: 1400 106 frr
+:geoo/construction/rod_steel/straight32.S: 1432 106 frr
+:geoo/construction/rod_steel/straight32.S: 1464 106 frr
+:geoo/construction/rod_steel/straight32.S: 1496 106 frr
+:geoo/construction/rod_steel/straight32.S: 1528 106 frr
+:geoo/construction/rod_steel/straight32.S: 1560 106 frr
+:geoo/construction/rod_steel/link_du_h.S: 1592 94 frr
+:geoo/construction/rod_steel/straight_diagu32.S: 1606 110 frr
+:geoo/construction/rod_steel/straight_diagu32.S: 1638 142 frr
+:geoo/construction/rod_steel/straight_diagu32.S: 1670 174 frr
+:geoo/construction/rod_steel/link_h_du.S: 1702 206 frr
+:geoo/construction/rod_steel/straight32.S: 1756 208 frr
+:geoo/construction/rod_steel/straight32.S: 1724 208 frr
+:geoo/construction/rod_steel/straight32.S: 1784 208 frr
+:geoo/construction/rod_steel/straight_diagu32.S: 1218 72 frr
+:geoo/construction/rod_steel/link_h_du.S: 1215 57 r
+:geoo/construction/rod_steel/straight32.S: 1832 198 frrr
+:geoo/construction/rod_steel/straight32.S: 1832 230 frrr
+:geoo/construction/rod_steel/straight32.S: 1832 262 frrr
+:geoo/construction/rod_steel/straight32.S: 1832 294 frrr
+:geoo/construction/rod_steel/straight32.S: 1832 326 frrr
+:geoo/construction/rod_steel/straight32.S: 1832 358 frrr
+:geoo/construction/rod_steel/straight32.S: 1800 232 frr
+:geoo/construction/rod_steel/straight32.S: 1808 384 frr
+:geoo/construction/rod_steel/straight32.S: 1792 384 frr
+:geoo/construction/rod_steel/straight_diagd32.S: 939 32
+:geoo/construction/rod_steel/straight_diagu32.S: 979 16
+:geoo/construction/rod_steel/straight_diagu32.S: 1075 16
+:geoo/construction/rod_steel/straight_diagu32.S: 1107 16
+:geoo/construction/rod_steel/straight_diagu32.S: 1139 16
+:geoo/construction/rod_steel/straight_diagu32.S: 1171 16
+:geoo/construction/rod_steel/straight32.S: 912 68 frr
+:geoo/construction/rod_steel/straight_diagu32.S: 1043 16
+:geoo/construction/rod_steel/straight_diagu32.S: 1011 16
+:geoo/construction/rod_steel/straight_diagd32.S: 947 32
+:geoo/construction/rod_steel/straight_diagd32.S: 955 32
+:geoo/construction/rod_steel/straight32.S: 944 68 frr
+:geoo/construction/rod_steel/straight32.S: 960 68 frr

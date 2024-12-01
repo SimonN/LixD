@@ -1,0 +1,222 @@
+$BUILT 2024-07-18 13:00:55
+$AUTHOR Hyperlodge
+$ENGLISH Down in the Garage
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 664
+#SIZE_Y 656
+#BACKGROUND_RED 159
+#BACKGROUND_GREEN 96
+#BACKGROUND_BLUE 79
+
+#SECONDS 59
+#INITIAL 120
+#SPAWN_INTERVAL 69
+
+#WALKER 20
+#RUNNER 20
+#CLIMBER 20
+#EXPLODER2 100
+#BLOCKER 100
+#BUILDER 100
+#PLATFORMER 100
+#BASHER 100
+#MINER 100
+#JUMPER 20
+#BATTER 20
+#CUBER 100
+
+:geoo/abstract/hatch.H: 336 168
+:geoo/abstract/hatch.H: 296 168 r
+
+:raymanni/lab/goal.G: 360 576
+:raymanni/lab/goal.G: 240 576
+
+:proxima/flame.F: 313 608
+:proxima/flame.F: 313 565
+:proxima/flame.F: 297 565
+:proxima/flame.F: 329 565
+
+:geoo/construction/steam_up.T: 216 200
+:geoo/construction/steam_up.T: 200 232
+:geoo/construction/steam_up.T: 184 264
+:geoo/construction/steam_up.T: 168 296
+:geoo/construction/steam_up.T: 152 328
+:geoo/construction/steam_up.T: 16 624
+:geoo/construction/steam_up.T: 0 624
+:raymanni/lab/launcher_right.T: 0 592
+:raymanni/lab/launcher_right.T: 0 560
+:raymanni/lab/launcher_right.T: 0 528
+:raymanni/lab/launcher_right.T: 0 496
+:raymanni/lab/launcher_right.T: 0 464
+:raymanni/lab/launcher_right.T: 0 432
+:raymanni/lab/launcher_right.T: 0 400
+:raymanni/lab/launcher_right.T: 0 368
+:raymanni/lab/launcher_right.T: 0 336
+:raymanni/lab/launcher_right.T: 0 304
+:raymanni/lab/launcher_right.T: 0 272
+:raymanni/lab/launcher_right.T: 0 240
+:geoo/construction/steam_up.T: 432 200
+:geoo/construction/steam_up.T: 448 232
+:geoo/construction/steam_up.T: 464 264
+:geoo/construction/steam_up.T: 480 296
+:geoo/construction/steam_up.T: 496 328
+:geoo/construction/steam_up.T: 632 624
+:geoo/construction/steam_up.T: 648 624
+:raymanni/lab/launcher_left.T: 632 240
+:raymanni/lab/launcher_left.T: 632 272
+:raymanni/lab/launcher_left.T: 632 304
+:raymanni/lab/launcher_left.T: 632 336
+:raymanni/lab/launcher_left.T: 632 368
+:raymanni/lab/launcher_left.T: 632 400
+:raymanni/lab/launcher_left.T: 632 432
+:raymanni/lab/launcher_left.T: 632 464
+:raymanni/lab/launcher_left.T: 632 496
+:raymanni/lab/launcher_left.T: 632 528
+:raymanni/lab/launcher_left.T: 632 560
+:raymanni/lab/launcher_left.T: 632 592
+:geoo/abstract/tbeam_up.T: 0 168
+:geoo/abstract/tbeam_up.T: 632 168
+:geoo/abstract/tbeam_left.T: 632 136
+:geoo/abstract/tbeam_right.T: 0 136
+:raymanni/lab/launcher_left.T: 280 418
+:raymanni/lab/launcher_left.T: 280 450
+:raymanni/lab/launcher_left.T: 280 482
+:raymanni/lab/launcher_right.T: 352 482
+:raymanni/lab/launcher_right.T: 352 450
+:raymanni/lab/launcher_right.T: 352 418
+:raymanni/lab/launcher_left.T: 280 386
+:raymanni/lab/launcher_right.T: 352 386
+:geoo/construction/steam_up.T: 324 482
+
+$BEGIN_TILE_GROUP 0
+:geoo/construction/stairs_ru_32.S: 8 0
+:geoo/construction/stairs_ru_32.S: 0 0 frr
+$END_TILE_GROUP
+:Group-0: 132 412 r
+:Group-0: 116 476 r
+:Group-0: 84 444 r
+:Group-0: 68 508 r
+:Group-0: 100 540 r
+:Group-0: 132 572 r
+:Group-0: 148 500 r
+:Group-0: 164 436 r
+:geoo/shadow/wall/side: 152 360
+:geoo/shadow/wall/side: 184 360
+:geoo/shadow/wall/side: 168 328
+:geoo/shadow/wall/side: 200 328
+:geoo/shadow/wall/side: 184 296
+:geoo/shadow/wall/side: 216 296
+:geoo/shadow/wall/side: 200 264
+:geoo/shadow/wall/side: 232 264
+:geoo/shadow/wall/side: 216 232
+:geoo/shadow/wall/side: 248 232
+:geoo/shadow/wall/side: 232 200
+:geoo/shadow/wall/side: 264 200
+:geoo/shadow/pillar_hztl_32: 96 640
+:geoo/shadow/pillar_hztl_32: 128 640
+:geoo/shadow/pillar_hztl_32: 160 640
+:geoo/shadow/pillar_hztl_32: 192 640
+:geoo/shadow/pillar_hztl_32: 64 640
+:geoo/shadow/pillar_hztl_32: 32 640
+:geoo/shadow/pillar_hztl_32: 224 640
+:geoo/shadow/pillar_hztl_32: 256 640
+:raymanni/toys/brick_1: 288 592
+:raymanni/toys/chalk_4: 256 592 r
+:raymanni/toys/chalk_4: 224 592 r
+:raymanni/toys/chalk_4: 192 592 r
+:raymanni/toys/car_2: 208 552
+:raymanni/toys/letter_blank: 256 608
+:raymanni/toys/letter_blank: 224 608
+:raymanni/toys/letter_blank: 192 608
+:Group-0: 296 200 rr
+:geoo/shadow/wall/side: 280 264
+:geoo/construction/platform.S: 264 264
+:geoo/shadow/wall/side: 264 296
+:geoo/construction/platform.S: 248 296
+:geoo/shadow/wall/side: 248 328
+:geoo/construction/platform.S: 232 328
+:geoo/construction/platform.S: 216 360
+:geoo/shadow/wall/side: 0 208
+:raymanni/toys/chalk_4: 0 200 r
+:raymanni/toys/chalk_4: 32 200 r
+:raymanni/toys/chalk_4: 64 200 r
+:raymanni/toys/chalk_4: 96 200 r
+:raymanni/toys/chalk_4: 128 200 r
+:Group-0: 500 412 fr
+:Group-0: 516 476 fr
+:Group-0: 548 444 fr
+:Group-0: 564 508 fr
+:Group-0: 532 540 fr
+:Group-0: 500 572 fr
+:Group-0: 484 500 fr
+:Group-0: 468 436 fr
+:geoo/shadow/wall/side: 480 360 frr
+:geoo/shadow/wall/side: 448 360 frr
+:geoo/shadow/wall/side: 464 328 frr
+:geoo/shadow/wall/side: 432 328 frr
+:geoo/shadow/wall/side: 448 296 frr
+:geoo/shadow/wall/side: 416 296 frr
+:geoo/shadow/wall/side: 432 264 frr
+:geoo/shadow/wall/side: 400 264 frr
+:geoo/shadow/wall/side: 416 232 frr
+:geoo/shadow/wall/side: 384 232 frr
+:geoo/shadow/wall/side: 400 200 frr
+:geoo/shadow/wall/side: 368 200 frr
+:geoo/shadow/pillar_hztl_32: 536 640 frr
+:geoo/shadow/pillar_hztl_32: 504 640 frr
+:geoo/shadow/pillar_hztl_32: 472 640 frr
+:geoo/shadow/pillar_hztl_32: 440 640 frr
+:geoo/shadow/pillar_hztl_32: 568 640 frr
+:geoo/shadow/pillar_hztl_32: 600 640 frr
+:geoo/shadow/pillar_hztl_32: 408 640 frr
+:geoo/shadow/pillar_hztl_32: 376 640 frr
+:raymanni/toys/chalk_4: 376 592 fr
+:raymanni/toys/chalk_4: 408 592 fr
+:raymanni/toys/chalk_4: 440 592 fr
+:raymanni/toys/letter_blank: 376 608 frr
+:raymanni/toys/letter_blank: 408 608 frr
+:raymanni/toys/letter_blank: 440 608 frr
+:geoo/shadow/wall/side: 352 264
+:geoo/construction/platform.S: 368 264 frr
+:geoo/shadow/wall/side: 376 296
+:geoo/construction/platform.S: 384 296 frr
+:geoo/shadow/wall/side: 392 328
+:geoo/construction/platform.S: 400 328 frr
+:geoo/construction/platform.S: 416 360 frr
+:geoo/shadow/wall/side: 632 208 frr
+:raymanni/toys/chalk_4: 632 200 fr
+:raymanni/toys/chalk_4: 600 200 fr
+:raymanni/toys/chalk_4: 568 200 fr
+:raymanni/toys/chalk_4: 536 200 fr
+:raymanni/toys/chalk_4: 504 200 fr
+:raymanni/toys/brick_1: 336 592
+:raymanni/toys/car_1: 392 552 frr
+:geoo/shadow/wall/side: 336 232
+:geoo/shadow/wall/side: 296 232
+:amanda/steel/steel24x8.S: 480 640
+:amanda/steel/steel24x8.S: 528 640
+:amanda/steel/steel24x8.S: 160 640
+:amanda/steel/steel24x8.S: 112 640
+:amanda/steel/steel24x8.S: 192 544
+:amanda/steel/steel24x8.S: 216 544
+:amanda/steel/steel24x8.S: 240 544
+:amanda/steel/steel24x8.S: 264 544
+:amanda/steel/steel24x8.S: 288 544
+:amanda/steel/steel24x8.S: 320 544
+:amanda/steel/steel24x8.S: 352 544
+:amanda/steel/steel24x8.S: 376 544
+:amanda/steel/steel24x8.S: 400 544
+:amanda/steel/steel24x8.S: 424 544
+:amanda/steel/steel24x8.S: 448 544
+:amanda/steel/steel24x8.S: 192 584
+:amanda/steel/steel24x8.S: 216 584
+:amanda/steel/steel24x8.S: 240 584
+:amanda/steel/steel24x8.S: 264 584
+:amanda/steel/steel24x8.S: 376 584
+:amanda/steel/steel24x8.S: 400 584
+:amanda/steel/steel24x8.S: 424 584
+:amanda/steel/steel24x8.S: 448 584
+:raymanni/lab/pipe_7: 324 512 rr
+:geoo/sandstone/slopes/32x64rb: 128 136
+:geoo/sandstone/slopes/32x64lb: 504 136

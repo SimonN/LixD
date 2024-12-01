@@ -1,0 +1,136 @@
+$BUILT 2024-07-18 15:21:33
+$AUTHOR Hyperlodge
+$ENGLISH Petty Slopes
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1120
+#SIZE_Y 400
+#TORUS_X 1
+#TORUS_Y 1
+#BACKGROUND_RED 207
+#BACKGROUND_GREEN 207
+#BACKGROUND_BLUE 207
+
+#SECONDS 100
+#INITIAL 100
+#SPAWN_INTERVAL 1
+
+#WALKER 10
+#RUNNER 10
+#CLIMBER -1
+#FLOATER -1
+#EXPLODER2 -1
+#BLOCKER -1
+#BUILDER -1
+#PLATFORMER 10
+#BASHER 10
+#MINER 10
+#DIGGER 10
+#JUMPER -1
+#BATTER 10
+#CUBER 10
+
+:geoo/construction/Hatch.H: 736 352 r
+:geoo/construction/Hatch.H: 352 352
+
+:raymanni/lab/goal.G: 16 176
+:raymanni/lab/goal.G: 1040 176
+
+:geoo/construction/concrete/032ha: 496 112
+:geoo/construction/concrete/032ha: 496 48
+:geoo/construction/concrete/032ha: 576 16
+:geoo/construction/concrete/032ha: 592 80
+:geoo/construction/concrete/032ha: 648 32
+:geoo/construction/concrete/032ha: 608 160
+:geoo/construction/concrete/032ha: 656 112
+:geoo/construction/concrete/032ha: 704 64
+:geoo/construction/concrete/032ha: 672 192
+:geoo/construction/concrete/032ha: 720 144
+:geoo/construction/concrete/032ha: 768 96
+:geoo/construction/concrete/032ha: 736 224
+:geoo/construction/concrete/032ha: 784 176
+:geoo/construction/concrete/032ha: 832 128
+:geoo/construction/concrete/032ha: 800 256
+:geoo/construction/concrete/032ha: 848 208
+:geoo/construction/concrete/032ha: 896 160
+:geoo/construction/concrete/032ha: 864 288
+:geoo/construction/concrete/032ha: 912 240
+:geoo/construction/concrete/032ha: 960 192
+:geoo/construction/concrete/032ha: 928 320
+:geoo/construction/concrete/032ha: 976 272
+:geoo/construction/concrete/032ha: 1040 304
+:geoo/construction/concrete/032ha: 1056 352
+:geoo/construction/concrete/032ha: 1056 256
+:geoo/construction/concrete/032ha: 496 176
+:geoo/construction/concrete/032ha: 576 224
+:geoo/construction/concrete/032ha: 624 240
+:geoo/construction/concrete/032ha: 696 272
+:geoo/construction/concrete/032ha: 760 304
+:geoo/construction/concrete/032ha: 816 336
+:geoo/construction/concrete/032ha: 832 384
+:geoo/construction/concrete/032ha: 656 320
+:geoo/construction/concrete/032ha: 752 16
+:geoo/construction/concrete/032ha: 800 48
+:geoo/construction/concrete/032ha: 864 80
+:geoo/construction/concrete/032ha: 928 112
+:geoo/construction/concrete/032ha: 992 144
+:geoo/construction/concrete/032ha: 992 64
+:geoo/construction/concrete/032ha: 1056 96
+:geoo/construction/concrete/032ha: 928 32
+:geoo/construction/concrete/032ha: 912 368
+:geoo/construction/concrete/032ha: 720 384
+:geoo/construction/concrete/032ha: 496 288
+:geoo/construction/concrete/032ha: 592 336 frr
+:geoo/construction/concrete/032ha: 640 368
+:geoo/construction/concrete/032ha: 496 384
+:geoo/construction/concrete/032ha: 976 384
+:geoo/construction/concrete/032ha: 1040 16
+:geoo/construction/concrete/032ha: 560 112 frr
+:geoo/construction/concrete/032ha: 560 48 frr
+:geoo/construction/concrete/032ha: 480 16 frr
+:geoo/construction/concrete/032ha: 464 80 frr
+:geoo/construction/concrete/032ha: 408 32 frr
+:geoo/construction/concrete/032ha: 448 160 frr
+:geoo/construction/concrete/032ha: 400 112 frr
+:geoo/construction/concrete/032ha: 352 64 frr
+:geoo/construction/concrete/032ha: 384 192 frr
+:geoo/construction/concrete/032ha: 336 144 frr
+:geoo/construction/concrete/032ha: 288 96 frr
+:geoo/construction/concrete/032ha: 320 224 frr
+:geoo/construction/concrete/032ha: 272 176 frr
+:geoo/construction/concrete/032ha: 224 128 frr
+:geoo/construction/concrete/032ha: 256 256 frr
+:geoo/construction/concrete/032ha: 208 208 frr
+:geoo/construction/concrete/032ha: 160 160 frr
+:geoo/construction/concrete/032ha: 192 288 frr
+:geoo/construction/concrete/032ha: 144 240 frr
+:geoo/construction/concrete/032ha: 96 192 frr
+:geoo/construction/concrete/032ha: 128 320 frr
+:geoo/construction/concrete/032ha: 80 272 frr
+:geoo/construction/concrete/032ha: 16 304 frr
+:geoo/construction/concrete/032ha: 0 352 frr
+:geoo/construction/concrete/032ha: 0 256 frr
+:geoo/construction/concrete/032ha: 560 176 frr
+:geoo/construction/concrete/032ha: 480 224 frr
+:geoo/construction/concrete/032ha: 432 240 frr
+:geoo/construction/concrete/032ha: 352 272 frr
+:geoo/construction/concrete/032ha: 296 304 frr
+:geoo/construction/concrete/032ha: 240 336 frr
+:geoo/construction/concrete/032ha: 224 384 frr
+:geoo/construction/concrete/032ha: 400 320 frr
+:geoo/construction/concrete/032ha: 304 16 frr
+:geoo/construction/concrete/032ha: 256 48 frr
+:geoo/construction/concrete/032ha: 192 80 frr
+:geoo/construction/concrete/032ha: 128 112 frr
+:geoo/construction/concrete/032ha: 64 144 frr
+:geoo/construction/concrete/032ha: 64 64 frr
+:geoo/construction/concrete/032ha: 0 96 frr
+:geoo/construction/concrete/032ha: 128 32 frr
+:geoo/construction/concrete/032ha: 144 368 frr
+:geoo/construction/concrete/032ha: 336 384 frr
+:geoo/construction/concrete/032ha: 560 288 frr
+:geoo/construction/concrete/032ha: 464 336
+:geoo/construction/concrete/032ha: 416 368 frr
+:geoo/construction/concrete/032ha: 560 384 frr
+:geoo/construction/concrete/032ha: 80 384 frr
+:geoo/construction/concrete/032ha: 16 16 frr

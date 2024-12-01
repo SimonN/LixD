@@ -1,0 +1,111 @@
+$BUILT 2024-07-18 11:30:45
+$AUTHOR Hyperlodge
+$ENGLISH Brown Death Warehouse
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 672
+#SIZE_Y 408
+#BACKGROUND_RED 24
+#BACKGROUND_GREEN 40
+#BACKGROUND_BLUE 28
+
+#SECONDS 66
+#INITIAL 76
+#SPAWN_INTERVAL 76
+
+#RUNNER 60
+#CLIMBER 60
+#FLOATER 6
+#EXPLODER2 60
+#BLOCKER 60
+#BUILDER 60
+#MINER 20
+#DIGGER 6
+#JUMPER 6
+#BATTER 6
+#CUBER 60
+
+:matt/goldmine/Hatch.H: 16 288
+:matt/goldmine/Hatch.H: 592 288 r
+:matt/goldmine/Hatch.H: 560 224 r
+:matt/goldmine/Hatch.H: 48 224
+
+:matt/goldmine/Goal.G: 576 32
+:matt/goldmine/Goal.G: 32 32
+
+:proxima/flame.F: 208 336
+:proxima/flame.F: 232 328
+:proxima/flame.F: 400 328
+:proxima/flame.F: 424 336
+:proxima/flame.F: 592 328
+:proxima/flame.F: 40 328
+:proxima/flame.F: 0 352
+:proxima/flame.F: 632 352
+:proxima/flame.F: 272 352
+:proxima/flame.F: 360 352
+:proxima/flame.F: 316 360
+
+:raymanni/lab/launcher_left.T: 272 176
+:raymanni/lab/launcher_left.T: 368 112
+:raymanni/lab/launcher_right.T: 368 176
+:raymanni/lab/launcher_right.T: 272 112
+
+:matt/goldmine/explosivecrate: 16 336
+:matt/goldmine/explosivecrate: 208 336
+:matt/goldmine/plank: 80 336
+:matt/goldmine/explosivecrate: 400 336
+:matt/goldmine/explosivecrate: 592 336
+:matt/goldmine/plank: 464 336
+:matt/goldmine/plank: 16 272
+:matt/goldmine/plank: 144 272
+:matt/goldmine/plank: 400 272
+:matt/goldmine/plank: 528 272
+:matt/goldmine/plank: 272 272
+:matt/goldmine/plank: 16 208
+:matt/goldmine/plank: 144 208
+:matt/goldmine/plank: 400 208
+:matt/goldmine/plank: 528 208
+:matt/goldmine/plank: 272 208
+:matt/goldmine/plank: 16 144
+:matt/goldmine/plank: 144 144
+:matt/goldmine/plank: 400 144
+:matt/goldmine/plank: 528 144
+:matt/goldmine/plank: 272 144
+:matt/goldmine/plank: 16 80
+:matt/goldmine/plank: 144 80
+:matt/goldmine/plank: 400 80
+:matt/goldmine/plank: 528 80
+:matt/goldmine/plank: 272 80
+:matt/goldmine/plank: 272 360
+:geoo/construction/rod_steel/straight32.S: 0 400
+:geoo/construction/rod_steel/straight32.S: 32 400
+:geoo/construction/rod_steel/straight32.S: 64 400
+:geoo/construction/rod_steel/straight32.S: 96 400
+:geoo/construction/rod_steel/straight32.S: 128 400
+:geoo/construction/rod_steel/straight32.S: 160 400
+:geoo/construction/rod_steel/straight32.S: 192 400
+:geoo/construction/rod_steel/straight32.S: 224 400
+:geoo/construction/rod_steel/straight32.S: 256 400
+:geoo/construction/rod_steel/straight32.S: 288 400
+:geoo/construction/rod_steel/straight32.S: 320 400
+:geoo/construction/rod_steel/straight32.S: 352 400
+:geoo/construction/rod_steel/straight32.S: 384 400
+:geoo/construction/rod_steel/straight32.S: 416 400
+:geoo/construction/rod_steel/straight32.S: 448 400
+:geoo/construction/rod_steel/straight32.S: 480 400
+:geoo/construction/rod_steel/straight32.S: 512 400
+:geoo/construction/rod_steel/straight32.S: 544 400
+:geoo/construction/rod_steel/straight32.S: 576 400
+:geoo/construction/rod_steel/straight32.S: 608 400
+:geoo/construction/rod_steel/straight32.S: 640 400
+:matt/goldmine/crate32: 624 240
+:matt/goldmine/crate32: 16 240
+:matt/goldmine/crate16: 640 192
+:matt/goldmine/crate16: 640 128
+:matt/goldmine/crate16: 640 64
+:matt/goldmine/crate16: 16 64
+:matt/goldmine/crate16: 16 128
+:matt/goldmine/crate16: 16 192
+:matt/goldmine/planksupport2: 400 272
+:matt/goldmine/planksupport2: 304 144
+:matt/goldmine/planksupport2: 208 272

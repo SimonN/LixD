@@ -1,0 +1,182 @@
+$BUILT 2024-07-18 15:18:36
+$AUTHOR Hyperlodge
+$ENGLISH Caught in the Web
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 592
+#SIZE_Y 656
+#BACKGROUND_RED 159
+#BACKGROUND_GREEN 16
+#BACKGROUND_BLUE 48
+
+#SECONDS 60
+#INITIAL 150
+#SPAWN_INTERVAL 80
+
+#WALKER 10
+#RUNNER 10
+#CLIMBER 10
+#FLOATER 10
+#EXPLODER2 -1
+#BLOCKER -1
+#BUILDER -1
+#PLATFORMER 10
+#BASHER 10
+#MINER 10
+#DIGGER 10
+#JUMPER 10
+#BATTER 10
+#CUBER 10
+
+:amanda/occult/hatch_tentacle.H: 56 32 r
+:amanda/occult/hatch_tentacle.H: 440 32
+
+:matt/marble/Goal.G: 456 440
+:matt/marble/Goal.G: 72 440
+
+:proxima/flame.F: 276 440
+:proxima/flame.F: 246 442
+:proxima/flame.F: 306 442
+
+:geoo/abstract/tbeam_down.T: 8 520
+:geoo/abstract/tbeam_down.T: 560 224
+:geoo/abstract/tbeam_down.T: 0 224
+:geoo/abstract/tbeam_down.T: 552 520
+:geoo/abstract/tbeam_down.T: 40 520
+:geoo/abstract/tbeam_down.T: 520 520
+:geoo/abstract/tbeam_down.T: 72 520
+:geoo/abstract/tbeam_down.T: 104 520
+:geoo/abstract/tbeam_down.T: 488 520
+:geoo/abstract/tbeam_down.T: 456 520
+:geoo/abstract/tbeam_down.T: 136 520
+:geoo/abstract/tbeam_down.T: 168 520
+:geoo/abstract/tbeam_down.T: 424 520
+:geoo/abstract/tbeam_down.T: 392 520
+:geoo/abstract/tbeam_left.T: 32 224
+:geoo/abstract/tbeam_left.T: 64 224
+:geoo/abstract/tbeam_right.T: 528 224
+:geoo/abstract/tbeam_right.T: 496 224
+:geoo/abstract/tbeam_left.T: 96 224
+:geoo/abstract/tbeam_left.T: 128 224
+:geoo/abstract/tbeam_right.T: 464 224
+:geoo/abstract/tbeam_right.T: 432 224
+:geoo/abstract/tbeam_right.T: 384 368
+:geoo/abstract/tbeam_left.T: 176 368
+:geoo/abstract/tbeam_right.T: 208 368
+:geoo/abstract/tbeam_left.T: 352 368
+:geoo/abstract/tbeam_left.T: 144 368
+:geoo/abstract/tbeam_right.T: 416 368
+:geoo/abstract/tbeam_left.T: 112 368
+:geoo/abstract/tbeam_right.T: 448 368
+
+:proxima/tile/spheres/goldsmall: 312 290
+:proxima/tile/spheres/greensmall: 304 322
+:proxima/tile/spheres/redsmall: 320 258
+:matt/beach/decor/moon: 264 394
+:proxima/tile/spheres/pinksmall: 280 392 d
+:matt/underworld/02: 264 488
+:proxima/tile/spheres/goldsmall: 248 290
+:proxima/tile/spheres/greensmall: 256 322
+:proxima/tile/spheres/redsmall: 240 258
+:proxima/tile/spheres/goldsmall: 224 194
+:proxima/tile/spheres/greensmall: 232 226
+:proxima/tile/spheres/redsmall: 216 162
+:proxima/tile/spheres/goldsmall: 336 194
+:proxima/tile/spheres/greensmall: 328 226
+:proxima/tile/spheres/redsmall: 344 162
+:proxima/tile/spheres/pinksmall: 268 418 d
+:proxima/tile/spheres/pinksmall: 292 418 d
+:matt/underworld/00: 12 104
+:matt/underworld/00: 76 104
+:matt/underworld/00: 140 104
+:matt/underworld/00: 388 104
+:matt/underworld/00: 452 104
+:matt/underworld/00: 516 104
+:geoo/construction/fence_64x64.S: 200 520
+:geoo/construction/fence_64x64.S: 328 520
+:matt/underworld/01: 200 488
+:matt/underworld/01: 328 488
+:matt/underworld/01: 392 488
+:matt/underworld/01: 136 488
+:matt/underworld/01: 72 488
+:matt/underworld/01: 456 488
+:amanda/steel/steel8x16.S: 0 520
+:amanda/steel/steel8x16.S: 0 536
+:amanda/steel/steel8x16.S: 0 552
+:amanda/steel/steel8x16.S: 0 568
+:amanda/steel/steel8x16.S: 0 584
+:amanda/steel/steel8x16.S: 0 600
+:amanda/steel/steel8x16.S: 0 616
+:amanda/steel/steel8x16.S: 0 632
+:amanda/steel/steel8x16.S: 584 520
+:amanda/steel/steel8x16.S: 584 536
+:amanda/steel/steel8x16.S: 584 552
+:amanda/steel/steel8x16.S: 584 568
+:amanda/steel/steel8x16.S: 584 584
+:amanda/steel/steel8x16.S: 584 600
+:amanda/steel/steel8x16.S: 584 616
+:amanda/steel/steel8x16.S: 584 632
+:amanda/steel/steel24x8.S: 0 648
+:amanda/steel/steel24x8.S: 24 648
+:amanda/steel/steel24x8.S: 48 648
+:amanda/steel/steel24x8.S: 72 648
+:amanda/steel/steel24x8.S: 96 648
+:amanda/steel/steel24x8.S: 120 648
+:amanda/steel/steel24x8.S: 144 648
+:amanda/steel/steel24x8.S: 168 648
+:amanda/steel/steel24x8.S: 192 648
+:amanda/steel/steel24x8.S: 216 648
+:amanda/steel/steel24x8.S: 240 648
+:amanda/steel/steel24x8.S: 264 648
+:amanda/steel/steel24x8.S: 304 648
+:amanda/steel/steel24x8.S: 328 648
+:amanda/steel/steel24x8.S: 352 648
+:amanda/steel/steel24x8.S: 376 648
+:amanda/steel/steel24x8.S: 400 648
+:amanda/steel/steel24x8.S: 424 648
+:amanda/steel/steel24x8.S: 448 648
+:amanda/steel/steel24x8.S: 472 648
+:amanda/steel/steel24x8.S: 496 648
+:amanda/steel/steel24x8.S: 520 648
+:amanda/steel/steel24x8.S: 544 648
+:amanda/steel/steel24x8.S: 568 648
+:geoo/construction/fence_64x64.S: 200 584
+:geoo/construction/fence_64x64.S: 328 584
+:amanda/steel/steel8x16.S: 288 640
+:amanda/steel/steel8x16.S: 296 640
+:amanda/steel/steel8x16.S: 288 624
+:amanda/steel/steel8x16.S: 296 624
+:amanda/steel/steel8x16.S: 288 608
+:amanda/steel/steel8x16.S: 296 608
+:amanda/steel/steel8x16.S: 288 592
+:amanda/steel/steel8x16.S: 296 592
+:amanda/steel/steel24x8.S: 284 584
+:raymanni/gore/bone_5: 132 112 rr
+:raymanni/gore/bone_5: 396 112 f
+:raymanni/gore/goop_1: 12 120
+:raymanni/gore/goop_1: 516 120 frr
+:raymanni/gore/goop_9: 376 480
+:raymanni/gore/eye: 368 456 f
+:raymanni/gore/goop_9: 201 480 frr
+:raymanni/gore/eye: 192 456 rr
+:raymanni/gore/bone_6: 1 48 frr
+:raymanni/gore/bone_6: 527 48
+:raymanni/gore/goop_1: 8 592 fr
+:raymanni/gore/goop_1: 520 592 r
+:matt/underworld/thinplatform128: 295 -53 rrr
+:amanda/forest/bark_04: 276 48 fr
+:amanda/occult/overlay32x32_d: 280 56
+:amanda/forest/bark_02: 296 16
+:amanda/forest/bark_02: 232 16 frr
+:amanda/forest/bark_04: 296 48 r
+:amanda/forest/bark_02: 240 92 rr
+:amanda/forest/bark_02: 288 92 f
+:amanda/forest/bark_02: 232 74 rr
+:amanda/forest/bark_02: 228 34 frr
+:amanda/forest/bark_02: 296 76 f
+:amanda/forest/bark_02: 300 34
+:amanda/occult/wax_details_drip_b: 280 88
+:matt/winter/09c: 276 114
+:matt/winter/09c: 300 114
+:amanda/occult/wax_details_drip_b: 280 50 f
+:amanda/occult/wax_details_drip_b: 280 50 rr

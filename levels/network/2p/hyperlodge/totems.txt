@@ -1,0 +1,631 @@
+$BUILT 2024-07-18 13:15:16
+$AUTHOR Hyperlodge
+$ENGLISH Totems
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 3200
+#SIZE_Y 320
+#BACKGROUND_RED 112
+#BACKGROUND_GREEN 48
+#BACKGROUND_BLUE 0
+
+#SECONDS 120
+#INITIAL 10
+#SPAWN_INTERVAL 20
+
+#WALKER 10
+#RUNNER 1
+#CLIMBER 1
+#FLOATER 1
+#EXPLODER2 10
+#BLOCKER 100
+#BUILDER 100
+#PLATFORMER 100
+#BASHER 100
+#MINER 1
+#DIGGER 100
+#JUMPER 10
+#BATTER 100
+#CUBER 1
+
+:geoo/sandstone/fennec.H: 1680 -48 r
+:geoo/sandstone/fennec.H: 1472 -48
+
+:amanda/forest/exit_tent.G: 166 -50
+:amanda/forest/exit_tent.G: 2939 -50
+
+:simon/water_main.W: 208 48
+:simon/water_main.W: 162 48
+:simon/water_main.W: 128 48
+:simon/water_main.W: 82 48
+:simon/water_main.W: 36 48
+:simon/water_main.W: 2945 48
+:simon/water_main.W: 2991 48
+:simon/water_main.W: 3025 48
+:simon/water_main.W: 3071 48
+:simon/water_main.W: 3117 48
+
+:proxima/flame.F: 1136 272
+:proxima/flame.F: 1168 280
+:proxima/flame.F: 1104 280
+:proxima/flame.F: 1072 272
+:proxima/flame.F: 1040 280
+:proxima/flame.F: 1008 272
+:proxima/flame.F: 976 280
+:proxima/flame.F: 944 272
+:proxima/flame.F: 912 280
+:proxima/flame.F: 880 272
+:proxima/flame.F: 1072 240
+:proxima/flame.F: 1040 248
+:proxima/flame.F: 1008 240
+:proxima/flame.F: 976 248
+:proxima/flame.F: 944 240
+:proxima/flame.F: 912 248
+:proxima/flame.F: 880 240
+:proxima/flame.F: 1008 208
+:proxima/flame.F: 976 216
+:proxima/flame.F: 944 208
+:proxima/flame.F: 912 216
+:proxima/flame.F: 880 208
+:proxima/flame.F: 848 216
+:proxima/flame.F: 816 208
+:proxima/flame.F: 944 176
+:proxima/flame.F: 912 184
+:proxima/flame.F: 880 176
+:proxima/flame.F: 848 184
+:proxima/flame.F: 816 176
+:proxima/flame.F: 784 184
+:proxima/flame.F: 752 176
+:proxima/flame.F: 784 216
+:proxima/flame.F: 752 208
+:proxima/flame.F: 784 248
+:proxima/flame.F: 752 240
+:proxima/flame.F: 848 248
+:proxima/flame.F: 816 240
+:proxima/flame.F: 848 280
+:proxima/flame.F: 816 272
+:proxima/flame.F: 784 280
+:proxima/flame.F: 752 272
+:proxima/flame.F: 720 216
+:proxima/flame.F: 688 208
+:proxima/flame.F: 720 184
+:proxima/flame.F: 688 176
+:proxima/flame.F: 656 184
+:proxima/flame.F: 624 176
+:proxima/flame.F: 656 216
+:proxima/flame.F: 624 208
+:proxima/flame.F: 656 248
+:proxima/flame.F: 624 240
+:proxima/flame.F: 720 248
+:proxima/flame.F: 688 240
+:proxima/flame.F: 720 280
+:proxima/flame.F: 688 272
+:proxima/flame.F: 656 280
+:proxima/flame.F: 624 272
+:proxima/flame.F: 592 184
+:proxima/flame.F: 592 216
+:proxima/flame.F: 592 248
+:proxima/flame.F: 592 280
+:proxima/flame.F: 592 56
+:proxima/flame.F: 592 88
+:proxima/flame.F: 592 120
+:proxima/flame.F: 592 152
+:proxima/flame.F: 624 48
+:proxima/flame.F: 624 80
+:proxima/flame.F: 624 112
+:proxima/flame.F: 624 144
+:proxima/flame.F: 656 56
+:proxima/flame.F: 656 88
+:proxima/flame.F: 656 120
+:proxima/flame.F: 656 152
+:proxima/flame.F: 688 80
+:proxima/flame.F: 688 112
+:proxima/flame.F: 688 144
+:proxima/flame.F: 720 88
+:proxima/flame.F: 720 120
+:proxima/flame.F: 720 152
+:proxima/flame.F: 784 120
+:proxima/flame.F: 752 112
+:proxima/flame.F: 752 144
+:proxima/flame.F: 784 152
+:proxima/flame.F: 816 144
+:proxima/flame.F: 848 152
+:proxima/flame.F: 688 48
+:proxima/flame.F: 752 80
+:proxima/flame.F: 816 112
+:proxima/flame.F: 880 144
+:geoo/construction/sawblade_medium.F: 488 240
+:geoo/construction/sawblade_medium.F: 448 240
+:geoo/construction/sawblade_medium.F: 408 240
+:geoo/construction/sawblade_medium.F: 368 240
+:geoo/construction/sawblade_medium.F: 328 240
+:geoo/construction/sawblade_medium.F: 288 240
+:geoo/construction/sawblade_medium.F: 248 240
+:geoo/construction/sawblade_medium.F: 208 240
+:geoo/construction/sawblade_medium.F: 168 240
+:geoo/construction/sawblade_medium.F: 128 240
+:geoo/construction/sawblade_medium.F: 88 240
+:geoo/construction/sawblade_medium.F: 48 240
+:proxima/flame.F: 2025 272
+:proxima/flame.F: 1993 280
+:proxima/flame.F: 2057 280
+:proxima/flame.F: 2089 272
+:proxima/flame.F: 2121 280
+:proxima/flame.F: 2153 272
+:proxima/flame.F: 2185 280
+:proxima/flame.F: 2217 272
+:proxima/flame.F: 2249 280
+:proxima/flame.F: 2281 272
+:proxima/flame.F: 2089 240
+:proxima/flame.F: 2121 248
+:proxima/flame.F: 2153 240
+:proxima/flame.F: 2185 248
+:proxima/flame.F: 2217 240
+:proxima/flame.F: 2249 248
+:proxima/flame.F: 2281 240
+:proxima/flame.F: 2153 208
+:proxima/flame.F: 2185 216
+:proxima/flame.F: 2217 208
+:proxima/flame.F: 2249 216
+:proxima/flame.F: 2281 208
+:proxima/flame.F: 2313 216
+:proxima/flame.F: 2345 208
+:proxima/flame.F: 2217 176
+:proxima/flame.F: 2249 184
+:proxima/flame.F: 2281 176
+:proxima/flame.F: 2313 184
+:proxima/flame.F: 2345 176
+:proxima/flame.F: 2377 184
+:proxima/flame.F: 2409 176
+:proxima/flame.F: 2377 216
+:proxima/flame.F: 2409 208
+:proxima/flame.F: 2377 248
+:proxima/flame.F: 2409 240
+:proxima/flame.F: 2313 248
+:proxima/flame.F: 2345 240
+:proxima/flame.F: 2313 280
+:proxima/flame.F: 2345 272
+:proxima/flame.F: 2377 280
+:proxima/flame.F: 2409 272
+:proxima/flame.F: 2441 216
+:proxima/flame.F: 2473 208
+:proxima/flame.F: 2441 184
+:proxima/flame.F: 2473 176
+:proxima/flame.F: 2505 184
+:proxima/flame.F: 2537 176
+:proxima/flame.F: 2505 216
+:proxima/flame.F: 2537 208
+:proxima/flame.F: 2505 248
+:proxima/flame.F: 2537 240
+:proxima/flame.F: 2441 248
+:proxima/flame.F: 2473 240
+:proxima/flame.F: 2441 280
+:proxima/flame.F: 2473 272
+:proxima/flame.F: 2505 280
+:proxima/flame.F: 2537 272
+:proxima/flame.F: 2569 184
+:proxima/flame.F: 2569 216
+:proxima/flame.F: 2569 248
+:proxima/flame.F: 2569 280
+:proxima/flame.F: 2569 56
+:proxima/flame.F: 2569 88
+:proxima/flame.F: 2569 120
+:proxima/flame.F: 2569 152
+:proxima/flame.F: 2537 48
+:proxima/flame.F: 2537 80
+:proxima/flame.F: 2537 112
+:proxima/flame.F: 2537 144
+:proxima/flame.F: 2505 56
+:proxima/flame.F: 2505 88
+:proxima/flame.F: 2505 120
+:proxima/flame.F: 2505 152
+:proxima/flame.F: 2473 80
+:proxima/flame.F: 2473 112
+:proxima/flame.F: 2473 144
+:proxima/flame.F: 2441 88
+:proxima/flame.F: 2441 120
+:proxima/flame.F: 2441 152
+:proxima/flame.F: 2377 120
+:proxima/flame.F: 2409 112
+:proxima/flame.F: 2409 144
+:proxima/flame.F: 2377 152
+:proxima/flame.F: 2345 144
+:proxima/flame.F: 2313 152
+:proxima/flame.F: 2473 48
+:proxima/flame.F: 2409 80
+:proxima/flame.F: 2345 112
+:proxima/flame.F: 2281 144
+:geoo/construction/sawblade_medium.F: 2649 240
+:geoo/construction/sawblade_medium.F: 2689 240
+:geoo/construction/sawblade_medium.F: 2729 240
+:geoo/construction/sawblade_medium.F: 2769 240
+:geoo/construction/sawblade_medium.F: 2809 240
+:geoo/construction/sawblade_medium.F: 2849 240
+:geoo/construction/sawblade_medium.F: 2889 240
+:geoo/construction/sawblade_medium.F: 2929 240
+:geoo/construction/sawblade_medium.F: 2969 240
+:geoo/construction/sawblade_medium.F: 3009 240
+:geoo/construction/sawblade_medium.F: 3049 240
+:geoo/construction/sawblade_medium.F: 3089 240
+
+:raymanni/lab/launcher_right.T: 512 160
+:raymanni/lab/launcher_left.T: 2656 160
+:raymanni/lab/launcher_right.T: 496 160
+:raymanni/lab/launcher_left.T: 2672 160
+
+:geoo/construction/stairs_rd_32.S: 1520 48 fr
+:geoo/construction/stairs_rd_32.S: 1536 112 r
+:raymanni/lab/steel_1.S: 1568 96
+:raymanni/lab/steel_1.S: 1488 32
+:geoo/construction/stairs_rd_32.S: 1520 176 fr
+:raymanni/lab/steel_1.S: 1488 160
+:geoo/construction/stairs_rd_32.S: 1536 240 r
+:raymanni/lab/steel_1.S: 1568 224
+:matt/carnival/34: 1472 288
+:matt/carnival/34: 1408 256
+:matt/carnival/34: 1344 224
+:matt/carnival/34: 1280 192
+:matt/carnival/34: 1216 160
+:matt/carnival/34: 1152 128
+:matt/carnival/34: 1088 96
+:matt/carnival/34: 1024 64
+:matt/carnival/34: 960 32
+:matt/carnival/34: 896 0
+:raymanni/lab/steel_1.S: 1568 64
+:raymanni/lab/steel_1.S: 1568 32
+:raymanni/lab/steel_1.S: 1568 192
+:raymanni/lab/steel_1.S: 1568 160
+:raymanni/lab/steel_1.S: 1488 128
+:raymanni/lab/steel_1.S: 1488 96
+:matt/carnival/21: 1280 256
+:matt/carnival/21: 1216 224
+:matt/carnival/21: 1152 192
+:matt/carnival/21: 1088 160
+:matt/carnival/21: 1024 128
+:matt/carnival/21: 960 96
+:matt/carnival/21: 896 64
+:matt/carnival/42: 1240 280
+:matt/carnival/42: 1176 248
+:matt/carnival/42: 1112 216
+:matt/carnival/42: 1048 184
+:matt/carnival/42: 984 152
+:matt/carnival/42: 920 120
+:matt/carnival/42: 856 88
+:matt/carnival/30: 888 40
+:matt/carnival/30: 824 8
+:matt/carnival/30: 952 72
+:matt/carnival/30: 1016 104
+:matt/carnival/30: 1080 136
+:matt/carnival/30: 1144 168
+:matt/carnival/30: 1208 200
+:matt/carnival/30: 1272 232
+:matt/carnival/30: 1336 264
+:matt/carnival/30: 1400 296
+:matt/carnival/21: 832 32
+:matt/carnival/35: 1168 288
+:matt/carnival/35: 1104 256
+:matt/carnival/35: 1040 224
+:matt/carnival/35: 976 192
+:matt/carnival/35: 912 160
+:matt/carnival/35: 848 128
+:matt/carnival/35: 784 96
+:matt/carnival/35: 720 64
+:matt/carnival/35: 656 32
+:matt/carnival/35: 592 0
+:matt/carnival/42: 792 56
+:matt/carnival/42: 728 24
+:matt/carnival/42: 664 -8
+:matt/carnival/21: 768 0
+:matt/carnival/21: 704 -32
+:matt/carnival/42: 1304 312
+:matt/carnival/21: 1344 288
+:matt/carnival/15: 560 40
+:matt/carnival/13: 536 40
+:matt/carnival/12: 512 40
+:matt/carnival/14: 488 40
+:matt/carnival/15: 464 40
+:matt/carnival/13: 440 40
+:matt/carnival/12: 416 40
+:matt/carnival/14: 392 40
+:matt/carnival/15: 368 40
+:matt/carnival/13: 344 40
+:matt/carnival/12: 320 40
+:matt/carnival/14: 296 40
+:matt/carnival/15: 272 40
+:matt/carnival/12: 328 64
+:matt/carnival/14: 304 64
+:matt/carnival/15: 280 64
+:matt/carnival/15: 288 88
+:geoo/construction/platform.S: 552 208
+:geoo/construction/platform.S: 520 208
+:geoo/construction/platform.S: 488 208
+:geoo/construction/platform.S: 456 208
+:geoo/construction/platform.S: 424 208
+:geoo/construction/platform.S: 392 208
+:geoo/construction/platform.S: 360 208
+:geoo/construction/platform.S: 328 208
+:geoo/construction/platform.S: 296 208
+:geoo/construction/platform.S: 256 192
+:geoo/construction/platform.S: 255 161 r
+:geoo/construction/platformbrick: 224 64
+:geoo/construction/platform.S: 255 65 r
+:geoo/construction/platformbrick: 224 48
+:geoo/construction/platform.S: 255 33 r
+:geoo/construction/platform.S: 255 1 r
+:geoo/construction/platform.S: 512 192
+:geoo/construction/platform.S: 480 192
+:geoo/construction/platform.S: 448 192
+:geoo/construction/platform.S: 416 192
+:geoo/construction/platform.S: 384 192
+:geoo/construction/platform.S: 352 192
+:geoo/construction/platform.S: 320 192
+:geoo/construction/platform.S: 288 192
+:geoo/construction/platform.S: 583 177 r
+:geoo/construction/platform.S: 255 97 r
+:geoo/construction/platform.S: 255 129 r
+:geoo/construction/platform.S: 256 224
+:geoo/construction/platform.S: 255 193 r
+:geoo/construction/platform.S: 512 224
+:geoo/construction/platform.S: 480 224
+:geoo/construction/platform.S: 448 224
+:geoo/construction/platform.S: 416 224
+:geoo/construction/platform.S: 384 224
+:geoo/construction/platform.S: 352 224
+:geoo/construction/platform.S: 320 224
+:geoo/construction/platform.S: 288 224
+:geoo/construction/platform.S: 583 209 r
+:raymanni/holiday/bauble_string: 520 298 r
+:matt/earth/30: 544 264
+:raymanni/holiday/bauble_string: 488 298 r
+:raymanni/holiday/bauble_string: 456 298 r
+:raymanni/holiday/bauble_string: 424 298 r
+:raymanni/holiday/bauble_string: 392 298 r
+:raymanni/holiday/bauble_string: 360 298 r
+:raymanni/holiday/bauble_string: 328 298 r
+:raymanni/holiday/bauble_string: 296 298 r
+:raymanni/holiday/bauble_string: 264 298 r
+:raymanni/holiday/bauble_string: 232 298 r
+:raymanni/holiday/bauble_string: 200 298 r
+:raymanni/holiday/bauble_string: 168 298 r
+:raymanni/holiday/bauble_string: 136 298 r
+:raymanni/holiday/bauble_string: 104 298 r
+:raymanni/holiday/bauble_string: 72 298 r
+:raymanni/holiday/bauble_string: 40 298 r
+:geoo/construction/fence_32x32.S: 24 216
+:geoo/construction/fence_32x32.S: 64 216
+:geoo/construction/fence_32x32.S: 104 216
+:geoo/construction/fence_32x32.S: 144 216
+:geoo/construction/fence_32x32.S: 184 216
+:geoo/construction/fence_32x32.S: 224 216
+:geoo/construction/fence_32x32.S: 2 176
+:geoo/construction/fence_32x32.S: 42 176
+:geoo/construction/fence_32x32.S: 82 176
+:geoo/construction/fence_32x32.S: 122 176
+:geoo/construction/fence_32x32.S: 162 176
+:geoo/construction/fence_32x32.S: 202 176
+:geoo/construction/fence_32x32.S: 24 136
+:geoo/construction/fence_32x32.S: 64 136
+:geoo/construction/fence_32x32.S: 104 136
+:geoo/construction/fence_32x32.S: 144 136
+:geoo/construction/fence_32x32.S: 184 136
+:geoo/construction/fence_32x32.S: 224 136
+:geoo/construction/fence_32x32.S: 2 96
+:geoo/construction/fence_32x32.S: 42 96
+:geoo/construction/fence_32x32.S: 82 96
+:geoo/construction/fence_32x32.S: 122 96
+:geoo/construction/fence_32x32.S: 162 96
+:geoo/construction/fence_32x32.S: 202 96
+:geoo/construction/platform.S: 1 161 r
+:geoo/construction/platform.S: 1 65 r
+:geoo/construction/platform.S: 1 33 r
+:geoo/construction/platform.S: 1 1 r
+:geoo/construction/platform.S: 1 97 r
+:geoo/construction/platform.S: 1 129 r
+:geoo/construction/platform.S: 1 289 r
+:geoo/construction/platform.S: 1 193 r
+:geoo/construction/platform.S: 1 225 r
+:geoo/construction/platform.S: 1 257 r
+:geoo/construction/platformbrick: 192 48
+:geoo/construction/platformbrick: 192 64
+:geoo/construction/platformbrick: 160 64
+:geoo/construction/platformbrick: 160 48
+:geoo/construction/platformbrick: 128 48
+:geoo/construction/platformbrick: 128 64
+:geoo/construction/platformbrick: 96 64
+:geoo/construction/platformbrick: 64 64
+:geoo/construction/platformbrick: 32 64
+:geoo/construction/platformbrick: 31 33 r
+:geoo/construction/platformbrick: 33 33 r
+:geoo/construction/platformbrick: 35 33 r
+:geoo/construction/stairs_rd_32.S: 1649 48 r
+:geoo/construction/stairs_rd_32.S: 1633 112 fr
+:raymanni/lab/steel_1.S: 1601 96
+:raymanni/lab/steel_1.S: 1681 32
+:geoo/construction/stairs_rd_32.S: 1649 176 r
+:raymanni/lab/steel_1.S: 1681 160
+:geoo/construction/stairs_rd_32.S: 1633 240 fr
+:raymanni/lab/steel_1.S: 1601 224
+:matt/carnival/34: 1665 288 frr
+:matt/carnival/34: 1729 256 frr
+:matt/carnival/34: 1793 224 frr
+:matt/carnival/34: 1857 192 frr
+:matt/carnival/34: 1921 160 frr
+:matt/carnival/34: 1985 128 frr
+:matt/carnival/34: 2049 96 frr
+:matt/carnival/34: 2113 64 frr
+:matt/carnival/34: 2177 32 frr
+:matt/carnival/34: 2241 0 frr
+:raymanni/lab/steel_1.S: 1601 64
+:raymanni/lab/steel_1.S: 1601 32
+:raymanni/lab/steel_1.S: 1601 192
+:raymanni/lab/steel_1.S: 1601 160
+:raymanni/lab/steel_1.S: 1681 128
+:raymanni/lab/steel_1.S: 1681 96
+:matt/carnival/21: 1873 256 frr
+:matt/carnival/21: 1937 224 frr
+:matt/carnival/21: 2001 192 frr
+:matt/carnival/21: 2065 160 frr
+:matt/carnival/21: 2129 128 frr
+:matt/carnival/21: 2193 96 frr
+:matt/carnival/21: 2257 64 frr
+:matt/carnival/42: 1929 280 frr
+:matt/carnival/42: 1993 248 frr
+:matt/carnival/42: 2057 216 frr
+:matt/carnival/42: 2121 184 frr
+:matt/carnival/42: 2185 152 frr
+:matt/carnival/42: 2249 120 frr
+:matt/carnival/42: 2313 88 frr
+:matt/carnival/30: 2249 40 frr
+:matt/carnival/30: 2313 8 frr
+:matt/carnival/30: 2185 72 frr
+:matt/carnival/30: 2121 104 frr
+:matt/carnival/30: 2057 136 frr
+:matt/carnival/30: 1993 168 frr
+:matt/carnival/30: 1929 200 frr
+:matt/carnival/30: 1865 232 frr
+:matt/carnival/30: 1801 264 frr
+:matt/carnival/30: 1737 296 frr
+:matt/carnival/21: 2321 32 frr
+:matt/carnival/35: 1969 288 frr
+:matt/carnival/35: 2033 256 frr
+:matt/carnival/35: 2097 224 frr
+:matt/carnival/35: 2161 192 frr
+:matt/carnival/35: 2225 160 frr
+:matt/carnival/35: 2289 128 frr
+:matt/carnival/35: 2353 96 frr
+:matt/carnival/35: 2417 64 frr
+:matt/carnival/35: 2481 32 frr
+:matt/carnival/35: 2545 0 frr
+:matt/carnival/42: 2377 56 frr
+:matt/carnival/42: 2441 24 frr
+:matt/carnival/42: 2505 -8 frr
+:matt/carnival/21: 2385 0 frr
+:matt/carnival/21: 2449 -32 frr
+:matt/carnival/42: 1865 312 frr
+:matt/carnival/21: 1809 288 frr
+:matt/carnival/15: 2625 40 frr
+:matt/carnival/13: 2649 40 frr
+:matt/carnival/12: 2673 40 frr
+:matt/carnival/14: 2697 40 frr
+:matt/carnival/15: 2721 40 frr
+:matt/carnival/13: 2745 40 frr
+:matt/carnival/12: 2769 40 frr
+:matt/carnival/14: 2793 40 frr
+:matt/carnival/15: 2817 40 frr
+:matt/carnival/13: 2841 40 frr
+:matt/carnival/12: 2865 40 frr
+:matt/carnival/14: 2889 40 frr
+:matt/carnival/15: 2913 40 frr
+:matt/carnival/12: 2857 64 frr
+:matt/carnival/14: 2881 64 frr
+:matt/carnival/15: 2905 64 frr
+:matt/carnival/15: 2897 88 frr
+:geoo/construction/platform.S: 2617 208 frr
+:geoo/construction/platform.S: 2649 208 frr
+:geoo/construction/platform.S: 2681 208 frr
+:geoo/construction/platform.S: 2713 208 frr
+:geoo/construction/platform.S: 2745 208 frr
+:geoo/construction/platform.S: 2777 208 frr
+:geoo/construction/platform.S: 2809 208 frr
+:geoo/construction/platform.S: 2841 208 frr
+:geoo/construction/platform.S: 2873 208 frr
+:geoo/construction/platform.S: 2913 192 frr
+:geoo/construction/platform.S: 2944 161 fr
+:geoo/construction/platformbrick: 2945 64 frr
+:geoo/construction/platform.S: 2944 65 fr
+:geoo/construction/platformbrick: 2945 48 frr
+:geoo/construction/platform.S: 2944 33 fr
+:geoo/construction/platform.S: 2944 1 fr
+:geoo/construction/platform.S: 2657 192 frr
+:geoo/construction/platform.S: 2689 192 frr
+:geoo/construction/platform.S: 2721 192 frr
+:geoo/construction/platform.S: 2753 192 frr
+:geoo/construction/platform.S: 2785 192 frr
+:geoo/construction/platform.S: 2817 192 frr
+:geoo/construction/platform.S: 2849 192 frr
+:geoo/construction/platform.S: 2881 192 frr
+:geoo/construction/platform.S: 2616 177 fr
+:geoo/construction/platform.S: 2944 97 fr
+:geoo/construction/platform.S: 2944 129 fr
+:geoo/construction/platform.S: 2913 224 frr
+:geoo/construction/platform.S: 2944 193 fr
+:geoo/construction/platform.S: 2657 224 frr
+:geoo/construction/platform.S: 2689 224 frr
+:geoo/construction/platform.S: 2721 224 frr
+:geoo/construction/platform.S: 2753 224 frr
+:geoo/construction/platform.S: 2785 224 frr
+:geoo/construction/platform.S: 2817 224 frr
+:geoo/construction/platform.S: 2849 224 frr
+:geoo/construction/platform.S: 2881 224 frr
+:geoo/construction/platform.S: 2616 209 fr
+:raymanni/holiday/bauble_string: 2649 298 fr
+:matt/earth/30: 2600 264 frr
+:raymanni/holiday/bauble_string: 2681 298 fr
+:raymanni/holiday/bauble_string: 2713 298 fr
+:raymanni/holiday/bauble_string: 2745 298 fr
+:raymanni/holiday/bauble_string: 2777 298 fr
+:raymanni/holiday/bauble_string: 2809 298 fr
+:raymanni/holiday/bauble_string: 2841 298 fr
+:raymanni/holiday/bauble_string: 2873 298 fr
+:raymanni/holiday/bauble_string: 2905 298 fr
+:raymanni/holiday/bauble_string: 2937 298 fr
+:raymanni/holiday/bauble_string: 2969 298 fr
+:raymanni/holiday/bauble_string: 3001 298 fr
+:raymanni/holiday/bauble_string: 3033 298 fr
+:raymanni/holiday/bauble_string: 3065 298 fr
+:raymanni/holiday/bauble_string: 3097 298 fr
+:raymanni/holiday/bauble_string: 3129 298 fr
+:geoo/construction/fence_32x32.S: 3145 216 frr
+:geoo/construction/fence_32x32.S: 3105 216 frr
+:geoo/construction/fence_32x32.S: 3065 216 frr
+:geoo/construction/fence_32x32.S: 3025 216 frr
+:geoo/construction/fence_32x32.S: 2985 216 frr
+:geoo/construction/fence_32x32.S: 2945 216 frr
+:geoo/construction/fence_32x32.S: 3167 176 frr
+:geoo/construction/fence_32x32.S: 3127 176 frr
+:geoo/construction/fence_32x32.S: 3087 176 frr
+:geoo/construction/fence_32x32.S: 3047 176 frr
+:geoo/construction/fence_32x32.S: 3007 176 frr
+:geoo/construction/fence_32x32.S: 2967 176 frr
+:geoo/construction/fence_32x32.S: 3145 136 frr
+:geoo/construction/fence_32x32.S: 3105 136 frr
+:geoo/construction/fence_32x32.S: 3065 136 frr
+:geoo/construction/fence_32x32.S: 3025 136 frr
+:geoo/construction/fence_32x32.S: 2985 136 frr
+:geoo/construction/fence_32x32.S: 2945 136 frr
+:geoo/construction/fence_32x32.S: 3167 96 frr
+:geoo/construction/fence_32x32.S: 3127 96 frr
+:geoo/construction/fence_32x32.S: 3087 96 frr
+:geoo/construction/fence_32x32.S: 3047 96 frr
+:geoo/construction/fence_32x32.S: 3007 96 frr
+:geoo/construction/fence_32x32.S: 2967 96 frr
+:geoo/construction/platform.S: 3198 161 fr
+:geoo/construction/platform.S: 3198 65 fr
+:geoo/construction/platform.S: 3198 33 fr
+:geoo/construction/platform.S: 3198 1 fr
+:geoo/construction/platform.S: 3198 97 fr
+:geoo/construction/platform.S: 3198 129 fr
+:geoo/construction/platform.S: 3198 289 fr
+:geoo/construction/platform.S: 3198 193 fr
+:geoo/construction/platform.S: 3198 225 fr
+:geoo/construction/platform.S: 3198 257 fr
+:geoo/construction/platformbrick: 2977 48 frr
+:geoo/construction/platformbrick: 2977 64 frr
+:geoo/construction/platformbrick: 3009 64 frr
+:geoo/construction/platformbrick: 3009 48 frr
+:geoo/construction/platformbrick: 3041 48 frr
+:geoo/construction/platformbrick: 3041 64 frr
+:geoo/construction/platformbrick: 3073 64 frr
+:geoo/construction/platformbrick: 3105 64 frr
+:geoo/construction/platformbrick: 3137 64 frr
+:geoo/construction/platformbrick: 3168 33 fr
+:geoo/construction/platformbrick: 3166 33 fr
+:geoo/construction/platformbrick: 3164 33 fr
+:matt/carnival/12: 520 64
+:matt/carnival/13: 544 64
+:matt/carnival/14: 496 64
+:matt/carnival/14: 504 88
+:matt/carnival/13: 2640 64 frr
+:matt/carnival/12: 2664 64 frr
+:matt/carnival/14: 2688 64 frr
+:matt/carnival/14: 2680 88 frr

@@ -1,0 +1,238 @@
+$BUILT 2024-09-18 16:09:59
+$AUTHOR Hyperlodge
+$ENGLISH Double W
+
+#INTENDED_NUMBER_OF_PLAYERS 4
+#SIZE_X 1472
+#SIZE_Y 400
+#TORUS_X 1
+#TORUS_Y 0
+#BACKGROUND_RED 79
+#BACKGROUND_GREEN 143
+#BACKGROUND_BLUE 112
+
+#SECONDS 60
+#INITIAL 100
+#SPAWN_INTERVAL 50
+
+#RUNNER 1
+#CLIMBER 1
+#FLOATER 1
+#EXPLODER2 -1
+#BLOCKER 1
+#BUILDER -1
+#MINER -1
+#JUMPER 1
+#BATTER 1
+#CUBER -1
+
+:matt/carnival/Hatch.H: 1400 136 r
+:matt/carnival/Hatch.H: 712 136
+:matt/carnival/Hatch.H: 664 136 r
+:matt/carnival/Hatch.H: 1448 136
+
+:matt/marble/Goal.G: 896 328
+:geoo/abstract/goal.G: 368 144
+:geoo/abstract/goal.G: 1040 144
+:matt/marble/Goal.G: 480 328
+:geoo/abstract/goal.G: 304 144
+:matt/marble/Goal.G: 1216 328
+:matt/marble/Goal.G: 160 328
+:geoo/abstract/goal.G: 1104 144
+
+:proxima/flame.F: 728 360
+:proxima/flame.F: 1408 360
+:proxima/flame.F: 1424 352
+:proxima/flame.F: 712 352
+:proxima/flame.F: 696 360
+:proxima/flame.F: 1440 360
+:proxima/flame.F: 1464 360
+:proxima/flame.F: 672 360
+:proxima/flame.F: 688 352
+:proxima/flame.F: 1448 352
+:proxima/flame.F: 1464 360
+:proxima/flame.F: 704 360
+
+:geoo/construction/steam_up.T: 1080 176
+:geoo/construction/steam_up.T: 1240 240
+:geoo/construction/steam_up.T: 920 240
+:geoo/construction/steam_up.T: 1080 368
+:geoo/construction/steam_up.T: 1032 368
+:geoo/construction/steam_up.T: 1128 368
+:geoo/construction/steam_up.T: 1320 264
+:geoo/construction/steam_up.T: 840 264
+:geoo/construction/steam_up.T: 1016 208
+:geoo/construction/steam_up.T: 1144 208
+:geoo/construction/steam_up.T: 344 176
+:geoo/construction/steam_up.T: 504 240
+:geoo/construction/steam_up.T: 184 240
+:geoo/construction/steam_up.T: 344 368
+:geoo/construction/steam_up.T: 296 368
+:geoo/construction/steam_up.T: 392 368
+:geoo/construction/steam_up.T: 584 264
+:geoo/construction/steam_up.T: 104 264
+:geoo/construction/steam_up.T: 280 208
+:geoo/construction/steam_up.T: 408 208
+
+:geoo/construction/concrete/032vb: 768 200
+:geoo/construction/concrete/032vb: 800 264
+:geoo/construction/concrete/032vb: 832 328
+:geoo/construction/concrete/032va: 864 328
+:geoo/construction/concrete/032va: 896 264
+:geoo/construction/concrete/032vb: 928 264
+:geoo/construction/concrete/032vb: 960 328
+:geoo/construction/concrete/032va: 992 328
+:geoo/construction/concrete/032va: 1024 264
+:geoo/construction/concrete/032va: 1056 200
+:geoo/construction/concrete/032vc: 784 192
+:geoo/construction/concrete/032vc: 808 240
+:geoo/construction/concrete/032vc: 832 288
+:geoo/construction/concrete/032vd: 1040 192
+:geoo/construction/concrete/032vd: 1016 240
+:geoo/construction/concrete/032vd: 992 288
+:geoo/construction/concrete/032vd: 880 256
+:geoo/construction/concrete/032vd: 864 288
+:geoo/construction/concrete/032vc: 944 256
+:geoo/construction/concrete/032vc: 960 288
+:geoo/construction/concrete/032vb: 1088 200
+:geoo/construction/concrete/032vb: 1120 264
+:geoo/construction/concrete/032vb: 1152 328
+:geoo/construction/concrete/032va: 1184 328
+:geoo/construction/concrete/032va: 1216 264
+:geoo/construction/concrete/032vb: 1248 264
+:geoo/construction/concrete/032vb: 1280 328
+:geoo/construction/concrete/032va: 1312 328
+:geoo/construction/concrete/032va: 1344 264
+:geoo/construction/concrete/032va: 1376 200
+:geoo/construction/concrete/032vc: 1104 192
+:geoo/construction/concrete/032vc: 1128 240
+:geoo/construction/concrete/032vc: 1152 288
+:geoo/construction/concrete/032vd: 1360 192
+:geoo/construction/concrete/032vd: 1336 240
+:geoo/construction/concrete/032vd: 1312 288
+:geoo/construction/concrete/032vd: 1200 256
+:geoo/construction/concrete/032vd: 1184 288
+:geoo/construction/concrete/032vc: 1264 256
+:geoo/construction/concrete/032vc: 1280 288
+:amanda/steel/steel24x8.S: 764 376
+:amanda/steel/steel24x8.S: 788 392
+:amanda/steel/steel24x8.S: 812 392
+:amanda/steel/steel24x8.S: 836 392
+:amanda/steel/steel24x8.S: 860 392
+:amanda/steel/steel24x8.S: 884 392
+:amanda/steel/steel24x8.S: 908 392
+:amanda/steel/steel24x8.S: 932 392
+:amanda/steel/steel24x8.S: 956 392
+:amanda/steel/steel24x8.S: 980 392
+:amanda/steel/steel24x8.S: 1004 392
+:amanda/steel/steel24x8.S: 1028 392
+:amanda/steel/steel24x8.S: 1052 392
+:amanda/steel/steel24x8.S: 1076 392
+:amanda/steel/steel24x8.S: 1100 392
+:amanda/steel/steel24x8.S: 1124 392
+:amanda/steel/steel24x8.S: 1148 392
+:amanda/steel/steel24x8.S: 1172 392
+:amanda/steel/steel24x8.S: 1196 392
+:amanda/steel/steel24x8.S: 1220 392
+:amanda/steel/steel24x8.S: 1244 392
+:amanda/steel/steel24x8.S: 1268 392
+:amanda/steel/steel24x8.S: 1292 392
+:amanda/steel/steel24x8.S: 1316 392
+:amanda/steel/steel24x8.S: 1340 392
+:amanda/steel/steel24x8.S: 1364 392
+:amanda/steel/steel24x8.S: 1388 376
+:amanda/steel/steel24x8.S: 1216 384
+:amanda/steel/steel24x8.S: 1216 376
+:amanda/steel/steel24x8.S: 1256 384
+:amanda/steel/steel24x8.S: 1256 376
+:amanda/steel/steel24x8.S: 896 384
+:amanda/steel/steel24x8.S: 896 376
+:amanda/steel/steel24x8.S: 936 384
+:amanda/steel/steel24x8.S: 936 376
+:amanda/steel/steel24x8.S: 1408 224
+:amanda/steel/steel24x8.S: 1432 224
+:amanda/steel/steel24x8.S: 720 224
+:amanda/steel/steel24x8.S: 744 224
+:amanda/steel/steel24x8.S: 1376 384
+:amanda/steel/steel24x8.S: 776 384
+:geoo/construction/concrete/032vb: 32 200
+:geoo/construction/concrete/032vb: 64 264
+:geoo/construction/concrete/032vb: 96 328
+:geoo/construction/concrete/032va: 128 328
+:geoo/construction/concrete/032va: 160 264
+:geoo/construction/concrete/032vb: 192 264
+:geoo/construction/concrete/032vb: 224 328
+:geoo/construction/concrete/032va: 256 328
+:geoo/construction/concrete/032va: 288 264
+:geoo/construction/concrete/032va: 320 200
+:geoo/construction/concrete/032vc: 48 192
+:geoo/construction/concrete/032vc: 72 240
+:geoo/construction/concrete/032vc: 96 288
+:geoo/construction/concrete/032vd: 304 192
+:geoo/construction/concrete/032vd: 280 240
+:geoo/construction/concrete/032vd: 256 288
+:geoo/construction/concrete/032vd: 144 256
+:geoo/construction/concrete/032vd: 128 288
+:geoo/construction/concrete/032vc: 208 256
+:geoo/construction/concrete/032vc: 224 288
+:geoo/construction/concrete/032vb: 352 200
+:geoo/construction/concrete/032vb: 384 264
+:geoo/construction/concrete/032vb: 416 328
+:geoo/construction/concrete/032va: 448 328
+:geoo/construction/concrete/032va: 480 264
+:geoo/construction/concrete/032vb: 512 264
+:geoo/construction/concrete/032vb: 544 328
+:geoo/construction/concrete/032va: 576 328
+:geoo/construction/concrete/032va: 608 264
+:geoo/construction/concrete/032va: 640 200
+:geoo/construction/concrete/032vc: 368 192
+:geoo/construction/concrete/032vc: 392 240
+:geoo/construction/concrete/032vc: 416 288
+:geoo/construction/concrete/032vd: 624 192
+:geoo/construction/concrete/032vd: 600 240
+:geoo/construction/concrete/032vd: 576 288
+:geoo/construction/concrete/032vd: 464 256
+:geoo/construction/concrete/032vd: 448 288
+:geoo/construction/concrete/032vc: 528 256
+:geoo/construction/concrete/032vc: 544 288
+:amanda/steel/steel24x8.S: 28 376
+:amanda/steel/steel24x8.S: 52 392
+:amanda/steel/steel24x8.S: 76 392
+:amanda/steel/steel24x8.S: 100 392
+:amanda/steel/steel24x8.S: 124 392
+:amanda/steel/steel24x8.S: 148 392
+:amanda/steel/steel24x8.S: 172 392
+:amanda/steel/steel24x8.S: 196 392
+:amanda/steel/steel24x8.S: 220 392
+:amanda/steel/steel24x8.S: 244 392
+:amanda/steel/steel24x8.S: 268 392
+:amanda/steel/steel24x8.S: 292 392
+:amanda/steel/steel24x8.S: 316 392
+:amanda/steel/steel24x8.S: 340 392
+:amanda/steel/steel24x8.S: 364 392
+:amanda/steel/steel24x8.S: 388 392
+:amanda/steel/steel24x8.S: 412 392
+:amanda/steel/steel24x8.S: 436 392
+:amanda/steel/steel24x8.S: 460 392
+:amanda/steel/steel24x8.S: 484 392
+:amanda/steel/steel24x8.S: 508 392
+:amanda/steel/steel24x8.S: 532 392
+:amanda/steel/steel24x8.S: 556 392
+:amanda/steel/steel24x8.S: 580 392
+:amanda/steel/steel24x8.S: 604 392
+:amanda/steel/steel24x8.S: 628 392
+:amanda/steel/steel24x8.S: 652 376
+:amanda/steel/steel24x8.S: 480 384
+:amanda/steel/steel24x8.S: 480 376
+:amanda/steel/steel24x8.S: 520 384
+:amanda/steel/steel24x8.S: 520 376
+:amanda/steel/steel24x8.S: 160 384
+:amanda/steel/steel24x8.S: 160 376
+:amanda/steel/steel24x8.S: 200 384
+:amanda/steel/steel24x8.S: 200 376
+:amanda/steel/steel24x8.S: 672 224
+:amanda/steel/steel24x8.S: 696 224
+:amanda/steel/steel24x8.S: 1456 224
+:amanda/steel/steel24x8.S: 8 224
+:amanda/steel/steel24x8.S: 640 384
+:amanda/steel/steel24x8.S: 40 384

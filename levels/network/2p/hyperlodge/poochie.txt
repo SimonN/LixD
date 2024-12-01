@@ -1,0 +1,274 @@
+$BUILT 2022-08-02 12:09:25
+$AUTHOR Hyperlodge
+$ENGLISH Poochie
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 896
+#SIZE_Y 426
+#BACKGROUND_RED 48
+#BACKGROUND_GREEN 24
+#BACKGROUND_BLUE 80
+
+#SECONDS 76
+#INITIAL 76
+#SPAWN_INTERVAL 76
+
+#WALKER -1
+#RUNNER -1
+#CLIMBER -1
+#FLOATER -1
+#EXPLODER2 -1
+#BLOCKER -1
+#BUILDER -1
+#PLATFORMER -1
+#BASHER -1
+#MINER -1
+#DIGGER -1
+#JUMPER -1
+#BATTER -1
+#CUBER -1
+
+:matt/marble/Hatch.H: 168 8 r
+:matt/marble/Hatch.H: 664 8
+
+:matt/marble/Goal.G: 720 0
+:matt/marble/Goal.G: 112 0
+
+:geoo/construction/steam_up.T: 288 144
+:geoo/construction/steam_up.T: 304 144
+:geoo/construction/steam_up.T: 320 144
+:geoo/construction/steam_up.T: 336 144
+:geoo/construction/steam_up.T: 352 144
+:geoo/construction/steam_up.T: 368 144
+:geoo/construction/steam_up.T: 384 144
+:geoo/construction/steam_up.T: 400 144
+:geoo/construction/steam_up.T: 416 144
+:geoo/construction/steam_up.T: 464 144
+:geoo/construction/steam_up.T: 480 144
+:geoo/construction/steam_up.T: 496 144
+:geoo/construction/steam_up.T: 512 144
+:geoo/construction/steam_up.T: 528 144
+:geoo/construction/steam_up.T: 544 144
+:geoo/construction/steam_up.T: 560 144
+:geoo/construction/steam_up.T: 576 144
+:geoo/construction/steam_up.T: 592 144
+:geoo/construction/steam_up.T: 424 224
+:geoo/construction/steam_up.T: 136 344
+:geoo/construction/steam_up.T: 152 344
+:geoo/construction/steam_up.T: 168 344
+:geoo/construction/steam_up.T: 184 344
+:geoo/construction/steam_up.T: 200 344
+:geoo/construction/steam_up.T: 216 344
+:geoo/construction/steam_up.T: 232 344
+:geoo/construction/steam_up.T: 248 344
+:geoo/construction/steam_up.T: 264 344
+:geoo/construction/steam_up.T: 616 344
+:geoo/construction/steam_up.T: 632 344
+:geoo/construction/steam_up.T: 648 344
+:geoo/construction/steam_up.T: 664 344
+:geoo/construction/steam_up.T: 680 344
+:geoo/construction/steam_up.T: 696 344
+:geoo/construction/steam_up.T: 712 344
+:geoo/construction/steam_up.T: 728 344
+:geoo/construction/steam_up.T: 744 344
+:geoo/construction/steam_up.T: 440 224
+:geoo/construction/steam_up.T: 456 224
+
+:geoo/construction/stairs_ru_32.S: 184 80
+:geoo/construction/stairs_ru_32.S: 24 80 frr
+:geoo/construction/platform.S: 96 112
+:geoo/construction/platform.S: 128 112
+:geoo/construction/platform.S: 160 112
+:matt/marble/22d: 232 160
+:matt/marble/23d: 208 208
+:matt/marble/23d: 144 208
+:matt/marble/23d: 112 208
+:matt/marble/23d: 80 208
+:matt/marble/23d: 48 208
+:matt/marble/22d: 0 160 frr
+:matt/marble/23d: 176 208
+:matt/marble/01d: 280 176
+:matt/marble/01d: 296 176
+:matt/marble/01d: 312 176
+:matt/marble/01d: 328 176
+:matt/marble/01d: 344 176
+:matt/marble/01d: 360 176
+:matt/marble/01d: 376 176
+:matt/marble/01d: 392 176
+:matt/marble/01d: 408 176
+:matt/marble/01d: 472 176
+:matt/marble/01d: 488 176
+:matt/marble/01d: 504 176
+:matt/marble/01d: 520 176
+:matt/marble/01d: 536 176
+:matt/marble/01d: 552 176
+:matt/marble/01d: 568 176
+:matt/marble/01d: 584 176
+:matt/marble/01d: 600 176
+:matt/marble/01d: 280 248
+:matt/marble/01d: 296 248
+:matt/marble/01d: 312 248
+:matt/marble/01d: 328 248
+:matt/marble/01d: 344 248
+:matt/marble/01d: 360 248
+:matt/marble/01d: 376 248
+:matt/marble/01d: 392 248
+:matt/marble/01d: 408 248
+:matt/marble/01d: 472 248
+:matt/marble/01d: 488 248
+:matt/marble/01d: 504 248
+:matt/marble/01d: 520 248
+:matt/marble/01d: 536 248
+:matt/marble/01d: 552 248
+:matt/marble/01d: 568 248
+:matt/marble/01d: 584 248
+:matt/marble/01d: 600 248
+:geoo/construction/stairs_ru_32.S: 792 80
+:geoo/construction/stairs_ru_32.S: 632 80 frr
+:geoo/construction/platform.S: 704 112
+:geoo/construction/platform.S: 736 112
+:geoo/construction/platform.S: 768 112
+:matt/marble/22d: 840 160
+:matt/marble/23d: 816 208
+:matt/marble/23d: 752 208
+:matt/marble/23d: 720 208
+:matt/marble/23d: 688 208
+:matt/marble/23d: 656 208
+:matt/marble/22d: 608 160 frr
+:matt/marble/23d: 784 208
+:matt/marble/01d: 392 280
+:matt/marble/01d: 408 280
+:matt/marble/01d: 424 280
+:matt/marble/01d: 440 280
+:matt/marble/01d: 456 280
+:matt/marble/01d: 472 280
+:matt/marble/01d: 488 280
+:matt/marble/01d: 504 280
+:matt/marble/01d: 520 280
+:matt/marble/01d: 376 280
+:matt/marble/01d: 360 280
+:matt/marble/01d: 312 280
+:matt/marble/01d: 328 280
+:matt/marble/01d: 344 280
+:matt/marble/01d: 296 280
+:matt/marble/01d: 280 280
+:matt/marble/01d: 536 280
+:matt/marble/01d: 552 280
+:matt/marble/01d: 568 280
+:matt/marble/01d: 584 280
+:matt/marble/01d: 600 280
+:matt/marble/01d: 112 312
+:matt/marble/01d: 128 312
+:matt/marble/01d: 144 312
+:matt/marble/01d: 160 312
+:matt/marble/01d: 176 312
+:matt/marble/01d: 192 312
+:matt/marble/01d: 208 312
+:matt/marble/01d: 224 312
+:matt/marble/01d: 240 312
+:matt/marble/01d: 96 312
+:matt/marble/01d: 80 312
+:matt/marble/01d: 32 312
+:matt/marble/01d: 48 312
+:matt/marble/01d: 64 312
+:matt/marble/01d: 16 312
+:matt/marble/01d: 0 312
+:matt/marble/01d: 256 312
+:matt/marble/01d: 272 312
+:matt/marble/01d: 288 312
+:matt/marble/01d: 304 312
+:matt/marble/01d: 320 312
+:matt/marble/01d: 672 312
+:matt/marble/01d: 688 312
+:matt/marble/01d: 704 312
+:matt/marble/01d: 720 312
+:matt/marble/01d: 736 312
+:matt/marble/01d: 752 312
+:matt/marble/01d: 768 312
+:matt/marble/01d: 784 312
+:matt/marble/01d: 800 312
+:matt/marble/01d: 656 312
+:matt/marble/01d: 640 312
+:matt/marble/01d: 592 312
+:matt/marble/01d: 608 312
+:matt/marble/01d: 624 312
+:matt/marble/01d: 576 312
+:matt/marble/01d: 560 312
+:matt/marble/01d: 816 312
+:matt/marble/01d: 832 312
+:matt/marble/01d: 848 312
+:matt/marble/01d: 864 312
+:matt/marble/01d: 880 312
+:matt/marble/01d: 392 344
+:matt/marble/01d: 408 344
+:matt/marble/01d: 424 344
+:matt/marble/01d: 440 344
+:matt/marble/01d: 456 344
+:matt/marble/01d: 472 344
+:matt/marble/01d: 488 344
+:matt/marble/01d: 504 344
+:matt/marble/01d: 520 344
+:matt/marble/01d: 376 344
+:matt/marble/01d: 360 344
+:matt/marble/01d: 312 344
+:matt/marble/01d: 328 344
+:matt/marble/01d: 344 344
+:matt/marble/01d: 296 344
+:matt/marble/01d: 280 344
+:matt/marble/01d: 536 344
+:matt/marble/01d: 552 344
+:matt/marble/01d: 568 344
+:matt/marble/01d: 584 344
+:matt/marble/01d: 600 344
+:matt/marble/01d: 104 368
+:matt/marble/01d: 120 368
+:matt/marble/01d: 88 368
+:matt/marble/01d: 72 368
+:matt/marble/01d: 16 368
+:matt/marble/01d: 40 368
+:matt/marble/01d: 56 368
+:matt/marble/01d: 0 368
+:matt/marble/01d: 864 368
+:matt/marble/01d: 880 368
+:matt/marble/01d: 840 368
+:matt/marble/01d: 824 368
+:matt/marble/01d: 776 368
+:matt/marble/01d: 792 368
+:matt/marble/01d: 808 368
+:matt/marble/01d: 760 368
+:geoo/construction/platform.S: 0 424
+:geoo/construction/platform.S: 32 424
+:geoo/construction/platform.S: 64 424
+:geoo/construction/platform.S: 96 424
+:geoo/construction/platform.S: 128 424
+:geoo/construction/platform.S: 160 424
+:geoo/construction/platform.S: 192 424
+:geoo/construction/platform.S: 224 424
+:geoo/construction/platform.S: 256 424
+:geoo/construction/platform.S: 288 424
+:geoo/construction/platform.S: 320 424
+:geoo/construction/platform.S: 352 424
+:geoo/construction/platform.S: 384 424
+:geoo/construction/platform.S: 416 424
+:geoo/construction/platform.S: 448 424
+:geoo/construction/platform.S: 480 424
+:geoo/construction/platform.S: 512 424
+:geoo/construction/platform.S: 544 424
+:geoo/construction/platform.S: 576 424
+:geoo/construction/platform.S: 608 424
+:geoo/construction/platform.S: 640 424
+:geoo/construction/platform.S: 672 424
+:geoo/construction/platform.S: 704 424
+:geoo/construction/platform.S: 736 424
+:geoo/construction/platform.S: 768 424
+:geoo/construction/platform.S: 800 424
+:geoo/construction/platform.S: 832 424
+:geoo/construction/platform.S: 864 424
+:matt/marble/17d: 408 80
+:matt/marble/15d: 456 80
+:matt/marble/15d: 488 48
+:matt/marble/17d: 376 48
+:matt/marble/16d: 408 48
+:matt/marble/14d: 456 48
+:matt/marble/16d: 488 16
+:matt/marble/14d: 376 16

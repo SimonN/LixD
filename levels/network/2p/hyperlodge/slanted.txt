@@ -1,0 +1,252 @@
+$BUILT 2024-07-18 12:44:58
+$AUTHOR Hyperlodge
+$ENGLISH Slanted
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1216
+#SIZE_Y 464
+#BACKGROUND_RED 112
+#BACKGROUND_GREEN 112
+#BACKGROUND_BLUE 112
+
+#SECONDS 60
+#INITIAL 100
+#SPAWN_INTERVAL 20
+
+#RUNNER 10
+#CLIMBER 10
+#FLOATER 10
+#EXPLODER2 10
+#BLOCKER -1
+#BUILDER -1
+#PLATFORMER -1
+#MINER -1
+#JUMPER 10
+#BATTER -1
+
+:geoo/abstract/hatch.H: 48 264
+:geoo/abstract/hatch.H: 1136 264 r
+
+:raymanni/toys/goal.G: 640 168
+:raymanni/toys/goal.G: 512 168
+
+:geoo/construction/stairs_ru_32.S: 72 328
+:geoo/construction/stairs_ru_32.S: 128 312
+:geoo/construction/stairs_ru_32.S: 184 296
+:geoo/construction/stairs_ru_32.S: 240 280
+:geoo/construction/stairs_ru_32.S: 296 264
+:geoo/construction/stairs_ru_32.S: 352 248
+:geoo/construction/stairs_ru_32.S: 144 288
+:geoo/construction/stairs_ru_32.S: 200 272
+:geoo/construction/stairs_ru_32.S: 256 256
+:geoo/construction/stairs_ru_32.S: 312 240
+:geoo/construction/stairs_ru_32.S: 368 224
+:geoo/construction/stairs_ru_32.S: 424 208
+:amanda/steel/steel32x32.S: 48 296
+:amanda/steel/steel32x32.S: 496 232
+:geoo/construction/stairs_ru_32.S: 96 360
+:geoo/construction/stairs_ru_32.S: 152 344
+:geoo/construction/stairs_ru_32.S: 208 328
+:geoo/construction/stairs_ru_32.S: 264 312
+:geoo/construction/stairs_ru_32.S: 320 296
+:geoo/construction/stairs_ru_32.S: 112 336
+:geoo/construction/stairs_ru_32.S: 168 320
+:geoo/construction/stairs_ru_32.S: 224 304
+:geoo/construction/stairs_ru_32.S: 280 288
+:geoo/construction/stairs_ru_32.S: 336 272
+:geoo/construction/stairs_ru_32.S: 392 256
+:amanda/steel/steel32x32.S: 528 232
+:geoo/construction/stairs_ru_32.S: 80 304
+:amanda/steel/steel32x32.S: 560 232
+:amanda/steel/steel32x32.S: 592 232
+:amanda/steel/steel32x32.S: 592 200
+:amanda/steel/steel32x32.S: 592 168
+:amanda/steel/steel32x32.S: 592 136
+:amanda/steel/steel32x32.S: 592 104
+:amanda/steel/steel32x32.S: 16 296
+:amanda/steel/steel32x32.S: 16 328
+:amanda/steel/steel32x32.S: 16 360
+:amanda/steel/steel32x32.S: 16 392
+:amanda/steel/steel32x32.S: 16 424
+:geoo/construction/stairs_ru_32.S: 120 392
+:geoo/construction/stairs_ru_32.S: 176 376
+:geoo/construction/stairs_ru_32.S: 232 360
+:geoo/construction/stairs_ru_32.S: 288 344
+:geoo/construction/stairs_ru_32.S: 344 328
+:geoo/construction/stairs_ru_32.S: 400 312
+:geoo/construction/stairs_ru_32.S: 192 352
+:geoo/construction/stairs_ru_32.S: 248 336
+:geoo/construction/stairs_ru_32.S: 304 320
+:geoo/construction/stairs_ru_32.S: 360 304
+:geoo/construction/stairs_ru_32.S: 416 288
+:geoo/construction/stairs_ru_32.S: 472 272
+:geoo/construction/stairs_ru_32.S: 200 408
+:geoo/construction/stairs_ru_32.S: 256 392
+:geoo/construction/stairs_ru_32.S: 312 376
+:geoo/construction/stairs_ru_32.S: 368 360
+:geoo/construction/stairs_ru_32.S: 160 400
+:geoo/construction/stairs_ru_32.S: 216 384
+:geoo/construction/stairs_ru_32.S: 272 368
+:geoo/construction/stairs_ru_32.S: 328 352
+:geoo/construction/stairs_ru_32.S: 384 336
+:geoo/construction/stairs_ru_32.S: 440 320
+:geoo/construction/stairs_ru_32.S: 128 368
+:geoo/construction/stairs_ru_32.S: 480 312
+:geoo/construction/stairs_ru_32.S: 504 344
+:geoo/construction/stairs_ru_32.S: 464 336
+:geoo/construction/stairs_ru_32.S: 520 320
+:geoo/construction/stairs_ru_32.S: 472 392
+:geoo/construction/stairs_ru_32.S: 528 376
+:geoo/construction/stairs_ru_32.S: 488 368
+:geoo/construction/stairs_ru_32.S: 328 408
+:geoo/construction/stairs_ru_32.S: 384 392
+:geoo/construction/stairs_ru_32.S: 344 384
+:geoo/construction/stairs_ru_32.S: 240 224
+:geoo/construction/stairs_ru_32.S: 296 208
+:geoo/construction/stairs_ru_32.S: 200 216
+:geoo/construction/stairs_ru_32.S: 256 200
+:geoo/construction/stairs_ru_32.S: 280 232
+:geoo/construction/stairs_ru_32.S: 1064 328 frr
+:geoo/construction/stairs_ru_32.S: 1008 312 frr
+:geoo/construction/stairs_ru_32.S: 952 296 frr
+:geoo/construction/stairs_ru_32.S: 896 280 frr
+:geoo/construction/stairs_ru_32.S: 840 264 frr
+:geoo/construction/stairs_ru_32.S: 784 248 frr
+:geoo/construction/stairs_ru_32.S: 992 288 frr
+:geoo/construction/stairs_ru_32.S: 936 272 frr
+:geoo/construction/stairs_ru_32.S: 880 256 frr
+:geoo/construction/stairs_ru_32.S: 824 240 frr
+:geoo/construction/stairs_ru_32.S: 768 224 frr
+:geoo/construction/stairs_ru_32.S: 712 208 frr
+:amanda/steel/steel32x32.S: 1136 296 frr
+:amanda/steel/steel32x32.S: 688 232
+:geoo/construction/stairs_ru_32.S: 1040 360 frr
+:geoo/construction/stairs_ru_32.S: 984 344 frr
+:geoo/construction/stairs_ru_32.S: 928 328 frr
+:geoo/construction/stairs_ru_32.S: 872 312 frr
+:geoo/construction/stairs_ru_32.S: 816 296 frr
+:geoo/construction/stairs_ru_32.S: 1024 336 frr
+:geoo/construction/stairs_ru_32.S: 968 320 frr
+:geoo/construction/stairs_ru_32.S: 912 304 frr
+:geoo/construction/stairs_ru_32.S: 856 288 frr
+:geoo/construction/stairs_ru_32.S: 800 272 frr
+:geoo/construction/stairs_ru_32.S: 744 256 frr
+:amanda/steel/steel32x32.S: 656 232
+:geoo/construction/stairs_ru_32.S: 1056 304 frr
+:amanda/steel/steel32x32.S: 624 232
+:amanda/steel/steel32x32.S: 1168 296 frr
+:amanda/steel/steel32x32.S: 1168 328 frr
+:amanda/steel/steel32x32.S: 1168 360 frr
+:amanda/steel/steel32x32.S: 1168 392 frr
+:amanda/steel/steel32x32.S: 1168 424 frr
+:geoo/construction/stairs_ru_32.S: 1016 392 frr
+:geoo/construction/stairs_ru_32.S: 960 376 frr
+:geoo/construction/stairs_ru_32.S: 904 360 frr
+:geoo/construction/stairs_ru_32.S: 848 344 frr
+:geoo/construction/stairs_ru_32.S: 792 328 frr
+:geoo/construction/stairs_ru_32.S: 736 312 frr
+:geoo/construction/stairs_ru_32.S: 944 352 frr
+:geoo/construction/stairs_ru_32.S: 888 336 frr
+:geoo/construction/stairs_ru_32.S: 832 320 frr
+:geoo/construction/stairs_ru_32.S: 776 304 frr
+:geoo/construction/stairs_ru_32.S: 720 288 frr
+:geoo/construction/stairs_ru_32.S: 664 272 frr
+:geoo/construction/stairs_ru_32.S: 936 408 frr
+:geoo/construction/stairs_ru_32.S: 880 392 frr
+:geoo/construction/stairs_ru_32.S: 824 376 frr
+:geoo/construction/stairs_ru_32.S: 768 360 frr
+:geoo/construction/stairs_ru_32.S: 976 400 frr
+:geoo/construction/stairs_ru_32.S: 920 384 frr
+:geoo/construction/stairs_ru_32.S: 864 368 frr
+:geoo/construction/stairs_ru_32.S: 808 352 frr
+:geoo/construction/stairs_ru_32.S: 752 336 frr
+:geoo/construction/stairs_ru_32.S: 696 320 frr
+:geoo/construction/stairs_ru_32.S: 1008 368 frr
+:geoo/construction/stairs_ru_32.S: 656 312 frr
+:geoo/construction/stairs_ru_32.S: 632 344 frr
+:geoo/construction/stairs_ru_32.S: 672 336 frr
+:geoo/construction/stairs_ru_32.S: 616 320 frr
+:geoo/construction/stairs_ru_32.S: 664 392 frr
+:geoo/construction/stairs_ru_32.S: 608 376 frr
+:geoo/construction/stairs_ru_32.S: 648 368 frr
+:geoo/construction/stairs_ru_32.S: 808 408 frr
+:geoo/construction/stairs_ru_32.S: 752 392 frr
+:geoo/construction/stairs_ru_32.S: 792 384 frr
+:geoo/construction/stairs_ru_32.S: 896 224 frr
+:geoo/construction/stairs_ru_32.S: 840 208 frr
+:geoo/construction/stairs_ru_32.S: 936 216 frr
+:geoo/construction/stairs_ru_32.S: 880 200 frr
+:geoo/construction/stairs_ru_32.S: 856 232 frr
+:geoo/construction/stairs_ru_32.S: 572 272
+:geoo/construction/stairs_ru_32.S: 564 272 frr
+:geoo/construction/stairs_ru_32.S: 572 336
+:geoo/construction/stairs_ru_32.S: 564 336 frr
+:geoo/construction/stairs_ru_32.S: 572 404
+:geoo/construction/stairs_ru_32.S: 564 404 frr
+:amanda/steel/steel24x8.S: 48 448
+:amanda/steel/steel24x8.S: 72 448
+:amanda/steel/steel24x8.S: 96 448
+:amanda/steel/steel24x8.S: 120 448
+:amanda/steel/steel24x8.S: 144 448
+:amanda/steel/steel24x8.S: 168 448
+:amanda/steel/steel24x8.S: 192 448
+:amanda/steel/steel24x8.S: 216 448
+:amanda/steel/steel24x8.S: 240 448
+:amanda/steel/steel24x8.S: 264 448
+:amanda/steel/steel24x8.S: 288 448
+:amanda/steel/steel24x8.S: 312 448
+:amanda/steel/steel24x8.S: 336 448
+:amanda/steel/steel24x8.S: 360 448
+:amanda/steel/steel24x8.S: 384 448
+:amanda/steel/steel24x8.S: 408 448
+:amanda/steel/steel24x8.S: 432 448
+:amanda/steel/steel24x8.S: 456 448
+:amanda/steel/steel24x8.S: 480 448
+:amanda/steel/steel24x8.S: 504 448
+:amanda/steel/steel24x8.S: 528 448
+:amanda/steel/steel24x8.S: 552 448
+:amanda/steel/steel24x8.S: 576 448
+:amanda/steel/steel24x8.S: 600 448
+:amanda/steel/steel24x8.S: 624 448
+:amanda/steel/steel24x8.S: 648 448
+:amanda/steel/steel24x8.S: 672 448
+:amanda/steel/steel24x8.S: 696 448
+:amanda/steel/steel24x8.S: 720 448
+:amanda/steel/steel24x8.S: 744 448
+:amanda/steel/steel24x8.S: 768 448
+:amanda/steel/steel24x8.S: 792 448
+:amanda/steel/steel24x8.S: 816 448
+:amanda/steel/steel24x8.S: 840 448
+:amanda/steel/steel24x8.S: 864 448
+:amanda/steel/steel24x8.S: 888 448
+:amanda/steel/steel24x8.S: 912 448
+:amanda/steel/steel24x8.S: 936 448
+:amanda/steel/steel24x8.S: 960 448
+:amanda/steel/steel24x8.S: 984 448
+:amanda/steel/steel24x8.S: 1000 448
+:amanda/steel/steel24x8.S: 1024 448
+:amanda/steel/steel24x8.S: 1048 448
+:amanda/steel/steel24x8.S: 1072 448
+:amanda/steel/steel24x8.S: 1096 448
+:amanda/steel/steel24x8.S: 1120 448
+:amanda/steel/steel24x8.S: 1144 448
+:geoo/construction/stairs_ru_32.S: 272 176
+:geoo/construction/stairs_ru_32.S: 328 160
+:geoo/construction/stairs_ru_32.S: 232 168
+:geoo/construction/stairs_ru_32.S: 288 152
+:geoo/construction/stairs_ru_32.S: 864 176 frr
+:geoo/construction/stairs_ru_32.S: 808 160 frr
+:geoo/construction/stairs_ru_32.S: 904 168 frr
+:geoo/construction/stairs_ru_32.S: 848 152 frr
+:amanda/steel/steel32x32.S: 592 72
+:amanda/steel/steel32x32.S: 592 40
+:geoo/construction/fence_32x32.S: 624 40
+:geoo/construction/fence_32x32.S: 560 40
+:geoo/construction/fence_32x32.S: 528 40
+:geoo/construction/fence_32x32.S: 656 40
+:geoo/construction/fence_32x32.S: 496 40
+:geoo/construction/fence_32x32.S: 688 40
+:geoo/construction/fence_32x32.S: 720 40
+:geoo/construction/fence_32x32.S: 752 40
+:geoo/construction/fence_32x32.S: 432 40
+:geoo/construction/fence_32x32.S: 464 40

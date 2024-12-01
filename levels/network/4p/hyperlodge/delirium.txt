@@ -1,0 +1,191 @@
+$BUILT 2024-09-14 16:27:48
+$AUTHOR Hyperlodge
+$ENGLISH Delirium
+
+#INTENDED_NUMBER_OF_PLAYERS 4
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 1
+#TORUS_Y 1
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 64
+#BACKGROUND_BLUE 80
+
+#SECONDS 60
+#INITIAL 100
+#SPAWN_INTERVAL 50
+
+#WALKER 50
+#CLIMBER 50
+#FLOATER 50
+#EXPLODER2 -1
+#BLOCKER -1
+#BUILDER 50
+#PLATFORMER 50
+#JUMPER 50
+#BATTER -1
+#CUBER 50
+
+:geoo/abstract/hatch.H: 0 256
+:geoo/abstract/hatch.H: 32 256
+:geoo/abstract/hatch.H: 80 256
+:geoo/abstract/hatch.H: 112 256
+:geoo/abstract/hatch.H: 160 256
+:geoo/abstract/hatch.H: 192 256
+:geoo/abstract/hatch.H: 240 256
+:geoo/abstract/hatch.H: 272 256
+:geoo/abstract/hatch.H: 320 256
+:geoo/abstract/hatch.H: 352 256
+:geoo/abstract/hatch.H: 400 256
+:geoo/abstract/hatch.H: 432 256
+:geoo/abstract/hatch.H: 480 256
+:geoo/abstract/hatch.H: 512 256
+:geoo/abstract/hatch.H: 560 256
+:geoo/abstract/hatch.H: 592 256
+
+:raymanni/lab/goal.G: 80 176
+:raymanni/lab/goal.G: 160 176
+:raymanni/lab/goal.G: 240 176
+:raymanni/lab/goal.G: 0 176
+:raymanni/lab/goal.G: 400 176
+:raymanni/lab/goal.G: 480 176
+:raymanni/lab/goal.G: 560 176
+:raymanni/lab/goal.G: 320 176
+
+:proxima/flame.F: 172 320
+:proxima/flame.F: 252 320
+:proxima/flame.F: 332 320
+:proxima/flame.F: 412 320
+:proxima/flame.F: 492 320
+:proxima/flame.F: 572 320
+:proxima/flame.F: 12 320
+:proxima/flame.F: 92 320
+
+:geoo/sandstone/64x64: 0 336
+:geoo/sandstone/64x64: 0 0
+:geoo/sandstone/64x64: 0 64
+:geoo/sandstone/64x64: 0 128
+:geoo/sandstone/64x64: 0 192
+:geoo/sandstone/64x64: 80 0
+:geoo/sandstone/64x64: 80 64
+:geoo/sandstone/64x64: 80 128
+:geoo/sandstone/64x64: 80 192
+:geoo/sandstone/64x64: 160 0
+:geoo/sandstone/64x64: 160 64
+:geoo/sandstone/64x64: 160 128
+:geoo/sandstone/64x64: 160 192
+:geoo/sandstone/64x64: 240 0
+:geoo/sandstone/64x64: 240 64
+:geoo/sandstone/64x64: 240 128
+:geoo/sandstone/64x64: 240 192
+:geoo/sandstone/64x64: 320 0
+:geoo/sandstone/64x64: 320 64
+:geoo/sandstone/64x64: 320 128
+:geoo/sandstone/64x64: 320 192
+:geoo/sandstone/64x64: 400 0
+:geoo/sandstone/64x64: 400 64
+:geoo/sandstone/64x64: 400 128
+:geoo/sandstone/64x64: 400 192
+:geoo/sandstone/64x64: 480 0
+:geoo/sandstone/64x64: 480 64
+:geoo/sandstone/64x64: 480 128
+:geoo/sandstone/64x64: 480 192
+:geoo/sandstone/64x64: 560 0
+:geoo/sandstone/64x64: 560 64
+:geoo/sandstone/64x64: 560 128
+:geoo/sandstone/64x64: 560 192
+:geoo/sandstone/64x64: 80 336
+:geoo/sandstone/64x64: 160 336
+:geoo/sandstone/64x64: 240 336
+:geoo/sandstone/64x64: 320 336
+:geoo/sandstone/64x64: 400 336
+:geoo/sandstone/64x64: 480 336
+:geoo/sandstone/64x64: 560 336
+:matt/winter/09b: 256 16 d
+:matt/winter/09b: 336 16 d
+:matt/winter/09b: 336 80 d
+:matt/winter/09b: 256 80 d
+:matt/winter/09b: 256 144 d
+:matt/winter/09b: 256 208 d
+:matt/winter/09b: 336 208 d
+:matt/winter/09b: 336 144 d
+:matt/winter/09b: 96 16 d
+:matt/winter/09b: 176 16 d
+:matt/winter/09b: 176 80 d
+:matt/winter/09b: 96 80 d
+:matt/winter/09b: 96 144 d
+:matt/winter/09b: 96 208 d
+:matt/winter/09b: 176 208 d
+:matt/winter/09b: 176 144 d
+:matt/winter/09b: 416 16 d
+:matt/winter/09b: 496 16 d
+:matt/winter/09b: 496 80 d
+:matt/winter/09b: 416 80 d
+:matt/winter/09b: 416 144 d
+:matt/winter/09b: 416 208 d
+:matt/winter/09b: 496 208 d
+:matt/winter/09b: 496 144 d
+:matt/winter/09b: 576 16 d
+:matt/winter/09b: 576 80 d
+:matt/winter/09b: 576 208 d
+:matt/winter/09b: 576 144 d
+:matt/winter/09b: 16 16 d
+:matt/winter/09b: 16 80 d
+:matt/winter/09b: 16 208 d
+:matt/winter/09b: 16 144 d
+:geoo/construction/platform.S: 560 336
+:geoo/construction/platform.S: 592 336
+:geoo/construction/platform.S: 512 336
+:geoo/construction/platform.S: 480 336
+:geoo/construction/platform.S: 432 336
+:geoo/construction/platform.S: 400 336
+:geoo/construction/platform.S: 352 336
+:geoo/construction/platform.S: 320 336
+:geoo/construction/platform.S: 272 336
+:geoo/construction/platform.S: 240 336
+:geoo/construction/platform.S: 192 336
+:geoo/construction/platform.S: 160 336
+:geoo/construction/platform.S: 112 336
+:geoo/construction/platform.S: 80 336
+:geoo/construction/platform.S: 32 336
+:geoo/construction/platform.S: 0 336
+:geoo/steel/dark_16x16o.S: 224 56
+:geoo/steel/dark_16x16o.S: 224 184
+:geoo/steel/dark_16x16o.S: 144 184
+:geoo/steel/dark_16x16o.S: 64 184
+:geoo/steel/dark_16x16o.S: 64 56
+:geoo/steel/dark_16x16o.S: 144 56
+:geoo/steel/dark_16x16o.S: 304 56
+:geoo/steel/dark_16x16o.S: 384 56
+:geoo/steel/dark_16x16o.S: 464 56
+:geoo/steel/dark_16x16o.S: 544 56
+:geoo/steel/dark_16x16o.S: 624 56
+:geoo/steel/dark_16x16o.S: 624 184
+:geoo/steel/dark_16x16o.S: 544 184
+:geoo/steel/dark_16x16o.S: 464 184
+:geoo/steel/dark_16x16o.S: 384 184
+:geoo/steel/dark_16x16o.S: 304 184
+:geoo/sandstone/slopes/16x32rt: 304 336
+:geoo/sandstone/slopes/16x32rt: 384 336
+:geoo/sandstone/slopes/16x32rt: 464 336
+:geoo/sandstone/slopes/16x32rt: 544 336
+:geoo/sandstone/slopes/16x32rt: 624 336
+:geoo/sandstone/slopes/16x32rt: 64 336
+:geoo/sandstone/slopes/16x32rt: 144 336
+:geoo/sandstone/slopes/16x32rt: 224 336
+:geoo/sandstone/slopes/16x32lb: 544 368
+:geoo/sandstone/slopes/16x32lb: 624 368
+:geoo/sandstone/slopes/16x32lb: 64 368
+:geoo/sandstone/slopes/16x32lb: 144 368
+:geoo/sandstone/slopes/16x32lb: 224 368
+:geoo/sandstone/slopes/16x32lb: 304 368
+:geoo/sandstone/slopes/16x32lb: 384 368
+:geoo/sandstone/slopes/16x32lb: 464 368
+:geoo/sandstone/slopes/16x32lb: 384 256
+:geoo/sandstone/slopes/16x32lb: 464 256
+:geoo/sandstone/slopes/16x32lb: 544 256
+:geoo/sandstone/slopes/16x32lb: 624 256
+:geoo/sandstone/slopes/16x32lb: 64 256
+:geoo/sandstone/slopes/16x32lb: 144 256
+:geoo/sandstone/slopes/16x32lb: 224 256
+:geoo/sandstone/slopes/16x32lb: 304 256

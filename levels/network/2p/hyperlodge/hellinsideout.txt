@@ -1,0 +1,87 @@
+$BUILT 2024-07-18 11:24:04
+$AUTHOR Hyperlodge
+$ENGLISH Hell Inside Out
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 512
+#SIZE_Y 336
+#BACKGROUND_RED 51
+#BACKGROUND_GREEN 31
+#BACKGROUND_BLUE 51
+
+#SECONDS 110
+#INITIAL 75
+#SPAWN_INTERVAL 75
+
+#WALKER -1
+#RUNNER -1
+#CLIMBER -1
+#BLOCKER -1
+#BUILDER -1
+#MINER -1
+#JUMPER -1
+#BATTER -1
+#CUBER -1
+#EXPLODER2 0
+
+:amanda/occult/hatch_tentacle.H: 96 158 r
+:amanda/occult/hatch_tentacle.H: 320 158
+
+:amanda/occult/goal_skull.G: 304 16
+:amanda/occult/goal_skull.G: 80 16
+
+:geoo/construction/sawblade.F: 460 62
+:geoo/construction/sawblade.F: 12 62
+:raymanni/gore/bonesaw.F: 112 128
+:raymanni/gore/bonesaw.F: 336 128
+:geoo/construction/Laser_vr_64.F: 264 208
+:geoo/construction/Laser_vr_64.F: 232 208
+:geoo/construction/Laser_vr_64.F: 24 208
+:geoo/construction/Laser_vr_64.F: 24 144
+:geoo/construction/Laser_vr_64.F: 472 208
+:geoo/construction/Laser_vr_64.F: 472 144
+:proxima/flame.F: 236 38
+:proxima/flame.F: 262 49
+:proxima/flame.F: 210 49
+
+:geoo/steel/64x64o.S: 224 272
+:geoo/steel/64x64o.S: 128 272
+:geoo/steel/64x64o.S: 320 272
+:geoo/steel/dark_32x64o.S: 288 272
+:geoo/steel/dark_32x64o.S: 192 272
+:geoo/steel/dark_64x32o.S: 112 160
+:geoo/steel/dark_64x32o.S: 336 160
+:geoo/steel/64x64o.S: 32 272
+:geoo/steel/dark_32x64o.S: 96 272
+:geoo/steel/64x64o.S: 416 272
+:geoo/steel/dark_32x64o.S: 384 272
+:raymanni/gore/steel.S: 240 144
+:amanda/steel/steel32x32.S: 0 240
+:amanda/steel/steel32x32.S: 480 240
+:amanda/steel/steel32x32.S: 480 208
+:geoo/steel/dark_32x64o.S: 480 272
+:geoo/steel/dark_32x64o.S: 0 272
+:amanda/steel/steel32x32.S: 0 208
+:amanda/steel/steel32x32.S: 0 176
+:amanda/steel/steel32x32.S: 0 144
+:amanda/steel/steel32x32.S: 0 112
+:amanda/steel/steel32x32.S: 0 80
+:amanda/steel/steel32x32.S: 64 80
+:amanda/steel/steel32x32.S: 480 176
+:amanda/steel/steel32x32.S: 480 144
+:amanda/steel/steel32x32.S: 480 112
+:amanda/steel/steel32x32.S: 480 80
+:amanda/steel/steel32x32.S: 416 80
+:amanda/steel/steel32x32.S: 32 80
+:amanda/steel/steel32x32.S: 96 80
+:amanda/steel/steel32x32.S: 256 80
+:amanda/steel/steel32x32.S: 224 80
+:amanda/steel/steel32x32.S: 192 80
+:amanda/steel/steel32x32.S: 288 80
+:amanda/steel/steel32x32.S: 384 80
+:amanda/steel/steel32x32.S: 448 80
+:amanda/steel/steel32x32.S: 320 80
+:amanda/steel/steel32x32.S: 160 80
+:raymanni/gore/steel.S: 240 112
+:raymanni/gore/steel.S: 240 240
+:raymanni/gore/steel.S: 240 208

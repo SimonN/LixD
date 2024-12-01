@@ -1,0 +1,314 @@
+$BUILT 2024-07-18 12:08:03
+$AUTHOR Hyperlodge
+$ENGLISH Merry Holidays!
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1120
+#SIZE_Y 400
+#BACKGROUND_RED 48
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 60
+#INITIAL 150
+#SPAWN_INTERVAL 50
+
+#WALKER -1
+#RUNNER -1
+#CLIMBER -1
+#FLOATER -1
+#EXPLODER2 -1
+#BLOCKER -1
+#BUILDER -1
+#PLATFORMER -1
+#BASHER -1
+#MINER -1
+#DIGGER -1
+#JUMPER -1
+#BATTER -1
+#CUBER -1
+
+:raymanni/holiday/hatch.H: 546 32
+:raymanni/holiday/hatch.H: 510 32 r
+
+:raymanni/holiday/goal.G: 80 304
+:raymanni/holiday/goal.G: 976 304
+
+:proxima/flame.F: 540 354
+
+:geoo/construction/steam_up.T: 192 384
+:geoo/construction/steam_up.T: 208 384
+:geoo/construction/steam_up.T: 224 384
+:geoo/construction/steam_up.T: 240 384
+:geoo/construction/steam_up.T: 256 384
+:geoo/construction/steam_up.T: 272 384
+:geoo/construction/steam_up.T: 288 384
+:geoo/construction/steam_up.T: 304 384
+:geoo/construction/steam_up.T: 320 384
+:geoo/construction/steam_up.T: 336 384
+:geoo/construction/steam_up.T: 352 384
+:geoo/construction/steam_up.T: 368 384
+:geoo/construction/steam_up.T: 384 384
+:geoo/construction/steam_up.T: 400 384
+:geoo/construction/steam_up.T: 416 384
+:geoo/construction/steam_up.T: 432 384
+:geoo/construction/steam_up.T: 448 384
+:geoo/construction/steam_up.T: 464 384
+:geoo/construction/steam_up.T: 480 384
+:geoo/construction/steam_up.T: 496 384
+:geoo/construction/steam_up.T: 512 384
+:geoo/construction/steam_up.T: 528 384
+:geoo/construction/steam_up.T: 576 384
+:geoo/construction/steam_up.T: 592 384
+:geoo/construction/steam_up.T: 608 384
+:geoo/construction/steam_up.T: 624 384
+:geoo/construction/steam_up.T: 640 384
+:geoo/construction/steam_up.T: 656 384
+:geoo/construction/steam_up.T: 672 384
+:geoo/construction/steam_up.T: 688 384
+:geoo/construction/steam_up.T: 704 384
+:geoo/construction/steam_up.T: 720 384
+:geoo/construction/steam_up.T: 736 384
+:geoo/construction/steam_up.T: 752 384
+:geoo/construction/steam_up.T: 768 384
+:geoo/construction/steam_up.T: 784 384
+:geoo/construction/steam_up.T: 800 384
+:geoo/construction/steam_up.T: 816 384
+:geoo/construction/steam_up.T: 832 384
+:geoo/construction/steam_up.T: 848 384
+:geoo/construction/steam_up.T: 864 384
+:geoo/construction/steam_up.T: 880 384
+:geoo/construction/steam_up.T: 896 384
+:geoo/construction/steam_up.T: 912 384
+
+:raymanni/holiday/cane_a: 176 368
+:raymanni/holiday/cane_d: 208 352
+:raymanni/holiday/cane_a: 224 320
+:raymanni/holiday/cane_d: 256 304
+:raymanni/holiday/cane_a: 272 272
+:raymanni/holiday/cane_d: 304 256
+:raymanni/holiday/cane_a: 320 224
+:raymanni/holiday/cane_d: 352 208
+:raymanni/holiday/cane_a: 368 176
+:raymanni/holiday/cane_d: 400 160
+:raymanni/holiday/cane_a: 416 128
+:raymanni/holiday/cane_d: 448 112
+:raymanni/holiday/cane_a: 464 80
+:raymanni/holiday/cane_mid: 496 80 r
+:raymanni/holiday/cane_mid: 528 80 r
+:geoo/steel/16x32o.S: 496 96
+:geoo/steel/16x32o.S: 496 128
+:geoo/steel/16x32o.S: 528 160 r
+:geoo/steel/16x32o.S: 496 160 r
+:raymanni/holiday/cane_a: 208 304
+:raymanni/holiday/cane_d: 240 288
+:raymanni/holiday/cane_a: 256 256
+:raymanni/holiday/cane_d: 288 240
+:raymanni/holiday/cane_a: 304 208
+:raymanni/holiday/cane_d: 336 192
+:raymanni/holiday/cane_a: 352 160
+:raymanni/holiday/cane_d: 384 144
+:raymanni/holiday/cane_a: 400 112
+:raymanni/holiday/cane_d: 432 96
+:raymanni/holiday/cane_a: 448 64
+:raymanni/holiday/cane_d: 480 48
+:raymanni/holiday/cane_a: 496 16
+:raymanni/holiday/cane_mid: 528 16 r
+:raymanni/holiday/cane_d: 192 336
+:raymanni/holiday/cane_a: 160 352
+:raymanni/holiday/cane_mid: 160 384 f
+:raymanni/holiday/cane_a: 912 368 frr
+:raymanni/holiday/cane_d: 880 352 frr
+:raymanni/holiday/cane_a: 864 320 frr
+:raymanni/holiday/cane_d: 832 304 frr
+:raymanni/holiday/cane_a: 816 272 frr
+:raymanni/holiday/cane_d: 784 256 frr
+:raymanni/holiday/cane_a: 768 224 frr
+:raymanni/holiday/cane_d: 736 208 frr
+:raymanni/holiday/cane_a: 720 176 frr
+:raymanni/holiday/cane_d: 688 160 frr
+:raymanni/holiday/cane_a: 672 128 frr
+:raymanni/holiday/cane_d: 640 112 frr
+:raymanni/holiday/cane_a: 624 80 frr
+:raymanni/holiday/cane_mid: 592 80 fr
+:raymanni/holiday/cane_mid: 560 80 fr
+:geoo/steel/16x32o.S: 608 96
+:geoo/steel/16x32o.S: 608 128
+:geoo/steel/16x32o.S: 592 160 r
+:geoo/steel/16x32o.S: 560 160 r
+:raymanni/holiday/cane_a: 880 304 frr
+:raymanni/holiday/cane_d: 848 288 frr
+:raymanni/holiday/cane_a: 832 256 frr
+:raymanni/holiday/cane_d: 800 240 frr
+:raymanni/holiday/cane_a: 784 208 frr
+:raymanni/holiday/cane_d: 752 192 frr
+:raymanni/holiday/cane_a: 736 160 frr
+:raymanni/holiday/cane_d: 704 144 frr
+:raymanni/holiday/cane_a: 688 112 frr
+:raymanni/holiday/cane_d: 656 96 frr
+:raymanni/holiday/cane_a: 640 64 frr
+:raymanni/holiday/cane_d: 608 48 frr
+:raymanni/holiday/cane_a: 592 16 frr
+:raymanni/holiday/cane_mid: 560 16 fr
+:raymanni/holiday/cane_d: 896 336 frr
+:raymanni/holiday/cane_a: 928 352 frr
+:raymanni/holiday/cane_mid: 944 384 rr
+:geoo/steel/16x32o.S: 96 384 r
+:geoo/steel/16x32o.S: 64 384 r
+:geoo/steel/16x32o.S: 128 384 r
+:geoo/steel/16x32o.S: 992 384 r
+:geoo/steel/16x32o.S: 960 384 r
+:geoo/steel/16x32o.S: 1024 384 r
+:raymanni/holiday/garland: 528 176
+:raymanni/holiday/brick_red: 96 240
+:raymanni/holiday/brick_red: 128 240
+:raymanni/holiday/brick_red: 64 240
+:raymanni/holiday/brick_red: 96 208
+:raymanni/holiday/brick_red: 128 208
+:raymanni/holiday/brick_red: 64 208
+:raymanni/holiday/brick_red: 96 176
+:raymanni/holiday/brick_red: 128 176
+:raymanni/holiday/brick_red: 64 176
+:raymanni/holiday/brick_red: 96 144
+:raymanni/holiday/brick_red: 128 144
+:raymanni/holiday/brick_red: 64 144
+:raymanni/holiday/brick_red: 96 112
+:raymanni/holiday/brick_red: 128 112
+:raymanni/holiday/brick_red: 64 112
+:raymanni/holiday/brick_red: 96 80
+:raymanni/holiday/brick_red: 128 80
+:raymanni/holiday/brick_red: 64 80
+:raymanni/holiday/brick_red_c: 128 272
+:raymanni/holiday/brick_red_c: 160 304
+:raymanni/holiday/brick_red: 160 240
+:raymanni/holiday/brick_red: 160 208
+:raymanni/holiday/brick_red: 160 176
+:raymanni/holiday/brick_red: 160 144
+:raymanni/holiday/brick_red: 160 112
+:raymanni/holiday/brick_red: 160 80
+:raymanni/holiday/brick_red: 160 272
+:raymanni/holiday/brick_red_d: 192 272
+:raymanni/holiday/brick_red_d: 192 144
+:raymanni/holiday/brick_red_b: 192 80
+:raymanni/holiday/brick_red_b: 192 208
+:raymanni/holiday/brick_red_b: 160 48
+:raymanni/holiday/brick_red_b: 128 16
+:raymanni/holiday/brick_red: 96 48
+:raymanni/holiday/brick_red: 128 48
+:raymanni/holiday/brick_red: 64 48
+:raymanni/holiday/brick_red: 96 16
+:raymanni/holiday/brick_red: 64 16
+:raymanni/holiday/brick_red: 992 240 frr
+:raymanni/holiday/brick_red: 960 240 frr
+:raymanni/holiday/brick_red: 1024 240 frr
+:raymanni/holiday/brick_red: 992 208 frr
+:raymanni/holiday/brick_red: 960 208 frr
+:raymanni/holiday/brick_red: 1024 208 frr
+:raymanni/holiday/brick_red: 992 176 frr
+:raymanni/holiday/brick_red: 960 176 frr
+:raymanni/holiday/brick_red: 1024 176 frr
+:raymanni/holiday/brick_red: 992 144 frr
+:raymanni/holiday/brick_red: 960 144 frr
+:raymanni/holiday/brick_red: 1024 144 frr
+:raymanni/holiday/brick_red: 992 112 frr
+:raymanni/holiday/brick_red: 960 112 frr
+:raymanni/holiday/brick_red: 1024 112 frr
+:raymanni/holiday/brick_red: 992 80 frr
+:raymanni/holiday/brick_red: 960 80 frr
+:raymanni/holiday/brick_red: 1024 80 frr
+:raymanni/holiday/brick_red_c: 960 272 frr
+:raymanni/holiday/brick_red_c: 928 304 frr
+:raymanni/holiday/brick_red: 928 240 frr
+:raymanni/holiday/brick_red: 928 208 frr
+:raymanni/holiday/brick_red: 928 176 frr
+:raymanni/holiday/brick_red: 928 144 frr
+:raymanni/holiday/brick_red: 928 112 frr
+:raymanni/holiday/brick_red: 928 80 frr
+:raymanni/holiday/brick_red: 928 272 frr
+:raymanni/holiday/brick_red_d: 896 272 frr
+:raymanni/holiday/brick_red_d: 896 144 frr
+:raymanni/holiday/brick_red_b: 896 80 frr
+:raymanni/holiday/brick_red_b: 896 208 frr
+:raymanni/holiday/brick_red_b: 928 48 frr
+:raymanni/holiday/brick_red_b: 960 16 frr
+:raymanni/holiday/brick_red: 992 48 frr
+:raymanni/holiday/brick_red: 960 48 frr
+:raymanni/holiday/brick_red: 1024 48 frr
+:raymanni/holiday/brick_red: 992 16 frr
+:raymanni/holiday/brick_red: 1024 16 frr
+:raymanni/holiday/brick_green: 200 16
+:raymanni/holiday/brick_green: 232 16
+:raymanni/holiday/brick_green: 264 16
+:raymanni/holiday/brick_green_a: 168 16
+:raymanni/holiday/brick_green_b: 296 16
+:raymanni/holiday/brick_green: 232 48
+:raymanni/holiday/brick_green: 264 48
+:raymanni/holiday/brick_green_d: 296 48
+:raymanni/holiday/brick_green_c: 200 48
+:raymanni/holiday/brick_green: 888 16 frr
+:raymanni/holiday/brick_green: 856 16 frr
+:raymanni/holiday/brick_green: 824 16 frr
+:raymanni/holiday/brick_green_a: 920 16 frr
+:raymanni/holiday/brick_green_b: 792 16 frr
+:raymanni/holiday/brick_green: 856 48 frr
+:raymanni/holiday/brick_green: 824 48 frr
+:raymanni/holiday/brick_green_d: 792 48 frr
+:raymanni/holiday/brick_green_c: 888 48 frr
+:raymanni/holiday/brick_green: 336 56 r
+:raymanni/holiday/brick_green: 336 88 r
+:raymanni/holiday/brick_green: 336 120 r
+:raymanni/holiday/brick_green_a: 336 24 r
+:raymanni/holiday/brick_green_b: 336 152 r
+:raymanni/holiday/brick_green: 304 88 r
+:raymanni/holiday/brick_green: 304 120 r
+:raymanni/holiday/brick_green_d: 304 152 r
+:raymanni/holiday/brick_green_c: 304 56 r
+:raymanni/holiday/brick_green: 752 56 fr
+:raymanni/holiday/brick_green: 752 88 fr
+:raymanni/holiday/brick_green: 752 120 fr
+:raymanni/holiday/brick_green_a: 752 24 fr
+:raymanni/holiday/brick_green_b: 752 152 fr
+:raymanni/holiday/brick_green: 784 88 fr
+:raymanni/holiday/brick_green: 784 120 fr
+:raymanni/holiday/brick_green_d: 784 152 fr
+:raymanni/holiday/brick_green_c: 784 56 fr
+:raymanni/holiday/bauble_string: 248 80
+:raymanni/holiday/bauble_string: 248 112
+:raymanni/holiday/bauble_string: 248 144
+:raymanni/holiday/bauble_string: 248 176
+:raymanni/holiday/bauble_ruby: 248 208
+:raymanni/holiday/bauble_string: 840 80
+:raymanni/holiday/bauble_string: 840 112
+:raymanni/holiday/bauble_string: 840 144
+:raymanni/holiday/bauble_string: 840 176
+:raymanni/holiday/bauble_navy: 840 208
+:geoo/steel/16x32o.S: 48 336
+:geoo/steel/16x32o.S: 48 368
+:geoo/steel/16x32o.S: 48 272
+:geoo/steel/16x32o.S: 48 304
+:geoo/steel/16x32o.S: 48 208
+:geoo/steel/16x32o.S: 48 240
+:geoo/steel/16x32o.S: 48 144
+:geoo/steel/16x32o.S: 48 176
+:geoo/construction/rod_steel/straight_diagu32.S: 18 72 frr
+:geoo/steel/16x32o.S: 48 80
+:geoo/steel/16x32o.S: 48 112
+:geoo/steel/16x32o.S: 48 16
+:geoo/steel/16x32o.S: 48 48
+:geoo/steel/16x32o.S: 1056 336 frr
+:geoo/steel/16x32o.S: 1056 368 frr
+:geoo/steel/16x32o.S: 1056 272 frr
+:geoo/steel/16x32o.S: 1056 304 frr
+:geoo/steel/16x32o.S: 1056 208 frr
+:geoo/steel/16x32o.S: 1056 240 frr
+:geoo/steel/16x32o.S: 1056 144 frr
+:geoo/steel/16x32o.S: 1056 176 frr
+:geoo/construction/rod_steel/straight_diagu32.S: 1064 72
+:geoo/steel/16x32o.S: 1056 80 frr
+:geoo/steel/16x32o.S: 1056 112 frr
+:geoo/steel/16x32o.S: 1056 16 frr
+:geoo/steel/16x32o.S: 1056 48 frr
+:geoo/steel/16x32o.S: 1088 16 frr
+:geoo/steel/16x32o.S: 1088 48 frr
+:geoo/steel/16x32o.S: 16 16
+:geoo/steel/16x32o.S: 16 48

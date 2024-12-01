@@ -1,0 +1,65 @@
+$BUILT 2024-07-18 11:58:00
+$AUTHOR Hyperlodge
+$ENGLISH Quickly But Deadly
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 448
+#SIZE_Y 400
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 32
+#BACKGROUND_BLUE 0
+
+#SECONDS 47
+#INITIAL 47
+#SPAWN_INTERVAL 47
+
+#CLIMBER 35
+#FLOATER 10
+#EXPLODER2 10
+#BLOCKER 10
+#BUILDER -1
+#PLATFORMER -1
+#BASHER 35
+#JUMPER 35
+#BATTER 10
+
+:matt/marble/Hatch.H: 80 288 r
+:matt/marble/Hatch.H: 304 288
+
+:matt/marble/Goal.G: 192 0
+
+:geoo/abstract/cvblocks/046: 16 336
+:geoo/abstract/cvblocks/046: 304 336
+:geoo/abstract/cvblocks/046: 160 320
+:geoo/abstract/cvblocks/046: 16 224
+:geoo/abstract/cvblocks/046: 304 224
+:geoo/abstract/cvblocks/046: 160 224
+:geoo/abstract/cvblocks/046: 16 112
+:geoo/abstract/cvblocks/046: 304 112
+:geoo/abstract/cvblocks/046: 160 128
+:geoo/steel/silhouette_32x64.S: 260 16
+:geoo/steel/silhouette_32x64.S: 158 16
+:geoo/steel/silhouette_64x32.S: 92 16
+:geoo/steel/silhouette_64x32.S: 16 16
+:geoo/steel/silhouette_64x32.S: 294 16
+:geoo/steel/silhouette_64x32.S: 368 16
+:geoo/abstract/cvblocks/022: 64 96
+:geoo/abstract/cvblocks/022: 64 208
+:geoo/abstract/cvblocks/022: 64 320
+:geoo/abstract/cvblocks/022: 352 96 frr
+:geoo/abstract/cvblocks/022: 352 208 frr
+:geoo/abstract/cvblocks/022: 352 320 frr
+:geoo/abstract/cvblocks/022: 176 304
+:geoo/abstract/cvblocks/022: 176 208
+:geoo/abstract/cvblocks/022: 240 208 frr
+:geoo/abstract/cvblocks/022: 240 304 frr
+:proxima/tile/spheres/gold: 192 224 d
+:proxima/tile/spheres/gold: 192 128 d
+:proxima/tile/spheres/gold: 192 320 d
+:proxima/tile/spheres/greensmall: 208 336
+:proxima/tile/spheres/goldsmall: 208 240
+:proxima/tile/spheres/redsmall: 208 144
+:geoo/steel/silhouette_32x32.S: 158 80
+:geoo/steel/silhouette_32x32.S: 192 80
+:geoo/steel/silhouette_32x32.S: 226 80
+:geoo/steel/silhouette_32x32.S: 260 80

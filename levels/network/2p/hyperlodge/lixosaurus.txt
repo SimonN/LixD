@@ -1,0 +1,160 @@
+$BUILT 2024-08-27 12:13:56
+$AUTHOR Hyperlodge
+$ENGLISH Lixosaurus
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1200
+#SIZE_Y 672
+#BACKGROUND_RED 36
+#BACKGROUND_GREEN 16
+#BACKGROUND_BLUE 36
+
+#SECONDS 71
+#INITIAL 111
+#SPAWN_INTERVAL 11
+
+#RUNNER 10
+#CLIMBER 10
+#FLOATER 10
+#EXPLODER2 -1
+#BLOCKER 10
+#BUILDER 100
+#PLATFORMER 10
+#BASHER 10
+#MINER 10
+#DIGGER 10
+#JUMPER 10
+#BATTER 10
+#CUBER -1
+
+:amanda/occult/hatch_tentacle.H: 96 489
+:amanda/occult/hatch_tentacle.H: 1008 488 r
+
+:simon/tapir/goal.G: 600 200
+:simon/tapir/goal.G: 536 200
+:simon/tapir/goal.G: 504 8
+:simon/tapir/goal.G: 632 8
+
+:matt/underworld/Lava.W: 48 624
+:matt/underworld/Lava.W: 96 624
+:matt/underworld/Lava.W: 144 624
+:matt/underworld/Lava.W: 192 624
+:matt/underworld/Lava.W: 240 624
+:matt/underworld/Lava.W: 288 624
+:matt/underworld/Lava.W: 336 624
+:matt/underworld/Lava.W: 384 624
+:matt/underworld/Lava.W: 432 624
+:matt/underworld/Lava.W: 480 624
+:matt/underworld/Lava.W: 528 624
+:matt/underworld/Lava.W: 576 624
+:matt/underworld/Lava.W: 624 624
+:matt/underworld/Lava.W: 672 624
+:matt/underworld/Lava.W: 720 624
+:matt/underworld/Lava.W: 768 624
+:matt/underworld/Lava.W: 816 624
+:matt/underworld/Lava.W: 864 624
+:matt/underworld/Lava.W: 912 624
+:matt/underworld/Lava.W: 960 624
+:matt/underworld/Lava.W: 1008 624
+:matt/underworld/Lava.W: 1056 624
+:matt/underworld/Lava.W: 1104 624
+:matt/underworld/Lava.W: 1152 624
+:matt/underworld/Lava.W: 0 624
+
+:amanda/occult/skulls32x32: 248 512
+:amanda/occult/skulls32x32: 249 477 rrr
+:raymanni/gore/bone_1: 305 540
+:amanda/occult/skulls32x32: 282 498
+:amanda/occult/skulls32x32: 296 462
+:amanda/occult/skulls32x32: 316 439 r
+:amanda/occult/skulls32x32: 336 402
+:raymanni/gore/bone_1: 392 400 r
+:amanda/occult/skulls32x32: 356 367 rrr
+:amanda/occult/skulls32x32: 376 338
+:amanda/occult/skulls32x32: 389 306 f
+:amanda/occult/skulls32x32: 389 276 r
+:amanda/occult/skulls32x32: 216 512 frr
+:raymanni/gore/bone_1: 160 503 r
+:amanda/occult/skulls32x32: 168 480 frr
+:amanda/occult/skulls32x32: 184 496 frr
+:amanda/occult/skulls32x32: 116 479 frr
+:amanda/occult/skulls32x32: 182 509 frrr
+:raymanni/gore/bone_1: 233 589
+:amanda/occult/skulls32x32: 204 601
+:amanda/occult/skulls32x32: 208 545 rrr
+:amanda/occult/skulls32x32: 282 555 frr
+:raymanni/gore/bone_1: 78 543 r
+:amanda/occult/skulls32x32: 84 511 frr
+:raymanni/gore/bone_1: 64 577 rr
+:amanda/occult/skulls32x32: 38 534 frr
+:amanda/occult/skulls32x32: 132 527 frrr
+:amanda/occult/skulls32x32: 248 592 rrr
+:amanda/occult/skulls32x32: 37 587 rrr
+:amanda/occult/skulls32x32: 285 593 f
+:geoo/steel/silhouette_64x32.S: 120 624
+:amanda/occult/skulls32x32: 159 594 frr
+:amanda/occult/skulls32x32: 77 608 frr
+:geoo/steel/silhouette_64x32.S: 536 248
+:geoo/steel/silhouette_64x32.S: 600 248
+:amanda/occult/skulls32x32: 394 241 r
+:amanda/occult/skulls32x32: 428 227 r
+:raymanni/gore/eye: 441 227 rrr
+:amanda/occult/skulls32x32: 399 204 r
+:raymanni/gore/bone_5: 448 270 rr
+:amanda/occult/skulls32x32: 456 242 r
+:amanda/occult/skulls32x32: 18 505 frr
+:amanda/occult/skulls32x32: 5 517 f
+:geoo/construction/fence_64x64.S: 568 184
+:amanda/occult/skulls32x32: 888 511 frr
+:amanda/occult/skulls32x32: 887 476 frrr
+:raymanni/gore/bone_1: 879 539 frr
+:amanda/occult/skulls32x32: 854 497 frr
+:amanda/occult/skulls32x32: 840 461 frr
+:amanda/occult/skulls32x32: 820 438 fr
+:raymanni/gore/bone_1: 776 400 fr
+:amanda/occult/skulls32x32: 800 401 frr
+:amanda/occult/skulls32x32: 780 366 frrr
+:amanda/occult/skulls32x32: 760 337 frr
+:amanda/occult/skulls32x32: 747 305 rr
+:amanda/occult/skulls32x32: 747 275 fr
+:amanda/occult/skulls32x32: 920 511
+:raymanni/gore/bone_1: 1008 502 fr
+:amanda/occult/skulls32x32: 968 479
+:amanda/occult/skulls32x32: 952 495
+:amanda/occult/skulls32x32: 1020 478
+:amanda/occult/skulls32x32: 954 508 rrr
+:raymanni/gore/bone_1: 951 588 frr
+:amanda/occult/skulls32x32: 932 600 frr
+:amanda/occult/skulls32x32: 928 544 frrr
+:amanda/occult/skulls32x32: 854 554
+:raymanni/gore/bone_1: 1090 542 fr
+:amanda/occult/skulls32x32: 1052 510
+:raymanni/gore/bone_1: 1120 576 f
+:amanda/occult/skulls32x32: 1098 533
+:amanda/occult/skulls32x32: 1004 526 rrr
+:amanda/occult/skulls32x32: 888 591 frrr
+:amanda/occult/skulls32x32: 1099 586 frrr
+:amanda/occult/skulls32x32: 851 592 rr
+:geoo/steel/silhouette_64x32.S: 1016 623 frr
+:amanda/occult/skulls32x32: 977 593
+:amanda/occult/skulls32x32: 1059 607
+:amanda/occult/skulls32x32: 742 240 fr
+:amanda/occult/skulls32x32: 708 226 fr
+:raymanni/gore/eye: 727 226 frrr
+:amanda/occult/skulls32x32: 737 203 fr
+:raymanni/gore/bone_5: 688 269 f
+:amanda/occult/skulls32x32: 680 241 fr
+:amanda/occult/skulls32x32: 1118 504
+:amanda/occult/skulls32x32: 1131 516 rr
+:geoo/construction/fence_64x64.S: 568 120
+:geoo/construction/fence_64x64.S: 568 58
+:geoo/steel/silhouette_64x32.S: 632 56
+:geoo/steel/silhouette_64x32.S: 504 56
+:raymanni/gore/bone_2: 456 384 r
+:raymanni/gore/bone_1: 424 400 r
+:raymanni/gore/bone_2: 712 384 fr
+:raymanni/gore/bone_1: 744 400 fr
+:matt/goldmine/planksupport2: 400 608
+:matt/goldmine/planksupport2: 736 608
+:matt/goldmine/planksupport2: 624 608
+:matt/goldmine/planksupport2: 512 608

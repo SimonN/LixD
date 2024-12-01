@@ -1,0 +1,172 @@
+$BUILT 2024-07-18 11:33:08
+$AUTHOR Hyperlodge
+$ENGLISH Don't Run in the Hallways
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1424
+#SIZE_Y 160
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 63
+#BACKGROUND_BLUE 79
+
+#SECONDS 142
+#INITIAL 222
+#SPAWN_INTERVAL 22
+
+#WALKER 9
+#RUNNER 9
+#CLIMBER 9
+#FLOATER 9
+#EXPLODER2 99
+#BLOCKER 99
+#BUILDER 9
+#PLATFORMER 99
+#JUMPER 9
+#BATTER 99
+#CUBER 9
+
+:matt/goldmine/Hatch.H: 24 56
+:matt/goldmine/Hatch.H: 1336 56 r
+
+:raymanni/lab/goal.G: 1336 86
+:raymanni/lab/goal.G: 24 86
+
+:simon/water_thin.W: 624 128
+:simon/water_thin.W: 752 128
+:simon/water_thin.W: 800 128
+:simon/water_thin.W: 848 128
+:simon/water_thin.W: 896 128
+:simon/water_thin.W: 944 128
+:simon/water_thin.W: 992 128
+:simon/water_thin.W: 384 128
+:simon/water_thin.W: 432 128
+:simon/water_thin.W: 480 128
+:simon/water_thin.W: 528 128
+:simon/water_thin.W: 576 128
+
+:proxima/flame.F: 648 112
+:proxima/flame.F: 692 80
+:proxima/flame.F: 736 112
+
+:geoo/construction/fence_rust_32x32: 0 108
+:raymanni/holiday/plank_long: 0 136
+:amanda/steel/steel24x8.S: 0 152
+:amanda/steel/steel24x8.S: 24 152
+:amanda/steel/steel24x8.S: 48 152
+:amanda/steel/steel24x8.S: 72 152
+:amanda/steel/steel24x8.S: 96 152
+:amanda/steel/steel24x8.S: 120 152
+:raymanni/holiday/plank_long: 128 136
+:amanda/steel/steel24x8.S: 144 152
+:amanda/steel/steel24x8.S: 168 152
+:amanda/steel/steel24x8.S: 192 152
+:amanda/steel/steel24x8.S: 216 152
+:amanda/steel/steel24x8.S: 240 152
+:amanda/steel/steel24x8.S: 264 152
+:raymanni/holiday/plank_long: 256 136
+:amanda/steel/steel24x8.S: 288 152
+:amanda/steel/steel24x8.S: 312 152
+:amanda/steel/steel24x8.S: 336 152
+:amanda/steel/steel24x8.S: 360 152
+:matt/goldmine/plank: 0 104
+:amanda/steel/steel8x16.S: 128 96
+:amanda/steel/steel8x16.S: 256 72
+:amanda/steel/steel8x16.S: 256 56
+:amanda/steel/steel8x16.S: 0 88
+:amanda/steel/steel8x16.S: 0 72
+:amanda/steel/steel8x16.S: 0 56
+:matt/goldmine/plank: 136 104
+:amanda/steel/steel8x16.S: 256 88
+:amanda/steel/steel8x16.S: 384 144
+:amanda/steel/steel8x16.S: 384 128
+:amanda/steel/steel8x16.S: 384 112
+:amanda/steel/steel_flange_right24x16.S: 360 120
+:amanda/steel/steel24x8.S: 264 56
+:amanda/steel/steel24x8.S: 288 56
+:amanda/steel/steel24x8.S: 312 56
+:amanda/steel/steel24x8.S: 336 56
+:amanda/steel/steel24x8.S: 360 56
+:amanda/steel/steel8x16.S: 128 80
+:amanda/steel/steel_flange_right24x16.S: 360 40
+:amanda/steel/steel_flange_right24x16.S: 376 64
+:amanda/steel/steel_flange_right24x16.S: 392 80
+:amanda/steel/steel24x8.S: 416 88
+:matt/goldmine/plank: 416 80
+:amanda/steel/steel8x16.S: 544 72
+:amanda/steel/steel8x16.S: 544 56
+:amanda/steel/steel_flange_right24x16.S: 504 64
+:amanda/steel/steel8x16.S: 544 40
+:raymanni/holiday/plank_long: 392 136
+:raymanni/holiday/plank_long: 520 136
+:matt/goldmine/planksupport2: 584 72
+:matt/goldmine/plank: 552 64
+:amanda/steel/steel8x16.S: 648 144
+:amanda/steel/steel8x16.S: 648 128
+:amanda/steel/steel8x16.S: 648 112
+:amanda/steel/steel8x16.S: 680 72
+:amanda/steel/steel8x16.S: 680 56
+:amanda/steel/steel8x16.S: 680 40
+:matt/goldmine/explosivecrate: 680 96
+:amanda/steel/steel8x16.S: 680 24
+:geoo/construction/fence_rust_32x32: 1392 108
+:raymanni/holiday/plank_long: 1296 136 frr
+:amanda/steel/steel24x8.S: 1400 152 frr
+:amanda/steel/steel24x8.S: 1376 152 frr
+:amanda/steel/steel24x8.S: 1352 152 frr
+:amanda/steel/steel24x8.S: 1328 152 frr
+:amanda/steel/steel24x8.S: 1304 152 frr
+:amanda/steel/steel24x8.S: 1280 152 frr
+:raymanni/holiday/plank_long: 1168 136 frr
+:amanda/steel/steel24x8.S: 1256 152 frr
+:amanda/steel/steel24x8.S: 1232 152 frr
+:amanda/steel/steel24x8.S: 1208 152 frr
+:amanda/steel/steel24x8.S: 1184 152 frr
+:amanda/steel/steel24x8.S: 1160 152 frr
+:amanda/steel/steel24x8.S: 1136 152 frr
+:raymanni/holiday/plank_long: 1040 136 frr
+:amanda/steel/steel24x8.S: 1112 152 frr
+:amanda/steel/steel24x8.S: 1088 152 frr
+:amanda/steel/steel24x8.S: 1064 152 frr
+:amanda/steel/steel24x8.S: 1040 152 frr
+:matt/goldmine/plank: 1296 104 frr
+:amanda/steel/steel8x16.S: 1288 96 frr
+:amanda/steel/steel8x16.S: 1160 72 frr
+:amanda/steel/steel8x16.S: 1160 56 frr
+:amanda/steel/steel8x16.S: 1416 88 frr
+:amanda/steel/steel8x16.S: 1416 72 frr
+:amanda/steel/steel8x16.S: 1416 56 frr
+:matt/goldmine/plank: 1160 104 frr
+:amanda/steel/steel8x16.S: 1160 88 frr
+:amanda/steel/steel8x16.S: 1032 144 frr
+:amanda/steel/steel8x16.S: 1032 128 frr
+:amanda/steel/steel8x16.S: 1032 112 frr
+:amanda/steel/steel_flange_right24x16.S: 1040 120 frr
+:amanda/steel/steel24x8.S: 1136 56 frr
+:amanda/steel/steel24x8.S: 1112 56 frr
+:amanda/steel/steel24x8.S: 1088 56 frr
+:amanda/steel/steel24x8.S: 1064 56 frr
+:amanda/steel/steel24x8.S: 1040 56 frr
+:amanda/steel/steel8x16.S: 1288 80 frr
+:amanda/steel/steel_flange_right24x16.S: 1040 40 frr
+:amanda/steel/steel_flange_right24x16.S: 1024 64 frr
+:amanda/steel/steel_flange_right24x16.S: 1008 80 frr
+:amanda/steel/steel24x8.S: 984 88 frr
+:matt/goldmine/plank: 880 80 frr
+:amanda/steel/steel8x16.S: 872 72 frr
+:amanda/steel/steel8x16.S: 872 56 frr
+:amanda/steel/steel_flange_right24x16.S: 896 64 frr
+:amanda/steel/steel8x16.S: 872 40 frr
+:raymanni/holiday/plank_long: 904 136 frr
+:raymanni/holiday/plank_long: 776 136 frr
+:matt/goldmine/planksupport2: 776 72 frr
+:matt/goldmine/plank: 744 64 frr
+:amanda/steel/steel8x16.S: 768 144 frr
+:amanda/steel/steel8x16.S: 768 128 frr
+:amanda/steel/steel8x16.S: 768 112 frr
+:amanda/steel/steel8x16.S: 736 72 frr
+:amanda/steel/steel8x16.S: 736 56 frr
+:amanda/steel/steel8x16.S: 736 40 frr
+:amanda/steel/steel8x16.S: 736 24 frr
+:geoo/construction/fence_rust_32x32: 696 64
+:geoo/construction/fence_rust_32x32: 696 32
+:geoo/construction/fence_rust_32x32: 696 0

@@ -1,0 +1,235 @@
+$BUILT 2024-07-18 13:16:39
+$AUTHOR Hyperlodge
+$ENGLISH Bikers Gonna Bike
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1280
+#SIZE_Y 400
+#BACKGROUND_RED 48
+#BACKGROUND_GREEN 96
+#BACKGROUND_BLUE 112
+
+#SECONDS 120
+#INITIAL 150
+#SPAWN_INTERVAL 60
+
+#RUNNER -1
+#CLIMBER -1
+#FLOATER -1
+#BLOCKER -1
+#BUILDER -1
+#MINER -1
+#JUMPER -1
+#BATTER -1
+#EXPLODER2 0
+
+:amanda/occult/hatch_tentacle.H: 560 -32
+:amanda/occult/hatch_tentacle.H: 624 -32 r
+
+:raymanni/lab/goal.G: 193 241
+:raymanni/lab/goal.G: 821 240
+:raymanni/lab/goal.G: 395 241
+:raymanni/lab/goal.G: 1023 241
+
+:simon/water.W: 47 352
+:simon/water.W: 0 352
+:simon/water.W: 1185 352
+:simon/water.W: 1232 352
+
+:proxima/flame.F: 540 296
+:proxima/flame.F: 620 296
+:proxima/flame.F: 700 296
+:proxima/flame.F: 1084 296
+:proxima/flame.F: 156 296
+:proxima/flame.F: 460 296
+:proxima/flame.F: 780 296
+
+:geoo/construction/steam_left.T: 147 272
+:geoo/construction/steam_right.T: 1102 272
+
+:matt/earth/03: 351 323
+:matt/earth/03: 156 324
+:matt/earth/03: 247 329
+:matt/earth/03: 89 320
+:matt/earth/10: 59 331
+:matt/earth/03: 456 325
+:matt/earth/03: 556 326
+:matt/earth/03: 658 329
+:matt/earth/10: 165 335 frr
+:matt/earth/10: 267 337 frr
+:matt/earth/10: 471 335
+:matt/earth/10: 388 341
+:matt/earth/10: 556 340
+:matt/earth/01: 711 344
+$BEGIN_TILE_GROUP 0
+:proxima/tile/spheres/grey.S: 217 117
+:matt/underworld/03: 226 126 d
+:raymanni/holiday/bauble_red: 1 89 r
+:geoo/construction/wall/big_diag_bu: 5 111
+:proxima/tile/spheres/grey.S: 15 117
+:matt/underworld/03: 24 126 d
+:raymanni/lab/scen_1: 90 147 frrr
+:geoo/construction/concrete/032h: 82 126
+:geoo/construction/fence_rust_32x32: 82 115
+:geoo/construction/fence_rust_32x32: 106 122
+:geoo/construction/rod_rust/straight32: 52 144
+:geoo/construction/rod_rust/cross_diag_full: 35 139
+:geoo/construction/concrete/032h: 140 127
+:geoo/construction/rod_rust/straight32: 138 123 r
+:geoo/construction/concrete/016h: 170 111
+:geoo/construction/concrete/016h: 185 116
+:geoo/construction/rod_rust/straight_diagu32: 98 111
+:raymanni/lab/pipe_3: 48 106
+:geoo/construction/rod_rust/straight_diagu32: 95 105
+:geoo/construction/wall/big_brickdiag_bd: 58 105
+:geoo/construction/wall/big_brick1: 106 105
+:geoo/construction/concrete/016vd: 201 130
+:matt/goldmine/tracks: 82 154
+:raymanni/holiday/screw1: 134 152 rrr
+:raymanni/holiday/plank_long: 36 72
+:geoo/construction/wall/big_brick1: 68 80
+:geoo/construction/wall/big_brickdiag_tu: 5 80
+:raymanni/holiday/bauble_yellow: 233 65 fr
+:geoo/construction/stairsbrick_ru_32: 215 79 r
+:geoo/construction/stairsbrick_ru_32: 221 83 r
+:geoo/construction/rod_rust/cross_diag_full: 237 139
+:geoo/construction/stairsbrick_ru_32: 189 28 r
+:geoo/construction/concrete/016v: 221 47
+:geoo/construction/stairsbrick_ru_32: 195 32 r
+:geoo/construction/wall/big_brick1: 106 80
+:geoo/construction/rod_rust/link_h_du: 82 142
+:raymanni/lab/pipe_1: 174 80 fr
+:raymanni/lab/pipe_1: 199 80 fr
+:geoo/construction/wall/big_brickdiag_td: 153 80
+:raymanni/lab/slope_1: 191 78 fr
+:geoo/construction/concrete/032: 222 79
+:geoo/construction/concrete/016vb: 253 79
+:geoo/construction/concrete/032vc: 191 47
+:geoo/construction/concrete/016vb: 236 47
+:geoo/construction/stairsbrick_ru_8: 173 37
+:geoo/construction/stairsbrick_ru_8: 173 39
+:geoo/construction/concrete/016vb: 221 16
+:geoo/construction/concrete/032c: 189 16
+:geoo/construction/concrete/016c: 261 111
+:geoo/construction/concrete/016hb: 189 0
+:raymanni/holiday/screw1: 241 141
+:geoo/construction/platformbrick: 169 134
+:geoo/construction/platformbrick: 169 132
+:geoo/construction/platformbrick: 169 130
+:geoo/construction/platformbrick: 169 128
+:geoo/construction/platformbrick: 169 126
+:geoo/construction/platformbrick: 169 124
+:geoo/construction/platformbrick: 169 122
+:geoo/construction/platformbrick: 169 120
+:geoo/construction/platformbrick: 169 118
+:geoo/construction/platformbrick: 169 116
+:geoo/construction/platformbrick: 169 114
+:geoo/construction/platformbrick: 169 112
+:geoo/construction/platformbrick: 185 120
+:geoo/construction/platformbrick: 185 118
+:geoo/construction/platformbrick: 185 116
+:geoo/construction/platformbrick: 185 126
+:geoo/construction/platformbrick: 185 124
+:geoo/construction/platformbrick: 185 122
+:geoo/construction/platformbrick: 185 130
+:geoo/construction/platformbrick: 185 128
+:geoo/construction/platformbrick: 185 126
+:raymanni/lab/pipe_1: 17 122 fr
+:geoo/construction/rod_rust/straight32: 37 137
+:raymanni/holiday/screw1: 39 141
+:geoo/construction/rod_rust/straight32: 65 137
+:geoo/construction/platformbrick: 185 114
+:geoo/construction/platformbrick: 185 112
+:raymanni/lab/pipe_7: 0 122 r
+$END_TILE_GROUP
+:Group-0: 178 150
+:matt/earth/03: 779 323 frr
+:matt/earth/03: 974 324 frr
+:matt/earth/03: 883 329 frr
+:matt/earth/03: 1041 320 frr
+:matt/earth/10: 1008 331 frr
+:matt/earth/03: 674 325 frr
+:matt/earth/03: 574 326 frr
+:matt/earth/03: 472 329 frr
+:matt/earth/10: 902 335
+:matt/earth/10: 800 337
+:matt/earth/10: 596 335 frr
+:matt/earth/10: 679 341 frr
+:matt/earth/10: 511 340 frr
+:matt/earth/01: 505 344 frr
+:Group-0: 822 150 frr
+:raymanni/toys/beam_13.S: 636 296
+:raymanni/toys/beam_13.S: 636 264
+:raymanni/toys/beam_13.S: 636 232
+:raymanni/toys/beam_13.S: 604 256 r
+:raymanni/toys/beam_13.S: 644 256 r
+:raymanni/toys/beam_13.S: 692 256 r
+:raymanni/toys/beam_13.S: 556 256 r
+:raymanni/toys/beam_13.S: 592 192
+:raymanni/toys/beam_13.S: 680 192
+:raymanni/toys/beam_13.S: 636 192
+:raymanni/toys/beam_13.S: 656 184 r
+:raymanni/toys/beam_13.S: 592 184 r
+:geoo/construction/platformbrick: 600 222
+:geoo/construction/platformbrick: 624 222
+:geoo/construction/platformbrick: 648 222
+:geoo/construction/platformbrick: 624 224
+:geoo/construction/platformbrick: 624 226
+:geoo/construction/platformbrick: 624 228
+:geoo/construction/platformbrick: 624 230
+:geoo/construction/platformbrick: 656 224
+:geoo/construction/platformbrick: 656 226
+:geoo/construction/platformbrick: 656 228
+:geoo/construction/platformbrick: 656 230
+:geoo/construction/platformbrick: 592 224
+:geoo/construction/platformbrick: 592 226
+:geoo/construction/platformbrick: 592 228
+:geoo/construction/platformbrick: 592 230
+:geoo/construction/platformbrick: 730 224 r
+:geoo/construction/platformbrick: 728 224 r
+:geoo/construction/platformbrick: 726 224 r
+:geoo/construction/platformbrick: 724 224 r
+:geoo/construction/platformbrick: 730 192 r
+:geoo/construction/platformbrick: 728 192 r
+:geoo/construction/platformbrick: 726 192 r
+:geoo/construction/platformbrick: 724 192 r
+:geoo/construction/platformbrick: 730 160 r
+:geoo/construction/platformbrick: 728 160 r
+:geoo/construction/platformbrick: 726 160 r
+:geoo/construction/platformbrick: 724 160 r
+:geoo/construction/platformbrick: 554 224 r
+:geoo/construction/platformbrick: 552 224 r
+:geoo/construction/platformbrick: 550 224 r
+:geoo/construction/platformbrick: 548 224 r
+:geoo/construction/platformbrick: 554 192 r
+:geoo/construction/platformbrick: 552 192 r
+:geoo/construction/platformbrick: 550 192 r
+:geoo/construction/platformbrick: 548 192 r
+:geoo/construction/platformbrick: 554 160 r
+:geoo/construction/platformbrick: 552 160 r
+:geoo/construction/platformbrick: 550 160 r
+:geoo/construction/platformbrick: 548 160 r
+:raymanni/toys/beam_13.S: 636 160
+:raymanni/toys/beam_13.S: 636 128
+:geoo/construction/platformbrick: 642 96 r
+:geoo/construction/platformbrick: 640 96 r
+:geoo/construction/platformbrick: 638 96 r
+:geoo/construction/platformbrick: 636 96 r
+:raymanni/toys/beam_13.S: 604 136 r
+:raymanni/toys/beam_13.S: 644 136 r
+:geoo/construction/platformbrick: 676 136
+:geoo/construction/platformbrick: 676 138
+:geoo/construction/platformbrick: 676 140
+:geoo/construction/platformbrick: 676 142
+:geoo/construction/platformbrick: 572 136
+:geoo/construction/platformbrick: 572 138
+:geoo/construction/platformbrick: 572 140
+:geoo/construction/platformbrick: 572 142
+:geoo/construction/platformbrick: 524 256
+:geoo/construction/platformbrick: 524 258
+:geoo/construction/platformbrick: 524 260
+:geoo/construction/platformbrick: 524 262
+:geoo/construction/platformbrick: 724 256
+:geoo/construction/platformbrick: 724 258
+:geoo/construction/platformbrick: 724 260
+:geoo/construction/platformbrick: 724 262

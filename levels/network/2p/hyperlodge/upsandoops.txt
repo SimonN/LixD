@@ -1,0 +1,239 @@
+$BUILT 2024-07-18 13:29:10
+$AUTHOR Hyperlodge
+$ENGLISH Ups and Oops
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1232
+#SIZE_Y 704
+#BACKGROUND_RED 52
+#BACKGROUND_GREEN 32
+#BACKGROUND_BLUE 0
+
+#SECONDS 90
+#INITIAL 150
+#SPAWN_INTERVAL 50
+
+#RUNNER 50
+#CLIMBER 50
+#EXPLODER2 50
+#BLOCKER 50
+#BUILDER 100
+#PLATFORMER 100
+#BASHER 50
+#MINER 50
+#DIGGER 50
+#JUMPER 50
+
+:geoo/construction/Hatch.H: 24 64 r
+:geoo/construction/Hatch.H: 1175 64
+
+:geoo/abstract/goal.G: 1152 624
+:geoo/abstract/goal.G: 48 624
+
+:geoo/construction/stairs_rd_32.S: 88 96 frrr
+:geoo/construction/stairs_rd_32.S: 120 160 frrr
+:geoo/construction/stairs_rd_32.S: 152 224 frrr
+:raymanni/lab/block_3: 312 544
+:geoo/construction/stairs_rd_32.S: 536 96 rrr
+:geoo/construction/stairs_rd_32.S: 504 160 rrr
+:geoo/construction/stairs_rd_32.S: 472 224 rrr
+:raymanni/lab/block_3: 600 96
+:raymanni/lab/block_3: 312 576
+:raymanni/lab/block_3: 600 128
+:raymanni/lab/block_3: 600 160
+:raymanni/lab/block_3: 600 192
+:raymanni/lab/block_3: 600 224
+:raymanni/lab/block_3: 600 256
+:raymanni/lab/block_3: 600 288
+:raymanni/lab/block_3: 600 320
+:geoo/construction/platform.S: 56 96
+:geoo/construction/platform.S: 24 96
+:geoo/construction/stairs_rd_32.S: 184 288 frrr
+:geoo/construction/stairs_rd_32.S: 440 288 rrr
+:geoo/construction/stairs_rd_32.S: 216 352 frrr
+:geoo/construction/stairs_rd_32.S: 248 416 frrr
+:geoo/construction/stairs_rd_32.S: 280 480 frrr
+:geoo/construction/stairs_rd_32.S: 408 352 rrr
+:geoo/construction/stairs_rd_32.S: 376 416 rrr
+:geoo/construction/stairs_rd_32.S: 344 480 rrr
+:raymanni/lab/block_3: 600 352
+:raymanni/lab/block_3: 600 384
+:raymanni/lab/block_3: 600 416
+:raymanni/lab/block_3: 600 448
+:raymanni/lab/block_3: 600 480
+:raymanni/lab/block_3: 600 512
+:raymanni/lab/block_3: 600 544
+:raymanni/lab/block_3: 600 576
+:raymanni/lab/block_3: 312 608
+:raymanni/lab/block_3: 312 640
+:raymanni/lab/block_3: 312 672
+:raymanni/lab/block_3: 600 608
+:raymanni/lab/block_3: 600 640
+:raymanni/lab/block_3: 600 672
+:geoo/construction/platform.S: 32 192
+:geoo/construction/platform.S: 0 192
+:geoo/construction/platform.S: -1 161 r
+:geoo/construction/platform.S: -1 129 r
+:geoo/construction/platform.S: 31 288 frr
+:geoo/construction/platform.S: 63 288 frr
+:geoo/construction/platform.S: 94 257 fr
+:geoo/construction/platform.S: 94 225 fr
+:geoo/construction/platform.S: 32 384
+:geoo/construction/platform.S: 0 384
+:geoo/construction/platform.S: -1 353 r
+:geoo/construction/platform.S: -1 321 r
+:geoo/construction/platform.S: 31 480 frr
+:geoo/construction/platform.S: 63 480 frr
+:geoo/construction/platform.S: 94 449 fr
+:geoo/construction/platform.S: 94 417 fr
+:geoo/construction/platform.S: 32 576
+:geoo/construction/platform.S: 0 576
+:geoo/construction/platform.S: -1 545 r
+:geoo/construction/platform.S: -1 513 r
+:geoo/construction/platform.S: 128 672
+:geoo/construction/platform.S: 96 672
+:geoo/construction/platform.S: 95 641 r
+:geoo/construction/platform.S: 95 609 r
+:geoo/construction/platform.S: 279 577 r
+:geoo/construction/platform.S: 279 545 r
+:geoo/construction/platform.S: 279 641 r
+:geoo/construction/platform.S: 279 609 r
+:geoo/construction/platform.S: 535 641 fr
+:geoo/construction/platform.S: 535 609 fr
+:geoo/construction/platform.S: 535 577 fr
+:geoo/construction/platform.S: 535 545 fr
+:geoo/construction/platform.S: 375 641 fr
+:geoo/construction/platform.S: 375 609 fr
+:geoo/construction/platform.S: 375 577 fr
+:geoo/construction/platform.S: 375 545 fr
+:geoo/construction/platform.S: 535 513 fr
+:geoo/construction/platform.S: 535 481 fr
+:geoo/construction/platform.S: 535 449 fr
+:geoo/construction/platform.S: 535 417 fr
+:geoo/construction/platform.S: 535 385 fr
+:geoo/construction/platform.S: 535 353 fr
+:geoo/construction/platform.S: 535 321 fr
+:geoo/construction/platform.S: 535 289 fr
+:geoo/construction/platform.S: 455 641 fr
+:geoo/construction/platform.S: 455 609 fr
+:geoo/construction/platform.S: 455 577 fr
+:geoo/construction/platform.S: 455 545 fr
+:geoo/construction/platform.S: 455 513 fr
+:geoo/construction/platform.S: 455 481 fr
+:geoo/construction/platform.S: 455 449 fr
+:geoo/construction/platform.S: 455 417 fr
+:geoo/construction/platform.S: 455 385 fr
+:geoo/construction/platform.S: 535 257 fr
+:geoo/construction/platform.S: 535 225 fr
+:raymanni/lab/block_3: 360 672
+:raymanni/lab/block_3: 440 672
+:raymanni/lab/block_3: 520 672
+:raymanni/lab/block_3: 264 672
+:geoo/construction/platform.S: 64 672
+:geoo/construction/platform.S: 32 672
+:geoo/construction/platform.S: 191 641 fr
+:geoo/construction/platform.S: 191 609 fr
+:geoo/construction/platform.S: 191 577 fr
+:geoo/construction/platform.S: 191 545 fr
+:geoo/construction/platform.S: 191 513 fr
+:geoo/construction/platform.S: 191 481 fr
+:geoo/construction/platform.S: 191 449 fr
+:geoo/construction/platform.S: 191 417 fr
+:geoo/construction/platform.S: 191 385 fr
+:raymanni/lab/block_3: 176 672
+:geoo/construction/stairs_rd_32.S: 568 32 rrr
+:raymanni/lab/block_3: 600 32
+:raymanni/lab/block_3: 600 64
+:geoo/construction/stairs_rd_32.S: 1111 96 rrr
+:geoo/construction/stairs_rd_32.S: 1079 160 rrr
+:geoo/construction/stairs_rd_32.S: 1047 224 rrr
+:raymanni/lab/block_3: 887 544 frr
+:geoo/construction/stairs_rd_32.S: 663 96 frrr
+:geoo/construction/stairs_rd_32.S: 695 160 frrr
+:geoo/construction/stairs_rd_32.S: 727 224 frrr
+:raymanni/lab/block_3: 887 576 frr
+:geoo/construction/platform.S: 1143 96 frr
+:geoo/construction/platform.S: 1175 96 frr
+:geoo/construction/stairs_rd_32.S: 1015 288 rrr
+:geoo/construction/stairs_rd_32.S: 759 288 frrr
+:geoo/construction/stairs_rd_32.S: 983 352 rrr
+:geoo/construction/stairs_rd_32.S: 951 416 rrr
+:geoo/construction/stairs_rd_32.S: 919 480 rrr
+:geoo/construction/stairs_rd_32.S: 791 352 frrr
+:geoo/construction/stairs_rd_32.S: 823 416 frrr
+:geoo/construction/stairs_rd_32.S: 855 480 frrr
+:raymanni/lab/block_3: 887 608 frr
+:raymanni/lab/block_3: 887 640 frr
+:raymanni/lab/block_3: 887 672 frr
+:geoo/construction/platform.S: 1167 192 frr
+:geoo/construction/platform.S: 1199 192 frr
+:geoo/construction/platform.S: 1230 161 fr
+:geoo/construction/platform.S: 1230 129 fr
+:geoo/construction/platform.S: 1168 288
+:geoo/construction/platform.S: 1136 288
+:geoo/construction/platform.S: 1135 257 r
+:geoo/construction/platform.S: 1135 225 r
+:geoo/construction/platform.S: 1167 384 frr
+:geoo/construction/platform.S: 1199 384 frr
+:geoo/construction/platform.S: 1230 353 fr
+:geoo/construction/platform.S: 1230 321 fr
+:geoo/construction/platform.S: 1168 480
+:geoo/construction/platform.S: 1136 480
+:geoo/construction/platform.S: 1135 449 r
+:geoo/construction/platform.S: 1135 417 r
+:geoo/construction/platform.S: 1167 576 frr
+:geoo/construction/platform.S: 1199 576 frr
+:geoo/construction/platform.S: 1230 545 fr
+:geoo/construction/platform.S: 1230 513 fr
+:geoo/construction/platform.S: 1071 672 frr
+:geoo/construction/platform.S: 1103 672 frr
+:geoo/construction/platform.S: 1134 641 fr
+:geoo/construction/platform.S: 1134 609 fr
+:geoo/construction/platform.S: 950 577 fr
+:geoo/construction/platform.S: 950 545 fr
+:geoo/construction/platform.S: 950 641 fr
+:geoo/construction/platform.S: 950 609 fr
+:geoo/construction/platform.S: 694 641 r
+:geoo/construction/platform.S: 694 609 r
+:geoo/construction/platform.S: 694 577 r
+:geoo/construction/platform.S: 694 545 r
+:geoo/construction/platform.S: 854 641 r
+:geoo/construction/platform.S: 854 609 r
+:geoo/construction/platform.S: 854 577 r
+:geoo/construction/platform.S: 854 545 r
+:geoo/construction/platform.S: 694 513 r
+:geoo/construction/platform.S: 694 481 r
+:geoo/construction/platform.S: 694 449 r
+:geoo/construction/platform.S: 694 417 r
+:geoo/construction/platform.S: 694 385 r
+:geoo/construction/platform.S: 694 353 r
+:geoo/construction/platform.S: 694 321 r
+:geoo/construction/platform.S: 694 289 r
+:geoo/construction/platform.S: 774 641 r
+:geoo/construction/platform.S: 774 609 r
+:geoo/construction/platform.S: 774 577 r
+:geoo/construction/platform.S: 774 545 r
+:geoo/construction/platform.S: 774 513 r
+:geoo/construction/platform.S: 774 481 r
+:geoo/construction/platform.S: 774 449 r
+:geoo/construction/platform.S: 774 417 r
+:geoo/construction/platform.S: 774 385 r
+:geoo/construction/platform.S: 694 257 r
+:geoo/construction/platform.S: 694 225 r
+:raymanni/lab/block_3: 839 672 frr
+:raymanni/lab/block_3: 759 672 frr
+:raymanni/lab/block_3: 679 672 frr
+:raymanni/lab/block_3: 935 672 frr
+:geoo/construction/platform.S: 1135 672 frr
+:geoo/construction/platform.S: 1167 672 frr
+:geoo/construction/platform.S: 1038 641 r
+:geoo/construction/platform.S: 1038 609 r
+:geoo/construction/platform.S: 1038 577 r
+:geoo/construction/platform.S: 1038 545 r
+:geoo/construction/platform.S: 1038 513 r
+:geoo/construction/platform.S: 1038 481 r
+:geoo/construction/platform.S: 1038 449 r
+:geoo/construction/platform.S: 1038 417 r
+:geoo/construction/platform.S: 1038 385 r
+:raymanni/lab/block_3: 1023 672 frr
+:geoo/construction/stairs_rd_32.S: 631 32 frrr

@@ -1,0 +1,79 @@
+$BUILT 2024-07-18 11:23:31
+$AUTHOR Hyperlodge
+$ENGLISH Hop Hop Hop
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 640
+#SIZE_Y 416
+#BACKGROUND_RED 95
+#BACKGROUND_GREEN 96
+#BACKGROUND_BLUE 0
+
+#SECONDS 60
+#INITIAL 200
+#SPAWN_INTERVAL 20
+
+#RUNNER 100
+#CLIMBER 100
+#EXPLODER2 100
+#BLOCKER 100
+#BUILDER 100
+#BASHER 100
+#JUMPER 100
+#BATTER 100
+
+:geoo/abstract/hatch.H: 128 256 r
+:geoo/abstract/hatch.H: 512 256
+
+:raymanni/lab/goal.G: 208 96
+:raymanni/lab/goal.G: 400 96
+
+:raymanni/lab/launcher_right.T: 64 256
+:raymanni/lab/launcher_right.T: 64 224
+:raymanni/lab/launcher_right.T: 64 192
+:raymanni/lab/launcher_right.T: 64 160
+:raymanni/lab/launcher_right.T: 64 128
+:raymanni/lab/launcher_left.T: 160 256
+:raymanni/lab/launcher_left.T: 160 224
+:raymanni/lab/launcher_left.T: 160 192
+:raymanni/lab/launcher_left.T: 160 160
+:raymanni/lab/launcher_left.T: 160 128
+:raymanni/lab/launcher_right.T: 480 256
+:raymanni/lab/launcher_right.T: 480 224
+:raymanni/lab/launcher_right.T: 480 192
+:raymanni/lab/launcher_right.T: 480 160
+:raymanni/lab/launcher_right.T: 480 128
+:raymanni/lab/launcher_left.T: 576 256
+:raymanni/lab/launcher_left.T: 576 224
+:raymanni/lab/launcher_left.T: 576 192
+:raymanni/lab/launcher_left.T: 576 160
+:raymanni/lab/launcher_left.T: 576 128
+:geoo/construction/steam_up.T: 256 384
+:geoo/construction/steam_up.T: 272 384
+:geoo/construction/steam_up.T: 288 384
+:geoo/construction/steam_up.T: 304 384
+:geoo/construction/steam_up.T: 320 384
+:geoo/construction/steam_up.T: 336 384
+:geoo/construction/steam_up.T: 352 384
+:geoo/construction/steam_up.T: 368 384
+:geoo/construction/steam_up.T: 384 384
+:geoo/construction/steam_up.T: 400 384
+
+:geoo/construction/concrete/128: 64 288
+:geoo/construction/concrete/064v: 192 160
+:geoo/construction/concrete/064v: 192 288
+:geoo/construction/concrete/128: 480 288
+:geoo/construction/concrete/064v: 416 160
+:geoo/construction/concrete/064v: 416 288
+:geoo/construction/concrete/064v: 0 288
+:geoo/construction/concrete/064v: 608 288
+:geoo/construction/concrete/064v: 608 160
+:geoo/construction/concrete/064v: 608 32
+:geoo/construction/concrete/064v: 0 160
+:geoo/construction/concrete/064v: 0 32
+:geoo/construction/pillar_long: 336 0 r
+:geoo/construction/pillar_long: 0 0 r
+:geoo/construction/pillar_long: 128 0 r
+:geoo/construction/pillar_long: 416 0 r
+:geoo/construction/pillar_long: 544 0 r
+:geoo/construction/pillar_long: 208 0 r

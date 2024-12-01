@@ -1,0 +1,225 @@
+$BUILT 2024-07-18 12:48:44
+$AUTHOR Hyperlodge
+$ENGLISH Let's Pool!
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 672
+#SIZE_Y 864
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 32
+#BACKGROUND_BLUE 0
+
+#SECONDS 90
+#INITIAL 200
+#SPAWN_INTERVAL 50
+
+#RUNNER 100
+#CLIMBER 100
+#FLOATER 100
+#EXPLODER2 100
+#BLOCKER -1
+#BUILDER -1
+#PLATFORMER -1
+#BASHER -1
+#MINER -1
+#DIGGER -1
+#JUMPER 100
+#BATTER -1
+
+:geoo/abstract/hatch.H: 608 792 r
+:geoo/abstract/hatch.H: 32 792
+
+:geoo/abstract/goal.G: 24 8
+:geoo/abstract/goal.G: 616 16
+
+:geoo/construction/spring.T: 320 512
+
+:geoo/construction/steam_down.T: 76 40
+:geoo/construction/steam_up.T: 224 808
+:geoo/construction/steam_up.T: 448 792
+:geoo/construction/steam_up.T: 432 808
+:geoo/construction/steam_up.T: 464 808
+:geoo/construction/steam_up.T: 208 792
+:geoo/construction/steam_up.T: 192 808
+:geoo/construction/steam_up.T: 92 808
+:geoo/construction/steam_up.T: 140 808
+:geoo/construction/steam_up.T: 108 808
+:geoo/construction/steam_up.T: 564 808
+:geoo/construction/steam_up.T: 516 808
+:geoo/construction/steam_up.T: 548 808
+:geoo/construction/steam_down.T: 92 24
+:geoo/construction/steam_down.T: 108 24
+:geoo/construction/steam_down.T: 548 24
+:geoo/construction/steam_down.T: 564 24
+:geoo/construction/steam_down.T: 580 40
+:geoo/construction/steam_down.T: 192 24
+:geoo/construction/steam_down.T: 208 40
+:geoo/construction/steam_down.T: 224 24
+:geoo/construction/steam_down.T: 432 24
+:geoo/construction/steam_down.T: 448 40
+:geoo/construction/steam_down.T: 464 24
+:geoo/construction/steam_left.T: 616 372
+:geoo/construction/steam_left.T: 616 388
+:geoo/construction/steam_left.T: 616 356
+:geoo/construction/steam_left.T: 616 476
+:geoo/construction/steam_left.T: 616 492
+:geoo/construction/steam_left.T: 616 460
+:geoo/construction/steam_down.T: 296 24
+:geoo/construction/steam_down.T: 328 40
+:geoo/construction/steam_down.T: 360 24
+:geoo/construction/steam_right.T: 23 356
+:geoo/construction/steam_right.T: 23 372
+:geoo/construction/steam_right.T: 23 388
+:geoo/construction/steam_right.T: 23 460
+:geoo/construction/steam_right.T: 23 476
+:geoo/construction/steam_right.T: 23 492
+:geoo/construction/steam_right.T: 323 548
+:geoo/construction/steam_left.T: 317 548
+:geoo/construction/steam_right.T: 323 248
+:geoo/construction/steam_right.T: 344 218
+:geoo/construction/steam_right.T: 361 188
+:geoo/construction/steam_left.T: 276 188
+:geoo/construction/steam_left.T: 296 218
+:geoo/construction/steam_left.T: 316 248
+:geoo/construction/steam_up.T: 287 177
+:geoo/construction/steam_up.T: 328 177
+:geoo/construction/steam_up.T: 367 177
+:geoo/construction/steam_down.T: 328 243
+:geoo/construction/steam_down.T: 307 213
+:geoo/construction/steam_down.T: 349 213
+:geoo/construction/steam_down.T: 367 183
+:geoo/construction/steam_down.T: 287 183
+:geoo/construction/steam_up.T: 352 808
+:geoo/construction/steam_up.T: 304 808
+:geoo/construction/steam_down.T: 376 24
+:geoo/construction/steam_down.T: 280 24
+:geoo/construction/steam_up.T: 368 792
+:geoo/construction/steam_up.T: 288 792
+:geoo/construction/steam_up.T: 404 808
+:geoo/construction/steam_up.T: 252 808
+:geoo/construction/steam_up.T: 496 808
+:geoo/construction/steam_up.T: 160 808
+:geoo/construction/steam_up.T: 580 792
+:geoo/construction/steam_up.T: 76 792
+:geoo/construction/steam_up.T: 616 656
+:geoo/construction/steam_up.T: 616 680
+:geoo/construction/steam_up.T: 616 728
+:geoo/construction/steam_up.T: 616 752
+:geoo/construction/steam_up.T: 328 685
+:geoo/construction/steam_up.T: 328 709
+:geoo/construction/steam_up.T: 328 741
+:geoo/construction/steam_up.T: 328 765
+:geoo/construction/steam_up.T: 328 573
+:geoo/construction/steam_up.T: 328 597
+:geoo/construction/steam_up.T: 616 536
+:geoo/construction/steam_up.T: 616 560
+:geoo/construction/steam_up.T: 616 272
+:geoo/construction/steam_up.T: 616 296
+:geoo/construction/steam_up.T: 616 152
+:geoo/construction/steam_up.T: 616 176
+:geoo/construction/steam_up.T: 616 80
+:geoo/construction/steam_up.T: 616 104
+:geoo/construction/steam_up.T: 40 272
+:geoo/construction/steam_up.T: 40 296
+:geoo/construction/steam_up.T: 40 152
+:geoo/construction/steam_up.T: 40 176
+:geoo/construction/steam_up.T: 40 80
+:geoo/construction/steam_up.T: 40 104
+:geoo/construction/steam_up.T: 40 536
+:geoo/construction/steam_up.T: 40 560
+:geoo/construction/steam_up.T: 40 656
+:geoo/construction/steam_up.T: 40 680
+:geoo/construction/steam_up.T: 40 728
+:geoo/construction/steam_up.T: 40 752
+:geoo/construction/steam_up.T: 328 629
+:geoo/construction/steam_up.T: 328 653
+:geoo/construction/steam_up.T: 384 792
+:geoo/construction/steam_up.T: 272 792
+
+$BEGIN_TILE_GROUP 0
+:matt/goldmine/plank: 48 0 frr
+:matt/goldmine/plank: 0 8 rr
+:matt/goldmine/plank: 128 0 f
+:matt/goldmine/plank: 0 24
+:matt/goldmine/plank: 128 24 f
+:matt/goldmine/plank: 128 16
+:matt/goldmine/plank: 128 8 frr
+:matt/goldmine/plank: 0 0 rr
+:matt/goldmine/plank: 32 24 f
+:matt/goldmine/plank: 0 16
+$END_TILE_GROUP
+:Group-0: 16 16
+:Group-0: 224 16
+:Group-0: 400 16
+:Group-0: 16 48 r
+:Group-0: 16 304 r
+:Group-0: 16 560 r
+:Group-0: 624 560 r
+:Group-0: 624 304 r
+:Group-0: 624 48 r
+:Group-0: 16 816
+:Group-0: 224 816
+:Group-0: 408 816
+:proxima/tile/spheres/greysmall.S: 320 541
+:geoo/sandstone/ebony/h8b: 332 572 fr
+$BEGIN_TILE_GROUP 1
+:geoo/construction/rod_steel/straight32.S: 0 0 r
+:geoo/construction/rod_steel/straight32.S: 0 32 r
+:geoo/construction/rod_steel/straight32.S: 0 64 r
+:geoo/construction/rod_steel/straight32.S: 0 96 r
+:geoo/construction/rod_steel/straight32.S: 0 128 r
+:geoo/construction/rod_steel/straight32.S: 0 160 r
+:geoo/construction/rod_steel/straight32.S: 0 192 r
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 2
+:Group-1: 0 8
+:geoo/construction/rod_steel/end_rect.S: 0 0 r
+$END_TILE_GROUP
+:Group-2: 332 576
+:geoo/sandstone/ebony/h8b: 332 790 r
+:proxima/tile/spheres/redsmall: 320 240
+:proxima/tile/spheres/cyansmall: 279 180
+:proxima/tile/spheres/goldsmall: 341 210
+:proxima/tile/spheres/greensmall: 320 180
+:proxima/tile/spheres/bluesmall: 299 210
+:proxima/tile/spheres/pinksmall: 359 180
+:proxima/tile/spheres/blue: 16 400 d
+:proxima/tile/spheres/blue: 592 400 d
+$BEGIN_TILE_GROUP 3
+:raymanni/holiday/plank_long: 128 0 rr
+:raymanni/holiday/plank_long: 0 0 rr
+:raymanni/holiday/plank_long: 384 0 rr
+:raymanni/holiday/plank_long: 256 0 rr
+:raymanni/holiday/plank_long: 512 0 rr
+:raymanni/holiday/plank_long: 544 0 rr
+$END_TILE_GROUP
+:Group-3: 0 0
+:Group-3: 0 848 rr
+:Group-3: 0 192 rrr
+:Group-3: 0 0 rrr
+:Group-3: 656 192 frrr
+:Group-3: 656 0 frrr
+:proxima/tile/spheres/blue: 16 16 d
+:proxima/tile/spheres/blue: 592 16 d
+:proxima/tile/spheres/blue: 16 784 d
+:proxima/tile/spheres/blue: 592 784 d
+$BEGIN_TILE_GROUP 4
+:geoo/construction/rod_steel/link.S: 8 0
+:geoo/construction/rod_steel/link.S: 0 0 frr
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 5
+:Group-4: 0 0 r
+:Group-4: 240 0 r
+$END_TILE_GROUP
+:Group-5: 212 24 d
+:Group-5: 212 824 d
+:geoo/sandstone/ebony/h8b: 332 816 r
+$BEGIN_TILE_GROUP 6
+:Group-4: 0 504
+:Group-4: 0 384
+:Group-4: 0 120
+:Group-4: 0 0
+$END_TILE_GROUP
+:Group-6: 24 176 d
+:geoo/sandstone/ebony/h8b: 332 832 r
+:Group-6: 632 176 d

@@ -1,0 +1,158 @@
+$BUILT 2024-07-18 14:45:57
+$AUTHOR Hyperlodge
+$ENGLISH Stepping Steps
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1192
+#SIZE_Y 528
+#BACKGROUND_RED 35
+#BACKGROUND_GREEN 4
+#BACKGROUND_BLUE 131
+
+#SECONDS 60
+#INITIAL 200
+#SPAWN_INTERVAL 20
+
+#RUNNER 10
+#CLIMBER -1
+#FLOATER 10
+#EXPLODER2 -1
+#BLOCKER 100
+#BUILDER 100
+#JUMPER 10
+
+:matt/bricks/Hatch.H: 32 320
+:matt/bricks/Hatch.H: 1096 320 r
+
+:geoo/abstract/goal.G: 608 80
+:geoo/abstract/goal.G: 560 80
+
+:simon/crystal.W: 0 480
+:simon/crystal.W: 48 480
+:simon/crystal.W: 96 480
+:simon/crystal.W: 144 480
+:simon/crystal.W: 192 480
+:simon/crystal.W: 240 480
+:simon/crystal.W: 288 480
+:simon/crystal.W: 336 480
+:simon/crystal.W: 384 480
+:simon/crystal.W: 432 480
+:simon/crystal.W: 480 480
+:simon/crystal.W: 528 480
+:geoo/construction/Laser_vr_64.F: 592 128
+:geoo/construction/Laser_vr_64.F: 592 192
+:geoo/construction/Laser_vr_64.F: 592 256
+:simon/crystal.W: 576 480
+:simon/crystal.W: 1152 480
+:simon/crystal.W: 1104 480
+:simon/crystal.W: 1056 480
+:simon/crystal.W: 1008 480
+:simon/crystal.W: 960 480
+:simon/crystal.W: 912 480
+:simon/crystal.W: 864 480
+:simon/crystal.W: 816 480
+:simon/crystal.W: 768 480
+:simon/crystal.W: 720 480
+:simon/crystal.W: 672 480
+:simon/crystal.W: 624 480
+:simon/crystal.W: 1200 480
+
+:raymanni/gore/steel.S: 0 336
+:raymanni/gore/steel.S: 1160 336
+$BEGIN_TILE_GROUP 0
+:geoo/shadow/wall/side: 0 0
+:geoo/shadow/wall/side: 32 0
+:geoo/shadow/wall/side: 64 0
+:geoo/shadow/wall/side: 96 0
+:geoo/shadow/wall/side: 128 0
+:geoo/shadow/wall/side: 160 0
+:geoo/shadow/wall/side: 192 0
+:geoo/shadow/wall/side: 224 0
+:geoo/shadow/wall/side: 256 0
+:geoo/shadow/wall/side: 288 0
+:geoo/shadow/wall/side: 320 0
+:geoo/shadow/wall/side: 352 0
+:geoo/shadow/wall/side: 384 0
+:geoo/shadow/wall/side: 416 0
+:geoo/shadow/wall/side: 448 0
+:geoo/shadow/wall/side: 480 0
+:geoo/shadow/wall/side: 512 0
+:geoo/shadow/wall/side: 544 0
+:geoo/shadow/wall/side: 576 0
+:geoo/shadow/wall/side: 0 32
+:geoo/shadow/wall/side: 32 32
+:geoo/shadow/wall/side: 64 32
+:geoo/shadow/wall/side: 96 32
+:geoo/shadow/wall/side: 128 32
+:geoo/shadow/wall/side: 160 32
+:geoo/shadow/wall/side: 192 32
+:geoo/shadow/wall/side: 224 32
+:geoo/shadow/wall/side: 256 32
+:geoo/shadow/wall/side: 288 32
+:geoo/shadow/wall/side: 320 32
+:geoo/shadow/wall/side: 352 32
+:geoo/shadow/wall/side: 384 32
+:geoo/shadow/wall/side: 416 32
+:geoo/shadow/wall/side: 448 32
+:geoo/shadow/wall/side: 480 32
+:geoo/shadow/wall/side: 512 32
+:geoo/shadow/wall/side: 544 32
+:geoo/shadow/wall/side: 576 32
+:geoo/shadow/wall/side: 0 64
+:geoo/shadow/wall/side: 32 64
+:geoo/shadow/wall/side: 64 64
+:geoo/shadow/wall/side: 96 64
+:geoo/shadow/wall/side: 128 64
+:geoo/shadow/wall/side: 160 64
+:geoo/shadow/wall/side: 192 64
+:geoo/shadow/wall/side: 224 64
+:geoo/shadow/wall/side: 256 64
+:geoo/shadow/wall/side: 288 64
+:geoo/shadow/wall/side: 320 64
+:geoo/shadow/wall/side: 352 64
+:geoo/shadow/wall/side: 384 64
+:geoo/shadow/wall/side: 416 64
+:geoo/shadow/wall/side: 448 64
+:geoo/shadow/wall/side: 480 64
+:geoo/shadow/wall/side: 512 64
+:geoo/shadow/wall/side: 544 64
+:geoo/shadow/wall/side: 576 64
+:geoo/shadow/wall/side: 0 96
+:geoo/shadow/wall/side: 32 96
+:geoo/shadow/wall/side: 64 96
+:geoo/shadow/wall/side: 96 96
+:geoo/shadow/wall/side: 128 96
+:geoo/shadow/wall/side: 160 96
+:geoo/shadow/wall/side: 192 96
+:geoo/shadow/wall/side: 224 96
+:geoo/shadow/wall/side: 256 96
+:geoo/shadow/wall/side: 288 96
+:geoo/shadow/wall/side: 320 96
+:geoo/shadow/wall/side: 352 96
+:geoo/shadow/wall/side: 384 96
+:geoo/shadow/wall/side: 416 96
+:geoo/shadow/wall/side: 448 96
+:geoo/shadow/wall/side: 480 96
+:geoo/shadow/wall/side: 512 96
+:geoo/shadow/wall/side: 544 96
+:geoo/shadow/wall/side: 576 96
+$END_TILE_GROUP
+:Group-0: -8 368
+:Group-0: 600 368
+$BEGIN_TILE_GROUP 1
+:geoo/construction/concrete/podium_32: 48 40 frr
+:geoo/construction/concrete/016hc: 16 48
+:geoo/construction/concrete/032c: 32 40
+:geoo/construction/concrete/016hd: 112 48
+:geoo/construction/concrete/032d: 96 40
+:geoo/construction/concrete/032ha: 0 16
+:geoo/construction/concrete/032hb: 96 16
+:geoo/construction/concrete/016va: 64 0
+:geoo/construction/concrete/016vb: 80 0
+:geoo/construction/concrete/podium_16: 64 8
+:geoo/abstract/pipes/juncx3: 64 32
+:geoo/abstract/pipes/juncx3: 88 32
+:geoo/abstract/pipes/juncx0: 72 32
+:geoo/abstract/pipes/juncx0: 80 32
+$END_TILE_GROUP
+:Group-1: 520 64

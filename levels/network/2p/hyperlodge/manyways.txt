@@ -1,0 +1,181 @@
+$BUILT 2024-07-21 12:47:52
+$AUTHOR Hyperlodge
+$ENGLISH Many Ways
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1408
+#SIZE_Y 392
+#BACKGROUND_RED 31
+#BACKGROUND_GREEN 127
+#BACKGROUND_BLUE 96
+
+#SECONDS 90
+#INITIAL 90
+#SPAWN_INTERVAL 90
+
+#RUNNER 10
+#CLIMBER 10
+#FLOATER 10
+#EXPLODER2 -1
+#BLOCKER 10
+#BUILDER 100
+#MINER 10
+#JUMPER 10
+#BATTER 10
+#CUBER -1
+
+:simon/hatch001.H: 1312 296 r
+:simon/hatch001.H: 32 296
+:simon/hatch001.H: 832 264 r
+:simon/hatch001.H: 512 264
+
+:geoo/abstract/goal.G: 120 280
+:geoo/abstract/goal.G: 1256 280
+:geoo/abstract/goal.G: 592 276
+:geoo/abstract/goal.G: 784 276
+:geoo/abstract/goal.G: 464 276
+:geoo/abstract/goal.G: 912 276
+
+:raymanni/gore/acid.W: 144 38
+:raymanni/gore/acid.W: 144 18
+:raymanni/gore/acid.W: 1232 38
+:raymanni/gore/acid.W: 1232 18
+
+:geoo/abstract/tbeam_up.T: 688 328
+:geoo/abstract/tbeam_up.T: 688 296
+:geoo/abstract/tbeam_up.T: 688 264
+:geoo/abstract/tbeam_up.T: 688 232
+:geoo/abstract/tbeam_up.T: 688 200
+:geoo/abstract/tbeam_up.T: 688 168
+:geoo/abstract/tbeam_up.T: 688 136
+:geoo/abstract/tbeam_left.T: 672 40
+:geoo/abstract/tbeam_right.T: 704 40
+:geoo/abstract/tbeam_right.T: 720 72
+:geoo/abstract/tbeam_left.T: 656 72
+:geoo/abstract/tbeam_up.T: 688 72
+:geoo/abstract/tbeam_up.T: 688 104
+:raymanni/lab/launcher_left.T: 336 8
+:raymanni/lab/launcher_right.T: 1040 8
+:geoo/construction/steam_left.T: 1026 318
+:geoo/construction/steam_left.T: 1026 332
+:geoo/construction/steam_left.T: 1026 346
+:geoo/construction/steam_right.T: 351 344
+:geoo/construction/steam_right.T: 351 330
+:geoo/construction/steam_right.T: 351 316
+
+:geoo/steel/silhouette_64x32.S: 384 360
+:geoo/steel/silhouette_64x32.S: 448 360
+:geoo/steel/silhouette_64x32.S: 512 360
+:geoo/steel/silhouette_64x32.S: 576 360
+:geoo/steel/silhouette_64x32.S: 640 360
+:geoo/steel/silhouette_64x32.S: 704 360
+:geoo/steel/silhouette_64x32.S: 768 360
+:geoo/steel/silhouette_64x32.S: 832 360
+:geoo/steel/silhouette_64x32.S: 896 360
+:geoo/steel/silhouette_64x32.S: 960 360
+:geoo/steel/silhouette_64x32.S: 928 324
+:geoo/steel/silhouette_64x32.S: 416 324
+:geoo/steel/silhouette_64x32.S: 480 324
+:geoo/steel/silhouette_64x32.S: 544 324
+:geoo/steel/silhouette_64x32.S: 608 324
+:geoo/steel/silhouette_64x32.S: 864 324
+:geoo/steel/silhouette_64x32.S: 800 324
+:geoo/steel/silhouette_64x32.S: 736 324
+:geoo/steel/silhouette_32x64.S: 944 260
+:geoo/steel/silhouette_32x64.S: 432 260
+:geoo/steel/silhouette_32x64.S: 624 260
+:geoo/steel/silhouette_32x64.S: 752 260
+:geoo/steel/silhouette_64x32.S: 416 224
+:geoo/steel/silhouette_64x32.S: 478 224
+:geoo/steel/silhouette_64x32.S: 546 224
+:geoo/steel/silhouette_64x32.S: 608 224
+:geoo/steel/silhouette_64x32.S: 420 188
+:geoo/steel/silhouette_64x32.S: 488 188
+:geoo/steel/silhouette_64x32.S: 536 188
+:geoo/steel/silhouette_64x32.S: 604 188
+:geoo/steel/silhouette_64x32.S: 736 224
+:geoo/steel/silhouette_64x32.S: 798 224
+:geoo/steel/silhouette_64x32.S: 866 224
+:geoo/steel/silhouette_64x32.S: 928 224
+:geoo/steel/silhouette_64x32.S: 740 188
+:geoo/steel/silhouette_64x32.S: 808 188
+:geoo/steel/silhouette_64x32.S: 856 188
+:geoo/steel/silhouette_64x32.S: 924 188
+:geoo/steel/silhouette_32x32.S: 452 156
+:geoo/steel/silhouette_32x32.S: 636 156
+:geoo/steel/silhouette_32x32.S: 740 156
+:geoo/steel/silhouette_32x32.S: 924 156
+:geoo/steel/silhouette_64x32.S: 604 124
+:geoo/steel/silhouette_64x32.S: 540 120
+:geoo/steel/silhouette_64x32.S: 476 116
+:geoo/steel/silhouette_64x32.S: 740 124
+:geoo/steel/silhouette_64x32.S: 804 120
+:geoo/steel/silhouette_64x32.S: 868 116
+$BEGIN_TILE_GROUP 0
+:raymanni/lab/slope_1: 44 2
+:raymanni/lab/pipe_4: 12 0
+:raymanni/lab/pipe_4: 18 14
+:raymanni/lab/pipe_4: 22 26
+:raymanni/lab/slope_1: 54 12
+:raymanni/lab/pipe_7: 0 0 r
+:raymanni/lab/pipe_7: 0 14 r
+:raymanni/lab/pipe_7: 0 26 r
+$END_TILE_GROUP
+:Group-0: 270 318 frr
+:geoo/steel/silhouette_64x32.S: 256 360
+:geoo/steel/silhouette_64x32.S: 320 360
+:Group-0: 1054 318
+:geoo/steel/silhouette_64x32.S: 1024 360
+:geoo/steel/silhouette_64x32.S: 1152 360
+:geoo/steel/silhouette_64x32.S: 1280 360
+:geoo/steel/silhouette_64x32.S: 1344 360
+:geoo/steel/silhouette_64x32.S: 192 360
+:geoo/steel/silhouette_64x32.S: 64 360
+:geoo/steel/silhouette_64x32.S: 0 360
+:geoo/steel/silhouette_64x32.S: 160 328
+:geoo/steel/silhouette_64x32.S: 1184 328
+:geoo/steel/silhouette_64x32.S: 160 296
+:geoo/steel/silhouette_64x32.S: 160 264
+:geoo/steel/silhouette_64x32.S: 1184 296
+:geoo/steel/silhouette_64x32.S: 1184 264
+:geoo/steel/silhouette_32x32.S: 400 278
+:geoo/steel/silhouette_32x32.S: 976 278
+:geoo/steel/silhouette_32x64.S: 0 296
+:geoo/steel/silhouette_32x64.S: 0 224
+:geoo/steel/silhouette_32x64.S: 0 152
+:geoo/steel/silhouette_32x64.S: 1376 296
+:geoo/steel/silhouette_32x64.S: 1376 224
+:geoo/steel/silhouette_32x64.S: 1376 152
+:geoo/steel/silhouette_32x32.S: 1336 240
+:geoo/steel/silhouette_32x32.S: 1296 240
+:geoo/steel/silhouette_32x32.S: 1256 240
+:geoo/steel/silhouette_32x32.S: 120 240
+:geoo/steel/silhouette_32x32.S: 80 240
+:geoo/steel/silhouette_32x32.S: 40 240
+:geoo/steel/silhouette_32x32.S: 176 232
+:geoo/steel/silhouette_32x32.S: 1200 232
+:geoo/construction/fence_rust_64x64: 0 72
+:geoo/construction/fence_rust_64x64: 64 40
+:geoo/construction/fence_rust_64x64: 128 72
+:geoo/construction/fence_rust_64x64: 192 40
+:geoo/construction/fence_rust_64x64: 256 72
+:geoo/construction/fence_rust_64x64: 320 40
+:geoo/construction/fence_rust_64x64: 384 72
+:geoo/construction/fence_rust_64x64: 960 72
+:geoo/construction/fence_rust_64x64: 1024 40
+:geoo/construction/fence_rust_64x64: 1088 72
+:geoo/construction/fence_rust_64x64: 1152 40
+:geoo/construction/fence_rust_64x64: 1216 72
+:geoo/construction/fence_rust_64x64: 1280 40
+:geoo/construction/fence_rust_64x64: 1344 72
+:geoo/construction/wall/big_brick2: 128 360
+:geoo/construction/wall/big_brick2: 96 328
+:geoo/construction/wall/big_brick2: 32 328
+:geoo/construction/wall/big_brick2: 1312 328
+:geoo/construction/wall/big_brick2: 1248 328
+:geoo/construction/wall/big_brick2: 1216 360
+:geoo/steel/silhouette_64x32.S: 1088 360
+:raymanni/lab/scen_6: 144 8
+:raymanni/lab/scen_6: 1232 8 frr
+:raymanni/lab/pipe_2: 1246 -6
+:raymanni/lab/pipe_2: 158 -6

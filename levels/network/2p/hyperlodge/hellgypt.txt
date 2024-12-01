@@ -1,0 +1,155 @@
+$BUILT 2024-07-18 11:24:57
+$AUTHOR Hyperlodge
+$ENGLISH Hellgypt
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 736
+#SIZE_Y 816
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 64
+#BACKGROUND_BLUE 64
+
+#SECONDS 93
+#INITIAL 333
+#SPAWN_INTERVAL 3
+
+#RUNNER -1
+#CLIMBER -1
+#FLOATER -1
+#EXPLODER2 -1
+#BUILDER -1
+#PLATFORMER -1
+#JUMPER -1
+#BATTER -1
+#CUBER -1
+
+:geoo/sandstone/Hatch.H: 144 32 r
+:geoo/sandstone/Hatch.H: 496 32
+
+:geoo/sandstone/Goal.G: 512 560
+:geoo/sandstone/Goal.G: 160 560
+
+:geoo/construction/Laser_vr_64.F: 344 168
+:geoo/construction/Laser_vr_64.F: 344 232
+:geoo/construction/Laser_vr_64.F: 344 296
+:geoo/construction/Laser_vr_64.F: 344 360
+:geoo/construction/Laser_vr_64.F: 344 424
+:geoo/construction/Laser_vr_64.F: 344 488
+:geoo/construction/Laser_vr_64.F: 344 552
+:geoo/construction/Laser_vr_64.F: 344 616
+:geoo/construction/Laser_vr_64.F: 376 168
+:geoo/construction/Laser_vr_64.F: 376 232
+:geoo/construction/Laser_vr_64.F: 376 296
+:geoo/construction/Laser_vr_64.F: 376 360
+:geoo/construction/Laser_vr_64.F: 376 424
+:geoo/construction/Laser_vr_64.F: 376 488
+:geoo/construction/Laser_vr_64.F: 376 552
+:geoo/construction/Laser_vr_64.F: 376 616
+
+$BEGIN_TILE_GROUP 0
+:geoo/sandstone/slopes/16x32rb: 0 0
+:geoo/sandstone/64x16: 0 31
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:Group-0: 0 0
+:Group-0: 48 112 frr
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 2
+:Group-1: 0 0
+:Group-1: 0 224
+$END_TILE_GROUP
+:Group-2: 136 144
+:geoo/sandstone/64x64: 160 624
+:geoo/construction/fence_64x64.S: 224 624
+:geoo/construction/fence_64x64.S: 288 624
+:geoo/construction/fence_64x64.S: 96 624
+:geoo/construction/fence_64x64.S: 32 624
+:geoo/construction/fence_64x64.S: 32 496
+:geoo/construction/fence_64x64.S: 32 560
+:geoo/construction/fence_64x64.S: 32 368
+:geoo/construction/fence_64x64.S: 32 432
+:geoo/construction/fence_64x64.S: 32 240
+:geoo/construction/fence_64x64.S: 32 304
+:geoo/construction/fence_64x64.S: 32 112
+:geoo/construction/fence_64x64.S: 32 176
+:geoo/sandstone/32x64: 0 624
+:geoo/sandstone/32x64: 0 560
+:geoo/sandstone/32x64: 0 496
+:geoo/sandstone/32x64: 0 432
+:geoo/sandstone/32x64: 0 368
+:geoo/sandstone/32x64: 0 304
+:geoo/sandstone/32x64: 0 240
+:geoo/sandstone/32x64: 0 176
+:geoo/sandstone/32x64: 0 112
+:geoo/sandstone/64x64: 0 48
+:geoo/sandstone/64x32: 32 688
+:geoo/sandstone/64x32: 96 688
+:geoo/sandstone/64x32: 160 688
+:geoo/sandstone/64x32: 224 688
+:geoo/sandstone/64x32: 288 688
+:geoo/sandstone/32x32: 0 688
+:geoo/sandstone/32x32: 352 688
+:geoo/sandstone/32x64: 352 624
+:geoo/sandstone/32x64: 352 560
+:geoo/sandstone/32x64: 352 496
+:geoo/sandstone/32x64: 352 432
+:geoo/sandstone/32x64: 352 368
+:geoo/sandstone/32x64: 352 304
+:geoo/sandstone/32x64: 352 240
+:geoo/sandstone/32x64: 352 176
+:geoo/sandstone/32x64: 352 112
+:geoo/sandstone/slopes/32x64rt: 320 112
+:geoo/sandstone/slopes/32x64lt: 384 112
+:geoo/sandstone/arc_small: 320 48
+:geoo/sandstone/16x32: 320 80
+:geoo/sandstone/16x32: 400 80
+:Group-2: 488 144 frr
+:geoo/sandstone/64x64: 512 624 frr
+:geoo/construction/fence_64x64.S: 448 624 frr
+:geoo/construction/fence_64x64.S: 384 624 frr
+:geoo/construction/fence_64x64.S: 576 624 frr
+:geoo/construction/fence_64x64.S: 640 624 frr
+:geoo/construction/fence_64x64.S: 640 496 frr
+:geoo/construction/fence_64x64.S: 640 560 frr
+:geoo/construction/fence_64x64.S: 640 368 frr
+:geoo/construction/fence_64x64.S: 640 432 frr
+:geoo/construction/fence_64x64.S: 640 240 frr
+:geoo/construction/fence_64x64.S: 640 304 frr
+:geoo/construction/fence_64x64.S: 640 112 frr
+:geoo/construction/fence_64x64.S: 640 176 frr
+:geoo/sandstone/32x64: 704 624
+:geoo/sandstone/32x64: 704 560
+:geoo/sandstone/32x64: 704 496
+:geoo/sandstone/32x64: 704 432
+:geoo/sandstone/32x64: 704 368
+:geoo/sandstone/32x64: 704 304
+:geoo/sandstone/32x64: 704 240
+:geoo/sandstone/32x64: 704 176
+:geoo/sandstone/32x64: 704 112
+:geoo/sandstone/64x64: 672 48
+:geoo/sandstone/64x32: 384 688
+:geoo/sandstone/64x32: 448 688
+:geoo/sandstone/64x32: 512 688
+:geoo/sandstone/64x32: 576 688
+:geoo/sandstone/64x32: 640 688
+:geoo/sandstone/32x32: 704 688
+:geoo/sandstone/slopes/32x64rt: 384 112 frr
+:geoo/sandstone/arc_small: 320 48 frr
+:geoo/sandstone/16x32: 400 80 frr
+:geoo/sandstone/slopes/32x16lb: 64 96
+:geoo/sandstone/slopes/32x16rb: 640 96
+:geoo/sandstone/64x32: 32 784
+:geoo/sandstone/64x32: 96 784
+:geoo/sandstone/64x32: 160 784
+:geoo/sandstone/64x32: 224 784
+:geoo/sandstone/64x32: 288 784
+:geoo/sandstone/32x32: 0 784
+:geoo/sandstone/32x32: 352 784
+:geoo/sandstone/64x32: 384 784
+:geoo/sandstone/64x32: 448 784
+:geoo/sandstone/64x32: 512 784
+:geoo/sandstone/64x32: 576 784
+:geoo/sandstone/64x32: 640 784
+:geoo/sandstone/32x32: 704 784
+:geoo/sandstone/32x64: 0 720
+:geoo/sandstone/32x64: 704 720

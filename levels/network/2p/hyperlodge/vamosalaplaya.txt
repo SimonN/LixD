@@ -1,0 +1,113 @@
+$BUILT 2024-07-18 12:49:06
+$AUTHOR Hyperlodge
+$ENGLISH Vamos a La Playa!
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1088
+#SIZE_Y 256
+#BACKGROUND_RED 64
+#BACKGROUND_GREEN 128
+#BACKGROUND_BLUE 160
+
+#SECONDS 82
+#INITIAL 22
+#SPAWN_INTERVAL 22
+
+#BLOCKER 20
+#BUILDER 100
+#PLATFORMER 100
+#BASHER 100
+#MINER 100
+#JUMPER 20
+#BATTER 20
+#EXPLODER2 0
+
+:matt/beach/Hatch.H: 31 142 r
+:matt/beach/Hatch.H: 1008 142
+
+:matt/beach/goal.G: 616 120
+:matt/beach/goal.G: 376 120
+
+:raymanni/crab.T: 584 160
+:raymanni/crab.T: 440 160
+:raymanni/crab.T: 104 40
+:raymanni/crab.T: 920 40
+:raymanni/crab.T: 160 160
+:raymanni/crab.T: 866 160
+
+:matt/water.W: 0 224
+:matt/water.W: 32 224
+:matt/water.W: 64 224
+:matt/water.W: 96 224
+:matt/water.W: 128 224
+:matt/water.W: 160 224
+:matt/water.W: 192 224
+:matt/water.W: 224 224
+:matt/water.W: 256 224
+:matt/water.W: 288 224
+:matt/water.W: 320 224
+:matt/water.W: 352 224
+:matt/water.W: 384 224
+:matt/water.W: 416 224
+:matt/water.W: 448 224
+:matt/water.W: 480 224
+:matt/water.W: 512 224
+:matt/water.W: 544 224
+:matt/water.W: 576 224
+:matt/water.W: 608 224
+:matt/water.W: 640 224
+:matt/water.W: 672 224
+:matt/water.W: 704 224
+:matt/water.W: 736 224
+:matt/water.W: 768 224
+:matt/water.W: 800 224
+:matt/water.W: 832 224
+:matt/water.W: 864 224
+:matt/water.W: 896 224
+:matt/water.W: 928 224
+:matt/water.W: 960 224
+:matt/water.W: 992 224
+:matt/water.W: 1024 224
+:matt/water.W: 1056 224
+
+:matt/beach/daytime/06: 152 176
+:matt/beach/daytime/00: 312 176
+:matt/beach/daytime/03: 336 176
+:matt/beach/daytime/03: 208 176
+:matt/beach/nighttime/06: 328 192 frr
+:matt/beach/nighttime/01: 152 168
+:matt/beach/nighttime/14: 192 192
+:matt/beach/daytime/06: 724 176 frr
+:matt/beach/daytime/00: 697 176 frr
+:matt/beach/daytime/03: 603 176 frr
+:matt/beach/daytime/03: 731 176 frr
+:matt/beach/nighttime/06: 548 192
+:matt/beach/nighttime/01: 873 168 frr
+:matt/beach/nighttime/14: 816 192 frr
+:matt/beach/decor/umbrella_green: 328 94
+:matt/beach/decor/umbrella_blue: 664 94 frr
+:matt/beach/decor/grass11: 304 152
+:matt/beach/decor/grass11: 732 152 frr
+:matt/beach/decor/grass08: 480 168 f
+:matt/beach/decor/grass08: 550 168 rr
+:matt/beach/decor/sun: 512 24
+:matt/beach/decor/beach ball: 256 160
+:matt/beach/decor/beach ball: 804 160 frr
+:matt/beach/nighttime/13: 952 144 frr
+:matt/beach/decor/palmtree: 928 64 frr
+:matt/beach/nighttime/13: 31 144
+:matt/beach/decor/palmtree: 74 64
+:matt/beach/daytime/01: 40 208
+:matt/beach/daytime/01: 984 208 frr
+:matt/beach/nighttime/14: 1024 168
+:matt/beach/decor/grass02: 900 216
+:matt/beach/decor/grass02: 120 216 frr
+:matt/beach/decor/grass02: 952 216
+:matt/beach/decor/grass02: 72 216 frr
+:matt/beach/decor/grass09: 376 184
+:matt/beach/decor/grass09: 680 184 frr
+:matt/beach/nighttime/14: -16 168 frr
+:simon/oriental/pebbles3: 0 226
+:simon/oriental/pebbles3: 1054 226
+:simon/oriental/pebbles5: 258 218
+:simon/oriental/pebbles5: 746 220 frr

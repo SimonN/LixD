@@ -1,0 +1,109 @@
+$BUILT 2024-08-19 08:19:35
+$AUTHOR Hyperlodge
+$ENGLISH Long Way Home
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1104
+#SIZE_Y 176
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 32
+#BACKGROUND_BLUE 0
+
+#SECONDS 30
+#INITIAL 30
+#SPAWN_INTERVAL 50
+
+#WALKER 30
+#RUNNER 30
+#EXPLODER2 30
+#BLOCKER 30
+#BUILDER 30
+#PLATFORMER 30
+#DIGGER 30
+#JUMPER 30
+#BATTER 30
+
+:raymanni/toys/hatch.H: 16 16
+:raymanni/toys/hatch.H: 1024 16 r
+
+:raymanni/toys/goal.G: 536 104
+:raymanni/toys/goal.G: 496 104
+
+:geoo/construction/spring.T: 24 136
+:geoo/construction/spring.T: 1048 136
+:geoo/construction/spring.T: -6 136
+:geoo/construction/spring.T: 1078 136
+
+:geoo/construction/steam_up.T: 416 138
+:geoo/construction/steam_up.T: 664 138
+:geoo/abstract/tbeam_right.T: 476 42
+:geoo/abstract/tbeam_left.T: 588 42
+:geoo/abstract/tbeam_left.T: 620 42
+:geoo/abstract/tbeam_right.T: 444 42
+:geoo/abstract/tbeam_right.T: 412 42
+:geoo/abstract/tbeam_right.T: 380 42
+:geoo/abstract/tbeam_left.T: 652 42
+:geoo/abstract/tbeam_left.T: 684 42
+:geoo/abstract/tbeam_left.T: 716 42
+:geoo/abstract/tbeam_right.T: 348 42
+
+:matt/marble/thinplatform128p: 40 94
+:matt/marble/thinplatform128p: 96 88
+:matt/marble/thinplatform128p: 224 88
+:matt/marble/thinplatform128p: 288 100
+:matt/marble/thinplatform128p: 168 94
+:matt/marble/thinplatform128p: 0 168
+:matt/marble/thinplatform128p: 896 168
+:matt/marble/thinplatform128p: 768 168
+:matt/marble/thinplatform128p: 640 168
+:matt/marble/thinplatform128p: 512 168
+:matt/marble/thinplatform128p: 384 168
+:matt/marble/thinplatform128p: 256 168
+:matt/marble/thinplatform128p: 128 168
+:matt/marble/thinplatform128p: 976 168
+:matt/marble/thinplatform128p: -1 41 r
+:matt/marble/thinplatform128p: 1103 41 r
+:raymanni/lab/steel_1.S: 472 136
+:raymanni/lab/steel_1.S: 468 82
+:raymanni/lab/steel_1.S: 592 136
+:raymanni/toys/beam_14.S: 468 114
+:raymanni/toys/beam_14.S: 500 114
+:raymanni/toys/beam_14.S: 564 114
+:raymanni/lab/steel_1.S: 596 82 frr
+:raymanni/toys/beam_14.S: 596 114
+:raymanni/toys/beam_14.S: 532 114
+:raymanni/toys/beam_14.S: 326 20
+:raymanni/toys/beam_14.S: 262 20
+:raymanni/toys/beam_14.S: 294 20
+:raymanni/toys/beam_14.S: 198 20
+:raymanni/toys/beam_14.S: 230 20
+:geoo/construction/stairs_ru_32.S: 126 22
+:geoo/construction/stairs_ru_32.S: 62 54
+:raymanni/toys/beam_14.S: 450 74
+:raymanni/toys/beam_14.S: 484 74
+:raymanni/toys/beam_14.S: 382 74
+:raymanni/toys/beam_14.S: 348 74
+:geoo/construction/stairs_ru_8.S: 46 86
+:matt/marble/thinplatform128p: 928 94 frr
+:matt/marble/thinplatform128p: 872 88 frr
+:matt/marble/thinplatform128p: 744 88 frr
+:matt/marble/thinplatform128p: 680 100 frr
+:matt/marble/thinplatform128p: 800 94 frr
+:raymanni/toys/beam_14.S: 738 20 frr
+:raymanni/toys/beam_14.S: 802 20 frr
+:raymanni/toys/beam_14.S: 770 20 frr
+:raymanni/toys/beam_14.S: 866 20 frr
+:raymanni/toys/beam_14.S: 834 20 frr
+:geoo/construction/stairs_ru_32.S: 890 22 frr
+:geoo/construction/stairs_ru_32.S: 954 54 frr
+:raymanni/toys/beam_14.S: 614 74 frr
+:raymanni/toys/beam_14.S: 580 74 frr
+:raymanni/toys/beam_14.S: 682 74 frr
+:raymanni/toys/beam_14.S: 716 74 frr
+:geoo/construction/stairs_ru_8.S: 1018 86 frr
+:matt/marble/thinplatform128p: 608 20 frr
+:matt/marble/thinplatform128p: 360 20 frr
+:matt/marble/thinplatform128p: 966 100 frr
+:matt/marble/thinplatform128p: 10 100 frr
+:raymanni/toys/beam_14.S: 518 50 r
+:raymanni/toys/beam_14.S: 570 50 fr

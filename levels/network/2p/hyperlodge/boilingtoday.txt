@@ -1,0 +1,113 @@
+$BUILT 2024-07-18 11:41:13
+$AUTHOR Hyperlodge
+$ENGLISH Boiling Today
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 640
+#SIZE_Y 368
+#TORUS_X 1
+#TORUS_Y 0
+#BACKGROUND_RED 40
+#BACKGROUND_GREEN 127
+#BACKGROUND_BLUE 191
+
+#SECONDS 60
+#INITIAL 150
+#SPAWN_INTERVAL 40
+
+#CLIMBER 10
+#EXPLODER2 -1
+#BUILDER -1
+#JUMPER 10
+#BATTER -1
+#CUBER -1
+
+:simon/hatch001.H: 128 24
+:simon/hatch001.H: 448 24 r
+
+:geoo/abstract/goal.G: 112 224
+:geoo/abstract/goal.G: 496 224
+
+:geoo/construction/steam_up.T: 272 336
+:geoo/construction/steam_up.T: 288 336
+:geoo/construction/steam_up.T: 304 336
+:geoo/construction/steam_up.T: 320 336
+:geoo/construction/steam_up.T: 336 336
+:geoo/construction/steam_up.T: 352 336
+:geoo/construction/steam_up.T: 368 336
+:geoo/construction/steam_up.T: 384 336
+:geoo/construction/steam_up.T: 400 336
+:geoo/construction/steam_up.T: 416 336
+:geoo/construction/steam_up.T: 432 336
+:geoo/construction/steam_up.T: 448 336
+:geoo/construction/steam_up.T: 464 336
+:geoo/construction/steam_up.T: 480 336
+:geoo/construction/steam_up.T: 496 336
+:geoo/construction/steam_up.T: 512 336
+:geoo/construction/steam_up.T: 528 336
+:geoo/construction/steam_up.T: 544 336
+:geoo/construction/steam_up.T: 560 336
+:geoo/construction/steam_up.T: 576 336
+:geoo/construction/steam_up.T: 592 336
+:geoo/construction/steam_up.T: 608 336
+:geoo/construction/steam_up.T: 624 336
+:geoo/construction/steam_up.T: 0 336
+:geoo/construction/steam_up.T: 16 336
+:geoo/construction/steam_up.T: 32 336
+:geoo/construction/steam_up.T: 48 336
+:geoo/construction/steam_up.T: 64 336
+:geoo/construction/steam_up.T: 80 336
+:geoo/construction/steam_up.T: 96 336
+:geoo/construction/steam_up.T: 112 336
+:geoo/construction/steam_up.T: 128 336
+:geoo/construction/steam_up.T: 144 336
+:geoo/construction/steam_up.T: 160 336
+:geoo/construction/steam_up.T: 176 336
+:geoo/construction/steam_up.T: 192 336
+:geoo/construction/steam_up.T: 208 336
+:geoo/construction/steam_up.T: 224 336
+:geoo/construction/steam_up.T: 240 336
+:geoo/construction/steam_up.T: 256 336
+
+:raymanni/gore/steel.S: 144 112
+:raymanni/gore/steel.S: 144 144
+:raymanni/gore/steel.S: 144 176
+:raymanni/gore/steel.S: 144 208
+:raymanni/gore/steel.S: 144 240
+:raymanni/gore/steel.S: 144 272
+:raymanni/gore/steel.S: 144 80
+:raymanni/gore/steel.S: 176 176
+:raymanni/gore/steel.S: 208 176
+:raymanni/gore/steel.S: 240 176
+:raymanni/gore/steel.S: 48 176
+:raymanni/gore/steel.S: 80 176
+:raymanni/gore/steel.S: 112 176
+:raymanni/gore/steel.S: 176 80
+:raymanni/gore/steel.S: 208 80
+:raymanni/gore/steel.S: 80 80
+:raymanni/gore/steel.S: 112 80
+:raymanni/gore/steel.S: 176 272
+:raymanni/gore/steel.S: 208 272
+:raymanni/gore/steel.S: 80 272
+:raymanni/gore/steel.S: 112 272
+:raymanni/gore/steel.S: 464 112
+:raymanni/gore/steel.S: 464 144
+:raymanni/gore/steel.S: 464 176
+:raymanni/gore/steel.S: 464 208
+:raymanni/gore/steel.S: 464 240
+:raymanni/gore/steel.S: 464 272
+:raymanni/gore/steel.S: 464 80
+:raymanni/gore/steel.S: 496 176
+:raymanni/gore/steel.S: 528 176
+:raymanni/gore/steel.S: 560 176
+:raymanni/gore/steel.S: 368 176
+:raymanni/gore/steel.S: 400 176
+:raymanni/gore/steel.S: 432 176
+:raymanni/gore/steel.S: 496 80
+:raymanni/gore/steel.S: 528 80
+:raymanni/gore/steel.S: 400 80
+:raymanni/gore/steel.S: 432 80
+:raymanni/gore/steel.S: 496 272
+:raymanni/gore/steel.S: 528 272
+:raymanni/gore/steel.S: 400 272
+:raymanni/gore/steel.S: 432 272

@@ -1,0 +1,94 @@
+$BUILT 2024-07-18 13:01:40
+$AUTHOR Hyperlodge
+$ENGLISH Full Grid
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1152
+#SIZE_Y 400
+#BACKGROUND_RED 48
+#BACKGROUND_GREEN 32
+#BACKGROUND_BLUE 48
+
+#SECONDS 70
+#INITIAL 70
+#SPAWN_INTERVAL 10
+
+#RUNNER 50
+#FLOATER 50
+#EXPLODER2 50
+#BLOCKER 50
+#BUILDER 50
+#MINER 50
+#JUMPER 50
+#BATTER 50
+
+:geoo/abstract/hatch.H: 1112 8 r
+:geoo/abstract/hatch.H: 8 8
+
+:raymanni/lab/goal.G: -8 324
+:raymanni/lab/goal.G: 1096 324
+
+:geoo/construction/fence_rust_64x64: 0 336
+:geoo/construction/fence_rust_64x64: 64 336
+:geoo/construction/fence_rust_64x64: 0 272
+:geoo/construction/fence_rust_64x64: 64 272
+:geoo/construction/fence_rust_64x64: 0 208
+:geoo/construction/fence_rust_64x64: 64 208
+:geoo/construction/fence_rust_64x64: 0 144
+:geoo/construction/fence_rust_64x64: 64 144
+:geoo/construction/fence_rust_64x64: 128 336
+:geoo/construction/fence_rust_64x64: 192 336
+:geoo/construction/fence_rust_64x64: 128 272
+:geoo/construction/fence_rust_64x64: 192 272
+:geoo/construction/fence_rust_64x64: 128 208
+:geoo/construction/fence_rust_64x64: 192 208
+:geoo/construction/fence_rust_64x64: 128 144
+:geoo/construction/fence_rust_64x64: 192 144
+:geoo/construction/fence_rust_64x64: 256 336
+:geoo/construction/fence_rust_64x64: 320 336
+:geoo/construction/fence_rust_64x64: 256 272
+:geoo/construction/fence_rust_64x64: 320 272
+:geoo/construction/fence_rust_64x64: 256 208
+:geoo/construction/fence_rust_64x64: 320 208
+:geoo/construction/fence_rust_64x64: 256 144
+:geoo/construction/fence_rust_64x64: 320 144
+:geoo/construction/fence_rust_64x64: 896 336
+:geoo/construction/fence_rust_64x64: 960 336
+:geoo/construction/fence_rust_64x64: 896 272
+:geoo/construction/fence_rust_64x64: 960 272
+:geoo/construction/fence_rust_64x64: 896 208
+:geoo/construction/fence_rust_64x64: 960 208
+:geoo/construction/fence_rust_64x64: 896 144
+:geoo/construction/fence_rust_64x64: 960 144
+:geoo/construction/fence_rust_64x64: 1024 336
+:geoo/construction/fence_rust_64x64: 1024 272
+:geoo/construction/fence_rust_64x64: 1024 208
+:geoo/construction/fence_rust_64x64: 1024 144
+:geoo/construction/fence_rust_64x64: 1088 336
+:geoo/construction/fence_rust_64x64: 1088 272
+:geoo/construction/fence_rust_64x64: 1088 208
+:geoo/construction/fence_rust_64x64: 1088 144
+:geoo/construction/fence_rust_64x64: 384 336
+:geoo/construction/fence_rust_64x64: 448 336
+:geoo/construction/fence_rust_64x64: 384 272
+:geoo/construction/fence_rust_64x64: 448 272
+:geoo/construction/fence_rust_64x64: 384 208
+:geoo/construction/fence_rust_64x64: 448 208
+:geoo/construction/fence_rust_64x64: 384 144
+:geoo/construction/fence_rust_64x64: 448 144
+:geoo/construction/fence_rust_64x64: 640 336
+:geoo/construction/fence_rust_64x64: 704 336
+:geoo/construction/fence_rust_64x64: 640 272
+:geoo/construction/fence_rust_64x64: 704 272
+:geoo/construction/fence_rust_64x64: 640 208
+:geoo/construction/fence_rust_64x64: 704 208
+:geoo/construction/fence_rust_64x64: 640 144
+:geoo/construction/fence_rust_64x64: 704 144
+:geoo/construction/fence_rust_64x64: 768 336
+:geoo/construction/fence_rust_64x64: 832 336
+:geoo/construction/fence_rust_64x64: 768 272
+:geoo/construction/fence_rust_64x64: 832 272
+:geoo/construction/fence_rust_64x64: 768 208
+:geoo/construction/fence_rust_64x64: 832 208
+:geoo/construction/fence_rust_64x64: 768 144
+:geoo/construction/fence_rust_64x64: 832 144

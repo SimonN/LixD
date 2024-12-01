@@ -1,0 +1,390 @@
+$BUILT 2024-08-07 14:53:17
+$AUTHOR Hyperlodge
+$ENGLISH My Precious
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 704
+#SIZE_Y 784
+#BACKGROUND_RED 16
+#BACKGROUND_GREEN 47
+#BACKGROUND_BLUE 0
+
+#SECONDS 60
+#INITIAL 100
+#SPAWN_INTERVAL 50
+
+#WALKER 50
+#RUNNER 50
+#CLIMBER 50
+#FLOATER 50
+#EXPLODER2 50
+#PLATFORMER 50
+#JUMPER 50
+#BATTER 50
+#CUBER 50
+
+:raymanni/gore/hatch.H: 188 0
+:raymanni/gore/hatch.H: 485 0 r
+
+:proxima/tile/goal.G: 608 676
+:proxima/tile/goal.G: 32 676
+
+:raymanni/lab/goo_fall.W: 279 120
+:raymanni/lab/goo_fall.W: 111 120
+:raymanni/lab/goo_fall.W: 150 64
+:raymanni/lab/goo_fall.W: 240 64
+:raymanni/lab/goo_fall.W: 198 120
+:raymanni/lab/goo_fall.W: 280 232
+:raymanni/lab/goo_fall.W: 112 232
+:raymanni/lab/goo_fall.W: 151 176
+:raymanni/lab/goo_fall.W: 241 176
+:raymanni/lab/goo_fall.W: 199 232
+:raymanni/lab/goo_fall.W: 152 400
+:raymanni/lab/goo_fall.W: 289 456
+:raymanni/lab/goo_fall.W: 199 456
+:raymanni/lab/goo_fall.W: 241 400
+:raymanni/lab/goo_fall.W: 159 288
+:raymanni/lab/goo_fall.W: 288 344
+:raymanni/lab/goo_fall.W: 198 344
+:raymanni/lab/goo_fall.W: 240 288
+:raymanni/lab/goo_fall.W: 240 511
+:raymanni/lab/goo_fall.W: 240 679
+:raymanni/lab/goo_fall.W: 184 640
+:raymanni/lab/goo_fall.W: 183 550
+:raymanni/lab/goo_fall.W: 240 592
+:raymanni/lab/goo_fall.W: 408 120
+:raymanni/lab/goo_fall.W: 576 120
+:raymanni/lab/goo_fall.W: 537 64
+:raymanni/lab/goo_fall.W: 447 64
+:raymanni/lab/goo_fall.W: 489 120
+:raymanni/lab/goo_fall.W: 407 232
+:raymanni/lab/goo_fall.W: 575 232
+:raymanni/lab/goo_fall.W: 536 176
+:raymanni/lab/goo_fall.W: 446 176
+:raymanni/lab/goo_fall.W: 488 232
+:raymanni/lab/goo_fall.W: 535 400
+:raymanni/lab/goo_fall.W: 398 456
+:raymanni/lab/goo_fall.W: 488 456
+:raymanni/lab/goo_fall.W: 446 400
+:raymanni/lab/goo_fall.W: 528 288
+:raymanni/lab/goo_fall.W: 399 344
+:raymanni/lab/goo_fall.W: 489 344
+:raymanni/lab/goo_fall.W: 447 288
+:raymanni/lab/goo_fall.W: 447 511
+:raymanni/lab/goo_fall.W: 447 679
+:raymanni/lab/goo_fall.W: 503 640
+:raymanni/lab/goo_fall.W: 504 550
+:raymanni/lab/goo_fall.W: 447 592
+:raymanni/lab/goo.W: 0 752
+:raymanni/lab/goo.W: 32 752
+:raymanni/lab/goo.W: 64 752
+:raymanni/lab/goo.W: 96 752
+:raymanni/lab/goo.W: 128 752
+:raymanni/lab/goo.W: 160 752
+:raymanni/lab/goo.W: 192 752
+:raymanni/lab/goo.W: 224 752
+:raymanni/lab/goo.W: 256 752
+:raymanni/lab/goo.W: 288 752
+:raymanni/lab/goo.W: 320 752
+:raymanni/lab/goo.W: 352 752
+:raymanni/lab/goo.W: 384 752
+:raymanni/lab/goo.W: 416 752
+:raymanni/lab/goo.W: 448 752
+:raymanni/lab/goo.W: 480 752
+:raymanni/lab/goo.W: 512 752
+:raymanni/lab/goo.W: 544 752
+:raymanni/lab/goo.W: 576 752
+:raymanni/lab/goo.W: 608 752
+:raymanni/lab/goo.W: 640 752
+:raymanni/lab/goo.W: 672 752
+
+:geoo/construction/sawblade_small.F: 336 76
+
+:geoo/abstract/tbeam_up.T: 0 728
+:geoo/abstract/tbeam_up.T: 0 696
+:geoo/abstract/tbeam_up.T: 0 664
+:geoo/abstract/tbeam_up.T: 0 632
+:geoo/abstract/tbeam_up.T: 0 600
+:geoo/abstract/tbeam_up.T: 0 568
+:geoo/abstract/tbeam_up.T: 0 536
+:geoo/abstract/tbeam_up.T: 0 504
+:geoo/abstract/tbeam_up.T: 0 472
+:geoo/abstract/tbeam_up.T: 0 440
+:geoo/abstract/tbeam_up.T: 0 408
+:geoo/abstract/tbeam_up.T: 0 376
+:geoo/abstract/tbeam_up.T: 0 344
+:geoo/abstract/tbeam_up.T: 0 312
+:geoo/abstract/tbeam_up.T: 0 280
+:geoo/abstract/tbeam_up.T: 0 248
+:geoo/abstract/tbeam_up.T: 0 216
+:geoo/abstract/tbeam_up.T: 0 184
+:geoo/abstract/tbeam_up.T: 0 152
+:geoo/abstract/tbeam_up.T: 0 120
+:geoo/abstract/tbeam_up.T: 0 88
+:geoo/abstract/tbeam_up.T: 0 56
+:geoo/abstract/tbeam_right.T: 0 24
+:geoo/abstract/tbeam_right.T: 32 24
+:geoo/abstract/tbeam_right.T: 64 24
+:geoo/abstract/tbeam_up.T: 672 728
+:geoo/abstract/tbeam_up.T: 672 696
+:geoo/abstract/tbeam_up.T: 672 664
+:geoo/abstract/tbeam_up.T: 672 632
+:geoo/abstract/tbeam_up.T: 672 600
+:geoo/abstract/tbeam_up.T: 672 568
+:geoo/abstract/tbeam_up.T: 672 536
+:geoo/abstract/tbeam_up.T: 672 504
+:geoo/abstract/tbeam_up.T: 672 472
+:geoo/abstract/tbeam_up.T: 672 440
+:geoo/abstract/tbeam_up.T: 672 408
+:geoo/abstract/tbeam_up.T: 672 376
+:geoo/abstract/tbeam_up.T: 672 344
+:geoo/abstract/tbeam_up.T: 672 312
+:geoo/abstract/tbeam_up.T: 672 280
+:geoo/abstract/tbeam_up.T: 672 248
+:geoo/abstract/tbeam_up.T: 672 216
+:geoo/abstract/tbeam_up.T: 672 184
+:geoo/abstract/tbeam_up.T: 672 152
+:geoo/abstract/tbeam_up.T: 672 120
+:geoo/abstract/tbeam_up.T: 672 88
+:geoo/abstract/tbeam_up.T: 672 56
+:geoo/abstract/tbeam_left.T: 672 24
+:geoo/abstract/tbeam_left.T: 640 24
+:geoo/abstract/tbeam_left.T: 608 24
+:geoo/construction/steam_up.T: 312 576
+:geoo/construction/steam_up.T: 376 576
+:geoo/construction/steam_up.T: 328 568
+:geoo/construction/steam_up.T: 360 568
+
+:raymanni/toys/beam_14.S: 32 752
+:raymanni/toys/beam_14.S: 64 752
+:raymanni/toys/beam_14.S: 96 752
+:raymanni/toys/beam_14.S: 128 752
+:raymanni/toys/beam_14.S: 160 752
+:raymanni/toys/beam_14.S: 192 752
+:raymanni/toys/beam_14.S: 224 752
+:raymanni/toys/beam_14.S: 256 752
+:raymanni/toys/beam_14.S: 288 752
+:raymanni/toys/beam_14.S: 384 752
+:raymanni/toys/beam_14.S: 416 752
+:raymanni/toys/beam_14.S: 448 752
+:raymanni/toys/beam_14.S: 480 752
+:raymanni/toys/beam_14.S: 512 752
+:raymanni/toys/beam_14.S: 544 752
+:raymanni/toys/beam_14.S: 576 752
+:raymanni/toys/beam_14.S: 608 752
+:raymanni/toys/beam_14.S: 640 752
+:raymanni/lab/steel_1.S: 368 688
+:raymanni/lab/steel_1.S: 304 656
+:raymanni/lab/steel_1.S: 368 656
+:raymanni/lab/steel_1.S: 304 624
+:raymanni/lab/steel_1.S: 368 624
+:raymanni/lab/steel_1.S: 312 592
+:raymanni/lab/steel_1.S: 384 720
+:raymanni/lab/steel_1.S: 304 688
+:raymanni/lab/steel_1.S: 288 720
+:raymanni/lab/steel_1.S: 360 592
+:matt/marble/15b: 247 104 rr
+:matt/marble/16: 263 136 rr
+:matt/marble/17a: 279 88 rr
+:matt/marble/17c: 95 88 r
+:matt/marble/15d: 79 120 r
+:matt/marble/16a: 167 104 frr
+:matt/marble/14d: 127 104 r
+:matt/marble/14b: 214 120 rr
+:matt/marble/15b: 118 64 frr
+:matt/marble/16: 134 32 frr
+:matt/marble/17a: 150 80 frr
+:matt/marble/17c: 256 64 frr
+:matt/marble/15d: 224 80 frr
+:matt/marble/16a: 208 48 frr
+:matt/marble/14d: 240 32 frr
+:matt/marble/14b: 166 48 frr
+:matt/marble/15: 199 88 f
+:matt/marble/16: 111 136 r
+:matt/marble/14c: 182 136 f
+:matt/marble/17c: 295 120 frr
+:matt/marble/15b: 248 216 rr
+:matt/marble/16: 264 248 rr
+:matt/marble/17a: 280 200 rr
+:matt/marble/17c: 96 200 r
+:matt/marble/15d: 80 232 r
+:matt/marble/16a: 168 216 frr
+:matt/marble/14d: 128 216 r
+:matt/marble/14b: 215 232 rr
+:matt/marble/15b: 119 176 frr
+:matt/marble/16: 135 144 frr
+:matt/marble/17a: 151 192 frr
+:matt/marble/17c: 257 176 frr
+:matt/marble/15d: 225 192 frr
+:matt/marble/16a: 209 160 frr
+:matt/marble/14d: 241 144 frr
+:matt/marble/14b: 167 160 frr
+:matt/marble/15: 200 200 f
+:matt/marble/16: 112 248 r
+:matt/marble/14c: 183 248 f
+:matt/marble/17c: 296 232 frr
+:matt/marble/15b: 120 400 frr
+:matt/marble/16: 136 368 frr
+:matt/marble/17a: 152 416 frr
+:matt/marble/16a: 256 400 f
+:matt/marble/14b: 209 384
+:matt/marble/15b: 305 440 f
+:matt/marble/16: 289 472 f
+:matt/marble/17a: 273 424 f
+:matt/marble/17c: 167 440 f
+:matt/marble/15d: 199 424 f
+:matt/marble/16a: 215 456 f
+:matt/marble/14d: 183 472 f
+:matt/marble/14b: 257 456 f
+:matt/marble/15: 224 416 frr
+:matt/marble/14c: 241 368 frr
+:matt/marble/17c: 168 384 rr
+:matt/marble/15b: 175 288
+:matt/marble/16: 159 256
+:matt/marble/17a: 143 304
+:matt/marble/16a: 255 288 f
+:matt/marble/14b: 208 272
+:matt/marble/15b: 304 328 f
+:matt/marble/16: 288 360 f
+:matt/marble/17a: 272 312 f
+:matt/marble/17c: 166 328 f
+:matt/marble/15d: 198 312 f
+:matt/marble/16a: 214 344 f
+:matt/marble/14d: 182 360 f
+:matt/marble/14b: 256 344 f
+:matt/marble/15: 223 304 frr
+:matt/marble/14c: 240 256 frr
+:matt/marble/17c: 127 272 f
+:matt/marble/15b: 224 527 r
+:matt/marble/16: 256 511 r
+:matt/marble/17a: 208 495 r
+:matt/marble/17c: 208 679
+:matt/marble/15d: 240 695
+:matt/marble/16a: 224 607 fr
+:matt/marble/14d: 224 647
+:matt/marble/14b: 240 560 r
+:matt/marble/15b: 184 656 fr
+:matt/marble/16: 152 640 fr
+:matt/marble/17a: 200 624 fr
+:matt/marble/17c: 167 518 r
+:matt/marble/15d: 151 550 r
+:matt/marble/16a: 183 566 r
+:matt/marble/14d: 199 534 r
+:matt/marble/14b: 168 608 fr
+:matt/marble/15: 208 575 frrr
+:matt/marble/16: 256 663
+:matt/marble/14c: 256 592 frrr
+:matt/marble/17c: 240 479 fr
+:matt/marble/15b: 424 104 f
+:matt/marble/16: 408 136 f
+:matt/marble/17a: 392 88 f
+:matt/marble/17c: 576 88 fr
+:matt/marble/15d: 592 120 fr
+:matt/marble/16a: 504 104
+:matt/marble/14d: 544 104 fr
+:matt/marble/14b: 457 120 f
+:matt/marble/15b: 553 64
+:matt/marble/16: 537 32
+:matt/marble/17a: 521 80
+:matt/marble/17c: 415 64
+:matt/marble/15d: 447 80
+:matt/marble/16a: 463 48
+:matt/marble/14d: 431 32
+:matt/marble/14b: 505 48
+:matt/marble/15: 472 88 rr
+:matt/marble/16: 560 136 fr
+:matt/marble/14c: 489 136 rr
+:matt/marble/17c: 376 120
+:matt/marble/15b: 423 216 f
+:matt/marble/16: 407 248 f
+:matt/marble/17a: 391 200 f
+:matt/marble/17c: 575 200 fr
+:matt/marble/15d: 591 232 fr
+:matt/marble/16a: 503 216
+:matt/marble/14d: 543 216 fr
+:matt/marble/14b: 456 232 f
+:matt/marble/15b: 552 176
+:matt/marble/16: 536 144
+:matt/marble/17a: 520 192
+:matt/marble/17c: 414 176
+:matt/marble/15d: 446 192
+:matt/marble/16a: 462 160
+:matt/marble/14d: 430 144
+:matt/marble/14b: 504 160
+:matt/marble/15: 471 200 rr
+:matt/marble/16: 559 248 fr
+:matt/marble/14c: 488 248 rr
+:matt/marble/17c: 375 232
+:matt/marble/15b: 551 400
+:matt/marble/16: 535 368
+:matt/marble/17a: 519 416
+:matt/marble/16a: 415 400 rr
+:matt/marble/14b: 462 384 frr
+:matt/marble/15b: 366 440 rr
+:matt/marble/16: 382 472 rr
+:matt/marble/17a: 398 424 rr
+:matt/marble/17c: 504 440 rr
+:matt/marble/15d: 472 424 rr
+:matt/marble/16a: 456 456 rr
+:matt/marble/14d: 488 472 rr
+:matt/marble/14b: 414 456 rr
+:matt/marble/15: 447 416
+:matt/marble/14c: 430 368
+:matt/marble/17c: 503 384 f
+:matt/marble/15b: 496 288 frr
+:matt/marble/16: 512 256 frr
+:matt/marble/17a: 528 304 frr
+:matt/marble/16a: 416 288 rr
+:matt/marble/14b: 463 272 frr
+:matt/marble/15b: 367 328 rr
+:matt/marble/16: 383 360 rr
+:matt/marble/17a: 399 312 rr
+:matt/marble/17c: 505 328 rr
+:matt/marble/15d: 473 312 rr
+:matt/marble/16a: 457 344 rr
+:matt/marble/14d: 489 360 rr
+:matt/marble/14b: 415 344 rr
+:matt/marble/15: 448 304
+:matt/marble/14c: 431 256
+:matt/marble/17c: 544 272 rr
+:matt/marble/15b: 447 527 fr
+:matt/marble/16: 415 511 fr
+:matt/marble/17a: 463 495 fr
+:matt/marble/17c: 463 679 frr
+:matt/marble/15d: 431 695 frr
+:matt/marble/16a: 447 607 r
+:matt/marble/14d: 447 647 frr
+:matt/marble/14b: 431 560 fr
+:matt/marble/15b: 487 656 r
+:matt/marble/16: 519 640 r
+:matt/marble/17a: 471 624 r
+:matt/marble/17c: 504 518 fr
+:matt/marble/15d: 520 550 fr
+:matt/marble/16a: 488 566 fr
+:matt/marble/14d: 472 534 fr
+:matt/marble/14b: 503 608 r
+:matt/marble/15: 463 575 rrr
+:matt/marble/16: 415 663 frr
+:matt/marble/14c: 415 592 rrr
+:matt/marble/17c: 431 479 r
+:raymanni/toys/beam_14.S: 188 48
+:raymanni/toys/beam_14.S: 484 48
+:matt/marble/thinplatform64p: 320 752
+:matt/marble/thinplatform64p: 320 754
+:matt/marble/thinplatform64p: 320 758
+:matt/marble/thinplatform64p: 320 756
+:raymanni/toys/beam_13.S: 348 64
+:raymanni/toys/beam_13.S: 348 0
+:raymanni/toys/beam_13.S: 348 32
+:matt/marble/thinplatform64p: 38 746
+:matt/marble/thinplatform64p: 40 748
+:matt/marble/thinplatform64p: 42 750
+:matt/marble/thinplatform64p: 32 740
+:matt/marble/thinplatform64p: 34 742
+:matt/marble/thinplatform64p: 36 744
+:matt/marble/thinplatform64p: 602 746 frr
+:matt/marble/thinplatform64p: 600 748 frr
+:matt/marble/thinplatform64p: 598 750 frr
+:matt/marble/thinplatform64p: 608 740 frr
+:matt/marble/thinplatform64p: 606 742 frr
+:matt/marble/thinplatform64p: 604 744 frr

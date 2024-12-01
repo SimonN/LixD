@@ -1,0 +1,184 @@
+$BUILT 2024-07-18 11:29:31
+$AUTHOR Hyperlodge
+$ENGLISH Leave Your Den
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 704
+#SIZE_Y 392
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 47
+#BACKGROUND_BLUE 63
+
+#SECONDS 90
+#INITIAL 50
+#SPAWN_INTERVAL 90
+
+#WALKER 5
+#RUNNER 5
+#CLIMBER 5
+#FLOATER 5
+#EXPLODER2 50
+#BLOCKER 50
+#BUILDER 50
+#PLATFORMER 5
+#BASHER 5
+#MINER 5
+#DIGGER 50
+#JUMPER 5
+#BATTER 5
+#CUBER 5
+
+:geoo/abstract/hatch.H: 72 166
+:geoo/abstract/hatch.H: 600 166 r
+
+:raymanni/lab/goal.G: 354 160
+:raymanni/lab/goal.G: 286 160
+
+:geoo/construction/steam_up.T: 512 184
+:geoo/construction/steam_up.T: 176 184
+:geoo/construction/steam_left.T: 664 128
+:geoo/construction/steam_right.T: 8 128
+
+:geoo/construction/fence_32x32.S: 268 160
+:geoo/construction/fence_32x32.S: 268 192
+:geoo/construction/fence_32x32.S: 336 192
+:geoo/construction/fence_32x32.S: 336 160
+:geoo/construction/fence_32x32.S: 404 192
+:geoo/construction/fence_32x32.S: 404 160
+:matt/goldmine/planksupport: 288 232
+:amanda/steel/steel24x8.S: 268 224
+:amanda/steel/steel24x8.S: 292 224
+:amanda/steel/steel24x8.S: 316 224
+:amanda/steel/steel24x8.S: 340 224
+:amanda/steel/steel24x8.S: 364 224
+:amanda/steel/steel24x8.S: 388 224
+:amanda/steel/steel24x8.S: 412 224
+:geoo/construction/platform.S: 8 326
+:geoo/construction/platform.S: 64 326
+:geoo/construction/platform.S: 96 326
+:geoo/construction/platform.S: 128 326
+:geoo/construction/platform.S: 160 326
+:geoo/construction/platform.S: 192 326
+:geoo/construction/platform.S: 224 326
+:geoo/construction/platform.S: 256 326
+:geoo/construction/platform.S: 288 326
+:geoo/construction/platform.S: 320 326
+:geoo/construction/platform.S: 352 326
+:geoo/construction/platform.S: 384 326
+:geoo/construction/platform.S: 416 326
+:geoo/construction/platform.S: 448 326
+:geoo/construction/platform.S: 480 326
+:geoo/construction/platform.S: 512 326
+:geoo/construction/platform.S: 544 326
+:geoo/construction/platform.S: 576 326
+:geoo/construction/platform.S: 608 326
+:geoo/construction/platform.S: 664 326
+:amanda/steel/steel24x8.S: 56 190 r
+:amanda/steel/steel24x8.S: 112 190 fr
+:amanda/steel/steel24x8.S: 56 166 r
+:amanda/steel/steel24x8.S: 112 166 fr
+:geoo/construction/pillar_top_shaded: 56 214 frr
+:geoo/construction/pillar_top_shaded: 88 214
+:geoo/construction/platform.S: 56 230
+:geoo/construction/platform.S: 88 230
+:amanda/steel/steel24x8.S: 84 254 fr
+:amanda/steel/steel24x8.S: 84 230 fr
+:amanda/steel/steel24x8.S: 84 302 fr
+:amanda/steel/steel24x8.S: 84 278 fr
+:amanda/steel/steel24x8.S: 584 190 r
+:amanda/steel/steel24x8.S: 640 190 fr
+:amanda/steel/steel24x8.S: 584 166 r
+:amanda/steel/steel24x8.S: 640 166 fr
+:geoo/construction/pillar_top_shaded: 584 214 frr
+:geoo/construction/pillar_top_shaded: 616 214
+:geoo/construction/platform.S: 584 230
+:geoo/construction/platform.S: 616 230
+:amanda/steel/steel24x8.S: 612 254 fr
+:amanda/steel/steel24x8.S: 612 230 fr
+:amanda/steel/steel24x8.S: 612 302 fr
+:amanda/steel/steel24x8.S: 612 278 fr
+:amanda/steel/steel24x8.S: 244 224
+:amanda/steel/steel24x8.S: 436 224
+:geoo/construction/platform.S: 120 214
+:geoo/construction/platform.S: 552 214
+:geoo/construction/platform.S: 520 214
+:geoo/construction/platform.S: 152 214
+:amanda/steel/steel24x8.S: 0 320 fr
+:amanda/steel/steel24x8.S: 0 344 fr
+:geoo/construction/platform.S: 0 390
+:amanda/steel/steel24x8.S: 0 368 fr
+:amanda/steel/steel24x8.S: 696 320 fr
+:amanda/steel/steel24x8.S: 696 344 fr
+:geoo/construction/platform.S: 664 368
+:geoo/construction/platform.S: 8 368
+:geoo/construction/platform.S: 40 368
+:geoo/construction/platform.S: 632 368
+:geoo/construction/platform.S: 600 368
+:geoo/construction/platform.S: 568 368
+:geoo/construction/platform.S: 536 368
+:geoo/construction/platform.S: 504 368
+:geoo/construction/platform.S: 72 368
+:geoo/construction/platform.S: 104 368
+:geoo/construction/platform.S: 136 368
+:geoo/construction/platform.S: 168 368
+:geoo/construction/platform.S: 200 368
+:geoo/construction/platform.S: 232 368
+:geoo/construction/platform.S: 264 368
+:geoo/construction/platform.S: 296 368
+:geoo/construction/platform.S: 376 368
+:geoo/construction/platform.S: 472 368
+:geoo/construction/platform.S: 440 368
+:geoo/construction/platform.S: 408 368
+:geoo/construction/platform.S: 96 390
+:geoo/construction/platform.S: 128 390
+:geoo/construction/platform.S: 160 390
+:geoo/construction/platform.S: 192 390
+:geoo/construction/platform.S: 224 390
+:geoo/construction/platform.S: 256 390
+:geoo/construction/platform.S: 288 390
+:geoo/construction/platform.S: 320 390
+:geoo/construction/platform.S: 352 390
+:geoo/construction/platform.S: 384 390
+:geoo/construction/platform.S: 416 390
+:geoo/construction/platform.S: 448 390
+:geoo/construction/platform.S: 480 390
+:geoo/construction/platform.S: 512 390
+:geoo/construction/platform.S: 544 390
+:geoo/construction/platform.S: 576 390
+:geoo/construction/platform.S: 32 390
+:geoo/construction/platform.S: 64 390
+:geoo/construction/platform.S: 608 390
+:geoo/construction/platform.S: 640 390
+:geoo/construction/platform.S: 672 390
+:amanda/steel/steel24x8.S: 696 368 fr
+:amanda/steel/steel24x8.S: 696 272 fr
+:amanda/steel/steel24x8.S: 696 296 fr
+:amanda/steel/steel24x8.S: 696 224 fr
+:amanda/steel/steel24x8.S: 696 248 fr
+:amanda/steel/steel24x8.S: 696 176 fr
+:amanda/steel/steel24x8.S: 696 200 fr
+:amanda/steel/steel24x8.S: 696 128 fr
+:amanda/steel/steel24x8.S: 696 152 fr
+:amanda/steel/steel24x8.S: 0 272 fr
+:amanda/steel/steel24x8.S: 0 296 fr
+:amanda/steel/steel24x8.S: 0 224 fr
+:amanda/steel/steel24x8.S: 0 248 fr
+:amanda/steel/steel24x8.S: 0 176 fr
+:amanda/steel/steel24x8.S: 0 200 fr
+:amanda/steel/steel24x8.S: 0 128 fr
+:amanda/steel/steel24x8.S: 0 152 fr
+:geoo/construction/pillar_top_shaded: 56 150
+:geoo/construction/pillar_top_shaded: 88 150 frr
+:geoo/construction/pillar_top_shaded: 584 150
+:geoo/construction/pillar_top_shaded: 616 150 frr
+:geoo/construction/platform.S: 24 230
+:geoo/construction/platform.S: 648 230
+:matt/goldmine/tracks: 356 352
+:matt/goldmine/tracks: 228 352
+:matt/goldmine/tracks: 476 352
+:matt/goldmine/tracks: 108 352
+:geoo/construction/fence_32x32.S: 336 128
+:geoo/construction/fence_32x32.S: 404 128
+:geoo/construction/fence_32x32.S: 268 128
+:geoo/construction/platform.S: 368 128
+:geoo/construction/platform.S: 304 128

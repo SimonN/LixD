@@ -1,0 +1,211 @@
+$BUILT 2024-07-21 13:13:55
+$AUTHOR Hyperlodge
+$ENGLISH Close Encounters
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 664
+#SIZE_Y 416
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 16
+#BACKGROUND_BLUE 47
+
+#SECONDS 90
+#INITIAL 100
+#SPAWN_INTERVAL 50
+
+#WALKER 2
+#RUNNER 2
+#CLIMBER 2
+#FLOATER 2
+#EXPLODER2 -1
+#BLOCKER 30
+#BUILDER 30
+#PLATFORMER 2
+#BASHER 2
+#MINER 2
+#DIGGER 2
+#JUMPER 30
+#BATTER 30
+#CUBER -1
+
+:geoo/abstract/hatch.H: 24 72
+:geoo/abstract/hatch.H: 608 72 r
+
+:geoo/abstract/goal.G: 288 360
+:geoo/abstract/goal.G: 344 360
+
+:geoo/abstract/tbeam_right.T: 32 360
+:geoo/abstract/tbeam_right.T: 96 360
+:geoo/abstract/tbeam_right.T: 128 360
+:geoo/abstract/tbeam_right.T: 160 360
+:geoo/abstract/tbeam_right.T: 192 360
+:geoo/abstract/tbeam_right.T: 224 360
+:geoo/abstract/tbeam_right.T: 256 360
+:geoo/abstract/tbeam_right.T: 0 360
+:geoo/abstract/tbeam_left.T: 376 360
+:geoo/abstract/tbeam_left.T: 408 360
+:geoo/abstract/tbeam_left.T: 440 360
+:geoo/abstract/tbeam_left.T: 472 360
+:geoo/abstract/tbeam_left.T: 504 360
+:geoo/abstract/tbeam_left.T: 536 360
+:geoo/abstract/tbeam_left.T: 600 360
+:geoo/abstract/tbeam_left.T: 632 360
+:geoo/abstract/tbeam_up.T: 316 264
+:geoo/abstract/tbeam_up.T: 316 232
+:geoo/abstract/tbeam_up.T: 316 200
+:geoo/abstract/tbeam_up.T: 316 168
+:geoo/abstract/tbeam_up.T: 316 136
+:geoo/abstract/tbeam_up.T: 316 104
+:geoo/abstract/tbeam_right.T: 84 320
+:geoo/abstract/tbeam_right.T: 116 320
+:geoo/abstract/tbeam_right.T: 148 320
+:geoo/abstract/tbeam_right.T: 180 320
+:geoo/abstract/tbeam_right.T: 52 320
+:geoo/abstract/tbeam_left.T: 452 320
+:geoo/abstract/tbeam_left.T: 484 320
+:geoo/abstract/tbeam_left.T: 516 320
+:geoo/abstract/tbeam_left.T: 548 320
+:geoo/abstract/tbeam_left.T: 580 320
+:geoo/abstract/tbeam_up.T: 316 296
+:geoo/abstract/tbeam_up.T: 316 328
+:geoo/abstract/tbeam_left.T: 420 320
+:geoo/abstract/tbeam_right.T: 212 320
+
+:amanda/steel/steel24x8.S: 296 408
+:amanda/steel/steel24x8.S: 272 408
+:amanda/steel/steel24x8.S: 320 408
+:amanda/steel/steel24x8.S: 344 408
+:amanda/steel/steel24x8.S: 368 408
+:amanda/steel/steel24x8.S: 0 344
+:amanda/steel/steel24x8.S: 640 344
+:amanda/steel/steel24x8.S: 248 408
+:amanda/steel/steel24x8.S: 392 408
+:amanda/steel/steel24x8.S: 292 344
+:amanda/steel/steel24x8.S: 348 344
+:amanda/steel/steel24x8.S: 372 344
+:amanda/steel/steel24x8.S: 268 344
+:amanda/steel/steel24x8.S: 244 344
+:amanda/steel/steel24x8.S: 396 344
+:amanda/steel/steel24x8.S: 528 408
+:amanda/steel/steel24x8.S: 552 408
+:amanda/steel/steel24x8.S: 576 408
+:amanda/steel/steel24x8.S: 64 408
+:amanda/steel/steel24x8.S: 88 408
+:amanda/steel/steel24x8.S: 112 408
+:amanda/steel/steel24x8.S: 40 408
+:amanda/steel/steel24x8.S: 600 408
+:amanda/steel/steel24x8.S: 624 408
+:amanda/steel/steel24x8.S: 16 408
+:amanda/steel/steel24x8.S: 136 408
+:amanda/steel/steel24x8.S: 504 408
+$BEGIN_TILE_GROUP 0
+:raymanni/lab/block_10: 0 0
+:raymanni/lab/block_8: 64 32
+:raymanni/lab/block_6: 64 0
+:raymanni/lab/block_2: 32 64
+:raymanni/lab/block_2: 0 64
+:raymanni/lab/block_9: 32 96
+:raymanni/lab/block_7: 128 128
+:raymanni/lab/block_6: 96 0
+:raymanni/lab/block_3: 160 96
+:raymanni/lab/block_3: 0 96
+:raymanni/lab/block_5: 128 64
+:raymanni/lab/block_5: 128 32
+:raymanni/lab/pipe_7: 112 160
+:raymanni/lab/pipe_7: 96 160
+:raymanni/lab/pipe_1: 96 128
+:raymanni/lab/pipe_1: 112 128
+:raymanni/lab/block_6: 160 0 r
+:raymanni/lab/block_5: 64 160 r
+:raymanni/lab/block_2: 32 160
+:raymanni/lab/block_2: 0 160
+:raymanni/lab/block_2: 128 0
+:raymanni/lab/block_6: 0 128
+:raymanni/lab/block_5: 160 64
+:raymanni/lab/block_5: 160 32
+:raymanni/lab/pipe_6: 96 96
+:raymanni/lab/pipe_6: 112 112
+:raymanni/lab/block_2: 128 96
+:raymanni/lab/block_3: 144 144
+$END_TILE_GROUP
+:Group-0: 16 104
+$BEGIN_TILE_GROUP 1
+:raymanni/lab/block_10: 128 0
+:raymanni/lab/block_8: 64 32
+:raymanni/lab/block_6: 96 0 frr
+:raymanni/lab/block_2: 128 64 frr
+:raymanni/lab/block_2: 160 64 frr
+:raymanni/lab/block_9: 96 96
+:raymanni/lab/block_7: 0 128 frr
+:raymanni/lab/block_6: 64 0 frr
+:raymanni/lab/block_3: 0 96 frr
+:raymanni/lab/block_3: 160 96 frr
+:raymanni/lab/block_5: 32 64 frr
+:raymanni/lab/block_5: 32 32 frr
+:raymanni/lab/pipe_7: 64 160 frr
+:raymanni/lab/pipe_7: 80 160 frr
+:raymanni/lab/pipe_1: 80 128 frr
+:raymanni/lab/pipe_1: 64 128 frr
+:raymanni/lab/block_6: 0 0 fr
+:raymanni/lab/block_5: 96 160 fr
+:raymanni/lab/block_2: 128 160 frr
+:raymanni/lab/block_2: 160 160 frr
+:raymanni/lab/block_2: 32 0 frr
+:raymanni/lab/block_6: 160 128 frr
+:raymanni/lab/block_5: 0 64 frr
+:raymanni/lab/block_5: 0 32 frr
+:raymanni/lab/pipe_6: 64 96 frr
+:raymanni/lab/pipe_6: 48 112 frr
+:raymanni/lab/block_2: 32 96 frr
+:raymanni/lab/block_3: 16 144 frr
+$END_TILE_GROUP
+:Group-1: 456 104
+:geoo/construction/concrete/008h: 270 102
+:geoo/construction/concrete/008h: 286 102
+:geoo/construction/pillar_top_shaded: 316 106 rr
+:geoo/construction/concrete/008h: 374 102 frr
+:geoo/construction/concrete/008h: 358 102 frr
+:geoo/construction/concrete/016va: 332 20 frr
+:geoo/construction/concrete/008h: 274 42 frr
+:geoo/construction/concrete/008h: 262 46
+:geoo/construction/concrete/032h: 244 64
+:geoo/construction/concrete/016: 246 46
+:geoo/construction/concrete/032ha: 236 36
+:geoo/construction/concrete/podium_32: 300 26
+:geoo/construction/concrete/016va: 316 20
+:geoo/construction/concrete/podium_16: 300 28 rrr
+:geoo/construction/concrete/032h: 356 64 frr
+:geoo/construction/concrete/064: 300 42
+:geoo/construction/concrete/008h: 260 96
+:geoo/construction/concrete/032hc: 252 92
+:geoo/construction/concrete/016: 246 88
+:geoo/construction/concrete/032ha: 182 46
+:geoo/construction/concrete/032hc: 182 78
+:geoo/construction/concrete/016h: 316 92
+:geoo/construction/concrete/008h: 376 42 frr
+:geoo/construction/concrete/008h: 386 46 frr
+:geoo/construction/concrete/016: 402 46 frr
+:geoo/construction/concrete/032ha: 364 36 frr
+:geoo/construction/concrete/podium_16: 348 28 frrr
+:geoo/construction/concrete/podium_32: 300 26 frr
+:geoo/construction/concrete/008h: 386 96 frr
+:geoo/construction/concrete/032hc: 348 92 frr
+:geoo/construction/concrete/016: 402 88 frr
+:geoo/construction/concrete/032ha: 418 46 frr
+:geoo/construction/concrete/032hc: 418 78 frr
+$BEGIN_TILE_GROUP 2
+:geoo/abstract/pipes/central3: 32 0
+:geoo/abstract/pipes/central3: 108 0
+:geoo/abstract/pipes/central3: 0 0
+:geoo/abstract/pipes/central3: 140 0
+$END_TILE_GROUP
+:Group-2: 246 86
+:raymanni/holiday/wreath: 300 65 rrd
+:geoo/abstract/pipes/link3: 358 56 r
+:geoo/abstract/pipes/link3: 298 56 r
+:geoo/abstract/pipes/link3: 312 58 r
+:geoo/abstract/pipes/link3: 344 58 r
+:geoo/abstract/pipes/link3: 298 48 frrr
+:geoo/abstract/pipes/link3: 358 48 frrr
+:Group-2: 246 88 d
+:geoo/abstract/pipes/link3: 328 66 r

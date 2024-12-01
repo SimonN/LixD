@@ -1,0 +1,208 @@
+$BUILT 2024-07-18 11:44:50
+$AUTHOR Hyperlodge
+$ENGLISH Inactivision
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1144
+#SIZE_Y 464
+#BACKGROUND_RED 36
+#BACKGROUND_GREEN 24
+#BACKGROUND_BLUE 64
+
+#SECONDS 59
+#INITIAL 99
+#SPAWN_INTERVAL 29
+
+#WALKER 5
+#RUNNER 5
+#CLIMBER 5
+#FLOATER 5
+#EXPLODER2 -1
+#BLOCKER -1
+#BUILDER -1
+#PLATFORMER 5
+#BASHER 5
+#MINER 5
+#DIGGER 5
+#JUMPER 5
+#BATTER 5
+#CUBER -1
+
+:geoo/abstract/hatch.H: 256 48
+:geoo/abstract/hatch.H: 856 48 r
+:geoo/abstract/hatch.H: 256 272 r
+:geoo/abstract/hatch.H: 856 272
+
+:matt/marble/Goal.G: 984 128
+:matt/marble/Goal.G: 96 128
+
+:geoo/abstract/tbeam_down.T: 32 176
+:geoo/abstract/tbeam_down.T: 32 400
+:geoo/abstract/tbeam_down.T: 32 288
+:geoo/abstract/tbeam_down.T: 1080 176
+:geoo/abstract/tbeam_down.T: 1080 400
+:geoo/abstract/tbeam_down.T: 1080 288
+
+:raymanni/gore/steel.S: 256 304
+:geoo/abstract/cvblocks/042: 224 240
+:geoo/abstract/cvblocks/042: 192 176
+:geoo/abstract/cvblocks/047: 160 240
+:geoo/abstract/cvblocks/040: 224 304
+:geoo/abstract/cvblocks/030: 256 336
+:geoo/abstract/cvblocks/040: 160 176
+:geoo/abstract/cvblocks/035: 96 176
+:geoo/construction/fence_64x64.S: 96 208
+:geoo/construction/fence_64x64.S: 96 272
+:geoo/construction/fence_64x64.S: 96 336
+:geoo/abstract/cvblocks/035: 64 400
+:geoo/abstract/cvblocks/035: 128 400
+:geoo/abstract/cvblocks/035: 192 400
+:geoo/abstract/cvblocks/035: 256 400
+:geoo/abstract/cvblocks/035: 320 400
+:geoo/abstract/cvblocks/035: 384 400
+:geoo/construction/fence_32x32.S: 160 368
+:geoo/construction/fence_32x32.S: 192 368
+:geoo/construction/fence_32x32.S: 224 368
+:geoo/construction/fence_32x32.S: 256 368
+:geoo/abstract/cvblocks/035: 208 80
+:geoo/abstract/cvblocks/026: 208 48
+:geoo/abstract/cvblocks/035: 272 80
+:geoo/abstract/cvblocks/027: 320 48
+:geoo/abstract/cvblocks/025: 304 48
+:geoo/abstract/cvblocks/025: 224 48
+:geoo/construction/fence_32x32.S: 64 368
+:geoo/construction/fence_32x32.S: 64 336
+:geoo/construction/fence_32x32.S: 64 304
+:geoo/construction/fence_32x32.S: 64 272
+:geoo/construction/fence_32x32.S: 64 240
+:geoo/construction/fence_32x32.S: 64 208
+:geoo/construction/fence_32x32.S: 64 176
+:raymanni/gore/steel.S: 0 432
+:raymanni/gore/steel.S: 0 400
+:raymanni/gore/steel.S: 0 368
+:raymanni/gore/steel.S: 0 336
+:raymanni/gore/steel.S: 0 304
+:raymanni/gore/steel.S: 0 272
+:raymanni/gore/steel.S: 0 240
+:raymanni/gore/steel.S: 0 208
+:raymanni/gore/steel.S: 0 176
+$BEGIN_TILE_GROUP 0
+:amanda/steel/steel24x8.S: 0 0
+:amanda/steel/steel24x8.S: 24 0
+:amanda/steel/steel24x8.S: 48 0
+:amanda/steel/steel24x8.S: 72 0
+$END_TILE_GROUP
+:Group-0: 32 456
+:Group-0: 128 456
+:Group-0: 224 456
+:Group-0: 320 456
+:amanda/steel/steel24x8.S: 416 456
+:amanda/steel/steel24x8.S: 440 456
+:amanda/steel/steel24x8.S: 464 456
+:amanda/steel/steel24x8.S: 488 456
+:geoo/abstract/cvblocks/035: 448 400
+:geoo/abstract/pipes/central2: 376 96
+:geoo/abstract/pipes/central1: 384 112
+:geoo/abstract/pipes/central0: 392 128
+:geoo/abstract/pipes/central3: 368 80
+:geoo/abstract/pipes/central4: 360 64
+:geoo/abstract/pipes/central5: 352 48
+:geoo/abstract/pipes/central6: 408 160
+:geoo/abstract/pipes/central7: 400 144
+:geoo/abstract/pipes/central2: 440 224
+:geoo/abstract/pipes/central1: 448 240
+:geoo/abstract/pipes/central0: 456 256
+:geoo/abstract/pipes/central3: 432 208
+:geoo/abstract/pipes/central4: 424 192
+:geoo/abstract/pipes/central5: 416 176
+:geoo/abstract/pipes/central6: 472 288
+:geoo/abstract/pipes/central7: 464 272
+:geoo/abstract/pipes/central2: 504 352
+:geoo/abstract/pipes/central1: 512 368
+:geoo/abstract/pipes/central0: 520 384
+:geoo/abstract/pipes/central3: 496 336
+:geoo/abstract/pipes/central4: 488 320
+:geoo/abstract/pipes/central5: 480 304
+:geoo/abstract/pipes/central6: 536 416
+:geoo/abstract/pipes/central7: 528 400
+:raymanni/gore/steel.S: 856 304 frr
+:geoo/abstract/cvblocks/042: 888 240 frr
+:geoo/abstract/cvblocks/042: 920 176 frr
+:geoo/abstract/cvblocks/047: 920 240 frr
+:geoo/abstract/cvblocks/040: 888 304 frr
+:geoo/abstract/cvblocks/030: 856 336 frr
+:geoo/abstract/cvblocks/040: 952 176 frr
+:geoo/abstract/cvblocks/035: 984 176 frr
+:geoo/construction/fence_64x64.S: 984 208 frr
+:geoo/construction/fence_64x64.S: 984 272 frr
+:geoo/construction/fence_64x64.S: 984 336 frr
+:geoo/abstract/cvblocks/035: 1016 400 frr
+:geoo/abstract/cvblocks/035: 952 400 frr
+:geoo/abstract/cvblocks/035: 888 400 frr
+:geoo/abstract/cvblocks/035: 824 400 frr
+:geoo/abstract/cvblocks/035: 760 400 frr
+:geoo/abstract/cvblocks/035: 696 400 frr
+:geoo/construction/fence_32x32.S: 952 368 frr
+:geoo/construction/fence_32x32.S: 920 368 frr
+:geoo/construction/fence_32x32.S: 888 368 frr
+:geoo/construction/fence_32x32.S: 856 368 frr
+:geoo/abstract/cvblocks/035: 872 80 frr
+:geoo/abstract/cvblocks/026: 920 48 frr
+:geoo/abstract/cvblocks/035: 808 80 frr
+:geoo/abstract/cvblocks/027: 808 48 frr
+:geoo/abstract/cvblocks/025: 824 48 frr
+:geoo/abstract/cvblocks/025: 904 48 frr
+:geoo/construction/fence_32x32.S: 1048 368 frr
+:geoo/construction/fence_32x32.S: 1048 336 frr
+:geoo/construction/fence_32x32.S: 1048 304 frr
+:geoo/construction/fence_32x32.S: 1048 272 frr
+:geoo/construction/fence_32x32.S: 1048 240 frr
+:geoo/construction/fence_32x32.S: 1048 208 frr
+:geoo/construction/fence_32x32.S: 1048 176 frr
+:raymanni/gore/steel.S: 1112 432 frr
+:raymanni/gore/steel.S: 1112 400 frr
+:raymanni/gore/steel.S: 1112 368 frr
+:raymanni/gore/steel.S: 1112 336 frr
+:raymanni/gore/steel.S: 1112 304 frr
+:raymanni/gore/steel.S: 1112 272 frr
+:raymanni/gore/steel.S: 1112 240 frr
+:raymanni/gore/steel.S: 1112 208 frr
+:raymanni/gore/steel.S: 1112 176 frr
+:Group-0: 632 456
+:Group-0: 728 456
+:Group-0: 824 456
+:Group-0: 920 456
+:amanda/steel/steel24x8.S: 1016 456
+:amanda/steel/steel24x8.S: 1040 456
+:amanda/steel/steel24x8.S: 1064 456
+:amanda/steel/steel24x8.S: 1088 456
+:geoo/abstract/cvblocks/035: 632 400 frr
+:geoo/abstract/pipes/central2: 736 96 frr
+:geoo/abstract/pipes/central1: 728 112 frr
+:geoo/abstract/pipes/central0: 720 128 frr
+:geoo/abstract/pipes/central3: 744 80 frr
+:geoo/abstract/pipes/central4: 752 64 frr
+:geoo/abstract/pipes/central5: 760 48 frr
+:geoo/abstract/pipes/central6: 704 160 frr
+:geoo/abstract/pipes/central7: 712 144 frr
+:geoo/abstract/pipes/central2: 672 224 frr
+:geoo/abstract/pipes/central1: 664 240 frr
+:geoo/abstract/pipes/central0: 656 256 frr
+:geoo/abstract/pipes/central3: 680 208 frr
+:geoo/abstract/pipes/central4: 688 192 frr
+:geoo/abstract/pipes/central5: 696 176 frr
+:geoo/abstract/pipes/central6: 640 288 frr
+:geoo/abstract/pipes/central7: 648 272 frr
+:geoo/abstract/pipes/central2: 608 352 frr
+:geoo/abstract/pipes/central1: 600 368 frr
+:geoo/abstract/pipes/central0: 592 384 frr
+:geoo/abstract/pipes/central3: 616 336 frr
+:geoo/abstract/pipes/central4: 624 320 frr
+:geoo/abstract/pipes/central5: 632 304 frr
+:geoo/abstract/pipes/central6: 576 416 frr
+:geoo/abstract/pipes/central7: 584 400 frr
+:amanda/steel/steel24x8.S: 512 456
+:amanda/steel/steel24x8.S: 536 456
+:amanda/steel/steel24x8.S: 584 456
+:amanda/steel/steel24x8.S: 608 456
+:amanda/steel/steel24x8.S: 560 456

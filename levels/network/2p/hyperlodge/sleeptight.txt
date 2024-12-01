@@ -1,0 +1,467 @@
+$BUILT 2024-12-01 18:55:56
+$AUTHOR Hyperlodge
+$ENGLISH Sleep Tight
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1824
+#SIZE_Y 828
+#TORUS_X 1
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 16
+#BACKGROUND_BLUE 48
+
+#SECONDS 50
+#INITIAL 150
+#SPAWN_INTERVAL 75
+
+#WALKER -1
+#RUNNER -1
+#CLIMBER -1
+#FLOATER -1
+#EXPLODER2 100
+#BLOCKER -1
+#PLATFORMER -1
+#BASHER -1
+#JUMPER -1
+#BATTER -1
+#CUBER -1
+
+:amanda/forest/hatch.H: 992 484 r
+:amanda/forest/hatch.H: 736 484
+
+:amanda/occult/goal_skull.G: 1624 16
+:amanda/occult/goal_skull.G: 72 16
+
+:simon/water_thin.W: 1400 788
+:simon/water_thin.W: 1448 788
+:simon/water_thin.W: 1496 788
+:simon/water_thin.W: 1544 788
+:amanda/tar.W: 1620 800
+:amanda/tar.W: 1748 800
+:raymanni/gore/bonesaw.F: 1722 264
+:simon/water_thin.W: 376 788
+:simon/water_thin.W: 328 788
+:simon/water_thin.W: 280 788
+:simon/water_thin.W: 232 788
+:amanda/tar.W: 76 800
+:amanda/tar.W: 1772 800
+:raymanni/gore/bonesaw.F: 38 264
+
+:geoo/abstract/tbeam_up.T: 1730 688
+:geoo/abstract/tbeam_down.T: 1698 688
+:geoo/abstract/tbeam_up.T: 1736 732
+:geoo/abstract/tbeam_down.T: 1704 732
+:geoo/abstract/tbeam_left.T: 1762 702
+:geoo/abstract/tbeam_up.T: 62 688
+:geoo/abstract/tbeam_down.T: 94 688
+:geoo/abstract/tbeam_up.T: 56 732
+:geoo/abstract/tbeam_down.T: 88 732
+:geoo/abstract/tbeam_left.T: 30 702
+:geoo/construction/steam_up.T: 904 685
+:geoo/construction/steam_left.T: 1054 352
+:geoo/construction/steam_right.T: 738 352
+:geoo/construction/steam_up.T: 412 447
+:geoo/construction/steam_up.T: 1396 447
+
+:matt/earth/18: 946 629 frr
+:matt/earth/18: 966 629 frr
+:matt/earth/10: 928 644 rrr
+:amanda/steel/steel24x8.S: 912 820
+:matt/earth/10: 1024 556 frrr
+:amanda/forest/bark_01: 1400 772 r
+:matt/goldmine/plank: 1748 690 rrr
+:amanda/occult/wax_details_drip: 1710 726 rr
+:amanda/forest/stone_01: 1688 740 r
+:matt/earth/26: 1444 702
+:matt/earth/23: 1422 726
+:matt/earth/28: 1370 712
+:amanda/forest/bark_01: 1496 772 fr
+:amanda/forest/bark_06: 1524 726
+:amanda/forest/bark_06: 1460 664
+:simon/oriental/branch5: 1238 582 r
+:matt/earth/10: 1262 620 frr
+:simon/oriental/bush4: 1062 802
+:simon/oriental/pebbles2: 1350 798 rrr
+:matt/earth/10: 1118 718 f
+:simon/oriental/bush3: 1298 804
+:simon/oriental/pebbles5: 1232 786
+:matt/earth/19: 1124 664
+:amanda/forest/bark_02: 1432 588
+:amanda/forest/bark_00: 1304 742 frrr
+:amanda/forest/moss_00: 1356 616
+:amanda/steel/steel24x8.S: 928 836
+:amanda/steel/steel24x8.S: 928 838
+:amanda/steel/steel24x8.S: 928 836
+:amanda/steel/steel24x8.S: 928 836
+:amanda/steel/steel24x8.S: 936 820
+:amanda/steel/steel24x8.S: 960 820
+:amanda/steel/steel24x8.S: 984 820
+:amanda/steel/steel24x8.S: 1008 820
+:matt/earth/01: 1012 774
+:amanda/steel/steel24x8.S: 1032 820
+:amanda/steel/steel24x8.S: 1056 820
+:amanda/steel/steel24x8.S: 1080 820
+:amanda/steel/steel24x8.S: 1104 820
+:amanda/steel/steel24x8.S: 1128 820
+:amanda/steel/steel24x8.S: 1152 820
+:amanda/steel/steel24x8.S: 1176 820
+:amanda/steel/steel24x8.S: 1200 820
+:amanda/steel/steel24x8.S: 1224 820
+:amanda/steel/steel24x8.S: 1248 820
+:amanda/steel/steel24x8.S: 1272 820
+:amanda/steel/steel24x8.S: 1296 820
+:amanda/steel/steel24x8.S: 1320 820
+:amanda/steel/steel24x8.S: 1344 820
+:amanda/steel/steel24x8.S: 1368 820
+:amanda/steel/steel24x8.S: 1392 820
+:amanda/steel/steel24x8.S: 1416 820
+:amanda/steel/steel24x8.S: 1440 820
+:amanda/steel/steel24x8.S: 1464 820
+:amanda/steel/steel24x8.S: 1488 820
+:amanda/steel/steel24x8.S: 1512 820
+:amanda/steel/steel24x8.S: 1536 820
+:amanda/steel/steel24x8.S: 1560 820
+:amanda/steel/steel24x8.S: 1584 820
+:amanda/steel/steel24x8.S: 1608 820
+:amanda/steel/steel24x8.S: 1632 820
+:amanda/steel/steel24x8.S: 1656 820
+:amanda/steel/steel24x8.S: 1680 820
+:amanda/steel/steel24x8.S: 1704 820
+:amanda/steel/steel24x8.S: 1728 820
+:amanda/steel/steel24x8.S: 1752 820
+:amanda/steel/steel24x8.S: 1776 820
+:amanda/steel/steel24x8.S: 1800 820
+:amanda/steel/steel24x8.S: 1816 796 r
+:amanda/steel/steel24x8.S: 1816 772 r
+:amanda/steel/steel24x8.S: 912 796 r
+:amanda/steel/steel24x8.S: 912 772 r
+:amanda/steel/steel32x32.S: 1592 788
+:amanda/steel/steel32x32.S: 1592 756
+:amanda/steel/steel32x32.S: 1368 788
+:amanda/steel/steel32x32.S: 1368 756
+:raymanni/gore/bone_5: 1604 690 rrr
+:amanda/occult/skulls32x32: 1662 660
+:amanda/occult/skulls32x32: 1750 698 frr
+:amanda/occult/wax_details_drip_b: 1656 776 r
+:matt/earth/02: 1170 700 d
+:matt/earth/18: 1178 718
+:matt/earth/06: 946 674
+:amanda/forest/leaves_05: 1464 572
+:amanda/occult/skulls32x32: 1654 724
+:amanda/occult/skulls32x32: 1646 688 frrr
+:amanda/occult/skulls32x32: 1740 668 r
+:amanda/occult/skulls32x32: 1690 638 f
+:matt/goldmine/planksupport: 1688 320
+:matt/goldmine/plank: 1748 444 rrr
+:matt/goldmine/plank: 1748 572 rrr
+:amanda/occult/skulls32x32: 1710 646 rrr
+:amanda/occult/skulls32x32: 1754 714 frr
+:geoo/construction/rod_steel/straight_diagd32.S: 1366 472 frr
+:raymanni/lab/pipe_5: 1396 474
+:simon/oriental/culm_d_long: 1390 482
+:matt/goldmine/plankdiag: 1374 520
+:raymanni/lab/scen_7: 1498 424
+:geoo/construction/rod_steel/straight_diagd32.S: 1334 504 frr
+:matt/earth/04: 1282 512 r
+:simon/oriental/leaf2: 1784 180 f
+:geoo/construction/fence_rust_64x64: 1720 148
+:simon/oriental/bush1: 1736 206 rr
+:amanda/steel/steel8x16.S: 1724 240
+:matt/goldmine/plankdiag: 1680 214
+:simon/oriental/bush1: 1702 208 rr
+:simon/oriental/leaf2: 1686 176 rr
+:simon/oriental/leaf3: 1296 486 r
+:matt/goldmine/plankdiag: 1648 246
+:matt/goldmine/plankdiag: 1616 278
+:matt/goldmine/plankdiag: 1586 308
+:matt/goldmine/plankdiag: 1530 364
+:matt/goldmine/plankdiag: 1554 340
+:raymanni/lab/scen_8: 1592 324
+:matt/goldmine/plankdiag: 1498 396
+:matt/goldmine/plankdiag: 1524 370
+:matt/goldmine/plankdiag: 1466 428
+:matt/goldmine/plankdiag: 1492 402
+:matt/goldmine/plankdiag: 1436 458
+:matt/goldmine/plankdiag: 1404 490
+:simon/oriental/culm_d_long: 1656 216
+:simon/oriental/gate: 1690 256
+:simon/oriental/culm_d_long: 1434 438
+:simon/oriental/culm_d_long: 1478 394
+:simon/oriental/culm_d_long: 1524 348
+:matt/goldmine/plankdiag: 1632 262
+:matt/goldmine/plankdiag: 1600 294
+:matt/goldmine/plankdiag: 1626 268
+:matt/goldmine/plankdiag: 1570 324
+:matt/goldmine/plankdiag: 1538 356
+:simon/oriental/culm_d_long: 1568 304
+:simon/oriental/culm_d_long: 1612 260
+:simon/oriental/leaf2: 1493 365 frrr
+:raymanni/gore/goop_3: 1682 326
+:raymanni/gore/goop_4: 1764 310
+:raymanni/gore/eye: 1710 712 rr
+:raymanni/gore/goop_7: 1748 326
+:matt/earth/07: 1070 572
+:raymanni/lab/pipe_4: 1080 352
+:simon/oriental/bonsai: 992 380
+:geoo/construction/fence_rust_64x64: 946 756 d
+:geoo/construction/fence_rust_64x64: 946 694 d
+:geoo/construction/fence_rust_64x64: 946 632 d
+:simon/oriental/branch5: 1198 530 frrr
+:simon/oriental/branch7: 1256 548 r
+:simon/oriental/branch2: 1014 584
+:amanda/occult/scrawl_pentagram: 1728 756 d
+:matt/goldmine/02: 950 56
+:amanda/occult/skulls32x32: 978 40
+:matt/goldmine/07: 876 -26
+:matt/goldmine/planksupport2: 1706 38
+:matt/goldmine/09: 1736 -24 rr
+:matt/goldmine/planksupport2: 1610 46
+:matt/goldmine/07: 1552 -36 rr
+:matt/goldmine/planksupport2: 1152 46
+:matt/goldmine/03: 1060 24
+:matt/goldmine/00: 1186 -8
+:matt/goldmine/07: 1252 -106 r
+:matt/goldmine/planksupport3: 1342 62
+:matt/goldmine/planksupport3: 1390 62
+:amanda/occult/wax_details_drip_b: 1448 8 rrr
+:matt/goldmine/09: 1336 -12 frrr
+:simon/oriental/pebbles5: 1044 196
+:matt/goldmine/08: 894 142 r
+:matt/goldmine/03: 946 180
+:amanda/occult/wax_details_sunken_lix_b: 1016 162
+:matt/goldmine/00: 1080 128
+:matt/goldmine/planksupport3: 1202 190
+:simon/oriental/pebbles4: 1308 114 frr
+:raymanni/gore/tentacle_1: 1121 88 f
+:matt/goldmine/07: 1140 90
+:geoo/construction/fence_rust_64x64: 1720 116
+:matt/goldmine/10: 1704 90
+:matt/goldmine/06: 1732 96
+:matt/goldmine/05: 1324 90
+:matt/earth/28: 1204 250
+:matt/earth/27: 1302 256 frr
+:matt/goldmine/tracks: 1230 252
+:matt/goldmine/05: 1166 214
+:matt/goldmine/00: 1386 78
+:matt/goldmine/07: 1456 48
+:matt/earth/28: 986 256
+:matt/goldmine/tracks: 900 252
+:matt/goldmine/07: 994 202 f
+:matt/goldmine/03: 1568 86
+:matt/goldmine/tracks: 1388 252
+:matt/goldmine/04: 1318 122 rr
+:matt/goldmine/shovel: 1484 52 rrr
+:matt/goldmine/minecart: 1444 206
+:matt/earth/09: 1258 172
+:matt/earth/27: 1048 306
+:simon/oriental/pebbles4: 1454 70
+:amanda/occult/wax_details_sunken_lix: 1518 38
+:amanda/occult/wax_details_drip: 1040 64
+:matt/earth/18: 844 629
+:matt/earth/18: 824 629
+:matt/earth/10: 784 644 frrr
+:amanda/steel/steel24x8.S: 888 820 frr
+:matt/earth/10: 688 556 rrr
+:amanda/forest/bark_01: 328 772 fr
+:matt/goldmine/plank: 68 690 frrr
+:amanda/occult/wax_details_drip: 82 726 f
+:amanda/forest/stone_01: 8 740 fr
+:matt/earth/26: 354 702 frr
+:matt/earth/23: 390 726 frr
+:matt/earth/28: 422 712 frr
+:amanda/forest/bark_01: 232 772 r
+:amanda/forest/bark_06: 220 726 frr
+:amanda/forest/bark_06: 284 664 frr
+:simon/oriental/branch5: 523 582 fr
+:matt/earth/10: 349 620
+:simon/oriental/bush4: 661 802 frr
+:simon/oriental/pebbles2: 453 798 frrr
+:matt/earth/10: 493 718 rr
+:simon/oriental/bush3: 460 804 frr
+:simon/oriental/pebbles5: 511 786 frr
+:matt/earth/19: 526 664 frr
+:amanda/forest/bark_02: 328 588 frr
+:amanda/forest/bark_00: 456 742 rrr
+:amanda/forest/moss_00: 390 616 frr
+:amanda/steel/steel24x8.S: 872 836 frr
+:amanda/steel/steel24x8.S: 872 838 frr
+:amanda/steel/steel24x8.S: 872 836 frr
+:amanda/steel/steel24x8.S: 872 836 frr
+:amanda/steel/steel24x8.S: 864 820 frr
+:amanda/steel/steel24x8.S: 840 820 frr
+:amanda/steel/steel24x8.S: 816 820 frr
+:amanda/steel/steel24x8.S: 792 820 frr
+:matt/earth/01: 748 774 frr
+:amanda/steel/steel24x8.S: 768 820 frr
+:amanda/steel/steel24x8.S: 744 820 frr
+:amanda/steel/steel24x8.S: 720 820 frr
+:amanda/steel/steel24x8.S: 696 820 frr
+:amanda/steel/steel24x8.S: 672 820 frr
+:amanda/steel/steel24x8.S: 648 820 frr
+:amanda/steel/steel24x8.S: 624 820 frr
+:amanda/steel/steel24x8.S: 600 820 frr
+:amanda/steel/steel24x8.S: 576 820 frr
+:amanda/steel/steel24x8.S: 552 820 frr
+:amanda/steel/steel24x8.S: 528 820 frr
+:amanda/steel/steel24x8.S: 504 820 frr
+:amanda/steel/steel24x8.S: 480 820 frr
+:amanda/steel/steel24x8.S: 456 820 frr
+:amanda/steel/steel24x8.S: 432 820 frr
+:amanda/steel/steel24x8.S: 408 820 frr
+:amanda/steel/steel24x8.S: 384 820 frr
+:amanda/steel/steel24x8.S: 360 820 frr
+:amanda/steel/steel24x8.S: 336 820 frr
+:amanda/steel/steel24x8.S: 312 820 frr
+:amanda/steel/steel24x8.S: 288 820 frr
+:amanda/steel/steel24x8.S: 264 820 frr
+:amanda/steel/steel24x8.S: 240 820 frr
+:amanda/steel/steel24x8.S: 216 820 frr
+:amanda/steel/steel24x8.S: 192 820 frr
+:amanda/steel/steel24x8.S: 168 820 frr
+:amanda/steel/steel24x8.S: 144 820 frr
+:amanda/steel/steel24x8.S: 120 820 frr
+:amanda/steel/steel24x8.S: 96 820 frr
+:amanda/steel/steel24x8.S: 72 820 frr
+:amanda/steel/steel24x8.S: 48 820 frr
+:amanda/steel/steel24x8.S: 24 820 frr
+:amanda/steel/steel24x8.S: 0 820 frr
+:amanda/steel/steel24x8.S: 0 796 fr
+:amanda/steel/steel24x8.S: 0 772 fr
+:amanda/steel/steel24x8.S: 904 796 fr
+:amanda/steel/steel24x8.S: 904 772 fr
+:amanda/steel/steel32x32.S: 200 788 frr
+:amanda/steel/steel32x32.S: 200 756 frr
+:amanda/steel/steel32x32.S: 424 788 frr
+:amanda/steel/steel32x32.S: 424 756 frr
+:raymanni/gore/bone_5: 156 690 frrr
+:amanda/occult/skulls32x32: 98 660 frr
+:amanda/occult/skulls32x32: 10 698
+:amanda/occult/wax_details_drip_b: 133 776 fr
+:matt/earth/02: 590 700 frrd
+:matt/earth/18: 611 718 frr
+:matt/earth/06: 837 674 frr
+:amanda/forest/leaves_05: 312 572 frr
+:amanda/occult/skulls32x32: 106 724 frr
+:amanda/occult/skulls32x32: 114 688 rrr
+:amanda/occult/skulls32x32: 20 668 fr
+:amanda/occult/skulls32x32: 70 638 rr
+:matt/goldmine/planksupport: 8 320 frr
+:matt/goldmine/plank: 68 444 frrr
+:matt/goldmine/plank: 68 572 frrr
+:amanda/occult/skulls32x32: 50 646 frrr
+:amanda/occult/skulls32x32: 6 714
+:geoo/construction/rod_steel/straight_diagd32.S: 418 470
+:raymanni/lab/pipe_3: 396 474
+:simon/oriental/culm_d_long: 385 482 frr
+:matt/goldmine/plankdiag: 402 520 frr
+:raymanni/lab/scen_7: 294 424 frr
+:geoo/construction/rod_steel/straight_diagd32.S: 450 502
+:matt/earth/04: 376 512 fr
+:simon/oriental/leaf2: 6 180 rr
+:geoo/construction/fence_rust_64x64: 40 148 frr
+:simon/oriental/bush1: 24 206 f
+:amanda/steel/steel8x16.S: 92 240
+:matt/goldmine/plankdiag: 96 214 frr
+:simon/oriental/bush1: 58 208 f
+:simon/oriental/leaf2: 104 176 f
+:simon/oriental/leaf3: 500 486 fr
+:matt/goldmine/plankdiag: 128 246 frr
+:matt/goldmine/plankdiag: 160 278 frr
+:matt/goldmine/plankdiag: 190 308 frr
+:matt/goldmine/plankdiag: 246 364 frr
+:matt/goldmine/plankdiag: 222 340 frr
+:raymanni/lab/scen_8: 200 324 frr
+:matt/goldmine/plankdiag: 278 396 frr
+:matt/goldmine/plankdiag: 252 370 frr
+:matt/goldmine/plankdiag: 310 428 frr
+:matt/goldmine/plankdiag: 284 402 frr
+:matt/goldmine/plankdiag: 340 458 frr
+:matt/goldmine/plankdiag: 372 490 frr
+:simon/oriental/culm_d_long: 119 216 frr
+:simon/oriental/gate: 6 256 frr
+:simon/oriental/culm_d_long: 341 438 frr
+:simon/oriental/culm_d_long: 297 394 frr
+:simon/oriental/culm_d_long: 251 348 frr
+:matt/goldmine/plankdiag: 144 262 frr
+:matt/goldmine/plankdiag: 176 294 frr
+:matt/goldmine/plankdiag: 150 268 frr
+:matt/goldmine/plankdiag: 206 324 frr
+:matt/goldmine/plankdiag: 238 356 frr
+:simon/oriental/culm_d_long: 207 304 frr
+:simon/oriental/culm_d_long: 163 260 frr
+:simon/oriental/leaf2: 296 365 rrr
+:raymanni/gore/goop_3: 78 326 frr
+:raymanni/gore/goop_4: 1820 310 frr
+:raymanni/gore/eye: 82 712 f
+:raymanni/gore/goop_7: 60 326 frr
+:matt/earth/07: 703 572 frr
+:raymanni/lab/pipe_6: 712 352
+:simon/oriental/bonsai: 605 380 frr
+:geoo/construction/fence_rust_64x64: 814 756 frrd
+:geoo/construction/fence_rust_64x64: 814 694 frrd
+:geoo/construction/fence_rust_64x64: 814 632 frrd
+:simon/oriental/branch5: 563 530 rrr
+:simon/oriental/branch7: 508 548 fr
+:simon/oriental/branch2: 777 584 frr
+:amanda/occult/scrawl_pentagram: 46 756 frrd
+:matt/goldmine/02: 810 56 frr
+:amanda/occult/skulls32x32: 782 40 frr
+:matt/goldmine/07: 735 -26 frr
+:matt/goldmine/planksupport2: 54 38 frr
+:matt/goldmine/09: 7 -24 f
+:matt/goldmine/planksupport2: 150 46 frr
+:matt/goldmine/07: 59 -36 f
+:raymanni/gore/tentacle_1: 664 88 rr
+:matt/goldmine/planksupport2: 608 46 frr
+:matt/goldmine/03: 614 24 frr
+:matt/goldmine/00: 558 -8 frr
+:matt/goldmine/07: 460 -106 fr
+:matt/goldmine/planksupport3: 450 62 frr
+:matt/goldmine/planksupport3: 402 62 frr
+:amanda/occult/wax_details_drip_b: 341 8 frrr
+:matt/goldmine/09: 372 -12 rrr
+:simon/oriental/pebbles5: 699 196 frr
+:matt/goldmine/08: 809 142 fr
+:matt/goldmine/03: 728 180 frr
+:amanda/occult/wax_details_sunken_lix_b: 776 162 frr
+:matt/goldmine/00: 664 128 frr
+:matt/goldmine/planksupport3: 590 190 frr
+:simon/oriental/pebbles4: 489 114
+:matt/goldmine/07: 471 90 frr
+:geoo/construction/fence_rust_64x64: 40 116 frr
+:matt/goldmine/10: 85 90 frr
+:matt/goldmine/06: 12 96 frr
+:matt/goldmine/05: 435 90 frr
+:matt/earth/28: 588 250 frr
+:matt/earth/27: 459 256
+:matt/goldmine/tracks: 474 252 frr
+:matt/goldmine/05: 593 214 frr
+:matt/goldmine/00: 358 78 frr
+:matt/goldmine/07: 155 48 frr
+:matt/earth/28: 806 256 frr
+:matt/goldmine/tracks: 804 252 frr
+:matt/goldmine/07: 617 202 rr
+:matt/goldmine/03: 106 86 frr
+:matt/goldmine/tracks: 316 252 frr
+:matt/goldmine/04: 384 122 f
+:matt/goldmine/shovel: 324 52 frrr
+:matt/goldmine/minecart: 325 206 frr
+:matt/earth/09: 511 172 frr
+:matt/earth/27: 713 306 frr
+:simon/oriental/pebbles4: 343 70 frr
+:amanda/occult/wax_details_sunken_lix: 277 38 frr
+:amanda/occult/wax_details_drip: 752 64 frr
+:raymanni/toys/soldier_3: 624 448
+:raymanni/toys/soldier_3: 1148 448 frr
+:raymanni/toys/cracker: 888 708
+:amanda/steel/steel24x8.S: 1716 240
+:amanda/steel/steel8x16.S: 1776 240
+:amanda/steel/steel24x8.S: 1768 240
+:amanda/steel/steel8x16.S: 40 240
+:amanda/steel/steel24x8.S: 32 240
+:amanda/steel/steel24x8.S: 84 240
+:matt/goldmine/05: 104 24 frrrd
+:matt/goldmine/05: 1660 24 rrrd
+:matt/goldmine/05: 1656 24 frrrd
+:matt/goldmine/05: 108 24 rrrd

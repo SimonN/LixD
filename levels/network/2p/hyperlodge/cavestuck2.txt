@@ -1,0 +1,239 @@
+$BUILT 2024-07-18 11:47:56
+$AUTHOR Hyperlodge
+$ENGLISH Cavestuck 2
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1016
+#SIZE_Y 592
+#TORUS_X 1
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 96
+#BACKGROUND_BLUE 115
+
+#SECONDS 150
+#INITIAL 120
+#SPAWN_INTERVAL 75
+
+#WALKER 10
+#RUNNER 10
+#FLOATER 10
+#EXPLODER2 -1
+#BLOCKER -1
+#BUILDER 10
+#PLATFORMER -1
+#JUMPER 10
+#BATTER -1
+#CUBER 10
+
+:matt/goldmine/Hatch.H: 118 178
+:matt/goldmine/Hatch.H: 834 178 r
+
+:matt/goldmine/Goal.G: 884 392
+:matt/goldmine/Goal.G: 68 392
+
+:raymanni/gore/acid.W: 28 560
+:raymanni/gore/acid.W: 60 560
+:raymanni/gore/acid.W: 92 560
+:raymanni/gore/acid.W: 124 560
+:raymanni/gore/acid.W: 156 560
+:raymanni/gore/acid.W: 188 560
+:raymanni/gore/acid.W: 220 560
+:raymanni/gore/acid.W: 252 560
+:raymanni/gore/acid.W: 284 560
+:raymanni/gore/acid.W: 316 560
+:raymanni/gore/acid.W: 348 560
+:raymanni/gore/acid.W: 380 560
+:raymanni/gore/acid.W: 412 560
+:raymanni/gore/acid.W: 444 560
+:raymanni/gore/acid.W: 476 560
+:raymanni/gore/acid.W: 956 560
+:raymanni/gore/acid.W: 924 560
+:raymanni/gore/acid.W: 892 560
+:raymanni/gore/acid.W: 860 560
+:raymanni/gore/acid.W: 828 560
+:raymanni/gore/acid.W: 796 560
+:raymanni/gore/acid.W: 764 560
+:raymanni/gore/acid.W: 732 560
+:raymanni/gore/acid.W: 700 560
+:raymanni/gore/acid.W: 668 560
+:raymanni/gore/acid.W: 636 560
+:raymanni/gore/acid.W: 604 560
+:raymanni/gore/acid.W: 572 560
+:raymanni/gore/acid.W: 540 560
+:raymanni/gore/acid.W: 508 560
+
+:proxima/flame.F: 728 248
+:proxima/flame.F: 248 248
+:proxima/flame.F: 936 344
+:proxima/flame.F: 32 344
+
+:raymanni/lab/elev_up.T: 980 560
+:raymanni/lab/elev_up.T: 980 528
+:raymanni/lab/elev_up.T: 980 496
+:raymanni/lab/elev_up.T: 980 464
+:raymanni/lab/elev_up.T: 980 432
+:raymanni/lab/elev_up.T: 980 400
+:raymanni/lab/elev_up.T: 980 368
+:raymanni/lab/elev_up.T: 980 336
+:raymanni/lab/elev_up.T: 980 304
+:raymanni/lab/elev_up.T: 980 272
+:raymanni/lab/elev_up.T: 980 240
+:raymanni/lab/elev_up.T: 980 208
+:raymanni/lab/elev_up.T: 980 176
+:raymanni/lab/elev_up.T: 980 144
+:raymanni/lab/elev_up.T: 980 112
+:raymanni/lab/elev_up.T: 980 80
+:raymanni/lab/elev_up.T: 4 368
+:raymanni/lab/elev_up.T: 4 336
+:raymanni/lab/elev_up.T: 4 304
+:raymanni/lab/elev_up.T: 4 272
+:raymanni/lab/elev_up.T: 4 240
+:raymanni/lab/elev_up.T: 4 208
+:raymanni/lab/elev_up.T: 4 176
+:raymanni/lab/elev_up.T: 4 144
+:raymanni/lab/elev_up.T: 4 112
+:raymanni/lab/elev_up.T: 4 80
+:raymanni/lab/elev_up.T: 4 496
+:raymanni/lab/elev_up.T: 4 464
+:raymanni/lab/elev_up.T: 4 432
+:raymanni/lab/elev_up.T: 4 400
+:raymanni/lab/elev_up.T: 4 560
+:raymanni/lab/elev_up.T: 4 528
+:raymanni/lab/launcher_left.T: 4 48
+:raymanni/lab/launcher_right.T: 980 48
+
+:proxima/tile/green3: 28 512
+:proxima/tile/green3: 92 512
+:matt/beach/daytime/04: 1000 388
+:matt/earth/04: 116 344
+:proxima/tile/green3: 156 512
+:matt/beach/daytime/05: 92 368
+:proxima/tile/green3: 284 520
+:proxima/tile/green3: 220 512
+:proxima/tile/green3: 348 520
+:matt/beach/daytime/06: 140 448
+:matt/goldmine/10: 308 496
+:matt/beach/daytime/14: 332 432
+:matt/beach/daytime/15: 88 336
+:matt/beach/daytime/02: 188 336
+:amanda/occult/skulls32x32: 188 408 d
+:matt/beach/daytime/00: 276 384 frr
+:matt/goldmine/06: 316 400
+:matt/beach/daytime/05: 145 169
+:matt/winter/10: 92 48
+:matt/earth/02: 122 89
+:matt/beach/daytime/06: 188 224
+:raymanni/holiday/plank_long: 444 288
+:raymanni/holiday/plank_long: 444 304
+:matt/beach/daytime/14: 380 208
+:matt/beach/daytime/15: 122 336
+:matt/beach/daytime/01: 252 328
+:matt/winter/10: 188 48 frr
+$BEGIN_TILE_GROUP 0
+:raymanni/holiday/plank_long: 0 0
+:raymanni/holiday/plank_long: 0 16
+:raymanni/holiday/plank_long: 0 32
+:raymanni/holiday/plank_long: 0 48
+$END_TILE_GROUP
+:Group-0: 380 128
+:matt/winter/10: 316 48
+:matt/beach/daytime/00: 340 136
+:raymanni/holiday/plank_long: 444 470
+:raymanni/holiday/plank_long: 444 486
+:proxima/tile/green3: 444 520
+:matt/goldmine/08: 372 464
+:matt/beach/daytime/04: 28 160
+:matt/goldmine/06: 1008 329
+:matt/goldmine/09: 140 208
+:matt/goldmine/02: 436 168
+:matt/earth/14: 35 378
+:matt/goldmine/01: 20 200
+:matt/earth/14: 276 264 r
+:geoo/nopales/nopal_01: 252 256 d
+:matt/goldmine/03: 172 288
+:raymanni/holiday/plank_long: 444 362
+:raymanni/holiday/plank_long: 444 378
+:matt/goldmine/04: 332 228
+:amanda/occult/skulls32x32: 156 480 rrd
+:matt/goldmine/05: 172 512
+:matt/beach/daytime/01: 236 544
+:matt/earth/11: 236 136
+:matt/beach/daytime/02: 84 72
+:amanda/occult/skulls32x32: 172 448 rd
+:matt/goldmine/07: 988 424
+:amanda/occult/wax_details_drip: 292 384 d
+:matt/earth/14: 274 418 r
+:amanda/occult/wax_details_drip: 292 416 d
+:geoo/nopales/nopal_11: 244 224 d
+:matt/goldmine/06: 444 512 frr
+:matt/winter/03: 124 112 frr
+:matt/winter/03: 244 120
+:proxima/tile/green3: 924 512 frr
+:proxima/tile/green3: 860 512 frr
+:matt/beach/daytime/04: 910 388 frr
+:matt/earth/04: 778 344 frr
+:proxima/tile/green3: 796 512 frr
+:matt/beach/daytime/05: 852 368 frr
+:proxima/tile/green3: 668 520 frr
+:proxima/tile/green3: 732 512 frr
+:proxima/tile/green3: 604 520 frr
+:matt/beach/daytime/06: 663 448 frr
+:matt/goldmine/10: 673 496 frr
+:matt/beach/daytime/14: 603 432 frr
+:matt/beach/daytime/02: 764 336 frr
+:amanda/occult/skulls32x32: 764 408 frrd
+:matt/beach/daytime/00: 660 384
+:matt/earth/14: 686 418 fr
+:matt/goldmine/06: 620 400 frr
+:matt/winter/10: 708 48 frr
+:matt/beach/daytime/05: 799 169 frr
+:matt/earth/02: 830 89 frr
+:matt/beach/daytime/06: 615 224 frr
+:matt/beach/daytime/14: 555 208 frr
+:matt/beach/daytime/01: 700 328 frr
+:Group-0: 508 128 frr
+:matt/winter/10: 484 48 frr
+:matt/winter/10: 612 48
+:matt/beach/daytime/00: 596 136 frr
+:proxima/tile/green3: 508 520
+:matt/goldmine/08: 539 464 frr
+:matt/beach/daytime/04: 866 160 frr
+:matt/goldmine/09: 795 208 frr
+:matt/goldmine/02: 516 168 frr
+:matt/earth/14: 937 378 frr
+:matt/goldmine/01: 932 200 frr
+:matt/earth/14: 683 264 fr
+:geoo/nopales/nopal_01: 735 256 frrd
+:matt/goldmine/03: 694 288 frr
+:matt/goldmine/04: 562 228 frr
+:amanda/occult/skulls32x32: 796 480 fd
+:matt/goldmine/05: 779 512 frr
+:matt/beach/daytime/01: 716 544 frr
+:matt/earth/11: 718 136 frr
+:matt/beach/daytime/02: 868 72 frr
+:amanda/occult/skulls32x32: 780 448 frd
+:matt/goldmine/07: 833 424 frr
+:amanda/occult/wax_details_drip: 692 384 frrd
+:amanda/occult/wax_details_drip: 692 416 frrd
+:geoo/nopales/nopal_11: 742 224 frrd
+:matt/goldmine/06: 492 512
+:matt/winter/03: 742 112
+:matt/winter/03: 622 120 frr
+:matt/winter/18: 508 120 d
+:matt/goldmine/10: 380 400
+:matt/goldmine/10: 604 400 frr
+:matt/goldmine/06: 396 408
+:matt/goldmine/10: 460 408
+:matt/goldmine/06: 540 408 frr
+:matt/goldmine/10: 521 408 frr
+:matt/winter/18: 473 120 frrd
+:matt/goldmine/06: 944 329 frr
+:matt/winter/18: 512 144 d
+:matt/winter/18: 469 144 frrd
+:matt/winter/18: 516 96 d
+:matt/winter/18: 464 96 frrd
+:matt/beach/daytime/15: 58 330
+:matt/beach/daytime/15: 893 336 frr
+:matt/beach/daytime/15: 859 336 frr
+:matt/beach/daytime/15: 923 330 frr

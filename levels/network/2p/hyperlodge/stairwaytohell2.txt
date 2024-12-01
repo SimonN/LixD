@@ -1,0 +1,155 @@
+$BUILT 2024-07-18 15:37:18
+$AUTHOR Hyperlodge
+$ENGLISH Stairway to Hell 2
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 896
+#SIZE_Y 592
+#BACKGROUND_RED 96
+#BACKGROUND_GREEN 127
+#BACKGROUND_BLUE 159
+
+#SECONDS 90
+#INITIAL 180
+#SPAWN_INTERVAL 60
+
+#WALKER 1
+#RUNNER 1
+#CLIMBER 1
+#FLOATER 1
+#EXPLODER2 -1
+#BLOCKER 1
+#BUILDER -1
+#PLATFORMER 1
+#BASHER 1
+#MINER 1
+#DIGGER 1
+#JUMPER 1
+#BATTER 1
+#CUBER -1
+
+:raymanni/toys/hatch.H: 16 0
+:raymanni/toys/hatch.H: 815 0 r
+
+:proxima/tile/goal.G: 448 0
+:proxima/tile/goal.G: 384 0
+
+:geoo/abstract/tbeam_down.T: 32 400
+:geoo/abstract/tbeam_right.T: 512 400
+:geoo/abstract/tbeam_left.T: 352 400
+:geoo/abstract/tbeam_left.T: 320 400
+:geoo/abstract/tbeam_left.T: 288 400
+:geoo/abstract/tbeam_left.T: 256 400
+:geoo/abstract/tbeam_left.T: 224 400
+:geoo/abstract/tbeam_left.T: 192 400
+:geoo/abstract/tbeam_left.T: 160 400
+:geoo/abstract/tbeam_left.T: 128 400
+:geoo/abstract/tbeam_left.T: 96 400
+:geoo/abstract/tbeam_left.T: 64 400
+:geoo/abstract/tbeam_down.T: 832 400
+:geoo/abstract/tbeam_down.T: 512 448
+:geoo/abstract/tbeam_right.T: 544 400
+:geoo/abstract/tbeam_right.T: 576 400
+:geoo/abstract/tbeam_right.T: 608 400
+:geoo/abstract/tbeam_right.T: 640 400
+:geoo/abstract/tbeam_right.T: 672 400
+:geoo/abstract/tbeam_right.T: 704 400
+:geoo/abstract/tbeam_right.T: 736 400
+:geoo/abstract/tbeam_right.T: 768 400
+:geoo/abstract/tbeam_right.T: 800 400
+:geoo/abstract/tbeam_right.T: 32 448
+:geoo/abstract/tbeam_right.T: 64 448
+:geoo/abstract/tbeam_right.T: 96 448
+:geoo/abstract/tbeam_right.T: 128 448
+:geoo/abstract/tbeam_right.T: 160 448
+:geoo/abstract/tbeam_right.T: 192 448
+:geoo/abstract/tbeam_right.T: 224 448
+:geoo/abstract/tbeam_right.T: 256 448
+:geoo/abstract/tbeam_right.T: 288 448
+:geoo/abstract/tbeam_right.T: 320 448
+:geoo/abstract/tbeam_down.T: 352 448
+:geoo/abstract/tbeam_left.T: 832 448
+:geoo/abstract/tbeam_left.T: 800 448
+:geoo/abstract/tbeam_left.T: 768 448
+:geoo/abstract/tbeam_left.T: 736 448
+:geoo/abstract/tbeam_left.T: 704 448
+:geoo/abstract/tbeam_left.T: 672 448
+:geoo/abstract/tbeam_left.T: 640 448
+:geoo/abstract/tbeam_left.T: 608 448
+:geoo/abstract/tbeam_left.T: 576 448
+:geoo/abstract/tbeam_left.T: 544 448
+:geoo/abstract/tbeam_left.T: 352 496
+:geoo/abstract/tbeam_left.T: 320 496
+:geoo/abstract/tbeam_left.T: 288 496
+:geoo/abstract/tbeam_left.T: 256 496
+:geoo/abstract/tbeam_left.T: 224 496
+:geoo/abstract/tbeam_left.T: 192 496
+:geoo/abstract/tbeam_left.T: 160 496
+:geoo/abstract/tbeam_left.T: 128 496
+:geoo/abstract/tbeam_left.T: 96 496
+:geoo/abstract/tbeam_left.T: 64 496
+:geoo/abstract/tbeam_right.T: 512 496
+:geoo/abstract/tbeam_right.T: 544 496
+:geoo/abstract/tbeam_right.T: 576 496
+:geoo/abstract/tbeam_right.T: 608 496
+:geoo/abstract/tbeam_right.T: 640 496
+:geoo/abstract/tbeam_right.T: 672 496
+:geoo/abstract/tbeam_right.T: 704 496
+:geoo/abstract/tbeam_right.T: 736 496
+:geoo/abstract/tbeam_right.T: 768 496
+:geoo/abstract/tbeam_right.T: 800 496
+
+:geoo/steel/64x32o.S: 320 560
+:geoo/steel/64x32o.S: 384 560
+:geoo/steel/64x32o.S: 192 560
+:geoo/steel/64x32o.S: 256 560
+:geoo/steel/64x32o.S: 64 560
+:geoo/steel/64x32o.S: 128 560
+:geoo/steel/64x32o.S: 576 560
+:geoo/steel/64x32o.S: 640 560
+:geoo/steel/64x32o.S: 448 560
+:geoo/steel/64x32o.S: 512 560
+:geoo/steel/64x32o.S: 0 560
+:geoo/steel/64x32o.S: 768 560
+:geoo/steel/64x32o.S: 832 560
+:geoo/steel/64x32o.S: 704 560
+:geoo/steel/32x64o.S: 384 368
+:geoo/steel/32x64o.S: 480 368
+:geoo/steel/32x64o.S: 864 432
+:geoo/steel/32x64o.S: 0 432
+:geoo/steel/32x64o.S: 0 368
+:geoo/steel/32x64o.S: 864 368
+:geoo/construction/fence_rust_64x64: 384 64
+:geoo/construction/fence_rust_64x64: 448 64
+:geoo/construction/fence_rust_64x64: 384 128
+:geoo/construction/fence_rust_64x64: 448 128
+:geoo/construction/fence_rust_64x64: 384 192
+:geoo/construction/fence_rust_64x64: 448 192
+:geoo/construction/fence_rust_64x64: 384 256
+:geoo/construction/fence_rust_64x64: 448 256
+:geoo/steel/32x64o.S: 0 496
+:geoo/steel/32x64o.S: 864 496
+$BEGIN_TILE_GROUP 0
+:geoo/construction/concrete/podium_16: 0 0 rr
+:geoo/construction/concrete/podium_16: 0 16 frr
+$END_TILE_GROUP
+:Group-0: 32 48
+:Group-0: 48 80
+:Group-0: 64 112
+:Group-0: 80 144
+:Group-0: 96 176
+:Group-0: 112 208
+:Group-0: 128 240
+:Group-0: 144 272
+:Group-0: 160 304
+:Group-0: 176 336
+:Group-0: 832 48 frr
+:Group-0: 816 80 frr
+:Group-0: 800 112 frr
+:Group-0: 784 144 frr
+:Group-0: 768 176 frr
+:Group-0: 752 208 frr
+:Group-0: 736 240 frr
+:Group-0: 720 272 frr
+:Group-0: 704 304 frr
+:Group-0: 688 336 frr

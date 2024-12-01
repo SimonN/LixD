@@ -1,0 +1,280 @@
+$BUILT 2022-06-25 14:13:47
+$AUTHOR Hyperlodge
+$ENGLISH Happy Merry
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1152
+#SIZE_Y 656
+#BACKGROUND_RED 32
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 32
+
+#SECONDS 60
+#INITIAL 100
+#SPAWN_INTERVAL 25
+
+#WALKER -1
+#RUNNER -1
+#CLIMBER -1
+#FLOATER -1
+#EXPLODER2 -1
+#BLOCKER -1
+#BUILDER -1
+#PLATFORMER -1
+#BASHER -1
+#MINER -1
+#DIGGER -1
+#JUMPER -1
+#BATTER -1
+#CUBER -1
+
+:raymanni/holiday/hatch.H: 128 336
+:raymanni/holiday/hatch.H: 960 336 r
+
+:raymanni/holiday/goal.G: 896 304
+:raymanni/holiday/goal.G: 192 304
+
+:proxima/flame.F: 556 319
+
+:geoo/construction/spring_fast.T: 24 590
+:geoo/construction/spring_fast.T: 1096 590
+
+:geoo/construction/steam_up.T: 720 528
+:geoo/construction/steam_up.T: 416 528
+
+:geoo/steel/silhouette_32x64.S: 256 304
+:geoo/steel/silhouette_32x64.S: 256 368
+:matt/goldmine/plankdiag2: 272 456
+:matt/winter/07: 480 152 r
+:geoo/steel/silhouette_32x64.S: 256 432
+:geoo/steel/silhouette_32x64.S: 192 384 r
+:geoo/steel/silhouette_32x64.S: 224 144 r
+:geoo/steel/silhouette_32x64.S: 96 144 r
+:geoo/steel/silhouette_32x64.S: 256 176
+:geoo/steel/silhouette_32x64.S: 96 304
+:geoo/steel/silhouette_32x64.S: 96 368
+:geoo/steel/silhouette_32x64.S: 96 432
+:geoo/steel/silhouette_32x64.S: 96 176
+:geoo/steel/silhouette_32x64.S: 256 240
+:geoo/steel/silhouette_32x64.S: 96 240
+:geoo/steel/silhouette_32x64.S: 96 496
+:geoo/steel/silhouette_32x64.S: 0 528
+:geoo/steel/silhouette_32x64.S: 416 592 r
+:geoo/steel/silhouette_32x64.S: 352 592 r
+:geoo/steel/silhouette_32x64.S: 288 592 r
+:geoo/steel/silhouette_32x64.S: 224 592 r
+:matt/bricks/03: 160 560
+:matt/bricks/02: 32 624
+:matt/bricks/02: 176 624
+:matt/bricks/02: 256 624
+:matt/bricks/02: 400 624
+:matt/bricks/02: 320 624
+:matt/bricks/01: 160 624 r
+:matt/bricks/01: 240 624 r
+:matt/bricks/02: 128 560 r
+:matt/bricks/03: 224 528
+:matt/bricks/02: 224 496
+:matt/bricks/03: 128 496
+:matt/bricks/02: 192 496 r
+:matt/bricks/01: 384 624 r
+:matt/bricks/01: 464 624 r
+:matt/bricks/03: 192 432
+:matt/bricks/01: 224 416
+:matt/bricks/01: 192 416
+:matt/bricks/02: 128 416
+:matt/bricks/02: 128 464
+:matt/bricks/01: 128 448
+:matt/bricks/01: 160 448
+:matt/bricks/02: 128 384
+:matt/bricks/02: 192 176
+:matt/bricks/02: 128 176
+:matt/bricks/01: 160 160
+:matt/bricks/01: 192 144
+:matt/bricks/01: 192 160
+:matt/bricks/01: 160 144
+:matt/bricks/01: 176 128
+:matt/bricks/01: 176 112
+:matt/bricks/02: 160 64
+:geoo/steel/silhouette_32x32.S: 264 112
+:geoo/steel/silhouette_32x32.S: 88 112
+:matt/bricks/01: 176 96
+:matt/bricks/02: 96 624
+:geoo/steel/silhouette_32x64.S: 0 590
+:geoo/steel/silhouette_32x64.S: 864 304 frr
+:geoo/steel/silhouette_32x64.S: 864 368 frr
+:matt/goldmine/plankdiag2: 832 456 frr
+:geoo/steel/silhouette_32x64.S: 864 432 frr
+:geoo/steel/silhouette_32x64.S: 896 384 fr
+:geoo/steel/silhouette_32x64.S: 864 144 fr
+:geoo/steel/silhouette_32x64.S: 992 144 fr
+:geoo/steel/silhouette_32x64.S: 864 176 frr
+:geoo/steel/silhouette_32x64.S: 1024 304 frr
+:geoo/steel/silhouette_32x64.S: 1024 368 frr
+:geoo/steel/silhouette_32x64.S: 1024 432 frr
+:geoo/steel/silhouette_32x64.S: 1024 176 frr
+:geoo/steel/silhouette_32x64.S: 864 240 frr
+:geoo/steel/silhouette_32x64.S: 1024 240 frr
+:geoo/steel/silhouette_32x64.S: 1024 496 frr
+:geoo/steel/silhouette_32x64.S: 1120 528 frr
+:geoo/steel/silhouette_32x64.S: 672 592 fr
+:geoo/steel/silhouette_32x64.S: 736 592 fr
+:geoo/steel/silhouette_32x64.S: 800 592 fr
+:geoo/steel/silhouette_32x64.S: 864 592 fr
+:matt/bricks/03: 928 560 frr
+:matt/bricks/02: 1056 624 frr
+:matt/bricks/02: 912 624 frr
+:matt/bricks/02: 832 624 frr
+:matt/bricks/02: 688 624 frr
+:matt/bricks/02: 768 624 frr
+:matt/bricks/01: 976 624 fr
+:matt/bricks/01: 896 624 fr
+:matt/bricks/02: 992 560 r
+:matt/bricks/03: 864 528 frr
+:matt/bricks/02: 864 496 frr
+:matt/bricks/03: 960 496 frr
+:matt/bricks/02: 928 496 fr
+:matt/bricks/01: 752 624 fr
+:matt/bricks/01: 672 624 fr
+:matt/bricks/03: 896 432 frr
+:matt/bricks/01: 896 416 frr
+:matt/bricks/01: 928 416 frr
+:matt/bricks/02: 960 416 frr
+:matt/bricks/02: 960 464 frr
+:matt/bricks/01: 992 448 frr
+:matt/bricks/01: 960 448 frr
+:matt/bricks/02: 960 384 frr
+:matt/bricks/02: 896 176 frr
+:matt/bricks/02: 960 176 frr
+:matt/bricks/01: 960 160 frr
+:matt/bricks/01: 928 144 frr
+:matt/bricks/01: 928 160 frr
+:matt/bricks/01: 960 144 frr
+:matt/bricks/01: 944 128 frr
+:matt/bricks/01: 944 112 frr
+:matt/bricks/02: 928 64 frr
+:geoo/steel/silhouette_32x32.S: 856 112 frr
+:geoo/steel/silhouette_32x32.S: 1032 112 frr
+:matt/bricks/01: 944 96 frr
+:matt/bricks/02: 992 624 frr
+:geoo/steel/silhouette_32x64.S: 1120 590 frr
+:matt/bricks/02: 608 624 frr
+:matt/bricks/02: 480 624
+:matt/bricks/01: 544 624 r
+:matt/bricks/01: 592 624 fr
+:matt/bricks/01: 560 640
+:matt/bricks/01: 560 624
+:geoo/steel/silhouette_32x64.S: 544 592 r
+:geoo/steel/silhouette_32x64.S: 480 592 r
+:geoo/steel/silhouette_32x64.S: 608 592 r
+:matt/steel/16x32.S: 416 560
+:raymanni/lab/pipe_7: 416 560 rr
+:matt/steel/16x32.S: 720 560
+:raymanni/lab/pipe_7: 720 560 rr
+:matt/goldmine/plank: 288 584
+:matt/goldmine/plank: 736 584
+:matt/goldmine/plankdiag2: 368 552
+:matt/goldmine/plankdiag2: 336 520
+:matt/goldmine/plankdiag2: 304 488
+:matt/goldmine/plank: 288 576
+:matt/goldmine/plankdiag2: 736 552 frr
+:matt/goldmine/plankdiag2: 768 520 frr
+:matt/goldmine/plankdiag2: 800 488 frr
+:matt/goldmine/plank: 736 576 frr
+:geoo/construction/rod_rust/straight32: 88 144 rrr
+:geoo/construction/rod_rust/straight32: 88 176 rrr
+:geoo/construction/rod_rust/straight32: 88 208 rrr
+:geoo/construction/rod_rust/straight32: 88 240 rrr
+:geoo/construction/rod_rust/straight32: 88 272 rrr
+:geoo/construction/rod_rust/straight32: 88 304 rrr
+:geoo/construction/rod_rust/straight32: 88 336 rrr
+:geoo/construction/rod_rust/straight32: 88 368 rrr
+:geoo/construction/rod_rust/straight32: 88 400 rrr
+:geoo/construction/rod_rust/straight32: 88 432 rrr
+:geoo/construction/rod_rust/straight32: 88 464 rrr
+:geoo/construction/rod_rust/straight32: 88 496 rrr
+:geoo/construction/rod_rust/straight32: 88 528 rrr
+:geoo/construction/rod_rust/straight32: 88 560 rrr
+:geoo/construction/rod_rust/link_h_dd: 84 592 r
+:geoo/construction/rod_rust/straight32: 1056 144 frrr
+:geoo/construction/rod_rust/straight32: 1056 176 frrr
+:geoo/construction/rod_rust/straight32: 1056 208 frrr
+:geoo/construction/rod_rust/straight32: 1056 240 frrr
+:geoo/construction/rod_rust/straight32: 1056 272 frrr
+:geoo/construction/rod_rust/straight32: 1056 304 frrr
+:geoo/construction/rod_rust/straight32: 1056 336 frrr
+:geoo/construction/rod_rust/straight32: 1056 368 frrr
+:geoo/construction/rod_rust/straight32: 1056 400 frrr
+:geoo/construction/rod_rust/straight32: 1056 432 frrr
+:geoo/construction/rod_rust/straight32: 1056 464 frrr
+:geoo/construction/rod_rust/straight32: 1056 496 frrr
+:geoo/construction/rod_rust/straight32: 1056 528 frrr
+:geoo/construction/rod_rust/straight32: 1056 560 frrr
+:geoo/construction/rod_rust/link_h_dd: 1056 592 fr
+:matt/bricks/02: 1024 560 fr
+:matt/bricks/02: 96 560 fr
+:matt/winter/06: 288 152 r
+:matt/winter/06: 352 152 r
+:matt/winter/06: 416 152 r
+:matt/winter/07: 608 152 fr
+:matt/winter/06: 800 152 fr
+:matt/winter/06: 736 152 fr
+:matt/winter/06: 672 152 fr
+:raymanni/holiday/garland: 288 168
+:raymanni/holiday/garland: 352 168
+:raymanni/holiday/garland: 416 168
+:raymanni/holiday/garland: 672 168
+:raymanni/holiday/garland: 736 168
+:raymanni/holiday/garland: 800 168
+:raymanni/holiday/bauble_ruby: 528 192
+:raymanni/holiday/bauble_string: 528 160
+:raymanni/holiday/bauble_string: 592 160
+:raymanni/holiday/bauble_navy: 592 192
+:raymanni/holiday/bauble_string: 176 208
+:raymanni/holiday/wreath: 160 232
+:raymanni/holiday/bauble_string: 944 208
+:raymanni/holiday/wreath: 928 232
+:raymanni/holiday/screw1: 864 576
+:raymanni/holiday/screw1: 744 576
+:raymanni/holiday/screw1: 392 576
+:raymanni/holiday/screw1: 272 576
+:raymanni/holiday/cane_mid: 560 304 frrr
+:raymanni/holiday/cane_d: 528 304 frrr
+:raymanni/holiday/cane_mid: 528 560 rr
+:raymanni/holiday/cane_d: 592 304 rrr
+:raymanni/holiday/cane_mid: 608 560
+:raymanni/holiday/cane_d: 8 464 frrr
+:raymanni/holiday/cane_mid: 8 496 rr
+:raymanni/holiday/cane_d: 40 464 rrr
+:raymanni/holiday/cane_mid: 56 496
+:raymanni/holiday/cane_mid: 56 528
+:raymanni/holiday/cane_mid: 56 560
+:raymanni/holiday/cane_mid: 56 592
+:raymanni/holiday/cane_d: 1112 464 rrr
+:raymanni/holiday/cane_mid: 1128 496 f
+:raymanni/holiday/cane_d: 1080 464 frrr
+:raymanni/holiday/cane_mid: 1080 496 frr
+:raymanni/holiday/cane_mid: 1080 528 frr
+:raymanni/holiday/cane_mid: 1080 560 frr
+:raymanni/holiday/cane_mid: 1080 592 frr
+:raymanni/holiday/cane_mid: 528 368 rr
+:raymanni/holiday/cane_mid: 608 368
+:raymanni/holiday/cane_mid: 528 336 rr
+:raymanni/holiday/cane_mid: 608 336
+:geoo/steel/silhouette_32x64.S: 544 366 r
+:raymanni/holiday/cane_mid: 528 528 rr
+:raymanni/holiday/cane_mid: 608 528
+:raymanni/holiday/cane_mid: 528 496 rr
+:raymanni/holiday/cane_mid: 608 496
+:raymanni/holiday/cane_mid: 528 464 rr
+:raymanni/holiday/cane_mid: 608 464
+:raymanni/holiday/cane_mid: 528 432 rr
+:raymanni/holiday/cane_mid: 608 432
+:raymanni/holiday/cane_mid: 528 400 rr
+:raymanni/holiday/cane_mid: 608 400
+:geoo/construction/fence_64x64.S: 544 400
+:geoo/construction/fence_64x64.S: 544 464
+:geoo/construction/fence_64x64.S: 544 528
+:geoo/construction/platform.S: 734 560 r
+:geoo/construction/platform.S: 720 560 r
+:geoo/construction/platform.S: 430 560 r
+:geoo/construction/platform.S: 416 560 r

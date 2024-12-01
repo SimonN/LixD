@@ -1,0 +1,184 @@
+$BUILT 2024-07-18 11:42:28
+$AUTHOR Hyperlodge
+$ENGLISH Happy Sticks
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1152
+#SIZE_Y 288
+#BACKGROUND_RED 48
+#BACKGROUND_GREEN 28
+#BACKGROUND_BLUE 48
+
+#SECONDS 70
+#INITIAL 240
+#SPAWN_INTERVAL 15
+
+#WALKER 5
+#RUNNER 5
+#CLIMBER -1
+#FLOATER 5
+#EXPLODER2 -1
+#PLATFORMER -1
+#JUMPER 5
+#BATTER 5
+#CUBER -1
+
+:raymanni/lab/hatch.H: 880 64
+:raymanni/lab/hatch.H: 240 64 r
+
+:geoo/abstract/goal.G: 168 88
+:geoo/abstract/goal.G: 952 88
+
+:geoo/construction/steam_up.T: 62 152
+:raymanni/lab/launcher_right.T: 32 64
+:geoo/construction/steam_up.T: 1074 152
+:raymanni/lab/launcher_left.T: 1088 64
+
+:geoo/construction/rod_steel/straight32.S: 248 136 r
+:geoo/construction/rod_steel/straight32.S: 256 136 r
+:geoo/construction/rod_steel/straight32.S: 240 128
+:geoo/construction/stairs_ru_32.S: 208 64 r
+:geoo/construction/stairs_ru_32.S: 272 56 frrr
+:matt/goldmine/plank: 192 64
+:geoo/construction/rod_steel/straight32.S: 248 168 r
+:geoo/construction/rod_steel/straight32.S: 256 168 r
+:amanda/steel/steel_flange_right24x16.S: 296 48
+:amanda/steel/steel_flange_left24x16.S: 192 48
+:raymanni/toys/beam_14.S: 184 136
+:matt/goldmine/plankdiag2: 136 136
+:matt/goldmine/plankdiag2: 168 168
+:matt/goldmine/plankdiag2: 200 200
+:matt/goldmine/plank: 232 232
+:raymanni/toys/beam_14.S: 216 136
+:raymanni/toys/beam_14.S: 168 136
+:matt/goldmine/plank: 360 232
+:raymanni/toys/beam_14.S: 264 136
+:raymanni/toys/beam_14.S: 296 136
+:raymanni/toys/beam_14.S: 312 136
+:geoo/construction/stairs_rd_32.S: 120 216
+:geoo/construction/rod_steel/straight32.S: 192 248
+:geoo/construction/rod_steel/straight32.S: 224 248
+:geoo/construction/rod_steel/straight32.S: 256 248
+:geoo/construction/rod_steel/straight32.S: 288 248
+:geoo/construction/rod_steel/straight32.S: 320 248
+:geoo/construction/rod_steel/straight32.S: 352 248
+:geoo/construction/rod_steel/straight32.S: 384 248
+:geoo/construction/rod_steel/straight32.S: 416 248
+:matt/goldmine/plankdiag2: 104 104
+:matt/goldmine/plankdiag: 104 72
+:matt/goldmine/plankdiag: 136 40
+:geoo/construction/stairs_rd_32.S: 56 184
+:matt/goldmine/plank: 416 264
+:matt/goldmine/plank: 288 264
+:matt/goldmine/plank: 160 264
+:matt/goldmine/plank: 32 264
+:geoo/construction/rod_steel/straight32.S: 0 280
+:geoo/construction/rod_steel/straight32.S: 32 280
+:geoo/construction/rod_steel/straight32.S: 64 280
+:geoo/construction/rod_steel/straight32.S: 96 280
+:geoo/construction/rod_steel/straight32.S: 128 280
+:geoo/construction/rod_steel/straight32.S: 160 280
+:geoo/construction/rod_steel/straight32.S: 192 280
+:geoo/construction/rod_steel/straight32.S: 224 280
+:geoo/construction/rod_steel/straight32.S: 256 280
+:geoo/construction/rod_steel/straight32.S: 288 280
+:geoo/construction/rod_steel/straight32.S: 320 280
+:geoo/construction/rod_steel/straight32.S: 352 280
+:geoo/construction/rod_steel/straight32.S: 384 280
+:geoo/construction/rod_steel/straight32.S: 416 280
+:geoo/construction/rod_steel/straight32.S: 448 280
+:geoo/construction/rod_steel/straight32.S: 480 280
+:geoo/construction/rod_steel/straight32.S: 448 248
+:matt/goldmine/plankdiag2: 328 136 frr
+:matt/goldmine/plankdiag2: 296 168 frr
+:matt/goldmine/plankdiag2: 264 200 frr
+:matt/goldmine/crate32: 240 200
+:matt/goldmine/plankdiag2: 360 104 frr
+:matt/goldmine/plankdiag: 360 72 frr
+:matt/goldmine/plankdiag: 328 40 frr
+:matt/goldmine/crate32: 0 248
+:matt/goldmine/crate16: 8 232
+:geoo/construction/rod_steel/straight32.S: 568 192 r
+:geoo/construction/rod_steel/straight32.S: 576 192 r
+:geoo/construction/rod_steel/straight32.S: 568 160 r
+:geoo/construction/rod_steel/straight32.S: 576 160 r
+:geoo/construction/rod_steel/straight32.S: 568 128 r
+:geoo/construction/rod_steel/straight32.S: 576 128 r
+:geoo/construction/rod_steel/straight32.S: 512 280
+:geoo/construction/rod_steel/straight32.S: 480 248
+:geoo/steel/dark_64x64o.S: 544 224
+:matt/goldmine/plank: 416 232
+:raymanni/toys/letter_1: 512 232
+:geoo/construction/rod_steel/straight32.S: 568 96 r
+:geoo/construction/rod_steel/straight32.S: 576 96 r
+:matt/beach/decor/moon: 544 46
+:geoo/construction/rod_steel/straight32.S: 896 136 fr
+:geoo/construction/rod_steel/straight32.S: 888 136 fr
+:geoo/construction/rod_steel/straight32.S: 880 128 frr
+:geoo/construction/stairs_ru_32.S: 912 64 fr
+:geoo/construction/stairs_ru_32.S: 848 56 rrr
+:matt/goldmine/plank: 832 64 frr
+:geoo/construction/rod_steel/straight32.S: 896 168 fr
+:geoo/construction/rod_steel/straight32.S: 888 168 fr
+:amanda/steel/steel_flange_right24x16.S: 832 48 frr
+:amanda/steel/steel_flange_left24x16.S: 936 48 frr
+:raymanni/toys/beam_14.S: 936 136 frr
+:matt/goldmine/plankdiag2: 968 136 frr
+:matt/goldmine/plankdiag2: 936 168 frr
+:matt/goldmine/plankdiag2: 904 200 frr
+:matt/goldmine/plank: 792 232 frr
+:raymanni/toys/beam_14.S: 904 136 frr
+:raymanni/toys/beam_14.S: 952 136 frr
+:matt/goldmine/plank: 664 232 frr
+:raymanni/toys/beam_14.S: 856 136 frr
+:raymanni/toys/beam_14.S: 824 136 frr
+:raymanni/toys/beam_14.S: 808 136 frr
+:geoo/construction/stairs_rd_32.S: 952 216 frr
+:geoo/construction/rod_steel/straight32.S: 928 248 frr
+:geoo/construction/rod_steel/straight32.S: 896 248 frr
+:geoo/construction/rod_steel/straight32.S: 864 248 frr
+:geoo/construction/rod_steel/straight32.S: 832 248 frr
+:geoo/construction/rod_steel/straight32.S: 800 248 frr
+:geoo/construction/rod_steel/straight32.S: 768 248 frr
+:geoo/construction/rod_steel/straight32.S: 736 248 frr
+:geoo/construction/rod_steel/straight32.S: 704 248 frr
+:matt/goldmine/plankdiag2: 1000 104 frr
+:matt/goldmine/plankdiag: 1000 72 frr
+:matt/goldmine/plankdiag: 968 40 frr
+:geoo/construction/stairs_rd_32.S: 1016 184 frr
+:matt/goldmine/plank: 608 264 frr
+:matt/goldmine/plank: 736 264 frr
+:matt/goldmine/plank: 864 264 frr
+:matt/goldmine/plank: 992 264 frr
+:geoo/construction/rod_steel/straight32.S: 1120 280 frr
+:geoo/construction/rod_steel/straight32.S: 1088 280 frr
+:geoo/construction/rod_steel/straight32.S: 1056 280 frr
+:geoo/construction/rod_steel/straight32.S: 1024 280 frr
+:geoo/construction/rod_steel/straight32.S: 992 280 frr
+:geoo/construction/rod_steel/straight32.S: 960 280 frr
+:geoo/construction/rod_steel/straight32.S: 928 280 frr
+:geoo/construction/rod_steel/straight32.S: 896 280 frr
+:geoo/construction/rod_steel/straight32.S: 864 280 frr
+:geoo/construction/rod_steel/straight32.S: 832 280 frr
+:geoo/construction/rod_steel/straight32.S: 800 280 frr
+:geoo/construction/rod_steel/straight32.S: 768 280 frr
+:geoo/construction/rod_steel/straight32.S: 736 280 frr
+:geoo/construction/rod_steel/straight32.S: 704 280 frr
+:geoo/construction/rod_steel/straight32.S: 672 280 frr
+:geoo/construction/rod_steel/straight32.S: 640 280 frr
+:geoo/construction/rod_steel/straight32.S: 672 248 frr
+:matt/goldmine/plankdiag2: 776 136
+:matt/goldmine/plankdiag2: 808 168
+:matt/goldmine/plankdiag2: 840 200
+:matt/goldmine/crate32: 880 200 frr
+:matt/goldmine/plankdiag2: 744 104
+:matt/goldmine/plankdiag: 744 72
+:matt/goldmine/plankdiag: 776 40
+:matt/goldmine/crate32: 1120 248 frr
+:matt/goldmine/crate16: 1128 232 frr
+:geoo/construction/rod_steel/straight32.S: 608 280 frr
+:geoo/construction/rod_steel/straight32.S: 640 248 frr
+:matt/goldmine/plank: 608 232 frr
+:raymanni/toys/letter_1: 1120 64 frr
+:raymanni/toys/letter_4: 608 232
+:raymanni/toys/letter_4: 0 64

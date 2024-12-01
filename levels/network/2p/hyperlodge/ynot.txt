@@ -1,0 +1,123 @@
+$BUILT 2024-07-18 12:02:53
+$AUTHOR Hyperlodge
+$ENGLISH Y Not?
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 896
+#SIZE_Y 336
+#TORUS_X 1
+#TORUS_Y 0
+#BACKGROUND_RED 111
+#BACKGROUND_GREEN 48
+#BACKGROUND_BLUE 160
+
+#SECONDS 90
+#INITIAL 100
+#SPAWN_INTERVAL 50
+
+#WALKER 10
+#RUNNER 10
+#CLIMBER 10
+#FLOATER 10
+#EXPLODER2 -1
+#BLOCKER -1
+#BUILDER -1
+#PLATFORMER 10
+#BASHER 10
+#MINER 10
+#DIGGER 10
+#JUMPER 10
+#BATTER 10
+#CUBER 10
+
+:geoo/abstract/hatch.H: 80 48 r
+:geoo/abstract/hatch.H: 784 48
+
+:raymanni/lab/goal.G: 704 240
+:raymanni/lab/goal.G: 128 240
+
+:simon/water_thin.W: 848 304
+:simon/water_thin.W: 800 304
+:simon/water_thin.W: 48 304
+:simon/water_thin.W: 0 304
+:simon/water_thin.W: 232 304
+:simon/water_thin.W: 616 304
+:simon/water_thin.W: 104 304
+:simon/water_thin.W: 168 304
+:simon/water_thin.W: 680 304
+:simon/water_thin.W: 744 304
+
+:raymanni/gore/steel.S: 32 80
+:raymanni/gore/steel.S: 32 112
+:raymanni/gore/steel.S: 32 144
+:raymanni/gore/steel.S: 64 144
+:raymanni/gore/steel.S: 96 144
+:raymanni/gore/steel.S: 128 144
+:raymanni/gore/steel.S: 128 112
+:raymanni/gore/steel.S: 128 80
+:raymanni/gore/steel.S: 80 176
+:raymanni/gore/steel.S: 80 208
+:raymanni/gore/steel.S: 80 240
+:raymanni/gore/steel.S: 80 272
+:raymanni/gore/steel.S: 80 304
+:raymanni/gore/steel.S: 144 304
+:raymanni/gore/steel.S: 176 288
+:raymanni/gore/steel.S: 208 272
+:raymanni/gore/steel.S: 240 256
+:raymanni/gore/steel.S: 272 240
+:raymanni/gore/steel.S: 304 224
+:raymanni/gore/steel.S: 336 208
+:raymanni/gore/steel.S: 368 192
+:raymanni/gore/steel.S: 408 176
+:raymanni/gore/steel.S: 432 224
+:raymanni/gore/steel.S: 472 128
+:raymanni/gore/steel.S: 832 80 frr
+:raymanni/gore/steel.S: 832 112 frr
+:raymanni/gore/steel.S: 832 144 frr
+:raymanni/gore/steel.S: 800 144 frr
+:raymanni/gore/steel.S: 768 144 frr
+:raymanni/gore/steel.S: 736 144 frr
+:raymanni/gore/steel.S: 736 112 frr
+:raymanni/gore/steel.S: 736 80 frr
+:raymanni/gore/steel.S: 784 176 frr
+:raymanni/gore/steel.S: 784 208 frr
+:raymanni/gore/steel.S: 784 240 frr
+:raymanni/gore/steel.S: 784 272 frr
+:raymanni/gore/steel.S: 784 304 frr
+:raymanni/gore/steel.S: 720 304 frr
+:raymanni/gore/steel.S: 688 288 frr
+:raymanni/gore/steel.S: 656 272 frr
+:raymanni/gore/steel.S: 624 256 frr
+:raymanni/gore/steel.S: 592 240 frr
+:raymanni/gore/steel.S: 560 224 frr
+:raymanni/gore/steel.S: 528 208 frr
+:raymanni/gore/steel.S: 496 192 frr
+:raymanni/gore/steel.S: 456 176 frr
+:raymanni/gore/steel.S: 352 112 frr
+:raymanni/gore/steel.S: 432 136 frr
+:raymanni/gore/steel.S: 392 128 frr
+:raymanni/gore/steel.S: 512 112
+:raymanni/gore/steel.S: 552 96
+:raymanni/gore/steel.S: 312 96 frr
+:raymanni/gore/steel.S: 272 80 frr
+:raymanni/gore/steel.S: 232 64 frr
+:raymanni/gore/steel.S: 592 80
+:raymanni/gore/steel.S: 632 64
+:raymanni/gore/steel.S: 464 240
+:raymanni/gore/steel.S: 400 240
+:raymanni/gore/steel.S: 496 256
+:raymanni/gore/steel.S: 368 256
+:raymanni/gore/steel.S: 336 272
+:raymanni/gore/steel.S: 528 272
+:raymanni/gore/steel.S: 304 288
+:raymanni/gore/steel.S: 272 304
+:raymanni/gore/steel.S: 560 288
+:raymanni/gore/steel.S: 592 304
+:raymanni/gore/steel.S: 656 304
+:raymanni/gore/steel.S: 208 304
+:raymanni/gore/steel.S: 672 48 frr
+:raymanni/gore/steel.S: 192 48 frr
+:raymanni/gore/steel.S: 736 48 frr
+:raymanni/gore/steel.S: 128 48 frr
+:raymanni/gore/steel.S: 32 48
+:raymanni/gore/steel.S: 832 48 frr

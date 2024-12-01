@@ -1,0 +1,174 @@
+$BUILT 2024-07-18 13:04:57
+$AUTHOR Hyperlodge
+$ENGLISH The CEP 3
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 864
+#SIZE_Y 1872
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 20
+#BACKGROUND_BLUE 36
+
+#SECONDS 120
+#INITIAL 200
+#SPAWN_INTERVAL 20
+
+#RUNNER -1
+#EXPLODER2 -1
+#BLOCKER -1
+#BUILDER -1
+#BATTER -1
+
+:geoo/abstract/hatch.H: 352 224
+:geoo/abstract/hatch.H: 480 224 r
+
+:geoo/abstract/goal.G: 784 1672
+:geoo/abstract/goal.G: 48 1672
+
+:geoo/construction/steam_up.T: 128 1840
+:geoo/construction/steam_up.T: 144 1840
+:geoo/construction/steam_up.T: 160 1840
+:geoo/construction/steam_up.T: 176 1840
+:geoo/construction/steam_up.T: 192 1840
+:geoo/construction/steam_up.T: 208 1840
+:geoo/construction/steam_up.T: 224 1840
+:geoo/construction/steam_up.T: 240 1840
+:geoo/construction/steam_up.T: 256 1840
+:geoo/construction/steam_up.T: 272 1840
+:geoo/construction/steam_up.T: 288 1840
+:geoo/construction/steam_up.T: 720 1840
+:geoo/construction/steam_up.T: 704 1840
+:geoo/construction/steam_up.T: 688 1840
+:geoo/construction/steam_up.T: 672 1840
+:geoo/construction/steam_up.T: 656 1840
+:geoo/construction/steam_up.T: 640 1840
+:geoo/construction/steam_up.T: 624 1840
+:geoo/construction/steam_up.T: 608 1840
+:geoo/construction/steam_up.T: 592 1840
+:geoo/construction/steam_up.T: 576 1840
+:geoo/construction/steam_up.T: 560 1840
+
+:geoo/construction/wall/big_128x128: 304 1744
+:geoo/construction/wall/big_128x128: 432 1744
+$BEGIN_TILE_GROUP 0
+:geoo/construction/rod_rust/cross_diag_ld: 0 32 frr
+:geoo/construction/rod_rust/straight32: 6 30 frr
+:geoo/construction/rod_rust/straight32: 38 30 frr
+:geoo/construction/rod_rust/link_dd_h: 66 22 frr
+:geoo/construction/rod_rust/link_h_du: 76 14 fr
+:geoo/construction/rod_rust/link_du_h: 76 0 r
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:Group-0: 0 1408 frr
+:Group-0: 0 1280 frr
+:Group-0: 0 1152 frr
+:Group-0: 0 1008 frr
+:Group-0: 0 768 frr
+:Group-0: 0 640 frr
+:Group-0: 0 512 frr
+:Group-0: 0 384 frr
+:Group-0: 0 128 frr
+:Group-0: 0 256 frr
+:Group-0: 0 0 frr
+:Group-0: 0 896 frr
+$END_TILE_GROUP
+:Group-1: 224 274
+:geoo/construction/wall/big_128x128: 304 1616
+$BEGIN_TILE_GROUP 2
+:Group-0: 0 1408
+:Group-0: 0 1280
+:Group-0: 0 1152
+:Group-0: 0 1008
+:Group-0: 0 768
+:Group-0: 0 640
+:Group-0: 0 512
+:Group-0: 0 384
+:Group-0: 0 128
+:Group-0: 0 256
+:Group-0: 0 0
+:Group-0: 0 896
+$END_TILE_GROUP
+:Group-2: 554 274
+:geoo/construction/wall/big_128x128: 432 1616
+:geoo/construction/wall/big_128x128: 304 1488
+:geoo/construction/wall/big_128x128: 432 1488
+:geoo/construction/wall/big_128x128: 304 1360
+:geoo/construction/wall/big_128x128: 432 1360
+:geoo/construction/wall/big_128x128: 304 1232
+:geoo/construction/wall/big_128x128: 432 1232
+:geoo/construction/wall/big_128x128: 304 1040
+:geoo/construction/wall/big_128x128: 304 1104
+:geoo/construction/wall/big_128x128: 432 1040
+:geoo/construction/wall/big_128x128: 432 1104
+:geoo/construction/concrete/064v: 400 1744 d
+:geoo/construction/concrete/064: 336 1616 d
+:geoo/construction/concrete/064: 464 1616 d
+:geoo/construction/concrete/064: 336 1488 d
+:geoo/construction/concrete/064: 464 1488 d
+:geoo/construction/concrete/064: 336 1360 d
+:geoo/construction/concrete/064: 464 1360 d
+:geoo/construction/wall/big_128x128: 304 912
+:geoo/construction/concrete/064: 336 1104 d
+:geoo/construction/wall/big_128x128: 432 912
+:geoo/construction/concrete/064: 464 1104 d
+:geoo/construction/concrete/064: 336 1232 d
+:geoo/construction/concrete/064: 464 1232 d
+:geoo/construction/wall/big_128x128: 0 1744
+:geoo/construction/wall/big_128x128: 736 1744 frr
+:geoo/construction/wall/big_128x128: 304 784
+:geoo/construction/wall/big_128x128: 432 784
+:geoo/construction/wall/big_128x128: 304 656
+:geoo/construction/wall/big_128x128: 432 656
+:geoo/construction/wall/big_128x128: 304 528
+:geoo/construction/wall/big_128x128: 432 528
+:geoo/construction/wall/big_128x128: 304 400
+:geoo/construction/wall/big_128x128: 432 400
+:geoo/construction/wall/big_128x128: 304 272
+:geoo/construction/wall/big_128x128: 432 272
+:geoo/construction/concrete/064: 336 976 d
+:geoo/construction/concrete/064: 464 976 d
+:geoo/construction/concrete/064: 336 848 d
+:geoo/construction/concrete/064: 464 848 d
+:geoo/construction/concrete/064: 336 720 d
+:geoo/construction/concrete/064: 464 720 d
+:geoo/construction/wall/big_128x128: 304 144
+:geoo/construction/concrete/064: 336 464 d
+:geoo/construction/wall/big_128x128: 432 144
+:geoo/construction/concrete/064: 464 464 d
+:geoo/construction/concrete/064: 336 592 d
+:geoo/construction/concrete/064: 464 592 d
+:geoo/construction/concrete/064: 336 208 d
+:geoo/construction/concrete/064: 464 208 d
+:geoo/construction/concrete/064: 336 336 d
+:geoo/construction/concrete/064: 464 336 d
+:geoo/construction/wall/big_brick1: 400 1840
+:geoo/construction/fence_64x64.S: 496 80
+:geoo/construction/fence_64x64.S: 432 80
+:geoo/construction/fence_64x64.S: 368 80
+:geoo/construction/fence_64x64.S: 304 80
+:geoo/construction/rod_rust/straight32: 304 72
+:geoo/construction/rod_rust/straight32: 336 72
+:geoo/construction/rod_rust/straight32: 368 72
+:geoo/construction/rod_rust/straight32: 400 72
+:geoo/construction/rod_rust/straight32: 432 72
+:geoo/construction/rod_rust/straight32: 464 72
+:geoo/construction/rod_rust/straight32: 496 72
+:geoo/construction/rod_rust/straight32: 528 72
+:geoo/construction/rod_rust/straight32: 272 144
+:geoo/construction/rod_rust/straight32: 560 144
+:amanda/steel/steel8x16.S: 80 1728
+:amanda/steel/steel8x16.S: 80 1712
+:amanda/steel/steel8x16.S: 80 1696
+:amanda/steel/steel8x16.S: 80 1680
+:amanda/steel/steel8x16.S: 40 1728
+:amanda/steel/steel8x16.S: 40 1712
+:amanda/steel/steel8x16.S: 40 1696
+:amanda/steel/steel8x16.S: 40 1680
+:amanda/steel/steel8x16.S: 776 1728
+:amanda/steel/steel8x16.S: 776 1712
+:amanda/steel/steel8x16.S: 776 1696
+:amanda/steel/steel8x16.S: 776 1680
+:amanda/steel/steel8x16.S: 816 1728
+:amanda/steel/steel8x16.S: 816 1712
+:amanda/steel/steel8x16.S: 816 1696
+:amanda/steel/steel8x16.S: 816 1680

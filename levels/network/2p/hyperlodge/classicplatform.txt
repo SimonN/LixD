@@ -1,0 +1,138 @@
+$BUILT 2024-07-18 11:56:00
+$AUTHOR Hyperlodge
+$ENGLISH Classic Platform
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 640
+#SIZE_Y 400
+#BACKGROUND_RED 32
+#BACKGROUND_GREEN 16
+#BACKGROUND_BLUE 0
+
+#SECONDS 60
+#INITIAL 100
+#SPAWN_INTERVAL 50
+
+#CLIMBER -1
+#FLOATER -1
+#EXPLODER2 -1
+#BLOCKER -1
+#PLATFORMER -1
+#DIGGER -1
+#BATTER -1
+
+:simon/hatch001.H: 0 32
+:simon/hatch001.H: 576 32 r
+
+:geoo/construction/Goal2.G: 576 304
+:geoo/construction/Goal2.G: 0 304
+
+:raymanni/toys/water.W: 576 384
+:raymanni/toys/water.W: 608 384
+:raymanni/toys/water.W: 0 384
+:raymanni/toys/water.W: 32 384
+
+:raymanni/gore/bonesaw.F: 288 288
+
+:geoo/construction/steam_up.T: 336 224
+:geoo/construction/steam_up.T: 352 224
+:geoo/construction/steam_up.T: 368 224
+:geoo/construction/steam_up.T: 288 224
+:geoo/construction/steam_up.T: 272 224
+:geoo/construction/steam_up.T: 256 224
+
+:geoo/steel/64x64o.S: 0 72
+:geoo/steel/64x64o.S: 576 72
+:geoo/steel/64x64o.S: 96 72
+:geoo/steel/64x64o.S: 160 72
+:geoo/steel/64x64o.S: 416 72
+:geoo/steel/64x64o.S: 480 72
+:geoo/steel/64x64o.S: 256 72
+:geoo/steel/64x64o.S: 320 72
+:geoo/steel/64x64o.S: 0 248
+:geoo/steel/64x64o.S: 576 248
+:geoo/steel/64x64o.S: 64 232
+:geoo/steel/64x64o.S: 128 216
+:geoo/steel/64x64o.S: 448 216
+:geoo/steel/64x64o.S: 512 232
+:geoo/steel/64x64o.S: 192 200
+:geoo/steel/64x64o.S: 384 200
+:matt/bricks/03b: 256 256
+:matt/bricks/03b: 320 256
+:matt/bricks/07: 32 120
+:matt/bricks/04: 544 120
+:geoo/steel/16x32o.S: 96 136
+:geoo/steel/16x32o.S: 528 136
+:matt/bricks/04a: 384 120
+:matt/bricks/07a: 192 120
+:matt/bricks/18: 312 152
+:matt/bricks/20: 304 136
+:matt/bricks/18: 312 176
+:matt/bricks/18: 312 208
+:matt/bricks/19: 304 240
+:matt/bricks/03b: 256 320
+:matt/bricks/03b: 320 320
+:geoo/steel/32x16o.S: 256 384
+:geoo/steel/32x16o.S: 352 384
+:geoo/steel/32x16o.S: 320 384
+:geoo/steel/32x16o.S: 288 384
+:geoo/steel/32x16o.S: 384 384
+:geoo/steel/32x16o.S: 480 384
+:geoo/steel/32x16o.S: 448 384
+:geoo/steel/32x16o.S: 416 384
+:geoo/steel/32x16o.S: 512 384
+:geoo/steel/32x16o.S: 544 384
+:geoo/steel/32x16o.S: 96 384
+:geoo/steel/32x16o.S: 64 384
+:geoo/steel/32x16o.S: 128 384
+:geoo/steel/32x16o.S: 224 384
+:geoo/steel/32x16o.S: 192 384
+:geoo/steel/32x16o.S: 160 384
+:matt/bricks/18: 152 152
+:matt/bricks/20: 144 136
+:matt/bricks/18: 152 176
+:matt/bricks/19: 144 200
+:matt/bricks/18: 472 152
+:matt/bricks/20: 464 136
+:matt/bricks/18: 472 176
+:matt/bricks/19: 464 200
+:guideline/fling-bomb: 296 296 d
+:matt/bricks/18: 408 272
+:matt/bricks/18: 408 304
+:matt/bricks/18: 408 336
+:matt/bricks/19: 400 368
+:matt/bricks/20: 400 264
+:matt/bricks/18: 216 272
+:matt/bricks/18: 216 304
+:matt/bricks/18: 216 336
+:matt/bricks/19: 208 368
+:matt/bricks/20: 208 264
+:matt/bricks/15b: 416 40
+:matt/bricks/15b: 480 8
+:matt/bricks/15b: 544 -24
+:matt/bricks/16b: 480 40
+:matt/bricks/16b: 544 8
+:matt/bricks/14b: 96 40
+:matt/bricks/14b: 32 8
+:matt/bricks/13b: 160 40
+:matt/bricks/13b: 96 8
+:matt/bricks/14b: -32 -24
+:matt/bricks/13b: 32 -24
+:matt/bricks/14b: 192 40
+:matt/bricks/14b: 128 8
+:matt/bricks/13b: 256 40
+:matt/bricks/13b: 192 8
+:matt/bricks/13b: 128 -24
+:matt/bricks/14b: 64 -24
+:matt/bricks/15b: 320 40
+:matt/bricks/15b: 384 8
+:matt/bricks/15b: 448 -24
+:matt/bricks/16b: 384 40
+:matt/bricks/16b: 448 8
+:matt/bricks/16b: 512 -24
+:geoo/steel/16x32o.S: 96 168
+:geoo/steel/16x32o.S: 64 184 r
+:geoo/steel/16x32o.S: 528 168
+:geoo/steel/16x32o.S: 544 184 rrr
+:geoo/steel/16x32o.S: 32 184 r
+:geoo/steel/16x32o.S: 576 184 rrr

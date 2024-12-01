@@ -1,0 +1,223 @@
+$BUILT 2024-08-07 14:10:43
+$AUTHOR Hyperlodge
+$ENGLISH Jumping Jacks
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 896
+#SIZE_Y 400
+#TORUS_X 1
+#TORUS_Y 0
+#BACKGROUND_RED 47
+#BACKGROUND_GREEN 15
+#BACKGROUND_BLUE 79
+
+#SECONDS 60
+#INITIAL 100
+#SPAWN_INTERVAL 25
+
+#WALKER 30
+#RUNNER 30
+#CLIMBER 30
+#FLOATER 30
+#EXPLODER2 30
+#BLOCKER 30
+#BUILDER 30
+#PLATFORMER 30
+#BASHER 30
+#MINER 30
+#DIGGER 30
+#JUMPER 30
+#BATTER 30
+#CUBER 30
+
+:geoo/abstract/hatch.H: 40 240
+:geoo/abstract/hatch.H: 488 240
+
+:geoo/abstract/goal.G: 824 320
+:geoo/abstract/goal.G: 376 320
+
+:geoo/construction/steam_up.T: 224 192
+:geoo/construction/steam_right.T: 232 216
+:geoo/abstract/tbeam_right.T: 384 248
+:geoo/abstract/tbeam_left.T: 448 248
+:geoo/construction/steam_up.T: 416 368
+:geoo/construction/steam_up.T: 432 368
+:geoo/abstract/tbeam_right.T: 0 304
+:geoo/abstract/tbeam_right.T: 32 304
+:geoo/abstract/tbeam_right.T: 64 304
+:geoo/abstract/tbeam_right.T: 96 304
+:geoo/abstract/tbeam_right.T: 128 304
+:geoo/abstract/tbeam_right.T: 192 336
+:geoo/abstract/tbeam_right.T: 224 336
+:geoo/abstract/tbeam_right.T: 256 336
+:geoo/abstract/tbeam_right.T: 288 336
+:geoo/abstract/tbeam_right.T: 320 336
+:geoo/abstract/tbeam_left.T: 128 368
+:geoo/abstract/tbeam_left.T: 96 368
+:geoo/abstract/tbeam_left.T: 64 368
+:geoo/abstract/tbeam_left.T: 32 368
+:geoo/abstract/tbeam_up.T: 0 368
+:geoo/abstract/tbeam_up.T: 0 336
+:geoo/abstract/tbeam_right.T: 352 280
+:geoo/construction/steam_up.T: 672 192
+:geoo/construction/steam_right.T: 680 216
+:geoo/abstract/tbeam_right.T: 832 248
+:geoo/abstract/tbeam_left.T: 0 248
+:geoo/construction/steam_up.T: 864 368
+:geoo/construction/steam_up.T: 880 368
+:geoo/abstract/tbeam_right.T: 448 304
+:geoo/abstract/tbeam_right.T: 480 304
+:geoo/abstract/tbeam_right.T: 512 304
+:geoo/abstract/tbeam_right.T: 544 304
+:geoo/abstract/tbeam_right.T: 576 304
+:geoo/abstract/tbeam_right.T: 640 336
+:geoo/abstract/tbeam_right.T: 672 336
+:geoo/abstract/tbeam_right.T: 704 336
+:geoo/abstract/tbeam_right.T: 736 336
+:geoo/abstract/tbeam_right.T: 768 336
+:geoo/abstract/tbeam_left.T: 576 368
+:geoo/abstract/tbeam_left.T: 544 368
+:geoo/abstract/tbeam_left.T: 512 368
+:geoo/abstract/tbeam_left.T: 480 368
+:geoo/abstract/tbeam_up.T: 448 368
+:geoo/abstract/tbeam_up.T: 448 336
+:geoo/abstract/tbeam_right.T: 800 280
+:geoo/construction/steam_up.T: 368 208
+:geoo/construction/steam_up.T: 816 208
+:geoo/abstract/tbeam_left.T: 136 168
+:geoo/abstract/tbeam_left.T: 72 168
+:geoo/abstract/tbeam_left.T: 104 168
+:geoo/abstract/tbeam_left.T: 40 168
+:geoo/abstract/tbeam_down.T: 0 216
+:geoo/abstract/tbeam_down.T: 448 216
+:geoo/abstract/tbeam_left.T: 584 168
+:geoo/abstract/tbeam_left.T: 520 168
+:geoo/abstract/tbeam_left.T: 552 168
+:geoo/abstract/tbeam_left.T: 488 168
+:geoo/abstract/tbeam_left.T: 464 104
+:geoo/abstract/tbeam_left.T: 496 104
+:geoo/abstract/tbeam_left.T: 528 104
+:geoo/abstract/tbeam_left.T: 560 104
+:geoo/abstract/tbeam_left.T: 112 104
+:geoo/abstract/tbeam_left.T: 48 104
+:geoo/abstract/tbeam_left.T: 80 104
+:geoo/abstract/tbeam_left.T: 16 104
+
+:matt/marble/23c: 384 368
+:matt/marble/23c: 352 368
+:matt/marble/23c: 320 368
+:amanda/steel/steel24x8.S: 336 392
+:amanda/steel/steel16x16.S: 360 384
+:matt/marble/23c: 160 368
+:matt/marble/23c: 192 368
+:matt/marble/23c: 224 368
+:matt/marble/23c: 256 368
+:matt/marble/23c: 288 368
+:amanda/steel/steel24x8.S: 296 392
+:amanda/steel/steel16x16.S: 320 384
+:amanda/steel/steel24x8.S: 256 392
+:amanda/steel/steel16x16.S: 280 384
+:amanda/steel/steel24x8.S: 216 392
+:amanda/steel/steel16x16.S: 240 384
+:amanda/steel/steel24x8.S: 176 392
+:amanda/steel/steel16x16.S: 200 384
+:amanda/steel/steel16x16.S: 160 384
+:amanda/steel/steel24x8.S: 376 392
+:amanda/steel/steel16x16.S: 400 384
+:matt/marble/23e: 608 264
+:matt/marble/23e: 512 272
+:matt/marble/23e: 544 272
+:matt/marble/23e: 576 272
+:matt/marble/23e: 480 272
+:matt/marble/23e: 640 272
+:matt/marble/23e: 672 272
+:matt/marble/23e: 704 272
+:matt/marble/23e: 736 272
+:matt/marble/23e: 768 272
+:matt/marble/23e: 800 248
+:matt/marble/22e: 632 216
+:matt/marble/23a: 800 368
+:matt/marble/23a: 768 368
+:amanda/steel/steel24x8.S: 784 392
+:amanda/steel/steel16x16.S: 808 384
+:matt/marble/23a: 736 368
+:amanda/steel/steel24x8.S: 744 392
+:amanda/steel/steel16x16.S: 768 384
+:matt/marble/23a: 704 368
+:amanda/steel/steel24x8.S: 704 392
+:amanda/steel/steel16x16.S: 728 384
+:matt/marble/23a: 672 368
+:matt/marble/23a: 640 368
+:amanda/steel/steel24x8.S: 664 392
+:amanda/steel/steel16x16.S: 688 384
+:matt/marble/23a: 608 368
+:amanda/steel/steel24x8.S: 624 392
+:amanda/steel/steel16x16.S: 648 384
+:amanda/steel/steel16x16.S: 608 384
+:matt/marble/23a: 832 368
+:amanda/steel/steel24x8.S: 824 392
+:amanda/steel/steel16x16.S: 848 384
+:matt/marble/01e_1: 464 296
+:matt/marble/01e_1: 448 296
+:amanda/steel/steel16x16.S: 336 248
+:amanda/steel/steel24x8.S: 328 264
+:amanda/steel/steel24x8.S: 344 240
+:amanda/steel/steel16x16.S: 368 232
+:amanda/steel/steel16x16.S: 784 248
+:amanda/steel/steel24x8.S: 776 264
+:amanda/steel/steel24x8.S: 792 240
+:amanda/steel/steel16x16.S: 816 232
+:matt/marble/22d: 184 216
+:matt/marble/23d: 352 248
+:matt/marble/23d: 320 272
+:matt/marble/23d: 288 272
+:matt/marble/23d: 160 264
+:matt/marble/23d: 192 272
+:matt/marble/23d: 224 272
+:matt/marble/23d: 256 272
+:matt/marble/23d: 128 272
+:matt/marble/23d: 32 272
+:matt/marble/23d: 64 272
+:matt/marble/23d: 96 272
+:matt/marble/01d: 0 296
+:matt/marble/01d: 16 296
+:matt/marble/23d: 168 168
+:matt/marble/23e: 616 168
+:amanda/steel/steel16x16.S: 448 280
+:amanda/steel/steel16x16.S: 472 280
+:amanda/steel/steel16x16.S: 0 280
+:amanda/steel/steel16x16.S: 24 280
+:amanda/steel/steel8x16.S: 464 280
+:amanda/steel/steel8x16.S: 480 264
+:amanda/steel/steel8x16.S: 480 248
+:amanda/steel/steel8x16.S: 480 232
+:amanda/steel/steel24x8.S: 480 208
+:amanda/steel/steel24x8.S: 504 208
+:amanda/steel/steel24x8.S: 528 208
+:amanda/steel/steel24x8.S: 552 208
+:amanda/steel/steel24x8.S: 576 208
+:amanda/steel/steel24x8.S: 600 208
+:amanda/steel/steel24x8.S: 624 208
+:amanda/steel/steel8x16.S: 648 200
+:amanda/steel/steel8x16.S: 648 184
+:amanda/steel/steel8x16.S: 648 168
+:matt/marble/23e: 592 104
+:matt/marble/23d: 144 104
+:amanda/steel/steel8x16.S: 16 280
+:amanda/steel/steel8x16.S: 32 264
+:amanda/steel/steel8x16.S: 32 248
+:amanda/steel/steel8x16.S: 32 232
+:amanda/steel/steel24x8.S: 32 208
+:amanda/steel/steel24x8.S: 56 208
+:amanda/steel/steel24x8.S: 80 208
+:amanda/steel/steel24x8.S: 104 208
+:amanda/steel/steel24x8.S: 128 208
+:amanda/steel/steel24x8.S: 152 208
+:amanda/steel/steel24x8.S: 176 208
+:amanda/steel/steel8x16.S: 200 200
+:amanda/steel/steel8x16.S: 200 184
+:amanda/steel/steel8x16.S: 200 168
+:amanda/steel/steel16x16.S: 480 216
+:amanda/steel/steel16x16.S: 32 216
+:amanda/steel/steel24x8.S: 40 288
+:amanda/steel/steel24x8.S: 488 288

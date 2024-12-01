@@ -1,0 +1,187 @@
+$BUILT 2024-07-18 13:02:04
+$AUTHOR Hyperlodge
+$ENGLISH Full Grid Immortal
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1152
+#SIZE_Y 416
+#BACKGROUND_RED 127
+#BACKGROUND_GREEN 80
+#BACKGROUND_BLUE 104
+
+#SECONDS 60
+#INITIAL 70
+#SPAWN_INTERVAL 50
+
+#WALKER 10
+#RUNNER 10
+#CLIMBER 10
+#FLOATER 10
+#EXPLODER2 -1
+#BLOCKER -1
+#BUILDER -1
+#PLATFORMER 10
+#BASHER 10
+#MINER 10
+#DIGGER 10
+#JUMPER 10
+#BATTER 10
+#CUBER -1
+
+:geoo/abstract/hatch.H: 1072 48 r
+:geoo/abstract/hatch.H: 48 48
+
+:raymanni/lab/goal.G: 24 276
+:raymanni/lab/goal.G: 1064 276
+
+:geoo/abstract/tbeam_left.T: 512 384
+:geoo/abstract/tbeam_left.T: 480 384
+:geoo/abstract/tbeam_left.T: 448 384
+:geoo/abstract/tbeam_left.T: 416 384
+:geoo/abstract/tbeam_left.T: 384 384
+:geoo/abstract/tbeam_left.T: 352 384
+:geoo/abstract/tbeam_left.T: 320 384
+:geoo/abstract/tbeam_left.T: 288 384
+:geoo/abstract/tbeam_left.T: 256 384
+:geoo/abstract/tbeam_left.T: 224 384
+:geoo/abstract/tbeam_left.T: 192 384
+:geoo/abstract/tbeam_left.T: 160 384
+:geoo/abstract/tbeam_left.T: 128 384
+:geoo/abstract/tbeam_left.T: 96 384
+:geoo/abstract/tbeam_left.T: 64 384
+:geoo/abstract/tbeam_left.T: 32 384
+:geoo/abstract/tbeam_up.T: 0 384
+:geoo/abstract/tbeam_up.T: 0 352
+:geoo/abstract/tbeam_up.T: 0 320
+:geoo/abstract/tbeam_up.T: 0 288
+:geoo/abstract/tbeam_up.T: 0 256
+:geoo/abstract/tbeam_up.T: 0 224
+:geoo/abstract/tbeam_up.T: 0 192
+:geoo/abstract/tbeam_up.T: 0 160
+:geoo/abstract/tbeam_up.T: 0 128
+:geoo/abstract/tbeam_up.T: 0 96
+:geoo/abstract/tbeam_up.T: 0 64
+:geoo/abstract/tbeam_right.T: 0 0
+:geoo/abstract/tbeam_right.T: 32 0
+:geoo/abstract/tbeam_right.T: 64 0
+:geoo/abstract/tbeam_right.T: 96 0
+:geoo/abstract/tbeam_right.T: 128 0
+:geoo/abstract/tbeam_right.T: 160 0
+:geoo/abstract/tbeam_right.T: 192 0
+:geoo/abstract/tbeam_right.T: 224 0
+:geoo/abstract/tbeam_right.T: 256 0
+:geoo/abstract/tbeam_right.T: 288 0
+:geoo/abstract/tbeam_right.T: 320 0
+:geoo/abstract/tbeam_right.T: 352 0
+:geoo/abstract/tbeam_right.T: 384 0
+:geoo/abstract/tbeam_right.T: 416 0
+:geoo/abstract/tbeam_right.T: 448 0
+:geoo/abstract/tbeam_right.T: 480 0
+:geoo/abstract/tbeam_right.T: 512 0
+:geoo/abstract/tbeam_up.T: 1120 384
+:geoo/abstract/tbeam_up.T: 1120 352
+:geoo/abstract/tbeam_up.T: 1120 320
+:geoo/abstract/tbeam_up.T: 1120 288
+:geoo/abstract/tbeam_up.T: 1120 256
+:geoo/abstract/tbeam_up.T: 1120 224
+:geoo/abstract/tbeam_up.T: 1120 192
+:geoo/abstract/tbeam_up.T: 1120 160
+:geoo/abstract/tbeam_up.T: 1120 128
+:geoo/abstract/tbeam_up.T: 1120 96
+:geoo/abstract/tbeam_up.T: 1120 64
+:geoo/abstract/tbeam_left.T: 1120 0
+:geoo/abstract/tbeam_right.T: 608 384
+:geoo/abstract/tbeam_right.T: 640 384
+:geoo/abstract/tbeam_right.T: 672 384
+:geoo/abstract/tbeam_right.T: 704 384
+:geoo/abstract/tbeam_right.T: 736 384
+:geoo/abstract/tbeam_right.T: 768 384
+:geoo/abstract/tbeam_right.T: 800 384
+:geoo/abstract/tbeam_right.T: 832 384
+:geoo/abstract/tbeam_right.T: 864 384
+:geoo/abstract/tbeam_right.T: 896 384
+:geoo/abstract/tbeam_right.T: 928 384
+:geoo/abstract/tbeam_right.T: 960 384
+:geoo/abstract/tbeam_right.T: 992 384
+:geoo/abstract/tbeam_right.T: 1024 384
+:geoo/abstract/tbeam_right.T: 1056 384
+:geoo/abstract/tbeam_right.T: 1088 384
+:geoo/abstract/tbeam_left.T: 1088 0
+:geoo/abstract/tbeam_left.T: 1056 0
+:geoo/abstract/tbeam_left.T: 1024 0
+:geoo/abstract/tbeam_left.T: 992 0
+:geoo/abstract/tbeam_left.T: 960 0
+:geoo/abstract/tbeam_left.T: 928 0
+:geoo/abstract/tbeam_left.T: 896 0
+:geoo/abstract/tbeam_left.T: 864 0
+:geoo/abstract/tbeam_left.T: 832 0
+:geoo/abstract/tbeam_left.T: 800 0
+:geoo/abstract/tbeam_left.T: 768 0
+:geoo/abstract/tbeam_left.T: 736 0
+:geoo/abstract/tbeam_left.T: 704 0
+:geoo/abstract/tbeam_left.T: 672 0
+:geoo/abstract/tbeam_left.T: 640 0
+:geoo/abstract/tbeam_left.T: 608 0
+:geoo/abstract/tbeam_left.T: 544 384
+:geoo/abstract/tbeam_right.T: 576 384
+:geoo/abstract/tbeam_up.T: 0 32
+:geoo/abstract/tbeam_up.T: 1120 32
+
+:geoo/construction/fence_rust_64x64: 32 288
+:geoo/construction/fence_rust_64x64: 96 288
+:geoo/construction/fence_rust_64x64: 32 224
+:geoo/construction/fence_rust_64x64: 96 224
+:geoo/construction/fence_rust_64x64: 32 160
+:geoo/construction/fence_rust_64x64: 96 160
+:geoo/construction/fence_rust_64x64: 160 288
+:geoo/construction/fence_rust_64x64: 224 288
+:geoo/construction/fence_rust_64x64: 160 224
+:geoo/construction/fence_rust_64x64: 224 224
+:geoo/construction/fence_rust_64x64: 160 160
+:geoo/construction/fence_rust_64x64: 224 160
+:geoo/construction/fence_rust_64x64: 288 288
+:geoo/construction/fence_rust_64x64: 352 288
+:geoo/construction/fence_rust_64x64: 288 224
+:geoo/construction/fence_rust_64x64: 352 224
+:geoo/construction/fence_rust_64x64: 288 160
+:geoo/construction/fence_rust_64x64: 352 160
+:geoo/construction/fence_rust_64x64: 864 288
+:geoo/construction/fence_rust_64x64: 928 288
+:geoo/construction/fence_rust_64x64: 864 224
+:geoo/construction/fence_rust_64x64: 928 224
+:geoo/construction/fence_rust_64x64: 864 160
+:geoo/construction/fence_rust_64x64: 928 160
+:geoo/construction/fence_rust_64x64: 992 288
+:geoo/construction/fence_rust_64x64: 992 224
+:geoo/construction/fence_rust_64x64: 992 160
+:geoo/construction/fence_rust_64x64: 1056 288
+:geoo/construction/fence_rust_64x64: 1056 224
+:geoo/construction/fence_rust_64x64: 1056 160
+:geoo/construction/fence_rust_64x64: 416 288
+:geoo/construction/fence_rust_64x64: 416 224
+:geoo/construction/fence_rust_64x64: 416 160
+:geoo/construction/fence_rust_64x64: 672 288
+:geoo/construction/fence_rust_64x64: 672 224
+:geoo/construction/fence_rust_64x64: 672 160
+:geoo/construction/fence_rust_64x64: 736 288
+:geoo/construction/fence_rust_64x64: 800 288
+:geoo/construction/fence_rust_64x64: 736 224
+:geoo/construction/fence_rust_64x64: 800 224
+:geoo/construction/fence_rust_64x64: 736 160
+:geoo/construction/fence_rust_64x64: 800 160
+:geoo/construction/fence_rust_64x64: 32 96
+:geoo/construction/fence_rust_64x64: 96 96
+:geoo/construction/fence_rust_64x64: 160 96
+:geoo/construction/fence_rust_64x64: 224 96
+:geoo/construction/fence_rust_64x64: 288 96
+:geoo/construction/fence_rust_64x64: 352 96
+:geoo/construction/fence_rust_64x64: 864 96
+:geoo/construction/fence_rust_64x64: 928 96
+:geoo/construction/fence_rust_64x64: 992 96
+:geoo/construction/fence_rust_64x64: 1056 96
+:geoo/construction/fence_rust_64x64: 416 96
+:geoo/construction/fence_rust_64x64: 672 96
+:geoo/construction/fence_rust_64x64: 736 96
+:geoo/construction/fence_rust_64x64: 800 96
+:geoo/construction/platform.S: 1080 352
+:geoo/construction/platform.S: 40 352

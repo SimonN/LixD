@@ -1,0 +1,204 @@
+$BUILT 2024-07-18 11:46:07
+$AUTHOR Hyperlodge
+$ENGLISH Anthony Chews
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 688
+#SIZE_Y 424
+#TORUS_X 1
+#TORUS_Y 0
+#BACKGROUND_RED 143
+#BACKGROUND_GREEN 63
+#BACKGROUND_BLUE 79
+
+#SECONDS 70
+#INITIAL 200
+#SPAWN_INTERVAL 20
+
+#WALKER 1
+#RUNNER 1
+#CLIMBER 1
+#FLOATER 1
+#EXPLODER2 -1
+#BLOCKER -1
+#BUILDER 1
+#PLATFORMER -1
+#BASHER 1
+#MINER 1
+#DIGGER 1
+#JUMPER 1
+#BATTER -1
+#CUBER -1
+
+:geoo/abstract/hatch.H: 16 280
+:geoo/abstract/hatch.H: 640 280 r
+
+:raymanni/lab/goal.G: 40 4
+:raymanni/lab/goal.G: 584 4
+
+:geoo/construction/sawblade_small.F: 56 88
+:geoo/construction/sawblade_small.F: 600 88
+:geoo/construction/sawblade_small.F: 576 88
+:geoo/construction/sawblade_small.F: 624 88
+:geoo/construction/sawblade_small.F: 32 88
+:geoo/construction/sawblade_small.F: 80 88
+
+:geoo/construction/steam_up.T: 680 390
+:geoo/construction/steam_up.T: 680 358
+:geoo/construction/steam_up.T: 680 326
+:geoo/construction/steam_up.T: 680 294
+:geoo/construction/steam_up.T: 680 262
+:geoo/construction/steam_up.T: 680 230
+:geoo/construction/steam_up.T: 680 198
+:geoo/construction/steam_up.T: 680 166
+:geoo/construction/steam_up.T: 680 134
+
+:raymanni/lab/block_1: 16 376
+:raymanni/lab/block_1: 64 376
+:raymanni/lab/block_1: 40 328
+:raymanni/lab/block_1: 112 376
+:raymanni/lab/block_1: 88 328
+:raymanni/lab/block_1: 136 328
+:raymanni/lab/block_1: 160 376
+:raymanni/lab/block_1: 64 280
+:raymanni/lab/block_1: 112 280
+:raymanni/lab/block_1: 160 280
+:raymanni/lab/block_1: 184 328
+:raymanni/lab/block_1: 232 328
+:raymanni/lab/block_1: 280 328
+:raymanni/lab/block_1: 208 376
+:raymanni/lab/block_1: 256 376
+:raymanni/lab/block_1: 304 376
+:raymanni/lab/block_1: 352 376
+:raymanni/lab/block_1: 328 328
+:raymanni/lab/block_1: 376 328
+:raymanni/lab/block_1: 424 328
+:raymanni/lab/block_1: 400 376
+:raymanni/lab/block_1: 448 376
+:raymanni/lab/block_1: 496 376
+:raymanni/lab/block_1: 472 328
+:raymanni/lab/block_1: 520 328
+:raymanni/lab/block_1: 544 376
+:raymanni/lab/block_1: 592 376
+:raymanni/lab/block_1: 568 328
+:raymanni/lab/block_1: 640 376
+:raymanni/lab/block_1: 616 328
+:raymanni/lab/block_1: 208 280
+:raymanni/lab/block_1: 256 280
+:raymanni/lab/block_1: 304 280
+:raymanni/lab/block_1: 352 280
+:raymanni/lab/block_1: 400 280
+:raymanni/lab/block_1: 448 280
+:raymanni/lab/block_1: 496 280
+:raymanni/lab/block_1: 544 280
+:raymanni/lab/block_1: 592 280
+:raymanni/lab/block_1: 136 232
+:raymanni/lab/block_1: 184 232
+:raymanni/lab/block_1: 232 232
+:raymanni/lab/block_1: 280 232
+:raymanni/lab/block_1: 328 232
+:raymanni/lab/block_1: 376 232
+:raymanni/lab/block_1: 424 232
+:raymanni/lab/block_1: 472 232
+:raymanni/lab/block_1: 520 232
+:raymanni/lab/block_1: 568 232
+:raymanni/lab/block_1: 88 232
+:raymanni/lab/block_1: 160 184
+:raymanni/lab/block_1: 208 184
+:raymanni/lab/block_1: 256 184
+:raymanni/lab/block_1: 304 184
+:raymanni/lab/block_1: 352 184
+:raymanni/lab/block_1: 400 184
+:raymanni/lab/block_1: 448 184
+:raymanni/lab/block_1: 496 184
+:raymanni/lab/block_1: 544 184
+:raymanni/lab/block_1: 112 184
+:raymanni/lab/block_1: 184 136
+:raymanni/lab/block_1: 232 136
+:raymanni/lab/block_1: 280 136
+:raymanni/lab/block_1: 328 136
+:raymanni/lab/block_1: 376 136
+:raymanni/lab/block_1: 424 136
+:raymanni/lab/block_1: 136 136
+:raymanni/lab/block_1: 472 136
+:raymanni/lab/block_1: 520 136
+:raymanni/lab/block_1: 120 88
+:raymanni/lab/block_1: 104 40
+:raymanni/lab/block_1: 536 88
+:raymanni/lab/block_1: 552 40
+:raymanni/lab/block_1: 600 40
+:raymanni/lab/block_1: 648 40
+:raymanni/lab/block_1: 56 40
+:raymanni/lab/block_1: 8 40
+:raymanni/lab/block_5: 184 36
+:raymanni/lab/block_5: 216 36
+:raymanni/lab/block_5: 248 36
+:raymanni/lab/block_5: 280 36
+:raymanni/lab/block_5: 312 36
+:raymanni/lab/block_5: 344 36
+:raymanni/lab/block_5: 376 36
+:raymanni/lab/block_5: 408 36
+:raymanni/lab/block_5: 440 36
+:raymanni/lab/block_5: 472 36
+:raymanni/lab/pipe_2: 504 102 r
+:raymanni/lab/pipe_2: 472 102 r
+:raymanni/lab/pipe_2: 440 102 r
+:raymanni/lab/pipe_2: 408 102 r
+:raymanni/lab/pipe_2: 376 102 r
+:raymanni/lab/pipe_2: 344 102 r
+:raymanni/lab/pipe_2: 312 102 r
+:raymanni/lab/pipe_2: 280 102 r
+:raymanni/lab/pipe_2: 248 102 r
+:raymanni/lab/pipe_2: 216 102 r
+:raymanni/lab/pipe_2: 184 102 r
+:raymanni/lab/pipe_2: 152 102 r
+:raymanni/lab/pipe_2: 88 102 r
+:raymanni/lab/pipe_2: 56 102 r
+:raymanni/lab/pipe_2: 24 102 r
+:raymanni/lab/pipe_2: 680 102 r
+:raymanni/lab/pipe_2: 664 102 r
+:raymanni/lab/pipe_2: 632 102 r
+:raymanni/lab/pipe_2: 600 102 r
+:raymanni/lab/pipe_2: 568 102 r
+:geoo/construction/platform.S: 0 422
+:geoo/construction/platform.S: 32 422
+:geoo/construction/platform.S: 64 422
+:geoo/construction/platform.S: 96 422
+:geoo/construction/platform.S: 128 422
+:geoo/construction/platform.S: 160 422
+:geoo/construction/platform.S: 192 422
+:geoo/construction/platform.S: 224 422
+:geoo/construction/platform.S: 256 422
+:geoo/construction/platform.S: 288 422
+:geoo/construction/platform.S: 320 422
+:geoo/construction/platform.S: 352 422
+:geoo/construction/platform.S: 384 422
+:geoo/construction/platform.S: 416 422
+:geoo/construction/platform.S: 448 422
+:geoo/construction/platform.S: 480 422
+:geoo/construction/platform.S: 512 422
+:geoo/construction/platform.S: 544 422
+:geoo/construction/platform.S: 576 422
+:geoo/construction/platform.S: 608 422
+:geoo/construction/platform.S: 640 422
+:geoo/construction/platform.S: 664 422
+:raymanni/lab/block_5: 184 70
+:raymanni/lab/block_5: 216 70
+:raymanni/lab/block_5: 248 70
+:raymanni/lab/block_5: 280 70
+:raymanni/lab/block_5: 312 70
+:raymanni/lab/block_5: 344 70
+:raymanni/lab/block_5: 376 70
+:raymanni/lab/block_5: 408 70
+:raymanni/lab/block_5: 440 70
+:raymanni/lab/block_5: 472 70
+:raymanni/lab/block_5: 184 2
+:raymanni/lab/block_5: 216 2
+:raymanni/lab/block_5: 248 2
+:raymanni/lab/block_5: 280 2
+:raymanni/lab/block_5: 312 2
+:raymanni/lab/block_5: 344 2
+:raymanni/lab/block_5: 376 2
+:raymanni/lab/block_5: 408 2
+:raymanni/lab/block_5: 440 2
+:raymanni/lab/block_5: 472 2

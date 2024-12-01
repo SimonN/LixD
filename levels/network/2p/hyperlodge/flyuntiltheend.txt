@@ -1,0 +1,153 @@
+$BUILT 2024-07-18 12:45:18
+$AUTHOR Hyperlodge
+$ENGLISH Fly Until The End
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 896
+#SIZE_Y 400
+#BACKGROUND_RED 32
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 60
+#INITIAL 100
+#SPAWN_INTERVAL 20
+
+#RUNNER -1
+#EXPLODER2 -1
+#BLOCKER -1
+#BUILDER -1
+#PLATFORMER -1
+#MINER -1
+#JUMPER -1
+#BATTER -1
+
+:geoo/abstract/hatch.H: 368 304
+:geoo/abstract/hatch.H: 496 304 r
+
+:geoo/construction/Goal2.G: 416 0
+
+:geoo/construction/steam_up.T: 32 368
+:geoo/construction/steam_up.T: 48 368
+:geoo/construction/steam_up.T: 64 368
+:geoo/construction/steam_up.T: 80 368
+:geoo/construction/steam_up.T: 96 368
+:geoo/construction/steam_up.T: 112 368
+:geoo/construction/steam_up.T: 128 368
+:geoo/construction/steam_up.T: 144 368
+:geoo/construction/steam_up.T: 160 368
+:geoo/construction/steam_up.T: 176 368
+:geoo/construction/steam_up.T: 192 368
+:geoo/construction/steam_up.T: 208 368
+:geoo/construction/steam_up.T: 224 368
+:geoo/construction/steam_up.T: 240 368
+:geoo/construction/steam_up.T: 256 368
+:geoo/construction/steam_up.T: 272 368
+:geoo/construction/steam_up.T: 288 368
+:geoo/construction/steam_right.T: 0 352
+:geoo/construction/steam_right.T: 0 336
+:geoo/construction/steam_right.T: 0 320
+:geoo/construction/steam_right.T: 0 304
+:geoo/construction/steam_right.T: 0 288
+:geoo/construction/steam_right.T: 0 272
+:geoo/construction/steam_right.T: 0 256
+:geoo/construction/steam_right.T: 0 240
+:geoo/construction/steam_right.T: 0 224
+:geoo/construction/steam_right.T: 0 208
+:geoo/construction/steam_right.T: 0 192
+:geoo/construction/steam_right.T: 0 176
+:geoo/construction/steam_right.T: 0 160
+:geoo/construction/steam_right.T: 0 144
+:geoo/construction/steam_right.T: 0 128
+:geoo/construction/steam_right.T: 0 112
+:geoo/construction/steam_right.T: 0 96
+:geoo/construction/steam_right.T: 0 80
+:geoo/construction/steam_right.T: 0 64
+:geoo/construction/steam_right.T: 0 48
+:geoo/construction/steam_right.T: 0 32
+:geoo/construction/steam_up.T: 304 368
+:geoo/construction/steam_up.T: 320 368
+:geoo/construction/steam_up.T: 336 368
+:geoo/construction/steam_up.T: 352 368
+:geoo/construction/steam_up.T: 848 368
+:geoo/construction/steam_up.T: 832 368
+:geoo/construction/steam_up.T: 816 368
+:geoo/construction/steam_up.T: 800 368
+:geoo/construction/steam_up.T: 784 368
+:geoo/construction/steam_up.T: 768 368
+:geoo/construction/steam_up.T: 752 368
+:geoo/construction/steam_up.T: 736 368
+:geoo/construction/steam_up.T: 720 368
+:geoo/construction/steam_up.T: 704 368
+:geoo/construction/steam_up.T: 688 368
+:geoo/construction/steam_up.T: 672 368
+:geoo/construction/steam_up.T: 656 368
+:geoo/construction/steam_up.T: 640 368
+:geoo/construction/steam_up.T: 624 368
+:geoo/construction/steam_up.T: 608 368
+:geoo/construction/steam_up.T: 592 368
+:geoo/construction/steam_up.T: 576 368
+:geoo/construction/steam_up.T: 560 368
+:geoo/construction/steam_up.T: 544 368
+:geoo/construction/steam_up.T: 528 368
+:geoo/construction/steam_up.T: 400 368
+:geoo/construction/steam_up.T: 416 368
+:geoo/construction/steam_left.T: 864 32
+:geoo/construction/steam_left.T: 864 48
+:geoo/construction/steam_left.T: 864 64
+:geoo/construction/steam_left.T: 864 80
+:geoo/construction/steam_left.T: 864 96
+:geoo/construction/steam_left.T: 864 112
+:geoo/construction/steam_left.T: 864 128
+:geoo/construction/steam_left.T: 864 144
+:geoo/construction/steam_left.T: 864 160
+:geoo/construction/steam_left.T: 864 176
+:geoo/construction/steam_left.T: 864 192
+:geoo/construction/steam_left.T: 864 208
+:geoo/construction/steam_left.T: 864 224
+:geoo/construction/steam_left.T: 864 240
+:geoo/construction/steam_left.T: 864 256
+:geoo/construction/steam_left.T: 864 272
+:geoo/construction/steam_left.T: 864 288
+:geoo/construction/steam_left.T: 864 304
+:geoo/construction/steam_left.T: 864 320
+:geoo/construction/steam_left.T: 864 336
+:geoo/construction/steam_left.T: 864 352
+:geoo/construction/steam_up.T: 464 368
+:geoo/construction/steam_up.T: 480 368
+:geoo/construction/steam_up.T: 480 80
+:geoo/construction/steam_up.T: 464 80
+:geoo/construction/steam_up.T: 416 80
+:geoo/construction/steam_up.T: 400 80
+:geoo/construction/steam_up.T: 432 272
+:geoo/construction/steam_up.T: 448 272
+
+:raymanni/gore/steel.S: 0 368
+:raymanni/gore/steel.S: 0 0
+:raymanni/gore/steel.S: 368 368
+:raymanni/gore/steel.S: 400 304
+:raymanni/gore/steel.S: 368 272
+:raymanni/gore/steel.S: 368 208
+:raymanni/gore/steel.S: 368 176
+:raymanni/gore/steel.S: 368 112
+:raymanni/gore/steel.S: 368 80
+:raymanni/gore/steel.S: 400 272
+:raymanni/gore/steel.S: 400 208
+:raymanni/gore/steel.S: 400 176
+:raymanni/gore/steel.S: 400 112
+:raymanni/gore/steel.S: 864 368 frr
+:raymanni/gore/steel.S: 864 0 frr
+:raymanni/gore/steel.S: 496 368 frr
+:raymanni/gore/steel.S: 496 272 frr
+:raymanni/gore/steel.S: 496 208 frr
+:raymanni/gore/steel.S: 496 176 frr
+:raymanni/gore/steel.S: 496 112 frr
+:raymanni/gore/steel.S: 496 80 frr
+:raymanni/gore/steel.S: 464 304
+:raymanni/gore/steel.S: 464 272
+:raymanni/gore/steel.S: 464 208
+:raymanni/gore/steel.S: 464 176
+:raymanni/gore/steel.S: 464 112
+:raymanni/gore/steel.S: 432 368
+:raymanni/gore/steel.S: 432 336
+:raymanni/gore/steel.S: 432 304

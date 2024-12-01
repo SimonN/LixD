@@ -1,0 +1,1230 @@
+$BUILT 2024-07-18 13:31:01
+$AUTHOR Hyperlodge
+$ENGLISH Chequered
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1392
+#SIZE_Y 448
+#BACKGROUND_RED 64
+#BACKGROUND_GREEN 64
+#BACKGROUND_BLUE 80
+
+#SECONDS 120
+#INITIAL 200
+#SPAWN_INTERVAL 50
+
+#WALKER -1
+#RUNNER -1
+#CLIMBER -1
+#FLOATER -1
+#EXPLODER2 -1
+#BLOCKER -1
+#PLATFORMER -1
+#BASHER -1
+#JUMPER -1
+#BATTER -1
+
+:geoo/sandstone/Hatch.H: 24 32
+:geoo/sandstone/Hatch.H: 1272 32 r
+
+:geoo/sandstone/Goal.G: 728 352
+:geoo/sandstone/Goal.G: 600 352
+
+:amanda/occult/cube: 32 80
+:amanda/occult/cube: 64 80
+:amanda/occult/cube: 96 80
+:amanda/occult/cube: 224 80
+:amanda/occult/cube: 592 416
+:amanda/occult/cube: 128 80
+:amanda/occult/cube: 160 80
+:amanda/occult/cube: 192 80
+:amanda/occult/cube: 48 96
+:amanda/occult/cube: 80 96
+:amanda/occult/cube: 112 96
+:amanda/occult/cube: 240 96
+:amanda/occult/cube: 624 416
+:amanda/occult/cube: 144 96
+:amanda/occult/cube: 176 96
+:amanda/occult/cube: 208 96
+:amanda/occult/cube: 32 112
+:amanda/occult/cube: 64 112
+:amanda/occult/cube: 96 112
+:amanda/occult/cube: 224 112
+:amanda/occult/cube: 256 112
+:amanda/occult/cube: 128 112
+:amanda/occult/cube: 160 112
+:amanda/occult/cube: 192 112
+:amanda/occult/cube: 48 128
+:amanda/occult/cube: 80 128
+:amanda/occult/cube: 112 128
+:amanda/occult/cube: 240 128
+:amanda/occult/cube: 272 128
+:amanda/occult/cube: 144 128
+:amanda/occult/cube: 176 128
+:amanda/occult/cube: 208 128
+:amanda/occult/cube: 64 144
+:amanda/occult/cube: 96 144
+:amanda/occult/cube: 128 144
+:amanda/occult/cube: 256 144
+:amanda/occult/cube: 288 144
+:amanda/occult/cube: 160 144
+:amanda/occult/cube: 192 144
+:amanda/occult/cube: 224 144
+:amanda/occult/cube: 80 160
+:amanda/occult/cube: 112 160
+:amanda/occult/cube: 144 160
+:amanda/occult/cube: 272 160
+:amanda/occult/cube: 304 160
+:amanda/occult/cube: 176 160
+:amanda/occult/cube: 208 160
+:amanda/occult/cube: 240 160
+:amanda/occult/cube: 96 176
+:amanda/occult/cube: 128 176
+:amanda/occult/cube: 160 176
+:amanda/occult/cube: 288 176
+:amanda/occult/cube: 320 176
+:amanda/occult/cube: 192 176
+:amanda/occult/cube: 224 176
+:amanda/occult/cube: 256 176
+:amanda/occult/cube: 112 192
+:amanda/occult/cube: 144 192
+:amanda/occult/cube: 176 192
+:amanda/occult/cube: 304 192
+:amanda/occult/cube: 336 192
+:amanda/occult/cube: 208 192
+:amanda/occult/cube: 240 192
+:amanda/occult/cube: 272 192
+:amanda/occult/cube: 128 208
+:amanda/occult/cube: 160 208
+:amanda/occult/cube: 192 208
+:amanda/occult/cube: 320 208
+:amanda/occult/cube: 352 208
+:amanda/occult/cube: 224 208
+:amanda/occult/cube: 256 208
+:amanda/occult/cube: 288 208
+:amanda/occult/cube: 144 224
+:amanda/occult/cube: 176 224
+:amanda/occult/cube: 208 224
+:amanda/occult/cube: 336 224
+:amanda/occult/cube: 368 224
+:amanda/occult/cube: 240 224
+:amanda/occult/cube: 272 224
+:amanda/occult/cube: 304 224
+:amanda/occult/cube: 160 240
+:amanda/occult/cube: 192 240
+:amanda/occult/cube: 224 240
+:amanda/occult/cube: 352 240
+:amanda/occult/cube: 384 240
+:amanda/occult/cube: 256 240
+:amanda/occult/cube: 288 240
+:amanda/occult/cube: 320 240
+:amanda/occult/cube: 176 256
+:amanda/occult/cube: 208 256
+:amanda/occult/cube: 240 256
+:amanda/occult/cube: 368 256
+:amanda/occult/cube: 400 256
+:amanda/occult/cube: 272 256
+:amanda/occult/cube: 304 256
+:amanda/occult/cube: 336 256
+:amanda/occult/cube: 192 272
+:amanda/occult/cube: 224 272
+:amanda/occult/cube: 256 272
+:amanda/occult/cube: 384 272
+:amanda/occult/cube: 416 272
+:amanda/occult/cube: 288 272
+:amanda/occult/cube: 320 272
+:amanda/occult/cube: 352 272
+:amanda/occult/cube: 208 288
+:amanda/occult/cube: 240 288
+:amanda/occult/cube: 272 288
+:amanda/occult/cube: 400 288
+:amanda/occult/cube: 432 288
+:amanda/occult/cube: 304 288
+:amanda/occult/cube: 336 288
+:amanda/occult/cube: 368 288
+:amanda/occult/cube: 224 304
+:amanda/occult/cube: 256 304
+:amanda/occult/cube: 288 304
+:amanda/occult/cube: 416 304
+:amanda/occult/cube: 448 304
+:amanda/occult/cube: 320 304
+:amanda/occult/cube: 352 304
+:amanda/occult/cube: 384 304
+:amanda/occult/cube: 240 320
+:amanda/occult/cube: 272 320
+:amanda/occult/cube: 304 320
+:amanda/occult/cube: 432 320
+:amanda/occult/cube: 464 320
+:amanda/occult/cube: 336 320
+:amanda/occult/cube: 368 320
+:amanda/occult/cube: 400 320
+:amanda/occult/cube: 256 336
+:amanda/occult/cube: 288 336
+:amanda/occult/cube: 320 336
+:amanda/occult/cube: 448 336
+:amanda/occult/cube: 480 336
+:amanda/occult/cube: 352 336
+:amanda/occult/cube: 384 336
+:amanda/occult/cube: 416 336
+:amanda/occult/cube: 272 352
+:amanda/occult/cube: 304 352
+:amanda/occult/cube: 336 352
+:amanda/occult/cube: 464 352
+:amanda/occult/cube: 496 352
+:amanda/occult/cube: 368 352
+:amanda/occult/cube: 400 352
+:amanda/occult/cube: 432 352
+:amanda/occult/cube: 288 368
+:amanda/occult/cube: 320 368
+:amanda/occult/cube: 352 368
+:amanda/occult/cube: 480 368
+:amanda/occult/cube: 512 368
+:amanda/occult/cube: 384 368
+:amanda/occult/cube: 416 368
+:amanda/occult/cube: 448 368
+:amanda/occult/cube: 304 384
+:amanda/occult/cube: 336 384
+:amanda/occult/cube: 368 384
+:amanda/occult/cube: 496 384
+:amanda/occult/cube: 528 384
+:amanda/occult/cube: 400 384
+:amanda/occult/cube: 432 384
+:amanda/occult/cube: 464 384
+:amanda/occult/cube: 320 400
+:amanda/occult/cube: 352 400
+:amanda/occult/cube: 384 400
+:amanda/occult/cube: 512 400
+:amanda/occult/cube: 544 400
+:amanda/occult/cube: 416 400
+:amanda/occult/cube: 448 400
+:amanda/occult/cube: 480 400
+:amanda/occult/cube: 336 416
+:amanda/occult/cube: 368 416
+:amanda/occult/cube: 400 416
+:amanda/occult/cube: 528 416
+:amanda/occult/cube: 560 416
+:amanda/occult/cube: 432 416
+:amanda/occult/cube: 464 416
+:amanda/occult/cube: 496 416
+:amanda/occult/cube: 656 416
+:amanda/occult/cube: 288 80
+:amanda/occult/cube: 320 80
+:amanda/occult/cube: 352 80
+:amanda/occult/cube: 480 80
+:amanda/occult/cube: 384 80
+:amanda/occult/cube: 416 80
+:amanda/occult/cube: 448 80
+:amanda/occult/cube: 304 96
+:amanda/occult/cube: 336 96
+:amanda/occult/cube: 368 96
+:amanda/occult/cube: 496 96
+:amanda/occult/cube: 400 96
+:amanda/occult/cube: 432 96
+:amanda/occult/cube: 464 96
+:amanda/occult/cube: 288 112
+:amanda/occult/cube: 320 112
+:amanda/occult/cube: 352 112
+:amanda/occult/cube: 480 112
+:amanda/occult/cube: 512 112
+:amanda/occult/cube: 384 112
+:amanda/occult/cube: 416 112
+:amanda/occult/cube: 448 112
+:amanda/occult/cube: 304 128
+:amanda/occult/cube: 336 128
+:amanda/occult/cube: 368 128
+:amanda/occult/cube: 496 128
+:amanda/occult/cube: 528 128
+:amanda/occult/cube: 400 128
+:amanda/occult/cube: 432 128
+:amanda/occult/cube: 464 128
+:amanda/occult/cube: 320 144
+:amanda/occult/cube: 352 144
+:amanda/occult/cube: 384 144
+:amanda/occult/cube: 512 144
+:amanda/occult/cube: 416 144
+:amanda/occult/cube: 448 144
+:amanda/occult/cube: 480 144
+:amanda/occult/cube: 336 160
+:amanda/occult/cube: 368 160
+:amanda/occult/cube: 400 160
+:amanda/occult/cube: 528 160
+:amanda/occult/cube: 432 160
+:amanda/occult/cube: 464 160
+:amanda/occult/cube: 496 160
+:amanda/occult/cube: 352 176
+:amanda/occult/cube: 384 176
+:amanda/occult/cube: 416 176
+:amanda/occult/cube: 448 176
+:amanda/occult/cube: 480 176
+:amanda/occult/cube: 512 176
+:amanda/occult/cube: 368 192
+:amanda/occult/cube: 400 192
+:amanda/occult/cube: 432 192
+:amanda/occult/cube: 464 192
+:amanda/occult/cube: 496 192
+:amanda/occult/cube: 528 192
+:amanda/occult/cube: 384 208
+:amanda/occult/cube: 416 208
+:amanda/occult/cube: 448 208
+:amanda/occult/cube: 480 208
+:amanda/occult/cube: 512 208
+:amanda/occult/cube: 400 224
+:amanda/occult/cube: 432 224
+:amanda/occult/cube: 464 224
+:amanda/occult/cube: 496 224
+:amanda/occult/cube: 528 224
+:amanda/occult/cube: 416 240
+:amanda/occult/cube: 448 240
+:amanda/occult/cube: 480 240
+:amanda/occult/cube: 512 240
+:amanda/occult/cube: 432 256
+:amanda/occult/cube: 464 256
+:amanda/occult/cube: 496 256
+:amanda/occult/cube: 528 256
+:amanda/occult/cube: 448 272
+:amanda/occult/cube: 480 272
+:amanda/occult/cube: 512 272
+:amanda/occult/cube: 464 288
+:amanda/occult/cube: 496 288
+:amanda/occult/cube: 528 288
+:amanda/occult/cube: 480 304
+:amanda/occult/cube: 512 304
+:amanda/occult/cube: 496 320
+:amanda/occult/cube: 528 320
+:amanda/occult/cube: 512 336
+:amanda/occult/cube: 528 352
+:amanda/occult/cube: 272 96
+:amanda/occult/cube: 256 80
+:amanda/occult/cube: 512 80
+:amanda/occult/cube: 528 96
+:amanda/occult/cube: 48 384
+:amanda/occult/cube: 80 384
+:amanda/occult/cube: 112 384
+:amanda/occult/cube: 240 384
+:amanda/occult/cube: 272 384
+:amanda/occult/cube: 144 384
+:amanda/occult/cube: 176 384
+:amanda/occult/cube: 208 384
+:amanda/occult/cube: 64 400
+:amanda/occult/cube: 96 400
+:amanda/occult/cube: 128 400
+:amanda/occult/cube: 256 400
+:amanda/occult/cube: 288 400
+:amanda/occult/cube: 160 400
+:amanda/occult/cube: 192 400
+:amanda/occult/cube: 224 400
+:amanda/occult/cube: 80 416
+:amanda/occult/cube: 112 416
+:amanda/occult/cube: 144 416
+:amanda/occult/cube: 272 416
+:amanda/occult/cube: 304 416
+:amanda/occult/cube: 176 416
+:amanda/occult/cube: 208 416
+:amanda/occult/cube: 240 416
+:amanda/occult/cube: 32 400
+:amanda/occult/cube: 48 416
+:amanda/occult/cube: 32 336
+:amanda/occult/cube: 64 336
+:amanda/occult/cube: 96 336
+:amanda/occult/cube: 128 336
+:amanda/occult/cube: 160 336
+:amanda/occult/cube: 192 336
+:amanda/occult/cube: 48 352
+:amanda/occult/cube: 80 352
+:amanda/occult/cube: 112 352
+:amanda/occult/cube: 144 352
+:amanda/occult/cube: 176 352
+:amanda/occult/cube: 64 368
+:amanda/occult/cube: 96 368
+:amanda/occult/cube: 128 368
+:amanda/occult/cube: 160 368
+:amanda/occult/cube: 192 368
+:amanda/occult/cube: 32 368
+:amanda/occult/cube: 144 320
+:amanda/occult/cube: 176 320
+:amanda/occult/cube: 208 320
+:amanda/occult/cube: 208 352
+:amanda/occult/cube: 240 352
+:amanda/occult/cube: 224 368
+:amanda/occult/cube: 256 368
+:amanda/occult/cube: 224 336
+:amanda/occult/cube: 32 176
+:amanda/occult/cube: 64 176
+:amanda/occult/cube: 48 192
+:amanda/occult/cube: 32 208
+:amanda/occult/cube: 64 208
+:amanda/occult/cube: 48 160
+:amanda/occult/cube: 32 144
+:amanda/occult/cube: 48 224
+:amanda/occult/cube: 80 224
+:amanda/occult/cube: 64 240
+:amanda/occult/cube: 48 256
+:amanda/occult/cube: 80 256
+:amanda/occult/cube: 32 272
+:amanda/occult/cube: 64 272
+:amanda/occult/cube: 48 288
+:amanda/occult/cube: 32 304
+:amanda/occult/cube: 64 304
+:amanda/occult/cube: 48 320
+:amanda/occult/cube: 32 240
+:amanda/occult/cube: 208 32
+:amanda/occult/cube: 112 32
+:amanda/occult/cube: 144 32
+:amanda/occult/cube: 176 32
+:amanda/occult/cube: 224 48
+:amanda/occult/cube: 128 48
+:amanda/occult/cube: 160 48
+:amanda/occult/cube: 192 48
+:amanda/occult/cube: 208 64
+:amanda/occult/cube: 240 64
+:amanda/occult/cube: 112 64
+:amanda/occult/cube: 144 64
+:amanda/occult/cube: 176 64
+:amanda/occult/cube: 272 32
+:amanda/occult/cube: 304 32
+:amanda/occult/cube: 336 32
+:amanda/occult/cube: 464 32
+:amanda/occult/cube: 368 32
+:amanda/occult/cube: 400 32
+:amanda/occult/cube: 432 32
+:amanda/occult/cube: 288 48
+:amanda/occult/cube: 320 48
+:amanda/occult/cube: 352 48
+:amanda/occult/cube: 480 48
+:amanda/occult/cube: 384 48
+:amanda/occult/cube: 416 48
+:amanda/occult/cube: 448 48
+:amanda/occult/cube: 272 64
+:amanda/occult/cube: 304 64
+:amanda/occult/cube: 336 64
+:amanda/occult/cube: 464 64
+:amanda/occult/cube: 496 64
+:amanda/occult/cube: 368 64
+:amanda/occult/cube: 400 64
+:amanda/occult/cube: 432 64
+:amanda/occult/cube: 256 48
+:amanda/occult/cube: 240 32
+:amanda/occult/cube: 496 32
+:amanda/occult/cube: 512 48
+:amanda/occult/cube: 528 64
+:amanda/occult/cube: 528 32
+:amanda/occult/cube: 80 192
+:amanda/occult/cube: 80 288
+:amanda/occult/cube: 80 320
+:amanda/occult/cube: 96 208
+:amanda/occult/cube: 96 240
+:amanda/occult/cube: 96 272
+:amanda/occult/cube: 96 304
+:amanda/occult/cube: 112 224
+:amanda/occult/cube: 112 256
+:amanda/occult/cube: 112 288
+:amanda/occult/cube: 112 320
+:amanda/occult/cube: 128 272
+:amanda/occult/cube: 128 304
+:amanda/occult/cube: 160 272
+:amanda/occult/cube: 160 304
+:amanda/occult/cube: 144 288
+:amanda/occult/cube: 176 288
+:amanda/occult/cube: 192 304
+:amanda/occult/cube: 128 240
+:amanda/occult/cube: 144 256
+:amanda/occult/cube: 544 336
+:amanda/occult/cube: 560 352
+:amanda/occult/cube: 544 368
+:amanda/occult/cube: 576 368
+:amanda/occult/cube: 560 384
+:amanda/occult/cube: 576 400
+:amanda/occult/cube: 544 80
+:amanda/occult/cube: 560 96
+:amanda/occult/cube: 544 112
+:amanda/occult/cube: 576 112
+:amanda/occult/cube: 560 128
+:amanda/occult/cube: 576 144
+:amanda/occult/cube: 544 144
+:amanda/occult/cube: 560 160
+:amanda/occult/cube: 544 176
+:amanda/occult/cube: 576 176
+:amanda/occult/cube: 560 192
+:amanda/occult/cube: 544 208
+:amanda/occult/cube: 576 208
+:amanda/occult/cube: 560 224
+:amanda/occult/cube: 544 240
+:amanda/occult/cube: 576 240
+:amanda/occult/cube: 560 256
+:amanda/occult/cube: 544 272
+:amanda/occult/cube: 576 272
+:amanda/occult/cube: 560 288
+:amanda/occult/cube: 544 304
+:amanda/occult/cube: 576 304
+:amanda/occult/cube: 560 320
+:amanda/occult/cube: 576 336
+:amanda/occult/cube: 560 64
+:amanda/occult/cube: 576 80
+:amanda/occult/cube: 544 48
+:amanda/occult/cube: 640 16
+:amanda/occult/cube: 560 32
+:amanda/occult/cube: 576 48
+:amanda/occult/cube: 672 16
+:amanda/occult/cube: 592 320
+:amanda/occult/cube: 592 288
+:amanda/occult/cube: 608 144
+:amanda/occult/cube: 608 176
+:amanda/occult/cube: 608 208
+:amanda/occult/cube: 608 240
+:amanda/occult/cube: 608 272
+:amanda/occult/cube: 608 112
+:amanda/occult/cube: 608 80
+:amanda/occult/cube: 608 48
+:amanda/occult/cube: 624 96
+:amanda/occult/cube: 640 112
+:amanda/occult/cube: 624 128
+:amanda/occult/cube: 656 128
+:amanda/occult/cube: 640 144
+:amanda/occult/cube: 656 160
+:amanda/occult/cube: 624 160
+:amanda/occult/cube: 640 176
+:amanda/occult/cube: 624 192
+:amanda/occult/cube: 656 192
+:amanda/occult/cube: 640 208
+:amanda/occult/cube: 624 224
+:amanda/occult/cube: 656 224
+:amanda/occult/cube: 640 240
+:amanda/occult/cube: 624 256
+:amanda/occult/cube: 656 256
+:amanda/occult/cube: 640 272
+:amanda/occult/cube: 624 288
+:amanda/occult/cube: 656 288
+:amanda/occult/cube: 640 80
+:amanda/occult/cube: 656 96
+:amanda/occult/cube: 624 64
+:amanda/occult/cube: 624 32
+:amanda/occult/cube: 640 48
+:amanda/occult/cube: 656 64
+:amanda/occult/cube: 656 32
+:amanda/occult/cube: 592 128
+:amanda/occult/cube: 592 160
+:amanda/occult/cube: 592 192
+:amanda/occult/cube: 592 224
+:amanda/occult/cube: 592 96
+:amanda/occult/cube: 592 64
+:amanda/occult/cube: 592 32
+:amanda/occult/cube: 592 256
+:amanda/occult/cube: 640 304
+:amanda/occult/cube: 656 320
+:amanda/occult/cube: 608 304
+:amanda/occult/cube: 624 320
+:amanda/occult/cube: 672 400
+:amanda/occult/cube: 672 144
+:amanda/occult/cube: 672 176
+:amanda/occult/cube: 672 208
+:amanda/occult/cube: 672 240
+:amanda/occult/cube: 672 272
+:amanda/occult/cube: 672 304
+:amanda/occult/cube: 672 336
+:amanda/occult/cube: 672 368
+:amanda/occult/cube: 672 112
+:amanda/occult/cube: 672 80
+:amanda/occult/cube: 672 48
+:amanda/occult/cube: 688 416
+:amanda/occult/cube: 688 160
+:amanda/occult/cube: 688 192
+:amanda/occult/cube: 688 224
+:amanda/occult/cube: 688 256
+:amanda/occult/cube: 688 288
+:amanda/occult/cube: 688 320
+:amanda/occult/cube: 688 352
+:amanda/occult/cube: 688 384
+:amanda/occult/cube: 688 128
+:amanda/occult/cube: 688 96
+:amanda/occult/cube: 688 64
+:amanda/occult/cube: 688 32
+:amanda/occult/cube: 608 336
+:amanda/occult/cube: 640 336
+:amanda/occult/cube: 0 80
+:amanda/occult/cube: 16 96
+:amanda/occult/cube: 0 112
+:amanda/occult/cube: 16 128
+:amanda/occult/cube: 16 384
+:amanda/occult/cube: 0 400
+:amanda/occult/cube: 16 416
+:amanda/occult/cube: 0 336
+:amanda/occult/cube: 16 352
+:amanda/occult/cube: 0 368
+:amanda/occult/cube: 0 176
+:amanda/occult/cube: 16 192
+:amanda/occult/cube: 0 208
+:amanda/occult/cube: 16 160
+:amanda/occult/cube: 0 144
+:amanda/occult/cube: 16 224
+:amanda/occult/cube: 16 256
+:amanda/occult/cube: 0 272
+:amanda/occult/cube: 16 288
+:amanda/occult/cube: 0 304
+:amanda/occult/cube: 16 320
+:amanda/occult/cube: 0 240
+:amanda/occult/cube: 16 64
+:amanda/occult/cube: 0 48
+:amanda/occult/cube: 16 32
+:amanda/occult/cube: 576 16
+:amanda/occult/cube: 608 16
+:amanda/occult/cube: 512 16
+:amanda/occult/cube: 544 16
+:amanda/occult/cube: 448 16
+:amanda/occult/cube: 480 16
+:amanda/occult/cube: 384 16
+:amanda/occult/cube: 416 16
+:amanda/occult/cube: 320 16
+:amanda/occult/cube: 352 16
+:amanda/occult/cube: 256 16
+:amanda/occult/cube: 288 16
+:amanda/occult/cube: 192 16
+:amanda/occult/cube: 224 16
+:amanda/occult/cube: 160 16
+:amanda/occult/cube: 96 16
+:amanda/occult/cube: 128 16
+:amanda/occult/cube: 32 16
+:amanda/occult/cube: 64 16
+:amanda/occult/cube: 0 16
+:amanda/occult/cube: 576 432
+:amanda/occult/cube: 608 432
+:amanda/occult/cube: 320 432
+:amanda/occult/cube: 352 432
+:amanda/occult/cube: 384 432
+:amanda/occult/cube: 512 432
+:amanda/occult/cube: 544 432
+:amanda/occult/cube: 416 432
+:amanda/occult/cube: 448 432
+:amanda/occult/cube: 480 432
+:amanda/occult/cube: 640 432
+:amanda/occult/cube: 64 432
+:amanda/occult/cube: 96 432
+:amanda/occult/cube: 128 432
+:amanda/occult/cube: 256 432
+:amanda/occult/cube: 288 432
+:amanda/occult/cube: 160 432
+:amanda/occult/cube: 192 432
+:amanda/occult/cube: 224 432
+:amanda/occult/cube: 32 432
+:amanda/occult/cube: 672 432
+:amanda/occult/cube: 0 432
+:amanda/occult/cube: 656 0
+:amanda/occult/cube: 688 0
+:amanda/occult/cube: 592 0
+:amanda/occult/cube: 624 0
+:amanda/occult/cube: 528 0
+:amanda/occult/cube: 560 0
+:amanda/occult/cube: 464 0
+:amanda/occult/cube: 496 0
+:amanda/occult/cube: 400 0
+:amanda/occult/cube: 432 0
+:amanda/occult/cube: 336 0
+:amanda/occult/cube: 368 0
+:amanda/occult/cube: 272 0
+:amanda/occult/cube: 304 0
+:amanda/occult/cube: 208 0
+:amanda/occult/cube: 240 0
+:amanda/occult/cube: 176 0
+:amanda/occult/cube: 112 0
+:amanda/occult/cube: 144 0
+:amanda/occult/cube: 48 0
+:amanda/occult/cube: 80 0
+:amanda/occult/cube: 16 0
+:amanda/occult/cube: 1344 80 frr
+:amanda/occult/cube: 1312 80 frr
+:amanda/occult/cube: 1280 80 frr
+:amanda/occult/cube: 1152 80 frr
+:amanda/occult/cube: 784 416 frr
+:amanda/occult/cube: 1248 80 frr
+:amanda/occult/cube: 1216 80 frr
+:amanda/occult/cube: 1184 80 frr
+:amanda/occult/cube: 1328 96 frr
+:amanda/occult/cube: 1296 96 frr
+:amanda/occult/cube: 1264 96 frr
+:amanda/occult/cube: 1136 96 frr
+:amanda/occult/cube: 752 416 frr
+:amanda/occult/cube: 1232 96 frr
+:amanda/occult/cube: 1200 96 frr
+:amanda/occult/cube: 1168 96 frr
+:amanda/occult/cube: 1344 112 frr
+:amanda/occult/cube: 1312 112 frr
+:amanda/occult/cube: 1280 112 frr
+:amanda/occult/cube: 1152 112 frr
+:amanda/occult/cube: 1120 112 frr
+:amanda/occult/cube: 1248 112 frr
+:amanda/occult/cube: 1216 112 frr
+:amanda/occult/cube: 1184 112 frr
+:amanda/occult/cube: 1328 128 frr
+:amanda/occult/cube: 1296 128 frr
+:amanda/occult/cube: 1264 128 frr
+:amanda/occult/cube: 1136 128 frr
+:amanda/occult/cube: 1104 128 frr
+:amanda/occult/cube: 1232 128 frr
+:amanda/occult/cube: 1200 128 frr
+:amanda/occult/cube: 1168 128 frr
+:amanda/occult/cube: 1312 144 frr
+:amanda/occult/cube: 1280 144 frr
+:amanda/occult/cube: 1248 144 frr
+:amanda/occult/cube: 1120 144 frr
+:amanda/occult/cube: 1088 144 frr
+:amanda/occult/cube: 1216 144 frr
+:amanda/occult/cube: 1184 144 frr
+:amanda/occult/cube: 1152 144 frr
+:amanda/occult/cube: 1296 160 frr
+:amanda/occult/cube: 1264 160 frr
+:amanda/occult/cube: 1232 160 frr
+:amanda/occult/cube: 1104 160 frr
+:amanda/occult/cube: 1072 160 frr
+:amanda/occult/cube: 1200 160 frr
+:amanda/occult/cube: 1168 160 frr
+:amanda/occult/cube: 1136 160 frr
+:amanda/occult/cube: 1280 176 frr
+:amanda/occult/cube: 1248 176 frr
+:amanda/occult/cube: 1216 176 frr
+:amanda/occult/cube: 1088 176 frr
+:amanda/occult/cube: 1056 176 frr
+:amanda/occult/cube: 1184 176 frr
+:amanda/occult/cube: 1152 176 frr
+:amanda/occult/cube: 1120 176 frr
+:amanda/occult/cube: 1264 192 frr
+:amanda/occult/cube: 1232 192 frr
+:amanda/occult/cube: 1200 192 frr
+:amanda/occult/cube: 1072 192 frr
+:amanda/occult/cube: 1040 192 frr
+:amanda/occult/cube: 1168 192 frr
+:amanda/occult/cube: 1136 192 frr
+:amanda/occult/cube: 1104 192 frr
+:amanda/occult/cube: 1248 208 frr
+:amanda/occult/cube: 1216 208 frr
+:amanda/occult/cube: 1184 208 frr
+:amanda/occult/cube: 1056 208 frr
+:amanda/occult/cube: 1024 208 frr
+:amanda/occult/cube: 1152 208 frr
+:amanda/occult/cube: 1120 208 frr
+:amanda/occult/cube: 1088 208 frr
+:amanda/occult/cube: 1232 224 frr
+:amanda/occult/cube: 1200 224 frr
+:amanda/occult/cube: 1168 224 frr
+:amanda/occult/cube: 1040 224 frr
+:amanda/occult/cube: 1008 224 frr
+:amanda/occult/cube: 1136 224 frr
+:amanda/occult/cube: 1104 224 frr
+:amanda/occult/cube: 1072 224 frr
+:amanda/occult/cube: 1216 240 frr
+:amanda/occult/cube: 1184 240 frr
+:amanda/occult/cube: 1152 240 frr
+:amanda/occult/cube: 1024 240 frr
+:amanda/occult/cube: 992 240 frr
+:amanda/occult/cube: 1120 240 frr
+:amanda/occult/cube: 1088 240 frr
+:amanda/occult/cube: 1056 240 frr
+:amanda/occult/cube: 1200 256 frr
+:amanda/occult/cube: 1168 256 frr
+:amanda/occult/cube: 1136 256 frr
+:amanda/occult/cube: 1008 256 frr
+:amanda/occult/cube: 976 256 frr
+:amanda/occult/cube: 1104 256 frr
+:amanda/occult/cube: 1072 256 frr
+:amanda/occult/cube: 1040 256 frr
+:amanda/occult/cube: 1184 272 frr
+:amanda/occult/cube: 1152 272 frr
+:amanda/occult/cube: 1120 272 frr
+:amanda/occult/cube: 992 272 frr
+:amanda/occult/cube: 960 272 frr
+:amanda/occult/cube: 1088 272 frr
+:amanda/occult/cube: 1056 272 frr
+:amanda/occult/cube: 1024 272 frr
+:amanda/occult/cube: 1168 288 frr
+:amanda/occult/cube: 1136 288 frr
+:amanda/occult/cube: 1104 288 frr
+:amanda/occult/cube: 976 288 frr
+:amanda/occult/cube: 944 288 frr
+:amanda/occult/cube: 1072 288 frr
+:amanda/occult/cube: 1040 288 frr
+:amanda/occult/cube: 1008 288 frr
+:amanda/occult/cube: 1152 304 frr
+:amanda/occult/cube: 1120 304 frr
+:amanda/occult/cube: 1088 304 frr
+:amanda/occult/cube: 960 304 frr
+:amanda/occult/cube: 928 304 frr
+:amanda/occult/cube: 1056 304 frr
+:amanda/occult/cube: 1024 304 frr
+:amanda/occult/cube: 992 304 frr
+:amanda/occult/cube: 1136 320 frr
+:amanda/occult/cube: 1104 320 frr
+:amanda/occult/cube: 1072 320 frr
+:amanda/occult/cube: 944 320 frr
+:amanda/occult/cube: 912 320 frr
+:amanda/occult/cube: 1040 320 frr
+:amanda/occult/cube: 1008 320 frr
+:amanda/occult/cube: 976 320 frr
+:amanda/occult/cube: 1120 336 frr
+:amanda/occult/cube: 1088 336 frr
+:amanda/occult/cube: 1056 336 frr
+:amanda/occult/cube: 928 336 frr
+:amanda/occult/cube: 896 336 frr
+:amanda/occult/cube: 1024 336 frr
+:amanda/occult/cube: 992 336 frr
+:amanda/occult/cube: 960 336 frr
+:amanda/occult/cube: 1104 352 frr
+:amanda/occult/cube: 1072 352 frr
+:amanda/occult/cube: 1040 352 frr
+:amanda/occult/cube: 912 352 frr
+:amanda/occult/cube: 880 352 frr
+:amanda/occult/cube: 1008 352 frr
+:amanda/occult/cube: 976 352 frr
+:amanda/occult/cube: 944 352 frr
+:amanda/occult/cube: 1088 368 frr
+:amanda/occult/cube: 1056 368 frr
+:amanda/occult/cube: 1024 368 frr
+:amanda/occult/cube: 896 368 frr
+:amanda/occult/cube: 864 368 frr
+:amanda/occult/cube: 992 368 frr
+:amanda/occult/cube: 960 368 frr
+:amanda/occult/cube: 928 368 frr
+:amanda/occult/cube: 1072 384 frr
+:amanda/occult/cube: 1040 384 frr
+:amanda/occult/cube: 1008 384 frr
+:amanda/occult/cube: 880 384 frr
+:amanda/occult/cube: 848 384 frr
+:amanda/occult/cube: 976 384 frr
+:amanda/occult/cube: 944 384 frr
+:amanda/occult/cube: 912 384 frr
+:amanda/occult/cube: 1056 400 frr
+:amanda/occult/cube: 1024 400 frr
+:amanda/occult/cube: 992 400 frr
+:amanda/occult/cube: 864 400 frr
+:amanda/occult/cube: 832 400 frr
+:amanda/occult/cube: 960 400 frr
+:amanda/occult/cube: 928 400 frr
+:amanda/occult/cube: 896 400 frr
+:amanda/occult/cube: 1040 416 frr
+:amanda/occult/cube: 1008 416 frr
+:amanda/occult/cube: 976 416 frr
+:amanda/occult/cube: 848 416 frr
+:amanda/occult/cube: 816 416 frr
+:amanda/occult/cube: 944 416 frr
+:amanda/occult/cube: 912 416 frr
+:amanda/occult/cube: 880 416 frr
+:amanda/occult/cube: 720 416 frr
+:amanda/occult/cube: 1088 80 frr
+:amanda/occult/cube: 1056 80 frr
+:amanda/occult/cube: 1024 80 frr
+:amanda/occult/cube: 896 80 frr
+:amanda/occult/cube: 992 80 frr
+:amanda/occult/cube: 960 80 frr
+:amanda/occult/cube: 928 80 frr
+:amanda/occult/cube: 1072 96 frr
+:amanda/occult/cube: 1040 96 frr
+:amanda/occult/cube: 1008 96 frr
+:amanda/occult/cube: 880 96 frr
+:amanda/occult/cube: 976 96 frr
+:amanda/occult/cube: 944 96 frr
+:amanda/occult/cube: 912 96 frr
+:amanda/occult/cube: 1088 112 frr
+:amanda/occult/cube: 1056 112 frr
+:amanda/occult/cube: 1024 112 frr
+:amanda/occult/cube: 896 112 frr
+:amanda/occult/cube: 864 112 frr
+:amanda/occult/cube: 992 112 frr
+:amanda/occult/cube: 960 112 frr
+:amanda/occult/cube: 928 112 frr
+:amanda/occult/cube: 1072 128 frr
+:amanda/occult/cube: 1040 128 frr
+:amanda/occult/cube: 1008 128 frr
+:amanda/occult/cube: 880 128 frr
+:amanda/occult/cube: 848 128 frr
+:amanda/occult/cube: 976 128 frr
+:amanda/occult/cube: 944 128 frr
+:amanda/occult/cube: 912 128 frr
+:amanda/occult/cube: 1056 144 frr
+:amanda/occult/cube: 1024 144 frr
+:amanda/occult/cube: 992 144 frr
+:amanda/occult/cube: 864 144 frr
+:amanda/occult/cube: 960 144 frr
+:amanda/occult/cube: 928 144 frr
+:amanda/occult/cube: 896 144 frr
+:amanda/occult/cube: 1040 160 frr
+:amanda/occult/cube: 1008 160 frr
+:amanda/occult/cube: 976 160 frr
+:amanda/occult/cube: 848 160 frr
+:amanda/occult/cube: 944 160 frr
+:amanda/occult/cube: 912 160 frr
+:amanda/occult/cube: 880 160 frr
+:amanda/occult/cube: 1024 176 frr
+:amanda/occult/cube: 992 176 frr
+:amanda/occult/cube: 960 176 frr
+:amanda/occult/cube: 928 176 frr
+:amanda/occult/cube: 896 176 frr
+:amanda/occult/cube: 864 176 frr
+:amanda/occult/cube: 1008 192 frr
+:amanda/occult/cube: 976 192 frr
+:amanda/occult/cube: 944 192 frr
+:amanda/occult/cube: 912 192 frr
+:amanda/occult/cube: 880 192 frr
+:amanda/occult/cube: 848 192 frr
+:amanda/occult/cube: 992 208 frr
+:amanda/occult/cube: 960 208 frr
+:amanda/occult/cube: 928 208 frr
+:amanda/occult/cube: 896 208 frr
+:amanda/occult/cube: 864 208 frr
+:amanda/occult/cube: 976 224 frr
+:amanda/occult/cube: 944 224 frr
+:amanda/occult/cube: 912 224 frr
+:amanda/occult/cube: 880 224 frr
+:amanda/occult/cube: 848 224 frr
+:amanda/occult/cube: 960 240 frr
+:amanda/occult/cube: 928 240 frr
+:amanda/occult/cube: 896 240 frr
+:amanda/occult/cube: 864 240 frr
+:amanda/occult/cube: 944 256 frr
+:amanda/occult/cube: 912 256 frr
+:amanda/occult/cube: 880 256 frr
+:amanda/occult/cube: 848 256 frr
+:amanda/occult/cube: 928 272 frr
+:amanda/occult/cube: 896 272 frr
+:amanda/occult/cube: 864 272 frr
+:amanda/occult/cube: 912 288 frr
+:amanda/occult/cube: 880 288 frr
+:amanda/occult/cube: 848 288 frr
+:amanda/occult/cube: 896 304 frr
+:amanda/occult/cube: 864 304 frr
+:amanda/occult/cube: 880 320 frr
+:amanda/occult/cube: 848 320 frr
+:amanda/occult/cube: 864 336 frr
+:amanda/occult/cube: 848 352 frr
+:amanda/occult/cube: 1104 96 frr
+:amanda/occult/cube: 1120 80 frr
+:amanda/occult/cube: 864 80 frr
+:amanda/occult/cube: 848 96 frr
+:amanda/occult/cube: 1328 384 frr
+:amanda/occult/cube: 1296 384 frr
+:amanda/occult/cube: 1264 384 frr
+:amanda/occult/cube: 1136 384 frr
+:amanda/occult/cube: 1104 384 frr
+:amanda/occult/cube: 1232 384 frr
+:amanda/occult/cube: 1200 384 frr
+:amanda/occult/cube: 1168 384 frr
+:amanda/occult/cube: 1312 400 frr
+:amanda/occult/cube: 1280 400 frr
+:amanda/occult/cube: 1248 400 frr
+:amanda/occult/cube: 1120 400 frr
+:amanda/occult/cube: 1088 400 frr
+:amanda/occult/cube: 1216 400 frr
+:amanda/occult/cube: 1184 400 frr
+:amanda/occult/cube: 1152 400 frr
+:amanda/occult/cube: 1296 416 frr
+:amanda/occult/cube: 1264 416 frr
+:amanda/occult/cube: 1232 416 frr
+:amanda/occult/cube: 1104 416 frr
+:amanda/occult/cube: 1072 416 frr
+:amanda/occult/cube: 1200 416 frr
+:amanda/occult/cube: 1168 416 frr
+:amanda/occult/cube: 1136 416 frr
+:amanda/occult/cube: 1344 400 frr
+:amanda/occult/cube: 1328 416 frr
+:amanda/occult/cube: 1344 336 frr
+:amanda/occult/cube: 1312 336 frr
+:amanda/occult/cube: 1280 336 frr
+:amanda/occult/cube: 1248 336 frr
+:amanda/occult/cube: 1216 336 frr
+:amanda/occult/cube: 1184 336 frr
+:amanda/occult/cube: 1328 352 frr
+:amanda/occult/cube: 1296 352 frr
+:amanda/occult/cube: 1264 352 frr
+:amanda/occult/cube: 1232 352 frr
+:amanda/occult/cube: 1200 352 frr
+:amanda/occult/cube: 1312 368 frr
+:amanda/occult/cube: 1280 368 frr
+:amanda/occult/cube: 1248 368 frr
+:amanda/occult/cube: 1216 368 frr
+:amanda/occult/cube: 1184 368 frr
+:amanda/occult/cube: 1344 368 frr
+:amanda/occult/cube: 1232 320 frr
+:amanda/occult/cube: 1200 320 frr
+:amanda/occult/cube: 1168 320 frr
+:amanda/occult/cube: 1168 352 frr
+:amanda/occult/cube: 1136 352 frr
+:amanda/occult/cube: 1152 368 frr
+:amanda/occult/cube: 1120 368 frr
+:amanda/occult/cube: 1152 336 frr
+:amanda/occult/cube: 1344 176 frr
+:amanda/occult/cube: 1312 176 frr
+:amanda/occult/cube: 1328 192 frr
+:amanda/occult/cube: 1344 208 frr
+:amanda/occult/cube: 1312 208 frr
+:amanda/occult/cube: 1328 160 frr
+:amanda/occult/cube: 1344 144 frr
+:amanda/occult/cube: 1328 224 frr
+:amanda/occult/cube: 1296 224 frr
+:amanda/occult/cube: 1312 240 frr
+:amanda/occult/cube: 1328 256 frr
+:amanda/occult/cube: 1296 256 frr
+:amanda/occult/cube: 1344 272 frr
+:amanda/occult/cube: 1312 272 frr
+:amanda/occult/cube: 1328 288 frr
+:amanda/occult/cube: 1344 304 frr
+:amanda/occult/cube: 1312 304 frr
+:amanda/occult/cube: 1328 320 frr
+:amanda/occult/cube: 1344 240 frr
+:amanda/occult/cube: 1168 32 frr
+:amanda/occult/cube: 1264 32 frr
+:amanda/occult/cube: 1232 32 frr
+:amanda/occult/cube: 1200 32 frr
+:amanda/occult/cube: 1152 48 frr
+:amanda/occult/cube: 1248 48 frr
+:amanda/occult/cube: 1216 48 frr
+:amanda/occult/cube: 1184 48 frr
+:amanda/occult/cube: 1168 64 frr
+:amanda/occult/cube: 1136 64 frr
+:amanda/occult/cube: 1264 64 frr
+:amanda/occult/cube: 1232 64 frr
+:amanda/occult/cube: 1200 64 frr
+:amanda/occult/cube: 1104 32 frr
+:amanda/occult/cube: 1072 32 frr
+:amanda/occult/cube: 1040 32 frr
+:amanda/occult/cube: 912 32 frr
+:amanda/occult/cube: 1008 32 frr
+:amanda/occult/cube: 976 32 frr
+:amanda/occult/cube: 944 32 frr
+:amanda/occult/cube: 1088 48 frr
+:amanda/occult/cube: 1056 48 frr
+:amanda/occult/cube: 1024 48 frr
+:amanda/occult/cube: 896 48 frr
+:amanda/occult/cube: 992 48 frr
+:amanda/occult/cube: 960 48 frr
+:amanda/occult/cube: 928 48 frr
+:amanda/occult/cube: 1104 64 frr
+:amanda/occult/cube: 1072 64 frr
+:amanda/occult/cube: 1040 64 frr
+:amanda/occult/cube: 912 64 frr
+:amanda/occult/cube: 880 64 frr
+:amanda/occult/cube: 1008 64 frr
+:amanda/occult/cube: 976 64 frr
+:amanda/occult/cube: 944 64 frr
+:amanda/occult/cube: 1120 48 frr
+:amanda/occult/cube: 1136 32 frr
+:amanda/occult/cube: 880 32 frr
+:amanda/occult/cube: 864 48 frr
+:amanda/occult/cube: 848 64 frr
+:amanda/occult/cube: 848 32 frr
+:amanda/occult/cube: 1296 192 frr
+:amanda/occult/cube: 1296 288 frr
+:amanda/occult/cube: 1296 320 frr
+:amanda/occult/cube: 1280 208 frr
+:amanda/occult/cube: 1280 240 frr
+:amanda/occult/cube: 1280 272 frr
+:amanda/occult/cube: 1280 304 frr
+:amanda/occult/cube: 1264 224 frr
+:amanda/occult/cube: 1264 256 frr
+:amanda/occult/cube: 1264 288 frr
+:amanda/occult/cube: 1264 320 frr
+:amanda/occult/cube: 1248 272 frr
+:amanda/occult/cube: 1248 304 frr
+:amanda/occult/cube: 1216 272 frr
+:amanda/occult/cube: 1216 304 frr
+:amanda/occult/cube: 1232 288 frr
+:amanda/occult/cube: 1200 288 frr
+:amanda/occult/cube: 1184 304 frr
+:amanda/occult/cube: 1248 240 frr
+:amanda/occult/cube: 1232 256 frr
+:amanda/occult/cube: 832 336 frr
+:amanda/occult/cube: 816 352 frr
+:amanda/occult/cube: 832 368 frr
+:amanda/occult/cube: 800 368 frr
+:amanda/occult/cube: 816 384 frr
+:amanda/occult/cube: 800 400 frr
+:amanda/occult/cube: 832 80 frr
+:amanda/occult/cube: 816 96 frr
+:amanda/occult/cube: 832 112 frr
+:amanda/occult/cube: 800 112 frr
+:amanda/occult/cube: 816 128 frr
+:amanda/occult/cube: 800 144 frr
+:amanda/occult/cube: 832 144 frr
+:amanda/occult/cube: 816 160 frr
+:amanda/occult/cube: 832 176 frr
+:amanda/occult/cube: 800 176 frr
+:amanda/occult/cube: 816 192 frr
+:amanda/occult/cube: 832 208 frr
+:amanda/occult/cube: 800 208 frr
+:amanda/occult/cube: 816 224 frr
+:amanda/occult/cube: 832 240 frr
+:amanda/occult/cube: 800 240 frr
+:amanda/occult/cube: 816 256 frr
+:amanda/occult/cube: 832 272 frr
+:amanda/occult/cube: 800 272 frr
+:amanda/occult/cube: 816 288 frr
+:amanda/occult/cube: 832 304 frr
+:amanda/occult/cube: 800 304 frr
+:amanda/occult/cube: 816 320 frr
+:amanda/occult/cube: 800 336 frr
+:amanda/occult/cube: 816 64 frr
+:amanda/occult/cube: 800 80 frr
+:amanda/occult/cube: 832 48 frr
+:amanda/occult/cube: 736 16 frr
+:amanda/occult/cube: 816 32 frr
+:amanda/occult/cube: 800 48 frr
+:amanda/occult/cube: 704 16 frr
+:amanda/occult/cube: 784 320 frr
+:amanda/occult/cube: 784 288 frr
+:amanda/occult/cube: 768 144 frr
+:amanda/occult/cube: 768 176 frr
+:amanda/occult/cube: 768 208 frr
+:amanda/occult/cube: 768 240 frr
+:amanda/occult/cube: 768 272 frr
+:amanda/occult/cube: 768 112 frr
+:amanda/occult/cube: 768 80 frr
+:amanda/occult/cube: 768 48 frr
+:amanda/occult/cube: 752 96 frr
+:amanda/occult/cube: 736 112 frr
+:amanda/occult/cube: 752 128 frr
+:amanda/occult/cube: 720 128 frr
+:amanda/occult/cube: 736 144 frr
+:amanda/occult/cube: 720 160 frr
+:amanda/occult/cube: 752 160 frr
+:amanda/occult/cube: 736 176 frr
+:amanda/occult/cube: 752 192 frr
+:amanda/occult/cube: 720 192 frr
+:amanda/occult/cube: 736 208 frr
+:amanda/occult/cube: 752 224 frr
+:amanda/occult/cube: 720 224 frr
+:amanda/occult/cube: 736 240 frr
+:amanda/occult/cube: 752 256 frr
+:amanda/occult/cube: 720 256 frr
+:amanda/occult/cube: 736 272 frr
+:amanda/occult/cube: 752 288 frr
+:amanda/occult/cube: 720 288 frr
+:amanda/occult/cube: 736 80 frr
+:amanda/occult/cube: 720 96 frr
+:amanda/occult/cube: 752 64 frr
+:amanda/occult/cube: 752 32 frr
+:amanda/occult/cube: 736 48 frr
+:amanda/occult/cube: 720 64 frr
+:amanda/occult/cube: 720 32 frr
+:amanda/occult/cube: 784 128 frr
+:amanda/occult/cube: 784 160 frr
+:amanda/occult/cube: 784 192 frr
+:amanda/occult/cube: 784 224 frr
+:amanda/occult/cube: 784 96 frr
+:amanda/occult/cube: 784 64 frr
+:amanda/occult/cube: 784 32 frr
+:amanda/occult/cube: 784 256 frr
+:amanda/occult/cube: 736 304 frr
+:amanda/occult/cube: 720 320 frr
+:amanda/occult/cube: 768 304 frr
+:amanda/occult/cube: 752 320 frr
+:amanda/occult/cube: 704 400 frr
+:amanda/occult/cube: 704 144 frr
+:amanda/occult/cube: 704 176 frr
+:amanda/occult/cube: 704 208 frr
+:amanda/occult/cube: 704 240 frr
+:amanda/occult/cube: 704 272 frr
+:amanda/occult/cube: 704 304 frr
+:amanda/occult/cube: 704 336 frr
+:amanda/occult/cube: 704 368 frr
+:amanda/occult/cube: 704 112 frr
+:amanda/occult/cube: 704 80 frr
+:amanda/occult/cube: 704 48 frr
+:amanda/occult/cube: 688 416 frr
+:amanda/occult/cube: 688 160 frr
+:amanda/occult/cube: 688 192 frr
+:amanda/occult/cube: 688 224 frr
+:amanda/occult/cube: 688 256 frr
+:amanda/occult/cube: 688 288 frr
+:amanda/occult/cube: 688 320 frr
+:amanda/occult/cube: 688 352 frr
+:amanda/occult/cube: 688 384 frr
+:amanda/occult/cube: 688 128 frr
+:amanda/occult/cube: 688 96 frr
+:amanda/occult/cube: 688 64 frr
+:amanda/occult/cube: 688 32 frr
+:amanda/occult/cube: 768 336 frr
+:amanda/occult/cube: 736 336 frr
+:amanda/occult/cube: 1376 80 frr
+:amanda/occult/cube: 1360 96 frr
+:amanda/occult/cube: 1376 112 frr
+:amanda/occult/cube: 1360 128 frr
+:amanda/occult/cube: 1360 384 frr
+:amanda/occult/cube: 1376 400 frr
+:amanda/occult/cube: 1360 416 frr
+:amanda/occult/cube: 1376 336 frr
+:amanda/occult/cube: 1360 352 frr
+:amanda/occult/cube: 1376 368 frr
+:amanda/occult/cube: 1376 176 frr
+:amanda/occult/cube: 1360 192 frr
+:amanda/occult/cube: 1376 208 frr
+:amanda/occult/cube: 1360 160 frr
+:amanda/occult/cube: 1376 144 frr
+:amanda/occult/cube: 1360 224 frr
+:amanda/occult/cube: 1360 256 frr
+:amanda/occult/cube: 1376 272 frr
+:amanda/occult/cube: 1360 288 frr
+:amanda/occult/cube: 1376 304 frr
+:amanda/occult/cube: 1360 320 frr
+:amanda/occult/cube: 1376 240 frr
+:amanda/occult/cube: 1360 64 frr
+:amanda/occult/cube: 1376 48 frr
+:amanda/occult/cube: 1360 32 frr
+:amanda/occult/cube: 800 16 frr
+:amanda/occult/cube: 768 16 frr
+:amanda/occult/cube: 864 16 frr
+:amanda/occult/cube: 832 16 frr
+:amanda/occult/cube: 928 16 frr
+:amanda/occult/cube: 896 16 frr
+:amanda/occult/cube: 992 16 frr
+:amanda/occult/cube: 960 16 frr
+:amanda/occult/cube: 1056 16 frr
+:amanda/occult/cube: 1024 16 frr
+:amanda/occult/cube: 1120 16 frr
+:amanda/occult/cube: 1088 16 frr
+:amanda/occult/cube: 1184 16 frr
+:amanda/occult/cube: 1152 16 frr
+:amanda/occult/cube: 1216 16 frr
+:amanda/occult/cube: 1280 16 frr
+:amanda/occult/cube: 1248 16 frr
+:amanda/occult/cube: 1344 16 frr
+:amanda/occult/cube: 1312 16 frr
+:amanda/occult/cube: 1376 16 frr
+:amanda/occult/cube: 800 432 frr
+:amanda/occult/cube: 768 432 frr
+:amanda/occult/cube: 1056 432 frr
+:amanda/occult/cube: 1024 432 frr
+:amanda/occult/cube: 992 432 frr
+:amanda/occult/cube: 864 432 frr
+:amanda/occult/cube: 832 432 frr
+:amanda/occult/cube: 960 432 frr
+:amanda/occult/cube: 928 432 frr
+:amanda/occult/cube: 896 432 frr
+:amanda/occult/cube: 736 432 frr
+:amanda/occult/cube: 1312 432 frr
+:amanda/occult/cube: 1280 432 frr
+:amanda/occult/cube: 1248 432 frr
+:amanda/occult/cube: 1120 432 frr
+:amanda/occult/cube: 1088 432 frr
+:amanda/occult/cube: 1216 432 frr
+:amanda/occult/cube: 1184 432 frr
+:amanda/occult/cube: 1152 432 frr
+:amanda/occult/cube: 1344 432 frr
+:amanda/occult/cube: 704 432 frr
+:amanda/occult/cube: 1376 432 frr
+:amanda/occult/cube: 720 0 frr
+:amanda/occult/cube: 688 0 frr
+:amanda/occult/cube: 784 0 frr
+:amanda/occult/cube: 752 0 frr
+:amanda/occult/cube: 848 0 frr
+:amanda/occult/cube: 816 0 frr
+:amanda/occult/cube: 912 0 frr
+:amanda/occult/cube: 880 0 frr
+:amanda/occult/cube: 976 0 frr
+:amanda/occult/cube: 944 0 frr
+:amanda/occult/cube: 1040 0 frr
+:amanda/occult/cube: 1008 0 frr
+:amanda/occult/cube: 1104 0 frr
+:amanda/occult/cube: 1072 0 frr
+:amanda/occult/cube: 1168 0 frr
+:amanda/occult/cube: 1136 0 frr
+:amanda/occult/cube: 1200 0 frr
+:amanda/occult/cube: 1264 0 frr
+:amanda/occult/cube: 1232 0 frr
+:amanda/occult/cube: 1328 0 frr
+:amanda/occult/cube: 1296 0 frr
+:amanda/occult/cube: 1360 0 frr

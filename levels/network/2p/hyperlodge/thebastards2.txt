@@ -1,0 +1,108 @@
+$BUILT 2024-07-18 12:00:51
+$AUTHOR Hyperlodge
+$ENGLISH The Bastards 2
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 512
+#SIZE_Y 224
+#BACKGROUND_RED 143
+#BACKGROUND_GREEN 63
+#BACKGROUND_BLUE 63
+
+#SECONDS 60
+#INITIAL 100
+#SPAWN_INTERVAL 50
+
+#RUNNER -1
+#CLIMBER -1
+#EXPLODER2 -1
+#BLOCKER -1
+#JUMPER -1
+#BATTER -1
+
+:raymanni/lab/hatch.H: 128 32
+:raymanni/lab/hatch.H: 352 32 r
+
+:raymanni/lab/goal.G: 208 32
+:raymanni/lab/goal.G: 240 32
+
+:raymanni/lab/steel_1.S: 128 160
+:raymanni/lab/steel_1.S: 128 128
+:raymanni/lab/steel_1.S: 128 192
+:raymanni/lab/steel_1.S: 256 96
+:raymanni/lab/steel_1.S: 160 128
+:raymanni/lab/steel_1.S: 128 96
+:raymanni/lab/steel_1.S: 192 128
+:raymanni/lab/steel_1.S: 224 128
+:raymanni/lab/steel_1.S: 224 96
+:raymanni/lab/steel_1.S: 224 192
+:raymanni/lab/steel_1.S: 224 160
+:raymanni/lab/steel_1.S: 128 0
+:raymanni/lab/steel_1.S: 96 0
+:raymanni/lab/steel_1.S: 64 0
+:raymanni/lab/steel_1.S: 32 0
+:raymanni/lab/steel_1.S: 0 0
+:raymanni/lab/steel_1.S: 96 128
+:raymanni/lab/steel_1.S: 96 160
+:raymanni/lab/steel_1.S: 64 160
+:raymanni/lab/steel_1.S: 96 192
+:raymanni/lab/steel_1.S: 64 192
+:raymanni/lab/steel_1.S: 32 192
+:raymanni/lab/steel_1.S: 0 192
+:raymanni/lab/steel_1.S: 192 160
+:raymanni/lab/steel_1.S: 192 192
+:raymanni/lab/steel_1.S: 160 160
+:raymanni/lab/steel_1.S: 160 192
+:raymanni/lab/steel_1.S: 288 160
+:raymanni/lab/steel_1.S: 288 128
+:raymanni/lab/steel_1.S: 288 192
+:raymanni/lab/steel_1.S: 320 128
+:raymanni/lab/steel_1.S: 352 128
+:raymanni/lab/steel_1.S: 384 128
+:raymanni/lab/steel_1.S: 384 192
+:raymanni/lab/steel_1.S: 384 160
+:raymanni/lab/steel_1.S: 256 128
+:raymanni/lab/steel_1.S: 256 160
+:raymanni/lab/steel_1.S: 256 192
+:raymanni/lab/steel_1.S: 352 160
+:raymanni/lab/steel_1.S: 352 192
+:raymanni/lab/steel_1.S: 320 160
+:raymanni/lab/steel_1.S: 320 192
+:raymanni/lab/steel_1.S: 352 96
+:raymanni/lab/steel_1.S: 480 192
+:raymanni/lab/steel_1.S: 416 160
+:raymanni/lab/steel_1.S: 416 192
+:raymanni/lab/steel_1.S: 448 192
+:raymanni/lab/steel_1.S: 480 0
+:raymanni/lab/steel_1.S: 448 0
+:raymanni/lab/steel_1.S: 416 0
+:raymanni/lab/steel_1.S: 384 0
+:raymanni/lab/steel_1.S: 352 0
+:raymanni/lab/steel_1.S: 288 0
+:raymanni/lab/steel_1.S: 256 0
+:raymanni/lab/steel_1.S: 224 0
+:raymanni/lab/steel_1.S: 192 0
+:raymanni/lab/steel_1.S: 160 0
+:raymanni/lab/steel_1.S: 320 0
+:raymanni/lab/steel_1.S: 0 160
+:raymanni/lab/steel_1.S: 0 128
+:raymanni/lab/steel_1.S: 0 96
+:raymanni/lab/steel_1.S: 32 96
+:raymanni/lab/steel_1.S: 64 64
+:raymanni/lab/steel_1.S: 32 64
+:raymanni/lab/steel_1.S: 0 64
+:raymanni/lab/steel_1.S: 64 32
+:raymanni/lab/steel_1.S: 32 32
+:raymanni/lab/steel_1.S: 0 32
+:raymanni/lab/steel_1.S: 96 32
+:raymanni/lab/steel_1.S: 480 32
+:raymanni/lab/steel_1.S: 448 32
+:raymanni/lab/steel_1.S: 416 32
+:raymanni/lab/steel_1.S: 384 32
+:raymanni/lab/steel_1.S: 480 64
+:raymanni/lab/steel_1.S: 448 64
+:raymanni/lab/steel_1.S: 416 64
+:raymanni/lab/steel_1.S: 480 96
+:raymanni/lab/steel_1.S: 448 96
+:raymanni/lab/steel_1.S: 480 128
+:raymanni/lab/steel_1.S: 480 160

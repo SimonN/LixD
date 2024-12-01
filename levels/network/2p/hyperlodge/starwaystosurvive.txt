@@ -1,0 +1,178 @@
+$BUILT 2024-07-18 11:28:04
+$AUTHOR Hyperlodge
+$ENGLISH Starways to Survive
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1152
+#SIZE_Y 424
+#BACKGROUND_RED 84
+#BACKGROUND_GREEN 44
+#BACKGROUND_BLUE 80
+
+#SECONDS 90
+#INITIAL 150
+#SPAWN_INTERVAL 80
+
+#WALKER 10
+#RUNNER 10
+#CLIMBER 10
+#FLOATER 10
+#EXPLODER2 -1
+#BLOCKER 10
+#BUILDER -1
+#PLATFORMER 10
+#BASHER 10
+#MINER 10
+#DIGGER 10
+#JUMPER 10
+#BATTER -1
+#CUBER -1
+
+:matt/goldmine/Hatch.H: 96 336
+:matt/goldmine/Hatch.H: 992 336 r
+
+:matt/earth/Goal.G: 208 8
+:matt/earth/Goal.G: 880 8
+
+:raymanni/gore/bonesaw.F: 792 42
+:raymanni/gore/bonesaw.F: 296 42
+
+:geoo/construction/steam_up.T: 272 384
+:geoo/construction/steam_up.T: 864 384
+:geoo/construction/steam_up.T: 568 384
+:geoo/construction/steam_up.T: 616 384
+:geoo/construction/steam_up.T: 664 384
+:geoo/construction/steam_up.T: 712 384
+:geoo/construction/steam_up.T: 760 384
+:geoo/construction/steam_up.T: 808 384
+:geoo/construction/steam_up.T: 520 384
+:geoo/construction/steam_up.T: 472 384
+:geoo/construction/steam_up.T: 424 384
+:geoo/construction/steam_up.T: 376 384
+:geoo/construction/steam_up.T: 328 384
+
+:matt/bricks/02a: 96 384
+:matt/bricks/02a: 208 360
+:matt/bricks/02a: 96 312
+:matt/bricks/02a: 208 288
+:matt/bricks/02a: 208 216
+:matt/bricks/02a: 96 240
+:matt/bricks/02a: 96 168
+:matt/bricks/02a: 208 144
+:matt/bricks/02a: 208 72
+:matt/bricks/02a: 96 96
+$BEGIN_TILE_GROUP 0
+:amanda/steel/steel24x8.S: 0 0
+:amanda/steel/steel24x8.S: 24 0
+:amanda/steel/steel24x8.S: 48 0
+:amanda/steel/steel24x8.S: 72 0
+:amanda/steel/steel24x8.S: 96 0
+:amanda/steel/steel24x8.S: 120 0
+:amanda/steel/steel24x8.S: 144 0
+:amanda/steel/steel24x8.S: 168 0
+:amanda/steel/steel24x8.S: 192 0
+:amanda/steel/steel24x8.S: 216 0
+:amanda/steel/steel24x8.S: 240 0
+:amanda/steel/steel24x8.S: 264 0
+:amanda/steel/steel24x8.S: 288 0
+:amanda/steel/steel24x8.S: 312 0
+:amanda/steel/steel24x8.S: 336 0
+:amanda/steel/steel24x8.S: 360 0
+$END_TILE_GROUP
+:Group-0: 0 416
+:Group-0: 384 416
+:Group-0: 768 416
+:matt/bricks/02a: 992 384 frr
+:matt/bricks/02a: 880 360 frr
+:matt/bricks/02a: 992 312 frr
+:matt/bricks/02a: 880 288 frr
+:matt/bricks/02a: 880 216 frr
+:matt/bricks/02a: 992 240 frr
+:matt/bricks/02a: 992 168 frr
+:matt/bricks/02a: 880 144 frr
+:matt/bricks/02a: 880 72 frr
+:matt/bricks/02a: 992 96 frr
+:amanda/steel/steel24x8.S: 324 72
+:amanda/steel/steel24x8.S: 348 72
+:amanda/steel/steel24x8.S: 372 72
+:amanda/steel/steel24x8.S: 396 72
+:amanda/steel/steel24x8.S: 420 72
+:amanda/steel/steel24x8.S: 444 72
+:amanda/steel/steel24x8.S: 468 72
+:amanda/steel/steel24x8.S: 492 72
+:amanda/steel/steel24x8.S: 516 72
+:amanda/steel/steel24x8.S: 540 72
+:amanda/steel/steel24x8.S: 564 72
+:amanda/steel/steel24x8.S: 588 72
+:amanda/steel/steel24x8.S: 612 72
+:amanda/steel/steel24x8.S: 636 72
+:amanda/steel/steel24x8.S: 660 72
+:amanda/steel/steel24x8.S: 684 72
+:amanda/steel/steel24x8.S: 708 72
+:amanda/steel/steel24x8.S: 732 72
+:amanda/steel/steel24x8.S: 756 72
+:amanda/steel/steel24x8.S: 780 72
+:amanda/steel/steel24x8.S: 804 72
+:amanda/steel/steel24x8.S: 276 144
+:amanda/steel/steel24x8.S: 300 144
+:amanda/steel/steel24x8.S: 324 144
+:amanda/steel/steel24x8.S: 348 144
+:amanda/steel/steel24x8.S: 372 144
+:amanda/steel/steel24x8.S: 396 144
+:amanda/steel/steel24x8.S: 420 144
+:amanda/steel/steel24x8.S: 444 144
+:amanda/steel/steel24x8.S: 468 144
+:amanda/steel/steel24x8.S: 492 144
+:amanda/steel/steel24x8.S: 516 144
+:amanda/steel/steel24x8.S: 540 144
+:amanda/steel/steel24x8.S: 564 144
+:amanda/steel/steel24x8.S: 588 144
+:amanda/steel/steel24x8.S: 612 144
+:amanda/steel/steel24x8.S: 636 144
+:amanda/steel/steel24x8.S: 660 144
+:amanda/steel/steel24x8.S: 684 144
+:amanda/steel/steel24x8.S: 708 144
+:amanda/steel/steel24x8.S: 732 144
+:amanda/steel/steel24x8.S: 756 144
+:amanda/steel/steel24x8.S: 780 144
+:amanda/steel/steel24x8.S: 804 144
+:amanda/steel/steel24x8.S: 828 144
+:amanda/steel/steel24x8.S: 852 144
+:amanda/steel/steel24x8.S: 300 360
+:amanda/steel/steel24x8.S: 348 360
+:amanda/steel/steel24x8.S: 396 360
+:amanda/steel/steel24x8.S: 444 360
+:amanda/steel/steel24x8.S: 492 360
+:amanda/steel/steel24x8.S: 540 360
+:amanda/steel/steel24x8.S: 588 360
+:amanda/steel/steel24x8.S: 636 360
+:amanda/steel/steel24x8.S: 684 360
+:amanda/steel/steel24x8.S: 732 360
+:amanda/steel/steel24x8.S: 780 360
+:amanda/steel/steel24x8.S: 828 360
+:geoo/construction/fence_32x32.S: 1120 384
+:geoo/construction/fence_32x32.S: 1120 352
+:geoo/construction/fence_32x32.S: 1120 320
+:geoo/construction/fence_32x32.S: 1120 288
+:geoo/construction/fence_32x32.S: 1120 256
+:geoo/construction/fence_32x32.S: 1120 224
+:geoo/construction/fence_32x32.S: 1120 192
+:geoo/construction/fence_32x32.S: 1120 160
+:geoo/construction/fence_32x32.S: 1120 128
+:geoo/construction/fence_32x32.S: 1120 96
+:geoo/construction/fence_32x32.S: 1120 64
+:geoo/construction/fence_32x32.S: 1120 32
+:geoo/construction/fence_32x32.S: 1120 0
+:geoo/construction/fence_32x32.S: 0 384
+:geoo/construction/fence_32x32.S: 0 352
+:geoo/construction/fence_32x32.S: 0 320
+:geoo/construction/fence_32x32.S: 0 288
+:geoo/construction/fence_32x32.S: 0 256
+:geoo/construction/fence_32x32.S: 0 224
+:geoo/construction/fence_32x32.S: 0 192
+:geoo/construction/fence_32x32.S: 0 160
+:geoo/construction/fence_32x32.S: 0 128
+:geoo/construction/fence_32x32.S: 0 96
+:geoo/construction/fence_32x32.S: 0 64
+:geoo/construction/fence_32x32.S: 0 32
+:geoo/construction/fence_32x32.S: 0 0

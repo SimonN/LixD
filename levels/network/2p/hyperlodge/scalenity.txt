@@ -1,0 +1,218 @@
+$BUILT 2024-07-18 11:32:44
+$AUTHOR Hyperlodge
+$ENGLISH Scalenity
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 564
+#SIZE_Y 458
+#TORUS_X 1
+#TORUS_Y 0
+#BACKGROUND_RED 109
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 20
+
+#SECONDS 80
+#INITIAL 120
+#SPAWN_INTERVAL 60
+
+#CLIMBER 10
+#FLOATER 10
+#EXPLODER2 100
+#BLOCKER 100
+#BUILDER 100
+#PLATFORMER 10
+#BATTER 100
+
+:raymanni/lab/hatch.H: 272 354
+:raymanni/lab/hatch.H: 232 354 r
+:raymanni/lab/hatch.H: 512 354
+:raymanni/lab/hatch.H: 473 354 r
+
+:geoo/abstract/goal.G: 236 8
+:geoo/abstract/goal.G: 268 8
+:geoo/abstract/goal.G: 476 8
+:geoo/abstract/goal.G: 508 8
+
+:proxima/flame.F: 392 410
+:proxima/flame.F: 424 410
+:proxima/flame.F: 456 410
+:proxima/flame.F: 488 410
+:proxima/flame.F: 520 410
+:proxima/flame.F: 552 410
+:proxima/flame.F: 296 410
+:proxima/flame.F: 328 410
+:proxima/flame.F: 360 410
+:proxima/flame.F: 200 410
+:proxima/flame.F: 232 410
+:proxima/flame.F: 264 410
+:proxima/flame.F: 104 410
+:proxima/flame.F: 136 410
+:proxima/flame.F: 168 410
+:proxima/flame.F: 16 410
+:proxima/flame.F: 40 410
+:proxima/flame.F: 72 410
+
+:geoo/construction/stairs_rd_32.S: 552 162
+:geoo/construction/stairs_rd_32.S: 40 138 frr
+:geoo/construction/stairs_rd_32.S: 72 162
+:geoo/construction/stairs_rd_32.S: 120 138 frr
+:geoo/construction/stairs_rd_32.S: 152 162
+:geoo/construction/stairs_rd_32.S: 200 138 frr
+:geoo/construction/stairs_rd_32.S: 232 162
+:geoo/construction/stairs_rd_32.S: 280 138 frr
+:geoo/construction/stairs_rd_32.S: 552 210
+:geoo/construction/stairs_rd_32.S: 40 186 frr
+:geoo/construction/stairs_rd_32.S: 72 210
+:geoo/construction/stairs_rd_32.S: 120 186 frr
+:geoo/construction/stairs_rd_32.S: 152 210
+:geoo/construction/stairs_rd_32.S: 200 186 frr
+:geoo/construction/stairs_rd_32.S: 232 210
+:geoo/construction/stairs_rd_32.S: 280 186 frr
+:geoo/construction/stairs_rd_32.S: 552 258
+:geoo/construction/stairs_rd_32.S: 40 234 frr
+:geoo/construction/stairs_rd_32.S: 72 258
+:geoo/construction/stairs_rd_32.S: 120 234 frr
+:geoo/construction/stairs_rd_32.S: 152 258
+:geoo/construction/stairs_rd_32.S: 200 234 frr
+:geoo/construction/stairs_rd_32.S: 232 258
+:geoo/construction/stairs_rd_32.S: 280 234 frr
+:geoo/construction/stairs_rd_32.S: 552 306
+:geoo/construction/stairs_rd_32.S: 40 282 frr
+:geoo/construction/stairs_rd_32.S: 72 306
+:geoo/construction/stairs_rd_32.S: 120 282 frr
+:geoo/construction/stairs_rd_32.S: 152 306
+:geoo/construction/stairs_rd_32.S: 200 282 frr
+:geoo/construction/stairs_rd_32.S: 232 306
+:geoo/construction/stairs_rd_32.S: 280 282 frr
+:geoo/construction/stairs_rd_32.S: 312 162
+:geoo/construction/stairs_rd_32.S: 360 138 frr
+:geoo/construction/stairs_rd_32.S: 312 210
+:geoo/construction/stairs_rd_32.S: 360 186 frr
+:geoo/construction/stairs_rd_32.S: 312 258
+:geoo/construction/stairs_rd_32.S: 360 234 frr
+:geoo/construction/stairs_rd_32.S: 312 306
+:geoo/construction/stairs_rd_32.S: 360 282 frr
+:geoo/construction/stairs_rd_32.S: 392 162
+:geoo/construction/stairs_rd_32.S: 440 138 frr
+:geoo/construction/stairs_rd_32.S: 392 210
+:geoo/construction/stairs_rd_32.S: 440 186 frr
+:geoo/construction/stairs_rd_32.S: 392 258
+:geoo/construction/stairs_rd_32.S: 440 234 frr
+:geoo/construction/stairs_rd_32.S: 392 306
+:geoo/construction/stairs_rd_32.S: 440 282 frr
+:geoo/construction/stairs_rd_32.S: 472 162
+:geoo/construction/stairs_rd_32.S: 520 138 frr
+:geoo/construction/stairs_rd_32.S: 472 210
+:geoo/construction/stairs_rd_32.S: 520 186 frr
+:geoo/construction/stairs_rd_32.S: 472 258
+:geoo/construction/stairs_rd_32.S: 520 234 frr
+:geoo/construction/stairs_rd_32.S: 472 306
+:geoo/construction/stairs_rd_32.S: 520 282 frr
+:amanda/steel/steel24x8.S: 232 346
+:amanda/steel/steel24x8.S: 256 346
+:amanda/steel/steel24x8.S: 280 346
+:amanda/steel/steel8x16.S: 264 354
+:amanda/steel/steel8x16.S: 264 370
+:amanda/steel/steel8x16.S: 264 386
+:amanda/steel/steel8x16.S: 336 346
+:amanda/steel/steel8x16.S: 336 362
+:amanda/steel/steel8x16.S: 336 378
+:amanda/steel/steel24x8.S: 272 394
+:amanda/steel/steel24x8.S: 296 394
+:amanda/steel/steel24x8.S: 320 394
+:amanda/steel/steel24x8.S: 192 394
+:amanda/steel/steel24x8.S: 216 394
+:amanda/steel/steel24x8.S: 240 394
+:amanda/steel/steel8x16.S: 192 346
+:amanda/steel/steel8x16.S: 192 362
+:amanda/steel/steel8x16.S: 192 378
+:amanda/steel/steel24x8.S: 520 346 frr
+:amanda/steel/steel24x8.S: 496 346 frr
+:amanda/steel/steel24x8.S: 472 346 frr
+:amanda/steel/steel8x16.S: 504 354 frr
+:amanda/steel/steel8x16.S: 504 370 frr
+:amanda/steel/steel8x16.S: 504 386 frr
+:amanda/steel/steel8x16.S: 432 346 frr
+:amanda/steel/steel8x16.S: 432 362 frr
+:amanda/steel/steel8x16.S: 432 378 frr
+:amanda/steel/steel24x8.S: 480 394 frr
+:amanda/steel/steel24x8.S: 456 394 frr
+:amanda/steel/steel24x8.S: 432 394 frr
+:amanda/steel/steel24x8.S: 560 394 frr
+:amanda/steel/steel24x8.S: 536 394 frr
+:amanda/steel/steel24x8.S: 512 394 frr
+:amanda/steel/steel8x16.S: 12 346 frr
+:amanda/steel/steel8x16.S: 12 362 frr
+:amanda/steel/steel8x16.S: 12 378 frr
+:raymanni/lab/pipe_1: 432 418 r
+:raymanni/lab/pipe_1: 464 418 r
+:raymanni/lab/pipe_1: 496 418 r
+:raymanni/lab/pipe_1: 528 418 r
+:raymanni/lab/pipe_1: 560 418 r
+:raymanni/lab/pipe_1: 28 418 r
+:raymanni/lab/pipe_1: 60 418 r
+:raymanni/lab/pipe_1: 92 418 r
+:raymanni/lab/pipe_1: 176 418 r
+:raymanni/lab/pipe_1: 208 418 r
+:raymanni/lab/pipe_1: 240 418 r
+:raymanni/lab/pipe_1: 272 418 r
+:raymanni/lab/pipe_1: 304 418 r
+:raymanni/lab/pipe_1: 336 418 r
+:raymanni/lab/pipe_1: 368 418 r
+:raymanni/lab/pipe_1: 400 418 r
+:raymanni/lab/pipe_1: 144 418 r
+:raymanni/lab/pipe_1: 112 418 r
+:amanda/steel/steel24x8.S: 20 346 frr
+:amanda/steel/steel24x8.S: 344 346
+:amanda/steel/steel24x8.S: 408 346 frr
+:amanda/steel/steel24x8.S: 168 346 frr
+:raymanni/lab/pipe_3: 477 402
+:raymanni/lab/pipe_3: 507 402 frr
+:raymanni/lab/pipe_3: 237 402
+:raymanni/lab/pipe_3: 267 402 frr
+:raymanni/lab/pipe_1: 236 112 r
+:raymanni/lab/pipe_1: 268 112 r
+:raymanni/lab/pipe_1: 300 112 r
+:raymanni/lab/pipe_1: 332 112 r
+:raymanni/lab/pipe_1: 364 112 r
+:raymanni/lab/pipe_1: 396 112 r
+:raymanni/lab/pipe_1: 428 112 r
+:raymanni/lab/pipe_1: 460 112 r
+:raymanni/lab/pipe_1: 492 112 r
+:raymanni/lab/pipe_1: 524 112 r
+:raymanni/lab/pipe_1: 556 112 r
+:raymanni/lab/pipe_1: 24 112 r
+:raymanni/lab/pipe_1: 56 112 r
+:raymanni/lab/pipe_1: 88 112 r
+:raymanni/lab/pipe_1: 120 112 r
+:raymanni/lab/pipe_1: 152 112 r
+:raymanni/lab/pipe_1: 182 112 r
+:raymanni/lab/pipe_1: 210 112 r
+:amanda/steel/steel8x16.S: 228 64
+:amanda/steel/steel8x16.S: 228 80
+:amanda/steel/steel8x16.S: 228 96
+:amanda/steel/steel8x16.S: 300 64
+:amanda/steel/steel8x16.S: 300 80
+:amanda/steel/steel8x16.S: 300 96
+:amanda/steel/steel8x16.S: 468 64
+:amanda/steel/steel8x16.S: 468 80
+:amanda/steel/steel8x16.S: 468 96
+:amanda/steel/steel8x16.S: 540 64
+:amanda/steel/steel8x16.S: 540 80
+:amanda/steel/steel8x16.S: 540 96
+:amanda/steel/steel8x16.S: 228 16
+:amanda/steel/steel8x16.S: 228 32
+:amanda/steel/steel8x16.S: 228 48
+:amanda/steel/steel8x16.S: 300 16
+:amanda/steel/steel8x16.S: 300 32
+:amanda/steel/steel8x16.S: 300 48
+:amanda/steel/steel8x16.S: 468 16
+:amanda/steel/steel8x16.S: 468 32
+:amanda/steel/steel8x16.S: 468 48
+:amanda/steel/steel8x16.S: 540 16
+:amanda/steel/steel8x16.S: 540 32
+:amanda/steel/steel8x16.S: 540 48
+:amanda/steel/steel24x8.S: 204 16
+:amanda/steel/steel24x8.S: 308 16
+:amanda/steel/steel24x8.S: 444 16
+:amanda/steel/steel24x8.S: 548 16

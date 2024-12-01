@@ -1,0 +1,146 @@
+$BUILT 2024-09-05 11:39:01
+$AUTHOR Hyperlodge
+$ENGLISH Migraine Machine
+
+#INTENDED_NUMBER_OF_PLAYERS 4
+#SIZE_X 1280
+#SIZE_Y 394
+#TORUS_X 1
+#TORUS_Y 0
+#BACKGROUND_RED 16
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 96
+
+#SECONDS 82
+#INITIAL 222
+#SPAWN_INTERVAL 22
+
+#RUNNER -1
+#CLIMBER -1
+#FLOATER 10
+#EXPLODER2 -1
+#BUILDER 10
+#PLATFORMER 10
+#BASHER 10
+#MINER 10
+#JUMPER -1
+#BATTER -1
+#CUBER -1
+
+:geoo/abstract/hatch.H: 784 32 r
+:geoo/abstract/hatch.H: 992 32
+:geoo/abstract/hatch.H: 32 32
+:geoo/abstract/hatch.H: 352 32
+:geoo/abstract/hatch.H: 672 32
+:geoo/abstract/hatch.H: 1104 32 r
+:geoo/abstract/hatch.H: 144 32 r
+:geoo/abstract/hatch.H: 464 32 r
+
+:matt/marble/Goal.G: 1192 344
+:matt/marble/Goal.G: 232 344
+:matt/marble/Goal.G: 552 344
+:matt/marble/Goal.G: 872 344
+
+:geoo/abstract/tbeam_down.T: 1208 344
+:geoo/abstract/tbeam_down.T: 248 344
+:geoo/abstract/tbeam_down.T: 568 344
+:geoo/abstract/tbeam_down.T: 888 344
+:geoo/abstract/tbeam_left.T: 1188 296
+:geoo/abstract/tbeam_right.T: 1228 296
+:geoo/abstract/tbeam_left.T: 228 296
+:geoo/abstract/tbeam_right.T: 268 296
+:geoo/abstract/tbeam_left.T: 548 296
+:geoo/abstract/tbeam_right.T: 588 296
+:geoo/abstract/tbeam_left.T: 868 296
+:geoo/abstract/tbeam_right.T: 908 296
+:geoo/abstract/tbeam_left.T: 1152 144
+:geoo/abstract/tbeam_left.T: 192 144
+:geoo/abstract/tbeam_left.T: 512 144
+:geoo/abstract/tbeam_left.T: 832 144
+:geoo/abstract/tbeam_right.T: 944 144
+:geoo/abstract/tbeam_right.T: 1264 144
+:geoo/abstract/tbeam_right.T: 304 144
+:geoo/abstract/tbeam_right.T: 624 144
+:geoo/abstract/tbeam_left.T: 388 144
+:geoo/abstract/tbeam_right.T: 428 144
+:geoo/construction/steam_up.T: 736 212
+:geoo/construction/steam_up.T: 1056 212
+:geoo/construction/steam_up.T: 96 212
+:geoo/construction/steam_up.T: 416 212
+:geoo/abstract/tbeam_left.T: 708 144
+:geoo/abstract/tbeam_right.T: 748 144
+
+$BEGIN_TILE_GROUP 0
+:geoo/construction/stairs_ru_32.S: 0 0
+:geoo/construction/stairs_ru_32.S: 80 0 frr
+:amanda/steel/steel_flange_left24x16.S: 0 32
+:amanda/steel/steel_flange_right24x16.S: 136 32
+:geoo/construction/platform.S: 128 48
+:geoo/construction/platform.S: 96 48
+:geoo/construction/platform.S: 64 48
+:geoo/construction/platform.S: 32 48
+:geoo/construction/platform.S: 0 48
+$END_TILE_GROUP
+:Group-0: 24 344
+$BEGIN_TILE_GROUP 1
+:geoo/shadow/wall/center: 88 176
+:geoo/shadow/tile2: 112 32
+:geoo/shadow/tile1: 48 96
+:geoo/shadow/tile2: 48 32
+:geoo/shadow/tile2: 80 32
+:geoo/shadow/tile2: 80 96 r
+:geoo/shadow/tile2: 112 96 frr
+:geoo/shadow/tile2: 112 128 frr
+:geoo/shadow/tile2: 80 128 fr
+:geoo/shadow/tile1: 48 128
+:geoo/shadow/tile2: 112 0
+:geoo/shadow/tile2: 80 0 frr
+:geoo/shadow/tile2: 48 0 frr
+:geoo/shadow/wall/center: 120 176
+:geoo/shadow/tile2: 160 32 frr
+:geoo/shadow/tile1: 224 96 frr
+:geoo/shadow/tile2: 224 32 frr
+:geoo/shadow/tile2: 192 32 frr
+:geoo/shadow/tile2: 192 96 fr
+:geoo/shadow/tile2: 160 96
+:geoo/shadow/tile2: 160 128
+:geoo/shadow/tile2: 192 128 r
+:geoo/shadow/tile1: 224 128 frr
+:geoo/shadow/tile2: 160 0 frr
+:geoo/shadow/tile2: 192 0
+:geoo/shadow/tile2: 224 0
+:geoo/shadow/wall/center: 184 176
+:geoo/shadow/wall/center: 152 176
+:geoo/shadow/wall/center: 0 128
+:geoo/shadow/wall/center: 0 96
+:geoo/shadow/wall/center: 0 160
+:geoo/shadow/wall/center: 0 64
+:geoo/shadow/wall/center: 0 32
+:geoo/shadow/wall/center: 0 0
+:geoo/shadow/wall/center: 272 128
+:geoo/shadow/wall/center: 272 96
+:geoo/shadow/wall/center: 272 160
+:geoo/shadow/wall/center: 272 64
+:geoo/shadow/wall/center: 272 32
+:geoo/shadow/wall/center: 272 0
+:geoo/shadow/wall/left: 240 176
+:geoo/shadow/wall/side: 32 176
+:geoo/shadow/wall/center: 40 232
+:geoo/shadow/wall/center: 72 232
+:geoo/shadow/wall/center: 136 232
+:geoo/shadow/wall/center: 104 232
+:geoo/shadow/wall/center: 200 232
+:geoo/shadow/wall/center: 168 232
+:geoo/shadow/wall/center: 232 232
+$END_TILE_GROUP
+:Group-1: 1232 64
+:Group-0: 184 344
+:Group-0: 344 344
+:Group-1: 272 64
+:Group-0: 504 344
+:Group-0: 664 344
+:Group-0: 824 344
+:Group-1: 592 64
+:Group-1: 912 64
+:Group-0: 984 344
+:Group-0: 1144 344

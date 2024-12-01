@@ -1,0 +1,371 @@
+$BUILT 2024-07-25 15:54:25
+$AUTHOR Hyperlodge
+$ENGLISH Opportunities
+
+#INTENDED_NUMBER_OF_PLAYERS 4
+#SIZE_X 1212
+#SIZE_Y 416
+#TORUS_X 1
+#TORUS_Y 0
+#BACKGROUND_RED 63
+#BACKGROUND_GREEN 83
+#BACKGROUND_BLUE 95
+
+#SECONDS 80
+#INITIAL 120
+#SPAWN_INTERVAL 60
+
+#CLIMBER 100
+#FLOATER 100
+#EXPLODER2 100
+#BLOCKER 100
+#BUILDER 100
+#MINER 100
+#BATTER 100
+#CUBER 100
+
+:raymanni/lab/hatch.H: 900 28
+:raymanni/lab/hatch.H: 916 28 r
+:raymanni/lab/hatch.H: 294 28
+:raymanni/lab/hatch.H: 310 28 r
+
+:raymanni/lab/goal.G: 462 160
+:raymanni/lab/goal.G: 110 160
+:raymanni/lab/goal.G: 1068 160
+:raymanni/lab/goal.G: 716 160
+
+:geoo/construction/Laser_vr_64.F: 466 160
+:geoo/construction/Laser_vr_64.F: 506 160
+:geoo/construction/Laser_vr_64.F: 210 82
+:geoo/construction/Laser_vr_64.F: 410 82
+:geoo/construction/Laser_vr_64.F: 154 160
+:geoo/construction/Laser_vr_64.F: 114 160
+:geoo/construction/Laser_vr_64.F: 1072 160
+:geoo/construction/Laser_vr_64.F: 1112 160
+:geoo/construction/Laser_vr_64.F: 816 82
+:geoo/construction/Laser_vr_64.F: 1016 82
+:geoo/construction/Laser_vr_64.F: 760 160
+:geoo/construction/Laser_vr_64.F: 720 160
+
+:geoo/construction/steam_up.T: 432 384
+:geoo/construction/steam_up.T: 400 384
+:geoo/construction/steam_up.T: 416 384
+:geoo/construction/steam_up.T: 480 384
+:geoo/construction/steam_up.T: 448 384
+:geoo/construction/steam_up.T: 464 384
+:geoo/construction/steam_up.T: 528 384
+:geoo/construction/steam_up.T: 496 384
+:geoo/construction/steam_up.T: 512 384
+:geoo/construction/steam_up.T: 576 384
+:geoo/construction/steam_up.T: 544 384
+:geoo/construction/steam_up.T: 560 384
+:geoo/construction/steam_up.T: 624 384
+:geoo/construction/steam_up.T: 592 384
+:geoo/construction/steam_up.T: 608 384
+:geoo/construction/steam_up.T: 672 384
+:geoo/construction/steam_up.T: 640 384
+:geoo/construction/steam_up.T: 656 384
+:geoo/construction/steam_up.T: 720 384
+:geoo/construction/steam_up.T: 688 384
+:geoo/construction/steam_up.T: 704 384
+:geoo/construction/steam_up.T: 768 384
+:geoo/construction/steam_up.T: 736 384
+:geoo/construction/steam_up.T: 752 384
+:geoo/construction/steam_up.T: 816 384
+:geoo/construction/steam_up.T: 784 384
+:geoo/construction/steam_up.T: 800 384
+:geoo/construction/steam_up.T: 864 384
+:geoo/construction/steam_up.T: 832 384
+:geoo/construction/steam_up.T: 848 384
+:geoo/construction/steam_up.T: 912 384
+:geoo/construction/steam_up.T: 880 384
+:geoo/construction/steam_up.T: 896 384
+:geoo/construction/steam_up.T: 960 384
+:geoo/construction/steam_up.T: 928 384
+:geoo/construction/steam_up.T: 944 384
+:geoo/construction/steam_up.T: 1008 384
+:geoo/construction/steam_up.T: 976 384
+:geoo/construction/steam_up.T: 992 384
+:geoo/construction/steam_up.T: 1056 384
+:geoo/construction/steam_up.T: 1024 384
+:geoo/construction/steam_up.T: 1040 384
+:geoo/construction/steam_up.T: 1104 384
+:geoo/construction/steam_up.T: 1072 384
+:geoo/construction/steam_up.T: 1088 384
+:geoo/construction/steam_up.T: 1152 384
+:geoo/construction/steam_up.T: 1120 384
+:geoo/construction/steam_up.T: 1136 384
+:geoo/construction/steam_up.T: 1200 384
+:geoo/construction/steam_up.T: 1168 384
+:geoo/construction/steam_up.T: 1184 384
+:geoo/construction/steam_up.T: 34 384
+:geoo/construction/steam_up.T: 4 384
+:geoo/construction/steam_up.T: 18 384
+:geoo/construction/steam_up.T: 82 384
+:geoo/construction/steam_up.T: 50 384
+:geoo/construction/steam_up.T: 66 384
+:geoo/construction/steam_up.T: 130 384
+:geoo/construction/steam_up.T: 98 384
+:geoo/construction/steam_up.T: 114 384
+:geoo/construction/steam_up.T: 178 384
+:geoo/construction/steam_up.T: 146 384
+:geoo/construction/steam_up.T: 162 384
+:geoo/construction/steam_up.T: 226 384
+:geoo/construction/steam_up.T: 194 384
+:geoo/construction/steam_up.T: 210 384
+:geoo/construction/steam_up.T: 274 384
+:geoo/construction/steam_up.T: 242 384
+:geoo/construction/steam_up.T: 258 384
+:geoo/construction/steam_up.T: 322 384
+:geoo/construction/steam_up.T: 290 384
+:geoo/construction/steam_up.T: 306 384
+:geoo/construction/steam_up.T: 370 384
+:geoo/construction/steam_up.T: 338 384
+:geoo/construction/steam_up.T: 354 384
+:geoo/construction/steam_up.T: 386 384
+
+:amanda/steel/steel24x8.S: 576 138
+:amanda/steel/steel8x16.S: 566 114
+:amanda/steel/steel24x8.S: 566 146
+:amanda/steel/steel_flange_right24x16.S: 584 114 frr
+:amanda/steel/steel24x8.S: 542 146
+:amanda/steel/steel24x8.S: 518 146
+:amanda/steel/steel8x16.S: 470 130
+:amanda/steel/steel24x8.S: 470 122
+:amanda/steel/steel24x8.S: 518 122
+:amanda/steel/steel24x8.S: 542 122
+:amanda/steel/steel8x16.S: 510 146
+:amanda/steel/steel8x16.S: 470 146
+:amanda/steel/steel24x8.S: 580 130
+:amanda/steel/steel24x8.S: 494 122
+:amanda/steel/steel8x16.S: 470 224
+:amanda/steel/steel8x16.S: 510 224
+:geoo/abstract/cvblocks/040: 478 224
+:amanda/steel/steel24x8.S: 446 224
+:amanda/steel/steel24x8.S: 422 224
+:amanda/steel/steel24x8.S: 398 224
+:amanda/steel/steel24x8.S: 374 224
+:geoo/abstract/cvblocks/040: 342 224
+:amanda/steel/steel24x8.S: 318 224
+:geoo/abstract/cvblocks/043: 446 240
+:geoo/abstract/cvblocks/005: 446 232
+:geoo/abstract/cvblocks/015: 486 294
+:geoo/abstract/cvblocks/000: 462 232
+:geoo/abstract/cvblocks/044: 510 240
+:geoo/abstract/cvblocks/020: 478 310
+:geoo/abstract/cvblocks/040: 334 288
+:amanda/steel/steel24x8.S: 294 224
+:amanda/steel/steel24x8.S: 238 224
+:geoo/abstract/cvblocks/040: 262 224
+:geoo/abstract/cvblocks/040: 270 288
+:amanda/steel/steel24x8.S: 214 224
+:amanda/steel/steel8x16.S: 214 146
+:amanda/steel/steel8x16.S: 590 146
+:amanda/steel/steel8x16.S: 214 68
+:geoo/abstract/cvblocks/015: 486 326
+:geoo/abstract/cvblocks/020: 478 342
+:amanda/steel/steel24x8.S: 214 44
+:amanda/steel/steel24x8.S: 238 44
+:amanda/steel/steel24x8.S: 262 44
+:amanda/steel/steel32x32.S: 302 192
+:amanda/steel/steel_flange_right24x16.S: 542 106
+:amanda/steel/steel24x8.S: 350 44
+:amanda/steel/steel24x8.S: 398 44
+:amanda/steel/steel8x16.S: 414 146
+:amanda/steel/steel8x16.S: 414 68
+:amanda/steel/steel24x8.S: 374 44
+:amanda/steel/steel8x16.S: 414 52
+:amanda/steel/steel24x8.S: 330 28
+:amanda/steel/steel8x16.S: 342 36
+:amanda/steel/steel8x16.S: 286 36
+:amanda/steel/steel24x8.S: 282 28
+:amanda/steel/steel24x8.S: 306 28
+:amanda/steel/steel8x16.S: 214 52
+:amanda/steel/steel24x8.S: 36 138 frr
+:amanda/steel/steel8x16.S: 62 114 frr
+:amanda/steel/steel24x8.S: 46 146 frr
+:amanda/steel/steel_flange_right24x16.S: 28 114
+:amanda/steel/steel24x8.S: 70 146 frr
+:amanda/steel/steel24x8.S: 94 146 frr
+:amanda/steel/steel8x16.S: 158 130 frr
+:amanda/steel/steel24x8.S: 142 122 frr
+:amanda/steel/steel24x8.S: 94 122 frr
+:amanda/steel/steel24x8.S: 70 122 frr
+:amanda/steel/steel8x16.S: 118 146 frr
+:amanda/steel/steel8x16.S: 158 146 frr
+:amanda/steel/steel24x8.S: 32 130 frr
+:amanda/steel/steel24x8.S: 118 122 frr
+:amanda/steel/steel32x32.S: 15 194 frr
+:amanda/steel/steel8x16.S: 38 146 frr
+:amanda/steel/steel8x16.S: 38 162 frr
+:amanda/steel/steel8x16.S: 38 178 frr
+:amanda/steel/steel_flange_right24x16.S: 70 106 frr
+:amanda/steel/steel24x8.S: 190 224
+:amanda/steel/steel24x8.S: 166 224
+:amanda/steel/steel8x16.S: 158 224
+:amanda/steel/steel8x16.S: 118 224
+:geoo/abstract/cvblocks/005: 526 232
+:geoo/abstract/cvblocks/000: 518 232
+:geoo/abstract/cvblocks/015: 310 336
+:amanda/steel/steel32x32.S: 589 194
+:amanda/steel/steel8x16.S: 590 162
+:amanda/steel/steel8x16.S: 590 178
+:geoo/abstract/cvblocks/040: 126 224
+:geoo/abstract/cvblocks/043: 94 240
+:geoo/abstract/cvblocks/005: 94 232
+:geoo/abstract/cvblocks/015: 134 294
+:geoo/abstract/cvblocks/000: 110 232
+:geoo/abstract/cvblocks/044: 158 240
+:geoo/abstract/cvblocks/020: 126 310
+:geoo/abstract/cvblocks/015: 134 326
+:geoo/abstract/cvblocks/020: 126 342
+:geoo/abstract/cvblocks/005: 174 232
+:geoo/abstract/cvblocks/000: 166 232
+:geoo/abstract/cvblocks/000: 512 330
+:geoo/abstract/cvblocks/000: 528 330
+:geoo/abstract/cvblocks/000: 544 330
+:geoo/abstract/cvblocks/000: 560 330
+:geoo/abstract/cvblocks/000: 576 330
+:geoo/abstract/cvblocks/000: 592 330
+:geoo/abstract/cvblocks/000: 608 330
+:geoo/abstract/cvblocks/000: 520 346
+:geoo/abstract/cvblocks/000: 536 346
+:geoo/abstract/cvblocks/000: 552 346
+:geoo/abstract/cvblocks/000: 568 346
+:geoo/abstract/cvblocks/000: 584 346
+:geoo/abstract/cvblocks/000: 600 346
+:geoo/abstract/cvblocks/000: 520 314
+:geoo/abstract/cvblocks/000: 536 314
+:geoo/abstract/cvblocks/000: 552 314
+:geoo/abstract/cvblocks/000: 568 314
+:geoo/abstract/cvblocks/000: 584 314
+:geoo/abstract/cvblocks/000: 600 314
+$BEGIN_TILE_GROUP 0
+:geoo/abstract/cvblocks/000: 0 16
+:geoo/abstract/cvblocks/000: 16 16
+:geoo/abstract/cvblocks/000: 32 16
+:geoo/abstract/cvblocks/000: 48 16
+:geoo/abstract/cvblocks/000: 64 16
+:geoo/abstract/cvblocks/000: 80 16
+:geoo/abstract/cvblocks/000: 96 16
+:geoo/abstract/cvblocks/000: 8 32
+:geoo/abstract/cvblocks/000: 24 32
+:geoo/abstract/cvblocks/000: 40 32
+:geoo/abstract/cvblocks/000: 56 32
+:geoo/abstract/cvblocks/000: 72 32
+:geoo/abstract/cvblocks/000: 88 32
+:geoo/abstract/cvblocks/000: 8 0
+:geoo/abstract/cvblocks/000: 24 0
+:geoo/abstract/cvblocks/000: 40 0
+:geoo/abstract/cvblocks/000: 56 0
+:geoo/abstract/cvblocks/000: 72 0
+:geoo/abstract/cvblocks/000: 88 0
+$END_TILE_GROUP
+:Group-0: 370 314
+:Group-0: 162 314
+:Group-0: 18 314
+:amanda/steel/steel24x8.S: 1182 138
+:amanda/steel/steel8x16.S: 1172 114
+:amanda/steel/steel24x8.S: 1172 146
+:amanda/steel/steel_flange_right24x16.S: 1190 114 frr
+:amanda/steel/steel24x8.S: 1148 146
+:amanda/steel/steel24x8.S: 1124 146
+:amanda/steel/steel8x16.S: 1076 130
+:amanda/steel/steel24x8.S: 1076 122
+:amanda/steel/steel24x8.S: 1124 122
+:amanda/steel/steel24x8.S: 1148 122
+:amanda/steel/steel8x16.S: 1116 146
+:amanda/steel/steel8x16.S: 1076 146
+:amanda/steel/steel24x8.S: 1186 130
+:amanda/steel/steel24x8.S: 1100 122
+:amanda/steel/steel8x16.S: 1076 224
+:amanda/steel/steel8x16.S: 1116 224
+:geoo/abstract/cvblocks/040: 1084 224
+:amanda/steel/steel24x8.S: 1052 224
+:amanda/steel/steel24x8.S: 1028 224
+:amanda/steel/steel24x8.S: 1004 224
+:amanda/steel/steel24x8.S: 980 224
+:geoo/abstract/cvblocks/040: 948 224
+:amanda/steel/steel24x8.S: 924 224
+:geoo/abstract/cvblocks/043: 1052 240
+:geoo/abstract/cvblocks/005: 1052 232
+:geoo/abstract/cvblocks/015: 1092 294
+:geoo/abstract/cvblocks/000: 1068 232
+:geoo/abstract/cvblocks/044: 1116 240
+:geoo/abstract/cvblocks/020: 1084 310
+:geoo/abstract/cvblocks/040: 940 288
+:amanda/steel/steel24x8.S: 900 224
+:amanda/steel/steel24x8.S: 844 224
+:geoo/abstract/cvblocks/040: 868 224
+:geoo/abstract/cvblocks/040: 876 288
+:amanda/steel/steel24x8.S: 820 224
+:amanda/steel/steel8x16.S: 820 146
+:amanda/steel/steel8x16.S: 1196 146
+:amanda/steel/steel8x16.S: 820 68
+:geoo/abstract/cvblocks/015: 1092 326
+:geoo/abstract/cvblocks/020: 1084 342
+:amanda/steel/steel24x8.S: 820 44
+:amanda/steel/steel24x8.S: 844 44
+:amanda/steel/steel24x8.S: 868 44
+:amanda/steel/steel32x32.S: 908 192
+:amanda/steel/steel_flange_right24x16.S: 1148 106
+:amanda/steel/steel24x8.S: 956 44
+:amanda/steel/steel24x8.S: 1004 44
+:amanda/steel/steel8x16.S: 1020 146
+:amanda/steel/steel8x16.S: 1020 68
+:amanda/steel/steel24x8.S: 980 44
+:amanda/steel/steel8x16.S: 1020 52
+:amanda/steel/steel24x8.S: 936 28
+:amanda/steel/steel8x16.S: 948 36
+:amanda/steel/steel8x16.S: 892 36
+:amanda/steel/steel24x8.S: 888 28
+:amanda/steel/steel24x8.S: 912 28
+:amanda/steel/steel8x16.S: 820 52
+:amanda/steel/steel24x8.S: 642 138 frr
+:amanda/steel/steel8x16.S: 668 114 frr
+:amanda/steel/steel24x8.S: 652 146 frr
+:amanda/steel/steel_flange_right24x16.S: 634 114
+:amanda/steel/steel24x8.S: 676 146 frr
+:amanda/steel/steel24x8.S: 700 146 frr
+:amanda/steel/steel8x16.S: 764 130 frr
+:amanda/steel/steel24x8.S: 748 122 frr
+:amanda/steel/steel24x8.S: 700 122 frr
+:amanda/steel/steel24x8.S: 676 122 frr
+:amanda/steel/steel8x16.S: 724 146 frr
+:amanda/steel/steel8x16.S: 764 146 frr
+:amanda/steel/steel24x8.S: 638 130 frr
+:amanda/steel/steel24x8.S: 724 122 frr
+:amanda/steel/steel32x32.S: 621 194 frr
+:amanda/steel/steel8x16.S: 644 146 frr
+:amanda/steel/steel8x16.S: 644 162 frr
+:amanda/steel/steel8x16.S: 644 178 frr
+:amanda/steel/steel_flange_right24x16.S: 676 106 frr
+:amanda/steel/steel24x8.S: 796 224
+:amanda/steel/steel24x8.S: 772 224
+:amanda/steel/steel8x16.S: 764 224
+:amanda/steel/steel8x16.S: 724 224
+:geoo/abstract/cvblocks/005: 1132 232
+:geoo/abstract/cvblocks/000: 1124 232
+:geoo/abstract/cvblocks/015: 916 336
+:amanda/steel/steel32x32.S: 1195 194
+:amanda/steel/steel8x16.S: 1196 162
+:amanda/steel/steel8x16.S: 1196 178
+:geoo/abstract/cvblocks/040: 732 224
+:geoo/abstract/cvblocks/043: 700 240
+:geoo/abstract/cvblocks/005: 700 232
+:geoo/abstract/cvblocks/015: 740 294
+:geoo/abstract/cvblocks/000: 716 232
+:geoo/abstract/cvblocks/044: 764 240
+:geoo/abstract/cvblocks/020: 732 310
+:geoo/abstract/cvblocks/015: 740 326
+:geoo/abstract/cvblocks/020: 732 342
+:geoo/abstract/cvblocks/005: 780 232
+:geoo/abstract/cvblocks/000: 772 232
+:Group-0: 1118 314
+:Group-0: 976 314
+:Group-0: 768 314
+:Group-0: 624 314
+:geoo/abstract/cvblocks/000: 616 346
+:geoo/abstract/cvblocks/000: 616 314
+:geoo/abstract/cvblocks/000: 10 346
+:geoo/abstract/cvblocks/000: 10 314

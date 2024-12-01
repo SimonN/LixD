@@ -1,0 +1,338 @@
+$BUILT 2024-07-18 12:57:30
+$AUTHOR Hyperlodge
+$ENGLISH Indiana Giorgio
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1824
+#SIZE_Y 400
+#BACKGROUND_RED 112
+#BACKGROUND_GREEN 64
+#BACKGROUND_BLUE 0
+
+#SECONDS 80
+#INITIAL 122
+#SPAWN_INTERVAL 70
+
+#RUNNER 99
+#FLOATER 99
+#EXPLODER2 99
+#BLOCKER 99
+#BUILDER 99
+#MINER 99
+#JUMPER 99
+#BATTER 99
+
+:amanda/forest/hatch.H: 96 112
+:amanda/forest/hatch.H: 1632 112 r
+
+:simon/tapir/goal.G: 1648 152
+:simon/tapir/goal.G: 112 152
+
+:raymanni/crab.T: 568 272
+:raymanni/crab.T: 1192 272
+
+:simon/acid.W: 288 352
+:simon/acid.W: 336 352
+:simon/acid.W: 384 352
+:simon/acid.W: 432 352
+:simon/acid.W: 480 352
+:simon/acid.W: 528 352
+:simon/acid.W: 576 352
+:simon/acid.W: 624 352
+:simon/acid.W: 672 352
+:simon/acid.W: 720 352
+:simon/acid.W: 768 352
+:simon/acid.W: 816 352
+:simon/acid.W: 864 352
+:simon/acid.W: 240 352
+:simon/acid.W: 192 352
+:simon/acid.W: 144 352
+:simon/acid.W: 96 352
+:simon/acid.W: 48 352
+:simon/acid.W: 0 352
+:simon/acid.W: 1488 352
+:simon/acid.W: 1440 352
+:simon/acid.W: 1392 352
+:simon/acid.W: 1344 352
+:simon/acid.W: 1296 352
+:simon/acid.W: 1248 352
+:simon/acid.W: 1200 352
+:simon/acid.W: 1152 352
+:simon/acid.W: 1104 352
+:simon/acid.W: 1056 352
+:simon/acid.W: 1008 352
+:simon/acid.W: 960 352
+:simon/acid.W: 912 352
+:simon/acid.W: 1536 352
+:simon/acid.W: 1584 352
+:simon/acid.W: 1632 352
+:simon/acid.W: 1680 352
+:simon/acid.W: 1728 352
+:simon/acid.W: 1776 352
+
+:proxima/flame.F: 672 8
+:raymanni/gore/bonesaw.F: 240 192
+:raymanni/gore/bonesaw.F: 176 128
+:raymanni/gore/bonesaw.F: 208 160
+:raymanni/gore/bonesaw.F: 152 80
+:raymanni/gore/bonesaw.F: 120 48
+:raymanni/gore/bonesaw.F: 88 16
+:proxima/flame.F: 1112 8
+:raymanni/gore/bonesaw.F: 1520 192
+:raymanni/gore/bonesaw.F: 1584 128
+:raymanni/gore/bonesaw.F: 1552 160
+:raymanni/gore/bonesaw.F: 1608 80
+:raymanni/gore/bonesaw.F: 1640 48
+:raymanni/gore/bonesaw.F: 1672 16
+
+:geoo/construction/steam_up.T: 883 185
+:geoo/construction/steam_up.T: 924 185
+
+:amanda/forest/stone_00: 459 367 rr
+:amanda/forest/rope: 312 16 r
+:amanda/forest/bark_02: 312 8 frr
+:matt/earth/10: 296 8
+:matt/earth/04: 432 96
+:matt/earth/02: 304 128
+:matt/earth/03: 528 296
+:matt/earth/01: 352 200
+:amanda/forest/bark_00: 600 224 fr
+:amanda/forest/rope: 752 40 r
+:amanda/forest/bark_02: 696 32
+:matt/earth/05: 656 48
+:matt/earth/00: 359 134
+:matt/earth/19: 512 112
+:matt/earth/09: 616 296
+:matt/earth/06: 440 112
+:matt/earth/07: 296 16 frr
+:matt/earth/07b: 360 200
+:matt/earth/09: 374 136
+:matt/earth/07b: 400 128
+:matt/earth/06: 470 61
+:matt/earth/07b: 380 132
+:matt/earth/06: 305 130
+:matt/earth/09: 303 132 r
+:matt/earth/28: 430 216
+:matt/earth/27: 558 326
+:matt/earth/29: 326 228
+:matt/earth/26: 672 272
+:matt/earth/17: 704 296
+:matt/earth/10: 312 256 rrr
+:matt/earth/18: 744 264
+:matt/earth/18: 768 232 fr
+:matt/earth/18: 800 224 frr
+:matt/earth/18: 836 208
+:matt/earth/18: 872 200 frr
+:matt/bricks/17: 192 320
+:matt/bricks/17: 192 288
+:matt/bricks/17: 240 240
+:matt/bricks/17: 240 272
+:matt/bricks/17: 136 312 r
+:matt/bricks/17: 144 280 r
+:matt/bricks/17: 88 224 r
+:matt/bricks/17: 80 256 r
+:matt/bricks/17: 24 200 r
+:matt/bricks/17: 24 144 rr
+:matt/bricks/17: 80 168 frrr
+:matt/bricks/17: 80 104 rrr
+:matt/bricks/17: 16 88 rrr
+:matt/bricks/17: 72 32 rrr
+:matt/bricks/17: 16 32
+:matt/bricks/17: 128 88 rrr
+:matt/bricks/17: 120 144 frrr
+:matt/bricks/17: 112 184 frrr
+:matt/bricks/17: 168 160 rrr
+:matt/bricks/17: 216 200 rrr
+:matt/bricks/17: 168 224
+:amanda/occult/skulls32x32: 16 128
+:amanda/occult/skulls32x32: -6 147
+:amanda/occult/skulls32x32: 2 108 frr
+:amanda/occult/skulls32x32: -17 92 frr
+:amanda/occult/skulls32x32: -29 119 frr
+:amanda/occult/skulls32x32: -24 168 frr
+:amanda/occult/skulls32x32: -25 132 frrr
+:amanda/occult/skulls32x32: -19 198 frrr
+:amanda/occult/skulls32x32: -5 210 frrr
+:amanda/occult/skulls32x32: 2 221 frrr
+:amanda/occult/skulls32x32: 19 225 f
+:amanda/occult/skulls32x32: 37 252 rr
+:amanda/occult/skulls32x32: 53 271 rr
+:amanda/occult/skulls32x32: 74 289 rr
+:amanda/occult/skulls32x32: 93 306 rr
+:amanda/occult/skulls32x32: 119 327 rrr
+:amanda/occult/skulls32x32: 141 343 rrr
+:amanda/occult/skulls32x32: 54 293 rrr
+:amanda/occult/skulls32x32: -26 238 frr
+:amanda/occult/skulls32x32: -3 268 frr
+:amanda/occult/skulls32x32: -29 278 frr
+:amanda/occult/skulls32x32: -9 346
+:amanda/occult/skulls32x32: 35 300
+:amanda/occult/skulls32x32: 208 341
+:amanda/occult/skulls32x32: 59 333 rrr
+:amanda/occult/skulls32x32: -8 297 f
+:amanda/occult/skulls32x32: 8 329 frrr
+:amanda/occult/skulls32x32: 51 316
+:amanda/occult/skulls32x32: 226 320 f
+:amanda/occult/skulls32x32: 246 339 rrr
+:amanda/occult/skulls32x32: 248 296
+:amanda/occult/skulls32x32: 254 315 r
+:amanda/forest/rope: 72 16 r
+:amanda/forest/rope: 88 16 r
+:amanda/forest/rope: 104 16 r
+:amanda/forest/rope: 120 16 r
+:amanda/forest/rope: 136 16 r
+:amanda/forest/rope: 152 16 r
+:amanda/forest/rope: 168 16 r
+:amanda/forest/rope: 184 16 r
+:amanda/forest/rope: 200 16 r
+:amanda/forest/rope: 216 16 r
+:amanda/forest/rope: 232 16 r
+:amanda/forest/rope: 248 16 r
+:amanda/forest/rope: 264 16 r
+:amanda/forest/rope: 280 16 r
+:amanda/forest/rope: 296 16 r
+:amanda/forest/stone_01: 614 357 rr
+:amanda/forest/stone_02: 849 358 fr
+:amanda/forest/rope: 40 16 r
+:amanda/forest/bark_02: -16 8
+:amanda/forest/rope: 56 16 r
+:amanda/forest/rope: 784 40 r
+:amanda/forest/rope: 800 40 r
+:amanda/forest/rope: 816 40 r
+:amanda/forest/rope: 832 40 r
+:amanda/forest/rope: 848 40 r
+:amanda/forest/rope: 864 40 r
+:amanda/forest/rope: 880 40 r
+:amanda/forest/rope: 1056 40 fr
+:amanda/forest/rope: 1040 40 fr
+:amanda/forest/rope: 768 40 r
+:amanda/forest/bark_06: 688 80 rr
+:amanda/forest/bark_02: 752 144 f
+:amanda/occult/skulls32x32: 584 264 frr
+:amanda/forest/stone_00: 1301 367 f
+:amanda/forest/rope: 1496 16 fr
+:amanda/forest/bark_02: 1448 8
+:matt/earth/10: 1315 8 frr
+:matt/earth/04: 1270 96 frr
+:matt/earth/02: 1456 128 frr
+:matt/earth/03: 1146 296 frr
+:matt/earth/01: 1408 200 frr
+:amanda/forest/bark_00: 1160 224 r
+:amanda/forest/rope: 896 40 r
+:amanda/forest/bark_02: 1064 32 frr
+:matt/earth/05: 1095 48 frr
+:matt/earth/00: 1385 134 frr
+:matt/earth/19: 1138 112 frr
+:matt/earth/09: 1153 296 frr
+:matt/earth/06: 1343 112 frr
+:matt/earth/07: 1477 16
+:matt/earth/07b: 1448 200 frr
+:matt/earth/09: 1395 136 frr
+:matt/earth/07b: 1408 128 frr
+:matt/earth/06: 1313 61 frr
+:matt/earth/07b: 1428 132 frr
+:matt/earth/06: 1478 130 frr
+:matt/earth/09: 1505 132 fr
+:matt/earth/28: 1362 216 frr
+:matt/earth/27: 1203 326 frr
+:matt/earth/29: 1482 228 frr
+:matt/earth/26: 1126 272 frr
+:matt/earth/17: 1039 296 frr
+:matt/earth/10: 1400 256 frrr
+:matt/earth/18: 1045 264 frr
+:matt/earth/18: 1026 232 r
+:matt/earth/18: 989 224
+:matt/earth/18: 953 208 frr
+:matt/earth/18: 917 200
+:matt/bricks/17: 1568 320 frr
+:matt/bricks/17: 1568 288 frr
+:matt/bricks/17: 1520 240 frr
+:matt/bricks/17: 1520 272 frr
+:matt/bricks/17: 1632 312 fr
+:matt/bricks/17: 1624 280 fr
+:matt/bricks/17: 1680 224 fr
+:matt/bricks/17: 1688 256 fr
+:matt/bricks/17: 1744 200 fr
+:matt/bricks/17: 1736 144 f
+:matt/bricks/17: 1688 168 rrr
+:matt/bricks/17: 1688 104 frrr
+:matt/bricks/17: 1752 88 frrr
+:matt/bricks/17: 1696 32 frrr
+:matt/bricks/17: 1744 32 frr
+:matt/bricks/17: 1640 88 frrr
+:matt/bricks/17: 1648 144 rrr
+:matt/bricks/17: 1656 184 rrr
+:matt/bricks/17: 1600 160 frrr
+:matt/bricks/17: 1552 200 frrr
+:matt/bricks/17: 1592 224 frr
+:amanda/occult/skulls32x32: 1744 128 frr
+:amanda/occult/skulls32x32: 1766 147 frr
+:amanda/occult/skulls32x32: 1758 108
+:amanda/occult/skulls32x32: 1777 92
+:amanda/occult/skulls32x32: 1789 119
+:amanda/occult/skulls32x32: 1784 168
+:amanda/occult/skulls32x32: 1785 132 rrr
+:amanda/occult/skulls32x32: 1779 198 rrr
+:amanda/occult/skulls32x32: 1765 210 rrr
+:amanda/occult/skulls32x32: 1758 221 rrr
+:amanda/occult/skulls32x32: 1741 225 rr
+:amanda/occult/skulls32x32: 1723 252 f
+:amanda/occult/skulls32x32: 1707 271 f
+:amanda/occult/skulls32x32: 1686 289 f
+:amanda/occult/skulls32x32: 1667 306 f
+:amanda/occult/skulls32x32: 1641 327 frrr
+:amanda/occult/skulls32x32: 1619 343 frrr
+:amanda/occult/skulls32x32: 1706 293 frrr
+:amanda/occult/skulls32x32: 1786 238
+:amanda/occult/skulls32x32: 1763 268
+:amanda/occult/skulls32x32: 1789 278
+:amanda/occult/skulls32x32: 1769 346 frr
+:amanda/occult/skulls32x32: 1725 300 frr
+:amanda/occult/skulls32x32: 1552 341 frr
+:amanda/occult/skulls32x32: 1701 333 frrr
+:amanda/occult/skulls32x32: 1768 297 rr
+:amanda/occult/skulls32x32: 1752 329 rrr
+:amanda/occult/skulls32x32: 1709 316 frr
+:amanda/occult/skulls32x32: 1534 320 rr
+:amanda/occult/skulls32x32: 1514 339 frrr
+:amanda/occult/skulls32x32: 1512 296 frr
+:amanda/occult/skulls32x32: 1506 315 fr
+:amanda/forest/rope: 1736 16 fr
+:amanda/forest/rope: 1720 16 fr
+:amanda/forest/rope: 1704 16 fr
+:amanda/forest/rope: 1688 16 fr
+:amanda/forest/rope: 1672 16 fr
+:amanda/forest/rope: 1656 16 fr
+:amanda/forest/rope: 1640 16 fr
+:amanda/forest/rope: 1624 16 fr
+:amanda/forest/rope: 1608 16 fr
+:amanda/forest/rope: 1592 16 fr
+:amanda/forest/rope: 1576 16 fr
+:amanda/forest/rope: 1560 16 fr
+:amanda/forest/rope: 1544 16 fr
+:amanda/forest/rope: 1528 16 fr
+:amanda/forest/rope: 1512 16 fr
+:amanda/forest/stone_01: 1114 357 f
+:amanda/forest/stone_02: 879 358 r
+:amanda/forest/rope: 1768 16 fr
+:amanda/forest/bark_02: 1776 8 frr
+:amanda/forest/rope: 1752 16 fr
+:amanda/forest/rope: 928 40 r
+:amanda/forest/rope: 944 40 r
+:amanda/forest/rope: 960 40 r
+:amanda/forest/rope: 976 40 r
+:amanda/forest/rope: 992 40 r
+:amanda/forest/rope: 1008 40 r
+:amanda/forest/rope: 1024 40 r
+:amanda/forest/rope: 1040 40 r
+:amanda/forest/rope: 1056 40 r
+:amanda/forest/rope: 912 40 r
+:amanda/forest/bark_06: 1056 80 f
+:amanda/forest/bark_02: 1008 144 rr
+:amanda/occult/skulls32x32: 1176 264
+:matt/bricks/17: 1648 192 rrr
+:matt/bricks/17: 1600 216 frr
+:matt/bricks/17: 1584 232 frr
+:matt/bricks/17: 120 192 frrr
+:matt/bricks/17: 176 232
+:matt/bricks/17: 160 216

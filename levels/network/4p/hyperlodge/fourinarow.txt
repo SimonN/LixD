@@ -1,0 +1,95 @@
+$BUILT 2024-09-16 13:05:11
+$AUTHOR Hyperlodge
+$ENGLISH Four in a Row
+
+#INTENDED_NUMBER_OF_PLAYERS 4
+#SIZE_X 512
+#SIZE_Y 320
+#TORUS_X 1
+#TORUS_Y 1
+
+#SECONDS 40
+#INITIAL 80
+#SPAWN_INTERVAL 40
+
+#WALKER 4
+#RUNNER 4
+#CLIMBER 4
+#FLOATER 4
+#EXPLODER2 4
+#BLOCKER 4
+#BUILDER 4
+#PLATFORMER 4
+#BASHER 4
+#MINER 4
+#DIGGER 4
+#JUMPER 4
+#BATTER 4
+#CUBER 4
+
+:geoo/abstract/hatch.H: 192 160 r
+:geoo/abstract/hatch.H: 64 160 r
+:geoo/abstract/hatch.H: 448 160 r
+:geoo/abstract/hatch.H: 320 160 r
+:geoo/abstract/hatch.H: 96 160
+:geoo/abstract/hatch.H: 480 160
+:geoo/abstract/hatch.H: 352 160
+:geoo/abstract/hatch.H: 224 160
+
+:raymanni/lab/goal.G: 128 248
+:raymanni/lab/goal.G: 128 312
+:raymanni/lab/goal.G: 128 56
+:raymanni/lab/goal.G: 128 120
+:raymanni/lab/goal.G: 256 312
+:raymanni/lab/goal.G: 0 248
+:raymanni/lab/goal.G: 384 248
+:raymanni/lab/goal.G: 256 248
+:raymanni/lab/goal.G: 384 56
+:raymanni/lab/goal.G: 384 120
+:raymanni/lab/goal.G: 0 312
+:raymanni/lab/goal.G: 384 312
+:raymanni/lab/goal.G: 0 120
+:raymanni/lab/goal.G: 256 56
+:raymanni/lab/goal.G: 256 120
+:raymanni/lab/goal.G: 0 56
+
+:matt/marble/09b: 0 128
+:matt/marble/09b: 0 64
+:matt/marble/09b: 0 0
+:matt/marble/09b: 0 256
+:matt/marble/09d: 128 128
+:matt/marble/09d: 128 64
+:matt/marble/09d: 128 0
+:matt/marble/09d: 128 256
+:matt/marble/09a: 384 128
+:matt/marble/09a: 384 64
+:matt/marble/09a: 384 0
+:matt/marble/09a: 384 256
+:matt/underworld/03: 392 264 d
+:matt/marble/09c: 256 128
+:matt/marble/09c: 256 64
+:matt/marble/09c: 256 0
+:matt/underworld/03: 264 8 d
+:matt/marble/09c: 256 256
+:matt/marble/09: 448 192
+:matt/marble/09: 64 192
+:matt/underworld/03: 264 72 d
+:matt/underworld/03: 264 136 d
+:matt/underworld/03: 264 264 d
+:matt/underworld/03: 392 8 d
+:matt/underworld/03: 392 72 d
+:matt/underworld/03: 392 136 d
+:matt/underworld/03: 8 264 d
+:matt/underworld/03: 8 8 d
+:matt/underworld/03: 8 72 d
+:matt/underworld/03: 8 136 d
+:matt/underworld/03: 136 264 d
+:matt/underworld/03: 136 8 d
+:matt/underworld/03: 136 72 d
+:matt/underworld/03: 136 136 d
+:matt/marble/09: 128 192
+:matt/marble/09: 256 192
+:matt/marble/09: 384 192
+:matt/marble/09: 0 192
+:matt/marble/09: 192 192
+:matt/marble/09: 320 192

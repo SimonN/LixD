@@ -1,0 +1,249 @@
+$BUILT 2024-07-18 13:14:12
+$AUTHOR Hyperlodge
+$ENGLISH Kung Fun
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1152
+#SIZE_Y 576
+#BACKGROUND_RED 12
+#BACKGROUND_GREEN 64
+#BACKGROUND_BLUE 96
+
+#SECONDS 120
+#INITIAL 300
+#SPAWN_INTERVAL 20
+
+#RUNNER 100
+#CLIMBER 100
+#FLOATER 100
+#EXPLODER2 100
+#BLOCKER 100
+#BUILDER 100
+#PLATFORMER 100
+#DIGGER 100
+#JUMPER 100
+
+:matt/bricks/Hatch.H: 104 376
+:matt/bricks/Hatch.H: 983 376 r
+
+:simon/oriental/goal.G: 576 160
+:simon/oriental/goal.G: 512 160
+
+:simon/crystal.W: 336 544
+:simon/crystal.W: 384 544
+:simon/crystal.W: 432 544
+:simon/crystal.W: 288 544
+:simon/crystal.W: 480 544
+:simon/crystal.W: 528 544
+:simon/crystal.W: 767 544
+:simon/crystal.W: 719 544
+:simon/crystal.W: 671 544
+:simon/crystal.W: 815 544
+:simon/crystal.W: 623 544
+:simon/crystal.W: 575 544
+
+:geoo/construction/Laser_hz_64.F: 376 240
+:geoo/construction/Laser_hz_64.F: 312 240
+:geoo/construction/Laser_hz_64.F: 248 240
+:geoo/construction/Laser_hz_64.F: 711 240
+:geoo/construction/Laser_hz_64.F: 775 240
+:geoo/construction/Laser_hz_64.F: 839 240
+:proxima/flame.F: 584 344
+:proxima/flame.F: 528 344
+
+:geoo/construction/steam_up.T: 696 464
+:geoo/construction/steam_up.T: 440 464
+:geoo/construction/steam_up.T: 304 496
+:geoo/construction/steam_up.T: 832 496
+:geoo/construction/steam_up.T: 648 448
+:geoo/construction/steam_up.T: 488 448
+:geoo/construction/steam_up.T: 328 488
+:geoo/construction/steam_up.T: 808 488
+
+:raymanni/holiday/steel1.S: 80 392
+:raymanni/holiday/steel1.S: 160 392
+:simon/oriental/culm_long: 80 448 fr
+:simon/oriental/culm_long: 96 440 r
+:simon/oriental/culm_long: 80 432 fr
+:simon/oriental/culm_long: 88 424 r
+:raymanni/holiday/steel1.S: 168 424
+:raymanni/holiday/steel1.S: 120 456
+:raymanni/holiday/steel1.S: 72 424
+:raymanni/holiday/steel1.S: 40 440
+:raymanni/holiday/steel1.S: 16 408
+:raymanni/holiday/steel1.S: 160 360
+:raymanni/holiday/steel1.S: 80 360
+:raymanni/holiday/steel1.S: 88 328
+:geoo/construction/fence_rust_32x32: 120 304
+:geoo/construction/fence_rust_32x32: 120 272
+:raymanni/holiday/steel1.S: 96 296
+:geoo/construction/fence_rust_32x32: 120 256
+:raymanni/holiday/steel1.S: 96 264
+:raymanni/holiday/steel1.S: 88 232
+:raymanni/holiday/steel1.S: 152 328
+:raymanni/holiday/steel1.S: 144 296
+:raymanni/holiday/steel1.S: 144 264
+:raymanni/holiday/steel1.S: 152 232
+:simon/oriental/culm_long: 80 192 fr
+:raymanni/holiday/steel1.S: 160 200
+:raymanni/holiday/steel1.S: 80 200
+:simon/oriental/culm_long: 96 184 r
+:simon/oriental/culm_long: 80 176 fr
+:simon/oriental/culm_long: 88 168 r
+:raymanni/holiday/steel1.S: 72 168
+:raymanni/holiday/steel1.S: 168 168
+:raymanni/holiday/steel1.S: 48 264
+:raymanni/holiday/steel1.S: 48 296
+:raymanni/holiday/steel1.S: 200 296
+:raymanni/holiday/steel1.S: 200 328
+:raymanni/holiday/steel1.S: 208 360
+:raymanni/holiday/steel1.S: 208 392
+:raymanni/holiday/steel1.S: 208 424
+:raymanni/holiday/steel1.S: 40 328
+:raymanni/holiday/steel1.S: 32 360
+:raymanni/holiday/steel1.S: 296 168
+:raymanni/holiday/steel1.S: 232 168
+:simon/oriental/culm_d_long: 448 168 frr
+:raymanni/holiday/steel1.S: 424 168
+:raymanni/holiday/steel1.S: 360 168
+:raymanni/holiday/steel1.S: 8 168
+:raymanni/holiday/steel1.S: 24 216
+:raymanni/holiday/steel1.S: 0 280
+:raymanni/holiday/steel1.S: 216 232
+:raymanni/holiday/steel1.S: 432 200
+:simon/oriental/culm_d_long: 480 200 frr
+:raymanni/holiday/steel1.S: 440 232
+:raymanni/holiday/steel1.S: 480 240
+:raymanni/holiday/steel1.S: 512 240
+:raymanni/holiday/steel1.S: 544 240
+:raymanni/holiday/steel1.S: 448 280
+:simon/oriental/culm_long: 504 280 r
+:raymanni/holiday/steel1.S: 480 280
+:raymanni/holiday/steel1.S: 416 280
+:raymanni/holiday/steel1.S: 384 280
+:raymanni/holiday/steel1.S: 352 280
+:raymanni/holiday/steel1.S: 320 280
+:raymanni/holiday/steel1.S: 288 280
+:raymanni/holiday/steel1.S: 256 280
+:raymanni/holiday/steel1.S: 240 320
+:simon/oriental/bridge2: 0 520
+:simon/oriental/bridge2: 64 520
+:simon/oriental/bridge2: 128 520
+:simon/oriental/bridge2: 192 520
+:simon/oriental/bridge2: 256 520
+:simon/oriental/bridge1: 320 488
+:simon/oriental/bridge2: 384 488
+:simon/oriental/bridge1: 448 456
+:simon/oriental/bridge2: 512 456
+:raymanni/holiday/steel1.S: 112 488
+:raymanni/holiday/steel1.S: 32 488
+:simon/oriental/pebbles6: 494 539
+:simon/oriental/branch5: 251 48 frr
+:simon/oriental/branch7: 401 40
+:simon/oriental/bonsai: 224 -94 f
+:simon/oriental/branch5: 4 61 frrr
+:simon/oriental/branch4: 206 95
+:simon/oriental/bonsai: 16 -64 rr
+:simon/oriental/culm_long: 576 48
+:simon/oriental/culm_long: 560 48
+:simon/oriental/bonsai: 380 -48 rr
+:simon/oriental/bush3: 227 101 f
+:simon/oriental/branch6: 384 94
+:simon/oriental/branch2: 305 118 f
+:simon/oriental/bush1: 335 117 rr
+:simon/oriental/bush2: 380 147 rr
+:raymanni/holiday/steel1.S: 1039 392 frr
+:raymanni/holiday/steel1.S: 959 392 frr
+:simon/oriental/culm_long: 975 448 r
+:simon/oriental/culm_long: 959 440 fr
+:simon/oriental/culm_long: 975 432 r
+:simon/oriental/culm_long: 967 424 fr
+:raymanni/holiday/steel1.S: 951 424 frr
+:raymanni/holiday/steel1.S: 999 456 frr
+:raymanni/holiday/steel1.S: 1047 424 frr
+:raymanni/holiday/steel1.S: 1079 440 frr
+:raymanni/holiday/steel1.S: 1103 408 frr
+:raymanni/holiday/steel1.S: 959 360 frr
+:raymanni/holiday/steel1.S: 1039 360 frr
+:raymanni/holiday/steel1.S: 1031 328 frr
+:geoo/construction/fence_rust_32x32: 999 304 frr
+:geoo/construction/fence_rust_32x32: 999 272 frr
+:raymanni/holiday/steel1.S: 1023 296 frr
+:geoo/construction/fence_rust_32x32: 999 256 frr
+:raymanni/holiday/steel1.S: 1023 264 frr
+:raymanni/holiday/steel1.S: 1031 232 frr
+:raymanni/holiday/steel1.S: 967 328 frr
+:raymanni/holiday/steel1.S: 975 296 frr
+:raymanni/holiday/steel1.S: 975 264 frr
+:raymanni/holiday/steel1.S: 967 232 frr
+:simon/oriental/culm_long: 975 192 r
+:raymanni/holiday/steel1.S: 959 200 frr
+:raymanni/holiday/steel1.S: 1039 200 frr
+:simon/oriental/culm_long: 959 184 fr
+:simon/oriental/culm_long: 975 176 r
+:simon/oriental/culm_long: 967 168 fr
+:raymanni/holiday/steel1.S: 1047 168 frr
+:raymanni/holiday/steel1.S: 951 168 frr
+:raymanni/holiday/steel1.S: 1071 264 frr
+:raymanni/holiday/steel1.S: 1071 296 frr
+:raymanni/holiday/steel1.S: 919 296 frr
+:raymanni/holiday/steel1.S: 919 328 frr
+:raymanni/holiday/steel1.S: 911 360 frr
+:raymanni/holiday/steel1.S: 911 392 frr
+:raymanni/holiday/steel1.S: 911 424 frr
+:raymanni/holiday/steel1.S: 1079 328 frr
+:raymanni/holiday/steel1.S: 1087 360 frr
+:raymanni/holiday/steel1.S: 823 168 frr
+:raymanni/holiday/steel1.S: 887 168 frr
+:simon/oriental/culm_d_long: 654 168
+:raymanni/holiday/steel1.S: 695 168 frr
+:raymanni/holiday/steel1.S: 759 168 frr
+:raymanni/holiday/steel1.S: 1111 168 frr
+:raymanni/holiday/steel1.S: 1095 216 frr
+:raymanni/holiday/steel1.S: 1119 280 frr
+:raymanni/holiday/steel1.S: 903 232 frr
+:raymanni/holiday/steel1.S: 687 200 frr
+:simon/oriental/culm_d_long: 622 200
+:raymanni/holiday/steel1.S: 679 232 frr
+:raymanni/holiday/steel1.S: 639 240 frr
+:raymanni/holiday/steel1.S: 607 240 frr
+:raymanni/holiday/steel1.S: 575 240 frr
+:raymanni/holiday/steel1.S: 671 280 frr
+:simon/oriental/culm_long: 552 280 fr
+:raymanni/holiday/steel1.S: 639 280 frr
+:raymanni/holiday/steel1.S: 703 280 frr
+:raymanni/holiday/steel1.S: 735 280 frr
+:raymanni/holiday/steel1.S: 767 280 frr
+:raymanni/holiday/steel1.S: 799 280 frr
+:raymanni/holiday/steel1.S: 831 280 frr
+:raymanni/holiday/steel1.S: 863 280 frr
+:raymanni/holiday/steel1.S: 879 320 frr
+:simon/oriental/bridge2: 1087 520 frr
+:simon/oriental/bridge2: 1023 520 frr
+:simon/oriental/bridge2: 959 520 frr
+:simon/oriental/bridge2: 895 520 frr
+:simon/oriental/bridge2: 831 520 frr
+:simon/oriental/bridge1: 767 488 frr
+:simon/oriental/bridge2: 703 488 frr
+:simon/oriental/bridge1: 639 456 frr
+:simon/oriental/bridge2: 575 456 frr
+:raymanni/holiday/steel1.S: 1007 488 frr
+:raymanni/holiday/steel1.S: 1087 488 frr
+:simon/oriental/pebbles6: 589 539 frr
+:simon/oriental/branch5: 850 48
+:simon/oriental/branch7: 727 40 frr
+:simon/oriental/bonsai: 700 -94 rr
+:simon/oriental/branch5: 1084 61 rrr
+:simon/oriental/branch4: 918 95 frr
+:simon/oriental/bonsai: 908 -64 f
+:simon/oriental/bonsai: 544 -48 f
+:simon/oriental/bush3: 858 101 rr
+:simon/oriental/branch6: 709 94 frr
+:simon/oriental/branch2: 813 118 rr
+:simon/oriental/bush1: 752 117 f
+:simon/oriental/bush2: 726 147 f
+:simon/oriental/culm_long: 576 144
+:simon/oriental/culm_long: 560 144
+:simon/oriental/gate: 512 392
+:raymanni/holiday/steel1.S: 880 424 frr
+:raymanni/holiday/steel1.S: 240 424

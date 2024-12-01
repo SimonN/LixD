@@ -1,0 +1,1341 @@
+$BUILT 2024-07-18 13:16:57
+$AUTHOR Hyperlodge
+$ENGLISH V for Violet
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1560
+#SIZE_Y 1040
+#BACKGROUND_RED 80
+#BACKGROUND_GREEN 16
+#BACKGROUND_BLUE 112
+
+#SECONDS 100
+#INITIAL 150
+#SPAWN_INTERVAL 15
+
+#RUNNER -1
+#CLIMBER -1
+#EXPLODER2 -1
+#BLOCKER -1
+#BUILDER -1
+#PLATFORMER -1
+#JUMPER -1
+#BATTER -1
+
+:geoo/abstract/hatch.H: 772 0 r
+:geoo/abstract/hatch.H: 756 0
+
+:raymanni/lab/goal.G: 1512 14
+:raymanni/lab/goal.G: -16 14
+
+:amanda/steel/steel24x8.S: 768 40
+:amanda/steel/steel24x8.S: 752 160
+:amanda/steel/steel24x8.S: 784 160
+:amanda/steel/steel24x8.S: 768 272
+:amanda/steel/steel24x8.S: 800 272
+:amanda/steel/steel24x8.S: 736 272
+:amanda/steel/steel24x8.S: 784 384
+:amanda/steel/steel24x8.S: 816 384
+:amanda/steel/steel24x8.S: 752 384
+:amanda/steel/steel24x8.S: 720 384
+:amanda/steel/steel24x8.S: 800 496
+:amanda/steel/steel24x8.S: 832 496
+:amanda/steel/steel24x8.S: 768 496
+:amanda/steel/steel24x8.S: 736 496
+:amanda/steel/steel24x8.S: 704 496
+:amanda/steel/steel24x8.S: 752 608
+:amanda/steel/steel24x8.S: 720 608
+:amanda/steel/steel24x8.S: 688 608
+:amanda/steel/steel24x8.S: 848 608
+:amanda/steel/steel24x8.S: 816 608
+:amanda/steel/steel24x8.S: 784 608
+:amanda/steel/steel24x8.S: 800 720
+:amanda/steel/steel24x8.S: 832 720
+:amanda/steel/steel24x8.S: 768 720
+:amanda/steel/steel24x8.S: 736 720
+:amanda/steel/steel24x8.S: 704 720
+:amanda/steel/steel24x8.S: 752 832
+:amanda/steel/steel24x8.S: 720 832
+:amanda/steel/steel24x8.S: 688 832
+:amanda/steel/steel24x8.S: 848 832
+:amanda/steel/steel24x8.S: 816 832
+:amanda/steel/steel24x8.S: 784 832
+:amanda/steel/steel24x8.S: 672 720
+:amanda/steel/steel24x8.S: 864 720
+:amanda/steel/steel24x8.S: 880 832
+:amanda/steel/steel24x8.S: 656 832
+:geoo/construction/stairs_rd_32.S: 1488 32 r
+:geoo/construction/stairs_rd_32.S: 1456 96 r
+:geoo/construction/stairs_rd_32.S: 1424 160 r
+:geoo/construction/stairs_rd_32.S: 1392 224 r
+:geoo/construction/stairs_rd_32.S: 1360 288 r
+:geoo/construction/stairs_rd_32.S: 1328 352 r
+:geoo/construction/stairs_rd_32.S: 1296 416 r
+:geoo/construction/stairs_rd_32.S: 1264 480 r
+:geoo/construction/stairs_rd_32.S: 1232 544 r
+:geoo/construction/stairs_rd_32.S: 1200 608 r
+:geoo/construction/stairs_rd_32.S: 1168 672 r
+:geoo/construction/stairs_rd_32.S: 1136 736 r
+:geoo/construction/stairs_rd_32.S: 1104 800 r
+:geoo/construction/stairs_rd_32.S: 1072 864 r
+:geoo/construction/platform.S: 1528 78
+:geoo/construction/platform.S: 1528 80
+:geoo/construction/platform.S: 1528 82
+:geoo/construction/platform.S: 1528 84
+:geoo/construction/platform.S: 1528 86
+:amanda/steel/steel24x8.S: 806 944
+:amanda/steel/steel24x8.S: 830 944
+:amanda/steel/steel24x8.S: 854 944
+:amanda/steel/steel24x8.S: 878 944
+:amanda/steel/steel24x8.S: 902 944
+:amanda/steel/steel24x8.S: 926 944
+:amanda/steel/steel24x8.S: 840 1032
+:amanda/steel/steel24x8.S: 864 1032
+:amanda/steel/steel24x8.S: 888 1032
+:amanda/steel/steel24x8.S: 912 1032
+:amanda/steel/steel24x8.S: 936 1032
+:amanda/steel/steel24x8.S: 1086 944
+:amanda/steel/steel24x8.S: 1118 944
+:amanda/steel/steel24x8.S: 1150 944
+:amanda/steel/steel24x8.S: 1182 944
+:amanda/steel/steel24x8.S: 1214 944
+:amanda/steel/steel24x8.S: 1246 944
+:amanda/steel/steel24x8.S: 1278 944
+:amanda/steel/steel24x8.S: 1310 944
+:amanda/steel/steel24x8.S: 1342 944
+:amanda/steel/steel24x8.S: 1374 944
+:amanda/steel/steel24x8.S: 1406 944
+:amanda/steel/steel24x8.S: 1438 944
+:amanda/steel/steel24x8.S: 1470 944
+:amanda/steel/steel24x8.S: 1502 944
+:amanda/steel/steel24x8.S: 816 1032
+:amanda/steel/steel24x8.S: 792 1032
+:amanda/steel/steel24x8.S: 1056 1032
+:amanda/steel/steel24x8.S: 1080 1032
+:amanda/steel/steel24x8.S: 1104 1032
+:amanda/steel/steel24x8.S: 1128 1032
+:amanda/steel/steel24x8.S: 1152 1032
+:amanda/steel/steel24x8.S: 1032 1032
+:amanda/steel/steel24x8.S: 1008 1032
+:amanda/steel/steel24x8.S: 984 1032
+:amanda/steel/steel24x8.S: 960 1032
+:amanda/steel/steel24x8.S: 1176 1032
+:amanda/steel/steel24x8.S: 1200 1032
+:amanda/steel/steel24x8.S: 1320 1032
+:amanda/steel/steel24x8.S: 1344 1032
+:amanda/steel/steel24x8.S: 1368 1032
+:amanda/steel/steel24x8.S: 1392 1032
+:amanda/steel/steel24x8.S: 1416 1032
+:amanda/steel/steel24x8.S: 1296 1032
+:amanda/steel/steel24x8.S: 1272 1032
+:amanda/steel/steel24x8.S: 1248 1032
+:amanda/steel/steel24x8.S: 1224 1032
+:amanda/steel/steel24x8.S: 1464 1032
+:amanda/steel/steel24x8.S: 1488 1032
+:amanda/steel/steel24x8.S: 1512 1032
+:amanda/steel/steel24x8.S: 1536 1032
+:amanda/steel/steel24x8.S: 1536 1024
+:amanda/steel/steel24x8.S: 1440 1032
+:amanda/steel/steel24x8.S: 1536 1016
+:amanda/steel/steel24x8.S: 1536 1008
+:amanda/steel/steel24x8.S: 1536 1000
+:amanda/steel/steel24x8.S: 1536 992
+:amanda/steel/steel24x8.S: 1536 984
+:amanda/steel/steel24x8.S: 1536 976
+:amanda/steel/steel24x8.S: 1536 968
+:amanda/steel/steel24x8.S: 1536 960
+:amanda/steel/steel24x8.S: 1536 952
+:amanda/steel/steel24x8.S: 1536 944
+:amanda/steel/steel24x8.S: 1536 936
+:amanda/steel/steel24x8.S: 1536 928
+:amanda/steel/steel24x8.S: 1536 920
+:amanda/steel/steel24x8.S: 1536 912
+:amanda/steel/steel24x8.S: 1536 904
+:amanda/steel/steel24x8.S: 1536 896
+:amanda/steel/steel24x8.S: 1536 888
+:amanda/steel/steel24x8.S: 1536 880
+:amanda/steel/steel24x8.S: 1536 872
+:amanda/steel/steel24x8.S: 1536 864
+:amanda/steel/steel24x8.S: 1536 856
+:amanda/steel/steel24x8.S: 1536 848
+:amanda/steel/steel24x8.S: 1536 840
+:amanda/steel/steel24x8.S: 1536 832
+:amanda/steel/steel24x8.S: 1536 824
+:amanda/steel/steel24x8.S: 1536 816
+:amanda/steel/steel24x8.S: 1536 808
+:amanda/steel/steel24x8.S: 1536 800
+:amanda/steel/steel24x8.S: 1536 792
+:amanda/steel/steel24x8.S: 1536 784
+:amanda/steel/steel24x8.S: 1536 776
+:amanda/steel/steel24x8.S: 1536 768
+:amanda/steel/steel24x8.S: 1536 760
+:amanda/steel/steel24x8.S: 1536 752
+:amanda/steel/steel24x8.S: 1536 744
+:amanda/steel/steel24x8.S: 1536 736
+:amanda/steel/steel24x8.S: 1536 728
+:amanda/steel/steel24x8.S: 1536 720
+:amanda/steel/steel24x8.S: 1536 712
+:amanda/steel/steel24x8.S: 1536 704
+:amanda/steel/steel24x8.S: 1536 696
+:amanda/steel/steel24x8.S: 1536 688
+:amanda/steel/steel24x8.S: 1536 680
+:amanda/steel/steel24x8.S: 1536 672
+:amanda/steel/steel24x8.S: 1536 664
+:amanda/steel/steel24x8.S: 1536 656
+:amanda/steel/steel24x8.S: 1536 648
+:amanda/steel/steel24x8.S: 1536 640
+:amanda/steel/steel24x8.S: 1536 632
+:amanda/steel/steel24x8.S: 1536 624
+:amanda/steel/steel24x8.S: 1536 616
+:amanda/steel/steel24x8.S: 1536 608
+:amanda/steel/steel24x8.S: 1536 600
+:amanda/steel/steel24x8.S: 780 1024
+:amanda/steel/steel24x8.S: 804 1016
+:geoo/construction/stairs_rd_32.S: 40 32 fr
+:geoo/construction/stairs_rd_32.S: 72 96 fr
+:geoo/construction/stairs_rd_32.S: 104 160 fr
+:geoo/construction/stairs_rd_32.S: 136 224 fr
+:geoo/construction/stairs_rd_32.S: 168 288 fr
+:geoo/construction/stairs_rd_32.S: 200 352 fr
+:geoo/construction/stairs_rd_32.S: 232 416 fr
+:geoo/construction/stairs_rd_32.S: 264 480 fr
+:geoo/construction/stairs_rd_32.S: 296 544 fr
+:geoo/construction/stairs_rd_32.S: 328 608 fr
+:geoo/construction/stairs_rd_32.S: 360 672 fr
+:geoo/construction/stairs_rd_32.S: 392 736 fr
+:geoo/construction/stairs_rd_32.S: 424 800 fr
+:geoo/construction/stairs_rd_32.S: 456 864 fr
+:geoo/construction/platform.S: 0 78 frr
+:geoo/construction/platform.S: 0 80 frr
+:geoo/construction/platform.S: 0 82 frr
+:geoo/construction/platform.S: 0 84 frr
+:geoo/construction/platform.S: 0 86 frr
+:amanda/steel/steel24x8.S: 730 944 frr
+:amanda/steel/steel24x8.S: 706 944 frr
+:amanda/steel/steel24x8.S: 682 944 frr
+:amanda/steel/steel24x8.S: 658 944 frr
+:amanda/steel/steel24x8.S: 634 944 frr
+:amanda/steel/steel24x8.S: 610 944 frr
+:amanda/steel/steel24x8.S: 696 1032 frr
+:amanda/steel/steel24x8.S: 672 1032 frr
+:amanda/steel/steel24x8.S: 648 1032 frr
+:amanda/steel/steel24x8.S: 624 1032 frr
+:amanda/steel/steel24x8.S: 600 1032 frr
+:amanda/steel/steel24x8.S: 450 944 frr
+:amanda/steel/steel24x8.S: 418 944 frr
+:amanda/steel/steel24x8.S: 386 944 frr
+:amanda/steel/steel24x8.S: 354 944 frr
+:amanda/steel/steel24x8.S: 322 944 frr
+:amanda/steel/steel24x8.S: 290 944 frr
+:amanda/steel/steel24x8.S: 258 944 frr
+:amanda/steel/steel24x8.S: 226 944 frr
+:amanda/steel/steel24x8.S: 194 944 frr
+:amanda/steel/steel24x8.S: 162 944 frr
+:amanda/steel/steel24x8.S: 130 944 frr
+:amanda/steel/steel24x8.S: 98 944 frr
+:amanda/steel/steel24x8.S: 66 944 frr
+:amanda/steel/steel24x8.S: 34 944 frr
+:amanda/steel/steel24x8.S: 720 1032 frr
+:amanda/steel/steel24x8.S: 744 1032 frr
+:amanda/steel/steel24x8.S: 480 1032 frr
+:amanda/steel/steel24x8.S: 456 1032 frr
+:amanda/steel/steel24x8.S: 432 1032 frr
+:amanda/steel/steel24x8.S: 408 1032 frr
+:amanda/steel/steel24x8.S: 384 1032 frr
+:amanda/steel/steel24x8.S: 504 1032 frr
+:amanda/steel/steel24x8.S: 528 1032 frr
+:amanda/steel/steel24x8.S: 552 1032 frr
+:amanda/steel/steel24x8.S: 576 1032 frr
+:amanda/steel/steel24x8.S: 360 1032 frr
+:amanda/steel/steel24x8.S: 336 1032 frr
+:amanda/steel/steel24x8.S: 216 1032 frr
+:amanda/steel/steel24x8.S: 192 1032 frr
+:amanda/steel/steel24x8.S: 168 1032 frr
+:amanda/steel/steel24x8.S: 144 1032 frr
+:amanda/steel/steel24x8.S: 120 1032 frr
+:amanda/steel/steel24x8.S: 240 1032 frr
+:amanda/steel/steel24x8.S: 264 1032 frr
+:amanda/steel/steel24x8.S: 288 1032 frr
+:amanda/steel/steel24x8.S: 312 1032 frr
+:amanda/steel/steel24x8.S: 72 1032 frr
+:amanda/steel/steel24x8.S: 48 1032 frr
+:amanda/steel/steel24x8.S: 24 1032 frr
+:amanda/steel/steel24x8.S: 0 1032 frr
+:amanda/steel/steel24x8.S: 0 1024 frr
+:amanda/steel/steel24x8.S: 96 1032 frr
+:amanda/steel/steel24x8.S: 0 1016 frr
+:amanda/steel/steel24x8.S: 0 1008 frr
+:amanda/steel/steel24x8.S: 0 1000 frr
+:amanda/steel/steel24x8.S: 0 992 frr
+:amanda/steel/steel24x8.S: 0 984 frr
+:amanda/steel/steel24x8.S: 0 976 frr
+:amanda/steel/steel24x8.S: 0 968 frr
+:amanda/steel/steel24x8.S: 0 960 frr
+:amanda/steel/steel24x8.S: 0 952 frr
+:amanda/steel/steel24x8.S: 0 944 frr
+:amanda/steel/steel24x8.S: 0 936 frr
+:amanda/steel/steel24x8.S: 0 928 frr
+:amanda/steel/steel24x8.S: 0 920 frr
+:amanda/steel/steel24x8.S: 0 912 frr
+:amanda/steel/steel24x8.S: 0 904 frr
+:amanda/steel/steel24x8.S: 0 896 frr
+:amanda/steel/steel24x8.S: 0 888 frr
+:amanda/steel/steel24x8.S: 0 880 frr
+:amanda/steel/steel24x8.S: 0 872 frr
+:amanda/steel/steel24x8.S: 0 864 frr
+:amanda/steel/steel24x8.S: 0 856 frr
+:amanda/steel/steel24x8.S: 0 848 frr
+:amanda/steel/steel24x8.S: 0 840 frr
+:amanda/steel/steel24x8.S: 0 832 frr
+:amanda/steel/steel24x8.S: 0 824 frr
+:amanda/steel/steel24x8.S: 0 816 frr
+:amanda/steel/steel24x8.S: 0 808 frr
+:amanda/steel/steel24x8.S: 0 800 frr
+:amanda/steel/steel24x8.S: 0 792 frr
+:amanda/steel/steel24x8.S: 0 784 frr
+:amanda/steel/steel24x8.S: 0 776 frr
+:amanda/steel/steel24x8.S: 0 768 frr
+:amanda/steel/steel24x8.S: 0 760 frr
+:amanda/steel/steel24x8.S: 0 752 frr
+:amanda/steel/steel24x8.S: 0 744 frr
+:amanda/steel/steel24x8.S: 0 736 frr
+:amanda/steel/steel24x8.S: 0 728 frr
+:amanda/steel/steel24x8.S: 0 720 frr
+:amanda/steel/steel24x8.S: 0 712 frr
+:amanda/steel/steel24x8.S: 0 704 frr
+:amanda/steel/steel24x8.S: 0 696 frr
+:amanda/steel/steel24x8.S: 0 688 frr
+:amanda/steel/steel24x8.S: 0 680 frr
+:amanda/steel/steel24x8.S: 0 672 frr
+:amanda/steel/steel24x8.S: 0 664 frr
+:amanda/steel/steel24x8.S: 0 656 frr
+:amanda/steel/steel24x8.S: 0 648 frr
+:amanda/steel/steel24x8.S: 0 640 frr
+:amanda/steel/steel24x8.S: 0 632 frr
+:amanda/steel/steel24x8.S: 0 624 frr
+:amanda/steel/steel24x8.S: 0 616 frr
+:amanda/steel/steel24x8.S: 0 608 frr
+:amanda/steel/steel24x8.S: 0 600 frr
+:amanda/steel/steel24x8.S: 756 1024 frr
+:amanda/steel/steel24x8.S: 732 1016 frr
+:amanda/steel/steel24x8.S: 804 1008
+:amanda/steel/steel24x8.S: 732 1008 frr
+:amanda/steel/steel24x8.S: 804 1000
+:amanda/steel/steel24x8.S: 732 1000 frr
+:amanda/steel/steel24x8.S: 804 992
+:amanda/steel/steel24x8.S: 732 992 frr
+:amanda/steel/steel24x8.S: 804 984
+:amanda/steel/steel24x8.S: 732 984 frr
+:amanda/steel/steel24x8.S: 804 976
+:amanda/steel/steel24x8.S: 732 976 frr
+:amanda/steel/steel24x8.S: 804 968
+:amanda/steel/steel24x8.S: 732 968 frr
+:amanda/steel/steel24x8.S: 804 960
+:amanda/steel/steel24x8.S: 732 960 frr
+:amanda/steel/steel24x8.S: 0 592 frr
+:amanda/steel/steel24x8.S: 0 584 frr
+:amanda/steel/steel24x8.S: 0 576 frr
+:amanda/steel/steel24x8.S: 0 568 frr
+:amanda/steel/steel24x8.S: 0 560 frr
+:amanda/steel/steel24x8.S: 0 552 frr
+:amanda/steel/steel24x8.S: 0 544 frr
+:amanda/steel/steel24x8.S: 0 536 frr
+:amanda/steel/steel24x8.S: 0 528 frr
+:amanda/steel/steel24x8.S: 0 520 frr
+:amanda/steel/steel24x8.S: 0 512 frr
+:amanda/steel/steel24x8.S: 0 504 frr
+:amanda/steel/steel24x8.S: 0 496 frr
+:amanda/steel/steel24x8.S: 0 488 frr
+:amanda/steel/steel24x8.S: 0 480 frr
+:amanda/steel/steel24x8.S: 0 472 frr
+:amanda/steel/steel24x8.S: 0 464 frr
+:amanda/steel/steel24x8.S: 0 456 frr
+:amanda/steel/steel24x8.S: 0 448 frr
+:amanda/steel/steel24x8.S: 0 440 frr
+:amanda/steel/steel24x8.S: 0 432 frr
+:amanda/steel/steel24x8.S: 0 424 frr
+:amanda/steel/steel24x8.S: 0 416 frr
+:amanda/steel/steel24x8.S: 0 408 frr
+:amanda/steel/steel24x8.S: 0 400 frr
+:amanda/steel/steel24x8.S: 0 392 frr
+:amanda/steel/steel24x8.S: 0 384 frr
+:amanda/steel/steel24x8.S: 0 376 frr
+:amanda/steel/steel24x8.S: 0 368 frr
+:amanda/steel/steel24x8.S: 0 360 frr
+:amanda/steel/steel24x8.S: 0 352 frr
+:amanda/steel/steel24x8.S: 0 344 frr
+:amanda/steel/steel24x8.S: 0 336 frr
+:amanda/steel/steel24x8.S: 0 328 frr
+:amanda/steel/steel24x8.S: 0 320 frr
+:amanda/steel/steel24x8.S: 0 312 frr
+:amanda/steel/steel24x8.S: 0 304 frr
+:amanda/steel/steel24x8.S: 0 296 frr
+:amanda/steel/steel24x8.S: 0 288 frr
+:amanda/steel/steel24x8.S: 0 280 frr
+:amanda/steel/steel24x8.S: 0 272 frr
+:amanda/steel/steel24x8.S: 0 264 frr
+:amanda/steel/steel24x8.S: 0 256 frr
+:amanda/steel/steel24x8.S: 1536 592
+:amanda/steel/steel24x8.S: 1536 584
+:amanda/steel/steel24x8.S: 1536 576
+:amanda/steel/steel24x8.S: 1536 568
+:amanda/steel/steel24x8.S: 1536 560
+:amanda/steel/steel24x8.S: 1536 552
+:amanda/steel/steel24x8.S: 1536 544
+:amanda/steel/steel24x8.S: 1536 536
+:amanda/steel/steel24x8.S: 1536 528
+:amanda/steel/steel24x8.S: 1536 520
+:amanda/steel/steel24x8.S: 1536 512
+:amanda/steel/steel24x8.S: 1536 504
+:amanda/steel/steel24x8.S: 1536 496
+:amanda/steel/steel24x8.S: 1536 488
+:amanda/steel/steel24x8.S: 1536 480
+:amanda/steel/steel24x8.S: 1536 472
+:amanda/steel/steel24x8.S: 1536 464
+:amanda/steel/steel24x8.S: 1536 456
+:amanda/steel/steel24x8.S: 1536 448
+:amanda/steel/steel24x8.S: 1536 440
+:amanda/steel/steel24x8.S: 1536 432
+:amanda/steel/steel24x8.S: 1536 424
+:amanda/steel/steel24x8.S: 1536 416
+:amanda/steel/steel24x8.S: 1536 408
+:amanda/steel/steel24x8.S: 1536 400
+:amanda/steel/steel24x8.S: 1536 392
+:amanda/steel/steel24x8.S: 1536 384
+:amanda/steel/steel24x8.S: 1536 376
+:amanda/steel/steel24x8.S: 1536 368
+:amanda/steel/steel24x8.S: 1536 360
+:amanda/steel/steel24x8.S: 1536 352
+:amanda/steel/steel24x8.S: 1536 344
+:amanda/steel/steel24x8.S: 1536 336
+:amanda/steel/steel24x8.S: 1536 328
+:amanda/steel/steel24x8.S: 1536 320
+:amanda/steel/steel24x8.S: 1536 312
+:amanda/steel/steel24x8.S: 1536 304
+:amanda/steel/steel24x8.S: 1536 296
+:amanda/steel/steel24x8.S: 1536 288
+:amanda/steel/steel24x8.S: 1536 280
+:amanda/steel/steel24x8.S: 1536 272
+:amanda/steel/steel24x8.S: 1536 264
+:amanda/steel/steel24x8.S: 1536 256
+:amanda/steel/steel24x8.S: 1086 936
+:amanda/steel/steel24x8.S: 1118 936
+:amanda/steel/steel24x8.S: 1150 936
+:amanda/steel/steel24x8.S: 1182 936
+:amanda/steel/steel24x8.S: 1214 936
+:amanda/steel/steel24x8.S: 1246 936
+:amanda/steel/steel24x8.S: 1278 936
+:amanda/steel/steel24x8.S: 1310 936
+:amanda/steel/steel24x8.S: 1342 936
+:amanda/steel/steel24x8.S: 1374 936
+:amanda/steel/steel24x8.S: 1406 936
+:amanda/steel/steel24x8.S: 1438 936
+:amanda/steel/steel24x8.S: 1470 936
+:amanda/steel/steel24x8.S: 1502 936
+:amanda/steel/steel24x8.S: 450 936 frr
+:amanda/steel/steel24x8.S: 418 936 frr
+:amanda/steel/steel24x8.S: 386 936 frr
+:amanda/steel/steel24x8.S: 354 936 frr
+:amanda/steel/steel24x8.S: 322 936 frr
+:amanda/steel/steel24x8.S: 290 936 frr
+:amanda/steel/steel24x8.S: 258 936 frr
+:amanda/steel/steel24x8.S: 226 936 frr
+:amanda/steel/steel24x8.S: 194 936 frr
+:amanda/steel/steel24x8.S: 162 936 frr
+:amanda/steel/steel24x8.S: 130 936 frr
+:amanda/steel/steel24x8.S: 98 936 frr
+:amanda/steel/steel24x8.S: 66 936 frr
+:amanda/steel/steel24x8.S: 34 936 frr
+:amanda/steel/steel24x8.S: 1118 928
+:amanda/steel/steel24x8.S: 1150 928
+:amanda/steel/steel24x8.S: 1182 928
+:amanda/steel/steel24x8.S: 1214 928
+:amanda/steel/steel24x8.S: 1246 928
+:amanda/steel/steel24x8.S: 1278 928
+:amanda/steel/steel24x8.S: 1310 928
+:amanda/steel/steel24x8.S: 1342 928
+:amanda/steel/steel24x8.S: 1374 928
+:amanda/steel/steel24x8.S: 1406 928
+:amanda/steel/steel24x8.S: 1438 928
+:amanda/steel/steel24x8.S: 1470 928
+:amanda/steel/steel24x8.S: 1502 928
+:amanda/steel/steel24x8.S: 418 928 frr
+:amanda/steel/steel24x8.S: 386 928 frr
+:amanda/steel/steel24x8.S: 354 928 frr
+:amanda/steel/steel24x8.S: 322 928 frr
+:amanda/steel/steel24x8.S: 290 928 frr
+:amanda/steel/steel24x8.S: 258 928 frr
+:amanda/steel/steel24x8.S: 226 928 frr
+:amanda/steel/steel24x8.S: 194 928 frr
+:amanda/steel/steel24x8.S: 162 928 frr
+:amanda/steel/steel24x8.S: 130 928 frr
+:amanda/steel/steel24x8.S: 98 928 frr
+:amanda/steel/steel24x8.S: 66 928 frr
+:amanda/steel/steel24x8.S: 34 928 frr
+:amanda/steel/steel24x8.S: 1118 920
+:amanda/steel/steel24x8.S: 1150 920
+:amanda/steel/steel24x8.S: 1182 920
+:amanda/steel/steel24x8.S: 1214 920
+:amanda/steel/steel24x8.S: 1246 920
+:amanda/steel/steel24x8.S: 1278 920
+:amanda/steel/steel24x8.S: 1310 920
+:amanda/steel/steel24x8.S: 1342 920
+:amanda/steel/steel24x8.S: 1374 920
+:amanda/steel/steel24x8.S: 1406 920
+:amanda/steel/steel24x8.S: 1438 920
+:amanda/steel/steel24x8.S: 1470 920
+:amanda/steel/steel24x8.S: 1502 920
+:amanda/steel/steel24x8.S: 418 920 frr
+:amanda/steel/steel24x8.S: 386 920 frr
+:amanda/steel/steel24x8.S: 354 920 frr
+:amanda/steel/steel24x8.S: 322 920 frr
+:amanda/steel/steel24x8.S: 290 920 frr
+:amanda/steel/steel24x8.S: 258 920 frr
+:amanda/steel/steel24x8.S: 226 920 frr
+:amanda/steel/steel24x8.S: 194 920 frr
+:amanda/steel/steel24x8.S: 162 920 frr
+:amanda/steel/steel24x8.S: 130 920 frr
+:amanda/steel/steel24x8.S: 98 920 frr
+:amanda/steel/steel24x8.S: 66 920 frr
+:amanda/steel/steel24x8.S: 34 920 frr
+:amanda/steel/steel24x8.S: 1150 912
+:amanda/steel/steel24x8.S: 1182 912
+:amanda/steel/steel24x8.S: 1214 912
+:amanda/steel/steel24x8.S: 1246 912
+:amanda/steel/steel24x8.S: 1278 912
+:amanda/steel/steel24x8.S: 1310 912
+:amanda/steel/steel24x8.S: 1342 912
+:amanda/steel/steel24x8.S: 1374 912
+:amanda/steel/steel24x8.S: 1406 912
+:amanda/steel/steel24x8.S: 1438 912
+:amanda/steel/steel24x8.S: 1470 912
+:amanda/steel/steel24x8.S: 1502 912
+:amanda/steel/steel24x8.S: 386 912 frr
+:amanda/steel/steel24x8.S: 354 912 frr
+:amanda/steel/steel24x8.S: 322 912 frr
+:amanda/steel/steel24x8.S: 290 912 frr
+:amanda/steel/steel24x8.S: 258 912 frr
+:amanda/steel/steel24x8.S: 226 912 frr
+:amanda/steel/steel24x8.S: 194 912 frr
+:amanda/steel/steel24x8.S: 162 912 frr
+:amanda/steel/steel24x8.S: 130 912 frr
+:amanda/steel/steel24x8.S: 98 912 frr
+:amanda/steel/steel24x8.S: 66 912 frr
+:amanda/steel/steel24x8.S: 34 912 frr
+:amanda/steel/steel24x8.S: 1150 904
+:amanda/steel/steel24x8.S: 1182 904
+:amanda/steel/steel24x8.S: 1214 904
+:amanda/steel/steel24x8.S: 1246 904
+:amanda/steel/steel24x8.S: 1278 904
+:amanda/steel/steel24x8.S: 1310 904
+:amanda/steel/steel24x8.S: 1342 904
+:amanda/steel/steel24x8.S: 1374 904
+:amanda/steel/steel24x8.S: 1406 904
+:amanda/steel/steel24x8.S: 1438 904
+:amanda/steel/steel24x8.S: 1470 904
+:amanda/steel/steel24x8.S: 1502 904
+:amanda/steel/steel24x8.S: 386 904 frr
+:amanda/steel/steel24x8.S: 354 904 frr
+:amanda/steel/steel24x8.S: 322 904 frr
+:amanda/steel/steel24x8.S: 290 904 frr
+:amanda/steel/steel24x8.S: 258 904 frr
+:amanda/steel/steel24x8.S: 226 904 frr
+:amanda/steel/steel24x8.S: 194 904 frr
+:amanda/steel/steel24x8.S: 162 904 frr
+:amanda/steel/steel24x8.S: 130 904 frr
+:amanda/steel/steel24x8.S: 98 904 frr
+:amanda/steel/steel24x8.S: 66 904 frr
+:amanda/steel/steel24x8.S: 34 904 frr
+:amanda/steel/steel24x8.S: 1150 896
+:amanda/steel/steel24x8.S: 1182 896
+:amanda/steel/steel24x8.S: 1214 896
+:amanda/steel/steel24x8.S: 1246 896
+:amanda/steel/steel24x8.S: 1278 896
+:amanda/steel/steel24x8.S: 1310 896
+:amanda/steel/steel24x8.S: 1342 896
+:amanda/steel/steel24x8.S: 1374 896
+:amanda/steel/steel24x8.S: 1406 896
+:amanda/steel/steel24x8.S: 1438 896
+:amanda/steel/steel24x8.S: 1470 896
+:amanda/steel/steel24x8.S: 1502 896
+:amanda/steel/steel24x8.S: 386 896 frr
+:amanda/steel/steel24x8.S: 354 896 frr
+:amanda/steel/steel24x8.S: 322 896 frr
+:amanda/steel/steel24x8.S: 290 896 frr
+:amanda/steel/steel24x8.S: 258 896 frr
+:amanda/steel/steel24x8.S: 226 896 frr
+:amanda/steel/steel24x8.S: 194 896 frr
+:amanda/steel/steel24x8.S: 162 896 frr
+:amanda/steel/steel24x8.S: 130 896 frr
+:amanda/steel/steel24x8.S: 98 896 frr
+:amanda/steel/steel24x8.S: 66 896 frr
+:amanda/steel/steel24x8.S: 34 896 frr
+:amanda/steel/steel24x8.S: 1150 888
+:amanda/steel/steel24x8.S: 1182 888
+:amanda/steel/steel24x8.S: 1214 888
+:amanda/steel/steel24x8.S: 1246 888
+:amanda/steel/steel24x8.S: 1278 888
+:amanda/steel/steel24x8.S: 1310 888
+:amanda/steel/steel24x8.S: 1342 888
+:amanda/steel/steel24x8.S: 1374 888
+:amanda/steel/steel24x8.S: 1406 888
+:amanda/steel/steel24x8.S: 1438 888
+:amanda/steel/steel24x8.S: 1470 888
+:amanda/steel/steel24x8.S: 1502 888
+:amanda/steel/steel24x8.S: 386 888 frr
+:amanda/steel/steel24x8.S: 354 888 frr
+:amanda/steel/steel24x8.S: 322 888 frr
+:amanda/steel/steel24x8.S: 290 888 frr
+:amanda/steel/steel24x8.S: 258 888 frr
+:amanda/steel/steel24x8.S: 226 888 frr
+:amanda/steel/steel24x8.S: 194 888 frr
+:amanda/steel/steel24x8.S: 162 888 frr
+:amanda/steel/steel24x8.S: 130 888 frr
+:amanda/steel/steel24x8.S: 98 888 frr
+:amanda/steel/steel24x8.S: 66 888 frr
+:amanda/steel/steel24x8.S: 34 888 frr
+:amanda/steel/steel24x8.S: 1182 880
+:amanda/steel/steel24x8.S: 1214 880
+:amanda/steel/steel24x8.S: 1246 880
+:amanda/steel/steel24x8.S: 1278 880
+:amanda/steel/steel24x8.S: 1310 880
+:amanda/steel/steel24x8.S: 1342 880
+:amanda/steel/steel24x8.S: 1374 880
+:amanda/steel/steel24x8.S: 1406 880
+:amanda/steel/steel24x8.S: 1438 880
+:amanda/steel/steel24x8.S: 1470 880
+:amanda/steel/steel24x8.S: 1502 880
+:amanda/steel/steel24x8.S: 354 880 frr
+:amanda/steel/steel24x8.S: 322 880 frr
+:amanda/steel/steel24x8.S: 290 880 frr
+:amanda/steel/steel24x8.S: 258 880 frr
+:amanda/steel/steel24x8.S: 226 880 frr
+:amanda/steel/steel24x8.S: 194 880 frr
+:amanda/steel/steel24x8.S: 162 880 frr
+:amanda/steel/steel24x8.S: 130 880 frr
+:amanda/steel/steel24x8.S: 98 880 frr
+:amanda/steel/steel24x8.S: 66 880 frr
+:amanda/steel/steel24x8.S: 34 880 frr
+:amanda/steel/steel24x8.S: 1182 872
+:amanda/steel/steel24x8.S: 1214 872
+:amanda/steel/steel24x8.S: 1246 872
+:amanda/steel/steel24x8.S: 1278 872
+:amanda/steel/steel24x8.S: 1310 872
+:amanda/steel/steel24x8.S: 1342 872
+:amanda/steel/steel24x8.S: 1374 872
+:amanda/steel/steel24x8.S: 1406 872
+:amanda/steel/steel24x8.S: 1438 872
+:amanda/steel/steel24x8.S: 1470 872
+:amanda/steel/steel24x8.S: 1502 872
+:amanda/steel/steel24x8.S: 354 872 frr
+:amanda/steel/steel24x8.S: 322 872 frr
+:amanda/steel/steel24x8.S: 290 872 frr
+:amanda/steel/steel24x8.S: 258 872 frr
+:amanda/steel/steel24x8.S: 226 872 frr
+:amanda/steel/steel24x8.S: 194 872 frr
+:amanda/steel/steel24x8.S: 162 872 frr
+:amanda/steel/steel24x8.S: 130 872 frr
+:amanda/steel/steel24x8.S: 98 872 frr
+:amanda/steel/steel24x8.S: 66 872 frr
+:amanda/steel/steel24x8.S: 34 872 frr
+:amanda/steel/steel24x8.S: 1182 864
+:amanda/steel/steel24x8.S: 1214 864
+:amanda/steel/steel24x8.S: 1246 864
+:amanda/steel/steel24x8.S: 1278 864
+:amanda/steel/steel24x8.S: 1310 864
+:amanda/steel/steel24x8.S: 1342 864
+:amanda/steel/steel24x8.S: 1374 864
+:amanda/steel/steel24x8.S: 1406 864
+:amanda/steel/steel24x8.S: 1438 864
+:amanda/steel/steel24x8.S: 1470 864
+:amanda/steel/steel24x8.S: 1502 864
+:amanda/steel/steel24x8.S: 354 864 frr
+:amanda/steel/steel24x8.S: 322 864 frr
+:amanda/steel/steel24x8.S: 290 864 frr
+:amanda/steel/steel24x8.S: 258 864 frr
+:amanda/steel/steel24x8.S: 226 864 frr
+:amanda/steel/steel24x8.S: 194 864 frr
+:amanda/steel/steel24x8.S: 162 864 frr
+:amanda/steel/steel24x8.S: 130 864 frr
+:amanda/steel/steel24x8.S: 98 864 frr
+:amanda/steel/steel24x8.S: 66 864 frr
+:amanda/steel/steel24x8.S: 34 864 frr
+:amanda/steel/steel24x8.S: 1182 856
+:amanda/steel/steel24x8.S: 1214 856
+:amanda/steel/steel24x8.S: 1246 856
+:amanda/steel/steel24x8.S: 1278 856
+:amanda/steel/steel24x8.S: 1310 856
+:amanda/steel/steel24x8.S: 1342 856
+:amanda/steel/steel24x8.S: 1374 856
+:amanda/steel/steel24x8.S: 1406 856
+:amanda/steel/steel24x8.S: 1438 856
+:amanda/steel/steel24x8.S: 1470 856
+:amanda/steel/steel24x8.S: 1502 856
+:amanda/steel/steel24x8.S: 354 856 frr
+:amanda/steel/steel24x8.S: 322 856 frr
+:amanda/steel/steel24x8.S: 290 856 frr
+:amanda/steel/steel24x8.S: 258 856 frr
+:amanda/steel/steel24x8.S: 226 856 frr
+:amanda/steel/steel24x8.S: 194 856 frr
+:amanda/steel/steel24x8.S: 162 856 frr
+:amanda/steel/steel24x8.S: 130 856 frr
+:amanda/steel/steel24x8.S: 98 856 frr
+:amanda/steel/steel24x8.S: 66 856 frr
+:amanda/steel/steel24x8.S: 34 856 frr
+:amanda/steel/steel24x8.S: 1182 848
+:amanda/steel/steel24x8.S: 1214 848
+:amanda/steel/steel24x8.S: 1246 848
+:amanda/steel/steel24x8.S: 1278 848
+:amanda/steel/steel24x8.S: 1310 848
+:amanda/steel/steel24x8.S: 1342 848
+:amanda/steel/steel24x8.S: 1374 848
+:amanda/steel/steel24x8.S: 1406 848
+:amanda/steel/steel24x8.S: 1438 848
+:amanda/steel/steel24x8.S: 1470 848
+:amanda/steel/steel24x8.S: 1502 848
+:amanda/steel/steel24x8.S: 354 848 frr
+:amanda/steel/steel24x8.S: 322 848 frr
+:amanda/steel/steel24x8.S: 290 848 frr
+:amanda/steel/steel24x8.S: 258 848 frr
+:amanda/steel/steel24x8.S: 226 848 frr
+:amanda/steel/steel24x8.S: 194 848 frr
+:amanda/steel/steel24x8.S: 162 848 frr
+:amanda/steel/steel24x8.S: 130 848 frr
+:amanda/steel/steel24x8.S: 98 848 frr
+:amanda/steel/steel24x8.S: 66 848 frr
+:amanda/steel/steel24x8.S: 34 848 frr
+:amanda/steel/steel24x8.S: 1182 840
+:amanda/steel/steel24x8.S: 1214 840
+:amanda/steel/steel24x8.S: 1246 840
+:amanda/steel/steel24x8.S: 1278 840
+:amanda/steel/steel24x8.S: 1310 840
+:amanda/steel/steel24x8.S: 1342 840
+:amanda/steel/steel24x8.S: 1374 840
+:amanda/steel/steel24x8.S: 1406 840
+:amanda/steel/steel24x8.S: 1438 840
+:amanda/steel/steel24x8.S: 1470 840
+:amanda/steel/steel24x8.S: 1502 840
+:amanda/steel/steel24x8.S: 354 840 frr
+:amanda/steel/steel24x8.S: 322 840 frr
+:amanda/steel/steel24x8.S: 290 840 frr
+:amanda/steel/steel24x8.S: 258 840 frr
+:amanda/steel/steel24x8.S: 226 840 frr
+:amanda/steel/steel24x8.S: 194 840 frr
+:amanda/steel/steel24x8.S: 162 840 frr
+:amanda/steel/steel24x8.S: 130 840 frr
+:amanda/steel/steel24x8.S: 98 840 frr
+:amanda/steel/steel24x8.S: 66 840 frr
+:amanda/steel/steel24x8.S: 34 840 frr
+:amanda/steel/steel24x8.S: 1182 832
+:amanda/steel/steel24x8.S: 1214 832
+:amanda/steel/steel24x8.S: 1246 832
+:amanda/steel/steel24x8.S: 1278 832
+:amanda/steel/steel24x8.S: 1310 832
+:amanda/steel/steel24x8.S: 1342 832
+:amanda/steel/steel24x8.S: 1374 832
+:amanda/steel/steel24x8.S: 1406 832
+:amanda/steel/steel24x8.S: 1438 832
+:amanda/steel/steel24x8.S: 1470 832
+:amanda/steel/steel24x8.S: 1502 832
+:amanda/steel/steel24x8.S: 354 832 frr
+:amanda/steel/steel24x8.S: 322 832 frr
+:amanda/steel/steel24x8.S: 290 832 frr
+:amanda/steel/steel24x8.S: 258 832 frr
+:amanda/steel/steel24x8.S: 226 832 frr
+:amanda/steel/steel24x8.S: 194 832 frr
+:amanda/steel/steel24x8.S: 162 832 frr
+:amanda/steel/steel24x8.S: 130 832 frr
+:amanda/steel/steel24x8.S: 98 832 frr
+:amanda/steel/steel24x8.S: 66 832 frr
+:amanda/steel/steel24x8.S: 34 832 frr
+:amanda/steel/steel24x8.S: 1182 824
+:amanda/steel/steel24x8.S: 1214 824
+:amanda/steel/steel24x8.S: 1246 824
+:amanda/steel/steel24x8.S: 1278 824
+:amanda/steel/steel24x8.S: 1310 824
+:amanda/steel/steel24x8.S: 1342 824
+:amanda/steel/steel24x8.S: 1374 824
+:amanda/steel/steel24x8.S: 1406 824
+:amanda/steel/steel24x8.S: 1438 824
+:amanda/steel/steel24x8.S: 1470 824
+:amanda/steel/steel24x8.S: 1502 824
+:amanda/steel/steel24x8.S: 354 824 frr
+:amanda/steel/steel24x8.S: 322 824 frr
+:amanda/steel/steel24x8.S: 290 824 frr
+:amanda/steel/steel24x8.S: 258 824 frr
+:amanda/steel/steel24x8.S: 226 824 frr
+:amanda/steel/steel24x8.S: 194 824 frr
+:amanda/steel/steel24x8.S: 162 824 frr
+:amanda/steel/steel24x8.S: 130 824 frr
+:amanda/steel/steel24x8.S: 98 824 frr
+:amanda/steel/steel24x8.S: 66 824 frr
+:amanda/steel/steel24x8.S: 34 824 frr
+:amanda/steel/steel24x8.S: 1214 816
+:amanda/steel/steel24x8.S: 1246 816
+:amanda/steel/steel24x8.S: 1278 816
+:amanda/steel/steel24x8.S: 1310 816
+:amanda/steel/steel24x8.S: 1342 816
+:amanda/steel/steel24x8.S: 1374 816
+:amanda/steel/steel24x8.S: 1406 816
+:amanda/steel/steel24x8.S: 1438 816
+:amanda/steel/steel24x8.S: 1470 816
+:amanda/steel/steel24x8.S: 1502 816
+:amanda/steel/steel24x8.S: 322 816 frr
+:amanda/steel/steel24x8.S: 290 816 frr
+:amanda/steel/steel24x8.S: 258 816 frr
+:amanda/steel/steel24x8.S: 226 816 frr
+:amanda/steel/steel24x8.S: 194 816 frr
+:amanda/steel/steel24x8.S: 162 816 frr
+:amanda/steel/steel24x8.S: 130 816 frr
+:amanda/steel/steel24x8.S: 98 816 frr
+:amanda/steel/steel24x8.S: 66 816 frr
+:amanda/steel/steel24x8.S: 34 816 frr
+:amanda/steel/steel24x8.S: 1214 808
+:amanda/steel/steel24x8.S: 1246 808
+:amanda/steel/steel24x8.S: 1278 808
+:amanda/steel/steel24x8.S: 1310 808
+:amanda/steel/steel24x8.S: 1342 808
+:amanda/steel/steel24x8.S: 1374 808
+:amanda/steel/steel24x8.S: 1406 808
+:amanda/steel/steel24x8.S: 1438 808
+:amanda/steel/steel24x8.S: 1470 808
+:amanda/steel/steel24x8.S: 1502 808
+:amanda/steel/steel24x8.S: 322 808 frr
+:amanda/steel/steel24x8.S: 290 808 frr
+:amanda/steel/steel24x8.S: 258 808 frr
+:amanda/steel/steel24x8.S: 226 808 frr
+:amanda/steel/steel24x8.S: 194 808 frr
+:amanda/steel/steel24x8.S: 162 808 frr
+:amanda/steel/steel24x8.S: 130 808 frr
+:amanda/steel/steel24x8.S: 98 808 frr
+:amanda/steel/steel24x8.S: 66 808 frr
+:amanda/steel/steel24x8.S: 34 808 frr
+:amanda/steel/steel24x8.S: 1214 800
+:amanda/steel/steel24x8.S: 1246 800
+:amanda/steel/steel24x8.S: 1278 800
+:amanda/steel/steel24x8.S: 1310 800
+:amanda/steel/steel24x8.S: 1342 800
+:amanda/steel/steel24x8.S: 1374 800
+:amanda/steel/steel24x8.S: 1406 800
+:amanda/steel/steel24x8.S: 1438 800
+:amanda/steel/steel24x8.S: 1470 800
+:amanda/steel/steel24x8.S: 1502 800
+:amanda/steel/steel24x8.S: 322 800 frr
+:amanda/steel/steel24x8.S: 290 800 frr
+:amanda/steel/steel24x8.S: 258 800 frr
+:amanda/steel/steel24x8.S: 226 800 frr
+:amanda/steel/steel24x8.S: 194 800 frr
+:amanda/steel/steel24x8.S: 162 800 frr
+:amanda/steel/steel24x8.S: 130 800 frr
+:amanda/steel/steel24x8.S: 98 800 frr
+:amanda/steel/steel24x8.S: 66 800 frr
+:amanda/steel/steel24x8.S: 34 800 frr
+:amanda/steel/steel24x8.S: 1214 792
+:amanda/steel/steel24x8.S: 1246 792
+:amanda/steel/steel24x8.S: 1278 792
+:amanda/steel/steel24x8.S: 1310 792
+:amanda/steel/steel24x8.S: 1342 792
+:amanda/steel/steel24x8.S: 1374 792
+:amanda/steel/steel24x8.S: 1406 792
+:amanda/steel/steel24x8.S: 1438 792
+:amanda/steel/steel24x8.S: 1470 792
+:amanda/steel/steel24x8.S: 1502 792
+:amanda/steel/steel24x8.S: 322 792 frr
+:amanda/steel/steel24x8.S: 290 792 frr
+:amanda/steel/steel24x8.S: 258 792 frr
+:amanda/steel/steel24x8.S: 226 792 frr
+:amanda/steel/steel24x8.S: 194 792 frr
+:amanda/steel/steel24x8.S: 162 792 frr
+:amanda/steel/steel24x8.S: 130 792 frr
+:amanda/steel/steel24x8.S: 98 792 frr
+:amanda/steel/steel24x8.S: 66 792 frr
+:amanda/steel/steel24x8.S: 34 792 frr
+:amanda/steel/steel24x8.S: 1214 784
+:amanda/steel/steel24x8.S: 1246 784
+:amanda/steel/steel24x8.S: 1278 784
+:amanda/steel/steel24x8.S: 1310 784
+:amanda/steel/steel24x8.S: 1342 784
+:amanda/steel/steel24x8.S: 1374 784
+:amanda/steel/steel24x8.S: 1406 784
+:amanda/steel/steel24x8.S: 1438 784
+:amanda/steel/steel24x8.S: 1470 784
+:amanda/steel/steel24x8.S: 1502 784
+:amanda/steel/steel24x8.S: 322 784 frr
+:amanda/steel/steel24x8.S: 290 784 frr
+:amanda/steel/steel24x8.S: 258 784 frr
+:amanda/steel/steel24x8.S: 226 784 frr
+:amanda/steel/steel24x8.S: 194 784 frr
+:amanda/steel/steel24x8.S: 162 784 frr
+:amanda/steel/steel24x8.S: 130 784 frr
+:amanda/steel/steel24x8.S: 98 784 frr
+:amanda/steel/steel24x8.S: 66 784 frr
+:amanda/steel/steel24x8.S: 34 784 frr
+:amanda/steel/steel24x8.S: 1214 776
+:amanda/steel/steel24x8.S: 1246 776
+:amanda/steel/steel24x8.S: 1278 776
+:amanda/steel/steel24x8.S: 1310 776
+:amanda/steel/steel24x8.S: 1342 776
+:amanda/steel/steel24x8.S: 1374 776
+:amanda/steel/steel24x8.S: 1406 776
+:amanda/steel/steel24x8.S: 1438 776
+:amanda/steel/steel24x8.S: 1470 776
+:amanda/steel/steel24x8.S: 1502 776
+:amanda/steel/steel24x8.S: 322 776 frr
+:amanda/steel/steel24x8.S: 290 776 frr
+:amanda/steel/steel24x8.S: 258 776 frr
+:amanda/steel/steel24x8.S: 226 776 frr
+:amanda/steel/steel24x8.S: 194 776 frr
+:amanda/steel/steel24x8.S: 162 776 frr
+:amanda/steel/steel24x8.S: 130 776 frr
+:amanda/steel/steel24x8.S: 98 776 frr
+:amanda/steel/steel24x8.S: 66 776 frr
+:amanda/steel/steel24x8.S: 34 776 frr
+:amanda/steel/steel24x8.S: 1214 768
+:amanda/steel/steel24x8.S: 1246 768
+:amanda/steel/steel24x8.S: 1278 768
+:amanda/steel/steel24x8.S: 1310 768
+:amanda/steel/steel24x8.S: 1342 768
+:amanda/steel/steel24x8.S: 1374 768
+:amanda/steel/steel24x8.S: 1406 768
+:amanda/steel/steel24x8.S: 1438 768
+:amanda/steel/steel24x8.S: 1470 768
+:amanda/steel/steel24x8.S: 1502 768
+:amanda/steel/steel24x8.S: 322 768 frr
+:amanda/steel/steel24x8.S: 290 768 frr
+:amanda/steel/steel24x8.S: 258 768 frr
+:amanda/steel/steel24x8.S: 226 768 frr
+:amanda/steel/steel24x8.S: 194 768 frr
+:amanda/steel/steel24x8.S: 162 768 frr
+:amanda/steel/steel24x8.S: 130 768 frr
+:amanda/steel/steel24x8.S: 98 768 frr
+:amanda/steel/steel24x8.S: 66 768 frr
+:amanda/steel/steel24x8.S: 34 768 frr
+:amanda/steel/steel24x8.S: 1214 760
+:amanda/steel/steel24x8.S: 1246 760
+:amanda/steel/steel24x8.S: 1278 760
+:amanda/steel/steel24x8.S: 1310 760
+:amanda/steel/steel24x8.S: 1342 760
+:amanda/steel/steel24x8.S: 1374 760
+:amanda/steel/steel24x8.S: 1406 760
+:amanda/steel/steel24x8.S: 1438 760
+:amanda/steel/steel24x8.S: 1470 760
+:amanda/steel/steel24x8.S: 1502 760
+:amanda/steel/steel24x8.S: 322 760 frr
+:amanda/steel/steel24x8.S: 290 760 frr
+:amanda/steel/steel24x8.S: 258 760 frr
+:amanda/steel/steel24x8.S: 226 760 frr
+:amanda/steel/steel24x8.S: 194 760 frr
+:amanda/steel/steel24x8.S: 162 760 frr
+:amanda/steel/steel24x8.S: 130 760 frr
+:amanda/steel/steel24x8.S: 98 760 frr
+:amanda/steel/steel24x8.S: 66 760 frr
+:amanda/steel/steel24x8.S: 34 760 frr
+:amanda/steel/steel24x8.S: 1214 752
+:amanda/steel/steel24x8.S: 1246 752
+:amanda/steel/steel24x8.S: 1278 752
+:amanda/steel/steel24x8.S: 1310 752
+:amanda/steel/steel24x8.S: 1342 752
+:amanda/steel/steel24x8.S: 1374 752
+:amanda/steel/steel24x8.S: 1406 752
+:amanda/steel/steel24x8.S: 1438 752
+:amanda/steel/steel24x8.S: 1470 752
+:amanda/steel/steel24x8.S: 1502 752
+:amanda/steel/steel24x8.S: 322 752 frr
+:amanda/steel/steel24x8.S: 290 752 frr
+:amanda/steel/steel24x8.S: 258 752 frr
+:amanda/steel/steel24x8.S: 226 752 frr
+:amanda/steel/steel24x8.S: 194 752 frr
+:amanda/steel/steel24x8.S: 162 752 frr
+:amanda/steel/steel24x8.S: 130 752 frr
+:amanda/steel/steel24x8.S: 98 752 frr
+:amanda/steel/steel24x8.S: 66 752 frr
+:amanda/steel/steel24x8.S: 34 752 frr
+:amanda/steel/steel24x8.S: 1214 744
+:amanda/steel/steel24x8.S: 1246 744
+:amanda/steel/steel24x8.S: 1278 744
+:amanda/steel/steel24x8.S: 1310 744
+:amanda/steel/steel24x8.S: 1342 744
+:amanda/steel/steel24x8.S: 1374 744
+:amanda/steel/steel24x8.S: 1406 744
+:amanda/steel/steel24x8.S: 1438 744
+:amanda/steel/steel24x8.S: 1470 744
+:amanda/steel/steel24x8.S: 1502 744
+:amanda/steel/steel24x8.S: 322 744 frr
+:amanda/steel/steel24x8.S: 290 744 frr
+:amanda/steel/steel24x8.S: 258 744 frr
+:amanda/steel/steel24x8.S: 226 744 frr
+:amanda/steel/steel24x8.S: 194 744 frr
+:amanda/steel/steel24x8.S: 162 744 frr
+:amanda/steel/steel24x8.S: 130 744 frr
+:amanda/steel/steel24x8.S: 98 744 frr
+:amanda/steel/steel24x8.S: 66 744 frr
+:amanda/steel/steel24x8.S: 34 744 frr
+:amanda/steel/steel24x8.S: 1214 736
+:amanda/steel/steel24x8.S: 1246 736
+:amanda/steel/steel24x8.S: 1278 736
+:amanda/steel/steel24x8.S: 1310 736
+:amanda/steel/steel24x8.S: 1342 736
+:amanda/steel/steel24x8.S: 1374 736
+:amanda/steel/steel24x8.S: 1406 736
+:amanda/steel/steel24x8.S: 1438 736
+:amanda/steel/steel24x8.S: 1470 736
+:amanda/steel/steel24x8.S: 1502 736
+:amanda/steel/steel24x8.S: 322 736 frr
+:amanda/steel/steel24x8.S: 290 736 frr
+:amanda/steel/steel24x8.S: 258 736 frr
+:amanda/steel/steel24x8.S: 226 736 frr
+:amanda/steel/steel24x8.S: 194 736 frr
+:amanda/steel/steel24x8.S: 162 736 frr
+:amanda/steel/steel24x8.S: 130 736 frr
+:amanda/steel/steel24x8.S: 98 736 frr
+:amanda/steel/steel24x8.S: 66 736 frr
+:amanda/steel/steel24x8.S: 34 736 frr
+:amanda/steel/steel24x8.S: 1214 728
+:amanda/steel/steel24x8.S: 1246 728
+:amanda/steel/steel24x8.S: 1278 728
+:amanda/steel/steel24x8.S: 1310 728
+:amanda/steel/steel24x8.S: 1342 728
+:amanda/steel/steel24x8.S: 1374 728
+:amanda/steel/steel24x8.S: 1406 728
+:amanda/steel/steel24x8.S: 1438 728
+:amanda/steel/steel24x8.S: 1470 728
+:amanda/steel/steel24x8.S: 1502 728
+:amanda/steel/steel24x8.S: 322 728 frr
+:amanda/steel/steel24x8.S: 290 728 frr
+:amanda/steel/steel24x8.S: 258 728 frr
+:amanda/steel/steel24x8.S: 226 728 frr
+:amanda/steel/steel24x8.S: 194 728 frr
+:amanda/steel/steel24x8.S: 162 728 frr
+:amanda/steel/steel24x8.S: 130 728 frr
+:amanda/steel/steel24x8.S: 98 728 frr
+:amanda/steel/steel24x8.S: 66 728 frr
+:amanda/steel/steel24x8.S: 34 728 frr
+:amanda/steel/steel24x8.S: 1214 720
+:amanda/steel/steel24x8.S: 1246 720
+:amanda/steel/steel24x8.S: 1278 720
+:amanda/steel/steel24x8.S: 1310 720
+:amanda/steel/steel24x8.S: 1342 720
+:amanda/steel/steel24x8.S: 1374 720
+:amanda/steel/steel24x8.S: 1406 720
+:amanda/steel/steel24x8.S: 1438 720
+:amanda/steel/steel24x8.S: 1470 720
+:amanda/steel/steel24x8.S: 1502 720
+:amanda/steel/steel24x8.S: 322 720 frr
+:amanda/steel/steel24x8.S: 290 720 frr
+:amanda/steel/steel24x8.S: 258 720 frr
+:amanda/steel/steel24x8.S: 226 720 frr
+:amanda/steel/steel24x8.S: 194 720 frr
+:amanda/steel/steel24x8.S: 162 720 frr
+:amanda/steel/steel24x8.S: 130 720 frr
+:amanda/steel/steel24x8.S: 98 720 frr
+:amanda/steel/steel24x8.S: 66 720 frr
+:amanda/steel/steel24x8.S: 34 720 frr
+:amanda/steel/steel24x8.S: 1214 712
+:amanda/steel/steel24x8.S: 1246 712
+:amanda/steel/steel24x8.S: 1278 712
+:amanda/steel/steel24x8.S: 1310 712
+:amanda/steel/steel24x8.S: 1342 712
+:amanda/steel/steel24x8.S: 1374 712
+:amanda/steel/steel24x8.S: 1406 712
+:amanda/steel/steel24x8.S: 1438 712
+:amanda/steel/steel24x8.S: 1470 712
+:amanda/steel/steel24x8.S: 1502 712
+:amanda/steel/steel24x8.S: 322 712 frr
+:amanda/steel/steel24x8.S: 290 712 frr
+:amanda/steel/steel24x8.S: 258 712 frr
+:amanda/steel/steel24x8.S: 226 712 frr
+:amanda/steel/steel24x8.S: 194 712 frr
+:amanda/steel/steel24x8.S: 162 712 frr
+:amanda/steel/steel24x8.S: 130 712 frr
+:amanda/steel/steel24x8.S: 98 712 frr
+:amanda/steel/steel24x8.S: 66 712 frr
+:amanda/steel/steel24x8.S: 34 712 frr
+:amanda/steel/steel24x8.S: 1214 704
+:amanda/steel/steel24x8.S: 1246 704
+:amanda/steel/steel24x8.S: 1278 704
+:amanda/steel/steel24x8.S: 1310 704
+:amanda/steel/steel24x8.S: 1342 704
+:amanda/steel/steel24x8.S: 1374 704
+:amanda/steel/steel24x8.S: 1406 704
+:amanda/steel/steel24x8.S: 1438 704
+:amanda/steel/steel24x8.S: 1470 704
+:amanda/steel/steel24x8.S: 1502 704
+:amanda/steel/steel24x8.S: 322 704 frr
+:amanda/steel/steel24x8.S: 290 704 frr
+:amanda/steel/steel24x8.S: 258 704 frr
+:amanda/steel/steel24x8.S: 226 704 frr
+:amanda/steel/steel24x8.S: 194 704 frr
+:amanda/steel/steel24x8.S: 162 704 frr
+:amanda/steel/steel24x8.S: 130 704 frr
+:amanda/steel/steel24x8.S: 98 704 frr
+:amanda/steel/steel24x8.S: 66 704 frr
+:amanda/steel/steel24x8.S: 34 704 frr
+:amanda/steel/steel24x8.S: 1214 696
+:amanda/steel/steel24x8.S: 1246 696
+:amanda/steel/steel24x8.S: 1278 696
+:amanda/steel/steel24x8.S: 1310 696
+:amanda/steel/steel24x8.S: 1342 696
+:amanda/steel/steel24x8.S: 1374 696
+:amanda/steel/steel24x8.S: 1406 696
+:amanda/steel/steel24x8.S: 1438 696
+:amanda/steel/steel24x8.S: 1470 696
+:amanda/steel/steel24x8.S: 1502 696
+:amanda/steel/steel24x8.S: 322 696 frr
+:amanda/steel/steel24x8.S: 290 696 frr
+:amanda/steel/steel24x8.S: 258 696 frr
+:amanda/steel/steel24x8.S: 226 696 frr
+:amanda/steel/steel24x8.S: 194 696 frr
+:amanda/steel/steel24x8.S: 162 696 frr
+:amanda/steel/steel24x8.S: 130 696 frr
+:amanda/steel/steel24x8.S: 98 696 frr
+:amanda/steel/steel24x8.S: 66 696 frr
+:amanda/steel/steel24x8.S: 34 696 frr
+:amanda/steel/steel24x8.S: 1470 504
+:amanda/steel/steel24x8.S: 1502 504
+:amanda/steel/steel24x8.S: 66 504 frr
+:amanda/steel/steel24x8.S: 34 504 frr
+:amanda/steel/steel24x8.S: 1470 496
+:amanda/steel/steel24x8.S: 1502 496
+:amanda/steel/steel24x8.S: 66 496 frr
+:amanda/steel/steel24x8.S: 34 496 frr
+:amanda/steel/steel24x8.S: 1470 488
+:amanda/steel/steel24x8.S: 1502 488
+:amanda/steel/steel24x8.S: 66 488 frr
+:amanda/steel/steel24x8.S: 34 488 frr
+:amanda/steel/steel24x8.S: 1470 480
+:amanda/steel/steel24x8.S: 1502 480
+:amanda/steel/steel24x8.S: 66 480 frr
+:amanda/steel/steel24x8.S: 34 480 frr
+:amanda/steel/steel24x8.S: 1470 472
+:amanda/steel/steel24x8.S: 1502 472
+:amanda/steel/steel24x8.S: 66 472 frr
+:amanda/steel/steel24x8.S: 34 472 frr
+:amanda/steel/steel24x8.S: 1470 464
+:amanda/steel/steel24x8.S: 1502 464
+:amanda/steel/steel24x8.S: 66 464 frr
+:amanda/steel/steel24x8.S: 34 464 frr
+:amanda/steel/steel24x8.S: 1470 456
+:amanda/steel/steel24x8.S: 1502 456
+:amanda/steel/steel24x8.S: 66 456 frr
+:amanda/steel/steel24x8.S: 34 456 frr
+:amanda/steel/steel24x8.S: 1470 448
+:amanda/steel/steel24x8.S: 1502 448
+:amanda/steel/steel24x8.S: 66 448 frr
+:amanda/steel/steel24x8.S: 34 448 frr
+:amanda/steel/steel24x8.S: 1470 440
+:amanda/steel/steel24x8.S: 1502 440
+:amanda/steel/steel24x8.S: 66 440 frr
+:amanda/steel/steel24x8.S: 34 440 frr
+:amanda/steel/steel24x8.S: 1470 432
+:amanda/steel/steel24x8.S: 1502 432
+:amanda/steel/steel24x8.S: 66 432 frr
+:amanda/steel/steel24x8.S: 34 432 frr
+:amanda/steel/steel24x8.S: 1470 424
+:amanda/steel/steel24x8.S: 1502 424
+:amanda/steel/steel24x8.S: 66 424 frr
+:amanda/steel/steel24x8.S: 34 424 frr
+:amanda/steel/steel24x8.S: 1470 416
+:amanda/steel/steel24x8.S: 1502 416
+:amanda/steel/steel24x8.S: 66 416 frr
+:amanda/steel/steel24x8.S: 34 416 frr
+:amanda/steel/steel24x8.S: 1470 408
+:amanda/steel/steel24x8.S: 1502 408
+:amanda/steel/steel24x8.S: 66 408 frr
+:amanda/steel/steel24x8.S: 34 408 frr
+:amanda/steel/steel24x8.S: 1470 400
+:amanda/steel/steel24x8.S: 1502 400
+:amanda/steel/steel24x8.S: 66 400 frr
+:amanda/steel/steel24x8.S: 34 400 frr
+:amanda/steel/steel24x8.S: 1470 392
+:amanda/steel/steel24x8.S: 1502 392
+:amanda/steel/steel24x8.S: 66 392 frr
+:amanda/steel/steel24x8.S: 34 392 frr
+:amanda/steel/steel24x8.S: 1470 384
+:amanda/steel/steel24x8.S: 1502 384
+:amanda/steel/steel24x8.S: 66 384 frr
+:amanda/steel/steel24x8.S: 34 384 frr
+:amanda/steel/steel24x8.S: 1470 376
+:amanda/steel/steel24x8.S: 1502 376
+:amanda/steel/steel24x8.S: 66 376 frr
+:amanda/steel/steel24x8.S: 34 376 frr
+:amanda/steel/steel24x8.S: 1470 368
+:amanda/steel/steel24x8.S: 1502 368
+:amanda/steel/steel24x8.S: 66 368 frr
+:amanda/steel/steel24x8.S: 34 368 frr
+:amanda/steel/steel24x8.S: 1470 360
+:amanda/steel/steel24x8.S: 1502 360
+:amanda/steel/steel24x8.S: 66 360 frr
+:amanda/steel/steel24x8.S: 34 360 frr
+:amanda/steel/steel24x8.S: 1470 352
+:amanda/steel/steel24x8.S: 1502 352
+:amanda/steel/steel24x8.S: 66 352 frr
+:amanda/steel/steel24x8.S: 34 352 frr
+:amanda/steel/steel24x8.S: 1470 344
+:amanda/steel/steel24x8.S: 1502 344
+:amanda/steel/steel24x8.S: 66 344 frr
+:amanda/steel/steel24x8.S: 34 344 frr
+:amanda/steel/steel24x8.S: 1470 336
+:amanda/steel/steel24x8.S: 1502 336
+:amanda/steel/steel24x8.S: 66 336 frr
+:amanda/steel/steel24x8.S: 34 336 frr
+:amanda/steel/steel24x8.S: 1470 328
+:amanda/steel/steel24x8.S: 1502 328
+:amanda/steel/steel24x8.S: 66 328 frr
+:amanda/steel/steel24x8.S: 34 328 frr
+:amanda/steel/steel24x8.S: 1470 320
+:amanda/steel/steel24x8.S: 1502 320
+:amanda/steel/steel24x8.S: 66 320 frr
+:amanda/steel/steel24x8.S: 34 320 frr
+:amanda/steel/steel24x8.S: 1470 312
+:amanda/steel/steel24x8.S: 1502 312
+:amanda/steel/steel24x8.S: 66 312 frr
+:amanda/steel/steel24x8.S: 34 312 frr
+:amanda/steel/steel24x8.S: 1470 304
+:amanda/steel/steel24x8.S: 1502 304
+:amanda/steel/steel24x8.S: 66 304 frr
+:amanda/steel/steel24x8.S: 34 304 frr
+:amanda/steel/steel24x8.S: 1470 296
+:amanda/steel/steel24x8.S: 1502 296
+:amanda/steel/steel24x8.S: 66 296 frr
+:amanda/steel/steel24x8.S: 34 296 frr
+:amanda/steel/steel24x8.S: 1470 288
+:amanda/steel/steel24x8.S: 1502 288
+:amanda/steel/steel24x8.S: 66 288 frr
+:amanda/steel/steel24x8.S: 34 288 frr
+:amanda/steel/steel24x8.S: 1470 280
+:amanda/steel/steel24x8.S: 1502 280
+:amanda/steel/steel24x8.S: 66 280 frr
+:amanda/steel/steel24x8.S: 34 280 frr
+:amanda/steel/steel24x8.S: 1470 272
+:amanda/steel/steel24x8.S: 1502 272
+:amanda/steel/steel24x8.S: 66 272 frr
+:amanda/steel/steel24x8.S: 34 272 frr
+:amanda/steel/steel24x8.S: 1470 264
+:amanda/steel/steel24x8.S: 1502 264
+:amanda/steel/steel24x8.S: 66 264 frr
+:amanda/steel/steel24x8.S: 34 264 frr
+:amanda/steel/steel24x8.S: 1470 256
+:amanda/steel/steel24x8.S: 1502 256
+:amanda/steel/steel24x8.S: 66 256 frr
+:amanda/steel/steel24x8.S: 34 256 frr
+:amanda/steel/steel24x8.S: 194 504 frr
+:amanda/steel/steel24x8.S: 162 504 frr
+:amanda/steel/steel24x8.S: 130 504 frr
+:amanda/steel/steel24x8.S: 98 504 frr
+:amanda/steel/steel24x8.S: 194 496 frr
+:amanda/steel/steel24x8.S: 162 496 frr
+:amanda/steel/steel24x8.S: 130 496 frr
+:amanda/steel/steel24x8.S: 98 496 frr
+:amanda/steel/steel24x8.S: 162 488 frr
+:amanda/steel/steel24x8.S: 130 488 frr
+:amanda/steel/steel24x8.S: 98 488 frr
+:amanda/steel/steel24x8.S: 162 480 frr
+:amanda/steel/steel24x8.S: 130 480 frr
+:amanda/steel/steel24x8.S: 98 480 frr
+:amanda/steel/steel24x8.S: 130 472 frr
+:amanda/steel/steel24x8.S: 98 472 frr
+:amanda/steel/steel24x8.S: 130 464 frr
+:amanda/steel/steel24x8.S: 98 464 frr
+:amanda/steel/steel24x8.S: 130 456 frr
+:amanda/steel/steel24x8.S: 98 456 frr
+:amanda/steel/steel24x8.S: 130 448 frr
+:amanda/steel/steel24x8.S: 98 448 frr
+:amanda/steel/steel24x8.S: 98 440 frr
+:amanda/steel/steel24x8.S: 98 432 frr
+:amanda/steel/steel24x8.S: 98 424 frr
+:amanda/steel/steel24x8.S: 98 416 frr
+:amanda/steel/steel24x8.S: 98 408 frr
+:amanda/steel/steel24x8.S: 98 400 frr
+:amanda/steel/steel24x8.S: 98 392 frr
+:amanda/steel/steel24x8.S: 98 384 frr
+:amanda/steel/steel24x8.S: 1342 504
+:amanda/steel/steel24x8.S: 1374 504
+:amanda/steel/steel24x8.S: 1406 504
+:amanda/steel/steel24x8.S: 1438 504
+:amanda/steel/steel24x8.S: 1342 496
+:amanda/steel/steel24x8.S: 1374 496
+:amanda/steel/steel24x8.S: 1406 496
+:amanda/steel/steel24x8.S: 1438 496
+:amanda/steel/steel24x8.S: 1374 488
+:amanda/steel/steel24x8.S: 1406 488
+:amanda/steel/steel24x8.S: 1438 488
+:amanda/steel/steel24x8.S: 1374 480
+:amanda/steel/steel24x8.S: 1406 480
+:amanda/steel/steel24x8.S: 1438 480
+:amanda/steel/steel24x8.S: 1406 472
+:amanda/steel/steel24x8.S: 1438 472
+:amanda/steel/steel24x8.S: 1406 464
+:amanda/steel/steel24x8.S: 1438 464
+:amanda/steel/steel24x8.S: 1406 456
+:amanda/steel/steel24x8.S: 1438 456
+:amanda/steel/steel24x8.S: 1406 448
+:amanda/steel/steel24x8.S: 1438 448
+:amanda/steel/steel24x8.S: 1438 440
+:amanda/steel/steel24x8.S: 1438 432
+:amanda/steel/steel24x8.S: 1438 424
+:amanda/steel/steel24x8.S: 1438 416
+:amanda/steel/steel24x8.S: 1438 408
+:amanda/steel/steel24x8.S: 1438 400
+:amanda/steel/steel24x8.S: 1438 392
+:amanda/steel/steel24x8.S: 1438 384
+:amanda/steel/steel24x8.S: 34 248 frr
+:amanda/steel/steel24x8.S: 34 240 frr
+:amanda/steel/steel24x8.S: 34 232 frr
+:amanda/steel/steel24x8.S: 34 224 frr
+:amanda/steel/steel24x8.S: 34 216 frr
+:amanda/steel/steel24x8.S: 34 208 frr
+:amanda/steel/steel24x8.S: 34 200 frr
+:amanda/steel/steel24x8.S: 34 192 frr
+:amanda/steel/steel24x8.S: 34 184 frr
+:amanda/steel/steel24x8.S: 34 176 frr
+:amanda/steel/steel24x8.S: 34 168 frr
+:amanda/steel/steel24x8.S: 34 160 frr
+:amanda/steel/steel24x8.S: 34 152 frr
+:amanda/steel/steel24x8.S: 34 144 frr
+:amanda/steel/steel24x8.S: 34 136 frr
+:amanda/steel/steel24x8.S: 34 128 frr
+:amanda/steel/steel24x8.S: 1502 248
+:amanda/steel/steel24x8.S: 1502 240
+:amanda/steel/steel24x8.S: 1502 232
+:amanda/steel/steel24x8.S: 1502 224
+:amanda/steel/steel24x8.S: 1502 216
+:amanda/steel/steel24x8.S: 1502 208
+:amanda/steel/steel24x8.S: 1502 200
+:amanda/steel/steel24x8.S: 1502 192
+:amanda/steel/steel24x8.S: 1502 184
+:amanda/steel/steel24x8.S: 1502 176
+:amanda/steel/steel24x8.S: 1502 168
+:amanda/steel/steel24x8.S: 1502 160
+:amanda/steel/steel24x8.S: 1502 152
+:amanda/steel/steel24x8.S: 1502 144
+:amanda/steel/steel24x8.S: 1502 136
+:amanda/steel/steel24x8.S: 1502 128
+:amanda/steel/steel24x8.S: 194 1024 frr
+:amanda/steel/steel24x8.S: 162 1024 frr
+:amanda/steel/steel24x8.S: 130 1024 frr
+:amanda/steel/steel24x8.S: 194 1016 frr
+:amanda/steel/steel24x8.S: 162 1016 frr
+:amanda/steel/steel24x8.S: 130 1016 frr
+:amanda/steel/steel24x8.S: 162 1008 frr
+:amanda/steel/steel24x8.S: 130 1008 frr
+:amanda/steel/steel24x8.S: 162 1000 frr
+:amanda/steel/steel24x8.S: 130 1000 frr
+:amanda/steel/steel24x8.S: 130 992 frr
+:amanda/steel/steel24x8.S: 130 984 frr
+:amanda/steel/steel24x8.S: 130 976 frr
+:amanda/steel/steel24x8.S: 130 968 frr
+:amanda/steel/steel24x8.S: 1342 1024
+:amanda/steel/steel24x8.S: 1374 1024
+:amanda/steel/steel24x8.S: 1406 1024
+:amanda/steel/steel24x8.S: 1342 1016
+:amanda/steel/steel24x8.S: 1374 1016
+:amanda/steel/steel24x8.S: 1406 1016
+:amanda/steel/steel24x8.S: 1374 1008
+:amanda/steel/steel24x8.S: 1406 1008
+:amanda/steel/steel24x8.S: 1374 1000
+:amanda/steel/steel24x8.S: 1406 1000
+:amanda/steel/steel24x8.S: 1406 992
+:amanda/steel/steel24x8.S: 1406 984
+:amanda/steel/steel24x8.S: 1406 976
+:amanda/steel/steel24x8.S: 1406 968
+:amanda/steel/steel24x8.S: 768 944 frr

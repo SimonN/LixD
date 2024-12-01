@@ -1,0 +1,234 @@
+$BUILT 2024-07-21 12:30:05
+$AUTHOR Hyperlodge
+$ENGLISH Shaolix
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 3072
+#SIZE_Y 368
+#TORUS_X 1
+#TORUS_Y 0
+#BACKGROUND_RED 111
+#BACKGROUND_GREEN 32
+#BACKGROUND_BLUE 0
+
+#SECONDS 60
+#INITIAL 50
+#SPAWN_INTERVAL 50
+
+#WALKER 49
+#RUNNER 49
+#CLIMBER 49
+#EXPLODER2 49
+#BLOCKER 49
+#JUMPER 49
+#BATTER 49
+#CUBER 49
+
+:simon/oriental/hatch.H: 0 72 r
+:simon/oriental/hatch.H: 3008 72
+
+:simon/oriental/goal.G: 788 62
+:simon/oriental/goal.G: 2220 62
+
+:matt/underworld/Lava.W: 672 320
+:matt/underworld/Lava.W: 624 320
+:matt/underworld/Lava.W: 576 320
+:matt/underworld/Lava.W: 528 320
+:matt/underworld/Lava.W: 480 320
+:matt/underworld/Lava.W: 432 320
+:matt/underworld/Lava.W: 384 320
+:matt/underworld/Lava.W: 336 320
+:matt/underworld/Lava.W: 288 320
+:matt/underworld/Lava.W: 240 320
+:matt/underworld/Lava.W: 192 320
+:matt/underworld/Lava.W: 144 320
+:matt/underworld/Lava.W: 96 320
+:matt/underworld/Lava.W: 48 320
+:matt/underworld/Lava.W: 0 320
+:matt/underworld/Lava.W: 1344 320
+:matt/underworld/Lava.W: 1296 320
+:matt/underworld/Lava.W: 1248 320
+:matt/underworld/Lava.W: 1200 320
+:matt/underworld/Lava.W: 1152 320
+:matt/underworld/Lava.W: 1104 320
+:matt/underworld/Lava.W: 1056 320
+:matt/underworld/Lava.W: 1008 320
+:matt/underworld/Lava.W: 960 320
+:matt/underworld/Lava.W: 912 320
+:matt/underworld/Lava.W: 864 320
+:matt/underworld/Lava.W: 816 320
+:matt/underworld/Lava.W: 768 320
+:matt/underworld/Lava.W: 720 320
+:matt/underworld/Lava.W: 1392 320
+:matt/underworld/Lava.W: 1440 320
+:matt/underworld/Lava.W: 1488 320
+:matt/underworld/Lava.W: 2352 320
+:matt/underworld/Lava.W: 2400 320
+:matt/underworld/Lava.W: 2448 320
+:matt/underworld/Lava.W: 2496 320
+:matt/underworld/Lava.W: 2544 320
+:matt/underworld/Lava.W: 2592 320
+:matt/underworld/Lava.W: 2640 320
+:matt/underworld/Lava.W: 2688 320
+:matt/underworld/Lava.W: 2736 320
+:matt/underworld/Lava.W: 2784 320
+:matt/underworld/Lava.W: 2832 320
+:matt/underworld/Lava.W: 2880 320
+:matt/underworld/Lava.W: 2928 320
+:matt/underworld/Lava.W: 2976 320
+:matt/underworld/Lava.W: 3024 320
+:matt/underworld/Lava.W: 1680 320
+:matt/underworld/Lava.W: 1728 320
+:matt/underworld/Lava.W: 1776 320
+:matt/underworld/Lava.W: 1824 320
+:matt/underworld/Lava.W: 1872 320
+:matt/underworld/Lava.W: 1920 320
+:matt/underworld/Lava.W: 1968 320
+:matt/underworld/Lava.W: 2016 320
+:matt/underworld/Lava.W: 2064 320
+:matt/underworld/Lava.W: 2112 320
+:matt/underworld/Lava.W: 2160 320
+:matt/underworld/Lava.W: 2208 320
+:matt/underworld/Lava.W: 2256 320
+:matt/underworld/Lava.W: 2304 320
+:matt/underworld/Lava.W: 1632 320
+:matt/underworld/Lava.W: 1584 320
+:matt/underworld/Lava.W: 1536 320
+
+:geoo/construction/sawblade_small.F: 899 154
+:geoo/construction/sawblade_small.F: 1261 46
+:geoo/construction/sawblade_small.F: 141 45
+:geoo/construction/sawblade_small.F: 429 142
+:geoo/construction/sawblade_small.F: 1059 137
+:geoo/construction/sawblade_small.F: 2141 154
+:geoo/construction/sawblade_small.F: 1779 46
+:geoo/construction/sawblade_small.F: 2899 45
+:geoo/construction/sawblade_small.F: 2611 142
+:geoo/construction/sawblade_small.F: 1981 137
+:geoo/construction/sawblade_medium.F: 1504 16
+:geoo/construction/sawblade_medium.F: 1376 32
+:geoo/construction/sawblade_medium.F: 1632 32
+
+:simon/oriental/bridge2: 0 136
+:simon/oriental/bridge1: 64 104
+:simon/oriental/bridge2: 128 104
+:simon/oriental/bridge3: 192 104
+:simon/oriental/bridge3: 320 168
+:simon/oriental/bridge3: 256 136
+:simon/oriental/bridge2: 384 200
+:simon/oriental/bridge2: 448 200
+:simon/oriental/bridge3: 512 200
+:simon/oriental/bridge1: 768 200
+:simon/oriental/bridge2: 960 232
+:simon/oriental/bridge3: 896 200
+:simon/oriental/leaf3: 1072 153 frr
+:simon/oriental/bridge1: 1088 168
+:simon/oriental/bridge2: 832 200
+:simon/oriental/bridge1: 1024 200
+:simon/oriental/bridge1: 1152 136
+:simon/oriental/bridge1: 1216 104
+:simon/oriental/bridge2: 1280 104
+:simon/oriental/leaf3: 415 158
+:simon/oriental/culm_long: 666 153
+:simon/oriental/culm_half1: 666 246
+:simon/oriental/bridge2: 640 264
+:simon/oriental/bridge3: 576 232
+:simon/oriental/bridge1: 704 232
+:simon/oriental/culm_d_long: 668 184
+:simon/oriental/bridge2: 1344 104
+:simon/oriental/culm_long: 1272 -32
+:simon/oriental/leaf1: 1253 21 rrr
+:simon/oriental/culm_long: 910 -20
+:simon/oriental/culm_long: 910 76
+:simon/oriental/leaf3: 639 5
+:simon/oriental/culm_long: 666 -38
+:simon/oriental/leaf6: 634 96 r
+:simon/oriental/culm_long: 666 58
+:simon/oriental/culm_long: 440 -32
+:simon/oriental/culm_long: 440 64
+:simon/oriental/culm_long: 152 -32
+:simon/oriental/bridge2: 1408 104
+:simon/oriental/bridge2: 1472 104
+:simon/oriental/culm_d_long: 712 140
+:simon/oriental/culm_long: 757 139 r
+:simon/oriental/leaf2: 157 -2
+:simon/oriental/leaf2: 851 141
+:simon/oriental/leaf6: 149 61
+:simon/oriental/leaf5: 1276 62 r
+:simon/oriental/leaf4: 913 158 fr
+:simon/oriental/leaf2: 881 55 frr
+:simon/oriental/leaf5: 759 145 fr
+:simon/oriental/leaf4: 670 152
+:simon/oriental/leaf4: 916 120
+:simon/oriental/leaf5: 446 106 r
+:simon/oriental/leaf4: 425 65 frr
+:simon/oriental/culm_long: 1070 -37 frr
+:simon/oriental/culm_long: 1070 59 frr
+:simon/oriental/leaf5: 1055 101 fr
+:simon/oriental/leaf4: 1078 60
+:simon/oriental/bridge2: 3008 136 frr
+:simon/oriental/bridge1: 2944 104 frr
+:simon/oriental/bridge2: 2880 104 frr
+:simon/oriental/bridge3: 2816 104 frr
+:simon/oriental/bridge3: 2688 168 frr
+:simon/oriental/bridge3: 2752 136 frr
+:simon/oriental/bridge2: 2624 200 frr
+:simon/oriental/bridge2: 2560 200 frr
+:simon/oriental/bridge3: 2496 200 frr
+:simon/oriental/bridge1: 2240 200 frr
+:simon/oriental/bridge2: 2048 232 frr
+:simon/oriental/bridge3: 2112 200 frr
+:simon/oriental/leaf3: 1967 153
+:simon/oriental/bridge1: 1920 168 frr
+:simon/oriental/bridge2: 2176 200 frr
+:simon/oriental/bridge1: 1984 200 frr
+:simon/oriental/bridge1: 1856 136 frr
+:simon/oriental/bridge1: 1792 104 frr
+:simon/oriental/bridge2: 1728 104 frr
+:simon/oriental/leaf3: 2624 158 frr
+:simon/oriental/culm_long: 2396 153 frr
+:simon/oriental/culm_half1: 2396 246 frr
+:simon/oriental/bridge2: 2368 264 frr
+:simon/oriental/bridge3: 2432 232 frr
+:simon/oriental/bridge1: 2304 232 frr
+:simon/oriental/culm_d_long: 2355 184 frr
+:simon/oriental/bridge2: 1664 104 frr
+:simon/oriental/culm_long: 1790 -32 frr
+:simon/oriental/leaf1: 1797 21 frrr
+:simon/oriental/culm_long: 2152 -20 frr
+:simon/oriental/culm_long: 2152 76 frr
+:simon/oriental/leaf3: 2400 5 frr
+:simon/oriental/culm_long: 2396 -38 frr
+:simon/oriental/leaf6: 2403 96 fr
+:simon/oriental/culm_long: 2396 58 frr
+:simon/oriental/culm_long: 2622 -32 frr
+:simon/oriental/culm_long: 2622 64 frr
+:simon/oriental/culm_long: 2910 -32 frr
+:simon/oriental/bridge2: 1600 104 frr
+:simon/oriental/bridge2: 1536 104 frr
+:simon/oriental/culm_d_long: 2311 140 frr
+:simon/oriental/culm_long: 2219 139 fr
+:simon/oriental/leaf2: 2881 -2 frr
+:simon/oriental/leaf2: 2187 141 frr
+:simon/oriental/leaf6: 2902 61 frr
+:simon/oriental/leaf5: 1777 62 fr
+:simon/oriental/leaf4: 2146 158 r
+:simon/oriental/leaf2: 2157 55
+:simon/oriental/leaf5: 2294 145 r
+:simon/oriental/leaf4: 2385 152 frr
+:simon/oriental/leaf4: 2139 120 frr
+:simon/oriental/leaf5: 2607 106 fr
+:simon/oriental/leaf4: 2630 65
+:simon/oriental/culm_long: 1992 -37
+:simon/oriental/culm_long: 1992 59
+:simon/oriental/leaf5: 1998 101 r
+:simon/oriental/leaf4: 1977 60 frr
+:simon/oriental/leaf1: 1542 6 frrr
+:simon/oriental/fat_long: 1528 -78 rr
+:simon/oriental/fat_long: 1400 -62 rr
+:simon/oriental/leaf3: 1664 16 frr
+:simon/oriental/fat_long: 1656 -62 rr
+:simon/oriental/leaf3: 1376 16
+:simon/oriental/leaf1: 1508 6 rrr
+:simon/oriental/leaf4: 1416 32
+:simon/oriental/leaf4: 1640 32 frr

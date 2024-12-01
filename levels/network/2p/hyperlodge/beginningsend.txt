@@ -1,0 +1,333 @@
+$BUILT 2024-07-18 12:09:30
+$AUTHOR Hyperlodge
+$ENGLISH Beginning's End
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1056
+#SIZE_Y 1056
+
+#SECONDS 59
+#INITIAL 99
+#SPAWN_INTERVAL 44
+
+#RUNNER 10
+#CLIMBER 10
+#FLOATER 10
+#EXPLODER2 -1
+#BLOCKER -1
+#PLATFORMER -1
+#MINER -1
+#JUMPER 10
+#BATTER 10
+
+:matt/carnival/Hatch.H: -8 -8
+:matt/carnival/Hatch.H: 1000 -8 r
+
+:geoo/abstract/goal.G: 16 976
+:geoo/abstract/goal.G: 1008 976
+
+:geoo/abstract/pipes/central2: 16 56
+:geoo/abstract/pipes/central1: 80 120
+:geoo/abstract/pipes/central0: 32 72
+:geoo/abstract/pipes/central3: 64 104
+:geoo/abstract/pipes/central6: 48 88
+:geoo/abstract/pipes/central4: 96 136
+:geoo/abstract/pipes/central7: 112 152
+:geoo/abstract/pipes/central5: 128 168
+:geoo/abstract/pipes/central2: 144 184
+:geoo/abstract/pipes/central1: 208 248
+:geoo/abstract/pipes/central0: 160 200
+:geoo/abstract/pipes/central3: 192 232
+:geoo/abstract/pipes/central6: 176 216
+:geoo/abstract/pipes/central4: 224 264
+:geoo/abstract/pipes/central7: 240 280
+:geoo/abstract/pipes/central5: 256 296
+:geoo/abstract/pipes/central2: 272 312
+:geoo/abstract/pipes/central1: 336 376
+:geoo/abstract/pipes/central0: 288 328
+:geoo/abstract/pipes/central3: 320 360
+:geoo/abstract/pipes/central6: 304 344
+:geoo/abstract/pipes/central4: 352 392
+:geoo/abstract/pipes/central7: 368 408
+:geoo/abstract/pipes/central5: 384 424
+:geoo/abstract/pipes/central2: 400 440
+:geoo/abstract/pipes/central1: 464 504
+:geoo/abstract/pipes/central0: 416 456
+:geoo/abstract/pipes/central3: 448 488
+:geoo/abstract/pipes/central6: 432 472
+:geoo/abstract/pipes/central4: 480 520
+:geoo/abstract/pipes/central7: 490 536
+:geoo/abstract/pipes/central2: 534 568
+:geoo/abstract/pipes/central1: 592 632
+:geoo/abstract/pipes/central0: 544 584
+:geoo/abstract/pipes/central3: 576 616
+:geoo/abstract/pipes/central6: 560 600
+:geoo/abstract/pipes/central4: 608 648
+:geoo/abstract/pipes/central7: 624 664
+:geoo/abstract/pipes/central5: 640 680
+:geoo/abstract/pipes/central2: 656 696
+:geoo/abstract/pipes/central1: 720 760
+:geoo/abstract/pipes/central0: 672 712
+:geoo/abstract/pipes/central3: 704 744
+:geoo/abstract/pipes/central6: 688 728
+:geoo/abstract/pipes/central4: 736 776
+:geoo/abstract/pipes/central7: 752 792
+:geoo/abstract/pipes/central5: 768 808
+:geoo/abstract/pipes/central2: 784 824
+:geoo/abstract/pipes/central1: 848 888
+:geoo/abstract/pipes/central0: 800 840
+:geoo/abstract/pipes/central3: 832 872
+:geoo/abstract/pipes/central6: 816 856
+:geoo/abstract/pipes/central4: 864 904
+:geoo/abstract/pipes/central7: 880 920
+:geoo/abstract/pipes/central5: 896 936
+:geoo/abstract/pipes/central2: 912 952
+:geoo/abstract/pipes/central1: 976 1016
+:geoo/abstract/pipes/central0: 928 968
+:geoo/abstract/pipes/central3: 960 1000
+:geoo/abstract/pipes/central6: 944 984
+:geoo/abstract/pipes/central4: 992 1032
+:geoo/abstract/pipes/central2: 1008 56 frr
+:geoo/abstract/pipes/central1: 944 120 frr
+:geoo/abstract/pipes/central0: 992 72 frr
+:geoo/abstract/pipes/central3: 960 104 frr
+:geoo/abstract/pipes/central6: 976 88 frr
+:geoo/abstract/pipes/central4: 928 136 frr
+:geoo/abstract/pipes/central7: 912 152 frr
+:geoo/abstract/pipes/central5: 896 168 frr
+:geoo/abstract/pipes/central2: 880 184 frr
+:geoo/abstract/pipes/central1: 816 248 frr
+:geoo/abstract/pipes/central0: 864 200 frr
+:geoo/abstract/pipes/central3: 832 232 frr
+:geoo/abstract/pipes/central6: 848 216 frr
+:geoo/abstract/pipes/central4: 800 264 frr
+:geoo/abstract/pipes/central7: 784 280 frr
+:geoo/abstract/pipes/central5: 768 296 frr
+:geoo/abstract/pipes/central2: 752 312 frr
+:geoo/abstract/pipes/central1: 688 376 frr
+:geoo/abstract/pipes/central0: 736 328 frr
+:geoo/abstract/pipes/central3: 704 360 frr
+:geoo/abstract/pipes/central6: 720 344 frr
+:geoo/abstract/pipes/central4: 672 392 frr
+:geoo/abstract/pipes/central7: 656 408 frr
+:geoo/abstract/pipes/central5: 640 424 frr
+:geoo/abstract/pipes/central2: 624 440 frr
+:geoo/abstract/pipes/central1: 560 504 frr
+:geoo/abstract/pipes/central0: 608 456 frr
+:geoo/abstract/pipes/central3: 576 488 frr
+:geoo/abstract/pipes/central6: 592 472 frr
+:geoo/abstract/pipes/central4: 544 520 frr
+:geoo/abstract/pipes/central7: 534 536 frr
+:geoo/abstract/pipes/central5: 472 552 frr
+:geoo/abstract/pipes/central2: 490 568 frr
+:geoo/abstract/pipes/central1: 432 632 frr
+:geoo/abstract/pipes/central0: 480 584 frr
+:geoo/abstract/pipes/central3: 448 616 frr
+:geoo/abstract/pipes/central6: 464 600 frr
+:geoo/abstract/pipes/central4: 416 648 frr
+:geoo/abstract/pipes/central7: 400 664 frr
+:geoo/abstract/pipes/central5: 384 680 frr
+:geoo/abstract/pipes/central2: 368 696 frr
+:geoo/abstract/pipes/central1: 304 760 frr
+:geoo/abstract/pipes/central0: 352 712 frr
+:geoo/abstract/pipes/central3: 320 744 frr
+:geoo/abstract/pipes/central6: 336 728 frr
+:geoo/abstract/pipes/central4: 288 776 frr
+:geoo/abstract/pipes/central7: 272 792 frr
+:geoo/abstract/pipes/central5: 256 808 frr
+:geoo/abstract/pipes/central2: 240 824 frr
+:geoo/abstract/pipes/central1: 176 888 frr
+:geoo/abstract/pipes/central0: 224 840 frr
+:geoo/abstract/pipes/central3: 192 872 frr
+:geoo/abstract/pipes/central6: 208 856 frr
+:geoo/abstract/pipes/central4: 160 904 frr
+:geoo/abstract/pipes/central7: 144 920 frr
+:geoo/abstract/pipes/central5: 128 936 frr
+:geoo/abstract/pipes/central2: 112 952 frr
+:geoo/abstract/pipes/central1: 48 1016 frr
+:geoo/abstract/pipes/central0: 96 968 frr
+:geoo/abstract/pipes/central3: 64 1000 frr
+:geoo/abstract/pipes/central6: 80 984 frr
+:geoo/abstract/pipes/central4: 32 1032 frr
+:geoo/construction/platform.S: 1024 1054
+:geoo/construction/platform.S: 992 1054
+:geoo/construction/platform.S: 960 1054
+:geoo/construction/platform.S: 928 1054
+:geoo/construction/platform.S: 896 1054
+:geoo/construction/platform.S: 864 1054
+:geoo/construction/platform.S: 832 1054
+:geoo/construction/platform.S: 800 1054
+:geoo/construction/platform.S: 768 1054
+:geoo/construction/platform.S: 736 1054
+:geoo/construction/platform.S: 704 1054
+:geoo/construction/platform.S: 672 1054
+:geoo/construction/platform.S: 640 1054
+:geoo/construction/platform.S: 608 1054
+:geoo/construction/platform.S: 576 1054
+:geoo/construction/platform.S: 544 1054
+:geoo/construction/platform.S: 512 1054
+:geoo/construction/platform.S: 480 1054
+:geoo/construction/platform.S: 448 1054
+:geoo/construction/platform.S: 416 1054
+:geoo/construction/platform.S: 384 1054
+:geoo/construction/platform.S: 352 1054
+:geoo/construction/platform.S: 320 1054
+:geoo/construction/platform.S: 288 1054
+:geoo/construction/platform.S: 256 1054
+:geoo/construction/platform.S: 224 1054
+:geoo/construction/platform.S: 192 1054
+:geoo/construction/platform.S: 160 1054
+:geoo/construction/platform.S: 128 1054
+:geoo/construction/platform.S: 96 1054
+:geoo/construction/platform.S: 64 1054
+:geoo/construction/platform.S: 32 1054
+:geoo/construction/platform.S: 0 1054
+:geoo/construction/platform.S: 1024 0
+:geoo/construction/platform.S: 992 0
+:geoo/construction/platform.S: 960 0
+:geoo/construction/platform.S: 928 0
+:geoo/construction/platform.S: 896 0
+:geoo/construction/platform.S: 864 0
+:geoo/construction/platform.S: 832 0
+:geoo/construction/platform.S: 800 0
+:geoo/construction/platform.S: 768 0
+:geoo/construction/platform.S: 736 0
+:geoo/construction/platform.S: 704 0
+:geoo/construction/platform.S: 672 0
+:geoo/construction/platform.S: 640 0
+:geoo/construction/platform.S: 608 0
+:geoo/construction/platform.S: 576 0
+:geoo/construction/platform.S: 544 0
+:geoo/construction/platform.S: 512 0
+:geoo/construction/platform.S: 480 0
+:geoo/construction/platform.S: 448 0
+:geoo/construction/platform.S: 416 0
+:geoo/construction/platform.S: 384 0
+:geoo/construction/platform.S: 352 0
+:geoo/construction/platform.S: 320 0
+:geoo/construction/platform.S: 288 0
+:geoo/construction/platform.S: 256 0
+:geoo/construction/platform.S: 224 0
+:geoo/construction/platform.S: 192 0
+:geoo/construction/platform.S: 160 0
+:geoo/construction/platform.S: 128 0
+:geoo/construction/platform.S: 96 0
+:geoo/construction/platform.S: 64 0
+:geoo/construction/platform.S: 32 0
+:geoo/construction/platform.S: 0 0
+:geoo/construction/platform.S: 1055 1023 r
+:geoo/construction/platform.S: 1055 991 r
+:geoo/construction/platform.S: 1055 959 r
+:geoo/construction/platform.S: 1055 927 r
+:geoo/construction/platform.S: 1055 895 r
+:geoo/construction/platform.S: 1055 863 r
+:geoo/construction/platform.S: 1055 831 r
+:geoo/construction/platform.S: 1055 799 r
+:geoo/construction/platform.S: 1055 767 r
+:geoo/construction/platform.S: 1055 735 r
+:geoo/construction/platform.S: 1055 703 r
+:geoo/construction/platform.S: 1055 671 r
+:geoo/construction/platform.S: 1055 639 r
+:geoo/construction/platform.S: 1055 607 r
+:geoo/construction/platform.S: 1055 575 r
+:geoo/construction/platform.S: 1055 543 r
+:geoo/construction/platform.S: 1055 511 r
+:geoo/construction/platform.S: 1055 479 r
+:geoo/construction/platform.S: 1055 447 r
+:geoo/construction/platform.S: 1055 415 r
+:geoo/construction/platform.S: 1055 383 r
+:geoo/construction/platform.S: 1055 351 r
+:geoo/construction/platform.S: 1055 319 r
+:geoo/construction/platform.S: 1055 287 r
+:geoo/construction/platform.S: 1055 255 r
+:geoo/construction/platform.S: 1055 223 r
+:geoo/construction/platform.S: 1055 191 r
+:geoo/construction/platform.S: 1055 159 r
+:geoo/construction/platform.S: 1055 127 r
+:geoo/construction/platform.S: 1055 95 r
+:geoo/construction/platform.S: 1055 63 r
+:geoo/construction/platform.S: 1055 31 r
+:geoo/construction/platform.S: 1055 -1 r
+:geoo/construction/platform.S: -1 1025 r
+:geoo/construction/platform.S: -1 993 r
+:geoo/construction/platform.S: -1 961 r
+:geoo/construction/platform.S: -1 929 r
+:geoo/construction/platform.S: -1 897 r
+:geoo/construction/platform.S: -1 865 r
+:geoo/construction/platform.S: -1 833 r
+:geoo/construction/platform.S: -1 801 r
+:geoo/construction/platform.S: -1 769 r
+:geoo/construction/platform.S: -1 737 r
+:geoo/construction/platform.S: -1 705 r
+:geoo/construction/platform.S: -1 673 r
+:geoo/construction/platform.S: -1 641 r
+:geoo/construction/platform.S: -1 609 r
+:geoo/construction/platform.S: -1 577 r
+:geoo/construction/platform.S: -1 545 r
+:geoo/construction/platform.S: -1 513 r
+:geoo/construction/platform.S: -1 481 r
+:geoo/construction/platform.S: -1 449 r
+:geoo/construction/platform.S: -1 417 r
+:geoo/construction/platform.S: -1 385 r
+:geoo/construction/platform.S: -1 353 r
+:geoo/construction/platform.S: -1 321 r
+:geoo/construction/platform.S: -1 289 r
+:geoo/construction/platform.S: -1 257 r
+:geoo/construction/platform.S: -1 225 r
+:geoo/construction/platform.S: -1 193 r
+:geoo/construction/platform.S: -1 161 r
+:geoo/construction/platform.S: -1 129 r
+:geoo/construction/platform.S: -1 97 r
+:geoo/construction/platform.S: -1 65 r
+:geoo/construction/platform.S: -1 33 r
+:geoo/construction/platform.S: -1 1 r
+:geoo/abstract/pipes/central5: 550 552 frr
+:geoo/abstract/pipes/central5: 646 552
+:geoo/abstract/pipes/central5: 606 552 frr
+:geoo/abstract/pipes/central5: 700 552 frr
+:geoo/abstract/pipes/central5: 792 552
+:geoo/abstract/pipes/central5: 736 552 frr
+:geoo/abstract/pipes/central5: 830 552 frr
+:geoo/abstract/pipes/central5: 926 552
+:geoo/abstract/pipes/central5: 886 552 frr
+:geoo/abstract/pipes/central5: 980 552 frr
+:geoo/abstract/pipes/central5: -48 552
+:geoo/abstract/pipes/central5: -96 552 frr
+:geoo/abstract/pipes/central5: 6 552 frr
+:geoo/abstract/pipes/central5: 102 552
+:geoo/abstract/pipes/central5: 46 552 frr
+:geoo/abstract/pipes/central5: 140 552 frr
+:geoo/abstract/pipes/central5: 232 552
+:geoo/abstract/pipes/central5: 192 552 frr
+:geoo/abstract/pipes/central5: 286 552 frr
+:geoo/abstract/pipes/central5: 382 552
+:geoo/abstract/pipes/central5: 326 552 frr
+:geoo/abstract/pipes/central5: 420 552 frr
+:geoo/abstract/pipes/central5: 1020 552 frr
+:geoo/abstract/pipes/central0: 524 486 frrr
+:geoo/abstract/pipes/central0: 524 450 frrr
+:geoo/abstract/pipes/central0: 524 406 frrr
+:geoo/abstract/pipes/central0: 524 370 frrr
+:geoo/abstract/pipes/central0: 524 326 frrr
+:geoo/abstract/pipes/central0: 524 290 frrr
+:geoo/abstract/pipes/central0: 524 246 frrr
+:geoo/abstract/pipes/central0: 524 210 frrr
+:geoo/abstract/pipes/central0: 524 166 frrr
+:geoo/abstract/pipes/central0: 524 130 frrr
+:geoo/abstract/pipes/central0: 524 86 frrr
+:geoo/abstract/pipes/central0: 524 50 frrr
+:geoo/abstract/pipes/central0: 524 6 frrr
+:geoo/abstract/pipes/central0: 524 1074 frrr
+:geoo/abstract/pipes/central0: 524 1018 frrr
+:geoo/abstract/pipes/central0: 524 982 frrr
+:geoo/abstract/pipes/central0: 524 938 frrr
+:geoo/abstract/pipes/central0: 524 902 frrr
+:geoo/abstract/pipes/central0: 524 858 frrr
+:geoo/abstract/pipes/central0: 524 822 frrr
+:geoo/abstract/pipes/central0: 524 778 frrr
+:geoo/abstract/pipes/central0: 524 742 frrr
+:geoo/abstract/pipes/central0: 524 698 frrr
+:geoo/abstract/pipes/central0: 524 662 frrr
+:geoo/abstract/pipes/central0: 524 618 frrr
+:geoo/abstract/pipes/central0: 524 582 frrr
+:geoo/abstract/pipes/junct3: 524 552

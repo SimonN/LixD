@@ -1,0 +1,64 @@
+$BUILT 2024-07-18 11:24:33
+$AUTHOR Hyperlodge
+$ENGLISH Downside Up
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 512
+#SIZE_Y 528
+#TORUS_X 0
+#TORUS_Y 1
+#BACKGROUND_RED 88
+#BACKGROUND_GREEN 52
+#BACKGROUND_BLUE 48
+
+#SECONDS 60
+#INITIAL 200
+#SPAWN_INTERVAL 30
+
+#WALKER 1
+#RUNNER 1
+#CLIMBER 1
+#FLOATER 1
+#EXPLODER2 -1
+#BLOCKER 1
+#BUILDER 1
+#PLATFORMER -1
+#BASHER 1
+#MINER 1
+#DIGGER 1
+#JUMPER 1
+#BATTER -1
+#CUBER -1
+
+:matt/goldmine/Hatch.H: 33 400 r
+:matt/goldmine/Hatch.H: 417 400
+
+:matt/goldmine/Goal.G: 416 304
+:matt/goldmine/Goal.G: 32 304
+
+$BEGIN_TILE_GROUP 0
+:geoo/construction/wall/small_64x64: 0 0 frr
+:geoo/construction/wall/small_64x64: 64 0 frr
+:geoo/construction/wall/small_64x64: 128 0 frr
+:geoo/construction/wall/small_64x64: 192 0 frr
+$END_TILE_GROUP
+:Group-0: 256 448 frr
+$BEGIN_TILE_GROUP 1
+:geoo/construction/wall/small_64x64: 192 0
+:geoo/construction/wall/small_64x64: 128 0
+:geoo/construction/wall/small_64x64: 64 0
+:geoo/construction/wall/small_64x64: 0 0
+$END_TILE_GROUP
+:Group-1: 0 448
+:Group-0: 256 352 frr
+:Group-0: 0 352 frr
+:Group-0: 256 48 frr
+:Group-0: 0 48 frr
+:Group-0: 256 512 frr
+:Group-0: 0 512 frr
+:Group-0: 256 112 frr
+:Group-0: 0 112 frr
+:Group-0: 256 176 frr
+:Group-0: 0 176 frr
+:Group-0: 256 240 frr
+:Group-0: 0 240 frr

@@ -1,0 +1,1506 @@
+$BUILT 2024-07-18 13:18:14
+$AUTHOR Hyperlodge
+$ENGLISH North Base
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1096
+#SIZE_Y 704
+#BACKGROUND_RED 48
+#BACKGROUND_GREEN 48
+#BACKGROUND_BLUE 80
+
+#SECONDS 90
+#INITIAL 200
+#SPAWN_INTERVAL 30
+
+#RUNNER 10
+#CLIMBER 10
+#FLOATER 10
+#EXPLODER2 50
+#BLOCKER 50
+#BUILDER 50
+#PLATFORMER 50
+#BASHER 50
+#MINER 50
+#DIGGER 50
+#JUMPER 10
+#BATTER 10
+#CUBER 50
+
+:matt/goldmine/Hatch.H: 853 64 r
+:matt/goldmine/Hatch.H: 182 64
+
+:matt/winter/Goal.G: 96 608
+:matt/winter/Goal.G: 904 608
+
+:simon/acid.W: 536 656
+:simon/acid.W: 488 656
+
+:geoo/abstract/tbeam_up.T: 0 160
+:geoo/abstract/tbeam_up.T: 0 192
+:geoo/abstract/tbeam_up.T: 0 224
+:geoo/abstract/tbeam_up.T: 0 256
+:geoo/abstract/tbeam_up.T: 0 288
+:geoo/abstract/tbeam_up.T: 0 320
+:geoo/abstract/tbeam_up.T: 0 352
+:geoo/abstract/tbeam_up.T: 0 384
+:geoo/abstract/tbeam_up.T: 0 416
+:geoo/abstract/tbeam_up.T: 0 448
+:geoo/abstract/tbeam_up.T: 0 480
+:geoo/abstract/tbeam_up.T: 0 512
+:geoo/abstract/tbeam_up.T: 0 544
+:geoo/abstract/tbeam_up.T: 0 576
+:geoo/abstract/tbeam_up.T: 0 608
+:geoo/abstract/tbeam_up.T: 0 640
+:geoo/abstract/tbeam_up.T: 1064 160
+:geoo/abstract/tbeam_up.T: 1064 192
+:geoo/abstract/tbeam_up.T: 1064 224
+:geoo/abstract/tbeam_up.T: 1064 256
+:geoo/abstract/tbeam_up.T: 1064 288
+:geoo/abstract/tbeam_up.T: 1064 320
+:geoo/abstract/tbeam_up.T: 1064 352
+:geoo/abstract/tbeam_up.T: 1064 384
+:geoo/abstract/tbeam_up.T: 1064 416
+:geoo/abstract/tbeam_up.T: 1064 448
+:geoo/abstract/tbeam_up.T: 1064 480
+:geoo/abstract/tbeam_up.T: 1064 512
+:geoo/abstract/tbeam_up.T: 1064 544
+:geoo/abstract/tbeam_up.T: 1064 576
+:geoo/abstract/tbeam_up.T: 1064 608
+:geoo/abstract/tbeam_up.T: 1064 672
+:geoo/abstract/tbeam_up.T: 0 96
+:geoo/abstract/tbeam_up.T: 0 128
+:geoo/abstract/tbeam_up.T: 1064 96
+:geoo/abstract/tbeam_up.T: 1064 128
+:geoo/abstract/tbeam_right.T: 1032 672
+:geoo/abstract/tbeam_right.T: 1000 672
+:geoo/abstract/tbeam_up.T: 1064 640
+:geoo/abstract/tbeam_left.T: 32 672
+:geoo/abstract/tbeam_left.T: 64 672
+:geoo/abstract/tbeam_up.T: 0 672
+:geoo/abstract/tbeam_right.T: 0 64
+:geoo/abstract/tbeam_left.T: 1064 64
+:geoo/construction/steam_up.T: 876 368
+:geoo/construction/steam_up.T: 204 368
+:geoo/construction/steam_up.T: 860 392
+:geoo/construction/steam_up.T: 892 392
+:geoo/construction/steam_up.T: 220 392
+:geoo/construction/steam_up.T: 188 392
+:geoo/construction/steam_up.T: 908 400
+:geoo/construction/steam_up.T: 924 400
+:geoo/construction/steam_up.T: 940 408
+:geoo/construction/steam_up.T: 844 400
+:geoo/construction/steam_up.T: 828 400
+:geoo/construction/steam_up.T: 812 408
+:geoo/construction/steam_up.T: 172 400
+:geoo/construction/steam_up.T: 156 400
+:geoo/construction/steam_up.T: 140 408
+:geoo/construction/steam_up.T: 236 400
+:geoo/construction/steam_up.T: 252 400
+:geoo/construction/steam_up.T: 268 408
+
+:matt/winter/07: 540 521 rr
+:matt/winter/07: 264 556 rr
+:matt/winter/07: 72 556 rr
+:matt/winter/07: 820 74
+:matt/winter/07: 804 74
+:matt/winter/07: 788 74
+:matt/winter/07: 772 74
+:matt/winter/07: 756 74
+:matt/winter/07: 740 74
+:matt/winter/07: 724 74
+:matt/winter/07: 708 74
+:matt/winter/07: 692 74
+:matt/winter/07: 676 74
+:matt/winter/07: 660 74
+:matt/winter/07: 644 74
+:matt/winter/07: 628 74
+:matt/winter/07: 612 74
+:matt/winter/07: 596 74
+:matt/winter/07: 580 74
+:matt/winter/07: 564 74
+:matt/winter/07: 548 74
+:matt/winter/07: 532 74
+:matt/winter/07: 516 74
+:matt/winter/07: 500 74
+:matt/winter/07: 484 74
+:matt/winter/07: 468 74
+:matt/winter/07: 452 74
+:matt/winter/07: 436 74
+:matt/winter/07: 420 74
+:matt/winter/07: 404 74
+:matt/winter/07: 388 74
+:matt/winter/07: 372 74
+:matt/winter/07: 356 74
+:matt/winter/07: 340 74
+:matt/winter/07: 324 74
+:matt/winter/07: 308 74
+:matt/winter/07: 292 74
+:matt/winter/07: 276 74
+:matt/winter/07: 260 74
+$BEGIN_TILE_GROUP 0
+:matt/winter/07: 576 0
+:matt/winter/07: 560 0
+:matt/winter/07: 544 0
+:matt/winter/07: 528 0
+:matt/winter/07: 512 0
+:matt/winter/07: 496 0
+:matt/winter/07: 480 0
+:matt/winter/07: 464 0
+:matt/winter/07: 448 0
+:matt/winter/07: 432 0
+:matt/winter/07: 416 0
+:matt/winter/07: 400 0
+:matt/winter/07: 384 0
+:matt/winter/07: 368 0
+:matt/winter/07: 352 0
+:matt/winter/07: 336 0
+:matt/winter/07: 320 0
+:matt/winter/07: 304 0
+:matt/winter/07: 288 0
+:matt/winter/07: 272 0
+:matt/winter/07: 256 0
+:matt/winter/07: 240 0
+:matt/winter/07: 224 0
+:matt/winter/07: 208 0
+:matt/winter/07: 192 0
+:matt/winter/07: 176 0
+:matt/winter/07: 160 0
+:matt/winter/07: 144 0
+:matt/winter/07: 128 0
+:matt/winter/07: 112 0
+:matt/winter/07: 96 0
+:matt/winter/07: 80 0
+:matt/winter/07: 64 0
+:matt/winter/07: 48 0
+:matt/winter/07: 32 0
+:matt/winter/07: 16 0
+:matt/winter/07: 0 0
+$END_TILE_GROUP
+:Group-0: 252 90
+$BEGIN_TILE_GROUP 1
+:raymanni/holiday/snow3: 160 0
+:raymanni/holiday/snow4: 80 0
+:raymanni/holiday/snow2: 0 0
+:raymanni/holiday/snow1: 144 16
+:raymanni/holiday/snow2: 64 32
+:raymanni/holiday/snow2: 384 0
+:raymanni/holiday/snow2: 304 48
+:raymanni/holiday/snow2: 51 97
+:raymanni/holiday/snow2: 400 176
+:raymanni/holiday/snow2: 32 160
+:raymanni/holiday/snow2: 192 288
+:raymanni/holiday/snow2: 80 208
+:raymanni/holiday/snow2: 304 288
+:raymanni/holiday/snow3: 0 64
+:raymanni/holiday/snow3: 464 80
+:raymanni/holiday/snow3: 464 0
+:raymanni/holiday/snow3: 256 0
+:raymanni/holiday/snow3: 272 176
+:raymanni/holiday/snow1: 288 304
+:raymanni/holiday/snow4: 176 0
+:raymanni/holiday/snow4: 288 0
+:raymanni/holiday/snow4: 400 416 rr
+:raymanni/holiday/snow4: 304 416 rr
+:raymanni/holiday/snow4: 208 416 rr
+:raymanni/holiday/snow4: 112 416 rr
+:raymanni/holiday/snow4: 16 416 rr
+:raymanni/holiday/snow4: 11 325 rrr
+:raymanni/holiday/snow4: 11 213 rrr
+:raymanni/holiday/snow4: 11 133 rrr
+:raymanni/holiday/snow4: 443 213 rrr
+:raymanni/holiday/snow2: 426 326 r
+:raymanni/holiday/snow2: 112 320 frrr
+:raymanni/holiday/snow2: 32 240 rrr
+:raymanni/holiday/snow2: 16 336 frr
+:raymanni/holiday/snow1: 48 80
+:raymanni/holiday/snow1: 304 16
+:raymanni/holiday/snow3: 352 16 rr
+:raymanni/holiday/snow2: 384 80 r
+:raymanni/holiday/snow2: 432 240 rrr
+:raymanni/holiday/snow2: 336 112 rrr
+:raymanni/holiday/snow3: 320 96 rrr
+:raymanni/holiday/snow3: 110 281 rrr
+:raymanni/holiday/snow3: 128 368 rrr
+:raymanni/holiday/snow2: 269 340 frr
+:raymanni/holiday/snow1: 16 320 rr
+:raymanni/holiday/snow1: 237 377 rrr
+:raymanni/holiday/snow1: 362 370 rrr
+:raymanni/holiday/snow3: 383 315
+:raymanni/holiday/snow2: 342 215 rrr
+:raymanni/holiday/snow2: 253 178 frr
+:raymanni/holiday/snow3: 140 166 rrr
+:raymanni/holiday/snow3: 214 176 frr
+:raymanni/holiday/snow1: 316 245
+:raymanni/holiday/snow2: 153 100
+:raymanni/holiday/snow4: 239 157
+:raymanni/holiday/snow4: 185 188 r
+:raymanni/holiday/snow3: 234 117 frrr
+:raymanni/holiday/snow3: 199 4
+:raymanni/holiday/snow1: 239 25
+$END_TILE_GROUP
+:Group-1: 48 109
+:matt/winter/07: 815 556 rr
+:matt/winter/07: 1007 556 rr
+$BEGIN_TILE_GROUP 2
+:raymanni/holiday/snow3: 304 0 frr
+:raymanni/holiday/snow4: 327 0 frr
+:raymanni/holiday/snow2: 412 0 frr
+:raymanni/holiday/snow1: 337 16 frr
+:raymanni/holiday/snow2: 348 32 frr
+:raymanni/holiday/snow2: 28 0 frr
+:raymanni/holiday/snow2: 108 48 frr
+:raymanni/holiday/snow2: 361 97 frr
+:raymanni/holiday/snow2: 12 176 frr
+:raymanni/holiday/snow2: 380 160 frr
+:raymanni/holiday/snow2: 220 288 frr
+:raymanni/holiday/snow2: 332 208 frr
+:raymanni/holiday/snow2: 108 288 frr
+:raymanni/holiday/snow3: 464 64 frr
+:raymanni/holiday/snow3: 0 80 frr
+:raymanni/holiday/snow3: 0 0 frr
+:raymanni/holiday/snow3: 208 0 frr
+:raymanni/holiday/snow3: 192 176 frr
+:raymanni/holiday/snow1: 193 304 frr
+:raymanni/holiday/snow4: 231 0 frr
+:raymanni/holiday/snow4: 119 0 frr
+:raymanni/holiday/snow4: 7 416 f
+:raymanni/holiday/snow4: 103 416 f
+:raymanni/holiday/snow4: 199 416 f
+:raymanni/holiday/snow4: 295 416 f
+:raymanni/holiday/snow4: 391 416 f
+:raymanni/holiday/snow4: 483 325 frrr
+:raymanni/holiday/snow4: 483 213 frrr
+:raymanni/holiday/snow4: 483 133 frrr
+:raymanni/holiday/snow4: 51 213 frrr
+:raymanni/holiday/snow2: 7 326 fr
+:raymanni/holiday/snow2: 321 320 rrr
+:raymanni/holiday/snow2: 401 240 frrr
+:raymanni/holiday/snow2: 396 336
+:raymanni/holiday/snow1: 433 80 frr
+:raymanni/holiday/snow1: 177 16 frr
+:raymanni/holiday/snow3: 112 16 f
+:raymanni/holiday/snow2: 49 80 fr
+:raymanni/holiday/snow2: 1 240 frrr
+:raymanni/holiday/snow2: 97 112 frrr
+:raymanni/holiday/snow3: 88 96 frrr
+:raymanni/holiday/snow3: 298 281 frrr
+:raymanni/holiday/snow3: 280 368 frrr
+:raymanni/holiday/snow2: 143 340
+:raymanni/holiday/snow1: 465 320 f
+:raymanni/holiday/snow1: 244 377 frrr
+:raymanni/holiday/snow1: 119 370 frrr
+:raymanni/holiday/snow3: 81 315 frr
+:raymanni/holiday/snow2: 91 215 frrr
+:raymanni/holiday/snow2: 159 178
+:raymanni/holiday/snow3: 268 166 frrr
+:raymanni/holiday/snow3: 250 176
+:raymanni/holiday/snow1: 165 245 frr
+:raymanni/holiday/snow2: 259 100 frr
+:raymanni/holiday/snow4: 168 157 frr
+:raymanni/holiday/snow4: 309 188 fr
+:raymanni/holiday/snow3: 174 117 rrr
+:raymanni/holiday/snow3: 265 4 frr
+:raymanni/holiday/snow1: 242 25 frr
+$END_TILE_GROUP
+:Group-2: 517 109
+:raymanni/holiday/snowlix: 202 121 frr
+:raymanni/holiday/snowlix: 874 121
+$BEGIN_TILE_GROUP 3
+:raymanni/toys/beam_8.S: 0 224
+:raymanni/toys/beam_8.S: 32 224
+:raymanni/toys/beam_8.S: 48 240
+:raymanni/toys/beam_8.S: 32 256
+:raymanni/toys/beam_8.S: 48 240
+:raymanni/toys/beam_8.S: 32 256
+:raymanni/toys/beam_8.S: 64 256
+:raymanni/toys/beam_8.S: 48 272
+:raymanni/toys/beam_8.S: 64 192
+:raymanni/toys/beam_8.S: 48 208
+:raymanni/toys/beam_8.S: 80 208
+:raymanni/toys/beam_8.S: 64 224
+:raymanni/toys/beam_8.S: 80 208
+:raymanni/toys/beam_8.S: 64 224
+:raymanni/toys/beam_8.S: 96 224
+:raymanni/toys/beam_8.S: 80 240
+:raymanni/toys/beam_8.S: 80 272
+:raymanni/toys/beam_8.S: 64 288
+:raymanni/toys/beam_8.S: 96 288
+:raymanni/toys/beam_8.S: 80 304
+:raymanni/toys/beam_8.S: 96 288
+:raymanni/toys/beam_8.S: 80 304
+:raymanni/toys/beam_8.S: 112 304
+:raymanni/toys/beam_8.S: 96 320
+:raymanni/toys/beam_8.S: 112 240
+:raymanni/toys/beam_8.S: 96 256
+:raymanni/toys/beam_8.S: 128 256
+:raymanni/toys/beam_8.S: 112 272
+:raymanni/toys/beam_8.S: 128 256
+:raymanni/toys/beam_8.S: 112 272
+:raymanni/toys/beam_8.S: 144 272
+:raymanni/toys/beam_8.S: 128 288
+:raymanni/toys/beam_8.S: 96 160
+:raymanni/toys/beam_8.S: 80 176
+:raymanni/toys/beam_8.S: 112 176
+:raymanni/toys/beam_8.S: 96 192
+:raymanni/toys/beam_8.S: 112 176
+:raymanni/toys/beam_8.S: 96 192
+:raymanni/toys/beam_8.S: 128 192
+:raymanni/toys/beam_8.S: 112 208
+:raymanni/toys/beam_8.S: 128 128
+:raymanni/toys/beam_8.S: 112 144
+:raymanni/toys/beam_8.S: 144 144
+:raymanni/toys/beam_8.S: 128 160
+:raymanni/toys/beam_8.S: 144 144
+:raymanni/toys/beam_8.S: 128 160
+:raymanni/toys/beam_8.S: 160 160
+:raymanni/toys/beam_8.S: 144 176
+:raymanni/toys/beam_8.S: 144 208
+:raymanni/toys/beam_8.S: 128 224
+:raymanni/toys/beam_8.S: 160 224
+:raymanni/toys/beam_8.S: 144 240
+:raymanni/toys/beam_8.S: 160 224
+:raymanni/toys/beam_8.S: 144 240
+:raymanni/toys/beam_8.S: 176 240
+:raymanni/toys/beam_8.S: 160 256
+:raymanni/toys/beam_8.S: 176 176
+:raymanni/toys/beam_8.S: 160 192
+:raymanni/toys/beam_8.S: 192 192
+:raymanni/toys/beam_8.S: 176 208
+:raymanni/toys/beam_8.S: 192 192
+:raymanni/toys/beam_8.S: 176 208
+:raymanni/toys/beam_8.S: 208 208
+:raymanni/toys/beam_8.S: 192 224
+:raymanni/toys/beam_8.S: 160 96
+:raymanni/toys/beam_8.S: 144 112
+:raymanni/toys/beam_8.S: 176 112
+:raymanni/toys/beam_8.S: 160 128
+:raymanni/toys/beam_8.S: 176 112
+:raymanni/toys/beam_8.S: 160 128
+:raymanni/toys/beam_8.S: 192 128
+:raymanni/toys/beam_8.S: 176 144
+:raymanni/toys/beam_8.S: 192 64
+:raymanni/toys/beam_8.S: 176 80
+:raymanni/toys/beam_8.S: 208 80
+:raymanni/toys/beam_8.S: 192 96
+:raymanni/toys/beam_8.S: 208 80
+:raymanni/toys/beam_8.S: 192 96
+:raymanni/toys/beam_8.S: 224 96
+:raymanni/toys/beam_8.S: 208 112
+:raymanni/toys/beam_8.S: 208 144
+:raymanni/toys/beam_8.S: 192 160
+:raymanni/toys/beam_8.S: 224 160
+:raymanni/toys/beam_8.S: 208 176
+:raymanni/toys/beam_8.S: 224 160
+:raymanni/toys/beam_8.S: 208 176
+:raymanni/toys/beam_8.S: 240 176
+:raymanni/toys/beam_8.S: 224 192
+:raymanni/toys/beam_8.S: 240 112
+:raymanni/toys/beam_8.S: 224 128
+:raymanni/toys/beam_8.S: 256 128
+:raymanni/toys/beam_8.S: 240 144
+:raymanni/toys/beam_8.S: 256 128
+:raymanni/toys/beam_8.S: 240 144
+:raymanni/toys/beam_8.S: 272 144
+:raymanni/toys/beam_8.S: 256 160
+:raymanni/toys/beam_8.S: 224 32
+:raymanni/toys/beam_8.S: 208 48
+:raymanni/toys/beam_8.S: 240 48
+:raymanni/toys/beam_8.S: 224 64
+:raymanni/toys/beam_8.S: 240 48
+:raymanni/toys/beam_8.S: 224 64
+:raymanni/toys/beam_8.S: 256 64
+:raymanni/toys/beam_8.S: 240 80
+:raymanni/toys/beam_8.S: 256 0
+:raymanni/toys/beam_8.S: 240 16
+:raymanni/toys/beam_8.S: 272 16
+:raymanni/toys/beam_8.S: 256 32
+:raymanni/toys/beam_8.S: 272 16
+:raymanni/toys/beam_8.S: 256 32
+:raymanni/toys/beam_8.S: 288 32
+:raymanni/toys/beam_8.S: 272 48
+:raymanni/toys/beam_8.S: 272 80
+:raymanni/toys/beam_8.S: 256 96
+:raymanni/toys/beam_8.S: 288 96
+:raymanni/toys/beam_8.S: 272 112
+:raymanni/toys/beam_8.S: 288 96
+:raymanni/toys/beam_8.S: 272 112
+:raymanni/toys/beam_8.S: 304 112
+:raymanni/toys/beam_8.S: 288 128
+:raymanni/toys/beam_8.S: 304 48
+:raymanni/toys/beam_8.S: 288 64
+:raymanni/toys/beam_8.S: 320 64
+:raymanni/toys/beam_8.S: 304 80
+:raymanni/toys/beam_8.S: 320 64
+:raymanni/toys/beam_8.S: 304 80
+:raymanni/toys/beam_8.S: 336 80
+:raymanni/toys/beam_8.S: 320 96
+:raymanni/toys/beam_8.S: 128 320
+:raymanni/toys/beam_8.S: 112 336
+:raymanni/toys/beam_8.S: 144 336
+:raymanni/toys/beam_8.S: 128 352
+:raymanni/toys/beam_8.S: 144 336
+:raymanni/toys/beam_8.S: 128 352
+:raymanni/toys/beam_8.S: 160 352
+:raymanni/toys/beam_8.S: 144 368
+:raymanni/toys/beam_8.S: 160 288
+:raymanni/toys/beam_8.S: 144 304
+:raymanni/toys/beam_8.S: 176 304
+:raymanni/toys/beam_8.S: 160 320
+:raymanni/toys/beam_8.S: 176 304
+:raymanni/toys/beam_8.S: 160 320
+:raymanni/toys/beam_8.S: 192 320
+:raymanni/toys/beam_8.S: 176 336
+:raymanni/toys/beam_8.S: 176 368
+:raymanni/toys/beam_8.S: 160 384
+:raymanni/toys/beam_8.S: 192 384
+:raymanni/toys/beam_8.S: 176 400
+:raymanni/toys/beam_8.S: 192 384
+:raymanni/toys/beam_8.S: 176 400
+:raymanni/toys/beam_8.S: 208 400
+:raymanni/toys/beam_8.S: 192 416
+:raymanni/toys/beam_8.S: 208 336
+:raymanni/toys/beam_8.S: 192 352
+:raymanni/toys/beam_8.S: 224 352
+:raymanni/toys/beam_8.S: 208 368
+:raymanni/toys/beam_8.S: 224 352
+:raymanni/toys/beam_8.S: 208 368
+:raymanni/toys/beam_8.S: 240 368
+:raymanni/toys/beam_8.S: 224 384
+:raymanni/toys/beam_8.S: 192 256
+:raymanni/toys/beam_8.S: 176 272
+:raymanni/toys/beam_8.S: 208 272
+:raymanni/toys/beam_8.S: 192 288
+:raymanni/toys/beam_8.S: 208 272
+:raymanni/toys/beam_8.S: 192 288
+:raymanni/toys/beam_8.S: 224 288
+:raymanni/toys/beam_8.S: 208 304
+:raymanni/toys/beam_8.S: 224 224
+:raymanni/toys/beam_8.S: 208 240
+:raymanni/toys/beam_8.S: 240 240
+:raymanni/toys/beam_8.S: 224 256
+:raymanni/toys/beam_8.S: 240 240
+:raymanni/toys/beam_8.S: 224 256
+:raymanni/toys/beam_8.S: 256 256
+:raymanni/toys/beam_8.S: 240 272
+:raymanni/toys/beam_8.S: 240 304
+:raymanni/toys/beam_8.S: 224 320
+:raymanni/toys/beam_8.S: 256 320
+:raymanni/toys/beam_8.S: 240 336
+:raymanni/toys/beam_8.S: 256 320
+:raymanni/toys/beam_8.S: 240 336
+:raymanni/toys/beam_8.S: 272 336
+:raymanni/toys/beam_8.S: 256 352
+:raymanni/toys/beam_8.S: 272 272
+:raymanni/toys/beam_8.S: 256 288
+:raymanni/toys/beam_8.S: 288 288
+:raymanni/toys/beam_8.S: 272 304
+:raymanni/toys/beam_8.S: 288 288
+:raymanni/toys/beam_8.S: 272 304
+:raymanni/toys/beam_8.S: 304 304
+:raymanni/toys/beam_8.S: 288 320
+:raymanni/toys/beam_8.S: 256 192
+:raymanni/toys/beam_8.S: 240 208
+:raymanni/toys/beam_8.S: 272 208
+:raymanni/toys/beam_8.S: 256 224
+:raymanni/toys/beam_8.S: 272 208
+:raymanni/toys/beam_8.S: 256 224
+:raymanni/toys/beam_8.S: 288 224
+:raymanni/toys/beam_8.S: 272 240
+:raymanni/toys/beam_8.S: 288 160
+:raymanni/toys/beam_8.S: 272 176
+:raymanni/toys/beam_8.S: 304 176
+:raymanni/toys/beam_8.S: 288 192
+:raymanni/toys/beam_8.S: 304 176
+:raymanni/toys/beam_8.S: 288 192
+:raymanni/toys/beam_8.S: 320 192
+:raymanni/toys/beam_8.S: 304 208
+:raymanni/toys/beam_8.S: 304 240
+:raymanni/toys/beam_8.S: 288 256
+:raymanni/toys/beam_8.S: 320 256
+:raymanni/toys/beam_8.S: 304 272
+:raymanni/toys/beam_8.S: 320 256
+:raymanni/toys/beam_8.S: 304 272
+:raymanni/toys/beam_8.S: 336 272
+:raymanni/toys/beam_8.S: 320 288
+:raymanni/toys/beam_8.S: 336 208
+:raymanni/toys/beam_8.S: 320 224
+:raymanni/toys/beam_8.S: 352 224
+:raymanni/toys/beam_8.S: 336 240
+:raymanni/toys/beam_8.S: 352 224
+:raymanni/toys/beam_8.S: 336 240
+:raymanni/toys/beam_8.S: 368 240
+:raymanni/toys/beam_8.S: 352 256
+:raymanni/toys/beam_8.S: 320 128
+:raymanni/toys/beam_8.S: 304 144
+:raymanni/toys/beam_8.S: 336 144
+:raymanni/toys/beam_8.S: 320 160
+:raymanni/toys/beam_8.S: 336 144
+:raymanni/toys/beam_8.S: 320 160
+:raymanni/toys/beam_8.S: 352 160
+:raymanni/toys/beam_8.S: 336 176
+:raymanni/toys/beam_8.S: 352 96
+:raymanni/toys/beam_8.S: 336 112
+:raymanni/toys/beam_8.S: 368 112
+:raymanni/toys/beam_8.S: 352 128
+:raymanni/toys/beam_8.S: 368 112
+:raymanni/toys/beam_8.S: 352 128
+:raymanni/toys/beam_8.S: 384 128
+:raymanni/toys/beam_8.S: 368 144
+:raymanni/toys/beam_8.S: 368 176
+:raymanni/toys/beam_8.S: 352 192
+:raymanni/toys/beam_8.S: 384 192
+:raymanni/toys/beam_8.S: 368 208
+:raymanni/toys/beam_8.S: 384 192
+:raymanni/toys/beam_8.S: 368 208
+:raymanni/toys/beam_8.S: 400 208
+:raymanni/toys/beam_8.S: 384 224
+:raymanni/toys/beam_8.S: 400 144
+:raymanni/toys/beam_8.S: 384 160
+:raymanni/toys/beam_8.S: 416 160
+:raymanni/toys/beam_8.S: 400 176
+:raymanni/toys/beam_8.S: 416 160
+:raymanni/toys/beam_8.S: 400 176
+:raymanni/toys/beam_8.S: 432 176
+:raymanni/toys/beam_8.S: 416 192
+:raymanni/toys/beam_8.S: 304 336
+:raymanni/toys/beam_8.S: 336 336
+:raymanni/toys/beam_8.S: 320 352
+:raymanni/toys/beam_8.S: 336 336
+:raymanni/toys/beam_8.S: 320 352
+:raymanni/toys/beam_8.S: 352 352
+:raymanni/toys/beam_8.S: 336 368
+:raymanni/toys/beam_8.S: 368 336
+:raymanni/toys/beam_8.S: 368 368
+:raymanni/toys/beam_8.S: 352 384
+:raymanni/toys/beam_8.S: 384 384
+:raymanni/toys/beam_8.S: 368 400
+:raymanni/toys/beam_8.S: 384 384
+:raymanni/toys/beam_8.S: 368 400
+:raymanni/toys/beam_8.S: 400 400
+:raymanni/toys/beam_8.S: 384 416
+:raymanni/toys/beam_8.S: 400 336
+:raymanni/toys/beam_8.S: 384 352
+:raymanni/toys/beam_8.S: 416 352
+:raymanni/toys/beam_8.S: 400 368
+:raymanni/toys/beam_8.S: 416 352
+:raymanni/toys/beam_8.S: 400 368
+:raymanni/toys/beam_8.S: 432 368
+:raymanni/toys/beam_8.S: 416 384
+:raymanni/toys/beam_8.S: 432 336
+:raymanni/toys/beam_8.S: 432 336
+:raymanni/toys/beam_8.S: 464 336
+:raymanni/toys/beam_8.S: 448 352
+:raymanni/toys/beam_8.S: 0 384
+:raymanni/toys/beam_8.S: 0 384
+:raymanni/toys/beam_8.S: 16 400
+:raymanni/toys/beam_8.S: 0 416
+:raymanni/toys/beam_8.S: 0 320
+:raymanni/toys/beam_8.S: 0 256
+:raymanni/toys/beam_8.S: 16 272
+:raymanni/toys/beam_8.S: 0 288
+:raymanni/toys/beam_8.S: 16 272
+:raymanni/toys/beam_8.S: 0 288
+:raymanni/toys/beam_8.S: 32 288
+:raymanni/toys/beam_8.S: 16 304
+:raymanni/toys/beam_8.S: 16 336
+:raymanni/toys/beam_8.S: 0 352
+:raymanni/toys/beam_8.S: 32 352
+:raymanni/toys/beam_8.S: 16 368
+:raymanni/toys/beam_8.S: 32 352
+:raymanni/toys/beam_8.S: 16 368
+:raymanni/toys/beam_8.S: 48 368
+:raymanni/toys/beam_8.S: 32 384
+:raymanni/toys/beam_8.S: 48 304
+:raymanni/toys/beam_8.S: 32 320
+:raymanni/toys/beam_8.S: 64 320
+:raymanni/toys/beam_8.S: 48 336
+:raymanni/toys/beam_8.S: 64 320
+:raymanni/toys/beam_8.S: 48 336
+:raymanni/toys/beam_8.S: 80 336
+:raymanni/toys/beam_8.S: 64 352
+:raymanni/toys/beam_8.S: 64 384
+:raymanni/toys/beam_8.S: 64 384
+:raymanni/toys/beam_8.S: 80 400
+:raymanni/toys/beam_8.S: 64 416
+:raymanni/toys/beam_8.S: 80 368
+:raymanni/toys/beam_8.S: 80 368
+:raymanni/toys/beam_8.S: 112 368
+:raymanni/toys/beam_8.S: 96 352
+:raymanni/toys/beam_8.S: 96 384
+:raymanni/toys/beam_8.S: 112 400
+:raymanni/toys/beam_8.S: 112 400
+:raymanni/toys/beam_8.S: 128 416
+:raymanni/toys/beam_8.S: 96 416
+:raymanni/toys/beam_8.S: 144 400
+:raymanni/toys/beam_8.S: 128 384
+:raymanni/toys/beam_8.S: 48 400
+:raymanni/toys/beam_8.S: 32 416
+:raymanni/toys/beam_8.S: 160 416
+:raymanni/toys/beam_8.S: 320 320
+:raymanni/toys/beam_8.S: 288 352
+:raymanni/toys/beam_8.S: 272 368
+:raymanni/toys/beam_8.S: 336 304
+:raymanni/toys/beam_8.S: 256 384
+:raymanni/toys/beam_8.S: 240 400
+:raymanni/toys/beam_8.S: 272 400
+:raymanni/toys/beam_8.S: 256 416
+:raymanni/toys/beam_8.S: 272 400
+:raymanni/toys/beam_8.S: 256 416
+:raymanni/toys/beam_8.S: 288 416
+:raymanni/toys/beam_8.S: 304 368
+:raymanni/toys/beam_8.S: 288 384
+:raymanni/toys/beam_8.S: 288 384
+:raymanni/toys/beam_8.S: 320 384
+:raymanni/toys/beam_8.S: 304 400
+:raymanni/toys/beam_8.S: 320 416
+:raymanni/toys/beam_8.S: 320 416
+:raymanni/toys/beam_8.S: 336 400
+:raymanni/toys/beam_8.S: 224 416
+:raymanni/toys/beam_8.S: 352 416
+:raymanni/toys/beam_8.S: 416 224
+:raymanni/toys/beam_8.S: 416 288
+:raymanni/toys/beam_8.S: 416 288
+:raymanni/toys/beam_8.S: 432 304
+:raymanni/toys/beam_8.S: 416 320
+:raymanni/toys/beam_8.S: 432 240
+:raymanni/toys/beam_8.S: 416 256
+:raymanni/toys/beam_8.S: 448 256
+:raymanni/toys/beam_8.S: 432 272
+:raymanni/toys/beam_8.S: 448 256
+:raymanni/toys/beam_8.S: 432 272
+:raymanni/toys/beam_8.S: 464 272
+:raymanni/toys/beam_8.S: 448 288
+:raymanni/toys/beam_8.S: 464 304
+:raymanni/toys/beam_8.S: 448 320
+:raymanni/toys/beam_8.S: 464 368
+:raymanni/toys/beam_8.S: 448 384
+:raymanni/toys/beam_8.S: 448 384
+:raymanni/toys/beam_8.S: 464 400
+:raymanni/toys/beam_8.S: 448 416
+:raymanni/toys/beam_8.S: 464 240
+:raymanni/toys/beam_8.S: 432 208
+:raymanni/toys/beam_8.S: 448 224
+:raymanni/toys/beam_8.S: 416 416
+:raymanni/toys/beam_8.S: 432 400
+:raymanni/toys/beam_8.S: 464 208
+:raymanni/toys/beam_8.S: 400 240
+:raymanni/toys/beam_8.S: 400 272
+:raymanni/toys/beam_8.S: 384 256
+:raymanni/toys/beam_8.S: 368 272
+:raymanni/toys/beam_8.S: 384 288
+:raymanni/toys/beam_8.S: 400 304
+:raymanni/toys/beam_8.S: 352 288
+:raymanni/toys/beam_8.S: 368 304
+:raymanni/toys/beam_8.S: 384 320
+:raymanni/toys/beam_8.S: 352 320
+:raymanni/toys/beam_8.S: 448 192
+:raymanni/toys/beam_8.S: 224 0
+:raymanni/toys/beam_8.S: 16 16
+:raymanni/toys/beam_8.S: 32 32
+:raymanni/toys/beam_8.S: 32 32
+:raymanni/toys/beam_8.S: 0 160
+:raymanni/toys/beam_8.S: 0 160
+:raymanni/toys/beam_8.S: 16 176
+:raymanni/toys/beam_8.S: 0 192
+:raymanni/toys/beam_8.S: 0 96
+:raymanni/toys/beam_8.S: 0 32
+:raymanni/toys/beam_8.S: 16 48
+:raymanni/toys/beam_8.S: 0 64
+:raymanni/toys/beam_8.S: 16 48
+:raymanni/toys/beam_8.S: 0 64
+:raymanni/toys/beam_8.S: 32 64
+:raymanni/toys/beam_8.S: 16 80
+:raymanni/toys/beam_8.S: 16 112
+:raymanni/toys/beam_8.S: 0 128
+:raymanni/toys/beam_8.S: 32 128
+:raymanni/toys/beam_8.S: 16 144
+:raymanni/toys/beam_8.S: 32 128
+:raymanni/toys/beam_8.S: 16 144
+:raymanni/toys/beam_8.S: 32 160
+:raymanni/toys/beam_8.S: 32 96
+:raymanni/toys/beam_8.S: 32 192
+:raymanni/toys/beam_8.S: 16 208
+:raymanni/toys/beam_8.S: 16 240
+:raymanni/toys/beam_8.S: 192 0
+:raymanni/toys/beam_8.S: 80 16
+:raymanni/toys/beam_8.S: 80 16
+:raymanni/toys/beam_8.S: 48 80
+:raymanni/toys/beam_8.S: 48 16
+:raymanni/toys/beam_8.S: 64 32
+:raymanni/toys/beam_8.S: 48 48
+:raymanni/toys/beam_8.S: 64 32
+:raymanni/toys/beam_8.S: 48 48
+:raymanni/toys/beam_8.S: 80 48
+:raymanni/toys/beam_8.S: 64 64
+:raymanni/toys/beam_8.S: 64 96
+:raymanni/toys/beam_8.S: 48 112
+:raymanni/toys/beam_8.S: 80 112
+:raymanni/toys/beam_8.S: 64 128
+:raymanni/toys/beam_8.S: 80 112
+:raymanni/toys/beam_8.S: 64 128
+:raymanni/toys/beam_8.S: 80 80
+:raymanni/toys/beam_8.S: 112 16
+:raymanni/toys/beam_8.S: 128 32
+:raymanni/toys/beam_8.S: 128 32
+:raymanni/toys/beam_8.S: 96 96
+:raymanni/toys/beam_8.S: 96 32
+:raymanni/toys/beam_8.S: 112 48
+:raymanni/toys/beam_8.S: 96 64
+:raymanni/toys/beam_8.S: 112 48
+:raymanni/toys/beam_8.S: 96 64
+:raymanni/toys/beam_8.S: 128 64
+:raymanni/toys/beam_8.S: 112 80
+:raymanni/toys/beam_8.S: 112 112
+:raymanni/toys/beam_8.S: 96 128
+:raymanni/toys/beam_8.S: 128 128
+:raymanni/toys/beam_8.S: 112 144
+:raymanni/toys/beam_8.S: 80 144
+:raymanni/toys/beam_8.S: 48 144
+:raymanni/toys/beam_8.S: 128 96
+:raymanni/toys/beam_8.S: 64 160
+:raymanni/toys/beam_8.S: 48 176
+:raymanni/toys/beam_8.S: 144 48
+:raymanni/toys/beam_8.S: 144 48
+:raymanni/toys/beam_8.S: 144 80
+:raymanni/toys/beam_8.S: 0 0
+:raymanni/toys/beam_8.S: 64 0
+:raymanni/toys/beam_8.S: 64 0
+:raymanni/toys/beam_8.S: 32 0
+:raymanni/toys/beam_8.S: 96 0
+:raymanni/toys/beam_8.S: 144 16
+:raymanni/toys/beam_8.S: 144 16
+:raymanni/toys/beam_8.S: 176 16
+:raymanni/toys/beam_8.S: 160 32
+:raymanni/toys/beam_8.S: 160 0
+:raymanni/toys/beam_8.S: 128 0
+:raymanni/toys/beam_8.S: 160 64
+:raymanni/toys/beam_8.S: 176 48
+:raymanni/toys/beam_8.S: 192 32
+:raymanni/toys/beam_8.S: 208 16
+:raymanni/toys/beam_8.S: 400 16
+:raymanni/toys/beam_8.S: 416 32
+:raymanni/toys/beam_8.S: 416 32
+:raymanni/toys/beam_8.S: 384 96
+:raymanni/toys/beam_8.S: 384 32
+:raymanni/toys/beam_8.S: 400 48
+:raymanni/toys/beam_8.S: 384 64
+:raymanni/toys/beam_8.S: 400 48
+:raymanni/toys/beam_8.S: 384 64
+:raymanni/toys/beam_8.S: 416 64
+:raymanni/toys/beam_8.S: 400 80
+:raymanni/toys/beam_8.S: 400 112
+:raymanni/toys/beam_8.S: 416 96
+:raymanni/toys/beam_8.S: 464 16
+:raymanni/toys/beam_8.S: 464 16
+:raymanni/toys/beam_8.S: 432 80
+:raymanni/toys/beam_8.S: 432 16
+:raymanni/toys/beam_8.S: 448 32
+:raymanni/toys/beam_8.S: 432 48
+:raymanni/toys/beam_8.S: 448 32
+:raymanni/toys/beam_8.S: 432 48
+:raymanni/toys/beam_8.S: 464 48
+:raymanni/toys/beam_8.S: 448 64
+:raymanni/toys/beam_8.S: 448 96
+:raymanni/toys/beam_8.S: 432 112
+:raymanni/toys/beam_8.S: 464 112
+:raymanni/toys/beam_8.S: 464 112
+:raymanni/toys/beam_8.S: 464 80
+:raymanni/toys/beam_8.S: 368 80
+:raymanni/toys/beam_8.S: 368 16
+:raymanni/toys/beam_8.S: 368 48
+:raymanni/toys/beam_8.S: 368 48
+:raymanni/toys/beam_8.S: 384 0
+:raymanni/toys/beam_8.S: 448 0
+:raymanni/toys/beam_8.S: 448 0
+:raymanni/toys/beam_8.S: 416 0
+:raymanni/toys/beam_8.S: 288 0
+:raymanni/toys/beam_8.S: 416 128
+:raymanni/toys/beam_8.S: 432 144
+:raymanni/toys/beam_8.S: 448 160
+:raymanni/toys/beam_8.S: 464 176
+:raymanni/toys/beam_8.S: 448 128
+:raymanni/toys/beam_8.S: 464 144
+:raymanni/toys/beam_8.S: 304 16
+:raymanni/toys/beam_8.S: 320 32
+:raymanni/toys/beam_8.S: 336 48
+:raymanni/toys/beam_8.S: 352 64
+:raymanni/toys/beam_8.S: 320 0
+:raymanni/toys/beam_8.S: 336 16
+:raymanni/toys/beam_8.S: 352 32
+:raymanni/toys/beam_8.S: 352 0
+:raymanni/toys/beam_8.S: 480 352
+:raymanni/toys/beam_8.S: 480 256
+:raymanni/toys/beam_8.S: 480 256
+:raymanni/toys/beam_8.S: 480 288
+:raymanni/toys/beam_8.S: 480 320
+:raymanni/toys/beam_8.S: 480 384
+:raymanni/toys/beam_8.S: 480 384
+:raymanni/toys/beam_8.S: 480 416
+:raymanni/toys/beam_8.S: 480 224
+:raymanni/toys/beam_8.S: 480 192
+:raymanni/toys/beam_8.S: 480 32
+:raymanni/toys/beam_8.S: 480 32
+:raymanni/toys/beam_8.S: 480 64
+:raymanni/toys/beam_8.S: 480 96
+:raymanni/toys/beam_8.S: 480 0
+:raymanni/toys/beam_8.S: 480 0
+:raymanni/toys/beam_8.S: 480 160
+:raymanni/toys/beam_8.S: 480 128
+:raymanni/toys/beam_8.S: 496 176
+:raymanni/toys/beam_8.S: 496 112
+:raymanni/toys/beam_8.S: 512 128
+:raymanni/toys/beam_8.S: 496 144
+:raymanni/toys/beam_8.S: 512 128
+:raymanni/toys/beam_8.S: 496 144
+:raymanni/toys/beam_8.S: 528 144
+:raymanni/toys/beam_8.S: 512 160
+:raymanni/toys/beam_8.S: 496 48
+:raymanni/toys/beam_8.S: 496 48
+:raymanni/toys/beam_8.S: 512 64
+:raymanni/toys/beam_8.S: 496 80
+:raymanni/toys/beam_8.S: 512 0
+:raymanni/toys/beam_8.S: 496 16
+:raymanni/toys/beam_8.S: 528 16
+:raymanni/toys/beam_8.S: 512 32
+:raymanni/toys/beam_8.S: 528 16
+:raymanni/toys/beam_8.S: 512 32
+:raymanni/toys/beam_8.S: 544 32
+:raymanni/toys/beam_8.S: 528 48
+:raymanni/toys/beam_8.S: 528 80
+:raymanni/toys/beam_8.S: 512 96
+:raymanni/toys/beam_8.S: 544 96
+:raymanni/toys/beam_8.S: 528 112
+:raymanni/toys/beam_8.S: 544 96
+:raymanni/toys/beam_8.S: 528 112
+:raymanni/toys/beam_8.S: 560 112
+:raymanni/toys/beam_8.S: 544 128
+:raymanni/toys/beam_8.S: 560 48
+:raymanni/toys/beam_8.S: 544 64
+:raymanni/toys/beam_8.S: 576 64
+:raymanni/toys/beam_8.S: 560 80
+:raymanni/toys/beam_8.S: 576 64
+:raymanni/toys/beam_8.S: 560 80
+:raymanni/toys/beam_8.S: 592 80
+:raymanni/toys/beam_8.S: 576 96
+:raymanni/toys/beam_8.S: 496 368
+:raymanni/toys/beam_8.S: 496 240
+:raymanni/toys/beam_8.S: 496 240
+:raymanni/toys/beam_8.S: 512 256
+:raymanni/toys/beam_8.S: 496 272
+:raymanni/toys/beam_8.S: 496 304
+:raymanni/toys/beam_8.S: 512 320
+:raymanni/toys/beam_8.S: 496 336
+:raymanni/toys/beam_8.S: 512 320
+:raymanni/toys/beam_8.S: 496 336
+:raymanni/toys/beam_8.S: 528 336
+:raymanni/toys/beam_8.S: 512 352
+:raymanni/toys/beam_8.S: 528 272
+:raymanni/toys/beam_8.S: 512 288
+:raymanni/toys/beam_8.S: 544 288
+:raymanni/toys/beam_8.S: 528 304
+:raymanni/toys/beam_8.S: 544 288
+:raymanni/toys/beam_8.S: 528 304
+:raymanni/toys/beam_8.S: 560 304
+:raymanni/toys/beam_8.S: 544 320
+:raymanni/toys/beam_8.S: 512 192
+:raymanni/toys/beam_8.S: 496 208
+:raymanni/toys/beam_8.S: 528 208
+:raymanni/toys/beam_8.S: 512 224
+:raymanni/toys/beam_8.S: 528 208
+:raymanni/toys/beam_8.S: 512 224
+:raymanni/toys/beam_8.S: 544 224
+:raymanni/toys/beam_8.S: 528 240
+:raymanni/toys/beam_8.S: 544 160
+:raymanni/toys/beam_8.S: 528 176
+:raymanni/toys/beam_8.S: 560 176
+:raymanni/toys/beam_8.S: 544 192
+:raymanni/toys/beam_8.S: 560 176
+:raymanni/toys/beam_8.S: 544 192
+:raymanni/toys/beam_8.S: 576 192
+:raymanni/toys/beam_8.S: 560 208
+:raymanni/toys/beam_8.S: 560 240
+:raymanni/toys/beam_8.S: 544 256
+:raymanni/toys/beam_8.S: 576 256
+:raymanni/toys/beam_8.S: 560 272
+:raymanni/toys/beam_8.S: 576 256
+:raymanni/toys/beam_8.S: 560 272
+:raymanni/toys/beam_8.S: 592 272
+:raymanni/toys/beam_8.S: 576 288
+:raymanni/toys/beam_8.S: 592 208
+:raymanni/toys/beam_8.S: 576 224
+:raymanni/toys/beam_8.S: 608 224
+:raymanni/toys/beam_8.S: 592 240
+:raymanni/toys/beam_8.S: 608 224
+:raymanni/toys/beam_8.S: 592 240
+:raymanni/toys/beam_8.S: 624 240
+:raymanni/toys/beam_8.S: 608 256
+:raymanni/toys/beam_8.S: 576 128
+:raymanni/toys/beam_8.S: 560 144
+:raymanni/toys/beam_8.S: 592 144
+:raymanni/toys/beam_8.S: 576 160
+:raymanni/toys/beam_8.S: 592 144
+:raymanni/toys/beam_8.S: 576 160
+:raymanni/toys/beam_8.S: 608 160
+:raymanni/toys/beam_8.S: 592 176
+:raymanni/toys/beam_8.S: 608 96
+:raymanni/toys/beam_8.S: 592 112
+:raymanni/toys/beam_8.S: 624 112
+:raymanni/toys/beam_8.S: 608 128
+:raymanni/toys/beam_8.S: 624 112
+:raymanni/toys/beam_8.S: 608 128
+:raymanni/toys/beam_8.S: 640 128
+:raymanni/toys/beam_8.S: 624 144
+:raymanni/toys/beam_8.S: 624 176
+:raymanni/toys/beam_8.S: 608 192
+:raymanni/toys/beam_8.S: 640 192
+:raymanni/toys/beam_8.S: 624 208
+:raymanni/toys/beam_8.S: 640 192
+:raymanni/toys/beam_8.S: 624 208
+:raymanni/toys/beam_8.S: 656 208
+:raymanni/toys/beam_8.S: 640 224
+:raymanni/toys/beam_8.S: 656 144
+:raymanni/toys/beam_8.S: 640 160
+:raymanni/toys/beam_8.S: 672 160
+:raymanni/toys/beam_8.S: 656 176
+:raymanni/toys/beam_8.S: 672 160
+:raymanni/toys/beam_8.S: 656 176
+:raymanni/toys/beam_8.S: 688 176
+:raymanni/toys/beam_8.S: 672 192
+:raymanni/toys/beam_8.S: 560 336
+:raymanni/toys/beam_8.S: 592 336
+:raymanni/toys/beam_8.S: 576 352
+:raymanni/toys/beam_8.S: 592 336
+:raymanni/toys/beam_8.S: 576 352
+:raymanni/toys/beam_8.S: 608 352
+:raymanni/toys/beam_8.S: 592 368
+:raymanni/toys/beam_8.S: 624 336
+:raymanni/toys/beam_8.S: 624 368
+:raymanni/toys/beam_8.S: 608 384
+:raymanni/toys/beam_8.S: 640 384
+:raymanni/toys/beam_8.S: 624 400
+:raymanni/toys/beam_8.S: 640 384
+:raymanni/toys/beam_8.S: 624 400
+:raymanni/toys/beam_8.S: 656 400
+:raymanni/toys/beam_8.S: 640 416
+:raymanni/toys/beam_8.S: 656 336
+:raymanni/toys/beam_8.S: 640 352
+:raymanni/toys/beam_8.S: 672 352
+:raymanni/toys/beam_8.S: 656 368
+:raymanni/toys/beam_8.S: 672 352
+:raymanni/toys/beam_8.S: 656 368
+:raymanni/toys/beam_8.S: 688 368
+:raymanni/toys/beam_8.S: 672 384
+:raymanni/toys/beam_8.S: 688 336
+:raymanni/toys/beam_8.S: 688 336
+:raymanni/toys/beam_8.S: 720 336
+:raymanni/toys/beam_8.S: 704 352
+:raymanni/toys/beam_8.S: 576 320
+:raymanni/toys/beam_8.S: 544 352
+:raymanni/toys/beam_8.S: 528 368
+:raymanni/toys/beam_8.S: 592 304
+:raymanni/toys/beam_8.S: 512 384
+:raymanni/toys/beam_8.S: 496 400
+:raymanni/toys/beam_8.S: 528 400
+:raymanni/toys/beam_8.S: 512 416
+:raymanni/toys/beam_8.S: 528 400
+:raymanni/toys/beam_8.S: 512 416
+:raymanni/toys/beam_8.S: 544 416
+:raymanni/toys/beam_8.S: 560 368
+:raymanni/toys/beam_8.S: 544 384
+:raymanni/toys/beam_8.S: 544 384
+:raymanni/toys/beam_8.S: 576 384
+:raymanni/toys/beam_8.S: 560 400
+:raymanni/toys/beam_8.S: 576 416
+:raymanni/toys/beam_8.S: 576 416
+:raymanni/toys/beam_8.S: 592 400
+:raymanni/toys/beam_8.S: 608 416
+:raymanni/toys/beam_8.S: 672 224
+:raymanni/toys/beam_8.S: 672 288
+:raymanni/toys/beam_8.S: 672 288
+:raymanni/toys/beam_8.S: 688 304
+:raymanni/toys/beam_8.S: 672 320
+:raymanni/toys/beam_8.S: 688 240
+:raymanni/toys/beam_8.S: 672 256
+:raymanni/toys/beam_8.S: 704 256
+:raymanni/toys/beam_8.S: 688 272
+:raymanni/toys/beam_8.S: 704 256
+:raymanni/toys/beam_8.S: 688 272
+:raymanni/toys/beam_8.S: 720 272
+:raymanni/toys/beam_8.S: 704 288
+:raymanni/toys/beam_8.S: 720 304
+:raymanni/toys/beam_8.S: 704 320
+:raymanni/toys/beam_8.S: 720 368
+:raymanni/toys/beam_8.S: 704 384
+:raymanni/toys/beam_8.S: 704 384
+:raymanni/toys/beam_8.S: 720 400
+:raymanni/toys/beam_8.S: 704 416
+:raymanni/toys/beam_8.S: 720 240
+:raymanni/toys/beam_8.S: 688 208
+:raymanni/toys/beam_8.S: 704 224
+:raymanni/toys/beam_8.S: 672 416
+:raymanni/toys/beam_8.S: 688 400
+:raymanni/toys/beam_8.S: 720 208
+:raymanni/toys/beam_8.S: 656 240
+:raymanni/toys/beam_8.S: 656 272
+:raymanni/toys/beam_8.S: 640 256
+:raymanni/toys/beam_8.S: 624 272
+:raymanni/toys/beam_8.S: 640 288
+:raymanni/toys/beam_8.S: 656 304
+:raymanni/toys/beam_8.S: 608 288
+:raymanni/toys/beam_8.S: 624 304
+:raymanni/toys/beam_8.S: 640 320
+:raymanni/toys/beam_8.S: 608 320
+:raymanni/toys/beam_8.S: 704 192
+:raymanni/toys/beam_8.S: 656 16
+:raymanni/toys/beam_8.S: 672 32
+:raymanni/toys/beam_8.S: 672 32
+:raymanni/toys/beam_8.S: 640 96
+:raymanni/toys/beam_8.S: 640 32
+:raymanni/toys/beam_8.S: 656 48
+:raymanni/toys/beam_8.S: 640 64
+:raymanni/toys/beam_8.S: 656 48
+:raymanni/toys/beam_8.S: 640 64
+:raymanni/toys/beam_8.S: 672 64
+:raymanni/toys/beam_8.S: 656 80
+:raymanni/toys/beam_8.S: 656 112
+:raymanni/toys/beam_8.S: 672 96
+:raymanni/toys/beam_8.S: 720 16
+:raymanni/toys/beam_8.S: 720 16
+:raymanni/toys/beam_8.S: 688 80
+:raymanni/toys/beam_8.S: 688 16
+:raymanni/toys/beam_8.S: 704 32
+:raymanni/toys/beam_8.S: 688 48
+:raymanni/toys/beam_8.S: 704 32
+:raymanni/toys/beam_8.S: 688 48
+:raymanni/toys/beam_8.S: 720 48
+:raymanni/toys/beam_8.S: 704 64
+:raymanni/toys/beam_8.S: 704 96
+:raymanni/toys/beam_8.S: 688 112
+:raymanni/toys/beam_8.S: 720 112
+:raymanni/toys/beam_8.S: 720 112
+:raymanni/toys/beam_8.S: 720 80
+:raymanni/toys/beam_8.S: 624 80
+:raymanni/toys/beam_8.S: 624 16
+:raymanni/toys/beam_8.S: 624 48
+:raymanni/toys/beam_8.S: 624 48
+:raymanni/toys/beam_8.S: 640 0
+:raymanni/toys/beam_8.S: 704 0
+:raymanni/toys/beam_8.S: 704 0
+:raymanni/toys/beam_8.S: 672 0
+:raymanni/toys/beam_8.S: 544 0
+:raymanni/toys/beam_8.S: 672 128
+:raymanni/toys/beam_8.S: 688 144
+:raymanni/toys/beam_8.S: 704 160
+:raymanni/toys/beam_8.S: 720 176
+:raymanni/toys/beam_8.S: 704 128
+:raymanni/toys/beam_8.S: 720 144
+:raymanni/toys/beam_8.S: 560 16
+:raymanni/toys/beam_8.S: 576 32
+:raymanni/toys/beam_8.S: 592 48
+:raymanni/toys/beam_8.S: 608 64
+:raymanni/toys/beam_8.S: 576 0
+:raymanni/toys/beam_8.S: 592 16
+:raymanni/toys/beam_8.S: 608 32
+:raymanni/toys/beam_8.S: 608 0
+:raymanni/toys/beam_8.S: 736 352
+:raymanni/toys/beam_8.S: 736 256
+:raymanni/toys/beam_8.S: 736 256
+:raymanni/toys/beam_8.S: 736 288
+:raymanni/toys/beam_8.S: 736 320
+:raymanni/toys/beam_8.S: 736 384
+:raymanni/toys/beam_8.S: 736 384
+:raymanni/toys/beam_8.S: 736 416
+:raymanni/toys/beam_8.S: 736 224
+:raymanni/toys/beam_8.S: 736 192
+:raymanni/toys/beam_8.S: 736 32
+:raymanni/toys/beam_8.S: 736 32
+:raymanni/toys/beam_8.S: 736 64
+:raymanni/toys/beam_8.S: 736 96
+:raymanni/toys/beam_8.S: 736 0
+:raymanni/toys/beam_8.S: 736 0
+:raymanni/toys/beam_8.S: 736 160
+:raymanni/toys/beam_8.S: 736 128
+:raymanni/toys/beam_8.S: 752 208
+:raymanni/toys/beam_8.S: 752 144
+:raymanni/toys/beam_8.S: 768 160
+:raymanni/toys/beam_8.S: 752 176
+:raymanni/toys/beam_8.S: 768 160
+:raymanni/toys/beam_8.S: 752 176
+:raymanni/toys/beam_8.S: 784 176
+:raymanni/toys/beam_8.S: 768 192
+:raymanni/toys/beam_8.S: 752 400
+:raymanni/toys/beam_8.S: 752 336
+:raymanni/toys/beam_8.S: 768 352
+:raymanni/toys/beam_8.S: 752 368
+:raymanni/toys/beam_8.S: 768 352
+:raymanni/toys/beam_8.S: 752 368
+:raymanni/toys/beam_8.S: 784 368
+:raymanni/toys/beam_8.S: 768 384
+:raymanni/toys/beam_8.S: 784 336
+:raymanni/toys/beam_8.S: 784 336
+:raymanni/toys/beam_8.S: 816 336
+:raymanni/toys/beam_8.S: 800 352
+:raymanni/toys/beam_8.S: 768 224
+:raymanni/toys/beam_8.S: 768 288
+:raymanni/toys/beam_8.S: 768 288
+:raymanni/toys/beam_8.S: 784 304
+:raymanni/toys/beam_8.S: 768 320
+:raymanni/toys/beam_8.S: 784 240
+:raymanni/toys/beam_8.S: 768 256
+:raymanni/toys/beam_8.S: 800 256
+:raymanni/toys/beam_8.S: 784 272
+:raymanni/toys/beam_8.S: 800 256
+:raymanni/toys/beam_8.S: 784 272
+:raymanni/toys/beam_8.S: 816 272
+:raymanni/toys/beam_8.S: 800 288
+:raymanni/toys/beam_8.S: 816 304
+:raymanni/toys/beam_8.S: 800 320
+:raymanni/toys/beam_8.S: 816 368
+:raymanni/toys/beam_8.S: 800 384
+:raymanni/toys/beam_8.S: 800 384
+:raymanni/toys/beam_8.S: 816 400
+:raymanni/toys/beam_8.S: 800 416
+:raymanni/toys/beam_8.S: 816 240
+:raymanni/toys/beam_8.S: 784 208
+:raymanni/toys/beam_8.S: 800 224
+:raymanni/toys/beam_8.S: 768 416
+:raymanni/toys/beam_8.S: 784 400
+:raymanni/toys/beam_8.S: 816 208
+:raymanni/toys/beam_8.S: 752 240
+:raymanni/toys/beam_8.S: 752 272
+:raymanni/toys/beam_8.S: 752 304
+:raymanni/toys/beam_8.S: 800 192
+:raymanni/toys/beam_8.S: 752 16
+:raymanni/toys/beam_8.S: 768 32
+:raymanni/toys/beam_8.S: 768 32
+:raymanni/toys/beam_8.S: 752 48
+:raymanni/toys/beam_8.S: 752 48
+:raymanni/toys/beam_8.S: 768 64
+:raymanni/toys/beam_8.S: 752 80
+:raymanni/toys/beam_8.S: 752 112
+:raymanni/toys/beam_8.S: 768 96
+:raymanni/toys/beam_8.S: 816 16
+:raymanni/toys/beam_8.S: 816 16
+:raymanni/toys/beam_8.S: 784 80
+:raymanni/toys/beam_8.S: 784 16
+:raymanni/toys/beam_8.S: 800 32
+:raymanni/toys/beam_8.S: 784 48
+:raymanni/toys/beam_8.S: 800 32
+:raymanni/toys/beam_8.S: 784 48
+:raymanni/toys/beam_8.S: 816 48
+:raymanni/toys/beam_8.S: 800 64
+:raymanni/toys/beam_8.S: 800 96
+:raymanni/toys/beam_8.S: 784 112
+:raymanni/toys/beam_8.S: 816 112
+:raymanni/toys/beam_8.S: 816 112
+:raymanni/toys/beam_8.S: 816 80
+:raymanni/toys/beam_8.S: 800 0
+:raymanni/toys/beam_8.S: 800 0
+:raymanni/toys/beam_8.S: 768 0
+:raymanni/toys/beam_8.S: 768 128
+:raymanni/toys/beam_8.S: 784 144
+:raymanni/toys/beam_8.S: 800 160
+:raymanni/toys/beam_8.S: 816 176
+:raymanni/toys/beam_8.S: 800 128
+:raymanni/toys/beam_8.S: 816 144
+:raymanni/toys/beam_8.S: 832 352
+:raymanni/toys/beam_8.S: 832 256
+:raymanni/toys/beam_8.S: 832 256
+:raymanni/toys/beam_8.S: 832 288
+:raymanni/toys/beam_8.S: 832 320
+:raymanni/toys/beam_8.S: 832 384
+:raymanni/toys/beam_8.S: 832 384
+:raymanni/toys/beam_8.S: 832 416
+:raymanni/toys/beam_8.S: 832 224
+:raymanni/toys/beam_8.S: 832 192
+:raymanni/toys/beam_8.S: 832 32
+:raymanni/toys/beam_8.S: 832 32
+:raymanni/toys/beam_8.S: 832 64
+:raymanni/toys/beam_8.S: 832 96
+:raymanni/toys/beam_8.S: 832 0
+:raymanni/toys/beam_8.S: 832 0
+:raymanni/toys/beam_8.S: 832 160
+:raymanni/toys/beam_8.S: 832 128
+:raymanni/toys/beam_8.S: 848 176
+:raymanni/toys/beam_8.S: 848 368
+:raymanni/toys/beam_8.S: 848 336
+:raymanni/toys/beam_8.S: 848 336
+:raymanni/toys/beam_8.S: 880 336
+:raymanni/toys/beam_8.S: 864 352
+:raymanni/toys/beam_8.S: 848 304
+:raymanni/toys/beam_8.S: 848 240
+:raymanni/toys/beam_8.S: 864 256
+:raymanni/toys/beam_8.S: 848 272
+:raymanni/toys/beam_8.S: 864 256
+:raymanni/toys/beam_8.S: 848 272
+:raymanni/toys/beam_8.S: 880 272
+:raymanni/toys/beam_8.S: 864 288
+:raymanni/toys/beam_8.S: 880 304
+:raymanni/toys/beam_8.S: 864 320
+:raymanni/toys/beam_8.S: 880 368
+:raymanni/toys/beam_8.S: 864 384
+:raymanni/toys/beam_8.S: 864 384
+:raymanni/toys/beam_8.S: 880 400
+:raymanni/toys/beam_8.S: 864 416
+:raymanni/toys/beam_8.S: 880 240
+:raymanni/toys/beam_8.S: 848 208
+:raymanni/toys/beam_8.S: 864 224
+:raymanni/toys/beam_8.S: 848 400
+:raymanni/toys/beam_8.S: 880 208
+:raymanni/toys/beam_8.S: 864 192
+:raymanni/toys/beam_8.S: 880 16
+:raymanni/toys/beam_8.S: 880 16
+:raymanni/toys/beam_8.S: 848 80
+:raymanni/toys/beam_8.S: 848 16
+:raymanni/toys/beam_8.S: 864 32
+:raymanni/toys/beam_8.S: 848 48
+:raymanni/toys/beam_8.S: 864 32
+:raymanni/toys/beam_8.S: 848 48
+:raymanni/toys/beam_8.S: 880 48
+:raymanni/toys/beam_8.S: 864 64
+:raymanni/toys/beam_8.S: 864 96
+:raymanni/toys/beam_8.S: 848 112
+:raymanni/toys/beam_8.S: 880 112
+:raymanni/toys/beam_8.S: 880 112
+:raymanni/toys/beam_8.S: 880 80
+:raymanni/toys/beam_8.S: 864 0
+:raymanni/toys/beam_8.S: 864 0
+:raymanni/toys/beam_8.S: 848 144
+:raymanni/toys/beam_8.S: 864 160
+:raymanni/toys/beam_8.S: 880 176
+:raymanni/toys/beam_8.S: 864 128
+:raymanni/toys/beam_8.S: 880 144
+:raymanni/toys/beam_8.S: 896 352
+:raymanni/toys/beam_8.S: 896 256
+:raymanni/toys/beam_8.S: 896 256
+:raymanni/toys/beam_8.S: 896 288
+:raymanni/toys/beam_8.S: 896 320
+:raymanni/toys/beam_8.S: 896 384
+:raymanni/toys/beam_8.S: 896 384
+:raymanni/toys/beam_8.S: 896 416
+:raymanni/toys/beam_8.S: 896 224
+:raymanni/toys/beam_8.S: 896 192
+:raymanni/toys/beam_8.S: 896 32
+:raymanni/toys/beam_8.S: 896 32
+:raymanni/toys/beam_8.S: 896 64
+:raymanni/toys/beam_8.S: 896 96
+:raymanni/toys/beam_8.S: 896 0
+:raymanni/toys/beam_8.S: 896 0
+:raymanni/toys/beam_8.S: 896 160
+:raymanni/toys/beam_8.S: 896 128
+:raymanni/toys/beam_8.S: 912 176
+:raymanni/toys/beam_8.S: 912 368
+:raymanni/toys/beam_8.S: 912 336
+:raymanni/toys/beam_8.S: 912 336
+:raymanni/toys/beam_8.S: 944 336
+:raymanni/toys/beam_8.S: 928 352
+:raymanni/toys/beam_8.S: 912 304
+:raymanni/toys/beam_8.S: 912 240
+:raymanni/toys/beam_8.S: 928 256
+:raymanni/toys/beam_8.S: 912 272
+:raymanni/toys/beam_8.S: 928 256
+:raymanni/toys/beam_8.S: 912 272
+:raymanni/toys/beam_8.S: 944 272
+:raymanni/toys/beam_8.S: 928 288
+:raymanni/toys/beam_8.S: 944 304
+:raymanni/toys/beam_8.S: 928 320
+:raymanni/toys/beam_8.S: 944 368
+:raymanni/toys/beam_8.S: 928 384
+:raymanni/toys/beam_8.S: 928 384
+:raymanni/toys/beam_8.S: 944 400
+:raymanni/toys/beam_8.S: 928 416
+:raymanni/toys/beam_8.S: 944 240
+:raymanni/toys/beam_8.S: 912 208
+:raymanni/toys/beam_8.S: 928 224
+:raymanni/toys/beam_8.S: 912 400
+:raymanni/toys/beam_8.S: 944 208
+:raymanni/toys/beam_8.S: 928 192
+:raymanni/toys/beam_8.S: 944 16
+:raymanni/toys/beam_8.S: 944 16
+:raymanni/toys/beam_8.S: 912 80
+:raymanni/toys/beam_8.S: 912 16
+:raymanni/toys/beam_8.S: 928 32
+:raymanni/toys/beam_8.S: 912 48
+:raymanni/toys/beam_8.S: 928 32
+:raymanni/toys/beam_8.S: 912 48
+:raymanni/toys/beam_8.S: 944 48
+:raymanni/toys/beam_8.S: 928 64
+:raymanni/toys/beam_8.S: 928 96
+:raymanni/toys/beam_8.S: 912 112
+:raymanni/toys/beam_8.S: 944 112
+:raymanni/toys/beam_8.S: 944 112
+:raymanni/toys/beam_8.S: 944 80
+:raymanni/toys/beam_8.S: 928 0
+:raymanni/toys/beam_8.S: 928 0
+:raymanni/toys/beam_8.S: 912 144
+:raymanni/toys/beam_8.S: 928 160
+:raymanni/toys/beam_8.S: 944 176
+:raymanni/toys/beam_8.S: 928 128
+:raymanni/toys/beam_8.S: 944 144
+:raymanni/toys/beam_8.S: 960 352
+:raymanni/toys/beam_8.S: 960 256
+:raymanni/toys/beam_8.S: 960 256
+:raymanni/toys/beam_8.S: 960 288
+:raymanni/toys/beam_8.S: 960 320
+:raymanni/toys/beam_8.S: 960 384
+:raymanni/toys/beam_8.S: 960 384
+:raymanni/toys/beam_8.S: 960 416
+:raymanni/toys/beam_8.S: 960 224
+:raymanni/toys/beam_8.S: 960 192
+:raymanni/toys/beam_8.S: 960 32
+:raymanni/toys/beam_8.S: 960 32
+:raymanni/toys/beam_8.S: 960 64
+:raymanni/toys/beam_8.S: 960 96
+:raymanni/toys/beam_8.S: 960 0
+:raymanni/toys/beam_8.S: 960 0
+:raymanni/toys/beam_8.S: 960 160
+:raymanni/toys/beam_8.S: 960 128
+$END_TILE_GROUP
+:Group-3: 64 121
+$BEGIN_TILE_GROUP 4
+:amanda/forest/stone_01: 32 128
+:amanda/forest/stone_01: 32 32
+:amanda/forest/stone_02: 0 192
+:amanda/forest/stone_00: 32 0 frr
+:amanda/forest/stone_01: 46 128 frr
+:amanda/forest/stone_01: 46 32 frr
+:amanda/forest/stone_02: 78 192 frr
+:amanda/forest/stone_00: 78 0
+$END_TILE_GROUP
+:Group-4: 132 144 d
+:raymanni/gore/steel.S: 96 672
+:raymanni/gore/steel.S: 128 672
+:raymanni/gore/steel.S: 160 672
+:raymanni/gore/steel.S: 192 672
+:raymanni/gore/steel.S: 224 672
+:raymanni/gore/steel.S: 256 672
+:raymanni/gore/steel.S: 808 672
+:raymanni/gore/steel.S: 840 672
+:raymanni/gore/steel.S: 872 672
+:raymanni/gore/steel.S: 904 672
+:raymanni/gore/steel.S: 936 672
+:raymanni/gore/steel.S: 968 672
+:raymanni/gore/steel.S: 616 672
+:raymanni/gore/steel.S: 648 672
+:raymanni/gore/steel.S: 680 672
+:raymanni/gore/steel.S: 712 672
+:raymanni/gore/steel.S: 744 672
+:raymanni/gore/steel.S: 776 672
+:raymanni/gore/steel.S: 416 672
+:raymanni/gore/steel.S: 448 672
+:raymanni/gore/steel.S: 480 672
+:raymanni/gore/steel.S: 480 640
+:raymanni/gore/steel.S: 584 640
+:raymanni/gore/steel.S: 584 672
+:raymanni/gore/steel.S: 288 672
+:raymanni/gore/steel.S: 320 672
+:raymanni/gore/steel.S: 352 672
+:raymanni/gore/steel.S: 384 672
+:raymanni/gore/steel.S: 96 576
+:raymanni/gore/steel.S: 128 576
+:raymanni/gore/steel.S: 160 576
+:raymanni/gore/steel.S: 416 576
+:raymanni/gore/steel.S: 448 576
+:raymanni/gore/steel.S: 288 576
+:raymanni/gore/steel.S: 320 576
+:raymanni/gore/steel.S: 352 576
+:raymanni/gore/steel.S: 384 576
+:raymanni/gore/steel.S: 480 592
+:raymanni/gore/steel.S: 512 569
+:raymanni/gore/steel.S: 552 569
+:raymanni/gore/steel.S: 584 592
+:raymanni/gore/steel.S: 616 576
+:raymanni/gore/steel.S: 648 576
+:raymanni/gore/steel.S: 680 576
+:raymanni/gore/steel.S: 712 576
+:raymanni/gore/steel.S: 872 576
+:raymanni/gore/steel.S: 744 576
+:raymanni/gore/steel.S: 776 576
+:raymanni/gore/steel.S: 840 576
+:raymanni/gore/steel.S: 224 640
+:raymanni/gore/steel.S: 288 608
+:raymanni/gore/steel.S: 352 640
+:raymanni/gore/steel.S: 416 608
+:raymanni/gore/steel.S: 840 640
+:raymanni/gore/steel.S: 648 608
+:raymanni/gore/steel.S: 712 640
+:raymanni/gore/steel.S: 776 608
+:raymanni/gore/steel.S: 192 576
+:raymanni/gore/steel.S: 224 576
+:raymanni/gore/steel.S: 968 576
+:raymanni/gore/steel.S: 936 576
+:raymanni/gore/steel.S: 904 576
+:Group-4: 804 144 d
+:raymanni/gore/steel.S: 532 609
+:matt/winter/07: -4 2 rr
+:matt/winter/07: 12 2 rr
+:matt/winter/07: 28 2 rr
+:matt/winter/07: 44 2 rr
+:matt/winter/07: 60 2 rr
+:matt/winter/07: 76 2 rr
+:matt/winter/07: 92 2 rr
+:matt/winter/07: 108 2 rr
+:matt/winter/07: 124 2 rr
+:matt/winter/07: 140 2 rr
+:matt/winter/07: 156 2 rr
+:matt/winter/07: 172 2 rr
+:matt/winter/07: 188 2 rr
+:matt/winter/07: 204 2 rr
+:matt/winter/07: 220 2 rr
+:matt/winter/07: 236 2 rr
+:matt/winter/07: 252 2 rr
+:matt/winter/07: 268 2 rr
+:matt/winter/07: 284 2 rr
+:matt/winter/07: 300 2 rr
+:matt/winter/07: 316 2 rr
+:matt/winter/07: 332 2 rr
+:matt/winter/07: 348 2 rr
+:matt/winter/07: 364 2 rr
+:matt/winter/07: 380 2 rr
+:matt/winter/07: 396 2 rr
+:matt/winter/07: 412 2 rr
+:matt/winter/07: 428 2 rr
+:matt/winter/07: 444 2 rr
+:matt/winter/07: 460 2 rr
+:matt/winter/07: 476 2 rr
+:matt/winter/07: 492 2 rr
+:matt/winter/07: 508 2 rr
+:matt/winter/07: 524 2 rr
+:matt/winter/07: 540 2 rr
+:matt/winter/07: 556 2 rr
+:matt/winter/07: 572 2 rr
+:matt/winter/07: 588 2 rr
+:matt/winter/07: 604 2 rr
+:matt/winter/07: 620 2 rr
+:matt/winter/07: 636 2 rr
+:matt/winter/07: 652 2 rr
+:matt/winter/07: 668 2 rr
+:matt/winter/07: 684 2 rr
+:matt/winter/07: 700 2 rr
+:matt/winter/07: 716 2 rr
+:matt/winter/07: 732 2 rr
+:matt/winter/07: 748 2 rr
+:matt/winter/07: 764 2 rr
+:matt/winter/07: 780 2 rr
+:matt/winter/07: 796 2 rr
+:matt/winter/07: 812 2 rr
+:matt/winter/07: 828 2 rr
+:matt/winter/07: 844 2 rr
+:matt/winter/07: 860 2 rr
+:matt/winter/07: 876 2 rr
+:matt/winter/07: 892 2 rr
+:matt/winter/07: 908 2 rr
+:matt/winter/07: 924 2 rr
+:matt/winter/07: 940 2 rr
+:matt/winter/07: 956 2 rr
+:matt/winter/07: 972 2 rr
+:matt/winter/07: 988 2 rr
+:matt/winter/07: 1004 2 rr
+:matt/winter/07: 1020 2 rr
+:matt/winter/07: 1036 2 rr
+:matt/winter/07: 1052 2 rr
+:matt/winter/07: 1068 2 rr
+:matt/winter/07: 1084 2 rr
+:Group-4: 132 128 fd
+:Group-4: 804 128 fd

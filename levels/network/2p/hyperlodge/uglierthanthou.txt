@@ -1,0 +1,103 @@
+$BUILT 2024-07-18 12:56:58
+$AUTHOR Hyperlodge
+$ENGLISH Uglier than Thou
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 896
+#SIZE_Y 400
+#BACKGROUND_RED 16
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 48
+
+#SECONDS 60
+#INITIAL 100
+#SPAWN_INTERVAL 50
+
+#EXPLODER2 200
+#BUILDER 200
+#MINER 200
+
+:matt/goldmine/Hatch.H: 0 256
+:matt/goldmine/Hatch.H: 824 256 r
+
+:matt/goldmine/Goal.G: 824 144
+:matt/goldmine/Goal.G: 0 144
+
+:geoo/construction/spring_fast.T: 752 160
+:geoo/construction/spring_fast.T: 624 160
+:geoo/construction/spring_fast.T: 240 160
+:geoo/construction/spring_fast.T: 112 160
+
+:geoo/construction/steam_up.T: 416 336
+:geoo/construction/steam_up.T: 432 336
+:geoo/construction/steam_up.T: 448 336
+:geoo/construction/steam_up.T: 464 336
+:raymanni/lab/launcher_right.T: 64 160
+:raymanni/lab/launcher_right.T: 64 128
+:raymanni/lab/launcher_right.T: 64 64
+:raymanni/lab/launcher_left.T: 792 160
+:raymanni/lab/launcher_left.T: 792 32
+:raymanni/lab/launcher_left.T: 792 128
+:raymanni/lab/launcher_right.T: 64 32
+:raymanni/lab/launcher_left.T: 792 64
+:raymanni/lab/launcher_left.T: 352 96
+:raymanni/lab/launcher_right.T: 512 96
+
+:simon/tapir/064h: 0 192
+:simon/tapir/064h: 0 304
+:simon/tapir/064h: 128 304
+:simon/tapir/064h: 256 304
+:simon/tapir/064h: 128 192
+:simon/tapir/064h: 256 192
+:simon/tapir/032va: 384 240
+:simon/tapir/032v: 384 304
+:simon/tapir/064h: 768 192 frr
+:simon/tapir/064h: 768 304 frr
+:simon/tapir/064h: 640 304 frr
+:simon/tapir/064h: 512 304 frr
+:simon/tapir/064h: 640 192 frr
+:simon/tapir/064h: 512 192 frr
+:simon/tapir/032va: 480 240 frr
+:simon/tapir/032v: 480 304 frr
+:raymanni/toys/beam_13.S: 384 160
+:raymanni/toys/beam_13.S: 384 128
+:raymanni/toys/beam_13.S: 384 224
+:raymanni/toys/beam_13.S: 384 192
+:raymanni/toys/beam_13.S: 504 160
+:raymanni/toys/beam_13.S: 504 128
+:raymanni/toys/beam_13.S: 504 224
+:raymanni/toys/beam_13.S: 504 192
+:raymanni/toys/beam_13.S: 384 96
+:raymanni/toys/beam_13.S: 504 96
+:raymanni/toys/beam_13.S: 472 96 r
+:raymanni/toys/beam_13.S: 392 96 r
+:geoo/construction/fence_rust_64x64: 512 128
+:geoo/construction/fence_rust_64x64: 320 128
+:raymanni/toys/beam_13.S: 32 392 r
+:raymanni/toys/beam_13.S: 64 392 r
+:raymanni/toys/beam_13.S: 0 392 r
+:raymanni/toys/beam_13.S: 128 392 r
+:raymanni/toys/beam_13.S: 160 392 r
+:raymanni/toys/beam_13.S: 96 392 r
+:raymanni/toys/beam_13.S: 224 392 r
+:raymanni/toys/beam_13.S: 256 392 r
+:raymanni/toys/beam_13.S: 192 392 r
+:raymanni/toys/beam_13.S: 320 392 r
+:raymanni/toys/beam_13.S: 352 392 r
+:raymanni/toys/beam_13.S: 288 392 r
+:raymanni/toys/beam_13.S: 416 392 r
+:raymanni/toys/beam_13.S: 448 392 r
+:raymanni/toys/beam_13.S: 384 392 r
+:raymanni/toys/beam_13.S: 512 392 r
+:raymanni/toys/beam_13.S: 544 392 r
+:raymanni/toys/beam_13.S: 480 392 r
+:raymanni/toys/beam_13.S: 608 392 r
+:raymanni/toys/beam_13.S: 640 392 r
+:raymanni/toys/beam_13.S: 576 392 r
+:raymanni/toys/beam_13.S: 704 392 r
+:raymanni/toys/beam_13.S: 736 392 r
+:raymanni/toys/beam_13.S: 672 392 r
+:raymanni/toys/beam_13.S: 768 392 r
+:raymanni/toys/beam_13.S: 832 392 r
+:raymanni/toys/beam_13.S: 864 392 r
+:raymanni/toys/beam_13.S: 800 392 r

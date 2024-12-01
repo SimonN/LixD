@@ -1,0 +1,324 @@
+$BUILT 2024-07-18 12:57:54
+$AUTHOR Hyperlodge
+$ENGLISH Deep Forest
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1280
+#SIZE_Y 400
+
+#SECONDS 60
+#INITIAL 50
+#SPAWN_INTERVAL 20
+
+#CLIMBER 10
+#FLOATER 10
+#EXPLODER2 10
+#BLOCKER 10
+#BUILDER 30
+#PLATFORMER 10
+#BASHER 30
+#MINER 10
+#DIGGER 30
+#JUMPER 10
+#BATTER 10
+
+:matt/earth/Hatch.H: 1232 -16 r
+:matt/earth/Hatch.H: -16 -16
+
+:amanda/forest/exit.G: 256 288
+:amanda/forest/exit.G: 937 288
+
+:raymanni/gore/eater.T: 613 168
+
+:geoo/construction/sawblade_small.F: 512 28
+:geoo/construction/sawblade_small.F: 496 46
+:geoo/construction/sawblade_small.F: 528 10
+:geoo/construction/sawblade_small.F: 548 -6
+:geoo/construction/sawblade_small.F: 574 -18
+:geoo/construction/sawblade_small.F: 508 192
+:geoo/construction/sawblade_small.F: 478 226
+:geoo/construction/sawblade_small.F: 432 112
+:proxima/flame.F: 128 352
+:proxima/flame.F: 88 352
+:geoo/construction/sawblade_small.F: 745 28
+:geoo/construction/sawblade_small.F: 761 46
+:geoo/construction/sawblade_small.F: 729 10
+:geoo/construction/sawblade_small.F: 709 -6
+:geoo/construction/sawblade_small.F: 683 -18
+:geoo/construction/sawblade_small.F: 749 192
+:geoo/construction/sawblade_small.F: 779 226
+:geoo/construction/sawblade_small.F: 825 112
+:proxima/flame.F: 1121 352
+:proxima/flame.F: 1161 352
+:raymanni/gore/bonesaw.F: 856 328
+:raymanni/gore/bonesaw.F: 368 328
+:raymanni/gore/bonesaw.F: 400 296
+:raymanni/gore/bonesaw.F: 824 288
+
+:amanda/forest/leaves_04: 48 32 rr
+:amanda/forest/leaves_02: 128 109 rr
+:amanda/forest/leaves_04: 144 64 f
+:amanda/forest/leaves_02: 48 112 f
+:amanda/forest/leaves_03: 176 144 rr
+:amanda/forest/leaves_04: -16 144 rr
+:amanda/forest/leaves_02: 64 221 rr
+:amanda/forest/leaves_04: 80 176 f
+:amanda/forest/leaves_02: -16 224 f
+:amanda/forest/leaves_03: 112 256 rr
+:amanda/forest/leaves_04: 48 96 rr
+:amanda/forest/leaves_02: 32 61 rr
+:amanda/forest/leaves_04: 48 16 f
+:amanda/forest/leaves_02: -48 64 f
+:amanda/forest/leaves_03: 80 96 rr
+:amanda/forest/leaves_04: 48 -48 rr
+:amanda/forest/leaves_02: 128 29 rr
+:amanda/forest/leaves_04: 144 -16 f
+:amanda/forest/leaves_02: 48 32 f
+:amanda/forest/leaves_03: 176 64 rr
+:amanda/forest/leaves_04: 240 -16 rr
+:amanda/forest/leaves_02: 256 13 rr
+:amanda/forest/leaves_04: 272 -32 f
+:amanda/forest/leaves_02: 176 -48 f
+:amanda/forest/leaves_03: 304 48 rr
+:amanda/forest/leaves_04: 336 -48 rr
+:amanda/forest/leaves_02: 416 29 rr
+:amanda/forest/leaves_04: 432 -16 f
+:amanda/forest/leaves_02: 336 32 f
+:amanda/forest/leaves_03: 464 64 rr
+:amanda/forest/leaves_04: 432 -64 rr
+:amanda/forest/leaves_02: 512 13 rr
+:amanda/forest/leaves_04: 528 -32 f
+:amanda/forest/leaves_02: 432 16 f
+:amanda/forest/leaves_03: 560 48 rr
+:amanda/forest/leaves_04: 416 112 rr
+:amanda/forest/leaves_02: 336 141 rr
+:amanda/forest/leaves_04: 352 96 f
+:amanda/forest/leaves_02: 256 144 f
+:amanda/forest/leaves_03: 384 176 rr
+:amanda/forest/leaves_04: 32 80 rr
+:amanda/forest/leaves_02: 32 29 rr
+:amanda/forest/leaves_04: 48 -16 f
+:amanda/forest/leaves_02: -48 32 f
+:amanda/forest/leaves_03: 80 64 rr
+:amanda/forest/leaves_04: 352 192 rr
+:amanda/forest/leaves_02: 512 173 rr
+:amanda/forest/leaves_04: 464 128 f
+:amanda/forest/leaves_02: 432 176 f
+:amanda/forest/leaves_03: 560 208 rr
+:amanda/forest/leaves_04: 208 224 rr
+:amanda/forest/leaves_02: 288 301 rr
+:amanda/forest/leaves_04: 304 256 f
+:amanda/forest/leaves_02: 176 304 f
+:amanda/forest/leaves_03: 336 336 rr
+:amanda/forest/leaves_04: 16 40 rrd
+:amanda/forest/leaves_02: 208 173 rr
+:amanda/forest/leaves_04: 224 128 f
+:amanda/forest/leaves_02: 128 176 f
+:amanda/forest/leaves_03: 256 208 rr
+:amanda/forest/leaves_04: 432 224 rr
+:amanda/forest/leaves_02: 512 301 rr
+:amanda/forest/leaves_04: 528 256 f
+:amanda/forest/leaves_02: 432 304 f
+:amanda/forest/leaves_03: 560 336 rr
+:amanda/forest/leaves_04: 240 80 rr
+:amanda/forest/leaves_04: -32 288 rr
+:amanda/forest/leaves_03: 63 304 f
+:amanda/forest/leaves_03: 128 320 f
+:amanda/forest/leaves_02: 336 144 f
+:amanda/forest/bark_01: 48 112 rd
+:amanda/forest/bark_01: 80 16 rd
+:amanda/forest/bark_01: 176 16 rd
+:amanda/forest/bark_01: 272 16 rd
+:amanda/forest/bark_01: 368 16 rd
+:amanda/forest/bark_01: 464 16 rd
+:amanda/forest/bark_01: 560 16 rd
+:amanda/forest/bark_03: 288 32 d
+:amanda/forest/bark_03: 292 210 frrd
+:amanda/forest/bark_03: 288 112 d
+:amanda/forest/leaves_02: 256 224 f
+:amanda/forest/leaves_02: 336 -16 rr
+:amanda/forest/leaves_02: 416 96 rr
+:amanda/forest/leaves_04: 528 -32 f
+:amanda/forest/leaves_04: 416 -16 f
+:amanda/forest/bark_06: 328 320 rd
+:amanda/forest/bark_06: 384 256 rd
+:amanda/forest/bark_06: 448 192 rd
+:amanda/forest/bark_06: 448 128 frd
+:amanda/forest/bark_06: 448 64 frrd
+:amanda/forest/bark_06: 516 -2 frrd
+:amanda/forest/leaves_02: 48 48 fd
+:raymanni/toys/beam_13.S: 336 32
+:raymanni/toys/beam_13.S: 336 64
+:raymanni/toys/beam_13.S: 336 96
+:raymanni/toys/beam_13.S: 336 128
+:raymanni/toys/beam_13.S: 336 160
+:raymanni/toys/beam_13.S: 336 192
+:raymanni/toys/beam_13.S: 336 224
+:raymanni/toys/beam_13.S: 336 256
+:raymanni/toys/beam_13.S: 336 288
+:raymanni/toys/beam_13.S: 336 320
+:raymanni/toys/beam_13.S: 288 320
+:raymanni/toys/beam_13.S: 288 288
+:raymanni/toys/beam_13.S: 288 256
+:raymanni/toys/beam_13.S: 288 224
+:raymanni/toys/beam_13.S: 288 192
+:raymanni/toys/beam_13.S: 288 160
+:raymanni/toys/beam_13.S: 288 128
+:raymanni/toys/beam_13.S: 288 96
+:raymanni/toys/beam_13.S: 288 64
+:raymanni/toys/beam_13.S: 288 32
+:amanda/forest/moss_00: 592 166 r
+:amanda/forest/moss_00: 338 30 r
+:amanda/forest/moss_00: 338 100 r
+:amanda/forest/moss_00: 338 160 r
+:amanda/forest/moss_00: 340 232 r
+:amanda/forest/moss_00: 272 252 fr
+:amanda/forest/moss_00: 270 188 rrr
+:amanda/forest/moss_00: 272 128 rrr
+:amanda/forest/moss_00: 272 72 rrr
+:amanda/forest/moss_00: 272 32 fr
+:amanda/forest/moss_00: 338 276 r
+:raymanni/toys/beam_13.S: 288 352
+:amanda/forest/leaves_02: 41 146 frd
+:amanda/forest/leaves_02: 96 144 frd
+:amanda/forest/leaves_02: 0 144 frd
+:amanda/forest/leaves_02: 80 224 frd
+:amanda/forest/leaves_02: 64 304 frd
+:amanda/forest/leaves_04: 1091 32 f
+:amanda/forest/leaves_02: 1033 109 f
+:amanda/forest/leaves_04: 995 64 rr
+:amanda/forest/leaves_02: 1113 112 rr
+:amanda/forest/leaves_03: 985 144 f
+:amanda/forest/leaves_04: 1155 144 f
+:amanda/forest/leaves_02: 1097 221 f
+:amanda/forest/leaves_04: 1059 176 rr
+:amanda/forest/leaves_02: 1177 224 rr
+:amanda/forest/leaves_03: 1049 256 f
+:amanda/forest/leaves_04: 1136 64 f
+:amanda/forest/leaves_02: 1129 61 f
+:amanda/forest/leaves_04: 1091 16 rr
+:amanda/forest/leaves_02: 1209 64 rr
+:amanda/forest/leaves_03: 1081 96 f
+:amanda/forest/leaves_04: 1091 -48 f
+:amanda/forest/leaves_02: 1033 29 f
+:amanda/forest/leaves_04: 995 -16 rr
+:amanda/forest/leaves_02: 1113 32 rr
+:amanda/forest/leaves_03: 985 64 f
+:amanda/forest/leaves_04: 963 -64 f
+:amanda/forest/leaves_02: 905 13 f
+:amanda/forest/leaves_04: 867 -32 rr
+:amanda/forest/leaves_02: 985 14 rr
+:amanda/forest/leaves_03: 857 48 f
+:amanda/forest/leaves_04: 803 -48 f
+:amanda/forest/leaves_02: 745 29 f
+:amanda/forest/leaves_04: 707 -16 rr
+:amanda/forest/leaves_02: 825 32 rr
+:amanda/forest/leaves_03: 697 64 f
+:amanda/forest/leaves_04: 707 -64 f
+:amanda/forest/leaves_02: 649 13 f
+:amanda/forest/leaves_04: 611 -32 rr
+:amanda/forest/leaves_02: 729 16 rr
+:amanda/forest/leaves_03: 601 48 f
+:amanda/forest/leaves_04: 723 112 f
+:amanda/forest/leaves_02: 825 141 f
+:amanda/forest/leaves_04: 787 96 rr
+:amanda/forest/leaves_02: 905 144 rr
+:amanda/forest/leaves_03: 777 176 f
+:amanda/forest/leaves_04: 1088 96 f
+:amanda/forest/leaves_02: 1129 29 f
+:amanda/forest/leaves_04: 1091 -16 rr
+:amanda/forest/leaves_02: 1209 32 rr
+:amanda/forest/leaves_03: 1081 64 f
+:amanda/forest/leaves_04: 787 192 f
+:amanda/forest/leaves_02: 649 173 f
+:amanda/forest/leaves_04: 675 128 rr
+:amanda/forest/leaves_02: 729 176 rr
+:amanda/forest/leaves_03: 608 32 f
+:amanda/forest/leaves_04: 931 224 f
+:amanda/forest/leaves_02: 873 301 f
+:amanda/forest/leaves_04: 835 256 rr
+:amanda/forest/leaves_02: 985 304 rr
+:amanda/forest/leaves_03: 825 336 f
+:amanda/forest/leaves_04: 1123 40 fd
+:amanda/forest/leaves_02: 953 173 f
+:amanda/forest/leaves_04: 915 128 rr
+:amanda/forest/leaves_02: 1033 176 rr
+:amanda/forest/leaves_03: 905 208 f
+:amanda/forest/leaves_04: 707 224 f
+:amanda/forest/leaves_02: 649 301 f
+:amanda/forest/leaves_04: 611 256 rr
+:amanda/forest/leaves_02: 729 304 rr
+:amanda/forest/leaves_03: 601 336 f
+:amanda/forest/leaves_04: 899 80 f
+:amanda/forest/leaves_04: 1171 288 f
+:amanda/forest/leaves_03: 1098 304 rr
+:amanda/forest/leaves_03: 1033 320 rr
+:amanda/forest/leaves_02: 825 144 rr
+:amanda/forest/bark_01: 1152 144 frd
+:amanda/forest/bark_01: 1113 16 frd
+:amanda/forest/bark_01: 1017 16 frd
+:amanda/forest/bark_01: 921 16 frd
+:amanda/forest/bark_01: 825 16 frd
+:amanda/forest/bark_01: 729 16 frd
+:amanda/forest/bark_01: 633 16 frd
+:amanda/forest/bark_03: 953 32 frrd
+:amanda/forest/bark_03: 949 210 d
+:amanda/forest/bark_03: 953 112 frrd
+:amanda/forest/leaves_02: 905 224 rr
+:amanda/forest/leaves_02: 825 -16 f
+:amanda/forest/leaves_02: 745 96 f
+:amanda/forest/leaves_04: 611 -32 rr
+:amanda/forest/leaves_04: 723 -16 rr
+:amanda/forest/bark_06: 881 320 frd
+:amanda/forest/bark_06: 825 256 frd
+:amanda/forest/bark_06: 761 192 frd
+:amanda/forest/bark_06: 761 128 rd
+:amanda/forest/bark_06: 761 64 d
+:amanda/forest/bark_06: 693 -2 d
+:amanda/forest/leaves_02: 1113 48 rrd
+:raymanni/toys/beam_13.S: 945 32 frr
+:raymanni/toys/beam_13.S: 945 64 frr
+:raymanni/toys/beam_13.S: 945 96 frr
+:raymanni/toys/beam_13.S: 945 128 frr
+:raymanni/toys/beam_13.S: 945 160 frr
+:raymanni/toys/beam_13.S: 945 192 frr
+:raymanni/toys/beam_13.S: 945 224 frr
+:raymanni/toys/beam_13.S: 945 256 frr
+:raymanni/toys/beam_13.S: 945 288 frr
+:raymanni/toys/beam_13.S: 945 320 frr
+:raymanni/toys/beam_13.S: 993 320 frr
+:raymanni/toys/beam_13.S: 993 288 frr
+:raymanni/toys/beam_13.S: 993 256 frr
+:raymanni/toys/beam_13.S: 993 224 frr
+:raymanni/toys/beam_13.S: 993 192 frr
+:raymanni/toys/beam_13.S: 993 160 frr
+:raymanni/toys/beam_13.S: 993 128 frr
+:raymanni/toys/beam_13.S: 993 96 frr
+:raymanni/toys/beam_13.S: 993 64 frr
+:raymanni/toys/beam_13.S: 993 32 frr
+:amanda/forest/moss_00: 674 166 fr
+:amanda/forest/moss_00: 928 30 fr
+:amanda/forest/moss_00: 928 100 fr
+:amanda/forest/moss_00: 928 160 fr
+:amanda/forest/moss_00: 926 232 fr
+:amanda/forest/moss_00: 994 252 r
+:amanda/forest/moss_00: 996 188 frrr
+:amanda/forest/moss_00: 994 128 frrr
+:amanda/forest/moss_00: 994 72 frrr
+:amanda/forest/moss_00: 994 32 r
+:amanda/forest/moss_00: 928 276 fr
+:raymanni/toys/beam_13.S: 993 352 frr
+:amanda/forest/leaves_02: 1120 146 rd
+:amanda/forest/leaves_02: 1065 144 rd
+:amanda/forest/leaves_02: 1161 144 rd
+:amanda/forest/leaves_02: 1081 224 rd
+:amanda/forest/leaves_02: 1097 304 rd
+:proxima/tile/spheres/gold: 672 64 d
+:proxima/tile/spheres/gold: 560 64 d
+:geoo/construction/platform.S: 629 233
+:geoo/construction/platform.S: 661 233
+:geoo/construction/platform.S: 597 233
+:geoo/construction/platform.S: 565 233
+:geoo/construction/platform.S: 693 233
+:geoo/abstract/pipes/juncx1: 688 96
+:geoo/abstract/pipes/juncx1: 600 96

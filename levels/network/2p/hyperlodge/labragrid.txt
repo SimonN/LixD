@@ -1,0 +1,56 @@
+$BUILT 2024-07-18 13:01:25
+$AUTHOR Hyperlodge
+$ENGLISH Labragrid
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 640
+#SIZE_Y 192
+#TORUS_X 0
+#TORUS_Y 1
+
+#SECONDS 60
+#INITIAL 70
+#SPAWN_INTERVAL 70
+
+#RUNNER 10
+#BLOCKER -1
+#BUILDER -1
+#MINER -1
+#BATTER -1
+#EXPLODER2 0
+
+:raymanni/lab/hatch.H: 8 80
+:raymanni/lab/hatch.H: 600 80 r
+
+:raymanni/lab/goal.G: 312 64
+:raymanni/lab/goal.G: 264 64
+
+:geoo/construction/fence_64x64.S: 48 64
+:geoo/construction/fence_64x64.S: 96 0
+:raymanni/lab/block_10: 0 128
+:raymanni/lab/block_8: 128 128
+:raymanni/lab/block_9: 64 128
+:geoo/construction/fence_64x64.S: 0 0
+:geoo/construction/fence_64x64.S: 144 64
+:geoo/construction/fence_64x64.S: 192 0
+:raymanni/lab/block_9: 256 128
+:raymanni/lab/block_10: 192 128
+:geoo/construction/fence_32x32.S: 240 64
+:geoo/construction/fence_32x32.S: 240 96
+:geoo/construction/fence_64x64.S: 528 64 frr
+:geoo/construction/fence_64x64.S: 480 0 frr
+:raymanni/lab/block_10: 320 128
+:raymanni/lab/block_8: 448 128
+:raymanni/lab/block_9: 384 128
+:geoo/construction/fence_64x64.S: 576 0 frr
+:geoo/construction/fence_64x64.S: 432 64 frr
+:geoo/construction/fence_64x64.S: 384 0 frr
+:raymanni/lab/block_9: 576 128
+:raymanni/lab/block_10: 512 128
+:geoo/construction/fence_32x32.S: 368 64 frr
+:geoo/construction/fence_32x32.S: 368 96 frr
+:geoo/construction/fence_32x32.S: 352 32 frr
+:geoo/construction/fence_32x32.S: 336 0 frr
+:geoo/construction/fence_32x32.S: 272 0 frr
+:geoo/construction/fence_32x32.S: 256 32 frr
+:geoo/construction/fence_32x32.S: 304 16 frr

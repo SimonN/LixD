@@ -1,0 +1,191 @@
+$BUILT 2022-07-07 19:06:56
+$AUTHOR Hyperlodge
+$ENGLISH Touchdown
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 928
+#SIZE_Y 528
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 32
+#BACKGROUND_BLUE 32
+
+#SECONDS 50
+#INITIAL 150
+#SPAWN_INTERVAL 10
+
+#EXPLODER2 100
+#BLOCKER 50
+#BUILDER 100
+#PLATFORMER 100
+#MINER 100
+#JUMPER 100
+#BATTER 100
+#CUBER 50
+
+:raymanni/lab/hatch.H: 0 272
+:raymanni/lab/hatch.H: 896 272 r
+
+:geoo/abstract/goal.G: 800 32
+:geoo/abstract/goal.G: 96 32
+
+:geoo/construction/Laser_vr_64.F: 456 432
+:geoo/construction/Laser_vr_64.F: 912 432
+:geoo/construction/Laser_vr_64.F: 0 432
+
+:geoo/construction/spring_fast.T: 448 144
+
+:geoo/construction/fence_32x32.S: 416 320
+:raymanni/lab/steel_1.S: 448 272
+:raymanni/lab/steel_1.S: 384 288
+:geoo/construction/fence_32x32.S: 416 288
+:geoo/construction/fence_32x32.S: 416 256
+:geoo/construction/fence_32x32.S: 416 224
+:raymanni/lab/steel_1.S: 384 256
+:raymanni/lab/steel_1.S: 448 240
+:raymanni/lab/steel_1.S: 448 208
+:raymanni/lab/steel_1.S: 384 224
+:raymanni/lab/steel_1.S: 384 192
+:geoo/construction/fence_32x32.S: 416 192
+:raymanni/lab/steel_1.S: 448 176
+:raymanni/lab/steel_1.S: 384 144
+:raymanni/lab/steel_1.S: 416 152
+:raymanni/lab/steel_1.S: 352 192
+:raymanni/lab/steel_1.S: 320 192
+:raymanni/lab/steel_1.S: 288 192
+:raymanni/lab/steel_1.S: 256 192
+:raymanni/lab/steel_1.S: 224 176
+:raymanni/lab/steel_1.S: 192 176
+:raymanni/lab/steel_1.S: 160 160
+:raymanni/lab/steel_1.S: 128 160
+:raymanni/lab/steel_1.S: 96 176
+:raymanni/lab/steel_1.S: 64 192
+:raymanni/lab/steel_1.S: 16 192
+:raymanni/lab/steel_1.S: 0 160
+:raymanni/lab/steel_1.S: 16 128
+:raymanni/lab/steel_1.S: 48 128
+:raymanni/lab/steel_1.S: 304 96
+:raymanni/lab/steel_1.S: 96 112
+:raymanni/lab/steel_1.S: 144 112
+:raymanni/lab/steel_1.S: 176 112
+:raymanni/lab/steel_1.S: 208 128
+:raymanni/lab/steel_1.S: 240 128
+:raymanni/lab/steel_1.S: 272 128
+:raymanni/lab/steel_1.S: 304 128
+:raymanni/lab/steel_1.S: 352 144
+:raymanni/lab/steel_1.S: 352 112
+:raymanni/lab/steel_1.S: 352 80
+:raymanni/lab/steel_1.S: 352 48
+:raymanni/lab/steel_1.S: 320 48
+:raymanni/lab/steel_1.S: 32 240
+:raymanni/lab/steel_1.S: 48 304
+:raymanni/lab/steel_1.S: 80 288
+:raymanni/lab/steel_1.S: 32 352
+:raymanni/lab/steel_1.S: 0 240
+:raymanni/lab/steel_1.S: 32 400
+:raymanni/lab/steel_1.S: 0 400
+:raymanni/lab/steel_1.S: 96 400
+:raymanni/lab/steel_1.S: 64 400
+:raymanni/lab/steel_1.S: 160 400
+:raymanni/lab/steel_1.S: 128 400
+:raymanni/lab/steel_1.S: 224 400
+:raymanni/lab/steel_1.S: 192 400
+:raymanni/lab/steel_1.S: 288 400
+:raymanni/lab/steel_1.S: 256 400
+:raymanni/lab/steel_1.S: 352 400
+:raymanni/lab/steel_1.S: 320 400
+:raymanni/lab/steel_1.S: 432 400
+:raymanni/lab/steel_1.S: 400 400
+:raymanni/lab/steel_1.S: 32 496
+:raymanni/lab/steel_1.S: 0 496
+:raymanni/lab/steel_1.S: 96 496
+:raymanni/lab/steel_1.S: 64 496
+:raymanni/lab/steel_1.S: 160 496
+:raymanni/lab/steel_1.S: 128 496
+:raymanni/lab/steel_1.S: 224 496
+:raymanni/lab/steel_1.S: 192 496
+:raymanni/lab/steel_1.S: 288 496
+:raymanni/lab/steel_1.S: 256 496
+:raymanni/lab/steel_1.S: 352 496
+:raymanni/lab/steel_1.S: 320 496
+:raymanni/lab/steel_1.S: 416 496
+:raymanni/lab/steel_1.S: 384 496
+:raymanni/lab/steel_1.S: 448 496
+:raymanni/lab/steel_1.S: 96 80
+:raymanni/lab/steel_1.S: 448 32
+:geoo/construction/fence_32x32.S: 480 320 frr
+:raymanni/lab/steel_1.S: 512 288 frr
+:geoo/construction/fence_32x32.S: 480 288 frr
+:geoo/construction/fence_32x32.S: 480 256 frr
+:geoo/construction/fence_32x32.S: 480 224 frr
+:raymanni/lab/steel_1.S: 512 256 frr
+:raymanni/lab/steel_1.S: 512 224 frr
+:raymanni/lab/steel_1.S: 512 192 frr
+:geoo/construction/fence_32x32.S: 480 192 frr
+:raymanni/lab/steel_1.S: 512 144 frr
+:raymanni/lab/steel_1.S: 480 152 frr
+:raymanni/lab/steel_1.S: 544 192 frr
+:raymanni/lab/steel_1.S: 576 192 frr
+:raymanni/lab/steel_1.S: 608 192 frr
+:raymanni/lab/steel_1.S: 640 192 frr
+:raymanni/lab/steel_1.S: 672 176 frr
+:raymanni/lab/steel_1.S: 704 176 frr
+:raymanni/lab/steel_1.S: 736 160 frr
+:raymanni/lab/steel_1.S: 768 160 frr
+:raymanni/lab/steel_1.S: 800 176 frr
+:raymanni/lab/steel_1.S: 832 192 frr
+:raymanni/lab/steel_1.S: 880 192 frr
+:raymanni/lab/steel_1.S: 896 160 frr
+:raymanni/lab/steel_1.S: 880 128 frr
+:raymanni/lab/steel_1.S: 848 128 frr
+:raymanni/lab/steel_1.S: 592 96 frr
+:raymanni/lab/steel_1.S: 800 112 frr
+:raymanni/lab/steel_1.S: 752 112 frr
+:raymanni/lab/steel_1.S: 720 112 frr
+:raymanni/lab/steel_1.S: 688 128 frr
+:raymanni/lab/steel_1.S: 656 128 frr
+:raymanni/lab/steel_1.S: 624 128 frr
+:raymanni/lab/steel_1.S: 592 128 frr
+:raymanni/lab/steel_1.S: 544 144 frr
+:raymanni/lab/steel_1.S: 544 112 frr
+:raymanni/lab/steel_1.S: 544 80 frr
+:raymanni/lab/steel_1.S: 544 48 frr
+:raymanni/lab/steel_1.S: 576 48 frr
+:raymanni/lab/steel_1.S: 864 240 frr
+:raymanni/lab/steel_1.S: 848 304 frr
+:raymanni/lab/steel_1.S: 816 288 frr
+:raymanni/lab/steel_1.S: 864 352 frr
+:raymanni/lab/steel_1.S: 896 240 frr
+:raymanni/lab/steel_1.S: 864 400 frr
+:raymanni/lab/steel_1.S: 896 400 frr
+:raymanni/lab/steel_1.S: 800 400 frr
+:raymanni/lab/steel_1.S: 832 400 frr
+:raymanni/lab/steel_1.S: 736 400 frr
+:raymanni/lab/steel_1.S: 768 400 frr
+:raymanni/lab/steel_1.S: 672 400 frr
+:raymanni/lab/steel_1.S: 704 400 frr
+:raymanni/lab/steel_1.S: 608 400 frr
+:raymanni/lab/steel_1.S: 640 400 frr
+:raymanni/lab/steel_1.S: 544 400 frr
+:raymanni/lab/steel_1.S: 576 400 frr
+:raymanni/lab/steel_1.S: 464 400 frr
+:raymanni/lab/steel_1.S: 496 400 frr
+:raymanni/lab/steel_1.S: 864 496 frr
+:raymanni/lab/steel_1.S: 896 496 frr
+:raymanni/lab/steel_1.S: 800 496 frr
+:raymanni/lab/steel_1.S: 832 496 frr
+:raymanni/lab/steel_1.S: 736 496 frr
+:raymanni/lab/steel_1.S: 768 496 frr
+:raymanni/lab/steel_1.S: 672 496 frr
+:raymanni/lab/steel_1.S: 704 496 frr
+:raymanni/lab/steel_1.S: 608 496 frr
+:raymanni/lab/steel_1.S: 640 496 frr
+:raymanni/lab/steel_1.S: 544 496 frr
+:raymanni/lab/steel_1.S: 576 496 frr
+:raymanni/lab/steel_1.S: 480 496 frr
+:raymanni/lab/steel_1.S: 512 496 frr
+:raymanni/lab/steel_1.S: 800 80 frr
+:raymanni/lab/steel_1.S: 80 256
+:raymanni/lab/steel_1.S: 80 224
+:raymanni/lab/steel_1.S: 816 256 frr
+:raymanni/lab/steel_1.S: 816 224 frr
+:raymanni/lab/steel_1.S: 448 304

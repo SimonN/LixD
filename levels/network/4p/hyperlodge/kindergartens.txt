@@ -1,0 +1,229 @@
+$BUILT 2024-09-05 09:22:32
+$AUTHOR Hyperlodge
+$ENGLISH Kindergartens
+
+#INTENDED_NUMBER_OF_PLAYERS 4
+#SIZE_X 1792
+#SIZE_Y 400
+#TORUS_X 1
+#TORUS_Y 0
+#BACKGROUND_RED 235
+#BACKGROUND_GREEN 235
+#BACKGROUND_BLUE 235
+
+#SECONDS 60
+#INITIAL 150
+#SPAWN_INTERVAL 20
+
+#WALKER 10
+#CLIMBER 10
+#FLOATER 10
+#EXPLODER2 -1
+#BUILDER 100
+#DIGGER 10
+#JUMPER 10
+#BATTER -1
+#CUBER -1
+
+:matt/carnival/Hatch.H: 1216 0
+:matt/carnival/Hatch.H: 768 0
+:matt/carnival/Hatch.H: 1664 0
+:matt/carnival/Hatch.H: 320 0
+
+:geoo/abstract/goal.G: 112 256
+:geoo/abstract/goal.G: 1456 256
+:geoo/abstract/goal.G: 560 256
+:geoo/abstract/goal.G: 1008 256
+
+:geoo/construction/spring_fast.T: 80 336
+:geoo/construction/spring_fast.T: 144 336
+:geoo/construction/spring_fast.T: 528 336
+:geoo/construction/spring_fast.T: 592 336
+:geoo/construction/spring_fast.T: 976 336
+:geoo/construction/spring_fast.T: 1040 336
+:geoo/construction/spring_fast.T: 1424 336
+:geoo/construction/spring_fast.T: 1488 336
+
+:geoo/abstract/tbeam_down.T: 448 224
+:geoo/abstract/tbeam_down.T: 480 224
+:geoo/abstract/tbeam_down.T: 512 224
+:geoo/abstract/tbeam_down.T: 544 224
+:geoo/abstract/tbeam_down.T: 576 224
+:geoo/abstract/tbeam_down.T: 608 224
+:geoo/abstract/tbeam_down.T: 640 224
+:geoo/abstract/tbeam_down.T: 672 224
+:geoo/abstract/tbeam_down.T: 896 224
+:geoo/abstract/tbeam_down.T: 928 224
+:geoo/abstract/tbeam_down.T: 960 224
+:geoo/abstract/tbeam_down.T: 992 224
+:geoo/abstract/tbeam_down.T: 1024 224
+:geoo/abstract/tbeam_down.T: 1056 224
+:geoo/abstract/tbeam_down.T: 1088 224
+:geoo/abstract/tbeam_down.T: 1120 224
+:geoo/abstract/tbeam_down.T: 1344 224
+:geoo/abstract/tbeam_down.T: 1376 224
+:geoo/abstract/tbeam_down.T: 1408 224
+:geoo/abstract/tbeam_down.T: 1440 224
+:geoo/abstract/tbeam_down.T: 1472 224
+:geoo/abstract/tbeam_down.T: 1504 224
+:geoo/abstract/tbeam_down.T: 1536 224
+:geoo/abstract/tbeam_down.T: 1568 224
+:geoo/abstract/tbeam_down.T: 0 224
+:geoo/abstract/tbeam_down.T: 32 224
+:geoo/abstract/tbeam_down.T: 64 224
+:geoo/abstract/tbeam_down.T: 96 224
+:geoo/abstract/tbeam_down.T: 128 224
+:geoo/abstract/tbeam_down.T: 160 224
+:geoo/abstract/tbeam_down.T: 192 224
+:geoo/abstract/tbeam_down.T: 224 224
+
+:raymanni/toys/brick_2: 1152 80 r
+:raymanni/toys/brick_18: 1152 120 r
+:raymanni/toys/brick_2: 1248 120 r
+:raymanni/gore/steel.S: 1232 72
+:raymanni/toys/brick_2: 1216 80 r
+:raymanni/toys/brick_2: 1280 80 r
+:raymanni/toys/brick_18: 1312 120 r
+:raymanni/toys/brick_2: 1184 120 r
+:raymanni/toys/brick_2: 1152 160 r
+:raymanni/toys/brick_18: 1152 200 r
+:raymanni/toys/brick_2: 1248 200 r
+:raymanni/toys/brick_2: 1280 160 r
+:raymanni/toys/brick_18: 1312 200 r
+:raymanni/toys/brick_2: 1184 200 r
+:raymanni/toys/brick_2: 1152 240 r
+:raymanni/toys/brick_18: 1152 280 r
+:raymanni/toys/brick_2: 1248 280 r
+:raymanni/toys/brick_2: 1216 240 r
+:raymanni/toys/brick_2: 1280 240 r
+:raymanni/toys/brick_18: 1312 280 r
+:raymanni/toys/brick_2: 1184 280 r
+:raymanni/toys/brick_2: 1152 320 r
+:raymanni/toys/brick_18: 1152 360 r
+:raymanni/toys/brick_2: 1248 360 r
+:raymanni/toys/brick_2: 1280 320 r
+:raymanni/toys/brick_18: 1312 360 r
+:raymanni/toys/brick_2: 1184 360 r
+:raymanni/toys/brick_4: 1600 320 r
+:raymanni/toys/brick_4: 1728 320 r
+:raymanni/toys/brick_20: 1600 280 r
+:raymanni/toys/brick_4: 1632 280 r
+:raymanni/toys/brick_4: 1696 280 r
+:raymanni/toys/brick_20: 1760 280 r
+:raymanni/toys/brick_4: 1600 240 r
+:raymanni/toys/brick_4: 1664 240 r
+:raymanni/toys/brick_4: 1728 240 r
+:raymanni/toys/brick_20: 1600 200 r
+:raymanni/toys/brick_4: 1632 200 r
+:raymanni/toys/brick_4: 1696 200 r
+:raymanni/toys/brick_20: 1760 200 r
+:raymanni/toys/brick_4: 1600 160 r
+:raymanni/toys/brick_4: 1728 160 r
+:raymanni/toys/brick_20: 1600 120 r
+:raymanni/toys/brick_4: 1632 120 r
+:raymanni/toys/brick_4: 1696 120 r
+:raymanni/toys/brick_20: 1760 120 r
+:raymanni/toys/brick_4: 1600 80 r
+:raymanni/gore/steel.S: 1680 72
+:raymanni/toys/brick_4: 1664 80 r
+:raymanni/toys/brick_4: 1728 80 r
+:raymanni/toys/brick_20: 1600 360 r
+:raymanni/toys/brick_4: 1632 360 r
+:raymanni/toys/brick_4: 1696 360 r
+:raymanni/toys/brick_20: 1760 360 r
+$BEGIN_TILE_GROUP 0
+:geoo/construction/platform.S: 0 0
+:geoo/construction/platform.S: 32 0
+:geoo/construction/platform.S: 64 0
+:geoo/construction/platform.S: 96 0
+:geoo/construction/platform.S: 128 0
+:geoo/construction/platform.S: 160 0
+:geoo/construction/platform.S: 192 0
+:geoo/construction/platform.S: 224 0
+$END_TILE_GROUP
+:Group-0: 448 368
+:Group-0: 0 368
+:raymanni/toys/brick_17: 256 120 r
+:raymanni/toys/brick_1: 256 80 r
+:raymanni/toys/brick_19: 704 120 r
+:raymanni/toys/brick_3: 704 80 r
+:raymanni/gore/steel.S: 784 72
+:raymanni/toys/brick_3: 768 80 r
+:raymanni/toys/brick_3: 832 80 r
+:raymanni/toys/brick_3: 800 120 r
+:raymanni/toys/brick_19: 864 120 r
+:raymanni/toys/brick_3: 736 120 r
+:raymanni/toys/brick_19: 704 200 r
+:raymanni/toys/brick_3: 704 160 r
+:raymanni/toys/brick_3: 832 160 r
+:raymanni/toys/brick_3: 800 200 r
+:raymanni/toys/brick_19: 864 200 r
+:raymanni/toys/brick_3: 736 200 r
+:raymanni/toys/brick_19: 704 280 r
+:raymanni/toys/brick_3: 704 240 r
+:raymanni/toys/brick_3: 768 240 r
+:raymanni/toys/brick_3: 832 240 r
+:raymanni/toys/brick_3: 800 280 r
+:raymanni/toys/brick_19: 864 280 r
+:raymanni/toys/brick_3: 736 280 r
+:raymanni/toys/brick_19: 704 360 r
+:raymanni/toys/brick_3: 704 320 r
+:raymanni/toys/brick_3: 832 320 r
+:raymanni/toys/brick_3: 800 360 r
+:raymanni/toys/brick_19: 864 360 r
+:raymanni/toys/brick_3: 736 360 r
+:raymanni/gore/steel.S: 336 72
+:raymanni/toys/brick_1: 320 80 r
+:raymanni/toys/brick_1: 384 80 r
+:raymanni/toys/brick_17: 416 120 r
+:raymanni/toys/brick_1: 288 120 r
+:raymanni/toys/brick_1: 352 120 r
+:raymanni/toys/brick_17: 256 200 r
+:raymanni/toys/brick_1: 256 160 r
+:raymanni/toys/brick_1: 384 160 r
+:raymanni/toys/brick_17: 416 200 r
+:raymanni/toys/brick_1: 288 200 r
+:raymanni/toys/brick_1: 352 200 r
+:raymanni/toys/brick_17: 256 280 r
+:raymanni/toys/brick_1: 256 240 r
+:raymanni/toys/brick_1: 320 240 r
+:raymanni/toys/brick_1: 384 240 r
+:raymanni/toys/brick_17: 416 280 r
+:raymanni/toys/brick_1: 288 280 r
+:raymanni/toys/brick_1: 352 280 r
+:raymanni/toys/brick_17: 256 360 r
+:raymanni/toys/brick_1: 256 320 r
+:raymanni/toys/brick_1: 384 320 r
+:raymanni/toys/brick_17: 416 360 r
+:raymanni/toys/brick_1: 288 360 r
+:raymanni/toys/brick_1: 352 360 r
+:raymanni/toys/brick_14: 880 48
+:raymanni/toys/brick_13: 688 48
+:raymanni/toys/brick_15: 1584 48
+:raymanni/toys/brick_16: 1776 48
+:raymanni/toys/brick_11: 240 48
+:raymanni/toys/brick_12: 432 48
+:raymanni/toys/brick_10: 1328 48
+:raymanni/toys/brick_9: 1136 48
+:raymanni/toys/brick_8: 1216 160 frr
+:raymanni/toys/brick_7: 1664 160 frr
+:raymanni/toys/brick_5: 320 160 frr
+:raymanni/toys/brick_6: 768 160 frr
+:raymanni/toys/letter_1: 112 336
+:raymanni/toys/letter_1: 112 368
+:raymanni/toys/letter_2: 1456 304
+:raymanni/toys/letter_2: 1456 336
+:Group-0: 1344 368
+:raymanni/toys/letter_2: 1456 368
+:raymanni/toys/letter_1: 112 304
+:raymanni/toys/letter_3: 560 368
+:raymanni/toys/letter_3: 560 336
+:raymanni/toys/letter_3: 560 304
+:Group-0: 896 368
+:raymanni/toys/letter_4: 1008 368
+:raymanni/toys/letter_4: 1008 336
+:raymanni/toys/letter_4: 1008 304
+:raymanni/toys/brick_8: 1216 320 frr
+:raymanni/toys/brick_7: 1664 320 frr
+:raymanni/toys/brick_5: 320 320 frr
+:raymanni/toys/brick_6: 768 320 frr

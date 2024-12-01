@@ -1,0 +1,49 @@
+$BUILT 2024-07-18 12:13:34
+$AUTHOR Hyperlodge
+$ENGLISH Coziness
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 160
+#SIZE_Y 160
+#TORUS_X 1
+#TORUS_Y 1
+
+#SECONDS 90
+#INITIAL 90
+#SPAWN_INTERVAL 30
+
+#WALKER 20
+#RUNNER 20
+#CLIMBER 20
+#FLOATER 20
+#EXPLODER2 20
+#BLOCKER 20
+#BUILDER 20
+#PLATFORMER 20
+#BASHER 20
+#MINER 20
+#DIGGER 20
+#JUMPER 20
+#BATTER 20
+#CUBER 20
+
+:geoo/abstract/hatch.H: 96 144 r
+:geoo/abstract/hatch.H: 144 144
+
+:raymanni/lab/goal.G: 8 64
+:raymanni/lab/goal.G: 40 64
+
+:geoo/construction/platform.S: 96 16
+:geoo/construction/platform.S: 144 16
+:geoo/construction/platform.S: 56 48
+:geoo/construction/platform.S: 120 48
+:geoo/construction/platform.S: 24 48
+:geoo/construction/platform.S: 16 16
+:geoo/construction/platform.S: 64 16
+:geoo/construction/platform.S: 96 80
+:geoo/construction/platform.S: 144 80
+:geoo/construction/platform.S: 16 80
+:geoo/construction/platform.S: 64 80
+:geoo/construction/platform.S: 56 128
+:geoo/construction/platform.S: 120 128
+:geoo/construction/platform.S: 24 128

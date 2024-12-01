@@ -1,0 +1,381 @@
+$BUILT 2024-07-18 11:22:49
+$AUTHOR Hyperlodge
+$ENGLISH Miners Be Mining
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1936
+#SIZE_Y 576
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 32
+#BACKGROUND_BLUE 31
+
+#SECONDS 90
+#INITIAL 200
+#SPAWN_INTERVAL 60
+
+#WALKER 10
+#RUNNER 10
+#CLIMBER 10
+#FLOATER 10
+#EXPLODER2 200
+#BLOCKER 10
+#BUILDER 10
+#PLATFORMER 200
+#BASHER 10
+#MINER 10
+#DIGGER 10
+#JUMPER 10
+#BATTER 10
+#CUBER 10
+
+:matt/goldmine/Hatch.H: 1145 424
+:matt/goldmine/Hatch.H: 729 424 r
+
+:matt/goldmine/Goal.G: 8 40
+:matt/goldmine/Goal.G: 1864 40
+
+:proxima/flame.F: 296 400
+:proxima/flame.F: 200 400
+:proxima/flame.F: 240 336
+:proxima/flame.F: 184 272
+:proxima/flame.F: 144 336
+:proxima/flame.F: 96 272
+:proxima/flame.F: 128 208
+:proxima/flame.F: 56 208
+:proxima/flame.F: 8 144
+:proxima/flame.F: 8 272
+:proxima/flame.F: 48 336
+:proxima/flame.F: 8 400
+:proxima/flame.F: 104 400
+:proxima/flame.F: 1600 400
+:proxima/flame.F: 1696 400
+:proxima/flame.F: 1656 336
+:proxima/flame.F: 1712 272
+:proxima/flame.F: 1752 336
+:proxima/flame.F: 1800 272
+:proxima/flame.F: 1768 208
+:proxima/flame.F: 1840 208
+:proxima/flame.F: 1888 144
+:proxima/flame.F: 1888 272
+:proxima/flame.F: 1848 336
+:proxima/flame.F: 1888 400
+:proxima/flame.F: 1792 400
+
+:geoo/construction/steam_up.T: 952 552
+:geoo/construction/steam_up.T: 936 552
+:geoo/construction/steam_up.T: 920 552
+:geoo/construction/steam_up.T: 904 552
+:geoo/construction/steam_up.T: 968 552
+:geoo/construction/steam_up.T: 984 552
+:geoo/construction/steam_up.T: 1000 552
+:geoo/construction/steam_up.T: 1016 552
+
+:matt/goldmine/crate32: 800 440
+:matt/goldmine/crate32: 800 408
+:matt/goldmine/crate32: 800 376
+:matt/goldmine/crate32: 800 344
+:matt/goldmine/crate32: 800 312
+:matt/goldmine/crate32: 800 280
+:matt/goldmine/crate32: 792 248
+:matt/goldmine/crate32: 792 216
+:matt/goldmine/crate32: 792 184
+$BEGIN_TILE_GROUP 0
+:amanda/steel/steel8x16.S: 0 48
+:amanda/steel/steel8x16.S: 0 32
+:amanda/steel/steel8x16.S: 0 16
+:amanda/steel/steel8x16.S: 0 0
+$END_TILE_GROUP
+:Group-0: 792 408
+:Group-0: 792 344
+:Group-0: 792 280
+:matt/goldmine/crate32: 792 152
+:matt/goldmine/crate32: 792 120
+:matt/goldmine/crate32: 792 88
+:Group-0: 824 216
+:Group-0: 824 152
+:Group-0: 824 88
+$BEGIN_TILE_GROUP 1
+:amanda/steel/steel24x8.S: 72 0
+:amanda/steel/steel24x8.S: 48 0
+:amanda/steel/steel24x8.S: 24 0
+:amanda/steel/steel24x8.S: 0 0
+$END_TILE_GROUP
+:Group-1: 736 472
+:matt/goldmine/10: 804 488
+:matt/goldmine/09: 830 464
+:matt/goldmine/crate32: 832 448
+:matt/goldmine/crate32: 832 416
+:matt/goldmine/crate32: 864 448
+:matt/goldmine/crate32: 864 416
+:matt/goldmine/plank: 768 480
+:matt/goldmine/08: 598 484 r
+:matt/goldmine/08: 392 484 r
+:matt/goldmine/03: 415 486 frr
+:matt/goldmine/plank: 512 480
+:matt/goldmine/08: 88 484 fr
+:matt/goldmine/08: 294 484 fr
+:matt/goldmine/03: 242 486
+:matt/goldmine/plank: 384 480
+:matt/goldmine/07: 446 490 frr
+:matt/goldmine/03: 621 486 frr
+:matt/goldmine/plank: 640 480
+:matt/goldmine/07: 652 490 frr
+:matt/goldmine/plank: 768 488 frr
+:matt/goldmine/plank: 696 488
+:matt/goldmine/plank: 568 488
+:matt/goldmine/plank: 440 488
+:matt/goldmine/07: 148 490
+:matt/goldmine/plank: 312 488
+:Group-1: 640 472
+:Group-1: 544 472
+:Group-1: 448 472
+:amanda/steel/steel_flange_left24x16.S: 456 456
+:amanda/steel/steel_flange_left24x16.S: 440 440
+:amanda/steel/steel_flange_left24x16.S: 424 424
+:amanda/steel/steel_flange_left24x16.S: 408 408
+:amanda/steel/steel_flange_right24x16.S: 432 456 f
+:amanda/steel/steel_flange_right24x16.S: 416 440 f
+:amanda/steel/steel_flange_right24x16.S: 400 424 f
+:amanda/steel/steel_flange_left24x16.S: 392 392
+:amanda/steel/steel_flange_left24x16.S: 376 376
+:amanda/steel/steel_flange_right24x16.S: 368 392 f
+:amanda/steel/steel_flange_right24x16.S: 384 408 f
+:amanda/steel/steel_flange_left24x16.S: 360 360
+:amanda/steel/steel_flange_left24x16.S: 344 344
+:amanda/steel/steel_flange_left24x16.S: 328 328
+:amanda/steel/steel_flange_right24x16.S: 336 360 f
+:amanda/steel/steel_flange_right24x16.S: 320 344 f
+:amanda/steel/steel_flange_left24x16.S: 312 312
+:matt/goldmine/plankdiag2: 274 280
+:matt/goldmine/plankdiag2: 266 280
+:matt/goldmine/plankdiag2: 256 280
+:amanda/steel/steel_flange_left24x16.S: 296 296
+:amanda/steel/steel_flange_right24x16.S: 288 312 f
+:amanda/steel/steel_flange_right24x16.S: 304 328 f
+:amanda/steel/steel_flange_right24x16.S: 352 376 f
+:matt/goldmine/plank: 256 480
+:matt/goldmine/03: 36 486
+:matt/goldmine/07: -58 490
+:matt/goldmine/plank: 56 488
+:matt/goldmine/plank: 184 488
+:matt/goldmine/plank: 128 480
+:matt/goldmine/plankdiag2: 242 248
+:matt/goldmine/plankdiag2: 234 248
+:matt/goldmine/plankdiag2: 224 248
+:matt/goldmine/plankdiag2: 210 216
+:matt/goldmine/plankdiag2: 202 216
+:matt/goldmine/plankdiag2: 192 216
+:matt/goldmine/plank: -32 88
+:matt/goldmine/plank: -32 96
+:Group-1: 0 104
+:matt/goldmine/plankdiag2: 82 88
+:matt/goldmine/plankdiag2: 74 88
+:matt/goldmine/plankdiag2: 64 88
+:matt/goldmine/plankdiag2: 178 184
+:matt/goldmine/plankdiag2: 170 184
+:matt/goldmine/plankdiag2: 160 184
+:matt/goldmine/plankdiag2: 146 152
+:matt/goldmine/plankdiag2: 138 152
+:matt/goldmine/plankdiag2: 128 152
+:matt/goldmine/plankdiag2: 114 120
+:matt/goldmine/plankdiag2: 106 120
+:matt/goldmine/plankdiag2: 96 120
+:matt/goldmine/plank: -72 488
+:matt/goldmine/plank: 0 480
+:matt/goldmine/plank: 320 472
+:matt/goldmine/plank: 192 472
+:matt/goldmine/plank: 64 472
+:matt/goldmine/plank: -64 472
+:matt/goldmine/explosivecrate: 192 408
+:matt/goldmine/explosivecrate: 288 408
+:matt/goldmine/explosivecrate: 232 344
+:matt/goldmine/explosivecrate: 136 344
+:matt/goldmine/explosivecrate: 0 408
+:matt/goldmine/explosivecrate: 96 408
+:matt/goldmine/explosivecrate: 40 344
+:matt/goldmine/explosivecrate: 176 280
+:matt/goldmine/explosivecrate: 88 280
+:matt/goldmine/explosivecrate: 120 216
+:matt/goldmine/explosivecrate: 0 280
+:matt/goldmine/explosivecrate: 48 216
+:matt/goldmine/explosivecrate: 0 152
+:matt/goldmine/planksupport2: -32 344
+:matt/goldmine/planksupport2: -32 216
+:matt/goldmine/crate32: 1104 440 frr
+:matt/goldmine/crate32: 1104 408 frr
+:matt/goldmine/crate32: 1104 376 frr
+:matt/goldmine/crate32: 1104 344 frr
+:matt/goldmine/crate32: 1104 312 frr
+:matt/goldmine/crate32: 1104 280 frr
+:matt/goldmine/crate32: 1112 248 frr
+:matt/goldmine/crate32: 1112 216 frr
+:matt/goldmine/crate32: 1112 184 frr
+:Group-0: 1136 408 frr
+:Group-0: 1136 344 frr
+:Group-0: 1136 280 frr
+:matt/goldmine/crate32: 1112 152 frr
+:matt/goldmine/crate32: 1112 120 frr
+:matt/goldmine/crate32: 1112 88 frr
+:Group-0: 1104 216 frr
+:Group-0: 1104 152 frr
+:Group-0: 1104 88 frr
+:Group-1: 1104 472 frr
+:matt/goldmine/10: 1097 488 frr
+:matt/goldmine/09: 1025 464 frr
+:matt/goldmine/crate32: 1072 448 frr
+:matt/goldmine/crate32: 1072 416 frr
+:matt/goldmine/crate32: 1040 448 frr
+:matt/goldmine/crate32: 1040 416 frr
+:matt/goldmine/plank: 1040 480 frr
+:matt/goldmine/08: 1217 484 fr
+:matt/goldmine/08: 1423 484 fr
+:matt/goldmine/03: 1371 486
+:matt/goldmine/plank: 1296 480 frr
+:matt/goldmine/08: 1727 484 r
+:matt/goldmine/08: 1521 484 r
+:matt/goldmine/03: 1544 486 frr
+:matt/goldmine/plank: 1424 480 frr
+:matt/goldmine/07: 1277 490
+:matt/goldmine/03: 1165 486
+:matt/goldmine/plank: 1168 480 frr
+:matt/goldmine/07: 1071 490
+:matt/goldmine/plank: 1040 488
+:matt/goldmine/plank: 1112 488 frr
+:matt/goldmine/plank: 1240 488 frr
+:matt/goldmine/plank: 1368 488 frr
+:matt/goldmine/07: 1575 490 frr
+:matt/goldmine/plank: 1496 488 frr
+:Group-1: 1200 472 frr
+:Group-1: 1296 472 frr
+:Group-1: 1392 472 frr
+:amanda/steel/steel_flange_left24x16.S: 1456 456 frr
+:amanda/steel/steel_flange_left24x16.S: 1472 440 frr
+:amanda/steel/steel_flange_left24x16.S: 1488 424 frr
+:amanda/steel/steel_flange_left24x16.S: 1504 408 frr
+:amanda/steel/steel_flange_right24x16.S: 1480 456 rr
+:amanda/steel/steel_flange_right24x16.S: 1496 440 rr
+:amanda/steel/steel_flange_right24x16.S: 1512 424 rr
+:amanda/steel/steel_flange_left24x16.S: 1520 392 frr
+:amanda/steel/steel_flange_left24x16.S: 1536 376 frr
+:amanda/steel/steel_flange_right24x16.S: 1544 392 rr
+:amanda/steel/steel_flange_right24x16.S: 1528 408 rr
+:amanda/steel/steel_flange_left24x16.S: 1552 360 frr
+:amanda/steel/steel_flange_left24x16.S: 1568 344 frr
+:amanda/steel/steel_flange_left24x16.S: 1584 328 frr
+:amanda/steel/steel_flange_right24x16.S: 1576 360 rr
+:amanda/steel/steel_flange_right24x16.S: 1592 344 rr
+:amanda/steel/steel_flange_left24x16.S: 1600 312 frr
+:matt/goldmine/plankdiag2: 1614 280 frr
+:matt/goldmine/plankdiag2: 1622 280 frr
+:matt/goldmine/plankdiag2: 1632 280 frr
+:amanda/steel/steel_flange_left24x16.S: 1616 296 frr
+:amanda/steel/steel_flange_right24x16.S: 1624 312 rr
+:amanda/steel/steel_flange_right24x16.S: 1608 328 rr
+:amanda/steel/steel_flange_right24x16.S: 1560 376 rr
+:matt/goldmine/plank: 1552 480 frr
+:matt/goldmine/03: 1750 486 frr
+:matt/goldmine/07: 1781 490 frr
+:matt/goldmine/plank: 1752 488 frr
+:matt/goldmine/plank: 1624 488 frr
+:matt/goldmine/plank: 1680 480 frr
+:matt/goldmine/plankdiag2: 1646 248 frr
+:matt/goldmine/plankdiag2: 1654 248 frr
+:matt/goldmine/plankdiag2: 1664 248 frr
+:matt/goldmine/plankdiag2: 1678 216 frr
+:matt/goldmine/plankdiag2: 1686 216 frr
+:matt/goldmine/plankdiag2: 1696 216 frr
+:matt/goldmine/plank: 1840 88 frr
+:matt/goldmine/plank: 1840 96 frr
+:Group-1: 1840 104 frr
+:matt/goldmine/plankdiag2: 1806 88 frr
+:matt/goldmine/plankdiag2: 1814 88 frr
+:matt/goldmine/plankdiag2: 1824 88 frr
+:matt/goldmine/plankdiag2: 1710 184 frr
+:matt/goldmine/plankdiag2: 1718 184 frr
+:matt/goldmine/plankdiag2: 1728 184 frr
+:matt/goldmine/plankdiag2: 1742 152 frr
+:matt/goldmine/plankdiag2: 1750 152 frr
+:matt/goldmine/plankdiag2: 1760 152 frr
+:matt/goldmine/plankdiag2: 1774 120 frr
+:matt/goldmine/plankdiag2: 1782 120 frr
+:matt/goldmine/plankdiag2: 1792 120 frr
+:matt/goldmine/plank: 1880 488 frr
+:matt/goldmine/plank: 1808 480 frr
+:matt/goldmine/plank: 1488 472 frr
+:matt/goldmine/plank: 1616 472 frr
+:matt/goldmine/plank: 1744 472 frr
+:matt/goldmine/plank: 1872 472 frr
+:matt/goldmine/explosivecrate: 1680 408 frr
+:matt/goldmine/explosivecrate: 1584 408 frr
+:matt/goldmine/explosivecrate: 1640 344 frr
+:matt/goldmine/explosivecrate: 1736 344 frr
+:matt/goldmine/explosivecrate: 1872 408 frr
+:matt/goldmine/explosivecrate: 1776 408 frr
+:matt/goldmine/explosivecrate: 1832 344 frr
+:matt/goldmine/explosivecrate: 1696 280 frr
+:matt/goldmine/explosivecrate: 1784 280 frr
+:matt/goldmine/explosivecrate: 1752 216 frr
+:matt/goldmine/explosivecrate: 1872 280 frr
+:matt/goldmine/explosivecrate: 1824 216 frr
+:matt/goldmine/explosivecrate: 1872 152 frr
+:matt/goldmine/planksupport2: 1904 344 frr
+:matt/goldmine/planksupport2: 1904 216 frr
+:matt/goldmine/crate32: 864 384
+:matt/goldmine/crate32: 864 352
+:matt/goldmine/crate32: 1040 384 frr
+:matt/goldmine/crate32: 1040 352 frr
+:matt/goldmine/crate32: 864 320
+:matt/goldmine/crate32: 864 288
+:matt/goldmine/crate32: 1040 320 frr
+:matt/goldmine/crate32: 1040 288 frr
+:matt/goldmine/crate32: 864 256
+:matt/goldmine/crate32: 864 224
+:matt/goldmine/crate32: 1040 256 frr
+:matt/goldmine/crate32: 1040 224 frr
+:matt/goldmine/crate32: 864 192
+:matt/goldmine/crate32: 864 160
+:matt/goldmine/crate32: 1040 192 frr
+:matt/goldmine/crate32: 1040 160 frr
+:matt/goldmine/crate32: 864 128
+:matt/goldmine/crate32: 864 96
+:matt/goldmine/crate32: 1040 128 frr
+:matt/goldmine/crate32: 1040 96 frr
+:matt/goldmine/crate32: 864 64
+:matt/goldmine/crate32: 1040 64 frr
+:matt/goldmine/crate32: 864 32
+:matt/goldmine/crate32: 1040 32 frr
+:matt/goldmine/crate32: 864 0
+:matt/goldmine/crate32: 1040 0 frr
+:matt/goldmine/plank: 896 160 frr
+:matt/goldmine/crate32: 896 128
+:matt/goldmine/crate32: 896 96
+:matt/goldmine/crate32: 896 64
+:matt/goldmine/crate32: 896 32
+:matt/goldmine/crate32: 896 0
+:matt/goldmine/crate32: 1008 128
+:matt/goldmine/crate32: 1008 96
+:matt/goldmine/crate32: 1008 64
+:matt/goldmine/crate32: 1008 32
+:matt/goldmine/crate32: 1008 0
+:matt/goldmine/crate32: 928 96
+:matt/goldmine/crate32: 928 64
+:matt/goldmine/crate32: 928 32
+:matt/goldmine/crate32: 928 0
+:matt/goldmine/crate32: 976 96
+:matt/goldmine/crate32: 976 64
+:matt/goldmine/crate32: 976 32
+:matt/goldmine/crate32: 976 0
+:matt/goldmine/plank: 960 0 r
+:matt/goldmine/plank: 968 0 r
+:matt/goldmine/plank: 912 160 frr
+:matt/goldmine/plank: 912 168 frr
+:matt/goldmine/plank: 896 168 frr
+:matt/goldmine/plank: 896 176 frr
+:matt/goldmine/plank: 912 176 frr
+:matt/goldmine/plank: 912 184 frr
+:matt/goldmine/plank: 896 184 frr
+:matt/goldmine/plank: 896 192 frr
+:matt/goldmine/plank: 912 192 frr
+:matt/goldmine/plank: 912 200 frr
+:matt/goldmine/plank: 896 200 frr
+:matt/goldmine/crate16: 960 144

@@ -1,0 +1,281 @@
+$BUILT 2024-07-21 13:29:13
+$AUTHOR Hyperlodge
+$ENGLISH Kung Fucius
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1056
+#SIZE_Y 672
+#BACKGROUND_RED 63
+#BACKGROUND_GREEN 80
+#BACKGROUND_BLUE 0
+
+#SECONDS 90
+#INITIAL 250
+#SPAWN_INTERVAL 50
+
+#CLIMBER -1
+#BLOCKER -1
+#BUILDER -1
+#MINER -1
+#BATTER -1
+#EXPLODER2 0
+
+:matt/goldmine/Hatch.H: 144 512
+:matt/goldmine/Hatch.H: 848 512 r
+
+:matt/goldmine/Goal.G: 244 158
+:matt/goldmine/Goal.G: 748 158
+
+:amanda/forest/frog_happy.T: 496 616
+
+:proxima/flame.F: 220 492
+:proxima/flame.F: 260 492
+:proxima/flame.F: 796 492
+:proxima/flame.F: 756 492
+:amanda/tar.W: -48 640
+:amanda/tar.W: 80 640
+:amanda/tar.W: 208 640
+:amanda/tar.W: 336 640
+:amanda/tar.W: 592 640
+:amanda/tar.W: 720 640
+:amanda/tar.W: 848 640
+:amanda/tar.W: 976 640
+:geoo/construction/sawblade_small.F: 966 225
+:geoo/construction/sawblade_small.F: 58 225
+:raymanni/lab/goo.W: 208 588
+:raymanni/lab/goo.W: 240 588
+:raymanni/lab/goo.W: 272 588
+:raymanni/lab/goo.W: 304 588
+:raymanni/lab/goo.W: 336 588
+:raymanni/lab/goo.W: 368 588
+:raymanni/lab/goo.W: 400 588
+:raymanni/lab/goo.W: 432 588
+:raymanni/lab/goo.W: 592 588
+:raymanni/lab/goo.W: 624 588
+:raymanni/lab/goo.W: 656 588
+:raymanni/lab/goo.W: 688 588
+:raymanni/lab/goo.W: 720 588
+:raymanni/lab/goo.W: 752 588
+:raymanni/lab/goo.W: 784 588
+:raymanni/lab/goo.W: 816 588
+:geoo/construction/sawblade_small.F: 791 225
+:geoo/construction/sawblade_small.F: 233 225
+
+:geoo/construction/steam_up.T: 464 154
+:geoo/construction/steam_up.T: 576 154
+:geoo/construction/steam_up.T: 16 280
+:geoo/construction/steam_up.T: 1024 280
+
+:simon/oriental/fat_long: 464 432
+$BEGIN_TILE_GROUP 0
+:raymanni/holiday/screw3: 0 1 r
+:raymanni/holiday/screw3: 16 1 r
+:raymanni/holiday/screw3: 32 1 r
+:raymanni/holiday/screw3: 48 1 r
+:raymanni/holiday/screw3: 64 1 r
+:raymanni/holiday/screw3: 80 1 r
+:raymanni/holiday/screw3: 96 1 r
+:raymanni/holiday/screw3: 112 1 r
+:raymanni/holiday/screw3: 128 1 r
+:raymanni/holiday/screw3: 144 1 r
+:raymanni/holiday/screw3: 160 1 r
+:raymanni/holiday/plank_left: 65 8 r
+:raymanni/holiday/screw1: 65 0
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:simon/oriental/culm_d_long: 136 330
+:amanda/forest/leaves_05: 0 344
+:simon/oriental/fat_d_half: 8 0 frr
+:raymanni/holiday/bauble_yellow: 96 230 rr
+:raymanni/holiday/bauble_yellow: 176 116 rr
+:Group-0: 231 49
+$END_TILE_GROUP
+:Group-1: 73 184 frr
+:simon/oriental/leaf2: 112 504
+:simon/oriental/02: 80 512
+:simon/oriental/02: 96 464
+:simon/oriental/02: 112 416
+:simon/oriental/02: 128 368
+:simon/oriental/02: 144 320
+:simon/oriental/02: 160 272
+:simon/oriental/03: 0 560 frr
+:simon/oriental/03: 48 560
+:simon/oriental/03: 96 560 frr
+:simon/oriental/03: 170 560 r
+:simon/oriental/03: 154 560 r
+:simon/oriental/03: 144 560
+:simon/oriental/03: 192 560 frr
+:simon/oriental/03: 240 560
+:simon/oriental/03: 288 560 frr
+:simon/oriental/03: 336 560
+:amanda/steel/steel8x16.S: 146 608
+:simon/oriental/03: 154 608 frrr
+:amanda/steel/steel24x8.S: 204 616
+:amanda/steel/steel8x16.S: 202 608
+:amanda/steel/steel8x16.S: 146 592
+:amanda/steel/steel8x16.S: 202 592
+:amanda/steel/steel8x16.S: 146 640
+:simon/oriental/03: 170 608 frrr
+:amanda/steel/steel24x8.S: 154 648
+:amanda/steel/steel24x8.S: 178 648
+:amanda/steel/steel24x8.S: 204 640
+:amanda/steel/steel8x16.S: 202 640
+:amanda/steel/steel8x16.S: 146 624
+:simon/oriental/fat_long: 16 432
+:simon/oriental/culm_long: 276 204 frrr
+:simon/oriental/culm_long: 180 204 rrr
+:simon/oriental/fat_long: 16 304
+:simon/oriental/leaf2: 160 368
+:simon/oriental/leaf3: 144 416 rrr
+:simon/oriental/leaf1: 128 464 rr
+:simon/oriental/leaf5: 176 320 r
+:simon/oriental/culm_long: 276 210 r
+:simon/oriental/culm_long: 180 210 fr
+:simon/oriental/bush4: 474 470 r
+:simon/oriental/fat_long: 464 304
+:simon/oriental/fat_long: 464 176
+:simon/oriental/03: 384 560 frr
+:simon/oriental/03: 432 560
+:simon/oriental/earth: 220 512
+:simon/oriental/bonsai: 180 328
+:simon/oriental/branch7: 188 142 frrr
+$BEGIN_TILE_GROUP 2
+:simon/oriental/branch1: 0 8 frr
+:simon/oriental/branch7: 32 0 frrr
+$END_TILE_GROUP
+:Group-2: 304 142 frr
+:simon/oriental/gate: 212 143
+:simon/oriental/culm_long: 372 204 frrr
+:simon/oriental/culm_long: 372 210 r
+:simon/oriental/leaf3: 438 216
+:simon/oriental/leaf2: 910 504 frr
+:simon/oriental/02: 944 512 frr
+:simon/oriental/02: 928 464 frr
+:simon/oriental/02: 912 416 frr
+:simon/oriental/02: 896 368 frr
+:simon/oriental/02: 880 320 frr
+:simon/oriental/02: 864 272 frr
+:simon/oriental/03: 1008 560
+:simon/oriental/03: 960 560 frr
+:simon/oriental/03: 912 560
+:simon/oriental/fat_long: 576 432 frr
+:Group-1: 577 184
+:simon/oriental/03: 854 560 fr
+:simon/oriental/03: 870 560 fr
+:simon/oriental/03: 864 560 frr
+:simon/oriental/03: 816 560
+:simon/oriental/03: 768 560 frr
+:simon/oriental/03: 720 560
+:simon/oriental/03: 672 560 frr
+:amanda/steel/steel8x16.S: 902 608 frr
+:simon/oriental/03: 870 608 rrr
+:amanda/steel/steel24x8.S: 828 616
+:amanda/steel/steel8x16.S: 846 608 frr
+:amanda/steel/steel8x16.S: 902 592 frr
+:amanda/steel/steel8x16.S: 846 592 frr
+:amanda/steel/steel8x16.S: 870 640 frr
+:simon/oriental/03: 854 608 rrr
+:amanda/steel/steel8x16.S: 902 624 frr
+:simon/oriental/fat_long: 1024 432 frr
+:simon/oriental/culm_long: 684 204 rrr
+:simon/oriental/culm_long: 780 204 frrr
+:simon/oriental/fat_long: 1024 304 frr
+:simon/oriental/leaf2: 862 368 frr
+:simon/oriental/leaf3: 884 416 frrr
+:simon/oriental/leaf1: 902 464 f
+:simon/oriental/leaf5: 861 320 fr
+:simon/oriental/culm_long: 684 210 fr
+:simon/oriental/culm_long: 780 210 r
+:simon/oriental/bush4: 556 470 fr
+:simon/oriental/fat_long: 576 304 frr
+:simon/oriental/fat_long: 576 176 frr
+:simon/oriental/03: 624 560
+:simon/oriental/03: 576 560 frr
+:simon/oriental/earth: 756 512 frr
+:simon/oriental/bonsai: 649 328 frr
+:Group-2: 660 142
+:simon/oriental/branch7: 808 142 rrr
+:simon/oriental/gate: 716 143 frr
+:simon/oriental/culm_long: 588 204 rrr
+:simon/oriental/culm_long: 588 210 fr
+:simon/oriental/leaf3: 585 216 frr
+:simon/oriental/03: 528 560
+:simon/oriental/03: 480 560 frr
+:amanda/steel/steel24x8.S: 828 640
+:amanda/steel/steel8x16.S: 846 640 frr
+:amanda/steel/steel24x8.S: 854 648 frr
+:amanda/steel/steel24x8.S: 878 648 frr
+:amanda/steel/steel8x16.S: 902 640 frr
+:amanda/steel/steel8x16.S: 460 592
+:amanda/steel/steel8x16.S: 588 592
+:amanda/forest/leaves_05: 456 632
+:amanda/steel/steel8x16.S: 460 656
+:amanda/forest/leaves_05: 553 632 frr
+:amanda/steel/steel24x8.S: 564 664
+:amanda/steel/steel24x8.S: 540 664
+:amanda/steel/steel8x16.S: 588 656
+:amanda/steel/steel24x8.S: 468 664
+:amanda/steel/steel24x8.S: 492 664
+:amanda/steel/steel24x8.S: 516 664
+:amanda/steel/steel24x8.S: 588 640
+:amanda/steel/steel8x16.S: 588 640
+:amanda/steel/steel24x8.S: 444 640
+:amanda/steel/steel8x16.S: 460 640
+:amanda/steel/steel24x8.S: 588 616
+:amanda/steel/steel8x16.S: 588 608
+:amanda/steel/steel24x8.S: 444 616
+:amanda/steel/steel8x16.S: 460 608
+:amanda/steel/steel24x8.S: 420 640
+:amanda/steel/steel24x8.S: 348 640
+:amanda/steel/steel24x8.S: 372 640
+:amanda/steel/steel24x8.S: 396 640
+:amanda/steel/steel24x8.S: 324 640
+:amanda/steel/steel24x8.S: 300 640
+:amanda/steel/steel24x8.S: 228 640
+:amanda/steel/steel24x8.S: 252 640
+:amanda/steel/steel24x8.S: 276 640
+:amanda/steel/steel24x8.S: 804 640
+:amanda/steel/steel24x8.S: 732 640
+:amanda/steel/steel24x8.S: 756 640
+:amanda/steel/steel24x8.S: 780 640
+:amanda/steel/steel24x8.S: 708 640
+:amanda/steel/steel24x8.S: 684 640
+:amanda/steel/steel24x8.S: 612 640
+:amanda/steel/steel24x8.S: 636 640
+:amanda/steel/steel24x8.S: 660 640
+:amanda/steel/steel24x8.S: 420 616
+:amanda/steel/steel24x8.S: 348 616
+:amanda/steel/steel24x8.S: 372 616
+:amanda/steel/steel24x8.S: 396 616
+:amanda/steel/steel24x8.S: 324 616
+:amanda/steel/steel24x8.S: 300 616
+:amanda/steel/steel24x8.S: 228 616
+:amanda/steel/steel24x8.S: 252 616
+:amanda/steel/steel24x8.S: 276 616
+:amanda/steel/steel24x8.S: 804 616
+:amanda/steel/steel24x8.S: 732 616
+:amanda/steel/steel24x8.S: 756 616
+:amanda/steel/steel24x8.S: 780 616
+:amanda/steel/steel24x8.S: 708 616
+:amanda/steel/steel24x8.S: 684 616
+:amanda/steel/steel24x8.S: 612 616
+:amanda/steel/steel24x8.S: 636 616
+:amanda/steel/steel24x8.S: 660 616
+:simon/oriental/culm_long: 84 204 rrr
+:simon/oriental/culm_long: 84 210 fr
+:simon/oriental/culm_long: 876 204 frrr
+:simon/oriental/culm_long: 876 210 r
+:simon/oriental/bush5: 476 436 r
+:simon/oriental/bush5: 568 436 fr
+:simon/oriental/bush2: 474 390 r
+:simon/oriental/bush2: 566 390 fr
+:simon/oriental/branch6: 640 88 rr
+:simon/oriental/branch6: 360 88 f
+:simon/oriental/branch5: 868 134 rrr
+:simon/oriental/branch5: 126 134 frrr
+:simon/oriental/pebbles5: 16 640
+:simon/oriental/pebbles5: 960 640 frr
+:simon/oriental/pebbles5: 912 640 frr
+:simon/oriental/pebbles5: 64 640
+:simon/oriental/pebbles4: 64 632
+:simon/oriental/pebbles4: 968 632 frr

@@ -1,0 +1,197 @@
+$BUILT 2024-07-18 13:13:40
+$AUTHOR Hyperlodge
+$ENGLISH Rolled Bones
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 544
+#SIZE_Y 544
+#BACKGROUND_RED 16
+#BACKGROUND_GREEN 48
+#BACKGROUND_BLUE 0
+
+#SECONDS 90
+#INITIAL 90
+#SPAWN_INTERVAL 30
+
+#WALKER 90
+#RUNNER 1
+#CLIMBER 1
+#FLOATER 1
+#EXPLODER2 90
+#BLOCKER 90
+#BUILDER 90
+#PLATFORMER 1
+#BASHER 1
+#MINER 1
+#DIGGER 1
+#JUMPER 1
+#BATTER 1
+#CUBER 1
+
+:raymanni/lab/hatch.H: 64 256
+:raymanni/lab/hatch.H: 448 256 r
+
+:raymanni/lab/goal.G: 32 16
+:raymanni/lab/goal.G: 448 16
+
+:geoo/abstract/tbeam_down.T: 0 64
+:geoo/abstract/tbeam_down.T: 0 32
+:geoo/abstract/tbeam_down.T: 0 128
+:geoo/abstract/tbeam_down.T: 0 96
+:geoo/abstract/tbeam_down.T: 0 192
+:geoo/abstract/tbeam_down.T: 0 160
+:geoo/abstract/tbeam_down.T: 0 256
+:geoo/abstract/tbeam_down.T: 0 224
+:geoo/abstract/tbeam_down.T: 0 320
+:geoo/abstract/tbeam_down.T: 0 288
+:geoo/abstract/tbeam_down.T: 0 384
+:geoo/abstract/tbeam_down.T: 0 352
+:geoo/abstract/tbeam_down.T: 0 448
+:geoo/abstract/tbeam_down.T: 0 416
+:geoo/abstract/tbeam_down.T: 512 64
+:geoo/abstract/tbeam_down.T: 512 32
+:geoo/abstract/tbeam_down.T: 512 128
+:geoo/abstract/tbeam_down.T: 512 96
+:geoo/abstract/tbeam_down.T: 512 192
+:geoo/abstract/tbeam_down.T: 512 160
+:geoo/abstract/tbeam_down.T: 512 256
+:geoo/abstract/tbeam_down.T: 512 224
+:geoo/abstract/tbeam_down.T: 512 320
+:geoo/abstract/tbeam_down.T: 512 288
+:geoo/abstract/tbeam_down.T: 512 384
+:geoo/abstract/tbeam_down.T: 512 352
+:geoo/abstract/tbeam_down.T: 512 448
+:geoo/abstract/tbeam_down.T: 512 416
+:raymanni/lab/launcher_right.T: 0 480
+:raymanni/lab/launcher_left.T: 512 480
+:raymanni/lab/launcher_right.T: 416 32
+:raymanni/lab/launcher_left.T: 96 32
+:geoo/abstract/tbeam_down.T: 512 0
+:geoo/abstract/tbeam_down.T: 0 0
+:raymanni/lab/launcher_right.T: 32 480
+:raymanni/lab/launcher_left.T: 480 480
+
+:raymanni/lab/steel_1.S: 32 96
+:raymanni/lab/steel_1.S: 64 96
+:raymanni/lab/steel_1.S: 96 64
+:raymanni/lab/steel_1.S: 32 128
+:raymanni/lab/steel_1.S: 32 160
+:raymanni/lab/steel_1.S: 32 320
+:raymanni/lab/steel_1.S: 64 320
+:raymanni/gore/bone_1: 144 328 r
+:raymanni/gore/bone_1: 176 328 r
+:raymanni/gore/bone_1: 208 328 r
+:raymanni/gore/bone_1: 240 328 r
+:raymanni/gore/bone_1: 272 328 r
+:raymanni/gore/bone_1: 304 328 r
+:raymanni/gore/bone_1: 336 328 r
+:raymanni/lab/steel_1.S: 480 96 frr
+:raymanni/lab/steel_1.S: 448 96 frr
+:raymanni/lab/steel_1.S: 416 64 frr
+:raymanni/lab/steel_1.S: 416 96 frr
+:raymanni/lab/steel_1.S: 480 128 frr
+:raymanni/lab/steel_1.S: 480 160 frr
+:raymanni/lab/steel_1.S: 480 320 frr
+:raymanni/lab/steel_1.S: 448 320 frr
+:raymanni/gore/bone_1: 368 328 r
+:raymanni/gore/bone_1: 80 424 r
+:raymanni/gore/bone_1: 112 424 r
+:raymanni/gore/bone_1: 144 424 r
+:raymanni/gore/bone_1: 176 424 r
+:raymanni/gore/bone_1: 208 424 r
+:raymanni/gore/bone_1: 240 424 r
+:raymanni/gore/bone_1: 272 424 r
+:raymanni/gore/bone_1: 304 424 r
+:raymanni/gore/bone_1: 336 424 r
+:raymanni/gore/bone_1: 368 424 r
+:raymanni/gore/bone_1: 400 424 r
+:raymanni/gore/bone_1: 432 424 r
+:raymanni/lab/steel_1.S: 32 416
+:raymanni/lab/steel_1.S: 480 416
+:raymanni/lab/steel_1.S: 480 384
+:raymanni/lab/steel_1.S: 480 352
+:raymanni/lab/steel_1.S: 32 352
+:raymanni/lab/steel_1.S: 32 384
+:raymanni/lab/steel_1.S: 32 448
+:raymanni/lab/steel_1.S: 480 448
+:raymanni/gore/bone_1: 96 520 r
+:raymanni/gore/bone_1: 128 520 r
+:raymanni/gore/bone_1: 160 520 r
+:raymanni/gore/bone_1: 384 520 r
+:raymanni/gore/bone_1: 416 520 r
+:raymanni/gore/bone_1: 80 520 r
+:raymanni/gore/bone_1: 448 520 r
+:raymanni/lab/steel_1.S: 416 320 frr
+:raymanni/lab/steel_1.S: 96 320 frr
+:raymanni/lab/steel_1.S: 64 224 frr
+:raymanni/lab/steel_1.S: 448 224 frr
+:raymanni/lab/steel_1.S: 64 160 frr
+:raymanni/lab/steel_1.S: 96 160 frr
+:raymanni/lab/steel_1.S: 128 160 frr
+:raymanni/lab/steel_1.S: 448 160 frr
+:raymanni/lab/steel_1.S: 416 160 frr
+:raymanni/lab/steel_1.S: 384 160 frr
+:raymanni/gore/bone_1: 208 168 r
+:raymanni/gore/bone_1: 240 168 r
+:raymanni/gore/bone_1: 272 168 r
+:raymanni/lab/steel_1.S: 192 32
+:raymanni/lab/steel_1.S: 320 32
+:raymanni/lab/steel_1.S: 96 96
+:raymanni/lab/steel_1.S: 352 160 frr
+:raymanni/gore/bone_2: 336 152 r
+:raymanni/lab/steel_1.S: 160 160 frr
+:raymanni/gore/bone_2: 176 152 fr
+:raymanni/gore/bone_1: 304 168 r
+:raymanni/gore/bone_2: 112 312 fr
+:raymanni/gore/bone_2: 400 312 r
+:raymanni/gore/bone_2: 48 408 fr
+:raymanni/gore/bone_2: 464 408 r
+:raymanni/gore/bone_1: 240 40 r
+:raymanni/gore/bone_1: 272 40 r
+:raymanni/lab/steel_1.S: 272 512 frr
+:raymanni/gore/bone_1: 352 520 r
+:raymanni/lab/steel_1.S: 304 512 frr
+:raymanni/gore/bone_2: 320 504 fr
+:raymanni/lab/steel_1.S: 208 512 frr
+:raymanni/lab/steel_1.S: 240 512 frr
+:raymanni/gore/bone_2: 192 504 r
+:raymanni/lab/steel_1.S: 0 512
+:raymanni/lab/steel_1.S: 480 512 frr
+:raymanni/lab/steel_1.S: 512 512 frr
+:raymanni/lab/steel_1.S: 32 512 frr
+:raymanni/gore/bone_2: 48 504 fr
+:raymanni/gore/bone_2: 464 504 r
+:raymanni/lab/steel_1.S: 96 224 frr
+:raymanni/lab/steel_1.S: 128 224 frr
+:raymanni/lab/steel_1.S: 416 224 frr
+:raymanni/lab/steel_1.S: 384 224 frr
+:raymanni/lab/steel_1.S: 160 224 frr
+:raymanni/lab/steel_1.S: 320 224 frr
+:raymanni/lab/steel_1.S: 320 256 frr
+:raymanni/lab/steel_1.S: 192 224 frr
+:raymanni/lab/steel_1.S: 192 256 frr
+:raymanni/lab/steel_1.S: 352 224 frr
+:raymanni/lab/steel_1.S: 320 288 frr
+:raymanni/lab/steel_1.S: 192 288 frr
+:raymanni/lab/steel_1.S: 192 64
+:raymanni/lab/steel_1.S: 192 96
+:raymanni/lab/steel_1.S: 320 64
+:raymanni/lab/steel_1.S: 320 96
+:raymanni/gore/bone_2: 208 24 fr
+:raymanni/gore/bone_2: 304 24 r
+:raymanni/gore/bone_1: 144 104 r
+:raymanni/gore/bone_2: 112 88 fr
+:raymanni/gore/bone_2: 176 88 r
+:raymanni/gore/bone_1: 368 104 r
+:raymanni/gore/bone_2: 336 88 fr
+:raymanni/gore/bone_2: 400 88 r
+:raymanni/gore/bone_1: 489 208 rr
+:raymanni/gore/bone_2: 473 176 frr
+:raymanni/gore/bone_2: 473 304 rr
+:raymanni/gore/bone_1: 39 240 f
+:raymanni/gore/bone_2: 23 176
+:raymanni/gore/bone_2: 23 304 f
+:raymanni/gore/bone_1: 489 272 rr
+:raymanni/gore/bone_1: 39 208 f
+:raymanni/gore/bone_1: 489 240 rr
+:raymanni/gore/bone_1: 39 272 f

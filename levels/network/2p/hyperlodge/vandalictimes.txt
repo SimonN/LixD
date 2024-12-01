@@ -1,0 +1,70 @@
+$BUILT 2024-07-18 11:31:24
+$AUTHOR Hyperlodge
+$ENGLISH Vandalic Times
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 384
+#SIZE_Y 674
+#BACKGROUND_RED 179
+#BACKGROUND_GREEN 198
+#BACKGROUND_BLUE 189
+
+#SECONDS 60
+#INITIAL 100
+#SPAWN_INTERVAL 50
+
+#WALKER 5
+#RUNNER 5
+#CLIMBER 5
+#FLOATER 5
+#EXPLODER2 50
+#BLOCKER 50
+#BUILDER 50
+#PLATFORMER 5
+#BATTER 5
+#CUBER 5
+
+:amanda/occult/hatch_tentacle.H: -8 -32
+:amanda/occult/hatch_tentacle.H: 296 -32 r
+
+:geoo/abstract/goal.G: 208 562
+:geoo/abstract/goal.G: 144 562
+
+:geoo/steel/silhouette_64x32.S: 0 98
+:geoo/steel/silhouette_64x32.S: 64 98
+:geoo/steel/silhouette_64x32.S: 256 98
+:geoo/steel/silhouette_64x32.S: 320 98
+:geoo/steel/silhouette_32x64.S: 128 82
+:geoo/steel/silhouette_32x64.S: 224 82
+:matt/goldmine/plank: 128 146
+:geoo/steel/silhouette_32x64.S: 160 170
+:geoo/steel/silhouette_32x64.S: 192 170
+:matt/goldmine/plank: 128 234
+:geoo/steel/silhouette_32x64.S: 64 250
+:geoo/steel/silhouette_32x64.S: 288 250
+:matt/goldmine/plank: 0 314
+:geoo/steel/silhouette_32x64.S: 160 346
+:geoo/steel/silhouette_32x64.S: 192 346
+:matt/goldmine/plank: 64 410
+:geoo/steel/silhouette_32x64.S: 96 442
+:geoo/steel/silhouette_32x64.S: 256 442
+:matt/goldmine/plank: 128 498
+:matt/goldmine/plank: 128 314
+:matt/goldmine/plank: 192 410
+:geoo/steel/silhouette_32x64.S: 96 546
+:geoo/steel/silhouette_32x64.S: 256 546
+:matt/goldmine/plank: 128 602
+:matt/goldmine/plank: 64 538
+:matt/goldmine/plank: 192 538
+:matt/goldmine/plank: 256 314
+:matt/goldmine/plank: 336 410
+:matt/goldmine/plank: -80 410
+:geoo/steel/silhouette_32x64.S: 352 346
+:geoo/steel/silhouette_32x64.S: 0 346
+:geoo/steel/silhouette_32x64.S: 32 482
+:geoo/steel/silhouette_32x64.S: 320 482
+:geoo/steel/silhouette_64x64.S: 128 610
+:geoo/steel/silhouette_64x64.S: 192 610
+:matt/goldmine/plank: 128 570
+:matt/goldmine/plank: 128 586
+:geoo/steel/silhouette_32x32.S: 176 538

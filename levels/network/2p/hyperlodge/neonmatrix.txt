@@ -1,0 +1,184 @@
+$BUILT 2024-08-19 08:20:28
+$AUTHOR Hyperlodge
+$ENGLISH Neon Matrix
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 640
+#SIZE_Y 528
+#BACKGROUND_RED 23
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 12
+
+#SECONDS 60
+#INITIAL 50
+#SPAWN_INTERVAL 20
+
+#CLIMBER -1
+#EXPLODER2 -1
+#BUILDER 50
+#JUMPER -1
+#CUBER -1
+
+:matt/winter/Hatch.H: 4 388
+:matt/winter/Hatch.H: 572 388 r
+
+:geoo/abstract/goal.G: 512 126
+:geoo/abstract/goal.G: 96 126
+:geoo/abstract/goal.G: 96 20
+:geoo/abstract/goal.G: 512 20
+
+$BEGIN_TILE_GROUP 0
+:geoo/abstract/pipes/central7: 48 40
+:geoo/abstract/pipes/endr7: 80 40
+:geoo/abstract/pipes/juncx7: 40 40
+:geoo/abstract/pipes/central7: 8 40
+:geoo/abstract/pipes/endr7: 0 40 rr
+:geoo/abstract/pipes/central7: 40 8 r
+:geoo/abstract/pipes/endr7: 40 0 rrr
+:geoo/abstract/pipes/central7: 40 48 rrr
+:geoo/abstract/pipes/endr7: 40 80 r
+$END_TILE_GROUP
+:Group-0: 76 400
+$BEGIN_TILE_GROUP 1
+:geoo/abstract/pipes/central5: 8 40
+:geoo/abstract/pipes/juncx5: 40 40
+:geoo/abstract/pipes/endr5: 48 40
+:geoo/abstract/pipes/endr5: 0 40 rr
+:geoo/abstract/pipes/central5: 40 8 r
+:geoo/abstract/pipes/endr5: 40 0 rrr
+:geoo/abstract/pipes/endr5: 40 48 r
+$END_TILE_GROUP
+:Group-1: 172 400
+$BEGIN_TILE_GROUP 2
+:geoo/abstract/pipes/central1: 16 8
+:geoo/abstract/pipes/juncx1: 8 8
+:geoo/abstract/pipes/endr1: 48 8
+:geoo/abstract/pipes/endr1: 0 8 rr
+:geoo/abstract/pipes/endr1: 8 16 r
+:geoo/abstract/pipes/endr1: 8 0 rrr
+$END_TILE_GROUP
+:Group-2: 236 432 frr
+:Group-0: 476 400 frr
+:Group-1: 412 400 frr
+:Group-2: 348 432
+$BEGIN_TILE_GROUP 3
+:geoo/abstract/pipes/juncx3: 80 40
+:geoo/abstract/pipes/junct3: 40 40
+:geoo/abstract/pipes/junct3: 120 40
+:geoo/abstract/pipes/endr3: 80 48 r
+:geoo/abstract/pipes/central3: 8 40
+:geoo/abstract/pipes/endr3: 0 40 rr
+:geoo/abstract/pipes/central3: 40 8 r
+:geoo/abstract/pipes/endr3: 40 0 rrr
+:geoo/abstract/pipes/central3: 120 8 r
+:geoo/abstract/pipes/endr3: 120 0 rrr
+:geoo/abstract/pipes/central3: 48 40
+:geoo/abstract/pipes/central3: 88 40
+:geoo/abstract/pipes/central3: 128 40
+:geoo/abstract/pipes/endr3: 160 40
+:geoo/abstract/pipes/endr3: 80 32 rrr
+$END_TILE_GROUP
+:Group-3: 236 464
+$BEGIN_TILE_GROUP 4
+:geoo/abstract/pipes/central6: 48 16 rrr
+:geoo/abstract/pipes/juncx6: 48 48 rr
+:geoo/abstract/pipes/cshort6: 56 48 rr
+:geoo/abstract/pipes/cshort6: 40 48 rr
+:geoo/abstract/pipes/endr6: 64 48
+:geoo/abstract/pipes/endr6: 32 48 rr
+:geoo/abstract/pipes/juncx6: 48 8
+:geoo/abstract/pipes/cshort6: 56 8 rr
+:geoo/abstract/pipes/cshort6: 40 8 rr
+:geoo/abstract/pipes/endr6: 0 8 rr
+:geoo/abstract/pipes/endr6: 96 8
+:geoo/abstract/pipes/central6: 64 8
+:geoo/abstract/pipes/central6: 8 8
+:geoo/abstract/pipes/endr6: 48 56 r
+:geoo/abstract/pipes/endr6: 48 0 rrr
+$END_TILE_GROUP
+:Group-4: 268 256
+$BEGIN_TILE_GROUP 5
+:geoo/abstract/pipes/central4: 32 48
+:geoo/abstract/pipes/junct4: 24 48
+:geoo/abstract/pipes/junct4: 72 48
+:geoo/abstract/pipes/cshort4: 16 48
+:geoo/abstract/pipes/cshort4: 80 48
+:geoo/abstract/pipes/junct4: 8 48 r
+:geoo/abstract/pipes/junct4: 88 48 fr
+:geoo/abstract/pipes/central4: 8 56 r
+:geoo/abstract/pipes/central4: 88 56 r
+:geoo/abstract/pipes/central4: 24 16 r
+:geoo/abstract/pipes/central4: 72 16 r
+:geoo/abstract/pipes/central4: 88 16 r
+:geoo/abstract/pipes/central4: 8 16 r
+:geoo/abstract/pipes/junct4: 8 8 rrr
+:geoo/abstract/pipes/junct4: 88 8 r
+:geoo/abstract/pipes/corner4: 24 8 r
+:geoo/abstract/pipes/corner4: 72 8 rr
+:geoo/abstract/pipes/endr4: 32 8
+:geoo/abstract/pipes/endr4: 64 8 frr
+:geoo/abstract/pipes/endr4: 88 0 frrr
+:geoo/abstract/pipes/endr4: 8 0 frrr
+:geoo/abstract/pipes/endr4: 8 88 r
+:geoo/abstract/pipes/endr4: 88 88 r
+:geoo/abstract/pipes/endr4: 96 8
+:geoo/abstract/pipes/endr4: 0 8 rr
+:geoo/abstract/pipes/cshort4: 64 48
+$END_TILE_GROUP
+:Group-5: 268 328
+$BEGIN_TILE_GROUP 6
+:geoo/abstract/pipes/central0: 16 40
+:geoo/abstract/pipes/junct0: 48 40
+:geoo/abstract/pipes/junct0: 8 40
+:geoo/abstract/pipes/endr0: 56 40
+:geoo/abstract/pipes/endr0: 0 40 rr
+:geoo/abstract/pipes/central0: 8 8 r
+:geoo/abstract/pipes/central0: 48 8 r
+:geoo/abstract/pipes/endr0: 48 0 rrr
+:geoo/abstract/pipes/endr0: 8 0 rrr
+$END_TILE_GROUP
+:Group-6: 4 400
+$BEGIN_TILE_GROUP 7
+:geoo/abstract/pipes/corner2: 80 40 r
+:geoo/abstract/pipes/corner2: 112 40 rr
+:geoo/abstract/pipes/corner2: 112 48
+:geoo/abstract/pipes/corner2: 80 48 frr
+:geoo/abstract/pipes/central2: 120 48
+:geoo/abstract/pipes/central2: 48 48
+:geoo/abstract/pipes/central2: 160 40
+:geoo/abstract/pipes/corner2: 152 40 r
+:geoo/abstract/pipes/corner2: 152 48 frr
+:geoo/abstract/pipes/central2: 8 40
+:geoo/abstract/pipes/corner2: 40 40 rr
+:geoo/abstract/pipes/corner2: 40 48
+:geoo/abstract/pipes/junct2: 88 40
+:geoo/abstract/pipes/junct2: 104 40
+:geoo/abstract/pipes/junct2: 96 40 f
+:geoo/abstract/pipes/central2: 96 48 r
+:geoo/abstract/pipes/central2: 96 80 r
+:geoo/abstract/pipes/endr2: 192 40
+:geoo/abstract/pipes/endr2: 0 40 frr
+:geoo/abstract/pipes/endr2: 96 112 fr
+:geoo/abstract/pipes/central2: 88 8 r
+:geoo/abstract/pipes/central2: 104 8 r
+:geoo/abstract/pipes/endr2: 88 0 frrr
+:geoo/abstract/pipes/endr2: 104 0 frrr
+$END_TILE_GROUP
+:Group-7: 220 128
+:Group-6: 572 400
+:Group-1: 152 160 frrr
+:Group-1: 432 160 rrr
+:Group-0: 432 224 frr
+:Group-0: 120 224 frr
+:Group-2: 152 320 frrr
+:Group-2: 464 320 frrr
+:Group-6: 496 128
+:Group-6: 80 128
+:Group-3: 236 96 rr
+:Group-4: 80 16 rrr
+:Group-4: 496 16 r
+:Group-2: 308 432 frrr
+:Group-0: 396 24 frr
+:Group-0: 156 24 frr
+:geoo/construction/platform.S: 588 438
+:geoo/construction/platform.S: 20 438

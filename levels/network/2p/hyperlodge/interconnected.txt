@@ -1,0 +1,282 @@
+$BUILT 2024-07-18 12:39:51
+$AUTHOR Hyperlodge
+$ENGLISH Interconnected
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1280
+#SIZE_Y 976
+#BACKGROUND_RED 40
+#BACKGROUND_GREEN 68
+#BACKGROUND_BLUE 88
+
+#SECONDS 60
+#INITIAL 100
+#SPAWN_INTERVAL 50
+
+#CLIMBER 50
+#FLOATER 50
+#EXPLODER2 50
+#BLOCKER 50
+#BUILDER 50
+#PLATFORMER 50
+#DIGGER 50
+#JUMPER 50
+#BATTER 50
+
+:raymanni/gore/hatch.H: 111 360 r
+:raymanni/gore/hatch.H: 1136 360
+
+:raymanni/lab/goal.G: 608 45
+
+:geoo/construction/Laser_vr_64.F: 724 74
+:geoo/construction/Laser_vr_64.F: 540 74
+
+:geoo/construction/steam_up.T: 632 280
+:geoo/construction/steam_up.T: 632 248
+:geoo/construction/steam_up.T: 632 216
+:geoo/construction/steam_up.T: 632 312
+:geoo/construction/steam_up.T: 632 344
+:geoo/construction/steam_up.T: 240 688
+:geoo/construction/steam_up.T: 1024 688
+:geoo/construction/steam_up.T: 1264 688
+:geoo/construction/steam_up.T: 1248 688
+:geoo/construction/steam_up.T: 1232 688
+:geoo/construction/steam_up.T: 1216 688
+:geoo/construction/steam_up.T: 1200 688
+:geoo/construction/steam_up.T: 1184 688
+:geoo/construction/steam_up.T: 1168 688
+:geoo/construction/steam_up.T: 1152 688
+:geoo/construction/steam_up.T: 1136 688
+:geoo/construction/steam_up.T: 1120 688
+:geoo/construction/steam_up.T: 1104 688
+:geoo/construction/steam_up.T: 1088 688
+:geoo/construction/steam_up.T: 1072 688
+:geoo/construction/steam_up.T: 1056 688
+:geoo/construction/steam_up.T: 1040 688
+:geoo/construction/steam_up.T: 224 688
+:geoo/construction/steam_up.T: 208 688
+:geoo/construction/steam_up.T: 192 688
+:geoo/construction/steam_up.T: 176 688
+:geoo/construction/steam_up.T: 160 688
+:geoo/construction/steam_up.T: 144 688
+:geoo/construction/steam_up.T: 128 688
+:geoo/construction/steam_up.T: 112 688
+:geoo/construction/steam_up.T: 96 688
+:geoo/construction/steam_up.T: 80 688
+:geoo/construction/steam_up.T: 64 688
+:geoo/construction/steam_up.T: 48 688
+:geoo/construction/steam_up.T: 32 688
+:geoo/construction/steam_up.T: 16 688
+:geoo/construction/steam_up.T: 0 688
+:geoo/construction/steam_up.T: 848 208
+:geoo/construction/steam_up.T: 416 208
+
+$BEGIN_TILE_GROUP 0
+:matt/underworld/thinplatform128: 0 192
+:matt/underworld/thinplatform128: 128 192
+:matt/underworld/thinplatform128: 256 192
+:matt/underworld/thinplatform128: 384 192
+:matt/underworld/thinplatform128: 512 192
+:matt/underworld/thinplatform128: 640 192
+:matt/underworld/thinplatform128: 0 208
+:matt/underworld/thinplatform128: 128 208
+:matt/underworld/thinplatform128: 256 208
+:matt/underworld/thinplatform128: 384 208
+:matt/underworld/thinplatform128: 512 208
+:matt/underworld/thinplatform128: 640 208
+:matt/underworld/thinplatform128: 0 224
+:matt/underworld/thinplatform128: 128 224
+:matt/underworld/thinplatform128: 256 224
+:matt/underworld/thinplatform128: 384 224
+:matt/underworld/thinplatform128: 512 224
+:matt/underworld/thinplatform128: 640 224
+:matt/underworld/thinplatform128: 0 240
+:matt/underworld/thinplatform128: 128 240
+:matt/underworld/thinplatform128: 256 240
+:matt/underworld/thinplatform128: 384 240
+:matt/underworld/thinplatform128: 512 240
+:matt/underworld/thinplatform128: 640 240
+:matt/underworld/thinplatform128: 0 128
+:matt/underworld/thinplatform128: 128 128
+:matt/underworld/thinplatform128: 256 128
+:matt/underworld/thinplatform128: 384 128
+:matt/underworld/thinplatform128: 512 128
+:matt/underworld/thinplatform128: 640 128
+:matt/underworld/thinplatform128: 0 144
+:matt/underworld/thinplatform128: 128 144
+:matt/underworld/thinplatform128: 256 144
+:matt/underworld/thinplatform128: 384 144
+:matt/underworld/thinplatform128: 512 144
+:matt/underworld/thinplatform128: 640 144
+:matt/underworld/thinplatform128: 0 160
+:matt/underworld/thinplatform128: 128 160
+:matt/underworld/thinplatform128: 256 160
+:matt/underworld/thinplatform128: 384 160
+:matt/underworld/thinplatform128: 512 160
+:matt/underworld/thinplatform128: 640 160
+:matt/underworld/thinplatform128: 0 176
+:matt/underworld/thinplatform128: 128 176
+:matt/underworld/thinplatform128: 256 176
+:matt/underworld/thinplatform128: 384 176
+:matt/underworld/thinplatform128: 512 176
+:matt/underworld/thinplatform128: 640 176
+:matt/underworld/thinplatform128: 0 64
+:matt/underworld/thinplatform128: 128 64
+:matt/underworld/thinplatform128: 256 64
+:matt/underworld/thinplatform128: 384 64
+:matt/underworld/thinplatform128: 512 64
+:matt/underworld/thinplatform128: 640 64
+:matt/underworld/thinplatform128: 0 80
+:matt/underworld/thinplatform128: 128 80
+:matt/underworld/thinplatform128: 256 80
+:matt/underworld/thinplatform128: 384 80
+:matt/underworld/thinplatform128: 512 80
+:matt/underworld/thinplatform128: 640 80
+:matt/underworld/thinplatform128: 0 96
+:matt/underworld/thinplatform128: 128 96
+:matt/underworld/thinplatform128: 256 96
+:matt/underworld/thinplatform128: 384 96
+:matt/underworld/thinplatform128: 512 96
+:matt/underworld/thinplatform128: 640 96
+:matt/underworld/thinplatform128: 0 112
+:matt/underworld/thinplatform128: 128 112
+:matt/underworld/thinplatform128: 256 112
+:matt/underworld/thinplatform128: 384 112
+:matt/underworld/thinplatform128: 512 112
+:matt/underworld/thinplatform128: 640 112
+:matt/underworld/thinplatform128: 0 0
+:matt/underworld/thinplatform128: 128 0
+:matt/underworld/thinplatform128: 256 0
+:matt/underworld/thinplatform128: 384 0
+:matt/underworld/thinplatform128: 512 0
+:matt/underworld/thinplatform128: 640 0
+:matt/underworld/thinplatform128: 0 16
+:matt/underworld/thinplatform128: 128 16
+:matt/underworld/thinplatform128: 256 16
+:matt/underworld/thinplatform128: 384 16
+:matt/underworld/thinplatform128: 512 16
+:matt/underworld/thinplatform128: 640 16
+:matt/underworld/thinplatform128: 0 32
+:matt/underworld/thinplatform128: 128 32
+:matt/underworld/thinplatform128: 256 32
+:matt/underworld/thinplatform128: 384 32
+:matt/underworld/thinplatform128: 512 32
+:matt/underworld/thinplatform128: 640 32
+:matt/underworld/thinplatform128: 0 48
+:matt/underworld/thinplatform128: 128 48
+:matt/underworld/thinplatform128: 256 48
+:matt/underworld/thinplatform128: 384 48
+:matt/underworld/thinplatform128: 512 48
+:matt/underworld/thinplatform128: 640 48
+$END_TILE_GROUP
+:Group-0: 256 464
+:matt/underworld/02: 608 560
+:matt/underworld/02: 608 464
+:Group-0: 256 240
+:matt/underworld/02: 608 368
+:Group-0: -136 720
+:Group-0: 632 720
+:raymanni/toys/brick_8: 96 600 rr
+:raymanni/toys/brick_8: 176 600 rr
+:raymanni/toys/brick_8: 16 600 rr
+:raymanni/toys/brick_8: 144 536 rr
+:raymanni/toys/brick_8: 52 532 rr
+:raymanni/toys/brick_8: 96 472 rr
+:raymanni/toys/brick_5: 1040 600 rr
+:raymanni/toys/brick_5: 1120 600 rr
+:raymanni/toys/brick_5: 1200 600 rr
+:raymanni/toys/brick_5: 1072 536 rr
+:raymanni/toys/brick_5: 1168 536 rr
+:raymanni/toys/brick_5: 1120 472 rr
+:geoo/construction/platform.S: 624 74 r
+:geoo/construction/platform.S: 654 74 fr
+:geoo/construction/platform.S: 577 137 frr
+:geoo/construction/platform.S: 671 137 frr
+:raymanni/toys/cracker: 694 74
+:geoo/construction/platform.S: 703 137 frr
+:raymanni/toys/cracker: 538 74
+:geoo/construction/platform.S: 545 137 frr
+:geoo/abstract/pipes/central7: 1032 240 r
+:geoo/abstract/pipes/central7: 1032 272 r
+:geoo/abstract/pipes/central7: 1032 304 r
+:geoo/abstract/pipes/central7: 1032 336 r
+:geoo/abstract/pipes/central7: 1032 368 r
+:geoo/abstract/pipes/central7: 1032 400 r
+:geoo/abstract/pipes/central7: 1032 432 r
+:geoo/abstract/pipes/central7: 1032 464 r
+:geoo/abstract/pipes/central7: 1032 496 r
+:geoo/abstract/pipes/central7: 1032 528 r
+:geoo/abstract/pipes/central7: 240 240 r
+:geoo/abstract/pipes/central7: 240 272 r
+:geoo/abstract/pipes/central7: 240 304 r
+:geoo/abstract/pipes/central7: 240 336 r
+:geoo/abstract/pipes/central7: 240 368 r
+:geoo/abstract/pipes/central7: 240 400 r
+:geoo/abstract/pipes/central7: 240 432 r
+:geoo/abstract/pipes/central7: 240 464 r
+:geoo/abstract/pipes/central7: 240 496 r
+:geoo/abstract/pipes/central7: 240 528 r
+:geoo/abstract/pipes/endr7: 1032 232 rrr
+:geoo/abstract/pipes/endr7: 1032 560 r
+:geoo/abstract/pipes/endr7: 240 232 rrr
+:geoo/abstract/pipes/endr7: 240 560 r
+:matt/bricks/06a: 0 256
+:matt/bricks/05a: 1216 256
+:matt/bricks/03a: 0 192
+:matt/bricks/03a: 1216 192
+:matt/bricks/06a: 64 192
+:matt/bricks/05a: 1152 192
+:matt/bricks/06a: 128 128
+:matt/bricks/05a: 1088 128
+:matt/bricks/03a: 0 128
+:matt/bricks/03a: 64 128
+:matt/bricks/03a: 1152 128
+:matt/bricks/03a: 1216 128
+:matt/bricks/17: 208 120 frr
+:matt/bricks/17: 264 176 frr
+:matt/bricks/17: 1008 120
+:matt/bricks/17: 952 176
+:matt/bricks/06a: 192 64
+:matt/bricks/03a: 64 64
+:matt/bricks/03a: 128 64
+:matt/bricks/03a: 0 64
+:matt/bricks/05a: 1024 64
+:matt/bricks/03a: 1088 64
+:matt/bricks/03a: 1152 64
+:matt/bricks/03a: 1216 64
+:geoo/construction/platform.S: 576 72 frr
+:geoo/construction/platform.S: 608 72 frr
+:geoo/construction/platform.S: 640 72 frr
+:geoo/construction/platform.S: 672 72 frr
+:raymanni/toys/chalk_box: 96 304
+:raymanni/toys/chalk_box: 1120 304
+:raymanni/toys/soldier_3: 104 256
+:raymanni/toys/soldier_3: 1128 256 frr
+:raymanni/toys/puzzle_1: 584 40
+:raymanni/toys/puzzle_2: 664 40 frr
+:raymanni/toys/puzzle_3: 536 16
+:raymanni/toys/puzzle_4: 688 16 frr
+:raymanni/toys/puzzle_5: 664 16 frr
+:raymanni/toys/puzzle_4: 584 16
+:raymanni/toys/puzzle_2: 560 16
+:raymanni/toys/puzzle_5: 712 16 frr
+:raymanni/toys/puzzle_1: 512 16
+:raymanni/toys/puzzle_3: 736 16 frr
+:raymanni/toys/puzzle_3: 808 16 frr
+:raymanni/toys/puzzle_4: 760 16 frr
+:raymanni/toys/puzzle_2: 784 16 frr
+:raymanni/toys/puzzle_1: 832 16 frr
+:raymanni/toys/puzzle_4: 464 16
+:raymanni/toys/puzzle_5: 488 16
+:raymanni/toys/puzzle_5: 440 16
+:raymanni/toys/puzzle_3: 416 16
+:raymanni/toys/puzzle_4: 416 40
+:raymanni/toys/puzzle_5: 416 64
+:raymanni/toys/puzzle_3: 416 88
+:raymanni/toys/puzzle_2: 416 112
+:raymanni/toys/puzzle_2: 416 136
+:raymanni/toys/puzzle_5: 832 40 frr
+:raymanni/toys/puzzle_1: 832 112 frr
+:raymanni/toys/puzzle_1: 832 136 frr
+:raymanni/toys/puzzle_4: 832 64 frr
+:raymanni/toys/puzzle_3: 832 88 frr

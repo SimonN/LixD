@@ -1,0 +1,147 @@
+$BUILT 2024-07-18 11:44:27
+$AUTHOR Hyperlodge
+$ENGLISH Mecha vs Mecha
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 768
+#SIZE_Y 544
+#BACKGROUND_RED 48
+#BACKGROUND_GREEN 48
+#BACKGROUND_BLUE 48
+
+#SECONDS 80
+#INITIAL 200
+#SPAWN_INTERVAL 20
+
+#WALKER 1
+#RUNNER -1
+#CLIMBER -1
+#FLOATER 1
+#EXPLODER2 -1
+#BLOCKER 1
+#BUILDER -1
+#PLATFORMER 1
+#BASHER 1
+#MINER 1
+#DIGGER 1
+#JUMPER -1
+#BATTER 1
+#CUBER 1
+
+:geoo/abstract/hatch.H: 112 40
+:geoo/abstract/hatch.H: 624 40 r
+:geoo/abstract/hatch.H: 624 264 r
+:geoo/abstract/hatch.H: 112 264
+
+:geoo/abstract/goal.G: 304 -8
+:geoo/abstract/goal.G: 432 -8
+
+:geoo/construction/steam_up.T: 752 464
+:geoo/construction/steam_up.T: 0 464
+
+:geoo/steel/dark_32x64o.S: 80 72
+:geoo/steel/dark_32x64o.S: 80 136
+:geoo/steel/dark_32x64o.S: 80 200
+:geoo/steel/dark_32x64o.S: 80 264
+:geoo/steel/dark_64x32o.S: 112 296
+:geoo/steel/dark_64x32o.S: 224 328
+:geoo/steel/dark_32x64o.S: 304 72
+:geoo/steel/dark_32x64o.S: 304 136
+:geoo/steel/dark_32x64o.S: 304 200
+:geoo/steel/dark_32x64o.S: 304 264
+:geoo/steel/dark_64x32o.S: 240 296
+:geoo/steel/dark_32x64o.S: 432 72
+:geoo/steel/dark_32x64o.S: 432 136
+:geoo/steel/dark_32x64o.S: 432 200
+:geoo/steel/dark_32x64o.S: 432 264
+:geoo/steel/dark_64x32o.S: 464 296
+:geoo/steel/dark_64x32o.S: 480 328
+:geoo/steel/dark_32x64o.S: 656 72
+:geoo/steel/dark_32x64o.S: 656 136
+:geoo/steel/dark_32x64o.S: 656 200
+:geoo/steel/dark_32x64o.S: 656 264
+:geoo/steel/dark_64x32o.S: 592 296
+:geoo/steel/dark_64x32o.S: 576 328
+:geoo/steel/dark_64x32o.S: 128 328
+:matt/bricks/17: 176 360
+:matt/bricks/17: 128 360
+:matt/bricks/17: 128 408 frr
+:matt/bricks/17: 176 408 frr
+:geoo/steel/dark_32x16o.S: 96 464
+:geoo/steel/dark_32x16o.S: 128 464
+:geoo/steel/dark_32x16o.S: 160 464
+:geoo/steel/dark_32x16o.S: 192 464
+:geoo/steel/dark_32x16o.S: 224 464
+:geoo/steel/dark_32x16o.S: 256 464
+:geoo/steel/dark_32x16o.S: 288 464
+:geoo/steel/dark_32x16o.S: 320 464
+:geoo/steel/dark_32x16o.S: 352 464
+:geoo/steel/dark_32x16o.S: 384 464
+:geoo/steel/dark_32x16o.S: 416 464
+:geoo/steel/dark_32x16o.S: 448 464
+:geoo/steel/dark_32x16o.S: 480 464
+:geoo/steel/dark_32x16o.S: 512 464
+:geoo/steel/dark_32x16o.S: 544 464
+:geoo/steel/dark_32x16o.S: 576 464
+:geoo/steel/dark_32x16o.S: 608 464
+:geoo/steel/dark_32x16o.S: 640 464
+:matt/bricks/17: 528 360 frr
+:matt/bricks/17: 576 360 frr
+:matt/bricks/17: 576 408
+:matt/bricks/17: 528 408
+:geoo/steel/32x32o.S: 80 40
+:geoo/steel/32x32o.S: 304 40
+:geoo/steel/32x32o.S: 432 40
+:geoo/steel/32x32o.S: 656 40
+:geoo/steel/dark_32x16o.S: 64 528
+:geoo/steel/dark_32x16o.S: 96 528
+:geoo/steel/dark_32x16o.S: 128 528
+:geoo/steel/dark_32x16o.S: 160 528
+:geoo/steel/dark_32x16o.S: 192 528
+:geoo/steel/dark_32x16o.S: 224 528
+:geoo/steel/dark_32x16o.S: 256 528
+:geoo/steel/dark_32x16o.S: 288 528
+:geoo/steel/dark_32x16o.S: 320 528
+:geoo/steel/dark_32x16o.S: 352 528
+:geoo/steel/dark_32x16o.S: 384 528
+:geoo/steel/dark_32x16o.S: 416 528
+:geoo/steel/dark_32x16o.S: 448 528
+:geoo/steel/dark_32x16o.S: 480 528
+:geoo/steel/dark_32x16o.S: 512 528
+:geoo/steel/dark_32x16o.S: 544 528
+:geoo/steel/dark_32x16o.S: 576 528
+:geoo/steel/dark_32x16o.S: 608 528
+:geoo/steel/dark_32x16o.S: 640 528
+:geoo/steel/dark_32x16o.S: 672 528
+:geoo/steel/dark_32x16o.S: 32 528
+:geoo/steel/dark_32x16o.S: 704 528
+:geoo/steel/dark_32x16o.S: 736 528
+:geoo/steel/dark_32x16o.S: 0 528
+:geoo/steel/16x32o.S: 0 496
+:geoo/steel/16x32o.S: 752 496
+:matt/bricks/17: 32 472
+:matt/bricks/17: 672 472 frr
+:raymanni/gore/bone_1: 112 72 r
+:raymanni/gore/bone_1: 144 72 r
+:raymanni/gore/bone_1: 176 72 r
+:raymanni/gore/bone_1: 208 72 r
+:raymanni/gore/bone_1: 240 72 r
+:raymanni/gore/bone_1: 272 72 r
+:raymanni/gore/bone_1: 464 72 r
+:raymanni/gore/bone_1: 496 72 r
+:raymanni/gore/bone_1: 528 72 r
+:raymanni/gore/bone_1: 560 72 r
+:raymanni/gore/bone_1: 592 72 r
+:raymanni/gore/bone_1: 624 72 r
+:geoo/construction/fence_64x64.S: 352 272
+:geoo/construction/fence_64x64.S: 352 208
+:geoo/construction/fence_64x64.S: 352 144
+:geoo/construction/fence_64x64.S: 352 80
+:geoo/construction/fence_64x64.S: 352 400
+:geoo/construction/fence_64x64.S: 352 336
+:raymanni/gore/bone_1: 176 296 r
+:raymanni/gore/bone_1: 208 296 r
+:raymanni/gore/bone_1: 192 328 r
+:raymanni/gore/bone_1: 528 296 r
+:raymanni/gore/bone_1: 560 296 r
+:raymanni/gore/bone_1: 544 328 r

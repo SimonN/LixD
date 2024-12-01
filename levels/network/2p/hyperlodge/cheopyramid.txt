@@ -1,0 +1,269 @@
+$BUILT 2024-07-18 11:30:26
+$AUTHOR Hyperlodge
+$ENGLISH Cheopyramid
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1440
+#SIZE_Y 984
+#BACKGROUND_RED 99
+#BACKGROUND_GREEN 83
+#BACKGROUND_BLUE 32
+
+#SECONDS 100
+#INITIAL 400
+#SPAWN_INTERVAL 40
+
+#WALKER 40
+#RUNNER 40
+#CLIMBER -1
+#FLOATER 4
+#EXPLODER2 -1
+#BLOCKER 40
+#BUILDER 4
+#PLATFORMER 40
+#BASHER 4
+#MINER 4
+#DIGGER 4
+#JUMPER 40
+#BATTER 40
+#CUBER -1
+
+:geoo/sandstone/Hatch.H: 80 824
+:geoo/sandstone/Hatch.H: 1264 824 r
+
+:geoo/sandstone/Goal.G: 1344 824
+:geoo/sandstone/Goal.G: 32 824
+
+:proxima/flame.F: 700 744
+:raymanni/gore/bonesaw.F: 688 612
+:raymanni/gore/bonesaw.F: 688 388
+:raymanni/gore/bonesaw.F: 688 164
+
+:raymanni/lab/launcher_right.T: 0 760
+:raymanni/lab/launcher_left.T: 1408 760
+
+:geoo/sandstone/64x32_blank: 288 800
+:geoo/sandstone/64x32_blank: 304 768
+:geoo/sandstone/64x32_blank: 320 736
+:geoo/sandstone/64x32_blank: 336 704
+:geoo/sandstone/64x32_blank: 352 672
+:geoo/sandstone/64x32_blank: 368 640
+:geoo/sandstone/64x32_blank: 384 608
+:geoo/sandstone/64x32_blank: 400 576
+:geoo/sandstone/64x32_blank: 416 544
+:geoo/sandstone/64x32_blank: 432 512
+:geoo/sandstone/64x32_blank: 448 480
+:geoo/sandstone/64x32_blank: 464 448
+:geoo/sandstone/64x32_blank: 480 416
+:geoo/sandstone/64x32_blank: 496 384
+:geoo/sandstone/64x32_blank: 512 352
+:geoo/sandstone/64x32_blank: 528 320
+:geoo/sandstone/64x32_blank: 544 288
+:geoo/sandstone/64x32_blank: 560 256
+:geoo/sandstone/64x32_blank: 576 224
+:geoo/sandstone/64x32_blank: 592 192
+:geoo/sandstone/64x32_blank: 608 160
+:geoo/sandstone/64x32_blank: 624 128
+:geoo/sandstone/64x32_blank: 640 96
+:geoo/sandstone/64x32_blank: 656 64
+:geoo/sandstone/64x32_blank: 1088 800 frr
+:geoo/sandstone/64x32_blank: 1072 768 frr
+:geoo/sandstone/64x32_blank: 1056 736 frr
+:geoo/sandstone/64x32_blank: 1040 704 frr
+:geoo/sandstone/64x32_blank: 1024 672 frr
+:geoo/sandstone/64x32_blank: 1008 640 frr
+:geoo/sandstone/64x32_blank: 992 608 frr
+:geoo/sandstone/64x32_blank: 976 576 frr
+:geoo/sandstone/64x32_blank: 960 544 frr
+:geoo/sandstone/64x32_blank: 944 512 frr
+:geoo/sandstone/64x32_blank: 928 480 frr
+:geoo/sandstone/64x32_blank: 912 448 frr
+:geoo/sandstone/64x32_blank: 896 416 frr
+:geoo/sandstone/64x32_blank: 880 384 frr
+:geoo/sandstone/64x32_blank: 864 352 frr
+:geoo/sandstone/64x32_blank: 848 320 frr
+:geoo/sandstone/64x32_blank: 832 288 frr
+:geoo/sandstone/64x32_blank: 816 256 frr
+:geoo/sandstone/64x32_blank: 800 224 frr
+:geoo/sandstone/64x32_blank: 784 192 frr
+:geoo/sandstone/64x32_blank: 768 160 frr
+:geoo/sandstone/64x32_blank: 752 128 frr
+:geoo/sandstone/64x32_blank: 736 96 frr
+:geoo/sandstone/64x32_blank: 720 64
+:geoo/sandstone/64x32_blank: 992 800 frr
+:geoo/sandstone/64x32_blank: 976 768 frr
+:geoo/sandstone/64x32_blank: 960 736 frr
+:geoo/sandstone/64x32_blank: 944 704 frr
+:geoo/sandstone/64x32_blank: 928 672 frr
+:geoo/sandstone/64x32_blank: 912 640 frr
+:geoo/sandstone/64x32_blank: 896 608 frr
+:geoo/sandstone/64x32_blank: 880 576 frr
+:geoo/sandstone/64x32_blank: 864 544 frr
+:geoo/sandstone/64x32_blank: 848 512 frr
+:geoo/sandstone/64x32_blank: 832 480 frr
+:geoo/sandstone/64x32_blank: 816 448 frr
+:geoo/sandstone/64x32_blank: 800 416 frr
+:geoo/sandstone/64x32_blank: 784 384 frr
+:geoo/sandstone/64x32_blank: 768 352 frr
+:geoo/sandstone/64x32_blank: 752 320 frr
+:geoo/sandstone/64x32_blank: 736 288 frr
+:geoo/sandstone/64x32_blank: 720 256
+:geoo/sandstone/64x32_blank: 384 800
+:geoo/sandstone/64x32_blank: 400 768
+:geoo/sandstone/64x32_blank: 416 736
+:geoo/sandstone/64x32_blank: 432 704
+:geoo/sandstone/64x32_blank: 448 672
+:geoo/sandstone/64x32_blank: 464 640
+:geoo/sandstone/64x32_blank: 480 608
+:geoo/sandstone/64x32_blank: 496 576
+:geoo/sandstone/64x32_blank: 512 544
+:geoo/sandstone/64x32_blank: 528 512
+:geoo/sandstone/64x32_blank: 544 480
+:geoo/sandstone/64x32_blank: 560 448
+:geoo/sandstone/64x32_blank: 576 416
+:geoo/sandstone/64x32_blank: 592 384
+:geoo/sandstone/64x32_blank: 608 352
+:geoo/sandstone/64x32_blank: 624 320
+:geoo/sandstone/64x32_blank: 640 288
+:geoo/sandstone/64x32_blank: 656 256
+:geoo/sandstone/64x32_blank: 480 800
+:geoo/sandstone/64x32_blank: 496 768
+:geoo/sandstone/64x32_blank: 512 736
+:geoo/sandstone/64x32_blank: 528 704
+:geoo/sandstone/64x32_blank: 544 672
+:geoo/sandstone/64x32_blank: 560 640
+:geoo/sandstone/64x32_blank: 576 608
+:geoo/sandstone/64x32_blank: 592 576
+:geoo/sandstone/64x32_blank: 608 544
+:geoo/sandstone/64x32_blank: 624 512
+:geoo/sandstone/64x32_blank: 896 800 frr
+:geoo/sandstone/64x32_blank: 880 768 frr
+:geoo/sandstone/64x32_blank: 864 736 frr
+:geoo/sandstone/64x32_blank: 848 704 frr
+:geoo/sandstone/64x32_blank: 816 640 frr
+:geoo/sandstone/64x32_blank: 800 608 frr
+:geoo/sandstone/64x32_blank: 784 576 frr
+:geoo/sandstone/64x32_blank: 768 544 frr
+:geoo/sandstone/64x32_blank: 752 512 frr
+:geoo/sandstone/64x32_blank: 832 672 frr
+:geoo/sandstone/64x32_blank: 656 480
+:geoo/sandstone/64x32_blank: 720 480
+:geoo/sandstone/64x32_blank: 576 800
+:geoo/sandstone/64x32_blank: 592 768
+:geoo/sandstone/64x32_blank: 608 736
+:geoo/sandstone/64x32_blank: 624 704
+:geoo/sandstone/64x32_blank: 800 800 frr
+:geoo/sandstone/64x32_blank: 784 768 frr
+:geoo/sandstone/64x32_blank: 768 736 frr
+:geoo/sandstone/64x32_blank: 752 704
+:raymanni/toys/beam_13.S: 716 640
+:geoo/sandstone/64x32_blank: 688 704
+:geoo/sandstone/64x32_blank: 272 832
+:geoo/sandstone/64x32_blank: 336 832
+:geoo/sandstone/64x32_blank: 400 832
+:geoo/sandstone/64x32_blank: 464 832
+:geoo/sandstone/64x32_blank: 528 832
+:geoo/sandstone/64x32_blank: 592 832
+:geoo/sandstone/64x32_blank: 656 832
+:geoo/sandstone/64x32_blank: 720 832
+:geoo/sandstone/64x32_blank: 784 832
+:geoo/sandstone/64x32_blank: 848 832
+:geoo/sandstone/64x32_blank: 912 832
+:geoo/sandstone/64x32_blank: 976 832
+:geoo/sandstone/64x32_blank: 1040 832
+:geoo/sandstone/64x32_blank: 1104 832
+:matt/beach/daytime/06: 704 848
+:matt/beach/daytime/00: 800 848
+:matt/beach/daytime/03: 688 848
+:matt/beach/daytime/06: 832 848
+:matt/beach/daytime/00: 944 848
+:matt/beach/daytime/04: 1008 832 r
+:matt/beach/daytime/03: 1120 848
+:matt/beach/daytime/03: 1248 848
+:matt/beach/daytime/03: 1360 848
+:matt/beach/daytime/04: 1136 856 r
+:matt/beach/daytime/04: 1248 856 r
+:matt/beach/daytime/00: 1370 868
+:matt/beach/daytime/06: 521 848 frr
+:matt/beach/daytime/00: 558 848 frr
+:matt/beach/daytime/03: 600 848 frr
+:matt/beach/daytime/06: 393 848 frr
+:matt/beach/daytime/00: 414 848 frr
+:matt/beach/daytime/04: 264 832 fr
+:matt/beach/daytime/03: 168 848 frr
+:matt/beach/daytime/03: 40 848 frr
+:matt/beach/daytime/03: -72 848 frr
+:matt/beach/daytime/04: 136 856 fr
+:matt/beach/daytime/04: 24 856 fr
+:matt/beach/daytime/00: -12 868 frr
+:raymanni/gore/steel.S: 0 952
+:raymanni/gore/steel.S: 32 952
+:raymanni/gore/steel.S: 64 952
+:raymanni/gore/steel.S: 96 952
+:raymanni/gore/steel.S: 128 952
+:raymanni/gore/steel.S: 160 952
+:raymanni/gore/steel.S: 192 952
+:raymanni/gore/steel.S: 224 952
+:raymanni/gore/steel.S: 256 952
+:raymanni/gore/steel.S: 288 952
+:raymanni/gore/steel.S: 320 952
+:raymanni/gore/steel.S: 352 952
+:raymanni/gore/steel.S: 384 952
+:raymanni/gore/steel.S: 416 952
+:raymanni/gore/steel.S: 448 952
+:raymanni/gore/steel.S: 480 952
+:raymanni/gore/steel.S: 512 952
+:raymanni/gore/steel.S: 544 952
+:raymanni/gore/steel.S: 576 952
+:raymanni/gore/steel.S: 608 952
+:raymanni/gore/steel.S: 640 952
+:raymanni/gore/steel.S: 672 952
+:raymanni/gore/steel.S: 704 952
+:raymanni/gore/steel.S: 736 952
+:raymanni/gore/steel.S: 768 952
+:raymanni/gore/steel.S: 800 952
+:raymanni/gore/steel.S: 832 952
+:raymanni/gore/steel.S: 864 952
+:raymanni/gore/steel.S: 896 952
+:raymanni/gore/steel.S: 928 952
+:raymanni/gore/steel.S: 960 952
+:raymanni/gore/steel.S: 992 952
+:raymanni/gore/steel.S: 1024 952
+:raymanni/gore/steel.S: 1056 952
+:raymanni/gore/steel.S: 1088 952
+:raymanni/gore/steel.S: 1120 952
+:raymanni/gore/steel.S: 1152 952
+:raymanni/gore/steel.S: 1184 952
+:raymanni/gore/steel.S: 1216 952
+:raymanni/gore/steel.S: 1248 952
+:raymanni/gore/steel.S: 1280 952
+:raymanni/gore/steel.S: 1312 952
+:raymanni/gore/steel.S: 1344 952
+:raymanni/gore/steel.S: 1376 952
+:raymanni/gore/steel.S: 1408 952
+:raymanni/gore/steel.S: 256 920
+:raymanni/gore/steel.S: 256 888
+:raymanni/gore/steel.S: 256 856
+:raymanni/gore/steel.S: 1152 920
+:raymanni/gore/steel.S: 1152 888
+:raymanni/gore/steel.S: 1152 856
+:raymanni/gore/steel.S: 704 792
+:raymanni/gore/steel.S: 704 824
+:raymanni/gore/steel.S: 704 856
+:raymanni/gore/steel.S: 704 888
+:raymanni/gore/steel.S: 704 920
+:raymanni/gore/steel.S: 0 920
+:raymanni/gore/steel.S: 0 888
+:raymanni/gore/steel.S: 0 856
+:raymanni/gore/steel.S: 0 824
+:raymanni/gore/steel.S: 0 792
+:raymanni/gore/steel.S: 1408 920
+:raymanni/gore/steel.S: 1408 888
+:raymanni/gore/steel.S: 1408 856
+:raymanni/gore/steel.S: 1408 824
+:raymanni/gore/steel.S: 1408 792
+:raymanni/toys/beam_13.S: 716 448
+:raymanni/toys/beam_13.S: 716 416
+:raymanni/toys/beam_13.S: 716 224
+:raymanni/toys/beam_13.S: 716 192
+:raymanni/toys/beam_13.S: 716 672

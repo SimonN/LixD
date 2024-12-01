@@ -1,0 +1,189 @@
+$BUILT 2024-07-18 13:04:38
+$AUTHOR Hyperlodge
+$ENGLISH Circus Follies
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 800
+#SIZE_Y 400
+#BACKGROUND_RED 32
+#BACKGROUND_GREEN 32
+#BACKGROUND_BLUE 80
+
+#SECONDS 60
+#INITIAL 150
+#SPAWN_INTERVAL 75
+
+#RUNNER -1
+#CLIMBER -1
+#EXPLODER2 -1
+#BUILDER -1
+#MINER -1
+#JUMPER -1
+#BATTER -1
+#CUBER -1
+
+:simon/oriental/hatch.H: 63 40 r
+:simon/oriental/hatch.H: 673 40
+
+:raymanni/lab/goal.G: 383 104
+:raymanni/lab/goal.G: 353 104
+
+:matt/water.W: 144 368
+:matt/water.W: 112 368
+:matt/water.W: 80 368
+:matt/water.W: 48 368
+:matt/water.W: 16 368
+:matt/water.W: -16 368
+:matt/water.W: 624 368
+:matt/water.W: 656 368
+:matt/water.W: 688 368
+:matt/water.W: 720 368
+:matt/water.W: 752 368
+:matt/water.W: 784 368
+
+:raymanni/lab/launcher_left.T: 48 135
+:raymanni/lab/launcher_right.T: 719 135
+
+:geoo/steel/silhouette_64x32.S: 48 167
+:geoo/steel/silhouette_64x32.S: 112 167
+:raymanni/gore/tentacle_1: 220 94 rrr
+:geoo/steel/silhouette_64x32.S: 176 167
+:raymanni/gore/tentacle_2: 156 128 fr
+:geoo/steel/silhouette_64x32.S: 240 167
+:geoo/construction/platform.S: 307 155 r
+:geoo/steel/silhouette_64x32.S: 304 167
+:geoo/construction/fence_32x32.S: 336 135
+:geoo/construction/fence_32x32.S: 336 103
+:geoo/construction/fence_32x32.S: 368 87
+:geoo/construction/fence_32x32.S: 400 87
+:geoo/construction/stairs_rd_32.S: 281 5 fr
+:geoo/construction/rod_steel/straight_diagd32.S: 308 70
+:geoo/construction/platform.S: 307 77 r
+:geoo/construction/platform.S: 307 109 r
+:geoo/construction/rod_steel/straight32.S: 82 209
+:geoo/construction/rod_steel/straight32.S: 50 209
+:geoo/construction/rod_steel/link_diag.S: 22 193
+:geoo/construction/rod_steel/link_dd_h.S: 30 201
+:geoo/construction/rod_steel/link_diag.S: 14 191 frrr
+:geoo/construction/rod_steel/link_dd_h.S: 10 177 frrr
+:geoo/construction/rod_steel/straight32.S: 10 145 r
+:geoo/construction/rod_steel/straight32.S: 10 113 r
+:geoo/construction/rod_steel/straight32.S: 146 209
+:geoo/construction/rod_steel/straight32.S: 114 209
+:geoo/construction/rod_steel/straight32.S: 210 209
+:geoo/construction/rod_steel/straight32.S: 178 209
+:matt/carnival/20: 248 241
+:matt/carnival/22: 292 241
+:matt/carnival/23: 336 241
+:matt/carnival/55: 176 296
+:matt/carnival/16: 240 209
+:matt/carnival/16: 304 209
+:matt/carnival/27a: 304 336 r
+:matt/carnival/27a: 368 336 rr
+:matt/goldmine/planksupport2: 63 104
+:matt/goldmine/planksupport3: 98 136
+:matt/goldmine/plank: 20 296
+:matt/carnival/37: 112 296
+:matt/goldmine/tracks: 56 332
+:matt/marble/thinplatform128p: 48 396
+:matt/marble/thinplatform128p: 48 392
+:matt/marble/thinplatform128p: 48 388
+:matt/marble/thinplatform128p: 48 384
+:matt/marble/thinplatform128p: 48 380
+:matt/marble/thinplatform128p: 48 376
+:matt/marble/thinplatform128p: 48 372
+:matt/marble/thinplatform128p: 46 368
+:matt/marble/thinplatform128p: 44 364
+:matt/marble/thinplatform128p: 42 360
+:matt/marble/thinplatform128p: 40 356
+:matt/marble/thinplatform128p: 174 368
+:matt/marble/thinplatform128p: 172 364
+:matt/marble/thinplatform128p: 170 360
+:matt/marble/thinplatform128p: 168 356
+:matt/carnival/27a: 176 336 rrr
+:matt/carnival/27a: 240 336
+:matt/winter/09c: 6 98
+:raymanni/gore/eye: 148 134 r
+:raymanni/gore/tentacle_3: 144 52
+:raymanni/gore/goop_3: 188 166
+:raymanni/gore/goop_1: 140 166
+:raymanni/gore/goop_9: 246 130
+:raymanni/gore/goop_7: 160 100
+:matt/underworld/00: 368 167
+:matt/underworld/00: 368 183
+:raymanni/holiday/screw1: 377 175
+:raymanni/holiday/screw1: 407 175
+:geoo/construction/fence_rust_64x64: 368 336
+:amanda/forest/rope_c: 294 151
+:amanda/forest/rope_c: 307 151
+:amanda/forest/rope: 300 145 r
+:amanda/forest/rope: 300 140 r
+:amanda/forest/rope: 300 135 r
+:geoo/steel/silhouette_64x32.S: 688 167 frr
+:geoo/steel/silhouette_64x32.S: 624 167 frr
+:raymanni/gore/tentacle_1: 530 94 frrr
+:geoo/steel/silhouette_64x32.S: 560 167 frr
+:raymanni/gore/tentacle_2: 594 128 r
+:geoo/steel/silhouette_64x32.S: 496 167 frr
+:geoo/construction/platform.S: 491 155 fr
+:geoo/steel/silhouette_64x32.S: 432 167 frr
+:geoo/construction/fence_32x32.S: 432 135 frr
+:geoo/construction/fence_32x32.S: 432 103 frr
+:geoo/construction/stairs_rd_32.S: 487 5 r
+:geoo/construction/rod_steel/straight_diagd32.S: 454 70 frr
+:geoo/construction/platform.S: 491 77 fr
+:geoo/construction/platform.S: 491 109 fr
+:geoo/construction/rod_steel/straight32.S: 686 209 frr
+:geoo/construction/rod_steel/straight32.S: 718 209 frr
+:geoo/construction/rod_steel/link_diag.S: 764 193 frr
+:geoo/construction/rod_steel/link_dd_h.S: 750 201 frr
+:geoo/construction/rod_steel/link_diag.S: 766 191 rrr
+:geoo/construction/rod_steel/link_dd_h.S: 774 177 rrr
+:geoo/construction/rod_steel/straight32.S: 782 145 fr
+:geoo/construction/rod_steel/straight32.S: 782 113 fr
+:geoo/construction/rod_steel/straight32.S: 622 209 frr
+:geoo/construction/rod_steel/straight32.S: 654 209 frr
+:geoo/construction/rod_steel/straight32.S: 558 209 frr
+:geoo/construction/rod_steel/straight32.S: 590 209 frr
+:matt/carnival/20: 503 241 frr
+:matt/carnival/22: 458 241 frr
+:matt/carnival/23: 416 241 frr
+:matt/carnival/21: 376 241
+:matt/carnival/55: 368 296 frr
+:matt/carnival/16: 496 209 frr
+:matt/carnival/16: 432 209 frr
+:matt/carnival/27a: 432 336 fr
+:matt/goldmine/planksupport2: 673 104 frr
+:matt/goldmine/planksupport3: 670 136 frr
+:matt/goldmine/plank: 652 296 frr
+:matt/carnival/37: 624 296 frr
+:matt/goldmine/tracks: 624 332 frr
+:matt/marble/thinplatform128p: 624 396 frr
+:matt/marble/thinplatform128p: 624 392 frr
+:matt/marble/thinplatform128p: 624 388 frr
+:matt/marble/thinplatform128p: 624 384 frr
+:matt/marble/thinplatform128p: 624 380 frr
+:matt/marble/thinplatform128p: 624 376 frr
+:matt/marble/thinplatform128p: 624 372 frr
+:matt/marble/thinplatform128p: 626 368 frr
+:matt/marble/thinplatform128p: 628 364 frr
+:matt/marble/thinplatform128p: 630 360 frr
+:matt/marble/thinplatform128p: 632 356 frr
+:matt/marble/thinplatform128p: 498 368 frr
+:matt/marble/thinplatform128p: 500 364 frr
+:matt/marble/thinplatform128p: 502 360 frr
+:matt/marble/thinplatform128p: 504 356 frr
+:matt/carnival/27a: 560 336 frrr
+:matt/carnival/27a: 496 336 frr
+:matt/winter/09c: 778 98 frr
+:raymanni/gore/eye: 620 134 fr
+:raymanni/gore/tentacle_3: 561 52 frr
+:raymanni/gore/goop_3: 548 166 frr
+:raymanni/gore/goop_1: 596 166 frr
+:raymanni/gore/goop_9: 538 130 frr
+:raymanni/gore/goop_7: 624 100 frr
+:amanda/forest/rope_c: 490 151 frr
+:amanda/forest/rope_c: 477 151 frr
+:amanda/forest/rope: 484 145 fr
+:amanda/forest/rope: 484 140 fr
+:amanda/forest/rope: 484 135 fr

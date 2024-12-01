@@ -1,0 +1,172 @@
+$BUILT 2024-07-18 12:51:17
+$AUTHOR Hyperlodge
+$ENGLISH Up There
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1152
+#SIZE_Y 544
+#BACKGROUND_RED 63
+#BACKGROUND_GREEN 191
+#BACKGROUND_BLUE 111
+
+#SECONDS 60
+#INITIAL 100
+#SPAWN_INTERVAL 20
+
+#WALKER 1
+#RUNNER 1
+#CLIMBER -1
+#FLOATER 1
+#EXPLODER2 -1
+#BLOCKER -1
+#BUILDER -1
+#PLATFORMER 1
+#BASHER 1
+#MINER 1
+#DIGGER 1
+#JUMPER 1
+#BATTER -1
+#CUBER 1
+
+:raymanni/lab/hatch.H: 32 448
+:raymanni/lab/hatch.H: 1088 448 r
+
+:raymanni/toys/goal.G: 344 56
+:raymanni/toys/goal.G: 744 56
+
+:geoo/construction/steam_up.T: 640 512
+:geoo/construction/steam_up.T: 656 512
+:geoo/construction/steam_up.T: 672 512
+:geoo/construction/steam_up.T: 752 512
+:geoo/construction/steam_up.T: 832 512
+:geoo/construction/steam_up.T: 1072 512
+:geoo/construction/steam_up.T: 992 512
+:geoo/construction/steam_up.T: 880 512
+:geoo/construction/steam_up.T: 64 512
+:geoo/construction/steam_up.T: 144 512
+:geoo/construction/steam_up.T: 304 512
+:geoo/construction/steam_up.T: 256 512
+:geoo/construction/steam_up.T: 384 512
+:geoo/construction/steam_up.T: 464 512
+:geoo/construction/steam_up.T: 480 512
+:geoo/construction/steam_up.T: 496 512
+:raymanni/lab/launcher_right.T: 0 384
+:raymanni/lab/launcher_right.T: 0 352
+:raymanni/lab/launcher_right.T: 0 320
+:raymanni/lab/launcher_right.T: 0 288
+:raymanni/lab/launcher_right.T: 0 256
+:raymanni/lab/launcher_right.T: 0 224
+:raymanni/lab/launcher_right.T: 0 192
+:raymanni/lab/launcher_right.T: 0 160
+:raymanni/lab/launcher_right.T: 0 128
+:raymanni/lab/launcher_right.T: 0 96
+:raymanni/lab/launcher_right.T: 0 64
+:raymanni/lab/launcher_right.T: 0 32
+:raymanni/lab/launcher_right.T: 0 0
+:raymanni/lab/launcher_left.T: 1120 384
+:raymanni/lab/launcher_left.T: 1120 352
+:raymanni/lab/launcher_left.T: 1120 320
+:raymanni/lab/launcher_left.T: 1120 288
+:raymanni/lab/launcher_left.T: 1120 256
+:raymanni/lab/launcher_left.T: 1120 224
+:raymanni/lab/launcher_left.T: 1120 192
+:raymanni/lab/launcher_left.T: 1120 160
+:raymanni/lab/launcher_left.T: 1120 128
+:raymanni/lab/launcher_left.T: 1120 96
+:raymanni/lab/launcher_left.T: 1120 64
+:raymanni/lab/launcher_left.T: 1120 32
+:raymanni/lab/launcher_left.T: 1120 0
+
+:amanda/steel/steel32x32.S: 0 512
+:amanda/steel/steel32x32.S: 32 512
+:amanda/steel/steel32x32.S: 80 512
+:amanda/steel/steel32x32.S: 112 512
+:amanda/steel/steel32x32.S: 160 512
+:amanda/steel/steel32x32.S: 192 512
+:amanda/steel/steel32x32.S: 224 512
+:amanda/steel/steel32x32.S: 272 512
+:amanda/steel/steel32x32.S: 320 512
+:amanda/steel/steel32x32.S: 352 512
+:amanda/steel/steel32x32.S: 400 512
+:amanda/steel/steel32x32.S: 432 512
+:amanda/steel/steel32x32.S: 688 512
+:amanda/steel/steel32x32.S: 720 512
+:amanda/steel/steel32x32.S: 768 512
+:amanda/steel/steel32x32.S: 800 512
+:amanda/steel/steel32x32.S: 848 512
+:amanda/steel/steel32x32.S: 896 512
+:amanda/steel/steel32x32.S: 928 512
+:amanda/steel/steel32x32.S: 960 512
+:amanda/steel/steel32x32.S: 1008 512
+:amanda/steel/steel32x32.S: 1040 512
+:amanda/steel/steel32x32.S: 1088 512
+:amanda/steel/steel32x32.S: 1120 512
+:amanda/steel/steel32x32.S: 544 512
+:amanda/steel/steel32x32.S: 576 512
+:amanda/steel/steel32x32.S: 512 512
+:amanda/steel/steel32x32.S: 608 512
+$BEGIN_TILE_GROUP 0
+:raymanni/lab/pipe_1: 144 352
+:raymanni/lab/pipe_1: 144 320
+:raymanni/lab/pipe_1: 144 288
+:raymanni/lab/pipe_1: 96 208
+:raymanni/lab/pipe_1: 96 176
+:raymanni/lab/pipe_1: 48 96
+:raymanni/lab/pipe_1: 48 64
+:raymanni/lab/pipe_1: 48 32
+:raymanni/lab/pipe_4: 128 256
+:raymanni/lab/pipe_5: 96 240
+:raymanni/lab/pipe_4: 80 144
+:raymanni/lab/pipe_5: 48 128
+:raymanni/lab/pipe_4: 32 0
+:raymanni/lab/pipe_7: 0 0 r
+:raymanni/lab/pipe_5: 144 384
+:raymanni/lab/pipe_4: 176 400
+:raymanni/lab/pipe_7: 192 432
+:raymanni/lab/pipe_1: 272 352 frr
+:raymanni/lab/pipe_1: 272 320 frr
+:raymanni/lab/pipe_1: 272 288 frr
+:raymanni/lab/pipe_1: 320 208 frr
+:raymanni/lab/pipe_1: 320 176 frr
+:raymanni/lab/pipe_1: 368 96 frr
+:raymanni/lab/pipe_1: 368 64 frr
+:raymanni/lab/pipe_1: 368 32 frr
+:raymanni/lab/pipe_4: 272 256 frr
+:raymanni/lab/pipe_5: 304 240 frr
+:raymanni/lab/pipe_4: 320 144 frr
+:raymanni/lab/pipe_5: 352 128 frr
+:raymanni/lab/pipe_4: 368 0 frr
+:raymanni/lab/pipe_7: 400 0 fr
+:raymanni/lab/pipe_5: 256 384 frr
+:raymanni/lab/pipe_4: 224 400 frr
+:raymanni/lab/pipe_7: 224 432 frr
+$END_TILE_GROUP
+:Group-0: 360 48
+:amanda/steel/steel32x32.S: 744 120
+:amanda/steel/steel32x32.S: 776 120
+:amanda/steel/steel32x32.S: 376 120
+:amanda/steel/steel32x32.S: 344 120
+:amanda/steel/steel32x32.S: 312 120
+:amanda/steel/steel32x32.S: 312 88
+:amanda/steel/steel32x32.S: 808 120
+:amanda/steel/steel32x32.S: 808 88
+:amanda/steel/steel32x32.S: 328 40
+:amanda/steel/steel32x32.S: 792 40
+:amanda/steel/steel32x32.S: 0 416
+:amanda/steel/steel32x32.S: 32 416
+:amanda/steel/steel32x32.S: 1120 416
+:amanda/steel/steel32x32.S: 1088 416
+:amanda/steel/steel32x32.S: 0 480
+:amanda/steel/steel32x32.S: 0 448
+:amanda/steel/steel32x32.S: 48 384
+:amanda/steel/steel32x32.S: 64 352
+:amanda/steel/steel32x32.S: 80 320
+:amanda/steel/steel32x32.S: 96 288
+:amanda/steel/steel32x32.S: 112 256
+:amanda/steel/steel32x32.S: 1120 448
+:amanda/steel/steel32x32.S: 1120 480
+:amanda/steel/steel32x32.S: 1072 384
+:amanda/steel/steel32x32.S: 1008 256
+:amanda/steel/steel32x32.S: 1024 288
+:amanda/steel/steel32x32.S: 1040 320
+:amanda/steel/steel32x32.S: 1056 352

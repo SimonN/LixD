@@ -1,0 +1,63 @@
+$BUILT 2024-07-18 12:01:06
+$AUTHOR Hyperlodge
+$ENGLISH The Bastards Forever
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1024
+#SIZE_Y 160
+#BACKGROUND_RED 95
+#BACKGROUND_GREEN 47
+#BACKGROUND_BLUE 111
+
+#SECONDS 60
+#INITIAL 100
+#SPAWN_INTERVAL 50
+
+#RUNNER -1
+#EXPLODER2 -1
+#BLOCKER -1
+#JUMPER -1
+#BATTER -1
+
+:raymanni/lab/hatch.H: 0 0
+:raymanni/lab/hatch.H: 992 0 r
+
+:raymanni/lab/goal.G: 464 32
+:raymanni/lab/goal.G: 496 32
+
+:raymanni/lab/steel_1.S: 128 128
+:raymanni/lab/steel_1.S: 512 96
+:raymanni/lab/steel_1.S: 0 96
+:raymanni/lab/steel_1.S: 480 96
+:raymanni/lab/steel_1.S: 480 128
+:raymanni/lab/steel_1.S: 96 128
+:raymanni/lab/steel_1.S: 64 128
+:raymanni/lab/steel_1.S: 32 128
+:raymanni/lab/steel_1.S: 0 128
+:raymanni/lab/steel_1.S: 192 128
+:raymanni/lab/steel_1.S: 160 128
+:raymanni/lab/steel_1.S: 800 128
+:raymanni/lab/steel_1.S: 896 128
+:raymanni/lab/steel_1.S: 512 128
+:raymanni/lab/steel_1.S: 864 128
+:raymanni/lab/steel_1.S: 832 128
+:raymanni/lab/steel_1.S: 992 96
+:raymanni/lab/steel_1.S: 992 128
+:raymanni/lab/steel_1.S: 928 128
+:raymanni/lab/steel_1.S: 960 128
+:raymanni/lab/steel_1.S: 256 128
+:raymanni/lab/steel_1.S: 224 128
+:raymanni/lab/steel_1.S: 320 128
+:raymanni/lab/steel_1.S: 288 128
+:raymanni/lab/steel_1.S: 672 128
+:raymanni/lab/steel_1.S: 768 128
+:raymanni/lab/steel_1.S: 736 128
+:raymanni/lab/steel_1.S: 704 128
+:raymanni/lab/steel_1.S: 384 128
+:raymanni/lab/steel_1.S: 352 128
+:raymanni/lab/steel_1.S: 448 128
+:raymanni/lab/steel_1.S: 416 128
+:raymanni/lab/steel_1.S: 544 128
+:raymanni/lab/steel_1.S: 640 128
+:raymanni/lab/steel_1.S: 608 128
+:raymanni/lab/steel_1.S: 576 128

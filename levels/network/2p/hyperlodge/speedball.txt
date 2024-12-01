@@ -1,0 +1,128 @@
+$BUILT 2022-08-05 10:27:59
+$AUTHOR Hyperlodge
+$ENGLISH Speedball
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 736
+#SIZE_Y 400
+#BACKGROUND_RED 80
+#BACKGROUND_GREEN 64
+#BACKGROUND_BLUE 64
+
+#SECONDS 50
+#INITIAL 50
+#SPAWN_INTERVAL 60
+
+#WALKER -1
+#RUNNER -1
+#CLIMBER -1
+#FLOATER -1
+#EXPLODER2 -1
+#BLOCKER -1
+#BUILDER -1
+#DIGGER -1
+#JUMPER -1
+#BATTER -1
+
+:geoo/abstract/hatch.H: 80 336
+:geoo/abstract/hatch.H: 624 336 r
+
+:geoo/abstract/goal.G: 688 120
+:geoo/abstract/goal.G: 16 120
+
+:raymanni/lab/launcher_right.T: 72 128
+:raymanni/lab/launcher_right.T: 72 64
+:raymanni/lab/launcher_right.T: 72 304
+:raymanni/lab/launcher_right.T: 72 240
+:raymanni/lab/launcher_left.T: 632 64
+:raymanni/lab/launcher_left.T: 632 128
+:raymanni/lab/launcher_left.T: 632 240
+:raymanni/lab/launcher_left.T: 632 304
+:geoo/construction/steam_up.T: 544 336
+:geoo/construction/steam_up.T: 512 336
+:geoo/construction/steam_up.T: 288 336
+:geoo/construction/steam_up.T: 432 336
+:geoo/construction/steam_up.T: 448 336
+:geoo/construction/steam_up.T: 272 336
+:geoo/construction/steam_up.T: 176 336
+:geoo/construction/steam_up.T: 208 336
+:geoo/construction/steam_up.T: 360 336
+:geoo/construction/steam_up.T: 488 216
+:geoo/abstract/tbeam_left.T: 440 184
+:geoo/abstract/tbeam_left.T: 408 184
+:geoo/abstract/tbeam_left.T: 376 184
+:geoo/abstract/tbeam_right.T: 328 184
+:geoo/abstract/tbeam_right.T: 296 184
+:geoo/abstract/tbeam_right.T: 264 184
+:geoo/construction/steam_up.T: 232 216
+:geoo/abstract/tbeam_right.T: 376 248
+:geoo/abstract/tbeam_left.T: 328 248
+:geoo/abstract/tbeam_right.T: 112 304
+:geoo/abstract/tbeam_left.T: 592 304
+:geoo/construction/steam_up.T: 488 144
+:geoo/construction/steam_up.T: 232 144
+
+:raymanni/gore/steel.S: 48 64
+:raymanni/gore/steel.S: 48 0
+:raymanni/gore/steel.S: 80 0
+:raymanni/gore/steel.S: 112 0
+:raymanni/gore/steel.S: 144 0
+:raymanni/gore/steel.S: 176 0
+:raymanni/gore/steel.S: 208 0
+:raymanni/gore/steel.S: 240 0
+:raymanni/gore/steel.S: 272 0
+:raymanni/gore/steel.S: 304 0
+:raymanni/gore/steel.S: 400 0
+:raymanni/gore/steel.S: 432 0
+:raymanni/gore/steel.S: 464 0
+:raymanni/gore/steel.S: 496 0
+:raymanni/gore/steel.S: 528 0
+:raymanni/gore/steel.S: 560 0
+:raymanni/gore/steel.S: 592 0
+:raymanni/gore/steel.S: 624 0
+:raymanni/gore/steel.S: 656 0
+:raymanni/gore/steel.S: 656 32
+:raymanni/gore/steel.S: 48 32
+:raymanni/gore/steel.S: 48 368
+:raymanni/gore/steel.S: 48 304
+:raymanni/gore/steel.S: 48 336
+:raymanni/gore/steel.S: 656 368
+:raymanni/gore/steel.S: 656 304
+:raymanni/gore/steel.S: 656 336
+:raymanni/gore/steel.S: 656 64
+:raymanni/gore/steel.S: 656 96
+:raymanni/gore/steel.S: 656 128
+:raymanni/gore/steel.S: 656 208
+:raymanni/gore/steel.S: 656 272
+:raymanni/gore/steel.S: 656 240
+:raymanni/gore/steel.S: 656 160
+:raymanni/gore/steel.S: 48 208
+:raymanni/gore/steel.S: 48 272
+:raymanni/gore/steel.S: 48 240
+:raymanni/gore/steel.S: 48 128
+:raymanni/gore/steel.S: 48 96
+:raymanni/gore/steel.S: 48 160
+:raymanni/gore/steel.S: 80 368
+:raymanni/gore/steel.S: 112 368
+:raymanni/gore/steel.S: 144 368
+:raymanni/gore/steel.S: 176 368
+:raymanni/gore/steel.S: 208 368
+:raymanni/gore/steel.S: 240 368
+:raymanni/gore/steel.S: 272 368
+:raymanni/gore/steel.S: 304 368
+:raymanni/gore/steel.S: 400 368
+:raymanni/gore/steel.S: 432 368
+:raymanni/gore/steel.S: 464 368
+:raymanni/gore/steel.S: 496 368
+:raymanni/gore/steel.S: 528 368
+:raymanni/gore/steel.S: 560 368
+:raymanni/gore/steel.S: 592 368
+:raymanni/gore/steel.S: 624 368
+:geoo/construction/fence_32x32.S: 688 200
+:geoo/construction/fence_32x32.S: 688 168
+:geoo/construction/fence_32x32.S: 16 200
+:geoo/construction/fence_32x32.S: 16 168
+:raymanni/gore/steel.S: 336 0
+:raymanni/gore/steel.S: 368 0
+:raymanni/gore/steel.S: 336 368
+:raymanni/gore/steel.S: 368 368

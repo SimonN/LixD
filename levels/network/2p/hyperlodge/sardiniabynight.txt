@@ -1,0 +1,228 @@
+$BUILT 2024-07-18 12:55:46
+$AUTHOR Hyperlodge
+$ENGLISH Sardinia by Night
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1952
+#SIZE_Y 560
+#BACKGROUND_RED 40
+#BACKGROUND_GREEN 28
+#BACKGROUND_BLUE 68
+
+#SECONDS 50
+#INITIAL 50
+#SPAWN_INTERVAL 50
+
+#RUNNER -1
+#EXPLODER2 -1
+#BLOCKER -1
+#BUILDER -1
+#PLATFORMER -1
+#MINER -1
+#BATTER -1
+
+:matt/goldmine/Hatch.H: 392 456
+:matt/goldmine/Hatch.H: 1483 456 r
+
+:matt/goldmine/Goal.G: 1472 192
+:matt/goldmine/Goal.G: 408 192
+
+:simon/water.W: 112 512
+:raymanni/toys/water.W: 112 528
+:simon/water.W: 64 512
+:raymanni/toys/water.W: 80 528
+:simon/water.W: 16 512
+:raymanni/toys/water.W: 48 528
+:raymanni/toys/water.W: 16 528
+:simon/water.W: -32 512
+:raymanni/toys/water.W: -16 528
+:simon/water.W: 1779 512
+:raymanni/toys/water.W: 1795 528
+:simon/water.W: 1827 512
+:raymanni/toys/water.W: 1827 528
+:simon/water.W: 1875 512
+:raymanni/toys/water.W: 1859 528
+:raymanni/toys/water.W: 1891 528
+:simon/water.W: 1923 512
+:raymanni/toys/water.W: 1923 528
+
+:proxima/flame.F: 584 432
+:proxima/flame.F: 1312 432
+
+:simon/oriental/pebbles6: 326 452
+:simon/oriental/branch1: 244 484 rrr
+:simon/oriental/branch4: 270 498 frr
+:simon/oriental/pebbles3: 446 480
+:matt/earth/10: 264 492
+:simon/oriental/pebbles5: 488 440 r
+:simon/oriental/pebbles3: 458 490
+:matt/earth/10: 504 494 r
+:simon/oriental/branch5: 642 452 rr
+:simon/oriental/branch4: 620 510
+:matt/earth/10: 598 496 frr
+:matt/earth/17: 786 506 fr
+:matt/earth/17: 886 508 r
+:matt/earth/10: 968 486
+:matt/earth/16: 844 504 rr
+:matt/earth/10: 1110 488
+:simon/oriental/branch5: 1247 452 f
+:matt/earth/10: 1254 472
+:matt/earth/05: 154 512 r
+:matt/earth/05: 388 500 r
+:matt/earth/16: 348 492 frr
+:simon/oriental/pebbles5: 374 406
+:simon/oriental/pebbles3: 356 432
+:simon/oriental/pebbles6: 440 408
+:simon/oriental/pebbles1: 442 402
+:simon/oriental/pebbles5: 410 336
+:simon/oriental/pebbles6: 466 370
+:simon/oriental/pebbles1: 368 412
+:simon/oriental/pebbles5: 348 350 fr
+:simon/oriental/pebbles6: 370 326 r
+:simon/oriental/pebbles5: 338 388 r
+:simon/oriental/pebbles6: 470 406 frrr
+:simon/oriental/pebbles6: 346 314
+:simon/oriental/pebbles5: 474 308 r
+:simon/oriental/pebbles5: 380 264
+:simon/oriental/pebbles3: 362 290
+:simon/oriental/pebbles6: 382 220 r
+:simon/oriental/pebbles6: 418 260
+:simon/oriental/pebbles1: 448 260
+:simon/oriental/pebbles5: 416 226
+:simon/oriental/pebbles6: 444 222 frr
+:simon/oriental/pebbles1: 374 270
+:simon/oriental/pebbles5: 356 210 fr
+:simon/oriental/pebbles5: 352 248 r
+:simon/oriental/pebbles6: 448 182 frrr
+:simon/oriental/pebbles6: 450 252 frrr
+:simon/oriental/pebbles6: 360 174 frrr
+:simon/oriental/pebbles3: 384 384
+:simon/oriental/pebbles3: 450 316
+:simon/oriental/pebbles3: 386 308
+:simon/oriental/pebbles5: 460 150 r
+:simon/oriental/pebbles5: 404 158 rr
+:simon/oriental/pebbles5: 370 152 rrr
+:simon/oriental/pebbles3: 422 252 d
+:simon/oriental/pebbles3: 442 380
+:simon/oriental/pebbles3: 462 468
+:simon/oriental/pebbles3: 372 442
+:simon/oriental/pebbles3: 368 470
+:simon/oriental/pebbles3: 396 436
+:simon/oriental/pebbles3: 428 444
+:simon/oriental/pebbles3: 444 466
+:geoo/nopales/nopal_01: 882 464
+:geoo/nopales/nopal_00: 850 464
+:geoo/nopales/nopal_03: 874 428
+:geoo/nopales/nopal_02: 902 438
+:geoo/nopales/nopal_07: 912 400
+:geoo/nopales/nopal_06: 928 376
+:geoo/nopales/nopal_05: 926 452 r
+:geoo/nopales/nopal_08: 848 438
+:geoo/nopales/nopal_08: 952 442 frr
+:geoo/nopales/fruit_07: 872 426
+:geoo/nopales/fruit_01: 848 432
+:geoo/nopales/fruit_05: 930 370
+:geoo/nopales/nopal_07: 1180 452
+:geoo/nopales/nopal_11: 1158 420
+:geoo/nopales/nopal_00: 1124 420
+:geoo/nopales/nopal_10: 1200 426 r
+:geoo/nopales/nopal_08: 1166 398 frr
+:geoo/nopales/nopal_07: 1196 402
+:geoo/nopales/nopal_08: 1196 378
+:geoo/nopales/nopal_00: 1224 422 frr
+:geoo/nopales/fruit_07: 1196 372
+:geoo/nopales/fruit_01: 956 436
+:geoo/nopales/fruit_01: 880 422
+:matt/beach/decor/umbrella_blue: 122 458 frr
+:matt/beach/nighttime/03: 100 522
+:matt/beach/daytime/03: 172 526 rr
+:matt/beach/daytime/06: 246 524
+:simon/oriental/pebbles6: 1545 452 frr
+:simon/oriental/branch1: 1683 484 frrr
+:simon/oriental/branch4: 1642 498
+:simon/oriental/pebbles3: 1457 480 frr
+:matt/earth/10: 1462 492 frr
+:simon/oriental/pebbles5: 1401 440 fr
+:simon/oriental/pebbles3: 1445 490 frr
+:matt/earth/10: 1323 494 fr
+:simon/oriental/branch4: 1292 510 frr
+:matt/earth/10: 1128 496
+:matt/earth/17: 1037 506 r
+:simon/oriental/branch3: 1117 488 frrr
+:matt/earth/16: 936 504 f
+:matt/earth/10: 758 486 frr
+:matt/earth/17: 856 504 fr
+:simon/oriental/branch3: 800 488 rrr
+:matt/earth/10: 616 488 frr
+:matt/earth/10: 472 472 frr
+:matt/earth/05: 1560 512 fr
+:matt/earth/05: 1326 500 fr
+:matt/earth/16: 1486 492
+:simon/oriental/pebbles5: 1484 406 frr
+:simon/oriental/pebbles3: 1547 432 frr
+:simon/oriental/pebbles6: 1431 408 frr
+:simon/oriental/pebbles1: 1481 402 frr
+:simon/oriental/pebbles5: 1448 336 frr
+:simon/oriental/pebbles6: 1405 370 frr
+:simon/oriental/pebbles1: 1555 412 frr
+:simon/oriental/pebbles5: 1541 350 r
+:simon/oriental/pebbles6: 1502 326 fr
+:simon/oriental/pebbles5: 1551 388 fr
+:simon/oriental/pebbles6: 1402 406 rrr
+:simon/oriental/pebbles6: 1525 314 frr
+:simon/oriental/pebbles5: 1415 308 fr
+:simon/oriental/pebbles5: 1478 264 frr
+:simon/oriental/pebbles3: 1541 290 frr
+:simon/oriental/pebbles6: 1490 220 fr
+:simon/oriental/pebbles6: 1453 260 frr
+:simon/oriental/pebbles1: 1475 260 frr
+:simon/oriental/pebbles5: 1442 226 frr
+:simon/oriental/pebbles6: 1427 222
+:simon/oriental/pebbles1: 1549 270 frr
+:simon/oriental/pebbles5: 1533 210 r
+:simon/oriental/pebbles5: 1537 248 fr
+:simon/oriental/pebbles6: 1424 182 rrr
+:simon/oriental/pebbles6: 1422 252 rrr
+:simon/oriental/pebbles6: 1512 174 rrr
+:simon/oriental/pebbles3: 1519 384 frr
+:simon/oriental/pebbles3: 1453 316 frr
+:simon/oriental/pebbles3: 1517 308 frr
+:simon/oriental/pebbles5: 1429 150 fr
+:simon/oriental/pebbles5: 1454 158 f
+:simon/oriental/pebbles5: 1519 152 frrr
+:simon/oriental/pebbles3: 1481 252 frrd
+:simon/oriental/pebbles3: 1461 380 frr
+:simon/oriental/pebbles3: 1441 468 frr
+:simon/oriental/pebbles3: 1531 442 frr
+:simon/oriental/pebbles3: 1535 470 frr
+:simon/oriental/pebbles3: 1507 436 frr
+:simon/oriental/pebbles3: 1475 444 frr
+:simon/oriental/pebbles3: 1459 466 frr
+:geoo/nopales/nopal_01: 1028 464 frr
+:geoo/nopales/nopal_00: 1053 464 frr
+:geoo/nopales/nopal_03: 1025 428 frr
+:geoo/nopales/nopal_02: 1002 438 frr
+:geoo/nopales/nopal_07: 1003 400 frr
+:geoo/nopales/nopal_06: 1003 376 frr
+:geoo/nopales/nopal_05: 982 452 fr
+:geoo/nopales/nopal_08: 1079 438 frr
+:geoo/nopales/nopal_08: 975 442
+:geoo/nopales/fruit_07: 1059 426 frr
+:geoo/nopales/fruit_01: 1084 432 frr
+:geoo/nopales/fruit_05: 1002 370 frr
+:geoo/nopales/nopal_07: 735 452 frr
+:geoo/nopales/nopal_11: 751 420 frr
+:geoo/nopales/nopal_00: 779 420 frr
+:geoo/nopales/nopal_10: 711 426 fr
+:geoo/nopales/nopal_08: 761 398
+:geoo/nopales/nopal_07: 719 402 frr
+:geoo/nopales/nopal_08: 731 378 frr
+:geoo/nopales/nopal_00: 679 422
+:geoo/nopales/fruit_07: 735 372 frr
+:geoo/nopales/fruit_01: 976 436 frr
+:geoo/nopales/fruit_01: 1052 422 frr
+:matt/beach/decor/umbrella_blue: 1719 458
+:matt/beach/nighttime/03: 1689 522 frr
+:matt/beach/daytime/03: 1617 526 f
+:matt/beach/daytime/06: 1480 524 frr
+:matt/beach/decor/moon: 936 24

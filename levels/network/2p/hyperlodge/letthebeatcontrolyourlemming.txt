@@ -1,0 +1,99 @@
+$BUILT 2024-08-20 10:53:26
+$AUTHOR Hyperlodge
+$ENGLISH Let the beat control your lemming
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 672
+#SIZE_Y 544
+#BACKGROUND_RED 72
+#BACKGROUND_GREEN 95
+#BACKGROUND_BLUE 56
+
+#SECONDS 60
+#INITIAL 100
+#SPAWN_INTERVAL 1
+
+#WALKER -1
+#RUNNER -1
+#CLIMBER -1
+#FLOATER 100
+#EXPLODER2 -1
+#BLOCKER -1
+#PLATFORMER 100
+#JUMPER 100
+#CUBER -1
+
+:matt/winter/Hatch.H: 544 416 r
+:matt/winter/Hatch.H: 64 416
+
+:simon/tapir/goal.G: 176 112
+:simon/tapir/goal.G: 432 112
+
+:geoo/construction/concrete/032d: 64 336
+:geoo/construction/concrete/032d: 128 240
+:geoo/construction/concrete/032h: 64 240
+:geoo/construction/concrete/032h: 64 16
+:geoo/construction/concrete/032h: 128 16
+:geoo/construction/concrete/032h: 192 16
+:geoo/construction/concrete/032v: 128 432
+:geoo/construction/concrete/032v: 288 16
+:geoo/construction/concrete/032v: 320 16
+:geoo/construction/concrete/032v: 352 16
+:geoo/construction/concrete/032: 256 16
+:geoo/construction/concrete/032v: 224 432
+:geoo/construction/concrete/032v: 224 368
+:geoo/construction/concrete/032v: 224 304
+:geoo/construction/wall/small_64x64: 304 432
+:geoo/construction/wall/small_64x64: 304 368
+:geoo/construction/wall/small_64x64: 304 176
+:geoo/construction/wall/small_64x64: 304 240
+:geoo/construction/wall/small_64x64: 304 304
+:geoo/construction/wall/big_brickdiag_bu: 208 160
+:geoo/construction/wall/big_brickdiag_bd: 144 160
+:geoo/construction/wall/small_brickdiag_bu: 208 192
+:geoo/construction/wall/small_brickdiag_bd: 176 192
+:geoo/construction/wall/small_64x32: 224 496
+:geoo/construction/wall/small_64x32: 96 496
+:geoo/construction/wall/small_64x32: 160 496
+:geoo/construction/wall/big_diag_bd: 32 496
+:geoo/construction/wall/big_square: 64 496
+:geoo/construction/wall/big_brickdiag_bu: 464 160
+:geoo/construction/wall/big_brickdiag_bd: 400 160
+:geoo/construction/wall/small_brickdiag_bu: 464 192
+:geoo/construction/wall/small_brickdiag_bd: 432 192
+:geoo/construction/concrete/032: 384 16
+:geoo/construction/concrete/032h: 416 16
+:geoo/construction/concrete/032h: 480 16
+:geoo/construction/concrete/032h: 544 16
+:geoo/construction/concrete/032v: 32 432
+:geoo/construction/concrete/032v: 32 368
+:geoo/construction/concrete/032v: 32 272
+:geoo/construction/concrete/032v: 32 144
+:geoo/construction/concrete/032v: 32 80
+:geoo/construction/concrete/032v: 32 16
+:geoo/construction/concrete/032v: 32 208
+:geoo/construction/concrete/032: 32 336
+:geoo/construction/wall/big_square: 304 496
+:geoo/construction/wall/small_brick1: 288 496 fr
+:geoo/construction/wall/small_brick1: 368 496 fr
+:geoo/construction/wall/big_square: 336 496
+:geoo/construction/wall/small_64x32: 384 496
+:geoo/construction/wall/small_64x32: 448 496
+:geoo/construction/wall/small_64x32: 512 496
+:geoo/construction/wall/big_square: 576 496
+:geoo/construction/wall/big_diag_bu: 608 496
+:geoo/construction/concrete/032v: 608 432
+:geoo/construction/concrete/032v: 608 368
+:geoo/construction/concrete/032v: 608 272
+:geoo/construction/concrete/032v: 608 144
+:geoo/construction/concrete/032v: 608 80
+:geoo/construction/concrete/032v: 608 16
+:geoo/construction/concrete/032v: 608 208
+:geoo/construction/concrete/032: 608 336
+:geoo/construction/concrete/032h: 544 240
+:geoo/construction/concrete/032c: 512 240
+:geoo/construction/concrete/032c: 576 336
+:geoo/construction/concrete/032v: 416 432
+:geoo/construction/concrete/032v: 416 368
+:geoo/construction/concrete/032v: 416 304
+:geoo/construction/concrete/032v: 512 432

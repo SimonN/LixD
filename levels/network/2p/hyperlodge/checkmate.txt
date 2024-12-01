@@ -1,0 +1,92 @@
+$BUILT 2024-07-18 15:20:32
+$AUTHOR Hyperlodge
+$ENGLISH Check Mate
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 800
+#SIZE_Y 528
+#BACKGROUND_RED 64
+#BACKGROUND_GREEN 24
+#BACKGROUND_BLUE 28
+
+#SECONDS 65
+#INITIAL 505
+#SPAWN_INTERVAL 55
+
+#RUNNER 20
+#CLIMBER 20
+#EXPLODER2 -1
+#BLOCKER -1
+#BUILDER -1
+#JUMPER 20
+
+:amanda/forest/hatch.H: 672 32 r
+:amanda/forest/hatch.H: 32 32
+
+:raymanni/toys/goal.G: 352 336
+:raymanni/toys/goal.G: 384 336
+:amanda/occult/goal_skull.G: 208 416
+:amanda/occult/goal_skull.G: 464 416
+:raymanni/toys/goal.G: 352 432
+:raymanni/toys/goal.G: 384 432
+
+:geoo/abstract/tbeam_right.T: 176 464
+:geoo/abstract/tbeam_right.T: 144 464
+:geoo/abstract/tbeam_right.T: 112 464
+:geoo/abstract/tbeam_right.T: 80 464
+:geoo/abstract/tbeam_right.T: 48 464
+:geoo/abstract/tbeam_right.T: 16 464
+:geoo/abstract/tbeam_right.T: 0 432
+:geoo/abstract/tbeam_left.T: 592 464
+:geoo/abstract/tbeam_left.T: 624 464
+:geoo/abstract/tbeam_left.T: 656 464
+:geoo/abstract/tbeam_left.T: 688 464
+:geoo/abstract/tbeam_left.T: 720 464
+:geoo/abstract/tbeam_left.T: 752 464
+:geoo/abstract/tbeam_left.T: 768 432
+
+$BEGIN_TILE_GROUP 0
+:matt/earth/09: 2 28 frrr
+:matt/earth/08: 0 80 frrr
+:matt/earth/07: 0 0 frr
+:geoo/construction/rod_steel/straight_diagd32.S: 89 83
+:matt/earth/09: 28 98 f
+:matt/earth/09: 44 2 frr
+:matt/earth/06: 67 73 frrr
+:matt/earth/06: 73 3 frr
+:geoo/construction/rod_steel/straight_diagd32.S: 121 115
+:geoo/construction/rod_steel/straight_diagd32.S: 153 147
+:geoo/construction/rod_steel/straight_diagd32.S: 185 179
+:geoo/construction/rod_steel/straight_diagd32.S: 217 211
+:geoo/construction/rod_steel/straight_diagd32.S: 249 243
+:geoo/construction/rod_steel/straight_diagd32.S: 281 275
+:geoo/construction/rod_steel/straight_diagd32.S: 313 307
+$END_TILE_GROUP
+:Group-0: 16 32
+:Group-0: 432 32 frr
+:simon/oriental/03: 352 496
+:amanda/occult/skulls32x32: 312 456 rr
+:raymanni/holiday/steel1.S: 336 496
+:raymanni/holiday/steel1.S: 336 432
+:raymanni/holiday/steel1.S: 336 400
+:raymanni/holiday/steel1.S: 336 368
+:simon/oriental/03: 400 496 frr
+:amanda/occult/skulls32x32: 424 456 f
+:raymanni/holiday/steel1.S: 432 496
+:raymanni/holiday/steel1.S: 432 432
+:raymanni/holiday/steel1.S: 432 400
+:raymanni/holiday/steel1.S: 432 368
+:raymanni/holiday/steel1.S: 304 368
+:raymanni/holiday/steel1.S: 464 368
+:raymanni/holiday/steel1.S: 464 496
+:raymanni/holiday/steel1.S: 496 496
+:raymanni/holiday/steel1.S: 304 496
+:raymanni/holiday/steel1.S: 272 496
+:raymanni/holiday/steel1.S: 240 496
+:raymanni/holiday/steel1.S: 208 496
+:raymanni/holiday/steel1.S: 528 496
+:raymanni/holiday/steel1.S: 560 496
+:raymanni/gore/bone_6: 352 398 rr
+:raymanni/gore/bone_6: 387 398 f
+:raymanni/toys/beam_13.S: 122 78
+:raymanni/toys/beam_13.S: 669 78

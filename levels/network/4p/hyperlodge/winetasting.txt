@@ -1,0 +1,287 @@
+$BUILT 2024-12-01 20:04:39
+$AUTHOR Hyperlodge
+$ENGLISH Wine Tasting
+
+#INTENDED_NUMBER_OF_PLAYERS 4
+#SIZE_X 1152
+#SIZE_Y 664
+#BACKGROUND_RED 48
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 16
+
+#SECONDS 120
+#INITIAL 500
+#SPAWN_INTERVAL 2
+
+#RUNNER -1
+#CLIMBER -1
+#EXPLODER2 -1
+#BLOCKER -1
+#BUILDER -1
+#MINER -1
+#JUMPER -1
+
+:matt/beach/Hatch.H: 294 8
+:matt/beach/Hatch.H: 807 8 r
+:matt/beach/Hatch.H: 809 8
+:matt/beach/Hatch.H: 296 8 r
+
+:geoo/abstract/goal.G: 976 464
+:geoo/abstract/goal.G: 144 464
+:geoo/abstract/goal.G: 464 464
+:geoo/abstract/goal.G: 656 464
+
+$BEGIN_TILE_GROUP 0
+:amanda/steel/steel16x16.S: 16 16
+:amanda/steel/steel16x16.S: 32 48
+:amanda/steel/steel16x16.S: 16 32
+:amanda/steel/steel16x16.S: 32 80
+:amanda/steel/steel16x16.S: 32 96
+:amanda/steel/steel16x16.S: 32 112
+:amanda/steel/steel16x16.S: 16 112
+:amanda/steel/steel16x16.S: 16 128
+:amanda/steel/steel16x16.S: 0 128
+:amanda/steel/steel_flange_right24x16.S: 0 176 rr
+:amanda/steel/steel16x16.S: 0 176
+:amanda/steel/steel16x16.S: 0 192
+:amanda/steel/steel16x16.S: 0 272
+:amanda/steel/steel16x16.S: 0 288
+:amanda/steel/steel16x16.S: 32 304
+:amanda/steel/steel16x16.S: 48 304
+:amanda/steel/steel16x16.S: 96 304
+:amanda/steel/steel16x16.S: 112 304
+:amanda/steel/steel16x16.S: 144 288
+:amanda/steel/steel16x16.S: 144 272
+:amanda/steel/steel16x16.S: 144 192
+:amanda/steel/steel16x16.S: 144 128
+:amanda/steel/steel16x16.S: 128 128
+:amanda/steel/steel16x16.S: 128 112
+:amanda/steel/steel16x16.S: 112 112
+:amanda/steel/steel16x16.S: 112 48
+:amanda/steel/steel16x16.S: 112 80
+:amanda/steel/steel16x16.S: 112 96
+:amanda/steel/steel16x16.S: 128 16
+:amanda/steel/steel16x16.S: 128 32
+:amanda/steel/steel16x16.S: 16 0
+:amanda/steel/steel16x16.S: 32 0
+:amanda/steel/steel16x16.S: 128 0
+:amanda/steel/steel16x16.S: 112 0
+:amanda/steel/steel16x16.S: 64 304
+:amanda/steel/steel16x16.S: 96 0
+:amanda/steel/steel16x16.S: 48 0
+:amanda/steel/steel_flange_left24x16.S: 48 112
+:amanda/steel/steel_flange_right24x16.S: 88 112
+:amanda/steel/steel16x16.S: 80 304
+:amanda/steel/steel16x16.S: 112 64
+:amanda/steel/steel16x16.S: 32 64
+:amanda/steel/steel16x16.S: 144 160
+:amanda/steel/steel16x16.S: 144 144
+:amanda/steel/steel16x16.S: 0 160
+:amanda/steel/steel16x16.S: 0 144
+:amanda/steel/steel_flange_right24x16.S: 0 112
+:amanda/steel/steel_flange_right24x16.S: 16 96
+:amanda/steel/steel_flange_left24x16.S: 120 96
+:amanda/steel/steel_flange_left24x16.S: 136 112
+:amanda/steel/steel_flange_left24x16.S: 120 48 f
+:amanda/steel/steel_flange_left24x16.S: 0 304 rr
+:amanda/steel/steel16x16.S: 16 304
+:amanda/steel/steel_flange_left24x16.S: 136 304 f
+:amanda/steel/steel16x16.S: 128 304
+:amanda/steel/steel_flange_left24x16.S: 16 48 rr
+:amanda/steel/steel_flange_left24x16.S: 88 128 rr
+:amanda/steel/steel16x16.S: 112 128
+:amanda/steel/steel_flange_right24x16.S: 48 128 rr
+:amanda/steel/steel16x16.S: 32 128
+:amanda/steel/steel_flange_right24x16.S: 32 144 rr
+:amanda/steel/steel_flange_right24x16.S: 16 160 rr
+:amanda/steel/steel_flange_left24x16.S: 104 144 rr
+:amanda/steel/steel_flange_left24x16.S: 120 160 rr
+:amanda/steel/steel_flange_left24x16.S: 136 176 rr
+:amanda/steel/steel16x16.S: 144 176
+:amanda/steel/steel16x16.S: 16 144
+:amanda/steel/steel16x16.S: 128 144
+:amanda/steel/steel_flange_left24x16.S: 32 96
+:amanda/steel/steel_flange_right24x16.S: 104 96
+:amanda/steel/steel_flange_left24x16.S: 24 32
+:amanda/steel/steel_flange_right24x16.S: 112 32
+:amanda/steel/steel_flange_right24x16.S: 128 288
+:amanda/steel/steel_flange_left24x16.S: 8 288
+:amanda/steel/steel16x16.S: 144 256
+:amanda/steel/steel16x16.S: 144 224
+:amanda/steel/steel16x16.S: 144 208
+:amanda/steel/steel16x16.S: 144 240
+:amanda/steel/steel16x16.S: 0 256
+:amanda/steel/steel16x16.S: 0 224
+:amanda/steel/steel16x16.S: 0 208
+:amanda/steel/steel16x16.S: 0 240
+:amanda/steel/steel_flange_left24x16.S: 88 288
+:amanda/steel/steel_flange_right24x16.S: 48 288
+:amanda/steel/steel16x16.S: 80 272 frr
+:amanda/steel/steel16x16.S: 80 256 frr
+:amanda/steel/steel16x16.S: 64 272
+:amanda/steel/steel16x16.S: 64 256
+:amanda/steel/steel_flange_right24x16.S: 64 232 fr
+:amanda/steel/steel16x16.S: 72 288
+:amanda/steel/steel_flange_left24x16.S: 80 232 frrr
+$END_TILE_GROUP
+:Group-0: 128 304 frr
+:Group-0: 352 304
+:Group-0: 640 304 frr
+:Group-0: 864 304
+:matt/goldmine/plank: 128 624
+:matt/goldmine/plank: 256 624
+:matt/goldmine/plank: 384 624 frr
+:matt/goldmine/plank: 640 624
+:matt/goldmine/plank: 768 624
+:matt/goldmine/plank: 896 624
+:matt/goldmine/plank: 896 632
+:matt/goldmine/plank: 768 632
+:matt/goldmine/plank: 640 632
+:matt/goldmine/plank: 384 632 frr
+:matt/goldmine/plank: 256 632 frr
+:matt/goldmine/plank: 128 632
+:matt/goldmine/plank: 896 640 frr
+:matt/goldmine/plank: 768 640 frr
+:matt/goldmine/plank: 640 640 frr
+:matt/goldmine/plank: 384 640
+:matt/goldmine/plank: 256 640
+:matt/goldmine/plank: 128 640 frr
+:matt/goldmine/plank: 128 648
+:matt/goldmine/plank: 256 648 frr
+:matt/goldmine/plank: 384 648
+:matt/goldmine/plank: 640 648 frr
+:matt/goldmine/plank: 768 648
+:matt/goldmine/plank: 896 648
+:matt/goldmine/crate64: 800 560
+:matt/goldmine/crate64: 288 560
+:matt/goldmine/crate64: 288 496
+:matt/goldmine/crate64: 800 496
+:matt/goldmine/crate64: 1024 560
+:matt/goldmine/crate64: 1024 496
+:matt/goldmine/crate64: 64 560
+:matt/goldmine/crate64: 64 496
+:matt/goldmine/plank: 0 624 frr
+:matt/goldmine/plank: 0 632 frr
+:matt/goldmine/plank: 0 640
+:matt/goldmine/plank: 0 648 frr
+:matt/goldmine/plank: 1024 624 frr
+:matt/goldmine/plank: 1024 632 frr
+:matt/goldmine/plank: 1024 640
+:matt/goldmine/plank: 1024 648 frr
+:matt/goldmine/crate32: 1088 592
+:matt/goldmine/crate32: 1024 464
+:matt/goldmine/crate32: 816 464
+:matt/goldmine/crate32: 304 464
+:matt/goldmine/crate32: 96 464
+:matt/goldmine/crate32: 32 592
+:amanda/steel/steel24x8.S: 8 656
+:amanda/steel/steel24x8.S: 32 656
+:amanda/steel/steel24x8.S: 56 656
+:amanda/steel/steel24x8.S: 80 656
+:amanda/steel/steel24x8.S: 104 656
+:amanda/steel/steel24x8.S: 128 656
+:amanda/steel/steel24x8.S: 152 656
+:amanda/steel/steel24x8.S: 176 656
+:amanda/steel/steel24x8.S: 200 656
+:amanda/steel/steel24x8.S: 224 656
+:amanda/steel/steel24x8.S: 248 656
+:amanda/steel/steel24x8.S: 272 656
+:amanda/steel/steel24x8.S: 296 656
+:amanda/steel/steel24x8.S: 320 656
+:amanda/steel/steel24x8.S: 344 656
+:amanda/steel/steel24x8.S: 368 656
+:amanda/steel/steel24x8.S: 392 656
+:amanda/steel/steel24x8.S: 416 656
+:amanda/steel/steel24x8.S: 440 656
+:amanda/steel/steel24x8.S: 464 656
+:amanda/steel/steel24x8.S: 488 656
+:amanda/steel/steel24x8.S: 640 656
+:amanda/steel/steel24x8.S: 664 656
+:amanda/steel/steel24x8.S: 688 656
+:amanda/steel/steel24x8.S: 712 656
+:amanda/steel/steel24x8.S: 736 656
+:amanda/steel/steel24x8.S: 760 656
+:amanda/steel/steel24x8.S: 784 656
+:amanda/steel/steel24x8.S: 808 656
+:amanda/steel/steel24x8.S: 832 656
+:amanda/steel/steel24x8.S: 856 656
+:amanda/steel/steel24x8.S: 880 656
+:amanda/steel/steel24x8.S: 904 656
+:amanda/steel/steel24x8.S: 928 656
+:amanda/steel/steel24x8.S: 952 656
+:amanda/steel/steel24x8.S: 976 656
+:amanda/steel/steel24x8.S: 1000 656
+:amanda/steel/steel24x8.S: 1024 656
+:amanda/steel/steel24x8.S: 1048 656
+:amanda/steel/steel24x8.S: 1072 656
+:amanda/steel/steel24x8.S: 1096 656
+:amanda/steel/steel24x8.S: 1120 656
+:amanda/steel/steel24x8.S: 1144 640 r
+:amanda/steel/steel24x8.S: 1144 616 r
+:amanda/steel/steel24x8.S: 1144 592 r
+:amanda/steel/steel24x8.S: 0 640 r
+:amanda/steel/steel24x8.S: 0 616 r
+:amanda/steel/steel24x8.S: 0 592 r
+:amanda/steel/steel24x8.S: 0 568 r
+:amanda/steel/steel24x8.S: 0 544 r
+:amanda/steel/steel24x8.S: 0 520 r
+:amanda/steel/steel24x8.S: 0 496 r
+:amanda/steel/steel24x8.S: 0 472 r
+:amanda/steel/steel24x8.S: 1144 568 r
+:amanda/steel/steel24x8.S: 1144 544 r
+:amanda/steel/steel24x8.S: 1144 520 r
+:amanda/steel/steel24x8.S: 1144 496 r
+:amanda/steel/steel24x8.S: 1144 472 r
+:amanda/steel/steel24x8.S: 1144 448 r
+:amanda/steel/steel24x8.S: 1144 424 r
+:amanda/steel/steel24x8.S: 0 448 r
+:amanda/steel/steel24x8.S: 0 424 r
+:matt/goldmine/plank: 512 624 frr
+:matt/goldmine/plank: 512 632
+:matt/goldmine/plank: 512 640 frr
+:matt/goldmine/plank: 512 648
+:amanda/steel/steel24x8.S: 512 656
+:amanda/steel/steel24x8.S: 536 656
+:amanda/steel/steel24x8.S: 560 656
+:amanda/steel/steel24x8.S: 592 656
+:amanda/steel/steel24x8.S: 616 656
+:amanda/steel/steel24x8.S: 568 656
+:matt/goldmine/crate64: 512 560
+:matt/goldmine/crate64: 576 560
+:matt/goldmine/crate64: 544 496
+:matt/goldmine/crate64: 512 432
+:matt/goldmine/crate64: 576 432
+:matt/goldmine/crate32: 528 400
+:matt/goldmine/crate32: 560 400
+:matt/goldmine/crate32: 544 368
+:matt/goldmine/crate32: 592 400
+:matt/goldmine/crate32: 576 368
+:matt/goldmine/crate32: 560 336
+:geoo/construction/rod_steel/straight_diagu32.S: 330 62 r
+:geoo/construction/rod_steel/straight_diagu32.S: 362 94 r
+:geoo/construction/rod_steel/link_du_h.S: 316 46 frr
+:geoo/construction/rod_steel/straight_diagu32.S: 272 62 fr
+:geoo/construction/rod_steel/straight_diagu32.S: 240 94 fr
+:geoo/construction/rod_steel/link_du_h.S: 304 46
+:geoo/construction/rod_steel/link_du_h.S: 394 126 r
+:geoo/construction/rod_steel/straight32.S: 396 146 r
+:geoo/construction/rod_steel/link_dd_h.S: 396 178 frrr
+:geoo/construction/rod_steel/link_du_h.S: 224 126 fr
+:geoo/construction/rod_steel/straight32.S: 236 146 fr
+:geoo/construction/rod_steel/link_dd_h.S: 228 178 rrr
+:geoo/construction/rod_steel/end_rect_du.S: 398 190 rr
+:geoo/construction/rod_steel/end_rect_du.S: 220 191 rrr
+:geoo/construction/rod_steel/straight_diagu32.S: 842 62 r
+:geoo/construction/rod_steel/straight_diagu32.S: 874 94 r
+:geoo/construction/rod_steel/link_du_h.S: 828 46 frr
+:geoo/construction/rod_steel/straight_diagu32.S: 784 62 fr
+:geoo/construction/rod_steel/straight_diagu32.S: 752 94 fr
+:geoo/construction/rod_steel/link_du_h.S: 816 46
+:geoo/construction/rod_steel/link_du_h.S: 906 126 r
+:geoo/construction/rod_steel/straight32.S: 908 146 r
+:geoo/construction/rod_steel/link_dd_h.S: 908 178 frrr
+:geoo/construction/rod_steel/link_du_h.S: 736 126 fr
+:geoo/construction/rod_steel/straight32.S: 748 146 fr
+:geoo/construction/rod_steel/link_dd_h.S: 740 178 rrr
+:geoo/construction/rod_steel/end_rect_du.S: 910 190 rr
+:geoo/construction/rod_steel/end_rect_du.S: 732 191 rrr
