@@ -1,6 +1,29 @@
 Version history
 ===============
 
+0.10.27
+-------
+
+2024-12-02
+
+Add 156 multiplayer maps by Hyperlodge: 135 maps for 2 players, 20 maps
+for 4 players, and 1 map for 6 players. Thank you very much!
+
+Add Blitz's map: Happy First Day.
+
+Change default mouse options on Linux to match the existing defaults for
+all other platforms. The default mouse speed is now 20 (= 100 %), not 10.
+By default, the mouse untraps with fast mouse movement.
+
+Bump the DAllegro dependency to 4.0.7+5.2.0. This fixes a crash on MacOS
+(the "argv crash") when you ran Lix as packaged software instead of as a
+standlone executable.
+
+In the build instructions, explain how to avoid installing Visual Studio when
+you install Windows DMD: You should select "do nothing".
+
+
+
 0.10.26
 -------
 
