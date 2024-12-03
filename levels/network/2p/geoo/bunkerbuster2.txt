@@ -1,4 +1,4 @@
-$BUILT 2022-04-04 11:42:08
+$BUILT 2024-12-17 22:21:23
 $AUTHOR geoo
 $ENGLISH Bunker Buster
 
@@ -36,7 +36,6 @@ $ENGLISH Bunker Buster
 :matt/water.W: 192 736
 :matt/water.W: 224 736
 :matt/water.W: 256 736
-:geoo/construction/sawblade_small.F: 240 192
 :matt/water.W: 288 736
 :matt/water.W: 320 736
 :matt/water.W: 352 736
@@ -45,10 +44,12 @@ $ENGLISH Bunker Buster
 :matt/water.W: 576 736
 :matt/water.W: 608 736
 :matt/water.W: 640 736
-:geoo/construction/sawblade_small.F: 624 192
 :matt/water.W: 672 736
 :matt/water.W: 704 736
 :matt/water.W: 736 736
+
+:geoo/construction/sawblade_small.F: 240 192
+:geoo/construction/sawblade_small.F: 624 192
 
 :geoo/abstract/tbeam_down.T: 416 640
 :geoo/abstract/tbeam_down.T: 448 640
@@ -175,3 +176,5 @@ $ENGLISH Bunker Buster
 :amanda/steel/steel24x8.S: 692 216
 :amanda/steel/steel24x8.S: 564 216
 :amanda/steel/steel24x8.S: 628 120
+:matt/marble/20: 736 136 rd
+:matt/marble/20: 736 40 rd
