@@ -168,14 +168,27 @@ public:
     }
     do {
         _recommendGC = true;
-        // First, attempt to save into a slower-frequency pair than _pairs[0].
-        for (int pair = _pairs.len - 1; pair >= 1; --pair) {
-            if (_pairs[pair].accepts(world.age)) {
-                _pairs[pair].save(world);
-                return;
+        try {
+            // First, attempt to find a slower-frequency pair than _pairs[0].
+            for (int pair = _pairs.len - 1; pair >= 1; --pair) {
+                if (_pairs[pair].accepts(world.age)) {
+                    _pairs[pair].save(world);
+                    return;
+                }
             }
+            // No slow-frequency pair found. Save into the most frequent.
+            saveIntoPair0ButMaybeBorrowSpaceFromHighestPair(world);
         }
-        saveIntoPair0ButMaybeBorrowSpaceFromHighestPair(world);
+        catch (OutOfVramException e) {
+            /*
+             * Do nothing here. We accept the error and don't savestate.
+             *
+             * We will let the exception fly out of PhysicsCache when we
+             * savestate for the necessary zero state or for the user state.
+             * The automatic savestates make rewinding/recomputing faster.
+             * Slow rewinding is bad, but aborting the level would be worse.
+             */
+        }
     }
 
 private:
