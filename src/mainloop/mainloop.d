@@ -16,11 +16,11 @@ import basics.cmdargs;
 import basics.alleg5;
 import basics.globals;
 import file.filename; // running levels from the command-line
-import file.log; // logging uncaught Exceptions
 import hardware.display;
 import hardware.keyboard;
 import mainloop.topscrn.base;
 
+static import file.log;
 static import gui;
 static import hardware.keyboard;
 static import hardware.mouse;
@@ -55,7 +55,8 @@ public:
         catch (Throwable uncaught) {
             if (screen !is null)
                 screen.emergencySave();
-            logThenRethrowToTerminate(uncaught);
+            file.log.showMessageBoxOnWindows(uncaught);
+            file.log.logThenRethrowToTerminate(uncaught);
         }
         kill();
     }

@@ -102,6 +102,12 @@ logfEvenDuringUnittest(Args...)(string formatstr, Args args)
     catch (Exception) {}
 }
 
+static void
+showMessageBoxOnWindows(in Throwable thr)
+{
+    showOsSpecificMessageBox(thr);
+}
+
 // Throws again its argument (firstThr).
 static void
 logThenRethrowToTerminate(Throwable firstThr)
@@ -115,7 +121,6 @@ logThenRethrowToTerminate(Throwable firstThr)
         log(thr.msg);
         log(thr.info.toString());
     }
-    showOsSpecificMessageBox(firstThr);
     throw firstThr;
 }
 
@@ -167,19 +172,24 @@ version (Windows) {
         HWND al_get_win_window_handle(ALLEGRO_DISPLAY *display);
     }
 
-    private void showOsSpecificMessageBox(Throwable thr)
+    private void showOsSpecificMessageBox(in Throwable thr)
     {
         al_show_mouse_cursor(theA5display);
-        const messageBody = wtext(thr.msg,
-            "\n\n", "Lix has crashed at:",
-            "\n", thr.file, ":", thr.line,
-            "\n\n", "Details are in the logfile:",
-            "\n", basics.globals.fileLog.rootless,
-            "\0");
+        const messageBody = _isInitialized
+            ? wtext(thr.msg,
+                "\n\n", "Lix has crashed at:",
+                "\n", thr.file, ":", thr.line,
+                "\n\n", "Details are in the logfile:",
+                "\n", basics.globals.fileLog.rootless,
+                "\0")
+            : wtext(thr.msg,
+                "\n\n", "Lix has stopped early at:",
+                "\n", thr.file, ":", thr.line,
+                "\0");
         MessageBoxW(al_get_win_window_handle(theA5display),
             messageBody.ptr, null, MB_ICONERROR);
     }
 }
 else {
-    private void showOsSpecificMessageBox(Throwable) {}
+    private void showOsSpecificMessageBox(in Throwable) {}
 }

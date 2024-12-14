@@ -35,16 +35,19 @@ static if (selfContained) {
 
     string getRootForWriting()
     {
-        import std.file;
-        if (exists("./images") && isDir("./images"))
+        import std.file : exists, isDir;
+        if ("./images".exists && "./images".isDir) {
             return "./";
-        else if (exists("../images") && isDir("../images"))
+        }
+        if ("../images".exists && "../images".isDir) {
             return "../";
-        else
-            throw new FileException("Can't find the Lix file tree: "
-                ~ "No directory `./images/'. "
-                ~ "Is your installation broken? "
-                ~ "Run Lix from its root directory or from `./bin/'.");
+        }
+        throw new Exception("Can't find the Lix file tree:"
+            ~ " There is no directory images/ or ../images/ here."
+            ~ " You need a full installation of Lix with directories levels/,"
+            ~ " images/, ..., not merely this executable. Run this executable"
+            ~ " from the root directory of such a full Lix installation"
+            ~ " or from ./bin/ inside a full Lix installation.");
     }
 }
 else {

@@ -31,16 +31,20 @@ static import file.log;
 
 void initialize(in Cmdargs cmdargs)
 {
-    file.filename.initialize(); // The virtual filesystem. Logfile needs it.
-    file.log.initialize();
-
     try {
+        file.filename.initialize(); // The virtual filesystem. For logging.
+        file.log.initialize(); // Even without init, you may call log methods.
+
         initializeEverythingExceptLogfileAndDisplay(cmdargs.mode);
-        if (cmdargs.mode == Runmode.INTERACTIVE)
+        if (cmdargs.mode == Runmode.INTERACTIVE) {
             // This initializes tiles, GUI context, many other things.
             changeResolutionBasedOnCmdargsThenUserFile(cmdargs);
+        }
     }
     catch (Throwable uncaught) {
+        if (cmdargs.mode == Runmode.INTERACTIVE) {
+            file.log.showMessageBoxOnWindows(uncaught);
+        }
         file.log.logThenRethrowToTerminate(uncaught);
     }
 }
