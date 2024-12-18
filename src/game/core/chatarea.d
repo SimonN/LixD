@@ -95,7 +95,7 @@ protected:
     override void calcSelf()
     {
         super.calcSelf();
-        if (keyChat.keyTapped && _network && ! on)
+        if (keyChat.wasTapped && _network && ! on)
             on = true;
         on = _texttype.on;
     }

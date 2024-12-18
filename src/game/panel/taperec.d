@@ -25,7 +25,7 @@ import game.panel.nuke;
 import game.panel.tooltip;
 import graphic.internal;
 import gui;
-import hardware.keyset;
+import file.key.set;
 
 class TapeRecorderButtons : Element, TooltipSuggester {
 private:

@@ -30,7 +30,7 @@ void hoverTiles(Editor editor) { with (editor)
         return;
     }
     auto range = editor.rangeOfAllOilsFromBackgroundToForeground;
-    if (keyPriorityInvert.keyHeld) {
+    if (keyPriorityInvert.isHeld) {
         editor.hoverTileAtMouse(range);
         return;
     }
@@ -47,7 +47,7 @@ void selectTiles(Editor editor) { with (editor)
         foreach (hovered; _hover[]) {
             _selection.insert(hovered);
         }
-        _panel.buttonSelectAdd.on = _panel.buttonSelectAdd.hotkey.keyHeld;
+        _panel.buttonSelectAdd.on = _panel.buttonSelectAdd.hotkey.isHeld;
     }
     if (mouseClickLeft && ! _panel.isMouseHere) {
         if (_hover.empty || _panel.buttonFraming.on) {
@@ -69,7 +69,7 @@ void selectTiles(Editor editor) { with (editor)
     else if (! mouseHeldLeft) {
         if (_dragger.framing) {
             selectHover();
-            _panel.buttonFraming.on = _panel.buttonFraming.hotkey.keyHeld;
+            _panel.buttonFraming.on = _panel.buttonFraming.hotkey.isHeld;
         }
         else if (aboutToTrash) {
             editor.removeFromLevelTheSelection();

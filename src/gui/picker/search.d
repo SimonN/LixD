@@ -25,6 +25,8 @@ import basics.globals;
 import opt = file.option.allopts;
 import file.language;
 import file.filename;
+import file.key.key;
+import file.key.set;
 import file.log;
 import graphic.color; // undrawColor for the label
 import gui;
@@ -32,7 +34,6 @@ import gui.picker.scrolist;
 import level.metadata;
 import hardware.mouse : mouseClickRight;
 import hardware.keyboard;
-import hardware.keyset;
 
 class LevelSearch : Window {
 private:
@@ -68,7 +69,7 @@ public:
 
         _query = new Texttype(new Geom(20, 20, 400, 20, From.BOTTOM_LEFT));
         _query.hotkey = KeySet(opt.keyMenuSearch.value,
-            KeySet(ALLEGRO_KEY_ENTER));
+            KeySet(Key.byA5KeyId(ALLEGRO_KEY_ENTER)));
         _query.on = true;
         _query.onEnter = () {
             matchesInDatabase.takeOne.each!((cachedFn) {

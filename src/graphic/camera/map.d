@@ -195,10 +195,10 @@ Point mouseOnLand() const
 
 void calcZoomAndScrolling()
 {
-    if (opt.keyZoomIn.value.keyTappedAllowingRepeats) {
+    if (opt.keyZoomIn.wasTappedOrRepeated) {
         chosenCam.zoomInKeepingTargetPointFixed(mouseOnTarget);
     }
-    if (opt.keyZoomOut.value.keyTappedAllowingRepeats) {
+    if (opt.keyZoomOut.wasTappedOrRepeated) {
         chosenCam.zoomOutKeepingTargetPointFixed(mouseOnTarget);
     }
     calcEdgeScrolling(chosenCam);
@@ -243,11 +243,11 @@ private void calcHoldScrolling(Camera cam)
         _isHoldScrolling = false;
         return;
     }
-    if (opt.keyScroll.keyHeld && ! _isHoldScrolling) {
+    if (opt.keyScroll.isHeld && ! _isHoldScrolling) {
         // first frame of scrolling
         _scrollGrabbed = hardware.mouse.mouseOnScreen;
     }
-    _isHoldScrolling = opt.keyScroll.keyHeld;
+    _isHoldScrolling = opt.keyScroll.isHeld;
     if (! _isHoldScrolling)
         return;
 

@@ -31,7 +31,7 @@ import file.option; // fileLanguage, which file does the user want
 import file.io;
 import file.log;
 import file.filename;
-import hardware.keyset;
+import file.key.set;
 import net.ac;
 
 nothrow @nogc @safe {

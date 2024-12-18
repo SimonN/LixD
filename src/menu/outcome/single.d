@@ -19,7 +19,7 @@ import file.trophy;
 import opt = file.option.allopts;
 import game.argscrea;
 import gui;
-import hardware.keyset;
+import file.key.set;
 import hardware.mouse;
 import menu.preview.base;
 import menu.outcome.repsave;

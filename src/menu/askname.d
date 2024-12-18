@@ -3,13 +3,14 @@ module menu.askname;
 import std.string;
 
 static import file.option;
-static import hardware.keyboard;
 
 import basics.alleg5; // Explicit press of ESC
-import file.option;
+import file.key.key;
 import file.language;
+import file.option;
 import file.trophy;
 import gui;
+import hardware.keyboard;
 import menu.menubg;
 
 class MenuAskName : MenuWithBackground {
@@ -54,8 +55,9 @@ protected:
         if (! _gotoMainMenu && ! _gotoExitApp) {
             _tt.down = false;
             _tt.on = true;
-            if (hardware.keyboard.keyTapped(ALLEGRO_KEY_ESCAPE))
+            if (Key.byA5KeyId(ALLEGRO_KEY_ESCAPE).wasTapped) {
                 _gotoExitApp = true;
+            }
         }
     }
 }

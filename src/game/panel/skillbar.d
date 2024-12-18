@@ -5,6 +5,7 @@ import optional;
 import opt = file.option.allopts;
 import game.core.view;
 import gui;
+import hardware.keyboard;
 import hardware.sound;
 import physics.tribe;
 
@@ -93,7 +94,7 @@ protected:
                 choose(candidate.skill);
                 hardware.sound.playLoud(Sound.PANEL);
             }
-            else if (candidate.hotkey.keyTapped) {
+            else if (candidate.hotkey.wasTapped) {
                 choose(Ac.nothing); // Avoid misassignmets to other skills.
                 hardware.sound.playQuiet(Sound.PANEL_EMPTY);
             }

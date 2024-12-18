@@ -31,9 +31,7 @@ public:
 
         foreach (const size_t id, KeyButton button; _watched) {
             foreach (other; _watched[id + 1 .. $]) {
-                if (button.keySet.keysAsInts.any!(key =>
-                    other.keySet.keysAsInts.canFind(key))
-                ) {
+                if (button.keySet[].any!(k => other.keySet[].canFind(k))) {
                     button.warnAboutDuplicateBindings = true;
                     other.warnAboutDuplicateBindings = true;
                 }

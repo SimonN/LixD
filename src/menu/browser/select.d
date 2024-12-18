@@ -127,7 +127,7 @@ protected:
             assert (_fileRecent !is null);
             onPlay(_fileRecent);
         }
-        else if (opt.keyMenuOkay.keyTapped && _upDownToCanBeNull) {
+        else if (opt.keyMenuOkay.wasTapped && _upDownToCanBeNull) {
             super.navigateTo(_upDownToCanBeNull);
             highlightIfInCurrentDir(_fileRecent);
             _upDownToCanBeNull = null;
@@ -151,9 +151,9 @@ private:
 
     static private int keyMenuMoveByTotal()
     {
-        return opt.keyMenuUpBy1  .keyTappedAllowingRepeats * -1
-            +  opt.keyMenuUpBy5  .keyTappedAllowingRepeats * -5
-            +  opt.keyMenuDownBy1.keyTappedAllowingRepeats * 1
-            +  opt.keyMenuDownBy5.keyTappedAllowingRepeats * 5;
+        return opt.keyMenuUpBy1  .wasTappedOrRepeated * -1
+            +  opt.keyMenuUpBy5  .wasTappedOrRepeated * -5
+            +  opt.keyMenuDownBy1.wasTappedOrRepeated * 1
+            +  opt.keyMenuDownBy5.wasTappedOrRepeated * 5;
     }
 }

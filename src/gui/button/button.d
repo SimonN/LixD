@@ -19,7 +19,7 @@ import file.language; // hotkey names
 import graphic.color;
 import gui;
 import hardware.keyboard;
-import hardware.keyset;
+import file.key.set;
 import hardware.mouse;
 
 class Button : Element {
@@ -88,21 +88,21 @@ protected:
         final switch (whenToExecute) {
         case WhenToExecute.whenMouseRelease:
             down     = mouseHere && mouseHeldLeft;
-            _execute = mouseHere && mouseReleaseLeft || _hotkey.keyTapped;
+            _execute = mouseHere && mouseReleaseLeft || _hotkey.wasTapped;
             break;
         case WhenToExecute.whenMouseClick:
             down     = mouseHere && mouseHeldLeft;
-            _execute = mouseHere && mouseClickLeft || _hotkey.keyTapped;
+            _execute = mouseHere && mouseClickLeft || _hotkey.wasTapped;
             break;
         case WhenToExecute.whenMouseHeld:
             down     = false;
-            _execute = mouseHere && mouseHeldLeft || _hotkey.keyTapped;
+            _execute = mouseHere && mouseHeldLeft || _hotkey.wasTapped;
             break;
         case WhenToExecute.whenMouseClickAllowingRepeats:
             down     = mouseHere && mouseHeldLeft;
             _execute = mouseHere && mouseClickLeft
                     || mouseHere && mouseHeldLongLeft
-                    || _hotkey.keyTappedAllowingRepeats;
+                    || _hotkey.wasTappedOrRepeated;
             break;
         }
         if (_onExecute !is null && _execute)

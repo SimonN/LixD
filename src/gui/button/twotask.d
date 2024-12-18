@@ -13,8 +13,9 @@ import file.language; // Hotkey names
 import graphic.cutbit;
 import graphic.internal;
 import gui;
-import hardware.keyset;
+import file.key.set;
 import hardware.mouse;
+import hardware.keyboard;
 
 class TwoTasksButton : BitmapButton {
     this(Geom g, const(Cutbit) cb)
@@ -27,16 +28,16 @@ class TwoTasksButton : BitmapButton {
         // Setting whenToExecute configures the left mouse function only.
     }
 
-    @property bool executeLeft()  const { return _executeLeft;  }
-    @property bool executeRight() const { return _executeRight; }
+    bool executeLeft()  const { return _executeLeft;  }
+    bool executeRight() const { return _executeRight; }
 
-    @property const(KeySet) hotkeyRight() const { return _hotkeyRight; }
-    @property const(KeySet) hotkeyRight(in KeySet ks) {
+    const(KeySet) hotkeyRight() const { return _hotkeyRight; }
+    const(KeySet) hotkeyRight(in KeySet ks) {
         reqDraw();
         return _hotkeyRight = ks;
     }
 
-    override @property bool execute() const { return _executeLeft
+    override bool execute() const { return _executeLeft
                                                   || _executeRight; }
 private:
     bool _executeLeft;
@@ -55,8 +56,8 @@ protected:
         _executeLeft  = super.execute;
         _executeRight = isMouseHere
             && (mouseClickRight() || mouseHeldLongRight())
-            || _hotkeyRight.keyTappedAllowingRepeats;
-        down = hotkey.keyHeld || _hotkeyRight.keyHeld
+            || _hotkeyRight.wasTappedOrRepeated;
+        down = hotkey.isHeld || _hotkeyRight.isHeld
             || (isMouseHere && (mouseHeldLeft || mouseHeldRight));
     }
 

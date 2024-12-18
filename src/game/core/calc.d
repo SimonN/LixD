@@ -14,7 +14,7 @@ import game.core.speed;
 import game.exitwin;
 import game.panel.tooltip;
 import gui;
-import hardware.keyset;
+import file.key.set;
 import physics.score;
 
 package void
@@ -24,7 +24,7 @@ implGameCalc(Game game) { with (game)
         game.calcModalWindow;
         game.noninputCalc();
     }
-    else if (keyGameExit.keyTapped) {
+    else if (keyGameExit.wasTapped) {
         if (game.view.askBeforeExitingGame) {
             modalWindow = new ReallyExitWindow();
             addFocus(game.modalWindow);

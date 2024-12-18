@@ -23,7 +23,7 @@ import opt = file.option.allopts;
 import file.language;
 import file.filename;
 import gui;
-import hardware.keyset;
+import file.key.set;
 import level.level;
 import level.oil;
 

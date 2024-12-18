@@ -18,7 +18,7 @@ import file.language; // Hotkey names
 import graphic.color;
 import gui;
 import hardware.keyboard;
-import hardware.keyset;
+import file.key.set;
 import hardware.mouse;
 
 interface KeyButton {
@@ -45,7 +45,7 @@ public:
     {
         if (sc == _keySet)
             return sc;
-        _keySet = KeySet(sc);
+        _keySet = sc;
         formatScancode();
         return sc;
     }
@@ -72,20 +72,23 @@ protected:
     override void calcSelf()
     {
         super.calcSelf();
-        if (! on)
+        if (! on) {
             on = execute;
-        else {
-            if (mouseClickLeft)
-                // Only LMB cancels this. RMB and MMB are assignable hotkeys.
-                on = false;
-            else if (scancodeTapped) {
-                _keySet = KeySet(scancodeTapped);
-                on = false;
-                if (_onChange !is null)
-                    _onChange();
-            }
-            formatScancode();
+            return;
         }
+        auto tappedKey = hardware.keyboard.whatExactlyWasTapped;
+        if (mouseClickLeft) {
+            // Only LMB cancels. Esc, RMB, MMB, ... are assignable hotkeys.
+            on = false;
+        }
+        else if (tappedKey.isValid) {
+            _keySet = KeySet(tappedKey);
+            on = false;
+            if (_onChange !is null) {
+                _onChange();
+            }
+        }
+        formatScancode();
     }
 
 private:
@@ -177,10 +180,7 @@ protected:
             _addTheseToBig = KeySet();
         }
         if (_minus.execute) {
-            assert (! keySet.empty);
-            KeySet temp = keySet;
-            temp.remove(temp.keysAsInts[$-1]);
-            keySet = temp;
+            keySet = keySet.butWithOneKeyFewer;
         }
         if (_plus.execute) {
             _addTheseToBig = _big.keySet;

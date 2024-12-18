@@ -72,11 +72,10 @@ package:
 void handleNonstandardPanelButtons(Editor editor) { with (editor)
 {
     with (_panel.buttonFraming)
-        on = hotkey.keyHeld || _dragger.framing ? true
-           : hotkey.keyReleased ? false : on;
+        on = hotkey.isHeld || _dragger.framing ? true
+           : hotkey.wasReleased ? false : on;
     with (_panel.buttonSelectAdd)
-        on = hotkey.keyHeld     ? true
-           : hotkey.keyReleased ? false : on;
+        on = hotkey.isHeld ? true : hotkey.wasReleased ? false : on;
 }}
 
 void selectGrid(Editor editor)
@@ -87,7 +86,7 @@ void selectGrid(Editor editor)
     g = (g == 1 || g == 2 || g == 16
         || g == opt.editorGridCustom.value) ? g : 1;
     assert (editor._panel.button(Lang.editorButtonGrid2));
-    if (opt.keyEditorGrid.keyTapped)
+    if (opt.keyEditorGrid.wasTapped)
         g = () { switch (g) {
             case 16: return 1;
             case  1: return 2;

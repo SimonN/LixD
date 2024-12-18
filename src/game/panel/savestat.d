@@ -16,7 +16,7 @@ import opt = file.option.allopts;
 import game.panel.tooltip;
 import graphic.internal;
 import gui;
-import hardware.keyset;
+import file.key.set;
 
 class SaveStateButtons : Element, TooltipSuggester {
 private:

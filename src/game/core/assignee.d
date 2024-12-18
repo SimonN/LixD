@@ -45,8 +45,8 @@ struct Assignee {
             : ! facingOkay && rhs.facingOkay ? false
             : priority <= 1 && rhs.priority > 1 ? false
             : priority >  1 && rhs.priority <= 1 ? true
-            : priority > rhs.priority ? ! opt.keyPriorityInvert.keyHeld
-            : priority < rhs.priority ?   opt.keyPriorityInvert.keyHeld
+            : priority > rhs.priority ? ! opt.keyPriorityInvert.isHeld
+            : priority < rhs.priority ?   opt.keyPriorityInvert.isHeld
             : distanceToCursor < rhs.distanceToCursor ? true
             : distanceToCursor > rhs.distanceToCursor ? false
             : id < rhs.id;
@@ -55,12 +55,12 @@ struct Assignee {
 
 bool forcingLeft() nothrow @safe @nogc
 {
-    return opt.keyForceLeft.keyHeld && ! opt.keyForceRight.keyHeld;
+    return opt.keyForceLeft.isHeld && ! opt.keyForceRight.isHeld;
 }
 
 bool forcingRight() nothrow @safe @nogc
 {
-    return opt.keyForceRight.keyHeld && ! opt.keyForceLeft.keyHeld;
+    return opt.keyForceRight.isHeld && ! opt.keyForceLeft.isHeld;
 }
 
 struct UnderCursor {
@@ -172,7 +172,7 @@ Tooltip.IdSet tooltipsFor1Surpassing2(in Assignee best, in Assignee worse)
     else if (best.lixxie.facingRight && worse.lixxie.facingLeft) {
         ret |= Tooltip.ID.forceLeft;
     }
-    if (best.priority != worse.priority && ! opt.keyPriorityInvert.keyHeld) {
+    if (best.priority != worse.priority && ! opt.keyPriorityInvert.isHeld) {
         ret |= Tooltip.ID.priorityInvert;
     }
     return ret;

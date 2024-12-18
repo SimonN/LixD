@@ -6,7 +6,7 @@ import std.conv;
 import file.language;
 import file.log;
 import file.option;
-import hardware.keyset;
+import file.key.set;
 
 interface TooltipSuggester {
 public:

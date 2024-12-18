@@ -11,7 +11,7 @@ import graphic.color;
 import graphic.internal;
 import gui;
 import gui.option;
-import hardware.keyset;
+import file.key.set;
 import hardware.mouse; // allow clicks on label
 
 class BoolOption : Option {

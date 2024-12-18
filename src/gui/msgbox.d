@@ -28,7 +28,7 @@ import std.range;
 
 import basics.help; // .len
 import file.language;
-import hardware.keyset;
+import file.key.set;
 import gui;
 
 class MsgBox : Window {
@@ -50,7 +50,7 @@ class MsgBox : Window {
     }
 
     auto addButton(in string caption,
-        in KeySet hotkey = 0,
+        in KeySet hotkey = KeySet(),
         in void delegate() callback = null
     ) {
         _buttons ~= new TextButton(new Geom(0, 0, buttonXl, 20, From.BOTTOM));

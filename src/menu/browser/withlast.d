@@ -10,7 +10,7 @@ import file.language;
 import file.filename;
 import gui;
 import gui.picker;
-import hardware.keyset;
+import file.key.set;
 import level.level;
 import menu.browser.frommain;
 

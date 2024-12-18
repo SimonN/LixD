@@ -7,9 +7,9 @@ import std.uni;
 import std.utf;
 
 import basics.alleg5; // The scancode enum
+import file.key.key;
+import file.key.set;
 import file.lang.enum_;
-import hardware.keyenum;
-import hardware.keyset;
 
 package struct KeyNamesForOneLanguage {
 private:
@@ -21,13 +21,14 @@ private:
      *
      * Ask it via nameLong() or nameShort().
      */
-    string[hardwareKeyboardArrLen] _keyNames;
+    string[ALLEGRO_KEY_MAX] _keyboardKeyNames;
+    // Mouse wheel directions and mouse wheel buttons are untranslatable icons.
 
 public:
     string nameLong(in KeySet set) {
         switch (set.len) {
             case 0: return null;
-            case 1: return hotkeyNiceLong(set.keysAsInts[0]);
+            case 1: return hotkeyNiceLong(set[0]);
             default: return nameShort(set);
         }
     }
@@ -35,11 +36,9 @@ public:
     string nameShort(in KeySet set) {
         switch (set.len) {
             case 0: return null;
-            case 1: return hotkeyNiceShort(set.keysAsInts[0], 3);
-            case 2: return set.keysAsInts
-                .map!(k => hotkeyNiceShort(k, 3)).join(' ');
-            default: return set.keysAsInts
-                .map!(k => hotkeyNiceShort(k, 2)).join;
+            case 1: return hotkeyNiceShort(set[0], 3);
+            case 2: return set[].map!(k => hotkeyNiceShort(k, 3)).join(' ');
+            default: return set[].map!(k => hotkeyNiceShort(k, 2)).join;
         }
     }
 
@@ -54,11 +53,11 @@ public:
         if (scancodeInArray < 1) {
             return;
         }
-        _keyNames[scancodeInArray] = customName;
+        _keyboardKeyNames[scancodeInArray] = customName;
     }
 
 private:
-    string hotkeyNiceShort(in int hotkey, in int maxLen)
+    string hotkeyNiceShort(in Key hotkey, in int maxLen)
     {
         string s = hotkeyNiceLong(hotkey);
         try {
@@ -75,17 +74,34 @@ private:
             return s;
     }
 
-    string hotkeyNiceLong(in int hotkey)
+    string hotkeyNiceLong(in Key hotkey)
     {
-        assert (hotkey >= 0);
-        assert (hotkey < hardwareKeyboardArrLen);
-        if (_keyNames[hotkey] == null) {
-            _keyNames[hotkey] = createFancyDefaultKeyNameOrNullFor(hotkey);
-            if (_keyNames[hotkey] == null) {
-                _keyNames[hotkey] = createAllegroDefaultKeyNameFor(hotkey);
+        final switch (hotkey.type) {
+        case Key.Type.keyboardKey:
+            immutable k = hotkey.keyboardKey;
+            if (k < 0 || k >= _keyboardKeyNames.length) {
+                return "";
             }
+            if (_keyboardKeyNames[k] == null) {
+                _keyboardKeyNames[k] = createFancyDefaultKeyNameOrNullFor(k);
+                if (_keyboardKeyNames[k] == null) {
+                    _keyboardKeyNames[k] = createAllegroDefaultKeyNameFor(k);
+                }
+            }
+            return _keyboardKeyNames[k];
+
+        case Key.Type.mouseButton:
+            // geoo has drawn these symbols into DejaVu Sans:
+            // \u27BF = LMB, \u27C0 = MMB, \u27C1 = RMB, \u27C2 = generic mouse
+            return hotkey == Key.mmb ? "\u27C0"
+                :  hotkey == Key.rmb ? "\u27C1"
+                :  text("\u27C2", hotkey.mouseButton);
+
+        case Key.Type.mouseWheelDirection:
+            return hotkey == Key.wheelUp
+                ? "\u27C0\u2191" // MMB, arrow up
+                : "\u27C0\u2193";
         }
-        return _keyNames[hotkey];
     }
 
     // Third choice: Allegro's English key name.
@@ -158,12 +174,6 @@ private:
             case ALLEGRO_KEY_PAD_8: return strKeyPad ~ "8";
             case ALLEGRO_KEY_PAD_9: return strKeyPad ~ "9";
 
-            // geoo has drawn these symbols into DejaVu Sans:
-            // \u27BF = LMB, \u27C0 = MMB, \u27C1 = RMB, \u27C2 = generic mouse
-            case keyMMB: return "\u27C0";
-            case keyRMB: return "\u27C1";
-            case keyWheelUp: return "\u27C0\u2191"; // MMB, arrow up
-            case keyWheelDown: return "\u27C0\u2193";
             default: return null;
         }
     }

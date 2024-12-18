@@ -7,11 +7,12 @@ import basics.globals; // extension
 import opt = file.option.allopts;
 import menu.browser.highli;
 import menu.browser.mkdir;
+import file.key.key;
+import file.key.set;
 import file.language;
 import gui;
 import gui.picker;
 import hardware.keyboard;
-import hardware.keyset;
 
 class SaveBrowser : BrowserHighlight {
 private:
@@ -44,7 +45,7 @@ public:
         _saveAsTexttype = new TextButton(new Geom(infoX, 20,
             infoXl/2, 40, From.BOTTOM_LEFT), Lang.commonOk.transl);
         _saveAsTexttype.hotkey = KeySet(opt.keyMenuOkay.value,
-                                        KeySet(ALLEGRO_KEY_ENTER));
+            KeySet(Key.byA5KeyId(ALLEGRO_KEY_ENTER)));
         addChildren(_mkdirButton, _texttype, _saveAsTexttype,
             new Label(new Geom(infoX, 100, infoXl, 20, From.BOTTOM_LEFT),
             Lang.saveBrowserWhatToType.transl));

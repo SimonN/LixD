@@ -5,66 +5,31 @@ import std.math; // abs
 import basics.alleg5;
 import basics.globals;
 import basics.rect;
+import file.key.key;
 import opt = file.option.allopts;
 import hardware.display;
+import hardware.keyhist;
 
-void initialize();
-void deinitialize();
-
-void calc();
-
-@property nothrow @safe @nogc {
+nothrow @safe @nogc {
     int   mouseX()        { return _mouseOwn.x; }
     int   mouseY()        { return _mouseOwn.y; }
     Point mouseOnScreen() { return _mouseOwn; }
     Point mouseMickey()   { return _mickey / mouseStandardDivisor; }
 
-    bool mouseClickLeft()         { return _mouseClick  [0]; }
-    bool mouseClickRight()        { return _mouseClick  [1]; }
-    bool mouseClickMiddle()       { return _mouseClick  [2]; }
-    bool mouseDoubleClickLeft()   { return _mouseDouble [0]; }
-    bool mouseDoubleClickRight()  { return _mouseDouble [1]; }
-    bool mouseDoubleClickMiddle() { return _mouseDouble [2]; }
-    int  mouseHeldLeft()          { return _mouseHeldFor[0]; }
-    int  mouseHeldRight()         { return _mouseHeldFor[1]; }
-    int  mouseHeldMiddle()        { return _mouseHeldFor[2]; }
-    bool mouseHeldLongLeft()      { return _mouseHeldFor[0] > _dSpeed; }
-    bool mouseHeldLongRight()     { return _mouseHeldFor[1] > _dSpeed; }
-    bool mouseHeldLongMiddle()    { return _mouseHeldFor[2] > _dSpeed; }
-    int  mouseReleaseLeft()       { return _mouseRelease[0]; }
-    int  mouseReleaseRight()      { return _mouseRelease[1]; }
-    int  mouseReleaseMiddle()     { return _mouseRelease[2]; }
-    int  mouseWheelNotches()      { return _wheelNotches; }
+    bool mouseClickLeft()     { return _mbHist[1].wasTapped; }
+    bool mouseClickRight()    { return _mbHist[2].wasTapped; }
+    int  mouseHeldLeft()      { return _mbHist[1].isHeldForAlticks; }
+    int  mouseHeldRight()     { return _mbHist[2].isHeldForAlticks; }
+    bool mouseHeldLongLeft()  { return _mbHist[1].isHeldForAlticks > _dSpeed; }
+    bool mouseHeldLongRight() { return _mbHist[2].isHeldForAlticks > _dSpeed; }
+    int  mouseReleaseLeft()   { return _mbHist[1].wasReleased; }
+    int  mouseReleaseRight()  { return _mbHist[2].wasReleased; }
+    int  mouseWheelNotches()  { return _wheelNotches; }
 
     bool hardwareMouseInsideWindow() { return _trapMouse; }
 }
 
 void trapMouse(bool b) { _trapMouse = b; }
-
-private:
-    ALLEGRO_EVENT_QUEUE* _queue;
-    bool _trapMouse = true;
-
-    Point _mouseOwn; // where is the cursor on the Lix screen
-    Point _mouseFreezeRevert; // previous main loop's _mouseOwn
-    Point _mickey; // Difference of _mouseOwnX since last mainLoop
-    Point _mickeyLeftover; // leftover movement from the previous mickeys,
-                           // yet unspent to _mouseOwnXy, for smoothening
-    int _wheelNotches; // often 0, only != 0 when wheel was used
-
-    // The mouse has 3 buttons: #0 is left, #1 is right, #2 is middle.
-    bool[3] _mouseClick;   // there just was a single click
-    bool[3] _mouseDouble;  // there just was a double click
-    int [3] _mouseHeldFor; // mouse button has been held for... (0 if not)
-    int [3] _mouseRelease; // just released button after being held for ...
-    int [3] _mouseSince;   // how long ago was the last click, for doubleclick
-
-    alias _dSpeed = basics.globals.ticksForDoubleClick;
-
-    int xl() { assert (theA5display); return al_get_display_width (theA5display); }
-    int yl() { assert (theA5display); return al_get_display_height(theA5display); }
-
-public:
 
 void initialize()
 {
@@ -85,6 +50,7 @@ void initialize()
 void deinitialize()
 {
     if (_queue) {
+        al_unregister_event_source(_queue, al_get_mouse_event_source());
         al_destroy_event_queue(_queue);
         _queue = null;
         al_uninstall_mouse();
@@ -93,20 +59,17 @@ void deinitialize()
 
 void calc()
 {
-    // Setting to zero all things that are good for only one mainLoop,
-    // incrementing the times on others.
+    foreach (ref hist; _mbHist) hist.resetTappedAndReleased;
+    foreach (ref hist; _whHist) hist.resetTappedAndReleased;
     _mickey = _mickeyLeftover;
     _wheelNotches = 0;
 
-    foreach (i; 0 .. 3) {
-        _mouseClick  [i] = false;
-        _mouseDouble [i] = false;
-        _mouseRelease[i] = 0;
-        _mouseSince  [i] += 1;
-        if (_mouseHeldFor[i]) ++_mouseHeldFor[i];
-    }
-
     consumeAllegroMouseEvents();
+    foreach (ref hist; _mbHist) {
+        hist.updateHeldAccordingToTapped();
+    }
+    // Do nothing for _whHist. You can't hold wheel-notch-counting hotkeys.
+
     handleTrappedMouse();
 
     _mouseFreezeRevert = _mouseOwn; // make backup from previous calc()
@@ -118,12 +81,47 @@ void calc()
     if (_mouseOwn.x >= xl) _mouseOwn.x = xl - 1;
     if (_mouseOwn.y >= yl) _mouseOwn.y = yl - 1;
 }
-// end void update()
 
 void freezeMouseX() { _mouseOwn.x = _mouseFreezeRevert.x; }
 void freezeMouseY() { _mouseOwn.y = _mouseFreezeRevert.y; }
 
-private:
+package:
+
+// _mbHist: 0 = unused, 1 = lmb, 2 = rmb, 3 = mmb, 4+ = extras
+// _whHist: 0 = unused, 1 = Wheel notch up, 2 = wheel notch down
+KeyHistory[Key.firstInvalidMouseButton] _mbHist;
+KeyHistory[Key.firstInvalidWheelDirection] _whHist;
+
+///////////////////////////////////////////////////////////////////////////////
+private: ///////////////////////////////////////////////////////////// :private
+///////////////////////////////////////////////////////////////////////////////
+
+ALLEGRO_EVENT_QUEUE* _queue;
+
+bool _trapMouse = true;
+
+Point _mouseOwn; // where is the cursor on the Lix screen
+Point _mouseFreezeRevert; // previous main loop's _mouseOwn
+Point _mickey; // Difference of _mouseOwnX since last mainLoop
+Point _mickeyLeftover; // leftover movement from the previous mickeys,
+                       // yet unspent to _mouseOwnXy, for smoothening
+/*
+ * Often 0. Only != 0 if we had mouse wheel activity in this main loop
+ * iteration. If it's < 0, the wheel turned up. If > 0, the wheel turned down.
+ * This is inverted from how Allegro 5's mice events report the wheel axis.
+ *
+ * For fast wheel movement (scrolling through a list), you'll want to see
+ * directly by how many notches (possibly more than a single one) we moved
+ * this altick. It won't be enough to treat the wheel as a mere hotkey then.
+ */
+int _wheelNotches;
+
+alias _dSpeed = basics.globals.ticksForDoubleClick;
+
+int xl() { assert (theA5display); return al_get_display_width (theA5display); }
+int yl() { assert (theA5display); return al_get_display_height(theA5display); }
+
+
 
 void consumeAllegroMouseEvents()
 {
@@ -134,30 +132,29 @@ void consumeAllegroMouseEvents()
         if (event.mouse.display != theA5display)
             continue;
 
-        immutable int i = event.mouse.button - 1;
-
         switch (event.type) {
         case ALLEGRO_EVENT_MOUSE_AXES:
             if (! isBuggyJump(&event)) {
                 _mickey += Point(event.mouse.dx, event.mouse.dy)
                         * opt.mouseSpeed.value;
             }
-            _wheelNotches -= event.mouse.dz;
+            if (event.mouse.dz != 0) {
+                _wheelNotches -= event.mouse.dz;
+                _whHist[event.mouse.dz > 0 ? 1 : 2].wasTapped = true;
+            }
             break;
 
         case ALLEGRO_EVENT_MOUSE_BUTTON_DOWN:
-            if (i < 0 || i >= 3) break;
-            _mouseClick  [i] = true;
-            _mouseDouble [i] = (_mouseSince[i] < _dSpeed);
-            _mouseSince  [i] = 0;
-            _mouseHeldFor[i] = 1;
-            _trapMouse       = true;
+            if (event.mouse.button < 0 || event.mouse.button >= _mbHist.length)
+                break;
+            _mbHist[event.mouse.button].wasTapped = true;
+            _trapMouse = true;
             break;
 
         case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
-            if (i < 0 || i >= 3) break;
-            _mouseRelease[i] = _mouseHeldFor[i];
-            _mouseHeldFor[i] = 0;
+            if (event.mouse.button < 0 || event.mouse.button >= _mbHist.length)
+                break;
+            _mbHist[event.mouse.button].wasReleased = true;
             break;
 
         // This occurs after centralizing the mouse manually.

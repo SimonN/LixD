@@ -8,11 +8,12 @@ import std.string;
 import editor.gui.custgrid;
 import file.option : showFPS;
 import file.filename; // currentFilenameOrNull
+import file.key.set;
 import file.language;
 import graphic.internal;
 import gui;
 import hardware.display; // FPS
-import hardware.keyset;
+import hardware.keyboard;
 
 class EditorPanel : Element {
 private:
@@ -103,7 +104,7 @@ public:
     {
         calcInfoBar();
         foreach (bb; _buttons) {
-            if (bb.hotkey.keyHeld)
+            if (bb.hotkey.isHeld)
                 bb.calc();
             bb.down = false;
         }

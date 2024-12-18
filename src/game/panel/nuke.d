@@ -4,12 +4,13 @@ import std.string;
 
 import basics.alleg5;
 import basics.globals;
+import file.key.set;
 import opt = file.option.allopts;
 import game.panel.tooltip;
 import graphic.color;
 import graphic.internal;
 import gui;
-import hardware.keyset;
+import hardware.keyboard;
 
 class NukeButton : Button, TooltipSuggester {
 private:
@@ -90,7 +91,7 @@ protected:
             _doubleclicked = (now - _lastExecute < ticksForDoubleClick);
             _lastExecute   = now;
         }
-        if (! on && hotkey.keyHeld)
+        if (! on && hotkey.isHeld)
             down = true;
         else if (on)
             down = false;

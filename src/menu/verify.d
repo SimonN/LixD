@@ -53,8 +53,8 @@ protected:
     {
         verifyOneFromQueue();
         maybePrintExitingLine();
-        if (keyMenuOkay.keyTapped || keyMenuExit.keyTapped
-            || keyMenuDelete.keyTapped || mouseClickLeft || mouseClickRight
+        if (keyMenuOkay.wasTapped || keyMenuExit.wasTapped
+            || keyMenuDelete.wasTapped || mouseClickLeft || mouseClickRight
         ) {
             _permanent.close();
             rmFocus(this);

@@ -17,7 +17,7 @@ import file.language;
 import file.replay;
 import gui;
 import gui.picker;
-import hardware.keyset;
+import file.key.set;
 import level.level;
 import menu.browser.withlast;
 import menu.repmatch;

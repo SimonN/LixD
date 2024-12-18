@@ -17,7 +17,7 @@ import std.string;
 import gui;
 import file.language;
 import opt = file.option.allopts;
-import hardware.keyset;
+import file.key.set;
 import net.client.client;
 import net.client.impl;
 import net.client.withserv;

@@ -14,6 +14,7 @@ import std.utf;
 import basics.alleg5;
 import basics.globals; // ticksForDoubleClick
 import basics.help;
+import file.key.key;
 import gui;
 import hardware.keyboard;
 import hardware.mouse;
@@ -111,20 +112,27 @@ protected:
 private:
     void handleOnAndTyping()
     {
-        if (mouseClickLeft || mouseClickRight || ALLEGRO_KEY_ENTER.keyTapped) {
+        if (mouseClickLeft || mouseClickRight
+            || Key.byA5KeyId(ALLEGRO_KEY_ENTER).wasTapped
+        ) {
             on = false;
             pruneDigits();
-            if (ALLEGRO_KEY_ENTER.keyTapped && _onEnter !is null)
+            if (Key.byA5KeyId(ALLEGRO_KEY_ENTER).wasTapped
+                && _onEnter !is null
+            ) {
                 _onEnter();
+            }
         }
-        else if (ALLEGRO_KEY_ESCAPE.keyTapped) {
+        else if (Key.byA5KeyId(ALLEGRO_KEY_ESCAPE).wasTapped) {
             on = false;
             text = _textBackupForCancelling;
-            if (_onEsc !is null)
+            if (_onEsc !is null) {
                 _onEsc();
+            }
         }
-        else
+        else {
             handleTyping();
+        }
     }
 
     void handleTyping()
@@ -133,7 +141,7 @@ private:
             _text = backspace(_text, CutAt.end);
             pruneText();
         }
-        if (ctrlHeld && keyTapped(ALLEGRO_KEY_V)) {
+        if (ctrlHeld && Key.byA5KeyId(ALLEGRO_KEY_V).wasTapped) {
             // We'll own an al_malloc()'ed copy of the text. We must al_free().
             char* alClipText = al_get_clipboard_text(theA5display);
             _text ~= alClipText.to!string;

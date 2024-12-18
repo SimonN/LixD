@@ -3,7 +3,7 @@ module game.exitwin;
 import opt = file.option.allopts;
 import file.language;
 import gui;
-import hardware.keyset;
+import file.key.set;
 
 class ReallyExitWindow : Window {
 protected:

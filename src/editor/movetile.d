@@ -43,18 +43,18 @@ private: ///////////////////////////////////////////////////////////// :private
 Point movedByKeyboard()
 {
     immutable grid = editorGridSelected.value;
-    return Point(-grid, 0) * keyEditorLeft .keyTappedAllowingRepeats
-        +  Point(+grid, 0) * keyEditorRight.keyTappedAllowingRepeats
-        +  Point(0, -grid) * keyEditorUp   .keyTappedAllowingRepeats
-        +  Point(0, +grid) * keyEditorDown .keyTappedAllowingRepeats;
+    return Point(-grid, 0) * keyEditorLeft .wasTappedOrRepeated
+        +  Point(+grid, 0) * keyEditorRight.wasTappedOrRepeated
+        +  Point(0, -grid) * keyEditorUp   .wasTappedOrRepeated
+        +  Point(0, +grid) * keyEditorDown .wasTappedOrRepeated;
 }
 
 bool anyHardwarePressedThatCouldMoveTiles(in Editor editor) {
     with (editor)
 {
     return _dragger.moving
-        || keyEditorLeft.keyHeld
-        || keyEditorRight.keyHeld
-        || keyEditorUp.keyHeld
-        || keyEditorDown.keyHeld;
+        || keyEditorLeft.isHeld
+        || keyEditorRight.isHeld
+        || keyEditorUp.isHeld
+        || keyEditorDown.isHeld;
 }}

@@ -17,7 +17,7 @@ import file.date;
 import file.language;
 import graphic.camera.mapncam;
 import gui;
-import hardware.keyset;
+import file.key.set;
 import hardware.sound;
 import level.level;
 import level.oil;
