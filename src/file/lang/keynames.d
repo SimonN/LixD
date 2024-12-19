@@ -174,6 +174,19 @@ private:
             case ALLEGRO_KEY_PAD_8: return strKeyPad ~ "8";
             case ALLEGRO_KEY_PAD_9: return strKeyPad ~ "9";
 
+            case 145: return "F13";
+            case 146: return "F14";
+            case 147: return "F15";
+            case 148: return "F16";
+            case 149: return "F17";
+            case 150: return "F18";
+            case 151: return "F19";
+            case 152: return "F20";
+            case 153: return "F21";
+            case 154: return "F22";
+            case 155: return "F23";
+            case 156: return "F24";
+
             default: return null;
         }
     }
