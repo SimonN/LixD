@@ -46,10 +46,11 @@ private:
 public:
     void determineSnap(in Phymap phy, in Point mouseOnLand)
     {
-        enum maxSnap = 10; // maximal snap distance near either end
+        // (snap) is the maximal snap distance near either end.
+        immutable snap = maxSnapByOption(opt.splatRulerSnapPixels.value);
         _snapTarget = max(
-            findSnapNear(phy, mouseOnLand, Point(0, half), maxSnap),
-            findSnapNear(phy, mouseOnLand, Point(0, -half), maxSnap)).snapTo;
+            findSnapNear(phy, mouseOnLand, Point(0, half), snap),
+            findSnapNear(phy, mouseOnLand, Point(0, -half), snap)).snapTo;
     }
 
     void drawAboveLand(Torbit tb) const
@@ -66,6 +67,26 @@ public:
 
     void drawBelowLand(Torbit) const { }
     void considerBackgroundColor(in Alcol) { }
+
+private:
+    static int maxSnapByOption(in int valueFromOption) pure nothrow @safe @nogc
+    {
+        /*
+         * Allow disabling the ruler: 0 maps to 0. Allow the default to
+         * produce the behavior of Lix <= 0.10.27: 126 maps to 10.
+         * www.lemmingsforums.net/index.php?topic=6968.msg105028#msg105028
+         */
+        return valueFromOption < 126 ? valueFromOption / 12
+            : valueFromOption - 116;
+    }
+}
+
+unittest {
+    assert (SplatRulerTwoBars.maxSnapByOption(0) == 0);
+    assert (SplatRulerTwoBars.maxSnapByOption(126/2) == 10/2);
+    assert (SplatRulerTwoBars.maxSnapByOption(124) == 10);
+    assert (SplatRulerTwoBars.maxSnapByOption(126) == 10);
+    assert (SplatRulerTwoBars.maxSnapByOption(128) == 12);
 }
 
 /*
@@ -154,7 +175,7 @@ protected:
     }
 
 private:
-    int maxSnap() const nothrow @safe @nogc
+    static int maxSnap() nothrow @safe @nogc
     {
         return opt.splatRulerSnapPixels.value;
     }
