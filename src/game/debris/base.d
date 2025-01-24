@@ -11,7 +11,6 @@ package:
 abstract class DebrisBase {
 protected:
     Point foot; // Not top-left of the debris sprite! Instead relative to foot.
-    int frame; // yf for flying tools, xf for the Ac on arrows
 
 public:
     this(in Point aFoot)

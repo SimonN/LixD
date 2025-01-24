@@ -204,14 +204,36 @@ public:
             _alreadyPlayed.insert(e);
     }
 
-    void addDigHammer(in Phyu upd, in Passport pa, in Point foot, in int dir)
+    private alias makeTool = newDebris!FlyingTool.ctor;
+
+    void addShovel(in Phyu upd, in Passport pa, in Point foot, in int dir)
     {
-        addDigHammerOrPickaxe!false(upd, pa, foot, dir);
+        immutable e = Effect(upd, pa, Sound.NOTHING, loudness(pa));
+        if (e in _alreadyPlayed) {
+            return;
+        }
+        _alreadyPlayed.insert(e);
+        _debris ~= makeTool(foot, dir, FlyingTool.Type.shovel);
     }
 
     void addPickaxe(in Phyu upd, in Passport pa, in Point foot, in int dir)
     {
-        addDigHammerOrPickaxe!true(upd, pa, foot, dir);
+        immutable res = addSteelSound_CallerMustAddTool(upd, pa, foot, dir);
+        if (res == AddResult.alreadyThere) {
+            return;
+        }
+        _debris ~= makeTool(foot, dir, FlyingTool.Type.pickaxe);
+    }
+
+    void addDigHammer(in Phyu upd, in Passport pa, in Point foot, in int dir)
+    {
+        immutable res = addSteelSound_CallerMustAddTool(upd, pa, foot, dir);
+        if (res == AddResult.alreadyThere) {
+            return;
+        }
+        _debris ~= makeTool(foot, dir, FlyingTool.Type.jackhammerFoot);
+        _debris ~= makeTool(foot, dir, FlyingTool.Type.jackhammerHandle);
+        _debris ~= makeTool(foot, dir, FlyingTool.Type.jackhammerEngine);
     }
 
     void addImplosion(in Phyu upd, in Passport pa, in Point foot)
@@ -274,22 +296,22 @@ private:
         return _weControlAllStyles || pa.style == _localStyle;
     }
 
-    private void addDigHammerOrPickaxe(bool axe)(
+    enum AddResult : bool {
+        alreadyThere,
+        successfullyAdded,
+    }
+
+    private AddResult addSteelSound_CallerMustAddTool(
         Phyu upd, in Passport pa, in Point foot, int dir
     ) {
         immutable e = Effect(upd, pa,
             isLocal(pa) ? Sound.STEEL : Sound.NOTHING, Loudness.loud);
         if (e in _alreadyPlayed) {
-            return;
+            return AddResult.alreadyThere;
         }
         _alreadyPlayed.insert(e);
         e.playSound();
-        static if (axe) {
-            _debris ~= newDebris!Pickaxe.ctor(foot, dir);
-        }
-        else {
-            // DTODOEFFECT: animate the dig hammer at(footX, footY - 10)
-        }
+        return AddResult.successfullyAdded;
     }
 
     void addPlosion(bool ex)(in Phyu upd, in Passport pa, in Point foot)

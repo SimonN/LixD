@@ -22,6 +22,7 @@ public:
 
     void addArrow(in Phyu upd, in Passport pa, in Point foot, in Ac ac);
 
+    void addShovel(in Phyu upd, in Passport pa, in Point foot, in int dir);
     void addPickaxe(in Phyu upd, in Passport pa, in Point foot, in int dir);
     void addDigHammer(in Phyu upd, in Passport pa, in Point foot, in int dir);
 

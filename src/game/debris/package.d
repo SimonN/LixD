@@ -26,5 +26,5 @@ public import game.debris.derived :
     ExplosionCenter,
     ImplosionCenter,
     ImplosionParticle,
-    Pickaxe
+    FlyingTool
     ;

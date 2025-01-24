@@ -30,6 +30,9 @@ public:
         }
         else if (frame == 10 && (steelWasHit || nothingMoreToBash)) {
             if (steelWasHit) {
+                lixxie.outsideWorld.effect.addShovel(
+                    lixxie.outsideWorld.state.age,
+                    lixxie.outsideWorld.passport, lixxie.foot, lixxie.dir);
                 lixxie.turn();
             }
             lixxie.become(Ac.walker);

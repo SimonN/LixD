@@ -141,48 +141,108 @@ public:
 
 
 
-abstract class FlyingTool : GravityDebris {
+class FlyingTool : GravityDebris {
 private:
     int yf;
     float rotCw; // clockwise rotational position 0 <= x < 4. Not speed.
 
-protected:
-    enum framePickaxe = 0;
-
 public:
+    /*
+     * The values of these enums are exactly the y frame numbers in debris.png.
+     * E.g., shovel = 4 means that this piece of debris is in the 5th row.
+     */
+    enum Type {
+        pickaxe = 0,
+        jackhammerFoot = 1,
+        jackhammerHandle = 2,
+        jackhammerEngine = 3,
+        shovel = 4,
+    }
+
     static const(Cutbit) cb()
     {
         return InternalImage.debris.toCutbit;
     }
 
-    this(in Point foot, in int dir, in int toolFrame)
+    this(in Point foot, in int dir, in Type whichTool)
     {
-        super(foot + Point(10 * dir, 0), uniform(40, 90));
-        speed = Point(uniform(1, 6) * dir, uniform(-11, -7));
-        yf = toolFrame;
-        // Left-facing pickaxe starts with nonzero rotation.
-        // Right-facing pickaxe starts in its default rotation 0.
-        rotCw = (dir < 0 && toolFrame == framePickaxe) ? 1f : 0f;
+        immutable forward = Point(dir, 1);
+        super(foot + forward * initialOffsetFromFootFor(whichTool),
+            uniform(40, 90));
+        speed = forward * initialSpeedFor(whichTool);
+        yf = whichTool;
+        rotCw = initialRotCwFor(dir, whichTool);
     }
 
 protected:
     final override void on3Calc()
     {
-        // The first 4 + is to produce positive values even with negative speed
-        rotCw = fmod(4 + rotCw + speed.x * 0.03125f, 4);
+        if (speed.x > 0) {
+            rotCw += 0.05f + speed.x * 0.02f;
+        }
+        else {
+            rotCw += 4f - 0.05f + speed.x * 0.02f;
+        }
+        if (rotCw >= 4f) {
+            rotCw -= 4f;
+        }
     }
 
     final override void onDraw()
     {
         cb.draw(foot - Point(cb.xl/2, cb.yl/2),
                 clamp(cb.xfs - timeToLive/4, 0, cb.xfs - 1),
-                frame, false, rotCw);
+                yf, false, rotCw);
     }
-}
 
-final class Pickaxe : FlyingTool {
-public:
-    this(in Point foot, in int dir) {
-        super(foot, dir, super.framePickaxe);
+private:
+    static float initialRotCwFor(in int dir, in Type tool
+    ) pure nothrow @safe @nogc
+    {
+        final switch (tool) {
+            // Left-facing pickaxe starts with nonzero rotation: 1f.
+            // Right-facing pickaxe starts in its default rotation: 0f.
+            case Type.pickaxe: return dir < 0;
+            case Type.jackhammerFoot: return 0;
+            case Type.jackhammerHandle: return 0;
+            case Type.jackhammerEngine: return 0;
+            case Type.shovel:
+                /*
+                 * Start the shovel rotated diagonally backward. This makes
+                 * sense: The basher holds it over her back before throwing it.
+                 *                      .                .
+                 * 0f = -->       2.5f = \       3.5f = /
+                 *       from right-facing       from right-facing
+                 */
+                return 2.6f + 0.8f * (dir < 0);
+        }
+    }
+
+    static Point initialOffsetFromFootFor(in Type tool
+    ) pure nothrow @safe @nogc
+    {
+        final switch (tool) {
+            case Type.pickaxe: return Point(10, 0);
+            case Type.jackhammerFoot: return Point(0, 0);
+            case Type.jackhammerHandle: return Point(0, -10);
+            case Type.jackhammerEngine: return Point(0, -5);
+            case Type.shovel: return Point(0, -20);
+        }
+    }
+
+    static Point initialSpeedFor(in Type tool) @safe
+    {
+        final switch (tool) {
+            case Type.pickaxe:
+                return Point(uniform(2, 6), uniform(-11, -7));
+            case Type.jackhammerFoot:
+                return Point(uniform(4, 6), uniform(-6, -4));
+            case Type.jackhammerHandle:
+                return Point(uniform(-6, -2), uniform(-9, -6));
+            case Type.jackhammerEngine:
+                return Point(uniform(1, 3), uniform(-8, -5));
+            case Type.shovel:
+                return Point(uniform(1, 3), uniform(-8, -6));
+        }
     }
 }

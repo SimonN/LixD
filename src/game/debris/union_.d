@@ -29,7 +29,7 @@ private:
         __traits(classInstanceSize, Arrow),
         __traits(classInstanceSize, ExplosionCenter),
         __traits(classInstanceSize, ImplosionCenter),
-        __traits(classInstanceSize, Pickaxe),
+        __traits(classInstanceSize, FlyingTool),
     );
     static assert (objLen > __traits(classInstanceSize, DebrisBase));
     void[objLen] object = void;
