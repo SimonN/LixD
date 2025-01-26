@@ -1,0 +1,70 @@
+How to Update Allegro DLLs
+==========================
+
+Download the newest NuGet package from:
+
+    https://www.nuget.org/packages/Allegro/
+
+... and click "Download Package" in the list of links on the right.
+
+You'll receive a file "allegro.X.Y.Z.nupkg". This is Microsoft OOXML, but it's
+compressed with regular .zip compression. Extract it. You'll want to extract
+it into a fresh directory because it contains more than one file at its root.
+E.g., with 7-Zip, extract it into a new directory "nuget/":
+
+    $ 7z x allegro.X.Y.Z.nupkg -onuget
+
+You'll get:
+
+    ./nuget/Allegro.nuspec
+    ./nuget/build
+    ./nuget/[Content_Types].xml
+    ./nuget/package
+    ./nuget/_rels
+
+Enter the directory: "./nuget/build/native/". There are three subdirectories
+here with DLLs: "v143/", "v142/", and "ClangCL/". Choose "v143/" because this
+stands for the newest version of the Visual Studio build tool. The directory
+structure inside "v143/" is:
+
+    ./nuget/build/native/v143/win32/bin
+    ./nuget/build/native/v143/win32/lib
+    ./nuget/build/native/v143/x64/bin
+    ./nuget/build/native/v143/x64/lib
+
+You'll need the DLLs and LIBs, but no PDBs. You don't need debugging libraries.
+You don't need the monolith library. Thus, prune:
+
+    $ cd nuget/build/native/v143
+    $ rm */*/*.pdb */*/*-debug* */*/*monolith*
+
+This leaves only DLLs in the two "bin/" directories and only LIBs in the two
+"lib/" directories.
+
+If you know exactly which DLLs Lix needs and which Lix doesn't need,
+you can prune the unnecessary components, as follows. As of Lix 0.10.29
+in early 2025, the following DLLs/LIBs are not necessary, you can prune them:
+
+    $ rm */*/*_color* */*/*_dialog* */*/*_main* \
+         */*/*_memfile* */*/*_physfs* */*/*_video*
+
+To prepare the three archives that I (Simon) offer for download,
+
+    lix-dlls-libs-win64.zip
+    lix-dlls-libs-ldc32.zip
+    lix-dlls-libs-dmd32.zip
+
+... stage, then archive the remaining DLLs and LIBs:
+
+    $ cd x64
+    # Add the 64-bit enet.dll to "bin/". No need to add anything to "lib/".
+    $ mv lib lib64
+    $ 7z a lix-dlls-libs-win64.zip bin lib64
+    $ cd ..
+
+    $ cd win32
+    # Add the 32-bit enet.dll to "bin/". No need to add anything to "lib/".
+    $ mv lib lib32
+    $ 7z a lix-dlls-libs-ldc32.zip bin lib32
+    $ mv lib32 lib32mscoff
+    $ 7z a lix-dlls-libs-dmd32.zip bin lib32mscoff

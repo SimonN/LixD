@@ -76,6 +76,10 @@ Mindless
 Martin H.
     * Maintaining the Lix openSUSE package
 
+Matthias Mailänder
+    * Maintaining the Lix Flathub package:
+        https://flathub.org/apps/com.lixgame.Lix
+
 Clam
     * ClamLix, an entire levelpack. This pack has no maintainer these days,
         Forestidia and mobius renovated it for D Lix in 2017.
