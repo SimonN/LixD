@@ -77,7 +77,7 @@ UnderCursor findUnderCursor(
         return UnderCursor();
     }
     auto ret = findUnderCursor(game.map, game.localTribe, chosenInPanel);
-    if (! game._effect.weControlAllStyles) {
+    if (! game.view.canSeeEverybodysSkillsets) {
         return ret;
     }
     // When observing multiplayer or playtesting n-player maps alone:

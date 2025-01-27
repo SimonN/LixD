@@ -282,9 +282,7 @@ package:
 private:
     void commonConstructor(Replay rp)
     {
-        _effect = new EffectManager(
-            determineLocalStyle(rp),
-            _netClient is null && level.intendedNumberOfPlayers > 1);
+        _effect = new EffectManager(determineLocalStyle(rp));
         nurse = new InteractiveNurse(level, rp, _effect);
         // After the nurse has been created here, this.view() works.
 

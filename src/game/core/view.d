@@ -50,6 +50,13 @@ bool canAssignSkills(in View v)
     return v.canInterruptReplays || v == View.battle;
 }
 
+bool canSeeEverybodysSkillsets(in View v)
+{
+    return v == View.observeSolving
+        || v == View.observeBattle
+        || v == View.solotestBattle;
+}
+
 bool startZoomedOutToSeeEntireMap(in View v)
 {
     return v == View.observeBattle || v == View.observeSolving;

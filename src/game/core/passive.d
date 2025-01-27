@@ -44,8 +44,7 @@ calcPassive(
         game._altickHighlightGoalsUntil = timerTicks + ticksPerSecond * 3 / 2;
     }
     if (! underCursor.best.empty) {
-        game._effect.changeLocalStyleToAlsoControlled(
-            underCursor.best.front.lixxie.style);
+        game._effect.localStyle = underCursor.best.front.lixxie.style;
         if (game.isInsertMode && game.canWeClickAirNowToCutGlobalFuture) {
             game._mapClickExplainer.suggestTooltip(Tooltip.ID.clickToInsert);
         }

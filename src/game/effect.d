@@ -101,13 +101,13 @@ private:
     int _overtimeInPhyusToAnnounce; // keep at 0 if nothing to announce
 
 public:
-    Style _localStyle; // Always meaningful for Game, even if Effects don't ...
-    bool _weControlAllStyles; // ... care if weControlAllStyles is true.
+    // Usually, _localStyle remains constant after construction.
+    // In solobattle and as observer, _localStyle can change.
+    Style _localStyle;
 
-    this(in Style lsty, in bool controlAll)
+    this(in Style aLocalStyle)
     {
-        _localStyle = lsty;
-        _weControlAllStyles = controlAll;
+        _localStyle = aLocalStyle;
         _alreadyPlayed = new RedBlackTree!Effect;
         _playedWhenLastQuicksaved = _alreadyPlayed.dup;
     }
@@ -117,17 +117,8 @@ public:
         return _localStyle;
     }
 
-    bool weControlAllStyles() const pure nothrow @safe @nogc
+    void localStyle(in Style s) pure nothrow @safe @nogc
     {
-        return _weControlAllStyles;
-    }
-
-    void changeLocalStyleToAlsoControlled(in Style s) pure nothrow @safe @nogc
-    in {
-        assert (weControlAllStyles || s == _localStyle,
-            "Can't change to an uncontrolled style.");
-    }
-    do {
         _localStyle = s;
     }
 
@@ -293,7 +284,7 @@ private:
 
     bool isLocal(in Passport pa) const pure nothrow @nogc
     {
-        return _weControlAllStyles || pa.style == _localStyle;
+        return pa.style == _localStyle;
     }
 
     enum AddResult : bool {

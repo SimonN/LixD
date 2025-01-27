@@ -113,12 +113,13 @@ Ply newPlyForNextPhyu(Game game, in Style styleOfAssignee)
 PlNr bestPlNrForAssignmentTo(Game game, in Style styleOfAssignee)
 {
     if (game._netClient !is null) {
-        return game._netClient.ourPlNr; // Battling yourself.
+        return game._netClient.ourPlNr;
     }
     if (styleOfAssignee == Style.garden) {
         return PlNr(0); // Conventional player number for singleplayer.
     }
-    assert (game._effect.weControlAllStyles);
+    assert (game.view.canSeeEverybodysSkillsets, "By now, if we can't see/use"
+        ~ " other skillsets, we should have returned a good PlNr.");
     foreach (plNr, prof; game.replay.players) {
         if (prof.style == styleOfAssignee && prof.name == opt.userName) {
             return plNr;
