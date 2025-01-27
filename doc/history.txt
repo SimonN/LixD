@@ -1,6 +1,31 @@
 Version history
 ===============
 
+0.10.29
+-------
+
+2025-01-27
+
+When a digger hits steel and stops, the jackhammer breaks into three pieces
+that fly away.
+
+After a basher has turned from hitting steel, the shovel flies away.
+
+Observers of a networking match can change the current team: Hover the mouse
+cursor over the lix of a different team to see that team's skillset
+and hear that team's sound effects.
+
+In solobattle (= play a multiplayer level from the singleplayer browser),
+you'll only hear sound effects for the current team. Hover the mouse cursor
+over the lix of a different team to change the current team.
+
+Update Allegro DLLs in the Windows binary release to Allegro 5.2.10.
+
+Document in `./doc/dev/nuget-dlls.txt` how to extract Allegro DLLs from the
+Allegro 5 NuGet release.
+
+
+
 0.10.28
 -------
 

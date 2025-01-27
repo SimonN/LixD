@@ -18,6 +18,9 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="v0.10.29" date="2025-01-27" type="stable">
+      <url>https://github.com/SimonN/LixD/releases/tag/v0.10.29</url>
+    </release>
     <release version="v0.10.28" date="2024-12-20" type="stable">
       <url>https://github.com/SimonN/LixD/releases/tag/v0.10.28</url>
     </release>
