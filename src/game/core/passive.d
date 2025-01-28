@@ -26,33 +26,36 @@ package void
 calcPassive(
     Game game,
     in UnderCursor underCursor,
-) {
+) { with (MouseCursor)
+{
     game.map.calcZoomAndScrolling();
     game.activateOrDeactivateTweaker(underCursor.best.empty
         ? no!Passport : some(underCursor.best.front.passport));
 
-    mouseCursor.yf = underCursor.numLix >= 1;
-    mouseCursor.xf
-        = game.map.isHoldScrolling ? 3
-        : forcingLeft ? 1
-        : forcingRight ? 2 : mouseCursor.xf;
-
-    if (game.map.suggestHoldScrollingTooltip)
-        game._panelExplainer.suggestTooltip(Tooltip.ID.holdToScroll);
-
-    if (game.pan.highlightGoalsExecute) {
-        game._altickHighlightGoalsUntil = timerTicks + ticksPerSecond * 3 / 2;
+    if (game.canWeClickAirNowToCutGlobalFuture) {
+        game._mapClickExplainer.suggestTooltip(Tooltip.ID.clickToCancelReplay);
+        mouseCursor.want(Sidekick.scissors);
     }
     if (! underCursor.best.empty) {
+        mouseCursor.want(Shape.openSquare);
         game._effect.localStyle = underCursor.best.front.lixxie.style;
         if (game.isInsertMode && game.canWeClickAirNowToCutGlobalFuture) {
             game._mapClickExplainer.suggestTooltip(Tooltip.ID.clickToInsert);
+            mouseCursor.want(Sidekick.insert); // overwrites Sidekick.scissors
         }
     }
-    if (game.canWeClickAirNowToCutGlobalFuture) {
-        game._mapClickExplainer.suggestTooltip(Tooltip.ID.clickToCancelReplay);
+    mouseCursor.want(game.map.isHoldScrolling ? Arrows.scroll
+        : forcingLeft ? Arrows.left
+        : forcingRight ? Arrows.right
+        : Arrows.none);
+
+    if (game.map.suggestHoldScrollingTooltip) {
+        game._panelExplainer.suggestTooltip(Tooltip.ID.holdToScroll);
     }
-}
+    if (game.pan.highlightGoalsExecute) {
+        game._altickHighlightGoalsUntil = timerTicks + ticksPerSecond * 3 / 2;
+    }
+}}
 
 private:
 

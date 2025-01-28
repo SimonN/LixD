@@ -52,10 +52,12 @@ void implEditorCalc(Editor editor) {
 {
     assert (_panel);
     _map.calcZoomAndScrolling();
-    if (aboutToTrash)
-        mouseCursor.yf = 2; // trashcan
-    else if (_map.isHoldScrolling)
-        mouseCursor.xf = 3; // scrolling arrows
+    if (aboutToTrash) {
+        mouseCursor.want(MouseCursor.Shape.trashcan);
+    }
+    else if (_map.isHoldScrolling) {
+        mouseCursor.want(MouseCursor.Arrows.scroll);
+    }
     if (! _dragger.framing && ! _dragger.moving)
         _panel.calc();
     else

@@ -19,13 +19,13 @@ import file.filename; // running levels from the command-line
 import file.key.key;
 import hardware.display;
 import hardware.keyboard;
+import hardware.mousecur;
 import mainloop.topscrn.base;
 
 static import file.log;
 static import gui;
 static import hardware.keyboard;
 static import hardware.mouse;
-static import hardware.mousecur;
 static import hardware.sound;
 static import mainloop.topscrn.first;
 
@@ -74,8 +74,7 @@ public:
 
     private bool calc_returnsTrueIfWeShouldExitApp()
     {
-        hardware.mousecur.mouseCursor.xf = 0;
-        hardware.mousecur.mouseCursor.yf = 0;
+        mouseCursor.wantPlainCrosshair();
 
         hardware.display .calc();
         hardware.mouse   .calc();
@@ -101,8 +100,9 @@ public:
     private void draw()
     {
         gui.draw(); // Will also draw the screen that is registered as Elder
-        if (screen.proposesToDrawMouseCursor)
-            hardware.mousecur.draw();
+        if (screen.proposesToDrawMouseCursor) {
+            mouseCursor.draw();
+        }
         hardware.sound.draw();
         flip_display();
         takeScreenshot();

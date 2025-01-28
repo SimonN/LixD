@@ -38,7 +38,8 @@ enum InternalImage {
     lobbySpec,
     menuBackground,
     menuCheckmark,
-    mouse,
+    mouseMain,
+    mouseSidekick,
     previewIcon,
     rewindPrevPly,
     skillsInPanel,
@@ -90,7 +91,8 @@ string toBasenameNoExt(in InternalImage id) @nogc
         case lobbySpec: return "lobbyspectatehandi";
         case menuBackground: return "mainmenubg";
         case menuCheckmark: return "checkbox";
-        case mouse: return "mouse";
+        case mouseMain: return "mouse";
+        case mouseSidekick: return "mouseinsert";
         case previewIcon: return "toruspreview";
         case rewindPrevPly: return "rewindprevply";
         case skillsInPanel: return "skillsinpanel";

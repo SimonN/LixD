@@ -14,7 +14,6 @@ import basics.globals : fileLog;
 import gui;
 import file.language;
 import graphic.color;
-import graphic.graphic;
 import graphic.internal;
 import graphic.torbit;
 import level.level;
@@ -23,8 +22,8 @@ import menu.preview.base;
 class LevelThumbnail : Frame, PreviewLevelOrReplay {
 private:
     Torbit  torbit; // the little canvas, sized like (this), to draw on
-    Graphic iconStatus;
-    Graphic iconTorus;
+    CornerStamp iconStatus;
+    CornerStamp iconTorus;
 
     immutable(string)[] _missingTiles;
     bool _warningTooLarge;
@@ -34,11 +33,7 @@ public:
     this(Geom g)
     {
         super(g);
-        auto cb = InternalImage.previewIcon.toCutbit;
-        iconStatus = new Graphic(cb, guiosd);
-        iconTorus  = new Graphic(cb, guiosd);
         iconTorus.yf = 1;
-
         _mtl = new Label(new Geom(0, 0, xlg, 20, From.TOP_LEFT));
         _mtl.undrawColor = color.transp;
         addChild(_mtl);
@@ -176,4 +171,17 @@ private Alcol darkeningColor()
     float r, g, b;
     al_unmap_rgb_f(color.screenBorder, &r, &g, &b);
     return al_map_rgba_f(r, g, b, 0.9f);
+}
+
+struct CornerStamp {
+public:
+    Point loc = Point(0, 0);
+    int xf = 0;
+    int yf = 0;
+
+const:
+    const(Cutbit) cutbit() const { return InternalImage.previewIcon.toCutbit; }
+    int xl() const { return cutbit.xl; }
+    int yl() const { return cutbit.yl; }
+    void draw() const { cutbit.draw(loc, xf, yf); }
 }
