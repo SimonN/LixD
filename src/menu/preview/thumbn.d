@@ -8,6 +8,8 @@ module menu.preview.thumbn;
  * but will only interpret the Level arguments of the methods, no Replay.
  */
 
+import std.algorithm;
+
 import basics.alleg5;
 import basics.help; // rounding
 import basics.globals : fileLog;
@@ -155,14 +157,16 @@ private:
     {
         void printLine(in int nthLine, in string str)
         {
+            immutable float centerLineY = ylg / 2f - 20f / 2f;
+            immutable float nextLinePlusY = min(20f, ylg / 3f);
             _mtl.resize(xlg - 2 * thickg, 20);
-            _mtl.move(thickg, iconTorus.yl / stretchFactor + nthLine * 20);
+            _mtl.move(thickg, centerLineY + nthLine * nextLinePlusY);
             _mtl.text = str;
             _mtl.draw();
         }
-        printLine(0, Lang.winTopologyWarnSize1.transl);
-        printLine(1, formattedWinTopologyWarnSize2());
-        printLine(2, Lang.winTopologyWarnSize3.transl);
+        printLine(-1, Lang.winTopologyWarnSize1.transl);
+        printLine(0, formattedWinTopologyWarnSize2());
+        printLine(1, Lang.winTopologyWarnSize3.transl);
     }
 }
 
