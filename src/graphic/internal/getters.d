@@ -93,7 +93,7 @@ Cutbit loadMaybeScaledFromDiskOrInvaildCutbit(Id)(in Id id)
     if (is (Id == InternalImage) || is (Id == Spritesheet))
 {
     immutable fn = toBestScaledFilenameOrNull(id);
-    if (! fn.fileExists || ! fn.hasImageExtension) {
+    if (fn is null || ! fn.fileExists || ! fn.hasImageExtension) {
         return nullCutbit;
     }
     auto ret = new Cutbit(fn, Cutbit.Cut.ifGridExists);
