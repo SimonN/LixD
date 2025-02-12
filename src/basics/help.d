@@ -128,7 +128,10 @@ unittest {
 
 // Remove dchars that don't satisfy pred, return newly allocated string.
 // If the entire input satisfies pred, return old string instead of allocating.
-pure string pruneString(in string input, bool function(dchar) pure pred)
+string pruneString(
+    in string input,
+    bool function(dchar) pure @safe pred
+) pure @safe
 {
     version (assert)
         std.utf.validate(input);
@@ -158,7 +161,7 @@ string expressWithTheseDigits(int n, ref immutable string[10] digits)
     return ret;
 }
 
-pure string escapeStringForFilename(in string s)
+string escapeStringForFilename(in string s) pure @safe
 {
     return pruneString(s, c => ! c.isControl && ! "\"*/:<>?\\|".canFind(c));
 }

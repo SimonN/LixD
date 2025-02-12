@@ -57,7 +57,7 @@ public:
         return rhs && tile is rhs.tile && loc == rhs.loc;
     }
 
-    @property const {
+    const {
         final Rect selboxOnMap() { return selboxOnTile + loc; }
         final Rect cutbitOnMap() { return cutbitOnTile + loc; }
 
@@ -73,7 +73,7 @@ public:
      * It's only legal to call these when the corresponding can.* is true.
      * Override the following when the corresponding can.* may be true.
      */
-    @property pure nothrow @safe @nogc {
+    pure nothrow @safe @nogc {
         int rotCw() const
         in { assert (can.rotate); } do { return 0; }
         int rotCw(int)
@@ -137,24 +137,24 @@ public:
         return IoLine.Colon(_tile.name, loc.x, loc.y, hatchRot ? "r" : "");
     }
 
-    final override @property pure nothrow @safe @nogc {
+    final override pure nothrow @safe @nogc {
         bool mirrY() const { return _hatchRot; }
         bool mirrY(bool b) { return _hatchRot = b; }
     }
 
-    @property bool hatchRot() const pure nothrow @safe @nogc
+    bool hatchRot() const pure nothrow @safe @nogc
     {
         return _hatchRot;
     }
 
-    @property Rect triggerAreaOnMap() const
+    Rect triggerAreaOnMap() const pure nothrow @safe @nogc
     {
         assert (_tile);
         return tile.triggerArea + loc;
     }
 
     // only for hatches
-    @property Point screenCenter() const
+    Point screenCenter() const pure nothrow @safe @nogc
     {
         assert (tile);
         return loc + tile.trigger + Point(hatchRot ? -64 : 64, 32);
@@ -209,7 +209,7 @@ public:
         return IoLine.Colon(_tile.name, loc.x, loc.y, modifiers);
     }
 
-    final override @property pure nothrow @safe @nogc {
+    final override pure nothrow @safe @nogc {
         int rotCw() const { return _rotCw; }
         int rotCw(int r) { return _rotCw = r % 4; }
         bool mirrY() const { return _mirrY; }
@@ -229,12 +229,12 @@ public:
     // horizontally. Reason: The editor button mirrors, then rotates twice.
     // Mirroring occurs first, then rotation. The selbox (selection box)
     // says where the editor should draw a frame around the selected tile.
-    override @property Rect selboxOnTile() const
+    override Rect selboxOnTile() const
     {
         return Rect(selboxStart!0, selboxStart!3, selboxLen!0, selboxLen!1);
     }
 
-    override @property Rect cutbitOnTile() const
+    override Rect cutbitOnTile() const
     {
         assert (_tile);
         return Rect(0, 0, (rotCw % 2 == 0) ? tile.cb.xl : tile.cb.yl,
@@ -242,7 +242,7 @@ public:
     }
 
 private:
-    @property int selboxStart(int plusRot)() const
+    int selboxStart(int plusRot)() const
         if (plusRot == 0 || plusRot == 3) {
         with (_tile)
     {
@@ -265,7 +265,7 @@ private:
             }
     }}
 
-    @property int selboxLen(int plusRot)() const
+    int selboxLen(int plusRot)() const
         if (plusRot == 0 || plusRot == 1)
     {
         assert (_tile);

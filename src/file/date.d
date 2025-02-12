@@ -22,12 +22,12 @@ private:
     int second;
 
 public:
-    static immutable(typeof(this)) now()
+    static immutable(typeof(this)) now() @safe
     {
         return new immutable typeof(this)();
     }
 
-    this(in string s) pure immutable
+    this(in string s) pure immutable @safe
     {
         auto digits = s.representation
             .filter!(c => c >= '0' && c <= '9')
@@ -46,13 +46,13 @@ public:
         second = takeDigits(12, 2);
     }
 
-    override string toString() const
+    override string toString() const @safe
     {
         return format("%04d-%02d-%02d %02d:%02d:%02d",
             year, month, day, hour, minute, second);
     }
 
-    string toStringForFilename() immutable
+    string toStringForFilename() immutable @safe
     {
         string ret = format("%04d-%02d-%02d-%02d%02d%02d",
             year, month, day, hour, minute, second);
@@ -94,7 +94,7 @@ public:
     }
 
 private:
-    private this() immutable
+    private this() immutable @trusted
     {
         time_t timestamp = time(null);
         tm*    loctime   = localtime(&timestamp);

@@ -66,7 +66,7 @@ deinitialize()
     _isInitialized = false;
 }
 
-nothrow static void
+nothrow static @safe void
 log(string s)
 {
     if (! _isInitialized)
@@ -79,7 +79,7 @@ log(string s)
     catch (Exception) { }
 }
 
-nothrow static void
+nothrow static @safe void
 logf(T...)(string formatstr, T formatargs)
 {
     if (! _isInitialized)
@@ -92,7 +92,7 @@ logf(T...)(string formatstr, T formatargs)
     catch (Exception) { }
 }
 
-nothrow static void
+nothrow static @safe void
 logfEvenDuringUnittest(Args...)(string formatstr, Args args)
 {
     try {
@@ -127,7 +127,7 @@ logThenRethrowToTerminate(Throwable firstThr)
 ///////////////////////////////////////////////////////////////////////////////
 
 private static void
-logHeaderIfNecessary()
+logHeaderIfNecessary() @safe
 {
     if (! _isInitialized || _somethingAlreadyLoggedThisSession) {
         return;
@@ -139,7 +139,7 @@ logHeaderIfNecessary()
 }
 
 private static string
-formatTimeSinceInit() nothrow
+formatTimeSinceInit() nothrow @safe
 {
     try {
         return format("%9.2f", secondsSinceInitAsDouble);
@@ -150,7 +150,7 @@ formatTimeSinceInit() nothrow
 }
 
 private static double
-secondsSinceInitAsDouble() nothrow @nogc
+secondsSinceInitAsDouble() nothrow @safe @nogc
 {
     if (_timeOfInit == MonoTime.init) {
         return 0.00;

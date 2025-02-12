@@ -34,14 +34,14 @@ public:
         _cb.dispose();
     }
 
-          @property const(Cutbit) cb() const { return _cb;     }
-    final @property Rect      selbox() const { return _selbox; }
+    const(Cutbit) cb() const pure nothrow @safe @nogc { return _cb; }
+    final Rect selbox() const pure nothrow @safe @nogc { return _selbox; }
 
-    @property string                name()         const { return null; }
-    @property const(AbstractTile)[] dependencies() const { return null; }
+    string                name()         const { return null; }
+    const(AbstractTile)[] dependencies() const { return null; }
 
     // Object.toHash is not const! WTF!
-    override @property size_t toHash() const pure nothrow @trusted
+    override size_t toHash() const pure nothrow @trusted
     {
         return cast(size_t) cast(void*) this;
     }

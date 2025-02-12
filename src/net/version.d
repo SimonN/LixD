@@ -13,7 +13,7 @@ import std.range;
 import std.string;
 
 private immutable _gameVersion = Version(0, 10, 29);
-const(Version) gameVersion() { return _gameVersion; }
+const(Version) gameVersion() nothrow @safe @nogc { return _gameVersion; }
 
 struct Version {
     int major;
