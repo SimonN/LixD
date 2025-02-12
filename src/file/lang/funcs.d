@@ -60,9 +60,13 @@ nothrow string translf(FormatArgs...)(in Lang key, FormatArgs args)
         return format(key.transl, args);
     }
     catch (Exception e) {
-        logf("Cannot format translation of `%s':", key);
-        logf("    -> Translation is `%s'", key.transl);
-        logf("    -> %s", e.msg);
+        static bool[Lang.max + 1] alreadyLogged = false;
+        if (! alreadyLogged[key]) {
+            logf("Cannot format translation of %s:", key);
+            logf("    -> Translation is: %s", key.transl);
+            logf("    -> %s", e.msg);
+            alreadyLogged[key] = true;
+        }
     }
     try {
         return text(key.transl, args);
