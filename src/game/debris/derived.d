@@ -168,7 +168,7 @@ public:
     {
         immutable forward = Point(dir, 1);
         super(foot + forward * initialOffsetFromFootFor(whichTool),
-            uniform(40, 90));
+            ttlFor(whichTool));
         speed = forward * initialSpeedFor(whichTool);
         yf = whichTool;
         rotCw = initialRotCwFor(dir, whichTool);
@@ -196,6 +196,17 @@ protected:
     }
 
 private:
+    static int ttlFor(in Type tool)  @safe
+    {
+        final switch (tool) {
+            case Type.pickaxe: return uniform(50, 80);
+            case Type.jackhammerFoot: return uniform(30, 40);
+            case Type.jackhammerHandle: return uniform(30, 40);
+            case Type.jackhammerEngine: return uniform(40, 60);
+            case Type.shovel: return uniform(50, 70);
+        }
+    }
+
     static float initialRotCwFor(in int dir, in Type tool
     ) pure nothrow @safe @nogc
     {
@@ -236,13 +247,13 @@ private:
             case Type.pickaxe:
                 return Point(uniform(2, 6), uniform(-11, -7));
             case Type.jackhammerFoot:
-                return Point(uniform(4, 6), uniform(-6, -4));
+                return Point(uniform(4, 5), uniform(-6, -4));
             case Type.jackhammerHandle:
-                return Point(uniform(-6, -2), uniform(-9, -6));
+                return Point(uniform(-4, -2), uniform(-10, -6));
             case Type.jackhammerEngine:
-                return Point(uniform(1, 3), uniform(-8, -5));
+                return Point(uniform(1, 3), uniform(-9, -6));
             case Type.shovel:
-                return Point(uniform(1, 3), uniform(-8, -6));
+                return Point(uniform(1, 3), uniform(-8, -7));
         }
     }
 }
