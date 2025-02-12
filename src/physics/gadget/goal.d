@@ -1,14 +1,16 @@
-module graphic.gadget.goal;
+module physics.gadget.goal;
 
 import std.algorithm; // max
+import std.format;
 import std.math;
 
 import basics.globals; // fileImageMouse
 import basics.help; // len
 import basics.styleset;
 import basics.topology;
+import file.language;
 import graphic.cutbit;
-import graphic.gadget;
+import physics.gadget;
 import graphic.internal;
 import graphic.torbit;
 import net.ac;
@@ -20,7 +22,7 @@ import tile.occur;
  * When overtime runs out, set drawWithNoSign.
  */
 
-class Goal : Gadget {
+final class Goal : Gadget {
 private:
     StyleSet _owners;
 
@@ -28,6 +30,24 @@ public:
     this(const(Topology) top, in GadOcc levelpos) { super(top, levelpos); }
     this(in Goal rhs) { super(rhs); }
     override Goal clone() const { return new Goal(this); }
+
+    override string tooltip(in Phyu now, in Tribe viewer) const nothrow @safe
+    {
+        if (viewer.style.goodForMultiplayer) {
+            return _owners.contains(viewer.style)
+                ? Lang.tooltipGoalYours.transl
+                : Lang.tooltipGoalOpponents.transl;
+        }
+        immutable score = viewer.score.lixSaved.as!int;
+        if (score > 0) {
+            return Lang.tooltipGoalPuzzleSome.translf(
+                viewer.rules.lixRequired,
+                viewer.rules.initialLixInHatchWithoutHandicap, score);
+        }
+        return Lang.tooltipGoalPuzzleZero.translf(
+            viewer.rules.lixRequired,
+            viewer.rules.initialLixInHatchWithoutHandicap);
+    }
 
     void addOwner(in Style st) pure nothrow @safe @nogc { _owners.insert(st); }
     bool hasOwner(in Style st) const pure nothrow @safe @nogc

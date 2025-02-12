@@ -8,7 +8,7 @@ import basics.alleg5;
 import basics.globals;
 import basics.help; // len
 import file.option;
-import graphic.gadget;
+import physics.gadget;
 import graphic.torbit;
 import file.replay;
 import level.level;
@@ -43,9 +43,9 @@ do {
     (&ret).preparePlayers(cfg);
     (&ret).prepareGadgets(cfg.level);
     (&ret).assignTribesToGoals(cfg.permu);
-    (&ret).foreachConstGadget((const(Gadget) g) {
+    foreach (g; ret.allConstGadgets) {
         g.drawLookup(ret.lookup);
-    });
+    }
     ret.age = ret.isBattle ? Phyu(0) : Phyu(45); // start quickly in 1-player
 
     ret.immutableHalf.overtimeAtStartInPhyus = ret.isBattle
@@ -69,6 +69,7 @@ do {
         state.tribes.add(Tribe.RuleSet(
             style,
             cfg.level.initial,
+            cfg.level.required,
             cfg.level.spawnint,
             cfg.level.skills,
             nukeRule,

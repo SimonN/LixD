@@ -183,6 +183,17 @@ $skill=ascender Ascendarare|ascendarar
 $skill=shrugger Ryckare|rycker
 $skill=shrugger2 Ryckare|rycker
 
+$tooltipHatch Lucka. Entréintervall %d.
+$tooltipGoalPuzzleZero Mål. Räddning %d/%d för att vinna.
+$tooltipGoalPuzzleSome Mål. Räddning %d/%d. Du har %d.
+$tooltipGoalYours Mål. Varje lix gör poäng för dig.
+$tooltipGoalOpponents Mål. Din motståndare får poäng.
+$tooltipFire Eld. Alltid dödlig.
+$tooltipWater Vatten. Alltid dödlig.
+$tooltipMuncher Fälla. Dödar inom %d ticks.
+$tooltipCatapult Katapult. Kastar %s%d, %s%d inom %d ticks.
+$tooltipSteam Ånga. Kastar alla lix %s%d, %s%d.
+
 // main editor screen
 $editorHotkey Snabbtangent:
 $editorBarAt på

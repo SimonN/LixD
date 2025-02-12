@@ -9,7 +9,6 @@ import std.range;
 
 import basics.alleg5;
 import graphic.color;
-import graphic.graphic; // mouse cursor
 import graphic.torbit;
 import gui.iroot;
 import gui.element;

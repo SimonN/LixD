@@ -179,6 +179,17 @@ $skill=ascender Ascender|steigt
 $skill=shrugger Shrugger|zuckt
 $skill=shrugger2 Shrugger|zuckt
 
+$tooltipHatch Klappe. Fall-Intervall %d.
+$tooltipGoalPuzzleZero Ziel. Rette %d/%d zur Lösung.
+$tooltipGoalPuzzleSome Ziel. Rette %d/%d. Du hast %d.
+$tooltipGoalYours Ziel. Jede Lix zählt für dich.
+$tooltipGoalOpponents Ziel. Dein Gegner bekommt Punkte.
+$tooltipFire Feuer. Jederzeit tödlich.
+$tooltipWater Wasser. Jederzeit tödlich.
+$tooltipMuncher Falle. Tötet in %d Ticks.
+$tooltipCatapult Katapult. Wirft %s%d, %s%d in %d Ticks.
+$tooltipSteam Dampf. Wirft alle Lix %s%d, %s%d.
+
 $editorHotkey Hotkey:
 $editorBarAt an
 $editorBarGroup -Stücke-Gruppe

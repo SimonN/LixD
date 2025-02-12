@@ -8,7 +8,6 @@ import std.string;
 import file.filename;
 import graphic.color;
 import graphic.cutbit;
-import graphic.graphic;
 import graphic.torbit;
 import hardware.tharsis;
 import level.level;

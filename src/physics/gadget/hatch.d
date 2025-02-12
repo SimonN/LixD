@@ -1,21 +1,20 @@
-module graphic.gadget.hatch;
+module physics.gadget.hatch;
 
-import std.algorithm; // min
+import std.algorithm; // clamp
+import std.format;
 
-import basics.help;
-import basics.globals; // hatch arrow graphic
 import basics.styleset;
 import basics.topology;
+import file.language;
 import game.effect;
-import graphic.cutbit;
-import graphic.gadget;
+import physics.gadget;
 import graphic.internal;
 import hardware.sound;
-import net.ac;
-import net.repdata;
+import net.phyu;
+import physics.tribe;
 import tile.occur;
 
-class Hatch : Gadget {
+final class Hatch : Gadget {
 private:
     StyleSet _owners;
 
@@ -42,6 +41,11 @@ public:
     }
 
     override Hatch clone() const { return new Hatch(this); }
+
+    override string tooltip(in Phyu now, in Tribe viewer) const nothrow @safe
+    {
+        return Lang.tooltipHatch.translf(viewer.rules.spawnInterval);
+    }
 
     void addOwner(in Style st) pure nothrow @safe @nogc { _owners.insert(st); }
     bool hasOwner(in Style st) const pure nothrow @safe @nogc
@@ -87,5 +91,7 @@ private:
         return now < updateBlinkStop
             && now % (updatesBlinkOn + updatesBlinkOff) < updatesBlinkOn;
     }
+
+
 }
 // end class Hatch

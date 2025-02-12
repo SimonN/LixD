@@ -15,6 +15,7 @@ import game.panel.infobar;
 import game.panel.rightbut;
 import game.panel.skillbar;
 import game.panel.tooltip;
+import physics.gadget;
 import gui;
 import net.phyu;
 import physics.lixxie.lixxie;
@@ -80,11 +81,14 @@ public:
     void add(in Style style, in string name) { _rb.add(style, name); }
 
     // call this from the Game
-    void setLikeTribe(in Tribe tr, in Ac ploderToDisplay,
-                      in bool overtimeRunning, in int overtimeRemainingInPhyus
-    ) {
-        if (tr is null)
-            return;
+    void show(
+        in Phyu now,
+        in Tribe tr,
+        in Ac ploderToDisplay,
+        in bool overtimeRunning,
+        in int overtimeRemainingInPhyus)
+    in { assert (tr); }
+    do {
         immutable bool multiNuking = tr.style != Style.garden
             && overtimeRunning && overtimeRemainingInPhyus == 0;
         _skillbar.setLikeTribe(tr, ploderToDisplay);
@@ -96,6 +100,7 @@ public:
         nuke.overtimeRunning = overtimeRunning;
         nuke.overtimeRemainingInPhyus = overtimeRemainingInPhyus;
         _rb.ourStyle = tr.style;
+        stats.show(now, tr);
     }
 
     // Can return null. Should refactor to Optional!SkillButton.
@@ -115,16 +120,17 @@ public:
         _skillbar.chooseLeftmostSkill();
     }
 
-    void dontDescribeTarget() { stats.dontDescribeTarget(); }
-    void describeTarget(in Lixxie l, in Passport p, int numUnderCursor)
+    void describeNoLixxie() { stats.describeNoLixxie(); }
+    void describeLixxie(in Lixxie l, in Passport p, int numUnderCursor)
     {
-        stats.describeTarget(l, p, numUnderCursor);
+        stats.describeLixxie(l, p, numUnderCursor);
     }
 
-    void showInfo(in Tribe tr) { stats.showTribe(tr); }
-    void dontShowSpawnInterval() { stats.dontShowSpawnInterval(); }
-    void showSpawnInterval(in int si) { stats.showSpawnInterval(si); }
-    void age(in Phyu phyu) { stats.age = phyu; }
+    void describeNoGadget() { stats.describeNoGadget(); }
+    void describeGadget(in Phyu now, in Tribe viewer, const(Gadget) gad)
+    {
+        stats.describeGadget(now, viewer, gad);
+    }
 
     const nothrow @safe @nogc {
         bool isSuggestingTooltip() { return _rb.isSuggestingTooltip; }

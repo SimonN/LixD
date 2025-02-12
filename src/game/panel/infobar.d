@@ -6,6 +6,7 @@ import glo = basics.globals;
 import file.language;
 import opt = file.option.allopts;
 import graphic.color;
+import physics.gadget;
 import graphic.internal;
 import gui;
 import hardware.display; // show fps
@@ -18,14 +19,12 @@ import physics.tribe;
 
 abstract class InfoBar : Button {
 private:
-    bool _showSpawnInterval;
-    int _spawnInterval;
-    int _numLixUnderCursor;
-    static assert (Ac.init == Ac.nothing);
-
     Phyu _age;
+    int _numLixUnderCursor;
     ConstLix _highlitLix; // May be null.
     Passport _highlitPassport; // Ignore whenever _highlitLix is null.
+    string _hoveredGadget; // == "" when mouse isn't hovering over a gadget.
+
     CutbitElement _bOut, _bHatch;
     Label _lOut, _lHatch, _targetDesc, _fps;
 
@@ -41,61 +40,54 @@ public:
         addChildren(_targetDesc, _fps);
     }
 
-    void describeTarget(
+    void describeLixxie(
         in Lixxie l,
         in Passport p,
         in int numLixUnderCursor)
     {
-        if (_highlitLix !is l || _numLixUnderCursor != numLixUnderCursor) {
-            reqDraw();
+        if (_highlitLix is l && _numLixUnderCursor == numLixUnderCursor) {
+            return;
         }
+        reqDraw();
         _highlitLix = l;
         _highlitPassport = p;
         _numLixUnderCursor = numLixUnderCursor;
     }
 
-    void dontDescribeTarget()
+    void describeNoLixxie()
     {
         if (_highlitLix is null && _numLixUnderCursor == 0) {
             return;
         }
+        reqDraw();
         _highlitLix = null;
         _highlitPassport = Passport();
         _numLixUnderCursor = 0;
     }
 
-    void dontShowSpawnInterval()
+    void describeNoGadget()
     {
-        if (! _showSpawnInterval)
+        if (_hoveredGadget.empty) {
             return;
+        }
         reqDraw();
-        _showSpawnInterval = false;
+        _hoveredGadget = "";
     }
 
-    void showSpawnInterval(in int si)
+    void describeGadget(in Phyu now, in Tribe viewer, const(Gadget) gad)
     {
-        if (_showSpawnInterval && _spawnInterval == si)
-            return;
-        reqDraw();
-        _showSpawnInterval = true;
-        _spawnInterval = si;
-    }
-
-    @property Phyu age(in Phyu phyu)
-    {
-        if (_age == phyu)
-            return phyu;
-        reqDraw();
-        return _age = phyu;
+        _hoveredGadget = gad.tooltip(now, viewer);
+        reqDraw(); // The gadget can change its own description every frame.
     }
 
     // Eventually, subclass InfoBar for singleplayer and multiplayer?
     // Pass lixRequired to the constructor of the one subclass.
-    void showTribe(in Tribe tribe) {
-        with (tribe)
+    void show(in Phyu now, in Tribe tribe)
+    in { assert (tribe); }
+    do { with (tribe)
     {
-        assert (tribe);
         reqDraw();
+        _age = now;
         _lHatch.shown = _bHatch.shown = lixInHatch > 0;
         _lOut.shown = _bOut.shown = lixInHatch + lixOut > 0;
         _lHatch.number = lixInHatch;
@@ -154,9 +146,8 @@ private:
         if (_numLixUnderCursor >= 1) {
             return formatTargetDescLix();
         }
-        else if (_showSpawnInterval) {
-            return "%s: %d".format(Lang.winConstantsSpawnint.transl,
-                _spawnInterval);
+        else if (_hoveredGadget.length >= 1) {
+            return _hoveredGadget;
         }
         return formatExtraDesc();
     }

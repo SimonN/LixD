@@ -15,13 +15,12 @@ module physics.world.world;
 import core.stdc.string : memcpy, memset;
 
 import std.algorithm;
-import std.conv;
 import std.range;
 
 import basics.help; // clone(T[]), a deep copy for arrays
 import basics.topology;
 import graphic.torbit;
-import graphic.gadget;
+import physics.gadget;
 import hardware.tharsis;
 import net.repdata;
 import net.style;
@@ -65,21 +64,17 @@ public:
 
     bool isValid() const pure nothrow @safe @nogc { return mut.isValid; }
 
-    // With dmd 2.0715.1, inout doesn't seem to work for this.
-    void foreachConstGadget(void delegate(const(Gadget)) func) const
+    auto allConstGadgets() const
     {
-        chain(immutableHalf.hatches, immutableHalf.goals, immutableHalf.waters,
-            mut.munchers, immutableHalf.steams, mut.catapults
-            ).each!func;
+        return chain(
+            immutableHalf.hatches, immutableHalf.goals, immutableHalf.waters,
+            mut.munchers, immutableHalf.steams, mut.catapults);
     }
 
     const pure nothrow @safe @nogc {
         bool isPuzzle() { return mut.tribes.isPuzzle; }
         bool isBattle() { return mut.tribes.isBattle; }
-        bool isSolvedPuzzle(in int req)
-        {
-            return mut.tribes.isSolvedPuzzle(req);
-        }
+        bool isSolvedPuzzle() { return mut.tribes.isSolvedPuzzle; }
     }
 
     bool someoneDoesntYetPreferGameToEnd() const

@@ -183,6 +183,17 @@ $skill=ascender Ascender|is ascending
 $skill=shrugger Shrugger|is shrugging
 $skill=shrugger2 Shrugger|is shrugging
 
+$tooltipHatch Hatch. Spawn interval %d.
+$tooltipGoalPuzzleZero Goal. Save %d/%d to win.
+$tooltipGoalPuzzleSome Goal. Save %d/%d. You've saved %d.
+$tooltipGoalYours Goal. Each lix scores for you.
+$tooltipGoalOpponents Goal. Your opponent gets points.
+$tooltipFire Fire. Always deadly.
+$tooltipWater Water. Always deadly.
+$tooltipMuncher Trap. Kills in %d ticks.
+$tooltipCatapult Catapult. Flings %s%d, %s%d in %d ticks.
+$tooltipSteam Steam. Flings all lix %s%d, %s%d.
+
 // main editor screen
 $editorHotkey Hotkey:
 $editorBarAt at

@@ -23,7 +23,7 @@ import basics.help; // len
 import net.repdata;
 import hardware.tharsis;
 import file.replay;
-import graphic.gadget;
+import physics.gadget;
 import graphic.torbit;
 import hardware.sound;
 import physics.effect;

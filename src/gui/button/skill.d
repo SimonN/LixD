@@ -6,7 +6,6 @@ public import net.style;
 import gui;
 import graphic.color;
 import graphic.internal;
-import graphic.graphic;
 
 class SkillOrScissorsButton : Button {
 private:

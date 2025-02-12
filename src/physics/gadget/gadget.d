@@ -1,4 +1,4 @@
-module graphic.gadget.gadget;
+module physics.gadget.gadget;
 
 /*
  * A Gadget behaves like an object of class Graphic that was created from
@@ -12,35 +12,23 @@ import std.conv;
 import optional;
 
 import basics.help;
-import net.repdata;
 import basics.topology;
+import file.log;
 import game.effect;
 import graphic.cutbit;
 import graphic.color;
-import graphic.graphic;
-import graphic.gadget;
+import physics.gadget;
 import graphic.torbit;
+import net.repdata;
 import tile.phymap;
 import tile.occur;
 import tile.gadtile;
 import net.style; // dubious, but I need it for fat interface antipattern
+import physics.tribe; // only for rendering tooltips
 
-public alias Water = Gadget;
-public alias Fire = Gadget;
-public alias Steam = Gadget;
-
-package immutable string StandardGadgetCtor =
-    "this(const(Topology) top, in GadOcc levelpos)
-    {
-        super(top, levelpos);
-    }";
-
-class Gadget {
-private:
-    Graphic _graphic;
-
+abstract class Gadget {
 public:
-    const(GadgetTile) tile;
+    const(GadOcc) occ;
 
 protected:
     // protected, use the factory to generate gadgets of the correct subclass
@@ -50,11 +38,22 @@ protected:
         assert (levelpos.tile.cb, "we shouldn't make gadgets from bad tiles");
     }
     do {
-        _graphic = new Graphic(levelpos.tile.cb, top, levelpos.loc);
-        tile = levelpos.tile;
+        occ = levelpos;
     }
 
 public:
+    this(in Gadget rhs)
+    in {
+        assert (rhs !is null, "we shouldn't copy from null rhs");
+        assert (rhs.occ !is null, "don't copy from rhs without occ");
+        assert (rhs.tile !is null, "don't copy from rhs with missing tile");
+    }
+    do {
+        occ = rhs.occ;
+    }
+
+    abstract Gadget clone() const;
+
     static Gadget
     factory(const(Topology) top, in GadOcc levelpos)
     {
@@ -72,44 +71,35 @@ public:
         }
     }
 
-    Gadget clone() const { return new Gadget(this); }
-    this(in Gadget rhs)
-    in {
-        assert (rhs !is null, "we shouldn't copy from null rhs");
-        assert (rhs._graphic !is null, "don't copy from rhs without graphic");
-        assert (rhs.tile !is null, "don't copy from rhs with missing tile");
-    }
-    do {
-        _graphic = rhs._graphic.clone;
-        tile = rhs.tile;
-    }
-
     final const pure nothrow @safe @nogc {
-        Point loc() { return _graphic.loc; }
-        Rect rect() { return _graphic.rect; }
-        int xl() { return _graphic.xl; }
-        int yl() { return _graphic.yl; }
-        int frames() { return max(1, _graphic.xfs * _graphic.yfs); }
+        const(GadgetTile) tile() { return occ.tile; }
+        Point loc() { return occ.loc; }
+        Rect triggerArea() { return occ.triggerAreaOnMap; }
+        int frames() { return max(1, tile.cb.xfs * tile.cb.yfs); }
     }
 
+    abstract string tooltip(in Phyu now, in Tribe viewer) const nothrow @safe;
+
+    /*
+     * draw() assumes that the correct Torbit is already the target Torbit.
+     */
     final void draw(in Phyu now, in Style treatSpecially) const
     {
         if (frames <= 1) {
-            _graphic.drawSpecificFrame(Point(0, 0));
+            tile.cb.draw(loc);
         }
         else {
             const fra = frame(now);
             if (fra.forceSecondRow) {
-                _graphic.drawSpecificFrame(Point(fra.frame, 1));
+                tile.cb.draw(loc, fra.frame, 1);
             }
-            else if (_graphic.yfs == 1) {
-                _graphic.drawSpecificFrame(Point(fra.frame, 0));
+            else if (tile.cb.yfs == 1) {
+                tile.cb.draw(loc, fra.frame, 0);
             }
             else {
-                assert (_graphic.xfs >= 1, "We must compute modulo");
-                _graphic.drawSpecificFrame(Point(
-                    fra.frame % _graphic.xfs,
-                    fra.frame / _graphic.xfs));
+                const xfs = tile.cb.xfs;
+                assert (xfs >= 1, "We must compute modulo");
+                tile.cb.draw(loc, fra.frame % xfs, fra.frame / xfs);
             }
         }
         onDraw(now, treatSpecially);
@@ -163,3 +153,18 @@ protected:
     void onDraw(in Phyu now, in Style treatSpecially) const { }
 }
 // end class Gadget
+
+
+
+private:
+
+bool[GadType.MAX] alreadyLoggedForType = false;
+
+void logOncePerGadgetType(in GadType type, in string errMsg) nothrow @safe
+{
+    if (alreadyLoggedForType[type]) {
+        return;
+    }
+    logf("Can't format string for gadget type %s: %s", type, errMsg);
+    alreadyLoggedForType[type] = true;
+}

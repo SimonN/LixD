@@ -79,9 +79,9 @@ package:
         in { assert (numPlayerTribes > 0, "Add some tribes first."); }
         do { return numPlayerTribes == 1; }
 
-    bool isSolvedPuzzle(in int lixRequired) const
+    bool isSolvedPuzzle() const
     {
-        return isPuzzle && theSingleTribe.score.lixSaved >= lixRequired;
+        return isPuzzle && theSingleTribe.hasSolvedThePuzzle;
     }
 }
 

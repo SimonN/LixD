@@ -259,12 +259,16 @@ package:
     void setLastPhyuToNow()
     {
         assert (this.nurse);
-        if (_effect)
+        if (_effect) {
             _effect.deleteAfter(nurse.now);
-        if (pan)
-            pan.setLikeTribe(localTribe, level.ploder,
-                cs.isOvertimeRunning,
-                cs.overtimeRemainingInPhyus);
+        }
+        if (pan) {
+            pan.show(nurse.now, localTribe, level.ploder,
+                cs.isOvertimeRunning, cs.overtimeRemainingInPhyus);
+            foreach (sc; nurse.scores) {
+                pan.update(sc);
+            }
+        }
         if (nurse.updatesSinceZero == 0 && _setLastPhyuToNowLastCalled != 0) {
             hardware.sound.playLoud(Sound.LETS_GO);
         }
@@ -273,7 +277,6 @@ package:
         altickLastPhyu = timerTicks;
     }
 
-    bool isSolvedPuzzle() const { return cs.isSolvedPuzzle(level.required); }
     bool singleplayerHasNuked() const
     {
         return cs.isPuzzle && cs.tribes.theSingleTribe.hasNuked;

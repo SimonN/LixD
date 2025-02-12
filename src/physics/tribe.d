@@ -16,7 +16,8 @@ import optional;
 import basics.globals;
 import basics.help;
 import basics.rect;
-import level.level; // spawnintMax
+import net.ac;
+import net.handicap;
 import net.repdata;
 import net.style;
 import physics.fracint;
@@ -55,7 +56,8 @@ public:
 
         Style style;
         int initialLixInHatchWithoutHandicap;
-        int spawnInterval; // number of physics updates until next spawn
+        int lixRequired; // Singleplayer save requirement. 0 in multiplayer.
+        int spawnInterval; // Number of physics updates between two spawns.
         Enumap!(Ac, int) initialSkillsWithoutHandicap; // may be skillInfinity
         MustNukeWhen mustNukeWhen;
         MergedHandicap handicap;
@@ -159,6 +161,13 @@ public:
             immutable ret = _lixSaved > 0;
             assert (ret != _firstScoring.empty);
             return ret;
+        }
+
+        bool hasSolvedThePuzzle()
+        {
+            assert (rules.handicap.score == Fraction(1, 1),
+                "Handicap in singleplayer isn't well-defined.");
+            return _lixSaved >= rules.lixRequired;
         }
     }
 

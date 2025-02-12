@@ -184,6 +184,17 @@ $skill=ascender Aixecador|s'està aixecant
 $skill=shrugger Arronsador|s'està arronsant d'espatlles
 $skill=shrugger2 Arronsador|s'està arronsant d'espatlles
 
+$tooltipHatch Cau. Intèrval d'aparició %d.
+$tooltipGoalPuzzleZero Objectiu. Salvar %d/%d per guanyar.
+$tooltipGoalPuzzleSome Objectiu. Salvar %d/%d. Has salvat %d.
+$tooltipGoalYours Objectiu. Cada lix puntua per a tu.
+$tooltipGoalOpponents Objectiu. El teu oponent obté punts.
+$tooltipFire Foc. Sempre mortal.
+$tooltipWater Aigua. Sempre mortal.
+$tooltipMuncher Trampa. Mata en %d ticks.
+$tooltipCatapult Catapulta. Llança %s%d, %s%d en %d ticks.
+$tooltipSteam Vapor. Llança totes les lix %s%d, %s%d.
+
 // main editor screen
 $editorHotkey Drecera de teclat:
 $editorBarAt a

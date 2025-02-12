@@ -152,6 +152,17 @@ enum Lang {
     tweakerEmptyListDesc2,
     tweakerEmptyListDesc3,
 
+    tooltipHatch,
+    tooltipGoalPuzzleZero,
+    tooltipGoalPuzzleSome,
+    tooltipGoalYours,
+    tooltipGoalOpponents,
+    tooltipFire,
+    tooltipWater,
+    tooltipMuncher,
+    tooltipCatapult,
+    tooltipSteam,
+
     // main editor screen
     editorHotkey,
     editorBarAt,

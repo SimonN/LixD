@@ -5,6 +5,7 @@ import std.conv; // replay sign
 import std.math; // sin, for replay sign
 import std.range : retro;
 import std.string; // format
+import std.typecons;
 
 import basics.alleg5;
 import basics.globals : ticksPerSecond;
@@ -15,7 +16,7 @@ import game.panel.tooltip;
 import graphic.camera.mapncam;
 import graphic.color;
 import graphic.cutbit; // replay sign
-import graphic.gadget;
+import physics.gadget;
 import graphic.internal;
 import graphic.torbit;
 import hardware.display;
@@ -44,6 +45,7 @@ implGameDraw(Game game) { with (game)
         if (modalWindow || ! pan.splatRulerIsOn || ! isMouseOnLand) {
             game.drawLand();
             game.pingOwnGadgets();
+            game.drawGadgetExtrasOnTopOfPing();
         }
         else {
             _splatRuler.considerBackgroundColor(level.bgColor);
@@ -51,6 +53,7 @@ implGameDraw(Game game) { with (game)
             _splatRuler.drawBelowLand(map.torbit);
             game.drawLand();
             game.pingOwnGadgets();
+            game.drawGadgetExtrasOnTopOfPing();
             _splatRuler.drawAboveLand(map.torbit);
         }
         assert (_effect);
@@ -63,12 +66,7 @@ implGameDraw(Game game) { with (game)
             drawAllTriggerAreas(level.gadgets, map.torbit);
         }
     }
-    pan.showInfo(localTribe);
-    foreach (sc; nurse.scores)
-        pan.update(sc);
-    pan.age = cs.age;
-
-    game.showSpawnIntervalOnHatches();
+    game.describeHoveredGadgetInPanel();
     game.drawMapToA5Display();
     game.ensureMusic();
 }}
@@ -76,52 +74,58 @@ implGameDraw(Game game) { with (game)
 
 private:
 
-void drawGadgets(Game game) { with (game)
+void drawGadgets(Game game)
 {
     version (tharsisprofiling)
         auto zone = Zone(profiler, "game draws gadgets");
-    cs.foreachConstGadget(delegate void (const(Gadget) g) {
-        g.draw(cs.age, localTribe.style);
-    });
-    if (cs.nukeIsAssigningExploders && ! nurse.everybodyOutOfLix) {
-        foreach (g; cs.goals)
-            g.drawNoSign();
+    foreach (g; game.cs.allConstGadgets) {
+        g.draw(game.cs.age, game.localTribe.style);
     }
-}}
-
-void pingOwnGadgets(Game game) { with (game)
-{
-    if (game.cs.isPuzzle)
-        return;
-    immutable remains = _altickHighlightGoalsUntil - timerTicks;
-    if (remains < 0) {
-        // Usually, we haven't clicked the cool shades button.
-        // Merely draw the own goals with semi-transparent extra lixes.
-        foreach (g; nurse.gadgetsOfTeam(localTribe.style))
-            g.drawExtrasOnTopOfLand(localTribe.style);
-    }
-    else {
-        // Draw the glaring black-and-white rectangles.
-        immutable int period = ticksPerSecond / 4;
-        assert (period > 0);
-        if (remains % period < period / 2)
-            return; // draw nothing extra during the off-part of flashing
-        foreach (g; nurse.gadgetsOfTeam(localTribe.style)) {
-            enum th = 5; // thickness of the border
-            Rect outer = Rect(g.loc - Point(th, th), g.xl + 2*th, g.yl + 2*th);
-            Rect inner = Rect(g.loc, g.xl, g.yl);
-            map.torbit.drawFilledRectangle(outer, color.white);
-            map.torbit.drawFilledRectangle(inner, color.black);
-            g.draw(cs.age, localTribe.style);
-        }
-    }
-}}
+}
 
 void drawLand(Game game)
 {
     version (tharsisproftsriling)
         auto zone = Zone(profiler, "game draws land to map");
     game.map.loadCameraRect(game.cs.land);
+}
+
+void pingOwnGadgets(Game game)
+{
+    if (game.cs.isPuzzle)
+        return;
+    immutable remains = game._altickHighlightGoalsUntil - timerTicks;
+    if (remains < 0) {
+        return;
+    }
+    // Draw the glaring black-and-white rectangles.
+    immutable int period = ticksPerSecond / 4;
+    assert (period > 0);
+    if (remains % period < period / 2)
+        return;
+    immutable sty = game.localTribe.style;
+    foreach (g; game.nurse.gadgetsOfTeam(sty)) {
+        enum th = 5; // thickness of the border
+        immutable Rect inner = g.occ.selboxOnMap;
+        immutable Rect outer = Rect(inner.topLeft - Point(th, th),
+            inner.xl + 2*th, inner.yl + 2*th);
+        game.map.torbit.drawFilledRectangle(outer, color.white);
+        game.map.torbit.drawFilledRectangle(inner, color.black);
+        g.draw(game.cs.age, sty);
+    }
+}
+
+void drawGadgetExtrasOnTopOfPing(Game game)
+{
+    immutable sty = game.localTribe.style;
+    foreach (g; game.nurse.gadgetsOfTeam(sty)) {
+        g.drawExtrasOnTopOfLand(sty);
+    }
+    if (game.cs.nukeIsAssigningExploders && ! game.nurse.everybodyOutOfLix) {
+        foreach (g; game.cs.goals) {
+            g.drawNoSign();
+        }
+    }
 }
 
 void drawAllLixes(Game game)
@@ -143,7 +147,7 @@ void drawAllLixes(Game game)
         drawTribe(localTribe);
     }
     const underCursor = game.findUnderCursor(game.pan.chosenSkill);
-    game.describeInPanel(underCursor);
+    game.describeHoveredLixInPanel(underCursor);
     // We'll show these tooltips in _panelExplainer. Better semantically is
     // _mapClickExplainer, but that will be big and glaring. Good or annoying?
     game._panelExplainer.suggestTooltip(underCursor.goodTooltips);
@@ -152,26 +156,48 @@ void drawAllLixes(Game game)
     }
 }
 
-void describeInPanel(Game game, in UnderCursor underCursor)
+void describeHoveredLixInPanel(Game game, in UnderCursor underCursor)
 {
     if (underCursor.numLix == 0) {
-        game.pan.dontDescribeTarget();
+        game.pan.describeNoLixxie();
         return;
     }
     assert (! underCursor.best.empty);
     assert (underCursor.best.front.lixxie !is null);
-    game.pan.describeTarget(
+    game.pan.describeLixxie(
         underCursor.best.front.lixxie,
         underCursor.best.front.passport,
         underCursor.numLix);
 }
 
-void showSpawnIntervalOnHatches(Game game)
+void describeHoveredGadgetInPanel(Game game)
 {
-    game.pan.dontShowSpawnInterval();
-    if (game.cs.hatches.any!(h =>
-        game.map.torbit.isPointInRectangle(game.map.mouseOnLand, h.rect)))
-        game.pan.showSpawnInterval(game.localTribe.rules.spawnInterval);
+    if (game.isMouseOnLand) {
+        const(Gadget) best = game.bestGadgetToDescribeOrNull();
+        if (best !is null) {
+            game.pan.describeGadget(game.cs.age, game.localTribe, best);
+            return;
+        }
+    }
+    game.pan.describeNoGadget();
+}
+
+private const(Gadget) bestGadgetToDescribeOrNull(Game game)
+{
+    immutable mol = game.map.mouseOnLand;
+    Rebindable!(const(Gadget)) mediocreResult = null;
+
+    foreach (g; game.cs.allConstGadgets) {
+        if (! game.map.torbit.isPointInRectangle(mol, g.occ.selboxOnMap)) {
+            continue;
+        }
+        immutable Rect trigA = g.tile.triggerArea + g.loc;
+        if (game.map.torbit.isPointInRectangle(mol, trigA)) {
+            return g; // An ideal result.
+        }
+        mediocreResult = g;
+    }
+    return mediocreResult;
 }
 
 void drawMapToA5Display(Game game)

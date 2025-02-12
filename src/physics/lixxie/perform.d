@@ -6,7 +6,7 @@ import std.math; // sqrt
 import std.range;
 
 import tile.phymap;
-import graphic.gadget;
+import physics.gadget;
 import hardware.sound;
 import physics.job;
 import physics.lixxie.lixxie;

@@ -1,4 +1,4 @@
-module graphic.gadget.openfor;
+module physics.gadget.muncher;
 
 /*
  * GadgetAnimsOnFeed allows for two different rows of animation: The first row
@@ -16,17 +16,18 @@ module graphic.gadget.openfor;
  * into frame 0 and show frame 0 at least once between two eatings.
  */
 
+import std.format;
+
 import basics.styleset;
 import basics.topology;
-import graphic.gadget;
+import file.language;
+import physics.gadget.gadget;
+import physics.gadget.steam; // For the fling speed tooltip generators.
+import net.phyu;
+import physics.tribe;
 import tile.occur;
-import net.repdata;
-import physics.effect;
 
-public alias Muncher  = GadgetAnimsOnFeed;
-public alias Catapult = GadgetAnimsOnFeed; // see gadget.d for FlingPerm
-
-private class GadgetAnimsOnFeed : Gadget {
+private abstract class GadgetAnimsOnFeed : Gadget {
 private:
     Phyu _lastFed;
     StyleSet _lastDish;
@@ -66,9 +67,9 @@ public:
         _eatingAnimLen = rhs._eatingAnimLen;
     }
 
-    override GadgetAnimsOnFeed clone() const
+    final override string tooltip(in Phyu, in Tribe) const nothrow @safe
     {
-        return new GadgetAnimsOnFeed(this);
+        return tooltipForEatingAnimLen(_eatingAnimLen);
     }
 
     bool isOpenFor(in Phyu upd, in Style st) const
@@ -99,12 +100,14 @@ public:
     }
 
 protected:
+    abstract string tooltipForEatingAnimLen(in int eatLen) const nothrow @safe;
+
     override Gadget.Frame frame(in Phyu now) const pure nothrow @safe @nogc
     {
+        const idleFrame = (now - firstIdlingPhyuAfterEating) % _idleAnimLen;
         return isEating(now)
             ? Gadget.Frame(now - _lastFed, true)
-            : Gadget.Frame((now - firstIdlingPhyuAfterEating) % _idleAnimLen,
-                false);
+            : Gadget.Frame(idleFrame, false);
     }
 
 private:
@@ -112,5 +115,35 @@ private:
     {
         return _lastFed == 0 ? Phyu(0) // never eaten anything
             : Phyu(_lastFed + _eatingAnimLen);
+    }
+}
+
+
+
+final class Muncher : GadgetAnimsOnFeed {
+public:
+    this(const(Topology) top, in GadOcc levelpos) { super(top, levelpos); }
+    this(in Muncher rhs) { super(rhs); }
+    override Muncher clone() const { return new Muncher(this); }
+
+protected:
+    override string tooltipForEatingAnimLen(in int eatLen) const nothrow @safe
+    {
+        return Lang.tooltipMuncher.translf(eatLen);
+    }
+}
+
+final class Catapult : GadgetAnimsOnFeed {
+public:
+    this(const(Topology) top, in GadOcc levelpos) { super(top, levelpos); }
+    this(in Catapult rhs) { super(rhs); }
+    override Catapult clone() const { return new Catapult(this); }
+
+protected:
+    override string tooltipForEatingAnimLen(in int eatLen) const nothrow @safe
+    {
+        return Lang.tooltipCatapult.translf(
+            tile.tooltipFlingXName, tile.tooltipFlingXValue,
+            tile.tooltipFlingYName, tile.tooltipFlingYValue, eatLen);
     }
 }

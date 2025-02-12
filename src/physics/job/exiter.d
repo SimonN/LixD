@@ -1,7 +1,7 @@
 module physics.job.exiter;
 
 import basics.styleset;
-import graphic.gadget.goal;
+import physics.gadget.goal;
 import hardware.sound;
 import physics.job;
 import physics.tribe;

@@ -70,17 +70,27 @@ void calcModalWindow(Game game) { with (game)
 
 void considerToEndGame(Game game)
 {
-    if (game.nurse.doneAnimating()) {
-        game.calcEndOfPhysicsWhileEffectsAreStillGoingOn();
-        if (game._effect.nothingGoingOn) {
-            game.calcEndOfPhysicsAndEndOfEffects();
+    if (! game.nurse.doneAnimating()) {
+        return;
+    }
+    game.calcEndOfPhysicsWhileEffectsAreStillGoingOn();
+    if (game._effect.nothingGoingOn) {
+        if (game.cs.isBattle
+            || game.cs.isSolvedPuzzle
+            || game.singleplayerHasNuked
+        ) {
+            game._gotoMainMenu = true;
+        }
+        if (game.view.printResultToConsole) {
+            game._chatArea.printScores(
+                game.nurse.scores, game.nurse.constReplay, game.localStyle);
         }
     }
 }
 
 void calcEndOfPhysicsWhileEffectsAreStillGoingOn(Game game) { with (game)
 {
-    if (game.cs.isBattle || game.isSolvedPuzzle) {
+    if (game.cs.isBattle || game.cs.isSolvedPuzzle) {
         return; // Singleplayer has not lost yet. Nothing to do here.
     }
     /*
@@ -104,15 +114,5 @@ void calcEndOfPhysicsWhileEffectsAreStillGoingOn(Game game) { with (game)
     }
     else if (! singleplayerHasNuked) {
         _mapClickExplainer.suggestTooltip(Tooltip.ID.framestepOrQuit);
-    }
-}}
-
-void calcEndOfPhysicsAndEndOfEffects(Game game) { with (game)
-{
-    if (game.cs.isBattle || isSolvedPuzzle || singleplayerHasNuked) {
-        _gotoMainMenu = true;
-    }
-    if (view.printResultToConsole) {
-        _chatArea.printScores(nurse.scores, nurse.constReplay, localStyle);
     }
 }}

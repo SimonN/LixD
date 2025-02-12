@@ -13,7 +13,7 @@ import file.option; // multipleBuilders
 import tile.phymap;
 import graphic.color;
 import graphic.cutbit;
-import graphic.gadget;
+import physics.gadget;
 import graphic.internal;
 import graphic.torbit;
 import hardware.sound;
@@ -246,11 +246,7 @@ void moveUp(in int minusY)
 
 bool inTriggerArea(in Gadget g) const
 {
-    // There is potential for refactoring here. Gadget doesn't hold a reference
-    // on the GadOcc it's instantiated with. Occurrence has Rect selbox()
-    // const, therefore GadOcc should naturally get Rect triggerArea() const.
-    // Then Gadget should defer to GadOcc.
-    return env.isPointInRectangle(Point(ex, ey), g.tile.triggerArea + g.loc);
+    return env.isPointInRectangle(Point(ex, ey), g.triggerArea);
 }
 
 void addFling(in int px, in int py, in bool same_tribe)
