@@ -20,7 +20,7 @@ public:
     void addSoundGeneral(in Phyu upd, in Sound sound);
     void addSound(in Phyu upd, in Passport pa, in Sound sound);
 
-    void addArrow(in Phyu upd, in Passport pa, in Point foot, in Ac ac);
+    void addAssignment(in Phyu, in Passport, in Point foot, in Ac, in Sound);
 
     void addShovel(in Phyu upd, in Passport pa, in Point foot, in int dir);
     void addPickaxe(in Phyu upd, in Passport pa, in Point foot, in int dir);

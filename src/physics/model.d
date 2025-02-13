@@ -145,8 +145,8 @@ private:
             OutsideWorld ow = makeGypsyWagon(pa);
             lixxie.assignManually(&ow, i.skill);
 
-            _effect.addSound(_cs.age, pa, Sound.ASSIGN);
-            _effect.addArrow(_cs.age, pa, lixxie.foot, i.skill);
+            _effect.addAssignment(_cs.age, pa, lixxie.foot, i.skill,
+                Sound.assignByReplay);
         }
         else if (i.isNuke) {
             tribe.recordNukePressedAt(_cs.age);

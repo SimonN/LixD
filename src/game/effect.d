@@ -33,11 +33,11 @@ import gui.console;
 import graphic.torbit;
 
 private struct Effect {
-    enum Loudness { loud, quiet, };
+    enum Loudness : bool { loud, quiet, };
 
     Phyu phyu;
     Passport pa; // if no Lixxie required (e.g., nuke), set pa.id = 0.
-    Sound sound; // if not necessary, set to 0 == Sound::NOTHING
+    Sound sound;
     Loudness loudness;
 
     int opCmp(in Effect rhs) const
@@ -51,9 +51,7 @@ private struct Effect {
 
     void playSound() const
     {
-        if (sound == Sound.NOTHING) {
-            return;
-        }
+        // hardware.sound can accept to play Sound.none and will nop.
         final switch (loudness) {
             case Loudness.loud: hardware.sound.playLoud(sound); return;
             case Loudness.quiet: hardware.sound.playQuiet(sound); return;
@@ -176,30 +174,37 @@ public:
         }
     }
 
-    void addArrow(in Phyu upd, in Passport pa, in Point foot, in Ac ac)
-    {
-        Effect e = Effect(upd, pa);
-        if (e !in _alreadyPlayed) {
-            _alreadyPlayed.insert(e);
-            Debris d = newDebris!Arrow.ctor(foot, pa.style, ac);
-            _debris ~= d;
+    void addAssignment(in Phyu upd, in Passport pa, in Point foot, in Ac ac,
+        in Sound reasonForAssignment
+    ) {
+        /*
+         * Normally, in these addXYZ(), we generate an effect, add it to
+         * _already played, and later play its sound. But we want all different
+         * (reasonForAssignment) to be equal in lookup (e in _alreadyPlayed).
+         * Thus, for insert and lookup, standardize on one of the reasons;
+         * we'll pick assignByClick. It doesn't matter which, but we should
+         * avoid popular choices of other addXYZ(), e.g., avoid Sound.none.
+         *
+         * We'll hardware.sound.play() the real reason of our caller.
+         */
+        immutable e = Effect(upd, pa, Sound.assignByClick, loudness(pa));
+        if (e in _alreadyPlayed) {
+            return;
         }
-    }
-
-    // Only remember the effect, don't draw any debris now.
-    // This is used for assignments by the local tribe master.
-    void addArrowDontShow(in Phyu upd, in Passport pa)
-    {
-        Effect e = Effect(upd, pa);
-        if (e !in _alreadyPlayed)
-            _alreadyPlayed.insert(e);
+        _alreadyPlayed.insert(e);
+        if (isLocal(pa)) {
+            hardware.sound.playLoud(reasonForAssignment);
+        }
+        if (reasonForAssignment != Sound.assignByClick) {
+            _debris ~= newDebris!Arrow.ctor(foot, pa.style, ac);
+        }
     }
 
     private alias makeTool = newDebris!FlyingTool.ctor;
 
     void addShovel(in Phyu upd, in Passport pa, in Point foot, in int dir)
     {
-        immutable e = Effect(upd, pa, Sound.NOTHING, loudness(pa));
+        immutable e = Effect(upd, pa, Sound.none, loudness(pa));
         if (e in _alreadyPlayed) {
             return;
         }
@@ -209,7 +214,7 @@ public:
 
     void addPickaxe(in Phyu upd, in Passport pa, in Point foot, in int dir)
     {
-        immutable res = addSteelSound_CallerMustAddTool(upd, pa, foot, dir);
+        immutable res = addSteelSound(upd, pa);
         if (res == AddResult.alreadyThere) {
             return;
         }
@@ -218,7 +223,7 @@ public:
 
     void addDigHammer(in Phyu upd, in Passport pa, in Point foot, in int dir)
     {
-        immutable res = addSteelSound_CallerMustAddTool(upd, pa, foot, dir);
+        immutable res = addSteelSound(upd, pa);
         if (res == AddResult.alreadyThere) {
             return;
         }
@@ -292,11 +297,10 @@ private:
         successfullyAdded,
     }
 
-    private AddResult addSteelSound_CallerMustAddTool(
-        Phyu upd, in Passport pa, in Point foot, int dir
-    ) {
+    private AddResult addSteelSound(Phyu upd, in Passport pa)
+    {
         immutable e = Effect(upd, pa,
-            isLocal(pa) ? Sound.STEEL : Sound.NOTHING, Loudness.loud);
+            isLocal(pa) ? Sound.STEEL : Sound.none, Loudness.loud);
         if (e in _alreadyPlayed) {
             return AddResult.alreadyThere;
         }

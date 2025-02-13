@@ -171,8 +171,8 @@ do { with (game)
     // React faster to the new assignment than during its evaluation next
     // update. The evaluation could be several ticks ticks later.
     assert (game._effect);
-    game._effect.addArrowDontShow(i.when, assignee.passport);
-    game._effect.addSound(i.when, assignee.passport, Sound.ASSIGN);
+    _effect.addAssignment(i.when, assignee.passport,
+        assignee.lixxie.foot, i.skill, Sound.assignByClick);
 }}
 
 void includeOurNew(Game game, in Ply data) { with (game)

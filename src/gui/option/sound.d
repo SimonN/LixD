@@ -89,8 +89,7 @@ private:
 public:
     this() {
         _queue = randomShuffle([
-            Sound.PANEL,
-            Sound.ASSIGN,
+            Sound.assignByClick, // Not assignByReplay, that's 2 dB quieter.
             Sound.LETS_GO,
             Sound.HATCH_OPEN,
             Sound.OBLIVION,
