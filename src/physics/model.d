@@ -134,7 +134,7 @@ private:
                 return;
             Lixxie lixxie = tribe.lixvec[i.toWhichLix];
             assert (lixxie);
-            if (lixxie.priorityForNewAc(i.skill) <= 1
+            if (! lixxie.priorityForNewAc(i.skill).isAssignable
                 || ! tribe.canStillUse(i.skill)
                 || (i.isDirectionallyForced && ! matchesDirection(i, lixxie))
             ) {

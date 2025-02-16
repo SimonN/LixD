@@ -37,26 +37,28 @@ do { with (game)
     _effect.addSound(Phyu(nurse.now + 1), Passport(localStyle, 0), Sound.NUKE);
 }}
 
-void calcClicksIntoMap(Game game, Optional!Assignee potAss)
+void calcClicksIntoMap(Game game, UnderCursor found)
 in {
     assert (!game.modalWindow);
-    assert (game.view.canAssignSkills);
 }
 do {
-    if (! hardware.mouse.mouseClickLeft || ! game.isMouseOnLand) {
+    if (! hardware.mouse.mouseClickLeft
+        || ! game.isMouseOnLand
+        || ! game.view.canAssignSkills
+    ) {
         return;
     }
-    else if (game.canAssignTo(potAss)) {
-        game.resolveClickThatWillAssign(potAss.front);
-    }
-    else if (potAss.empty) {
-        // We have clicked air.
+    if (found.best.empty) {
         if (game.canWeClickAirNowToCutGlobalFuture) {
             game.nurse.cutGlobalFutureFromReplay();
         }
-        // The click will also advance physics. That's handled in speed.d.
+        return;
     }
-    else if (game.view.canAssignSkills && game.pan.chosenSkill == Ac.nothing) {
+    if (game.canAssignTo(found.best.front)) {
+        game.resolveClickThatWillAssign(found.best.front);
+        return;
+    }
+    if (game.view.canAssignSkills && game.pan.chosenSkill == Ac.nothing) {
         hardware.sound.playLoud(Sound.PANEL_EMPTY);
     }
 }
@@ -92,13 +94,12 @@ void cutSingleLixFutureFromReplay(Game game, in Passport ofWhom)
 
 private:
 
-bool canAssignTo(Game game, in Optional!Assignee potAss)
+bool canAssignTo(Game game, in Assignee foundLix)
 {
     return game.view.canAssignSkills
         && game.pan.chosenSkill != Ac.nothing
-        && ! potAss.empty
-        && potAss.front.facingOkay
-        && potAss.front.priority >= 2
+        && foundLix.facingOkay
+        && foundLix.prio.isAssignable
         && ! game.localTribe.hasNuked;
 }
 

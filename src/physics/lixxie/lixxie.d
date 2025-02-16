@@ -389,66 +389,66 @@ final void drawAgainHighlit() const
 
 
 
-// ############################################################################
-// ######################### click priority -- was lix/lix_ac.cpp in C++/A4 Lix
-// ############################################################################
-
-
-
 bool healthy() const { return JobUnion.healthy(ac); }
 bool cursorShouldOpenOverMe() const { return healthy; }
 
-// returns 0 iff lix is not clickable and the cursor should be closed
-// returns 1 iff lix is not clickable, but the cursor should open still
-// returns >= 2 and <= 99,998 iff lix is clickable
-// higher return values mean higher priority. The player can invert priority,
-// e.g., by holding the right mouse button. This inversion is not handled by
-// this function, but should be done by the calling game code.
-int priorityForNewAc(in Ac newAc) const
+/*
+ * See struct Priority in physics.lixxie.fields. Internally, it's a number:
+ * 0 == Unassignable with closed cursor
+ * 1 == Unassignable with open cursor
+ * 2 or higher means assignable, and higher number means higher priority.
+ */
+Priority priorityForNewAc(in Ac newAc) const
 {
-    // Nothing allowed at all, don't even open the cursor
-    if (! cursorShouldOpenOverMe) return 0;
-
-    // Permanent skills
+    if (! cursorShouldOpenOverMe) {
+        return Priority.unassignableWithClosedCursor;
+    }
     if ((newAc == Ac.imploder && ploderTimer > 0)
      || (newAc == Ac.exploder && ploderTimer > 0)
      || (newAc == Ac.runner && abilityToRun)
      || (newAc == Ac.climber && abilityToClimb)
      || (newAc == Ac.floater && abilityToFloat)
-     || (newAc == Ac.nothing)) return 1;
+     || (newAc == Ac.nothing)
+    ) {
+        return Priority.unassignableWithOpenCursor;
+    }
 
-    immutable base = basePriorityForNewAcGivenOldAc(newAc);
-    if (base < 2) {
+    immutable Priority base = basePriorityForNewAcGivenOldAc(newAc);
+    if (! base.isAssignable) {
         return base;
     }
-    return base + (newAc == Ac.batter && avoidBatterToExploder.value
+    return base
+        + (newAc == Ac.batter && avoidBatterToExploder.value
             ? (- ploderTimer) : ploderTimer)
-        + 400 * abilityToRun + 200 * abilityToClimb + 100 * abilityToFloat;
+        + 400 * abilityToRun
+        + 200 * abilityToClimb
+        + 100 * abilityToFloat;
 }
 
-private int basePriorityForNewAcGivenOldAc(in Ac newAc) const
-out (ret) { assert(ret < 2 || ret % 1000 == 0); }
-do {
-    int basePriorityWhileBusy()
+private Priority basePriorityForNewAcGivenOldAc(in Ac newAc) const
+{
+    Priority basePriorityWhileBusy()
     {
-        return newAc.isPloder || newAc.isPermanentAbility ? 2000 : 1;
+        return newAc.isPloder || newAc.isPermanentAbility
+            ? Priority(2000) : Priority.unassignableWithOpenCursor;
     }
 
     switch (ac) {
         // When a blocker shall be freed/exploded, the blocker has extremely
         // high priority, more than anything else on the field.
         case Ac.blocker:
-            return newAc == Ac.walker || newAc.isPloder ? 6000
+            return newAc == Ac.walker || newAc.isPloder ? Priority(6000)
                 // New in Lix 0.10: Allow ability assignments to blocker.
-                : newAc.isPermanentAbility ? 1000 : 1;
+                : newAc.isPermanentAbility ? Priority(1000)
+                : Priority.unassignableWithOpenCursor;
 
         // Stunners/ascenders may be turned in their later frames, but
         // otherwise act like regular mostly unassignable-to acitivities
         case Ac.stunner:
-            return frame >= 16 ? 3000 : basePriorityWhileBusy;
+            return frame >= 16 ? Priority(3000) : basePriorityWhileBusy;
 
         case Ac.ascender:
-            return frame >= 5 ? 3000 : basePriorityWhileBusy;
+            return frame >= 5 ? Priority(3000) : basePriorityWhileBusy;
 
         // further activities that take all of the lix's attention; she
         // canot be assigned anything except permanent skills
@@ -463,7 +463,7 @@ do {
         case Ac.walker:
         case Ac.lander:
         case Ac.runner:
-            return 3000;
+            return Priority(3000);
 
         // Builders and platformers can be queued. These assignments go
         // always through (p > 1), that's important in networked games.
@@ -472,12 +472,13 @@ do {
         // in the UI, but allow the same networking actions.
         case Ac.builder:
         case Ac.platformer:
-            return newAc != ac ? 5000
-                : avoidBuilderQueuing.value ? 1000 : 4000;
+            return newAc != ac ? Priority(5000)
+                : avoidBuilderQueuing.value ? Priority(1000) : Priority(4000);
 
         // Workers other than builders.
         default:
-            return (newAc != ac) ? 5000 : 1;
+            return (newAc != ac) ? Priority(5000)
+                : Priority.unassignableWithOpenCursor;
     }
 }
 

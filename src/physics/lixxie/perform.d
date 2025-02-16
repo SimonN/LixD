@@ -75,15 +75,14 @@ void useFlingers(Lixxie lixxie) { with (lixxie) with (outsideWorld.state)
 void maybeEnterGoals(Lixxie lixxie)
 {
     assert (lixxie.outsideWorld !is null);
-    if (! (lixxie.footEncounters & Phybit.goal)
-        || lixxie.priorityForNewAc(Ac.exiter) <= 1 // Prevents direct drop.
-        || ! lixxie.outsideWorld.state.lixMayUseGoals
+    if ((lixxie.footEncounters & Phybit.goal)
+        && lixxie.priorityForNewAc(Ac.exiter).isAssignable // No direct drop.
+        && lixxie.outsideWorld.state.lixMayUseGoals
     ) {
-        return;
-    }
-    foreach (goal; lixxie.outsideWorld.state.goals) {
-        if (lixxie.inTriggerArea(goal)) {
-            Exiter.enterGoal(lixxie, goal);
+        foreach (goal; lixxie.outsideWorld.state.goals) {
+            if (lixxie.inTriggerArea(goal)) {
+                Exiter.enterGoal(lixxie, goal);
+            }
         }
     }
 }

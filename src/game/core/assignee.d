@@ -20,7 +20,7 @@ import physics.tribe;
 struct Assignee {
     ConstLix lixxie; // Should never be null. Use Optional!Assignee otherwise.
     int id;
-    int priority;
+    Priority prio;
     double distanceToCursor;
 
     bool facingOkay() const nothrow @safe @nogc
@@ -41,12 +41,10 @@ struct Assignee {
     // in the options) inverts the sorting of (1.), but not of the others.
     // Never invert priority for unclickable lix (priority == 0 or == 1).
     bool isBetterThan(in Assignee rhs) const nothrow @safe @nogc {
-        return facingOkay && ! rhs.facingOkay ? true
-            : ! facingOkay && rhs.facingOkay ? false
-            : priority <= 1 && rhs.priority > 1 ? false
-            : priority >  1 && rhs.priority <= 1 ? true
-            : priority > rhs.priority ? ! opt.keyPriorityInvert.isHeld
-            : priority < rhs.priority ?   opt.keyPriorityInvert.isHeld
+        return facingOkay != rhs.facingOkay ? facingOkay
+            : prio.isAssignable != rhs.prio.isAssignable ? prio.isAssignable
+            : prio > rhs.prio ? ! opt.keyPriorityInvert.isHeld
+            : prio < rhs.prio ?   opt.keyPriorityInvert.isHeld
             : distanceToCursor < rhs.distanceToCursor ? true
             : distanceToCursor > rhs.distanceToCursor ? false
             : id < rhs.id;
@@ -159,7 +157,7 @@ Assignee generateAssignee(
     ret.distanceToCursor = onMap.topology.hypotSquared(
         mouseOnLand.x, mouseOnLand.y, lixxie.ex,
                                       lixxie.ey + roundInt(dMinusU/2));
-    ret.priority = lixxie.priorityForNewAc(chosenInPanel);
+    ret.prio = lixxie.priorityForNewAc(chosenInPanel);
     return ret;
 }
 
@@ -172,7 +170,7 @@ Tooltip.IdSet tooltipsFor1Surpassing2(in Assignee best, in Assignee worse)
     else if (best.lixxie.facingRight && worse.lixxie.facingLeft) {
         ret |= Tooltip.ID.forceLeft;
     }
-    if (best.priority != worse.priority && ! opt.keyPriorityInvert.isHeld) {
+    if (best.prio != worse.prio && ! opt.keyPriorityInvert.isHeld) {
         ret |= Tooltip.ID.priorityInvert;
     }
     return ret;

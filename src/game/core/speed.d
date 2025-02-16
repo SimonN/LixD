@@ -6,10 +6,11 @@ import core.time;
 import basics.alleg5;
 static import basics.globals;
 import file.option; // replayAfterFrameBack
+import game.core.assignee;
 import game.core.game;
 import physics.world.cache : DuringTurbo;
 import game.panel.base;
-import hardware.mouse;
+static import hardware.mouse;
 import hardware.sound;
 import net.repdata;
 
@@ -31,7 +32,7 @@ void dispatchTweaks(Game game)
     game.setLastPhyuToNow(); // Updates skill numbers in panel.
 }
 
-void updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
+void maybeUpdatePhysics(Game game) { with (game)
 {
     if (pan.rewindPrevPly) {
         game.nurse.framestepBackBy(game.numPhyusToBackstepToPrevPly);
@@ -70,25 +71,20 @@ void updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
         game.upd(updatesAheadMany, DuringTurbo.no);
         // Don't pause. Don't unpause either. Keep pause as-is.
     }
-    else if (pan.paused && isMouseOnLand && mouseClickLeft) {
-        // Clicking into the non-panel screen advances physics once.
-        // This happens both when we unpause on assignment and when we
-        // merely advance 1 frame, but keep the game paused, on assignment.
-        // This happens either because you've assigned something, or because
-        // you have cancelled the replay.
-        game.upd(1, DuringTurbo.no);
-    }
-    else if (! pan.paused) {
-        if (pan.speedIsNormal) {
-            if (game.shallWeUpdateAtAdjustedNormalSpeed())
-                game.upd(1, DuringTurbo.no);
-        }
-        else if (pan.speedIsTurbo)
-            game.upd(9, DuringTurbo.yes);
-        else {
-            assert (pan.speedIsFast);
+    else if (pan.paused) {
+        if (hardware.mouse.mouseClickLeft && game.isMouseOnLand) {
             game.upd(1, DuringTurbo.no);
         }
+    }
+    else if (pan.speedIsNormal) {
+        if (game.shallWeUpdateAtAdjustedNormalSpeed())
+            game.upd(1, DuringTurbo.no);
+    }
+    else if (pan.speedIsTurbo)
+        game.upd(9, DuringTurbo.yes);
+    else {
+        assert (pan.speedIsFast);
+        game.upd(1, DuringTurbo.no);
     }
 }}
 
