@@ -1,4 +1,4 @@
-module net.client.impl;
+module net.client.tcpclient;
 
 /* Interactive mode runs an instance of this during network games.
  * This is the high-level message API that the game and lobby call when
@@ -26,7 +26,7 @@ import net.structs;
 import net.style;
 import net.versioning;
 
-class NetClient : INetClient {
+class TcpNetClient : NetClient {
 private:
     ENetHost* _ourClient;
     ENetPeer* _serverPeer;

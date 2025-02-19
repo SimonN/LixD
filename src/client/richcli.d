@@ -19,9 +19,9 @@ import gui.console;
 import level.level;
 import net.client.client;
 
-class RichClient : INetClient, NetClientObserver {
+class RichClient : NetClient, NetClientObserver {
 private:
-    INetClient _inner; // we own one and expose it for callers' use.
+    NetClient _inner; // we own one and expose it for callers' use.
     Console _console; // not owned
     Level _level; // owned, may be null
     Permu _permu;
@@ -29,7 +29,7 @@ private:
     public string unsentChat; // carry unsent text between Lobby/Game
 
 public:
-    this(INetClient anInner, Console aConsole)
+    this(NetClient anInner, Console aConsole)
     {
         assert (anInner);
         assert (aConsole);

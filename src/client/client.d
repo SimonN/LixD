@@ -45,7 +45,7 @@ interface NetClientObserver {
     void onMillisecondsSinceGameStart(in int millis);
 }
 
-interface INetClient {
+interface NetClient {
     void disconnectAndDispose(); // This unregisters all observers.
     /*
      * Call calc() frequently; this receives and sends all due networking

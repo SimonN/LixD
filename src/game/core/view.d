@@ -22,7 +22,7 @@ enum View {
 // netClient may be null.
 View createView(
     in int numPlayers,
-    in INetClient netClient) pure nothrow @safe @nogc
+    in NetClient netClient) pure nothrow @safe @nogc
 {
     if (netClient && netClient.connected) {
         return netClient.ourProfile.feeling == Profile.Feeling.observing

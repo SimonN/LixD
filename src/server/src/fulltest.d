@@ -20,7 +20,7 @@ import std.range;
 
 import net.server.server;
 import net.client.client;
-import net.client.impl;
+import net.client.tcpclient;
 import net.style;
 import net.plnr;
 import net.profile;
@@ -38,10 +38,10 @@ unittest {
 private struct FullTest {
 private:
     NetServer _srv;
-    NetClient _cli9; // Still uses the 0.9 protocol from 2021 and earlier.
-    NetClient _cliA; // Current minor version.
-    NetClient _cliB; // Current minor version.
-    NetClient _cliC; // Current minor version.
+    TcpNetClient _cli9; // Still uses the 0.9 protocol from 2021 and earlier.
+    TcpNetClient _cliA; // Current minor version.
+    TcpNetClient _cliB; // Current minor version.
+    TcpNetClient _cliC; // Current minor version.
 
 public:
     enum portDuringThisUnittest = 22934;
@@ -155,10 +155,10 @@ public:
     }
 
 private:
-    NetClient makeClient(in Version v, in string name, in Style st)
+    TcpNetClient makeClient(in Version v, in string name, in Style st)
     {
-        return new NetClient(NetClientCfg("localhost", portDuringThisUnittest,
-            v, name, st));
+        return new TcpNetClient(
+            NetClientCfg("localhost", portDuringThisUnittest, v, name, st));
     }
 
     void await(in string testName, bool delegate() successCondition)

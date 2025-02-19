@@ -11,10 +11,10 @@ version (lixDaemon) {}
 else:
 
 import net.client.client;
-import net.client.impl;
+import net.client.tcpclient;
 import net.server.server;
 
-class ClientWithServer : NetClient {
+class TcpClientWithServer : TcpNetClient {
 private:
     NetServer _server;
 

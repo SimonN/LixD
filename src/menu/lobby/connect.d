@@ -19,7 +19,7 @@ import file.language;
 import opt = file.option.allopts;
 import file.key.set;
 import net.client.client;
-import net.client.impl;
+import net.client.tcpclient;
 import net.client.withserv;
 import net.versioning;
 
@@ -37,13 +37,13 @@ private:
     // We pass the NetClientCfg only for our owner's convenience: The owner
     // does not have to create a client from that config, we already did that,
     // but the owner might display information to the user.
-    void delegate(INetClient, NetClientCfg) _onOkay;
+    void delegate(NetClient, NetClientCfg) _onOkay;
     void delegate(Exception) _onEnetDLLMissing;
 
 public:
     this(
         Geom g,
-        void delegate(INetClient, NetClientCfg) aOnOkay,
+        void delegate(NetClient, NetClientCfg) aOnOkay,
         void delegate(Exception) aOnEnetDLLMissing
     )
     in {
@@ -127,20 +127,20 @@ private:
 
         opt.networkConnectionMethod = _radio.theChosen;
 
-        INetClient ret;
+        NetClient ret;
         try {
             switch (_radio.theChosen) {
             case 0:
-                ret = new NetClient(cfg);
+                ret = new TcpNetClient(cfg);
                 break;
             case 1:
                 opt.networkOwnServerPort = _port.number;
-                ret = new ClientWithServer(cfg);
+                ret = new TcpClientWithServer(cfg);
                 break;
             case 2:
                 opt.networkConnectToAddress = _hostname.value;
                 opt.networkConnectToPort = _port.number;
-                ret = new NetClient(cfg);
+                ret = new TcpNetClient(cfg);
                 break;
             default:
                 assert (false, "unhandled radio button during connection");

@@ -225,7 +225,7 @@ private:
                                    : Lang.commonBack.transl;
     }
 
-    void acceptConnection(INetClient cli, NetClientCfg cfgThatWasUsed)
+    void acceptConnection(NetClient cli, NetClientCfg cfgThatWasUsed)
     {
         _netClient = new RichClient(cli, _console);
         _netClient.register(this);
