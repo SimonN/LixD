@@ -1,0 +1,42 @@
+$BUILT 2025-02-09 15:54:23
+$AUTHOR Hyperlodge
+$ENGLISH Embedded
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 640
+#SIZE_Y 400
+#BACKGROUND_RED 96
+#BACKGROUND_GREEN 144
+#BACKGROUND_BLUE 240
+
+#SECONDS 90
+#INITIAL 80
+#SPAWN_INTERVAL 30
+
+#RUNNER 50
+#CLIMBER 50
+#EXPLODER2 50
+#BLOCKER 50
+#BUILDER 50
+#DIGGER 50
+#JUMPER 50
+#BATTER 50
+
+:matt/marble/Hatch.H: 480 312
+:matt/marble/Hatch.H: 96 312 r
+
+:matt/marble/Goal.G: 192 16
+:matt/marble/Goal.G: 376 16
+
+:geoo/construction/concrete/128: 160 0
+:geoo/construction/concrete/128: 344 0
+:geoo/construction/concrete/128: 64 272
+:geoo/construction/concrete/128: 448 272
+:geoo/construction/concrete/128: 0 136
+:geoo/construction/concrete/128: 512 136
+:geoo/construction/concrete/128: 136 136
+:geoo/construction/concrete/128: 376 136
+:matt/goldmine/crate32: 392 16 d
+:matt/goldmine/crate32: 208 16 d
+:matt/goldmine/crate32: 112 324 d
+:matt/goldmine/crate32: 496 324 d

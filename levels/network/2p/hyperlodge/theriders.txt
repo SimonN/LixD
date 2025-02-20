@@ -1,0 +1,447 @@
+$BUILT 2025-01-22 10:14:40
+$AUTHOR Hyperlodge
+$ENGLISH The Riders
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 3104
+#SIZE_Y 896
+#TORUS_X 1
+#TORUS_Y 0
+#BACKGROUND_RED 16
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 99
+
+#SECONDS 76
+#INITIAL 176
+#SPAWN_INTERVAL 76
+
+#RUNNER 10
+#CLIMBER 10
+#FLOATER -1
+#EXPLODER2 10
+#BLOCKER -1
+#BUILDER -1
+#DIGGER 10
+#JUMPER 10
+#BATTER -1
+
+:geoo/abstract/hatch.H: 1472 800
+:geoo/abstract/hatch.H: 3024 800
+
+:geoo/abstract/goal.G: 704 784
+:geoo/abstract/goal.G: 2256 784
+
+:simon/water.W: 336 824
+:simon/water.W: 288 824
+:simon/water.W: 240 824
+:simon/water.W: 192 824
+:simon/water.W: 144 824
+:simon/water.W: 96 824
+:simon/water.W: 48 824
+:simon/water.W: 0 824
+:simon/water.W: 1888 824
+:simon/water.W: 1840 824
+:simon/water.W: 1792 824
+:simon/water.W: 1744 824
+:simon/water.W: 1696 824
+:simon/water.W: 1648 824
+:simon/water.W: 1600 824
+:simon/water.W: 1552 824
+:matt/underworld/Lava.W: 2880 728
+:matt/underworld/Lava.W: 2816 728
+:matt/underworld/Lava.W: 1328 728
+:matt/underworld/Lava.W: 1264 728
+
+:geoo/construction/steam_right.T: 1416 744
+:geoo/construction/steam_right.T: 2968 744
+:geoo/abstract/tbeam_right.T: 1408 816
+:geoo/abstract/tbeam_right.T: 1376 816
+:geoo/abstract/tbeam_right.T: 1344 816
+:geoo/abstract/tbeam_right.T: 1312 816
+:geoo/abstract/tbeam_right.T: 1280 816
+:geoo/abstract/tbeam_right.T: 1248 816
+:geoo/abstract/tbeam_right.T: 1216 816
+:geoo/abstract/tbeam_right.T: 1184 816
+:geoo/abstract/tbeam_right.T: 1152 816
+:geoo/abstract/tbeam_right.T: 1120 816
+:geoo/abstract/tbeam_right.T: 1088 816
+:geoo/abstract/tbeam_right.T: 1056 816
+:geoo/abstract/tbeam_right.T: 1024 816
+:geoo/abstract/tbeam_right.T: 992 816
+:geoo/abstract/tbeam_right.T: 960 816
+:geoo/abstract/tbeam_right.T: 928 816
+:geoo/abstract/tbeam_right.T: 896 816
+:geoo/abstract/tbeam_right.T: 864 816
+:geoo/abstract/tbeam_right.T: 832 816
+:geoo/abstract/tbeam_right.T: 2960 816
+:geoo/abstract/tbeam_right.T: 2928 816
+:geoo/abstract/tbeam_right.T: 2896 816
+:geoo/abstract/tbeam_right.T: 2864 816
+:geoo/abstract/tbeam_right.T: 2832 816
+:geoo/abstract/tbeam_right.T: 2800 816
+:geoo/abstract/tbeam_right.T: 2768 816
+:geoo/abstract/tbeam_right.T: 2736 816
+:geoo/abstract/tbeam_right.T: 2704 816
+:geoo/abstract/tbeam_right.T: 2672 816
+:geoo/abstract/tbeam_right.T: 2640 816
+:geoo/abstract/tbeam_right.T: 2608 816
+:geoo/abstract/tbeam_right.T: 2576 816
+:geoo/abstract/tbeam_right.T: 2544 816
+:geoo/abstract/tbeam_right.T: 2512 816
+:geoo/abstract/tbeam_right.T: 2480 816
+:geoo/abstract/tbeam_right.T: 2448 816
+:geoo/abstract/tbeam_right.T: 2416 816
+:geoo/abstract/tbeam_right.T: 2384 816
+
+:matt/beach/nighttime/15: 1352 392
+:matt/beach/nighttime/15: 1368 384
+$BEGIN_TILE_GROUP 0
+:raymanni/gore/tentacle_3: 0 8 rr
+:raymanni/gore/tentacle_3: 12 8 rr
+:raymanni/gore/tentacle_3: 24 6 rr
+:raymanni/gore/tentacle_3: 36 6 rr
+:raymanni/gore/tentacle_3: 50 0 rr
+$END_TILE_GROUP
+:Group-0: 1296 282
+:Group-0: 1288 224
+:raymanni/gore/tentacle_1: 1272 276
+:raymanni/gore/eye: 1292 254 r
+:matt/earth/25: 1284 228
+:matt/earth/25: 1290 230
+:matt/earth/25: 1296 230
+:matt/earth/25: 1306 230
+:matt/earth/25: 1314 234 frr
+:matt/earth/25: 1322 234 frr
+:matt/earth/25: 1322 244 frr
+:matt/earth/25: 1332 234 frr
+:matt/earth/25: 1340 242 frr
+:matt/earth/25: 1330 242
+:matt/earth/25: 1356 266
+:matt/earth/25: 1342 248
+:matt/earth/25: 1334 254 frr
+:matt/earth/25: 1358 254
+:matt/earth/25: 1338 262 frr
+:Group-0: 1032 272
+:Group-0: 1008 214
+:raymanni/gore/tentacle_1: 992 266
+:raymanni/gore/eye: 1020 244 r
+:matt/earth/25: 1004 218
+:matt/earth/25: 1010 220
+:matt/earth/25: 1016 220
+:matt/earth/25: 1026 220
+:matt/earth/25: 1034 224 frr
+:Group-0: 1064 208
+:matt/earth/25: 1042 224 frr
+:Group-0: 1064 248
+:matt/earth/25: 1042 234 frr
+:matt/earth/25: 1052 224 frr
+:matt/earth/25: 1060 232 frr
+:matt/earth/25: 1050 232
+:matt/earth/25: 1076 256
+:matt/earth/25: 1062 238
+:matt/earth/25: 1054 244 frr
+:matt/earth/25: 1108 264
+:matt/earth/25: 1078 244
+:matt/earth/25: 1058 252 frr
+:matt/earth/06: 1032 312 rrd
+:matt/earth/25: 1088 238
+:matt/earth/25: 1118 284
+:matt/earth/25: 1098 266 frr
+$BEGIN_TILE_GROUP 1
+:matt/carnival/06: 160 96
+:matt/carnival/36: 224 160 r
+:matt/carnival/36: 32 0 frr
+:matt/carnival/36: 160 0
+:matt/carnival/06: 96 0 fr
+:matt/carnival/26: 32 32
+:matt/carnival/26: 96 32
+:matt/carnival/26: 160 32
+:matt/carnival/26: 192 96
+:matt/carnival/36: 128 96 fr
+:matt/carnival/26: 160 160
+:matt/carnival/37: 224 32 fr
+:matt/carnival/37: 0 32 r
+$END_TILE_GROUP
+:Group-1: 977 144
+$BEGIN_TILE_GROUP 2
+:matt/carnival/05: 128 64
+:matt/carnival/35: 64 0 f
+:matt/carnival/35: 0 32 f
+:matt/carnival/57: 0 192
+:matt/carnival/25: 128 0
+:matt/carnival/25: 160 64
+:matt/carnival/25: 128 128
+:matt/carnival/05: 224 64
+:matt/carnival/05: 192 0
+:matt/carnival/35: 224 0 fr
+:matt/carnival/25: 192 128
+:matt/carnival/05: 0 64 rrr
+:matt/carnival/25: 64 32
+$END_TILE_GROUP
+:Group-2: 1240 152
+:matt/earth/09: 1292 324 d
+$BEGIN_TILE_GROUP 3
+:geoo/construction/concrete/016va: 0 32
+:geoo/construction/concrete/016hb: 80 0
+:geoo/construction/concrete/016ha: 32 0
+:geoo/construction/concrete/016: 64 0
+:geoo/construction/concrete/016vb: 128 32
+:geoo/construction/concrete/016b: 112 16
+:geoo/construction/concrete/016a: 16 16
+:geoo/construction/concrete/016: 0 64
+:geoo/construction/concrete/016: 64 128
+:geoo/construction/concrete/016: 128 64
+:geoo/construction/concrete/016hc: 32 128
+:geoo/construction/concrete/016hd: 80 128
+:geoo/construction/concrete/016vc: 0 80
+:geoo/construction/concrete/016vd: 128 80
+:geoo/construction/concrete/016c: 16 112
+:geoo/construction/concrete/016d: 112 112
+:geoo/construction/concrete/064: 40 40
+:geoo/construction/concrete/032h: 32 16
+:geoo/construction/concrete/032h: 48 96
+:geoo/construction/concrete/032v: 16 48
+:geoo/construction/concrete/032v: 96 32
+:geoo/construction/concrete/016: 32 112
+:geoo/construction/concrete/016: 112 96
+:geoo/construction/concrete/016: 96 16
+:geoo/construction/concrete/016: 16 32
+:proxima/tile/spheres/cyan: 16 40 d
+:proxima/tile/spheres/cyan: 40 16 d
+:proxima/tile/spheres/cyan: 64 40 d
+:proxima/tile/spheres/cyan: 40 64 d
+:proxima/tile/spheres/cyan: 24 24 d
+:proxima/tile/spheres/cyan: 56 24 d
+:proxima/tile/spheres/cyan: 56 56 d
+:proxima/tile/spheres/cyan: 24 56 d
+$END_TILE_GROUP
+:Group-3: 760 688
+:Group-3: 1248 688
+:proxima/tile/spheres/gold: 1288 728
+:raymanni/lab/block_7: 1272 704
+:raymanni/lab/pipe_7: 1392 744 fr
+:raymanni/lab/block_7: 1336 704
+:simon/oriental/08: 1320 656
+:raymanni/lab/slope_1: 1240 736 fr
+:simon/oriental/10: 1240 728 f
+:simon/oriental/08: 1240 656
+:amanda/occult/wax64x48: 1320 616
+:amanda/occult/wax32x48_cap_left_sheer: 1224 616
+:amanda/occult/wax32x48_cap_right_sheer: 1384 616
+:proxima/tile/spheres/gold: 800 728
+:simon/oriental/04: 1192 712
+:simon/oriental/04: 1144 712
+:simon/oriental/04: 1048 712
+:amanda/occult/wax64x48: 1256 616
+:simon/oriental/09: 1016 696 fr
+:simon/oriental/fat_d_long: 912 576
+:simon/oriental/09: 984 632 fr
+:simon/oriental/05_top: 1048 696
+:simon/oriental/04: 1016 648
+:matt/earth/05: 1056 536 rrr
+:simon/oriental/fat_open: 1040 536 rrr
+:simon/oriental/fat_open: 1032 512
+:simon/oriental/fat_d_long: 960 528
+:simon/oriental/04: 984 584
+:simon/oriental/10: 952 536 rrr
+:simon/oriental/10: 1064 664 frrr
+:matt/earth/18: 1104 688
+:simon/oriental/09: 1096 696
+:simon/oriental/fat_d_long: 824 664
+:simon/oriental/09: 952 568 fr
+:simon/oriental/04: 984 536
+:simon/oriental/10: 1016 616 frrr
+:simon/oriental/09: 1032 584 frrr
+:simon/oriental/04: 1096 712
+:matt/beach/nighttime/14: 1360 392
+:matt/beach/nighttime/14: 1320 400 frr
+:matt/beach/nighttime/14: 1304 504 frr
+:matt/beach/nighttime/14: 1360 504 frr
+:matt/beach/nighttime/15: 1216 704
+:matt/earth/17: 1128 368
+:matt/beach/nighttime/03: 1216 432 f
+:matt/earth/17: 1200 448
+:matt/earth/17: 1216 504
+:matt/earth/02: 1168 408 frr
+:matt/earth/05: 1072 568 rrr
+:matt/beach/nighttime/02: 1248 592 r
+:matt/earth/01: 1184 424 frr
+:matt/earth/02: 1056 448 r
+:matt/earth/02: 1104 472 r
+:matt/beach/nighttime/02: 1224 624
+:matt/beach/nighttime/15: 1192 704
+:matt/earth/01: 1152 384 frr
+:simon/oriental/fat_open: 1032 480
+:matt/earth/18: 1032 464
+:matt/earth/18: 1040 512
+:matt/earth/18: 1056 504
+:matt/earth/18: 1080 496
+:matt/earth/01: 1048 576 fr
+:matt/earth/01: 1064 632 fr
+:matt/earth/01: 1080 600 fr
+:matt/earth/01: 1104 640 fr
+:matt/beach/nighttime/03: 1240 504
+:matt/beach/nighttime/15: 1328 416
+:matt/beach/nighttime/14: 1376 472
+:matt/beach/daytime/03: 3062 864 frr
+:matt/beach/daytime/03: 1510 864 frr
+:geoo/steel/dark_64x64o.S: 1488 832
+:geoo/steel/dark_64x64o.S: 1424 832
+:geoo/steel/dark_64x64o.S: 1360 832
+:geoo/steel/dark_64x64o.S: 1296 832
+:geoo/steel/dark_64x64o.S: 1232 832
+:geoo/steel/dark_64x64o.S: 1168 832
+:geoo/steel/dark_64x64o.S: 1104 832
+:geoo/steel/dark_64x64o.S: 1040 832
+:geoo/steel/dark_64x64o.S: 976 832
+:geoo/steel/dark_64x64o.S: 912 832
+:geoo/steel/dark_64x64o.S: 848 832
+:geoo/steel/dark_64x64o.S: 784 832
+:geoo/steel/dark_64x64o.S: 720 832
+:geoo/steel/dark_64x64o.S: 656 832
+:matt/beach/daytime/06: 320 816 frr
+:matt/beach/daytime/03: 120 864 frr
+:matt/beach/daytime/03: 208 864 frr
+:matt/beach/daytime/03: 472 832 frr
+:matt/beach/daytime/06: 520 832
+:matt/beach/daytime/03: 48 864 frr
+:matt/earth/25: 1078 254
+:matt/beach/nighttime/15: 2904 392
+:matt/beach/nighttime/15: 2920 384
+:Group-0: 2848 282
+:Group-0: 2840 224
+:raymanni/gore/tentacle_1: 2824 276
+:raymanni/gore/eye: 2844 254 r
+:matt/earth/25: 2836 228
+:matt/earth/25: 2842 230
+:matt/earth/25: 2848 230
+:matt/earth/25: 2858 230
+:matt/earth/25: 2866 234 frr
+:matt/earth/25: 2874 234 frr
+:matt/earth/25: 2874 244 frr
+:matt/earth/25: 2884 234 frr
+:matt/earth/25: 2892 242 frr
+:matt/earth/25: 2882 242
+:matt/earth/25: 2908 266
+:matt/earth/25: 2894 248
+:matt/earth/25: 2886 254 frr
+:matt/earth/25: 2910 254
+:matt/earth/25: 2890 262 frr
+:Group-0: 2584 272
+:Group-0: 2560 214
+:raymanni/gore/tentacle_1: 2544 266
+:raymanni/gore/eye: 2572 244 r
+:matt/earth/25: 2556 218
+:matt/earth/25: 2562 220
+:matt/earth/25: 2568 220
+:matt/earth/25: 2578 220
+:matt/earth/25: 2586 224 frr
+:Group-0: 2616 208
+:matt/earth/25: 2594 224 frr
+:Group-0: 2616 248
+:matt/earth/25: 2594 234 frr
+:matt/earth/25: 2604 224 frr
+:matt/earth/25: 2612 232 frr
+:matt/earth/25: 2602 232
+:matt/earth/25: 2628 256
+:matt/earth/25: 2614 238
+:matt/earth/25: 2606 244 frr
+:matt/earth/25: 2660 264
+:matt/earth/25: 2630 244
+:matt/earth/25: 2610 252 frr
+:matt/earth/06: 2584 312 rrd
+:matt/earth/25: 2640 238
+:matt/earth/25: 2670 284
+:matt/earth/25: 2650 266 frr
+:Group-1: 2529 144
+:Group-2: 2792 152
+:matt/earth/09: 2844 324 d
+:Group-3: 2312 688
+:Group-3: 2800 688
+:proxima/tile/spheres/gold: 2840 728
+:raymanni/lab/block_7: 2824 704
+:raymanni/lab/pipe_7: 2944 744 fr
+:raymanni/lab/block_7: 2888 704
+:simon/oriental/08: 2872 656
+:raymanni/lab/slope_1: 2792 736 fr
+:simon/oriental/10: 2792 728 f
+:simon/oriental/08: 2792 656
+:amanda/occult/wax64x48: 2872 616
+:amanda/occult/wax32x48_cap_left_sheer: 2776 616
+:amanda/occult/wax32x48_cap_right_sheer: 2936 616
+:proxima/tile/spheres/gold: 2352 728
+:simon/oriental/04: 2744 712
+:simon/oriental/04: 2696 712
+:simon/oriental/04: 2600 712
+:amanda/occult/wax64x48: 2808 616
+:simon/oriental/09: 2568 696 fr
+:simon/oriental/fat_d_long: 2464 576
+:simon/oriental/09: 2536 632 fr
+:simon/oriental/05_top: 2600 696
+:simon/oriental/04: 2568 648
+:matt/earth/05: 2608 536 rrr
+:simon/oriental/fat_open: 2592 536 rrr
+:simon/oriental/fat_open: 2584 512
+:simon/oriental/fat_d_long: 2512 528
+:simon/oriental/04: 2536 584
+:simon/oriental/10: 2504 536 rrr
+:simon/oriental/10: 2616 664 frrr
+:matt/earth/18: 2656 688
+:simon/oriental/09: 2648 696
+:simon/oriental/fat_d_long: 2376 664
+:simon/oriental/09: 2504 568 fr
+:simon/oriental/04: 2536 536
+:simon/oriental/10: 2568 616 frrr
+:simon/oriental/09: 2584 584 frrr
+:simon/oriental/04: 2648 712
+:matt/beach/nighttime/14: 2912 392
+:matt/beach/nighttime/14: 2872 400 frr
+:matt/beach/nighttime/14: 2856 504 frr
+:matt/beach/nighttime/14: 2912 504 frr
+:matt/beach/nighttime/15: 2768 704
+:matt/earth/17: 2680 368
+:matt/beach/nighttime/03: 2768 432 f
+:matt/earth/17: 2752 448
+:matt/earth/17: 2768 504
+:matt/earth/02: 2720 408 frr
+:matt/earth/05: 2624 568 rrr
+:matt/beach/nighttime/02: 2800 592 r
+:matt/earth/01: 2736 424 frr
+:matt/earth/02: 2608 448 r
+:matt/earth/02: 2656 472 r
+:matt/beach/nighttime/02: 2776 624
+:matt/beach/nighttime/15: 2744 704
+:matt/earth/01: 2704 384 frr
+:simon/oriental/fat_open: 2584 480
+:matt/earth/18: 2584 464
+:matt/earth/18: 2592 512
+:matt/earth/18: 2608 504
+:matt/earth/18: 2632 496
+:matt/earth/01: 2600 576 fr
+:matt/earth/01: 2616 632 fr
+:matt/earth/01: 2632 600 fr
+:matt/earth/01: 2656 640 fr
+:matt/beach/nighttime/03: 2792 504
+:matt/beach/nighttime/15: 2880 416
+:matt/beach/nighttime/14: 2928 472
+:geoo/steel/dark_64x64o.S: 3040 832
+:geoo/steel/dark_64x64o.S: 2976 832
+:geoo/steel/dark_64x64o.S: 2912 832
+:geoo/steel/dark_64x64o.S: 2848 832
+:geoo/steel/dark_64x64o.S: 2784 832
+:geoo/steel/dark_64x64o.S: 2720 832
+:geoo/steel/dark_64x64o.S: 2656 832
+:geoo/steel/dark_64x64o.S: 2592 832
+:geoo/steel/dark_64x64o.S: 2528 832
+:geoo/steel/dark_64x64o.S: 2464 832
+:geoo/steel/dark_64x64o.S: 2400 832
+:geoo/steel/dark_64x64o.S: 2336 832
+:geoo/steel/dark_64x64o.S: 2272 832
+:geoo/steel/dark_64x64o.S: 2208 832
+:matt/beach/daytime/06: 1872 816 frr
+:matt/beach/daytime/03: 1672 864 frr
+:matt/beach/daytime/03: 1760 864 frr
+:matt/beach/daytime/03: 2024 832 frr
+:matt/beach/daytime/06: 2072 832
+:matt/beach/daytime/03: 1600 864 frr
+:matt/earth/25: 2630 254

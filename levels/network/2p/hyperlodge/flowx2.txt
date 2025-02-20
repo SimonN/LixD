@@ -1,0 +1,193 @@
+$BUILT 2025-02-09 17:21:12
+$AUTHOR Hyperlodge
+$ENGLISH Flow x 2
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1136
+#SIZE_Y 160
+#TORUS_X 1
+#TORUS_Y 1
+#BACKGROUND_RED 32
+#BACKGROUND_GREEN 71
+#BACKGROUND_BLUE 64
+
+#SECONDS 22
+#INITIAL 222
+#SPAWN_INTERVAL 2
+
+#RUNNER -1
+#EXPLODER2 -1
+#JUMPER -1
+#BATTER -1
+#CUBER -1
+
+:geoo/abstract/hatch.H: 80 40
+:geoo/abstract/hatch.H: 640 40
+:geoo/abstract/hatch.H: 776 120
+:geoo/abstract/hatch.H: 208 120
+
+:geoo/abstract/goal.G: 304 16
+:geoo/abstract/goal.G: 904 16
+:geoo/abstract/goal.G: 1032 96
+:geoo/abstract/goal.G: 472 96
+
+:amanda/steel/steel_flange_right24x16.S: 264 56
+:amanda/steel/steel_flange_right24x16.S: 280 40
+:amanda/steel/steel_flange_right24x16.S: 336 24
+:amanda/steel/steel_flange_right24x16.S: 352 8
+:amanda/steel/steel16x16.S: 360 24
+:amanda/steel/steel16x16.S: 288 56
+:amanda/steel/steel24x8.S: 288 72
+:amanda/steel/steel24x8.S: 312 72
+:amanda/steel/steel24x8.S: 336 72
+:amanda/steel/steel24x8.S: 360 72
+:geoo/sandstone/ebony/h8b: 176 72
+:geoo/sandstone/ebony/h8b: 144 72
+:amanda/steel/steel24x8.S: 384 72
+:geoo/sandstone/ebony/h8b: 240 72
+:amanda/steel/steel24x8.S: 264 72
+:amanda/steel/steel_flange_right24x16.S: 40 56
+:amanda/steel/steel_flange_right24x16.S: 56 40
+:amanda/steel/steel_flange_right24x16.S: 72 24
+:amanda/steel/steel_flange_right24x16.S: 88 8
+:amanda/steel/steel16x16.S: 96 24
+:amanda/steel/steel16x16.S: 64 56
+:amanda/steel/steel24x8.S: 24 72
+:amanda/steel/steel24x8.S: 48 72
+:amanda/steel/steel24x8.S: 72 72
+:amanda/steel/steel24x8.S: 96 72
+:amanda/steel/steel24x8.S: 120 72
+:amanda/steel/steel24x8.S: 0 72
+:amanda/steel/steel_flange_right24x16.S: 168 136
+:amanda/steel/steel_flange_right24x16.S: 184 120
+:amanda/steel/steel_flange_right24x16.S: 200 104
+:amanda/steel/steel_flange_right24x16.S: 216 88
+:amanda/steel/steel16x16.S: 224 104
+:amanda/steel/steel16x16.S: 192 136
+:amanda/steel/steel24x8.S: 152 152
+:amanda/steel/steel24x8.S: 176 152
+:amanda/steel/steel24x8.S: 200 152
+:amanda/steel/steel24x8.S: 224 152
+:amanda/steel/steel24x8.S: 248 152
+:amanda/steel/steel24x8.S: 128 152
+:geoo/sandstone/ebony/h8b: 304 152
+:geoo/sandstone/ebony/h8b: 272 152
+:geoo/sandstone/ebony/h8b: 368 152
+:geoo/sandstone/ebony/h8b: 336 152
+:geoo/sandstone/ebony/h8b: 208 72
+:geoo/sandstone/ebony/h8b: 32 152
+:geoo/sandstone/ebony/h8b: 0 152
+:geoo/sandstone/ebony/h8b: 96 152
+:geoo/sandstone/ebony/h8b: 64 152
+:amanda/steel/steel24x8.S: 408 72
+:geoo/sandstone/ebony/h8b: 400 152
+:amanda/steel/steel_flange_right24x16.S: 600 56
+:amanda/steel/steel_flange_right24x16.S: 616 40
+:amanda/steel/steel_flange_right24x16.S: 632 24
+:amanda/steel/steel_flange_right24x16.S: 648 8
+:amanda/steel/steel16x16.S: 656 24
+:amanda/steel/steel16x16.S: 624 56
+:amanda/steel/steel24x8.S: 584 72
+:amanda/steel/steel24x8.S: 608 72
+:amanda/steel/steel24x8.S: 632 72
+:amanda/steel/steel24x8.S: 656 72
+:amanda/steel/steel24x8.S: 680 72
+:amanda/steel/steel24x8.S: 560 72
+:geoo/sandstone/ebony/h8b: 736 72
+:geoo/sandstone/ebony/h8b: 704 72
+:geoo/sandstone/ebony/h8b: 800 72
+:geoo/sandstone/ebony/h8b: 768 72
+:geoo/sandstone/ebony/h8b: 464 72
+:geoo/sandstone/ebony/h8b: 432 72
+:geoo/sandstone/ebony/h8b: 528 72
+:geoo/sandstone/ebony/h8b: 496 72
+:geoo/sandstone/ebony/h8b: 832 72
+:amanda/steel/steel_flange_right24x16.S: 736 136
+:amanda/steel/steel_flange_right24x16.S: 752 120
+:amanda/steel/steel_flange_right24x16.S: 768 104
+:amanda/steel/steel_flange_right24x16.S: 784 88
+:amanda/steel/steel16x16.S: 792 104
+:amanda/steel/steel16x16.S: 760 136
+:amanda/steel/steel24x8.S: 720 152
+:amanda/steel/steel24x8.S: 744 152
+:amanda/steel/steel24x8.S: 768 152
+:amanda/steel/steel24x8.S: 792 152
+:geoo/sandstone/ebony/h8b: 600 152
+:geoo/sandstone/ebony/h8b: 568 152
+:amanda/steel/steel24x8.S: 816 152
+:amanda/steel/steel24x8.S: 696 152
+:amanda/steel/steel_flange_right24x16.S: 432 136
+:amanda/steel/steel_flange_right24x16.S: 448 120
+:amanda/steel/steel_flange_right24x16.S: 504 104
+:amanda/steel/steel_flange_right24x16.S: 520 88
+:amanda/steel/steel16x16.S: 528 104
+:amanda/steel/steel16x16.S: 456 136
+:amanda/steel/steel24x8.S: 456 152
+:amanda/steel/steel24x8.S: 480 152
+:amanda/steel/steel24x8.S: 504 152
+:amanda/steel/steel24x8.S: 528 152
+:amanda/steel/steel24x8.S: 552 152
+:amanda/steel/steel24x8.S: 432 152
+:geoo/sandstone/ebony/h8b: 632 152
+:amanda/steel/steel24x8.S: 840 152
+:geoo/sandstone/ebony/h8b: 664 152
+:geoo/sandstone/ebony/h8b: 1040 72
+:geoo/sandstone/ebony/h8b: 1008 72
+:geoo/sandstone/ebony/h8b: 1104 72
+:amanda/steel/steel_flange_right24x16.S: 864 56
+:amanda/steel/steel_flange_right24x16.S: 880 40
+:amanda/steel/steel_flange_right24x16.S: 936 24
+:amanda/steel/steel_flange_right24x16.S: 952 8
+:amanda/steel/steel16x16.S: 960 24
+:amanda/steel/steel16x16.S: 888 56
+:amanda/steel/steel24x8.S: 888 72
+:amanda/steel/steel24x8.S: 912 72
+:amanda/steel/steel24x8.S: 936 72
+:amanda/steel/steel24x8.S: 960 72
+:amanda/steel/steel24x8.S: 984 72
+:amanda/steel/steel24x8.S: 864 72
+:amanda/steel/steel_flange_right24x16.S: 992 136
+:amanda/steel/steel_flange_right24x16.S: 1008 120
+:amanda/steel/steel_flange_right24x16.S: 1064 104
+:amanda/steel/steel_flange_right24x16.S: 1080 88
+:amanda/steel/steel16x16.S: 1088 104
+:amanda/steel/steel16x16.S: 1016 136
+:amanda/steel/steel24x8.S: 1016 152
+:amanda/steel/steel24x8.S: 1040 152
+:amanda/steel/steel24x8.S: 1064 152
+:amanda/steel/steel24x8.S: 1088 152
+:amanda/steel/steel24x8.S: 1112 152
+:amanda/steel/steel24x8.S: 992 152
+:geoo/sandstone/ebony/h8b: 1072 72
+:geoo/sandstone/ebony/h8b: 896 152
+:geoo/sandstone/ebony/h8b: 864 152
+:geoo/sandstone/ebony/h8b: 960 152
+:geoo/sandstone/ebony/h8b: 928 152
+:matt/carnival/38: 376 8 frrr
+:matt/carnival/32: 976 8 frrr
+:matt/carnival/34: 1104 88 frrr
+:matt/carnival/36: 544 88 frrr
+:matt/carnival/15: 560 56
+:matt/carnival/13: 0 56
+:matt/carnival/12: 128 136
+:matt/carnival/14: 696 136
+:amanda/steel/steel24x8.S: 304 40
+:amanda/steel/steel24x8.S: 328 40
+:amanda/steel/steel24x8.S: 352 40
+:amanda/steel/steel24x8.S: 472 120
+:amanda/steel/steel24x8.S: 496 120
+:amanda/steel/steel24x8.S: 520 120
+:amanda/steel/steel24x8.S: 904 40
+:amanda/steel/steel24x8.S: 928 40
+:amanda/steel/steel24x8.S: 952 40
+:amanda/steel/steel24x8.S: 1032 120
+:amanda/steel/steel24x8.S: 1056 120
+:amanda/steel/steel24x8.S: 1080 120
+:amanda/steel/steel24x8.S: 1032 144
+:amanda/steel/steel24x8.S: 1056 144
+:amanda/steel/steel24x8.S: 904 64
+:amanda/steel/steel24x8.S: 928 64
+:amanda/steel/steel24x8.S: 472 144
+:amanda/steel/steel24x8.S: 496 144
+:amanda/steel/steel24x8.S: 304 64
+:amanda/steel/steel24x8.S: 328 64

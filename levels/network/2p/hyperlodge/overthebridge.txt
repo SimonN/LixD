@@ -1,0 +1,302 @@
+$BUILT 2025-02-09 15:56:28
+$AUTHOR Hyperlodge
+$ENGLISH Over the Bridge
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1600
+#SIZE_Y 432
+#TORUS_X 1
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 64
+
+#SECONDS 60
+#INITIAL 150
+#SPAWN_INTERVAL 20
+
+#WALKER 50
+#RUNNER 50
+#CLIMBER 50
+#FLOATER 50
+#EXPLODER2 50
+#BLOCKER 50
+#BUILDER 50
+#PLATFORMER 50
+#BASHER 50
+#MINER 50
+#DIGGER 50
+#JUMPER 50
+#BATTER 50
+#CUBER 50
+
+:simon/hatch001.H: 368 96 r
+:simon/hatch001.H: 1168 96
+
+:geoo/abstract/goal.G: 736 344
+:geoo/abstract/goal.G: 832 344
+
+:matt/water.W: 352 400
+:matt/water.W: 320 400
+:matt/water.W: 288 400
+:matt/water.W: 256 400
+:matt/water.W: 224 400
+:matt/water.W: 192 400
+:matt/water.W: 160 400
+:matt/water.W: 128 400
+:matt/water.W: 96 400
+:matt/water.W: 64 400
+:matt/water.W: 32 400
+:matt/water.W: 0 400
+:matt/water.W: 1216 400
+:matt/water.W: 1248 400
+:matt/water.W: 1280 400
+:matt/water.W: 1312 400
+:matt/water.W: 1344 400
+:matt/water.W: 1376 400
+:matt/water.W: 1408 400
+:matt/water.W: 1440 400
+:matt/water.W: 1472 400
+:matt/water.W: 1504 400
+:matt/water.W: 1536 400
+:matt/water.W: 1568 400
+
+:proxima/flame.F: 668 352
+:proxima/flame.F: 668 328
+:proxima/flame.F: 892 352
+:proxima/flame.F: 892 328
+:geoo/construction/sawblade_small.F: 368 328
+:geoo/construction/sawblade_small.F: 1200 328
+:geoo/construction/sawblade_medium.F: 1152 312
+:geoo/construction/sawblade_medium.F: 384 312
+
+:geoo/construction/steam_up.T: 216 288
+:geoo/construction/steam_up.T: 312 288
+:geoo/construction/steam_up.T: 248 288
+:geoo/construction/steam_up.T: 280 288
+:geoo/construction/steam_up.T: 120 288
+:geoo/construction/steam_up.T: 152 288
+:geoo/construction/steam_up.T: 184 288
+:geoo/construction/steam_up.T: 88 288
+:geoo/construction/steam_up.T: 24 288
+:geoo/construction/steam_up.T: 56 288
+:geoo/construction/steam_up.T: 1368 288
+:geoo/construction/steam_up.T: 1272 288
+:geoo/construction/steam_up.T: 1336 288
+:geoo/construction/steam_up.T: 1304 288
+:geoo/construction/steam_up.T: 1464 288
+:geoo/construction/steam_up.T: 1432 288
+:geoo/construction/steam_up.T: 1400 288
+:geoo/construction/steam_up.T: 1496 288
+:geoo/construction/steam_up.T: 1560 288
+:geoo/construction/steam_up.T: 1528 288
+:geoo/construction/steam_up.T: 1592 288
+:geoo/construction/steam_up.T: 232 280
+:geoo/construction/steam_up.T: 264 280
+:geoo/construction/steam_up.T: 296 280
+:geoo/construction/steam_up.T: 136 280
+:geoo/construction/steam_up.T: 168 280
+:geoo/construction/steam_up.T: 200 280
+:geoo/construction/steam_up.T: 104 280
+:geoo/construction/steam_up.T: 40 280
+:geoo/construction/steam_up.T: 72 280
+:geoo/construction/steam_up.T: 1384 280
+:geoo/construction/steam_up.T: 1288 280
+:geoo/construction/steam_up.T: 1352 280
+:geoo/construction/steam_up.T: 1320 280
+:geoo/construction/steam_up.T: 1480 280
+:geoo/construction/steam_up.T: 1448 280
+:geoo/construction/steam_up.T: 1416 280
+:geoo/construction/steam_up.T: 1512 280
+:geoo/construction/steam_up.T: 1576 280
+:geoo/construction/steam_up.T: 1544 280
+:geoo/construction/steam_up.T: 8 280
+:geoo/construction/steam_up.T: 344 288
+:geoo/construction/steam_up.T: 328 280
+:geoo/construction/steam_up.T: 1240 288
+:geoo/construction/steam_up.T: 1256 280
+
+:amanda/steel/steel32x32.S: 672 272
+:amanda/steel/steel32x32.S: 656 240
+:amanda/steel/steel32x32.S: 656 208
+:amanda/steel/steel32x32.S: 656 176
+:amanda/steel/steel32x32.S: 648 112
+:amanda/steel/steel32x32.S: 648 80
+:amanda/steel/steel32x32.S: 648 48
+:geoo/construction/wall/small_64x64: 608 336
+:geoo/construction/wall/small_64x64: 544 336
+:matt/goldmine/planksupport2: 352 368
+:geoo/construction/wall/small_64x64: 416 336
+:geoo/construction/wall/small_64x64: 480 336
+:geoo/construction/fence_rust_32x32: 672 336
+:geoo/construction/fence_rust_32x32: 672 368
+:geoo/construction/concrete/032h: 416 400
+:geoo/construction/concrete/032h: 480 400
+:geoo/construction/concrete/032h: 544 400
+:geoo/construction/concrete/032h: 608 400
+:amanda/occult/skulls32x32: 712 360
+:geoo/construction/concrete/032h: 672 400
+:geoo/construction/concrete/podium_32: 640 144 rr
+:geoo/construction/concrete/podium_32: 632 16 rr
+:geoo/construction/concrete/016vc: 656 272
+:geoo/construction/concrete/032d: 704 272
+:raymanni/gore/steel.S: 384 400
+:geoo/construction/wall/big_square: 384 368
+:geoo/construction/wall/big_square: 384 320
+:geoo/construction/wall/big_square: 384 272
+:geoo/construction/wall/big_square: 384 224
+:geoo/construction/concrete/032vc: 352 208
+:geoo/construction/concrete/032vd: 416 208
+:geoo/construction/platformbrick: 351 177 rrr
+:geoo/construction/platformbrick: 447 177 rrr
+:geoo/construction/platformbrick: 447 145 rrr
+:geoo/construction/platformbrick: 447 113 rrr
+:geoo/construction/platformbrick: 351 113 rrr
+:geoo/construction/platformbrick: 351 145 rrr
+:geoo/construction/concrete/016ha: 352 96
+:geoo/construction/concrete/016hb: 416 96
+:geoo/construction/platformbrick: 352 208
+:geoo/construction/platformbrick: 416 208
+:raymanni/holiday/plank_left: 384 208 frr
+:geoo/construction/platformbrick: 384 208
+:geoo/construction/platformbrick: 352 112
+:geoo/construction/platformbrick: 384 112
+:geoo/construction/platformbrick: 416 112
+:raymanni/holiday/plank_left: 384 96
+:raymanni/holiday/plank_left: 384 256 frr
+:raymanni/holiday/plank_left: 384 304 frr
+:raymanni/holiday/plank_left: 384 352 frr
+:matt/goldmine/planksupport2: 256 368
+:matt/goldmine/plank: 256 368
+:raymanni/holiday/plank_left: 360 352
+:matt/goldmine/planksupport2: 160 368
+:matt/goldmine/plank: 128 368 frr
+:raymanni/lab/pipe_7: 312 320 rr
+:raymanni/lab/pipe_7: 248 320 rr
+:raymanni/lab/pipe_7: 280 320 rr
+:raymanni/lab/pipe_7: 344 320 rr
+:matt/goldmine/plank: 256 344
+:raymanni/lab/pipe_7: 216 320 rr
+:raymanni/lab/pipe_7: 152 320 rr
+:raymanni/lab/pipe_7: 184 320 rr
+:raymanni/lab/pipe_7: 120 320 rr
+:matt/goldmine/plank: 128 344 frr
+:matt/goldmine/planksupport2: 32 368
+:matt/goldmine/plank: 0 368
+:raymanni/lab/pipe_7: 88 320 rr
+:raymanni/lab/pipe_7: 24 320 rr
+:raymanni/lab/pipe_7: 56 320 rr
+:raymanni/lab/pipe_7: 1592 320 f
+:matt/goldmine/plank: 0 344
+:amanda/steel/steel32x32.S: 672 304
+:amanda/steel/steel32x32.S: 896 272 frr
+:amanda/steel/steel32x32.S: 912 240 frr
+:amanda/steel/steel32x32.S: 912 208 frr
+:amanda/steel/steel32x32.S: 912 176 frr
+:amanda/steel/steel32x32.S: 920 112 frr
+:amanda/steel/steel32x32.S: 920 80 frr
+:amanda/steel/steel32x32.S: 920 48 frr
+:geoo/construction/wall/small_64x64: 928 336 frr
+:geoo/construction/wall/small_64x64: 992 336 frr
+:matt/goldmine/planksupport2: 1184 368 frr
+:geoo/construction/wall/small_64x64: 1120 336 frr
+:geoo/construction/wall/small_64x64: 1056 336 frr
+:geoo/construction/fence_rust_32x32: 896 336 frr
+:geoo/construction/fence_rust_32x32: 896 368 frr
+:geoo/construction/concrete/032h: 1120 400 frr
+:geoo/construction/concrete/032h: 1056 400 frr
+:geoo/construction/concrete/032h: 992 400 frr
+:geoo/construction/concrete/032h: 928 400 frr
+:geoo/construction/concrete/podium_32: 896 144 f
+:geoo/construction/concrete/podium_32: 904 16 f
+:geoo/construction/concrete/016vc: 928 272 frr
+:geoo/construction/concrete/032d: 864 272 frr
+:raymanni/gore/steel.S: 1184 400 frr
+:geoo/construction/wall/big_square: 1184 368 frr
+:geoo/construction/wall/big_square: 1184 320 frr
+:geoo/construction/wall/big_square: 1184 272 frr
+:geoo/construction/wall/big_square: 1184 224 frr
+:geoo/construction/concrete/032vc: 1216 208 frr
+:geoo/construction/concrete/032vd: 1152 208 frr
+:geoo/construction/platformbrick: 1247 177 frrr
+:geoo/construction/platformbrick: 1151 177 frrr
+:geoo/construction/platformbrick: 1151 145 frrr
+:geoo/construction/platformbrick: 1151 113 frrr
+:geoo/construction/platformbrick: 1247 113 frrr
+:geoo/construction/platformbrick: 1247 145 frrr
+:geoo/construction/concrete/016ha: 1216 96 frr
+:geoo/construction/concrete/016hb: 1152 96 frr
+:geoo/construction/platformbrick: 1216 208 frr
+:geoo/construction/platformbrick: 1152 208 frr
+:raymanni/holiday/plank_left: 1184 208
+:geoo/construction/platformbrick: 1184 208 frr
+:geoo/construction/platformbrick: 1216 112 frr
+:geoo/construction/platformbrick: 1184 112 frr
+:geoo/construction/platformbrick: 1152 112 frr
+:raymanni/holiday/plank_left: 1184 96 frr
+:raymanni/holiday/plank_left: 1184 256
+:raymanni/holiday/plank_left: 1184 304
+:raymanni/holiday/plank_left: 1184 352
+:matt/goldmine/planksupport2: 1280 368 frr
+:matt/goldmine/plank: 1216 368 frr
+:raymanni/holiday/plank_left: 1208 352 frr
+:matt/goldmine/planksupport2: 1376 368 frr
+:matt/goldmine/plank: 1344 368
+:raymanni/lab/pipe_7: 1272 320 f
+:raymanni/lab/pipe_7: 1336 320 f
+:raymanni/lab/pipe_7: 1304 320 f
+:raymanni/lab/pipe_7: 1240 320 f
+:matt/goldmine/plank: 1216 344 frr
+:raymanni/lab/pipe_7: 1368 320 f
+:raymanni/lab/pipe_7: 1432 320 f
+:raymanni/lab/pipe_7: 1400 320 f
+:raymanni/lab/pipe_7: 1464 320 f
+:matt/goldmine/plank: 1344 344
+:matt/goldmine/planksupport2: 1504 368 frr
+:matt/goldmine/plank: 1472 368 frr
+:raymanni/lab/pipe_7: 1496 320 f
+:raymanni/lab/pipe_7: 1560 320 f
+:raymanni/lab/pipe_7: 1528 320 f
+:matt/goldmine/plank: 1472 344 frr
+:amanda/steel/steel32x32.S: 896 304 frr
+:amanda/occult/skulls32x32: 720 336
+:amanda/occult/skulls32x32: 728 360 frr
+:amanda/occult/skulls32x32: 752 360 frr
+:raymanni/gore/steel.S: 736 400
+:amanda/occult/skulls32x32: 722 312
+:amanda/occult/skulls32x32: 744 328 frr
+:amanda/occult/skulls32x32: 736 320
+:amanda/occult/skulls32x32: 824 360 frr
+:geoo/construction/concrete/032h: 864 400 frr
+:amanda/occult/skulls32x32: 816 336 frr
+:amanda/occult/skulls32x32: 808 360
+:amanda/occult/skulls32x32: 784 360
+:geoo/construction/concrete/032h: 768 400
+:raymanni/gore/steel.S: 832 400 frr
+:amanda/occult/skulls32x32: 816 312 frr
+:amanda/occult/skulls32x32: 792 328
+:amanda/occult/skulls32x32: 800 320 frr
+:raymanni/lab/pipe_7: 264 312 rr
+:raymanni/lab/pipe_7: 296 312 rr
+:raymanni/lab/pipe_7: 232 312 rr
+:raymanni/lab/pipe_7: 168 312 rr
+:raymanni/lab/pipe_7: 200 312 rr
+:raymanni/lab/pipe_7: 136 312 rr
+:raymanni/lab/pipe_7: 104 312 rr
+:raymanni/lab/pipe_7: 40 312 rr
+:raymanni/lab/pipe_7: 72 312 rr
+:raymanni/lab/pipe_7: 8 312 f
+:raymanni/lab/pipe_7: 1288 312 f
+:raymanni/lab/pipe_7: 1352 312 f
+:raymanni/lab/pipe_7: 1320 312 f
+:raymanni/lab/pipe_7: 1384 312 f
+:raymanni/lab/pipe_7: 1448 312 f
+:raymanni/lab/pipe_7: 1416 312 f
+:raymanni/lab/pipe_7: 1480 312 f
+:raymanni/lab/pipe_7: 1512 312 f
+:raymanni/lab/pipe_7: 1576 312 f
+:raymanni/lab/pipe_7: 1544 312 f
+:raymanni/lab/pipe_7: 328 312 rr
+:raymanni/lab/pipe_7: 1256 312 f
+:proxima/tile/spheres/greensmall: 736 336 d
+:proxima/tile/spheres/greensmall: 832 336 d

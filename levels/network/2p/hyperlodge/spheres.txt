@@ -1,0 +1,262 @@
+$BUILT 2024-07-18 14:50:36
+$AUTHOR Hyperlodge
+$ENGLISH Spheres
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1104
+#SIZE_Y 672
+#BACKGROUND_RED 32
+#BACKGROUND_GREEN 64
+#BACKGROUND_BLUE 112
+
+#SECONDS 60
+#INITIAL 75
+#SPAWN_INTERVAL 75
+
+#WALKER 20
+#RUNNER 20
+#CLIMBER 20
+#FLOATER 20
+#EXPLODER2 20
+#BLOCKER 20
+#BUILDER 90
+#PLATFORMER 90
+#BASHER 20
+#MINER 20
+#DIGGER 20
+#JUMPER 20
+#BATTER 20
+#CUBER 20
+
+:raymanni/lab/hatch.H: 1024 512 r
+:raymanni/lab/hatch.H: 48 512
+
+:geoo/abstract/goal.G: 456 32
+:geoo/abstract/goal.G: 616 32
+
+:simon/acid.W: 96 624
+:simon/acid.W: 144 624
+:simon/acid.W: 192 624
+:simon/acid.W: 240 624
+:simon/acid.W: 288 624
+:simon/acid.W: 336 624
+:simon/acid.W: 384 624
+:simon/acid.W: 432 624
+:simon/acid.W: 480 624
+:simon/acid.W: 528 624
+:simon/acid.W: 576 624
+:simon/acid.W: 624 624
+:simon/acid.W: 672 624
+:simon/acid.W: 720 624
+:simon/acid.W: 768 624
+:simon/acid.W: 816 624
+:simon/acid.W: 864 624
+:simon/acid.W: 912 624
+:simon/acid.W: 960 624
+:simon/acid.W: 1008 624
+:simon/acid.W: 1056 624
+:simon/acid.W: 0 624
+:simon/acid.W: 48 624
+
+:geoo/abstract/tbeam_up.T: 1072 448
+:geoo/abstract/tbeam_up.T: 1072 480
+:geoo/abstract/tbeam_up.T: 1072 384
+:geoo/abstract/tbeam_up.T: 1072 416
+:geoo/abstract/tbeam_up.T: 1072 576
+:geoo/abstract/tbeam_up.T: 1072 608
+:geoo/abstract/tbeam_up.T: 1072 512
+:geoo/abstract/tbeam_up.T: 1072 544
+:geoo/abstract/tbeam_up.T: 1072 192
+:geoo/abstract/tbeam_up.T: 1072 224
+:geoo/abstract/tbeam_up.T: 1072 128
+:geoo/abstract/tbeam_up.T: 1072 160
+:geoo/abstract/tbeam_up.T: 1072 320
+:geoo/abstract/tbeam_up.T: 1072 352
+:geoo/abstract/tbeam_up.T: 1072 256
+:geoo/abstract/tbeam_up.T: 1072 288
+:geoo/abstract/tbeam_up.T: 1072 96
+:geoo/abstract/tbeam_up.T: 1072 32
+:geoo/abstract/tbeam_up.T: 1072 64
+:geoo/abstract/tbeam_up.T: 0 448
+:geoo/abstract/tbeam_up.T: 0 480
+:geoo/abstract/tbeam_up.T: 0 384
+:geoo/abstract/tbeam_up.T: 0 416
+:geoo/abstract/tbeam_up.T: 0 576
+:geoo/abstract/tbeam_up.T: 0 608
+:geoo/abstract/tbeam_up.T: 0 512
+:geoo/abstract/tbeam_up.T: 0 544
+:geoo/abstract/tbeam_up.T: 0 192
+:geoo/abstract/tbeam_up.T: 0 224
+:geoo/abstract/tbeam_up.T: 0 128
+:geoo/abstract/tbeam_up.T: 0 160
+:geoo/abstract/tbeam_up.T: 0 320
+:geoo/abstract/tbeam_up.T: 0 352
+:geoo/abstract/tbeam_up.T: 0 256
+:geoo/abstract/tbeam_up.T: 0 288
+:geoo/abstract/tbeam_up.T: 0 96
+:geoo/abstract/tbeam_up.T: 0 32
+:geoo/abstract/tbeam_up.T: 0 64
+:geoo/abstract/tbeam_left.T: 1040 0
+:geoo/abstract/tbeam_right.T: 0 0
+:geoo/abstract/tbeam_right.T: 32 0
+:geoo/abstract/tbeam_left.T: 1072 0
+:geoo/abstract/tbeam_right.T: 64 0
+:geoo/abstract/tbeam_left.T: 1008 0
+
+:matt/winter/09a: 352 288
+:matt/winter/09b: 368 376
+:matt/winter/09c: 544 400
+:matt/winter/09b: 424 432
+:matt/winter/09b: 312 432
+:matt/winter/09b: 368 488
+:matt/winter/09a: 480 416
+:matt/winter/09a: 224 416
+:matt/winter/09a: 352 544
+:matt/beach/decor/moon: 288 352
+:matt/beach/decor/moon: 416 352
+:matt/beach/decor/moon: 288 480
+:matt/beach/decor/moon: 416 480
+:geoo/construction/stairs_ru_32.S: 176 504
+:matt/underworld/03: 224 496
+:matt/underworld/03: 288 560
+:matt/underworld/03: 440 288
+:matt/underworld/03: 496 352
+:matt/underworld/03: 496 496
+:matt/underworld/03: 432 560
+:matt/underworld/03: 224 352
+:matt/underworld/03: 280 288
+:proxima/tile/spheres/bluesmall: 240 560
+:proxima/tile/spheres/cyansmall: 368 432
+:proxima/tile/spheres/goldsmall: 504 304
+:proxima/tile/spheres/pinksmall: 232 304
+:proxima/tile/spheres/redsmall: 504 560
+:matt/winter/09c: 544 480
+:matt/winter/09c: 208 480
+:matt/winter/09c: 208 400
+:matt/winter/09c: 416 608
+:matt/winter/09c: 336 608
+:matt/winter/09c: 336 272
+:matt/winter/09c: 408 272
+:matt/winter/09a: 688 288
+:matt/winter/09b: 704 376
+:matt/winter/09c: 880 400
+:matt/winter/09b: 760 432
+:matt/winter/09b: 648 432
+:geoo/construction/stairs_ru_32.S: 848 504 frr
+:matt/winter/09b: 704 488
+:matt/winter/09a: 816 416
+:matt/winter/09a: 560 416
+:matt/winter/09a: 688 544
+:matt/beach/decor/moon: 624 352
+:matt/beach/decor/moon: 752 352
+:matt/beach/decor/moon: 624 480
+:matt/beach/decor/moon: 752 480
+:matt/underworld/03: 560 496
+:matt/underworld/03: 624 560
+:matt/underworld/03: 776 288
+:matt/underworld/03: 832 352
+:matt/underworld/03: 832 496
+:matt/underworld/03: 768 560
+:matt/underworld/03: 560 352
+:matt/underworld/03: 616 288
+:proxima/tile/spheres/bluesmall: 568 560
+:proxima/tile/spheres/goldsmall: 840 304
+:proxima/tile/spheres/pinksmall: 568 304
+:proxima/tile/spheres/redsmall: 832 560
+:matt/winter/09c: 880 480
+:matt/winter/09c: 544 544
+:matt/winter/09c: 544 336
+:matt/winter/09c: 752 608
+:matt/winter/09c: 672 608
+:matt/winter/09c: 672 272
+:matt/winter/09c: 744 272
+:proxima/tile/spheres/greensmall: 704 432
+:proxima/tile/spheres/gold: 896 416
+:proxima/tile/spheres/green: 144 416
+:proxima/tile/spheres/blue: 896 528
+:proxima/tile/spheres/pink: 144 528
+:proxima/tile/spheres/red: 144 304
+:proxima/tile/spheres/cyan: 896 304
+:proxima/tile/spheres/greysmall.S: 536 272
+:proxima/tile/spheres/grey.S: 520 192
+:proxima/tile/spheres/greysmall.S: 536 592
+:proxima/tile/spheres/grey.S: 520 64
+:proxima/tile/spheres/greysmall.S: 536 144
+:matt/winter/09c: 120 304
+:matt/winter/09c: 120 440
+:matt/winter/09c: 120 576
+:matt/winter/09c: 968 304
+:matt/winter/09c: 968 440
+:matt/winter/09c: 968 576
+$BEGIN_TILE_GROUP 0
+:geoo/construction/rod_steel/straight_diagu32.S: 0 96
+:geoo/construction/rod_steel/straight_diagu32.S: 32 64
+:geoo/construction/rod_steel/straight_diagu32.S: 64 32
+:geoo/construction/rod_steel/straight_diagu32.S: 96 0
+$END_TILE_GROUP
+:Group-0: 336 8
+:matt/underworld/03: 448 72
+:Group-0: 632 8 frr
+:matt/underworld/03: 608 72
+:proxima/tile/spheres/greysmall.S: 456 144
+:proxima/tile/spheres/greysmall.S: 616 144
+:matt/winter/09c: 464 192
+:matt/winter/09c: 464 224
+:matt/winter/09c: 464 256
+:matt/winter/09c: 624 192
+:matt/winter/09c: 624 224
+:matt/winter/09c: 624 256
+:matt/winter/09c: 424 152
+:matt/winter/09c: 664 152
+:matt/winter/09c: 672 88
+:matt/winter/09c: 416 88
+:proxima/tile/spheres/cyansmall: 704 144
+:proxima/tile/spheres/greensmall: 368 144
+:proxima/tile/spheres/red: 752 128
+:proxima/tile/spheres/gold: 288 128
+:geoo/construction/fence_rust_64x64: 1008 608
+:geoo/construction/fence_rust_64x64: 1008 448
+:geoo/construction/fence_rust_32x32: 992 576
+:geoo/construction/fence_rust_32x32: 1056 512
+:geoo/construction/fence_rust_32x32: 992 544
+:geoo/construction/fence_rust_32x32: 992 512
+:geoo/construction/fence_rust_32x32: 1056 544
+:geoo/construction/fence_rust_32x32: 1056 576
+:geoo/construction/fence_rust_64x64: 32 608 frr
+:geoo/construction/fence_rust_64x64: 32 448 frr
+:geoo/construction/fence_rust_32x32: 80 576 frr
+:geoo/construction/fence_rust_32x32: 16 512 frr
+:geoo/construction/fence_rust_32x32: 80 544 frr
+:geoo/construction/fence_rust_32x32: 80 512 frr
+:geoo/construction/fence_rust_32x32: 16 544 frr
+:geoo/construction/fence_rust_32x32: 16 576 frr
+:geoo/construction/fence_rust_32x32: 32 352 frr
+:geoo/construction/fence_rust_32x32: 32 384 frr
+:geoo/construction/fence_rust_32x32: 32 416 frr
+:geoo/construction/fence_rust_32x32: 1040 352 frr
+:geoo/construction/fence_rust_32x32: 1040 384 frr
+:geoo/construction/fence_rust_32x32: 1040 416 frr
+:geoo/construction/fence_rust_32x32: 1040 256 frr
+:geoo/construction/fence_rust_32x32: 1040 288 frr
+:geoo/construction/fence_rust_32x32: 1040 320 frr
+:geoo/construction/fence_rust_32x32: 32 256 frr
+:geoo/construction/fence_rust_32x32: 32 288 frr
+:geoo/construction/fence_rust_32x32: 32 320 frr
+:geoo/construction/fence_rust_32x32: 32 160 frr
+:geoo/construction/fence_rust_32x32: 32 192 frr
+:geoo/construction/fence_rust_32x32: 32 224 frr
+:geoo/construction/fence_rust_32x32: 1040 160 frr
+:geoo/construction/fence_rust_32x32: 1040 192 frr
+:geoo/construction/fence_rust_32x32: 1040 224 frr
+:geoo/construction/fence_rust_32x32: 1040 128 frr
+:geoo/construction/fence_rust_32x32: 1040 32 frr
+:geoo/construction/fence_rust_32x32: 1040 64 frr
+:geoo/construction/fence_rust_32x32: 1040 96 frr
+:geoo/construction/fence_rust_32x32: 32 128 frr
+:geoo/construction/fence_rust_32x32: 32 32 frr
+:geoo/construction/fence_rust_32x32: 32 64 frr
+:geoo/construction/fence_rust_32x32: 32 96 frr
+:proxima/tile/spheres/grey.S: 896 192
+:proxima/tile/spheres/grey.S: 144 200
+:proxima/tile/spheres/greysmall.S: 112 144
+:proxima/tile/spheres/greysmall.S: 960 144

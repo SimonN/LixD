@@ -1,0 +1,264 @@
+$BUILT 2025-02-09 16:35:06
+$AUTHOR Hyperlodge
+$ENGLISH That Long Road
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 3200
+#SIZE_Y 240
+#BACKGROUND_RED 203
+#BACKGROUND_GREEN 195
+#BACKGROUND_BLUE 159
+
+#SECONDS 120
+#INITIAL 100
+#SPAWN_INTERVAL 90
+
+#WALKER 1
+#RUNNER -1
+#CLIMBER -1
+#FLOATER -1
+#EXPLODER2 -1
+#BLOCKER -1
+#BUILDER -1
+#PLATFORMER 1
+#BASHER 1
+#MINER -1
+#DIGGER 1
+#JUMPER 1
+#BATTER 1
+#CUBER -1
+
+:geoo/sandstone/Hatch.H: 32 106
+:geoo/sandstone/Hatch.H: 3072 106 r
+
+:matt/goldmine/Goal.G: 3144 152
+:matt/goldmine/Goal.G: -8 152
+
+:proxima/flame.F: 1580 134
+:proxima/flame.F: 1580 170
+
+:geoo/abstract/tbeam_up.T: 1600 102
+:geoo/abstract/tbeam_up.T: 1568 102
+:geoo/abstract/tbeam_up.T: 1600 70
+:geoo/abstract/tbeam_up.T: 1568 70
+:geoo/abstract/tbeam_up.T: 1600 38
+:geoo/abstract/tbeam_up.T: 1568 38
+:geoo/abstract/tbeam_right.T: 1600 8
+:geoo/abstract/tbeam_right.T: 1632 8
+:geoo/abstract/tbeam_left.T: 1568 8
+:geoo/abstract/tbeam_left.T: 1536 8
+:geoo/abstract/tbeam_left.T: 1504 8
+:geoo/abstract/tbeam_left.T: 1472 8
+:geoo/abstract/tbeam_right.T: 1664 8
+:geoo/abstract/tbeam_right.T: 1696 8
+:geoo/abstract/tbeam_right.T: 1728 8
+:geoo/abstract/tbeam_right.T: 1760 8
+:geoo/abstract/tbeam_right.T: 1792 8
+:geoo/abstract/tbeam_right.T: 1824 8
+:geoo/abstract/tbeam_left.T: 1440 8
+:geoo/abstract/tbeam_left.T: 1408 8
+:geoo/abstract/tbeam_left.T: 1376 8
+:geoo/abstract/tbeam_left.T: 1344 8
+:geoo/abstract/tbeam_left.T: 1312 8
+:geoo/abstract/tbeam_left.T: 1280 8
+:geoo/abstract/tbeam_left.T: 1248 8
+:geoo/abstract/tbeam_left.T: 1216 8
+:geoo/abstract/tbeam_left.T: 1184 8
+:geoo/abstract/tbeam_left.T: 1152 8
+:geoo/abstract/tbeam_left.T: 1120 8
+:geoo/abstract/tbeam_left.T: 1088 8
+:geoo/abstract/tbeam_right.T: 1856 8
+:geoo/abstract/tbeam_right.T: 1888 8
+:geoo/abstract/tbeam_right.T: 1920 8
+:geoo/abstract/tbeam_right.T: 1952 8
+:geoo/abstract/tbeam_right.T: 1984 8
+:geoo/abstract/tbeam_right.T: 2016 8
+:geoo/abstract/tbeam_right.T: 2048 8
+:geoo/abstract/tbeam_right.T: 2080 8
+:geoo/abstract/tbeam_right.T: 2112 8
+:geoo/abstract/tbeam_right.T: 2144 8
+:geoo/abstract/tbeam_right.T: 2176 8
+:geoo/abstract/tbeam_right.T: 2208 8
+:geoo/abstract/tbeam_right.T: 2240 8
+:geoo/abstract/tbeam_right.T: 2272 8
+:geoo/abstract/tbeam_right.T: 2304 8
+:geoo/abstract/tbeam_right.T: 2336 8
+:geoo/abstract/tbeam_right.T: 2368 8
+:geoo/abstract/tbeam_right.T: 2400 8
+:geoo/abstract/tbeam_right.T: 2432 8
+:geoo/abstract/tbeam_right.T: 2464 8
+:geoo/abstract/tbeam_right.T: 2496 8
+:geoo/abstract/tbeam_right.T: 2528 8
+:geoo/abstract/tbeam_right.T: 2560 8
+:geoo/abstract/tbeam_right.T: 2592 8
+:geoo/abstract/tbeam_left.T: 1056 8
+:geoo/abstract/tbeam_left.T: 1024 8
+:geoo/abstract/tbeam_left.T: 992 8
+:geoo/abstract/tbeam_left.T: 960 8
+:geoo/abstract/tbeam_left.T: 928 8
+:geoo/abstract/tbeam_left.T: 896 8
+:geoo/abstract/tbeam_left.T: 864 8
+:geoo/abstract/tbeam_left.T: 832 8
+:geoo/abstract/tbeam_left.T: 800 8
+:geoo/abstract/tbeam_left.T: 768 8
+:geoo/abstract/tbeam_left.T: 736 8
+:geoo/abstract/tbeam_left.T: 704 8
+:geoo/abstract/tbeam_left.T: 672 8
+:geoo/abstract/tbeam_left.T: 640 8
+:geoo/abstract/tbeam_left.T: 608 8
+:geoo/abstract/tbeam_left.T: 576 8
+:geoo/abstract/tbeam_left.T: 544 8
+:geoo/abstract/tbeam_left.T: 512 8
+:geoo/abstract/tbeam_left.T: 480 8
+:geoo/abstract/tbeam_left.T: 448 8
+:geoo/abstract/tbeam_left.T: 416 8
+:geoo/abstract/tbeam_left.T: 384 8
+:geoo/abstract/tbeam_left.T: 352 8
+:geoo/abstract/tbeam_left.T: 320 8
+:geoo/abstract/tbeam_left.T: 288 8
+:geoo/abstract/tbeam_left.T: 256 8
+:geoo/abstract/tbeam_left.T: 224 8
+:geoo/abstract/tbeam_left.T: 192 8
+:geoo/abstract/tbeam_left.T: 160 8
+:geoo/abstract/tbeam_left.T: 128 8
+:geoo/abstract/tbeam_left.T: 96 8
+:geoo/abstract/tbeam_right.T: 2624 8
+:geoo/abstract/tbeam_right.T: 2656 8
+:geoo/abstract/tbeam_right.T: 2688 8
+:geoo/abstract/tbeam_right.T: 2720 8
+:geoo/abstract/tbeam_right.T: 2752 8
+:geoo/abstract/tbeam_right.T: 2784 8
+:geoo/abstract/tbeam_right.T: 2816 8
+:geoo/abstract/tbeam_right.T: 2848 8
+:geoo/abstract/tbeam_right.T: 2880 8
+:geoo/abstract/tbeam_right.T: 2912 8
+:geoo/abstract/tbeam_right.T: 2944 8
+:geoo/abstract/tbeam_right.T: 2976 8
+:geoo/abstract/tbeam_right.T: 3008 8
+:geoo/abstract/tbeam_right.T: 3040 8
+:geoo/abstract/tbeam_right.T: 3072 8
+:geoo/abstract/tbeam_down.T: 3136 8
+:geoo/abstract/tbeam_right.T: 3104 8
+:geoo/abstract/tbeam_down.T: 3136 40
+:geoo/abstract/tbeam_down.T: 32 8
+:geoo/abstract/tbeam_down.T: 32 40
+:geoo/abstract/tbeam_left.T: 64 8
+
+$BEGIN_TILE_GROUP 0
+:geoo/construction/rod_steel/straight32.S: 0 0
+:geoo/construction/rod_steel/straight32.S: 32 0
+:geoo/construction/rod_steel/straight32.S: 64 0
+:geoo/construction/rod_steel/straight32.S: 96 0
+:geoo/construction/rod_steel/straight32.S: 128 0
+:geoo/construction/rod_steel/straight32.S: 160 0
+:geoo/construction/rod_steel/straight32.S: 192 0
+:geoo/construction/rod_steel/straight32.S: 224 0
+:geoo/construction/rod_steel/straight32.S: 256 0
+:geoo/construction/rod_steel/straight32.S: 288 0
+:geoo/construction/rod_steel/straight32.S: 320 0
+:geoo/construction/rod_steel/straight32.S: 352 0
+:geoo/construction/rod_steel/straight32.S: 384 0
+:geoo/construction/rod_steel/straight32.S: 416 0
+:geoo/construction/rod_steel/straight32.S: 448 0
+:geoo/construction/rod_steel/straight32.S: 480 0
+:geoo/construction/rod_steel/straight32.S: 512 0
+:geoo/construction/rod_steel/straight32.S: 544 0
+:geoo/construction/rod_steel/straight32.S: 576 0
+:geoo/construction/rod_steel/straight32.S: 608 0
+:geoo/construction/rod_steel/straight32.S: 640 0
+:geoo/construction/rod_steel/straight32.S: 672 0
+:geoo/construction/rod_steel/straight32.S: 704 0
+:geoo/construction/rod_steel/straight32.S: 736 0
+$END_TILE_GROUP
+:Group-0: 0 232
+:Group-0: 768 232
+:Group-0: 1536 232
+:geoo/construction/rod_steel/straight32.S: 2304 232
+:geoo/construction/rod_steel/straight32.S: 2336 232
+:geoo/construction/rod_steel/straight32.S: 2368 232
+:geoo/construction/rod_steel/straight32.S: 2400 232
+:geoo/construction/rod_steel/straight32.S: 2432 232
+:geoo/construction/rod_steel/straight32.S: 2464 232
+:geoo/construction/rod_steel/straight32.S: 2496 232
+:geoo/construction/rod_steel/straight32.S: 2528 232
+:geoo/construction/rod_steel/straight32.S: 2560 232
+:geoo/construction/rod_steel/straight32.S: 2592 232
+:geoo/construction/rod_steel/straight32.S: 2624 232
+:geoo/construction/rod_steel/straight32.S: 2656 232
+:geoo/construction/rod_steel/straight32.S: 2688 232
+:geoo/construction/rod_steel/straight32.S: 2720 232
+:geoo/construction/rod_steel/straight32.S: 2752 232
+:geoo/construction/rod_steel/straight32.S: 2784 232
+:geoo/construction/rod_steel/straight32.S: 2816 232
+:geoo/construction/rod_steel/straight32.S: 2848 232
+:geoo/construction/rod_steel/straight32.S: 2880 232
+:geoo/construction/rod_steel/straight32.S: 2912 232
+:geoo/construction/rod_steel/straight32.S: 2944 232
+:geoo/construction/rod_steel/straight32.S: 2976 232
+:geoo/construction/rod_steel/straight32.S: 3008 232
+:geoo/construction/rod_steel/straight32.S: 3040 232
+:geoo/construction/rod_steel/straight32.S: 3072 232
+:geoo/construction/rod_steel/straight32.S: 3104 232
+:geoo/construction/rod_steel/straight32.S: 3136 232
+:geoo/construction/rod_steel/straight32.S: 3168 232
+$BEGIN_TILE_GROUP 1
+:geoo/construction/wall/small_64x64: 6 20
+:matt/earth/09: 22 0 frr
+:amanda/forest/moss_00: 0 6
+:simon/oriental/bush2: 32 4
+:matt/earth/09: 6 0
+:simon/oriental/bush7: 6 6
+$END_TILE_GROUP
+:Group-1: -4 148
+:Group-1: 60 148
+:Group-1: 124 148
+:Group-1: 188 148
+:Group-1: 252 148
+:Group-1: 316 148
+:Group-1: 380 148
+:Group-1: 444 148
+:Group-1: 508 148
+:Group-1: 572 148
+:Group-1: 636 148
+:Group-1: 700 148
+:Group-1: 764 148
+:Group-1: 828 148
+:Group-1: 892 148
+:Group-1: 956 148
+:Group-1: 1020 148
+:Group-1: 1084 148
+:Group-1: 1148 148
+:Group-1: 1212 148
+:Group-1: 1276 148
+:Group-1: 1340 148
+:Group-1: 1404 148
+:Group-1: 1468 148
+:Group-1: 1532 148
+:Group-1: 1910 148 frr
+:Group-1: 1846 148 frr
+:Group-1: 1782 148 frr
+:Group-1: 1718 148 frr
+:Group-1: 1654 148 frr
+:Group-1: 1590 148 frr
+:Group-1: -68 148
+:Group-1: 2294 148 frr
+:Group-1: 2230 148 frr
+:Group-1: 2166 148 frr
+:Group-1: 2102 148 frr
+:Group-1: 2038 148 frr
+:Group-1: 1974 148 frr
+:Group-1: 2678 148 frr
+:Group-1: 2614 148 frr
+:Group-1: 2550 148 frr
+:Group-1: 2486 148 frr
+:Group-1: 2422 148 frr
+:Group-1: 2358 148 frr
+:Group-1: 3062 148 frr
+:Group-1: 2998 148 frr
+:Group-1: 2934 148 frr
+:Group-1: 2870 148 frr
+:Group-1: 2806 148 frr
+:Group-1: 2742 148 frr
+:Group-1: 3126 148 frr
+:matt/underworld/03: 0 136 d
+:matt/underworld/03: 3152 136 d

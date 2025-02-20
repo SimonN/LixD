@@ -1,0 +1,216 @@
+$BUILT 2025-02-09 16:19:43
+$AUTHOR Hyperlodge
+$ENGLISH Devilmen
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1730
+#SIZE_Y 1312
+#BACKGROUND_RED 32
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 48
+
+#SECONDS 80
+#INITIAL 120
+#SPAWN_INTERVAL 50
+
+#RUNNER 50
+#CLIMBER 50
+#FLOATER 50
+#EXPLODER2 50
+#BLOCKER 50
+#BUILDER 200
+#PLATFORMER 50
+#MINER 200
+#JUMPER 50
+#BATTER 50
+
+:raymanni/gore/hatch.H: 80 1152 r
+:raymanni/gore/hatch.H: 1615 1152
+
+:simon/tapir/goal.G: 415 16
+:simon/tapir/goal.G: 1250 16
+
+:raymanni/gore/eater.T: 832 460
+:raymanni/gore/eater.T: 64 1056
+:matt/10tons.T: 838 1184
+:raymanni/gore/eater.T: 1600 1056
+
+:matt/underworld/Lava.W: 818 1264
+:matt/underworld/Lava.W: 770 1264
+:matt/underworld/Lava.W: 722 1264
+:matt/underworld/Lava.W: 674 1264
+:matt/underworld/Lava.W: 626 1264
+:matt/underworld/Lava.W: 578 1264
+:matt/underworld/Lava.W: 530 1264
+:matt/underworld/Lava.W: 482 1264
+:matt/underworld/Lava.W: 434 1264
+:matt/underworld/Lava.W: 386 1264
+:matt/underworld/Lava.W: 338 1264
+:matt/underworld/Lava.W: 290 1264
+:matt/underworld/Lava.W: 242 1264
+:matt/underworld/Lava.W: 194 1264
+:matt/underworld/Lava.W: 146 1264
+:matt/underworld/Lava.W: 98 1264
+:matt/underworld/Lava.W: 50 1264
+:matt/underworld/Lava.W: 1634 1264
+:matt/underworld/Lava.W: 1586 1264
+:matt/underworld/Lava.W: 1538 1264
+:matt/underworld/Lava.W: 1490 1264
+:matt/underworld/Lava.W: 1442 1264
+:matt/underworld/Lava.W: 1394 1264
+:matt/underworld/Lava.W: 1346 1264
+:matt/underworld/Lava.W: 1298 1264
+:matt/underworld/Lava.W: 1250 1264
+:matt/underworld/Lava.W: 1202 1264
+:matt/underworld/Lava.W: 1154 1264
+:matt/underworld/Lava.W: 1106 1264
+:matt/underworld/Lava.W: 1058 1264
+:matt/underworld/Lava.W: 1010 1264
+:matt/underworld/Lava.W: 962 1264
+:matt/underworld/Lava.W: 914 1264
+:matt/underworld/Lava.W: 866 1264
+
+:proxima/flame.F: 639 254
+:proxima/flame.F: 155 271
+:proxima/flame.F: 401 523
+:raymanni/gore/bonesaw.F: 832 1068
+:raymanni/gore/bonesaw.F: 832 780
+:raymanni/gore/bonesaw.F: 832 684
+:raymanni/gore/bonesaw.F: 832 588
+:raymanni/gore/bonesaw.F: 832 876
+:raymanni/gore/bonesaw.F: 832 972
+:proxima/flame.F: 1289 523
+:proxima/flame.F: 1049 254
+:proxima/flame.F: 1533 271
+
+:geoo/construction/steam_up.T: 443 111
+:geoo/construction/steam_up.T: 418 110
+:geoo/construction/steam_up.T: 1270 111
+:geoo/construction/steam_up.T: 1295 110
+
+:matt/underworld/thinplatform128: 863 989 r
+:matt/underworld/02: 832 1100
+:matt/underworld/02: 832 908
+:matt/underworld/02: 832 716
+:matt/underworld/02: 832 524
+:matt/underworld/thinplatform128: 863 797 r
+:matt/underworld/thinplatform128: 863 605 r
+$BEGIN_TILE_GROUP 0
+:raymanni/gore/goop_7: 14 88
+:raymanni/gore/tentacle_3: 0 3 rrr
+:raymanni/gore/blob_4: 86 0 frr
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:matt/underworld/thinplatform128: 737 1256
+:matt/underworld/thinplatform128: 609 1256
+:matt/underworld/thinplatform128: 481 1256
+:matt/underworld/thinplatform128: 353 1256
+:matt/underworld/thinplatform128: 225 1256
+:matt/underworld/thinplatform128: 97 1256
+:matt/underworld/thinplatform128: 481 1224
+:matt/underworld/thinplatform128: 353 1224
+:matt/underworld/thinplatform128: 225 1224
+:matt/underworld/thinplatform128: 97 1224
+:matt/underworld/thinplatform128: 481 1192
+:matt/underworld/thinplatform128: 353 1192
+:matt/underworld/thinplatform128: 225 1192
+:matt/underworld/thinplatform128: 97 1192
+:matt/underworld/thinplatform128: 737 1224
+:matt/underworld/thinplatform128: 609 1224
+:matt/underworld/thinplatform128: 737 1192
+:matt/underworld/thinplatform128: 609 1192
+:raymanni/gore/bone_6: 464 255 frr
+:raymanni/gore/bone_6: 434 256 frr
+:raymanni/gore/bone_6: 406 258 frr
+:raymanni/gore/bone_6: 332 259
+:raymanni/gore/bone_6: 357 262
+:raymanni/gore/bone_6: 384 262
+:raymanni/gore/bone_5: 347 153 f
+:raymanni/gore/bone_6: 316 126 f
+:raymanni/gore/bone_6: 372 143 f
+:raymanni/gore/bone_6: 398 141 rr
+:raymanni/gore/bone_6: 344 0
+:matt/underworld/08: 318 46 fr
+:matt/underworld/04: 410 96 fr
+:raymanni/gore/bone_6: 426 140 rr
+:raymanni/gore/bone_6: 482 137 rr
+:raymanni/gore/bone_6: 490 12 frr
+:matt/underworld/06: 444 60 frr
+:raymanni/gore/bone_5: 446 153 rr
+:raymanni/gore/eye: 476 77 frr
+:raymanni/gore/eye: 381 73 frr
+:raymanni/gore/bone_2: 441 96 frrrd
+:matt/underworld/04: 428 48 frr
+:matt/underworld/05: 337 298 frr
+:matt/underworld/05: 525 82 fr
+:matt/underworld/05: 288 99 frrr
+:matt/underworld/05: 293 197 rrr
+:matt/underworld/05: 504 210 r
+:raymanni/gore/bone_2: 405 96 rrrd
+:matt/underworld/04: 393 42 frr
+:matt/underworld/06: 359 563 rr
+:matt/underworld/07: 416 541 rr
+:matt/underworld/08: 356 408 f
+:matt/underworld/06: 348 886 f
+:matt/underworld/07: 325 823 f
+:matt/underworld/08: 353 732 f
+:matt/underworld/06: 363 637 f
+:matt/underworld/06: 177 1069 f
+:matt/underworld/07: 216 1002 f
+:matt/underworld/08: 254 911 f
+:matt/underworld/06: 486 1095 rr
+:matt/underworld/07: 452 1014 rr
+:matt/underworld/08: 407 924 f
+:raymanni/gore/goop_3: 563 517
+:matt/underworld/05: 453 478 frr
+:matt/underworld/05: 215 490 frr
+:matt/underworld/04: 607 473 frr
+:matt/underworld/04: 183 490 frr
+:matt/underworld/05: 155 357 fr
+:matt/underworld/05: 629 332 frrr
+:matt/underworld/04: 624 294 frr
+:matt/underworld/04: 139 313 frr
+:matt/underworld/05: 543 1132 frr
+:matt/underworld/05: 230 1141
+:matt/underworld/07: 388 843 frr
+:matt/underworld/07: 319 657 fr
+:matt/underworld/08: 275 740 frr
+:matt/underworld/06: 294 836 frr
+:matt/underworld/07: 233 808 f
+:matt/underworld/07: 163 815 f
+:matt/underworld/04: 443 512 frr
+:matt/underworld/04: 342 486 frr
+:matt/underworld/04: 334 611 frr
+:raymanni/gore/goop_6: 196 910 frr
+:raymanni/gore/eye: 429 71 frr
+:raymanni/gore/goop_9: 233 911 frr
+:matt/underworld/04: 154 1114 frr
+:matt/underworld/04: 463 1139 frr
+:matt/underworld/04: 250 982 frr
+:matt/underworld/06: 452 449 rr
+:matt/underworld/06: 295 447 rr
+:matt/underworld/07: 287 522 rr
+:amanda/occult/wax_details_drip: 308 372 frr
+:amanda/occult/wax_details_drip: 513 384 frr
+:matt/underworld/04: 395 365
+:amanda/occult/wax64x48: 396 410 frr
+:amanda/occult/wax32x48_cap_right_soft: 364 408 frr
+:amanda/occult/wax32x48_cap_left_soft: 460 410 frr
+:matt/underworld/04: 392 328 frr
+:matt/underworld/02: 0 1213
+:matt/underworld/02: 0 1117
+:matt/underworld/thinplatform128: 65 1256
+:matt/underworld/thinplatform128: 65 1224
+:matt/underworld/thinplatform128: 65 1192
+:Group-0: 44 848
+:raymanni/gore/goop_6: 189 530 frr
+:raymanni/gore/goop_9: 556 527 frr
+:matt/underworld/01: 64 1117
+:raymanni/gore/blob_5: 438 753
+:raymanni/gore/blob_3: 320 605
+:raymanni/gore/blob_4: 448 621
+:raymanni/gore/bone_5: 364 1131 frrr
+:raymanni/gore/bone_6: 693 1127 frrr
+$END_TILE_GROUP
+:Group-1: 0 5
+:Group-1: 864 5 frr

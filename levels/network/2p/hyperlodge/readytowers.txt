@@ -1,0 +1,173 @@
+$BUILT 2025-02-09 16:58:51
+$AUTHOR Hyperlodge
+$ENGLISH Ready Towers
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 800
+#SIZE_Y 400
+#BACKGROUND_RED 96
+#BACKGROUND_GREEN 152
+#BACKGROUND_BLUE 180
+
+#SECONDS 60
+#INITIAL 200
+#SPAWN_INTERVAL 40
+
+#RUNNER 10
+#CLIMBER 10
+#FLOATER 10
+#EXPLODER2 -1
+#BLOCKER -1
+#BUILDER -1
+#PLATFORMER 10
+#DIGGER 10
+#JUMPER 10
+#BATTER 10
+
+:raymanni/lab/hatch.H: 128 88
+:raymanni/lab/hatch.H: 640 88 r
+:raymanni/lab/hatch.H: 128 136
+:raymanni/lab/hatch.H: 640 136 r
+
+:raymanni/lab/goal.G: 624 182
+:raymanni/lab/goal.G: 112 182
+
+:geoo/construction/sawblade_medium.F: 240 112
+:geoo/construction/sawblade_medium.F: 368 112
+:geoo/construction/sawblade_medium.F: 496 112
+
+:geoo/construction/steam_up.T: 0 280
+:geoo/construction/steam_up.T: 16 280
+:geoo/construction/steam_up.T: 32 280
+:geoo/construction/steam_up.T: 48 280
+:geoo/construction/steam_up.T: 64 280
+:geoo/construction/steam_up.T: 80 280
+:geoo/construction/steam_up.T: 96 280
+:geoo/construction/steam_up.T: 176 280
+:geoo/construction/steam_up.T: 192 280
+:geoo/construction/steam_up.T: 208 280
+:geoo/construction/steam_up.T: 224 280
+:geoo/construction/steam_up.T: 304 280
+:geoo/construction/steam_up.T: 320 280
+:geoo/construction/steam_up.T: 336 280
+:geoo/construction/steam_up.T: 352 280
+:geoo/construction/steam_up.T: 432 280
+:geoo/construction/steam_up.T: 448 280
+:geoo/construction/steam_up.T: 464 280
+:geoo/construction/steam_up.T: 480 280
+:geoo/construction/steam_up.T: 560 280
+:geoo/construction/steam_up.T: 576 280
+:geoo/construction/steam_up.T: 592 280
+:geoo/construction/steam_up.T: 608 280
+:geoo/construction/steam_up.T: 688 280
+:geoo/construction/steam_up.T: 704 280
+:geoo/construction/steam_up.T: 720 280
+:geoo/construction/steam_up.T: 736 280
+:geoo/construction/steam_up.T: 752 280
+:geoo/construction/steam_up.T: 768 280
+:geoo/construction/steam_up.T: 784 280
+:geoo/construction/steam_left.T: 768 264
+:geoo/construction/steam_left.T: 768 248
+:geoo/construction/steam_left.T: 768 232
+:geoo/construction/steam_left.T: 768 216
+:geoo/construction/steam_left.T: 768 200
+:geoo/construction/steam_left.T: 768 184
+:geoo/construction/steam_left.T: 768 168
+:geoo/construction/steam_left.T: 768 152
+:geoo/construction/steam_left.T: 768 136
+:geoo/construction/steam_left.T: 768 120
+:geoo/construction/steam_left.T: 768 104
+:geoo/construction/steam_left.T: 768 88
+:geoo/construction/steam_right.T: 0 88
+:geoo/construction/steam_right.T: 0 104
+:geoo/construction/steam_right.T: 0 120
+:geoo/construction/steam_right.T: 0 136
+:geoo/construction/steam_right.T: 0 152
+:geoo/construction/steam_right.T: 0 168
+:geoo/construction/steam_right.T: 0 184
+:geoo/construction/steam_right.T: 0 200
+:geoo/construction/steam_right.T: 0 216
+:geoo/construction/steam_right.T: 0 232
+:geoo/construction/steam_right.T: 0 248
+:geoo/construction/steam_right.T: 0 264
+:geoo/construction/steam_up.T: 248 280
+:geoo/construction/steam_up.T: 264 280
+:geoo/construction/steam_up.T: 280 280
+:geoo/construction/steam_up.T: 376 280
+:geoo/construction/steam_up.T: 392 280
+:geoo/construction/steam_up.T: 408 280
+:geoo/construction/steam_up.T: 504 280
+:geoo/construction/steam_up.T: 520 280
+:geoo/construction/steam_up.T: 536 280
+
+:geoo/construction/wall/small_64x64: 112 216
+:geoo/construction/wall/small_64x64: 112 152
+:geoo/construction/wall/small_64x64: 112 88
+:geoo/construction/wall/small_64x64: 240 216
+:geoo/construction/wall/small_64x64: 240 152
+:geoo/construction/wall/small_64x64: 240 88
+:geoo/construction/wall/small_64x64: 368 216
+:geoo/construction/wall/small_64x64: 368 152
+:geoo/construction/wall/small_64x64: 368 88
+:geoo/construction/wall/small_64x64: 496 216
+:geoo/construction/wall/small_64x64: 496 152
+:geoo/construction/wall/small_64x64: 496 88
+:geoo/construction/wall/small_64x64: 624 216
+:geoo/construction/wall/small_64x64: 624 152
+:geoo/construction/wall/small_64x64: 624 88
+:amanda/steel/steel8x16.S: 112 280
+:amanda/steel/steel8x16.S: 168 280
+:amanda/steel/steel8x16.S: 240 280
+:amanda/steel/steel8x16.S: 296 280
+:amanda/steel/steel8x16.S: 368 280
+:amanda/steel/steel8x16.S: 424 280
+:amanda/steel/steel8x16.S: 496 280
+:amanda/steel/steel8x16.S: 552 280
+:amanda/steel/steel8x16.S: 624 280
+:amanda/steel/steel8x16.S: 680 280
+:amanda/steel/steel8x16.S: 112 296
+:amanda/steel/steel8x16.S: 168 296
+:amanda/steel/steel8x16.S: 240 296
+:amanda/steel/steel8x16.S: 296 296
+$BEGIN_TILE_GROUP 0
+:matt/earth/05: 120 6 fr
+:simon/oriental/bush4: 238 0
+:matt/earth/05: 2 4 r
+:simon/oriental/bush4: 152 0 frr
+:simon/oriental/bush4: 80 0 frr
+:simon/oriental/bush4: 0 0 frr
+:matt/earth/05: 120 44 rrr
+:matt/earth/05: 2 46 frrr
+:simon/oriental/bush2: 316 4
+$END_TILE_GROUP
+:Group-0: 44 304 frr
+:amanda/steel/steel8x16.S: 368 296
+:amanda/steel/steel8x16.S: 424 296
+:amanda/steel/steel8x16.S: 496 296
+:amanda/steel/steel8x16.S: 552 296
+:Group-0: 396 304
+:amanda/steel/steel8x16.S: 624 296
+:amanda/steel/steel8x16.S: 680 296
+:geoo/shadow/door: 128 232
+:geoo/shadow/door: 128 216
+:geoo/shadow/door: 640 232
+:amanda/steel/steel24x8.S: 644 272
+:geoo/shadow/door: 640 216
+:geoo/shadow/door: 512 232
+:geoo/shadow/door: 512 216
+:geoo/shadow/door: 256 232
+:geoo/shadow/door: 256 216
+:geoo/shadow/door: 384 232
+:geoo/shadow/door: 384 216
+:amanda/steel/steel24x8.S: 132 272
+:Group-0: -8 304
+:Group-0: 444 304 frr
+:simon/oriental/02b: 256 120 d
+:simon/oriental/02b: 384 120 d
+:simon/oriental/02b: 512 120 d
+:simon/oriental/02b: 632 104 rd
+:simon/oriental/02b: 632 152 rd
+:simon/oriental/02b: 120 152 rd
+:simon/oriental/02b: 120 104 rd
+:matt/beach/decor/beach ball: 128 192 d
+:matt/beach/decor/beach ball: 640 192 d

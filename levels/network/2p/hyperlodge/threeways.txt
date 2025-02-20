@@ -1,0 +1,649 @@
+$BUILT 2025-01-29 10:24:43
+$AUTHOR Hyperlodge
+$ENGLISH Three Ways
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1760
+#SIZE_Y 544
+#BACKGROUND_RED 16
+#BACKGROUND_GREEN 32
+#BACKGROUND_BLUE 48
+
+#SECONDS 93
+#INITIAL 333
+#SPAWN_INTERVAL 33
+
+#WALKER 10
+#RUNNER 10
+#CLIMBER 10
+#FLOATER 10
+#EXPLODER2 -1
+#BLOCKER 100
+#BUILDER 100
+#PLATFORMER 10
+#BASHER 10
+#MINER 10
+#DIGGER 10
+#JUMPER 10
+#BATTER 100
+#CUBER 10
+
+:geoo/sandstone/Hatch.H: 256 144 r
+:geoo/sandstone/Hatch.H: 1408 144
+
+:geoo/sandstone/Goal.G: 1664 472
+:geoo/sandstone/Goal.G: 32 472
+
+:geoo/construction/sawblade_small.F: 520 408
+:geoo/construction/sawblade_small.F: 536 408
+:geoo/construction/sawblade_small.F: 552 408
+:geoo/construction/sawblade_small.F: 568 408
+:geoo/construction/sawblade_small.F: 584 408
+:geoo/construction/sawblade_small.F: 600 408
+:geoo/construction/sawblade_small.F: 616 408
+:geoo/construction/sawblade_small.F: 632 408
+:geoo/construction/sawblade_small.F: 648 408
+:geoo/construction/sawblade_small.F: 664 408
+:geoo/construction/sawblade_small.F: 680 408
+:geoo/construction/sawblade_small.F: 696 408
+:geoo/construction/sawblade_small.F: 712 408
+:geoo/construction/sawblade_small.F: 728 408
+:geoo/construction/sawblade_small.F: 744 408
+:geoo/construction/sawblade_small.F: 760 408
+:geoo/construction/sawblade_small.F: 776 408
+:geoo/construction/sawblade_small.F: 792 408
+:geoo/construction/sawblade_small.F: 808 408
+:geoo/construction/sawblade_small.F: 824 408
+:geoo/construction/sawblade_small.F: 840 408
+:geoo/construction/sawblade_small.F: 856 408
+:geoo/construction/sawblade_small.F: 1208 408
+:geoo/construction/sawblade_small.F: 1192 408
+:geoo/construction/sawblade_small.F: 1176 408
+:geoo/construction/sawblade_small.F: 1160 408
+:geoo/construction/sawblade_small.F: 1144 408
+:geoo/construction/sawblade_small.F: 1128 408
+:geoo/construction/sawblade_small.F: 1112 408
+:geoo/construction/sawblade_small.F: 1096 408
+:geoo/construction/sawblade_small.F: 1080 408
+:geoo/construction/sawblade_small.F: 1064 408
+:geoo/construction/sawblade_small.F: 1048 408
+:geoo/construction/sawblade_small.F: 1032 408
+:geoo/construction/sawblade_small.F: 1016 408
+:geoo/construction/sawblade_small.F: 1000 408
+:geoo/construction/sawblade_small.F: 984 408
+:geoo/construction/sawblade_small.F: 968 408
+:geoo/construction/sawblade_small.F: 952 408
+:geoo/construction/sawblade_small.F: 936 408
+:geoo/construction/sawblade_small.F: 920 408
+:geoo/construction/sawblade_small.F: 904 408
+:geoo/construction/sawblade_small.F: 888 408
+:geoo/construction/sawblade_small.F: 872 408
+:raymanni/gore/bonesaw.F: 1272 448
+:raymanni/gore/bonesaw.F: 1224 448
+:raymanni/gore/bonesaw.F: 472 448
+:raymanni/gore/bonesaw.F: 424 448
+:geoo/construction/Laser_hz_64.F: 800 40
+:geoo/construction/Laser_hz_64.F: 896 40
+
+:geoo/sandstone/64x32: 176 320
+:geoo/sandstone/32x32: 160 288
+:geoo/sandstone/32x64: 144 224
+:geoo/sandstone/64x64: 224 352
+:geoo/sandstone/32x32: 112 192
+:geoo/sandstone/64x32: 256 288
+:geoo/sandstone/32x32: 224 256
+:geoo/sandstone/32x64: 208 192
+:geoo/sandstone/64x64: 320 352
+:geoo/sandstone/32x32: 304 320
+:geoo/sandstone/64x32: 128 128
+:geoo/sandstone/64x32: 160 384
+:geoo/sandstone/64x32: 96 384
+:geoo/sandstone/32x32: 96 352
+:geoo/sandstone/32x64: 96 288
+:amanda/steel/steel32x32.S: 96 480
+:amanda/steel/steel32x32.S: 128 480
+:amanda/steel/steel32x32.S: 160 480
+:amanda/steel/steel32x32.S: 192 480
+:amanda/steel/steel32x32.S: 224 480
+:amanda/steel/steel32x32.S: 256 480
+:amanda/steel/steel32x32.S: 288 480
+:amanda/steel/steel32x32.S: 320 480
+:amanda/steel/steel32x32.S: 352 480
+:geoo/sandstone/slopes/16x32rt: 288 320
+:geoo/sandstone/slopes/16x32lb: 192 288
+:geoo/sandstone/slopes/16x32lb: 176 256
+:geoo/sandstone/slopes/16x32lb: 240 224
+:geoo/sandstone/slopes/16x32lb: 320 288
+:geoo/sandstone/slopes/16x32rt: 304 352
+:geoo/sandstone/slopes/16x32rt: 160 320
+:geoo/sandstone/slopes/16x32rt: 144 288
+:geoo/sandstone/slopes/32x32rt: 112 224
+:geoo/sandstone/slopes/32x32rt: 144 160
+:geoo/sandstone/slopes/32x32rt: 176 192
+:geoo/sandstone/slopes/32x32lb: 256 256
+:geoo/sandstone/slopes/16x32rt: 208 256
+:geoo/sandstone/slopes/32x32rt: 224 288
+:geoo/sandstone/slopes/32x32rt: 176 352
+:geoo/sandstone/slopes/32x32lb: 240 320
+:geoo/sandstone/slopes/32x32lb: 144 192
+:geoo/sandstone/16x32: 208 352
+:geoo/sandstone/slopes/32x32lb: 88 256
+:geoo/sandstone/slopes/32x64lb: 128 320
+:geoo/sandstone/slopes/64x32lb: 336 320
+:geoo/sandstone/slopes/16x32lt: 384 352
+:geoo/sandstone/slopes/32x64lb: 544 352
+:geoo/sandstone/slopes/64x32lb: 480 320
+:geoo/sandstone/slopes/16x32lb: 464 288
+:geoo/sandstone/slopes/32x32lb: 432 256
+:geoo/sandstone/slopes/32x32lb: 400 224
+:geoo/sandstone/slopes/32x16lb: 368 464
+:geoo/sandstone/slopes/32x64lb: 336 128
+:geoo/sandstone/32x32: 432 288
+:geoo/sandstone/64x32: 416 320
+:geoo/sandstone/slopes/16x32rt: 400 320
+:geoo/sandstone/64x64: 448 352
+:geoo/sandstone/slopes/32x64rt: 416 352
+:geoo/sandstone/32x64: 512 352
+:geoo/sandstone/32x64: 400 256
+:geoo/sandstone/slopes/32x64rt: 272 192
+:geoo/sandstone/slopes/32x32rt: 304 256
+:geoo/sandstone/32x32: 352 256
+:geoo/sandstone/slopes/32x32rt: 240 128
+:geoo/sandstone/16x32: 384 256
+:geoo/sandstone/slopes/64x32rt: 336 288
+:geoo/sandstone/16x32: 336 256
+:geoo/sandstone/32x32: 368 224
+:geoo/sandstone/slopes/16x32lb: 384 192
+:geoo/sandstone/16x32: 368 192
+:geoo/sandstone/slopes/64x32lb: 288 432
+:geoo/sandstone/32x16: 272 464
+:geoo/sandstone/32x16: 304 464
+:geoo/sandstone/32x16: 336 464
+:amanda/steel/steel32x32.S: 384 480
+:amanda/steel/steel32x32.S: 416 480
+:amanda/steel/steel32x32.S: 448 480
+:amanda/steel/steel32x32.S: 480 480
+:amanda/steel/steel32x32.S: 512 480
+:geoo/sandstone/ebony/h8a: 560 480
+:geoo/sandstone/64x64: 304 192
+:geoo/sandstone/slopes/16x32rt: 80 368
+:geoo/sandstone/pillar_bottom_ext: 448 464
+:geoo/sandstone/pillar_top: 464 432
+:geoo/sandstone/ebony/h8a: 496 420
+:geoo/sandstone/pillar_top_ext: 448 416
+:geoo/sandstone/slopes/32x64rb: 32 408 frr
+:geoo/sandstone/ebony/h8a: 528 420
+:geoo/sandstone/ebony/h8a: 560 420
+:geoo/sandstone/ebony/h8a: 592 420
+:geoo/sandstone/ebony/h8a: 624 420
+:geoo/sandstone/ebony/h8a: 656 420
+:geoo/sandstone/ebony/h8a: 688 420
+:geoo/sandstone/ebony/h8a: 720 420
+:geoo/sandstone/ebony/h8a: 752 420
+:geoo/sandstone/ebony/h8a: 784 420
+:geoo/sandstone/ebony/h8a: 816 420
+:geoo/sandstone/ebony/h8a: 848 420
+:amanda/steel/steel24x8.S: 0 536
+:amanda/steel/steel8x16.S: 0 520
+:amanda/steel/steel8x16.S: 0 504
+:amanda/steel/steel8x16.S: 0 488
+:amanda/steel/steel8x16.S: 0 472
+:amanda/steel/steel8x16.S: 0 456
+:amanda/steel/steel8x16.S: 0 440
+:amanda/steel/steel8x16.S: 0 424
+:amanda/steel/steel8x16.S: 0 400
+:amanda/steel/steel_flange_left24x16.S: 8 416 r
+:amanda/steel/steel8x16.S: 0 384
+:amanda/steel/steel8x16.S: 0 368
+:amanda/steel/steel8x16.S: 0 352
+:amanda/steel/steel8x16.S: 0 336
+:amanda/steel/steel_flange_left24x16.S: 0 304 r
+:amanda/steel/steel8x16.S: 0 320
+:amanda/steel/steel8x16.S: 0 304
+:amanda/steel/steel8x16.S: 0 256
+:amanda/steel/steel8x16.S: 0 240
+:amanda/steel/steel24x8.S: 0 416
+:amanda/steel/steel8x16.S: 0 288
+:amanda/steel/steel8x16.S: 0 272
+:amanda/steel/steel8x16.S: 0 224
+:amanda/steel/steel8x16.S: 0 208
+:amanda/steel/steel8x16.S: 0 112
+:amanda/steel/steel8x16.S: 0 96
+:amanda/steel/steel8x16.S: 0 192
+:amanda/steel/steel8x16.S: 0 136
+:amanda/steel/steel24x8.S: -10 184
+:amanda/steel/steel8x16.S: 0 168
+:amanda/steel/steel8x16.S: 0 152
+:geoo/sandstone/ebony/h8a: 0 128
+:geoo/sandstone/ebony/h8a: 32 128
+:geoo/sandstone/ebony/h8a: 64 128
+:geoo/sandstone/slopes/16x32rt: 96 192
+:geoo/sandstone/ebony/h8a: 592 480
+:geoo/sandstone/ebony/h8a: 624 480
+:geoo/sandstone/ebony/h8a: 560 504
+:geoo/sandstone/ebony/h8a: 592 504
+:geoo/sandstone/ebony/h8a: 624 504
+:geoo/sandstone/ebony/h8a: 656 480
+:geoo/sandstone/ebony/h8a: 688 480
+:geoo/sandstone/ebony/h8a: 720 480
+:geoo/sandstone/ebony/h8a: 656 504
+:geoo/sandstone/ebony/h8a: 688 504
+:geoo/sandstone/ebony/h8a: 720 504
+:geoo/sandstone/ebony/h8a: 752 480
+:geoo/sandstone/ebony/h8a: 784 480
+:geoo/sandstone/ebony/h8a: 816 480
+:geoo/sandstone/ebony/h8a: 752 504
+:geoo/sandstone/ebony/h8a: 784 504
+:geoo/sandstone/ebony/h8a: 816 504
+:geoo/sandstone/ebony/h8a: 848 480
+:geoo/sandstone/ebony/h8a: 848 504
+:geoo/sandstone/ebony/h8a: 560 492
+:amanda/steel/steel32x32.S: 544 480
+:geoo/sandstone/ebony/h8a: 592 492
+:geoo/sandstone/ebony/h8a: 624 492
+:geoo/sandstone/ebony/h8a: 656 492
+:geoo/sandstone/ebony/h8a: 688 492
+:geoo/sandstone/ebony/h8a: 720 492
+:geoo/sandstone/ebony/h8a: 752 492
+:geoo/sandstone/ebony/h8a: 784 492
+:geoo/sandstone/ebony/h8a: 816 492
+:geoo/sandstone/ebony/h8a: 848 492
+:amanda/steel/steel24x8.S: 12 80
+:amanda/steel/steel24x8.S: 36 80
+:amanda/steel/steel24x8.S: 60 80
+:amanda/steel/steel8x16.S: 0 80
+:amanda/steel/steel24x8.S: 12 136
+:amanda/steel/steel24x8.S: 36 136
+:amanda/steel/steel24x8.S: 60 136
+:geoo/sandstone/ebony/h8a: 12 120
+:geoo/sandstone/ebony/h8a: 44 120
+:geoo/sandstone/ebony/h8a: 12 112
+:amanda/steel/steel24x8.S: 24 144
+:amanda/steel/steel24x8.S: 48 144
+:amanda/steel/steel24x8.S: 36 152
+:amanda/steel/steel24x8.S: 84 80
+:amanda/steel/steel24x8.S: 108 80
+:amanda/steel/steel24x8.S: 132 80
+:amanda/steel/steel24x8.S: 156 80
+:amanda/steel/steel24x8.S: 180 80
+:amanda/steel/steel24x8.S: 204 80
+:amanda/steel/steel24x8.S: 228 80
+:amanda/steel/steel24x8.S: 252 80
+:amanda/steel/steel24x8.S: 276 80
+:amanda/steel/steel24x8.S: 300 80
+:amanda/steel/steel24x8.S: 324 80
+:amanda/steel/steel24x8.S: 348 80
+:amanda/steel/steel24x8.S: 372 80
+:amanda/steel/steel24x8.S: 396 80
+:amanda/steel/steel24x8.S: 420 80
+:amanda/steel/steel24x8.S: 444 80
+:amanda/steel/steel24x8.S: 468 80
+:amanda/steel/steel24x8.S: 492 80
+:amanda/steel/steel24x8.S: 516 80
+:amanda/steel/steel24x8.S: 540 80
+:amanda/steel/steel24x8.S: 564 80
+:amanda/steel/steel24x8.S: 588 80
+:amanda/steel/steel24x8.S: 612 80
+:amanda/steel/steel24x8.S: 636 80
+:amanda/steel/steel_flange_left24x16.S: 96 528
+:amanda/steel/steel24x8.S: 112 536
+:amanda/steel/steel24x8.S: 136 536
+:amanda/steel/steel24x8.S: 160 536
+:amanda/steel/steel24x8.S: 184 536
+:amanda/steel/steel24x8.S: 208 536
+:amanda/steel/steel24x8.S: 232 536
+:amanda/steel/steel24x8.S: 256 536
+:amanda/steel/steel24x8.S: 280 536
+:amanda/steel/steel24x8.S: 304 536
+:amanda/steel/steel24x8.S: 328 536
+:amanda/steel/steel24x8.S: 352 536
+:amanda/steel/steel24x8.S: 376 536
+:amanda/steel/steel24x8.S: 400 536
+:amanda/steel/steel24x8.S: 424 536
+:amanda/steel/steel24x8.S: 448 536
+:amanda/steel/steel24x8.S: 472 536
+:amanda/steel/steel24x8.S: 496 536
+:amanda/steel/steel24x8.S: 520 536
+:amanda/steel/steel_flange_left24x16.S: 552 528 frr
+:amanda/steel/steel24x8.S: 544 536
+:amanda/steel/steel24x8.S: 568 536
+:amanda/steel/steel24x8.S: 592 536
+:amanda/steel/steel24x8.S: 616 536
+:amanda/steel/steel24x8.S: 640 536
+:amanda/steel/steel24x8.S: 664 536
+:amanda/steel/steel24x8.S: 688 536
+:amanda/steel/steel24x8.S: 712 536
+:amanda/steel/steel24x8.S: 736 536
+:amanda/steel/steel24x8.S: 760 536
+:amanda/steel/steel24x8.S: 784 536
+:amanda/steel/steel24x8.S: 808 536
+:amanda/steel/steel24x8.S: 832 536
+:amanda/steel/steel24x8.S: 856 536
+:geoo/sandstone/ebony/h8a: 720 80
+:geoo/sandstone/ebony/h8a: 752 80
+:geoo/sandstone/ebony/h8a: 784 80
+:geoo/sandstone/ebony/h8a: 816 80
+:geoo/sandstone/ebony/h8a: 848 80
+:amanda/steel/steel24x8.S: 660 80
+:geoo/construction/fence_32x32.S: 96 448
+:geoo/construction/fence_32x32.S: 96 416
+:geoo/sandstone/32x16: 64 456
+:geoo/sandstone/32x16: 32 456
+:geoo/sandstone/32x16: 272 128
+:geoo/sandstone/32x16: 304 128
+:geoo/sandstone/slopes/64x32lt: 352 416
+:geoo/sandstone/slopes/32x32rt: 320 416
+:geoo/sandstone/slopes/32x32lb: 384 384
+:geoo/construction/fence_32x32.S: 128 448
+:geoo/construction/fence_32x32.S: 128 416
+:geoo/construction/fence_32x32.S: 160 448
+:geoo/construction/fence_32x32.S: 160 416
+:geoo/construction/fence_32x32.S: 192 448
+:geoo/construction/fence_32x32.S: 192 416
+:geoo/construction/fence_32x32.S: 224 448
+:geoo/construction/fence_32x32.S: 224 416
+:geoo/sandstone/slopes/16x32rt: 112 128
+:geoo/sandstone/16x32: 176 160
+:geoo/sandstone/slopes/32x64lb: 192 112
+:geoo/sandstone/32x16: 192 176
+:geoo/sandstone/slopes/32x16rb: 160 112
+:geoo/sandstone/slopes/32x16rb: 240 112
+:amanda/steel/steel24x8.S: 24 536
+:amanda/steel/steel24x8.S: 48 536
+:amanda/steel/steel24x8.S: 72 536
+:geoo/sandstone/64x32: 1520 320 frr
+:geoo/sandstone/32x32: 1568 288 frr
+:geoo/sandstone/32x64: 1584 224 frr
+:geoo/sandstone/64x64: 1472 352 frr
+:geoo/sandstone/32x32: 1616 192 frr
+:geoo/sandstone/64x32: 1440 288 frr
+:geoo/sandstone/32x32: 1504 256 frr
+:geoo/sandstone/32x64: 1520 192 frr
+:geoo/sandstone/64x64: 1376 352 frr
+:geoo/sandstone/32x32: 1424 320 frr
+:geoo/sandstone/64x32: 1568 128 frr
+:geoo/sandstone/64x32: 1536 384 frr
+:geoo/sandstone/64x32: 1600 384 frr
+:geoo/sandstone/32x32: 1632 352 frr
+:geoo/sandstone/32x64: 1632 288 frr
+:amanda/steel/steel32x32.S: 1632 480 frr
+:amanda/steel/steel32x32.S: 1600 480 frr
+:amanda/steel/steel32x32.S: 1568 480 frr
+:amanda/steel/steel32x32.S: 1536 480 frr
+:amanda/steel/steel32x32.S: 1504 480 frr
+:amanda/steel/steel32x32.S: 1472 480 frr
+:amanda/steel/steel32x32.S: 1440 480 frr
+:amanda/steel/steel32x32.S: 1408 480 frr
+:amanda/steel/steel32x32.S: 1376 480 frr
+:geoo/sandstone/slopes/16x32rt: 1456 320 frr
+:geoo/sandstone/slopes/16x32lb: 1552 288 frr
+:geoo/sandstone/slopes/16x32lb: 1568 256 frr
+:geoo/sandstone/slopes/16x32lb: 1504 224 frr
+:geoo/sandstone/slopes/16x32lb: 1424 288 frr
+:geoo/sandstone/slopes/16x32rt: 1440 352 frr
+:geoo/sandstone/slopes/16x32rt: 1584 320 frr
+:geoo/sandstone/slopes/16x32rt: 1600 288 frr
+:geoo/sandstone/slopes/32x32rt: 1616 224 frr
+:geoo/sandstone/slopes/32x32rt: 1584 160 frr
+:geoo/sandstone/slopes/32x32rt: 1552 192 frr
+:geoo/sandstone/slopes/32x32lb: 1472 256 frr
+:geoo/sandstone/slopes/16x32rt: 1536 256 frr
+:geoo/sandstone/slopes/32x32rt: 1504 288 frr
+:geoo/sandstone/slopes/32x32rt: 1552 352 frr
+:geoo/sandstone/slopes/32x32lb: 1488 320 frr
+:geoo/sandstone/slopes/32x32lb: 1584 192 frr
+:geoo/sandstone/16x32: 1536 352 frr
+:geoo/sandstone/slopes/32x32lb: 1640 256 frr
+:geoo/sandstone/slopes/32x64lb: 1600 320 frr
+:geoo/sandstone/slopes/64x32lb: 1360 320 frr
+:geoo/sandstone/slopes/16x32lt: 1360 352 frr
+:geoo/sandstone/slopes/32x64lb: 1184 352 frr
+:geoo/sandstone/slopes/64x32lb: 1216 320 frr
+:geoo/sandstone/slopes/16x32lb: 1280 288 frr
+:geoo/sandstone/slopes/32x32lb: 1296 256 frr
+:geoo/sandstone/slopes/32x32lb: 1328 224 frr
+:geoo/sandstone/slopes/32x16lb: 1360 464 frr
+:geoo/sandstone/slopes/32x64lb: 1392 128 frr
+:geoo/sandstone/32x32: 1296 288 frr
+:geoo/sandstone/64x32: 1280 320 frr
+:geoo/sandstone/slopes/16x32rt: 1344 320 frr
+:geoo/sandstone/64x64: 1248 352 frr
+:geoo/sandstone/slopes/32x64rt: 1312 352 frr
+:geoo/sandstone/32x64: 1216 352 frr
+:geoo/sandstone/32x64: 1328 256 frr
+:geoo/sandstone/slopes/32x64rt: 1456 192 frr
+:geoo/sandstone/slopes/32x32rt: 1424 256 frr
+:geoo/sandstone/32x32: 1376 256 frr
+:geoo/sandstone/slopes/32x32rt: 1488 128 frr
+:geoo/sandstone/16x32: 1360 256 frr
+:geoo/sandstone/slopes/64x32rt: 1360 288 frr
+:geoo/sandstone/16x32: 1408 256 frr
+:geoo/sandstone/32x32: 1360 224 frr
+:geoo/sandstone/slopes/16x32lb: 1360 192 frr
+:geoo/sandstone/16x32: 1376 192 frr
+:geoo/sandstone/slopes/64x32lb: 1408 432 frr
+:geoo/sandstone/32x16: 1456 464 frr
+:geoo/sandstone/32x16: 1424 464 frr
+:geoo/sandstone/32x16: 1392 464 frr
+:amanda/steel/steel32x32.S: 1344 480 frr
+:amanda/steel/steel32x32.S: 1312 480 frr
+:amanda/steel/steel32x32.S: 1280 480 frr
+:amanda/steel/steel32x32.S: 1248 480 frr
+:amanda/steel/steel32x32.S: 1216 480 frr
+:geoo/sandstone/ebony/h8a: 1168 480 frr
+:geoo/sandstone/64x64: 1392 192 frr
+:geoo/sandstone/slopes/16x32rt: 1664 368 frr
+:geoo/sandstone/pillar_bottom_ext: 1248 464 frr
+:geoo/sandstone/pillar_top: 1264 432 frr
+:geoo/sandstone/ebony/h8a: 1232 420 frr
+:geoo/sandstone/pillar_top_ext: 1248 416 frr
+:geoo/sandstone/slopes/32x64rb: 1696 408
+:geoo/sandstone/ebony/h8a: 1200 420 frr
+:geoo/sandstone/ebony/h8a: 1168 420 frr
+:geoo/sandstone/ebony/h8a: 1136 420 frr
+:geoo/sandstone/ebony/h8a: 1104 420 frr
+:geoo/sandstone/ebony/h8a: 1072 420 frr
+:geoo/sandstone/ebony/h8a: 1040 420 frr
+:geoo/sandstone/ebony/h8a: 1008 420 frr
+:geoo/sandstone/ebony/h8a: 976 420 frr
+:geoo/sandstone/ebony/h8a: 944 420 frr
+:geoo/sandstone/ebony/h8a: 912 420 frr
+:geoo/sandstone/ebony/h8a: 880 420 frr
+:amanda/steel/steel24x8.S: 1736 536 frr
+:amanda/steel/steel8x16.S: 1752 520 frr
+:amanda/steel/steel8x16.S: 1752 504 frr
+:amanda/steel/steel8x16.S: 1752 488 frr
+:amanda/steel/steel8x16.S: 1752 472 frr
+:amanda/steel/steel8x16.S: 1752 456 frr
+:amanda/steel/steel8x16.S: 1752 440 frr
+:amanda/steel/steel8x16.S: 1752 424 frr
+:amanda/steel/steel8x16.S: 1752 400 frr
+:amanda/steel/steel_flange_left24x16.S: 1736 416 fr
+:amanda/steel/steel8x16.S: 1752 384 frr
+:amanda/steel/steel8x16.S: 1752 368 frr
+:amanda/steel/steel8x16.S: 1752 352 frr
+:amanda/steel/steel8x16.S: 1752 336 frr
+:amanda/steel/steel_flange_left24x16.S: 1744 304 fr
+:amanda/steel/steel8x16.S: 1752 320 frr
+:amanda/steel/steel8x16.S: 1752 304 frr
+:amanda/steel/steel8x16.S: 1752 256 frr
+:amanda/steel/steel8x16.S: 1752 240 frr
+:amanda/steel/steel24x8.S: 1736 416 frr
+:amanda/steel/steel8x16.S: 1752 288 frr
+:amanda/steel/steel8x16.S: 1752 272 frr
+:amanda/steel/steel8x16.S: 1752 224 frr
+:amanda/steel/steel8x16.S: 1752 208 frr
+:amanda/steel/steel8x16.S: 1752 112 frr
+:amanda/steel/steel8x16.S: 1752 96 frr
+:amanda/steel/steel8x16.S: 1752 192 frr
+:amanda/steel/steel8x16.S: 1752 136 frr
+:amanda/steel/steel24x8.S: 1746 184 frr
+:amanda/steel/steel8x16.S: 1752 168 frr
+:amanda/steel/steel8x16.S: 1752 152 frr
+:geoo/sandstone/ebony/h8a: 1728 128 frr
+:geoo/sandstone/ebony/h8a: 1696 128 frr
+:geoo/sandstone/ebony/h8a: 1664 128 frr
+:geoo/sandstone/slopes/16x32rt: 1648 192 frr
+:geoo/sandstone/ebony/h8a: 1136 480 frr
+:geoo/sandstone/ebony/h8a: 1104 480 frr
+:geoo/sandstone/ebony/h8a: 1168 504 frr
+:geoo/sandstone/ebony/h8a: 1136 504 frr
+:geoo/sandstone/ebony/h8a: 1104 504 frr
+:geoo/sandstone/ebony/h8a: 1072 480 frr
+:geoo/sandstone/ebony/h8a: 1040 480 frr
+:geoo/sandstone/ebony/h8a: 1008 480 frr
+:geoo/sandstone/ebony/h8a: 1072 504 frr
+:geoo/sandstone/ebony/h8a: 1040 504 frr
+:geoo/sandstone/ebony/h8a: 1008 504 frr
+:geoo/sandstone/ebony/h8a: 976 480 frr
+:geoo/sandstone/ebony/h8a: 944 480 frr
+:geoo/sandstone/ebony/h8a: 912 480 frr
+:geoo/sandstone/ebony/h8a: 976 504 frr
+:geoo/sandstone/ebony/h8a: 944 504 frr
+:geoo/sandstone/ebony/h8a: 912 504 frr
+:geoo/sandstone/ebony/h8a: 880 480 frr
+:geoo/sandstone/ebony/h8a: 880 504 frr
+:geoo/sandstone/ebony/h8a: 1168 492 frr
+:amanda/steel/steel32x32.S: 1184 480 frr
+:geoo/sandstone/ebony/h8a: 1136 492 frr
+:geoo/sandstone/ebony/h8a: 1104 492 frr
+:geoo/sandstone/ebony/h8a: 1072 492 frr
+:geoo/sandstone/ebony/h8a: 1040 492 frr
+:geoo/sandstone/ebony/h8a: 1008 492 frr
+:geoo/sandstone/ebony/h8a: 976 492 frr
+:geoo/sandstone/ebony/h8a: 944 492 frr
+:geoo/sandstone/ebony/h8a: 912 492 frr
+:geoo/sandstone/ebony/h8a: 880 492 frr
+:amanda/steel/steel24x8.S: 1724 80 frr
+:amanda/steel/steel24x8.S: 1700 80 frr
+:amanda/steel/steel24x8.S: 1676 80 frr
+:amanda/steel/steel8x16.S: 1752 80 frr
+:amanda/steel/steel24x8.S: 1724 136 frr
+:amanda/steel/steel24x8.S: 1700 136 frr
+:amanda/steel/steel24x8.S: 1676 136 frr
+:geoo/sandstone/ebony/h8a: 1716 120 frr
+:geoo/sandstone/ebony/h8a: 1684 120 frr
+:geoo/sandstone/ebony/h8a: 1716 112 frr
+:amanda/steel/steel24x8.S: 1712 144 frr
+:amanda/steel/steel24x8.S: 1688 144 frr
+:amanda/steel/steel24x8.S: 1700 152 frr
+:amanda/steel/steel24x8.S: 1652 80 frr
+:amanda/steel/steel24x8.S: 1628 80 frr
+:amanda/steel/steel24x8.S: 1604 80 frr
+:amanda/steel/steel24x8.S: 1580 80 frr
+:amanda/steel/steel24x8.S: 1556 80 frr
+:amanda/steel/steel24x8.S: 1532 80 frr
+:amanda/steel/steel24x8.S: 1508 80 frr
+:amanda/steel/steel24x8.S: 1484 80 frr
+:amanda/steel/steel24x8.S: 1460 80 frr
+:amanda/steel/steel24x8.S: 1436 80 frr
+:amanda/steel/steel24x8.S: 1412 80 frr
+:amanda/steel/steel24x8.S: 1388 80 frr
+:amanda/steel/steel24x8.S: 1364 80 frr
+:amanda/steel/steel24x8.S: 1340 80 frr
+:amanda/steel/steel24x8.S: 1316 80 frr
+:amanda/steel/steel24x8.S: 1292 80 frr
+:amanda/steel/steel24x8.S: 1268 80 frr
+:amanda/steel/steel24x8.S: 1244 80 frr
+:amanda/steel/steel24x8.S: 1220 80 frr
+:amanda/steel/steel24x8.S: 1196 80 frr
+:amanda/steel/steel24x8.S: 1172 80 frr
+:amanda/steel/steel24x8.S: 1148 80 frr
+:amanda/steel/steel24x8.S: 1124 80 frr
+:amanda/steel/steel24x8.S: 1100 80 frr
+:amanda/steel/steel_flange_left24x16.S: 1640 528 frr
+:amanda/steel/steel24x8.S: 1624 536 frr
+:amanda/steel/steel24x8.S: 1600 536 frr
+:amanda/steel/steel24x8.S: 1576 536 frr
+:amanda/steel/steel24x8.S: 1552 536 frr
+:amanda/steel/steel24x8.S: 1528 536 frr
+:amanda/steel/steel24x8.S: 1504 536 frr
+:amanda/steel/steel24x8.S: 1480 536 frr
+:amanda/steel/steel24x8.S: 1456 536 frr
+:amanda/steel/steel24x8.S: 1432 536 frr
+:amanda/steel/steel24x8.S: 1408 536 frr
+:amanda/steel/steel24x8.S: 1384 536 frr
+:amanda/steel/steel24x8.S: 1360 536 frr
+:amanda/steel/steel24x8.S: 1336 536 frr
+:amanda/steel/steel24x8.S: 1312 536 frr
+:amanda/steel/steel24x8.S: 1288 536 frr
+:amanda/steel/steel24x8.S: 1264 536 frr
+:amanda/steel/steel24x8.S: 1240 536 frr
+:amanda/steel/steel24x8.S: 1216 536 frr
+:amanda/steel/steel_flange_left24x16.S: 1184 528
+:amanda/steel/steel24x8.S: 1192 536 frr
+:amanda/steel/steel24x8.S: 1168 536 frr
+:amanda/steel/steel24x8.S: 1144 536 frr
+:amanda/steel/steel24x8.S: 1120 536 frr
+:amanda/steel/steel24x8.S: 1096 536 frr
+:amanda/steel/steel24x8.S: 1072 536 frr
+:amanda/steel/steel24x8.S: 1048 536 frr
+:amanda/steel/steel24x8.S: 1024 536 frr
+:amanda/steel/steel24x8.S: 1000 536 frr
+:amanda/steel/steel24x8.S: 976 536 frr
+:amanda/steel/steel24x8.S: 952 536 frr
+:amanda/steel/steel24x8.S: 928 536 frr
+:amanda/steel/steel24x8.S: 904 536 frr
+:amanda/steel/steel24x8.S: 880 536 frr
+:geoo/sandstone/ebony/h8a: 1008 80 frr
+:geoo/sandstone/ebony/h8a: 976 80 frr
+:geoo/sandstone/ebony/h8a: 944 80 frr
+:geoo/sandstone/ebony/h8a: 912 80 frr
+:geoo/sandstone/ebony/h8a: 880 80 frr
+:amanda/steel/steel24x8.S: 1076 80 frr
+:geoo/construction/fence_32x32.S: 1632 448 frr
+:geoo/construction/fence_32x32.S: 1632 416 frr
+:geoo/sandstone/32x16: 1664 456 frr
+:geoo/sandstone/32x16: 1696 456 frr
+:geoo/sandstone/32x16: 1456 128 frr
+:geoo/sandstone/32x16: 1424 128 frr
+:geoo/sandstone/slopes/64x32lt: 1344 416 frr
+:geoo/sandstone/slopes/32x32rt: 1408 416 frr
+:geoo/sandstone/slopes/32x32lb: 1344 384 frr
+:geoo/construction/fence_32x32.S: 1600 448 frr
+:geoo/construction/fence_32x32.S: 1600 416 frr
+:geoo/construction/fence_32x32.S: 1568 448 frr
+:geoo/construction/fence_32x32.S: 1568 416 frr
+:geoo/construction/fence_32x32.S: 1536 448 frr
+:geoo/construction/fence_32x32.S: 1536 416 frr
+:geoo/construction/fence_32x32.S: 1504 448 frr
+:geoo/construction/fence_32x32.S: 1504 416 frr
+:geoo/sandstone/slopes/16x32rt: 1632 128 frr
+:geoo/sandstone/16x32: 1568 160 frr
+:geoo/sandstone/slopes/32x64lb: 1536 112 frr
+:geoo/sandstone/32x16: 1536 176 frr
+:geoo/sandstone/slopes/32x16rb: 1568 112 frr
+:geoo/sandstone/slopes/32x16rb: 1488 112 frr
+:amanda/steel/steel24x8.S: 1712 536 frr
+:amanda/steel/steel24x8.S: 1688 536 frr
+:amanda/steel/steel24x8.S: 1664 536 frr
+:geoo/sandstone/64x64: 1136 16 frr
+:geoo/sandstone/64x64: 1216 16 frr
+:geoo/sandstone/64x64: 1296 16 frr
+:geoo/sandstone/64x64: 1376 16 frr
+:geoo/sandstone/64x64: 1456 16 frr
+:geoo/sandstone/64x64: 1536 16 frr
+:geoo/sandstone/64x64: 1616 16 frr
+:geoo/sandstone/64x64: 1696 16 frr
+:geoo/sandstone/64x64: 1056 16 frr
+:geoo/sandstone/64x64: 80 16 frr
+:geoo/sandstone/64x64: 160 16 frr
+:geoo/sandstone/64x64: 240 16 frr
+:geoo/sandstone/64x64: 320 16 frr
+:geoo/sandstone/64x64: 400 16 frr
+:geoo/sandstone/64x64: 480 16 frr
+:geoo/sandstone/64x64: 560 16 frr
+:geoo/sandstone/64x64: 640 16 frr
+:geoo/sandstone/64x64: 0 16 frr
+:geoo/sandstone/64x64: 720 16 frr
+:geoo/sandstone/64x64: 800 52 frr
+:geoo/sandstone/64x64: 976 16 frr
+:geoo/sandstone/64x64: 896 52 frr
+:geoo/sandstone/ebony/h8a: 864 96
+:geoo/sandstone/ebony/h8a: 864 64
+:amanda/steel/steel24x8.S: 684 80
+:amanda/steel/steel24x8.S: 708 80
+:amanda/steel/steel24x8.S: 1028 80 frr
+:amanda/steel/steel24x8.S: 1052 80 frr
+:geoo/sandstone/slopes/32x32lb: 272 96
+:geoo/sandstone/slopes/32x32lb: 1456 96 frr

@@ -1,0 +1,210 @@
+$BUILT 2025-02-09 15:53:41
+$AUTHOR Hyperlodge
+$ENGLISH Amarcord
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1024
+#SIZE_Y 432
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 48
+#BACKGROUND_BLUE 111
+
+#SECONDS 90
+#INITIAL 101
+#SPAWN_INTERVAL 8
+
+#RUNNER 5
+#CLIMBER 5
+#FLOATER 5
+#EXPLODER2 -1
+#BLOCKER -1
+#BUILDER -1
+#DIGGER -1
+#JUMPER 5
+#BATTER -1
+
+:raymanni/gore/hatch.H: 991 280 r
+:raymanni/gore/hatch.H: -1 280
+
+:geoo/abstract/goal.G: 417 32
+:geoo/abstract/goal.G: 575 32
+
+:geoo/construction/steam_up.T: 976 216
+:geoo/construction/steam_up.T: 32 216
+:geoo/construction/steam_up.T: 16 216
+:geoo/construction/steam_up.T: 0 216
+:geoo/construction/steam_up.T: 992 216
+:geoo/construction/steam_up.T: 1008 216
+:geoo/construction/steam_up.T: 392 48
+:geoo/construction/steam_up.T: 616 48
+:raymanni/lab/launcher_left.T: 352 144
+:raymanni/lab/launcher_left.T: 352 112
+:raymanni/lab/launcher_right.T: 640 112
+:raymanni/lab/launcher_right.T: 640 144
+
+:geoo/steel/silhouette_64x32.S: 448 400
+:geoo/steel/silhouette_64x32.S: 64 400
+:geoo/steel/silhouette_64x32.S: 0 400
+:geoo/steel/silhouette_64x32.S: 608 80 fr
+:geoo/steel/silhouette_64x32.S: 576 400
+:geoo/steel/silhouette_64x32.S: 512 400
+:proxima/tile/orange1a: 496 128 r
+:geoo/steel/silhouette_64x32.S: 0 248
+:geoo/steel/silhouette_64x32.S: 64 248
+:geoo/steel/silhouette_64x32.S: 128 248
+:geoo/steel/silhouette_64x32.S: 192 248
+:geoo/steel/silhouette_64x32.S: 256 248
+:geoo/steel/silhouette_64x32.S: 320 248
+:geoo/steel/silhouette_64x32.S: 384 248
+:geoo/steel/silhouette_64x32.S: 608 144 fr
+:geoo/steel/silhouette_64x32.S: 416 176
+:geoo/steel/silhouette_64x32.S: 480 176
+:geoo/steel/silhouette_64x32.S: 544 176
+:geoo/steel/silhouette_64x32.S: 384 80 r
+:geoo/steel/silhouette_64x32.S: 384 144 r
+:geoo/steel/silhouette_64x32.S: 96 336 r
+:geoo/construction/wall/small_64x32: 128 384
+:geoo/construction/wall/small_64x32: 192 384
+:geoo/construction/wall/small_64x32: 256 384
+:geoo/construction/wall/small_64x32: 320 384
+:geoo/construction/wall/small_64x32: 384 384
+:geoo/construction/wall/small_brick1: 128 416
+:geoo/construction/wall/small_brick1: 160 416
+:geoo/construction/wall/small_brick1: 192 416
+:geoo/construction/wall/small_brick1: 224 416
+:geoo/construction/wall/small_brick1: 256 416
+:geoo/construction/wall/small_brick1: 288 416
+:geoo/construction/wall/small_brick1: 320 416
+:geoo/construction/wall/small_brick1: 352 416
+:geoo/construction/wall/small_brick1: 384 416
+:geoo/construction/wall/small_brick1: 416 416
+:geoo/steel/silhouette_64x32.S: 896 400 frr
+:geoo/steel/silhouette_64x32.S: 960 400 frr
+:geoo/steel/silhouette_64x32.S: 960 248 frr
+:geoo/steel/silhouette_64x32.S: 896 248 frr
+:geoo/steel/silhouette_64x32.S: 832 248 frr
+:geoo/steel/silhouette_64x32.S: 768 248 frr
+:geoo/steel/silhouette_64x32.S: 704 248 frr
+:geoo/steel/silhouette_64x32.S: 640 248 frr
+:geoo/steel/silhouette_64x32.S: 576 248 frr
+:geoo/steel/silhouette_64x32.S: 896 336 fr
+:geoo/construction/wall/small_64x32: 832 384 frr
+:geoo/construction/wall/small_64x32: 768 384 frr
+:geoo/construction/wall/small_64x32: 704 384 frr
+:geoo/construction/wall/small_64x32: 640 384 frr
+:geoo/construction/wall/small_64x32: 576 384 frr
+:geoo/construction/wall/small_brick1: 864 416 frr
+:geoo/construction/wall/small_brick1: 832 416 frr
+:geoo/construction/wall/small_brick1: 800 416 frr
+:geoo/construction/wall/small_brick1: 768 416 frr
+:geoo/construction/wall/small_brick1: 736 416 frr
+:geoo/construction/wall/small_brick1: 704 416 frr
+:geoo/construction/wall/small_brick1: 672 416 frr
+:geoo/construction/wall/small_brick1: 608 416 frr
+:geoo/construction/wall/small_brick1: 576 416 frr
+:geoo/steel/silhouette_64x32.S: 720 96
+:geoo/steel/silhouette_64x32.S: 784 96
+:geoo/steel/silhouette_64x32.S: 848 96
+:geoo/steel/silhouette_64x32.S: 912 96
+:geoo/steel/silhouette_64x32.S: 272 128 fr
+:geoo/steel/silhouette_64x32.S: 240 96 frr
+:geoo/steel/silhouette_64x32.S: 176 96 frr
+:geoo/steel/silhouette_64x32.S: 112 96 frr
+:geoo/steel/silhouette_64x32.S: 48 96 frr
+:geoo/steel/silhouette_64x32.S: 720 128 r
+:geoo/construction/wall/small_64x64: 0 0
+:geoo/construction/wall/small_64x64: 64 0
+:geoo/construction/wall/small_64x64: 128 0
+:geoo/construction/wall/small_64x64: 192 0
+:geoo/construction/wall/small_64x64: 256 0
+:geoo/construction/wall/small_64x64: 704 0
+:geoo/construction/wall/small_64x64: 768 0
+:geoo/construction/wall/small_64x64: 832 0
+:geoo/construction/wall/small_64x64: 896 0
+:geoo/construction/wall/small_64x64: 960 0
+:geoo/construction/wall/small_brickdiag_bu: 352 0
+:geoo/construction/wall/small_brickdiag_bd: 640 0
+:geoo/construction/wall/small_brick1: 320 0
+:geoo/construction/wall/small_brick1: 672 0
+:geoo/construction/wall/small_brickdiag_bd: 656 16
+:geoo/construction/wall/small_brickdiag_bd: 672 32
+:geoo/construction/wall/small_brickdiag_bd: 688 48
+:geoo/construction/wall/small_brickdiag_bu: 336 16
+:geoo/construction/wall/small_brickdiag_bu: 320 32
+:geoo/construction/wall/small_brickdiag_bu: 304 48
+:geoo/construction/wall/small_brick1: 304 16
+:geoo/construction/wall/small_brick1: 688 16
+:geoo/construction/squarebrick_large: 992 368
+:geoo/construction/squarebrick_large: 0 368
+:geoo/construction/wall/big_diag_td: 0 336
+:geoo/construction/wall/big_diag_tu: 992 336
+:geoo/construction/wall/small_brick1: 640 416 frr
+:proxima/tile/green2s: 420 144
+:proxima/tile/green2s: 420 112
+$BEGIN_TILE_GROUP 0
+:proxima/tile/green2s: 0 32
+:proxima/tile/green2s: 0 0
+$END_TILE_GROUP
+:Group-0: 402 320
+:Group-0: 364 320
+:Group-0: 324 320
+:Group-0: 290 320
+:Group-0: 252 320
+:Group-0: 208 320
+:Group-0: 172 320
+:Group-0: 132 320
+:Group-0: 464 336
+:proxima/tile/pink5s: 272 216
+:proxima/tile/pink5s: 210 216
+:proxima/tile/pink5s: 160 216
+:proxima/tile/pink5s: 128 216
+:proxima/tile/pink5s: 160 184
+:proxima/tile/pink5s: 128 184
+:proxima/tile/blue2bs: 50 368 frr
+:proxima/tile/pink5s: 80 216
+:proxima/tile/pink5s: 48 216
+:proxima/tile/pink5s: 80 184
+:proxima/tile/pink5s: 48 184
+:proxima/tile/pink5s: 48 152
+:proxima/tile/pink1a: 456 160
+:proxima/tile/orange2s: 496 144
+:proxima/tile/orange3a: 410 48
+:proxima/tile/orange3a: 442 48
+:proxima/tile/orange3a: 472 48
+:proxima/tile/orange3a: 504 48
+:proxima/tile/orange3a: 530 48
+:proxima/tile/orange3a: 554 48
+:proxima/tile/orange3a: 582 48
+:proxima/tile/orange3a: 582 32 rr
+:proxima/tile/orange3a: 550 32 rr
+:proxima/tile/orange3a: 524 32 rr
+:proxima/tile/orange3a: 492 32 rr
+:proxima/tile/orange3a: 460 32 rr
+:proxima/tile/orange3a: 438 32 rr
+:proxima/tile/orange3a: 410 32 rr
+:proxima/tile/green2s: 572 144 frr
+:proxima/tile/green2s: 572 112 frr
+:Group-0: 590 320 frr
+:Group-0: 628 320 frr
+:Group-0: 668 320 frr
+:Group-0: 702 320 frr
+:Group-0: 740 320 frr
+:Group-0: 784 320 frr
+:Group-0: 820 320 frr
+:Group-0: 860 320 frr
+:Group-0: 528 336 frr
+:proxima/tile/pink5s: 720 216 frr
+:proxima/tile/pink5s: 782 216 frr
+:proxima/tile/pink5s: 832 216 frr
+:proxima/tile/pink5s: 864 216 frr
+:proxima/tile/pink5s: 832 184 frr
+:proxima/tile/pink5s: 864 184 frr
+:proxima/tile/blue2bs: 942 368
+:proxima/tile/pink5s: 912 216 frr
+:proxima/tile/pink5s: 944 216 frr
+:proxima/tile/pink5s: 912 184 frr
+:proxima/tile/pink5s: 944 184 frr
+:proxima/tile/pink5s: 944 152 frr
+:proxima/tile/pink1a: 536 160 frr
+:matt/winter/09b: 417 24 d
+:matt/winter/09b: 575 23 d

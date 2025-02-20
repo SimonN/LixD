@@ -1,0 +1,166 @@
+$BUILT 2025-02-09 16:21:15
+$AUTHOR Hyperlodge
+$ENGLISH Catacombs
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 712
+#SIZE_Y 368
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 127
+
+#SECONDS 60
+#INITIAL 100
+#SPAWN_INTERVAL 70
+
+#CLIMBER 100
+#EXPLODER2 100
+#BLOCKER 100
+#BUILDER 100
+#BATTER 100
+
+:raymanni/lab/hatch.H: 628 202
+:raymanni/lab/hatch.H: 52 204 r
+
+:geoo/abstract/goal.G: 84 136
+:geoo/abstract/goal.G: 596 136
+
+:raymanni/gore/bonesaw.F: 324 -2
+:raymanni/gore/bonesaw.F: 324 50
+:raymanni/gore/bonesaw.F: 324 84
+
+:geoo/abstract/tbeam_left.T: 148 112
+:geoo/abstract/tbeam_right.T: 532 112
+:geoo/abstract/tbeam_up.T: 148 144
+:geoo/abstract/tbeam_up.T: 532 144
+:geoo/abstract/tbeam_up.T: 532 176
+:geoo/abstract/tbeam_up.T: 148 176
+:geoo/abstract/tbeam_left.T: 116 112
+:geoo/abstract/tbeam_right.T: 564 112
+:geoo/abstract/tbeam_down.T: 36 8
+:geoo/abstract/tbeam_down.T: 36 40
+:geoo/abstract/tbeam_down.T: 36 72
+:geoo/abstract/tbeam_down.T: 36 104
+:geoo/abstract/tbeam_down.T: 36 136
+:geoo/abstract/tbeam_down.T: 644 8
+:geoo/abstract/tbeam_down.T: 644 40
+:geoo/abstract/tbeam_down.T: 644 72
+:geoo/abstract/tbeam_down.T: 644 104
+:geoo/abstract/tbeam_down.T: 644 136
+:geoo/abstract/tbeam_up.T: 532 208
+:geoo/abstract/tbeam_up.T: 148 208
+:geoo/abstract/tbeam_up.T: 244 176
+:geoo/abstract/tbeam_up.T: 244 208
+:geoo/abstract/tbeam_up.T: 436 176
+:geoo/abstract/tbeam_up.T: 436 208
+:geoo/abstract/tbeam_right.T: 500 176
+:geoo/abstract/tbeam_left.T: 180 176
+:geoo/abstract/tbeam_left.T: 212 176
+:geoo/abstract/tbeam_right.T: 468 176
+:geoo/abstract/tbeam_left.T: 288 336
+:geoo/abstract/tbeam_left.T: 320 336
+:geoo/abstract/tbeam_left.T: 224 336
+:geoo/abstract/tbeam_left.T: 256 336
+:geoo/abstract/tbeam_left.T: 160 336
+:geoo/abstract/tbeam_left.T: 192 336
+:geoo/abstract/tbeam_left.T: 96 336
+:geoo/abstract/tbeam_left.T: 128 336
+:geoo/abstract/tbeam_left.T: 32 336
+:geoo/abstract/tbeam_left.T: 64 336
+:geoo/abstract/tbeam_up.T: 0 336
+:geoo/abstract/tbeam_up.T: 0 304
+:geoo/abstract/tbeam_up.T: 0 272
+:geoo/abstract/tbeam_up.T: 0 240
+:geoo/abstract/tbeam_up.T: 0 208
+:geoo/abstract/tbeam_up.T: 0 176
+:geoo/abstract/tbeam_up.T: 0 144
+:geoo/abstract/tbeam_up.T: 0 112
+:geoo/abstract/tbeam_up.T: 0 80
+:geoo/abstract/tbeam_up.T: 0 48
+:geoo/abstract/tbeam_right.T: 0 16
+:geoo/abstract/tbeam_right.T: 392 336
+:geoo/abstract/tbeam_right.T: 360 336
+:geoo/abstract/tbeam_right.T: 456 336
+:geoo/abstract/tbeam_right.T: 424 336
+:geoo/abstract/tbeam_right.T: 520 336
+:geoo/abstract/tbeam_right.T: 488 336
+:geoo/abstract/tbeam_right.T: 584 336
+:geoo/abstract/tbeam_right.T: 552 336
+:geoo/abstract/tbeam_right.T: 616 336
+:geoo/abstract/tbeam_right.T: 648 336
+:geoo/abstract/tbeam_up.T: 680 336
+:geoo/abstract/tbeam_up.T: 680 304
+:geoo/abstract/tbeam_up.T: 680 272
+:geoo/abstract/tbeam_up.T: 680 240
+:geoo/abstract/tbeam_up.T: 680 208
+:geoo/abstract/tbeam_up.T: 680 176
+:geoo/abstract/tbeam_up.T: 680 144
+:geoo/abstract/tbeam_up.T: 680 112
+:geoo/abstract/tbeam_up.T: 680 80
+:geoo/abstract/tbeam_up.T: 680 48
+:geoo/abstract/tbeam_left.T: 680 16
+:geoo/abstract/tbeam_left.T: 84 112
+:geoo/abstract/tbeam_right.T: 596 112
+
+:geoo/steel/dark_32x64o.S: 52 248
+:geoo/steel/dark_32x64o.S: 100 248
+:geoo/steel/dark_32x64o.S: 148 248
+:geoo/steel/dark_32x64o.S: 196 248
+:geoo/steel/dark_32x64o.S: 244 248
+:geoo/steel/dark_32x64o.S: 292 232
+:geoo/steel/dark_32x64o.S: 340 240
+:geoo/steel/dark_32x64o.S: 388 232
+:geoo/steel/dark_32x64o.S: 436 248
+:geoo/steel/dark_32x64o.S: 484 248
+:geoo/steel/dark_32x64o.S: 532 248
+:geoo/steel/dark_32x64o.S: 580 248
+:geoo/steel/dark_32x64o.S: 628 248
+:geoo/steel/dark_32x16o.S: 268 312
+:geoo/construction/stairs_rd_32.S: 244 144
+:geoo/construction/stairs_rd_32.S: 180 112
+:geoo/construction/stairs_rd_32.S: 388 144 frr
+:geoo/construction/stairs_rd_32.S: 452 112 frr
+:geoo/steel/dark_32x16o.S: 220 312
+:geoo/steel/dark_32x16o.S: 172 312
+:geoo/steel/dark_32x16o.S: 124 312
+:geoo/steel/dark_32x16o.S: 76 312
+:geoo/steel/dark_32x16o.S: 604 312
+:geoo/steel/dark_32x16o.S: 556 312
+:geoo/steel/dark_32x16o.S: 508 312
+:geoo/steel/dark_32x16o.S: 460 312
+:geoo/construction/stairs_rd_32.S: 116 80
+:geoo/construction/stairs_rd_32.S: 516 80 frr
+:geoo/steel/dark_32x16o.S: 52 200
+:geoo/steel/dark_32x64o.S: 340 176
+:geoo/steel/dark_16x16o.S: 324 272
+:geoo/steel/dark_16x16o.S: 372 272
+:geoo/steel/dark_32x16o.S: 308 312
+:geoo/steel/dark_32x16o.S: 412 312
+:geoo/steel/dark_32x16o.S: 372 312
+:geoo/steel/dark_16x16o.S: 348 320
+:geoo/steel/dark_32x16o.S: 628 200
+:geoo/steel/dark_16x32o.S: 36 232
+:geoo/steel/dark_16x32o.S: 36 200
+:geoo/steel/dark_16x32o.S: 660 232
+:geoo/steel/dark_16x32o.S: 660 200
+:matt/bricks/17: 364 14 frr
+:matt/bricks/17: 284 14
+:matt/bricks/18: 276 70
+:matt/bricks/18: 420 70
+:matt/bricks/17: 220 14 frr
+:matt/bricks/17: 428 14
+:matt/bricks/19: 268 102
+:matt/bricks/19: 412 102
+:matt/bricks/17: 492 14 frr
+:matt/bricks/17: 156 14
+:matt/bricks/17: 556 14
+:matt/bricks/17: 92 14 frr
+:matt/bricks/20: 268 16
+:matt/bricks/18: 276 30
+:matt/bricks/20: 412 16
+:matt/bricks/18: 420 30
+:matt/bricks/02b: 340 112 r
+:matt/bricks/02b: 340 22 r
+:matt/bricks/02b: 84 168 r
+:matt/bricks/02b: 596 168 r
+:matt/bricks/01b: 340 304

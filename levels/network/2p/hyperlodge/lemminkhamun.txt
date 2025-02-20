@@ -1,0 +1,211 @@
+$BUILT 2025-02-09 16:44:13
+$AUTHOR Hyperlodge
+$ENGLISH Lemminkhamun
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1152
+#SIZE_Y 602
+
+#SECONDS 60
+#INITIAL 200
+#SPAWN_INTERVAL 20
+
+#RUNNER 100
+#CLIMBER 100
+#EXPLODER2 100
+#BLOCKER 100
+#BUILDER 100
+#MINER 100
+#JUMPER 100
+#BATTER 100
+
+:geoo/sandstone/Hatch.H: 96 298
+:geoo/sandstone/Hatch.H: 960 298 r
+
+:geoo/sandstone/Goal.G: 128 522
+:geoo/sandstone/Goal.G: 960 522
+
+:geoo/sandstone/chopper.T: 1024 523
+:geoo/sandstone/chopper.T: 96 522
+
+:geoo/sandstone/brazier.F: 560 4
+:geoo/sandstone/torch.F: 592 504
+:geoo/sandstone/torch.F: 656 504
+:geoo/sandstone/torch.F: 720 504
+:geoo/sandstone/torch.F: 784 504
+:geoo/sandstone/torch.F: 848 504
+:geoo/sandstone/torch.F: 272 504
+:geoo/sandstone/torch.F: 336 504
+:geoo/sandstone/torch.F: 400 504
+:geoo/sandstone/torch.F: 464 504
+:geoo/sandstone/torch.F: 528 504
+:geoo/sandstone/torch.F: 912 504
+:geoo/sandstone/torch.F: 208 504
+
+:raymanni/lab/launcher_right.T: 88 250
+:raymanni/lab/launcher_left.T: 1032 250
+:raymanni/lab/launcher_left.T: 72 250
+:raymanni/lab/launcher_right.T: 1048 250
+
+:matt/bricks/03a: 512 218
+:matt/bricks/03a: 576 218
+:matt/bricks/03a: 576 282
+:matt/bricks/03a: 512 282
+:geoo/construction/fence_64x64.S: 640 154
+:geoo/construction/fence_64x64.S: 640 218
+:geoo/construction/fence_64x64.S: 640 282
+:geoo/construction/fence_64x64.S: 448 282
+:geoo/construction/fence_64x64.S: 448 218
+:geoo/construction/fence_64x64.S: 576 154
+:geoo/construction/fence_64x64.S: 512 154
+:geoo/construction/fence_64x64.S: 448 154
+:geoo/construction/platform.S: 96 346
+:matt/bricks/20: 128 346
+:geoo/construction/platform.S: 128 346
+:geoo/construction/platform.S: 160 346
+:geoo/construction/platform.S: 192 346
+:geoo/construction/platform.S: 224 346
+:geoo/construction/platform.S: 256 346
+:geoo/construction/platform.S: 288 346
+:geoo/construction/platform.S: 320 346
+:geoo/construction/platform.S: 352 346
+:matt/bricks/14a: 384 346
+:geoo/construction/platform.S: 384 346
+:geoo/construction/platform.S: 416 346
+:matt/bricks/12a: 448 346
+:geoo/construction/platform.S: 448 346
+:matt/bricks/12a: 480 346
+:geoo/construction/platform.S: 480 346
+:matt/bricks/03a: 512 346
+:geoo/construction/platform.S: 528 346
+:matt/bricks/03a: 576 346
+:geoo/construction/platform.S: 560 346
+:matt/bricks/12a: 640 346
+:geoo/construction/platform.S: 640 346
+:matt/bricks/03a: 384 282
+:matt/bricks/03a: 704 282
+:matt/bricks/03a: 704 218
+:matt/bricks/03a: 768 282
+:matt/bricks/03a: 320 282
+:matt/bricks/03a: 384 218
+:matt/bricks/07a: 320 218
+:matt/bricks/07a: 384 154
+:matt/bricks/04a: 704 154
+:matt/bricks/04a: 768 218
+:matt/bricks/04a: 640 90
+:matt/bricks/07a: 448 90
+:matt/bricks/07a: 512 26
+:matt/bricks/04a: 576 26
+:matt/bricks/02a: 560 58 frrrd
+:geoo/construction/fence_64x64.S: 576 90
+:geoo/construction/fence_64x64.S: 512 90
+:matt/bricks/04a: 832 282
+:matt/bricks/07a: 256 282
+:matt/bricks/12a: 672 346
+:geoo/construction/platform.S: 672 346
+:matt/bricks/16a: 704 346
+:geoo/construction/platform.S: 704 346
+:geoo/construction/platform.S: 736 346
+:geoo/construction/platform.S: 768 346
+:geoo/construction/platform.S: 800 346
+:geoo/construction/platform.S: 832 346
+:geoo/construction/platform.S: 864 346
+:geoo/construction/platform.S: 896 346
+:geoo/construction/platform.S: 928 346
+:geoo/construction/platform.S: 960 346
+:matt/bricks/20: 992 346
+:geoo/construction/platform.S: 992 346
+:geoo/construction/platform.S: 1024 346
+:geoo/construction/platform.S: 95 315 r
+:geoo/construction/platform.S: 95 283 r
+:geoo/construction/platform.S: 95 251 r
+:geoo/construction/platform.S: 1055 315 fr
+:geoo/construction/platform.S: 1055 283 fr
+:geoo/construction/platform.S: 1055 251 fr
+:geoo/construction/platform.S: 592 346
+:matt/bricks/03a: 512 538
+:matt/bricks/03a: 576 538
+:matt/bricks/03a: 448 538
+:matt/bricks/03a: 384 538
+:matt/bricks/03a: 320 538
+:matt/bricks/03a: 256 538
+:matt/bricks/03a: 192 538
+:matt/bricks/03a: 128 538
+:matt/bricks/03a: 896 538
+:matt/bricks/03a: 832 538
+:matt/bricks/03a: 768 538
+:matt/bricks/03a: 704 538
+:matt/bricks/03a: 640 538
+:matt/bricks/03a: 960 538
+:matt/bricks/13a: 160 506
+:matt/bricks/12a: 128 506
+:matt/bricks/12a: 992 506
+:matt/bricks/15a: 928 506
+:matt/bricks/14a: 448 378
+:matt/bricks/16a: 640 378
+:matt/bricks/09a: 512 410
+:matt/bricks/11a: 608 410
+:matt/bricks/18: 1000 458
+:matt/bricks/19: 992 490
+:matt/bricks/18: 1000 426
+:matt/bricks/18: 1000 394
+:matt/bricks/18: 1000 362
+:matt/bricks/18: 136 458
+:matt/bricks/19: 128 490
+:matt/bricks/18: 136 426
+:matt/bricks/18: 136 394
+:matt/bricks/18: 136 362
+:matt/bricks/12a: 544 410
+:matt/bricks/12a: 576 410
+:matt/bricks/17: 256 290
+:matt/bricks/17: 312 234
+:matt/bricks/17: 368 178
+:matt/bricks/17: 424 122
+:matt/bricks/17: 480 66
+:matt/bricks/17: 536 10
+:matt/bricks/17: 832 290 frr
+:matt/bricks/17: 776 234 frr
+:matt/bricks/17: 720 178 frr
+:matt/bricks/17: 664 122 frr
+:matt/bricks/17: 608 66 frr
+:matt/bricks/17: 552 10 frr
+:matt/bricks/02a: 543 -4 frrd
+:geoo/sandstone/16x32: 512 345 d
+:geoo/sandstone/16x32: 624 345 d
+:geoo/sandstone/64x16: 512 368 d
+:geoo/sandstone/64x16: 576 368 d
+$BEGIN_TILE_GROUP 0
+:matt/bricks/18: 8 64
+:matt/bricks/18: 8 16
+:matt/bricks/20: 0 0
+:matt/bricks/19: 0 80
+:matt/bricks/18: 8 32
+$END_TILE_GROUP
+:Group-0: 560 442
+:Group-0: 624 442
+:Group-0: 688 442
+:Group-0: 752 442
+:Group-0: 816 442
+:Group-0: 304 442
+:Group-0: 368 442
+:Group-0: 432 442
+:Group-0: 496 442
+:Group-0: 240 442
+:Group-0: 880 442
+:matt/bricks/12a: 1024 553
+:matt/bricks/12a: 96 554
+:matt/bricks/12a: 64 554
+:matt/bricks/12a: 1056 553
+:matt/bricks/11a: 1088 553
+:matt/bricks/11a: 1056 585
+:matt/bricks/03a: 32 490
+:matt/bricks/03a: 32 426
+:matt/bricks/03a: 1056 490
+:matt/bricks/03a: 1056 426
+:matt/bricks/09a: 32 554
+:matt/bricks/09a: 64 586
+:matt/bricks/15a: 1056 394
+:matt/bricks/13a: 32 394
+:geoo/construction/fence_32x32.S: 560 58
+:matt/bricks/12a: 144 536 d
+:matt/bricks/12a: 976 536 d

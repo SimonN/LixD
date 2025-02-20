@@ -1,0 +1,158 @@
+$BUILT 2025-01-22 10:52:54
+$AUTHOR Hyperlodge
+$ENGLISH Forts of Fourths
+
+#INTENDED_NUMBER_OF_PLAYERS 4
+#SIZE_X 768
+#SIZE_Y 704
+#TORUS_X 1
+#TORUS_Y 1
+#BACKGROUND_RED 76
+#BACKGROUND_GREEN 20
+#BACKGROUND_BLUE 64
+
+#SECONDS 76
+#INITIAL 160
+#SPAWN_INTERVAL 44
+
+#CLIMBER -1
+#FLOATER 10
+#EXPLODER2 -1
+#BLOCKER -1
+#PLATFORMER -1
+#DIGGER 10
+#JUMPER -1
+#BATTER -1
+#CUBER -1
+
+:raymanni/lab/hatch.H: 432 240
+:raymanni/lab/hatch.H: 48 240
+:raymanni/lab/hatch.H: 720 592
+:raymanni/lab/hatch.H: 336 592
+
+:geoo/abstract/goal.G: 624 32
+:geoo/abstract/goal.G: 240 32
+:geoo/abstract/goal.G: 144 384
+:geoo/abstract/goal.G: 528 384
+
+:geoo/construction/steam_right.T: 16 200
+:geoo/construction/steam_right.T: 400 200
+:geoo/construction/steam_right.T: 304 552
+:geoo/construction/steam_right.T: 688 552
+
+:matt/marble/09c: 32 32
+:matt/marble/25c: 48 96
+:matt/marble/09c: 32 224
+:matt/marble/09c: 224 32
+:matt/marble/25c: 240 96
+:raymanni/lab/pipe_1: 216 200 r
+:matt/marble/09c: 224 224
+:matt/marble/25c: 96 240 r
+:matt/marble/25c: 96 48 r
+:raymanni/lab/scen_5: 176 112
+:raymanni/lab/scen_6: 144 88
+:raymanni/lab/scen_6: 112 112
+:raymanni/lab/block_1: 48 48 d
+:raymanni/lab/block_1: 48 240 d
+:raymanni/lab/block_1: 240 240 d
+:raymanni/lab/block_1: 240 48 d
+:raymanni/lab/pipe_1: 120 176
+:raymanni/lab/pipe_1: 184 176
+:raymanni/lab/pipe_1: 152 152
+:raymanni/lab/pipe_5: 120 208
+:raymanni/lab/pipe_3: 168 208
+:raymanni/lab/pipe_1: 184 200 r
+:raymanni/lab/pipe_1: 144 224 r
+:raymanni/lab/pipe_5: 152 184
+:raymanni/lab/pipe_1: 248 200 r
+:raymanni/lab/pipe_1: 280 200 r
+:raymanni/lab/pipe_1: 312 200 r
+:raymanni/lab/pipe_1: 344 200 r
+:matt/marble/09a: 416 32
+:matt/marble/09a: 416 224
+:matt/marble/25a: 432 96
+:matt/marble/09a: 608 32
+:matt/marble/09a: 608 224
+:matt/marble/25a: 624 96
+:matt/marble/25a: 480 240 r
+:matt/marble/25a: 480 48 r
+:raymanni/lab/block_1: 432 48 d
+:raymanni/lab/block_1: 432 240 d
+:raymanni/lab/block_1: 624 240 d
+:raymanni/lab/block_1: 624 48 d
+:raymanni/lab/pipe_7: 376 200 fr
+:matt/marble/25: 336 448
+:matt/marble/09d: 704 384
+:matt/marble/25d: 720 448
+:matt/marble/09: 512 384
+:matt/marble/09: 320 384
+:matt/marble/09d: 128 384
+:matt/marble/25d: 144 448
+:matt/marble/25: 528 448
+:matt/marble/09d: 704 576
+:matt/marble/09: 512 576
+:matt/marble/09: 320 576
+:matt/marble/09d: 128 576
+:matt/marble/25d: 0 400 r
+:matt/marble/25d: 0 592 r
+:matt/marble/25: 384 400 r
+:matt/marble/25: 384 592 r
+:raymanni/lab/block_1: 720 400 d
+:raymanni/lab/block_1: 720 592 d
+:raymanni/lab/block_1: 144 592 d
+:raymanni/lab/block_1: 144 400 d
+:raymanni/lab/block_1: 336 400 d
+:raymanni/lab/block_1: 336 592 d
+:raymanni/lab/block_1: 528 592 d
+:raymanni/lab/block_1: 528 400 d
+:raymanni/lab/pipe_1: 504 552 r
+:raymanni/lab/scen_5: 432 440
+:raymanni/lab/scen_6: 464 464 frr
+:raymanni/lab/scen_6: 400 464
+:raymanni/lab/pipe_1: 408 528
+:raymanni/lab/pipe_1: 472 528
+:raymanni/lab/pipe_1: 440 504
+:raymanni/lab/pipe_5: 408 560
+:raymanni/lab/pipe_3: 456 560
+:raymanni/lab/pipe_1: 472 552 r
+:raymanni/lab/pipe_1: 432 576 r
+:raymanni/lab/pipe_5: 440 536
+:raymanni/lab/pipe_1: 536 552 r
+:raymanni/lab/pipe_1: 568 552 r
+:raymanni/lab/pipe_1: 600 552 r
+:raymanni/lab/pipe_1: 632 552 r
+:raymanni/lab/pipe_7: 664 552 fr
+:raymanni/lab/pipe_1: 600 200 r
+:raymanni/lab/scen_5: 560 112
+:raymanni/lab/scen_6: 528 88 frr
+:raymanni/lab/pipe_1: 504 176
+:raymanni/lab/pipe_1: 568 176
+:raymanni/lab/pipe_1: 536 152
+:raymanni/lab/pipe_5: 504 208
+:raymanni/lab/pipe_3: 552 208
+:raymanni/lab/pipe_1: 568 200 r
+:raymanni/lab/pipe_1: 528 224 r
+:raymanni/lab/pipe_5: 536 184
+:raymanni/lab/pipe_1: 632 200 r
+:raymanni/lab/pipe_1: 664 200 r
+:raymanni/lab/pipe_1: 696 200 r
+:raymanni/lab/pipe_1: 728 200 r
+:raymanni/lab/pipe_7: 760 200 fr
+:raymanni/lab/scen_5: 496 112
+:raymanni/lab/pipe_1: 120 552 r
+:raymanni/lab/scen_6: 48 440 frr
+:raymanni/lab/scen_6: 16 464 frr
+:raymanni/lab/pipe_1: 24 528
+:raymanni/lab/pipe_1: 88 528
+:raymanni/lab/pipe_1: 56 504
+:raymanni/lab/pipe_5: 24 560
+:raymanni/lab/pipe_3: 72 560
+:raymanni/lab/pipe_1: 88 552 r
+:raymanni/lab/pipe_1: 48 576 r
+:raymanni/lab/pipe_5: 56 536
+:raymanni/lab/pipe_1: 152 552 r
+:raymanni/lab/pipe_1: 184 552 r
+:raymanni/lab/pipe_1: 216 552 r
+:raymanni/lab/pipe_1: 248 552 r
+:raymanni/lab/pipe_7: 280 552 fr
+:raymanni/lab/scen_6: 80 464 frr

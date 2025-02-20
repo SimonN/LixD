@@ -1,0 +1,153 @@
+$BUILT 2025-02-09 17:00:54
+$AUTHOR Hyperlodge
+$ENGLISH Frankie Bots
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 928
+#SIZE_Y 336
+#TORUS_X 0
+#TORUS_Y 1
+#BACKGROUND_RED 64
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 64
+
+#SECONDS 120
+#INITIAL 100
+#SPAWN_INTERVAL 1
+
+#WALKER 10
+#RUNNER 10
+#CLIMBER 10
+#FLOATER 10
+#EXPLODER2 -1
+#BLOCKER 10
+#BUILDER -1
+#PLATFORMER 10
+#BASHER 10
+#MINER 10
+#JUMPER 10
+#BATTER 10
+#CUBER -1
+
+:raymanni/lab/hatch.H: 784 56 r
+:raymanni/lab/hatch.H: 110 56
+
+:raymanni/toys/goal.G: 96 138
+:raymanni/toys/goal.G: 770 138
+
+:geoo/construction/steam_up.T: 456 192
+
+:proxima/tile/pink4: 320 328
+:proxima/tile/pink4: 384 328
+:proxima/tile/pink4: 256 328
+:proxima/tile/pink4: 192 328
+:proxima/tile/pink4: 128 328
+:proxima/tile/pink4: 64 328
+:proxima/tile/pink4: 0 328
+:raymanni/gore/steel.S: 448 224
+:raymanni/gore/steel.S: 448 256
+:raymanni/gore/steel.S: 448 288
+:raymanni/gore/steel.S: 448 320
+:raymanni/gore/steel.S: 448 16
+:raymanni/gore/steel.S: 448 80
+:raymanni/gore/steel.S: 448 112
+:raymanni/gore/steel.S: 480 120
+:raymanni/gore/steel.S: 416 120
+:raymanni/gore/steel.S: 384 128
+:raymanni/gore/steel.S: 344 144
+:raymanni/gore/steel.S: 512 128
+:raymanni/gore/steel.S: 552 144
+:raymanni/gore/steel.S: 472 192
+:raymanni/gore/steel.S: 424 192
+:raymanni/gore/steel.S: 392 184
+:raymanni/gore/steel.S: 504 184
+:raymanni/gore/steel.S: 360 176
+:raymanni/gore/steel.S: 536 176
+:raymanni/gore/steel.S: 336 112
+:raymanni/gore/steel.S: 560 112
+:raymanni/gore/steel.S: 400 56
+:raymanni/gore/steel.S: 496 56
+:proxima/tile/pink4: 384 232
+:proxima/tile/pink5s: 416 296
+:proxima/tile/pink5s: 384 296
+:geoo/construction/fence_rust_64x64: 384 280 d
+:proxima/tile/pink4: 320 232
+:proxima/tile/pink5s: 352 296
+:proxima/tile/pink5s: 320 296
+:geoo/construction/fence_rust_64x64: 320 280 d
+:proxima/tile/pink4: 256 232
+:proxima/tile/pink5s: 288 296
+:proxima/tile/pink5s: 256 296
+:geoo/construction/fence_rust_64x64: 256 280 d
+:proxima/tile/pink4: 192 232
+:proxima/tile/pink5s: 224 296
+:proxima/tile/pink5s: 192 296
+:geoo/construction/fence_rust_64x64: 192 280 d
+:proxima/tile/pink4: 128 232
+:proxima/tile/pink5s: 160 296
+:proxima/tile/pink5s: 128 296
+:geoo/construction/fence_rust_64x64: 128 280 d
+:proxima/tile/pink4: 64 232
+:proxima/tile/pink5s: 96 296
+:proxima/tile/pink5s: 64 296
+:geoo/construction/fence_rust_64x64: 64 280 d
+:proxima/tile/pink4: 0 232
+:proxima/tile/pink5s: 0 296
+:proxima/tile/pink5s: 32 296
+:geoo/construction/fence_rust_64x64: 0 280 d
+:proxima/tile/pink4: 800 328
+:proxima/tile/pink4: 864 328
+:proxima/tile/pink4: 736 328
+:proxima/tile/pink4: 672 328
+:proxima/tile/pink4: 608 328
+:proxima/tile/pink4: 544 328
+:proxima/tile/pink4: 480 328
+:proxima/tile/pink4: 864 232
+:proxima/tile/pink5s: 864 296
+:proxima/tile/pink5s: 896 296
+:geoo/construction/fence_rust_64x64: 864 280 d
+:proxima/tile/pink4: 800 232
+:proxima/tile/pink5s: 832 296
+:proxima/tile/pink5s: 800 296
+:geoo/construction/fence_rust_64x64: 800 280 d
+:proxima/tile/pink4: 736 232
+:proxima/tile/pink5s: 768 296
+:proxima/tile/pink5s: 736 296
+:geoo/construction/fence_rust_64x64: 736 280 d
+:proxima/tile/pink4: 672 232
+:proxima/tile/pink5s: 704 296
+:proxima/tile/pink5s: 672 296
+:geoo/construction/fence_rust_64x64: 672 280 d
+:proxima/tile/pink4: 608 232
+:proxima/tile/pink5s: 640 296
+:proxima/tile/pink5s: 608 296
+:geoo/construction/fence_rust_64x64: 608 280 d
+:proxima/tile/pink4: 544 232
+:proxima/tile/pink5s: 576 296
+:proxima/tile/pink5s: 544 296
+:geoo/construction/fence_rust_64x64: 544 280 d
+:proxima/tile/pink4: 480 232
+:proxima/tile/pink5s: 480 296
+:proxima/tile/pink5s: 512 296
+:geoo/construction/fence_rust_64x64: 480 280 d
+$BEGIN_TILE_GROUP 0
+:proxima/tile/cyan3: 52 16
+:proxima/tile/cyan1b: 32 32
+:proxima/tile/cyan1: 36 48
+:proxima/tile/cyan1b: 24 128
+:proxima/tile/cyan1b: 24 112
+:proxima/tile/cyan1b: 84 128
+:proxima/tile/cyan1b: 84 112
+:proxima/tile/cyan1a: 98 48
+:proxima/tile/cyan1a: 4 48
+:proxima/tile/cyan1a: 0 32
+:proxima/tile/cyan1a: 102 32
+:proxima/tile/cyan1a: 102 0 r
+:proxima/tile/cyan1a: 16 0 r
+:proxima/tile/cyan1b: 72 32
+:proxima/tile/spheres/bluesmall: 52 18
+$END_TILE_GROUP
+:Group-0: 732 88
+:Group-0: 58 88
+:matt/beach/decor/beach ball: 112 150 d
+:matt/beach/decor/beach ball: 788 150 d

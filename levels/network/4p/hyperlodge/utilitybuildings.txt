@@ -1,0 +1,334 @@
+$BUILT 2025-02-09 15:53:09
+$AUTHOR Hyperlodge
+$ENGLISH Utility Buildings
+
+#INTENDED_NUMBER_OF_PLAYERS 4
+#SIZE_X 640
+#SIZE_Y 1408
+#TORUS_X 1
+#TORUS_Y 1
+#BACKGROUND_RED 63
+#BACKGROUND_GREEN 16
+#BACKGROUND_BLUE 0
+
+#SECONDS 65
+#INITIAL 75
+#SPAWN_INTERVAL 1
+
+#WALKER -1
+#CLIMBER 10
+#FLOATER 10
+#EXPLODER2 -1
+#BUILDER -1
+#MINER 10
+#JUMPER 10
+#BATTER -1
+
+:raymanni/lab/hatch.H: 96 1312
+:raymanni/lab/hatch.H: 512 960 r
+:raymanni/lab/hatch.H: 96 608
+:raymanni/lab/hatch.H: 512 256 r
+
+:raymanni/toys/goal.G: 496 880
+:raymanni/toys/goal.G: 80 528
+:raymanni/toys/goal.G: 496 176
+:raymanni/toys/goal.G: 80 1232
+
+:geoo/construction/spring.T: 296 1232
+:geoo/construction/spring.T: 312 880
+:geoo/construction/spring.T: 296 528
+:geoo/construction/spring.T: 312 176
+
+:geoo/construction/steam_up.T: 128 1192
+:geoo/construction/steam_up.T: 144 1208
+:geoo/construction/steam_up.T: 160 1224
+:geoo/construction/steam_up.T: 176 1240
+:geoo/abstract/tbeam_down.T: 64 1206
+:geoo/abstract/tbeam_down.T: 96 1206
+:geoo/abstract/tbeam_down.T: 32 1206
+:geoo/abstract/tbeam_down.T: 0 1206
+:geoo/construction/steam_up.T: 400 1296
+:geoo/construction/steam_up.T: 416 1280
+:geoo/construction/steam_up.T: 496 840
+:geoo/construction/steam_up.T: 480 856
+:geoo/construction/steam_up.T: 464 872
+:geoo/construction/steam_up.T: 448 888
+:geoo/abstract/tbeam_down.T: 544 854
+:geoo/abstract/tbeam_down.T: 512 854
+:geoo/abstract/tbeam_down.T: 576 854
+:geoo/abstract/tbeam_down.T: 608 854
+:geoo/construction/steam_up.T: 224 944
+:geoo/construction/steam_up.T: 208 928
+:geoo/construction/steam_up.T: 128 488
+:geoo/construction/steam_up.T: 144 504
+:geoo/construction/steam_up.T: 160 520
+:geoo/construction/steam_up.T: 176 536
+:geoo/abstract/tbeam_down.T: 64 502
+:geoo/abstract/tbeam_down.T: 96 502
+:geoo/abstract/tbeam_down.T: 32 502
+:geoo/abstract/tbeam_down.T: 0 502
+:geoo/construction/steam_up.T: 400 592
+:geoo/construction/steam_up.T: 416 576
+:geoo/construction/steam_up.T: 496 136
+:geoo/construction/steam_up.T: 480 152
+:geoo/construction/steam_up.T: 464 168
+:geoo/construction/steam_up.T: 448 184
+:geoo/abstract/tbeam_down.T: 544 150
+:geoo/abstract/tbeam_down.T: 512 150
+:geoo/abstract/tbeam_down.T: 576 150
+:geoo/abstract/tbeam_down.T: 608 150
+:geoo/construction/steam_up.T: 224 240
+:geoo/construction/steam_up.T: 208 224
+
+:geoo/shadow/window: 32 1248
+:geoo/shadow/rope1: 184 1264
+:geoo/shadow/wall/right: 160 1280
+:geoo/shadow/wall/left: 64 1280 frr
+:geoo/shadow/wall/side: 128 1248
+:geoo/shadow/wall/left: 96 1280 frr
+:geoo/shadow/wall/left: 64 1248 frr
+:geoo/shadow/wall/center: 96 1216
+:geoo/shadow/pillar_verti_32: 160 1248
+:geoo/shadow/pillar_verti_32: 128 1216
+:geoo/shadow/pillar_verti: 176 1264
+:geoo/shadow/pillar_verti: 144 1232
+:geoo/shadow/wall/left: 64 1312 frr
+:geoo/shadow/wall/left: 128 1312 frr
+:geoo/shadow/wall/left: 128 1280
+:geoo/shadow/wall/left: 160 1344
+:geoo/shadow/wall/left: 128 1344
+:geoo/shadow/wall/left: 64 1344
+:geoo/shadow/rope1: 248 1264 frr
+:geoo/shadow/rope1: 312 1264
+:geoo/shadow/rope1: 376 1264 frr
+:geoo/shadow/pillar_verti: 304 1264
+:geoo/shadow/pillar_verti_32: 304 1280
+:geoo/shadow/pillar_verti_32: 304 1344
+:geoo/shadow/pillar_verti_32: 304 1312
+:geoo/shadow/door: 96 1312
+:geoo/shadow/wall/deco_crags: 96 1360 frr
+:geoo/shadow/wall/left: 32 1280
+:geoo/shadow/wall/side: 160 1312
+:geoo/shadow/wall/deco_crags2: 64 1232
+:geoo/shadow/wall/left: 32 1312 frr
+:geoo/shadow/wall/left: 32 1344
+:geoo/shadow/wall/deco_dark: 0 1232
+:geoo/shadow/wall/side: 0 1344 frr
+:geoo/shadow/wall/side: 0 1312
+:geoo/shadow/wall/side: 0 1280 frr
+:geoo/shadow/wall/side: 0 1248
+:geoo/shadow/wall/deco_dark: 32 1232
+:amanda/steel/steel32x32.S: 0 1376
+:amanda/steel/steel32x32.S: 32 1376
+:amanda/steel/steel32x32.S: 64 1376
+:amanda/steel/steel32x32.S: 96 1376
+:amanda/steel/steel32x32.S: 128 1376
+:amanda/steel/steel32x32.S: 160 1376
+:amanda/steel/steel32x32.S: 192 1376
+:amanda/steel/steel32x32.S: 224 1376
+:amanda/steel/steel32x32.S: 256 1376
+:amanda/steel/steel32x32.S: 288 1376
+:amanda/steel/steel32x32.S: 320 1376
+:amanda/steel/steel32x32.S: 352 1376
+:amanda/steel/steel32x32.S: 384 1376
+:geoo/shadow/wall/side: 400 1344
+:geoo/shadow/wall/side: 416 1312
+:geoo/shadow/wall/side: 432 1280
+:geoo/shadow/wall/side: 432 1248
+:geoo/shadow/pillar_verti_32: 400 1312
+:geoo/shadow/pillar_verti_32: 416 1296
+:geoo/shadow/wall/side: 416 1376
+:geoo/shadow/wall/side: 432 1344
+:geoo/shadow/wall/side: 448 1312
+:geoo/shadow/wall/side: 448 1376
+:geoo/shadow/wall/side: 464 1344
+:geoo/shadow/wall/side: 480 1376
+:geoo/shadow/window: 576 896 frr
+:geoo/shadow/rope1: 392 912 frr
+:geoo/shadow/wall/right: 448 928 frr
+:geoo/shadow/wall/left: 544 928
+:geoo/shadow/wall/side: 544 896 frr
+:geoo/shadow/wall/side: 480 896 frr
+:geoo/shadow/wall/left: 512 928
+:geoo/shadow/pillar_verti_32: 464 896 frr
+:geoo/shadow/pillar_verti_32: 496 864 frr
+:geoo/shadow/pillar_verti: 448 912 frr
+:geoo/shadow/pillar_verti: 480 880 frr
+:geoo/shadow/wall/left: 544 960
+:geoo/shadow/wall/left: 480 960
+:geoo/shadow/wall/left: 480 928 frr
+:geoo/shadow/wall/left: 448 992 frr
+:geoo/shadow/wall/left: 480 992 frr
+:geoo/shadow/wall/left: 544 992 frr
+:geoo/shadow/rope1: 328 912
+:geoo/shadow/rope1: 264 912 frr
+:geoo/shadow/rope1: 200 912
+:geoo/shadow/pillar_verti: 320 912 frr
+:geoo/shadow/pillar_verti_32: 320 928 frr
+:geoo/shadow/pillar_verti_32: 320 992 frr
+:geoo/shadow/pillar_verti_32: 320 960 frr
+:geoo/shadow/door: 512 960 frr
+:geoo/shadow/wall/deco_crags: 512 1008
+:geoo/shadow/wall/left: 576 928 frr
+:geoo/shadow/wall/side: 448 960 frr
+:geoo/shadow/wall/deco_crags2: 544 880 frr
+:geoo/shadow/wall/left: 576 960
+:geoo/shadow/wall/left: 576 992 frr
+:geoo/shadow/wall/deco_dark: 608 880 frr
+:geoo/shadow/wall/side: 608 992
+:geoo/shadow/wall/side: 608 960 frr
+:geoo/shadow/wall/side: 608 928
+:geoo/shadow/wall/side: 608 896 frr
+:geoo/shadow/wall/deco_dark: 576 880 frr
+:amanda/steel/steel32x32.S: 608 1024 frr
+:amanda/steel/steel32x32.S: 576 1024 frr
+:amanda/steel/steel32x32.S: 544 1024 frr
+:amanda/steel/steel32x32.S: 512 1024 frr
+:amanda/steel/steel32x32.S: 480 1024 frr
+:amanda/steel/steel32x32.S: 448 1024 frr
+:amanda/steel/steel32x32.S: 416 1024 frr
+:amanda/steel/steel32x32.S: 384 1024 frr
+:amanda/steel/steel32x32.S: 352 1024 frr
+:amanda/steel/steel32x32.S: 320 1024 frr
+:amanda/steel/steel32x32.S: 288 1024 frr
+:amanda/steel/steel32x32.S: 256 1024 frr
+:amanda/steel/steel32x32.S: 224 1024 frr
+:geoo/shadow/wall/side: 208 992 frr
+:geoo/shadow/wall/side: 192 960 frr
+:geoo/shadow/wall/side: 176 928 frr
+:geoo/shadow/wall/side: 176 896 frr
+:geoo/shadow/pillar_verti_32: 224 960 frr
+:geoo/shadow/pillar_verti_32: 208 944 frr
+:geoo/shadow/wall/side: 192 1024 frr
+:geoo/shadow/wall/side: 176 992 frr
+:geoo/shadow/wall/side: 160 960 frr
+:geoo/shadow/wall/side: 160 1024 frr
+:geoo/shadow/wall/side: 144 992 frr
+:geoo/shadow/wall/side: 128 1024 frr
+:geoo/shadow/window: 32 544
+:geoo/shadow/rope1: 184 560
+:geoo/shadow/wall/right: 160 576
+:geoo/shadow/wall/left: 64 576 frr
+:geoo/shadow/wall/side: 64 544
+:geoo/shadow/wall/side: 128 544
+:geoo/shadow/wall/left: 96 576 frr
+:geoo/shadow/pillar_verti_32: 160 544
+:geoo/shadow/pillar_verti_32: 128 512
+:geoo/shadow/pillar_verti: 176 560
+:geoo/shadow/pillar_verti: 144 528
+:geoo/shadow/wall/left: 64 608 frr
+:geoo/shadow/wall/left: 128 608 frr
+:geoo/shadow/wall/left: 128 576
+:geoo/shadow/wall/left: 160 640
+:geoo/shadow/wall/left: 128 640
+:geoo/shadow/wall/left: 64 640
+:geoo/shadow/rope1: 248 560 frr
+:geoo/shadow/rope1: 312 560
+:geoo/shadow/rope1: 376 560 frr
+:geoo/shadow/pillar_verti: 304 560
+:geoo/shadow/pillar_verti_32: 304 576
+:geoo/shadow/pillar_verti_32: 304 640
+:geoo/shadow/pillar_verti_32: 304 608
+:geoo/shadow/door: 96 608
+:geoo/shadow/wall/deco_crags: 96 656 frr
+:geoo/shadow/wall/left: 32 576
+:geoo/shadow/wall/side: 160 608
+:geoo/shadow/wall/deco_crags2: 64 528
+:geoo/shadow/wall/left: 32 608 frr
+:geoo/shadow/wall/left: 32 640
+:geoo/shadow/wall/deco_dark: 0 528
+:geoo/shadow/wall/side: 0 640 frr
+:geoo/shadow/wall/side: 0 608
+:geoo/shadow/wall/side: 0 576 frr
+:geoo/shadow/wall/side: 0 544
+:geoo/shadow/wall/deco_dark: 32 528
+:amanda/steel/steel32x32.S: 0 672
+:amanda/steel/steel32x32.S: 32 672
+:amanda/steel/steel32x32.S: 64 672
+:amanda/steel/steel32x32.S: 96 672
+:amanda/steel/steel32x32.S: 128 672
+:amanda/steel/steel32x32.S: 160 672
+:amanda/steel/steel32x32.S: 192 672
+:amanda/steel/steel32x32.S: 224 672
+:amanda/steel/steel32x32.S: 256 672
+:amanda/steel/steel32x32.S: 288 672
+:amanda/steel/steel32x32.S: 320 672
+:amanda/steel/steel32x32.S: 352 672
+:amanda/steel/steel32x32.S: 384 672
+:geoo/shadow/wall/side: 400 640
+:geoo/shadow/wall/side: 416 608
+:geoo/shadow/wall/side: 432 576
+:geoo/shadow/wall/side: 432 544
+:geoo/shadow/pillar_verti_32: 400 608
+:geoo/shadow/pillar_verti_32: 416 592
+:geoo/shadow/wall/side: 416 672
+:geoo/shadow/wall/side: 432 640
+:geoo/shadow/wall/side: 448 608
+:geoo/shadow/wall/side: 448 672
+:geoo/shadow/wall/side: 464 640
+:geoo/shadow/wall/side: 480 672
+:geoo/shadow/window: 576 192 frr
+:geoo/shadow/rope1: 392 208 frr
+:geoo/shadow/wall/right: 448 224 frr
+:geoo/shadow/wall/left: 544 224
+:geoo/shadow/wall/side: 544 192 frr
+:geoo/shadow/wall/side: 480 192 frr
+:geoo/shadow/wall/left: 512 224
+:geoo/shadow/wall/center: 512 160 frr
+:geoo/shadow/pillar_verti_32: 464 192 frr
+:geoo/shadow/pillar_verti_32: 496 160 frr
+:geoo/shadow/pillar_verti: 448 208 frr
+:geoo/shadow/pillar_verti: 480 176 frr
+:geoo/shadow/wall/left: 544 256
+:geoo/shadow/wall/left: 480 256
+:geoo/shadow/wall/left: 480 224 frr
+:geoo/shadow/wall/left: 448 288 frr
+:geoo/shadow/wall/left: 480 288 frr
+:geoo/shadow/wall/left: 544 288 frr
+:geoo/shadow/rope1: 328 208
+:geoo/shadow/rope1: 264 208 frr
+:geoo/shadow/rope1: 200 208
+:geoo/shadow/pillar_verti: 320 208 frr
+:geoo/shadow/pillar_verti_32: 320 224 frr
+:geoo/shadow/pillar_verti_32: 320 288 frr
+:geoo/shadow/pillar_verti_32: 320 256 frr
+:geoo/shadow/door: 512 256 frr
+:geoo/shadow/wall/deco_crags: 512 304
+:geoo/shadow/wall/left: 576 224 frr
+:geoo/shadow/wall/side: 448 256 frr
+:geoo/shadow/wall/deco_crags2: 544 176 frr
+:geoo/shadow/wall/left: 576 256
+:geoo/shadow/wall/left: 576 288 frr
+:geoo/shadow/wall/deco_dark: 608 176 frr
+:geoo/shadow/wall/side: 608 288
+:geoo/shadow/wall/side: 608 256 frr
+:geoo/shadow/wall/side: 608 224
+:geoo/shadow/wall/side: 608 192 frr
+:geoo/shadow/wall/deco_dark: 576 176 frr
+:amanda/steel/steel32x32.S: 608 320 frr
+:amanda/steel/steel32x32.S: 576 320 frr
+:amanda/steel/steel32x32.S: 544 320 frr
+:amanda/steel/steel32x32.S: 512 320 frr
+:amanda/steel/steel32x32.S: 480 320 frr
+:amanda/steel/steel32x32.S: 448 320 frr
+:amanda/steel/steel32x32.S: 416 320 frr
+:amanda/steel/steel32x32.S: 384 320 frr
+:amanda/steel/steel32x32.S: 352 320 frr
+:amanda/steel/steel32x32.S: 320 320 frr
+:amanda/steel/steel32x32.S: 288 320 frr
+:amanda/steel/steel32x32.S: 256 320 frr
+:amanda/steel/steel32x32.S: 224 320 frr
+:geoo/shadow/wall/side: 208 288 frr
+:geoo/shadow/wall/side: 192 256 frr
+:geoo/shadow/wall/side: 176 224 frr
+:geoo/shadow/wall/side: 176 192 frr
+:geoo/shadow/pillar_verti_32: 224 256 frr
+:geoo/shadow/pillar_verti_32: 208 240 frr
+:geoo/shadow/wall/side: 192 320 frr
+:geoo/shadow/wall/side: 176 288 frr
+:geoo/shadow/wall/side: 160 256 frr
+:geoo/shadow/wall/side: 160 320 frr
+:geoo/shadow/wall/side: 144 288 frr
+:geoo/shadow/wall/side: 128 320 frr
+:geoo/shadow/wall/deco_crags2: 96 528
+:geoo/shadow/wall/deco_crags2: 512 880

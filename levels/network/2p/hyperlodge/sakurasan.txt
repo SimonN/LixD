@@ -1,0 +1,204 @@
+$BUILT 2025-02-09 16:37:29
+$AUTHOR Hyperlodge
+$ENGLISH Sakura San
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1280
+#SIZE_Y 432
+#TORUS_X 1
+#TORUS_Y 0
+#BACKGROUND_RED 28
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 36
+
+#SECONDS 110
+#INITIAL 200
+#SPAWN_INTERVAL 70
+
+#WALKER 90
+#RUNNER 90
+#CLIMBER 90
+#FLOATER 1
+#EXPLODER2 90
+#BLOCKER 1
+#BUILDER 90
+#PLATFORMER 1
+#BASHER 1
+#MINER 1
+#DIGGER 1
+#JUMPER 90
+#BATTER 90
+#CUBER 90
+
+:geoo/construction/Hatch.H: 1232 336
+:geoo/construction/Hatch.H: 592 336
+:geoo/construction/Hatch.H: 16 336 r
+:geoo/construction/Hatch.H: 656 336 r
+:geoo/construction/Hatch.H: 80 336
+:geoo/construction/Hatch.H: 720 336
+:geoo/construction/Hatch.H: 144 336 r
+:geoo/construction/Hatch.H: 784 336 r
+:geoo/construction/Hatch.H: 848 336
+:geoo/construction/Hatch.H: 208 336
+
+:raymanni/lab/goal.G: 416 0
+:raymanni/lab/goal.G: 1056 0
+
+:proxima/flame.F: 382 280
+:proxima/flame.F: 350 296
+:proxima/flame.F: 318 312
+:proxima/flame.F: 414 280
+:proxima/flame.F: 446 296
+:proxima/flame.F: 478 312
+:proxima/flame.F: 1022 280
+:proxima/flame.F: 990 296
+:proxima/flame.F: 958 312
+:proxima/flame.F: 1054 280
+:proxima/flame.F: 1086 296
+:proxima/flame.F: 1118 312
+
+:raymanni/gore/blob_3: 398 110 rr
+:geoo/steel/32x64o.S: 240 336
+:geoo/steel/32x64o.S: 256 400 r
+:geoo/steel/32x64o.S: 320 400 r
+:geoo/steel/32x64o.S: 384 400 r
+:geoo/steel/32x64o.S: 448 400 r
+:geoo/steel/32x64o.S: 512 400 r
+:geoo/steel/32x64o.S: 576 400 r
+:geoo/steel/32x64o.S: 192 400 r
+:geoo/steel/32x64o.S: 128 400 r
+:geoo/steel/32x64o.S: 64 400 r
+:geoo/steel/32x64o.S: 0 400 r
+:geoo/steel/32x64o.S: 176 336
+:geoo/steel/32x64o.S: 112 336
+:geoo/steel/32x64o.S: 48 336
+:geoo/steel/32x64o.S: 560 336
+:geoo/steel/32x64o.S: 624 336
+:raymanni/toys/beam_13.S: 60 304
+:raymanni/toys/beam_13.S: 60 272
+:raymanni/toys/beam_13.S: 124 304
+:raymanni/toys/beam_13.S: 124 272
+:raymanni/toys/beam_13.S: 188 304
+:raymanni/toys/beam_13.S: 188 272
+:raymanni/toys/beam_13.S: 252 304
+:raymanni/toys/beam_13.S: 252 272
+:raymanni/toys/beam_13.S: 572 304
+:raymanni/toys/beam_13.S: 572 272
+:raymanni/toys/beam_13.S: 636 304
+:raymanni/toys/beam_13.S: 636 272
+:geoo/steel/32x64o.S: 880 336
+:geoo/steel/32x64o.S: 896 400 r
+:geoo/steel/32x64o.S: 960 400 r
+:geoo/steel/32x64o.S: 1024 400 r
+:geoo/steel/32x64o.S: 1088 400 r
+:geoo/steel/32x64o.S: 1152 400 r
+:geoo/steel/32x64o.S: 1216 400 r
+:geoo/steel/32x64o.S: 832 400 r
+:geoo/steel/32x64o.S: 768 400 r
+:geoo/steel/32x64o.S: 704 400 r
+:geoo/steel/32x64o.S: 640 400 r
+:geoo/steel/32x64o.S: 816 336
+:geoo/steel/32x64o.S: 752 336
+:geoo/steel/32x64o.S: 688 336
+:geoo/steel/32x64o.S: 1200 336
+:geoo/steel/32x64o.S: 1264 336
+:raymanni/toys/beam_13.S: 700 304
+:raymanni/toys/beam_13.S: 700 272
+:raymanni/toys/beam_13.S: 764 304
+:raymanni/toys/beam_13.S: 764 272
+:raymanni/toys/beam_13.S: 828 304
+:raymanni/toys/beam_13.S: 828 272
+:raymanni/toys/beam_13.S: 892 304
+:raymanni/toys/beam_13.S: 892 272
+:raymanni/toys/beam_13.S: 1212 304
+:raymanni/toys/beam_13.S: 1212 272
+:raymanni/toys/beam_13.S: 1276 304
+:raymanni/toys/beam_13.S: 1276 272
+:raymanni/gore/blob_2: 388 194 r
+:raymanni/gore/blob_5: 420 236 rrr
+:raymanni/gore/blob_1: 372 170
+:raymanni/gore/bone_5: 328 162 rrr
+:raymanni/gore/blob_1: 496 104
+:raymanni/gore/blob_1: 524 76
+:raymanni/gore/bone_6: 524 28 frr
+:raymanni/gore/blob_4: 374 46 rr
+:raymanni/gore/blob_5: 480 108
+:raymanni/gore/blob_4: 464 76 r
+:raymanni/gore/blob_4: 420 38 f
+:raymanni/gore/blob_3: 416 86
+:raymanni/gore/blob_1: 376 92 f
+:raymanni/gore/eye: 408 120
+:raymanni/gore/goop_6: 476 262
+:raymanni/gore/blob_1: 490 132
+:raymanni/gore/blob_4: 506 142 rr
+:raymanni/gore/blob_1: 508 120 r
+:raymanni/gore/blob_2: 418 194
+:raymanni/gore/blob_5: 454 114
+:raymanni/gore/eye: 460 96
+:raymanni/gore/blob_4: 408 148 frrr
+:raymanni/gore/blob_4: 460 42 f
+:raymanni/gore/blob_1: 426 28 f
+:raymanni/gore/blob_3: 1038 110 rr
+:raymanni/gore/blob_2: 1028 194 r
+:raymanni/gore/blob_5: 1060 236 rrr
+:raymanni/gore/blob_1: 1012 170
+:raymanni/gore/bone_5: 968 162 rrr
+:raymanni/gore/blob_1: 1136 104
+:raymanni/gore/blob_1: 1164 76
+:raymanni/gore/bone_6: 1164 28 frr
+:raymanni/gore/blob_4: 1014 46 rr
+:raymanni/gore/blob_5: 1120 108
+:raymanni/gore/blob_4: 1104 76 r
+:raymanni/gore/blob_4: 1060 38 f
+:raymanni/gore/blob_3: 1056 86
+:raymanni/gore/blob_1: 1016 92 f
+:raymanni/gore/eye: 1048 120
+:raymanni/gore/goop_6: 1116 262
+:raymanni/gore/blob_1: 1130 132
+:raymanni/gore/blob_4: 1146 142 rr
+:raymanni/gore/blob_1: 1148 120 r
+:raymanni/gore/blob_2: 1058 194
+:raymanni/gore/blob_5: 1094 114
+:raymanni/gore/eye: 1100 96
+:raymanni/gore/blob_4: 1048 148 frrr
+:raymanni/gore/blob_4: 1100 42 f
+:raymanni/gore/blob_1: 1066 28 f
+$BEGIN_TILE_GROUP 0
+:simon/tapir/016a: 32 24
+:simon/tapir/016: 32 48
+:simon/tapir/016a: 16 40
+:simon/tapir/016ha: 64 0
+:simon/tapir/016ha: 48 8
+:simon/tapir/016va: 0 56
+:simon/tapir/008h: 0 88
+:simon/tapir/008h: 176 40
+:simon/tapir/064: 80 16
+:simon/tapir/032v: 48 24
+:simon/tapir/032v: 144 24
+:simon/tapir/016h: 96 0
+:simon/tapir/016hb: 126 0
+:simon/tapir/016hb: 144 8
+:simon/tapir/016vb: 208 56
+:simon/tapir/016b: 176 24
+:simon/tapir/016b: 192 40
+:simon/tapir/008h: 208 88
+:simon/tapir/016: 176 48
+:simon/tapir/008v: 96 80
+:simon/tapir/008v: 120 80
+:simon/tapir/032: 176 64
+:simon/tapir/032: 16 64
+:simon/tapir/008h: 16 56
+:simon/tapir/008h: 32 40
+:simon/tapir/008h: 48 88
+:simon/tapir/008h: 64 88
+:simon/tapir/008h: 144 88
+:simon/tapir/008h: 160 88
+:simon/tapir/008h: 192 56
+:simon/tapir/016a: 80 80
+:simon/tapir/016d: 80 80
+:simon/tapir/016a: 128 80
+:simon/tapir/016d: 128 80
+:simon/tapir/016: 104 80
+$END_TILE_GROUP
+:Group-0: 306 304
+:Group-0: 946 304

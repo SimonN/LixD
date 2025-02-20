@@ -1,0 +1,118 @@
+$BUILT 2025-02-09 16:55:47
+$AUTHOR Hyperlodge
+$ENGLISH Mountain Magno
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1024
+#SIZE_Y 528
+#BACKGROUND_RED 32
+#BACKGROUND_GREEN 64
+#BACKGROUND_BLUE 112
+
+#SECONDS 100
+#INITIAL 300
+#SPAWN_INTERVAL 10
+
+#RUNNER -1
+#CLIMBER 10
+#FLOATER 10
+#EXPLODER2 -1
+#BLOCKER -1
+#BUILDER -1
+#JUMPER -1
+#BATTER -1
+
+:matt/goldmine/Hatch.H: 939 464 r
+:matt/goldmine/Hatch.H: 24 464
+
+:geoo/abstract/goal.G: 480 72
+:geoo/abstract/goal.G: 512 72
+:geoo/abstract/goal.G: 600 400
+:geoo/abstract/goal.G: 392 400
+
+:matt/earth/13: 761 512 fr
+:matt/earth/15: 88 512
+:matt/earth/13: 72 480
+:matt/earth/11: 136 472
+:matt/earth/12: 168 512
+:matt/earth/15: 192 456 frrr
+:matt/earth/11: -16 480
+:matt/earth/15: 8 504
+:matt/earth/15: 858 512 frr
+:matt/earth/13: 910 480 frr
+:matt/earth/11: 829 472 frr
+:matt/earth/12: 817 512 frr
+:matt/earth/15: 805 456 rrr
+:matt/earth/11: 981 480 frr
+:matt/earth/15: 938 504 frr
+$BEGIN_TILE_GROUP 0
+:raymanni/toys/beam_13.S: 176 360
+:matt/earth/13: 0 456 r
+:raymanni/toys/beam_13.S: 176 328
+:raymanni/toys/beam_13.S: 176 296
+:raymanni/toys/beam_13.S: 176 264
+:raymanni/toys/beam_13.S: 176 232
+:raymanni/toys/beam_13.S: 176 200
+:raymanni/toys/beam_13.S: 176 168
+:raymanni/toys/beam_13.S: 176 136
+:raymanni/toys/beam_13.S: 176 104
+:raymanni/toys/beam_13.S: 176 72
+:raymanni/toys/beam_13.S: 176 40
+:raymanni/toys/beam_13.S: 176 8
+:raymanni/toys/beam_13.S: 168 0 r
+:matt/earth/16: 120 361 fr
+:matt/earth/08: 88 384 frr
+:matt/earth/07b: 109 313
+:matt/earth/07b: 100 317
+:matt/earth/07b: 70 320
+:matt/earth/07b: 80 385
+:matt/earth/28: 49 264 f
+:matt/earth/28: 106 224 rr
+:matt/earth/28: 110 234 f
+:matt/earth/09: 116 255 frrr
+:matt/earth/10: 19 426
+:matt/earth/19: 104 272 r
+:amanda/forest/leaves_05: 101 245
+:matt/earth/07: 129 349
+:matt/earth/06: 88 336
+:matt/earth/07b: 132 305
+:matt/earth/09: 57 275 frrr
+:matt/earth/28: 53 255 f
+:matt/earth/19: 48 296 fr
+:amanda/forest/leaves_05: 43 267
+:matt/earth/07b: 50 326
+:matt/earth/08: 32 344 frr
+:matt/earth/07b: 72 380
+:matt/earth/08: 66 411
+:matt/earth/06: 22 403
+:matt/earth/04: 208 237 frr
+:matt/earth/17: 189 170 rr
+:matt/earth/00: 199 86 rrr
+:matt/earth/00: 210 57 rrr
+:matt/earth/00: 246 92 fr
+:matt/earth/18: 204 86
+:matt/earth/00: 216 46
+:matt/earth/00: 249 36 frrr
+:matt/earth/00: 197 113 rr
+:matt/earth/01: 216 245 r
+:matt/earth/02: 187 156 fr
+:matt/earth/01: 198 210
+:raymanni/gore/bone_6: 256 272 f
+:raymanni/gore/bone_5: 235 271 f
+:matt/earth/07b: 131 383
+:matt/earth/03: 166 447
+:matt/earth/00: 229 188 r
+:matt/earth/02: 256 158 frr
+:proxima/tile/spheres/gold: 223 164 d
+:raymanni/gore/eye: 240 165
+:matt/earth/04: 218 339
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:matt/earth/01: 272 232
+:Group-0: 0 0
+:Group-0: 268 0 frr
+:matt/earth/01: 272 88
+$END_TILE_GROUP
+:Group-1: 208 56
+:matt/earth/07b: 492 304 frrrd
+:matt/earth/07b: 516 304 rrrd

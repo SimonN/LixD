@@ -1,0 +1,262 @@
+$BUILT 2025-02-03 09:48:49
+$AUTHOR Hyperlodge
+$ENGLISH Slippery
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1856
+#SIZE_Y 1040
+#TORUS_X 1
+#TORUS_Y 0
+#BACKGROUND_RED 32
+#BACKGROUND_GREEN 128
+#BACKGROUND_BLUE 255
+
+#SECONDS 93
+#INITIAL 999
+#SPAWN_INTERVAL 33
+
+#WALKER 10
+#RUNNER -1
+#CLIMBER -1
+#FLOATER -1
+#EXPLODER2 -1
+#BLOCKER -1
+#BUILDER 10
+#PLATFORMER -1
+#BASHER 10
+#MINER 10
+#DIGGER 10
+#JUMPER -1
+#BATTER -1
+#CUBER -1
+
+:matt/winter/Hatch.H: 1034 832
+:matt/winter/Hatch.H: 106 832
+
+:matt/winter/Goal.G: 704 168
+:matt/winter/Goal.G: 1632 168
+:matt/winter/Goal.G: 1576 40
+:matt/winter/Goal.G: 648 40
+
+:matt/water.W: 864 1008
+:matt/water.W: 896 1008
+:matt/water.W: 1792 1008
+:matt/water.W: 1824 1008
+
+:geoo/abstract/tbeam_up.T: 928 576
+:geoo/abstract/tbeam_up.T: 928 608
+:geoo/abstract/tbeam_up.T: 928 640
+:geoo/abstract/tbeam_up.T: 928 672
+:geoo/abstract/tbeam_up.T: 928 704
+:geoo/abstract/tbeam_up.T: 928 736
+:geoo/abstract/tbeam_up.T: 928 768
+:geoo/abstract/tbeam_up.T: 928 800
+:geoo/abstract/tbeam_up.T: 928 832
+:geoo/abstract/tbeam_up.T: 928 864
+:geoo/abstract/tbeam_up.T: 928 896
+:geoo/abstract/tbeam_up.T: 928 928
+:geoo/abstract/tbeam_up.T: 928 288
+:geoo/abstract/tbeam_up.T: 928 320
+:geoo/abstract/tbeam_up.T: 928 352
+:geoo/abstract/tbeam_up.T: 928 384
+:geoo/abstract/tbeam_up.T: 928 416
+:geoo/abstract/tbeam_up.T: 928 448
+:geoo/abstract/tbeam_up.T: 928 480
+:geoo/abstract/tbeam_up.T: 928 512
+:geoo/abstract/tbeam_up.T: 928 544
+:geoo/abstract/tbeam_right.T: 928 256
+:geoo/abstract/tbeam_right.T: 960 256
+:geoo/abstract/tbeam_right.T: 992 256
+:geoo/abstract/tbeam_up.T: 0 576
+:geoo/abstract/tbeam_up.T: 0 608
+:geoo/abstract/tbeam_up.T: 0 640
+:geoo/abstract/tbeam_up.T: 0 672
+:geoo/abstract/tbeam_up.T: 0 704
+:geoo/abstract/tbeam_up.T: 0 736
+:geoo/abstract/tbeam_up.T: 0 768
+:geoo/abstract/tbeam_up.T: 0 800
+:geoo/abstract/tbeam_up.T: 0 832
+:geoo/abstract/tbeam_up.T: 0 864
+:geoo/abstract/tbeam_up.T: 0 896
+:geoo/abstract/tbeam_up.T: 0 928
+:geoo/abstract/tbeam_up.T: 0 288
+:geoo/abstract/tbeam_up.T: 0 320
+:geoo/abstract/tbeam_up.T: 0 352
+:geoo/abstract/tbeam_up.T: 0 384
+:geoo/abstract/tbeam_up.T: 0 416
+:geoo/abstract/tbeam_up.T: 0 448
+:geoo/abstract/tbeam_up.T: 0 480
+:geoo/abstract/tbeam_up.T: 0 512
+:geoo/abstract/tbeam_up.T: 0 544
+:geoo/abstract/tbeam_right.T: 0 256
+:geoo/abstract/tbeam_right.T: 32 256
+:geoo/abstract/tbeam_right.T: 64 256
+:geoo/abstract/tbeam_right.T: 1600 480
+:geoo/abstract/tbeam_right.T: 1632 480
+:geoo/abstract/tbeam_right.T: 1664 480
+:geoo/abstract/tbeam_right.T: 1696 480
+:geoo/abstract/tbeam_right.T: 1728 480
+:geoo/abstract/tbeam_right.T: 1760 480
+:geoo/abstract/tbeam_right.T: 672 480
+:geoo/abstract/tbeam_right.T: 704 480
+:geoo/abstract/tbeam_right.T: 736 480
+:geoo/abstract/tbeam_right.T: 768 480
+:geoo/abstract/tbeam_right.T: 800 480
+:geoo/abstract/tbeam_right.T: 832 480
+
+:matt/winter/04: 152 784
+:matt/winter/10: 16 736
+:matt/winter/17: 64 640 frr
+:matt/winter/16: 480 208
+:matt/winter/11: 608 112
+:matt/winter/03: 608 96
+:matt/winter/00: 582 64
+:matt/winter/16: 544 112
+:matt/winter/02: 48 832 frr
+:matt/winter/15: 88 896 frr
+:matt/winter/06: 64 960 r
+:matt/winter/06: 0 960 r
+:matt/winter/06: 128 960 r
+:matt/winter/06: 192 960 r
+:matt/winter/06: 256 960 r
+:matt/winter/06: 320 960 r
+:matt/winter/06: 384 960 r
+:matt/winter/17: 544 208 rrr
+:matt/winter/17: 456 304 frr
+:matt/winter/13: 288 704 r
+:matt/winter/16: 224 800 rr
+:matt/winter/16: 208 688
+:matt/winter/16: 272 592
+:matt/winter/03: 736 224 f
+:matt/winter/03: 640 224 frr
+:matt/winter/02: 720 240 frr
+:raymanni/holiday/steel1.S: 0 1008
+:raymanni/holiday/steel1.S: 32 1008
+:raymanni/holiday/steel1.S: 64 1008
+:raymanni/holiday/steel1.S: 96 1008
+:raymanni/holiday/steel1.S: 128 1008
+:raymanni/holiday/steel1.S: 160 1008
+:raymanni/holiday/steel1.S: 192 1008
+:raymanni/holiday/steel1.S: 224 1008
+:raymanni/holiday/steel1.S: 256 1008
+:raymanni/holiday/steel1.S: 288 1008
+:raymanni/holiday/steel1.S: 320 1008
+:raymanni/holiday/steel1.S: 352 1008
+:raymanni/holiday/steel1.S: 384 1008
+:raymanni/holiday/steel1.S: 416 1008
+:matt/winter/06: 448 960 r
+:matt/winter/06: 512 960 r
+:matt/winter/06: 576 960 r
+:raymanni/holiday/steel1.S: 448 1008
+:raymanni/holiday/steel1.S: 480 1008
+:raymanni/holiday/steel1.S: 512 1008
+:raymanni/holiday/steel1.S: 544 1008
+:raymanni/holiday/steel1.S: 576 1008
+:raymanni/holiday/steel1.S: 608 1008
+:matt/winter/06: 640 960 r
+:matt/winter/06: 704 960 r
+:raymanni/holiday/steel1.S: 640 1008
+:raymanni/holiday/steel1.S: 672 1008
+:raymanni/holiday/steel1.S: 704 1008
+:raymanni/holiday/steel1.S: 736 1008
+:raymanni/holiday/steel1.S: 768 1008
+:raymanni/holiday/steel1.S: 800 1008
+:matt/winter/12: 640 208
+:matt/winter/15: 624 240 rr
+:matt/winter/13: 416 512 r
+:matt/winter/16: 336 496
+:matt/winter/16: 408 400
+:matt/winter/17: 584 456 frrr
+:matt/winter/17: 480 440 rrr
+:matt/winter/02: 536 504 frr
+:matt/winter/10: 328 592
+:matt/winter/11: 320 672
+:matt/winter/12: 112 304 rrr
+:matt/winter/03: 128 328
+:matt/winter/03: 112 336 r
+:matt/winter/05: 72 456 rr
+:matt/winter/07: 840 944
+:raymanni/holiday/steel1.S: 832 1008
+:matt/winter/12: 80 360
+:matt/winter/13: 136 352 r
+:matt/winter/04: 1080 784
+:matt/winter/10: 944 736
+:matt/winter/17: 992 640 frr
+:matt/winter/16: 1408 208
+:matt/winter/03: 1536 96
+:matt/winter/11: 1536 112
+:matt/winter/00: 1510 74
+:matt/winter/16: 1472 112
+:matt/winter/02: 976 832 frr
+:matt/winter/15: 1016 896 frr
+:matt/winter/06: 992 960 r
+:matt/winter/06: 928 960 r
+:matt/winter/06: 1056 960 r
+:matt/winter/06: 1120 960 r
+:matt/winter/06: 1184 960 r
+:matt/winter/06: 1248 960 r
+:matt/winter/06: 1312 960 r
+:matt/winter/17: 1472 208 rrr
+:matt/winter/17: 1384 304 frr
+:matt/winter/13: 1216 704 r
+:matt/winter/16: 1152 800 rr
+:matt/winter/16: 1136 688
+:matt/winter/16: 1200 592
+:matt/winter/03: 1664 224 f
+:matt/winter/03: 1568 224 frr
+:matt/winter/02: 1648 240 frr
+:raymanni/holiday/steel1.S: 928 1008
+:raymanni/holiday/steel1.S: 960 1008
+:raymanni/holiday/steel1.S: 992 1008
+:raymanni/holiday/steel1.S: 1024 1008
+:raymanni/holiday/steel1.S: 1056 1008
+:raymanni/holiday/steel1.S: 1088 1008
+:raymanni/holiday/steel1.S: 1120 1008
+:raymanni/holiday/steel1.S: 1152 1008
+:raymanni/holiday/steel1.S: 1184 1008
+:raymanni/holiday/steel1.S: 1216 1008
+:raymanni/holiday/steel1.S: 1248 1008
+:raymanni/holiday/steel1.S: 1280 1008
+:raymanni/holiday/steel1.S: 1312 1008
+:raymanni/holiday/steel1.S: 1344 1008
+:matt/winter/06: 1376 960 r
+:matt/winter/06: 1440 960 r
+:matt/winter/06: 1504 960 r
+:raymanni/holiday/steel1.S: 1376 1008
+:raymanni/holiday/steel1.S: 1408 1008
+:raymanni/holiday/steel1.S: 1440 1008
+:raymanni/holiday/steel1.S: 1472 1008
+:raymanni/holiday/steel1.S: 1504 1008
+:raymanni/holiday/steel1.S: 1536 1008
+:matt/winter/06: 1568 960 r
+:matt/winter/06: 1632 960 r
+:raymanni/holiday/steel1.S: 1568 1008
+:raymanni/holiday/steel1.S: 1600 1008
+:raymanni/holiday/steel1.S: 1632 1008
+:raymanni/holiday/steel1.S: 1664 1008
+:raymanni/holiday/steel1.S: 1696 1008
+:raymanni/holiday/steel1.S: 1728 1008
+:matt/winter/12: 1568 208
+:matt/winter/15: 1552 240 rr
+:matt/winter/13: 1344 512 r
+:matt/winter/16: 1264 496
+:matt/winter/16: 1336 400
+:matt/winter/17: 1512 456 frrr
+:matt/winter/17: 1408 440 rrr
+:matt/winter/02: 1464 504 frr
+:matt/winter/10: 1256 592
+:matt/winter/11: 1248 672
+:matt/winter/12: 1040 304 rrr
+:matt/winter/03: 1056 328
+:matt/winter/03: 1040 336 r
+:matt/winter/05: 1000 456 rr
+:matt/winter/07: 1768 944
+:raymanni/holiday/steel1.S: 1760 1008
+:matt/winter/12: 1008 360
+:matt/winter/13: 1064 352 r
+:raymanni/holiday/steel1.S: 928 976
+:raymanni/holiday/steel1.S: 0 976
+:geoo/construction/fence_64x64.S: 592 86
+:geoo/construction/fence_64x64.S: 1520 96
+:matt/winter/07: 768 960 r
+:matt/winter/07: 1696 960 r

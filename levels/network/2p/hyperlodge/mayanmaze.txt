@@ -1,0 +1,192 @@
+$BUILT 2025-02-09 16:44:41
+$AUTHOR Hyperlodge
+$ENGLISH Mayan Maze
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 640
+#SIZE_Y 560
+#TORUS_X 1
+#TORUS_Y 0
+#BACKGROUND_RED 32
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 80
+
+#SECONDS 60
+#INITIAL 150
+#SPAWN_INTERVAL 25
+
+#CLIMBER -1
+#EXPLODER2 -1
+#BUILDER -1
+#JUMPER -1
+#CUBER -1
+
+:matt/bricks/Hatch.H: 32 -8 r
+:matt/bricks/Hatch.H: 288 -8
+
+:raymanni/lab/goal.G: 336 112
+:raymanni/lab/goal.G: 624 112
+
+:matt/10tons.T: 296 456
+:matt/10tons.T: 360 456
+:matt/10tons.T: 168 456
+:matt/10tons.T: 40 456
+:matt/10tons.T: 616 456
+:matt/10tons.T: 488 456
+
+:raymanni/gore/bonesaw.F: 480 48
+:proxima/flame.F: 492 120
+:proxima/flame.F: 172 168
+:raymanni/gore/bonesaw.F: 160 11
+
+:matt/bricks/03b: 32 184
+:matt/bricks/03a: 128 104
+:matt/bricks/03: 288 184
+:matt/bricks/12: 320 152
+:matt/bricks/12: 320 120
+:matt/bricks/08: 320 88
+:matt/bricks/12b: 32 152
+:matt/bricks/12b: 32 120
+:matt/bricks/10b: 32 88
+:matt/bricks/04a: 96 40
+:matt/bricks/07a: 224 40
+:matt/bricks/11a: 256 104
+:matt/bricks/12a: 176 216
+:matt/bricks/11b: 96 280
+:matt/bricks/14a: 32 40
+:matt/bricks/16a: 288 40
+:matt/bricks/03a: 192 104
+:matt/bricks/03b: 32 248
+:matt/bricks/03: 288 248
+:matt/bricks/09: 256 280
+:matt/bricks/09a: 96 104
+:matt/bricks/12a: 176 248
+:matt/bricks/12a: 176 280
+:matt/bricks/06: 352 152
+:matt/bricks/05b: 608 152
+:matt/bricks/03a: 160 312
+:matt/bricks/14a: 96 344
+:matt/bricks/16a: 224 344
+:matt/bricks/18: 184 392
+:matt/bricks/19: 176 424
+:matt/bricks/20: 176 376
+:matt/bricks/18: 312 392
+:matt/bricks/19: 304 424
+:matt/bricks/20: 304 312
+:matt/bricks/18: 312 360
+:matt/bricks/18: 312 328
+:matt/bricks/18: 56 392
+:matt/bricks/19: 48 424
+:matt/bricks/20: 48 312
+:matt/bricks/18: 56 360
+:matt/bricks/18: 56 328
+:matt/bricks/10: 288 152
+:matt/bricks/08b: 64 152
+:matt/bricks/08: 384 120
+:matt/bricks/10b: 608 120
+:matt/bricks/06: 416 248
+:matt/bricks/05b: 544 248
+:matt/bricks/03b: 608 248
+:matt/bricks/03: 352 248
+:matt/bricks/13: 416 216
+:matt/bricks/15b: 544 216
+:matt/bricks/18: 376 392
+:matt/bricks/19: 368 424
+:matt/bricks/20: 368 312
+:matt/bricks/18: 376 360
+:matt/bricks/18: 376 328
+:matt/bricks/18: 632 392
+:matt/bricks/19: 624 424
+:matt/bricks/20: 624 312
+:matt/bricks/18: 632 360
+:matt/bricks/18: 632 328
+:matt/bricks/04a: 224 280
+:matt/bricks/07a: 96 280
+:matt/bricks/08b: 112 248
+:matt/bricks/10: 240 248
+:matt/bricks/03a: 160 496
+:matt/bricks/03a: 96 496
+:matt/bricks/03a: 32 496
+:matt/bricks/03a: 608 496
+:matt/bricks/03a: 224 496
+:matt/bricks/03a: 288 496
+:matt/bricks/03a: 352 496
+:matt/bricks/12a: 496 168
+:matt/bricks/12a: 496 184
+:matt/bricks/12a: 496 216
+:matt/bricks/12a: 496 248
+:matt/bricks/12a: 496 280
+:matt/bricks/03a: 480 312
+:matt/bricks/18: 504 392
+:matt/bricks/19: 496 424
+:matt/bricks/20: 496 376
+:matt/bricks/03a: 480 496
+:matt/bricks/03a: 416 496
+:matt/bricks/07a: 416 312
+:matt/bricks/04a: 544 312
+:matt/bricks/09a: 416 104
+:matt/bricks/11a: 576 104
+:matt/bricks/16a: 528 168
+:matt/bricks/14a: 432 168
+:matt/bricks/03a: 544 496
+:matt/bricks/10: 288 88
+:matt/bricks/08b: 64 88
+:matt/bricks/01a: 176 440
+:matt/bricks/01a: 208 440
+:matt/bricks/01a: 240 440
+:matt/bricks/01a: 272 440
+:matt/bricks/01a: 304 440
+:matt/bricks/01a: 336 440
+:matt/bricks/01a: 368 440
+:matt/bricks/01a: 400 440
+:matt/bricks/01a: 432 440
+:matt/bricks/01a: 464 440
+:matt/bricks/01a: 496 440
+:matt/bricks/01a: 528 440
+:matt/bricks/01a: 560 440
+:matt/bricks/01a: 592 440
+:matt/bricks/01a: 624 440
+:matt/bricks/01a: 16 440
+:matt/bricks/01a: 48 440
+:matt/bricks/01a: 80 440
+:matt/bricks/01a: 112 440
+:matt/bricks/01a: 144 440
+:matt/bricks/01a: 336 0
+:matt/bricks/01a: 368 0
+:matt/bricks/01a: 464 0
+:matt/bricks/01a: 432 0
+:matt/bricks/01a: 400 0
+:matt/bricks/01a: 528 0
+:matt/bricks/01a: 560 0
+:matt/bricks/01a: 48 0
+:matt/bricks/01a: 16 0
+:matt/bricks/01a: 624 0
+:matt/bricks/01a: 592 0
+:matt/bricks/01a: 80 0
+:matt/bricks/01a: 112 0
+:matt/bricks/01a: 240 0
+:matt/bricks/01a: 272 0
+:matt/bricks/01a: 304 0
+:matt/bricks/12a: 128 72
+:matt/bricks/05a: 112 168
+:matt/bricks/06a: 208 168
+:matt/bricks/06a: 368 48
+:matt/bricks/05a: 592 48
+:matt/bricks/12a: 368 16
+:matt/bricks/12a: 400 16
+:matt/bricks/12a: 592 16
+:matt/bricks/12a: 624 16
+:matt/bricks/07a: 432 40
+:matt/bricks/04a: 528 40
+:geoo/construction/platform.S: 511 48 r
+:geoo/construction/platform.S: 511 16 r
+:geoo/construction/platform.S: 511 -16 r
+:matt/bricks/12a: 448 104
+:matt/bricks/12a: 448 136
+:matt/bricks/12a: 544 104
+:matt/bricks/12a: 544 136
+:geoo/construction/platform.S: 191 11 r
+:geoo/construction/platform.S: 191 -20 r
+:matt/bricks/15a: 112 40
+:matt/bricks/13a: 208 40
+:matt/bricks/12a: 224 72

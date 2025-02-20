@@ -1,0 +1,118 @@
+$BUILT 2025-02-09 16:23:07
+$AUTHOR Hyperlodge
+$ENGLISH Invertislands
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 960
+#SIZE_Y 304
+#BACKGROUND_RED 224
+#BACKGROUND_GREEN 16
+#BACKGROUND_BLUE 67
+
+#SECONDS 60
+#INITIAL 30
+#SPAWN_INTERVAL 60
+
+#BLOCKER -1
+#BUILDER -1
+#MINER -1
+#EXPLODER2 0
+
+:simon/oriental/hatch.H: 128 0
+:simon/oriental/hatch.H: 768 0 r
+
+:amanda/forest/exit.G: 752 96
+:amanda/forest/exit.G: 112 96
+
+:simon/acid.W: 144 256
+:simon/acid.W: 192 256
+:simon/acid.W: 240 256
+:simon/acid.W: 288 256
+:simon/acid.W: 336 256
+:simon/acid.W: 384 256
+:simon/acid.W: 432 256
+:simon/acid.W: 480 256
+:simon/acid.W: 528 256
+:simon/acid.W: 576 256
+:simon/acid.W: 624 256
+:simon/acid.W: 672 256
+:simon/acid.W: 720 256
+:simon/acid.W: 768 256
+:simon/acid.W: 96 256
+:simon/acid.W: 816 256
+:simon/acid.W: 864 256
+:simon/acid.W: 912 256
+:simon/acid.W: 48 256
+:simon/acid.W: 0 256
+
+:simon/oriental/bush1: 478 228 rr
+:simon/oriental/bush1: 418 228 f
+:simon/oriental/bush1: 398 228 rr
+:simon/oriental/bush1: 298 228 f
+:simon/oriental/bush1: 344 228 rr
+:simon/oriental/bush1: 278 228 rr
+:simon/oriental/culm_end: 336 224 r
+:simon/oriental/08: 120 64
+:simon/oriental/05: 136 64
+:simon/oriental/08: 168 144
+:simon/oriental/08: 72 144
+:simon/oriental/05: 136 144
+:simon/oriental/08: 760 64
+:simon/oriental/08: 840 64
+:raymanni/gore/goop_1: 820 64 frr
+:simon/oriental/08: 680 64
+:raymanni/gore/goop_2: 724 64
+:simon/oriental/08: 200 64
+:raymanni/gore/goop_2: 172 64
+:simon/oriental/09: 280 64 r
+:simon/oriental/09: 248 144 r
+:simon/oriental/09: 40 144 fr
+:simon/oriental/09: 8 64 fr
+:simon/oriental/08: 40 64
+:raymanni/gore/goop_1: 76 64
+:simon/oriental/bush1: 224 228 rr
+:simon/oriental/culm_end: 216 224 r
+:simon/oriental/culm_long: 240 224 r
+:simon/oriental/10: 216 224 r
+:simon/oriental/10: 72 224 fr
+:simon/oriental/02b: 184 224
+:simon/oriental/culm_long: 360 224 r
+:simon/oriental/culm_end: 456 224 r
+:simon/oriental/bush1: 498 228 f
+:simon/oriental/bush1: 590 228 rr
+:simon/oriental/bush1: 610 228 f
+:simon/oriental/bush1: 552 228 f
+:simon/oriental/culm_long: 504 224 fr
+:simon/oriental/culm_end: 480 224 fr
+:simon/oriental/culm_end: 600 224 fr
+:simon/oriental/02b: 104 224
+:simon/oriental/05: 136 224
+:simon/oriental/05: 776 64
+:simon/oriental/08: 808 144
+:simon/oriental/08: 712 144
+:simon/oriental/05: 776 144
+:simon/oriental/09: 920 64 r
+:simon/oriental/09: 888 144 r
+:simon/oriental/09: 680 144 fr
+:simon/oriental/09: 648 64 fr
+:simon/oriental/10: 856 224 r
+:simon/oriental/culm_end: 712 224 fr
+:simon/oriental/bush1: 664 228 f
+:simon/oriental/10: 712 224 fr
+:simon/oriental/02b: 824 224
+:simon/oriental/02b: 744 224
+:simon/oriental/05: 776 224
+:simon/oriental/10: 824 272 r
+:simon/oriental/10: 744 272 fr
+:simon/oriental/10: 104 272 fr
+:simon/oriental/10: 184 272 r
+:simon/oriental/culm_long: 616 224 fr
+$BEGIN_TILE_GROUP 0
+:simon/oriental/culm_long: 0 29
+:simon/oriental/culm_end: 0 124 f
+:simon/oriental/leaf3: 4 0 fr
+$END_TILE_GROUP
+:Group-0: 336 79
+:Group-0: 592 79 frr
+:matt/bricks/12: 144 140 d
+:matt/bricks/12: 784 140 d

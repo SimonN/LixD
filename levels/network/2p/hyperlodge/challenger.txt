@@ -1,0 +1,282 @@
+$BUILT 2025-02-09 16:02:10
+$AUTHOR Hyperlodge
+$ENGLISH Challenger
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 864
+#SIZE_Y 544
+#TORUS_X 1
+#TORUS_Y 0
+#BACKGROUND_RED 48
+#BACKGROUND_GREEN 176
+#BACKGROUND_BLUE 208
+
+#SECONDS 90
+#INITIAL 50
+#SPAWN_INTERVAL 96
+
+#WALKER 2
+#RUNNER 2
+#CLIMBER 2
+#FLOATER 2
+#EXPLODER2 -1
+#BLOCKER -1
+#BUILDER -1
+#PLATFORMER 2
+#BASHER 2
+#MINER 2
+#DIGGER 2
+#JUMPER 2
+#BATTER -1
+
+:simon/hatch001.H: 64 400
+:simon/hatch001.H: 736 400 r
+
+:raymanni/lab/goal.G: 434 86
+:raymanni/lab/goal.G: 366 86
+
+:proxima/flame.F: 412 54
+
+:geoo/construction/steam_down.T: 386 292
+:geoo/construction/steam_down.T: 390 300
+:geoo/construction/steam_down.T: 394 292
+:geoo/construction/steam_down.T: 454 292
+:geoo/construction/steam_down.T: 458 300
+:geoo/construction/steam_down.T: 462 292
+:geoo/construction/steam_down.T: 454 324
+:geoo/construction/steam_down.T: 458 348
+:geoo/construction/steam_down.T: 462 324
+:geoo/construction/steam_down.T: 386 324
+:geoo/construction/steam_down.T: 390 348
+:geoo/construction/steam_down.T: 394 324
+:geoo/abstract/tbeam_right.T: 448 512
+:geoo/abstract/tbeam_up.T: 480 512
+:geoo/abstract/tbeam_right.T: 480 480
+:geoo/abstract/tbeam_left.T: 384 512
+:geoo/abstract/tbeam_up.T: 352 512
+:geoo/abstract/tbeam_left.T: 352 480
+:geoo/abstract/tbeam_right.T: 512 480
+:geoo/abstract/tbeam_right.T: 544 480
+:geoo/abstract/tbeam_right.T: 576 480
+:geoo/abstract/tbeam_right.T: 608 480
+:geoo/abstract/tbeam_left.T: 320 480
+:geoo/abstract/tbeam_left.T: 288 480
+:geoo/abstract/tbeam_left.T: 256 480
+:geoo/abstract/tbeam_left.T: 224 480
+:geoo/abstract/tbeam_left.T: 608 352
+:geoo/abstract/tbeam_right.T: 224 352
+:geoo/construction/steam_down.T: 458 374
+:geoo/construction/steam_down.T: 390 374
+:geoo/construction/steam_up.T: 838 308
+:geoo/construction/steam_up.T: 12 308
+
+:amanda/steel/steel32x32.S: 512 512
+:amanda/steel/steel32x32.S: 544 512
+:amanda/steel/steel32x32.S: 576 512
+:amanda/steel/steel32x32.S: 608 512
+:amanda/steel/steel32x32.S: 640 512
+:amanda/steel/steel32x32.S: 672 512
+:matt/goldmine/planksupport3: 704 504
+:amanda/steel/steel32x32.S: 704 512
+:amanda/steel/steel32x32.S: 160 512
+:amanda/steel/steel32x32.S: 192 512
+:amanda/steel/steel32x32.S: 224 512
+:amanda/steel/steel32x32.S: 256 512
+:amanda/steel/steel32x32.S: 288 512
+:amanda/steel/steel32x32.S: 320 512
+:amanda/steel/steel32x32.S: 128 448
+:amanda/steel/steel32x32.S: 128 416
+:amanda/steel/steel32x32.S: 704 448
+:amanda/steel/steel32x32.S: 704 416
+:amanda/steel/steel32x32.S: 96 432
+:amanda/steel/steel32x32.S: 64 432
+:amanda/steel/steel32x32.S: 32 432
+:amanda/steel/steel32x32.S: 800 432
+:amanda/steel/steel32x32.S: 768 432
+:amanda/steel/steel32x32.S: 736 432
+:matt/goldmine/plankdiag2: 672 384
+:amanda/steel/steel32x32.S: 704 384
+:amanda/steel/steel32x32.S: 704 352
+:matt/goldmine/plankdiag: 144 384
+:amanda/steel/steel32x32.S: 128 384
+:amanda/steel/steel32x32.S: 128 352
+:amanda/steel/steel32x32.S: 704 304
+:amanda/steel/steel32x32.S: 736 304
+:amanda/steel/steel32x32.S: 768 304
+:amanda/steel/steel32x32.S: 800 304
+:matt/goldmine/plankdiag2: 768 336
+:amanda/steel/steel32x32.S: 800 336
+:amanda/steel/steel32x32.S: 32 304
+:amanda/steel/steel32x32.S: 64 304
+:amanda/steel/steel32x32.S: 96 304
+:amanda/steel/steel32x32.S: 128 304
+:matt/goldmine/plankdiag: 48 336
+:amanda/steel/steel32x32.S: 32 336
+:amanda/steel/steel32x32.S: 160 352
+:amanda/steel/steel32x32.S: 672 352
+:amanda/steel/steel_flange_right24x16.S: 640 336
+:amanda/steel/steel32x32.S: 640 352
+:amanda/steel/steel_flange_left24x16.S: 200 336
+:amanda/steel/steel32x32.S: 192 352
+:amanda/steel/steel_flange_right24x16.S: 792 416
+:amanda/steel/steel_flange_left24x16.S: 48 416
+:matt/goldmine/plankdiag2: 16 488
+:amanda/steel/steel32x32.S: 0 512
+:amanda/steel/steel32x32.S: 32 512
+:amanda/steel/steel32x32.S: 64 512
+:amanda/steel/steel32x32.S: 96 512
+:amanda/steel/steel32x32.S: 736 512
+:amanda/steel/steel32x32.S: 768 512
+:matt/goldmine/plankdiag: 800 488
+:amanda/steel/steel32x32.S: 800 512
+:amanda/steel/steel32x32.S: 832 512
+:amanda/steel/steel_flange_right24x16.S: 1 336
+:amanda/steel/steel_flange_left24x16.S: 841 336
+:amanda/steel/steel_flange_right24x16.S: 824 376
+:amanda/steel/steel_flange_left24x16.S: 16 376
+:raymanni/lab/steel_1.S: 704 512
+:matt/goldmine/crate16: 704 488
+:matt/goldmine/crate16: 720 488
+:matt/goldmine/planksupport3: 128 504
+:matt/goldmine/crate16: 128 488
+:matt/goldmine/crate16: 144 488
+:raymanni/lab/steel_1.S: 128 512
+:matt/goldmine/planksupport3: 416 488
+:raymanni/lab/steel_1.S: 416 512
+:raymanni/lab/steel_1.S: 832 480
+:amanda/steel/steel32x32.S: 848 384
+:amanda/steel/steel32x32.S: 848 352
+:raymanni/lab/steel_1.S: 0 480
+:matt/goldmine/crate16: 416 472
+:matt/goldmine/crate16: 432 472
+:matt/goldmine/crate32: 840 448
+:matt/goldmine/crate32: 856 416
+:matt/goldmine/crate16: 8 464
+:matt/goldmine/crate16: 8 448
+:matt/goldmine/crate16: 840 432
+:matt/goldmine/crate16: 840 416
+$BEGIN_TILE_GROUP 0
+:geoo/construction/squarebrick_large: 56 128
+:geoo/construction/squarebrick_large: 56 97 f
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 60 55 frr
+:geoo/construction/squarebrick_large: 55 66
+:geoo/construction/rod_rust/straight32: 50 85 r
+:geoo/construction/wall/big_diag_tu: 19 112
+:geoo/construction/stairsbrick_rd_8: 47 83 r
+:geoo/construction/stairsbrick_rd_8: 51 63 r
+:geoo/construction/rod_rust/straight32: 32 143 r
+:geoo/construction/rod_rust/straight_diagu8: 31 138
+:geoo/construction/stairsbrick_rd_8: 12 170
+:geoo/construction/wall/big_brickdiag_bd: 39 145 frrr
+:geoo/construction/wall/big_diag_tu: 9 123
+:geoo/construction/stairsbrick_rd_8: 0 170
+:geoo/construction/rod_rust/straight32: 8 163
+:geoo/construction/platformbrick: 70 182 r
+:geoo/construction/platformbrick: 70 150 r
+:geoo/construction/rod_rust/straight32: 8 155
+:geoo/construction/rod_rust/straight32: 50 114 r
+:geoo/construction/platformbrick: 71 7 fr
+:geoo/construction/platformbrick: 70 7 r
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 66 18 r
+:geoo/construction/stairsbrick_rd_8: 51 56 r
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 60 43 rr
+:geoo/construction/rod_rust/straight32: 55 51 r
+:geoo/construction/stairsbrick_rd_8: 63 0 r
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 61 27 frrr
+:geoo/construction/stairsbrick_rd_8: 58 12 r
+:geoo/construction/stairsbrick_rd_8: 55 27 r
+:geoo/construction/platformbrick_single: 61 28
+:geoo/construction/platformbrick_single: 64 28
+:geoo/construction/rod_rust/end_rect: 63 53
+:matt/marble/00e_1: 47 155
+:geoo/construction/rod_rust/link_diag: 54 36 rrr
+:geoo/construction/rod_rust/straight32: 85 85 fr
+:geoo/construction/wall/big_diag_tu: 92 112 frr
+:geoo/construction/stairsbrick_rd_8: 88 83 fr
+:geoo/construction/stairsbrick_rd_8: 84 63 fr
+:geoo/construction/rod_rust/straight32: 103 143 fr
+:geoo/construction/rod_rust/straight_diagu8: 90 138 frr
+:geoo/construction/stairsbrick_rd_8: 99 170 frr
+:geoo/construction/wall/big_brickdiag_bd: 72 145 rrr
+:geoo/construction/wall/big_diag_tu: 102 123 frr
+:geoo/construction/stairsbrick_rd_8: 111 170 frr
+:geoo/construction/rod_rust/straight32: 103 163 frr
+:geoo/construction/platformbrick: 71 182 fr
+:geoo/construction/platformbrick: 71 150 fr
+:geoo/construction/rod_rust/straight32: 103 155 frr
+:geoo/construction/rod_rust/straight32: 85 114 fr
+:geoo/construction/stairsbrick_rd_8: 84 56 fr
+:geoo/construction/rod_rust/straight32: 80 51 fr
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 71 27 rrr
+:geoo/construction/stairsbrick_rd_8: 72 0 fr
+:geoo/construction/stairsbrick_rd_8: 77 12 fr
+:geoo/construction/stairsbrick_rd_8: 80 27 fr
+:geoo/construction/platformbrick_single: 74 28 frr
+:geoo/construction/platformbrick_single: 71 28 frr
+:geoo/construction/rod_rust/end_rect: 72 53 frr
+:matt/marble/00e_1: 88 155 frr
+:geoo/construction/rod_rust/link_diag: 69 36 frrr
+:geoo/construction/platformbrick: 71 113 fr
+:geoo/construction/platformbrick: 70 113 r
+:geoo/construction/platformbrick: 71 80 fr
+:geoo/construction/platformbrick: 70 80 r
+:geoo/construction/platformbrick: 71 53 fr
+:geoo/construction/platformbrick: 70 53 r
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:geoo/construction/concrete/016vb: 99 48
+:geoo/construction/pillar_long: 83 132
+:geoo/construction/pillar_long: 83 80
+:geoo/construction/concrete/016vb: 83 48 frr
+:geoo/construction/concrete/016vb: 31 48
+:geoo/construction/pillar_long: 15 132
+:geoo/construction/pillar_long: 15 80
+:geoo/construction/concrete/016vb: 15 48 frr
+:geoo/construction/concrete/016vb: 65 0
+:geoo/construction/pillar_long: 49 32
+:geoo/construction/concrete/016vb: 49 0 frr
+:geoo/construction/concrete/016vb: 28 262
+:geoo/construction/concrete/016vb: 18 262 frr
+:geoo/construction/concrete/podium_16: 15 270
+:geoo/construction/rod_rust/straight32: 15 272
+:geoo/construction/pillar_top_shaded: 15 260 f
+:geoo/construction/concrete/016vb: 96 262
+:geoo/construction/concrete/016vb: 86 262 frr
+:geoo/construction/concrete/podium_16: 83 270
+:geoo/construction/rod_rust/straight32: 83 272
+:geoo/construction/pillar_top_shaded: 83 260 f
+:geoo/construction/platformbrick: 49 32 rr
+:geoo/construction/platformbrick: 49 58 rr
+:geoo/construction/pillar_top_shaded: 15 108
+:geoo/construction/pillar_top_shaded: 15 80
+:geoo/construction/pillar_top_shaded: 83 79
+:geoo/construction/pillar_top_shaded: 83 108
+:geoo/construction/pillar_top_shaded: 49 60
+:geoo/construction/pillar_top_shaded: 49 34
+:matt/underworld/thinplatform16: 99 107 rr
+:matt/underworld/thinplatform16: 83 107 rr
+:matt/underworld/thinplatform16: 31 106 rr
+:matt/underworld/thinplatform16: 15 106 rr
+:matt/underworld/thinplatform16: 99 79 rr
+:matt/underworld/thinplatform16: 83 79 rr
+:matt/underworld/thinplatform16: 31 79 rr
+:matt/underworld/thinplatform16: 15 79 rr
+:geoo/construction/platformbrick: 79 32 rrr
+:geoo/construction/platformbrick: 49 34 r
+:geoo/construction/platformbrick: 49 66 r
+:geoo/construction/platformbrick: 79 64 rrr
+:geoo/construction/platformbrick: 79 96 rrr
+:geoo/construction/platformbrick: 79 128 rrr
+:geoo/construction/platformbrick: 49 128 r
+:geoo/construction/platformbrick: 49 96 r
+:Group-0: 2 75
+:geoo/construction/platformbrick_single: 1 224 r
+:geoo/construction/platformbrick_single: 1 232 r
+:geoo/construction/platformbrick_single: 128 232 fr
+:geoo/construction/platformbrick_single: 128 224 fr
+:geoo/construction/platformbrick_single: 129 230 r
+:geoo/construction/platformbrick_single: 0 230 fr
+$END_TILE_GROUP
+:Group-1: 367 11
+:geoo/nopales/nopal_05: 384 98 d
+:geoo/nopales/nopal_05: 451 98 frrd

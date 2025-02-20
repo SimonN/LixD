@@ -1,0 +1,195 @@
+$BUILT 2025-02-09 15:55:00
+$AUTHOR Hyperlodge
+$ENGLISH Fairytale
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1728
+#SIZE_Y 384
+#TORUS_X 1
+#TORUS_Y 0
+#BACKGROUND_RED 15
+#BACKGROUND_GREEN 143
+#BACKGROUND_BLUE 192
+
+#SECONDS 80
+#INITIAL 80
+#SPAWN_INTERVAL 80
+
+#RUNNER 100
+#EXPLODER2 -1
+#BLOCKER 100
+#BUILDER 100
+#MINER 100
+#JUMPER 100
+#BATTER -1
+
+:geoo/sandstone/fennec.H: 170 174
+:geoo/sandstone/fennec.H: 1508 174 r
+
+:matt/goldmine/Goal.G: 1008 304
+:matt/goldmine/Goal.G: 656 304
+
+:amanda/forest/frog_happy.T: 832 275
+
+:simon/water.W: 0 336
+:simon/water.W: 48 336
+:simon/water.W: 96 336
+:simon/water.W: 144 336
+:simon/water.W: 192 336
+:simon/water.W: 240 336
+:simon/water.W: 288 336
+:simon/water.W: 336 336
+:simon/water.W: 384 336
+:simon/water.W: 432 336
+:simon/water.W: 480 336
+:simon/water.W: 528 336
+:simon/water.W: 576 336
+:simon/water.W: 624 336
+:simon/water.W: 672 336
+:simon/water.W: 720 336
+:simon/water.W: 1680 336
+:simon/water.W: 1632 336
+:simon/water.W: 1584 336
+:simon/water.W: 1536 336
+:simon/water.W: 1488 336
+:simon/water.W: 1440 336
+:simon/water.W: 1392 336
+:simon/water.W: 1344 336
+:simon/water.W: 1296 336
+:simon/water.W: 1248 336
+:simon/water.W: 1200 336
+:simon/water.W: 1152 336
+:simon/water.W: 1104 336
+:simon/water.W: 1056 336
+:simon/water.W: 1008 336
+:simon/water.W: 960 336
+:simon/water.W: 768 336
+:simon/water.W: 816 336
+:simon/water.W: 864 336
+:simon/water.W: 912 336
+
+:proxima/flame.F: 1692 288
+:proxima/flame.F: 1724 288
+:proxima/flame.F: 1708 276
+
+:geoo/construction/steam_up.T: 1714 262
+:geoo/construction/steam_up.T: 0 262
+:geoo/construction/steam_up.T: 1721 244
+:geoo/construction/steam_right.T: 1308 256
+:geoo/construction/steam_left.T: 1360 256
+:geoo/construction/steam_left.T: 388 256
+:geoo/construction/steam_right.T: 336 256
+:geoo/construction/steam_up.T: 368 304
+:geoo/construction/steam_up.T: 1344 304
+
+:amanda/forest/bark_01: 166 208
+:amanda/forest/bark_02: 166 200
+:amanda/forest/leaves_04: 110 88
+:amanda/forest/bark_06: 92 232
+:matt/earth/05: 238 352 frrr
+:matt/earth/10: 1694 316 rr
+:amanda/forest/moss_00: 1716 318
+:matt/earth/05: 272 320 rrr
+:matt/earth/10: 124 306 f
+:amanda/forest/moss_00: 82 314
+:amanda/forest/bark_04: 122 304
+:amanda/forest/moss_00: 214 302
+:amanda/forest/bark_00: 182 284 frrr
+:amanda/forest/moss_00: 134 312
+:amanda/forest/moss_00: 38 314
+:amanda/forest/moss_00: 22 324
+:amanda/forest/moss_00: 186 314
+:amanda/forest/leaves_05: 218 274
+:amanda/forest/bark_02: 54 192 rrr
+:amanda/forest/leaves_05: 43 152
+:amanda/forest/leaves_05: 68 174
+:amanda/forest/leaves_05: 28 178 frr
+:amanda/forest/moss_00: 238 314
+:amanda/forest/stone_01: 318 174 r
+:amanda/forest/stone_01: 277 210 frr
+:amanda/forest/stone_02: 384 236
+:amanda/forest/moss_00: 344 310
+:amanda/forest/moss_00: 274 316
+:amanda/forest/moss_00: 310 318
+:amanda/forest/moss_00: 372 316 frr
+:matt/earth/01: 118 378
+:matt/earth/04: 624 272
+:matt/earth/05: 488 318 frrr
+:amanda/forest/leaves_05: 676 260
+:matt/earth/26: 694 224 frr
+:amanda/forest/moss_00: 484 310
+:matt/earth/09: 478 318
+:matt/earth/01: 462 332
+:amanda/forest/moss_00: 424 316
+:amanda/forest/moss_00: 546 312
+:amanda/forest/moss_00: 580 312
+:matt/earth/06: 650 280
+:amanda/forest/moss_00: 588 308
+:matt/earth/23: 660 182 r
+:matt/earth/26: 628 216 frrr
+:matt/earth/23: 716 188 fr
+:matt/earth/14: 674 170
+:matt/winter/07: 706 156 r
+:matt/earth/12: 694 140
+:matt/winter/09c: 716 146
+:geoo/nopales/fruit_07: 722 150
+:amanda/forest/bark_01: 1538 208 frr
+:amanda/forest/bark_02: 1498 200 frr
+:amanda/forest/leaves_04: 1468 88 frr
+:amanda/forest/bark_06: 1556 232 frr
+:matt/earth/05: 1265 352 rrr
+:matt/earth/10: 1549 316 f
+:amanda/forest/moss_00: 1662 318 frr
+:matt/earth/05: 1231 320 frrr
+:matt/earth/10: 1391 306 rr
+:amanda/forest/moss_00: 1568 314 frr
+:amanda/forest/bark_04: 1510 304 frr
+:amanda/forest/moss_00: 1436 302 frr
+:amanda/forest/bark_00: 1482 284 rrr
+:amanda/forest/moss_00: 1516 312 frr
+:amanda/forest/moss_00: 1612 314 frr
+:amanda/forest/moss_00: 1628 324 frr
+:amanda/forest/moss_00: 1464 314 frr
+:amanda/forest/leaves_05: 1462 274 frr
+:amanda/forest/bark_02: 1610 192 frrr
+:amanda/forest/leaves_05: 1637 152 frr
+:amanda/forest/leaves_05: 1612 174 frr
+:amanda/forest/leaves_05: 1652 178
+:amanda/forest/moss_00: 1412 314 frr
+:amanda/forest/stone_01: 1282 174 fr
+:amanda/forest/stone_01: 1355 210
+:amanda/forest/stone_02: 1248 236 frr
+:amanda/forest/moss_00: 1306 310 frr
+:amanda/forest/moss_00: 1376 316 frr
+:amanda/forest/moss_00: 1340 318 frr
+:amanda/forest/moss_00: 1278 316
+:matt/earth/04: 984 272 frr
+:matt/earth/05: 1015 318 rrr
+:amanda/forest/leaves_05: 1004 260 frr
+:matt/earth/26: 1008 224
+:amanda/forest/moss_00: 1166 310 frr
+:matt/earth/09: 1195 318 frr
+:matt/earth/01: 1202 332 frr
+:amanda/forest/moss_00: 1226 316 frr
+:amanda/forest/moss_00: 1104 312 frr
+:amanda/forest/moss_00: 1070 312 frr
+:matt/earth/06: 1037 280 frr
+:amanda/forest/moss_00: 1062 308 frr
+:matt/earth/23: 1040 182 fr
+:matt/earth/26: 1044 216 rrr
+:matt/earth/23: 984 188 r
+:matt/earth/14: 1010 170 frr
+:matt/winter/07: 958 156 fr
+:matt/earth/12: 993 140 frr
+:matt/winter/09c: 996 146 frr
+:geoo/nopales/fruit_07: 998 150 frr
+:amanda/forest/stone_02: 784 321
+:amanda/forest/stone_02: 848 321 frr
+:amanda/forest/stone_00: 827 320 rr
+:amanda/forest/stone_00: 837 320 f
+:matt/beach/decor/sun: 1696 16
+:matt/beach/decor/sun: 1696 16 frr
+:geoo/construction/platform.S: 672 354
+:geoo/construction/platform.S: 1024 354
+:matt/goldmine/crate32: 672 304 d
+:matt/goldmine/crate32: 1024 304 d

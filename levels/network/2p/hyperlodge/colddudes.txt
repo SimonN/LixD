@@ -1,0 +1,149 @@
+$BUILT 2025-02-09 15:54:05
+$AUTHOR Hyperlodge
+$ENGLISH Cold Dudes
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 832
+#SIZE_Y 400
+#TORUS_X 1
+#TORUS_Y 0
+#BACKGROUND_RED 144
+#BACKGROUND_GREEN 208
+#BACKGROUND_BLUE 240
+
+#SECONDS 80
+#INITIAL 220
+#SPAWN_INTERVAL 60
+
+#WALKER 30
+#RUNNER 30
+#CLIMBER 30
+#FLOATER 30
+#EXPLODER2 30
+#BLOCKER 30
+#BUILDER 30
+#PLATFORMER 30
+#BASHER 30
+#MINER 30
+#DIGGER 30
+#JUMPER 30
+#BATTER 30
+#CUBER 30
+
+:matt/winter/Hatch.H: 126 32
+:matt/winter/Hatch.H: 642 266 r
+:matt/winter/Hatch.H: 126 266
+:matt/winter/Hatch.H: 642 32 r
+
+:raymanni/toys/goal.G: 352 220
+:raymanni/toys/goal.G: 412 220
+
+:matt/winter/10: 8 320 frr
+:geoo/construction/concrete/064h: 432 336
+:geoo/construction/concrete/032vb: 504 256
+:geoo/construction/concrete/032b: 528 304
+:matt/winter/10: 496 312 frr
+:geoo/construction/concrete/032v: 400 336
+:geoo/construction/concrete/064h: 272 336
+:matt/winter/10: 120 312
+:matt/winter/10: 608 320
+:matt/winter/15: 784 376
+:matt/winter/15: 798 376 frr
+:geoo/construction/concrete/032va: 320 208
+:geoo/construction/concrete/032va: 296 256
+:geoo/construction/concrete/016a: 352 192
+:geoo/construction/concrete/032a: 272 304
+:geoo/construction/concrete/016ha: 368 176
+:geoo/construction/concrete/016h: 400 176
+:geoo/construction/concrete/016hb: 432 176
+:geoo/construction/concrete/016b: 464 192
+:geoo/construction/concrete/032vb: 480 208
+:geoo/construction/concrete/064v: 416 208
+:geoo/construction/concrete/064v: 352 208
+:matt/underworld/03: 361 224 d
+:geoo/construction/concrete/016h: 384 192
+:geoo/construction/concrete/016h: 416 192
+:geoo/construction/concrete/016: 368 192
+:geoo/construction/concrete/016: 448 192
+:geoo/construction/concrete/016h: 304 320
+:geoo/construction/concrete/016h: 496 320
+:geoo/construction/concrete/016: 480 320
+:geoo/construction/concrete/016: 336 320
+:geoo/construction/concrete/008v: 344 304
+:geoo/construction/concrete/008v: 480 304
+:geoo/construction/concrete/016: 488 304
+:geoo/construction/concrete/016: 328 304
+:geoo/construction/concrete/016: 336 288
+:geoo/construction/concrete/016: 328 272
+:geoo/construction/concrete/008v: 328 288
+:geoo/construction/concrete/008v: 344 272
+:geoo/construction/concrete/008v: 496 288
+:geoo/construction/concrete/008v: 480 272
+:geoo/construction/concrete/016: 480 288
+:geoo/construction/concrete/016: 488 272
+:matt/winter/03: 400 376
+:matt/winter/15: 394 374
+:matt/winter/03: 278 376 frr
+:matt/winter/13: 310 352
+:matt/winter/15: 353 374 frr
+:matt/winter/12: 342 364
+:matt/winter/13: 473 352 frr
+:matt/winter/12: 445 364 frr
+$BEGIN_TILE_GROUP 0
+:matt/winter/15: 226 154 r
+:matt/winter/01: 212 6 r
+:matt/winter/05: 73 0
+:matt/winter/02: 116 137
+:matt/winter/03: 115 206 r
+:matt/winter/02: 87 148 frr
+:matt/winter/15: 81 207 fr
+:matt/winter/18: 56 333 rr
+:matt/winter/03: 67 204 rrr
+:matt/winter/01: 65 0 frr
+:matt/winter/09c: 244 24
+:matt/winter/07: 240 36 r
+:matt/winter/00: 75 59
+:matt/winter/02: 179 66
+:matt/winter/15: 233 169 rrr
+:matt/winter/15: 269 101 fr
+:matt/winter/02: 215 78 frr
+:matt/winter/15: 209 107 rrr
+:matt/winter/13: 187 50 rrr
+:matt/winter/13: 240 52 frrr
+:matt/winter/18: 268 83 r
+:matt/winter/12: 218 39 r
+:matt/winter/09c: 228 26
+:matt/winter/15: 227 223 r
+:matt/winter/18: 268 92 r
+:matt/winter/13: 185 172 rr
+:matt/winter/15: 82 279 fr
+:matt/winter/15: 66 68 fr
+:matt/winter/09c: 84 21
+:matt/winter/07: 36 31 fr
+:matt/winter/18: 80 36 r
+:matt/winter/09c: 95 25
+:matt/winter/18: 178 154 r
+:matt/winter/15: 173 89 r
+:matt/winter/15: 187 197 fr
+:matt/winter/18: 196 217 r
+:matt/winter/15: 191 224 fr
+:matt/winter/12: 174 307 rr
+:matt/winter/13: 183 260
+:matt/winter/12: 231 295 frrr
+:matt/winter/13: 131 292
+:matt/winter/18: 170 327 r
+:matt/winter/18: 134 340 rr
+:matt/winter/18: 115 344 rr
+:matt/winter/18: 124 68 rr
+:matt/winter/18: 137 86 rr
+:matt/winter/18: 131 76 rr
+:matt/winter/18: 158 116 r
+:matt/winter/18: 153 99 rr
+:matt/winter/18: 117 124 r
+:matt/winter/15: 0 133 f
+:matt/winter/13: 36 126 rrr
+:matt/winter/18: 270 156 rrr
+$END_TILE_GROUP
+:Group-0: 822 23
+:Group-0: 538 23 frr
+:matt/underworld/03: 421 224 d

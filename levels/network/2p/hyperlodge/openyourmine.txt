@@ -1,0 +1,245 @@
+$BUILT 2025-01-27 10:35:34
+$AUTHOR Hyperlodge
+$ENGLISH Open Your Mine
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1826
+#SIZE_Y 400
+#BACKGROUND_RED 44
+#BACKGROUND_GREEN 32
+#BACKGROUND_BLUE 16
+
+#SECONDS 60
+#INITIAL 200
+#SPAWN_INTERVAL 76
+
+#WALKER 100
+#RUNNER 100
+#CLIMBER 100
+#FLOATER 100
+#EXPLODER2 100
+#BLOCKER 100
+#BUILDER 100
+#PLATFORMER 100
+#BASHER 100
+#MINER 100
+#DIGGER 100
+#JUMPER 100
+#BATTER 100
+#CUBER 100
+
+:matt/goldmine/Hatch.H: 32 24
+:matt/goldmine/Hatch.H: 1728 24 r
+
+:matt/goldmine/Goal.G: 1632 24
+:matt/goldmine/Goal.G: 128 24
+
+:simon/crystal.W: 48 352
+:simon/crystal.W: 96 352
+:simon/crystal.W: 144 352
+:simon/crystal.W: 192 352
+:simon/crystal.W: 240 352
+:simon/crystal.W: 288 352
+:simon/crystal.W: 336 352
+:simon/crystal.W: 384 352
+:simon/crystal.W: 432 352
+:simon/crystal.W: 480 352
+:simon/crystal.W: 528 352
+:simon/crystal.W: 576 352
+:simon/crystal.W: 624 352
+:simon/crystal.W: 672 352
+:simon/crystal.W: 720 352
+:simon/crystal.W: 768 352
+:simon/crystal.W: 0 352
+:simon/crystal.W: 816 352
+:simon/crystal.W: 864 352
+:simon/crystal.W: 1728 352
+:simon/crystal.W: 1680 352
+:simon/crystal.W: 1632 352
+:simon/crystal.W: 1584 352
+:simon/crystal.W: 1536 352
+:simon/crystal.W: 1488 352
+:simon/crystal.W: 1440 352
+:simon/crystal.W: 1392 352
+:simon/crystal.W: 1344 352
+:simon/crystal.W: 1296 352
+:simon/crystal.W: 1248 352
+:simon/crystal.W: 1200 352
+:simon/crystal.W: 1152 352
+:simon/crystal.W: 1104 352
+:simon/crystal.W: 1056 352
+:simon/crystal.W: 1008 352
+:simon/crystal.W: 1776 352
+:simon/crystal.W: 960 352
+:simon/crystal.W: 912 352
+
+:raymanni/gore/bonesaw.F: 508 243
+:raymanni/gore/bonesaw.F: 1252 243
+
+:raymanni/lab/elev_up.T: 320 232
+:raymanni/lab/elev_up.T: 320 200
+:raymanni/lab/launcher_right.T: 320 168
+:geoo/abstract/tbeam_left.T: 704 208
+:geoo/abstract/tbeam_left.T: 672 208
+:geoo/abstract/tbeam_left.T: 640 208
+:geoo/abstract/tbeam_up.T: 704 272
+:geoo/abstract/tbeam_up.T: 704 240
+:raymanni/lab/elev_up.T: 0 160
+:raymanni/lab/elev_up.T: 0 128
+:raymanni/lab/elev_up.T: 0 96
+:raymanni/lab/elev_up.T: 0 64
+:raymanni/lab/launcher_right.T: 0 32
+:geoo/abstract/tbeam_down.T: 144 0
+:raymanni/lab/elev_up.T: 1472 232
+:raymanni/lab/elev_up.T: 1472 200
+:geoo/abstract/tbeam_up.T: 1088 272
+:geoo/abstract/tbeam_up.T: 1088 240
+:raymanni/lab/elev_up.T: 1792 160
+:raymanni/lab/elev_up.T: 1792 128
+:raymanni/lab/elev_up.T: 1792 96
+:raymanni/lab/elev_up.T: 1792 64
+:geoo/abstract/tbeam_down.T: 1648 0
+:geoo/abstract/tbeam_right.T: 1088 209
+:geoo/abstract/tbeam_right.T: 1120 209
+:geoo/abstract/tbeam_right.T: 1152 209
+:raymanni/lab/launcher_left.T: 1472 168
+:raymanni/lab/launcher_left.T: 1792 32
+:geoo/abstract/tbeam_up.T: 832 272
+:geoo/abstract/tbeam_up.T: 832 240
+:geoo/abstract/tbeam_up.T: 832 208
+:geoo/abstract/tbeam_up.T: 832 176
+:geoo/abstract/tbeam_up.T: 832 144
+:geoo/abstract/tbeam_up.T: 832 112
+:geoo/abstract/tbeam_up.T: 832 80
+:geoo/abstract/tbeam_left.T: 832 48
+:geoo/abstract/tbeam_left.T: 800 48
+:geoo/abstract/tbeam_left.T: 768 48
+:geoo/abstract/tbeam_right.T: 960 48
+:geoo/abstract/tbeam_right.T: 992 48
+:geoo/abstract/tbeam_right.T: 1024 48
+:geoo/abstract/tbeam_up.T: 960 272
+:geoo/abstract/tbeam_up.T: 960 240
+:geoo/abstract/tbeam_up.T: 960 208
+:geoo/abstract/tbeam_up.T: 960 176
+:geoo/abstract/tbeam_up.T: 960 144
+:geoo/abstract/tbeam_up.T: 960 112
+:geoo/abstract/tbeam_up.T: 960 80
+:geoo/abstract/tbeam_down.T: 864 240
+:geoo/abstract/tbeam_down.T: 928 240
+:geoo/abstract/tbeam_down.T: 896 240
+
+:matt/goldmine/planksupport3: 123 252 frrr
+:matt/goldmine/planksupport: 48 168
+:matt/goldmine/plankdiag2: 128 312 r
+:matt/goldmine/08: 48 288
+:matt/goldmine/plankdiag: 246 320
+:matt/goldmine/planksupport3: 238 296
+:matt/goldmine/plankdiag2: 168 320
+:matt/goldmine/planksupport3: 184 296 frr
+:matt/goldmine/09: 190 288
+:matt/goldmine/plankdiag: 286 280
+:matt/goldmine/01: 312 256
+:matt/goldmine/plankdiag: 400 312
+:matt/goldmine/plank: 408 304
+:matt/goldmine/plank: 336 360
+:matt/goldmine/04: 320 272
+:matt/goldmine/02: 136 248
+:matt/goldmine/03: 272 240 r
+:matt/goldmine/06: 192 248
+:matt/goldmine/10: 248 256
+:matt/goldmine/10: 336 288
+:matt/goldmine/10: 360 272 frr
+:matt/goldmine/10: 264 248 frr
+:matt/goldmine/10: 168 248
+:matt/goldmine/plank: 536 304 frr
+:matt/goldmine/plank: 720 360 frr
+:matt/goldmine/plank: 592 360
+:matt/goldmine/planksupport: 656 304
+:matt/goldmine/crate16: 104 152
+:matt/goldmine/planksupport2: 128 72
+:matt/goldmine/crate16: 176 56
+:matt/goldmine/planksupport2: 32 72
+:matt/goldmine/crate16: 80 56
+:matt/goldmine/planksupport3: 207 155 frr
+:matt/goldmine/planksupport3: 186 155
+:matt/goldmine/02: 177 149 rr
+:matt/goldmine/crate32: 48 136 rr
+:matt/goldmine/crate32: 144 136 rr
+:matt/goldmine/planksupport3: 8 284 frr
+:matt/goldmine/planksupport3: 71 284 frr
+:matt/goldmine/04: -72 171 r
+:matt/goldmine/00: 19 275 frrr
+:matt/goldmine/plank: 784 304
+:amanda/occult/skulls32x32: 39 315
+:raymanni/gore/goop_9: 559 303
+:raymanni/gore/goop_1: 507 304
+:raymanni/gore/goop_7: 503 302
+:matt/goldmine/plankdiag: 529 272 frr
+:matt/goldmine/plankdiag: 500 272
+:raymanni/gore/goop_7: 535 270
+:raymanni/gore/goop_7: 542 275
+:raymanni/gore/goop_9: 524 276 frr
+:raymanni/gore/goop_7: 520 275
+:raymanni/gore/goop_9: 527 270 frr
+:matt/goldmine/crate16: 80 40
+:matt/goldmine/crate16: 176 40
+:matt/goldmine/crate16: 176 24
+:matt/goldmine/planksupport3: 1669 252 rrr
+:matt/goldmine/planksupport: 1648 168 frr
+:matt/goldmine/plankdiag2: 1664 312 fr
+:matt/goldmine/08: 1671 288 frr
+:matt/goldmine/plankdiag: 1530 320 frr
+:matt/goldmine/planksupport3: 1554 296 frr
+:matt/goldmine/plankdiag2: 1608 320 frr
+:matt/goldmine/planksupport3: 1608 296
+:matt/goldmine/09: 1553 288 frr
+:matt/goldmine/plankdiag: 1490 280 frr
+:matt/goldmine/01: 1448 256 frr
+:matt/goldmine/plankdiag: 1376 312 frr
+:matt/goldmine/plank: 1288 304 frr
+:matt/goldmine/plank: 1360 360
+:matt/goldmine/04: 1382 272 frr
+:matt/goldmine/02: 1624 248 frr
+:matt/goldmine/03: 1511 240 fr
+:matt/goldmine/06: 1552 248 frr
+:matt/goldmine/10: 1541 256 frr
+:matt/goldmine/10: 1453 288 frr
+:matt/goldmine/10: 1429 272
+:matt/goldmine/10: 1525 248
+:matt/goldmine/10: 1621 248 frr
+:matt/goldmine/plank: 1160 304
+:matt/goldmine/plank: 976 360 frr
+:matt/goldmine/plank: 1104 360
+:matt/goldmine/planksupport: 1040 304 frr
+:matt/goldmine/crate16: 1704 152 frr
+:matt/goldmine/planksupport2: 1632 72 frr
+:matt/goldmine/crate16: 1632 56 frr
+:matt/goldmine/planksupport2: 1728 72 frr
+:matt/goldmine/crate16: 1728 56 frr
+:matt/goldmine/planksupport3: 1585 155
+:matt/goldmine/planksupport3: 1606 155 frr
+:matt/goldmine/02: 1583 149 f
+:matt/goldmine/crate32: 1744 136 f
+:matt/goldmine/crate32: 1648 136 f
+:matt/goldmine/planksupport3: 1784 284
+:matt/goldmine/planksupport3: 1721 284
+:matt/goldmine/04: 1730 171 fr
+:matt/goldmine/00: 1731 275 rrr
+:matt/goldmine/plank: 912 304 frr
+:amanda/occult/skulls32x32: 1721 315 frr
+:raymanni/gore/goop_9: 1249 303 frr
+:raymanni/gore/goop_1: 1253 304 frr
+:raymanni/gore/goop_7: 1305 302 frr
+:matt/goldmine/plankdiag: 1247 272
+:matt/goldmine/plankdiag: 1276 272 frr
+:raymanni/gore/goop_7: 1273 270 frr
+:raymanni/gore/goop_7: 1266 275 frr
+:raymanni/gore/goop_9: 1284 276
+:raymanni/gore/goop_7: 1288 275 frr
+:raymanni/gore/goop_9: 1281 270
+:matt/goldmine/crate16: 1728 40 frr
+:matt/goldmine/crate16: 1632 40 frr
+:matt/goldmine/crate16: 1632 24 frr
+:matt/goldmine/plank: 848 360
+:matt/goldmine/plank: 1232 360 frr
+:matt/goldmine/plank: 464 360 frr

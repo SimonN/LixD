@@ -1,0 +1,237 @@
+$BUILT 2025-02-09 15:47:40
+$AUTHOR Hyperlodge
+$ENGLISH Tomb and Tomber
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1408
+#SIZE_Y 656
+#BACKGROUND_RED 48
+#BACKGROUND_GREEN 48
+#BACKGROUND_BLUE 48
+
+#SECONDS 60
+#INITIAL 120
+#SPAWN_INTERVAL 10
+
+#RUNNER -1
+#CLIMBER -1
+#EXPLODER2 -1
+#PLATFORMER -1
+#JUMPER -1
+#BATTER -1
+#CUBER -1
+
+:geoo/sandstone/Hatch.H: 0 16
+:geoo/sandstone/Hatch.H: 1312 16 r
+
+:geoo/sandstone/Goal.G: 1280 496
+:geoo/sandstone/Goal.G: 64 496
+
+:geoo/construction/sawblade_small.F: 1272 560
+:geoo/construction/sawblade_small.F: 1320 560
+:geoo/construction/sawblade_small.F: 56 560
+:geoo/construction/sawblade_small.F: 104 560
+:proxima/flame.F: 624 608
+:proxima/flame.F: 744 608
+:proxima/flame.F: 232 480
+:proxima/flame.F: 304 480
+:proxima/flame.F: 1064 480
+:proxima/flame.F: 1136 480
+:proxima/flame.F: 1176 376
+:proxima/flame.F: 1024 376
+:proxima/flame.F: 344 376
+:proxima/flame.F: 192 376
+
+:matt/bricks/04a: 256 144
+:matt/bricks/04a: 320 208
+:matt/bricks/04a: 384 272
+:matt/bricks/04a: 448 336
+:matt/bricks/04a: 512 400
+:matt/bricks/04a: 576 464
+:matt/bricks/04a: 192 80
+:matt/bricks/03a: 128 80
+:matt/bricks/03a: 192 144
+:matt/bricks/03a: 128 144
+:matt/bricks/03a: 256 208
+:matt/bricks/03a: 192 208
+:matt/bricks/03a: 320 272
+:matt/bricks/03a: 192 272
+:matt/bricks/03a: 128 272
+:matt/bricks/03a: 128 208
+:matt/bricks/03a: 512 464
+:matt/bricks/03a: 448 464
+:matt/bricks/03a: 384 464
+:matt/bricks/03a: 320 464
+:matt/bricks/03a: 448 400
+:matt/bricks/03a: 384 400
+:matt/bricks/03a: 320 400
+:matt/bricks/03a: 384 336
+:matt/bricks/03a: 128 336
+:matt/bricks/03a: 192 400
+:matt/bricks/03a: 128 400
+:matt/bricks/03a: 192 464
+:matt/bricks/03a: 128 464
+$BEGIN_TILE_GROUP 0
+:amanda/occult/skulls32x32: 90 0
+:amanda/occult/skulls32x32: 176 8 frr
+:amanda/occult/skulls32x32: 306 8
+:amanda/occult/skulls32x32: 336 24 frr
+:amanda/occult/skulls32x32: 256 32 frr
+:amanda/occult/skulls32x32: 152 24 frr
+:amanda/occult/skulls32x32: 40 32 frr
+:amanda/occult/skulls32x32: 0 24 frr
+:amanda/occult/skulls32x32: 376 24 frr
+:amanda/occult/skulls32x32: 458 32
+:amanda/occult/skulls32x32: 504 48 frr
+$END_TILE_GROUP
+:Group-0: 80 566
+:matt/bricks/03a: 576 528
+:matt/bricks/03a: 512 528
+:matt/bricks/03a: 448 528
+:matt/bricks/03a: 384 528
+:matt/bricks/03a: 320 528
+:matt/bricks/03a: 256 528
+:matt/bricks/03a: 192 528
+:matt/bricks/03a: 128 528
+:matt/bricks/12a: 96 176
+:matt/bricks/12a: 80 224
+:matt/bricks/12a: 80 320
+:matt/bricks/12a: 64 272
+:matt/bricks/12a: 96 368
+:matt/bricks/12a: 80 416
+:matt/bricks/12a: 64 464
+:matt/bricks/03a: 0 80
+:matt/bricks/03a: 0 144
+:matt/bricks/03a: 0 272
+:matt/bricks/03a: 0 208
+:matt/bricks/03a: 0 336
+:matt/bricks/03a: 0 400
+:matt/bricks/03a: 0 464
+:matt/bricks/03a: 0 528
+:matt/bricks/12a: 80 128
+:matt/bricks/12a: 64 80
+:matt/bricks/04a: 1088 144 frr
+:matt/bricks/04a: 1024 208 frr
+:matt/bricks/04a: 960 272 frr
+:matt/bricks/04a: 896 336 frr
+:matt/bricks/04a: 832 400 frr
+:matt/bricks/04a: 768 464 frr
+:matt/bricks/04a: 1152 80 frr
+:matt/bricks/03a: 1216 80 frr
+:matt/bricks/03a: 1152 144 frr
+:matt/bricks/03a: 1216 144 frr
+:matt/bricks/03a: 1088 208 frr
+:matt/bricks/03a: 1152 208 frr
+:matt/bricks/03a: 1024 272 frr
+:matt/bricks/03a: 1152 272 frr
+:matt/bricks/03a: 1216 272 frr
+:matt/bricks/03a: 1216 208 frr
+:matt/bricks/03a: 832 464 frr
+:matt/bricks/03a: 896 464 frr
+:matt/bricks/03a: 960 464 frr
+:matt/bricks/03a: 1024 464 frr
+:matt/bricks/03a: 896 400 frr
+:matt/bricks/03a: 960 400 frr
+:matt/bricks/03a: 1024 400 frr
+:matt/bricks/03a: 960 336 frr
+:matt/bricks/03a: 1216 336 frr
+:matt/bricks/03a: 1152 400 frr
+:matt/bricks/03a: 1216 400 frr
+:matt/bricks/03a: 1152 464 frr
+:matt/bricks/03a: 1216 464 frr
+:Group-0: 778 566 frr
+:matt/bricks/03a: 768 528 frr
+:matt/bricks/03a: 832 528 frr
+:matt/bricks/03a: 896 528 frr
+:matt/bricks/03a: 960 528 frr
+:matt/bricks/03a: 1024 528 frr
+:matt/bricks/03a: 1088 528 frr
+:matt/bricks/03a: 1152 528 frr
+:matt/bricks/03a: 1216 528 frr
+:matt/bricks/12a: 1280 176 frr
+:matt/bricks/12a: 1296 224 frr
+:matt/bricks/12a: 1296 320 frr
+:matt/bricks/12a: 1312 272 frr
+:matt/bricks/12a: 1280 368 frr
+:matt/bricks/12a: 1296 416 frr
+:matt/bricks/12a: 1312 464 frr
+:matt/bricks/03a: 1344 80 frr
+:matt/bricks/03a: 1344 144 frr
+:matt/bricks/03a: 1344 272 frr
+:matt/bricks/03a: 1344 208 frr
+:matt/bricks/03a: 1344 336 frr
+:matt/bricks/03a: 1344 400 frr
+:matt/bricks/03a: 1344 464 frr
+:matt/bricks/03a: 1344 528 frr
+:matt/bricks/12a: 1296 128 frr
+:matt/bricks/12a: 1312 80 frr
+:matt/bricks/03a: 640 528
+:matt/bricks/03a: 704 528 frr
+:matt/bricks/12a: 1296 560 frr
+:matt/bricks/12a: 80 560 frr
+:matt/bricks/12a: 1376 624 frr
+:matt/bricks/12a: 1328 624 frr
+:matt/bricks/12a: 1280 624 frr
+:matt/bricks/12a: 1232 624 frr
+:matt/bricks/12a: 1184 624 frr
+:matt/bricks/12a: 1136 624 frr
+:matt/bricks/12a: 1088 624 frr
+:matt/bricks/12a: 1040 624 frr
+:matt/bricks/12a: 992 624 frr
+:matt/bricks/12a: 944 624 frr
+:matt/bricks/12a: 896 624 frr
+:matt/bricks/12a: 848 624 frr
+:matt/bricks/12a: 800 624 frr
+:matt/bricks/12a: 752 624 frr
+:matt/bricks/12a: 624 624 frr
+:matt/bricks/12a: 576 624 frr
+:matt/bricks/12a: 528 624 frr
+:matt/bricks/12a: 480 624 frr
+:matt/bricks/12a: 432 624 frr
+:matt/bricks/12a: 384 624 frr
+:matt/bricks/12a: 336 624 frr
+:matt/bricks/12a: 288 624 frr
+:matt/bricks/12a: 240 624 frr
+:matt/bricks/12a: 192 624 frr
+:matt/bricks/12a: 144 624 frr
+:matt/bricks/12a: 96 624 frr
+:matt/bricks/12a: 48 624 frr
+:matt/bricks/12a: 0 624 frr
+:matt/steel/16x8.S: 32 648
+:matt/steel/16x8.S: 80 648
+:matt/steel/16x8.S: 128 648
+:matt/steel/16x8.S: 176 648
+:matt/steel/16x8.S: 224 648
+:matt/steel/16x8.S: 272 648
+:matt/steel/16x8.S: 320 648
+:matt/steel/16x8.S: 368 648
+:matt/steel/16x8.S: 416 648
+:matt/steel/16x8.S: 464 648
+:matt/steel/16x8.S: 512 648
+:matt/steel/16x8.S: 560 648
+:matt/steel/16x8.S: 608 648
+:matt/steel/16x8.S: 656 624
+:matt/steel/16x8.S: 736 624
+:matt/steel/16x8.S: 784 648
+:matt/steel/16x8.S: 832 648
+:matt/steel/16x8.S: 880 648
+:matt/steel/16x8.S: 928 648
+:matt/steel/16x8.S: 976 648
+:matt/steel/16x8.S: 1024 648
+:matt/steel/16x8.S: 1072 648
+:matt/steel/16x8.S: 1120 648
+:matt/steel/16x8.S: 1168 648
+:matt/steel/16x8.S: 1216 648
+:matt/steel/16x8.S: 1264 648
+:matt/steel/16x8.S: 1312 648
+:matt/steel/16x8.S: 1360 648
+:raymanni/toys/beam_14.S: 672 624
+:raymanni/toys/beam_14.S: 704 624
+:raymanni/toys/beam_13.S: 1400 592
+:raymanni/toys/beam_13.S: 0 592
+:matt/goldmine/pickaxe: 152 48
+:matt/goldmine/crate16: 152 64
+:matt/goldmine/pickaxe: 1240 48 frr
+:matt/goldmine/crate16: 1240 64 frr
+:matt/bricks/03a: 256 272
+:matt/bricks/03a: 1088 272
