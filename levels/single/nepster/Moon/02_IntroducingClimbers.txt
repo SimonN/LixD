@@ -1,6 +1,6 @@
 $BUILT 2016-01-06 15:45:17
 $AUTHOR Nepster
-$ENGLISH Introdicing: Climbers
+$ENGLISH Introducing Climbers
 
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 2128

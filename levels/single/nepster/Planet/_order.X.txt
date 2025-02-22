@@ -11,7 +11,7 @@
 11_Cubism.txt
 12_DeathWorkingLix.txt
 13_ChoirMad.txt
-14_Canonballs.txt
+14_Cannonballs.txt
 15_NoMatter.txt
 16_MinorObstacles.txt
 17_MarbleTemple.txt

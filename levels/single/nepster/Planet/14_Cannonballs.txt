@@ -1,6 +1,6 @@
 $BUILT 2017-06-11 22:12:16
 $AUTHOR Nepster
-$ENGLISH Canonballs in the Air
+$ENGLISH Cannonballs in the Air
 
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 912

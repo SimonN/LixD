@@ -1,4 +1,4 @@
-$BUILT 2017-11-23 20:14:37
+$BUILT 2025-02-22 04:52:57
 $AUTHOR Nepster
 $ENGLISH Miner Preservation Society
 
@@ -19,7 +19,7 @@ $ENGLISH Miner Preservation Society
 #MINER 1
 
 :geoo/sandstone/Hatch.H: 256 0
-:geoo/sandstone/Hatch.H: 16 0
+:geoo/sandstone/Hatch.H: 0 0
 
 :geoo/sandstone/Goal.G: 576 272
 
@@ -166,3 +166,19 @@ $BEGIN_TILE_GROUP 1
 :geoo/sandstone/32x64: 0 0 d
 $END_TILE_GROUP
 :Group-1: 224 376
+:geoo/sandstone/32x64: 224 0
+:geoo/sandstone/32x32: 192 0
+:geoo/sandstone/32x64: 352 0
+:geoo/sandstone/32x32: 384 0
+:geoo/sandstone/32x64: 96 0
+:geoo/sandstone/32x32: 128 0
+:geoo/sandstone/32x64: 512 0
+:geoo/sandstone/32x32: 480 0
+:geoo/sandstone/32x64: 416 0
+:geoo/sandstone/32x64: 448 0
+:Group-0: 448 48
+:geoo/sandstone/32x32: 160 0
+:geoo/sandstone/16x16: 0 0
+:geoo/sandstone/16x16: 80 0
+:geoo/sandstone/16x16: 256 0
+:geoo/sandstone/16x16: 336 0
