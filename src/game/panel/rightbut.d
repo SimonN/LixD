@@ -11,6 +11,7 @@ import opt = file.option.allopts;
 import game.core.view;
 import game.panel.nuke;
 import game.panel.taperec;
+import game.panel.livenote;
 import game.panel.tooltip;
 import game.panel.savestat;
 import graphic.internal;
@@ -132,13 +133,26 @@ private:
     mixin SaveStateMixin;
 
 public:
-    this(Geom g)
-    {
+    this(Geom g, in LivestreamNote.SourceLine[] noteLines) {
         super(g);
-        makeTapeRecorder(new Geom(0, 0, xlg, skillYl, From.BOTTOM));
+        myMakeTapeRecorder(noteLines.length == 0);
+        if (noteLines.length >= 1) {
+            addChild(new LivestreamNote(new Geom(0, 0, xlg, ylg, From.BOTTOM),
+                noteLines));
+        }
+    }
+
+private:
+    void myMakeTapeRecorder(in bool visible_ifFalseItsStillHotkeyable)
+    {
+        makeTapeRecorder(new Geom(
+            visible_ifFalseItsStillHotkeyable ? 0 : 13 * xlg,
+            0, xlg, skillYl, From.BOTTOM));
         Geom mkGeom(in int nr, in int widthInButtons)
         {
-            return new Geom(nr * (xlg / 4f), 0,
+            return new Geom(
+                nr * (xlg / 4f),
+                visible_ifFalseItsStillHotkeyable ? 0 : 99 * ylg,
                 widthInButtons * xlg / 4f, topRowYl);
         }
         makeSaveState(mkGeom(0, 2));

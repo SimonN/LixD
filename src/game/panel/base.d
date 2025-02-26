@@ -12,6 +12,7 @@ import std.range;
 import opt = file.option.allopts;
 import game.core.view;
 import game.panel.infobar;
+import game.panel.livenote;
 import game.panel.rightbut;
 import game.panel.skillbar;
 import game.panel.tooltip;
@@ -51,7 +52,8 @@ public:
             _rb = (view.showTapeRecorderButtons && view.showScoreGraph)
                 ? new BattleReplayRightButtons(rbGeom)
                 : view.showTapeRecorderButtons
-                ? new SinglePlayerRightButtons(rbGeom)
+                ? new SinglePlayerRightButtons(rbGeom,
+                    LivestreamNote.readUserFile)
                 /*
                  * This is the branch for (yes score graph, no tape recorder).
                  * Hack: Even if neither score graph or trbs shown, still

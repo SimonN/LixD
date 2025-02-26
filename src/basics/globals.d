@@ -120,7 +120,9 @@ Filename dirLevels, dirLevelsSingle, dirLevelsNetwork, dirReplays, dirData,
     dirReplayAutoSolutions, dirReplayAutoMulti, dirReplayManual,
     dirExport;
 
-Filename fileGlobalConfigLegacy, fileLog, fileReplayVerifier, fileTharsisProf,
+Filename fileLog, fileReplayVerifier,
+    fileLivestreamNote,
+    fileTharsisProf,
     fileHotkeys, fileOptions, fileTrophies,
     fileMusicMenu,
     fileSingleplayerFirstLevel;
@@ -151,9 +153,9 @@ shared static this()
     fileTrophies = new Fn("user/trophies.sdl");
     fileLog = new Fn("user/log.txt");
     fileReplayVerifier = new Fn("user/verifier.txt");
+    fileLivestreamNote = new Fn("user/streamnote.txt");
     fileTharsisProf = new Fn("user/profiler.txt");
 
-    fileGlobalConfigLegacy = new Fn("data/config.txt");
     fileMusicMenu = new Fn(dirDataMusic.rootless ~ "menulix");
     fileSingleplayerFirstLevel = new Fn(dirLevelsSingle.rootless
                                     ~ "lemforum/Lovely/anyway.txt");
