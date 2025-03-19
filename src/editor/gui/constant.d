@@ -44,8 +44,10 @@ public:
         _overtimeLabel = label(160, Lang.winConstantsOvertime);
 
         _levelName = new Texttype(new Geom(butX, 40, butXl, 20));
-        _author    = new Texttype(new Geom(butX, 70, butXl, 20));
+        _levelName.allowScrolling = true;
         _levelName.text = level.md.nameEnglish;
+        _author = new Texttype(new Geom(butX, 70, butXl, 20));
+        _author.allowScrolling = true;
         _author.text = level.author;
 
         NumPickConfig cfg;
