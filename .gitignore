@@ -27,3 +27,10 @@
 # exclude replays -- D Lix is smart enough to generate the directory
 /replays/*
 /export/*
+
+# Exclude compile-time-tracing analysis result files. To activate time tracing,
+# put into dub.json:
+#     "dflags": ["-ftime-trace", "-ftime-trace-file=$PACKAGE_DIR/trace.json"],
+trace.json
+trace.txt
+timetrace.txt

@@ -87,16 +87,11 @@ struct Tooltip {
 
     string format()
     {
-        try {
-            string s = lang.transl;
-            return formatWithButtons // see hardware.keynames for these
-                ? s.format("\u27BF" /+ lmb +/, "\u27C1" /+ rmb +/)
-                : keyToHold ? s.format(keyToHold.value.nameShort) : s;
-        }
-        catch (Exception e) {
-            log(e.msg);
-            return std.format.format!"!%s!"(lang);
-        }
+        return formatWithButtons // see hardware.keynames for these
+            ? lang.translf("\u27BF" /+ lmb +/, "\u27C1" /+ rmb +/)
+            : keyToHold
+            ? lang.translf(keyToHold.value.nameShort)
+            : lang.transl;
     }
 }
 

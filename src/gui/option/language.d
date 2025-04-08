@@ -60,7 +60,7 @@ protected:
             assert (fn);
             auto ret = new TextButton(new Geom(0, 0, xlg, buttonYlg));
             ret.text = fn.file;
-            immutable key = Lang.mainNameOfLanguage.to!string;
+            immutable string key = Lang.mainNameOfLanguage.idName;
             try {
                 fillVectorFromFile(fn)
                     .filter!(ioLine => ioLine.text1 == key)

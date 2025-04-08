@@ -21,10 +21,10 @@ import enumap;
 
 import std.array;
 import std.algorithm;
-import std.conv; // (enum constant) --to!Lang--> (string of its variable name)
 import std.format;
 
 import basics.globals; // fileLanguageEnglish
+import basics.enum2str;
 import file.lang.enum_;
 import file.lang.keynames;
 import file.option; // fileLanguage, which file does the user want
@@ -35,6 +35,7 @@ import file.key.set;
 import net.ac;
 
 nothrow @nogc @safe {
+    string idName(in Lang key) { return key.toString; }
     string transl(in Lang key) { return _globLoaded.words[key].transl; }
     string[] descr(in Lang key) { return _globLoaded.words[key].descr; }
 
@@ -60,20 +61,15 @@ nothrow string translf(FormatArgs...)(in Lang key, FormatArgs args)
         return format(key.transl, args);
     }
     catch (Exception e) {
-        static bool[Lang.max + 1] alreadyLogged = false;
+        static bool[numLangs] alreadyLogged = false;
         if (! alreadyLogged[key]) {
-            logf("Cannot format translation of %s:", key);
+            logf("Cannot format translation of %s:", key.idName);
             logf("    -> Translation is: %s", key.transl);
             logf("    -> %s", e.msg);
             alreadyLogged[key] = true;
         }
     }
-    try {
-        return text(key.transl, args);
-    }
-    catch (Exception) {
-        return key.transl;
-    }
+    return key.transl;
 }
 
 void loadUserLanguageAndIfNotExistSetUserOptionToEnglish()
@@ -100,7 +96,7 @@ do {
 
 string formattedWinTopologyWarnSize2() // strange here, but it's needed 2x
 {
-    return format!"\u2265 %3.1f \u00D7 2\u00b2\u2070 %s"(
+    return format("\u2265 %3.1f \u00D7 2\u00b2\u2070 %s",
         // greaterThan %d times 2^20 pixels
         levelPixelsToWarn * 1.0f / 2^^20,
         Lang.winTopologyWarnSize2.transl);
@@ -109,6 +105,8 @@ string formattedWinTopologyWarnSize2() // strange here, but it's needed 2x
 /////////////////////////////////////////////////////////////////////// private
 
 private Language _globLoaded;
+
+private enum size_t numLangs = Lang.max + 1;
 
 // translated strings of a loaded language
 private struct Word {
@@ -122,7 +120,7 @@ private:
     bool _fnWrittenToLog = false;
 
 public:
-    Enumap!(Lang, Word) words;
+    Word[numLangs] words;
     Enumap!(Ac, SkillTranslation) skills;
     KeyNamesForOneLanguage keys;
 
@@ -150,25 +148,28 @@ public:
         logfEvenDuringUnittest("    -> " ~ formatstr, formatargs);
     }
 
-    void parseTranslation(in string key, in string translFromFile)
+    void parseTranslation(in string keyFromFile, in string translFromFile)
     {
-        Lang langId;
-        try {
-            langId = key.to!Lang;
+        const converted = toEnum!Lang(keyFromFile);
+        if (converted.success) {
+            parseFoundTranslation(converted.value, translFromFile);
         }
-        catch (ConvException) {
-            langlog("Unnecessary line: %s", key);
-            return;
+        else {
+            langlog("Unnecessary line: %s", keyFromFile);
         }
+    }
+
+    void parseFoundTranslation(in Lang key, in string translFromFile)
+    {
         auto range = translFromFile.splitter('|');
         if (range.empty)
             return;
-        words[langId].transl = range.front;
-        keys.addTranslatedKeyName(langId, range.front);
+        words[key].transl = range.front;
+        keys.addTranslatedKeyName(key, range.front);
         range.popFront;
         if (range.empty)
             return;
-        words[langId].descr = range.array; // all remaining fields
+        words[key].descr = range.array; // all remaining fields
     }
 
     void parseSkillTooltip(in string acAsString, in string payloadWithBars)
@@ -189,8 +190,8 @@ public:
         foreach (Lang id, ref Word word; words) {
             if (word.transl.length > 0)
                 continue;
-            langlog("Missing translation: %s", id.to!string);
-            words[id].transl = "!" ~ id.to!string ~ "!";
+            langlog("Missing translation: %s", id.idName);
+            words[id].transl = "!" ~ id.idName ~ "!";
         }
         foreach (Ac ac, ref SkillTranslation tr; skills) {
             if (! ac.appearsInPanel && ac.isLeaving) {
@@ -206,7 +207,7 @@ public:
                 && tr.isPerforming.length == 0
                 && tr.buttonTooltip.length == 0
             ) {
-                langlog("Missing skill: %s", ac.to!string);
+                langlog("Missing skill: %s", ac.acToNiceCase);
                 continue;
             }
             string[] missed;
@@ -220,7 +221,7 @@ public:
                 missed ~= "tooltip";
             }
             langlog("Missing %s for skill: %s",
-                missed.join("+"), ac.to!string);
+                missed.join("+"), ac.acToNiceCase);
         }
     }
 }
