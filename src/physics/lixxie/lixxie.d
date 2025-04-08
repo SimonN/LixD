@@ -175,29 +175,6 @@ this(OutsideWorld* ow, in Point aLoc)
     addEncountersFromHere();
 }
 
-this(this)
-{
-    // Even the _job, as a struct, is copied bitwise. Perfect, since it points
-    // to its lixxie by deducting its offset. Only 1 Lixxie member is special:
-    _outsideWorld = null; // Must be passed anew by the next update.
-}
-
-LixxieImpl clone() const
-{
-    LixxieImpl ret;
-    ret._style = this._style;
-    ret._ex = this._ex;
-    ret._ey = this._ey;
-    ret._flags = this._flags;
-    ret._flingX = this._flingX;
-    ret._flingY = this._flingY;
-    ret._encFoot = this._encFoot;
-    ret.ploderTimer = this.ploderTimer;
-    ret._job = this._job; // POD, designed to be copied like this
-    ret._outsideWorld = null; // Must be passed anew by the next update.
-    return ret;
-}
-
 void addEncountersFromHere()
 {
     _encFoot |= lookup.get(Point(_ex, _ey));

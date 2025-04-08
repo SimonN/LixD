@@ -10,6 +10,9 @@ module physics.tribe;
 
 import std.algorithm;
 
+import core.stdc.string : memcpy; // To clone LixxieImpl structs.
+// We want to treat LixxieImpl like a POD, but it holds pointers.
+
 import enumap;
 import optional;
 
@@ -80,8 +83,13 @@ public:
         _nukePressedAt = rhs._nukePressedAt;
         rules = rhs.rules;
         skillsUsed = rhs.skillsUsed;
-        lixvecImpl = rhs.lixvecImpl.clone; // only value types since 2017-09!
         nextHatch = rhs.nextHatch;
+
+        lixvecImpl.length = rhs.lixvecImpl.length;
+        if (lixvecImpl.length > 0) {
+            memcpy(&lixvecImpl[0], &rhs.lixvecImpl[0],
+                lixvecImpl.length * LixxieImpl.sizeof);
+        }
     }
 
     Tribe clone() const { return new Tribe(this); }
