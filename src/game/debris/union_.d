@@ -20,9 +20,15 @@ import graphic.torbit;
 import net.ac;
 import net.style;
 
-// Not classes. I'd like to avoid GC for many flying pixels.
-// This is a struct with an untagged union for any single DebrisBase object.
-struct Debris {
+/*
+ * Debris is not a class. I'd like to avoid GC for many flying pixels.
+ * This is a struct with an untagged union for any single DebrisBase object.
+ *
+ * align (8) fixes the "chunk is not aligned" from std.typecons.emplace.
+ * (Really, we want to pass the maximum alignment of all the classes that
+ * contribute to objLen. But 8 should be well enough.)
+ */
+align (8) struct Debris {
 private:
     enum int objLen = max(
         __traits(classInstanceSize, TimedLifeDebris),
@@ -32,6 +38,8 @@ private:
         __traits(classInstanceSize, FlyingTool),
     );
     static assert (objLen > __traits(classInstanceSize, DebrisBase));
+    static assert (8 >= __traits(classInstanceAlignment, TimedLifeDebris));
+
     void[objLen] object = void;
 
 public:
