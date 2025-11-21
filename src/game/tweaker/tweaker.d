@@ -86,18 +86,19 @@ public:
         showOrHideEmptyListDescs();
     }
 
+    bool hoversPly() const nothrow @nogc
+        => _entries.any!(e => e.isMouseHere);
+
+    Ply hoveredPly() const nothrow @nogc
+        in (this.hoversPly)
+        => _entries.find!(e => e.isMouseHere)[0].ply;
+
     bool suggestsChange() const pure nothrow @nogc
-    {
-        return _entries.any!(e => e.suggestsChange);
-    }
+        => _entries.any!(e => e.suggestsChange);
 
     ChangeRequest suggestedChange() const pure nothrow @nogc
-    in {
-        assert (this.suggestsChange);
-    }
-    do {
-        return _entries.find!(e => e.suggestsChange)[0].suggestedChange;
-    }
+        in (this.suggestsChange)
+        => _entries.find!(e => e.suggestsChange)[0].suggestedChange;
 
 protected:
     override void drawSelf()
@@ -163,14 +164,14 @@ private:
     do {
         mixin liesInPast;
         foreach (size_t id, ref PlyLine e; _entries) {
+            e.move(e.geom.x, 30 + 20 * id.to!float
+                + (liesInPast(pliesToMatch[id]) ? 0 : 20f));
             immutable bool whi = shouldBeWhite(e, lixToHighlight);
             if (e.ply != pliesToMatch[id] || e.isWhite != whi) {
                 e.ply = pliesToMatch[id];
                 e.white = whi;
                 reqDraw(); // redraw all our lines, they can't easily undraw
             }
-            e.move(e.geom.x, 30 + 20 * id.to!float
-                + (liesInPast(pliesToMatch[id]) ? 0 : 20f));
         }
         if (_nowLine.phyu != now) {
             _nowLine.phyu = now;
@@ -197,14 +198,16 @@ private:
     }
 }
 
-private bool shouldBeWhite(in PlyLine plyLine, in Optional!Passport lix) pure
+// Call this after moving plyLine to where it will sit for this graphics frame.
+private bool shouldBeWhite(in PlyLine plyLine, in Optional!Passport lix)
 {
-    if (lix.empty || ! plyLine.ply.isAssignment) {
+    if (! plyLine.ply.isAssignment) {
         return false;
     }
-    return lix.front.id == plyLine.ply.toWhichLix;
+    return plyLine.isMouseHere
+        || (! lix.empty && lix.front.id == plyLine.ply.toWhichLix);
     /*
-     * We don't check the style for equality. Reason: Passports know styles,
+     * Style of lix needn't be equal. Reason: Passports know styles,
      * but Plies don't know styles, they only know player numbers. The
      * tweaker doesn't know how to get styles from player numbers, and it
      * shouldn't have to do that in singleplayer anyway.

@@ -154,6 +154,19 @@ void drawAllLixes(Game game)
     if (! underCursor.best.empty && underCursor.best.front.facingOkay) {
         underCursor.best.front.lixxie.drawAgainHighlit();
     }
+    game.drawLixHighlitByTweakerHover();
+}
+
+void drawLixHighlitByTweakerHover(Game game)
+{
+    if (! game._tweaker.hoversPly) {
+        return;
+    }
+    const id = game._tweaker.hoveredPly.toWhichLix;
+    // We assume that the tweaker will only ever appear in single-tribe games.
+    if (id < game.localTribe.lixvec.length) {
+        game.localTribe.lixvec[id].drawAgainHighlit();
+    }
 }
 
 void describeHoveredLixInPanel(Game game, in UnderCursor underCursor)

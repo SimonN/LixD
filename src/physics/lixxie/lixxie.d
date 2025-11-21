@@ -339,7 +339,9 @@ void draw() const
 
 final void drawAgainHighlit() const
 {
-    assert (ac != Ac.nothing, "we shouldn't highlight dead lix");
+    if (ac == Ac.nothing) {
+        return;
+    }
     // No need to draw the fuse, because we draw on top of the old lix drawing.
     const cb = job.spritesheet.toCutbitFor(Style.highlight);
     with (Blender(
