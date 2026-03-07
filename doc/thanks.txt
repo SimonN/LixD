@@ -88,6 +88,9 @@ Insane Steve
     * Many levels in levels/lemforum/.
     * Early multiplayer maps and playtesting in 2009.
 
+Zanzindorf
+    * Improving the animation of the laser traps from flashing to wobbling
+
 Nessy
     * 10 singleplayer puzzles in misc/nessy/.
 
