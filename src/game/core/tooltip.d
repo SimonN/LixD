@@ -120,7 +120,7 @@ private:
     {
         enum darkenedBg = Alcol(0, 0, 0, 0.4f);
         al_draw_filled_rectangle(
-            la.xs + la.xls - la.textRenderedXlg - gui.thicks * 4,
+            la.xs + la.xls - la.textRenderedXls - gui.thicks * 4,
             la.ys,
             la.xs + la.xls,
             la.ys + la.yls,
