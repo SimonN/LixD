@@ -1,4 +1,4 @@
-$BUILT 2017-06-28 14:11:39
+$BUILT 2026-09-12 09:38:23
 $AUTHOR Nepster
 $ENGLISH House of the Mad Trickster
 
@@ -31,9 +31,10 @@ $ENGLISH House of the Mad Trickster
 :geoo/construction/squisher.T: 208 288
 :geoo/construction/squisher.T: 488 178
 
-:geoo/construction/sawblade_small.F: 464 78
 :geoo/construction/sawblade_small.F: 441 47
 :geoo/construction/sawblade_small.F: 391 -9
+:geoo/construction/sawblade_small.F: 469 77
+:geoo/construction/sawblade_small.F: 451 71
 
 :simon/tapir/032: 32 192
 :simon/tapir/016: 495 352
