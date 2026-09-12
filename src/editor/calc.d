@@ -233,9 +233,15 @@ string describeHoveredTiles(Editor editor) { with (editor)
 
 string describeMousePosition(Editor editor)
 {
-    if (editor._panel.isMouseHere)
+    if (editor._panel.isMouseHere) {
         return "";
-    return editor._map.mouseOnLand.toDec;
+    }
+    immutable string mouseText = editor._map.mouseOnLand.toDec;
+    if (! editor._dragger.framing) {
+        return mouseText;
+    }
+    immutable Rect rect = editor._dragger.frame(editor._map);
+    return format!"%s [%d × %d]"(mouseText, rect.xl, rect.yl);
 }
 
 string toDec(in Point p) pure
