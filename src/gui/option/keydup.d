@@ -8,34 +8,54 @@ import std.algorithm;
 
 import gui.button.key;
 
-class KeyDuplicationWatcher {
+class KeyDuplicationWatcher : WatcherOfKB {
 private:
-    KeyButton[] _watched;
+    // _hasDupe[i] is true iff _watched[i] bites with some _watched[j].
+    WatchedKB[] _watched;
+    bool[] _hasDupe;
 
 public:
-    void watch(KeyButton b)
+    void watch(WatchedKB b)
+    in {
+        assert (! _watched.canFind(b), "Don't register b twice.");
+    }
+    do {
+        _watched ~= b;
+        _hasDupe ~= false;
+        b.registerWatcher(this);
+        scanForDuplicates();
+    }
+
+    bool areDuplicatesKnownFor(in WatchedKB b) const pure nothrow @safe @nogc
     {
-        if (! _watched.canFind(b)) {
-            _watched ~= b;
-        }
+        immutable id = _watched.countUntil!"a is b"(b);
+        assert (id >= 0, "Don't ask about a non-watched button.");
+        return _hasDupe[id];
     }
 
     /*
-     * Call this after you've changed the hotkeys of the watched buttons.
+     * After a button has changed its keys, it should tell us to
+     * scanForDuplicates. This merely records findings in _hasDupe[],
+     * it doesn't tell any buttons. Buttons must ask us later for results.
      */
-    void warnAboutDuplicateBindings()
+    void scanForDuplicates()
     {
-        foreach (KeyButton but; _watched) {
-            but.warnAboutDuplicateBindings = false;
+        for (size_t id = 0; id < _watched.length; ++id) {
+            if (_hasDupe[id]) {
+                _hasDupe[id] = false;
+                _watched[id].rememberToAskWatcher;
+            }
         }
-
-        foreach (const size_t id, KeyButton button; _watched) {
-            foreach (other; _watched[id + 1 .. $]) {
-                if (button.keySet[].any!(k => other.keySet[].canFind(k))) {
-                    button.warnAboutDuplicateBindings = true;
-                    other.warnAboutDuplicateBindings = true;
+        for (size_t idA = 0; idA < _watched.length; ++idA) {
+            for (size_t idB = idA + 1; idB < _watched.length; ++idB) {
+                if (_watched[idA].keySet.intersects(_watched[idB].keySet)) {
+                    _hasDupe[idA] = true;
+                    _watched[idA].rememberToAskWatcher;
+                    _hasDupe[idB] = true;
+                    _watched[idB].rememberToAskWatcher;
                 }
             }
         }
     }
 }
+

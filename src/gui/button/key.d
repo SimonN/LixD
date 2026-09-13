@@ -12,6 +12,8 @@ module gui.button.key;
  * extras.
  */
 
+import std.algorithm;
+
 import basics.alleg5; // timerTicks
 import basics.globals; // ticksForDoubleClick
 import file.language; // Hotkey names
@@ -21,36 +23,45 @@ import hardware.keyboard;
 import file.key.set;
 import hardware.mouse;
 
-interface KeyButton {
-    void onChange(void delegate());
-    bool warnAboutDuplicateBindings() const;
-    bool warnAboutDuplicateBindings(in bool);
-    const(KeySet) keySet() const;
-    const(KeySet) keySet(in KeySet);
+// a Watched Key Button
+interface WatchedKB {
+    void registerWatcher(WatcherOfKB);
+    const(KeySet) keySet() const pure nothrow @safe @nogc;
+
+    // Watcher calls this to tell us that we should re-ask him about dupes.
+    void rememberToAskWatcher() pure nothrow @safe @nogc;
 }
 
-class SingleKeyButton : TextButton, KeyButton {
+// the Watcher of Key Buttons
+interface WatcherOfKB {
+    bool areDuplicatesKnownFor(in WatchedKB) const pure nothrow @safe @nogc;
+    void scanForDuplicates();
+}
+
+class SingleKeyButton : TextButton {
 private:
     KeySet _keySet;
-    void delegate() _onChange; // called on new assignment, not on cancel
-    bool _warnAboutDuplicateBindings; // only set externally, we don't check
+    void delegate() _onChange;
+    bool _hasRedText;
 
 public:
-    this(Geom g) { super(g); }
+    this(Geom g, void delegate() cb)
+    in { assert (cb !is null); }
+    do {
+        _onChange = cb;
+        super(g);
+    }
 
-    mixin (GetSetWithReqDraw!"warnAboutDuplicateBindings");
-
-    const(KeySet) keySet() const { return _keySet; }
+    const(KeySet) keySet() const pure nothrow @safe @nogc { return _keySet; }
     const(KeySet) keySet(in KeySet sc)
     {
         if (sc == _keySet)
             return sc;
         _keySet = sc;
         formatScancode();
+        _onChange();
         return sc;
     }
-
-    void onChange(void delegate() f) { _onChange = f; }
 
     override bool on() const pure nothrow @safe @nogc { return super.on(); }
     override bool on(in bool b) @safe nothrow
@@ -63,11 +74,7 @@ public:
         return b;
     }
 
-    override Alcol colorText() const
-    {
-        return _warnAboutDuplicateBindings
-            ? color.guiTextWarning : super.colorText;
-    }
+    mixin (GetSetWithReqDraw!"hasRedText");
 
 protected:
     override void calcSelf()
@@ -83,13 +90,15 @@ protected:
             on = false;
         }
         else if (tappedKey.isValid) {
-            _keySet = KeySet(tappedKey);
+            keySet = KeySet(tappedKey);
             on = false;
-            if (_onChange !is null) {
-                _onChange();
-            }
         }
         formatScancode();
+    }
+
+    override Alcol colorText() const nothrow @safe @nogc
+    {
+        return _hasRedText ? color.guiTextWarning : super.colorText;
     }
 
 private:
@@ -104,13 +113,14 @@ private:
 
 // ############################################################################
 
-class MultiKeyButton : Element, KeyButton {
+class MultiKeyButton : Element, WatchedKB {
 private:
     SingleKeyButton _big;
     TextButton _plus;
     TextButton _minus;
     KeySet _addTheseToBig; // Saves _big's keys when we click _plus
-    void delegate() _onChange;
+
+    WatcherOfKB[] _dupeWatchers;
 
     // Layout if _smallBelowBig == false: [-][+][big]
     //
@@ -125,7 +135,8 @@ public:
         _smallBelowBig = g.ylg >= 30f;
 
         if (_smallBelowBig) {
-            _big = new SingleKeyButton(new Geom(0, 0, xlg, ylg));
+            _big = new SingleKeyButton(new Geom(0, 0, xlg, ylg),
+                () { scanForDuplicates(); });
             immutable pYlg = ylg - 20f;
             immutable pY = ylg - pYlg;
             _plus = new DarkTextButton(new Geom(xlg/2, pY, xlg/2, pYlg), "+");
@@ -133,15 +144,12 @@ public:
         }
         else {
             enum pXlg = 15f;
-            _big = new SingleKeyButton(new Geom(0, 0, xlg, ylg, From.RIGHT));
+            _big = new SingleKeyButton(new Geom(0, 0, xlg, ylg, From.RIGHT),
+                () { scanForDuplicates(); });
             _plus = new DarkTextButton(new Geom(pXlg, 0, pXlg, ylg), "+");
             _minus = new DarkTextButton(new Geom(0, 0, pXlg, ylg), "\u2212");
         }
-        _big.onChange = () { this.formatButtonsAndCallCallback(); };
-        assert (! this._onChange);
         addChildren(_big, _minus, _plus);
-
-        formatButtonsAndCallCallback();
     }
 
     const(KeySet) keySet() const { return _big.keySet; }
@@ -149,24 +157,22 @@ public:
     {
         if (_big.keySet == set)
             return set;
-        _big.keySet = set;
-        formatButtonsAndCallCallback();
+        _big.keySet = set; // calls back into formatThreeButtons().
         return set;
     }
 
-    void onChange(void delegate() f) { _onChange = f; }
-
-    bool warnAboutDuplicateBindings() const
-    {
-        return _big.warnAboutDuplicateBindings;
+    final void registerWatcher(WatcherOfKB w)
+    in {
+        assert (! _dupeWatchers.canFind(w), "Don't register w twice.");
+    }
+    do {
+        _dupeWatchers ~= w;
+        // We assume that w already watches us. No need to call w.watch(this).
     }
 
-    bool warnAboutDuplicateBindings(in bool b)
+    void rememberToAskWatcher() pure nothrow @safe @nogc
     {
-        if (_big.warnAboutDuplicateBindings == b)
-            return b;
         reqDraw();
-        return _big.warnAboutDuplicateBindings = b;
     }
 
 protected:
@@ -179,9 +185,11 @@ protected:
             _plus.on = false;
             keySet = KeySet(_big.keySet, _addTheseToBig);
             _addTheseToBig = KeySet();
+            scanForDuplicates();
         }
         if (_minus.execute) {
             keySet = keySet.butWithOneKeyFewer;
+            scanForDuplicates();
         }
         if (_plus.execute) {
             _addTheseToBig = _big.keySet;
@@ -190,8 +198,20 @@ protected:
         }
     }
 
+    override void drawSelf()
+    {
+        formatThreeButtons();
+    }
+
 private:
-    void formatButtonsAndCallCallback()
+    void scanForDuplicates()
+    {
+        foreach (w; _dupeWatchers) {
+            w.scanForDuplicates();
+        }
+    }
+
+    void formatThreeButtons()
     {
         _minus.shown = keySet.len >= 1;
         _plus.shown = keySet.len >= 1 && keySet.len < 3;
@@ -203,7 +223,7 @@ private:
         else {
             _big.resize(xlg - _minus.xlg * (_minus.shown + _plus.shown), ylg);
         }
-        if (_onChange !is null)
-            _onChange();
+        _big.hasRedText = _dupeWatchers.any!(w
+            => w.areDuplicatesKnownFor(this));
     }
 }

@@ -103,22 +103,13 @@ public:
 
 
 
-private void registerAtWatcher(KeyDuplicationWatcher watcher, KeyButton button)
-{
-    if (watcher is null || button is null)
-        return;
-    watcher.watch(button);
-    button.onChange = () { watcher.warnAboutDuplicateBindings(); };
-}
-
 class HotkeyOption : Option {
 private:
     MultiKeyButton _keyb;
     UserOption!KeySet _userOption;
 
 public:
-    // watcher may be null, then we won't register ourselves with any watcher
-    this(Geom g, UserOption!KeySet opt, KeyDuplicationWatcher watcher = null)
+    this(Geom g, UserOption!KeySet opt, KeyDuplicationWatcher[] watcher ...)
     {
         assert (opt);
         _keyb = new MultiKeyButton(new Geom(0, 0, keyButtonXl, 20));
@@ -127,7 +118,9 @@ public:
                             opt.lang.transl));
         addChild(_keyb);
         _userOption = opt;
-        registerAtWatcher(watcher, _keyb);
+        foreach (w; watcher) {
+            w.watch(_keyb);
+        }
     }
 
     override void loadValue() { _keyb.keySet = _userOption.value; }
@@ -141,8 +134,7 @@ class SkillHotkeyOption : Option
     private MultiKeyButton _keyb;
     private UserOption!KeySet _userOption;
 
-    // watcher may be null, then we won't register ourselves with any watcher
-    this(Geom g, Ac ac, UserOption!KeySet opt, KeyDuplicationWatcher watcher)
+    this(Geom g, Ac ac, UserOption!KeySet opt, KeyDuplicationWatcher[] ws ...)
     {
         super(g);
         assert (opt);
@@ -152,7 +144,9 @@ class SkillHotkeyOption : Option
         _cb.ac = ac;
         addChildren(_cb, _keyb);
         _userOption = opt;
-        registerAtWatcher(watcher, _keyb);
+        foreach (w; ws) {
+            w.watch(_keyb);
+        }
     }
 
     override Lang lang() const { return Lang.commonOk; } // hack

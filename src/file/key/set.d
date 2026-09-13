@@ -78,6 +78,16 @@ nothrow:
     {
         return _keys[i];
     }
+
+    bool contains(in Key k) const pure nothrow @safe @nogc
+    {
+        return _keys[0 .. len].canFind(k);
+    }
+
+    bool intersects(in typeof(this) rhs) const pure nothrow @safe @nogc
+    {
+        return _keys[0 .. len].any!(k => rhs.contains(k));
+    }
 }
 
 unittest {
@@ -105,4 +115,15 @@ unittest {
     assert (c[].equal([
         Key.byA5KeyId(4),
         Key.byA5KeyId(5)]));
+}
+
+unittest {
+    KeySet a = KeySet(KeySet(Key.byA5KeyId(2)), KeySet(Key.byA5KeyId(3)));
+    KeySet b = KeySet(KeySet(Key.byA5KeyId(3)), KeySet(Key.byA5KeyId(4)));
+    KeySet c = KeySet(KeySet(Key.byA5KeyId(4)), KeySet(Key.byA5KeyId(5)));
+
+    assert (a.intersects(b));
+    assert (b.intersects(c));
+    assert (! a.intersects(c));
+    assert (! a.intersects(KeySet()));
 }
