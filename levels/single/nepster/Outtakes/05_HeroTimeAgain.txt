@@ -1,6 +1,6 @@
-$BUILT 2016-01-02 16:12:40
+$BUILT 2026-09-15 06:00:00
 $AUTHOR Nepster
-$ENGLISH It's hero time again! - 1min
+$ENGLISH It's hero time again! - 930 Ticks
 
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
