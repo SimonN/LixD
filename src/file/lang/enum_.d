@@ -70,6 +70,8 @@ enum Lang {
     winSearchPrompt,
 
     repForLevTitle,
+    repForLevFoundWhere,
+    repForLevFoundWhat,
 
     // Singleplayer outcome
     outcomeRetryOldLevel,

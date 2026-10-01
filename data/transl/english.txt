@@ -21,7 +21,7 @@ $commonCancel Cancel
 $commonBack Back
 $commonExit Exit
 
-$mainMenuGetMusic Extract the music into Lix's directory:
+$mainMenuGetMusic Extract the music into Lix's folder:
 
 // level browsers
 $browserSingleTitle Single Player|From the main menu, go to the singleplayer browser.
@@ -39,7 +39,7 @@ $browserMkdirPleaseEnter Name of new folder:
 
 $browserReplayTitle Replays|From the main menu, go to the replay browser.
 $browserReplayPointedTo Pointed-to level
-$browserReplayVerifyDir Verify directory
+$browserReplayVerifyDir Verify folder
 
 $winVerifyTitle Replay Verifier
 $winVerifyOutputWrittenTo Output written to “%s”. Click to return.
@@ -77,7 +77,9 @@ $harvestReplaySaveManuallyToo Save manually
 $winSearchTitle Level Search
 $winSearchPrompt Search by title, author, or filename in %d levels:
 
-$repForLevTitle Load replay for “%s”
+$repForLevTitle Load Replay for “%s”
+$repForLevFoundWhere Listing replays from folder:
+$repForLevFoundWhat with filenames starting with:
 
 $outcomeRetryOldLevel Try again:
 $outcomeYouSolvedOldLevel Congratulations! You solved:

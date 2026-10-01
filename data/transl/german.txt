@@ -74,6 +74,8 @@ $winSearchTitle Levelsuche
 $winSearchPrompt Suche nach Titel, Autor oder Dateiname in %d Levels:
 
 $repForLevTitle Replay für „%s“ laden
+$repForLevFoundWhere Listet Replays aus Ordner:
+$repForLevFoundWhat deren Dateiname so beginnt:
 
 $outcomeRetryOldLevel Versuch es nochmal:
 $outcomeYouSolvedOldLevel Glückwunsch! Du hast gelöst:

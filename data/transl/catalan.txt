@@ -78,6 +78,8 @@ $winSearchTitle Cerca de nivells
 $winSearchPrompt Cerca per títol, autor o nom de fitxer en %d nivells:
 
 $repForLevTitle Carrega la repetició per “%s”
+$repForLevFoundWhere Llista de repeticions do directorio:
+$repForLevFoundWhat con nomes de ficheiro que comezan con:
 
 $outcomeRetryOldLevel Torna-ho a provar:
 $outcomeYouSolvedOldLevel Enhorabona! Has resolt:

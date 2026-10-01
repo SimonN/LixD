@@ -15,7 +15,7 @@ import optional;
 import basics.globals;
 import file.filename;
 import file.language;
-import opt = file.option.allopts;
+static import opt = file.option.allopts;
 import gui;
 import gui.picker;
 import hardware.mouse;
@@ -26,6 +26,9 @@ import menu.repmatch;
 class RepForLev : Window {
 private:
     Picker _picker;
+
+    LabelTwo _labelWhere;
+    LabelTwo _labelWhat;
     TextButton _back;
 
     Filename _levelFn;
@@ -53,7 +56,7 @@ public:
         bool gotoGame() { return null !is _replayFnNullUntilReplayIsSelected; }
     }
 
-    @property ReplayToLevelMatcher matcher()
+    ReplayToLevelMatcher matcher()
     in { assert (gotoGame, "demand the matcher only when its data is ready"); }
     do {
         auto m = new ReplayToLevelMatcher(_replayFnNullUntilReplayIsSelected);
@@ -86,11 +89,22 @@ private:
             version (tharsisprofiling)
                 auto zone = Zone(profiler, "ls replays for " ~ _levelFn.file);
             _picker.currentDir = _picker.baseDir;
+            addChild(_picker);
         }
         _back = new TextButton(new Geom(20, 20, 100, 40, From.BOTTOM_RIGHT),
             Lang.commonBack.transl);
         _back.hotkey = opt.keyMenuExit.value;
-        addChildren(_picker, _back);
+        addChild(_back);
+
+        _labelWhere = new LabelTwo(
+            new Geom(20, 40, xlg - 120, 20, From.BOT_LEF),
+            Lang.repForLevFoundWhere.transl);
+        _labelWhat = new LabelTwo(
+            new Geom(20, 20, xlg - 120, 20, From.BOT_LEF),
+            Lang.repForLevFoundWhat.transl);
+        _labelWhere.value = dirReplays.stringForWriting;
+        _labelWhat.value = _levelFn.fileNoExtNoPre;
+        addChildren(_labelWhere, _labelWhat);
     }
 }
 

@@ -77,7 +77,9 @@ $harvestReplaySaveManuallyToo Spara manuellt
 $winSearchTitle Sök bana
 $winSearchPrompt Sök på titel, författare, eller filnamn i %d banor:
 
-$repForLevTitle Läs in repris för “%s”
+$repForLevTitle Läs in Repris för “%s”
+$repForLevFoundWhere Listar de repriser i katalogen:
+$repForLevFoundWhat med filnamn som börjar med:
 
 $outcomeRetryOldLevel Försök igen:
 $outcomeYouSolvedOldLevel Gratulerar! Du löste:
