@@ -2,6 +2,36 @@ Version History
 ===============
 
 
+0.10.36
+-------
+
+2026-10-11
+
+NepsterLix: House of the Mad Trickster (Black Hole 20): Cover therectangular
+hole's entire ceiling with buzzsaws. Climbers will now die in this hole.
+That makes it more honest, the deadly-looking nook is indeed deadly now.
+
+NepsterLix: Write the unenforced time limit in ticks, not seconds, into the
+level titles of the 3 Outtake levels that had time limits:
+It's Hero Time Again, Just a Quickie, Time Out. Reason: Lix counts in ticks
+only and doesn't convert 15 ticks to 1 second anywhere.
+
+Fix #502 and #304: Detect hotkey duplication across tabs in the options menu
+between functions that can be available simultaneously. E.g., if you assign
+the same key to hold-to-scroll (on the general controls tab) and to a game
+feature (on the game hotkeys tab), the duplication gets highlit in red.
+You can still duplicate keys as much as you like; it's merely shown.
+
+Fix #501: When you drag a selection frame in the editor, the info bar at
+the bottom will tell you the size of the dragged frame.
+
+Fix #500: The dialog that loads replays for the current level now tells you
+where it looks for replays, typically in ./replays/, and what it lists,
+filenames starting with the level basename without extension. Before, the
+dialog showed only a list of files, possibly empty, without explantion.
+
+
+
 0.10.35
 -------
 
